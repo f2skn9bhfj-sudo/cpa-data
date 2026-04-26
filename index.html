@@ -45,7 +45,7 @@
 </div>
 
 <script>
-  // Progress simulation
+  // Progress + global error catching
   const setStep = (text, pct) => {
     const s = document.getElementById('splashStep');
     const b = document.getElementById('splashBar');
@@ -54,6 +54,21 @@
   };
   setStep('Chargement des bibliothèques...', 20);
   window.addEventListener('load', () => setStep('Compilation de l\'app...', 50));
+
+  // Surface any error so user knows what broke
+  window.addEventListener('error', (e) => {
+    const root = document.getElementById('root');
+    if (!root) return;
+    root.innerHTML = '<div class="splash"><div style="font-size:48px;margin-bottom:16px">⚠️</div>' +
+      '<div style="font-weight:800;font-size:18px;color:#fca5a5">Erreur au démarrage</div>' +
+      '<div style="font-size:13px;color:#94a3b8;margin-top:12px;max-width:400px;word-break:break-word">' +
+      (e.message || 'Erreur inconnue') + '</div>' +
+      '<div style="font-size:11px;color:#64748b;margin-top:8px">' +
+      (e.filename || '') + ':' + (e.lineno || '?') + '</div></div>';
+  });
+  window.addEventListener('unhandledrejection', (e) => {
+    console.error('Promise rejection:', e.reason);
+  });
 </script>
 
 <!-- Données embarquées (instantané, pas de fetch) -->
@@ -63,7 +78,7 @@ setStep && setStep('Préparation des cartes...', 80);
 </script>
 
 <script type="text/babel" data-presets="react">
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+const { useState, useEffect, useMemo, useCallback } = React;
 
 // ═══════════════════════════════════════════════════════════
 // ⚠️ COLLE ICI L'URL RAW DE TON GIST (cpa_data.json)
