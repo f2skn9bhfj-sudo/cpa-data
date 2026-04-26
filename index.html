@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CPA Trainer">
+<title>EY Brevet · Swiss CPA Trainer</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎓%3C/text%3E%3C/svg%3E">
+
+<!-- Tailwind via CDN (Play CDN — works for personal projects) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- React + ReactDOM (UMD) -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+<!-- Babel standalone for in-browser JSX compile -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<style>
+  body { background: linear-gradient(135deg, #0f172a, #020617, #172554); min-height: 100vh; margin: 0; }
+  * { -webkit-tap-highlight-color: transparent; }
+  /* Loading spinner before React kicks in */
+  .splash { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; color: #f1f5f9; font-family: system-ui, -apple-system, sans-serif; }
+  .splash-emoji { font-size: 64px; margin-bottom: 16px; animation: bounce 1s infinite; }
+  @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+</style>
+</head>
+<body>
+
+<div id="root">
+  <div class="splash">
+    <div class="splash-emoji">🎓</div>
+    <div style="font-weight: 700; font-size: 18px;">Chargement...</div>
+    <div style="font-size: 13px; color: #94a3b8; margin-top: 6px;">Première fois : ~5s</div>
+  </div>
+</div>
+
+<script type="text/babel" data-presets="react">
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
+
+// ═══════════════════════════════════════════════════════════
+// ⚠️ COLLE ICI L'URL RAW DE TON GIST (cpa_data.json)
+// Format : https://gist.githubusercontent.com/USER/HASH/raw/cpa_data.json
+// ═══════════════════════════════════════════════════════════
+
+const DATA_URL = './cpa_data.json';
+
+// ═══════════════════════════════════════════════════════════
+// CONSTANTS
+// ═══════════════════════════════════════════════════════════
+
+const MOD_COLORS = {
+  M1: '#3b82f6', M2: '#8b5cf6', M3: '#0ea5e9', M4: '#10b981',
+  M5: '#a855f7', M6: '#9333ea', M7: '#f97316', M8: '#eab308',
+  M11: '#3b82f6', M0: '#64748b',
+};
+
+const MOD_NAMES = {
+  M1: 'Principes fondamentaux', M2: 'Audit', M3: 'Swiss GAAP RPC',
+  M4: 'IFRS / IAS', M5: 'Planification audit', M7: 'Fiscalité PM',
+  M8: 'TVA / LTVA', M11: 'Consolidation',
+};
+
+const DIFF_LABELS = {
+  facile: { lbl: '🟢 Facile', col: '#22c55e' },
+  moyen: { lbl: '🟡 Moyen', col: '#eab308' },
+  difficile: { lbl: '🔴 Difficile', col: '#ef4444' },
+  piège: { lbl: '⚠️ Piège', col: '#f97316' },
+  easy: { lbl: '🟢 Facile', col: '#22c55e' },
+  medium: { lbl: '🟡 Moyen', col: '#eab308' },
+  hard: { lbl: '🔴 Difficile', col: '#ef4444' },
+};
+
+const SM2_INTERVALS = { again: 0, hard: 1, good: 4, easy: 7 };
+const SM2_DELTAS = { again: -0.20, hard: -0.15, good: 0.0, easy: 0.15 };
+const STORAGE_KEY = 'cpa_v2';
+const DATA_KEY = 'cpa_data_cache_v2';
+
+// Storage abstraction with in-memory fallback (artefacts may block localStorage)
+const memStore = {};
+const safeStore = {
+  get(key) {
+    try { return localStorage.getItem(key); } catch (e) { return memStore[key] || null; }
+  },
+  set(key, value) {
+    try { localStorage.setItem(key, value); } catch (e) { memStore[key] = value; }
+  },
+  remove(key) {
+    try { localStorage.removeItem(key); } catch (e) { delete memStore[key]; }
+  },
+  isPersistent() {
+    try { localStorage.setItem('__t', '1'); localStorage.removeItem('__t'); return true; }
+    catch (e) { return false; }
+  },
+};
+
+// ═══════════════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════════════
+
+const today = () => new Date().toISOString().slice(0, 10);
+const addDays = (n) => { const d = new Date(); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); };
+
+const sm2Update = (prev, rating) => {
+  const p = prev || { ease: 2.5, interval: 0, streak: 0, reviews: 0, correct: 0 };
+  const ease = Math.max(1.3, Math.min(3.0, p.ease + SM2_DELTAS[rating]));
+  let interval, streak;
+  if (rating === 'again') { interval = 0; streak = 0; }
+  else {
+    streak = p.streak + 1;
+    if (streak === 1) interval = SM2_INTERVALS[rating];
+    else if (streak === 2) interval = SM2_INTERVALS[rating] * 2;
+    else interval = Math.min(180, Math.round(p.interval * ease));
+  }
+  return {
+    ease, interval, streak,
+    reviews: p.reviews + 1,
+    correct: p.correct + (rating === 'again' ? 0 : 1),
+    lastReviewed: today(),
+    nextReview: addDays(rating === 'again' ? 1 : interval),
+  };
+};
+
+const formatMD = (text) => {
+  if (!text) return '';
+  return text
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong class="text-white">$1</strong>')
+    .replace(/\*([^*]+)\*/g, '<em class="text-blue-300">$1</em>')
+    .replace(/`([^`]+)`/g, '<code class="bg-slate-700 text-amber-300 px-1.5 py-0.5 rounded text-xs">$1</code>')
+    .replace(/\n/g, '<br/>');
+};
+
+const shuffle = (arr) => {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+};
+
+// ═══════════════════════════════════════════════════════════
+// MAIN APP
+// ═══════════════════════════════════════════════════════════
+
+function CPAApp() {
+  const [tab, setTab] = useState('home');
+  const [dataset, setDataset] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [data, setData] = useState({ fcProgress: {}, qcmAttempts: {}, qcmBookmarks: {} });
+
+  const [persistent] = useState(() => safeStore.isPersistent());
+
+  // Load progress from storage
+  useEffect(() => {
+    try {
+      const raw = safeStore.get(STORAGE_KEY);
+      if (raw) setData(JSON.parse(raw));
+    } catch (e) {}
+  }, []);
+
+  // Load dataset (cache → fetch fallback)
+  useEffect(() => {
+    (async () => {
+      try {
+        // Try cache first
+        try {
+          const cached = safeStore.get(DATA_KEY);
+          if (cached) {
+            const parsed = JSON.parse(cached);
+            if (parsed && parsed.fc && parsed.qcm) {
+              setDataset(parsed);
+              setLoading(false);
+              // Refresh in background
+              fetch(DATA_URL).then(r => r.json()).then(fresh => {
+                if (fresh && fresh.fc) {
+                  safeStore.set(DATA_KEY, JSON.stringify(fresh));
+                }
+              }).catch(() => {});
+              return;
+            }
+          }
+        } catch (e) {}
+        // Fetch fresh
+        const r = await fetch(DATA_URL);
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        const fresh = await r.json();
+        if (!fresh.fc || !fresh.qcm) throw new Error('Données invalides');
+        safeStore.set(DATA_KEY, JSON.stringify(fresh));
+        setDataset(fresh);
+      } catch (e) {
+        setError(e.message || String(e));
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  const saveData = useCallback((next) => {
+    setData(next);
+    safeStore.set(STORAGE_KEY, JSON.stringify(next));
+  }, []);
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
+  if (error || !dataset) {
+    return <ErrorScreen error={error} url={DATA_URL} />;
+  }
+
+  const FC = dataset.fc;
+  const QCM = dataset.qcm;
+
+  return <AppContent FC={FC} QCM={QCM} data={data} saveData={saveData} tab={tab} setTab={setTab} persistent={persistent} />;
+}
+
+function LoadingScreen() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-slate-100 flex items-center justify-center">
+      <div className="text-center">
+        <div className="text-6xl mb-4 animate-bounce">🎓</div>
+        <div className="text-xl font-bold mb-2">Chargement des cartes...</div>
+        <div className="text-sm text-slate-400">Première fois : peut prendre 5-10s</div>
+      </div>
+    </div>
+  );
+}
+
+function ErrorScreen({ error, url }) {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-red-950 text-slate-100 flex items-center justify-center p-6">
+      <div className="max-w-md text-center">
+        <div className="text-6xl mb-4">⚠️</div>
+        <h1 className="text-2xl font-bold mb-3">Données indisponibles</h1>
+        <div className="text-sm text-slate-300 mb-4">Erreur : {error}</div>
+        <div className="bg-slate-800/60 rounded-lg p-4 text-left text-xs">
+          <div className="font-bold mb-2">Vérifie dans le code source :</div>
+          <code className="block bg-slate-900 p-2 rounded break-all text-amber-300">DATA_URL</code>
+          <div className="mt-3 text-slate-400">URL actuelle :</div>
+          <div className="break-all text-slate-300 mt-1">{url}</div>
+        </div>
+        <button onClick={() => window.location.reload()} className="mt-4 bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-lg font-bold">↻ Réessayer</button>
+      </div>
+    </div>
+  );
+}
+
+function AppContent({ FC, QCM, data, saveData, tab, setTab, persistent }) {
+  const stats = useMemo(() => {
+    const fcSeen = Object.keys(data.fcProgress || {}).length;
+    const fcMastered = Object.values(data.fcProgress || {}).filter(p => p.streak >= 4).length;
+    const fcDue = FC.filter(c => {
+      const p = (data.fcProgress || {})[c.id];
+      return !p || p.nextReview <= today();
+    }).length;
+    const qcmSeen = Object.keys(data.qcmAttempts || {}).length;
+    const qcmTotal = Object.values(data.qcmAttempts || {}).reduce((s, p) => s + (p.attempts || 0), 0);
+    const qcmCorrect = Object.values(data.qcmAttempts || {}).reduce((s, p) => s + (p.correct || 0), 0);
+    return {
+      fcTotal: FC.length, fcSeen, fcMastered, fcDue,
+      qcmTotal: QCM.length, qcmSeen, qcmCorrect, qcmAttempts: qcmTotal,
+      qcmAcc: qcmTotal ? Math.round(qcmCorrect / qcmTotal * 100) : 0,
+    };
+  }, [data, FC, QCM]);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-slate-100">
+      {!persistent && (
+        <div className="bg-amber-900/40 border-b border-amber-700/60 text-amber-200 text-[11px] py-1.5 px-3 text-center">
+          ⚠️ Mode session uniquement — la progression ne sera pas sauvegardée (storage indisponible)
+        </div>
+      )}
+      <div className="sticky top-0 z-30 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => setTab('home')}>
+            <span className="text-2xl">🎓</span>
+            <div>
+              <div className="text-sm font-bold">EY Brevet</div>
+              <div className="text-[10px] text-slate-400 -mt-0.5">Swiss CPA Trainer</div>
+            </div>
+          </div>
+          <nav className="hidden md:flex gap-1">
+            <NavBtn current={tab} target="home" onClick={setTab}>🏠 Home</NavBtn>
+            <NavBtn current={tab} target="fc" onClick={setTab}>🃏 Flashcards</NavBtn>
+            <NavBtn current={tab} target="qcm" onClick={setTab}>❓ QCM</NavBtn>
+            <NavBtn current={tab} target="stats" onClick={setTab}>📊 Stats</NavBtn>
+          </nav>
+        </div>
+      </div>
+
+      <div className="pb-24 md:pb-6">
+        {tab === 'home' && <HomeView stats={stats} setTab={setTab} FC={FC} QCM={QCM} />}
+        {tab === 'fc' && <FCView FC={FC} data={data} saveData={saveData} stats={stats} />}
+        {tab === 'qcm' && <QCMView QCM={QCM} data={data} saveData={saveData} stats={stats} />}
+        {tab === 'stats' && <StatsView FC={FC} QCM={QCM} data={data} stats={stats} />}
+      </div>
+
+      <div className="fixed bottom-0 inset-x-0 bg-slate-900/95 backdrop-blur border-t border-slate-800 md:hidden z-40">
+        <div className="grid grid-cols-4">
+          {[
+            { id: 'home', icon: '🏠', l: 'Home' },
+            { id: 'fc', icon: '🃏', l: 'Flash' },
+            { id: 'qcm', icon: '❓', l: 'QCM' },
+            { id: 'stats', icon: '📊', l: 'Stats' },
+          ].map(t => (
+            <button key={t.id} onClick={() => setTab(t.id)}
+              className={`py-3 flex flex-col items-center text-[11px] ${tab === t.id ? 'text-blue-400' : 'text-slate-500'}`}>
+              <span className="text-2xl">{t.icon}</span>
+              <span>{t.l}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function NavBtn({ current, target, onClick, children }) {
+  return (
+    <button onClick={() => onClick(target)}
+      className={`px-3 py-2 rounded-lg text-sm font-medium transition ${current === target ? 'bg-blue-600 text-white' : 'text-slate-300 hover:bg-slate-800'}`}>
+      {children}
+    </button>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════
+// HOME
+// ═══════════════════════════════════════════════════════════
+
+function HomeView({ stats, setTab, FC, QCM }) {
+  return (
+    <div className="max-w-6xl mx-auto px-4 py-6">
+      <div className="text-center mb-8 mt-4">
+        <h1 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
+          Swiss CPA
+        </h1>
+        <p className="text-slate-400 text-sm md:text-base">
+          {FC.length} flashcards · {QCM.length} QCM · Brevet fédéral & Diplôme d\'expert
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+        <BigStat label="Flashcards" value={stats.fcTotal} sub={`${stats.fcMastered} maîtrisées`} icon="🃏" gradient="from-blue-600 to-purple-600" />
+        <BigStat label="QCM" value={stats.qcmTotal} sub={`${stats.qcmCorrect} bonnes`} icon="❓" gradient="from-purple-600 to-pink-600" />
+        <BigStat label="À réviser" value={stats.fcDue} sub="cartes dues" icon="🔥" gradient="from-amber-600 to-red-600" highlight={stats.fcDue > 50} />
+        <BigStat label="Précision" value={`${stats.qcmAcc}%`} sub={`${stats.qcmAttempts} réponses`} icon="🎯" gradient="from-green-600 to-teal-600" />
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <button onClick={() => setTab('fc')} className="bg-gradient-to-br from-blue-700 to-indigo-700 hover:brightness-110 p-6 rounded-2xl text-left shadow-xl transition">
+          <div className="text-4xl mb-2">🃏</div>
+          <div className="text-2xl font-black mb-1">Flashcards</div>
+          <div className="text-sm opacity-80">SM-2 · 6 catégories · 80+ thèmes</div>
+        </button>
+        <button onClick={() => setTab('qcm')} className="bg-gradient-to-br from-purple-700 to-pink-700 hover:brightness-110 p-6 rounded-2xl text-left shadow-xl transition">
+          <div className="text-4xl mb-2">❓</div>
+          <div className="text-2xl font-black mb-1">QCM</div>
+          <div className="text-sm opacity-80">Examen blanc · Points faibles · ⭐ Favoris</div>
+        </button>
+      </div>
+
+      <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-5">
+        <div className="text-sm font-bold mb-3 flex items-center gap-2">💡 Conseils</div>
+        <ul className="text-sm text-slate-300 space-y-2">
+          <li>🔥 Commence par tes cartes <b>dues</b> (algorithme SM-2)</li>
+          <li>🎯 Mode <b>Points faibles</b> : auto-session sur questions ratées 2+ fois</li>
+          <li>📝 <b>Examen blanc</b> 100Q/3h une fois par semaine</li>
+          <li>💪 Marque ta <b>confiance</b> (Sûr/Devine) pour identifier les erreurs cachées</li>
+          <li>⭐ Bookmark les questions importantes</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════
+// FLASHCARDS VIEW
+// ═══════════════════════════════════════════════════════════
+
+function FCView({ FC, data, saveData, stats }) {
+  const [view, setView] = useState('setup');
+  const [filters, setFilters] = useState({
+    modules: new Set(), categories: new Set(), subs: new Set(),
+    difficulties: new Set(), onlyDue: false, search: '',
+  });
+  const [session, setSession] = useState(null);
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [sessionStats, setSessionStats] = useState({ correct: 0, wrong: 0 });
+
+  const allModules = useMemo(() => [...new Set(FC.map(c => c.m))].sort((a,b) => parseInt(a.slice(1))-parseInt(b.slice(1))), [FC]);
+  const allCategories = useMemo(() => [...new Set(FC.map(c => c.c))].sort(), [FC]);
+  const allDifficulties = useMemo(() => [...new Set(FC.map(c => c.d))], [FC]);
+
+  const allSubs = useMemo(() => {
+    const set = new Set();
+    FC.forEach(c => {
+      if (filters.modules.size && !filters.modules.has(c.m)) return;
+      if (filters.categories.size && !filters.categories.has(c.c)) return;
+      if (c.s) set.add(c.s);
+    });
+    return [...set].sort();
+  }, [FC, filters.modules, filters.categories]);
+
+  const filtered = useMemo(() => {
+    const search = filters.search.toLowerCase().trim();
+    return FC.filter(c => {
+      if (filters.modules.size && !filters.modules.has(c.m)) return false;
+      if (filters.categories.size && !filters.categories.has(c.c)) return false;
+      if (filters.subs.size && !filters.subs.has(c.s)) return false;
+      if (filters.difficulties.size && !filters.difficulties.has(c.d)) return false;
+      if (filters.onlyDue) {
+        const p = data.fcProgress[c.id];
+        if (p && p.nextReview > today()) return false;
+      }
+      if (search && !`${c.q} ${c.a} ${c.s} ${c.c}`.toLowerCase().includes(search)) return false;
+      return true;
+    });
+  }, [FC, filters, data.fcProgress]);
+
+  const toggleSet = (kind, val) => {
+    const next = { ...filters, [kind]: new Set(filters[kind]) };
+    if (next[kind].has(val)) next[kind].delete(val); else next[kind].add(val);
+    if (kind === 'modules' || kind === 'categories') next.subs = new Set();
+    setFilters(next);
+  };
+
+  const clearFilters = () => setFilters({
+    modules: new Set(), categories: new Set(), subs: new Set(),
+    difficulties: new Set(), onlyDue: false, search: '',
+  });
+
+  const start = (count, duesOnly = false) => {
+    let pool = filtered;
+    if (duesOnly) {
+      pool = FC.filter(c => {
+        const p = data.fcProgress[c.id];
+        return !p || p.nextReview <= today();
+      });
+    }
+    if (!pool.length) { alert('Aucune carte disponible.'); return; }
+    setSession({ cards: shuffle(pool).slice(0, Math.min(count || pool.length, pool.length)), idx: 0 });
+    setShowAnswer(false);
+    setSessionStats({ correct: 0, wrong: 0 });
+    setView('study');
+  };
+
+  const rate = (rating) => {
+    const card = session.cards[session.idx];
+    const newProgress = { ...data.fcProgress };
+    newProgress[card.id] = sm2Update(data.fcProgress[card.id], rating);
+    saveData({ ...data, fcProgress: newProgress });
+    setSessionStats(s => ({
+      correct: s.correct + (rating === 'again' ? 0 : 1),
+      wrong: s.wrong + (rating === 'again' ? 1 : 0),
+    }));
+    if (session.idx + 1 >= session.cards.length) setView('summary');
+    else { setSession({ ...session, idx: session.idx + 1 }); setShowAnswer(false); }
+  };
+
+  if (view === 'setup') {
+    return (
+      <div className="max-w-6xl mx-auto px-4 py-6">
+        <div className="flex items-baseline justify-between mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold">🃏 Flashcards</h2>
+          <span className="text-sm text-slate-400"><b className="text-blue-400">{filtered.length}</b> / {FC.length}</span>
+        </div>
+
+        <input type="text" value={filters.search} onChange={e => setFilters({ ...filters, search: e.target.value })}
+          placeholder="🔍 Rechercher..."
+          className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none mb-4" />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+          <button onClick={() => start(stats.fcDue, true)} disabled={!stats.fcDue}
+            className={`p-4 rounded-xl text-left transition ${stats.fcDue ? 'bg-gradient-to-br from-amber-600 to-red-700 hover:brightness-110 text-white' : 'bg-slate-800 text-slate-500'}`}>
+            <div className="text-3xl mb-1">🔥</div>
+            <div className="font-black text-lg">Mes cartes dues</div>
+            <div className="text-xs opacity-80">{stats.fcDue} carte(s)</div>
+          </button>
+          <button onClick={() => start(20)} className="p-4 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 hover:brightness-110 text-white text-left">
+            <div className="text-3xl mb-1">⚡</div>
+            <div className="font-black text-lg">Session rapide</div>
+            <div className="text-xs opacity-80">20 cartes · filtres actifs</div>
+          </button>
+        </div>
+
+        <div className="bg-slate-800/60 backdrop-blur border border-slate-700 rounded-xl p-4 mb-4">
+          <div className="flex justify-between mb-3">
+            <div className="text-xs uppercase font-bold tracking-wider text-slate-400">Filtres</div>
+            <button onClick={clearFilters} className="text-xs text-slate-400 hover:text-white">✕ Reset</button>
+          </div>
+
+          <FilterGroup label="Modules">
+            {allModules.map(m => {
+              const n = FC.filter(c => c.m === m).length;
+              return <Chip key={m} active={filters.modules.has(m)} onClick={() => toggleSet('modules', m)} color={MOD_COLORS[m]}>{m} ({n})</Chip>;
+            })}
+          </FilterGroup>
+
+          <FilterGroup label="Catégories">
+            {allCategories.map(c => {
+              const n = FC.filter(x => x.c === c).length;
+              return <Chip key={c} active={filters.categories.has(c)} onClick={() => toggleSet('categories', c)}>{c} ({n})</Chip>;
+            })}
+          </FilterGroup>
+
+          <FilterGroup label={`Sous-catégories (${allSubs.length})`}>
+            <div className="max-h-40 overflow-y-auto flex flex-wrap gap-2 p-2 bg-slate-900/50 rounded-lg">
+              {allSubs.length ? allSubs.map(s => {
+                const n = FC.filter(x => x.s === s).length;
+                return <Chip key={s} active={filters.subs.has(s)} onClick={() => toggleSet('subs', s)}>{s} ({n})</Chip>;
+              }) : <span className="text-xs text-slate-500 p-2">Sélectionne un module/catégorie</span>}
+            </div>
+          </FilterGroup>
+
+          <FilterGroup label="Difficulté">
+            {allDifficulties.map(d => {
+              const info = DIFF_LABELS[d] || { lbl: d, col: '#64748b' };
+              const n = FC.filter(c => c.d === d).length;
+              return <Chip key={d} active={filters.difficulties.has(d)} onClick={() => toggleSet('difficulties', d)} color={info.col}>{info.lbl} ({n})</Chip>;
+            })}
+          </FilterGroup>
+
+          <label className="flex items-center gap-2 mt-4 cursor-pointer">
+            <input type="checkbox" checked={filters.onlyDue} onChange={e => setFilters({...filters, onlyDue: e.target.checked})} className="w-4 h-4 accent-amber-500" />
+            <span className="text-sm text-slate-300">🔥 Seulement les dues</span>
+          </label>
+        </div>
+
+        <div className="bg-slate-800/60 border border-slate-700 rounded-xl p-4">
+          <div className="grid grid-cols-5 gap-2 mb-4">
+            {[10, 20, 50, 100, 0].map(n => (
+              <button key={n} onClick={() => start(n)} className="bg-slate-700 hover:bg-blue-600 py-3 rounded-lg font-bold transition">
+                {n === 0 ? 'Tout' : n}
+              </button>
+            ))}
+          </div>
+          <button onClick={() => start(filtered.length)}
+            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:brightness-110 text-white font-bold py-4 rounded-xl text-lg shadow-lg transition">
+            ▶ Démarrer ({filtered.length} cartes)
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (view === 'study' && session) {
+    const card = session.cards[session.idx];
+    const cp = data.fcProgress[card.id];
+    return (
+      <div className="max-w-3xl mx-auto px-4 py-4">
+        <div className="flex items-center gap-3 mb-4 sticky top-16 bg-slate-900/95 backdrop-blur z-20 py-2">
+          <button onClick={() => { if (confirm('Quitter ?')) setView('setup'); }} className="text-slate-400 text-xl">✕</button>
+          <div className="flex-1 flex items-center gap-2">
+            <span className="text-sm font-bold">{session.idx + 1}/{session.cards.length}</span>
+            <div className="flex-1 h-2 bg-slate-700 rounded-full overflow-hidden">
+              <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all" style={{ width: `${(session.idx + 1) / session.cards.length * 100}%` }}></div>
+            </div>
+          </div>
+          <span className="text-xs text-green-400">✓ {sessionStats.correct}</span>
+          {sessionStats.wrong > 0 && <span className="text-xs text-red-400">✗ {sessionStats.wrong}</span>}
+        </div>
+
+        <div className="flex flex-wrap gap-2 mb-3">
+          <Badge color={MOD_COLORS[card.m]}>{card.m}</Badge>
+          <Badge color="#475569">{card.c}</Badge>
+          {card.s && <Badge color="#64748b">{card.s}</Badge>}
+          <Badge color={DIFF_LABELS[card.d]?.col || '#64748b'}>{DIFF_LABELS[card.d]?.lbl || card.d}</Badge>
+          {cp && <Badge color="#a855f7">📚 {cp.reviews}× · 🔥 {cp.streak}</Badge>}
+        </div>
+
+        <div onClick={() => !showAnswer && setShowAnswer(true)}
+          className={`bg-slate-800 border-2 ${showAnswer ? 'border-purple-600' : 'border-blue-600'} rounded-2xl p-6 min-h-[400px] flex flex-col cursor-pointer shadow-2xl mb-4 transition-all`}>
+          <div className="text-xs text-slate-400 uppercase tracking-widest font-bold mb-3">Question</div>
+          <div className="text-base md:text-lg text-white leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: formatMD(card.q) }}></div>
+          {showAnswer ? (
+            <div className="border-t border-slate-700 pt-4 mt-2 flex-1">
+              <div className="text-xs text-purple-400 uppercase tracking-widest font-bold mb-3">Réponse</div>
+              <div className="text-sm md:text-base text-slate-200 leading-relaxed" dangerouslySetInnerHTML={{ __html: formatMD(card.a) }}></div>
+            </div>
+          ) : (
+            <div className="mt-auto text-center text-slate-500 text-sm">👆 Tape pour révéler</div>
+          )}
+        </div>
+
+        {showAnswer && (
+          <div className="grid grid-cols-4 gap-2">
+            <RatingBtn label="Encore" sub="<1j" gradient="from-red-600 to-red-700" onClick={() => rate('again')} />
+            <RatingBtn label="Difficile" sub="1j" gradient="from-amber-600 to-amber-700" onClick={() => rate('hard')} />
+            <RatingBtn label="Bon" sub="4j" gradient="from-blue-600 to-blue-700" onClick={() => rate('good')} />
+            <RatingBtn label="Facile" sub="7j+" gradient="from-green-600 to-green-700" onClick={() => rate('easy')} />
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  if (view === 'summary' && session) {
+    const total = session.cards.length;
+    const acc = total ? Math.round(sessionStats.correct / total * 100) : 0;
+    return (
+      <div className="max-w-md mx-auto px-4 py-12 text-center">
+        <div className="text-7xl mb-4">{acc >= 80 ? '🏆' : acc >= 60 ? '⭐' : '👍'}</div>
+        <h2 className="text-2xl font-bold mb-2">Session terminée !</h2>
+        <div className={`text-7xl font-black my-6 ${acc >= 80 ? 'text-green-400' : acc >= 60 ? 'text-amber-400' : 'text-red-400'}`}>{acc}%</div>
+        <div className="text-slate-300 mb-8">{sessionStats.correct} bonnes · {sessionStats.wrong} à revoir</div>
+        <div className="grid grid-cols-2 gap-3">
+          <button onClick={() => setView('setup')} className="bg-slate-700 hover:bg-slate-600 py-3 rounded-lg font-semibold">Retour</button>
+          <button onClick={() => start(total)} className="bg-blue-600 hover:bg-blue-500 py-3 rounded-lg font-semibold">↻ Recommencer</button>
+        </div>
+      </div>
+    );
+  }
+  return null;
+}
+
+// ═══════════════════════════════════════════════════════════
+// QCM VIEW
+// ═══════════════════════════════════════════════════════════
+
+function QCMView({ QCM, data, saveData, stats }) {
+  const [view, setView] = useState('setup');
+  const [filters, setFilters] = useState({
+    modules: new Set(), norms: new Set(), difficulties: new Set(),
+    types: new Set(), search: '',
+  });
+  const [count, setCount] = useState(20);
+  const [shuffleOpts, setShuffleOpts] = useState(true);
+  const [session, setSession] = useState(null);
+
+  const allModules = useMemo(() => [...new Set(QCM.map(q => q.m))].sort((a,b) => parseInt(a.slice(1))-parseInt(b.slice(1))), [QCM]);
+  const allNorms = useMemo(() => {
+    const set = new Set();
+    QCM.forEach(q => {
+      if (filters.modules.size && !filters.modules.has(q.m)) return;
+      if (q.n) set.add(q.n);
+    });
+    return [...set].sort();
+  }, [QCM, filters.modules]);
+
+  const filtered = useMemo(() => {
+    const search = filters.search.toLowerCase().trim();
+    return QCM.filter(q => {
+      if (filters.modules.size && !filters.modules.has(q.m)) return false;
+      if (filters.norms.size && !filters.norms.has(q.n)) return false;
+      if (filters.difficulties.size && !filters.difficulties.has(q.d)) return false;
+      if (filters.types.size && !filters.types.has(q.t)) return false;
+      if (search && !`${q.q} ${q.e} ${q.n}`.toLowerCase().includes(search)) return false;
+      return true;
+    });
+  }, [QCM, filters]);
+
+  const starredCount = Object.values(data.qcmBookmarks || {}).filter(b => b.starred).length;
+  const weakCount = Object.entries(data.qcmAttempts || {}).filter(([, p]) => p.attempts >= 2 && (p.correct / p.attempts) < 0.5).length;
+  const dueCount = Object.entries(data.qcmAttempts || {}).filter(([, p]) => p.nextReview && p.nextReview <= today()).length;
+
+  const toggleSet = (kind, val) => {
+    const next = { ...filters, [kind]: new Set(filters[kind]) };
+    if (next[kind].has(val)) next[kind].delete(val); else next[kind].add(val);
+    if (kind === 'modules') next.norms = new Set();
+    setFilters(next);
+  };
+
+  const clearFilters = () => setFilters({
+    modules: new Set(), norms: new Set(), difficulties: new Set(),
+    types: new Set(), search: '',
+  });
+
+  const startSession = (cards, opts = {}) => {
+    if (!cards.length) { alert('Aucune question.'); return; }
+    let prepared = shuffle(cards).slice(0, opts.count || cards.length);
+    if (shuffleOpts) {
+      prepared = prepared.map(q => {
+        if (q.t !== 'mcq' || !Array.isArray(q.o)) return { ...q };
+        const indexed = q.o.map((opt, i) => ({ opt, i }));
+        const sh = shuffle(indexed);
+        return { ...q, o: sh.map(s => s.opt), a: sh.findIndex(s => s.i === q.a) };
+      });
+    }
+    setSession({
+      qs: prepared, idx: 0, answers: [], start: Date.now(),
+      mode: opts.mode || 'training', isExam: opts.exam || false, timer: opts.timer || null,
+      questionStart: Date.now(),
+    });
+    setView('quiz');
+  };
+
+  const launchSpecial = (kind) => {
+    let ids = [];
+    if (kind === 'starred') ids = Object.entries(data.qcmBookmarks || {}).filter(([, b]) => b.starred).map(([id]) => id);
+    else if (kind === 'weak') ids = Object.entries(data.qcmAttempts || {}).filter(([, p]) => p.attempts >= 2 && (p.correct / p.attempts) < 0.5).map(([id]) => id);
+    else if (kind === 'due') ids = Object.entries(data.qcmAttempts || {}).filter(([, p]) => p.nextReview && p.nextReview <= today()).map(([id]) => id);
+    const cards = QCM.filter(q => ids.includes(q.id));
+    startSession(cards);
+  };
+
+  const launchExam = () => {
+    if (!confirm('📝 Examen blanc : 100 questions · 3h · pas de feedback. Démarrer ?')) return;
+    const w = { M8: 25, M4: 25, M3: 20, M2: 15, M7: 15 };
+    const picked = [];
+    for (const [mod, n] of Object.entries(w)) {
+      const pool = QCM.filter(q => q.m === mod);
+      if (pool.length) picked.push(...shuffle(pool).slice(0, n));
+    }
+    startSession(picked, { exam: true, mode: 'exam', timer: 180 * 60 });
+  };
+
+  if (view === 'setup') {
+    return (
+      <div className="max-w-6xl mx-auto px-4 py-6">
+        <div className="flex items-baseline justify-between mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold">❓ QCM</h2>
+          <span className="text-sm text-slate-400"><b className="text-purple-400">{filtered.length}</b> / {QCM.length}</span>
+        </div>
+
+        <input type="text" value={filters.search} onChange={e => setFilters({ ...filters, search: e.target.value })}
+          placeholder="🔍 Rechercher..."
+          className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 mb-4 text-white placeholder:text-slate-500 focus:border-purple-500 focus:outline-none" />
+
+        <div className="text-xs uppercase font-bold tracking-wider text-slate-400 mb-3">🎯 Sessions intelligentes</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+          <SpecialBtn icon="🔁" title="Révision SR" desc={`${dueCount} dues`} disabled={!dueCount} onClick={() => launchSpecial('due')} gradient="from-amber-600 to-orange-700" />
+          <SpecialBtn icon="🎯" title="Points faibles" desc={`${weakCount} ratées 2+`} disabled={!weakCount} onClick={() => launchSpecial('weak')} gradient="from-red-600 to-rose-700" />
+          <SpecialBtn icon="⭐" title="Mes favoris" desc={`${starredCount} marquées`} disabled={!starredCount} onClick={() => launchSpecial('starred')} gradient="from-yellow-600 to-amber-700" />
+          <SpecialBtn icon="📝" title="Examen blanc" desc="100 Q · 3h" onClick={launchExam} gradient="from-purple-700 to-pink-700" />
+          <SpecialBtn icon="⚡" title="Vitesse" desc="30 Q · 30s/Q" onClick={() => startSession(filtered, { mode: 'speed', count: 30, timer: 30 * 30 })} gradient="from-blue-600 to-cyan-700" />
+          <SpecialBtn icon="🎲" title="Aléatoire" desc="100% random" onClick={() => startSession(filtered, { count })} gradient="from-emerald-600 to-teal-700" />
+        </div>
+
+        <div className="bg-slate-800/60 border border-slate-700 rounded-xl p-4 mb-4">
+          <div className="flex justify-between mb-3">
+            <div className="text-xs uppercase font-bold tracking-wider text-slate-400">Filtres</div>
+            <button onClick={clearFilters} className="text-xs text-slate-400 hover:text-white">✕ Reset</button>
+          </div>
+
+          <FilterGroup label="Modules">
+            {allModules.map(m => {
+              const n = QCM.filter(q => q.m === m).length;
+              return <Chip key={m} active={filters.modules.has(m)} onClick={() => toggleSet('modules', m)} color={MOD_COLORS[m]}>{m} ({n})</Chip>;
+            })}
+          </FilterGroup>
+
+          <FilterGroup label={`Normes (${allNorms.length})`}>
+            <div className="max-h-32 overflow-y-auto flex flex-wrap gap-2 p-2 bg-slate-900/50 rounded-lg">
+              {allNorms.length ? allNorms.map(n => {
+                const c = QCM.filter(q => q.n === n).length;
+                return <Chip key={n} active={filters.norms.has(n)} onClick={() => toggleSet('norms', n)}>{n} ({c})</Chip>;
+              }) : <span className="text-xs text-slate-500 p-2">Sélectionne un module</span>}
+            </div>
+          </FilterGroup>
+
+          <FilterGroup label="Difficulté">
+            {['easy', 'medium', 'hard'].map(d => {
+              const info = DIFF_LABELS[d];
+              const n = QCM.filter(q => q.d === d).length;
+              return <Chip key={d} active={filters.difficulties.has(d)} onClick={() => toggleSet('difficulties', d)} color={info.col}>{info.lbl} ({n})</Chip>;
+            })}
+          </FilterGroup>
+
+          <FilterGroup label="Type">
+            {['mcq', 'vrai_faux'].map(t => {
+              const n = QCM.filter(q => q.t === t).length;
+              return <Chip key={t} active={filters.types.has(t)} onClick={() => toggleSet('types', t)}>{t === 'mcq' ? 'QCM 4 réponses' : 'Vrai / Faux'} ({n})</Chip>;
+            })}
+          </FilterGroup>
+        </div>
+
+        <div className="bg-slate-800/60 border border-slate-700 rounded-xl p-4">
+          <div className="grid grid-cols-5 gap-2 mb-3">
+            {[5, 10, 20, 50, 100].map(n => (
+              <button key={n} onClick={() => setCount(n)}
+                className={`py-2 rounded-lg font-bold transition ${count === n ? 'bg-purple-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`}>{n}</button>
+            ))}
+          </div>
+          <label className="flex items-center gap-2 mb-4 cursor-pointer">
+            <input type="checkbox" checked={shuffleOpts} onChange={e => setShuffleOpts(e.target.checked)} className="w-4 h-4 accent-purple-500" />
+            <span className="text-sm text-slate-300">🔀 Mélanger les options</span>
+          </label>
+          <button onClick={() => startSession(filtered, { count })}
+            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:brightness-110 text-white font-bold py-4 rounded-xl text-lg shadow-lg transition">
+            ▶ Démarrer ({Math.min(count, filtered.length)} questions)
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (view === 'quiz' && session) return <QuizScreen session={session} setSession={setSession} setView={setView} data={data} saveData={saveData} />;
+  if (view === 'result' && session) return <ResultScreen session={session} setSession={setSession} setView={setView} />;
+  return null;
+}
+
+// ═══════════════════════════════════════════════════════════
+// QUIZ + RESULT (identiques à v2)
+// ═══════════════════════════════════════════════════════════
+
+function QuizScreen({ session, setSession, setView, data, saveData }) {
+  const [confidence, setConfidence] = useState(null);
+  const [timeLeft, setTimeLeft] = useState(session.timer);
+
+  useEffect(() => { setConfidence(null); setSession(s => ({ ...s, questionStart: Date.now() })); }, [session.idx]);
+  useEffect(() => {
+    if (!session.timer) return;
+    const endTime = session.start + session.timer * 1000;
+    const interval = setInterval(() => {
+      const remain = Math.max(0, Math.floor((endTime - Date.now()) / 1000));
+      setTimeLeft(remain);
+      if (remain === 0) { clearInterval(interval); setView('result'); }
+    }, 500);
+    return () => clearInterval(interval);
+  }, [session.timer, session.start]);
+
+  const q = session.qs[session.idx];
+  const ans = session.answers[session.idx];
+
+  const answer = (choice) => {
+    if (ans) return;
+    const correct = choice === q.a;
+    const time_ms = Date.now() - session.questionStart;
+    const newAnswers = [...session.answers];
+    newAnswers[session.idx] = { choice, correct, confidence, time_ms };
+    setSession({ ...session, answers: newAnswers });
+
+    const prev = (data.qcmAttempts || {})[q.id] || { attempts: 0, correct: 0, streak: 0, interval: 0 };
+    const newAttempts = { ...(data.qcmAttempts || {}) };
+    const newStreak = correct ? prev.streak + 1 : 0;
+    const interval = !correct ? 1 : (newStreak === 1 ? 1 : newStreak === 2 ? 3 : Math.min(180, Math.round((prev.interval || 1) * 2.5)));
+    newAttempts[q.id] = {
+      attempts: prev.attempts + 1, correct: prev.correct + (correct ? 1 : 0),
+      streak: newStreak, interval, lastAt: today(), nextReview: addDays(interval),
+    };
+    saveData({ ...data, qcmAttempts: newAttempts });
+    if (session.mode === 'exam') setTimeout(() => next(), 300);
+  };
+
+  const next = () => {
+    if (session.idx + 1 >= session.qs.length) setView('result');
+    else setSession({ ...session, idx: session.idx + 1 });
+  };
+
+  const toggleBookmark = () => {
+    const bm = { ...(data.qcmBookmarks || {}) };
+    bm[q.id] = { ...(bm[q.id] || {}), starred: !(bm[q.id] || {}).starred };
+    saveData({ ...data, qcmBookmarks: bm });
+  };
+
+  const correct = session.answers.filter(a => a && a.correct).length;
+  const isBookmarked = ((data.qcmBookmarks || {})[q.id] || {}).starred;
+
+  return (
+    <div className="max-w-3xl mx-auto px-4 py-4">
+      <div className="flex items-center gap-3 mb-4 sticky top-16 bg-slate-900/95 backdrop-blur z-20 py-2">
+        <button onClick={() => { if (confirm('Quitter ?')) setView('setup'); }} className="text-slate-400 text-xl">✕</button>
+        <div className="flex-1">
+          <div className="flex items-center gap-2 text-sm">
+            <span className="font-bold">{session.idx + 1}/{session.qs.length}</span>
+            <div className="flex-1 h-2 bg-slate-700 rounded-full overflow-hidden">
+              <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all" style={{ width: `${(session.idx + 1) / session.qs.length * 100}%` }}></div>
+            </div>
+            {session.mode !== 'exam' && <span className="text-xs text-green-400">✓ {correct}</span>}
+          </div>
+        </div>
+        {timeLeft !== null && (
+          <div className={`font-mono font-bold text-sm px-2 py-1 rounded ${timeLeft < 300 ? 'bg-red-900/50 text-red-300' : timeLeft < 900 ? 'bg-amber-900/50 text-amber-300' : 'bg-slate-700 text-slate-200'}`}>
+            {Math.floor(timeLeft/3600).toString().padStart(2,'0')}:{Math.floor((timeLeft%3600)/60).toString().padStart(2,'0')}:{(timeLeft%60).toString().padStart(2,'0')}
+          </div>
+        )}
+      </div>
+
+      <div className={`bg-slate-800/70 backdrop-blur border-2 ${session.mode === 'exam' ? 'border-purple-700' : 'border-slate-700'} rounded-2xl p-6 shadow-2xl mb-4`}>
+        <div className="flex flex-wrap gap-2 mb-4">
+          <Badge color={MOD_COLORS[q.m]}>{q.m}</Badge>
+          <Badge color="#475569">{q.n}</Badge>
+          <Badge color={DIFF_LABELS[q.d]?.col}>{DIFF_LABELS[q.d]?.lbl}</Badge>
+          <Badge color="#64748b">{q.t === 'mcq' ? 'QCM' : 'V/F'}</Badge>
+          <button onClick={toggleBookmark}
+            className={`px-2 py-0.5 rounded-full text-xs font-bold ${isBookmarked ? 'bg-yellow-600/30 text-yellow-300' : 'bg-slate-700 text-slate-400 hover:text-white'}`}>
+            {isBookmarked ? '⭐' : '☆'}
+          </button>
+        </div>
+
+        <div className="text-base md:text-lg text-white leading-relaxed mb-5 font-medium" dangerouslySetInnerHTML={{ __html: formatMD(q.q) }}></div>
+
+        {q.t === 'mcq' ? (
+          <div className="space-y-2">
+            {q.o.map((opt, i) => {
+              let cls = 'bg-slate-700 hover:bg-slate-600 border-slate-600 text-slate-100';
+              if (ans) {
+                if (i === q.a) cls = 'bg-green-700/30 border-green-500 text-green-200';
+                else if (i === ans.choice) cls = 'bg-red-700/30 border-red-500 text-red-200';
+                else cls = 'bg-slate-800 border-slate-700 text-slate-500';
+              }
+              return (
+                <button key={i} onClick={() => answer(i)} disabled={!!ans}
+                  className={`w-full text-left p-3 rounded-lg border-2 transition flex items-start gap-3 ${cls}`}>
+                  <span className="font-bold text-sm bg-slate-900 px-2 py-1 rounded min-w-[28px] text-center">{String.fromCharCode(65 + i)}</span>
+                  <span className="flex-1" dangerouslySetInnerHTML={{ __html: formatMD(opt) }}></span>
+                </button>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 gap-2">
+            {[true, false].map(v => {
+              let cls = 'bg-slate-700 hover:bg-slate-600 border-slate-600 text-slate-100';
+              if (ans) {
+                if (v === q.a) cls = 'bg-green-700/30 border-green-500 text-green-200';
+                else if (v === ans.choice) cls = 'bg-red-700/30 border-red-500 text-red-200';
+                else cls = 'bg-slate-800 border-slate-700 text-slate-500';
+              }
+              return <button key={String(v)} onClick={() => answer(v)} disabled={!!ans} className={`p-4 rounded-lg border-2 transition font-bold text-lg ${cls}`}>{v ? '✓ Vrai' : '✗ Faux'}</button>;
+            })}
+          </div>
+        )}
+
+        {!ans && session.mode !== 'exam' && (
+          <div className="flex items-center gap-2 mt-4 p-3 bg-purple-900/20 border border-purple-700/50 rounded-lg">
+            <span className="text-xs text-slate-300">Confiance :</span>
+            <button onClick={() => setConfidence('sure')} className={`text-xs px-3 py-1 rounded-full ${confidence === 'sure' ? 'bg-purple-600 text-white' : 'bg-slate-700 text-slate-300'}`}>💪 Sûr</button>
+            <button onClick={() => setConfidence('guess')} className={`text-xs px-3 py-1 rounded-full ${confidence === 'guess' ? 'bg-purple-600 text-white' : 'bg-slate-700 text-slate-300'}`}>🎲 Devine</button>
+          </div>
+        )}
+
+        {ans && session.mode !== 'exam' && (
+          <div className={`mt-5 p-4 rounded-lg ${ans.correct ? 'bg-green-900/30 border border-green-700' : 'bg-red-900/30 border border-red-700'}`}>
+            <div className={`font-bold mb-2 ${ans.correct ? 'text-green-300' : 'text-red-300'}`}>
+              {ans.correct ? '✅ Bonne réponse !' : '❌ Mauvaise réponse'}
+              {ans.confidence === 'sure' && !ans.correct && <span className="text-xs ml-2 text-amber-300">🚨 Tu étais sûr</span>}
+              {ans.confidence === 'guess' && ans.correct && <span className="text-xs ml-2 text-blue-300">⚠ Deviné juste</span>}
+            </div>
+            {q.e && <div className="text-sm text-slate-200 leading-relaxed" dangerouslySetInnerHTML={{ __html: formatMD(q.e) }}></div>}
+          </div>
+        )}
+      </div>
+
+      {(ans || session.mode === 'exam') && (
+        <button onClick={next}
+          className={`w-full ${session.mode === 'exam' ? 'bg-purple-600 hover:bg-purple-500' : 'bg-blue-600 hover:bg-blue-500'} text-white py-3 rounded-lg font-bold transition`}>
+          {session.idx + 1 >= session.qs.length ? '🏁 Terminer' : 'Suivante →'}
+        </button>
+      )}
+    </div>
+  );
+}
+
+function ResultScreen({ session, setSession, setView }) {
+  const total = session.qs.length;
+  const correct = session.answers.filter(a => a && a.correct).length;
+  const pct = total ? Math.round(correct / total * 100) : 0;
+  const grade = pct >= 90 ? '🏆 Excellent' : pct >= 80 ? '⭐ Très bien' : pct >= 60 ? '👍 Correct' : '⚠ À travailler';
+  const color = pct >= 80 ? 'text-green-400' : pct >= 60 ? 'text-amber-400' : 'text-red-400';
+  const duration = Math.round((Date.now() - session.start) / 1000);
+
+  const byMod = {};
+  session.qs.forEach((q, i) => {
+    const a = session.answers[i];
+    if (!byMod[q.m]) byMod[q.m] = { total: 0, correct: 0 };
+    byMod[q.m].total++;
+    if (a && a.correct) byMod[q.m].correct++;
+  });
+
+  const quad = { sure_ok: 0, sure_ko: 0, guess_ok: 0, guess_ko: 0 };
+  session.answers.forEach(a => {
+    if (!a || !a.confidence) return;
+    quad[`${a.confidence === 'sure' ? 'sure' : 'guess'}_${a.correct ? 'ok' : 'ko'}`]++;
+  });
+
+  return (
+    <div className="max-w-2xl mx-auto px-4 py-6">
+      <div className="text-center bg-gradient-to-br from-slate-800 to-blue-950 border border-slate-700 rounded-2xl p-8 mb-6 shadow-2xl">
+        <div className="text-2xl font-bold mb-2">{grade}</div>
+        <div className={`text-7xl font-black my-4 ${color}`}>{pct}%</div>
+        <div className="text-slate-300">{correct} / {total} bonnes</div>
+        <div className="text-xs text-slate-500 mt-2">{Math.floor(duration / 60)}m {duration % 60}s · ~{Math.round(duration / total)}s/Q</div>
+      </div>
+
+      <div className="bg-slate-800/60 rounded-xl p-4 mb-4 border border-slate-700">
+        <div className="text-sm font-bold mb-3">Par module</div>
+        <div className="space-y-2">
+          {Object.entries(byMod).map(([m, v]) => {
+            const p = Math.round(v.correct / v.total * 100);
+            return (
+              <div key={m} className="flex items-center gap-3">
+                <span className="font-bold w-12" style={{ color: MOD_COLORS[m] }}>{m}</span>
+                <div className="flex-1 h-2 bg-slate-700 rounded-full overflow-hidden">
+                  <div className="h-full" style={{ width: `${p}%`, backgroundColor: MOD_COLORS[m] }}></div>
+                </div>
+                <span className="text-sm text-slate-300 w-20 text-right">{v.correct}/{v.total} ({p}%)</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {Object.values(quad).some(v => v > 0) && (
+        <div className="bg-slate-800/60 rounded-xl p-4 mb-4 border border-slate-700">
+          <div className="text-sm font-bold mb-3">🧠 Confiance</div>
+          <div className="grid grid-cols-2 gap-2">
+            <Quadrant val={quad.sure_ok} label="💪✓ Sûr + juste" sub="Maîtrisé" border="border-green-500" />
+            <Quadrant val={quad.guess_ok} label="🎲✓ Deviné + juste" sub="À consolider" border="border-amber-500" />
+            <Quadrant val={quad.guess_ko} label="🎲✗ Deviné + faux" sub="Apprendre" border="border-blue-500" />
+            <Quadrant val={quad.sure_ko} label="💪✗ Sûr + faux" sub="🚨 Priorité" border="border-red-500" />
+          </div>
+        </div>
+      )}
+
+      <div className="grid grid-cols-2 gap-3">
+        <button onClick={() => setView('setup')} className="bg-slate-700 hover:bg-slate-600 py-3 rounded-lg font-bold">Retour</button>
+        <button onClick={() => { setSession(null); setView('setup'); }} className="bg-blue-600 hover:bg-blue-500 py-3 rounded-lg font-bold">Nouvelle session</button>
+      </div>
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════
+// STATS
+// ═══════════════════════════════════════════════════════════
+
+function StatsView({ FC, QCM, data, stats }) {
+  const allMods = useMemo(() => {
+    const set = new Set();
+    FC.forEach(c => set.add(c.m));
+    QCM.forEach(q => set.add(q.m));
+    return [...set].sort((a, b) => parseInt(a.slice(1) || 99) - parseInt(b.slice(1) || 99));
+  }, [FC, QCM]);
+
+  const modStats = allMods.map(m => {
+    const fcCards = FC.filter(c => c.m === m);
+    const fcMastered = fcCards.filter(c => ((data.fcProgress || {})[c.id] || {}).streak >= 4).length;
+    const qcmCards = QCM.filter(q => q.m === m);
+    const qcmAttempts = qcmCards.reduce((s, q) => s + (((data.qcmAttempts || {})[q.id] || {}).attempts || 0), 0);
+    const qcmCorrect = qcmCards.reduce((s, q) => s + (((data.qcmAttempts || {})[q.id] || {}).correct || 0), 0);
+    return {
+      m, fcTotal: fcCards.length, fcMastered,
+      qcmTotal: qcmCards.length, qcmAttempts, qcmCorrect,
+      qcmAcc: qcmAttempts ? Math.round(qcmCorrect / qcmAttempts * 100) : 0,
+    };
+  });
+
+  return (
+    <div className="max-w-4xl mx-auto px-4 py-6">
+      <h2 className="text-2xl font-bold mb-6">📊 Statistiques</h2>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+        <BigStat label="Flashcards vues" value={stats.fcSeen} sub={`/ ${stats.fcTotal}`} icon="🃏" gradient="from-blue-600 to-purple-600" />
+        <BigStat label="Maîtrisées" value={stats.fcMastered} sub="streak ≥ 4" icon="✓" gradient="from-green-600 to-teal-600" />
+        <BigStat label="QCM répondus" value={stats.qcmAttempts} sub={`${stats.qcmSeen} questions`} icon="❓" gradient="from-purple-600 to-pink-600" />
+        <BigStat label="Précision" value={`${stats.qcmAcc}%`} sub={`${stats.qcmCorrect} bonnes`} icon="🎯" gradient="from-amber-600 to-orange-600" />
+      </div>
+
+      <div className="bg-slate-800/60 rounded-xl p-4 border border-slate-700 mb-4">
+        <div className="text-sm font-bold mb-3">Progression par module</div>
+        <div className="space-y-3">
+          {modStats.map(s => (
+            <div key={s.m} className="border-b border-slate-700 pb-3 last:border-0">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="font-bold text-lg" style={{ color: MOD_COLORS[s.m] }}>{s.m}</span>
+                <span className="text-xs text-slate-400 flex-1">{MOD_NAMES[s.m] || ''}</span>
+              </div>
+              {s.fcTotal > 0 && (
+                <div className="flex items-center gap-2 text-xs mb-1">
+                  <span className="text-slate-400 w-20">🃏 FC</span>
+                  <div className="flex-1 h-1.5 bg-slate-700 rounded-full overflow-hidden">
+                    <div className="h-full bg-blue-500" style={{ width: `${s.fcTotal ? s.fcMastered / s.fcTotal * 100 : 0}%` }}></div>
+                  </div>
+                  <span className="text-slate-300 w-20 text-right">{s.fcMastered}/{s.fcTotal}</span>
+                </div>
+              )}
+              {s.qcmTotal > 0 && (
+                <div className="flex items-center gap-2 text-xs">
+                  <span className="text-slate-400 w-20">❓ QCM</span>
+                  <div className="flex-1 h-1.5 bg-slate-700 rounded-full overflow-hidden">
+                    <div className="h-full bg-purple-500" style={{ width: `${s.qcmAcc}%` }}></div>
+                  </div>
+                  <span className="text-slate-300 w-20 text-right">{s.qcmAcc}% ({s.qcmAttempts})</span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <button onClick={() => { if (confirm('Réinitialiser TOUTE la progression ?')) { safeStore.remove(STORAGE_KEY); window.location.reload(); } }}
+        className="w-full text-slate-500 hover:text-red-400 py-3 text-xs">⚠ Réinitialiser ma progression</button>
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════
+// SHARED COMPONENTS
+// ═══════════════════════════════════════════════════════════
+
+function FilterGroup({ label, children }) {
+  return <div className="mb-4"><div className="text-xs text-slate-300 mb-2">{label}</div><div className="flex flex-wrap gap-2">{children}</div></div>;
+}
+
+function Chip({ active, onClick, children, color }) {
+  const style = active && color ? { backgroundColor: color, borderColor: color } : {};
+  return (
+    <button onClick={onClick} style={style}
+      className={`text-xs px-3 py-1.5 rounded-full font-medium border transition ${
+        active ? 'text-white shadow-md' : 'bg-slate-700 border-slate-600 text-slate-300 hover:bg-slate-600'
+      }`}>{children}</button>
+  );
+}
+
+function Badge({ color, children }) {
+  return (
+    <span className="text-[11px] px-2 py-0.5 rounded-full font-bold"
+      style={{ backgroundColor: `${color}33`, color, border: `1px solid ${color}66` }}>{children}</span>
+  );
+}
+
+function BigStat({ label, value, sub, icon, gradient, highlight }) {
+  return (
+    <div className={`bg-gradient-to-br ${gradient} rounded-xl p-4 shadow-lg ${highlight ? 'ring-2 ring-amber-400 animate-pulse' : ''}`}>
+      <div className="flex items-center justify-between mb-1">
+        <div className="text-[10px] uppercase tracking-wider opacity-80">{label}</div>
+        <div className="text-xl">{icon}</div>
+      </div>
+      <div className="text-3xl font-black text-white">{value}</div>
+      <div className="text-[11px] opacity-70 mt-1">{sub}</div>
+    </div>
+  );
+}
+
+function SpecialBtn({ icon, title, desc, onClick, disabled, gradient }) {
+  return (
+    <button onClick={onClick} disabled={disabled}
+      className={`p-4 rounded-xl text-left transition ${disabled ? 'bg-slate-800 text-slate-600 cursor-not-allowed' : `bg-gradient-to-br ${gradient} hover:brightness-110 text-white shadow-lg`}`}>
+      <div className="text-2xl mb-1">{icon}</div>
+      <div className="font-bold">{title}</div>
+      <div className="text-xs opacity-80">{desc}</div>
+    </button>
+  );
+}
+
+function RatingBtn({ label, sub, gradient, onClick }) {
+  return (
+    <button onClick={onClick} className={`bg-gradient-to-br ${gradient} text-white py-3 rounded-lg font-bold transition active:scale-95 shadow-md`}>
+      <div className="text-sm">{label}</div>
+      <div className="text-[10px] opacity-70 font-normal">{sub}</div>
+    </button>
+  );
+}
+
+function Quadrant({ val, label, sub, border }) {
+  return (
+    <div className={`bg-slate-900/60 rounded-lg p-3 border-l-4 ${border}`}>
+      <div className="text-2xl font-black text-white">{val}</div>
+      <div className="text-xs text-slate-300 mt-1">{label}</div>
+      <div className="text-[10px] text-slate-500">{sub}</div>
+    </div>
+  );
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<CPAApp />);
+</script>
+
+</body>
+</html>
