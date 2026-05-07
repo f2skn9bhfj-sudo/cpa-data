@@ -1,0 +1,1877 @@
+{
+  "version": 1,
+  "level_target": "A2-B1",
+  "vocab": [
+    {
+      "id": "en_v_aud_001",
+      "domain": "audit",
+      "level": "A2",
+      "fr": "audit",
+      "en": "audit",
+      "ipa": "ˈɔːdɪt",
+      "notes": "Mot pivot du domaine; verbe et nom.",
+      "examples": [
+        {
+          "fr": "Nous réalisons l'audit annuel.",
+          "en": "We perform the annual audit."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_002",
+      "domain": "audit",
+      "level": "A2",
+      "fr": "auditeur",
+      "en": "auditor",
+      "ipa": "ˈɔːdɪtə",
+      "examples": [
+        {
+          "fr": "L'auditeur a signé le rapport.",
+          "en": "The auditor signed the report."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_003",
+      "domain": "audit",
+      "level": "A2",
+      "fr": "audit interne",
+      "en": "internal audit",
+      "ipa": "ɪnˈtɜːnl ˈɔːdɪt",
+      "examples": [
+        {
+          "fr": "L'audit interne évalue les contrôles.",
+          "en": "Internal audit assesses the controls."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_004",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "comité d'audit",
+      "en": "audit committee",
+      "ipa": "ˈɔːdɪt kəˈmɪti",
+      "notes": "Sous-comité du conseil d'administration.",
+      "examples": [
+        {
+          "fr": "Le comité d'audit se réunit tous les trimestres.",
+          "en": "The audit committee meets every quarter."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_005",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "seuil de signification",
+      "en": "materiality",
+      "ipa": "məˌtɪəriˈæləti",
+      "notes": "Concept clé en audit ISA.",
+      "examples": [
+        {
+          "fr": "Le seuil de signification a été fixé à 1 million.",
+          "en": "Materiality was set at 1 million."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_006",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "continuité d'exploitation",
+      "en": "going concern",
+      "ipa": "ˈɡəʊɪŋ kənˈsɜːn",
+      "notes": "Hypothèse fondamentale IFRS / ISA 570.",
+      "examples": [
+        {
+          "fr": "L'auditeur évalue la continuité d'exploitation.",
+          "en": "The auditor assesses going concern."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_007",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "contrôle interne",
+      "en": "internal control",
+      "ipa": "ɪnˈtɜːnl kənˈtrəʊl",
+      "examples": [
+        {
+          "fr": "Le contrôle interne a été testé.",
+          "en": "Internal control was tested."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_008",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "juste valeur",
+      "en": "fair value",
+      "ipa": "feə ˈvæljuː",
+      "notes": "IFRS 13.",
+      "examples": [
+        {
+          "fr": "L'actif est mesuré à la juste valeur.",
+          "en": "The asset is measured at fair value."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_009",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "impôt différé",
+      "en": "deferred tax",
+      "ipa": "dɪˈfɜːd tæks",
+      "examples": [
+        {
+          "fr": "L'impôt différé est comptabilisé au passif.",
+          "en": "Deferred tax is recognised as a liability."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_010",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "dépréciation",
+      "en": "impairment",
+      "ipa": "ɪmˈpeəmənt",
+      "notes": "IAS 36.",
+      "examples": [
+        {
+          "fr": "Un test de dépréciation est requis chaque année.",
+          "en": "An impairment test is required each year."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_011",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "écriture comptable",
+      "en": "journal entry",
+      "ipa": "ˈdʒɜːnl ˈentri",
+      "examples": [
+        {
+          "fr": "L'écriture comptable a été passée hier.",
+          "en": "The journal entry was posted yesterday."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_012",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "réserves / report à nouveau",
+      "en": "retained earnings",
+      "ipa": "rɪˈteɪnd ˈɜːnɪŋz",
+      "examples": [
+        {
+          "fr": "Les réserves ont augmenté.",
+          "en": "Retained earnings have increased."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_013",
+      "domain": "audit",
+      "level": "A2",
+      "fr": "bilan",
+      "en": "balance sheet",
+      "ipa": "ˈbæləns ʃiːt",
+      "examples": [
+        {
+          "fr": "Le bilan est daté du 31 décembre.",
+          "en": "The balance sheet is dated 31 December."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_014",
+      "domain": "audit",
+      "level": "A2",
+      "fr": "compte de résultat",
+      "en": "income statement",
+      "ipa": "ˈɪnkʌm ˈsteɪtmənt",
+      "examples": [
+        {
+          "fr": "Le compte de résultat montre une perte.",
+          "en": "The income statement shows a loss."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_015",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "flux de trésorerie",
+      "en": "cash flow",
+      "ipa": "kæʃ fləʊ",
+      "examples": [
+        {
+          "fr": "Le tableau des flux de trésorerie est requis.",
+          "en": "The cash flow statement is required."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_016",
+      "domain": "audit",
+      "level": "A2",
+      "fr": "produits / chiffre d'affaires",
+      "en": "revenue",
+      "ipa": "ˈrevənjuː",
+      "examples": [
+        {
+          "fr": "Le chiffre d'affaires a augmenté de 5%.",
+          "en": "Revenue rose by 5%."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_017",
+      "domain": "audit",
+      "level": "A2",
+      "fr": "charges",
+      "en": "expenses",
+      "ipa": "ɪkˈspensɪz",
+      "examples": [
+        {
+          "fr": "Les charges sont supérieures au budget.",
+          "en": "Expenses are above budget."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_018",
+      "domain": "audit",
+      "level": "A2",
+      "fr": "actif",
+      "en": "asset",
+      "ipa": "ˈæset",
+      "examples": [
+        {
+          "fr": "L'actif a été cédé.",
+          "en": "The asset was disposed of."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_019",
+      "domain": "audit",
+      "level": "A2",
+      "fr": "passif",
+      "en": "liability",
+      "ipa": "ˌlaɪəˈbɪləti",
+      "examples": [
+        {
+          "fr": "Le passif est échu dans un an.",
+          "en": "The liability is due in one year."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_020",
+      "domain": "audit",
+      "level": "A2",
+      "fr": "capitaux propres",
+      "en": "equity",
+      "ipa": "ˈekwəti",
+      "examples": [
+        {
+          "fr": "Les capitaux propres sont positifs.",
+          "en": "Equity is positive."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_021",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "régularisation",
+      "en": "accrual",
+      "ipa": "əˈkruːəl",
+      "notes": "Charges/produits à rattacher à la période.",
+      "examples": [
+        {
+          "fr": "Une régularisation est nécessaire en fin d'année.",
+          "en": "An accrual is needed at year-end."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_022",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "amortissement",
+      "en": "depreciation",
+      "ipa": "dɪˌpriːʃiˈeɪʃn",
+      "examples": [
+        {
+          "fr": "L'amortissement est linéaire sur 5 ans.",
+          "en": "Depreciation is straight-line over 5 years."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_023",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "écart d'acquisition / goodwill",
+      "en": "goodwill",
+      "ipa": "ˈɡʊdwɪl",
+      "examples": [
+        {
+          "fr": "Le goodwill est testé chaque année.",
+          "en": "Goodwill is tested every year."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_024",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "rapport d'audit",
+      "en": "audit report",
+      "ipa": "ˈɔːdɪt rɪˈpɔːt",
+      "examples": [
+        {
+          "fr": "Le rapport d'audit a été publié.",
+          "en": "The audit report has been issued."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_025",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "anomalie",
+      "en": "misstatement",
+      "ipa": "ˌmɪsˈsteɪtmənt",
+      "examples": [
+        {
+          "fr": "Une anomalie significative a été identifiée.",
+          "en": "A material misstatement has been identified."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_026",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "élément probant",
+      "en": "audit evidence",
+      "ipa": "ˈɔːdɪt ˈevɪdəns",
+      "examples": [
+        {
+          "fr": "Nous avons collecté des éléments probants.",
+          "en": "We have gathered audit evidence."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_027",
+      "domain": "audit",
+      "level": "A2",
+      "fr": "facture",
+      "en": "invoice",
+      "ipa": "ˈɪnvɔɪs",
+      "examples": [
+        {
+          "fr": "La facture est en retard.",
+          "en": "The invoice is overdue."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_028",
+      "domain": "audit",
+      "level": "A2",
+      "fr": "trésorerie",
+      "en": "cash",
+      "ipa": "kæʃ",
+      "examples": [
+        {
+          "fr": "La trésorerie est confirmée par la banque.",
+          "en": "Cash is confirmed by the bank."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_029",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "stock",
+      "en": "inventory",
+      "ipa": "ˈɪnvəntri",
+      "examples": [
+        {
+          "fr": "Le stock est valorisé au coût.",
+          "en": "Inventory is measured at cost."
+        }
+      ]
+    },
+    {
+      "id": "en_v_aud_030",
+      "domain": "audit",
+      "level": "B1",
+      "fr": "respect / conformité",
+      "en": "compliance",
+      "ipa": "kəmˈplaɪəns",
+      "examples": [
+        {
+          "fr": "Nous vérifions la conformité aux normes.",
+          "en": "We check compliance with the standards."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_001",
+      "domain": "business",
+      "level": "A2",
+      "fr": "réunion",
+      "en": "meeting",
+      "ipa": "ˈmiːtɪŋ",
+      "examples": [
+        {
+          "fr": "La réunion commence à 9h.",
+          "en": "The meeting starts at 9 a.m."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_002",
+      "domain": "business",
+      "level": "A2",
+      "fr": "échéance",
+      "en": "deadline",
+      "ipa": "ˈdedlaɪn",
+      "examples": [
+        {
+          "fr": "L'échéance est vendredi.",
+          "en": "The deadline is Friday."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_003",
+      "domain": "business",
+      "level": "B1",
+      "fr": "partie prenante",
+      "en": "stakeholder",
+      "ipa": "ˈsteɪkˌhəʊldə",
+      "examples": [
+        {
+          "fr": "Toutes les parties prenantes ont été informées.",
+          "en": "All stakeholders have been informed."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_004",
+      "domain": "business",
+      "level": "A2",
+      "fr": "ordre du jour",
+      "en": "agenda",
+      "ipa": "əˈdʒendə",
+      "examples": [
+        {
+          "fr": "Voici l'ordre du jour.",
+          "en": "Here is the agenda."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_005",
+      "domain": "business",
+      "level": "B1",
+      "fr": "suivi",
+      "en": "follow-up",
+      "ipa": "ˈfɒləʊ ʌp",
+      "examples": [
+        {
+          "fr": "Je vous envoie un suivi demain.",
+          "en": "I'll send you a follow-up tomorrow."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_006",
+      "domain": "business",
+      "level": "B1",
+      "fr": "jalon",
+      "en": "milestone",
+      "ipa": "ˈmaɪlstəʊn",
+      "examples": [
+        {
+          "fr": "Nous avons atteint un jalon clé.",
+          "en": "We've reached a key milestone."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_007",
+      "domain": "business",
+      "level": "B1",
+      "fr": "livrable",
+      "en": "deliverable",
+      "ipa": "dɪˈlɪvərəbl",
+      "examples": [
+        {
+          "fr": "Le livrable est dû lundi.",
+          "en": "The deliverable is due on Monday."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_008",
+      "domain": "business",
+      "level": "B1",
+      "fr": "brief / cahier des charges",
+      "en": "brief",
+      "ipa": "briːf",
+      "examples": [
+        {
+          "fr": "Pourriez-vous m'envoyer le brief?",
+          "en": "Could you send me the brief?"
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_009",
+      "domain": "business",
+      "level": "B1",
+      "fr": "réunion de lancement",
+      "en": "kick-off",
+      "ipa": "ˈkɪk ɒf",
+      "examples": [
+        {
+          "fr": "La réunion de lancement est prévue mardi.",
+          "en": "The kick-off is scheduled for Tuesday."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_010",
+      "domain": "business",
+      "level": "B1",
+      "fr": "validation",
+      "en": "sign-off",
+      "ipa": "ˈsaɪn ɒf",
+      "examples": [
+        {
+          "fr": "J'attends la validation du client.",
+          "en": "I'm waiting for the client's sign-off."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_011",
+      "domain": "business",
+      "level": "B1",
+      "fr": "effectifs",
+      "en": "headcount",
+      "ipa": "ˈhedkaʊnt",
+      "examples": [
+        {
+          "fr": "Les effectifs ont diminué cette année.",
+          "en": "Headcount has decreased this year."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_012",
+      "domain": "business",
+      "level": "A2",
+      "fr": "budget",
+      "en": "budget",
+      "ipa": "ˈbʌdʒɪt",
+      "examples": [
+        {
+          "fr": "Nous sommes dans le budget.",
+          "en": "We are within budget."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_013",
+      "domain": "business",
+      "level": "A2",
+      "fr": "client",
+      "en": "client",
+      "ipa": "ˈklaɪənt",
+      "examples": [
+        {
+          "fr": "Le client a appelé ce matin.",
+          "en": "The client called this morning."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_014",
+      "domain": "business",
+      "level": "A2",
+      "fr": "collègue",
+      "en": "colleague",
+      "ipa": "ˈkɒliːɡ",
+      "examples": [
+        {
+          "fr": "Mon collègue est en vacances.",
+          "en": "My colleague is on holiday."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_015",
+      "domain": "business",
+      "level": "A2",
+      "fr": "responsable",
+      "en": "manager",
+      "ipa": "ˈmænɪdʒə",
+      "examples": [
+        {
+          "fr": "Mon responsable est en réunion.",
+          "en": "My manager is in a meeting."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_016",
+      "domain": "business",
+      "level": "A2",
+      "fr": "rapport",
+      "en": "report",
+      "ipa": "rɪˈpɔːt",
+      "examples": [
+        {
+          "fr": "J'ai envoyé le rapport hier soir.",
+          "en": "I sent the report last night."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_017",
+      "domain": "business",
+      "level": "A2",
+      "fr": "présentation",
+      "en": "presentation",
+      "ipa": "ˌprezənˈteɪʃn",
+      "examples": [
+        {
+          "fr": "La présentation dure 30 minutes.",
+          "en": "The presentation lasts 30 minutes."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_018",
+      "domain": "business",
+      "level": "A2",
+      "fr": "objectif",
+      "en": "goal",
+      "ipa": "ɡəʊl",
+      "examples": [
+        {
+          "fr": "Notre objectif est ambitieux.",
+          "en": "Our goal is ambitious."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_019",
+      "domain": "business",
+      "level": "B1",
+      "fr": "périmètre",
+      "en": "scope",
+      "ipa": "skəʊp",
+      "examples": [
+        {
+          "fr": "Cela dépasse le périmètre du projet.",
+          "en": "This is out of scope for the project."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_020",
+      "domain": "business",
+      "level": "A2",
+      "fr": "équipe",
+      "en": "team",
+      "ipa": "tiːm",
+      "examples": [
+        {
+          "fr": "L'équipe est très motivée.",
+          "en": "The team is highly motivated."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_021",
+      "domain": "business",
+      "level": "A2",
+      "fr": "tâche",
+      "en": "task",
+      "ipa": "tɑːsk",
+      "examples": [
+        {
+          "fr": "J'ai trois tâches à finir aujourd'hui.",
+          "en": "I have three tasks to finish today."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_022",
+      "domain": "business",
+      "level": "A2",
+      "fr": "projet",
+      "en": "project",
+      "ipa": "ˈprɒdʒekt",
+      "examples": [
+        {
+          "fr": "Le projet est en bonne voie.",
+          "en": "The project is on track."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_023",
+      "domain": "business",
+      "level": "B1",
+      "fr": "compte-rendu de réunion",
+      "en": "meeting minutes",
+      "ipa": "ˈmiːtɪŋ ˈmɪnɪts",
+      "examples": [
+        {
+          "fr": "Pourriez-vous prendre le compte-rendu?",
+          "en": "Could you take the meeting minutes?"
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_024",
+      "domain": "business",
+      "level": "A2",
+      "fr": "rendez-vous",
+      "en": "appointment",
+      "ipa": "əˈpɔɪntmənt",
+      "examples": [
+        {
+          "fr": "J'ai un rendez-vous à 15h.",
+          "en": "I have an appointment at 3 p.m."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_025",
+      "domain": "business",
+      "level": "B1",
+      "fr": "compétences",
+      "en": "skills",
+      "ipa": "skɪlz",
+      "examples": [
+        {
+          "fr": "Ce poste demande de nouvelles compétences.",
+          "en": "This role requires new skills."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_026",
+      "domain": "business",
+      "level": "B1",
+      "fr": "réseau professionnel",
+      "en": "network",
+      "ipa": "ˈnetwɜːk",
+      "examples": [
+        {
+          "fr": "Mon réseau s'est développé ce trimestre.",
+          "en": "My network has grown this quarter."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_027",
+      "domain": "business",
+      "level": "B1",
+      "fr": "feedback",
+      "en": "feedback",
+      "ipa": "ˈfiːdbæk",
+      "examples": [
+        {
+          "fr": "J'aimerais avoir votre feedback.",
+          "en": "I'd like to get your feedback."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_028",
+      "domain": "business",
+      "level": "B1",
+      "fr": "négociation",
+      "en": "negotiation",
+      "ipa": "nɪˌɡəʊʃiˈeɪʃn",
+      "examples": [
+        {
+          "fr": "La négociation a duré deux heures.",
+          "en": "The negotiation lasted two hours."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_029",
+      "domain": "business",
+      "level": "A2",
+      "fr": "courriel",
+      "en": "email",
+      "ipa": "ˈiːmeɪl",
+      "examples": [
+        {
+          "fr": "Je vous envoie un email demain.",
+          "en": "I'll send you an email tomorrow."
+        }
+      ]
+    },
+    {
+      "id": "en_v_biz_030",
+      "domain": "business",
+      "level": "A2",
+      "fr": "appel téléphonique",
+      "en": "phone call",
+      "ipa": "fəʊn kɔːl",
+      "examples": [
+        {
+          "fr": "Je suis en appel téléphonique.",
+          "en": "I'm on a phone call."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_001",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "petit-déjeuner",
+      "en": "breakfast",
+      "ipa": "ˈbrekfəst",
+      "examples": [
+        {
+          "fr": "Je prends le petit-déjeuner à 7h.",
+          "en": "I have breakfast at 7 a.m."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_002",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "déjeuner",
+      "en": "lunch",
+      "ipa": "lʌntʃ",
+      "examples": [
+        {
+          "fr": "On mange au resto pour le déjeuner?",
+          "en": "Shall we go out for lunch?"
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_003",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "dîner",
+      "en": "dinner",
+      "ipa": "ˈdɪnə",
+      "examples": [
+        {
+          "fr": "Le dîner est servi à 20h.",
+          "en": "Dinner is served at 8 p.m."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_004",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "café",
+      "en": "coffee",
+      "ipa": "ˈkɒfi",
+      "examples": [
+        {
+          "fr": "Je prendrais bien un café.",
+          "en": "I'd love a coffee."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_005",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "thé",
+      "en": "tea",
+      "ipa": "tiː",
+      "examples": [
+        {
+          "fr": "Tu veux du thé?",
+          "en": "Do you want some tea?"
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_006",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "eau",
+      "en": "water",
+      "ipa": "ˈwɔːtə",
+      "examples": [
+        {
+          "fr": "Je voudrais un verre d'eau.",
+          "en": "I'd like a glass of water."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_007",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "pain",
+      "en": "bread",
+      "ipa": "bred",
+      "examples": [
+        {
+          "fr": "J'achète du pain frais.",
+          "en": "I'm buying fresh bread."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_008",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "gare",
+      "en": "train station",
+      "ipa": "treɪn ˈsteɪʃn",
+      "examples": [
+        {
+          "fr": "La gare est près du centre.",
+          "en": "The train station is near the centre."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_009",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "aéroport",
+      "en": "airport",
+      "ipa": "ˈeəpɔːt",
+      "examples": [
+        {
+          "fr": "Je vais à l'aéroport demain.",
+          "en": "I'm going to the airport tomorrow."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_010",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "bus",
+      "en": "bus",
+      "ipa": "bʌs",
+      "examples": [
+        {
+          "fr": "Je prends le bus pour aller travailler.",
+          "en": "I take the bus to work."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_011",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "voiture",
+      "en": "car",
+      "ipa": "kɑː",
+      "examples": [
+        {
+          "fr": "Ma voiture est en panne.",
+          "en": "My car has broken down."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_012",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "taxi",
+      "en": "taxi",
+      "ipa": "ˈtæksi",
+      "examples": [
+        {
+          "fr": "On prend un taxi?",
+          "en": "Shall we take a taxi?"
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_013",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "vélo",
+      "en": "bike",
+      "ipa": "baɪk",
+      "examples": [
+        {
+          "fr": "Je vais au travail à vélo.",
+          "en": "I go to work by bike."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_014",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "météo / temps qu'il fait",
+      "en": "weather",
+      "ipa": "ˈweðə",
+      "examples": [
+        {
+          "fr": "Quel temps fait-il aujourd'hui?",
+          "en": "What's the weather like today?"
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_015",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "pluie",
+      "en": "rain",
+      "ipa": "reɪn",
+      "examples": [
+        {
+          "fr": "Il y a beaucoup de pluie en avril.",
+          "en": "There's a lot of rain in April."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_016",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "neige",
+      "en": "snow",
+      "ipa": "snəʊ",
+      "examples": [
+        {
+          "fr": "Il y a de la neige sur les sommets.",
+          "en": "There's snow on the peaks."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_017",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "soleil",
+      "en": "sun",
+      "ipa": "sʌn",
+      "examples": [
+        {
+          "fr": "Il y a du soleil aujourd'hui.",
+          "en": "It's sunny today."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_018",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "week-end",
+      "en": "weekend",
+      "ipa": "ˌwiːkˈend",
+      "examples": [
+        {
+          "fr": "Bon week-end!",
+          "en": "Have a nice weekend!"
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_019",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "matin",
+      "en": "morning",
+      "ipa": "ˈmɔːnɪŋ",
+      "examples": [
+        {
+          "fr": "Je cours tous les matins.",
+          "en": "I run every morning."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_020",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "après-midi",
+      "en": "afternoon",
+      "ipa": "ˌɑːftəˈnuːn",
+      "examples": [
+        {
+          "fr": "On se voit cet après-midi.",
+          "en": "See you this afternoon."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_021",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "soir",
+      "en": "evening",
+      "ipa": "ˈiːvnɪŋ",
+      "examples": [
+        {
+          "fr": "Bonne soirée!",
+          "en": "Have a nice evening!"
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_022",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "famille",
+      "en": "family",
+      "ipa": "ˈfæməli",
+      "examples": [
+        {
+          "fr": "Ma famille vit à Lausanne.",
+          "en": "My family lives in Lausanne."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_023",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "ami",
+      "en": "friend",
+      "ipa": "frend",
+      "examples": [
+        {
+          "fr": "Je dîne avec un ami.",
+          "en": "I'm having dinner with a friend."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_024",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "voisin",
+      "en": "neighbour",
+      "ipa": "ˈneɪbə",
+      "examples": [
+        {
+          "fr": "Mon voisin est gentil.",
+          "en": "My neighbour is friendly."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_025",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "quartier",
+      "en": "neighbourhood",
+      "ipa": "ˈneɪbəhʊd",
+      "examples": [
+        {
+          "fr": "Notre quartier est calme.",
+          "en": "Our neighbourhood is quiet."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_026",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "médecin",
+      "en": "doctor",
+      "ipa": "ˈdɒktə",
+      "examples": [
+        {
+          "fr": "Je dois voir le médecin.",
+          "en": "I need to see the doctor."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_027",
+      "domain": "daily",
+      "level": "B1",
+      "fr": "rendez-vous médical",
+      "en": "doctor's appointment",
+      "ipa": "ˈdɒktəz əˈpɔɪntmənt",
+      "examples": [
+        {
+          "fr": "J'ai un rendez-vous médical jeudi.",
+          "en": "I have a doctor's appointment on Thursday."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_028",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "pharmacie",
+      "en": "pharmacy",
+      "ipa": "ˈfɑːməsi",
+      "examples": [
+        {
+          "fr": "Il y a une pharmacie en bas.",
+          "en": "There's a pharmacy downstairs."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_029",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "supermarché",
+      "en": "supermarket",
+      "ipa": "ˈsuːpəmɑːkɪt",
+      "examples": [
+        {
+          "fr": "Je vais au supermarché.",
+          "en": "I'm going to the supermarket."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_030",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "magasin",
+      "en": "shop",
+      "ipa": "ʃɒp",
+      "examples": [
+        {
+          "fr": "Le magasin ferme à 19h.",
+          "en": "The shop closes at 7 p.m."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_031",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "restaurant",
+      "en": "restaurant",
+      "ipa": "ˈrestrɒnt",
+      "examples": [
+        {
+          "fr": "Ce restaurant est très bon.",
+          "en": "This restaurant is very good."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_032",
+      "domain": "daily",
+      "level": "B1",
+      "fr": "bureau de poste",
+      "en": "post office",
+      "ipa": "pəʊst ˈɒfɪs",
+      "examples": [
+        {
+          "fr": "Le bureau de poste est en face.",
+          "en": "The post office is across the street."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_033",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "banque",
+      "en": "bank",
+      "ipa": "bæŋk",
+      "examples": [
+        {
+          "fr": "La banque ferme à 17h.",
+          "en": "The bank closes at 5 p.m."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_034",
+      "domain": "daily",
+      "level": "B1",
+      "fr": "embouteillage",
+      "en": "traffic jam",
+      "ipa": "ˈtræfɪk dʒæm",
+      "examples": [
+        {
+          "fr": "Je suis dans un embouteillage.",
+          "en": "I'm stuck in a traffic jam."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_035",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "rue",
+      "en": "street",
+      "ipa": "striːt",
+      "examples": [
+        {
+          "fr": "La rue est très animée.",
+          "en": "The street is very busy."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_036",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "maison",
+      "en": "house",
+      "ipa": "haʊs",
+      "examples": [
+        {
+          "fr": "J'achète une maison.",
+          "en": "I'm buying a house."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_037",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "appartement",
+      "en": "flat",
+      "ipa": "flæt",
+      "notes": "BrE; AmE: 'apartment'.",
+      "examples": [
+        {
+          "fr": "Mon appartement est petit.",
+          "en": "My flat is small."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_038",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "chambre",
+      "en": "bedroom",
+      "ipa": "ˈbedruːm",
+      "examples": [
+        {
+          "fr": "Ma chambre est au premier étage.",
+          "en": "My bedroom is on the first floor."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_039",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "cuisine",
+      "en": "kitchen",
+      "ipa": "ˈkɪtʃɪn",
+      "examples": [
+        {
+          "fr": "La cuisine est petite mais pratique.",
+          "en": "The kitchen is small but practical."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_040",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "salle de bain",
+      "en": "bathroom",
+      "ipa": "ˈbɑːθruːm",
+      "examples": [
+        {
+          "fr": "La salle de bain est libre.",
+          "en": "The bathroom is free."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_041",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "vêtements",
+      "en": "clothes",
+      "ipa": "kləʊðz",
+      "examples": [
+        {
+          "fr": "J'achète des vêtements.",
+          "en": "I'm buying some clothes."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_042",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "argent",
+      "en": "money",
+      "ipa": "ˈmʌni",
+      "examples": [
+        {
+          "fr": "Je n'ai pas d'argent sur moi.",
+          "en": "I don't have any money on me."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_043",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "horaire",
+      "en": "schedule",
+      "ipa": "ˈʃedjuːl",
+      "examples": [
+        {
+          "fr": "Quel est ton horaire demain?",
+          "en": "What's your schedule tomorrow?"
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_044",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "jour férié",
+      "en": "public holiday",
+      "ipa": "ˈpʌblɪk ˈhɒlədeɪ",
+      "examples": [
+        {
+          "fr": "Lundi est un jour férié.",
+          "en": "Monday is a public holiday."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_045",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "vacances",
+      "en": "holiday",
+      "ipa": "ˈhɒlədeɪ",
+      "notes": "BrE; AmE: 'vacation'.",
+      "examples": [
+        {
+          "fr": "Je pars en vacances en juillet.",
+          "en": "I'm going on holiday in July."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_046",
+      "domain": "daily",
+      "level": "B1",
+      "fr": "loisir",
+      "en": "hobby",
+      "ipa": "ˈhɒbi",
+      "examples": [
+        {
+          "fr": "Mon loisir préféré est la randonnée.",
+          "en": "My favourite hobby is hiking."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_047",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "sport",
+      "en": "sport",
+      "ipa": "spɔːt",
+      "examples": [
+        {
+          "fr": "Je fais du sport trois fois par semaine.",
+          "en": "I do sport three times a week."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_048",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "livre",
+      "en": "book",
+      "ipa": "bʊk",
+      "examples": [
+        {
+          "fr": "Je lis un livre intéressant.",
+          "en": "I'm reading an interesting book."
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_049",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "film",
+      "en": "movie",
+      "ipa": "ˈmuːvi",
+      "examples": [
+        {
+          "fr": "On regarde un film ce soir?",
+          "en": "Shall we watch a movie tonight?"
+        }
+      ]
+    },
+    {
+      "id": "en_v_day_050",
+      "domain": "daily",
+      "level": "A2",
+      "fr": "musique",
+      "en": "music",
+      "ipa": "ˈmjuːzɪk",
+      "examples": [
+        {
+          "fr": "J'écoute de la musique en travaillant.",
+          "en": "I listen to music while working."
+        }
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "id": "en_p_open_001",
+      "category": "email_opening",
+      "level": "A2",
+      "fr": "Bonjour Pierre,",
+      "en": "Hi Peter,",
+      "context": "Email professionnel informel, collègue connu."
+    },
+    {
+      "id": "en_p_open_002",
+      "category": "email_opening",
+      "level": "A2",
+      "fr": "Cher Monsieur Smith,",
+      "en": "Dear Mr Smith,",
+      "context": "Email formel, première prise de contact ou client externe."
+    },
+    {
+      "id": "en_p_open_003",
+      "category": "email_opening",
+      "level": "A2",
+      "fr": "J'espère que vous allez bien.",
+      "en": "I hope you are doing well.",
+      "context": "Formule d'ouverture neutre, après le 'Dear/Hi'."
+    },
+    {
+      "id": "en_p_open_004",
+      "category": "email_opening",
+      "level": "A2",
+      "fr": "J'espère que ce courriel vous trouvera en bonne santé.",
+      "en": "I hope this email finds you well.",
+      "context": "Formule d'ouverture standard en anglais professionnel."
+    },
+    {
+      "id": "en_p_open_005",
+      "category": "email_opening",
+      "level": "B1",
+      "fr": "Merci pour votre rapide réponse.",
+      "en": "Thank you for your quick reply.",
+      "context": "Ouverture quand on répond à un email reçu récemment."
+    },
+    {
+      "id": "en_p_open_006",
+      "category": "email_opening",
+      "level": "B1",
+      "fr": "Je me permets de vous contacter au sujet de…",
+      "en": "I am writing to you regarding…",
+      "context": "Ouverture formelle, annonce le motif du message."
+    },
+    {
+      "id": "en_p_open_007",
+      "category": "email_opening",
+      "level": "A2",
+      "fr": "Suite à notre conversation,",
+      "en": "Following our conversation,",
+      "context": "Référence à un échange antérieur (téléphonique ou en réunion)."
+    },
+    {
+      "id": "en_p_open_008",
+      "category": "email_opening",
+      "level": "B1",
+      "fr": "Merci de m'avoir répondu si rapidement.",
+      "en": "Thanks for getting back to me so quickly.",
+      "context": "Email informel-professionnel, pour remercier d'un retour rapide."
+    },
+    {
+      "id": "en_p_close_001",
+      "category": "email_closing",
+      "level": "A2",
+      "fr": "Cordialement,",
+      "en": "Best regards,",
+      "context": "Formule de clôture standard professionnelle."
+    },
+    {
+      "id": "en_p_close_002",
+      "category": "email_closing",
+      "level": "A2",
+      "fr": "Cordialement,",
+      "en": "Kind regards,",
+      "context": "Variante légèrement plus chaleureuse de 'Best regards'."
+    },
+    {
+      "id": "en_p_close_003",
+      "category": "email_closing",
+      "level": "B1",
+      "fr": "Dans l'attente de votre retour,",
+      "en": "Looking forward to hearing from you,",
+      "context": "Clôture qui invite à une réponse."
+    },
+    {
+      "id": "en_p_close_004",
+      "category": "email_closing",
+      "level": "A2",
+      "fr": "Dites-moi si vous avez des questions.",
+      "en": "Let me know if you have any questions.",
+      "context": "Clôture pour rester ouvert au dialogue."
+    },
+    {
+      "id": "en_p_close_005",
+      "category": "email_closing",
+      "level": "A2",
+      "fr": "Merci d'avance pour votre aide.",
+      "en": "Thank you in advance for your help.",
+      "context": "Clôture quand on attend une action de la part du destinataire."
+    },
+    {
+      "id": "en_p_close_006",
+      "category": "email_closing",
+      "level": "B1",
+      "fr": "N'hésitez pas à revenir vers moi.",
+      "en": "Please don't hesitate to get back to me.",
+      "context": "Clôture invitant à une suite si besoin."
+    },
+    {
+      "id": "en_p_close_007",
+      "category": "email_closing",
+      "level": "A2",
+      "fr": "Bonne journée,",
+      "en": "Have a good day,",
+      "context": "Clôture conviviale, contexte semi-formel."
+    },
+    {
+      "id": "en_p_close_008",
+      "category": "email_closing",
+      "level": "B1",
+      "fr": "Je reste à votre disposition.",
+      "en": "I remain at your disposal.",
+      "context": "Clôture formelle classique en anglais d'affaires."
+    },
+    {
+      "id": "en_p_mtg_001",
+      "category": "meeting",
+      "level": "A2",
+      "fr": "Pourrions-nous fixer une réunion?",
+      "en": "Could we schedule a meeting?",
+      "context": "Demande de planification d'un rendez-vous."
+    },
+    {
+      "id": "en_p_mtg_002",
+      "category": "meeting",
+      "level": "A2",
+      "fr": "Je voudrais ajouter un point à l'ordre du jour.",
+      "en": "I'd like to add an item to the agenda.",
+      "context": "Avant ou pendant une réunion, demande d'ajout."
+    },
+    {
+      "id": "en_p_mtg_003",
+      "category": "meeting",
+      "level": "A2",
+      "fr": "Passons au point suivant.",
+      "en": "Let's move on to the next point.",
+      "context": "Pour faire avancer la réunion (animateur)."
+    },
+    {
+      "id": "en_p_mtg_004",
+      "category": "meeting",
+      "level": "B1",
+      "fr": "Je ferai un suivi par e-mail.",
+      "en": "I'll follow up by email.",
+      "context": "Engagement à clôturer un sujet après la réunion."
+    },
+    {
+      "id": "en_p_mtg_005",
+      "category": "meeting",
+      "level": "A2",
+      "fr": "Pouvez-vous répéter, s'il vous plaît?",
+      "en": "Could you repeat that, please?",
+      "context": "Demande de clarification quand on n'a pas compris."
+    },
+    {
+      "id": "en_p_mtg_006",
+      "category": "meeting",
+      "level": "B1",
+      "fr": "Je suis tout à fait d'accord avec ça.",
+      "en": "I completely agree with that.",
+      "context": "Pour exprimer un accord clair."
+    },
+    {
+      "id": "en_p_mtg_007",
+      "category": "meeting",
+      "level": "B1",
+      "fr": "Je vois ce que vous voulez dire, mais…",
+      "en": "I see your point, but…",
+      "context": "Désaccord poli, transition vers contre-argument."
+    },
+    {
+      "id": "en_p_mtg_008",
+      "category": "meeting",
+      "level": "A2",
+      "fr": "Récapitulons les actions à mener.",
+      "en": "Let's recap the action items.",
+      "context": "Fin de réunion, pour clôturer."
+    },
+    {
+      "id": "en_p_idm_001",
+      "category": "idiom",
+      "level": "B1",
+      "fr": "briser la glace",
+      "en": "to break the ice",
+      "context": "Démarrer une conversation dans un contexte tendu ou nouveau."
+    },
+    {
+      "id": "en_p_idm_002",
+      "category": "idiom",
+      "level": "B1",
+      "fr": "penser autrement / sortir des sentiers battus",
+      "en": "to think outside the box",
+      "context": "Trouver une idée originale, hors cadre habituel."
+    },
+    {
+      "id": "en_p_idm_003",
+      "category": "idiom",
+      "level": "B1",
+      "fr": "la balle est dans votre camp",
+      "en": "the ball is in your court",
+      "context": "C'est à l'autre de prendre la décision ou d'agir."
+    },
+    {
+      "id": "en_p_idm_004",
+      "category": "idiom",
+      "level": "B1",
+      "fr": "arrêter pour aujourd'hui",
+      "en": "to call it a day",
+      "context": "Décider de mettre fin à la journée de travail."
+    },
+    {
+      "id": "en_p_idm_005",
+      "category": "idiom",
+      "level": "B1",
+      "fr": "faire un point ensemble",
+      "en": "to touch base",
+      "context": "Reprendre contact rapidement avec quelqu'un."
+    },
+    {
+      "id": "en_p_idm_006",
+      "category": "idiom",
+      "level": "B1",
+      "fr": "revenir vers (qqn) plus tard",
+      "en": "to circle back",
+      "context": "Reprendre un sujet plus tard quand on aura plus d'infos."
+    },
+    {
+      "id": "en_p_idm_007",
+      "category": "idiom",
+      "level": "B1",
+      "fr": "laisser tomber la balle / merder",
+      "en": "to drop the ball",
+      "context": "Échouer à tenir un engagement, oublier une tâche."
+    },
+    {
+      "id": "en_p_idm_008",
+      "category": "idiom",
+      "level": "B1",
+      "fr": "être sur la même longueur d'onde",
+      "en": "to be on the same page",
+      "context": "Confirmer qu'on partage la même compréhension."
+    },
+    {
+      "id": "en_p_trn_001",
+      "category": "transition",
+      "level": "A2",
+      "fr": "Cependant,",
+      "en": "However,",
+      "context": "Connecteur d'opposition, en début de phrase écrite ou orale."
+    },
+    {
+      "id": "en_p_trn_002",
+      "category": "transition",
+      "level": "A2",
+      "fr": "De plus,",
+      "en": "In addition,",
+      "context": "Pour ajouter un argument ou une information."
+    },
+    {
+      "id": "en_p_trn_003",
+      "category": "transition",
+      "level": "B1",
+      "fr": "D'autre part,",
+      "en": "On the other hand,",
+      "context": "Présenter un point de vue différent ou complémentaire."
+    },
+    {
+      "id": "en_p_trn_004",
+      "category": "transition",
+      "level": "B1",
+      "fr": "Par conséquent,",
+      "en": "As a result,",
+      "context": "Conséquence ou conclusion d'un raisonnement."
+    },
+    {
+      "id": "en_p_pol_001",
+      "category": "politeness",
+      "level": "B1",
+      "fr": "Pourriez-vous éventuellement…?",
+      "en": "Could you possibly…?",
+      "context": "Demande très polie, registre formel."
+    },
+    {
+      "id": "en_p_pol_002",
+      "category": "politeness",
+      "level": "B1",
+      "fr": "Cela vous dérangerait-il de…?",
+      "en": "Would you mind…?",
+      "context": "Demande polie suivie d'un verbe en -ing."
+    },
+    {
+      "id": "en_p_pol_003",
+      "category": "politeness",
+      "level": "B1",
+      "fr": "Je vous serais reconnaissant si…",
+      "en": "I'd appreciate it if…",
+      "context": "Demande très formelle, ton professionnel."
+    },
+    {
+      "id": "en_p_pol_004",
+      "category": "politeness",
+      "level": "A2",
+      "fr": "Désolé de vous déranger, mais…",
+      "en": "Sorry to bother you, but…",
+      "context": "Pour interrompre poliment quelqu'un."
+    }
+  ]
+}

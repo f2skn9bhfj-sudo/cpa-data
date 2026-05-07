@@ -1,0 +1,1572 @@
+{
+  "statements": [
+    {
+      "id": "bilan",
+      "title": "État consolidé de la situation financière",
+      "subtitle": "Bilan — IAS 1",
+      "icon": "📊",
+      "sections": [
+        {
+          "id": "actifs_non_courants",
+          "title": "ACTIFS NON COURANTS",
+          "items": [
+            {
+              "id": "goodwill",
+              "label": "Goodwill",
+              "amount_2025": "5 041",
+              "amount_2024": "3 537",
+              "note_ref": "Note 10",
+              "norms": [
+                "IFRS 3",
+                "IAS 36"
+              ],
+              "cross_refs": [
+                "ifrs3",
+                "ias36",
+                "rpc30"
+              ],
+              "definition": "Excédent du coût d'acquisition (contrepartie transférée + JV des minoritaires) sur la juste valeur des actifs nets identifiables acquis lors d'un regroupement d'entreprises (IFRS 3).",
+              "accounting_method": "Comptabilisation initiale lors de l'acquisition uniquement (pas de goodwill généré en interne). Non amorti sous IFRS. Alloué aux UGT et soumis à un test de dépréciation annuel obligatoire (IAS 36), même sans indice. Perte de valeur comptabilisée immédiatement au résultat.",
+              "key_points": [
+                "Goodwill = Contrepartie + JV minoritaires − JV actifs nets identifiables",
+                "2 méthodes pour minoritaires : full goodwill (JV) ou partial goodwill (quote-part actifs nets)",
+                "Choix de méthode = par regroupement (pas de politique uniforme obligatoire)",
+                "Test de dépréciation ANNUEL obligatoire, même sans indices",
+                "Perte allouée d'abord au goodwill, puis aux autres actifs de l'UGT proportionnellement",
+                "⚠️ Reprise de dépréciation sur goodwill = INTERDITE (IAS 36.124)"
+              ],
+              "comparison": {
+                "rpc": "RPC 30 : goodwill soit ACTIVÉ + amorti (5 ans, max 20 ans), soit COMPENSÉ directement avec les FP. Coûts de transaction INCLUS dans le prix d'achat. Pas de test annuel obligatoire (seulement si indices).",
+                "co": "CO art. 963b : selon la norme choisie (RPC ou IFRS). Pas de règle propre au CO pour le goodwill consolidé."
+              },
+              "exam_tips": [
+                "⚠️ IFRS 3 : coûts de transaction (due diligence, avocats) = EN CHARGES. RPC 30 : INCLUS dans le goodwill.",
+                "💡 Période d'évaluation = 12 mois max pour ajustements rétrospectifs du goodwill.",
+                "⚠️ Goodwill négatif (bargain purchase) : IFRS = gain IMMÉDIAT au résultat. RPC = même traitement que goodwill positif."
+              ],
+              "note_content": "Le goodwill est affecté aux UGT : Vente au détail (4 796 UM) et Services-conseils (245 UM). Test de dépréciation basé sur la valeur d'utilité avec taux d'actualisation avant impôts de 12,9% (vente au détail) et 14,8% (services-conseils). Taux de croissance terminale de 2,7% et 2,3% respectivement."
+            },
+            {
+              "id": "incorporelles",
+              "label": "Autres immobilisations incorporelles",
+              "amount_2025": "13 517",
+              "amount_2024": "9 441",
+              "note_ref": "Note 11",
+              "norms": [
+                "IAS 38"
+              ],
+              "cross_refs": [
+                "ias38",
+                "rpc10"
+              ],
+              "definition": "Actifs non monétaires identifiables sans substance physique : brevets, licences, logiciels, marques, relations clients, frais de développement. Acquis séparément, via regroupement d'entreprises, ou générés en interne (développement uniquement).",
+              "accounting_method": "Comptabilisation initiale au coût. Distinction durée déterminée (amortissement linéaire) vs indéterminée (pas d'amortissement, test annuel). Frais de recherche = TOUJOURS en charges. Développement = activable si 6 critères cumulatifs remplis (IAS 38.57). Modèle du coût ou de réévaluation.",
+              "key_points": [
+                "Recherche = toujours en CHARGES. Développement = activable si 6 critères (FIACRE)",
+                "6 critères IAS 38 : Faisabilité, Intention, Capacité utilisation/vente, Avantages éco, Ressources, Évaluation fiable",
+                "Durée indéterminée ≠ infinie : réévaluer chaque année",
+                "Incorporelles acquises via regroupement : comptabilisées SÉPARÉMENT du goodwill si identifiables",
+                "⚠️ Marques, fichiers clients générés en INTERNE = JAMAIS activables (IAS 38.63-64)"
+              ],
+              "comparison": {
+                "rpc": "RPC 10 : 4 conditions (plus souples qu'IFRS). Amortissement obligatoire (5 ans par défaut, max 20 ans). Durée indéterminée = pas de concept sous RPC.",
+                "co": "CO art. 960a : au plus au coût d'acquisition. Amortissements si durée limitée. Pas d'activation obligatoire des frais de développement."
+              },
+              "exam_tips": [
+                "⚠️ RPC 10 = 4 conditions vs IAS 38 = 6 critères (FIACRE). Connaître les deux !",
+                "💡 Lors d'une acquisition (IFRS 3), identifier et évaluer séparément les incorporelles (relations clients, technologie, carnet de commandes) = réduit le goodwill.",
+                "⚠️ Incorporelles liées à des PERSONNES sous RPC : max 5 ans d'amortissement."
+              ],
+              "note_content": "Logiciels acquis amortis sur 3-7 ans. Logiciels générés en interne : coûts de développement activés (1 440 UM en 2025), coûts d'emprunt incorporés (80 UM). Frais R&D en charges : 1 690 UM. Relations clients acquises via Goodtech : 3 005 UM amorties sur 7-15 ans."
+            },
+            {
+              "id": "ic_corporelles",
+              "label": "Immobilisations corporelles",
+              "amount_2025": "26 498",
+              "amount_2024": "25 053",
+              "note_ref": "Note 12",
+              "norms": [
+                "IAS 16"
+              ],
+              "cross_refs": [
+                "ias16",
+                "rpc18",
+                "co_evaluation"
+              ],
+              "definition": "Actifs corporels détenus pour la production, la fourniture de biens/services ou à des fins administratives, dont on s'attend à les utiliser sur plus d'un exercice. Terrains, bâtiments, matériel, mobilier.",
+              "accounting_method": "Comptabilisation initiale au coût (prix + frais directs + coûts démantèlement). Évaluation subséquente : modèle du COÛT (coût − amortissements − dépréciations) ou modèle de RÉÉVALUATION (JV − amortissements − dépréciations, par catégorie entière). Approche par COMPOSANTS obligatoire. Amortissement dès que l'actif est prêt à l'utilisation.",
+              "key_points": [
+                "Approche par COMPOSANTS : chaque partie significative avec durée différente = amortie séparément",
+                "Réévaluation : plus-value → OCI. Moins-value → P&L (sauf si réserve existante)",
+                "Terrains = pas d'amortissement (durée illimitée)",
+                "Coûts inclus : prix + douanes + installation + démantèlement (IAS 37). EXCLUS : ouverture, pub, admin, pertes initiales",
+                "Coûts d'emprunt sur actif qualifié = incorporés obligatoirement (IAS 23)",
+                "⚠️ Remplacement composant : décomptabiliser l'ancien + activer le nouveau"
+              ],
+              "comparison": {
+                "rpc": "RPC 18 : modèle du coût uniquement pour les IC d'EXPLOITATION (pas de réévaluation). IC de rendement (hors exploitation) = JV possible. Pas d'approche par composants explicitement requise.",
+                "co": "CO art. 960a : au plus au coût d'acquisition − amortissements. Réserves latentes autorisées (amortissements accélérés). Art. 960d : amortissements systématiques."
+              },
+              "exam_tips": [
+                "⚠️ IFRS : réévaluation = toute la CATÉGORIE. RPC : réévaluation INTERDITE pour IC d'exploitation.",
+                "💡 IAS 16.67 : lors du remplacement d'un composant, la VC de l'ancien est DÉCOMPTABILISÉE même si elle n'était pas amortie séparément.",
+                "⚠️ Terrains + bâtiments = 2 actifs distincts, amortis séparément."
+              ],
+              "note_content": "Bâtiments amortis sur 25-50 ans, matériel informatique 3-5 ans, mobilier 3-10 ans. Terrains évalués au modèle de réévaluation (JV = 4 050 UM, réévaluation nette de 303 UM en OCI). Engagement contractuel d'acquisition de matériel informatique : 1 304 UM."
+            },
+            {
+              "id": "rou_assets",
+              "label": "Actifs au titre de droits d'utilisation",
+              "amount_2025": "10 422",
+              "amount_2024": "11 091",
+              "note_ref": "Note 13",
+              "norms": [
+                "IFRS 16"
+              ],
+              "cross_refs": [
+                "ifrs16",
+                "rpc13"
+              ],
+              "definition": "Actifs représentant le droit du preneur d'utiliser un actif sous-jacent pendant la durée du contrat de location. Comptabilisés au bilan par le preneur pour quasi tous les contrats de location (sauf exemptions CT et faible valeur).",
+              "accounting_method": "Évaluation initiale = VA des paiements de location futurs + coûts directs + démantèlement − avantages reçus. Amortissement linéaire sur la durée du contrat (ou durée d'utilité si plus courte et option d'achat raisonnablement certaine). Taux d'actualisation = taux implicite du contrat ou, si indéterminable, taux d'emprunt marginal du preneur.",
+              "key_points": [
+                "IFRS 16 = quasi TOUT au bilan (plus de distinction opérationnel/financier pour le preneur)",
+                "Exemptions : contrats ≤ 12 mois ET actifs de faible valeur (< ~USD 5'000 neuf)",
+                "Résultat : amortissement ROU (linéaire) + intérêts dette location (décroissant) = charge FRONTLOADED",
+                "Bailleur : distinction maintenue (location-financement vs simple)",
+                "⚠️ La charge totale est la même sur la durée du contrat, mais le profil est différent (plus élevé au début)"
+              ],
+              "comparison": {
+                "rpc": "RPC 13 : distinction MAINTENUE entre leasing financier (au bilan) et opérationnel (hors bilan, charges linéaires). 4 critères qualitatifs pour la classification.",
+                "co": "CO : engagements de leasing opérationnel = mention dans l'ANNEXE (hors bilan). Pas de règle spécifique de comptabilisation."
+              },
+              "exam_tips": [
+                "⚠️ IFRS 16 = révolution pour le PRENEUR uniquement. Le bailleur garde l'ancienne distinction (IAS 17).",
+                "💡 Taux d'actualisation : en pratique presque toujours le taux d'emprunt MARGINAL (le taux implicite est rarement déterminable).",
+                "⚠️ Sale-and-leaseback : IFRS 16 = décomptabiliser l'actif, comptabiliser le ROU proportionnel au droit conservé. RPC 13 = bénéfice différé, perte immédiate."
+              ],
+              "note_content": "Le Groupe loue des bureaux, entrepôt principal, bâtiment de production et véhicules. Amortissement linéaire sur durée du contrat. Charge de location totale : 4 259 UM (dont intérêts 621 UM). Exemptions appliquées pour matériel de bureau (CT + faible valeur) : 345 UM en charges."
+            },
+            {
+              "id": "immeubles_placement",
+              "label": "Immeubles de placement",
+              "amount_2025": "8 220",
+              "amount_2024": "7 680",
+              "note_ref": "Note 14",
+              "norms": [
+                "IAS 40"
+              ],
+              "cross_refs": [
+                "ias40",
+                "co_evaluation"
+              ],
+              "definition": "Biens immobiliers (terrains et/ou bâtiments) détenus pour percevoir des loyers et/ou pour l'appréciation du capital, et NON pour l'occupation propre ni la vente dans le cours normal des activités.",
+              "accounting_method": "Comptabilisation initiale au coût. Évaluation subséquente : modèle du COÛT (comme IAS 16) ou modèle de la JUSTE VALEUR (JV à chaque clôture, variations au RÉSULTAT, pas d'amortissement). Le Groupe utilise le modèle de la JV. Transferts vers/depuis IAS 16 ou IAS 2 possibles.",
+              "key_points": [
+                "Modèle JV : variations au RÉSULTAT (P&L), PAS en OCI",
+                "⚠️ IAS 40 JV → P&L ≠ IAS 16 réévaluation → OCI",
+                "Pas d'amortissement en modèle JV",
+                "Cas mixte : si portions séparables → comptabilisation séparée. Sinon → IAS 40 si portion propre insignifiante",
+                "Transfert IAS 16 → IAS 40 (modèle JV) : réévaluer à JV, différence → OCI"
+              ],
+              "comparison": {
+                "rpc": "RPC 2 : IC détenues à des fins de RENDEMENT (hors exploitation) peuvent être à la JV, variations au résultat. Concept similaire mais moins formalisé.",
+                "co": "CO art. 960a : au plus au coût d'acquisition. Pas de modèle JV sous CO minimum. Réserves latentes possibles."
+              },
+              "exam_tips": [
+                "⚠️ IAS 40 (JV) → variations au P&L. IAS 16 (réévaluation) → variations en OCI. Ne pas confondre !",
+                "💡 Transfert IAS 40 → IAS 16 : JV au moment du transfert = nouveau 'coût' de l'actif."
+              ],
+              "note_content": "Le Groupe détient des immeubles de bureaux loués à des tiers. JV déterminée par évaluateurs externes indépendants (niveau 3 hiérarchie IFRS 13). Produits locatifs : 1 530 UM. Charges directes : 410 UM. Variation JV comptabilisée en résultat : 540 UM."
+            },
+            {
+              "id": "participations_mee",
+              "label": "Participations comptabilisées selon la méthode de la mise en équivalence",
+              "amount_2025": "4 263",
+              "amount_2024": "3 914",
+              "note_ref": "Note 7",
+              "norms": [
+                "IAS 28",
+                "IFRS 11"
+              ],
+              "cross_refs": [
+                "ias28",
+                "ifrs11",
+                "rpc30"
+              ],
+              "definition": "Participations dans des entreprises associées (influence notable, généralement 20-50%) et des coentreprises (contrôle conjoint). Comptabilisées selon la méthode de la mise en équivalence : coût initial + quote-part des résultats − dividendes.",
+              "accounting_method": "① Initiale : au COÛT. ② Quote-part du résultat → P&L (ligne séparée). ③ Dividendes → réduction de la VC (PAS un produit). ④ Quote-part des OCI → OCI. ⑤ Goodwill implicite inclus dans la VC. ⑥ Test de dépréciation sur la VC totale (y compris goodwill).",
+              "key_points": [
+                "Dividendes reçus = réduction de la VC, PAS un produit",
+                "Influence notable : présumée à partir de 20% (mais peut exister < 20%)",
+                "Joint ventures (IFRS 11) : mise en équivalence. Joint operations : comptabiliser sa part des actifs/passifs",
+                "⚠️ Consolisation proportionnelle INTERDITE sous IFRS (autorisée sous RPC 30)"
+              ],
+              "comparison": {
+                "rpc": "RPC 30 : mise en équivalence OU consolidation proportionnelle (choix). La proportionnelle est AUTORISÉE sous RPC, INTERDITE sous IFRS.",
+                "co": "CO art. 963a : selon la norme choisie."
+              },
+              "exam_tips": [
+                "⚠️ Dividendes = réduction VC, PAS un produit ! C'est LE piège classique.",
+                "💡 Perte d'influence notable → décomptabiliser la participation, gain/perte au P&L, participation résiduelle à JV (IFRS 9)."
+              ],
+              "note_content": "Participation de 40% dans Halftime Ltd (entreprise associée). Quote-part du résultat 2025 : 478 UM. Aucun dividende reçu. Participation de 50% dans Équipe (coentreprise, mise en équivalence). Passifs éventuels joints : 40 UM."
+            },
+            {
+              "id": "autres_actifs_fi_nc",
+              "label": "Autres actifs financiers non courants",
+              "amount_2025": "1 908",
+              "amount_2024": "1 539",
+              "note_ref": "Note 15",
+              "norms": [
+                "IFRS 9",
+                "IFRS 13"
+              ],
+              "cross_refs": [
+                "ifrs9",
+                "ifrs13"
+              ],
+              "definition": "Actifs financiers non courants : placements en actions (JVTPL ou JVOCI), prêts LT, instruments dérivés de couverture LT. Classifiés selon le business model et le test SPPI (IFRS 9).",
+              "accounting_method": "Classification IFRS 9 : ① Coût amorti (collecter + SPPI). ② JVOCI (collecter ET vendre + SPPI). ③ JVTPL (tous les autres). Actions = toujours JVTPL sauf choix irrévocable JVOCI (dividendes en P&L, variations JV en OCI, JAMAIS recyclé).",
+              "key_points": [
+                "Test SPPI = Solely Payments of Principal and Interest",
+                "3 catégories : coût amorti, JVOCI, JVTPL",
+                "Actions = JVTPL par défaut (choix irrévocable JVOCI possible)",
+                "Dépréciation ECL : stade 1 (12 mois), stade 2 (durée de vie), stade 3 (défaut)",
+                "⚠️ Rendement indexé sur actions = échec SPPI → JVTPL obligatoirement"
+              ],
+              "comparison": {
+                "rpc": "RPC 27 : dérivés à la JV, couverture possible. Pas de modèle ECL à 3 stades. Classification plus simple.",
+                "co": "CO art. 960b : actifs avec prix courant observable → évaluation au prix courant possible (même au-dessus du coût). Sinon art. 960a : max coût."
+              },
+              "exam_tips": [
+                "⚠️ JVOCI pour actions = choix IRRÉVOCABLE + dividendes en P&L + variations en OCI + JAMAIS recyclé.",
+                "💡 Créances clients = toujours ECL durée de vie (approche simplifiée IFRS 9)."
+              ],
+              "note_content": "Placement dans XY Ltd au niveau 3 (JV = 820 UM, gain JV de 100 UM en P&L). Titres cotés au niveau 1 (343 UM). Contrats de change à terme : couvertures de flux de trésorerie (JV nette positive de 601 UM)."
+            },
+            {
+              "id": "impot_differe_actif",
+              "label": "Actifs d'impôt différé",
+              "amount_2025": "2 891",
+              "amount_2024": "3 604",
+              "note_ref": "Note 18",
+              "norms": [
+                "IAS 12"
+              ],
+              "cross_refs": [
+                "ias12",
+                "rpc11",
+                "co_evaluation"
+              ],
+              "definition": "Impôts récupérables au cours de périodes futures liés aux différences temporelles déductibles, aux reports de pertes fiscales non utilisées et aux crédits d'impôt non utilisés. Ne comptabiliser que si bénéfices futurs imposables PROBABLES.",
+              "accounting_method": "Méthode du report variable (bilan). DTA = différences temporelles déductibles × taux d'impôt attendu. Condition : bénéfices futurs probables. Réévaluation à chaque clôture. ⚠️ Actualisation INTERDITE (IAS 12).",
+              "key_points": [
+                "DTA comptabilisé seulement si bénéfices futurs PROBABLES",
+                "Actualisation des impôts différés = INTERDITE sous IAS 12",
+                "Exceptions à la comptabilisation : goodwill initial, reconnaissance initiale (si pas regroupement)",
+                "Compensation DTA/DTL possible si même autorité fiscale et droit exécutoire"
+              ],
+              "comparison": {
+                "rpc": "RPC 11 : méthode du report variable aussi. DTA dans les immobilisations financières. DTL dans les provisions. Approche allégée pour les PME.",
+                "co": "CO : pas d'impôts différés dans les comptes individuels (principe de déterminance). Seulement dans les comptes consolidés si norme reconnue appliquée."
+              },
+              "exam_tips": [
+                "⚠️ IAS 12 interdit EXPLICITEMENT l'actualisation des DTA/DTL, même si dénouement lointain.",
+                "💡 Pas d'impôt différé sur le goodwill initial en consolidation (IFRS 3 + IAS 12)."
+              ],
+              "note_content": "DTA principaux : obligations retraite (3 556 UM), provisions (898 UM), pertes fiscales reportées (480 UM). DTL principaux : incorporelles acquises (1 821 UM), immeubles de placement (1 275 UM). Taux d'impôt : 30%."
+            }
+          ]
+        },
+        {
+          "id": "actifs_courants",
+          "title": "ACTIFS COURANTS",
+          "items": [
+            {
+              "id": "stocks",
+              "label": "Stocks",
+              "amount_2025": "22 890",
+              "amount_2024": "15 747",
+              "note_ref": "Note 17",
+              "norms": [
+                "IAS 2"
+              ],
+              "cross_refs": [
+                "ias2",
+                "rpc17",
+                "co_evaluation"
+              ],
+              "definition": "Actifs détenus en vue de la vente dans le cours normal de l'activité, en cours de production, ou sous forme de matières premières/fournitures devant être consommées dans le processus de production ou de prestation de services.",
+              "accounting_method": "Évaluation au plus faible du COÛT et de la VNR (valeur nette de réalisation = prix de vente estimé − coûts d'achèvement − coûts de vente). Coût = FIFO ou coût moyen pondéré. Coût de production = directs + quote-part frais généraux de production (capacité normale).",
+              "key_points": [
+                "VNR ≠ Juste valeur ! VNR = spécifique à l'entité, JV = prix de marché",
+                "LIFO = INTERDIT sous IFRS et RPC",
+                "Si VNR < coût → dépréciation. Si VNR remonte → reprise (max coût d'origine)",
+                "Coûts de production incluent la quote-part des frais généraux (capacité NORMALE, pas réelle)",
+                "⚠️ Courtiers-négociants : exception → JV moins coûts de vente"
+              ],
+              "comparison": {
+                "rpc": "RPC 17 : quasi identique. Plus bas entre coût et valeur nette de marché. FIFO ou moyenne pondérée. LIFO interdit.",
+                "co": "CO art. 960c : si valeur marché < VC → ajuster. Si valeur remonte → revaloriser, max coût. LIFO toléré sous CO."
+              },
+              "exam_tips": [
+                "⚠️ LIFO : interdit IFRS + RPC, toléré CO. Question classique !",
+                "💡 VNR = prix vente − coûts achèvement − coûts vente (spécifique à l'entité). ≠ JV (IFRS 13)."
+              ],
+              "note_content": "Matières premières : 8 540 UM, en-cours : 3 250 UM, produits finis : 11 100 UM. Dépréciation de 780 UM comptabilisée (obsolescence). Méthode du coût moyen pondéré. Augmentation des stocks liée à l'acquisition de Goodtech (5 469 UM)."
+            },
+            {
+              "id": "clients",
+              "label": "Clients et autres débiteurs",
+              "amount_2025": "30 498",
+              "amount_2024": "23 333",
+              "note_ref": "Note 17",
+              "norms": [
+                "IFRS 9",
+                "IFRS 15"
+              ],
+              "cross_refs": [
+                "ifrs9",
+                "ifrs15"
+              ],
+              "definition": "Créances résultant de contrats avec les clients (IFRS 15) et autres montants à recevoir. Évaluées au coût amorti après déduction de la provision pour pertes de crédit attendues (ECL).",
+              "accounting_method": "Comptabilisation initiale au prix de transaction (IFRS 15). Évaluation subséquente au coût amorti. Provision ECL : approche SIMPLIFIÉE pour créances clients = toujours ECL durée de vie (pas de stade 1/2). Matrice de provisions par tranches d'ancienneté.",
+              "key_points": [
+                "Approche simplifiée ECL : toujours durée de vie (pas de surveillance du risque de crédit)",
+                "Matrice de provisions : taux de perte par tranche (0-30j, 31-60j, 61-90j, >90j)",
+                "Actifs sur contrat = créance conditionnelle (obligation de performance remplie mais pas encore droit inconditionnel au paiement)",
+                "⚠️ Les actifs sur contrat sont aussi soumis aux règles de dépréciation ECL d'IFRS 9"
+              ],
+              "comparison": {
+                "rpc": "RPC 2 : valeur nominale − pertes de valeur. Importantes = évaluation individuelle. Autres = forfaitaire (basé sur valeurs empiriques, publié en annexe).",
+                "co": "CO art. 960a : au plus au coût − corrections de valeur. Ducroire possible. Réserves latentes autorisées."
+              },
+              "exam_tips": [
+                "💡 ECL créances clients = TOUJOURS durée de vie (approche simplifiée). Pas besoin de surveiller le stade.",
+                "⚠️ Sous RPC, les hypothèses du forfait doivent être publiées dans l'annexe."
+              ],
+              "note_content": "Clients brut : 31 165 UM. Provision ECL : 667 UM. Taux de perte : courant 1,37%, >30j 6,5%, >60j 18%, >90j 60%. Augmentation de la provision de 191 UM en 2025."
+            },
+            {
+              "id": "tresorerie",
+              "label": "Trésorerie et équivalents de trésorerie",
+              "amount_2025": "34 729",
+              "amount_2024": "11 197",
+              "note_ref": "Note 19",
+              "norms": [
+                "IAS 7"
+              ],
+              "cross_refs": [
+                "ias7",
+                "rpc4"
+              ],
+              "definition": "Fonds en caisse et dépôts à vue + placements à court terme très liquides, facilement convertibles en un montant connu de trésorerie et soumis à un risque négligeable de changement de valeur (échéance ≤ 3 mois).",
+              "accounting_method": "Évaluation à la valeur nominale. Les découverts bancaires remboursables à vue et faisant partie de la gestion de trésorerie peuvent être inclus dans la trésorerie (présentation nette au TFT si fait partie intégrante).",
+              "key_points": [
+                "Équivalents = placements ≤ 3 mois à l'acquisition",
+                "Découverts bancaires : inclus dans la trésorerie au TFT si gestion de trésorerie intégrée",
+                "⚠️ Découverts et dépôts bancaires ne doivent PAS être compensés au bilan (sauf droit exécutoire)",
+                "Rapprochement entre trésorerie bilan et TFT requis"
+              ],
+              "comparison": {
+                "rpc": "RPC 4 : même définition. Liquidités = caisse + postaux/bancaires + dépôts ≤ 90 jours.",
+                "co": "CO : liquidités au bilan. Pas de définition formelle des équivalents de trésorerie."
+              },
+              "exam_tips": [
+                "💡 La trésorerie au TFT peut différer de celle au bilan (ex: découverts inclus au TFT mais en dettes au bilan)."
+              ],
+              "note_content": "Dépôts bancaires à vue : 30 729 UM. Dépôts à terme ≤ 3 mois : 4 000 UM. Pas de restrictions sur la trésorerie."
+            }
+          ]
+        },
+        {
+          "id": "capitaux_propres",
+          "title": "CAPITAUX PROPRES",
+          "items": [
+            {
+              "id": "capital_social",
+              "label": "Capital social",
+              "amount_2025": "13 770",
+              "amount_2024": "12 000",
+              "note_ref": "Note 21.1",
+              "norms": [
+                "IAS 1",
+                "IAS 32"
+              ],
+              "cross_refs": [
+                "ias1",
+                "ias32",
+                "co_sa_capital"
+              ],
+              "definition": "Valeur nominale des actions émises. Représente la contribution des actionnaires au capital de la société.",
+              "accounting_method": "Comptabilisé à la valeur nominale. La prime d'émission (montant reçu au-dessus du nominal) est présentée séparément. Coûts de transaction d'émission d'actions → déduits de la prime d'émission (pas en charges).",
+              "key_points": [
+                "Capital = valeur nominale × nombre d'actions émises",
+                "Prime d'émission = montant reçu − valeur nominale",
+                "Coûts d'émission d'actions → réduction de la prime d'émission, nets d'impôt",
+                "⚠️ Les coûts d'émission ne passent PAS par le P&L (ils réduisent les FP)"
+              ],
+              "comparison": {
+                "rpc": "RPC 24 : même traitement. Capital-actions + réserves de capital (agio).",
+                "co": "CO art. 621 : capital-actions minimum CHF 100'000 (SA). Libération min 20% par action ET min CHF 50'000. Art. 671 : agio = réserve légale issue du capital."
+              },
+              "exam_tips": [
+                "💡 SA suisse : capital min CHF 100'000. Sàrl : CHF 20'000 (entièrement libéré).",
+                "⚠️ Frais d'émission d'actions : IFRS/RPC → réduction FP. PAS une charge au P&L."
+              ],
+              "note_content": "1 770 actions nouvelles émises en 2025 (augmentation de capital ordinaire). Valeur nominale par action : 1 UM. Prime d'émission : 16 595 UM en 2025."
+            },
+            {
+              "id": "resultats_non_distribues",
+              "label": "Résultats non distribués",
+              "amount_2025": "49 076",
+              "amount_2024": "37 041",
+              "note_ref": "Note 21",
+              "norms": [
+                "IAS 1"
+              ],
+              "cross_refs": [
+                "ias1",
+                "co_sa_capital"
+              ],
+              "definition": "Bénéfices cumulés non distribués sous forme de dividendes. Représente l'accumulation des résultats depuis la création de l'entité, diminués des dividendes versés.",
+              "accounting_method": "Augmenté par le résultat net. Diminué par les dividendes déclarés. Peut aussi être affecté par des transferts depuis/vers d'autres composantes des FP (réserve de réévaluation, propres actions).",
+              "key_points": [
+                "Résultats non distribués = somme cumulée des résultats − dividendes versés",
+                "Les dividendes sont déduits quand ils sont DÉCLARÉS (pas quand payés)",
+                "Peut être négatif (déficit accumulé)",
+                "⚠️ Sous CO suisse : dividendes possibles uniquement sur bénéfice net + réserves libres disponibles"
+              ],
+              "comparison": {
+                "rpc": "RPC 24 : réserves provenant de bénéfices ou pertes cumulées.",
+                "co": "CO art. 675 : dividendes sur bénéfice net + réserves libres, après attribution réserve légale (5% jusqu'à 50% du capital). Soumis à IA 35%."
+              },
+              "exam_tips": [
+                "💡 CO : réserve légale bénéfice = 5% du bénéfice annuel → jusqu'à 50% du capital-actions.",
+                "⚠️ Dividendes en Suisse = soumis à l'impôt anticipé de 35% (art. 4 LIA)."
+              ],
+              "note_content": "Résultats non distribués augmentés de 15 315 UM (résultat net 2025) et diminués de 3 280 UM (dividendes)."
+            },
+            {
+              "id": "oci_composantes",
+              "label": "Autres composantes des capitaux propres",
+              "amount_2025": "2 265",
+              "amount_2024": "(392)",
+              "note_ref": "Note 21.3",
+              "norms": [
+                "IAS 1"
+              ],
+              "cross_refs": [
+                "ias1",
+                "ias16",
+                "ias19",
+                "ifrs9"
+              ],
+              "definition": "Cumul des éléments comptabilisés en OCI (autres éléments du résultat global) : réserve de réévaluation, écarts de conversion, écarts actuariels, couvertures de flux de trésorerie, JVOCI.",
+              "accounting_method": "Chaque composante est présentée séparément dans l'état des variations des FP. Certains éléments sont RECYCLABLES (reclassés en P&L lors de la réalisation), d'autres NON RECYCLABLES.",
+              "key_points": [
+                "NON RECYCLABLES : réévaluation IAS 16/38, écarts actuariels IAS 19, JVOCI actions (choix irrévocable)",
+                "RECYCLABLES : écarts de conversion IAS 21, couvertures flux de trésorerie, JVOCI dette",
+                "⚠️ La distinction recyclable/non recyclable est CRITIQUE pour l'examen",
+                "Pas d'OCI sous RPC (tout passe par le résultat ou les FP directement)"
+              ],
+              "comparison": {
+                "rpc": "PAS d'OCI sous Swiss GAAP RPC ! Les éléments qui iraient en OCI sous IFRS passent directement en résultat ou en FP selon la norme RPC applicable.",
+                "co": "CO : pas de concept d'OCI. Résultat = tout au P&L."
+              },
+              "exam_tips": [
+                "⚠️ PAS d'OCI sous RPC ! C'est une différence MAJEURE avec IFRS.",
+                "💡 Moyen mnémotechnique recyclable : 'COUD' = Conversion, cOuvertures, Dette JVOCI."
+              ],
+              "note_content": "Réserve de réévaluation terrains : 689 UM. Écarts actuariels IAS 19 : (6 182) UM cumulés. Couvertures flux de trésorerie : 601 UM. Écarts de conversion : 890 UM. JVOCI : 267 UM."
+            },
+            {
+              "id": "minoritaires",
+              "label": "Participations ne donnant pas le contrôle",
+              "amount_2025": "713",
+              "amount_2024": "622",
+              "note_ref": "Note 6",
+              "norms": [
+                "IFRS 10",
+                "IFRS 3"
+              ],
+              "cross_refs": [
+                "ifrs10",
+                "ifrs3",
+                "rpc30"
+              ],
+              "definition": "Quote-part des capitaux propres et du résultat net d'une filiale consolidée attribuable aux actionnaires autres que la société mère. Font PARTIE des capitaux propres (pas un passif intermédiaire).",
+              "accounting_method": "Comptabilisation initiale : JV à la date d'acquisition (full goodwill) ou quote-part des actifs nets identifiables (partial goodwill). Évaluation subséquente : quote-part du résultat + OCI de la filiale. Transactions avec les minoritaires (achat/vente sans perte de contrôle) = transactions en FP.",
+              "key_points": [
+                "Font PARTIE des capitaux propres consolidés (pas un passif)",
+                "Part au résultat présentée séparément dans le P&L consolidé",
+                "Transactions sans perte de contrôle = transactions en FP (pas de résultat)",
+                "⚠️ Perte de contrôle = déconsolidation complète + gain/perte au P&L"
+              ],
+              "comparison": {
+                "rpc": "RPC 30 : part au capital + part au résultat présentées séparément. Font partie des FP consolidés.",
+                "co": "CO art. 963b : selon la norme choisie."
+              },
+              "exam_tips": [
+                "⚠️ Full goodwill : minoritaires à la JV (inclut leur part de goodwill). Partial : quote-part des actifs nets uniquement.",
+                "💡 Achat de minoritaires (ex: passer de 80% à 100%) = PAS de nouveau goodwill sous IFRS. C'est une transaction en FP."
+              ],
+              "note_content": "Participations minoritaires dans Webware : 713 UM (13,35% de Webware Ltd). Quote-part du résultat attribuable : 91 UM. Aucun dividende versé aux minoritaires."
+            }
+          ]
+        },
+        {
+          "id": "passifs_non_courants",
+          "title": "PASSIFS NON COURANTS",
+          "items": [
+            {
+              "id": "emprunts_nc",
+              "label": "Emprunts",
+              "amount_2025": "16 070",
+              "amount_2024": "16 265",
+              "note_ref": "Note 16",
+              "norms": [
+                "IFRS 9",
+                "IAS 32"
+              ],
+              "cross_refs": [
+                "ifrs9",
+                "ias32"
+              ],
+              "definition": "Dettes financières à long terme : emprunts bancaires, obligations, emprunts subordonnés. Classifiés en courant/non courant selon la date d'exigibilité (>12 mois = non courant).",
+              "accounting_method": "Comptabilisation initiale à la JV nette des coûts de transaction. Évaluation subséquente au coût amorti (méthode du taux d'intérêt effectif). Obligations convertibles : composante dette + composante FP (IAS 32).",
+              "key_points": [
+                "Coûts de transaction = déduits de la valeur initiale (pas en charges immédiatement)",
+                "Taux d'intérêt effectif = taux qui actualise exactement les flux futurs au montant net initial",
+                "Clauses restrictives (covenants) : si violées à la clôture → reclassement en COURANT",
+                "⚠️ Obligation convertible = dette + FP (séparation obligatoire sous IAS 32)"
+              ],
+              "comparison": {
+                "rpc": "RPC 2 : dettes à la valeur nominale. Pas de méthode du TIE obligatoire pour les PME.",
+                "co": "CO art. 960e : valeur nominale."
+              },
+              "exam_tips": [
+                "⚠️ Covenant violé au 31/12 mais waiver obtenu APRÈS la clôture = reclassement en courant quand même (IAS 1.74).",
+                "💡 Emprunts à taux variable = risque de taux d'intérêt → analyse de sensibilité requise (IFRS 7)."
+              ],
+              "note_content": "Emprunt USD : 8 020 UM (taux variable SOFR + 2,25%). Obligation non convertible : 8 300 UM (taux fixe 2,5%). Emprunt subordonné actionnaire : 5 000 UM. Covenant respecté au 31/12/2025."
+            },
+            {
+              "id": "obligations_loc_nc",
+              "label": "Obligations locatives",
+              "amount_2025": "8 750",
+              "amount_2024": "9 480",
+              "note_ref": "Note 13",
+              "norms": [
+                "IFRS 16"
+              ],
+              "cross_refs": [
+                "ifrs16",
+                "rpc13"
+              ],
+              "definition": "Passif représentant l'obligation du preneur de payer les loyers futurs. VA des paiements non encore effectués, actualisée au taux d'emprunt marginal ou au taux implicite du contrat.",
+              "accounting_method": "VA des paiements de location : loyers fixes, variables indexés, garantie de valeur résiduelle, prix d'exercice option d'achat (si raisonnablement certain), pénalités de résiliation. Charge d'intérêts décroissante au P&L. Remboursement du principal = réduction du passif.",
+              "key_points": [
+                "Éléments inclus dans la dette : loyers fixes + variables indexés + garanties + options",
+                "Loyers variables basés sur performance/utilisation → en CHARGES (pas dans la dette)",
+                "Réévaluation si modification de la durée ou changement significatif",
+                "⚠️ IFRS 16 crée un passif que les anciens baux opérationnels n'avaient pas → impact ratios d'endettement"
+              ],
+              "comparison": {
+                "rpc": "RPC 13 : leasing financier au bilan, opérationnel hors bilan (annexe uniquement).",
+                "co": "CO : pas d'obligation locative au bilan. Mentionné dans l'annexe (art. 959c)."
+              },
+              "exam_tips": [
+                "⚠️ Impact sur les ratios : IFRS 16 augmente les actifs ET les passifs → ratio dette/FP augmente.",
+                "💡 Les loyers variables basés sur un INDICE sont dans la dette. Ceux basés sur la PERFORMANCE sont en charges."
+              ],
+              "note_content": "Paiements futurs non actualisés : 8 158 UM (dont 1 030 UM < 1 an). Charge d'intérêts sur obligations locatives : 621 UM. Amortissement des ROU : 3 638 UM."
+            },
+            {
+              "id": "provisions_nc",
+              "label": "Provisions",
+              "amount_2025": "3 250",
+              "amount_2024": "4 120",
+              "note_ref": "Note 24",
+              "norms": [
+                "IAS 37"
+              ],
+              "cross_refs": [
+                "ias37",
+                "rpc23",
+                "co_evaluation"
+              ],
+              "definition": "Passifs dont l'échéance ou le montant est incertain. Comptabilisées quand 3 conditions cumulatives remplies : obligation actuelle, sortie probable, estimation fiable.",
+              "accounting_method": "Meilleure ESTIMATION du montant nécessaire pour éteindre l'obligation. Actualiser si effet temps significatif (taux avant impôts reflétant les risques). Revoir à chaque clôture. Provision restructuration : plan détaillé + attente fondée créée.",
+              "key_points": [
+                "3 conditions : obligation actuelle (juridique ou implicite) + sortie PROBABLE (> 50%) + estimation fiable",
+                "Passif éventuel (< 50%) = PAS de provision, mention en annexe",
+                "Actif éventuel = JAMAIS comptabilisé",
+                "Restructuration : plan détaillé ET annonce publique/début d'exécution requis",
+                "⚠️ Décision du CA seule NE SUFFIT PAS pour provisionner une restructuration"
+              ],
+              "comparison": {
+                "rpc": "RPC 23 : mêmes 3 conditions. Mais tolérance pour réserves latentes (provisions excessives possibles sous RPC).",
+                "co": "CO art. 960e al. 3 : provisions supplémentaires autorisées pour 'assurer la prospérité' = RÉSERVES LATENTES explicitement autorisées."
+              },
+              "exam_tips": [
+                "⚠️ IAS 37 est plus STRICT que RPC 23. Pas de réserves latentes via provisions sous IFRS !",
+                "💡 Mnémonique provisions : 'OPE' = Obligation actuelle + Probable + Estimation fiable."
+              ],
+              "note_content": "Provision restructuration : 1 450 UM (fermeture branche services conventionnels). Provision garanties : 980 UM. Provision démantèlement : 820 UM. Dissolution de 870 UM sur provisions antérieures."
+            },
+            {
+              "id": "retraite_nc",
+              "label": "Passif net au titre de la retraite",
+              "amount_2025": "11 853",
+              "amount_2024": "15 138",
+              "note_ref": "Note 23",
+              "norms": [
+                "IAS 19"
+              ],
+              "cross_refs": [
+                "ias19",
+                "rpc16"
+              ],
+              "definition": "Obligation nette de l'employeur au titre des régimes à prestations définies. = Obligation actuarielle (PBO) − Juste valeur des actifs du régime. Si négatif = actif net.",
+              "accounting_method": "Calcul actuariel complet : PBO = VA des prestations futures basée sur méthode des unités de crédit projetées. 3 composantes du coût : ① Coût des services → P&L, ② Intérêts nets → P&L, ③ Réévaluations (écarts actuariels) → OCI (non recyclable).",
+              "key_points": [
+                "Écarts actuariels → OCI (NON recyclable — jamais reclassés en P&L)",
+                "Méthode du corridor = ABOLIE depuis IAS 19 révisée (2011)",
+                "Cotisations définies : charge de la période = cotisation versée (simple)",
+                "Prestations définies : calcul actuariel complexe (hypothèses démographiques + financières)",
+                "⚠️ Sous RPC 16, approche pragmatique basée sur les comptes de la CP (pas de calcul actuariel)"
+              ],
+              "comparison": {
+                "rpc": "RPC 16 : approche ÉCONOMIQUE basée sur les comptes STATUTAIRES de la caisse de pension. Pas de calcul actuariel. Avantage/engagement = excédent/découvert de la CP. Beaucoup plus simple.",
+                "co": "CO : mention des engagements envers institutions de prévoyance dans l'annexe (art. 959c). Pas de calcul actuariel en comptes individuels."
+              },
+              "exam_tips": [
+                "⚠️ RPC 16 vs IAS 19 = différence FONDAMENTALE. RPC = comptes de la CP. IAS 19 = calcul actuariel indépendant.",
+                "💡 Écarts actuariels IAS 19 = OCI NON recyclable. La méthode du corridor N'EXISTE PLUS."
+              ],
+              "note_content": "PBO : 47 614 UM. JV actifs du régime : 35 761 UM. Passif net : 11 853 UM. Taux d'actualisation : 5,2%. Hypothèse d'augmentation salariale : 4%. Écarts actuariels en OCI 2025 : gain de 2 745 UM (dû à l'augmentation du taux d'actualisation)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "resultat",
+      "title": "État consolidé du résultat net",
+      "subtitle": "Compte de résultat — IAS 1",
+      "icon": "📈",
+      "sections": [
+        {
+          "id": "resultat_exploitation",
+          "title": "RÉSULTAT D'EXPLOITATION",
+          "items": [
+            {
+              "id": "ca",
+              "label": "Produits des activités ordinaires",
+              "amount_2025": "205 793",
+              "amount_2024": "191 228",
+              "note_ref": "Notes 8-9",
+              "norms": [
+                "IFRS 15"
+              ],
+              "cross_refs": [
+                "ifrs15"
+              ],
+              "definition": "Produits provenant des contrats avec les clients, comptabilisés selon le modèle en 5 étapes d'IFRS 15.",
+              "accounting_method": "5 étapes IFRS 15 : ① Identifier le contrat ② Identifier les obligations de performance (OP) distinctes ③ Déterminer le prix de transaction ④ Répartir le prix entre les OP ⑤ Comptabiliser quand chaque OP est satisfaite (point in time ou over time).",
+              "key_points": [
+                "3 critères 'over time' : client consomme simultanément, contrôle progressif, pas d'utilisation alternative + droit au paiement",
+                "Si aucun critère → 'point in time' (transfert du contrôle)",
+                "Contrepartie variable : incluse si HAUTEMENT PROBABLE pas de reprise significative",
+                "Coûts d'obtention du contrat : activables si recouvrables",
+                "⚠️ Garanties : assurance-type (pas OP) vs service-type (OP séparée)"
+              ],
+              "comparison": {
+                "rpc": "RPC 22 : méthode POC pour contrats long terme (4 conditions). Completed contract si conditions non remplies. Moins détaillé qu'IFRS 15.",
+                "co": "CO : reconnaissance quand la prestation est fournie / le bien livré. Pas de norme spécifique sur les revenus."
+              },
+              "exam_tips": [
+                "⚠️ OP distincte : le client peut en bénéficier isolément ET l'engagement est distinct dans le contrat.",
+                "💡 Licence : droit d'accès (over time) vs droit d'utilisation (point in time)."
+              ],
+              "note_content": "Ventilation : Services-conseils 82 131 UM, Vente au détail 79 505 UM, Services 44 157 UM. Par mode : over time 65%, point in time 35%. Obligations de performance restantes : 28 500 UM."
+            },
+            {
+              "id": "personnel",
+              "label": "Charge au titre des avantages du personnel",
+              "amount_2025": "(85 858)",
+              "amount_2024": "(80 702)",
+              "note_ref": "Note 22",
+              "norms": [
+                "IAS 19",
+                "IFRS 2"
+              ],
+              "cross_refs": [
+                "ias19",
+                "ifrs2"
+              ],
+              "definition": "Ensemble des charges liées au personnel : salaires, charges sociales, cotisations retraite, rémunération en actions, indemnités de licenciement.",
+              "accounting_method": "Salaires et charges → charge de la période. Cotisations définies → charge = cotisation. Prestations définies → coût des services + intérêts nets. Rémunération en actions (IFRS 2) → JV à l'attribution, charge étalée sur la période d'acquisition des droits.",
+              "key_points": [
+                "IFRS 2 : charge = JV des options/actions à la date d'ATTRIBUTION (pas d'exercice)",
+                "Options réglées en actions = JV fixée au grant date (pas de réévaluation)",
+                "Options réglées en trésorerie = réévaluées à chaque clôture",
+                "⚠️ La charge IFRS 2 est un élément NON-CASH (contrepartie en FP pour equity-settled)"
+              ],
+              "comparison": {
+                "rpc": "RPC 31 : rémunérations en actions pour sociétés cotées. JV à l'attribution, charges sur période d'acquisition.",
+                "co": "CO : pas de norme spécifique sur les paiements en actions."
+              },
+              "exam_tips": [
+                "💡 IFRS 2 equity-settled : JV au grant date = définitive. Pas de réévaluation ultérieure.",
+                "⚠️ Ne pas confondre IAS 19 (avantages du personnel) et IFRS 2 (paiement en actions)."
+              ],
+              "note_content": "Salaires : 72 450 UM. Charges sociales : 8 920 UM. Cotisations retraite : 2 738 UM. IFRS 2 : 1 750 UM (options sur actions). Restructuration : crédit de 510 UM (reprise provision)."
+            },
+            {
+              "id": "amortissements",
+              "label": "Amortissements et dépréciation d'actifs non financiers",
+              "amount_2025": "(9 993)",
+              "amount_2024": "(8 881)",
+              "note_ref": "Notes 10-14",
+              "norms": [
+                "IAS 16",
+                "IAS 36",
+                "IAS 38",
+                "IFRS 16"
+              ],
+              "cross_refs": [
+                "ias16",
+                "ias36",
+                "ias38",
+                "ifrs16"
+              ],
+              "definition": "Charge d'amortissement systématique des IC, incorporelles et ROU + pertes de valeur (dépréciation) le cas échéant.",
+              "accounting_method": "Amortissement linéaire (ou autre méthode reflétant le rythme de consommation). Dépréciation si VC > valeur recouvrable (IAS 36). Les ROU (IFRS 16) sont amortis sur la durée du contrat.",
+              "key_points": [
+                "Amortissement = répartition systématique. Dépréciation = perte de valeur ponctuelle",
+                "ROU IFRS 16 = amortissement sur la durée du contrat (ou durée d'utilité si plus courte + option achat)",
+                "Goodwill = PAS amorti sous IFRS (test de dépréciation uniquement)",
+                "⚠️ Reprise de dépréciation : possible pour IC et incorporelles, INTERDIT pour le goodwill"
+              ],
+              "comparison": {
+                "rpc": "RPC 18/10 : amortissement obligatoire y compris goodwill. Pas de modèle de réévaluation pour IC d'exploitation.",
+                "co": "CO art. 960d : amortissements systématiques. Amortissements accélérés autorisés (réserves latentes)."
+              },
+              "exam_tips": [
+                "⚠️ IFRS : goodwill JAMAIS amorti. RPC : goodwill TOUJOURS amorti (ou compensé FP).",
+                "💡 Composant IAS 16 : lors du remplacement, décomptabiliser l'ancien et activer le nouveau."
+              ],
+              "note_content": "IC : 5 215 UM (bâtiments, matériel). Incorporelles : 1 140 UM. ROU : 3 638 UM. Perte de dépréciation goodwill services-conseils : 800 UM."
+            }
+          ]
+        },
+        {
+          "id": "resultat_financier",
+          "title": "RÉSULTAT FINANCIER",
+          "items": [
+            {
+              "id": "charges_fi",
+              "label": "Charges financières",
+              "amount_2025": "(3 274)",
+              "amount_2024": "(3 109)",
+              "note_ref": "Note 28",
+              "norms": [
+                "IAS 23",
+                "IFRS 9",
+                "IFRS 16"
+              ],
+              "cross_refs": [
+                "ias23",
+                "ifrs9",
+                "ifrs16"
+              ],
+              "definition": "Intérêts sur emprunts, intérêts sur obligations locatives (IFRS 16), coût de la désactualisation des provisions, pertes de change financières.",
+              "accounting_method": "Comptabilisées en P&L sauf si incorporées dans un actif qualifié (IAS 23 = obligation d'incorporer). Intérêts IFRS 16 = calculés sur le solde de la dette × taux d'actualisation (charge décroissante).",
+              "key_points": [
+                "IAS 23 : coûts d'emprunt sur actif qualifié = incorporés (obligation, pas choix)",
+                "IFRS 16 : intérêts sur obligations locatives inclus ici",
+                "Désactualisation des provisions = charge financière",
+                "Intérêts nets sur obligation retraite IAS 19 = inclus ici aussi"
+              ],
+              "comparison": {
+                "rpc": "RPC 2 : intérêts pendant construction activés aussi. Intérêts leasing financier en charges financières.",
+                "co": "CO : charges financières au CR. Pas d'obligation d'incorporer les coûts d'emprunt."
+              },
+              "exam_tips": [
+                "💡 IAS 23 : obligation d'incorporer (pas un choix comme sous l'ancien IAS 23). Cohérent avec RPC.",
+                "⚠️ Les intérêts sur dettes de location IFRS 16 augmentent les charges financières par rapport à l'ancien modèle (loyer linéaire)."
+              ],
+              "note_content": "Intérêts emprunts : 1 650 UM. Intérêts obligations locatives IFRS 16 : 621 UM. Intérêts nets IAS 19 : 637 UM. Désactualisation provisions : 138 UM. Coûts d'emprunt incorporés : 80 UM."
+            },
+            {
+              "id": "impots",
+              "label": "Charge d'impôt sur le résultat",
+              "amount_2025": "(6 346)",
+              "amount_2024": "(5 058)",
+              "note_ref": "Note 29",
+              "norms": [
+                "IAS 12"
+              ],
+              "cross_refs": [
+                "ias12",
+                "co_evaluation"
+              ],
+              "definition": "Somme de la charge d'impôt exigible (impôt courant) et de la charge/produit d'impôt différé.",
+              "accounting_method": "Impôt exigible = résultat fiscal × taux applicable. Impôt différé = variation des DTA/DTL. Rapprochement du taux effectif requis en annexe. Pilier 2 (OCDE) : taux minimum de 15% pour les grands groupes (depuis 2024).",
+              "key_points": [
+                "Charge d'impôt = impôt exigible ± variation des impôts différés",
+                "Rapprochement taux effectif/nominal obligatoire en annexe",
+                "Pilier 2 OCDE : taux minimum 15% pour les groupes > EUR 750M de CA",
+                "⚠️ Exception temporaire IAS 12 : pas de DTA/DTL sur l'impôt complémentaire Pilier 2"
+              ],
+              "comparison": {
+                "rpc": "RPC 11 : impôt différé selon méthode du report variable. Approche allégée pour PME.",
+                "co": "CO : impôt exigible au CR. Pas d'impôt différé en comptes individuels (principe de déterminance)."
+              },
+              "exam_tips": [
+                "⚠️ Pilier 2 = sujet d'actualité pour l'examen 2026. Connaître le seuil EUR 750M et l'exception IAS 12.",
+                "💡 Taux effectif d'impôt = charge d'impôt totale / résultat avant impôt. Les écarts avec le taux nominal doivent être expliqués."
+              ],
+              "note_content": "Taux nominal : 30%. Taux effectif : 29,3%. Impôt exigible : 5 633 UM. Charge d'impôt différé : 713 UM. Le Groupe est soumis aux règles Pilier 2 dans 3 juridictions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oci",
+      "title": "État consolidé du résultat global",
+      "subtitle": "OCI — IAS 1",
+      "icon": "🔄",
+      "sections": [
+        {
+          "id": "non_recyclables",
+          "title": "ÉLÉMENTS NON RECYCLABLES",
+          "items": [
+            {
+              "id": "reeval_terrains",
+              "label": "Réévaluation des terrains",
+              "amount_2025": "303",
+              "amount_2024": "—",
+              "note_ref": "Note 12",
+              "norms": [
+                "IAS 16"
+              ],
+              "cross_refs": [
+                "ias16"
+              ],
+              "definition": "Plus-value de réévaluation sur les terrains évalués au modèle de réévaluation (IAS 16). Non recyclable = ne sera JAMAIS reclassé en P&L.",
+              "accounting_method": "Première réévaluation positive → OCI (réserve de réévaluation). Réévaluation négative → P&L (sauf si réserve existante). Transférable directement en résultats non distribués (jamais via le P&L).",
+              "key_points": [
+                "Non recyclable : reste définitivement en FP",
+                "⚠️ Si la JV diminue en dessous du coût → d'abord réserve OCI, puis P&L pour l'excédent"
+              ],
+              "comparison": {
+                "rpc": "Pas de réévaluation IC d'exploitation sous RPC. Pas d'OCI.",
+                "co": "CO art. 725c : réévaluation uniquement pour résorber perte de capital."
+              },
+              "exam_tips": [
+                "⚠️ Non recyclable = ne passe JAMAIS par le P&L, même à la cession de l'actif."
+              ],
+              "note_content": "Réévaluation des terrains en 2025 : gain de 303 UM comptabilisé en OCI."
+            },
+            {
+              "id": "ecarts_actuariels",
+              "label": "Réévaluations du passif net au titre de la retraite (IAS 19)",
+              "amount_2025": "2 745",
+              "amount_2024": "(1 423)",
+              "note_ref": "Note 23",
+              "norms": [
+                "IAS 19"
+              ],
+              "cross_refs": [
+                "ias19"
+              ],
+              "definition": "Écarts actuariels = différence entre les hypothèses actuarielles et la réalité + effet des changements d'hypothèses. Comprend aussi le rendement des actifs du régime excluant les intérêts nets.",
+              "accounting_method": "Comptabilisés immédiatement en OCI (NON recyclable). Peuvent être transférés dans les résultats non distribués au sein des FP. Méthode du corridor abolie depuis 2013.",
+              "key_points": [
+                "NON recyclable : jamais reclassé en P&L",
+                "⚠️ Méthode du corridor = ABOLIE",
+                "Changement de taux d'actualisation = principal facteur"
+              ],
+              "comparison": {
+                "rpc": "RPC 16 : pas d'écarts actuariels (approche basée sur les comptes de la CP, pas de calcul actuariel).",
+                "co": "CO : pas de concept."
+              },
+              "exam_tips": [
+                "⚠️ Non recyclable + méthode du corridor abolie = 2 pièges classiques sur IAS 19."
+              ],
+              "note_content": "Gain actuariel 2025 de 2 745 UM dû principalement à l'augmentation du taux d'actualisation (4,8% → 5,2%) et au rendement des actifs du régime supérieur aux attentes."
+            }
+          ]
+        },
+        {
+          "id": "recyclables",
+          "title": "ÉLÉMENTS RECYCLABLES",
+          "items": [
+            {
+              "id": "conversion",
+              "label": "Écarts de conversion",
+              "amount_2025": "890",
+              "amount_2024": "540",
+              "note_ref": "Note 21.3",
+              "norms": [
+                "IAS 21"
+              ],
+              "cross_refs": [
+                "ias21"
+              ],
+              "definition": "Différences de change résultant de la conversion des états financiers de filiales étrangères dont la monnaie fonctionnelle diffère de la monnaie de présentation du groupe.",
+              "accounting_method": "Actifs/passifs au cours de clôture. P&L au cours moyen. FP au cours historique. La différence = OCI (recyclable). Recyclé en P&L lors de la cession de la filiale.",
+              "key_points": [
+                "Recyclable : reclassé en P&L lors de la cession de l'entité étrangère",
+                "Prêts intragroupe LT de nature FP → écarts en OCI aussi (pas en P&L)"
+              ],
+              "comparison": {
+                "rpc": "RPC 30 : même méthode. Écarts de conversion → FP. Recyclé à la cession.",
+                "co": "CO : pas de comptes consolidés spécifiques."
+              },
+              "exam_tips": [
+                "💡 'COUD' = Conversion, cOuvertures, Dette JVOCI = les 3 éléments recyclables d'OCI."
+              ],
+              "note_content": "Écarts positifs de 890 UM en 2025, liés principalement à l'appréciation du dollar américain."
+            },
+            {
+              "id": "couvertures",
+              "label": "Couvertures de flux de trésorerie",
+              "amount_2025": "250",
+              "amount_2024": "(160)",
+              "note_ref": "Note 15.4",
+              "norms": [
+                "IFRS 9"
+              ],
+              "cross_refs": [
+                "ifrs9"
+              ],
+              "definition": "Part efficace de la variation de JV des instruments de couverture de flux de trésorerie (cash flow hedges). Recyclée en P&L quand l'élément couvert affecte le résultat.",
+              "accounting_method": "Part efficace → OCI. Part inefficace → P&L immédiatement. Recyclée quand la transaction couverte se réalise.",
+              "key_points": [
+                "Recyclable quand la transaction couverte se réalise",
+                "⚠️ Ne pas confondre : FV hedge = tout au P&L. CF hedge = efficace en OCI, inefficace en P&L"
+              ],
+              "comparison": {
+                "rpc": "RPC 27 : CF hedge → FP sans incidence résultat + annexe.",
+                "co": "CO : pas de comptabilité de couverture spécifique."
+              },
+              "exam_tips": [
+                "⚠️ FV hedge → P&L (instrument ET élément couvert). CF hedge → OCI (part efficace uniquement)."
+              ],
+              "note_content": "Couvertures de change (contrats à terme USD et GBP). Gains reclassés en P&L : 640 UM. Gains en OCI : 890 UM."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flux_tresorerie",
+      "title": "Tableau consolidé des flux de trésorerie",
+      "subtitle": "TFT — IAS 7",
+      "icon": "💰",
+      "sections": [
+        {
+          "id": "exploitation",
+          "title": "ACTIVITÉS D'EXPLOITATION",
+          "items": [
+            {
+              "id": "flux_exploitation",
+              "label": "Flux nets provenant des activités d'exploitation",
+              "amount_2025": "29 570",
+              "amount_2024": "24 944",
+              "note_ref": "Note 31",
+              "norms": [
+                "IAS 7"
+              ],
+              "cross_refs": [
+                "ias7",
+                "rpc4"
+              ],
+              "definition": "Flux de trésorerie provenant des principales activités génératrices de produits de l'entité. Méthode directe ou indirecte autorisée (IFRS préfère la directe mais en pratique indirecte très majoritaire).",
+              "accounting_method": "Méthode indirecte : résultat avant impôt ± ajustements non-cash (amortissements, provisions, JV) ± variation du BFR − impôts payés. Les intérêts reçus/payés peuvent être classés en exploitation ou financement (choix de politique).",
+              "key_points": [
+                "Méthode indirecte = la plus utilisée en pratique",
+                "Ajustements non-cash : amortissements, dépréciations, variations JV, résultat MEE, IFRS 2",
+                "Intérêts payés : exploitation OU financement (choix de politique comptable)",
+                "⚠️ IFRS 16 : remboursement du principal des dettes de location = activités de FINANCEMENT (pas exploitation)"
+              ],
+              "comparison": {
+                "rpc": "RPC 4 : méthode directe ou indirecte. Mêmes 3 catégories.",
+                "co": "CO : TFT non obligatoire en droit minimum. Requis sous RPC."
+              },
+              "exam_tips": [
+                "⚠️ IFRS 16 : paiements de location = intérêts (exploitation/financement) + principal (financement). Avant IFRS 16, tout était en exploitation.",
+                "💡 Les dividendes reçus peuvent être en exploitation ou investissement. Les dividendes payés en exploitation ou financement."
+              ],
+              "note_content": "Résultat avant impôt : 21 661 UM. Ajustements non-cash : 12 519 UM. Variation BFR : (2 032) UM. Impôts payés : (1 978) UM. Cotisations retraite : (1 186) UM."
+            }
+          ]
+        },
+        {
+          "id": "investissement",
+          "title": "ACTIVITÉS D'INVESTISSEMENT",
+          "items": [
+            {
+              "id": "flux_investissement",
+              "label": "Flux nets utilisés par les activités d'investissement",
+              "amount_2025": "(20 870)",
+              "amount_2024": "(2 155)",
+              "note_ref": "Notes 5, 12",
+              "norms": [
+                "IAS 7"
+              ],
+              "cross_refs": [
+                "ias7",
+                "ifrs3"
+              ],
+              "definition": "Flux liés à l'acquisition et la cession d'actifs à long terme et d'autres placements non inclus dans les équivalents de trésorerie.",
+              "accounting_method": "Acquisitions de filiales : montant net payé (prix − trésorerie acquise). Investissements en IC/incorporelles. Produits de cessions.",
+              "key_points": [
+                "Acquisition de filiale : montant NET de la trésorerie acquise",
+                "Les coûts de transaction d'une acquisition = en exploitation (car en charges sous IFRS 3)",
+                "Produits de cession d'IC et incorporelles ici"
+              ],
+              "comparison": {
+                "rpc": "RPC : coûts de transaction dans le prix d'acquisition → dans les flux d'investissement.",
+                "co": "CO : selon la norme choisie."
+              },
+              "exam_tips": [
+                "⚠️ Acquisition filiale au TFT : toujours montant NET (prix payé − trésorerie acquise)."
+              ],
+              "note_content": "Acquisition Goodtech : (15 491) UM net. Acquisition IC : (4 578) UM. Acquisition incorporelles : (1 440) UM. Produits de cession : 639 UM."
+            }
+          ]
+        },
+        {
+          "id": "financement",
+          "title": "ACTIVITÉS DE FINANCEMENT",
+          "items": [
+            {
+              "id": "flux_financement",
+              "label": "Flux nets provenant des activités de financement",
+              "amount_2025": "14 832",
+              "amount_2024": "(13 122)",
+              "note_ref": "Note 26",
+              "norms": [
+                "IAS 7",
+                "IFRS 16"
+              ],
+              "cross_refs": [
+                "ias7",
+                "ifrs16"
+              ],
+              "definition": "Flux résultant des changements dans la taille et la composition des capitaux propres et des emprunts de l'entité.",
+              "accounting_method": "Produits d'émission d'actions, remboursement d'emprunts, dividendes versés, remboursement du principal des obligations locatives (IFRS 16).",
+              "key_points": [
+                "IFRS 16 : remboursement principal des dettes de location = activité de FINANCEMENT",
+                "Émission d'actions : produit net des coûts d'émission",
+                "Rapprochement des passifs de financement requis (IAS 7.44A-E)",
+                "Dividendes versés : financement OU exploitation (choix de politique)"
+              ],
+              "comparison": {
+                "rpc": "RPC : leasing opérationnel = pas de flux de financement (tout en exploitation).",
+                "co": "CO : selon la norme choisie."
+              },
+              "exam_tips": [
+                "⚠️ IFRS 16 : le remboursement du principal des dettes de location passe de exploitation → financement. Impact significatif sur le flux d'exploitation."
+              ],
+              "note_content": "Émission d'actions : 18 365 UM. Remboursement emprunts : (1 440) UM. Remboursement principal obligations locatives : (3 638) UM. Dividendes versés : (3 280) UM. Nouveau emprunt : 4 825 UM."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "id": "note_1",
+      "number": 1,
+      "title": "Nature des activités",
+      "content": "Société Illustration ltée : vente de matériel et logiciels de télécommunications, service après-vente, services-conseils et fabrication de systèmes.",
+      "subsections": [
+        {
+          "title": "Activités principales",
+          "content": "Le Groupe opère dans 3 secteurs :\n① Services-conseils — projets de transformation digitale et intégration de systèmes\n② Services — maintenance, externalisation IT, gestion de paie\n③ Vente au détail — vente de matériel et logiciels de télécommunications\n\n💡 La segmentation sectorielle est conforme à IFRS 8 (approche managériale : segments = tels que vus par le CODM)."
+        },
+        {
+          "title": "Structure du Groupe",
+          "content": "Société mère : Société Illustration ltée (zone euro)\nActions cotées à la Bourse de Greatstocks\nFiliales : Goodtech GmbH (100%), Webware Ltd (86,65%)\nEntreprise associée : Halftime Ltd (40%)\nCoentreprise : Équipe (50%)"
+        }
+      ]
+    },
+    {
+      "id": "note_2",
+      "number": 2,
+      "title": "Déclaration de conformité et continuité d'exploitation",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Conformité IFRS",
+          "content": "Les états financiers consolidés sont établis conformément aux normes IFRS de comptabilité publiées par l'IASB.\n\n⚠️ IAS 1.16 : une entité dont les états financiers sont conformes aux IFRS doit faire une déclaration EXPLICITE et SANS RÉSERVE de cette conformité dans les notes."
+        },
+        {
+          "title": "Continuité d'exploitation",
+          "content": "IAS 1.25-26 : à chaque date de clôture, la direction évalue la capacité de l'entité à poursuivre son exploitation.\n\nSi doutes significatifs → publication OBLIGATOIRE :\n→ Nature de l'incertitude\n→ Plans de la direction\n→ Jugements significatifs exercés\n\n⚠️ IAS 10.14 : si la direction conclut APRÈS la clôture que la continuité n'est plus assurée, NE PAS préparer les EF sur base de continuité."
+        },
+        {
+          "title": "Date d'autorisation de publication",
+          "content": "IAS 10.17 : l'entité doit indiquer la date à laquelle les EF ont été autorisés pour publication et qui a donné cette autorisation.\n\nÉvénements postérieurs : seuls ceux survenus AVANT cette date sont pris en compte.\n\nDate d'autorisation : 25 février 2026."
+        }
+      ]
+    },
+    {
+      "id": "note_3",
+      "number": 3,
+      "title": "Normes nouvelles ou révisées",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Normes entrées en vigueur en 2025",
+          "content": "→ Modifications d'IAS 21 : Absence de convertibilité — nouvelles directives pour déterminer le taux de change lorsqu'une monnaie n'est pas convertible.\n\nIAS 8.28 exige de présenter l'information sur les normes appliquées pour la première fois."
+        },
+        {
+          "title": "Normes futures importantes",
+          "content": "→ IFRS 18 — Présentation et informations à fournir dans les états financiers (remplace IAS 1). En vigueur : 1er janvier 2027.\n→ IFRS 19 — Filiales sans obligation d'information publique (simplifications). En vigueur : 1er janvier 2027.\n→ Modifications IFRS 9 et IFRS 7 — Classement et évaluation des instruments financiers. En vigueur : 1er janvier 2026.\n\n⚠️ IFRS 18 est une refonte MAJEURE d'IAS 1. Introduit des sous-totaux obligatoires au CR : résultat d'exploitation, résultat avant financement et impôts."
+        },
+        {
+          "title": "💡 Pertinence examen",
+          "content": "Pour l'examen Swiss CPA 2026, connaître :\n→ IFRS 18 (structure du CR, catégories de revenus/charges)\n→ Les modifications IFRS 9/IFRS 7 sur la classification\n→ Le principe IAS 8.30 : normes publiées non encore en vigueur → informations à fournir sur l'impact attendu"
+        }
+      ]
+    },
+    {
+      "id": "note_4",
+      "number": 4,
+      "title": "Méthodes comptables significatives",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Principes de consolidation (IFRS 10)",
+          "content": "Contrôle = 3 éléments cumulatifs : pouvoir + rendements variables + capacité d'influencer.\nFiliales consolidées par intégration globale dès la prise de contrôle.\nTransactions intragroupes éliminées intégralement.\n\n⚠️ Le contrôle peut exister SANS majorité de vote (contrôle de fait, droits de vote potentiels)."
+        },
+        {
+          "title": "Reconnaissance du revenu (IFRS 15)",
+          "content": "Modèle en 5 étapes appliqué systématiquement :\n① Identifier le contrat\n② Identifier les obligations de performance (OP) distinctes\n③ Déterminer le prix de transaction (y.c. contrepartie variable)\n④ Répartir le prix entre les OP (prix de vente individuels relatifs)\n⑤ Comptabiliser quand/au fur et à mesure que chaque OP est satisfaite\n\nVente de matériel = point in time (transfert du contrôle)\nServices de maintenance = over time (client consomme simultanément)\nContrats de construction = over time si pas d'utilisation alternative + droit au paiement\n\n⚠️ Garantie assurance-type ≠ garantie service-type (OP séparée)"
+        },
+        {
+          "title": "Immobilisations corporelles (IAS 16)",
+          "content": "Comptabilisation initiale au coût (incluant coûts d'emprunt IAS 23 et démantèlement IAS 37).\nModèle du coût pour bâtiments et matériel. Modèle de réévaluation pour les terrains.\nApproche par composants : chaque partie significative amortie séparément.\nDurées : bâtiments 25-50 ans, matériel informatique 3-5 ans, mobilier 3-10 ans.\n\n⚠️ Réévaluation = toute la catégorie (pas un actif individuel)."
+        },
+        {
+          "title": "Contrats de location (IFRS 16)",
+          "content": "Preneur : quasi tous les contrats au bilan (ROU + dette de location).\nExemptions : ≤ 12 mois ET < ~USD 5'000 neuf (matériel de bureau).\nAmortissement ROU : linéaire sur la durée du contrat.\nIntérêts : sur le solde de la dette × taux d'emprunt marginal.\n\n⚠️ Impact sur les ratios : IFRS 16 augmente actifs ET passifs → ratio d'endettement plus élevé."
+        },
+        {
+          "title": "Instruments financiers (IFRS 9)",
+          "content": "Classification des actifs financiers :\n→ Coût amorti : business model 'collecter' + test SPPI passé\n→ JVOCI : business model 'collecter et vendre' + SPPI passé\n→ JVTPL : tous les autres\n\nDépréciation ECL :\n→ Stade 1 : risque normal → ECL 12 mois\n→ Stade 2 : risque augmenté → ECL durée de vie\n→ Stade 3 : défaut → ECL durée de vie (intérêts sur net)\n→ Créances clients : approche simplifiée → toujours ECL durée de vie\n\n⚠️ SPPI échoué (ex: rendement lié à des actions) → JVTPL obligatoirement."
+        },
+        {
+          "title": "Dépréciation d'actifs non financiers (IAS 36)",
+          "content": "Test si INDICES de dépréciation (sauf goodwill et incorporelles à durée indéterminée → test ANNUEL).\nValeur recouvrable = MAX(FVLCD, VIU)\nSi VC > valeur recouvrable → perte au résultat.\nAllocation UGT : perte d'abord sur goodwill, puis proportionnellement.\n\n⚠️ Reprise de dépréciation : possible sauf sur le GOODWILL (jamais de reprise)."
+        },
+        {
+          "title": "Stocks (IAS 2)",
+          "content": "Au plus faible du coût et de la VNR.\nCoût = FIFO ou coût moyen pondéré (LIFO INTERDIT).\nCoût de production = directs + frais généraux à capacité NORMALE.\nDépréciation si VNR < coût. Reprise si VNR augmente (max coût).\n\n⚠️ VNR (spécifique à l'entité) ≠ JV (prix de marché IFRS 13)."
+        },
+        {
+          "title": "Impôts (IAS 12)",
+          "content": "Méthode du report variable (approche bilan).\nDTA = différences temporelles déductibles × taux attendu (si bénéfices futurs probables).\nDTL = différences temporelles imposables × taux attendu.\n\nExceptions : goodwill initial, reconnaissance initiale (si pas regroupement et n'affecte ni résultat comptable ni fiscal).\nPilier 2 OCDE : exception temporaire — pas de DTA/DTL sur l'impôt complémentaire.\n\n⚠️ Actualisation des impôts différés = INTERDITE (IAS 12)."
+        },
+        {
+          "title": "Provisions (IAS 37)",
+          "content": "3 conditions cumulatives : obligation actuelle + sortie probable (>50%) + estimation fiable.\nMeilleure estimation. Actualiser si effet temps significatif.\nPassif éventuel (<50%) = annexe seulement. Actif éventuel = JAMAIS comptabilisé.\nRestructuration : plan détaillé + attente fondée créée (annonce/début d'exécution).\n\n⚠️ Décision du CA seule NE SUFFIT PAS pour provisionner une restructuration."
+        },
+        {
+          "title": "Avantages du personnel (IAS 19)",
+          "content": "Cotisations définies : charge = cotisation versée.\nPrestations définies : obligation actuarielle (PBO) − JV actifs du régime.\n3 composantes du coût :\n① Coût des services → P&L\n② Intérêts nets → P&L\n③ Réévaluations (écarts actuariels) → OCI (NON recyclable)\n\n⚠️ Méthode du corridor ABOLIE depuis IAS 19 révisée (2011)."
+        },
+        {
+          "title": "Rémunération en actions (IFRS 2)",
+          "content": "Equity-settled : JV à la date d'ATTRIBUTION → charge étalée sur la période d'acquisition des droits.\nCash-settled : JV réévaluée à chaque clôture → charge ajustée.\n\n⚠️ Equity-settled : JV fixée au grant date, PAS de réévaluation ultérieure. Contrepartie = réserve en FP (non-cash)."
+        }
+      ]
+    },
+    {
+      "id": "note_5",
+      "number": 5,
+      "title": "Acquisitions et cessions (IFRS 3)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Acquisition de Goodtech GmbH (2025)",
+          "content": "Date d'acquisition : 31 mars 2025 (100% des actions)\nContrepartie : 16 058 UM en trésorerie + contrepartie conditionnelle de 1 310 UM\nGoodwill : 2 303 UM (= prix 16 058 + contrepartie conditionnelle 1 310 − actifs nets JV 15 065)\n\nActifs nets identifiables acquis à la JV :\n→ IC : 3 148 UM | Incorporelles : 3 005 UM (relations clients, technologie)\n→ Stocks : 5 469 UM | Clients : 5 200 UM\n→ Dettes reprises : (3 290) UM\n\nCoûts de transaction : 223 UM en CHARGES (pas dans le goodwill sous IFRS 3).\n\n⚠️ Sous RPC 30, ces 223 UM seraient INCLUS dans le goodwill."
+        },
+        {
+          "title": "Contrepartie conditionnelle (earnout)",
+          "content": "1 310 UM payable si bénéfice moyen 2025-2026 dépasse un seuil.\nClassée en PASSIF (dette financière) → réévaluée à chaque clôture, variations au P&L.\n\n⚠️ Si classée en FP → PAS de réévaluation (différence IAS 32)."
+        },
+        {
+          "title": "Période d'évaluation",
+          "content": "IFRS 3 : 12 MOIS max après la date d'acquisition.\nPendant cette période : ajustements RÉTROSPECTIFS du goodwill.\nAprès 12 mois : ajustements au RÉSULTAT."
+        },
+        {
+          "title": "Acquisition de Webware (2024)",
+          "content": "Participation de 86,65% acquise pour 12 420 UM.\nPartial goodwill method utilisée (minoritaires = quote-part des actifs nets).\nGoodwill : 799 UM."
+        },
+        {
+          "title": "Cession de Highstreet Ltd (2024)",
+          "content": "Filiale classée comme détenue en vue de la vente (IFRS 5) puis cédée le 30/09/2024.\nGain de cession comptabilisé dans les activités abandonnées.\n\n⚠️ IFRS 5 : actifs détenus en vue de la vente → évalués au plus faible de la VC et de la JV moins coûts de vente. PAS d'amortissement."
+        }
+      ]
+    },
+    {
+      "id": "note_8",
+      "number": 8,
+      "title": "Produits des activités ordinaires (IFRS 15)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Ventilation des produits",
+          "content": "Par secteur : Services-conseils 82 131 UM | Vente au détail 79 505 UM | Services 44 157 UM\nPar timing : over time ~65% | point in time ~35%\n\n💡 La ventilation par timing (over time vs point in time) est une information OBLIGATOIRE sous IFRS 15."
+        },
+        {
+          "title": "Obligations de performance",
+          "content": "Types d'OP identifiées par le Groupe :\n→ Vente de matériel/logiciels : OP satisfaite au moment de la livraison (point in time)\n→ Abonnements de maintenance : OP satisfaite au fil du temps (over time, base mensuelle)\n→ Services-conseils : OP satisfaite au fil du temps (méthode de l'avancement)\n→ Garantie standard (1 an) : assurance-type = PAS une OP séparée (provision IAS 37)\n→ Garantie étendue : service-type = OP SÉPARÉE\n\n⚠️ Obligations de performance restantes (backlog) : 28 500 UM, principalement à satisfaire sur 1-3 ans."
+        },
+        {
+          "title": "Actifs et passifs sur contrat",
+          "content": "Actif sur contrat = travail effectué mais pas encore facturé (droit conditionnel)\nPassif sur contrat = acomptes reçus, OP non encore satisfaites\n\n⚠️ Les actifs sur contrat sont AUSSI soumis aux règles ECL d'IFRS 9."
+        }
+      ]
+    },
+    {
+      "id": "note_10",
+      "number": 10,
+      "title": "Goodwill (IFRS 3 + IAS 36)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Mouvements du goodwill",
+          "content": "VC brute au 01/01/2025 : 3 727 UM\n+ Acquisition Goodtech : 2 303 UM\n+ Écarts de conversion : 11 UM\n= VC brute au 31/12/2025 : 6 041 UM\n− Dépréciations cumulées : (1 000 UM dont 800 en 2025)\n= VC nette : 5 041 UM"
+        },
+        {
+          "title": "Affectation aux UGT",
+          "content": "Vente au détail : 4 796 UM (incluant Goodtech et Webware)\nServices-conseils : 245 UM (après dépréciation de 800 UM)\n\n⚠️ Le goodwill doit être alloué aux UGT AVANT le test de dépréciation."
+        },
+        {
+          "title": "Test de dépréciation annuel",
+          "content": "Méthode : valeur d'utilité (DCF sur 5 ans + valeur terminale)\n\nVente au détail : taux d'actualisation 12,9%, taux de croissance terminale 2,7% → PAS de dépréciation (marge suffisante)\n\nServices-conseils : taux 14,8%, croissance 2,3% → Dépréciation de 800 UM (baisse du marché des systèmes conventionnels)\n\n⚠️ Sensibilité requise : montrer l'impact d'un changement de +1% du taux d'actualisation et de −1% du taux de croissance."
+        }
+      ]
+    },
+    {
+      "id": "note_12",
+      "number": 12,
+      "title": "Immobilisations corporelles (IAS 16)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Tableau des mouvements",
+          "content": "Bâtiments, matériel informatique, mobilier.\nEntrées 2025 : 4 578 UM (dont 3 148 UM via acquisition Goodtech).\nAmortissements de l'exercice : 5 215 UM.\n\nTerrains : évalués au modèle de réévaluation.\nRéévaluation 2025 : gain de 303 UM → OCI (réserve de réévaluation)."
+        },
+        {
+          "title": "Durées d'utilité",
+          "content": "Bâtiments : 25-50 ans\nMatériel informatique : 3-5 ans\nMobilier et agencements : 3-10 ans\nTerrains : pas d'amortissement (durée illimitée)\n\n💡 Les durées d'utilité sont révisées à chaque clôture (changement d'estimation → prospectif, IAS 8)."
+        },
+        {
+          "title": "Engagements contractuels",
+          "content": "Engagement d'acquisition de matériel informatique : 1 304 UM (à régler en 2026).\nPas d'autres engagements significatifs."
+        }
+      ]
+    },
+    {
+      "id": "note_13",
+      "number": 13,
+      "title": "Contrats de location (IFRS 16)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Actifs au titre de droits d'utilisation",
+          "content": "Bureaux : 6 450 UM | Entrepôt : 2 180 UM | Bâtiment production : 1 340 UM | Véhicules : 452 UM\nAmortissement 2025 : 3 638 UM (linéaire sur durée du contrat)"
+        },
+        {
+          "title": "Obligations locatives",
+          "content": "Total : 10 054 UM (dont 1 304 UM courantes)\nIntérêts 2025 : 621 UM\nRemboursement principal 2025 : 3 638 UM\nTaux d'emprunt marginal utilisé : 3,5-5,2% selon les contrats\n\nPaiements futurs non actualisés : 8 158 UM (de moins de 1 an à plus de 5 ans)"
+        },
+        {
+          "title": "Exemptions appliquées",
+          "content": "Contrats court terme (≤ 12 mois) + actifs de faible valeur (< ~5'000 USD) :\n→ Matériel de bureau (bureaux, chaises, matériel informatique) : 345 UM en charges\n\n⚠️ Ces exemptions sont un CHOIX de politique comptable (pas obligatoire)."
+        },
+        {
+          "title": "Bailleur",
+          "content": "Le Groupe loue certains immeubles de bureaux à des tiers → contrats de location simple.\nProduits locatifs présentés dans la note sur les immeubles de placement (Note 14)."
+        }
+      ]
+    },
+    {
+      "id": "note_14",
+      "number": 14,
+      "title": "Immeubles de placement (IAS 40)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Évaluation",
+          "content": "Modèle de la juste valeur appliqué.\nJV déterminée par évaluateurs externes indépendants (niveau 3 IFRS 13).\nTechnique : DCF sur les flux locatifs futurs.\n\nVariation de JV 2025 : gain de 540 UM → comptabilisé au RÉSULTAT (pas en OCI !)\n\n⚠️ IAS 40 JV → P&L. IAS 16 réévaluation → OCI. Ne pas confondre !"
+        },
+        {
+          "title": "Produits et charges",
+          "content": "Produits locatifs : 1 530 UM\nCharges directes (entretien, taxes) : 410 UM\nRésultat net des immeubles de placement : 1 660 UM (loyers + variation JV − charges)"
+        }
+      ]
+    },
+    {
+      "id": "note_15",
+      "number": 15,
+      "title": "Actifs et passifs financiers (IFRS 9 + IFRS 13)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Classification des actifs financiers",
+          "content": "Au coût amorti : créances clients (30 498 UM), autres débiteurs, trésorerie\nÀ la JVTPL : placement dans XY Ltd (820 UM, niveau 3)\nÀ la JVOCI : titres cotés en actions (343 UM, choix irrévocable)\n\n⚠️ Le placement XY Ltd est au niveau 3 (données non observables) → informations détaillées requises (IFRS 13.93)."
+        },
+        {
+          "title": "Instruments dérivés et couverture",
+          "content": "Contrats de change à terme (USD et GBP) : couvertures de flux de trésorerie.\nJV nette positive : 601 UM.\nPart efficace → OCI (recyclable quand la transaction couverte se réalise).\nGains reclassés en P&L en 2025 : 640 UM.\n\n⚠️ FV hedge = tout au P&L. CF hedge = part efficace en OCI. Ne pas confondre !"
+        },
+        {
+          "title": "Hiérarchie de la juste valeur (IFRS 13)",
+          "content": "Niveau 1 : prix cotés sur marchés actifs → titres cotés (343 UM)\nNiveau 2 : données observables → dérivés (601 UM)\nNiveau 3 : données non observables → XY Ltd (820 UM), immeubles de placement (8 220 UM)\n\n💡 Plus le niveau est élevé (3), plus les informations à fournir sont détaillées (sensibilité, réconciliation, technique d'évaluation)."
+        }
+      ]
+    },
+    {
+      "id": "note_16",
+      "number": 16,
+      "title": "Emprunts",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Détail des emprunts",
+          "content": "Emprunt en USD : 8 020 UM (taux variable SOFR + 2,25%), échéance 2030\nObligation non convertible : 8 300 UM (taux fixe 2,5%), échéance 2029\nEmprunt subordonné actionnaire : 5 000 UM\nAutres emprunts bancaires : 4 565 UM (courants)\n\nTotal non courant : 16 070 UM | Total courant : 4 815 UM"
+        },
+        {
+          "title": "Covenants",
+          "content": "Ratio dette nette/EBITDA : ne doit pas dépasser 7%.\nStatut au 31/12/2025 : respecté.\n\n⚠️ IAS 1.74 : si covenant violé à la date de clôture, l'emprunt doit être reclassé en COURANT, même si un waiver est obtenu après la clôture."
+        },
+        {
+          "title": "Rapprochement des passifs de financement",
+          "content": "IAS 7.44A-E exige un rapprochement entre les soldes d'ouverture et de clôture des passifs issus des activités de financement.\nMouvements : flux de trésorerie + variations non-cash (acquisition, écarts de conversion, JV)."
+        }
+      ]
+    },
+    {
+      "id": "note_18",
+      "number": 18,
+      "title": "Impôts différés (IAS 12)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "DTA et DTL",
+          "content": "Actifs d'impôt différé (DTA) : 2 891 UM\n→ Obligations retraite : 3 556 UM\n→ Provisions : 898 UM\n→ Pertes fiscales reportées : 480 UM\n→ Compensé avec DTL : (2 043 UM)\n\nPassifs d'impôt différé (DTL) : 5 240 UM\n→ Incorporelles acquises : 1 821 UM\n→ Immeubles de placement : 1 275 UM\n→ IC réévaluées : 689 UM"
+        },
+        {
+          "title": "Taux et mouvements",
+          "content": "Taux d'impôt applicable : 30%\nCharge d'impôt différé 2025 : 713 UM\nMouvements principaux : acquisition Goodtech (incorporelles) + variation JV immeubles\n\n⚠️ Pas d'impôt différé sur le goodwill initial (exception IAS 12.15/24)."
+        },
+        {
+          "title": "Pilier 2 OCDE",
+          "content": "Le Groupe est soumis aux règles Pilier 2 dans 3 juridictions.\nTaux minimum effectif : 15%.\nException temporaire IAS 12 : pas de DTA/DTL comptabilisé sur l'impôt complémentaire Pilier 2.\n\n💡 Sujet d'actualité pour l'examen 2026. Seuil : groupes avec CA consolidé > EUR 750 millions."
+        }
+      ]
+    },
+    {
+      "id": "note_21",
+      "number": 21,
+      "title": "Capitaux propres",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Capital social",
+          "content": "13 770 actions de 1 UM de valeur nominale chacune.\n1 770 actions nouvelles émises en 2025 (augmentation de capital ordinaire).\nToutes les actions sont entièrement libérées."
+        },
+        {
+          "title": "Prime d'émission",
+          "content": "Solde 2025 : 19 645 UM (2024 : 3 050 UM).\nAugmentation : 16 595 UM liée à l'émission de 1 770 nouvelles actions.\nCoûts d'émission déduits : nets de l'avantage fiscal.\n\n⚠️ Les coûts d'émission d'actions ne passent JAMAIS par le P&L — ils réduisent la prime d'émission."
+        },
+        {
+          "title": "Autres composantes des FP (OCI cumulé)",
+          "content": "Réserve de réévaluation (terrains IAS 16) : 689 UM\nÉcarts actuariels cumulés (IAS 19) : (6 182) UM — NON recyclable\nCouvertures de flux de trésorerie : 601 UM — recyclable\nÉcarts de conversion : 890 UM — recyclable\nJVOCI : 267 UM\n\nTotal autres composantes : 2 265 UM (2024 : (392) UM)"
+        },
+        {
+          "title": "Dividendes",
+          "content": "Dividendes déclarés et versés en 2025 : 3 280 UM.\nDividende par action : environ 0,27 UM.\n\n⚠️ Les dividendes sont comptabilisés quand ils sont DÉCLARÉS par l'AG, pas quand ils sont payés."
+        }
+      ]
+    },
+    {
+      "id": "note_22",
+      "number": 22,
+      "title": "Rémunération du personnel (IAS 19 + IFRS 2)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Charge au titre des avantages du personnel",
+          "content": "Salaires et traitements : 72 450 UM\nCharges sociales : 8 920 UM\nCotisations retraite (cotisations définies) : 2 738 UM\nCharge IFRS 2 (options sur actions) : 1 750 UM\nIndemnités de licenciement : crédit de 510 UM (reprise provision restructuration)\n\nTotal : 85 858 UM"
+        },
+        {
+          "title": "Rémunération en actions (IFRS 2)",
+          "content": "Programme d'options sur actions pour le personnel clé.\n500 000 options attribuées, JV unitaire : 3,50 UM.\nPrix d'exercice : 7,75 UM. Période d'acquisition : 3 ans.\nModèle d'évaluation : binomial (volatilité, dividendes, taux sans risque).\n\n⚠️ JV fixée à la date d'ATTRIBUTION (grant date). Pas de réévaluation ultérieure pour les equity-settled."
+        }
+      ]
+    },
+    {
+      "id": "note_23",
+      "number": 23,
+      "title": "Avantages postérieurs à l'emploi (IAS 19)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Obligation et actifs du régime",
+          "content": "PBO (obligation au titre des prestations définies) : 47 614 UM\nJV des actifs du régime : 35 761 UM\nPassif net : 11 853 UM (2024 : 15 138 UM)\n\nAmélioration significative en 2025 due à l'augmentation du taux d'actualisation (4,8% → 5,2%)."
+        },
+        {
+          "title": "Composantes du coût",
+          "content": "Coût des services courants : 1 852 UM → P&L\nIntérêts sur l'obligation : 2 620 UM → P&L\nRendement attendu des actifs : (1 983 UM) → P&L\nIntérêts nets : 637 UM → P&L\n\nÉcarts actuariels : gain de 2 745 UM → OCI (NON recyclable)\n→ Principalement dû à l'augmentation du taux d'actualisation"
+        },
+        {
+          "title": "Hypothèses actuarielles clés",
+          "content": "Taux d'actualisation : 5,2% (2024 : 4,8%)\nHypothèse d'augmentation salariale : 4%\nHypothèse d'inflation : 2,5%\nTaux de mortalité : tables standard\n\n💡 Analyse de sensibilité obligatoire : montrer l'impact de ±0,5% sur le taux d'actualisation et les augmentations salariales."
+        },
+        {
+          "title": "Composition des actifs du régime",
+          "content": "Obligations (45%) : niveau 1\nActions (35%) : niveau 1\nImmobilier (15%) : niveau 3\nAutres (5%) : niveau 2\n\nRendement réel 2025 : 9 074 UM (vs rendement attendu de 1 983 UM).\n\n⚠️ Les actifs du régime ne comprennent AUCUN instrument du Groupe lui-même (interdiction IAS 19)."
+        }
+      ]
+    },
+    {
+      "id": "note_24",
+      "number": 24,
+      "title": "Provisions (IAS 37)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Détail des provisions",
+          "content": "Restructuration : 1 450 UM (fermeture branche services conventionnels)\nGaranties : 980 UM (garantie standard 1 an sur le matériel vendu)\nDémantèlement : 820 UM (obligation de remise en état de sites)\n\nTotal : 3 250 UM (2024 : 4 120 UM)"
+        },
+        {
+          "title": "Mouvements",
+          "content": "Constitution : 1 200 UM\nUtilisation : (1 200 UM)\nDissolution : (870 UM) → reprise au résultat\nDésactualisation : 0 UM\n\n⚠️ Les dissolutions de provisions = produit au résultat. C'est une source de manipulation potentielle des résultats."
+        },
+        {
+          "title": "Provision restructuration",
+          "content": "Plan détaillé approuvé par le CA et ANNONCÉ au personnel en septembre 2025.\nCoûts estimés : indemnités de licenciement + résiliation bail + dépréciation actifs.\n\n⚠️ IAS 37 : la provision restructuration ne peut être constituée que si le plan est détaillé ET une attente fondée a été créée (annonce publique ou début d'exécution)."
+        }
+      ]
+    },
+    {
+      "id": "note_29",
+      "number": 29,
+      "title": "Charge d'impôt sur le résultat",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Rapprochement du taux effectif",
+          "content": "Résultat avant impôt : 21 661 UM\nTaux nominal : 30%\nImpôt théorique : 6 498 UM\n\nAjustements :\n→ Charges non déductibles : +145 UM\n→ Taux étrangers différents : (180 UM)\n→ Utilisation pertes fiscales : (117 UM)\n\nCharge d'impôt effective : 6 346 UM\nTaux effectif : 29,3%"
+        },
+        {
+          "title": "Composantes",
+          "content": "Impôt exigible : 5 633 UM\nCharge d'impôt différé : 713 UM\nTotal : 6 346 UM\n\n💡 Le rapprochement taux nominal / taux effectif est une information OBLIGATOIRE (IAS 12.81(c))."
+        }
+      ]
+    },
+    {
+      "id": "note_32",
+      "number": 32,
+      "title": "Transactions entre parties liées (IAS 24)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Transactions avec entreprises associées",
+          "content": "Ventes à Halftime Ltd : 250 UM\nAchats à Halftime Ltd : 120 UM\nCréance sur Halftime au 31/12/2025 : 112 UM\n\nToutes les transactions sont réalisées à des conditions de marché."
+        },
+        {
+          "title": "Rémunération des principaux dirigeants",
+          "content": "Avantages CT (salaires, bonus) : 3 800 UM\nAvantages postérieurs à l'emploi : 620 UM\nRémunération en actions (IFRS 2) : 430 UM\nTotal : 4 850 UM\n\n⚠️ IAS 24.17 : les rémunérations des dirigeants doivent être ventilées par TYPE d'avantage."
+        }
+      ]
+    },
+    {
+      "id": "note_34",
+      "number": 34,
+      "title": "Gestion des risques financiers (IFRS 7)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Risque de change",
+          "content": "Expositions principales : USD et GBP.\nCouverture : contrats de change à terme.\nSensibilité : impact d'une variation de ±10% des cours → sur résultat net et FP.\n\n💡 IFRS 7 exige une analyse de sensibilité QUANTIFIÉE pour chaque type de risque de marché."
+        },
+        {
+          "title": "Risque de taux d'intérêt",
+          "content": "Exposition : emprunt USD à taux variable (SOFR + 2,25%).\nSensibilité : +1% du taux → charge supplémentaire de ~80 UM.\nPas de couverture de taux en place."
+        },
+        {
+          "title": "Risque de crédit",
+          "content": "Exposition maximale = valeur comptable des actifs financiers.\nConcentration : pas de client > 10% du CA.\nMatrice ECL par ancienneté : courant 1,37% → >90 jours 60%.\n\n⚠️ La matrice de provisions ECL doit être mise à jour à chaque clôture avec les données historiques ET prospectives."
+        },
+        {
+          "title": "Risque de liquidité",
+          "content": "Analyse d'échéances contractuelles des passifs financiers (non actualisées).\nFacilités de crédit non utilisées : 15 000 UM.\nRatio de liquidité : actifs courants / passifs courants > 1,5x.\n\n💡 Le tableau d'échéances montre les flux CONTRACTUELS (non actualisés), pas la valeur comptable."
+        }
+      ]
+    },
+    {
+      "id": "note_35",
+      "number": 35,
+      "title": "Évaluation de la juste valeur (IFRS 13)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Hiérarchie des justes valeurs",
+          "content": "Niveau 1 : prix cotés sur marchés actifs → titres cotés (343 UM)\nNiveau 2 : données observables (courbes de taux, cours de change) → dérivés (601 UM)\nNiveau 3 : données non observables → XY Ltd (820 UM), immeubles de placement (8 220 UM)\n\n⚠️ Plus le niveau est élevé, plus les informations à fournir sont DÉTAILLÉES (technique, données d'entrée, sensibilité, réconciliation)."
+        },
+        {
+          "title": "Évaluations de niveau 3",
+          "content": "XY Ltd : évaluation par multiples de résultat (EBITDA multiple 6x-8x).\nImmeubles de placement : DCF des flux locatifs (taux de capitalisation 6,5-7,5%, taux d'inoccupation 5-10%).\n\nRéconciliation du niveau 3 : solde d'ouverture + acquisitions + gains/pertes JV = solde de clôture.\nSensibilité : ±10% du taux de capitalisation → variation de ±820 UM sur la JV des immeubles."
+        }
+      ]
+    },
+    {
+      "id": "note_36",
+      "number": 36,
+      "title": "Gestion du capital",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Objectifs et politique",
+          "content": "Objectif : maintenir une structure de capital solide pour assurer la confiance des investisseurs et créanciers.\nRatio cible : FP / (FP + dette nette) ≥ 45%.\nRatio au 31/12/2025 : 60,7% (2024 : 48,1%).\n\n💡 IAS 1.134-136 exige des informations sur les objectifs, politiques et processus de gestion du capital."
+        }
+      ]
+    },
+    {
+      "id": "note_37",
+      "number": 37,
+      "title": "Événements postérieurs à la clôture (IAS 10)",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Classification des événements",
+          "content": "Type 1 — AJUSTABLES : preuves de conditions EXISTANTES à la date de clôture → ajuster les EF.\nExemple : faillite d'un client dont la créance était déjà douteuse.\n\nType 2 — NON AJUSTABLES : conditions APPARUES après la clôture → pas d'ajustement, publier si significatif.\nExemple : catastrophe naturelle, acquisition post-clôture."
+        },
+        {
+          "title": "Événements du Groupe",
+          "content": "Aucun événement significatif (ajustable ou non ajustable) entre le 31/12/2025 et le 25/02/2026.\n\n⚠️ IAS 10.14 : si APRÈS la clôture, la direction conclut que la continuité d'exploitation n'est plus assurée → NE PAS préparer les EF sur base de continuité. C'est TOUJOURS un événement ajustable."
+        },
+        {
+          "title": "Date d'autorisation",
+          "content": "États financiers autorisés pour publication le 25 février 2026 par le conseil d'administration.\n\n💡 Seuls les événements survenus AVANT cette date sont pris en compte."
+        }
+      ]
+    }
+  ]
+}

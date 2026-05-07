@@ -1,0 +1,836 @@
+{
+  "enrichments": {
+    "rpc1": {
+      "summary": "RPC 1 définit les seuils déterminant l'application des RPC fondamentales vs complètes (bilan 10M, CA 20M, 50 ETP) et rappelle les seuils CO pour la révision légale (bilan 20M, CA 40M, 250 ETP). Le dépassement doit être durable, soit 2 critères sur 3 pendant 2 exercices consécutifs.",
+      "exam_tips": [
+        "⚠️ Ne pas confondre les seuils RPC (10/20/50) avec les seuils CO de révision (20/40/250) — c'est un piège classique à l'examen",
+        "⚠️ Le dépassement doit concerner 2 critères sur 3 pendant 2 exercices CONSÉCUTIFS — un dépassement ponctuel ne suffit pas",
+        "💡 Les sociétés cotées appliquent TOUJOURS les RPC complètes + RPC 31, indépendamment des seuils",
+        "💡 L'opting-out (art. 727a al. 2 CO) n'est possible que si ≤ 10 ETP ET accord de TOUS les actionnaires"
+      ],
+      "key_differences": {
+        "ifrs": "Pas de notion de seuils en IFRS — les IFRS s'appliquent intégralement ou pas du tout (sauf IFRS pour PME)",
+        "rpc": "Distinction fondamentales (RPC 1-6) vs complètes (+ RPC 10-27, 30, 31)",
+        "co": "Seuils CO pour révision sont plus élevés (20/40/250) que les seuils RPC (10/20/50)"
+      },
+      "mnemonics": "RPC = 10-20-50 (petit) / CO = 20-40-250 (grand) — toujours '2 sur 3 pendant 2 ans'",
+      "related_topics": ["Révision légale", "Contrôle ordinaire vs restreint", "Opting-out", "RPC 31"]
+    },
+    "rpc2": {
+      "summary": "RPC 2 traite des principes d'évaluation des actifs et passifs dans les comptes annuels selon Swiss GAAP RPC. Elle couvre les méthodes d'évaluation initiale (coût d'acquisition/production) et ultérieure (amortissements, corrections de valeur), ainsi que les principes de prudence et d'image fidèle.",
+      "exam_tips": [
+        "⚠️ Sous RPC, la valeur la plus basse entre le coût et la valeur nette de réalisation s'applique (principe de prudence renforcé)",
+        "💡 Les réserves latentes sont autorisées sous RPC (contrairement aux IFRS) — attention aux questions de dissolution de réserves",
+        "⚠️ Le coût de production inclut les coûts directs + quote-part raisonnable des frais généraux de production",
+        "💡 Les corrections de valeur doivent être reprises si les raisons ayant motivé la dépréciation n'existent plus"
+      ],
+      "key_differences": {
+        "ifrs": "Les IFRS interdisent les réserves latentes et visent la fair value ; RPC 2 reste plus prudent et conservateur",
+        "rpc": "RPC 2 autorise une approche prudente avec possibilité de réserves latentes (image fidèle vs prudence)",
+        "co": "Le CO (art. 960 ss) permet aussi des évaluations prudentes et autorise explicitement les réserves latentes"
+      },
+      "mnemonics": "Évaluation RPC = 'Coût - Amortissement - Dépréciation' (CAD), jamais au-dessus du coût historique sauf exceptions",
+      "related_topics": ["RPC 20 — Dépréciation", "RPC 18 — Immobilisations corporelles", "RPC 17 — Stocks", "Réserves latentes"]
+    },
+    "rpc3": {
+      "summary": "RPC 3 fixe les règles de présentation et de structure des comptes annuels selon Swiss GAAP RPC : bilan, compte de résultat, tableau des flux de trésorerie, tableau de variation des capitaux propres et annexe. Elle définit les postes minimaux obligatoires et les principes de présentation.",
+      "exam_tips": [
+        "💡 Les postes minimaux du bilan et du compte de résultat sont prescrits — connaître la structure de base",
+        "⚠️ Le compte de résultat peut être présenté par nature OU par fonction — mais pas un mélange des deux",
+        "💡 La compensation (netting) entre actifs et passifs est interdite sauf exceptions explicites",
+        "⚠️ L'exercice comptable est normalement de 12 mois — tout écart doit être signalé et justifié"
+      ],
+      "key_differences": {
+        "ifrs": "IAS 1 impose un résultat global (OCI) séparé — RPC 3 ne connaît pas d'OCI",
+        "rpc": "RPC 3 est plus flexible qu'IAS 1 sur la structure minimale des états financiers",
+        "co": "Le CO (art. 959-959c) prescrit aussi une structure minimale mais elle est moins détaillée que RPC 3"
+      },
+      "mnemonics": "5 éléments des comptes annuels RPC : B-R-F-V-A = Bilan, Résultat, Flux, Variation FP, Annexe",
+      "related_topics": ["IAS 1", "RPC 6 — Annexe", "RPC 4 — Flux de trésorerie", "RPC 24 — Fonds propres"]
+    },
+    "rpc4": {
+      "summary": "RPC 4 règle l'établissement du tableau des flux de trésorerie, distinguant les flux d'exploitation, d'investissement et de financement. Ce tableau est obligatoire pour toutes les entités appliquant les Swiss GAAP RPC et peut être établi selon la méthode directe ou indirecte.",
+      "exam_tips": [
+        "⚠️ La méthode indirecte part du résultat net et ajuste pour les éléments non-cash — c'est la plus fréquente à l'examen",
+        "💡 Les intérêts payés peuvent être classés en exploitation OU financement — mais le choix doit être constant",
+        "⚠️ Les dividendes reçus = exploitation ou investissement ; dividendes payés = financement",
+        "💡 Les investissements dans des filiales sont toujours des flux d'investissement (net de la trésorerie acquise)"
+      ],
+      "key_differences": {
+        "ifrs": "IAS 7 est très similaire mais impose plus de détails ; les deux méthodes (directe/indirecte) sont autorisées",
+        "rpc": "RPC 4 est plus concise qu'IAS 7 mais les principes fondamentaux sont identiques",
+        "co": "Le CO ne prescrit pas de tableau des flux de trésorerie — c'est une exigence spécifique aux RPC et IFRS"
+      },
+      "mnemonics": "EIF = Exploitation (opérationnel), Investissement (actifs LT), Financement (dettes/FP) — les 3 catégories de flux",
+      "related_topics": ["IAS 7", "Méthode directe vs indirecte", "Trésorerie et équivalents", "RPC 3"]
+    },
+    "rpc5": {
+      "summary": "RPC 5 traite des opérations hors bilan, c'est-à-dire des engagements et risques qui n'apparaissent pas au bilan mais qui doivent être mentionnés dans l'annexe. Cela inclut les engagements conditionnels, les engagements de leasing opérationnel, les actifs mis en gage, et les garanties données.",
+      "exam_tips": [
+        "⚠️ Distinguer clairement : engagement conditionnel (hors bilan, annexe) vs provision (au bilan, RPC 23)",
+        "💡 Les cautionnements, garanties et engagements irrévocables doivent TOUJOURS être mentionnés hors bilan",
+        "⚠️ Les contrats de leasing opérationnel figurent hors bilan sous RPC (contrairement à IFRS 16)",
+        "💡 Les actifs mis en gage ou cédés en garantie doivent être indiqués même s'ils restent au bilan"
+      ],
+      "key_differences": {
+        "ifrs": "Sous IFRS, les passifs éventuels (IAS 37) et les leasings (IFRS 16) réduisent le périmètre du hors bilan",
+        "rpc": "RPC 5 maintient beaucoup d'éléments hors bilan, notamment le leasing opérationnel",
+        "co": "Le CO (art. 959c al. 2 ch. 4) exige aussi la mention des engagements conditionnels dans l'annexe"
+      },
+      "mnemonics": "Hors bilan RPC = CAGE : Cautionnements, Actifs gagés, Garanties, Engagements irrévocables",
+      "related_topics": ["RPC 23 — Provisions", "RPC 13 — Leasing", "IAS 37 — Provisions", "RPC 6 — Annexe"]
+    },
+    "rpc6": {
+      "summary": "RPC 6 définit le contenu de l'annexe aux comptes annuels, qui complète le bilan et le compte de résultat. L'annexe doit fournir toutes les informations nécessaires à la compréhension des comptes, incluant les méthodes comptables, les détails des postes significatifs et les informations complémentaires.",
+      "exam_tips": [
+        "💡 L'annexe doit contenir au minimum : méthodes d'évaluation, explications des postes, informations hors bilan",
+        "⚠️ Toute dérogation aux principes comptables doit être mentionnée ET justifiée dans l'annexe",
+        "💡 Le principe de matérialité s'applique — seules les informations significatives doivent figurer",
+        "⚠️ L'annexe fait partie intégrante des comptes annuels — elle n'est pas optionnelle"
+      ],
+      "key_differences": {
+        "ifrs": "Les IFRS imposent des informations en annexe beaucoup plus détaillées (chaque norme a ses propres exigences de disclosure)",
+        "rpc": "RPC 6 est une norme-cadre moins détaillée que les exigences IFRS de disclosure",
+        "co": "Le CO (art. 959c) prescrit un contenu minimal de l'annexe, plus limité que RPC 6"
+      },
+      "mnemonics": "Annexe = MED : Méthodes comptables, Explications des postes, Données complémentaires",
+      "related_topics": ["RPC 3 — Présentation", "RPC 5 — Hors bilan", "IAS 1", "CO art. 959c"]
+    },
+    "rpc10": {
+      "summary": "RPC 10 traite de la comptabilisation et de l'évaluation des immobilisations incorporelles, incluant le goodwill, les brevets, licences, logiciels et marques. L'amortissement se fait sur la durée d'utilité, avec 5 ans par défaut et 20 ans maximum.",
+      "exam_tips": [
+        "⚠️ Le goodwill est amorti sur 5 ans par défaut, max 20 ans si justifié — ou peut être compensé directement avec les FP",
+        "💡 Si le goodwill est compensé avec les FP, l'annexe doit présenter l'impact théorique d'une activation",
+        "⚠️ Les incorporelles liées à des personnes (savoir-faire individuel) = max 5 ans d'amortissement",
+        "💡 Seules les incorporelles acquises peuvent être activées — les incorporelles créées en interne ne sont PAS activables sous RPC"
+      ],
+      "key_differences": {
+        "ifrs": "Sous IAS 38/IFRS 3, le goodwill n'est PAS amorti mais soumis à un test de dépréciation annuel (IAS 36)",
+        "rpc": "RPC 10 offre le choix : amortissement du goodwill OU compensation avec les FP",
+        "co": "Le CO autorise l'activation des incorporelles acquises mais avec amortissement sur la durée de vie utile"
+      },
+      "mnemonics": "Goodwill RPC : 5-20-FP = 5 ans par défaut, 20 ans max, ou directement en Fonds Propres",
+      "related_topics": ["IAS 38 — Incorporelles", "IFRS 3 — Regroupements", "RPC 30 — Consolidation", "RPC 20 — Dépréciation"]
+    },
+    "rpc11": {
+      "summary": "RPC 11 traite de la comptabilisation des impôts courants et différés sur les bénéfices. Les impôts différés résultent des différences temporaires entre les valeurs comptables et fiscales. La norme prescrit la méthode du report variable (liability method).",
+      "exam_tips": [
+        "⚠️ Sous RPC 11, seuls les impôts différés PASSIFS doivent être comptabilisés — les ID actifs ne sont comptabilisés que si leur réalisation est probable",
+        "💡 Le taux d'imposition à utiliser est celui attendu au moment de la résorption de la différence temporaire",
+        "⚠️ Les différences permanentes ne génèrent PAS d'impôts différés — distinguer temporaire vs permanent",
+        "💡 Les reports de pertes fiscales peuvent être activés si la réalisation future est probable"
+      ],
+      "key_differences": {
+        "ifrs": "IAS 12 exige la comptabilisation systématique de TOUS les impôts différés (actifs et passifs) avec plus de détails",
+        "rpc": "RPC 11 est plus souple : les ID actifs ne sont comptabilisés que si réalisation probable",
+        "co": "Le CO ne connaît pas les impôts différés — seuls les impôts courants exigibles sont comptabilisés"
+      },
+      "mnemonics": "ID = Différence Temporaire × Taux futur. Passifs = toujours. Actifs = si probable.",
+      "related_topics": ["IAS 12 — Impôts", "Différences temporaires vs permanentes", "Reports de pertes fiscales", "RPC 2"]
+    },
+    "rpc13": {
+      "summary": "RPC 13 régit la comptabilisation des transactions de leasing. Elle distingue le leasing financier (activation au bilan du preneur) du leasing opérationnel (charge de période). La classification dépend du transfert substantiel des risques et avantages liés à la propriété.",
+      "exam_tips": [
+        "⚠️ Sous RPC 13, le leasing opérationnel reste HORS bilan — c'est la différence majeure avec IFRS 16",
+        "💡 Critères du leasing financier : transfert de propriété, option d'achat avantageuse, durée ≥ 75% vie économique, VAN loyers ≥ 90% JV",
+        "⚠️ En cas de sale-and-lease-back financier, le profit est différé et amorti sur la durée du contrat",
+        "💡 L'annexe doit indiquer les engagements futurs de leasing opérationnel (hors bilan, RPC 5)"
+      ],
+      "key_differences": {
+        "ifrs": "IFRS 16 a supprimé la distinction opérationnel/financier pour le preneur — TOUT est au bilan",
+        "rpc": "RPC 13 maintient la distinction leasing financier vs opérationnel (similaire à l'ancien IAS 17)",
+        "co": "Le CO ne traite pas spécifiquement du leasing — en pratique, le leasing opérationnel n'est pas au bilan"
+      },
+      "mnemonics": "Leasing financier = 'comme si propriétaire' (actif + dette). Opérationnel = 'comme un loyer' (charge)",
+      "related_topics": ["IFRS 16 — Contrats de location", "RPC 5 — Hors bilan", "Sale-and-lease-back", "IAS 17 (remplacé)"]
+    },
+    "rpc15": {
+      "summary": "RPC 15 impose la divulgation des transactions entre parties liées (actionnaires, dirigeants, entités du groupe, proches familiaux). L'objectif est d'assurer la transparence sur les transactions qui pourraient ne pas être conclues à des conditions de marché.",
+      "exam_tips": [
+        "⚠️ Les transactions avec parties liées doivent être évaluées à des conditions de marché (arm's length) ou la différence doit être divulguée",
+        "💡 L'annexe doit mentionner : nature de la relation, type de transaction, montants, conditions inhabituelles",
+        "⚠️ Les rémunérations de la direction et du conseil d'administration sont des informations obligatoires",
+        "💡 Les parties liées incluent aussi les membres de la famille proche des personnes-clés de la direction"
+      ],
+      "key_differences": {
+        "ifrs": "IAS 24 a une définition plus large des parties liées et des exigences de disclosure plus détaillées",
+        "rpc": "RPC 15 est alignée sur les principes d'IAS 24 mais avec moins d'exigences de détail",
+        "co": "Le CO (art. 663b bis) exige la divulgation des rémunérations de la direction pour les sociétés cotées"
+      },
+      "mnemonics": "Parties liées = FACG : Famille, Actionnaires significatifs, Conseil d'administration, Groupe",
+      "related_topics": ["IAS 24 — Parties liées", "RPC 6 — Annexe", "Rémunérations dirigeants", "RPC 31"]
+    },
+    "rpc16": {
+      "summary": "RPC 16 traite de la comptabilisation des engagements de prévoyance professionnelle (2e pilier) chez l'employeur. L'approche RPC est basée sur le concept de surplus/découvert économique de l'institution de prévoyance, avec impact direct au bilan de l'employeur si des avantages ou obligations économiques en résultent.",
+      "exam_tips": [
+        "⚠️ L'approche RPC 16 est fondamentalement différente d'IAS 19 : on regarde le surplus/découvert de la caisse de pension, pas la PBO",
+        "💡 Si l'employeur bénéficie d'un avantage économique du surplus → actif au bilan. Si obligation économique du découvert → passif",
+        "⚠️ Le calcul repose sur les comptes de l'institution de prévoyance, pas sur des hypothèses actuarielles comme IAS 19",
+        "💡 Les cotisations de l'employeur sont une charge de la période — la variation de l'actif/passif de prévoyance s'ajoute"
+      ],
+      "key_differences": {
+        "ifrs": "IAS 19 utilise la méthode PBO (projected benefit obligation) avec hypothèses actuarielles complexes ; RPC 16 se base sur les comptes de la caisse",
+        "rpc": "RPC 16 : approche économique basée sur surplus/découvert de la caisse de pension",
+        "co": "Le CO ne prévoit que la comptabilisation des cotisations courantes comme charges"
+      },
+      "mnemonics": "RPC 16 = regarder la CAISSE (surplus/découvert). IAS 19 = regarder la PROMESSE (PBO actuarielle)",
+      "related_topics": ["IAS 19 — Avantages du personnel", "Prévoyance professionnelle LPP", "OCI", "Écarts actuariels"]
+    },
+    "rpc17": {
+      "summary": "RPC 17 régit la comptabilisation et l'évaluation des stocks (matières premières, en-cours, produits finis, marchandises). Les stocks sont évalués au plus bas du coût d'acquisition/production et de la valeur nette de réalisation. FIFO et coût moyen pondéré sont autorisés.",
+      "exam_tips": [
+        "⚠️ LIFO est INTERDIT sous Swiss GAAP RPC — seuls FIFO et coût moyen pondéré sont autorisés",
+        "💡 Le coût de production comprend les coûts directs + part appropriée des frais généraux de production (pas les frais administratifs)",
+        "⚠️ Les corrections de valeur sur stocks obsolètes ou à rotation lente sont obligatoires",
+        "💡 L'évaluation au plus bas (lower of cost or NRV) s'applique article par article ou par catégorie homogène"
+      ],
+      "key_differences": {
+        "ifrs": "IAS 2 interdit aussi LIFO et utilise les mêmes méthodes (FIFO, CMP) — forte convergence",
+        "rpc": "RPC 17 est très proche d'IAS 2 dans ses principes fondamentaux",
+        "co": "Le CO autorise LIFO et permet des évaluations plus prudentes (réserves latentes sur stocks)"
+      },
+      "mnemonics": "Stocks RPC = FIFO ou CMP, jamais LIFO. Évaluation = min(coût, VNR)",
+      "related_topics": ["IAS 2 — Stocks", "RPC 2 — Évaluation", "Valeur nette de réalisation", "Coût de production"]
+    },
+    "rpc18": {
+      "summary": "RPC 18 traite des immobilisations corporelles (terrains, bâtiments, machines, véhicules, mobilier). Elles sont comptabilisées au coût d'acquisition/production diminué des amortissements cumulés et des dépréciations. L'approche par composants est autorisée.",
+      "exam_tips": [
+        "⚠️ L'approche par composants est autorisée mais pas obligatoire sous RPC 18 (obligatoire sous IAS 16)",
+        "💡 Les terrains ne sont PAS amortis sauf s'ils sont liés à une exploitation (carrière, décharge)",
+        "⚠️ Les dépenses ultérieures ne sont activées que si elles augmentent l'utilité future de l'actif",
+        "💡 La réévaluation au-dessus du coût d'acquisition n'est PAS autorisée sous RPC (contrairement à IAS 16 modèle de réévaluation)"
+      ],
+      "key_differences": {
+        "ifrs": "IAS 16 offre le choix entre modèle du coût et modèle de réévaluation ; l'approche par composants est obligatoire",
+        "rpc": "RPC 18 n'autorise que le modèle du coût ; l'approche par composants est facultative",
+        "co": "Le CO (art. 960a) prescrit l'évaluation au coût d'acquisition moins amortissements"
+      },
+      "mnemonics": "RPC 18 = Coût uniquement. IAS 16 = Coût OU réévaluation",
+      "related_topics": ["IAS 16 — Immobilisations corporelles", "RPC 20 — Dépréciation", "Approche par composants", "Amortissements"]
+    },
+    "rpc20": {
+      "summary": "RPC 20 traite de la dépréciation d'actifs. Lorsqu'un indice de perte de valeur existe, l'entité doit comparer la valeur comptable à la valeur recouvrable (plus élevée entre valeur d'utilité et juste valeur moins frais de vente). Si la valeur comptable excède la valeur recouvrable, une dépréciation est comptabilisée.",
+      "exam_tips": [
+        "⚠️ Un test de dépréciation n'est requis que s'il existe des INDICES de perte de valeur — pas de test annuel systématique (sauf goodwill sous IFRS)",
+        "💡 Valeur recouvrable = max(valeur d'utilité, juste valeur - frais de vente)",
+        "⚠️ La reprise de dépréciation est obligatoire si les conditions ayant causé la dépréciation ont disparu",
+        "💡 Les indices de dépréciation peuvent être internes (obsolescence, dommage) ou externes (conditions de marché, changements technologiques)"
+      ],
+      "key_differences": {
+        "ifrs": "IAS 36 est beaucoup plus détaillée et impose un test annuel pour le goodwill et les incorporelles à durée indéfinie",
+        "rpc": "RPC 20 est plus simple et ne requiert le test que sur indice",
+        "co": "Le CO exige une évaluation prudente mais ne détaille pas la méthodologie de dépréciation"
+      },
+      "mnemonics": "Dépréciation = VC > VR → perte. VR = max(VU, JV-frais). Indice nécessaire.",
+      "related_topics": ["IAS 36 — Dépréciation", "RPC 18 — Immo. corporelles", "RPC 10 — Incorporelles", "Unité génératrice de trésorerie"]
+    },
+    "rpc22": {
+      "summary": "RPC 22 traite de la comptabilisation des produits (chiffre d'affaires) et définit quand et comment les revenus doivent être reconnus dans les comptes annuels. Le produit est comptabilisé lorsque les risques et avantages significatifs sont transférés à l'acheteur et que le montant peut être mesuré de manière fiable.",
+      "exam_tips": [
+        "⚠️ Le moment du transfert des risques et avantages est crucial — pas forcément au moment de la livraison physique",
+        "💡 Pour les contrats de longue durée : méthode de l'avancement (PoC) ou méthode de l'achèvement selon les circonstances",
+        "⚠️ Les revenus de services sont comptabilisés au prorata de l'avancement si le résultat peut être estimé de manière fiable",
+        "💡 Les rabais, retours et escomptes réduisent le chiffre d'affaires (présentation nette)"
+      ],
+      "key_differences": {
+        "ifrs": "IFRS 15 utilise le modèle en 5 étapes basé sur le transfert de contrôle (pas les risques et avantages)",
+        "rpc": "RPC 22 reste basée sur le transfert des risques et avantages (similaire à l'ancien IAS 18)",
+        "co": "Le CO ne prescrit pas de règles spécifiques de reconnaissance des revenus"
+      },
+      "mnemonics": "RPC 22 = Risques & Avantages transférés → revenu. IFRS 15 = Contrôle transféré → revenu.",
+      "related_topics": ["IFRS 15 — Revenus", "IAS 18 (remplacé)", "Contrats de construction", "Méthode PoC"]
+    },
+    "rpc23": {
+      "summary": "RPC 23 traite des provisions, qui sont des passifs dont l'échéance ou le montant est incertain. Une provision est comptabilisée lorsqu'il existe une obligation actuelle résultant d'un événement passé, qu'un décaissement est probable et que le montant peut être estimé de manière fiable.",
+      "exam_tips": [
+        "⚠️ Les trois conditions cumulatives pour une provision : obligation actuelle + sortie probable de ressources + estimation fiable du montant",
+        "💡 Distinguer provision (probable → bilan) vs engagement conditionnel (possible → annexe) vs risque négligeable (rien)",
+        "⚠️ Les provisions pour restructuration nécessitent un plan détaillé et annoncé — une simple intention ne suffit pas",
+        "💡 Les provisions doivent être réévaluées à chaque clôture et ajustées si nécessaire"
+      ],
+      "key_differences": {
+        "ifrs": "IAS 37 a des critères similaires mais interdit l'actualisation sauf si l'effet est significatif ; plus détaillé sur les passifs éventuels",
+        "rpc": "RPC 23 est plus concise mais les principes de base sont alignés sur IAS 37",
+        "co": "Le CO (art. 960e al. 2) impose de constituer des provisions pour les risques de pertes, avec possibilité de provisions excessives"
+      },
+      "mnemonics": "Provision = OPE : Obligation actuelle, Probable décaissement, Estimation fiable",
+      "related_topics": ["IAS 37 — Provisions", "RPC 5 — Hors bilan", "Passifs éventuels", "Restructuration"]
+    },
+    "rpc24": {
+      "summary": "RPC 24 traite de la présentation et de la structure des fonds propres dans les comptes annuels. Elle couvre le capital-actions, les réserves (légales, libres, provenant de réévaluations), le report à nouveau, les actions propres et le résultat de l'exercice.",
+      "exam_tips": [
+        "⚠️ Les actions propres doivent être déduites des fonds propres (portées en négatif), PAS présentées à l'actif",
+        "💡 Le tableau de variation des fonds propres est obligatoire et doit montrer chaque composante séparément",
+        "⚠️ Le goodwill compensé avec les FP (RPC 10) réduit directement les fonds propres — impact sur les ratios",
+        "💡 Les réserves légales issues du capital et les réserves légales issues du bénéfice ont des règles de distribution différentes"
+      ],
+      "key_differences": {
+        "ifrs": "IAS 1/IAS 32 impose aussi la déduction des actions propres des FP ; l'OCI est un composant supplémentaire des FP sous IFRS",
+        "rpc": "RPC 24 n'a pas d'OCI ; le goodwill peut être directement compensé avec les FP",
+        "co": "Le CO (art. 959a) prescrit la structure des FP avec les réserves légales selon la loi"
+      },
+      "mnemonics": "FP = Capital + Réserves + Report ± Résultat - Actions propres (- Goodwill si compensé)",
+      "related_topics": ["IAS 1", "IAS 32", "RPC 10 — Goodwill", "Actions propres", "Réserves légales CO"]
+    },
+    "rpc27": {
+      "summary": "RPC 27 traite de la comptabilisation et de la présentation des instruments financiers dérivés (options, futures, swaps, forwards). Ces instruments doivent être évalués à la juste valeur. Les opérations de couverture (hedging) sont soumises à des conditions strictes de documentation.",
+      "exam_tips": [
+        "⚠️ Les dérivés sont toujours évalués à la juste valeur sous RPC 27 — pas d'exception pour le coût amorti",
+        "💡 La comptabilité de couverture est autorisée sous conditions : documentation, efficacité, désignation formelle",
+        "⚠️ Si les conditions de couverture ne sont plus remplies, retour à l'évaluation standard (cessation prospective)",
+        "💡 L'annexe doit contenir des informations détaillées sur la nature, l'étendue et les risques des dérivés"
+      ],
+      "key_differences": {
+        "ifrs": "IFRS 9 a des règles de hedge accounting plus complexes avec trois types de couverture (JV, flux, investissement net)",
+        "rpc": "RPC 27 est plus simple et moins prescriptive qu'IFRS 9 sur la comptabilité de couverture",
+        "co": "Le CO ne traite pas spécifiquement des dérivés — évaluation au plus bas du coût/valeur de marché"
+      },
+      "mnemonics": "Dérivés RPC = toujours Fair Value. Couverture = Documentation + Efficacité + Désignation (DED)",
+      "related_topics": ["IFRS 9 — Instruments financiers", "IAS 32", "IFRS 7 — Disclosures", "Hedge accounting"]
+    },
+    "rpc28": {
+      "summary": "RPC 28 traite de la comptabilisation des subventions publiques (aides à l'investissement, subventions d'exploitation). Les subventions liées à des actifs sont soit déduites de l'actif, soit comptabilisées en produits différés. Les subventions d'exploitation sont comptabilisées en produit de la période correspondante.",
+      "exam_tips": [
+        "⚠️ Les subventions ne sont comptabilisées que lorsqu'il existe une assurance raisonnable de leur obtention ET du respect des conditions",
+        "💡 Deux méthodes pour les subventions liées à des actifs : déduction de l'actif OU produit différé (choix de méthode)",
+        "⚠️ En cas de remboursement d'une subvention, c'est un changement d'estimation (prospectif), pas une erreur",
+        "💡 Les subventions d'exploitation sont présentées séparément ou déduites des charges correspondantes"
+      ],
+      "key_differences": {
+        "ifrs": "IAS 20 a des principes très similaires — forte convergence entre RPC 28 et IAS 20",
+        "rpc": "RPC 28 est alignée sur IAS 20 dans ses principes fondamentaux",
+        "co": "Le CO ne contient pas de règles spécifiques sur les subventions publiques"
+      },
+      "mnemonics": "Subvention actif = réduire l'actif OU produit différé. Subvention exploitation = produit immédiat.",
+      "related_topics": ["IAS 20 — Subventions", "Produits différés", "Remboursement de subventions", "RPC 2"]
+    },
+    "rpc30": {
+      "summary": "RPC 30 traite des comptes consolidés (combinaison des états financiers d'un groupe). Elle définit le périmètre de consolidation, les méthodes (intégration globale, proportionnelle, mise en équivalence) et le traitement du goodwill de consolidation.",
+      "exam_tips": [
+        "⚠️ L'intégration globale s'applique dès qu'il y a CONTRÔLE (généralement >50% des droits de vote)",
+        "💡 Sous RPC, l'intégration proportionnelle est encore autorisée pour les coentreprises (supprimée sous IFRS 11)",
+        "⚠️ Le goodwill de consolidation peut être amorti (5-20 ans) OU compensé avec les FP — choix irréversible par acquisition",
+        "💡 Les transactions intra-groupe, soldes, produits et charges doivent être INTÉGRALEMENT éliminés"
+      ],
+      "key_differences": {
+        "ifrs": "IFRS 10/11 interdisent l'intégration proportionnelle (sauf pour les activités conjointes sous IFRS 11)",
+        "rpc": "RPC 30 autorise encore l'intégration proportionnelle et offre le choix pour le goodwill",
+        "co": "Le CO (art. 963 ss) définit l'obligation de consolidation mais renvoie aux normes comptables pour la méthode"
+      },
+      "mnemonics": "Consolidation : Contrôle = Intégration Globale, Influence notable = MEQ, Contrôle conjoint = Proportionnelle ou MEQ",
+      "related_topics": ["IFRS 10 — Consolidation", "IFRS 11 — Partenariats", "IAS 28 — MEQ", "RPC 10 — Goodwill"]
+    },
+    "rpc31": {
+      "summary": "RPC 31 est la recommandation complémentaire pour les sociétés cotées en bourse (SIX Swiss Exchange). Elle impose des exigences supplémentaires en matière de transparence, notamment le résultat par action, l'information sectorielle et des disclosures renforcées.",
+      "exam_tips": [
+        "⚠️ RPC 31 est OBLIGATOIRE pour toutes les sociétés cotées qui appliquent les Swiss GAAP RPC",
+        "💡 Les exigences supplémentaires incluent : résultat par action, information sectorielle, juste valeur des immeubles de placement",
+        "⚠️ Les sociétés cotées doivent aussi appliquer TOUTES les RPC complètes, pas seulement les fondamentales",
+        "💡 L'information sectorielle doit couvrir au minimum le chiffre d'affaires et le résultat par segment"
+      ],
+      "key_differences": {
+        "ifrs": "Les IFRS imposent des exigences comparables (IFRS 8, IAS 33) mais de manière plus détaillée pour les cotées",
+        "rpc": "RPC 31 comble l'écart entre RPC et IFRS pour les sociétés cotées suisses",
+        "co": "Le CO impose des obligations supplémentaires pour les cotées (art. 961d, rapport de rémunération)"
+      },
+      "mnemonics": "RPC 31 = exigences EXTRA pour les COTÉES : BPA + Segments + Fair Value immeubles",
+      "related_topics": ["IAS 33 — Résultat par action", "IFRS 8 — Segments", "RPC 1 — Seuils", "SIX Swiss Exchange"]
+    },
+    "ias1": {
+      "summary": "IAS 1 prescrit les bases de la présentation des états financiers en IFRS : bilan, compte de résultat et résultat global (OCI), tableau de variation des FP, tableau des flux de trésorerie et annexe. Elle définit les caractéristiques qualitatives et les principes de présentation fidèle.",
+      "exam_tips": [
+        "⚠️ IAS 1 impose la présentation de l'OCI (Other Comprehensive Income) — les éléments de l'OCI ne passent PAS par le résultat net",
+        "💡 Distinction actif courant/non courant basée sur le cycle d'exploitation (12 mois par défaut)",
+        "⚠️ Un passif est courant s'il est exigible dans les 12 mois — même si un accord de refinancement est signé APRÈS la clôture",
+        "💡 La présentation du résultat par nature OU par fonction est autorisée, mais l'information par nature doit toujours figurer (en annexe si format par fonction)"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS pour la présentation des états financiers",
+        "rpc": "RPC 3 est l'équivalent mais sans OCI et avec moins d'exigences de détail",
+        "co": "Le CO (art. 959-959c) prescrit une structure minimale plus simple qu'IAS 1"
+      },
+      "mnemonics": "États financiers IFRS = BROVA : Bilan, Résultat+OCI, Variation FP, Annexe + flux de trésorerie",
+      "related_topics": ["RPC 3 — Présentation", "OCI", "IAS 7 — Flux de trésorerie", "Courant vs non courant"]
+    },
+    "ias2": {
+      "summary": "IAS 2 traite de la comptabilisation et de l'évaluation des stocks (matières premières, en-cours, produits finis, marchandises). Les stocks sont évalués au plus bas du coût et de la valeur nette de réalisation. LIFO est interdit. FIFO et coût moyen pondéré sont les méthodes autorisées.",
+      "exam_tips": [
+        "⚠️ LIFO est INTERDIT sous IAS 2 — c'est un piège classique à l'examen",
+        "💡 Le coût de production inclut : matières directes + MOD + frais généraux de production (fixes et variables, sur base de capacité normale)",
+        "⚠️ Les frais de vente et les frais administratifs NE SONT PAS inclus dans le coût des stocks",
+        "💡 Les coûts d'emprunt ne sont PAS capitalisables dans les stocks (sauf stocks qualifiés selon IAS 23)"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS pour les stocks",
+        "rpc": "RPC 17 est très similaire dans ses principes — forte convergence",
+        "co": "Le CO autorise LIFO et permet des évaluations plus prudentes avec réserves latentes"
+      },
+      "mnemonics": "IAS 2 : FIFO ou CMP, jamais LIFO. Coût = MAT + MOD + FGP (capacité normale)",
+      "related_topics": ["RPC 17 — Stocks", "IAS 23 — Coûts d'emprunt", "Valeur nette de réalisation", "Capacité normale"]
+    },
+    "ias7": {
+      "summary": "IAS 7 prescrit l'établissement et la présentation du tableau des flux de trésorerie, classant les flux en trois catégories : exploitation, investissement et financement. Les deux méthodes (directe et indirecte) sont autorisées, mais l'IASB recommande la méthode directe.",
+      "exam_tips": [
+        "⚠️ Les intérêts et dividendes peuvent être classés dans différentes catégories — le choix doit être cohérent d'une période à l'autre",
+        "💡 Les impôts sur le bénéfice sont généralement classés en exploitation, sauf s'ils sont clairement liés à l'investissement ou au financement",
+        "⚠️ Les équivalents de trésorerie = placements très liquides, échéance ≤ 3 mois dès l'acquisition, risque négligeable de changement de valeur",
+        "💡 Les transactions non monétaires significatives (ex: échange d'actifs, conversion de dette en capital) sont exclues du tableau mais mentionnées en annexe"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS pour le tableau des flux de trésorerie",
+        "rpc": "RPC 4 est très similaire — les différences sont mineures",
+        "co": "Le CO ne prescrit pas de tableau des flux de trésorerie"
+      },
+      "mnemonics": "Trésorerie = caisse + comptes bancaires + équivalents (≤3 mois). Flux = E-I-F",
+      "related_topics": ["RPC 4 — Flux de trésorerie", "Méthode directe vs indirecte", "Équivalents de trésorerie"]
+    },
+    "ias8": {
+      "summary": "IAS 8 traite des méthodes comptables, des changements d'estimations et des corrections d'erreurs. Un changement de méthode est appliqué rétrospectivement, un changement d'estimation prospectivement, et une correction d'erreur rétrospectivement avec retraitement des comparatifs.",
+      "exam_tips": [
+        "⚠️ Distinguer changement de MÉTHODE (rétrospectif) vs changement d'ESTIMATION (prospectif) — piège fréquent",
+        "💡 Exemples de changements de méthode : passage FIFO→CMP, changement de modèle d'évaluation. Estimation : durée d'amortissement, provision",
+        "⚠️ Les corrections d'erreurs d'exercices antérieurs sont traitées rétrospectivement (restatement) — impact sur les FP d'ouverture",
+        "💡 Un changement de durée d'amortissement est un changement d'estimation, PAS un changement de méthode"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — principes clairs et stricts",
+        "rpc": "Les Swiss GAAP RPC ne contiennent pas de norme équivalente dédiée — principes dans le cadre conceptuel",
+        "co": "Le CO impose la permanence des méthodes (art. 958c al. 1 ch. 6) mais est moins détaillé sur le traitement"
+      },
+      "mnemonics": "Méthode = Rétro. Estimation = Prospectif. Erreur = Rétro. Mnémo : MRE-RPR",
+      "related_topics": ["Changements de méthodes", "Restatement", "IAS 1", "Permanence des méthodes"]
+    },
+    "ias10": {
+      "summary": "IAS 10 traite des événements survenant entre la date de clôture et la date d'approbation des comptes. On distingue les événements ajustants (qui confirment des conditions existant à la clôture → ajustement des comptes) et les événements non ajustants (conditions nouvelles → disclosure uniquement).",
+      "exam_tips": [
+        "⚠️ Un litige existant à la clôture dont le jugement tombe après = événement AJUSTANT. Un incendie après la clôture = NON ajustant",
+        "💡 La faillite d'un client après clôture est ajustante si les difficultés existaient déjà à la date de clôture",
+        "⚠️ Les dividendes proposés après la clôture sont des événements NON ajustants (pas de dette à la clôture)",
+        "💡 Si l'hypothèse de continuité n'est plus valable après la clôture, les comptes ne peuvent PAS être établis en continuité"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS pour les événements post-clôture",
+        "rpc": "Le cadre conceptuel RPC contient des principes similaires mais sans norme dédiée aussi détaillée",
+        "co": "Le CO (art. 958c) exige la mention des événements significatifs mais est moins prescriptif"
+      },
+      "mnemonics": "Ajustant = condition EXISTAIT à la clôture. Non ajustant = condition NOUVELLE après la clôture.",
+      "related_topics": ["Continuité d'exploitation", "Dividendes proposés", "Litiges", "Date d'approbation des comptes"]
+    },
+    "ias12": {
+      "summary": "IAS 12 traite de la comptabilisation des impôts sur le résultat, incluant les impôts courants et différés. Les impôts différés sont calculés selon la méthode du bilan (balance sheet approach) sur toutes les différences temporaires entre valeurs comptables et bases fiscales.",
+      "exam_tips": [
+        "⚠️ Les impôts différés sont calculés sur les différences TEMPORAIRES (bilan), pas sur les différences TEMPORELLES (résultat) — distinction fondamentale",
+        "💡 Un actif d'impôt différé n'est comptabilisé que s'il est PROBABLE que des bénéfices imposables futurs seront disponibles",
+        "⚠️ Les impôts différés ne sont JAMAIS actualisés sous IAS 12",
+        "💡 Les impôts différés liés à l'OCI sont comptabilisés en OCI, pas en résultat"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — méthode du bilan, très détaillée",
+        "rpc": "RPC 11 est plus souple et moins détaillée ; les ID actifs ne sont comptabilisés que si réalisation probable",
+        "co": "Le CO ne connaît pas les impôts différés — seuls les impôts courants exigibles"
+      },
+      "mnemonics": "ID = Diff. Temporaire × Taux futur. DTL = toujours. DTA = si probable. Jamais d'actualisation.",
+      "related_topics": ["RPC 11 — Impôts", "Différences temporaires", "Reports de pertes fiscales", "OCI"]
+    },
+    "ias16": {
+      "summary": "IAS 16 traite de la comptabilisation, de l'évaluation et de la décomptabilisation des immobilisations corporelles (PPE). Deux modèles sont autorisés après la comptabilisation initiale : le modèle du coût et le modèle de réévaluation. L'approche par composants est obligatoire.",
+      "exam_tips": [
+        "⚠️ L'approche par composants est OBLIGATOIRE sous IAS 16 — chaque composant significatif est amorti séparément",
+        "💡 Le modèle de réévaluation : surplus en OCI (réserve de réévaluation), sauf si reprise d'une perte antérieure passée en résultat",
+        "⚠️ Les coûts de démantèlement futurs doivent être inclus dans le coût initial de l'actif (avec provision correspondante, IAS 37)",
+        "💡 Les pièces de rechange majeures et le matériel d'entretien spécifique peuvent être qualifiés de PPE (pas de stocks)"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — modèle du coût ou de réévaluation, composants obligatoires",
+        "rpc": "RPC 18 n'autorise que le modèle du coût ; composants facultatifs",
+        "co": "Le CO ne connaît que le modèle du coût (art. 960a) ; pas d'obligation de décomposition"
+      },
+      "mnemonics": "IAS 16 : Coût OU Réévaluation. Composants = OBLIGATOIRE. Démantèlement = dans le coût initial.",
+      "related_topics": ["RPC 18 — Immo. corporelles", "IAS 36 — Dépréciation", "IAS 23 — Coûts d'emprunt", "Composants"]
+    },
+    "ias19": {
+      "summary": "IAS 19 traite de la comptabilisation des avantages du personnel : avantages à court terme, avantages postérieurs à l'emploi (régimes à prestations/cotisations définies), avantages à long terme et indemnités de fin de contrat. La méthode PBO (projected benefit obligation) s'applique aux régimes à prestations définies.",
+      "exam_tips": [
+        "⚠️ Les écarts actuariels (remeasurements) des régimes à prestations définies vont en OCI et ne sont JAMAIS recyclés en résultat",
+        "💡 Coût des services rendus = en résultat. Intérêts nets = en résultat. Remeasurements = en OCI",
+        "⚠️ Le plafonnement de l'actif (asset ceiling) : l'actif net ne peut excéder la valeur actualisée des avantages économiques futurs",
+        "💡 Les régimes à cotisations définies sont simples : la charge = les cotisations de la période"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — méthode PBO avec hypothèses actuarielles complexes",
+        "rpc": "RPC 16 utilise l'approche économique basée sur le surplus/découvert de la caisse de pension — fondamentalement différent",
+        "co": "Le CO ne comptabilise que les cotisations courantes comme charges"
+      },
+      "mnemonics": "IAS 19 : Résultat = Services + Intérêts nets. OCI = Remeasurements (jamais recyclés). RPC 16 = caisse.",
+      "related_topics": ["RPC 16 — Prévoyance", "OCI", "PBO", "Régimes à prestations vs cotisations définies"]
+    },
+    "ias20": {
+      "summary": "IAS 20 traite de la comptabilisation des subventions publiques et de l'information à fournir sur l'aide publique. Les subventions liées à des actifs sont soit déduites de l'actif, soit présentées en produit différé. Les subventions liées au résultat sont comptabilisées en produit systématiquement sur les périodes correspondantes.",
+      "exam_tips": [
+        "⚠️ Les subventions ne sont comptabilisées que lorsqu'il existe une assurance raisonnable que les conditions seront remplies et que la subvention sera reçue",
+        "💡 Deux présentations pour les subventions d'actifs : déduction de la valeur comptable OU produit différé amorti — le choix doit être constant",
+        "⚠️ Le remboursement d'une subvention est traité comme un changement d'estimation (IAS 8), pas rétrospectivement",
+        "💡 Les prêts à taux réduit de l'État contiennent un élément de subvention = différence avec le taux de marché"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS pour les subventions publiques",
+        "rpc": "RPC 28 est très similaire — forte convergence",
+        "co": "Le CO ne contient pas de règles spécifiques sur les subventions"
+      },
+      "mnemonics": "Subvention actif = 2 méthodes (déduire OU différer). Subvention résultat = produit systématique.",
+      "related_topics": ["RPC 28 — Subventions", "IAS 8 — Changements d'estimations", "Produits différés", "Prêts bonifiés"]
+    },
+    "ias21": {
+      "summary": "IAS 21 traite de la comptabilisation des transactions en monnaies étrangères et de la conversion des états financiers d'entités étrangères. Les éléments monétaires sont convertis au cours de clôture, les éléments non monétaires au cours historique (ou au cours de la date de juste valeur le cas échéant).",
+      "exam_tips": [
+        "⚠️ Éléments MONÉTAIRES (créances, dettes, trésorerie) = cours de clôture. GAINS/PERTES de change = en résultat",
+        "💡 Éléments NON monétaires au coût = cours historique. Non monétaires à la JV = cours à la date de JV",
+        "⚠️ Conversion d'entités étrangères : actifs/passifs au cours de clôture, résultat au cours moyen, écarts en OCI (réserve de conversion)",
+        "💡 La monnaie fonctionnelle est déterminée par l'environnement économique principal — pas un choix libre de l'entité"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS pour les monnaies étrangères",
+        "rpc": "Les Swiss GAAP RPC ne contiennent pas de norme dédiée aussi détaillée — principes dans RPC 2 et cadre conceptuel",
+        "co": "Le CO (art. 960 al. 2-3) prescrit la conversion au cours de clôture ou au cours historique selon les cas"
+      },
+      "mnemonics": "Monétaire = cours Clôture + résultat. Non monétaire = cours Historique. Conversion filiale = écart en OCI.",
+      "related_topics": ["OCI — Réserve de conversion", "Monnaie fonctionnelle", "Monnaie de présentation", "Couverture d'investissement net"]
+    },
+    "ias23": {
+      "summary": "IAS 23 impose la capitalisation des coûts d'emprunt directement attribuables à l'acquisition, la construction ou la production d'un actif qualifié. Un actif qualifié est un actif qui exige une longue période de préparation avant de pouvoir être utilisé ou vendu.",
+      "exam_tips": [
+        "⚠️ La capitalisation est OBLIGATOIRE sous IAS 23, pas optionnelle — c'est une différence clé avec RPC",
+        "💡 Actif qualifié = période substantielle de préparation (ex: immeuble en construction, stocks à maturation longue comme le vin/fromage)",
+        "⚠️ La capitalisation commence quand : dépenses engagées + coûts d'emprunt encourus + activités de préparation en cours (3 conditions)",
+        "💡 Si l'emprunt est spécifique : capitaliser les coûts réels moins les revenus du placement temporaire. Si emprunt général : utiliser le taux moyen pondéré"
+      ],
+      "key_differences": {
+        "ifrs": "Capitalisation OBLIGATOIRE des coûts d'emprunt pour actifs qualifiés",
+        "rpc": "Les Swiss GAAP RPC autorisent la capitalisation mais ne l'imposent pas",
+        "co": "Le CO autorise la capitalisation des intérêts intercalaires (art. 960a al. 1) sans l'imposer"
+      },
+      "mnemonics": "IAS 23 : Capitalisation = OBLIGATOIRE. 3 conditions simultanées : Dépenses + Coûts + Activités (DCA)",
+      "related_topics": ["IAS 16 — Immobilisations corporelles", "IAS 2 — Stocks qualifiés", "IAS 38 — Incorporelles", "Taux de capitalisation"]
+    },
+    "ias24": {
+      "summary": "IAS 24 définit les parties liées et prescrit la divulgation des transactions, soldes et engagements entre une entité et ses parties liées. L'objectif est de s'assurer que les comptes reflètent l'impact potentiel de ces relations sur la situation financière et le résultat.",
+      "exam_tips": [
+        "⚠️ La définition de 'partie liée' est LARGE : inclut sociétés-mères, filiales, associées, coentreprises, dirigeants clés ET leurs proches",
+        "💡 Les rémunérations des dirigeants clés doivent être ventilées par catégorie (court terme, post-emploi, actions, etc.)",
+        "⚠️ Même si la transaction est à des conditions de marché, la DIVULGATION est obligatoire",
+        "💡 L'État n'est pas une partie liée sauf si l'entité est contrôlée par l'État (exemption partielle possible)"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — définition large et disclosure détaillée",
+        "rpc": "RPC 15 est alignée sur les mêmes principes mais avec moins de détails",
+        "co": "Le CO (art. 663b bis) exige la divulgation des rémunérations pour les cotées"
+      },
+      "mnemonics": "Parties liées IAS 24 = Contrôle + Influence + Direction (CID) et leurs familles",
+      "related_topics": ["RPC 15 — Parties liées", "Rémunérations dirigeants", "Arm's length", "IAS 1"]
+    },
+    "ias28": {
+      "summary": "IAS 28 prescrit la comptabilisation des participations dans des entreprises associées (influence notable, généralement 20-50%) et des coentreprises par la méthode de la mise en équivalence (MEQ). L'investisseur comptabilise sa quote-part du résultat et des autres éléments du résultat global de l'entité détenue.",
+      "exam_tips": [
+        "⚠️ L'influence notable est PRÉSUMÉE à partir de 20% des droits de vote — mais cette présomption est réfutable",
+        "💡 MEQ : valeur initiale + quote-part résultat - dividendes reçus ± ajustements de JV à l'acquisition",
+        "⚠️ Les profits/pertes sur transactions intra-groupe avec une associée ne sont éliminés qu'à hauteur de la participation",
+        "💡 Si la MEQ amène la valeur à zéro, l'investisseur cesse de comptabiliser sa quote-part des pertes (sauf obligations supplémentaires)"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS pour la mise en équivalence",
+        "rpc": "RPC 30 traite aussi de la MEQ — principes similaires",
+        "co": "Le CO ne prescrit pas spécifiquement la mise en équivalence dans les comptes individuels"
+      },
+      "mnemonics": "MEQ = Coût + Quote-part résultat - Dividendes. Influence notable = 20-50% (présomption réfutable)",
+      "related_topics": ["RPC 30 — Consolidation", "IFRS 10", "IFRS 11 — Partenariats", "Goodwill implicite dans la MEQ"]
+    },
+    "ias32": {
+      "summary": "IAS 32 définit les principes de classification des instruments financiers entre dette (passif financier) et capitaux propres. Le critère clé est l'existence d'une obligation contractuelle de remettre de la trésorerie ou un autre actif financier. Elle traite aussi de la compensation des actifs et passifs financiers.",
+      "exam_tips": [
+        "⚠️ Le critère de classification dette/FP est JURIDIQUE (obligation contractuelle), pas économique — les actions rachetables = dette",
+        "💡 Les instruments composés (ex: obligation convertible) doivent être décomposés en composante dette + composante FP",
+        "⚠️ La compensation actif/passif financier n'est autorisée que si : droit juridiquement exécutoire + intention de régler net",
+        "💡 Les coûts de transaction sur instruments de FP sont déduits des FP (pas en charges)"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS pour la classification dette/FP des instruments financiers",
+        "rpc": "Les Swiss GAAP RPC n'ont pas de norme équivalente aussi détaillée — classification plus simple",
+        "co": "Le CO classe selon la forme juridique, pas selon la substance économique"
+      },
+      "mnemonics": "IAS 32 : Obligation de payer = DETTE. Pas d'obligation = FP. Convertible = décomposer.",
+      "related_topics": ["IFRS 9 — Instruments financiers", "IFRS 7 — Disclosures", "RPC 27 — Dérivés", "Instruments composés"]
+    },
+    "ias33": {
+      "summary": "IAS 33 prescrit le calcul et la présentation du résultat par action (BPA/EPS) pour les sociétés dont les actions ordinaires sont cotées. Le BPA de base utilise le résultat attribuable aux actionnaires ordinaires divisé par la moyenne pondérée des actions en circulation. Le BPA dilué intègre l'effet potentiel des instruments dilutifs.",
+      "exam_tips": [
+        "⚠️ Le BPA dilué ne peut jamais être SUPÉRIEUR au BPA de base — si un instrument est antidilutif, il est exclu du calcul",
+        "💡 Moyenne pondérée = pondération par le nombre de jours/mois en circulation pendant l'exercice",
+        "⚠️ Les actions gratuites et les splits sont traités RÉTROSPECTIVEMENT (ajustement des comparatifs)",
+        "💡 Options/warrants dilutifs : méthode du rachat d'actions (treasury stock method) — seul l'incrément dilutif est ajouté"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS pour le BPA — obligatoire pour les cotées",
+        "rpc": "RPC 31 exige le BPA pour les sociétés cotées appliquant les RPC, mais avec moins de détails",
+        "co": "Le CO n'impose pas le calcul du BPA"
+      },
+      "mnemonics": "BPA = Résultat / Actions moy. pondérées. Dilué = ajouter actions potentielles (si dilutives uniquement)",
+      "related_topics": ["RPC 31 — Sociétés cotées", "IAS 1", "Options sur actions", "Obligations convertibles"]
+    },
+    "ias36": {
+      "summary": "IAS 36 traite de la dépréciation d'actifs. Un actif est déprécié quand sa valeur comptable excède sa valeur recouvrable (plus élevée entre juste valeur diminuée des frais de vente et valeur d'utilité). Le test est obligatoire annuellement pour le goodwill et les incorporelles à durée indéfinie.",
+      "exam_tips": [
+        "⚠️ Le goodwill et les incorporelles à durée indéfinie = test annuel OBLIGATOIRE, pas seulement sur indice",
+        "💡 La valeur d'utilité est calculée par actualisation des flux de trésorerie futurs attendus (DCF)",
+        "⚠️ Le goodwill est alloué aux UGT (unités génératrices de trésorerie) — la dépréciation du goodwill n'est JAMAIS reprise sous IFRS",
+        "💡 L'ordre d'allocation de la dépréciation dans une UGT : d'abord le goodwill, puis les autres actifs au prorata"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — test annuel pour goodwill, concept d'UGT détaillé",
+        "rpc": "RPC 20 est plus simple et ne requiert le test que sur indice (pas de test annuel systématique)",
+        "co": "Le CO ne détaille pas la méthodologie de dépréciation"
+      },
+      "mnemonics": "IAS 36 : VR = max(JV-frais, VU). Goodwill = test annuel, pas de reprise. UGT = plus petit groupe d'actifs.",
+      "related_topics": ["RPC 20 — Dépréciation", "IFRS 3 — Goodwill", "UGT", "Valeur d'utilité / DCF"]
+    },
+    "ias37": {
+      "summary": "IAS 37 traite des provisions, passifs éventuels et actifs éventuels. Une provision est comptabilisée si trois conditions sont remplies : obligation actuelle, sortie probable de ressources et estimation fiable. Les passifs éventuels sont divulgués en annexe ; les actifs éventuels ne sont jamais comptabilisés.",
+      "exam_tips": [
+        "⚠️ La meilleure estimation d'une provision individuelle = montant le plus probable. Pour une population = espérance mathématique (moyenne pondérée)",
+        "💡 Provision pour contrat déficitaire (onerous contract) obligatoire si les coûts inévitables > avantages attendus",
+        "⚠️ Les actifs éventuels ne sont JAMAIS comptabilisés, seulement divulgués si l'entrée de ressources est probable",
+        "💡 L'actualisation est obligatoire si l'effet de la valeur temps de l'argent est significatif"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — critères stricts et détaillés",
+        "rpc": "RPC 23 est alignée sur les mêmes principes mais plus concise",
+        "co": "Le CO (art. 960e al. 2) permet des provisions prudentes, y compris des provisions excessives (réserves latentes)"
+      },
+      "mnemonics": "Provision = OPE (Obligation + Probable + Estimable). Passif éventuel = annexe. Actif éventuel = jamais au bilan.",
+      "related_topics": ["RPC 23 — Provisions", "IAS 10 — Événements post-clôture", "Contrats déficitaires", "Restructuration"]
+    },
+    "ias38": {
+      "summary": "IAS 38 traite de la comptabilisation, de l'évaluation et de l'amortissement des immobilisations incorporelles (brevets, licences, logiciels, marques, frais de développement). Les incorporelles acquises sont activées ; les frais de recherche sont toujours en charges ; les frais de développement sont activés sous conditions strictes.",
+      "exam_tips": [
+        "⚠️ Les frais de RECHERCHE sont TOUJOURS en charges. Les frais de DÉVELOPPEMENT sont activables si 6 conditions sont remplies (critères PIRATE)",
+        "💡 Critères d'activation du développement (PIRATE) : Possibilité technique, Intention d'achever, Ressources disponibles, Avantages économiques probables, Totalité des coûts mesurables, Existence d'un marché/utilité",
+        "⚠️ Le goodwill généré en interne n'est JAMAIS activable — seul le goodwill acquis (IFRS 3)",
+        "💡 Les incorporelles à durée indéfinie ne sont PAS amorties mais soumises au test annuel de dépréciation (IAS 36)"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — activation des frais de développement si 6 critères remplis",
+        "rpc": "RPC 10 n'autorise PAS l'activation des incorporelles créées en interne (y compris développement)",
+        "co": "Le CO (art. 959a al. 1 ch. 1) autorise l'activation des incorporelles acquises"
+      },
+      "mnemonics": "IAS 38 : Recherche = CHARGE. Développement = ACTIF si PIRATE. Goodwill interne = JAMAIS.",
+      "related_topics": ["RPC 10 — Incorporelles", "IFRS 3 — Goodwill", "IAS 36 — Dépréciation", "Frais de R&D"]
+    },
+    "ias40": {
+      "summary": "IAS 40 traite des immeubles de placement (investment property), c'est-à-dire des biens immobiliers détenus pour la perception de loyers ou pour la plus-value. Deux modèles d'évaluation ultérieure sont autorisés : le modèle de la juste valeur et le modèle du coût.",
+      "exam_tips": [
+        "⚠️ Sous le modèle de la juste valeur, les variations de JV passent en RÉSULTAT (pas en OCI) — différence avec IAS 16 réévaluation",
+        "💡 Un immeuble utilisé par le propriétaire = IAS 16 (pas IAS 40). Occupation partielle → séparer si possible",
+        "⚠️ Le transfert entre IAS 16 et IAS 40 peut générer une réévaluation au moment du transfert",
+        "💡 Même sous le modèle du coût, la juste valeur doit être divulguée en annexe"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — choix entre modèle JV (en résultat) et modèle du coût",
+        "rpc": "Les Swiss GAAP RPC n'ont pas de catégorie spécifique pour les immeubles de placement — traitement selon RPC 18 (coût)",
+        "co": "Le CO ne distingue pas les immeubles de placement — évaluation au coût amorti"
+      },
+      "mnemonics": "IAS 40 : Immeuble de placement = LOYER ou PLUS-VALUE. JV en résultat (pas OCI). Occupation propre = IAS 16.",
+      "related_topics": ["IAS 16 — Immobilisations corporelles", "IFRS 13 — Juste valeur", "RPC 31 — Immeubles de placement cotées", "RPC 18"]
+    },
+    "ifrs2": {
+      "summary": "IFRS 2 traite des paiements fondés sur des actions (stock-options, actions gratuites, plans d'intéressement). Elle distingue les transactions réglées en instruments de capitaux propres (equity-settled), en trésorerie (cash-settled) ou avec choix de règlement. La charge est étalée sur la période d'acquisition des droits (vesting period).",
+      "exam_tips": [
+        "⚠️ Equity-settled : évaluation à la date d'attribution (grant date) et JAMAIS réévalué par la suite",
+        "💡 Cash-settled : évaluation à la juste valeur à chaque clôture avec ajustement en résultat",
+        "⚠️ Les conditions de marché (ex: cours de l'action > X) sont intégrées dans la JV initiale mais n'affectent pas le nombre d'instruments attendus",
+        "💡 Les conditions de service et de performance non-marché affectent le nombre d'instruments attendus (ajustement de la charge)"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS pour les paiements en actions",
+        "rpc": "Les Swiss GAAP RPC n'ont pas de norme dédiée aux paiements en actions — disclosure dans l'annexe",
+        "co": "Le CO ne traite pas spécifiquement des paiements en actions"
+      },
+      "mnemonics": "IFRS 2 : Equity = JV à la date d'attribution (fixée). Cash = JV à chaque clôture (variable).",
+      "related_topics": ["IAS 19 — Avantages du personnel", "IAS 33 — Effet dilutif", "OCI", "Conditions de vesting"]
+    },
+    "ifrs3": {
+      "summary": "IFRS 3 traite des regroupements d'entreprises (business combinations) par la méthode de l'acquisition. L'acquéreur identifie les actifs acquis et passifs repris à leur juste valeur à la date d'acquisition. Le goodwill = prix payé - juste valeur nette des actifs identifiables.",
+      "exam_tips": [
+        "⚠️ Le goodwill n'est PAS amorti sous IFRS — il est soumis au test annuel de dépréciation (IAS 36)",
+        "💡 Un goodwill négatif (badwill/gain on bargain purchase) est comptabilisé immédiatement en RÉSULTAT",
+        "⚠️ Les frais d'acquisition (due diligence, avocats, etc.) sont en CHARGES, pas dans le goodwill",
+        "💡 Les passifs éventuels identifiables de la cible sont comptabilisés à leur JV à la date d'acquisition (même si <50% probable)"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — goodwill non amorti, frais d'acquisition en charges",
+        "rpc": "RPC 30/10 : goodwill amorti (5-20 ans) ou compensé avec FP ; frais d'acquisition peuvent être activés",
+        "co": "Le CO permet l'activation du goodwill avec amortissement sur 5 ans maximum (art. 963c)"
+      },
+      "mnemonics": "IFRS 3 : Goodwill = Prix - JV nette. Pas d'amortissement. Badwill = résultat immédiat. Frais = charges.",
+      "related_topics": ["IAS 36 — Dépréciation goodwill", "RPC 10/30 — Goodwill", "IFRS 10 — Consolidation", "Juste valeur des actifs acquis"]
+    },
+    "ifrs5": {
+      "summary": "IFRS 5 traite des actifs non courants détenus en vue de la vente et des activités abandonnées. Un actif est classé 'held for sale' si sa vente est hautement probable dans les 12 mois. Il est alors évalué au plus bas de la valeur comptable et de la juste valeur diminuée des coûts de vente, et n'est plus amorti.",
+      "exam_tips": [
+        "⚠️ Un actif classé 'held for sale' n'est PLUS amorti — c'est un piège fréquent",
+        "💡 Critères de classification : disponible pour vente immédiate + vente hautement probable + direction engagée + vente attendue dans 12 mois",
+        "⚠️ Les activités abandonnées sont présentées séparément dans le compte de résultat (une seule ligne, net d'impôt)",
+        "💡 Si les critères ne sont plus remplis, l'actif est reclassé et évalué comme s'il n'avait jamais été classé held for sale"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS pour les actifs détenus en vue de la vente",
+        "rpc": "Les Swiss GAAP RPC n'ont pas d'équivalent — pas de catégorie spécifique 'held for sale'",
+        "co": "Le CO ne connaît pas cette catégorie d'actifs"
+      },
+      "mnemonics": "IFRS 5 : Held for sale = STOP amortissement + évaluation min(VC, JV-frais) + vente en 12 mois",
+      "related_topics": ["IAS 16 — Reclassement", "IAS 36 — Dépréciation", "Activités abandonnées", "Présentation séparée"]
+    },
+    "ifrs7": {
+      "summary": "IFRS 7 prescrit les informations à fournir en annexe sur les instruments financiers : leur importance pour la situation financière et la performance, ainsi que la nature et l'étendue des risques (crédit, liquidité, marché) et la manière dont l'entité les gère.",
+      "exam_tips": [
+        "⚠️ IFRS 7 est une norme de DISCLOSURE uniquement — elle ne traite ni de la comptabilisation ni de l'évaluation",
+        "💡 Les trois risques principaux à divulguer : risque de crédit, risque de liquidité, risque de marché (change, taux, prix)",
+        "⚠️ L'analyse de sensibilité est obligatoire pour les risques de marché — montrer l'impact d'un changement raisonnablement possible",
+        "💡 Le tableau d'échéances des passifs financiers (maturity analysis) est une exigence clé pour le risque de liquidité"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS pour la disclosure des instruments financiers",
+        "rpc": "Les Swiss GAAP RPC exigent des informations sur les risques mais avec moins de détails",
+        "co": "Le CO ne prescrit pas d'informations détaillées sur les risques financiers"
+      },
+      "mnemonics": "IFRS 7 = CLM : Crédit, Liquidité, Marché — les 3 risques à divulguer + analyse de sensibilité",
+      "related_topics": ["IFRS 9 — Classification et évaluation", "IAS 32 — Présentation", "RPC 27 — Dérivés", "Gestion des risques"]
+    },
+    "ifrs9": {
+      "summary": "IFRS 9 traite de la classification, de l'évaluation, de la dépréciation et de la comptabilité de couverture des instruments financiers. La classification dépend du modèle économique et des caractéristiques des flux contractuels (test SPPI). Le modèle de dépréciation est basé sur les pertes de crédit attendues (ECL).",
+      "exam_tips": [
+        "⚠️ Trois catégories de mesure : coût amorti, JVOCI (juste valeur par OCI), JVPL (juste valeur par résultat) — le classement dépend du business model + test SPPI",
+        "💡 Le test SPPI (Solely Payments of Principal and Interest) détermine si les flux contractuels sont uniquement du principal et des intérêts",
+        "⚠️ Le modèle ECL (Expected Credit Loss) = 3 stages : stage 1 = ECL 12 mois, stage 2 = ECL vie entière, stage 3 = déprécié",
+        "💡 Les actions cotées sont toujours à JVPL sauf choix irrévocable JVOCI (sans recyclage)"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — classification business model + SPPI, ECL en 3 stages",
+        "rpc": "RPC 27 traite des dérivés mais pas de la classification générale des instruments financiers avec ce niveau de détail",
+        "co": "Le CO utilise le principe du plus bas du coût ou de la valeur de marché pour les titres"
+      },
+      "mnemonics": "IFRS 9 : Business Model + SPPI → CA, JVOCI ou JVPL. ECL 3 stages : 12 mois → vie entière → déprécié.",
+      "related_topics": ["IAS 32 — Classification", "IFRS 7 — Disclosures", "RPC 27 — Dérivés", "Hedge accounting"]
+    },
+    "ifrs10": {
+      "summary": "IFRS 10 définit les principes de consolidation basés sur le concept de contrôle. Un investisseur contrôle une entité lorsqu'il a le pouvoir sur l'entité, est exposé à des rendements variables et a la capacité d'utiliser son pouvoir pour influencer ces rendements. Les trois conditions sont cumulatives.",
+      "exam_tips": [
+        "⚠️ Le contrôle repose sur trois critères CUMULATIFS : pouvoir + rendements variables + lien entre les deux",
+        "💡 Le contrôle peut exister même sans majorité des droits de vote (contrôle de facto, droits potentiels, accords contractuels)",
+        "⚠️ Les entités structurées (SPE/SPV) doivent être analysées selon les mêmes critères de contrôle",
+        "💡 La perte de contrôle entraîne la déconsolidation et la comptabilisation d'un gain/perte"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — basée sur le contrôle effectif (pas seulement juridique)",
+        "rpc": "RPC 30 utilise aussi le concept de contrôle mais de manière moins détaillée",
+        "co": "Le CO (art. 963) définit l'obligation de consolidation basée sur le contrôle (>50% droits de vote ou influence dominante)"
+      },
+      "mnemonics": "IFRS 10 : Contrôle = Pouvoir + Rendements variables + Lien (PRL). Pas besoin de >50%.",
+      "related_topics": ["RPC 30 — Consolidation", "IFRS 3 — Regroupements", "IAS 28 — Influence notable", "Entités structurées"]
+    },
+    "ifrs11": {
+      "summary": "IFRS 11 traite des partenariats (joint arrangements), distinguant les activités conjointes (joint operations) des coentreprises (joint ventures). Les activités conjointes sont comptabilisées en intégrant les actifs, passifs, produits et charges propres. Les coentreprises sont comptabilisées selon la méthode de la mise en équivalence.",
+      "exam_tips": [
+        "⚠️ L'intégration PROPORTIONNELLE est INTERDITE sous IFRS 11 pour les coentreprises — seule la MEQ est autorisée",
+        "💡 La distinction joint operation vs joint venture dépend de la STRUCTURE juridique et des DROITS des parties sur les actifs/obligations",
+        "⚠️ Joint operation = droits sur les actifs et obligations pour les passifs → comptabilisation des actifs/passifs/produits/charges propres",
+        "💡 Joint venture = droits sur l'actif net → mise en équivalence (IAS 28)"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — plus d'intégration proportionnelle pour les JV",
+        "rpc": "RPC 30 autorise encore l'intégration proportionnelle pour les coentreprises — différence majeure",
+        "co": "Le CO ne prescrit pas de méthode spécifique pour les coentreprises"
+      },
+      "mnemonics": "IFRS 11 : Joint Operation = actifs/passifs propres. Joint Venture = MEQ. Proportionnelle = interdite pour JV.",
+      "related_topics": ["RPC 30 — Consolidation", "IAS 28 — Mise en équivalence", "IFRS 10 — Contrôle", "Intégration proportionnelle"]
+    },
+    "ifrs13": {
+      "summary": "IFRS 13 définit la juste valeur (fair value) comme le prix qui serait reçu pour vendre un actif ou payé pour transférer un passif lors d'une transaction ordonnée entre participants de marché. Elle établit une hiérarchie à trois niveaux pour les inputs d'évaluation.",
+      "exam_tips": [
+        "⚠️ La hiérarchie de JV : Niveau 1 = prix cotés sur marchés actifs, Niveau 2 = inputs observables, Niveau 3 = inputs non observables",
+        "💡 La juste valeur est un prix de SORTIE (exit price), pas un prix d'entrée ou un coût de remplacement",
+        "⚠️ L'utilisation optimale (highest and best use) est le concept pour les actifs non financiers",
+        "💡 Le niveau de la hiérarchie est déterminé par l'input le plus bas significatif utilisé dans l'évaluation"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS pour la mesure de la juste valeur — hiérarchie à 3 niveaux",
+        "rpc": "Les Swiss GAAP RPC utilisent la notion de juste valeur mais sans hiérarchie formalisée à 3 niveaux",
+        "co": "Le CO (art. 960b) autorise l'évaluation à la juste valeur pour les actifs cotés en bourse"
+      },
+      "mnemonics": "IFRS 13 : Fair Value = Exit price. Hiérarchie 1-2-3 : Coté → Observable → Non observable.",
+      "related_topics": ["IAS 40 — Immeubles de placement", "IFRS 9 — JVPL/JVOCI", "IAS 36 — JV - frais de vente", "IAS 16 — Réévaluation"]
+    },
+    "ifrs15": {
+      "summary": "IFRS 15 prescrit un modèle en 5 étapes pour la comptabilisation du chiffre d'affaires : (1) identifier le contrat, (2) identifier les obligations de performance, (3) déterminer le prix de transaction, (4) allouer le prix aux obligations, (5) comptabiliser le revenu lorsque l'obligation est satisfaite (transfert de contrôle).",
+      "exam_tips": [
+        "⚠️ Le critère est le transfert de CONTRÔLE (pas des risques et avantages comme sous RPC 22/ancien IAS 18)",
+        "💡 Obligation satisfaite dans le temps (over time) si : bénéfice simultané, actif sans usage alternatif avec droit au paiement, ou actif créé/amélioré contrôlé par le client",
+        "⚠️ La contrepartie variable (rabais, bonus, pénalités) doit être estimée et incluse dans le prix de transaction (contrainte de la variable)",
+        "💡 Les coûts d'obtention d'un contrat (commissions) sont activables si amortis sur plus d'un exercice"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — modèle en 5 étapes basé sur le contrôle",
+        "rpc": "RPC 22 est basée sur les risques et avantages (approche de l'ancien IAS 18) — plus simple",
+        "co": "Le CO ne prescrit pas de modèle spécifique de reconnaissance des revenus"
+      },
+      "mnemonics": "IFRS 15 en 5 étapes : CIPAD = Contrat, Identifier obligations, Prix, Allouer, Delivery (transfert contrôle)",
+      "related_topics": ["RPC 22 — Revenus", "IAS 18 (remplacé)", "Obligations de performance", "Contrepartie variable"]
+    },
+    "ifrs16": {
+      "summary": "IFRS 16 traite des contrats de location. Pour le preneur, TOUS les contrats de location de plus de 12 mois sont au bilan : actif droit d'utilisation (ROU asset) et dette de location. La distinction opérationnel/financier disparaît chez le preneur. Le bailleur conserve la distinction.",
+      "exam_tips": [
+        "⚠️ Sous IFRS 16, le preneur n'a PLUS de leasing opérationnel hors bilan (sauf exemptions : <12 mois ou faible valeur <5'000 USD)",
+        "💡 L'actif ROU est amorti linéairement ; la dette est comptabilisée au coût amorti avec intérêts (front-loaded)",
+        "⚠️ Le profil de charges est 'front-loaded' : charge totale (amortissement + intérêts) plus élevée au début qu'à la fin",
+        "💡 Les exemptions : contrats ≤ 12 mois (short-term) et actifs de faible valeur (low-value, ~5'000 USD)"
+      ],
+      "key_differences": {
+        "ifrs": "Norme de référence IFRS — tout au bilan du preneur (sauf exemptions)",
+        "rpc": "RPC 13 maintient la distinction opérationnel/financier chez le preneur — différence MAJEURE",
+        "co": "Le CO ne prescrit pas de comptabilisation spécifique des contrats de location"
+      },
+      "mnemonics": "IFRS 16 preneur : TOUT au bilan = ROU asset + Lease liability. Exceptions : <12 mois ou <5k USD.",
+      "related_topics": ["RPC 13 — Leasing", "IAS 17 (remplacé)", "Droit d'utilisation", "Sale-and-lease-back"]
+    },
+    "oci": {
+      "summary": "L'OCI (Other Comprehensive Income / Autres éléments du résultat global) regroupe les gains et pertes qui ne passent pas par le compte de résultat mais directement en capitaux propres. Les principaux éléments sont : écarts de réévaluation IAS 16, variations JV JVOCI (IFRS 9), écarts actuariels IAS 19, écarts de conversion IAS 21, et couvertures de flux de trésorerie.",
+      "exam_tips": [
+        "⚠️ Certains éléments OCI sont RECYCLABLES en résultat (conversion, couverture flux, JVOCI dette) et d'autres NON (réévaluation IAS 16, JVOCI actions, actuariels IAS 19)",
+        "💡 L'OCI n'existe PAS sous Swiss GAAP RPC — tout passe en résultat ou directement en FP",
+        "⚠️ Le résultat GLOBAL = résultat net + OCI. C'est le résultat global qui alimente la variation des FP",
+        "💡 Les éléments d'OCI sont présentés nets d'impôts (ou bruts avec l'impôt montré séparément)"
+      ],
+      "key_differences": {
+        "ifrs": "L'OCI est un concept fondamental en IFRS avec des éléments recyclables et non recyclables",
+        "rpc": "Les Swiss GAAP RPC n'ont PAS d'OCI — c'est une différence structurelle majeure",
+        "co": "Le CO ne connaît pas l'OCI"
+      },
+      "mnemonics": "OCI recyclable = CCD (Conversion, Couverture flux, Dette JVOCI). Non recyclable = RAA (Réévaluation, Actions JVOCI, Actuariels)",
+      "related_topics": ["IAS 1 — Présentation", "IAS 19 — Actuariels", "IAS 21 — Conversion", "IFRS 9 — JVOCI", "IAS 16 — Réévaluation"]
+    },
+    "co_droit_comptable": {
+      "summary": "Le droit comptable du CO (art. 957-963c) fixe les règles minimales de tenue des comptes et de présentation des comptes annuels en Suisse. Il s'applique à toutes les entités inscrites au RC et définit les principes de comptabilité régulière, la structure du bilan et du compte de résultat, et les règles d'évaluation.",
+      "exam_tips": [
+        "⚠️ Le CO autorise les réserves latentes (art. 960a al. 4) — c'est la différence fondamentale avec IFRS et même RPC",
+        "💡 Le seuil de CHF 500'000 CA (art. 957 al. 2) détermine la comptabilité simplifiée vs complète",
+        "⚠️ Les principes comptables du CO (art. 958c) : permanence, continuité, prudence, non-compensation, régularité, etc.",
+        "💡 L'évaluation selon le CO se fait au coût historique amorti, avec la possibilité d'évaluer les actifs cotés à la juste valeur (art. 960b)"
+      ],
+      "key_differences": {
+        "ifrs": "Les IFRS visent l'image fidèle et interdisent les réserves latentes ; le CO privilégie la prudence",
+        "rpc": "Les RPC sont plus exigeantes que le CO mais moins que les IFRS ; elles limitent les réserves latentes",
+        "co": "Norme de référence du droit comptable suisse — base légale minimale"
+      },
+      "mnemonics": "CO = Base minimale + Prudence + Réserves latentes autorisées. Art. 957-963c.",
+      "related_topics": ["RPC 1 — Seuils", "Réserves latentes", "Art. 957-963c CO", "Révision légale", "Comptabilité simplifiée"]
+    }
+  }
+}

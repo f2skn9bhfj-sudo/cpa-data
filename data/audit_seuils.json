@@ -1,0 +1,649 @@
+{
+  "_meta": {
+    "module": "Audit — Seuils & Exercices",
+    "description": "Tous les seuils clés de l'audit suisse + exercices pas-à-pas pour vraiment les comprendre.",
+    "version": "1.0.0"
+  },
+
+  "categories": [
+    {
+      "id": "materialite",
+      "label": "Matérialité (PM / Performance / SUD)",
+      "icon": "💰",
+      "color": "#8b5cf6",
+      "aide_memoire": {
+        "concept": "Il y a 3 seuils en matérialité, dans l'ordre décroissant :",
+        "niveaux": [
+          {
+            "name": "1. Matérialité globale (PM - Planning Materiality)",
+            "formula": "% × Base (RAI, CA, Total actif, FP)",
+            "benchmarks": "RAI : 5% · CA : 0.5-2% · Total actif : 1-5% · FP : 1-5%",
+            "purpose": "Seuil pour l'opinion. Au-dessus → anomalie significative. Base de décision.",
+            "typical_value": "CHF 500k - 5M selon l'entité"
+          },
+          {
+            "name": "2. Performance Materiality (TE - Tolerable Error)",
+            "formula": "50-75% de la PM globale",
+            "benchmarks": "Choix basé sur le risque : 50% si risque élevé, 75% si risque faible",
+            "purpose": "Seuil DE TEST (plus strict que PM). Marge de sécurité pour éviter que des anomalies non détectées, CUMULÉES, dépassent la PM.",
+            "typical_value": "~65% de PM en pratique"
+          },
+          {
+            "name": "3. SUD (Clearly Trivial Threshold)",
+            "formula": "3-5% de la PM globale",
+            "benchmarks": "5% par défaut",
+            "purpose": "En dessous : anomalie 'clairement insignifiante' → on ne l'accumule PAS dans le SAD. Au-dessus : on accumule.",
+            "typical_value": "CHF 25k - 250k selon l'entité"
+          }
+        ],
+        "mental_model": "PM = 'est-ce que ça change l'opinion ?' · Performance = 'teste-t-on assez strictement ?' · SUD = 'est-ce que ça vaut la peine de le noter ?'",
+        "pitfalls": [
+          "Ne jamais conclure sur UNE anomalie isolée : toujours cumuler dans le SAD et comparer au PM",
+          "PM qualitative : certaines anomalies (fraude, loi) sont significatives même sous le seuil quantitatif",
+          "Choix de la base : viser la mesure qui intéresse le plus les utilisateurs (cotées = RAI; ONG = total actif ; banques = FP)",
+          "En cas de résultat anormal (perte, pic exceptionnel) : utiliser une base NORMALISÉE (moyenne 3 ans)"
+        ]
+      },
+      "exercises": [
+        {
+          "id": "mat_ex1",
+          "difficulty": "easy",
+          "scenario": "PME industrielle · RAI moyen 3 ans = CHF 2'000'000 · CA = CHF 30M · Total actif = CHF 25M",
+          "question": "Quelle est la matérialité globale (PM) en utilisant le RAI comme base à 5% ?",
+          "options": [
+            {"label": "CHF 50'000", "ok": false, "x": "Trop bas — tu as peut-être calculé sur 0.5%."},
+            {"label": "CHF 100'000", "ok": true, "x": "Correct : 5% × CHF 2'000'000 = CHF 100'000."},
+            {"label": "CHF 150'000", "ok": false, "x": "Tu as utilisé 7.5%, pas 5%."},
+            {"label": "CHF 1'000'000", "ok": false, "x": "Erreur décimale — c'est 5% (=0.05), pas 50%."}
+          ],
+          "steps": [
+            "1. On utilise la base RAI (classique pour entreprises commerciales)",
+            "2. On applique le % standard : 5%",
+            "3. PM = RAI × % = CHF 2'000'000 × 5% = CHF 100'000"
+          ],
+          "exam_ref": "NAS 320"
+        },
+        {
+          "id": "mat_ex2",
+          "difficulty": "medium",
+          "scenario": "Même PME : PM = CHF 100'000. Le risque d'audit est ÉLEVÉ (nouvelle mission, SCI faible, parties liées).",
+          "question": "Quelle Performance Materiality (TE) choisis-tu ?",
+          "options": [
+            {"label": "CHF 50'000 (50% de PM)", "ok": true, "x": "Correct : risque élevé → 50% de PM pour test plus strict."},
+            {"label": "CHF 75'000 (75% de PM)", "ok": false, "x": "75% serait pour un risque FAIBLE. Ici risque élevé → 50%."},
+            {"label": "CHF 100'000 (= PM)", "ok": false, "x": "Impossible : Performance < PM toujours."},
+            {"label": "CHF 5'000 (5% de PM)", "ok": false, "x": "Confusion avec le SUD."}
+          ],
+          "steps": [
+            "1. Performance Materiality est TOUJOURS < Matérialité globale",
+            "2. Fourchette usuelle : 50-75% de la PM",
+            "3. Risque élevé → choisir 50% (test + strict)",
+            "4. Risque faible → choisir 75% (test + efficient)",
+            "5. Ici risque élevé → TE = 50% × CHF 100'000 = CHF 50'000"
+          ],
+          "exam_ref": "NAS 320 §10"
+        },
+        {
+          "id": "mat_ex3",
+          "difficulty": "medium",
+          "scenario": "PM = CHF 100'000. Performance = CHF 50'000.",
+          "question": "Quelle est le SUD (seuil de remontée, clearly trivial threshold) ?",
+          "options": [
+            {"label": "CHF 5'000 (5% de PM)", "ok": true, "x": "Correct : SUD = ~5% de la PM GLOBALE (pas de Performance)."},
+            {"label": "CHF 2'500 (5% de Performance)", "ok": false, "x": "Piège classique : le SUD se calcule sur la PM globale, pas sur la TE."},
+            {"label": "CHF 10'000", "ok": false, "x": "Trop élevé — ça serait 10% de PM."},
+            {"label": "CHF 1'000", "ok": false, "x": "Trop bas."}
+          ],
+          "steps": [
+            "1. Le SUD est un % de la MATÉRIALITÉ GLOBALE (PM), pas de la Performance",
+            "2. % usuel : 3-5% · par défaut 5%",
+            "3. SUD = 5% × CHF 100'000 = CHF 5'000",
+            "4. En dessous : on ignore l'anomalie. Au-dessus : on la met dans le SAD."
+          ],
+          "exam_ref": "NAS 450"
+        },
+        {
+          "id": "mat_ex4",
+          "difficulty": "hard",
+          "scenario": "Société avec PERTE significative en 2025 (RAI = -CHF 500k). Historique : 2024 RAI +CHF 3M, 2023 RAI +CHF 2.8M. CA 2025 = CHF 45M. Total actif = CHF 35M.",
+          "question": "Comment calcules-tu la matérialité globale ?",
+          "options": [
+            {"label": "5% de la perte 2025 = 5% × -500k = -25k (non-sens)", "ok": false, "x": "FAUX — on ne calcule pas sur un résultat négatif."},
+            {"label": "Passer à 0.5% du CA = CHF 225'000", "ok": false, "x": "Possible mais souvent on utilise plutôt le RAI NORMALISÉ quand le résultat est exceptionnel."},
+            {"label": "RAI normalisé (moyenne 3 ans) = (3M + 2.8M − 0.5M)/3 = CHF 1.77M. PM = 5% × 1.77M = CHF 88'500", "ok": true, "x": "Correct — base normalisée en cas de résultat anormal. Approche recommandée."},
+            {"label": "1% du total actif = CHF 350'000", "ok": false, "x": "Possible comme sanity check mais pas la méthode usuelle pour commerciale."}
+          ],
+          "steps": [
+            "1. Le RAI 2025 négatif ne reflète pas la capacité normale de l'entité",
+            "2. NAS 320 §A3 : utiliser une base NORMALISÉE en cas de résultat exceptionnel",
+            "3. Moyenne 3 ans = (3M + 2.8M − 0.5M) / 3 = CHF 1'767'000 ≈ 1.77M",
+            "4. PM = 5% × 1.77M = CHF 88'500",
+            "5. Alternative : utiliser le CA (0.5-2%) ou le total actif (1-5%) comme sanity check"
+          ],
+          "exam_ref": "NAS 320 §A3 — choix de la base"
+        },
+        {
+          "id": "mat_ex5",
+          "difficulty": "hard",
+          "scenario": "PM = CHF 200'000, Performance = CHF 130'000, SUD = CHF 10'000. Tu identifies : Anomalie 1 : CHF 15'000 (au-dessus SUD). Anomalie 2 : CHF 8'000 (en dessous SUD). Anomalie 3 : CHF 170'000 (entre SUD et PM). Anomalie 4 : fraude direction pour CHF 12'000.",
+          "question": "Quelles anomalies entrent dans ton SAD cumul final ? Quel est l'impact ?",
+          "options": [
+            {"label": "Total SAD = 15 + 170 = CHF 185k — en dessous de PM → opinion OK", "ok": false, "x": "Oubli — la fraude direction est QUALITATIVE (à retenir même < SUD)."},
+            {"label": "Total SAD = 15 + 170 + 12 (fraude) = CHF 197k — sous PM mais QUALITATIF critique → opinion modifiée", "ok": true, "x": "Correct — la fraude direction est retenue indépendamment du SUD (matérialité qualitative)."},
+            {"label": "Total SAD = 15 + 8 + 170 + 12 = CHF 205k — dépasse PM → défavorable", "ok": false, "x": "L'anomalie 2 (CHF 8k) est SOUS le SUD → ne s'accumule pas."},
+            {"label": "Rien ne s'accumule car tout est < PM individuellement", "ok": false, "x": "FAUX — le SAD se cumule et se compare à la PM."}
+          ],
+          "steps": [
+            "1. SUD = CHF 10'000. Anomalies < SUD = IGNORÉES (anomalie 2 ignorée)",
+            "2. Anomalies entre SUD et PM = ACCUMULÉES (anomalies 1, 3 incluses)",
+            "3. Anomalies QUALITATIVES (fraude, non-conformité, parties liées) = TOUJOURS accumulées, même < SUD (anomalie 4 incluse)",
+            "4. Total SAD = 15 + 170 + 12 = CHF 197'000",
+            "5. 197k < 200k (PM) → quantitativement OK, MAIS matérialité qualitative (fraude) → opinion modifiée (qualifiée minimum)"
+          ],
+          "exam_ref": "NAS 450 + NAS 240"
+        }
+      ]
+    },
+
+    {
+      "id": "co727",
+      "label": "CO 727 — Régimes de révision (ordinaire / restreint / opting-out)",
+      "icon": "⚖️",
+      "color": "#f59e0b",
+      "aide_memoire": {
+        "concept": "En Suisse, trois régimes possibles selon les seuils :",
+        "niveaux": [
+          {
+            "name": "Révision ORDINAIRE (CO 727)",
+            "formula": "Cotée OU (2 critères dépassés × 2 exercices consécutifs) OU consolidation OU opting-up 10%",
+            "benchmarks": "Bilan CHF 20M · CA CHF 40M · 250 employés ETP",
+            "purpose": "Audit COMPLET avec NAS, opinion positive, vérification SCI, 2 rapports (long + short)",
+            "typical_value": "Grandes PME, PMI, cotées"
+          },
+          {
+            "name": "Contrôle RESTREINT (CO 727a)",
+            "formula": "Par défaut si pas de critère ordinaire ET > 10 ETP",
+            "benchmarks": "Sous les seuils CO 727 + plus de 10 employés ETP",
+            "purpose": "Examen limité (inquiries + analytiques + vérifications appropriées), conclusion négative, 1 seul rapport",
+            "typical_value": "PME moyennes"
+          },
+          {
+            "name": "Opting-out (pas de révision)",
+            "formula": "≤ 10 employés ETP + accord UNANIME des actionnaires",
+            "benchmarks": "10 ETP max en moyenne annuelle + renonciation explicite",
+            "purpose": "Aucune vérification externe — rare en pratique",
+            "typical_value": "Micro-SA, sociétés unipersonnelles"
+          }
+        ],
+        "mental_model": "Question 1 : Cotée ? → Ordinaire. Q2 : 2 critères × 2 ans ? → Ordinaire. Q3 : Consolidation ? → Ordinaire. Q4 : Opting-up 10% ? → Ordinaire. Q5 : ≤10 ETP + unanimité ? → Opting-out. Sinon → Restreint.",
+        "pitfalls": [
+          "Deux critères simultanés PENDANT DEUX exercices CONSÉCUTIFS (pas un seul)",
+          "Les cotées sont automatiquement en révision ordinaire même si sous les seuils",
+          "Le 'dépassement' doit concerner les MÊMES 2 critères (pas alterner)",
+          "Opting-out : ne pas confondre avec opting-up (inverse : exiger plus)"
+        ]
+      },
+      "exercises": [
+        {
+          "id": "co727_ex1",
+          "difficulty": "easy",
+          "scenario": "PME SA · Bilan 15 mio · CA 45 mio · 180 employés · NON cotée · pas de consolidation",
+          "question": "Quel régime d'audit ?",
+          "options": [
+            {"label": "Révision ORDINAIRE — CA > 40M", "ok": false, "x": "Piège : 1 SEUL critère dépassé (CA) → insuffisant pour ordinaire."},
+            {"label": "Contrôle RESTREINT — seulement 1 critère dépassé", "ok": true, "x": "Correct : il faut DEUX critères dépassés × 2 exercices pour déclencher l'ordinaire."},
+            {"label": "Opting-out — entreprise familiale", "ok": false, "x": "Opting-out nécessite ≤ 10 ETP."},
+            {"label": "Révision ordinaire — société > 100 employés", "ok": false, "x": "100 n'est pas un seuil."}
+          ],
+          "steps": [
+            "1. Bilan 15 < 20 mio → KO",
+            "2. CA 45 > 40 mio → OK",
+            "3. Employés 180 < 250 → KO",
+            "4. 1 seul critère dépassé → PAS ordinaire",
+            "5. Non cotée, pas de conso → contrôle RESTREINT par défaut"
+          ],
+          "exam_ref": "CO 727 al. 1 ch. 2"
+        },
+        {
+          "id": "co727_ex2",
+          "difficulty": "easy",
+          "scenario": "SA · Bilan 10 mio · CA 15 mio · 45 employés · NON cotée · cotée à SIX pour emprunts obligataires",
+          "question": "Quel régime d'audit ?",
+          "options": [
+            {"label": "Contrôle restreint (sous les seuils)", "ok": false, "x": "Piège : cotée = ordinaire même sous les seuils."},
+            {"label": "Révision ORDINAIRE — émettrice d'emprunts par obligations", "ok": true, "x": "Correct : CO 727 al. 1 ch. 1 — les sociétés ouvertes au public incluent les débiteurs d'emprunts par obligations."},
+            {"label": "Opting-out possible", "ok": false, "x": "Impossible : société ouverte au public."},
+            {"label": "Contrôle restreint avec mention spéciale", "ok": false, "x": "La cotation déclenche l'ordinaire."}
+          ],
+          "steps": [
+            "1. Société 'ouverte au public' = cotée OU débitrice d'emprunts par obligations",
+            "2. Ici : émet des obligations → ouverte au public",
+            "3. CO 727 al. 1 ch. 1 : toutes les sociétés ouvertes au public → révision ORDINAIRE",
+            "4. Les seuils bilan/CA/emplois ne s'appliquent plus"
+          ],
+          "exam_ref": "CO 727 al. 1 ch. 1"
+        },
+        {
+          "id": "co727_ex3",
+          "difficulty": "medium",
+          "scenario": "SA familiale · 2024 : Bilan 22 mio, CA 38 mio, 230 employés · 2025 : Bilan 25 mio, CA 42 mio, 255 employés",
+          "question": "Quel régime pour 2025 ?",
+          "options": [
+            {"label": "Contrôle restreint — pas la même combinaison 2 ans de suite", "ok": false, "x": "Analyse à refaire — voir les steps."},
+            {"label": "Révision ORDINAIRE — 2 critères dépassés × 2 ans", "ok": true, "x": "Correct — on a bien 2 critères en commun qui dépassent les 2 ans."},
+            {"label": "Ordinaire — juste parce que 2025 dépasse 3 critères", "ok": false, "x": "Règle est '2 ans consécutifs' pas '3 critères une année'."},
+            {"label": "Restreint — 2024 ne dépassait que 2 critères, pas 3", "ok": false, "x": "Il faut 2 critères sur 2 ans, pas 3."}
+          ],
+          "steps": [
+            "1. Analyser 2024 : Bilan 22>20 OK · CA 38<40 KO · Empl 230<250 KO → 1 critère OK",
+            "2. Analyser 2025 : Bilan 25>20 OK · CA 42>40 OK · Empl 255>250 OK → 3 critères OK",
+            "3. Règle : 2 critères dépassés PENDANT 2 EXERCICES CONSÉCUTIFS",
+            "4. Attention : les critères doivent être communs aux 2 années",
+            "5. En 2024 seul le bilan dépasse. Il n'y a PAS 2 critères en commun sur 2 ans consécutifs.",
+            "6. Donc 2025 reste en RESTREINT (on bascule à l'ordinaire si en 2026 on a au moins 2 critères en commun avec 2025)",
+            "⚠️ Cette interprétation stricte est la plus prudente — certains auditeurs considèrent qu'il suffit que chaque année isolée dépasse 2 critères. La pratique EXPERTsuisse va dans le sens strict."
+          ],
+          "exam_ref": "CO 727 al. 1 ch. 2",
+          "note": "Cas ambigu — en pratique on bascule souvent en 2025 par prudence."
+        },
+        {
+          "id": "co727_ex4",
+          "difficulty": "medium",
+          "scenario": "SA · Bilan 5 mio · CA 8 mio · 8 employés ETP · Tous les actionnaires votent l'opting-out à l'unanimité",
+          "question": "Quel régime ?",
+          "options": [
+            {"label": "Contrôle restreint (obligatoire malgré décision AG)", "ok": false, "x": "Non, opting-out est légalement possible ici."},
+            {"label": "Opting-out — conditions remplies (≤10 ETP + unanimité)", "ok": true, "x": "Correct : CO 727a al. 2 — renonciation possible."},
+            {"label": "Révision ordinaire — pour protection des actionnaires", "ok": false, "x": "Pas obligatoire."},
+            {"label": "Restreint car bilan > 1M", "ok": false, "x": "Pas de seuil bilan pour opting-out."}
+          ],
+          "steps": [
+            "1. Conditions opting-out (CO 727a al. 2) : ≤ 10 employés ETP + accord UNANIME des actionnaires",
+            "2. 8 employés ETP → OK",
+            "3. Unanimité actionnaires → OK",
+            "4. Donc opting-out possible : AUCUNE révision obligatoire",
+            "5. ⚠️ Réversible : si > 10 ETP l'année suivante, retour automatique au contrôle restreint"
+          ],
+          "exam_ref": "CO 727a al. 2"
+        },
+        {
+          "id": "co727_ex5",
+          "difficulty": "hard",
+          "scenario": "SA · Bilan 12 mio · CA 18 mio · 95 employés · Non cotée · pas de consolidation · Un actionnaire détient 12% du capital et demande une révision ordinaire",
+          "question": "Quel régime s'applique ?",
+          "options": [
+            {"label": "Contrôle restreint — sous les seuils", "ok": false, "x": "Piège : opting-up est possible."},
+            {"label": "Révision ORDINAIRE — opting-up demandé par actionnaire ≥ 10% du capital", "ok": true, "x": "Correct : CO 727 al. 2 — ≥10% capital peut exiger l'ordinaire."},
+            {"label": "Opting-out possible", "ok": false, "x": "Employés > 10."},
+            {"label": "Révision ordinaire si la majorité vote", "ok": false, "x": "Pas besoin de majorité — 10% suffit."}
+          ],
+          "steps": [
+            "1. Sans la demande : seuils CO 727 non atteints → restreint",
+            "2. Mais CO 727 al. 2 — actionnaires représentant ≥10% du capital peuvent exiger une révision ordinaire (opting-up)",
+            "3. Ici : 12% → largement au-dessus de 10%",
+            "4. L'opting-up est un DROIT d'actionnaire, pas négociable",
+            "5. Régime final : RÉVISION ORDINAIRE obligatoire pour l'exercice concerné"
+          ],
+          "exam_ref": "CO 727 al. 2"
+        }
+      ]
+    },
+
+    {
+      "id": "rpc30",
+      "label": "RPC 30 — Consolidation",
+      "icon": "🏢",
+      "color": "#3b82f6",
+      "aide_memoire": {
+        "concept": "Les seuils de consolidation (RPC 30 et CO 963) déterminent qui doit établir des comptes consolidés :",
+        "niveaux": [
+          {
+            "name": "Consolidation OBLIGATOIRE (CO 963)",
+            "formula": "2 critères dépassés × 2 exercices consécutifs",
+            "benchmarks": "Bilan CHF 20M · CA CHF 40M · 250 employés ETP",
+            "purpose": "Comptes consolidés requis par la loi",
+            "typical_value": "Identiques aux seuils révision ordinaire CO 727"
+          },
+          {
+            "name": "Consolidation obligatoire RPC 30",
+            "formula": "Identique CO 963 mais détail par normes",
+            "benchmarks": "20/40/250 sur 2 ans",
+            "purpose": "Norme RPC 30 sur consolidation + exemption possible pour petits groupes"
+          },
+          {
+            "name": "Exemption",
+            "formula": "Petits groupes sous seuils",
+            "benchmarks": "< seuils CO 963 sur 2 ans consécutifs",
+            "purpose": "Pas de consolidation requise"
+          }
+        ],
+        "mental_model": "CO 963 seuils = CO 727 seuils (identiques). Logique : si tu dois consolider, tu es forcément en révision ordinaire.",
+        "pitfalls": [
+          "Les seuils de consolidation sont identiques aux seuils CO 727 — en fait, la consolidation déclenche l'ordinaire",
+          "Une société MÈRE peut être dispensée si déjà consolidée dans un groupe supérieur (sous-consolidation exemption)",
+          "Fondations/associations : règles spéciales différentes"
+        ]
+      },
+      "exercises": [
+        {
+          "id": "rpc30_ex1",
+          "difficulty": "easy",
+          "scenario": "Holding · Bilan groupe 25 mio · CA groupe 45 mio · 280 employés groupe · depuis 3 ans",
+          "question": "La consolidation est-elle obligatoire ?",
+          "options": [
+            {"label": "Oui — 3 critères dépassés × 3 ans", "ok": true, "x": "Correct : seuils 20/40/250 largement dépassés sur plus de 2 ans."},
+            {"label": "Non — filiales petites", "ok": false, "x": "On regarde le total groupe, pas les filiales isolées."},
+            {"label": "Non — moins de 500 employés", "ok": false, "x": "Seuil est 250, pas 500."},
+            {"label": "Exempté car holding", "ok": false, "x": "Les holdings ne sont pas automatiquement exemptés."}
+          ],
+          "steps": [
+            "1. Seuils CO 963 : Bilan 20 · CA 40 · ETP 250 · sur 2 ans",
+            "2. Ici : 25 > 20 ✓, 45 > 40 ✓, 280 > 250 ✓ → 3/3 critères",
+            "3. 3 ans > 2 ans requis → conditions remplies",
+            "4. Consolidation OBLIGATOIRE",
+            "5. Conséquence : révision ordinaire déclenchée automatiquement (CO 727)"
+          ],
+          "exam_ref": "CO 963 / RPC 30"
+        },
+        {
+          "id": "rpc30_ex2",
+          "difficulty": "medium",
+          "scenario": "SA mère de 2 filiales · Bilan groupe 18 mio · CA groupe 35 mio · 180 employés groupe · ANNÉE 1",
+          "question": "Consolidation requise en année 1 ?",
+          "options": [
+            {"label": "Oui — entreprise a des filiales", "ok": false, "x": "Les seuils comptent, pas la simple présence de filiales."},
+            {"label": "Non — aucun critère dépassé", "ok": true, "x": "Correct : 18 < 20, 35 < 40, 180 < 250 → 0/3 critères dépassés."},
+            {"label": "Oui — précaution", "ok": false, "x": "Pas obligatoire sans dépassement."},
+            {"label": "À voir après 2 ans", "ok": false, "x": "Même après 2 ans, il faut encore dépasser 2 critères."}
+          ],
+          "steps": [
+            "1. Bilan 18 < 20 → KO",
+            "2. CA 35 < 40 → KO",
+            "3. ETP 180 < 250 → KO",
+            "4. 0 critère dépassé → consolidation NON obligatoire",
+            "5. Exempté du CO 963"
+          ],
+          "exam_ref": "CO 963"
+        }
+      ]
+    },
+
+    {
+      "id": "sampling",
+      "label": "Sampling (MUS, Attribute)",
+      "icon": "🎲",
+      "color": "#ec4899",
+      "aide_memoire": {
+        "concept": "2 types de sondages avec des formules différentes :",
+        "niveaux": [
+          {
+            "name": "MUS (Monetary Unit Sampling) — tests substantifs",
+            "formula": "n = (Population / Performance Materiality) × facteur de confiance",
+            "benchmarks": "Facteurs : High (95%) = 3.0 · Modéré (90%) = 2.3 · Low (80%) = 1.6",
+            "purpose": "Tester qu'un solde de compte n'a pas d'anomalie > Performance Materiality",
+            "typical_value": "30-100 items selon population"
+          },
+          {
+            "name": "Attribute Sampling — tests de contrôles (TOC)",
+            "formula": "Taille fixée par matrice selon fréquence du contrôle",
+            "benchmarks": "Modéré : Annuel=1 · Trim=2 · Mensuel=5 · Hebdo=15 · Quotidien=25 · Plusieurs/j=45",
+            "purpose": "Tester qu'un contrôle fonctionne (pas d'exception > taux acceptable)",
+            "typical_value": "25 items pour contrôle quotidien confiance modérée"
+          }
+        ],
+        "mental_model": "MUS = 'est-ce que le solde est OK à ±PM ?' · Attribute = 'est-ce que le contrôle s'exécute OK ?'",
+        "pitfalls": [
+          "MUS sélectionne automatiquement les gros items (proportionnel au CHF)",
+          "Si erreur dans échantillon MUS → EXTRAPOLER à la population",
+          "Exception TOC > 5% généralement inacceptable → investiguer ou abandonner reliance",
+          "Plus le risque est élevé, plus le facteur de confiance est HAUT (plus de preuves)"
+        ]
+      },
+      "exercises": [
+        {
+          "id": "samp_ex1",
+          "difficulty": "medium",
+          "scenario": "Test substantif sur créances clients · Population CHF 5'000'000 · Performance Materiality CHF 200'000 · Confiance modérée (facteur 2.3)",
+          "question": "Taille d'échantillon MUS ?",
+          "options": [
+            {"label": "25 items", "ok": false, "x": "Ça serait une taille attribute, pas MUS."},
+            {"label": "58 items", "ok": true, "x": "Correct : (5'000'000 / 200'000) × 2.3 = 25 × 2.3 = 57.5 → arrondi 58."},
+            {"label": "100 items", "ok": false, "x": "Tu as probablement utilisé facteur 4."},
+            {"label": "12 items", "ok": false, "x": "Trop peu — oubli du facteur de confiance."}
+          ],
+          "steps": [
+            "1. Formule MUS : n = (Pop / PM) × facteur",
+            "2. n = (5'000'000 / 200'000) × 2.3",
+            "3. n = 25 × 2.3 = 57.5",
+            "4. Arrondi supérieur : 58 items",
+            "5. Intervalle de sondage = 200'000 / 2.3 = CHF 86'957 (on sélectionne 1 item tous les 86'957 CHF cumulés)"
+          ],
+          "exam_ref": "NAS 530"
+        },
+        {
+          "id": "samp_ex2",
+          "difficulty": "medium",
+          "scenario": "Test de contrôle QUOTIDIEN (contrôle exécuté chaque jour) · Niveau de confiance MODÉRÉ",
+          "question": "Taille échantillon attribute sampling ?",
+          "options": [
+            {"label": "10 items", "ok": false, "x": "Trop peu pour un contrôle quotidien confiance modérée."},
+            {"label": "25 items", "ok": true, "x": "Correct : matrice EY GAM pour contrôle quotidien confiance modérée."},
+            {"label": "60 items", "ok": false, "x": "C'est pour confiance élevée / contrôle multi-quotidien."},
+            {"label": "Dépend du volume total", "ok": false, "x": "Non : attribute sampling est basé sur la FRÉQUENCE, pas le volume."}
+          ],
+          "steps": [
+            "1. Attribute sampling = matrice fixée selon fréquence × confiance",
+            "2. Fréquence quotidienne (≈250/an)",
+            "3. Confiance modérée (≈90%)",
+            "4. Matrice : Quotidien × Modéré = 25 items",
+            "5. Si exception trouvée (ex 1/25 = 4%) → acceptable si < 5% ; au-delà → élargir ou abandonner reliance"
+          ],
+          "exam_ref": "NAS 530 / EY GAM"
+        },
+        {
+          "id": "samp_ex3",
+          "difficulty": "hard",
+          "scenario": "Test MUS sur stocks : n=50 items testés. 2 items ont une erreur. Erreur 1 : CHF 15'000 (item vaut 80'000). Erreur 2 : CHF 3'000 (item vaut 50'000). Intervalle sondage = CHF 100'000. Performance Materiality = CHF 200'000.",
+          "question": "Erreur projetée à la population ?",
+          "options": [
+            {"label": "18'000 CHF (somme des erreurs)", "ok": false, "x": "Piège : il faut EXTRAPOLER, pas juste sommer."},
+            {"label": "~25'000 CHF", "ok": false, "x": "Trop bas pour l'extrapolation."},
+            {"label": "~22'750 CHF (méthode complexe)", "ok": false, "x": "Pas le calcul standard MUS."},
+            {"label": "~24'750 CHF (erreur 1 = 15k × 100% + erreur 2 projeté avec ratio)", "ok": true, "x": "Correct : items > intervalle projetés à 100% ; items < intervalle avec ratio erreur/item."}
+          ],
+          "steps": [
+            "1. Règle MUS : si item testé ≥ intervalle → projeter à 100% de l'erreur observée",
+            "2. Si item < intervalle → projeter (erreur/item) × intervalle",
+            "3. Item 1 : 80'000 < 100'000 (intervalle) → erreur projetée = (15'000/80'000) × 100'000 = 18'750",
+            "4. Attendez — on reprend. 80'000 < intervalle → projection 18'750",
+            "5. Item 2 : 50'000 < 100'000 → erreur projetée = (3'000/50'000) × 100'000 = 6'000",
+            "6. Erreur projetée totale ≈ 18'750 + 6'000 = 24'750 CHF",
+            "7. 24'750 << 200'000 (PM) → accepté"
+          ],
+          "exam_ref": "NAS 530 — projection MUS"
+        }
+      ]
+    },
+
+    {
+      "id": "rotation",
+      "label": "Rotation & Indépendance",
+      "icon": "🔄",
+      "color": "#10b981",
+      "aide_memoire": {
+        "concept": "Règles d'indépendance avec seuils à connaître :",
+        "niveaux": [
+          {
+            "name": "Rotation engagement partner",
+            "formula": "Max 7 ans + cooling-off 3 ans",
+            "benchmarks": "Obligatoire pour révision ordinaire (CO 728 al. 2 ch. 5)",
+            "purpose": "Éviter familiarité excessive avec la direction client",
+            "typical_value": "Le partner change tous les 7 ans max"
+          },
+          {
+            "name": "Cooling-off ex-auditeur",
+            "formula": "1-2 ans avant de rejoindre le client",
+            "benchmarks": "Selon fonction (CFO/CEO = plus long)",
+            "purpose": "Éviter auto-révision — que l'ex-auditeur contrôle sa propre période"
+          },
+          {
+            "name": "Dépendance économique",
+            "formula": "< 15% des revenus du cabinet",
+            "benchmarks": "Seuil indicatif IESBA pour cotées",
+            "purpose": "Éviter menace d'intérêt personnel du cabinet"
+          },
+          {
+            "name": "Rotation cabinet (EU - pas CH)",
+            "formula": "10 ans max (UE seulement)",
+            "benchmarks": "Pas obligatoire en Suisse",
+            "purpose": "Seulement pour les sociétés cotées de l'UE"
+          }
+        ],
+        "mental_model": "7 ans partner → 3 ans off. 1-2 ans cooling-off pour CFO/CEO ex-EY. 15% cap cabinet.",
+        "pitfalls": [
+          "Rotation = personne (engagement partner), pas cabinet (en CH)",
+          "Le cooling-off de 3 ans ne court qu'après la rotation (pas dès le changement de team)",
+          "Les directives EXPERTsuisse peuvent être plus strictes que le Code IESBA"
+        ]
+      },
+      "exercises": [
+        {
+          "id": "rot_ex1",
+          "difficulty": "easy",
+          "scenario": "Tu es engagement partner sur un mandat cotée depuis 2019. Nous sommes en 2026 (8 ans).",
+          "question": "Peux-tu continuer ?",
+          "options": [
+            {"label": "Oui — pas de limite stricte", "ok": false, "x": "FAUX — il y a une limite de 7 ans."},
+            {"label": "Non — max 7 ans (CO 728 al. 2 ch. 5) → rotation obligatoire", "ok": true, "x": "Correct : tu dois passer le flambeau."},
+            {"label": "Oui sauf demande explicite ASR", "ok": false, "x": "Pas de dérogation prévue."},
+            {"label": "Oui si l'équipe change", "ok": false, "x": "C'est le PARTNER qui rotate, pas l'équipe."}
+          ],
+          "steps": [
+            "1. CO 728 al. 2 ch. 5 : engagement partner max 7 ans sur un même mandat",
+            "2. Depuis 2019 : 2019, 2020, 2021, 2022, 2023, 2024, 2025 = 7 ans révolus fin 2025",
+            "3. En 2026 : tu dois avoir fait la rotation",
+            "4. Cooling-off 3 ans → reprise possible au plus tôt 2029",
+            "5. Le CABINET reste sur le mandat, seul le partner change"
+          ],
+          "exam_ref": "CO 728 al. 2 ch. 5"
+        },
+        {
+          "id": "rot_ex2",
+          "difficulty": "medium",
+          "scenario": "Un client représente 22% des revenus totaux de votre cabinet (seul cabinet pour cette industrie spécialisée)",
+          "question": "Quelle est la menace ?",
+          "options": [
+            {"label": "Aucune — 22% c'est OK", "ok": false, "x": "Menace au-delà de ~15% pour cotées."},
+            {"label": "Intérêt personnel (dépendance économique)", "ok": true, "x": "Correct — risque d'indépendance compromise."},
+            {"label": "Familiarité uniquement", "ok": false, "x": "Liée à la durée, pas au volume."},
+            {"label": "Auto-révision", "ok": false, "x": "Auto-révision = réviser son propre travail passé."}
+          ],
+          "steps": [
+            "1. Seuil indicatif IESBA : 15% des revenus cabinet (pour cotées)",
+            "2. 22% > 15% → DÉPASSÉ",
+            "3. Menace d'INTÉRÊT PERSONNEL (financial dependence)",
+            "4. Sauvegardes : rotation partner accélérée, EQCR externe, surveillance ASR, réduction dépendance",
+            "5. Si menace non réductible → DÉMISSION obligatoire"
+          ],
+          "exam_ref": "Code IESBA § 410.4"
+        }
+      ]
+    },
+
+    {
+      "id": "co725",
+      "label": "CO 725 — Perte capital & surendettement",
+      "icon": "🚨",
+      "color": "#ef4444",
+      "aide_memoire": {
+        "concept": "Deux niveaux d'alerte en cas de difficultés financières :",
+        "niveaux": [
+          {
+            "name": "Perte de capital (CO 725a)",
+            "formula": "Fonds propres < 50% du capital-actions + réserves légales",
+            "benchmarks": "FP dégradés mais toujours positifs",
+            "purpose": "Alerter et prendre mesures d'assainissement",
+            "typical_value": "Déclencheur AG pour mesures"
+          },
+          {
+            "name": "Surendettement (CO 725b)",
+            "formula": "Dettes > actifs (liquidation OU continuité)",
+            "benchmarks": "Situation plus grave que perte de capital",
+            "purpose": "Avis au juge obligatoire par le CA (ou l'auditeur si CA passif)",
+            "typical_value": "Ouverture procédure faillite possible"
+          }
+        ],
+        "mental_model": "725a = 'alerte jaune' (mesures AG) · 725b = 'alerte rouge' (juge)",
+        "pitfalls": [
+          "L'auditeur DOIT aviser le juge si surendettement + CA passif (CO 728c al. 3 ord. / 729c restreint)",
+          "La perte de capital concerne FP < 50% du CAPITAL (pas seulement FP négatifs)",
+          "Subordination de créances peut éviter la qualification de surendettement"
+        ]
+      },
+      "exercises": [
+        {
+          "id": "co725_ex1",
+          "difficulty": "easy",
+          "scenario": "SA · Capital-actions CHF 1'000'000 · Réserve légale CHF 100'000 · Fonds propres totaux CHF 450'000",
+          "question": "CO 725a applicable ?",
+          "options": [
+            {"label": "Non — FP positifs", "ok": false, "x": "FP positifs ne suffit pas — il faut ≥ 50% du capital + réserves."},
+            {"label": "Oui — FP < 50% de (capital + réserves légales)", "ok": true, "x": "Correct : 50% × (1'000 + 100) = 550k. FP 450k < 550k → perte de capital."},
+            {"label": "Non — pas encore surendetté", "ok": false, "x": "Confusion avec CO 725b (surendettement)."},
+            {"label": "Seulement si les pertes continuent", "ok": false, "x": "La seule situation de bilan suffit."}
+          ],
+          "steps": [
+            "1. Formule CO 725a : FP < 50% × (Capital + Réserves légales)",
+            "2. Capital + Réserves = 1'000'000 + 100'000 = 1'100'000",
+            "3. Seuil 50% = 550'000",
+            "4. FP actuels = 450'000 < 550'000 → 725a APPLICABLE",
+            "5. Conséquence : CA doit convoquer AG et proposer mesures d'assainissement"
+          ],
+          "exam_ref": "CO 725a"
+        },
+        {
+          "id": "co725_ex2",
+          "difficulty": "medium",
+          "scenario": "SA · Actifs (valeur continuité) CHF 2'000'000 · Actifs (valeur liquidation) CHF 1'400'000 · Dettes CHF 1'800'000",
+          "question": "Surendettement au sens CO 725b ?",
+          "options": [
+            {"label": "Non — actifs continuité > dettes", "ok": false, "x": "L'article exige les DEUX tests (continuité ET liquidation)."},
+            {"label": "Oui — actifs liquidation < dettes", "ok": true, "x": "Correct : surendettement si DETTES > actifs dans l'UNE des deux évaluations."},
+            {"label": "Non — l'auditeur détermine", "ok": false, "x": "C'est objectif selon CO 725b."},
+            {"label": "Oui — car actifs continuité = 2M", "ok": false, "x": "Erreur de raisonnement."}
+          ],
+          "steps": [
+            "1. CO 725b : surendettement si DETTES dépassent les actifs évalués tant à leur valeur d'exploitation qu'à leur valeur de liquidation",
+            "2. Continuité : Actifs 2M > Dettes 1.8M → OK (pas de surendettement sur cette base)",
+            "3. Liquidation : Actifs 1.4M < Dettes 1.8M → SURENDETTEMENT SUR CETTE BASE",
+            "4. Il suffit qu'UNE des deux bases montre un surendettement → CO 725b APPLICABLE",
+            "5. CA doit aviser le juge SAUF si subordination obtenue des créanciers",
+            "6. Si CA passif → l'organe de révision DOIT aviser le juge (CO 728c al. 3)"
+          ],
+          "exam_ref": "CO 725b + CO 728c al. 3"
+        },
+        {
+          "id": "co725_ex3",
+          "difficulty": "hard",
+          "scenario": "SA en surendettement manifeste (CO 725b). Le CA est au courant depuis 3 mois mais n'a RIEN fait. En tant qu'organe de révision ordinaire, quelle est ton obligation ?",
+          "question": "Action obligatoire ?",
+          "options": [
+            {"label": "Démissionner sans rien faire", "ok": false, "x": "Démission ne lève pas l'obligation légale."},
+            {"label": "AVISER LE JUGE toi-même (CO 728c al. 3)", "ok": true, "x": "Correct : obligation subsidiaire de l'auditeur en cas de passivité du CA."},
+            {"label": "Aviser seulement les actionnaires", "ok": false, "x": "Insuffisant — le juge doit être saisi."},
+            {"label": "Attendre la prochaine AG", "ok": false, "x": "Trop tard — danger pour les créanciers."}
+          ],
+          "steps": [
+            "1. CO 728c al. 3 : si le CA omet d'aviser le juge malgré surendettement manifeste, l'organe de révision en informe le juge",
+            "2. Conditions : surendettement manifeste (OK) + CA passif (OK)",
+            "3. Documentation : l'auditeur doit documenter son évaluation + les tentatives d'alerte du CA",
+            "4. Forme : lettre écrite au juge compétent + copie aux parties",
+            "5. Protection : l'auditeur est protégé par l'obligation légale — pas de violation du secret professionnel",
+            "6. En contrôle restreint : même obligation (CO 729c)"
+          ],
+          "exam_ref": "CO 728c al. 3 / 729c"
+        }
+      ]
+    }
+  ]
+}

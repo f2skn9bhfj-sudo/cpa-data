@@ -1,0 +1,416 @@
+{
+  "_meta": {
+    "module": "Canvas Perso — Bibliothèque de procédures",
+    "description": "Procédures d'audit types par cycle, réutilisables dans les workpapers. Importables directement dans un WP.",
+    "version": "1.0.0"
+  },
+
+  "wp_templates": {
+    "description": "Templates de workpapers types pour un engagement complet",
+    "phases": [
+      {
+        "phase": "planning", "ref": "A.1", "title": "Acceptance of engagement",
+        "objective": "Documenter l'acceptation du mandat + évaluation des risques pré-mission",
+        "cycle": "general"
+      },
+      {
+        "phase": "planning", "ref": "A.2", "title": "Engagement letter",
+        "objective": "Lettre de mission signée",
+        "cycle": "general"
+      },
+      {
+        "phase": "planning", "ref": "A.3", "title": "Independence confirmation",
+        "objective": "Confirmation d'indépendance individuelle + cabinet",
+        "cycle": "general"
+      },
+      {
+        "phase": "risk_assessment", "ref": "B.1", "title": "Understanding of the entity",
+        "objective": "Compréhension de l'entité, secteur, SI, stratégie",
+        "cycle": "general"
+      },
+      {
+        "phase": "risk_assessment", "ref": "B.2", "title": "Risk Assessment Matrix",
+        "objective": "Matrice risques × assertions × réponses (NAS 315)",
+        "cycle": "general"
+      },
+      {
+        "phase": "risk_assessment", "ref": "B.3", "title": "Materiality computation",
+        "objective": "Calcul PM, Performance Materiality, SUD + justification",
+        "cycle": "general"
+      },
+      {
+        "phase": "walkthrough", "ref": "C.1", "title": "Walkthrough — Revenue cycle",
+        "objective": "Compréhension process ventes end-to-end + contrôles clés",
+        "cycle": "ventes_ar"
+      },
+      {
+        "phase": "walkthrough", "ref": "C.2", "title": "Walkthrough — Purchases cycle",
+        "objective": "Compréhension process achats end-to-end",
+        "cycle": "achats_ap"
+      },
+      {
+        "phase": "walkthrough", "ref": "C.3", "title": "Walkthrough — Payroll cycle",
+        "objective": "Compréhension process paie end-to-end",
+        "cycle": "paie"
+      },
+      {
+        "phase": "walkthrough", "ref": "C.4", "title": "ITGC walkthrough",
+        "objective": "IT General Controls (accès, changements, opérations)",
+        "cycle": "it"
+      },
+      {
+        "phase": "substantive", "ref": "E.1", "title": "Lead Schedule — Trésorerie",
+        "objective": "Analyse comptes 1020-1099 + rapprochement TB", "cycle": "treso"
+      },
+      {
+        "phase": "substantive", "ref": "E.2", "title": "Lead Schedule — AR / Ventes",
+        "objective": "Analyse comptes 1100-1199 + cut-off + confirmation", "cycle": "ventes_ar"
+      },
+      {
+        "phase": "substantive", "ref": "E.3", "title": "Lead Schedule — Stocks",
+        "objective": "Analyse comptes 1200-1299 + inventaire + LCNRV", "cycle": "stocks"
+      },
+      {
+        "phase": "substantive", "ref": "E.4", "title": "Lead Schedule — Immobilisations",
+        "objective": "Analyse comptes 1500-1699 + capitalisation + impairment", "cycle": "immo"
+      },
+      {
+        "phase": "substantive", "ref": "E.5", "title": "Lead Schedule — AP / Achats",
+        "objective": "Analyse comptes 2000-2099 + exhaustivité + cut-off", "cycle": "achats_ap"
+      },
+      {
+        "phase": "substantive", "ref": "E.6", "title": "Lead Schedule — Paie",
+        "objective": "Analyse comptes 5000 + headcount reconciliation", "cycle": "paie"
+      },
+      {
+        "phase": "substantive", "ref": "E.7", "title": "Lead Schedule — Fonds propres",
+        "objective": "Analyse comptes 2800-2990 + mouvements capital", "cycle": "fp"
+      },
+      {
+        "phase": "substantive", "ref": "E.8", "title": "Lead Schedule — Impôts",
+        "objective": "Analyse impôts courants + différés + ETR walk", "cycle": "impots"
+      },
+      {
+        "phase": "wrap_up", "ref": "F.1", "title": "Subsequent events review",
+        "objective": "Revue événements postérieurs (NAS 560)", "cycle": "general"
+      },
+      {
+        "phase": "wrap_up", "ref": "F.2", "title": "Going concern assessment",
+        "objective": "Évaluation going concern 12 mois (NAS 570)", "cycle": "general"
+      },
+      {
+        "phase": "wrap_up", "ref": "F.3", "title": "Summary of Audit Differences (SAD)",
+        "objective": "Cumul anomalies non corrigées vs matérialité (NAS 450)", "cycle": "general"
+      },
+      {
+        "phase": "wrap_up", "ref": "F.4", "title": "Management Representation Letter",
+        "objective": "Lettre d'affirmation signée par la direction (NAS 580)", "cycle": "general"
+      },
+      {
+        "phase": "wrap_up", "ref": "F.5", "title": "Communication to governance",
+        "objective": "Lettre de communication à la gouvernance (NAS 260)", "cycle": "general"
+      },
+      {
+        "phase": "reporting", "ref": "G.1", "title": "Draft auditor's report",
+        "objective": "Rapport d'audit (résumé + détaillé si ordinaire)", "cycle": "general"
+      }
+    ]
+  },
+
+  "procedures": {
+    "ventes_ar": {
+      "cycle_label": "Ventes & Comptes clients (AR)",
+      "items": [
+        {
+          "title": "Cut-off ventes — 25 dernières factures",
+          "procedure": "Obtenir la liste des 25 dernières factures émises avant clôture. Pour chacune : recouper (a) date facture avec date BL/POD, (b) conditions contractuelles, (c) comptabilisation période. Identifier les factures avec date BL post-clôture → reclassement à N+1.",
+          "assertion": "Cut-off / Occurrence",
+          "exam_ref": "NAS 240 (présomption fraude revenue)",
+          "tickmarks_suggested": ["A (facture recoupée)", "B (BL croisé)", "C (conditions vérifiées)"]
+        },
+        {
+          "title": "Circularisation clients — top 10",
+          "procedure": "Sélectionner les 10 plus gros soldes clients à la date de clôture + échantillon MUS sur le reste. Envoyer demandes de confirmation POSITIVE directement depuis le cabinet (Confirmation.com). Suivi réponses J+7 / J+14. Pour non-réponses : procédures alternatives (relevés compte, paiements post-clôture).",
+          "assertion": "Existence / Évaluation",
+          "exam_ref": "NAS 505",
+          "tickmarks_suggested": ["✉️ Envoyée", "✓ Reçue confirmée", "ALT procédure alternative"]
+        },
+        {
+          "title": "Revue créances > 180 jours",
+          "procedure": "Extraire balance âgée détaillée à la clôture. Identifier les créances > 180 jours. Pour chaque solde significatif : vérifier existence du client au Registre du commerce, recouvrements post-clôture, capacité financière. Calculer provision appropriée et comparer à la provision comptabilisée.",
+          "assertion": "Évaluation",
+          "exam_ref": "NAS 540 + IFRS 9 / RPC ECL"
+        },
+        {
+          "title": "SAP — marge brute par segment",
+          "procedure": "Comparer la marge brute N vs N-1 par segment/produit. Si variance > 2% : investiguer (hausse prix, mix produits, erreur cut-off). Attendu documenté avant le test.",
+          "assertion": "Exhaustivité + Évaluation",
+          "exam_ref": "NAS 520"
+        },
+        {
+          "title": "JE Testing revenue (Helix)",
+          "procedure": "Extraire 100% des écritures du compte CA. Filtrer : manuelles, montants ronds > seuil, horaires inhabituels, comptes contrepartie inhabituels. Investigation de chaque anomalie identifiée.",
+          "assertion": "Occurrence",
+          "exam_ref": "NAS 240 §32 management override"
+        }
+      ]
+    },
+
+    "achats_ap": {
+      "cycle_label": "Achats & Comptes fournisseurs (AP)",
+      "items": [
+        {
+          "title": "Search for unrecorded liabilities",
+          "procedure": "Obtenir la liste des paiements fournisseurs des 2 premiers mois de N+1 > SUD. Pour chaque : vérifier date de facture et date de livraison. Si service/bien reçu AVANT clôture → vérifier comptabilisation en FNP à la clôture.",
+          "assertion": "Exhaustivité",
+          "exam_ref": "NAS 500"
+        },
+        {
+          "title": "3-way match sur échantillon achats",
+          "procedure": "Sélectionner 25 transactions achats (MUS). Pour chacune : recouper bon de commande + bon de réception + facture. Vérifier approbation selon matrice d'autorisation.",
+          "assertion": "Occurrence / Exactitude"
+        },
+        {
+          "title": "Circularisation fournisseurs disputes/top 20",
+          "procedure": "Circulariser : top 20 soldes + tous les soldes débiteurs + fournisseurs avec litiges. Confirmation positive. Suivi standard.",
+          "assertion": "Existence / Exhaustivité",
+          "exam_ref": "NAS 505"
+        },
+        {
+          "title": "Test nouveaux fournisseurs de la période",
+          "procedure": "Extraire la liste des fournisseurs créés dans l'année. Sur échantillon : vérifier (a) existence légale au Registre du commerce, (b) IBAN (détecter doublons avec employés ou autres fournisseurs), (c) substance économique, (d) approbation création.",
+          "assertion": "Existence / Fraud check",
+          "exam_ref": "NAS 240"
+        },
+        {
+          "title": "Cut-off achats — dernières factures reçues",
+          "procedure": "Sélectionner les 25 dernières factures reçues avant clôture + 25 premières de N+1. Vérifier date livraison vs comptabilisation période.",
+          "assertion": "Cut-off"
+        }
+      ]
+    },
+
+    "paie": {
+      "cycle_label": "Paie & Charges sociales",
+      "items": [
+        {
+          "title": "Headcount reconciliation",
+          "procedure": "Réconcilier : nombre d'employés RH ↔ employés en paie ↔ déclarations AVS. Investiguer toute différence. Tester sur échantillon aléatoire : présence physique + contrat RH + dernière fiche de paie.",
+          "assertion": "Existence",
+          "exam_ref": "Détection ghost employees"
+        },
+        {
+          "title": "Test IBAN anti-doublons",
+          "procedure": "Extraire tous les IBAN de la paie. Détecter les doublons (2+ employés avec même IBAN). Pour chaque doublon : investigation (conjoints = OK, autres = SUSPECT → escalade).",
+          "assertion": "Existence / Fraud check"
+        },
+        {
+          "title": "Test substantif salaires",
+          "procedure": "Échantillon 25 employés. Vérifier : salaire versé ↔ contrat RH ↔ paiement bancaire ↔ fiche de paie ↔ déclaration AVS.",
+          "assertion": "Exactitude / Évaluation"
+        },
+        {
+          "title": "Recalcul provision vacances",
+          "procedure": "Obtenir l'extraction des jours de congés non pris au 31.12. Recomputer : jours × salaire moyen × (1 + charges sociales). Comparer à provision comptabilisée.",
+          "assertion": "Évaluation"
+        },
+        {
+          "title": "Review LPP (RPC 16 ou IAS 19)",
+          "procedure": "Obtenir rapport actuariel. Vérifier hypothèses cohérentes avec N-1 ou justification du changement. Challenger le taux technique. Confirmer la caisse de pension directement. Calcul RPC 16 = part économique de l'engagement.",
+          "assertion": "Évaluation",
+          "exam_ref": "RPC 16 / IAS 19"
+        }
+      ]
+    },
+
+    "stocks": {
+      "cycle_label": "Stocks & Inventaire",
+      "items": [
+        {
+          "title": "Assistance à l'inventaire physique",
+          "procedure": "Assister à l'inventaire annuel. Noter procédures : planification, équipes de comptage, méthode, cut-off production/réception. Effectuer 2 tests-counts : (a) physique → fiche (existence), (b) fiche → physique (exhaustivité). Documenter tickmarks par article testé.",
+          "assertion": "Existence / Exhaustivité",
+          "exam_ref": "NAS 501 §4 — obligatoire"
+        },
+        {
+          "title": "Test de valorisation FIFO/coût moyen",
+          "procedure": "Sélectionner 15 références les plus significatives. Pour chacune : recomputer le coût selon méthode (FIFO = dernières factures achat, coût moyen = moyenne pondérée). Comparer à valorisation comptable.",
+          "assertion": "Évaluation"
+        },
+        {
+          "title": "Test LCNRV (Lower of Cost or NRV)",
+          "procedure": "Sur échantillon : comparer coût au bilan à (prix de vente - coûts à achever - coûts de vente). Si NRV < coût → dépréciation requise. Vérifier provisions existantes.",
+          "assertion": "Évaluation",
+          "exam_ref": "RPC 17 / IAS 2"
+        },
+        {
+          "title": "Analyse rotation slow-moving",
+          "procedure": "Extraction par référence avec date dernier mouvement. Stratification : < 3 mois, 3-12 mois, 12-18 mois, > 18 mois. Pour > 12 mois sans rotation : évaluer provision pour obsolescence.",
+          "assertion": "Évaluation"
+        },
+        {
+          "title": "Cut-off stocks",
+          "procedure": "Noter dernier BL/BR à l'inventaire. Vérifier que les réceptions post-inventaire ne sont pas incluses et que les livraisons pré-inventaire sont exclues.",
+          "assertion": "Cut-off"
+        }
+      ]
+    },
+
+    "immo": {
+      "cycle_label": "Immobilisations",
+      "items": [
+        {
+          "title": "Lead schedule immo — mouvements N",
+          "procedure": "Reconstituer : solde ouverture + acquisitions - cessions - amortissements = solde clôture. Recouper avec TB.",
+          "assertion": "Exhaustivité / Exactitude"
+        },
+        {
+          "title": "Test ajouts CapEx",
+          "procedure": "Échantillon 10 acquisitions > matérialité. Pour chaque : facture, bon de réception, approbation CapEx, nature (capital vs charge), date mise en service.",
+          "assertion": "Occurrence / Cut-off"
+        },
+        {
+          "title": "Test impairment indicators + goodwill",
+          "procedure": "Pour chaque CGU : identifier indicateurs (baisse performance, changement technologie, départ client clé). Si indicateur OU goodwill → test d'impairment (Value in Use vs Valeur comptable). Challenge WACC + croissance perpétuelle vs peer group.",
+          "assertion": "Évaluation",
+          "exam_ref": "IAS 36 / RPC 20"
+        },
+        {
+          "title": "Recalcul amortissements",
+          "procedure": "Sur échantillon : recomputer amortissement selon méthode documentée. Vérifier cohérence durée d'utilité vs N-1.",
+          "assertion": "Exactitude"
+        },
+        {
+          "title": "Test existence — physical verification",
+          "procedure": "Sur échantillon d'immobilisations significatives : vérification physique (visite, photo, sticker asset tag).",
+          "assertion": "Existence"
+        }
+      ]
+    },
+
+    "treso": {
+      "cycle_label": "Trésorerie & Banques",
+      "items": [
+        {
+          "title": "Confirmation bancaire standardisée",
+          "procedure": "Envoyer à TOUTES les banques (même si solde 0). Canal : Confirmation.com. Demander : soldes, lignes de crédit utilisées/non utilisées, garanties, dérivés, signataires. Investigation des comptes non au bilan.",
+          "assertion": "Existence / Exhaustivité",
+          "exam_ref": "NAS 505"
+        },
+        {
+          "title": "Review bank reconciliations",
+          "procedure": "Sur échantillon mensuel : obtenir bank reco. Recouper : solde relevé bancaire + items en transit + solde grand livre. Vérifier clearance des items en transit en janvier N+1.",
+          "assertion": "Exactitude"
+        },
+        {
+          "title": "Cash count caisses",
+          "procedure": "Pour caisses significatives : comptage physique surprise. Réconcilier avec le livre de caisse.",
+          "assertion": "Existence"
+        },
+        {
+          "title": "Test conversion devises",
+          "procedure": "Recomputer : solde devise × taux de clôture (BNS). Vérifier comptabilisation de l'écart de conversion.",
+          "assertion": "Évaluation"
+        }
+      ]
+    },
+
+    "fp": {
+      "cycle_label": "Fonds propres",
+      "items": [
+        {
+          "title": "Lead schedule FP — mouvements N",
+          "procedure": "Mouvements : ouverture + augmentations capital + résultat - dividendes - rachat actions = clôture. Recouper avec PV AG, registre du commerce, registre actionnaires.",
+          "assertion": "Exactitude"
+        },
+        {
+          "title": "Test CO 725a (perte de capital)",
+          "procedure": "Calculer : Capital-actions + Réserve légale. Calculer 50% de ce total. Si FP totaux < 50% → CO 725a applicable → vérifier mesures AG.",
+          "assertion": "Présentation / Divulgation",
+          "exam_ref": "CO 725a"
+        },
+        {
+          "title": "Test CO 725b (surendettement)",
+          "procedure": "Évaluer actifs à (a) valeur continuité, (b) valeur liquidation. Si l'une des deux < dettes → surendettement. Vérifier avis juge ou subordination.",
+          "assertion": "Going concern",
+          "exam_ref": "CO 725b"
+        }
+      ]
+    },
+
+    "impots": {
+      "cycle_label": "Impôts",
+      "items": [
+        {
+          "title": "Recompute impôt courant",
+          "procedure": "Point de départ : RAI comptable. Ajustements permanents + temporaires = revenu imposable. × taux impôt = impôt dû. Comparer à provision comptabilisée.",
+          "assertion": "Exactitude"
+        },
+        {
+          "title": "ETR walk",
+          "procedure": "Réconciliation : (Impôt théorique = RAI × taux nominal) vs (Impôt effectif) = (Différences permanentes + Ajustements années antérieures + UTP + Changement hypothèses DTA).",
+          "assertion": "Exhaustivité / Présentation"
+        },
+        {
+          "title": "DTA recoverability",
+          "procedure": "Pour chaque DTA : identifier source (report déficitaire, différence temporelle déductible). Vérifier bénéfices futurs probables selon forecast approuvé CA. Challenger réalisme du forecast.",
+          "assertion": "Évaluation",
+          "exam_ref": "IAS 12 / RPC 11"
+        },
+        {
+          "title": "DTL sur réserves latentes (Suisse)",
+          "procedure": "Pour RPC : identifier réserves latentes nettes et calculer impôt différé latent. Vérifier divulgation en annexe.",
+          "assertion": "Présentation"
+        }
+      ]
+    },
+
+    "general": {
+      "cycle_label": "Général (transversal)",
+      "items": [
+        {
+          "title": "Discussion d'équipe fraude",
+          "procedure": "Réunion obligatoire en début de mission. Participants : engagement partner, senior, juniors. Agenda : identifier zones de fraude potentielle, triangle Cressey, présomptions NAS 240. PV signé.",
+          "exam_ref": "NAS 240 §15"
+        },
+        {
+          "title": "Entretien fraude direction + gouvernance",
+          "procedure": "Questions : politiques anti-fraude, contrôles, fraudes connues passées, suspicions. Documenter réponses mot pour mot.",
+          "exam_ref": "NAS 240 §17"
+        },
+        {
+          "title": "Procédures analytiques de planification",
+          "procedure": "Variations N vs N-1 par compte. Ratios financiers clés. Budget vs réalisé. Identifier anomalies inattendues → investigation.",
+          "exam_ref": "NAS 315"
+        },
+        {
+          "title": "Revue PV CA + AG",
+          "procedure": "Lire TOUS les PV de la période + début N+1 jusqu'à date du rapport. Identifier décisions significatives, transactions inhabituelles, parties liées, événements postérieurs."
+        },
+        {
+          "title": "Parties liées — identification",
+          "procedure": "Demander liste au management. Corroboration via : Registre du commerce (sociétés liées), déclarations fiscales (participations), PV AG (actionnaires), LinkedIn direction. Revue transactions avec parties identifiées.",
+          "exam_ref": "NAS 550 / RPC 15"
+        }
+      ]
+    }
+  },
+
+  "tickmark_legend": {
+    "description": "Tickmarks standards EY pour documentation workpapers",
+    "items": [
+      {"symbol": "Ⓐ", "meaning": "Recoupé avec grand livre détaillé"},
+      {"symbol": "Ⓑ", "meaning": "Recoupé avec pièce justificative (facture, contrat)"},
+      {"symbol": "Ⓒ", "meaning": "Cut-off vérifié"},
+      {"symbol": "Ⓒ🄻", "meaning": "Confirmation externe reçue"},
+      {"symbol": "Ⓓ", "meaning": "Date vérifiée"},
+      {"symbol": "Ⓔ", "meaning": "Existence vérifiée (physical)"},
+      {"symbol": "Ⓕ", "meaning": "Footed (additionné, recomputé)"},
+      {"symbol": "Ⓟ", "meaning": "Procédure analytique OK"},
+      {"symbol": "Ⓡ", "meaning": "Recomputé"},
+      {"symbol": "Ⓧ", "meaning": "Exception identifiée — voir review notes"},
+      {"symbol": "✓", "meaning": "OK — aucune exception"},
+      {"symbol": "Ⓝ", "meaning": "Non applicable"}
+    ]
+  }
+}

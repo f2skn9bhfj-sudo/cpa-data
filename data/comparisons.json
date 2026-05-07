@@ -1,0 +1,1353 @@
+{
+  "themes": [
+    {
+      "id": "stocks",
+      "title": "Stocks / Inventaires",
+      "icon": "📦",
+      "category": "Actifs",
+      "norms": {"ifrs": "IAS 2", "rpc": "RPC 17", "co": "art. 960c CO"},
+      "rows": [
+        {
+          "aspect": "Évaluation initiale",
+          "ifrs": "Coût d'acquisition ou coût de production incluant tous les coûts directs et quote-part des frais généraux de production (IAS 2.10-18).",
+          "rpc": "Coût d'acquisition ou coût de revient, incluant les coûts complets de production (RPC 17.5).",
+          "co": "Au plus au coût d'acquisition ou de revient (art. 960a al. 1 CO). Sous-évaluation autorisée.",
+          "piege": "⚠️ Le CO autorise une sous-évaluation volontaire = création de réserves latentes. IFRS et RPC l'interdisent."
+        },
+        {
+          "aspect": "Méthodes de coûts",
+          "ifrs": "FIFO ou coût moyen pondéré (CMP). LIFO interdit (IAS 2.25).",
+          "rpc": "FIFO ou CMP. LIFO interdit (RPC 17.7).",
+          "co": "FIFO, CMP ou LIFO tolérés. Pas de restriction légale sur la méthode.",
+          "piege": "⚠️ LIFO interdit sous IFRS ET RPC, mais toléré sous CO. Question d'examen fréquente !"
+        },
+        {
+          "aspect": "Évaluation subséquente",
+          "ifrs": "Au plus faible du coût et de la VNR (valeur nette de réalisation = prix de vente estimé - coûts d'achèvement - coûts de vente) (IAS 2.9).",
+          "rpc": "Au plus faible du coût et de la VNR (RPC 17.5). Identique à IFRS.",
+          "co": "Évaluation au cours du jour si inférieur au coût. Possibilité de corrections supplémentaires (art. 960c CO)."
+        },
+        {
+          "aspect": "Correction de valeur",
+          "ifrs": "Dépréciation obligatoire si VNR < coût. Reprise obligatoire si VNR remonte (max = coût initial) (IAS 2.33-34).",
+          "rpc": "Identique à IFRS : dépréciation si VNR < coût, reprise possible (RPC 17.9).",
+          "co": "Correction de valeur si la valeur est inférieure. Reprise non obligatoire = possibilité de maintenir des réserves latentes.",
+          "piege": "⚠️ Sous CO, la non-reprise de corrections de valeur crée des réserves latentes. Sous IFRS/RPC, la reprise est OBLIGATOIRE."
+        },
+        {
+          "aspect": "Coûts d'emprunt",
+          "ifrs": "Non inclus dans le coût des stocks (sauf actif qualifié selon IAS 23, rare pour stocks).",
+          "rpc": "Non inclus dans le coût des stocks.",
+          "co": "Pas de règle spécifique. Les intérêts passifs sont généralement en charges."
+        },
+        {
+          "aspect": "Escomptes",
+          "ifrs": "Les rabais, remises et ristournes viennent en déduction du coût d'acquisition (IAS 2.11).",
+          "rpc": "Idem IFRS : déduction du coût d'acquisition.",
+          "co": "Déduction du coût admise mais pas toujours appliquée en pratique."
+        },
+        {
+          "aspect": "Présentation au bilan",
+          "ifrs": "Actif courant. Ventilation par catégorie requise (matières premières, en-cours, produits finis) (IAS 2.36).",
+          "rpc": "Actif circulant. Ventilation similaire recommandée (RPC 3).",
+          "co": "Actif circulant (art. 959a al. 1 ch. 3 CO). Pas de ventilation détaillée exigée."
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "Méthodes d'évaluation, valeur comptable par catégorie, montant déprécié, reprises, stocks en garantie (IAS 2.36-39).",
+          "rpc": "Méthodes d'évaluation et principes comptables appliqués (RPC 6).",
+          "co": "Principes d'évaluation (art. 959c al. 1 ch. 1 CO). Informations minimales."
+        },
+        {
+          "aspect": "Contrats de construction",
+          "ifrs": "Intégrés dans IFRS 15 (méthode de l'avancement). Les stocks en cours = contrats IFRS 15.",
+          "rpc": "RPC 22 : méthode de l'avancement recommandée, achèvement tolérée (RPC 22.10-14).",
+          "co": "Méthode de l'achèvement principalement. L'avancement n'est pas courant."
+        }
+      ],
+      "key_takeaway": "IFRS et RPC sont quasi identiques sur les stocks. Le CO est plus conservateur, autorise LIFO et les réserves latentes par sous-évaluation.",
+      "exam_tip": "⚠️ Connaître les 3 différences clés : LIFO (interdit IFRS/RPC, toléré CO), reprise de dépréciation (obligatoire IFRS/RPC, facultative CO), réserves latentes (interdites IFRS/RPC, autorisées CO)."
+    },
+    {
+      "id": "immobilisations_corporelles",
+      "title": "Immobilisations corporelles",
+      "icon": "🏗️",
+      "category": "Actifs",
+      "norms": {"ifrs": "IAS 16", "rpc": "RPC 18", "co": "art. 960a-960d CO"},
+      "rows": [
+        {
+          "aspect": "Activation initiale",
+          "ifrs": "Coût d'acquisition + coûts directement attribuables + estimation du coût de démantèlement (IAS 16.15-22).",
+          "rpc": "Coût d'acquisition ou de revient incluant les frais accessoires (RPC 18.5).",
+          "co": "Au plus au coût d'acquisition ou de revient (art. 960a CO). Sous-évaluation possible."
+        },
+        {
+          "aspect": "Approche par composants",
+          "ifrs": "Obligatoire : chaque composant significatif est amorti séparément (IAS 16.43-47).",
+          "rpc": "Recommandée mais pas toujours appliquée (RPC 18.12).",
+          "co": "Non requise. Amortissement global de l'actif.",
+          "piege": "⚠️ L'approche par composants est OBLIGATOIRE sous IFRS. Question fréquente : recalculer les amortissements composant par composant."
+        },
+        {
+          "aspect": "Amortissement",
+          "ifrs": "Systématique sur la durée d'utilité. Linéaire, dégressif, ou selon les unités (IAS 16.60-62). Révision annuelle.",
+          "rpc": "Systématique sur la durée d'utilité prévue. Méthode linéaire courante (RPC 18.10-11).",
+          "co": "Amortissements nécessaires selon les règles reconnues (art. 960a al. 3 CO). Amortissements fiscaux souvent utilisés."
+        },
+        {
+          "aspect": "Modèle de réévaluation",
+          "ifrs": "Option : modèle de réévaluation à la juste valeur. Écart en OCI (IAS 16.31-42).",
+          "rpc": "Interdit. Seul le modèle du coût est autorisé (RPC CC 8).",
+          "co": "Réévaluation possible uniquement pour supprimer un découvert (art. 670 CO) ou si la loi le prévoit.",
+          "piege": "⚠️ La réévaluation est une OPTION sous IFRS, INTERDITE sous RPC, et très limitée sous CO (seulement pour couvrir un découvert)."
+        },
+        {
+          "aspect": "Coûts ultérieurs",
+          "ifrs": "Activés si avantages économiques futurs probables et évaluation fiable (IAS 16.7, 12-14).",
+          "rpc": "Activés si augmentation de la valeur ou de la durée d'utilité (RPC 18.7).",
+          "co": "Activés si augmentent la valeur. Charges de maintenance en résultat (art. 959 CO)."
+        },
+        {
+          "aspect": "Valeur résiduelle",
+          "ifrs": "Estimée et révisée annuellement. Base amortissable = coût - valeur résiduelle (IAS 16.51-54).",
+          "rpc": "Prise en compte si significative (RPC 18.9).",
+          "co": "Pas de prescription spécifique. Franc symbolique souvent retenu en pratique."
+        },
+        {
+          "aspect": "Décomptabilisation",
+          "ifrs": "Lors de la cession ou quand aucun avantage futur attendu. Gain/perte en résultat (IAS 16.67-72).",
+          "rpc": "Lors de la cession. Gain/perte en résultat (RPC 18.14).",
+          "co": "Lors de la cession. Gain/perte en résultat."
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "Méthodes d'amortissement, durées d'utilité, réconciliation des VNC, réévaluations, restrictions (IAS 16.73-79).",
+          "rpc": "Principes d'évaluation et d'amortissement, tableau de mouvement (RPC 18.16).",
+          "co": "Principes d'évaluation appliqués, montant assurance incendie des immo corporelles (art. 959c CO)."
+        }
+      ],
+      "key_takeaway": "IFRS impose l'approche par composants et offre l'option de réévaluation. RPC reste au modèle du coût. Le CO permet les réserves latentes via amortissements excessifs.",
+      "exam_tip": "💡 Maîtriser le calcul d'amortissement par composants (IFRS) et savoir quand activer vs passer en charges les coûts ultérieurs."
+    },
+    {
+      "id": "immobilisations_incorporelles",
+      "title": "Immobilisations incorporelles",
+      "icon": "💎",
+      "category": "Actifs",
+      "norms": {"ifrs": "IAS 38", "rpc": "RPC 10", "co": "art. 960a CO"},
+      "rows": [
+        {
+          "aspect": "Définition / critères",
+          "ifrs": "Actif non monétaire identifiable sans substance physique. 3 critères : identifiabilité, contrôle, avantages futurs (IAS 38.8-17).",
+          "rpc": "Identifiabilité, contrôle, avantages économiques futurs (RPC 10.3-5). Similaire à IFRS.",
+          "co": "Pas de définition précise. Les immobilisations incorporelles figurent au bilan si elles ont une valeur (art. 959a al. 1 ch. 2 CO)."
+        },
+        {
+          "aspect": "Goodwill généré en interne",
+          "ifrs": "Strictement interdit d'activation (IAS 38.48).",
+          "rpc": "Interdit d'activation (RPC 10.6).",
+          "co": "Interdit d'activation (art. 959a CO : seules les valeurs acquises).",
+          "piege": "⚠️ Le goodwill interne ne peut JAMAIS être activé, quel que soit le référentiel."
+        },
+        {
+          "aspect": "Frais de R&D",
+          "ifrs": "Recherche = toujours en charges. Développement = activé si 6 critères cumulatifs remplis (IAS 38.57) : faisabilité technique, intention d'achever, capacité d'utiliser/vendre, avantages futurs, ressources disponibles, évaluation fiable.",
+          "rpc": "Recherche = en charges. Développement = activation possible si critères similaires (RPC 10.8), mais la pratique est plus souple.",
+          "co": "Frais de R&D généralement en charges. Activation possible si valeur durable.",
+          "piege": "⚠️ Les 6 critères IAS 38.57 pour activer le développement sont un classique d'examen. Tous doivent être remplis SIMULTANÉMENT."
+        },
+        {
+          "aspect": "Durée d'utilité",
+          "ifrs": "Déterminée ou indéterminée. Si indéterminée : pas d'amortissement mais test de dépréciation annuel (IAS 38.88-96).",
+          "rpc": "Durée d'utilité définie obligatoirement. Maximum 5 ans (présomption réfragable de 20 ans pour goodwill acquis) (RPC 10.10).",
+          "co": "Amortissement sur la durée d'utilité. Les durées fiscales sont souvent appliquées.",
+          "piege": "⚠️ Sous RPC, la durée de vie indéterminée n'existe PAS. Maximum 5 ans (sauf justification de 20 ans max pour goodwill)."
+        },
+        {
+          "aspect": "Réévaluation",
+          "ifrs": "Option de réévaluation UNIQUEMENT s'il existe un marché actif (très rare en pratique) (IAS 38.75).",
+          "rpc": "Interdite. Modèle du coût uniquement (RPC CC 8).",
+          "co": "Non prévue sauf art. 670 CO (découvert)."
+        },
+        {
+          "aspect": "Logiciels acquis",
+          "ifrs": "Activés au coût d'acquisition. Amortis sur la durée d'utilité (IAS 38.24-25).",
+          "rpc": "Activés si critères remplis. Amortis sur la durée d'utilité (RPC 10).",
+          "co": "Activés au coût d'acquisition. Amortis selon usage."
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "Durées d'utilité, méthodes d'amortissement, VNC par catégorie, restrictions, R&D en charges (IAS 38.118-128).",
+          "rpc": "Principes d'évaluation, tableau de mouvement, durées d'utilité (RPC 6).",
+          "co": "Principes d'évaluation appliqués (art. 959c CO)."
+        }
+      ],
+      "key_takeaway": "IFRS est le plus détaillé (6 critères R&D, durée indéterminée possible). RPC est plus strict (max 5 ans, pas de durée indéterminée). CO est minimaliste.",
+      "exam_tip": "💡 Retenir les 6 critères IAS 38.57 par coeur (FITARE : Faisabilité, Intention, Tech, Avantages, Ressources, Évaluation)."
+    },
+    {
+      "id": "depreciation",
+      "title": "Dépréciation d'actifs",
+      "icon": "📉",
+      "category": "Actifs",
+      "norms": {"ifrs": "IAS 36", "rpc": "RPC 20", "co": "art. 960a CO"},
+      "rows": [
+        {
+          "aspect": "Champ d'application",
+          "ifrs": "Tous les actifs sauf stocks (IAS 2), actifs de contrats (IFRS 15), impôts différés (IAS 12), actifs financiers (IFRS 9) (IAS 36.2).",
+          "rpc": "Tous les actifs immobilisés (RPC 20.1).",
+          "co": "Tous les actifs (art. 960a al. 2 CO)."
+        },
+        {
+          "aspect": "Indicateurs de dépréciation",
+          "ifrs": "Test annuel obligatoire pour goodwill et actifs à durée indéterminée. Autres actifs : uniquement si indice de dépréciation (IAS 36.9-14).",
+          "rpc": "Test si indices de dépréciation existent (RPC 20.7).",
+          "co": "Évaluation selon le principe de prudence. Correction si la valeur est durablement inférieure.",
+          "piege": "⚠️ Sous IFRS, le test de dépréciation est ANNUEL et OBLIGATOIRE pour le goodwill, même sans indice."
+        },
+        {
+          "aspect": "Valeur recouvrable",
+          "ifrs": "Max(juste valeur - coûts de cession, valeur d'utilité). La valeur d'utilité = DCF actualisés (IAS 36.18-57).",
+          "rpc": "Valeur recouvrable = max(valeur vénale nette, valeur d'utilité) (RPC 20.9-11). Concept similaire.",
+          "co": "Pas de notion formelle de valeur recouvrable. Évaluation prudente."
+        },
+        {
+          "aspect": "Unité génératrice de trésorerie (UGT)",
+          "ifrs": "Si un actif ne génère pas de flux individuels, il est regroupé en UGT. Le goodwill est alloué aux UGT (IAS 36.66-73).",
+          "rpc": "Concept similaire, regroupement d'actifs possible (RPC 20.12-13).",
+          "co": "Pas de concept d'UGT. Évaluation actif par actif."
+        },
+        {
+          "aspect": "Reprise de dépréciation",
+          "ifrs": "Reprise obligatoire si les conditions ont changé, SAUF pour le goodwill (jamais de reprise) (IAS 36.109-125).",
+          "rpc": "Reprise obligatoire si les conditions ont changé. Pour le goodwill : pas de reprise (RPC 20.18).",
+          "co": "Reprise facultative. La non-reprise crée des réserves latentes.",
+          "piege": "⚠️ Jamais de reprise de dépréciation du goodwill sous IFRS ni RPC. C'est irréversible."
+        },
+        {
+          "aspect": "Taux d'actualisation",
+          "ifrs": "Taux avant impôts reflétant les risques spécifiques de l'actif. Souvent WACC ajusté (IAS 36.55-57).",
+          "rpc": "Taux approprié reflétant les conditions de marché (RPC 20.11).",
+          "co": "Pas de prescription."
+        },
+        {
+          "aspect": "Comptabilisation de la perte",
+          "ifrs": "En résultat, sauf si l'actif est réévalué (alors en OCI dans la limite de l'écart de réévaluation) (IAS 36.60-64).",
+          "rpc": "En résultat (RPC 20.16).",
+          "co": "En résultat (charges d'exploitation ou hors exploitation)."
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "Détails étendus : événements, UGT, taux, hypothèses, sensibilités (IAS 36.126-137).",
+          "rpc": "Informations sur les dépréciations significatives (RPC 20.19).",
+          "co": "Informations minimales dans l'annexe."
+        }
+      ],
+      "key_takeaway": "IFRS est très détaillé (UGT, DCF, sensibilités). RPC suit la même logique de façon simplifiée. CO reste au principe de prudence sans méthodologie prescrite.",
+      "exam_tip": "⚠️ Retenir : goodwill = test annuel obligatoire (IFRS), reprise de dépréciation du goodwill = JAMAIS (IFRS et RPC)."
+    },
+    {
+      "id": "leasing",
+      "title": "Contrats de location",
+      "icon": "🔑",
+      "category": "Actifs",
+      "norms": {"ifrs": "IFRS 16", "rpc": "RPC 13", "co": "art. 959 CO"},
+      "rows": [
+        {
+          "aspect": "Modèle preneur",
+          "ifrs": "Modèle unique : activation du droit d'utilisation (ROU) + dette de location pour TOUS les contrats > 12 mois et > 5'000 USD (IFRS 16.22-28).",
+          "rpc": "Leasing financier : activation au bilan. Leasing opérationnel : hors bilan (RPC 13.4-5). Distinction maintenue.",
+          "co": "Tous les leasings hors bilan. Informations en annexe seulement.",
+          "piege": "⚠️ IFRS 16 a supprimé la distinction opérationnel/financier pour le preneur. RPC la maintient. CO = tout hors bilan."
+        },
+        {
+          "aspect": "Critères de classification (preneur)",
+          "ifrs": "Plus de classification nécessaire. Tout contrat conférant le droit de contrôler l'utilisation = contrat de location (IFRS 16.9).",
+          "rpc": "Classification en financier vs opérationnel. Financier si transfert substantiel des risques et avantages (RPC 13.4).",
+          "co": "Pas de classification. Tout en charges."
+        },
+        {
+          "aspect": "Évaluation initiale (preneur)",
+          "ifrs": "ROU = dette de location + paiements anticipés + coûts directs initiaux + coûts de démantèlement. Dette = VA des paiements futurs (IFRS 16.23-28).",
+          "rpc": "Leasing financier : VA des paiements futurs minimum (RPC 13.5-6).",
+          "co": "Loyers en charges de la période."
+        },
+        {
+          "aspect": "Évaluation subséquente (preneur)",
+          "ifrs": "ROU : amortissement linéaire + test de dépréciation. Dette : coût amorti (méthode du taux effectif) (IFRS 16.29-35).",
+          "rpc": "Leasing financier : amortissement du bien + charge d'intérêt sur dette (RPC 13.7).",
+          "co": "Charges de loyer en résultat sur la durée."
+        },
+        {
+          "aspect": "Exemptions",
+          "ifrs": "Contrats < 12 mois (court terme) et actifs de faible valeur (< ~5'000 USD) : traitement en charges (IFRS 16.5-8).",
+          "rpc": "Pas d'exemption spécifique. Le leasing opérationnel est déjà hors bilan.",
+          "co": "Tout est déjà en charges."
+        },
+        {
+          "aspect": "Modèle bailleur",
+          "ifrs": "Classification en financier (créance) ou opérationnel (actif) maintenue (IFRS 16.61-66). Identique à IAS 17.",
+          "rpc": "Identique côté bailleur : financier = créance, opérationnel = actif loué (RPC 13.10).",
+          "co": "Pas de distinction spécifique."
+        },
+        {
+          "aspect": "Impact sur les ratios",
+          "ifrs": "Augmentation des actifs et des dettes. Impact sur EBITDA (plus de loyer), ratio d'endettement, ROA.",
+          "rpc": "Impact uniquement pour le leasing financier.",
+          "co": "Aucun impact au bilan. Tout est hors bilan.",
+          "piege": "⚠️ L'impact d'IFRS 16 sur les ratios financiers est un sujet d'examen fréquent (endettement, EBITDA, couverture d'intérêts)."
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "Tableaux de maturité des dettes, ROU par catégorie, charges court terme/faible valeur, engagements variables (IFRS 16.47-60).",
+          "rpc": "Engagements de leasing opérationnel hors bilan, détail leasing financier (RPC 13.11).",
+          "co": "Engagements ne figurant pas au bilan (art. 959c al. 2 ch. 7 CO)."
+        }
+      ],
+      "key_takeaway": "IFRS 16 = tout au bilan (sauf exemptions). RPC 13 = distinction financier/opérationnel maintenue. CO = tout hors bilan.",
+      "exam_tip": "💡 Savoir calculer le ROU et la dette initiale, puis faire le tableau d'amortissement de la dette (taux effectif) et du ROU (linéaire)."
+    },
+    {
+      "id": "instruments_financiers",
+      "title": "Instruments financiers",
+      "icon": "📊",
+      "category": "Actifs",
+      "norms": {"ifrs": "IFRS 9 / IAS 32 / IFRS 7", "rpc": "RPC 27", "co": "art. 960b CO"},
+      "rows": [
+        {
+          "aspect": "Classification actifs financiers",
+          "ifrs": "3 catégories selon modèle économique + caractéristiques des flux : coût amorti (CA), JVOCI (juste valeur par OCI), JVPR (juste valeur par résultat) (IFRS 9.4.1).",
+          "rpc": "Au coût ou à la juste valeur selon la nature (RPC 27.5-6). Pas de modèle de flux contractuels.",
+          "co": "Actifs cotés : au cours du jour (art. 960b al. 1 CO). Non cotés : au coût - corrections nécessaires.",
+          "piege": "⚠️ IFRS 9 exige un double test (business model + SPPI) pour classer un actif financier. Très technique à l'examen."
+        },
+        {
+          "aspect": "Évaluation initiale",
+          "ifrs": "Juste valeur + coûts de transaction (sauf JVPR : JV sans coûts de transaction) (IFRS 9.5.1.1).",
+          "rpc": "Coût d'acquisition incluant les frais de transaction (RPC 27.5).",
+          "co": "Coût d'acquisition (art. 960b CO)."
+        },
+        {
+          "aspect": "Dépréciation (modèle ECL)",
+          "ifrs": "Modèle des pertes attendues (ECL) en 3 phases. Phase 1 : ECL 12 mois. Phase 2 : ECL durée de vie. Phase 3 : déprécié (IFRS 9.5.5).",
+          "rpc": "Corrections de valeur si indication de perte. Pas de modèle ECL formel (RPC 27.9).",
+          "co": "Correction si la valeur est durablement inférieure au coût.",
+          "piege": "⚠️ Le modèle ECL à 3 phases d'IFRS 9 est très testé. Savoir quand on passe de phase 1 à 2 (détérioration significative du risque de crédit)."
+        },
+        {
+          "aspect": "Couverture (hedge accounting)",
+          "ifrs": "3 types : couverture de juste valeur, de flux de trésorerie, d'investissement net (IFRS 9.6). Conditions strictes de documentation et d'efficacité.",
+          "rpc": "Comptabilité de couverture autorisée si conditions remplies (RPC 27.12-14).",
+          "co": "Pas de dispositions spécifiques sur la couverture."
+        },
+        {
+          "aspect": "Dérivés",
+          "ifrs": "Toujours à la juste valeur par résultat sauf si couverture documentée (IFRS 9.4.1.4).",
+          "rpc": "À la juste valeur ou au plus faible du coût/valeur de marché (RPC 27.7).",
+          "co": "Pas de règle spécifique. Information en annexe si significatif."
+        },
+        {
+          "aspect": "Distinction dettes/fonds propres",
+          "ifrs": "Substance économique prime sur la forme juridique. Obligations convertibles = composante dette + composante capitaux propres (IAS 32.28-32).",
+          "rpc": "Distinction selon la substance économique (RPC 27.3).",
+          "co": "Forme juridique prévaut. Obligation convertible = dette jusqu'à conversion."
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "IFRS 7 très exigeant : risques (crédit, liquidité, marché), sensibilités, VNC par catégorie, juste valeur par niveau (1-2-3).",
+          "rpc": "Informations sur les risques financiers et instruments de couverture (RPC 27.15).",
+          "co": "Actifs cotés évalués au cours du jour, indication de la réserve latente si coût retenu (art. 960b al. 2 CO)."
+        }
+      ],
+      "key_takeaway": "IFRS 9 est très complexe (classification SPPI, ECL 3 phases, hedge accounting). RPC 27 est simplifié. CO se limite au coût ou cours du jour.",
+      "exam_tip": "⚠️ Maîtriser le double test SPPI + business model pour la classification IFRS 9, et le modèle ECL en 3 phases."
+    },
+    {
+      "id": "immeubles_placement",
+      "title": "Immeubles de placement",
+      "icon": "🏢",
+      "category": "Actifs",
+      "norms": {"ifrs": "IAS 40", "rpc": "RPC 2 / CC", "co": "art. 960a CO"},
+      "rows": [
+        {
+          "aspect": "Définition",
+          "ifrs": "Bien immobilier détenu pour percevoir des loyers et/ou pour valoriser le capital (IAS 40.5).",
+          "rpc": "Pas de norme spécifique. Traitement selon RPC 18 (immobilisations corporelles) ou RPC CC pour les actifs immobiliers.",
+          "co": "Pas de distinction. Traitement comme immobilisation corporelle classique."
+        },
+        {
+          "aspect": "Évaluation initiale",
+          "ifrs": "Coût d'acquisition + frais de transaction directement attribuables (IAS 40.20-23).",
+          "rpc": "Coût d'acquisition (RPC 18).",
+          "co": "Au plus au coût d'acquisition (art. 960a CO)."
+        },
+        {
+          "aspect": "Évaluation subséquente",
+          "ifrs": "Choix entre modèle du coût (IAS 16) ou modèle de la juste valeur avec variations en résultat (IAS 40.30-35). Le choix est une méthode comptable.",
+          "rpc": "Modèle du coût uniquement. Pas de réévaluation à la juste valeur (RPC CC).",
+          "co": "Modèle du coût. Amortissements sur la durée d'utilité.",
+          "piege": "⚠️ Sous IFRS, le modèle de la juste valeur pour les immeubles de placement n'implique PAS d'amortissement. Les variations de JV passent en résultat."
+        },
+        {
+          "aspect": "Transferts",
+          "ifrs": "Transfert entre catégories (stocks, immo corporelle, immeuble de placement) possible si changement d'utilisation (IAS 40.57-65).",
+          "rpc": "Reclassification possible si changement d'affectation.",
+          "co": "Pas de règle spécifique de transfert."
+        },
+        {
+          "aspect": "Juste valeur (disclosure)",
+          "ifrs": "Si modèle du coût retenu : la juste valeur doit quand même être communiquée en annexe (IAS 40.79).",
+          "rpc": "Valeur de marché à mentionner en annexe si significativement différente (RPC 6).",
+          "co": "Pas d'obligation de communiquer la juste valeur."
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "Modèle retenu, juste valeur, réconciliation des VNC, revenus locatifs, charges directes (IAS 40.74-79).",
+          "rpc": "Principes d'évaluation, mouvements, charges/revenus liés.",
+          "co": "Principes d'évaluation appliqués (art. 959c CO)."
+        }
+      ],
+      "key_takeaway": "IFRS offre le choix entre coût et juste valeur (JV en résultat). RPC et CO = modèle du coût uniquement.",
+      "exam_tip": "💡 Sous IFRS, si modèle de la JV : pas d'amortissement, variation en résultat (pas en OCI !). Distinction avec réévaluation des immo corporelles (IAS 16 = en OCI)."
+    },
+    {
+      "id": "provisions",
+      "title": "Provisions",
+      "icon": "⚖️",
+      "category": "Passifs",
+      "norms": {"ifrs": "IAS 37", "rpc": "RPC 23", "co": "art. 960e CO"},
+      "rows": [
+        {
+          "aspect": "Conditions de comptabilisation",
+          "ifrs": "3 critères cumulatifs : obligation actuelle (juridique ou implicite), sortie probable de ressources, estimation fiable du montant (IAS 37.14).",
+          "rpc": "Obligation juridique ou implicite, sortie probable de ressources, estimation fiable (RPC 23.3-4). Identique à IFRS.",
+          "co": "Provisions pour les engagements dont le montant ou l'échéance est incertain mais qui sont probables (art. 960e al. 2 CO).",
+          "piege": "⚠️ Les 3 conditions d'IAS 37 doivent TOUTES être remplies. Si une seule manque = pas de provision mais éventuel passif éventuel en annexe."
+        },
+        {
+          "aspect": "Meilleure estimation",
+          "ifrs": "Meilleure estimation du montant nécessaire pour éteindre l'obligation à la date de clôture. Pour une population : valeur attendue (pondérée). Pour un cas unique : résultat le plus probable (IAS 37.36-40).",
+          "rpc": "Meilleure estimation possible de la charge future (RPC 23.5).",
+          "co": "Montant estimé avec prudence (art. 960e CO)."
+        },
+        {
+          "aspect": "Actualisation",
+          "ifrs": "Obligatoire si l'effet est significatif. Taux avant impôts reflétant les conditions de marché (IAS 37.45-47).",
+          "rpc": "Actualisation si l'effet est significatif (RPC 23.6).",
+          "co": "Pas d'obligation d'actualisation."
+        },
+        {
+          "aspect": "Provisions excessives",
+          "ifrs": "Interdites. Le montant doit refléter la meilleure estimation, pas plus (IAS 37.36).",
+          "rpc": "Interdites. Estimation fidèle requise (RPC 23.5).",
+          "co": "Autorisées implicitement. Les provisions excessives créent des réserves latentes.",
+          "piege": "⚠️ Le CO autorise les provisions excessives (réserves latentes). IFRS et RPC les interdisent. Piège classique d'examen."
+        },
+        {
+          "aspect": "Passifs éventuels",
+          "ifrs": "Non comptabilisés. Information en annexe sauf si la sortie est improbable (IAS 37.27-30, 86-92).",
+          "rpc": "Non comptabilisés. Information en annexe (RPC 23.8).",
+          "co": "Information en annexe sur les obligations ne figurant pas au bilan (art. 959c al. 2 ch. 10 CO)."
+        },
+        {
+          "aspect": "Contrats déficitaires",
+          "ifrs": "Provision obligatoire si coûts inévitables > avantages attendus (IAS 37.66-69).",
+          "rpc": "Provision pour contrats déficitaires si les conditions sont remplies (RPC 23.4).",
+          "co": "Provisions possibles selon le principe de prudence."
+        },
+        {
+          "aspect": "Restructuration",
+          "ifrs": "Provision si plan détaillé et annonce publique créant une attente légitime. Seuls les coûts directs sont inclus (IAS 37.70-83).",
+          "rpc": "Provision si plan approuvé et communiqué (RPC 23.9-10).",
+          "co": "Provision possible si les conditions générales sont remplies."
+        },
+        {
+          "aspect": "Révision annuelle",
+          "ifrs": "Révision à chaque date de clôture. Ajustement à la meilleure estimation. Reprise si plus probable (IAS 37.59).",
+          "rpc": "Révision à chaque clôture (RPC 23.7).",
+          "co": "Révision des provisions. Dissolution si plus nécessaire, mais les réserves latentes peuvent être maintenues."
+        }
+      ],
+      "key_takeaway": "IFRS et RPC sont très proches sur les provisions. Le CO est plus permissif et autorise les provisions excessives (réserves latentes).",
+      "exam_tip": "💡 Maîtriser les 3 conditions d'IAS 37, distinguer provision vs passif éventuel, et savoir qu'une provision excessive = réserve latente (interdite IFRS/RPC, tolérée CO)."
+    },
+    {
+      "id": "prevoyance",
+      "title": "Engagements de prévoyance",
+      "icon": "🏦",
+      "category": "Passifs",
+      "norms": {"ifrs": "IAS 19", "rpc": "RPC 16", "co": "LPP / art. 958 CO"},
+      "rows": [
+        {
+          "aspect": "Classification des plans",
+          "ifrs": "Plans à cotisations définies (DC) vs plans à prestations définies (DB). La substance économique prime (IAS 19.27-30).",
+          "rpc": "Excédent/insuffisance de couverture de l'institution de prévoyance. Pas de distinction DC/DB au sens IFRS (RPC 16.3).",
+          "co": "Pas de classification. Cotisations LPP = charges de la période.",
+          "piege": "⚠️ La classification DC vs DB est fondamentale sous IFRS. Sous RPC 16, l'approche est totalement différente (analyse de la couverture)."
+        },
+        {
+          "aspect": "Plans DC (cotisations définies)",
+          "ifrs": "Charge = cotisation due pour la période. Aucune dette au bilan sauf cotisations impayées (IAS 19.50-54).",
+          "rpc": "Cotisations en charges. Analyse de la sur/sous-couverture sur base des comptes de l'IP (RPC 16.5).",
+          "co": "Cotisations patronales LPP en charges de la période."
+        },
+        {
+          "aspect": "Plans DB (prestations définies)",
+          "ifrs": "Obligation = PUC (projected unit credit). Actif du plan à la JV. Passif net = obligation - actifs. Écarts actuariels en OCI (IAS 19.55-119).",
+          "rpc": "Pas de calcul PUC. L'engagement est évalué sur la base des comptes réglementaires de l'institution de prévoyance (RPC 16.5-8).",
+          "co": "Pas de comptabilisation de l'engagement de prévoyance au bilan individuel.",
+          "piege": "⚠️ Sous IFRS, les plans DB suisses (2e pilier) doivent être traités comme des DB même si juridiquement en DC. Calcul actuariel complexe (PUC)."
+        },
+        {
+          "aspect": "Évaluation IFRS (DB)",
+          "ifrs": "Obligation : méthode PUC avec hypothèses actuarielles (taux d'actualisation, mortalité, rotation). Actifs : juste valeur (IAS 19.67-98).",
+          "rpc": "Évaluation basée sur les comptes de l'institution de prévoyance. Avantage/engagement économique à comptabiliser (RPC 16.5-8).",
+          "co": "Pas applicable."
+        },
+        {
+          "aspect": "Écarts actuariels (remeasurements)",
+          "ifrs": "Comptabilisés immédiatement en OCI (autres éléments du résultat global). Pas de recyclage en résultat (IAS 19.120-130).",
+          "rpc": "Pas d'écarts actuariels au sens IFRS. Variation de l'avantage/engagement en résultat (RPC 16.9).",
+          "co": "Pas applicable."
+        },
+        {
+          "aspect": "Coût des services passés",
+          "ifrs": "Comptabilisé immédiatement en résultat lors de la modification du plan (IAS 19.101-104).",
+          "rpc": "Pas de concept équivalent. Variation de la couverture reflétée dans l'engagement (RPC 16).",
+          "co": "Pas applicable."
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "Très détaillé : hypothèses, sensibilités, ventilation de la charge, réconciliation obligation/actifs, profil de maturité (IAS 19.135-152).",
+          "rpc": "Existence de sur/sous-couverture, avantage/engagement économique, charges de prévoyance (RPC 16.11).",
+          "co": "Institution de prévoyance, engagements, cotisations (art. 959c CO)."
+        }
+      ],
+      "key_takeaway": "IFRS (IAS 19) impose un calcul actuariel complet (PUC) pour les plans DB. RPC 16 utilise une approche simplifiée basée sur les comptes de l'IP. CO = cotisations en charges.",
+      "exam_tip": "⚠️ Les plans suisses du 2e pilier sont des DB sous IFRS (calcul PUC). Sous RPC 16, on analyse la sur/sous-couverture de l'IP. Approche fondamentalement différente."
+    },
+    {
+      "id": "impots_differes",
+      "title": "Impôts différés",
+      "icon": "🧾",
+      "category": "Passifs",
+      "norms": {"ifrs": "IAS 12", "rpc": "RPC 11", "co": "CO (pas de norme)"},
+      "rows": [
+        {
+          "aspect": "Obligation de comptabilisation",
+          "ifrs": "Obligatoire pour toutes les différences temporaires (méthode du bilan / balance sheet approach) (IAS 12.15-24).",
+          "rpc": "Obligatoire (RPC 11.3). Méthode similaire à IFRS.",
+          "co": "Pas de comptabilisation d'impôts différés dans les comptes individuels CO.",
+          "piege": "⚠️ Le CO ne prévoit PAS d'impôts différés dans les comptes individuels. Les impôts différés n'apparaissent qu'en consolidation ou sous IFRS/RPC."
+        },
+        {
+          "aspect": "Méthode",
+          "ifrs": "Méthode du bilan : comparaison valeur comptable vs base fiscale. Différences temporaires = actifs/passifs d'impôt différé (IAS 12.5).",
+          "rpc": "Méthode du bilan similaire (RPC 11.5).",
+          "co": "N/A"
+        },
+        {
+          "aspect": "Actifs d'impôt différé (AID)",
+          "ifrs": "Comptabilisés si probable qu'un bénéfice imposable futur sera disponible pour absorber les différences (IAS 12.24-31).",
+          "rpc": "Comptabilisés si recouvrement probable (RPC 11.7).",
+          "co": "N/A"
+        },
+        {
+          "aspect": "Reports de pertes fiscales",
+          "ifrs": "AID comptabilisé si utilisation probable. Révision à chaque clôture (IAS 12.34-36).",
+          "rpc": "Activation si utilisation probable dans les 7 ans (droit fiscal suisse) (RPC 11.9).",
+          "co": "N/A, mais les pertes fiscales sont reportables 7 ans en droit fiscal suisse."
+        },
+        {
+          "aspect": "Taux d'imposition",
+          "ifrs": "Taux adoptés ou quasi adoptés à la date de clôture (IAS 12.46-47).",
+          "rpc": "Taux effectifs attendus (RPC 11.10).",
+          "co": "N/A"
+        },
+        {
+          "aspect": "Actualisation",
+          "ifrs": "Interdite (IAS 12.53).",
+          "rpc": "Interdite (RPC 11.8).",
+          "co": "N/A",
+          "piege": "⚠️ Les impôts différés ne sont JAMAIS actualisés sous IFRS ni RPC."
+        },
+        {
+          "aspect": "Comptabilisation en OCI",
+          "ifrs": "Si l'impôt différé est lié à un élément en OCI, l'impôt différé est aussi en OCI (IAS 12.61A).",
+          "rpc": "Pas d'OCI sous RPC. Tout en résultat.",
+          "co": "N/A"
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "Réconciliation du taux, ventilation AID/PID, différences temporaires, pertes reportées non activées (IAS 12.79-88).",
+          "rpc": "Méthode de calcul, taux utilisé, actifs non comptabilisés (RPC 11.12).",
+          "co": "N/A"
+        }
+      ],
+      "key_takeaway": "IFRS et RPC exigent la comptabilisation des impôts différés (méthode du bilan). Le CO ne prévoit pas d'impôts différés en comptes individuels.",
+      "exam_tip": "💡 Savoir calculer les différences temporaires (valeur comptable vs base fiscale), distinguer AID vs PID, et ne JAMAIS actualiser."
+    },
+    {
+      "id": "revenus",
+      "title": "Reconnaissance du revenu",
+      "icon": "💰",
+      "category": "Résultat",
+      "norms": {"ifrs": "IFRS 15", "rpc": "RPC 22", "co": "CO (art. 958d)"},
+      "rows": [
+        {
+          "aspect": "Modèle général",
+          "ifrs": "Modèle en 5 étapes : 1) Identifier le contrat, 2) Identifier les obligations de prestation, 3) Déterminer le prix, 4) Allouer le prix, 5) Comptabiliser le revenu (IFRS 15.6-19).",
+          "rpc": "Principe général : le revenu est comptabilisé lorsque les prestations sont fournies et les risques transférés (RPC 22.4-5).",
+          "co": "Principe de réalisation : revenus comptabilisés quand les prestations sont fournies (art. 958d CO).",
+          "piege": "⚠️ Le modèle en 5 étapes d'IFRS 15 est fondamental. Chaque étape peut faire l'objet de questions d'examen."
+        },
+        {
+          "aspect": "Obligations de prestation",
+          "ifrs": "Chaque bien/service distinct dans un contrat est une obligation séparée. Critère : le client peut en bénéficier seul OU avec des ressources facilement disponibles (IFRS 15.22-30).",
+          "rpc": "Pas de concept formel d'obligation de prestation distincte. Approche plus globale.",
+          "co": "Pas de concept d'obligation de prestation."
+        },
+        {
+          "aspect": "Prix de transaction",
+          "ifrs": "Montant auquel l'entité s'attend à avoir droit. Inclut contrepartie variable (estimation), composante financement, contrepartie non monétaire, contrepartie payable au client (IFRS 15.47-72).",
+          "rpc": "Prix convenu, ajusté si nécessaire (RPC 22).",
+          "co": "Prix convenu. Principe de prudence."
+        },
+        {
+          "aspect": "Revenu dans le temps vs à un moment",
+          "ifrs": "Dans le temps si : le client reçoit les avantages au fur et à mesure, OU l'entité crée un actif contrôlé par le client, OU pas d'utilisation alternative + droit au paiement. Sinon : moment précis (IFRS 15.35-38).",
+          "rpc": "Méthode de l'avancement recommandée pour les contrats de construction. Méthode de l'achèvement tolérée (RPC 22.10-14).",
+          "co": "Méthode de l'achèvement principalement. L'avancement est rarement utilisé."
+        },
+        {
+          "aspect": "Contrats de construction",
+          "ifrs": "Intégrés dans IFRS 15. Reconnaissance dans le temps si critères remplis. Méthode input ou output (IFRS 15.39-45).",
+          "rpc": "POC (percentage of completion) recommandée. Achèvement tolérée (RPC 22.10-14).",
+          "co": "Méthode de l'achèvement (completed contract) usuelle."
+        },
+        {
+          "aspect": "Coûts du contrat",
+          "ifrs": "Coûts incrémentaux d'obtention activés si amortis sur > 1 an. Coûts d'exécution activés si critères (IFRS 15.91-98).",
+          "rpc": "Pas de règles spécifiques sur l'activation des coûts du contrat.",
+          "co": "Charges de la période."
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "Très détaillé : ventilation du CA par catégorie, soldes de contrats, obligations restantes, jugements significatifs (IFRS 15.110-129).",
+          "rpc": "Ventilation du chiffre d'affaires par segment ou activité (RPC 22).",
+          "co": "Chiffre d'affaires net (art. 959b al. 2 CO). Informations minimales."
+        }
+      ],
+      "key_takeaway": "IFRS 15 impose un modèle structuré en 5 étapes avec allocation du prix aux obligations. RPC est plus simple. CO applique le principe de réalisation.",
+      "exam_tip": "⚠️ Maîtriser les 5 étapes d'IFRS 15. Savoir identifier les obligations distinctes et allouer le prix (souvent testé avec des bundles produit+service)."
+    },
+    {
+      "id": "subventions",
+      "title": "Subventions publiques",
+      "icon": "🏛️",
+      "category": "Résultat",
+      "norms": {"ifrs": "IAS 20", "rpc": "RPC 28", "co": "CO"},
+      "rows": [
+        {
+          "aspect": "Conditions de comptabilisation",
+          "ifrs": "Comptabilisées quand assurance raisonnable que les conditions seront remplies ET que la subvention sera reçue (IAS 20.7).",
+          "rpc": "Comptabilisées quand les conditions sont remplies ou qu'il est très probable qu'elles le seront (RPC 28.5).",
+          "co": "Pas de norme spécifique. Comptabilisation selon les principes généraux."
+        },
+        {
+          "aspect": "Subventions liées aux actifs",
+          "ifrs": "2 méthodes : déduction du coût de l'actif OU produit différé (deferred income) amorti sur la durée de l'actif (IAS 20.24-28).",
+          "rpc": "Déduction de la valeur comptable de l'actif OU comptabilisation en produit différé (RPC 28.7).",
+          "co": "Généralement en diminution du coût de l'actif ou en produit."
+        },
+        {
+          "aspect": "Subventions liées au résultat",
+          "ifrs": "En produit systématiquement sur les périodes de la charge compensée. Présentation en produit ou en déduction de la charge (IAS 20.29-31).",
+          "rpc": "En produit de la période où les charges compensées sont encourues (RPC 28.7).",
+          "co": "En produit de la période."
+        },
+        {
+          "aspect": "Remboursement",
+          "ifrs": "Changement d'estimation comptable (prospectif). La subvention remboursable réduit le produit différé ou augmente la VNC de l'actif (IAS 20.32-36).",
+          "rpc": "Traitement prospectif similaire (RPC 28.9).",
+          "co": "Comptabilisation de la dette de remboursement."
+        },
+        {
+          "aspect": "Prêts à taux préférentiel",
+          "ifrs": "Avantage = différence entre la JV du prêt et le nominal. Traité comme une subvention (IAS 20.10A).",
+          "rpc": "Pas de disposition spécifique.",
+          "co": "Pas de disposition spécifique."
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "Méthode de présentation, nature et étendue, conditions non remplies, passifs éventuels (IAS 20.39).",
+          "rpc": "Nature et montant des subventions (RPC 28.10).",
+          "co": "Informations dans l'annexe si significatif."
+        }
+      ],
+      "key_takeaway": "IFRS et RPC offrent deux options de comptabilisation pour les subventions liées aux actifs. Le CO n'a pas de norme spécifique.",
+      "exam_tip": "💡 Savoir les 2 options IAS 20 pour les subventions liées aux actifs : en déduction de l'actif OU en produit différé. Impact sur les amortissements et le résultat."
+    },
+    {
+      "id": "couts_emprunt",
+      "title": "Coûts d'emprunt",
+      "icon": "🏗️",
+      "category": "Résultat",
+      "norms": {"ifrs": "IAS 23", "rpc": "RPC 2 / CC", "co": "CO"},
+      "rows": [
+        {
+          "aspect": "Principe général",
+          "ifrs": "Activation OBLIGATOIRE des coûts d'emprunt directement attribuables à un actif qualifié (IAS 23.8).",
+          "rpc": "Activation FACULTATIVE des coûts d'emprunt (RPC CC 18). Possibilité de comptabiliser en charges.",
+          "co": "Généralement en charges financières. Pas d'obligation d'activation.",
+          "piege": "⚠️ Sous IFRS, l'activation des coûts d'emprunt est OBLIGATOIRE pour les actifs qualifiés. Sous RPC, c'est un CHOIX. Sous CO, en charges."
+        },
+        {
+          "aspect": "Actif qualifié",
+          "ifrs": "Actif nécessitant une période substantielle de préparation avant utilisation ou vente (IAS 23.5-7). Ex : immeubles en construction, stocks à maturation longue.",
+          "rpc": "Concept similaire si l'option d'activation est retenue.",
+          "co": "Pas de concept d'actif qualifié."
+        },
+        {
+          "aspect": "Début de l'activation",
+          "ifrs": "Quand 3 conditions réunies : dépenses engagées, coûts d'emprunt encourus, activités nécessaires commencées (IAS 23.17-19).",
+          "rpc": "Conditions similaires si activation choisie.",
+          "co": "N/A"
+        },
+        {
+          "aspect": "Suspension",
+          "ifrs": "Suspension si activités interrompues pendant une période prolongée (IAS 23.20-21).",
+          "rpc": "Suspension similaire si applicable.",
+          "co": "N/A"
+        },
+        {
+          "aspect": "Fin de l'activation",
+          "ifrs": "Quand la quasi-totalité des activités de préparation est achevée (IAS 23.22-25).",
+          "rpc": "Quand l'actif est prêt à l'utilisation prévue.",
+          "co": "N/A"
+        },
+        {
+          "aspect": "Taux de capitalisation",
+          "ifrs": "Si emprunt spécifique : taux réel. Si emprunts généraux : taux moyen pondéré (IAS 23.12-14).",
+          "rpc": "Taux de l'emprunt spécifique ou taux moyen.",
+          "co": "N/A"
+        }
+      ],
+      "key_takeaway": "IFRS impose l'activation des coûts d'emprunt pour les actifs qualifiés. RPC laisse le choix. CO les passe en charges.",
+      "exam_tip": "⚠️ Calculer les intérêts à activer : taux spécifique ou taux moyen pondéré. Ne pas oublier de suspendre en cas d'interruption."
+    },
+    {
+      "id": "fonds_propres",
+      "title": "Fonds propres et capital",
+      "icon": "🏛️",
+      "category": "Capitaux propres",
+      "norms": {"ifrs": "IAS 1 / IAS 32", "rpc": "RPC 24", "co": "art. 959a al. 2 CO"},
+      "rows": [
+        {
+          "aspect": "Composantes",
+          "ifrs": "Capital émis, primes d'émission, réserves (réévaluation, couverture, conversion), résultats non distribués, intérêts minoritaires (IAS 1.78).",
+          "rpc": "Capital, réserves légales, réserves facultatives, bénéfice reporté, propres actions (RPC 24).",
+          "co": "Capital-actions/social, réserve légale issue du capital, réserve légale issue du bénéfice, réserves facultatives, bénéfice reporté (art. 959a al. 2 CO)."
+        },
+        {
+          "aspect": "OCI (autres éléments du résultat global)",
+          "ifrs": "Écarts de réévaluation (IAS 16/38), écarts actuariels (IAS 19), couverture de flux (IFRS 9), conversion (IAS 21), JVOCI (IFRS 9). Présenté séparément (IAS 1.7).",
+          "rpc": "Pas d'OCI sous RPC. Tous les éléments passent par le résultat.",
+          "co": "Pas d'OCI. Résultat unique.",
+          "piege": "⚠️ L'OCI n'existe que sous IFRS. Sous RPC et CO, tout impacte le résultat net. Cela crée des différences significatives de résultat."
+        },
+        {
+          "aspect": "Frais d'augmentation de capital",
+          "ifrs": "En déduction des capitaux propres (IAS 32.37).",
+          "rpc": "En déduction des capitaux propres (RPC 24.9).",
+          "co": "Frais de fondation et d'augmentation pouvant être activés et amortis sur 5 ans max (art. 664 CO abrogé, maintenant en charges ou en déduction)."
+        },
+        {
+          "aspect": "Réserves légales",
+          "ifrs": "Pas de réserve légale au sens IFRS. Les exigences légales locales sont respectées.",
+          "rpc": "Application du droit suisse (CO).",
+          "co": "Réserve légale issue du capital (art. 671 CO). Réserve légale issue du bénéfice : 5% du bénéfice annuel jusqu'à ce que, cumulée avec la réserve légale issue du capital, elle atteigne 20% du capital-actions libéré (50% pour les sociétés holding) (art. 672 CO, nouveau droit 2023)."
+        },
+        {
+          "aspect": "Dividendes",
+          "ifrs": "Comptabilisés comme passif lorsque déclarés/approuvés. Si proposés après la clôture : pas de dette (IAS 10.12-13).",
+          "rpc": "Idem : comptabilisés quand approuvés par l'AG.",
+          "co": "Décidés par l'AG. Restriction : les dividendes ne peuvent être prélevés que sur le bénéfice résultant du bilan et les réserves constituées à cet effet (art. 675 CO)."
+        },
+        {
+          "aspect": "Distinction dettes / FP",
+          "ifrs": "Substance économique prime. Une obligation de remettre du cash = dette, même si juridiquement un FP (IAS 32.15-27).",
+          "rpc": "Distinction selon substance économique (RPC 24.3).",
+          "co": "Classification juridique. Le capital-actions est toujours en FP.",
+          "piege": "⚠️ Sous IFRS, certaines actions privilégiées rachetables = dette. Sous CO = toujours en FP. Risque de reclassification."
+        }
+      ],
+      "key_takeaway": "IFRS a l'OCI et privilégie la substance sur la forme pour la classification dettes/FP. RPC n'a pas d'OCI. CO suit la classification juridique stricte.",
+      "exam_tip": "💡 L'OCI est une spécificité IFRS. Savoir quels éléments y transitent (5 éléments principaux) et lesquels sont recyclés en résultat."
+    },
+    {
+      "id": "propres_actions",
+      "title": "Propres actions (actions propres)",
+      "icon": "🔄",
+      "category": "Capitaux propres",
+      "norms": {"ifrs": "IAS 32", "rpc": "RPC 24", "co": "art. 659-659b CO"},
+      "rows": [
+        {
+          "aspect": "Traitement comptable",
+          "ifrs": "En déduction des capitaux propres (poste négatif). Pas d'actif au bilan (IAS 32.33-34).",
+          "rpc": "En déduction des capitaux propres (poste négatif) (RPC 24.7).",
+          "co": "Poste négatif en capitaux propres. Constitution d'une réserve pour propres actions du même montant (art. 659a CO).",
+          "piege": "⚠️ Sous CO, il faut constituer une réserve pour propres actions. Sous IFRS/RPC, simple déduction des FP sans réserve spéciale."
+        },
+        {
+          "aspect": "Limites d'acquisition",
+          "ifrs": "Pas de limite en % fixée par IFRS. Soumis au droit local.",
+          "rpc": "Application du droit suisse.",
+          "co": "Maximum 10% du capital-actions (20% si les actions sont acquises en lien avec une restriction de transmissibilité) (art. 659 al. 1 CO)."
+        },
+        {
+          "aspect": "Résultat sur vente",
+          "ifrs": "Aucun gain/perte en résultat. Tout mouvement en capitaux propres (IAS 32.33).",
+          "rpc": "Pas de résultat en compte de résultat. Mouvement en capitaux propres (RPC 24.7).",
+          "co": "Le gain/perte peut transiter par le résultat en pratique.",
+          "piege": "⚠️ Sous IFRS et RPC, il n'y a JAMAIS de gain/perte en résultat sur les propres actions. Tout passe par les FP."
+        },
+        {
+          "aspect": "Dividendes sur propres actions",
+          "ifrs": "Pas de dividende sur les propres actions détenues (annulation).",
+          "rpc": "Pas de dividende sur les propres actions détenues.",
+          "co": "Pas de droit au dividende pour les propres actions détenues (art. 659a al. 2 CO)."
+        },
+        {
+          "aspect": "Présentation",
+          "ifrs": "Mention en face de la ligne des capitaux propres. Montant des actions détenues (IAS 1.79).",
+          "rpc": "En déduction des FP avec indication du nombre et de la valeur (RPC 24.7).",
+          "co": "Poste séparé dans les capitaux propres. Réserve pour propres actions distincte."
+        }
+      ],
+      "key_takeaway": "Les 3 référentiels traitent les propres actions en déduction des FP. Le CO impose une réserve spéciale et une limite de 10%.",
+      "exam_tip": "💡 Sous IFRS/RPC : aucun impact résultat. Sous CO : réserve pour propres actions obligatoire. Limite de 10% du capital."
+    },
+    {
+      "id": "reserves_latentes",
+      "title": "Réserves latentes",
+      "icon": "🔒",
+      "category": "Capitaux propres",
+      "norms": {"ifrs": "IFRS (interdit)", "rpc": "RPC (interdit)", "co": "art. 960e al. 3-4 CO"},
+      "rows": [
+        {
+          "aspect": "Définition",
+          "ifrs": "Différence entre la valeur réelle d'un actif/passif et sa valeur comptable. Sous IFRS, les RL ne sont pas autorisées car elles violent le principe de fair presentation (IAS 1.15).",
+          "rpc": "Les RL ne sont pas autorisées. La comptabilisation doit refléter la situation réelle (RPC CC 6).",
+          "co": "Les RL sont explicitement autorisées. Elles résultent de la sous-évaluation d'actifs ou de la surévaluation de passifs (art. 960e al. 3 CO).",
+          "piege": "⚠️ Les réserves latentes sont un concept SPÉCIFIQUEMENT suisse (CO). Elles sont INTERDITES sous IFRS et RPC."
+        },
+        {
+          "aspect": "Types de réserves latentes",
+          "ifrs": "N/A (interdites).",
+          "rpc": "N/A (interdites).",
+          "co": "RL obligatoires (principe de prudence), RL d'arbitrage (choix de méthode), RL volontaires = réserves cachées (art. 960e al. 3 CO)."
+        },
+        {
+          "aspect": "Création",
+          "ifrs": "Interdite. Tous les actifs et passifs à leur juste valeur ou valeur comptable conforme aux normes.",
+          "rpc": "Interdite. Image fidèle requise.",
+          "co": "Par sous-évaluation d'actifs (amortissements excessifs, provisions excessives), surévaluation de passifs, non-activation de charges activables."
+        },
+        {
+          "aspect": "Dissolution",
+          "ifrs": "N/A.",
+          "rpc": "N/A.",
+          "co": "La dissolution de RL augmente le résultat. Elle doit être mentionnée en annexe si le résultat est significativement faussé (art. 960e al. 4 CO).",
+          "piege": "⚠️ La dissolution de RL gonfle artificiellement le résultat. L'annexe doit mentionner le montant si significatif."
+        },
+        {
+          "aspect": "Obligation de disclosure",
+          "ifrs": "N/A.",
+          "rpc": "N/A.",
+          "co": "Si les RL dissoutes dépassent les RL nouvellement constituées et que le montant est significatif : mention obligatoire en annexe (art. 959c al. 1 ch. 3 CO)."
+        },
+        {
+          "aspect": "Impact sur la révision",
+          "ifrs": "Les RL entraîneraient une qualification du rapport d'audit (image non fidèle).",
+          "rpc": "Les RL entraîneraient une qualification du rapport d'audit.",
+          "co": "Les RL sont acceptées par le réviseur dans les comptes CO. Elles font partie du cadre légal suisse."
+        }
+      ],
+      "key_takeaway": "Les réserves latentes sont une particularité suisse du CO. Elles sont interdites sous IFRS et RPC car elles faussent l'image fidèle.",
+      "exam_tip": "⚠️ Savoir identifier les mécanismes de création de RL (amortissements excessifs, provisions excessives, LIFO, non-activation). Connaître l'obligation de disclosure en cas de dissolution."
+    },
+    {
+      "id": "consolidation",
+      "title": "Périmètre et méthodes de consolidation",
+      "icon": "🌐",
+      "category": "Consolidation",
+      "norms": {"ifrs": "IFRS 10 / IFRS 3", "rpc": "RPC 30", "co": "art. 963-963b CO"},
+      "rows": [
+        {
+          "aspect": "Obligation de consolider",
+          "ifrs": "Toute entité qui contrôle une ou plusieurs autres entités (IFRS 10.4-5).",
+          "rpc": "Toute entité qui contrôle une ou plusieurs filiales. Exemptions pour petits groupes (RPC 30.3).",
+          "co": "Obligation si contrôle d'une ou plusieurs entreprises (art. 963 CO). Exemptions : petits groupes (bilan 20M, CA 40M, 250 ETP) si aucun associé ne l'exige (art. 963a CO).",
+          "piege": "⚠️ Les seuils CO d'exemption (20M/40M/250 ETP) sont fréquemment testés. Il suffit de ne PAS dépasser 2 des 3 critères pendant 2 exercices consécutifs."
+        },
+        {
+          "aspect": "Notion de contrôle",
+          "ifrs": "Pouvoir sur l'entité + exposition aux rendements variables + capacité d'utiliser le pouvoir pour influencer les rendements (IFRS 10.7-18).",
+          "rpc": "Contrôle = pouvoir de diriger les politiques financières et opérationnelles (RPC 30.5). Présomption à > 50% des droits de vote.",
+          "co": "Contrôle = majorité des voix ou autre forme de contrôle (art. 963 al. 1-2 CO)."
+        },
+        {
+          "aspect": "Méthode de consolidation",
+          "ifrs": "Intégration globale pour les filiales contrôlées (IFRS 10.19-24). Mise en équivalence pour les associées et JV (IAS 28).",
+          "rpc": "Intégration globale pour les filiales. Mise en équivalence pour les participations entre 20-50% (RPC 30.10-14).",
+          "co": "Intégration globale. Renvoi aux normes reconnues (IFRS ou RPC) (art. 963b CO)."
+        },
+        {
+          "aspect": "Date de première consolidation",
+          "ifrs": "À la date d'acquisition du contrôle. Identification des actifs/passifs acquis à la JV (IFRS 3.4-8).",
+          "rpc": "À la date d'acquisition. Actifs/passifs identifiés à la JV (RPC 30.17-20).",
+          "co": "Renvoi aux normes reconnues."
+        },
+        {
+          "aspect": "Intérêts minoritaires",
+          "ifrs": "Présentés séparément dans les FP. Option : à la JV (full goodwill) ou à la quote-part des actifs nets (partial goodwill) (IFRS 3.19).",
+          "rpc": "Présentés dans les FP, évalués à la quote-part des actifs nets. Pas de full goodwill (RPC 30.22).",
+          "co": "Présentation séparée dans les FP (art. 963b CO).",
+          "piege": "⚠️ IFRS offre le choix entre full goodwill et partial goodwill. RPC = uniquement partial goodwill."
+        },
+        {
+          "aspect": "Éliminations",
+          "ifrs": "Élimination totale des transactions intra-groupe, soldes, produits/charges, dividendes, bénéfices non réalisés (IFRS 10.B86-B87).",
+          "rpc": "Élimination des transactions intra-groupe (RPC 30.24-27).",
+          "co": "Renvoi aux normes reconnues."
+        },
+        {
+          "aspect": "Exemptions de consolidation",
+          "ifrs": "Sous-groupe dont la mère publie des comptes consolidés IFRS accessibles au public (IFRS 10.4).",
+          "rpc": "Si comptes consolidés établis selon un référentiel reconnu d'ordre supérieur (IFRS). Exemptions pour petits groupes (RPC 30.3).",
+          "co": "Exemptions : petits groupes (art. 963a al. 1 CO), mère elle-même consolidée (art. 963a al. 2 CO), association/fondation si pas > 2/3 seuils."
+        }
+      ],
+      "key_takeaway": "IFRS 10 a une notion de contrôle plus sophistiquée (pouvoir + rendements variables). RPC est plus simple. CO définit les seuils d'exemption.",
+      "exam_tip": "💡 Retenir les seuils d'exemption CO (20M/40M/250) et la différence full vs partial goodwill (IFRS = choix, RPC = partial uniquement)."
+    },
+    {
+      "id": "goodwill",
+      "title": "Goodwill",
+      "icon": "⭐",
+      "category": "Consolidation",
+      "norms": {"ifrs": "IFRS 3 / IAS 36", "rpc": "RPC 30", "co": "art. 963b CO"},
+      "rows": [
+        {
+          "aspect": "Calcul initial",
+          "ifrs": "Prix d'acquisition - JV des actifs nets identifiables acquis. Option full goodwill (inclusion des minoritaires à la JV) (IFRS 3.32-40).",
+          "rpc": "Prix d'acquisition - JV des actifs nets identifiables acquis. Partial goodwill uniquement (RPC 30.17-20).",
+          "co": "Renvoi aux normes reconnues (IFRS ou RPC)."
+        },
+        {
+          "aspect": "Traitement subséquent",
+          "ifrs": "PAS d'amortissement. Test de dépréciation annuel obligatoire (impairment only approach) (IAS 36.80-99).",
+          "rpc": "Amortissement sur la durée d'utilité estimée, maximum 5 ans (présomption réfragable de 20 ans avec justification) (RPC 30.21).",
+          "co": "Renvoi aux normes reconnues. En pratique CO individuel : amortissement sur max 5 ans.",
+          "piege": "⚠️ Différence MAJEURE : IFRS = impairment only (pas d'amortissement). RPC = amortissement sur 5 ans (max 20 ans). Question d'examen classique."
+        },
+        {
+          "aspect": "Dépréciation",
+          "ifrs": "Test annuel obligatoire, même sans indice. Alloué aux UGT. Pas de reprise possible (IAS 36.80-99).",
+          "rpc": "Test si indice de dépréciation. Pas de reprise (RPC 30.21).",
+          "co": "Correction si perte de valeur durable."
+        },
+        {
+          "aspect": "Badwill (GW négatif)",
+          "ifrs": "= Gain sur acquisition avantageuse. Comptabilisé immédiatement en résultat après vérification des évaluations (IFRS 3.34-36).",
+          "rpc": "Comptabilisé immédiatement en résultat (RPC 30.20).",
+          "co": "Pas de traitement spécifique.",
+          "piege": "⚠️ Le badwill sous IFRS va directement en résultat (profit). Il faut d'abord vérifier qu'on n'a pas sous-évalué des passifs."
+        },
+        {
+          "aspect": "Option d'imputation sur FP",
+          "ifrs": "Interdite. Le goodwill est un actif au bilan (IFRS 3.32).",
+          "rpc": "Option : imputation directe sur les capitaux propres (FP) OU activation et amortissement (RPC 30.21).",
+          "co": "Renvoi aux normes reconnues.",
+          "piege": "⚠️ RPC 30 offre le choix : activer et amortir OU imputer directement sur les FP. Si imputation sur FP : présenter les impacts en annexe."
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "UGT d'allocation, hypothèses du test, taux d'actualisation, sensibilités (IAS 36.134-137).",
+          "rpc": "Si imputé sur FP : montrer l'impact d'une activation théorique. Durée d'amortissement retenue (RPC 30.29).",
+          "co": "Informations générales sur la méthode retenue."
+        }
+      ],
+      "key_takeaway": "IFRS = activation obligatoire + impairment only. RPC = choix entre activation+amortissement (5-20 ans) et imputation sur FP. La différence de traitement a un impact majeur sur le résultat et le bilan.",
+      "exam_tip": "⚠️ Savoir calculer le goodwill (full vs partial), connaître le traitement subséquent (IFRS: impairment, RPC: amortissement ou imputation FP) et le badwill."
+    },
+    {
+      "id": "mise_en_equivalence",
+      "title": "Mise en équivalence",
+      "icon": "🤝",
+      "category": "Consolidation",
+      "norms": {"ifrs": "IAS 28 / IFRS 11", "rpc": "RPC 30", "co": "art. 963b CO"},
+      "rows": [
+        {
+          "aspect": "Champ d'application",
+          "ifrs": "Entreprises associées (influence notable, présomption 20-50%) et coentreprises (joint ventures) (IAS 28.2-3, IFRS 11.24).",
+          "rpc": "Participations avec influence notable (20-50%). Option pour les JV : intégration proportionnelle ou MEE (RPC 30.14).",
+          "co": "Renvoi aux normes reconnues.",
+          "piege": "⚠️ Sous IFRS 11, l'intégration proportionnelle est INTERDITE pour les joint ventures (uniquement MEE). Sous RPC 30, elle reste une option."
+        },
+        {
+          "aspect": "Influence notable",
+          "ifrs": "Présomption réfragable si ≥ 20% des droits de vote. Indicateurs : siège au CA, participation aux décisions, transactions significatives, échange de personnel (IAS 28.5-9).",
+          "rpc": "Présomption si ≥ 20% des droits de vote. Indicateurs similaires (RPC 30.12).",
+          "co": "Participation significative (> 20%) mène à des exigences d'information."
+        },
+        {
+          "aspect": "Évaluation initiale",
+          "ifrs": "Au coût d'acquisition. Goodwill inclus dans la valeur de la participation (non amorti séparément) (IAS 28.32).",
+          "rpc": "Au coût d'acquisition. Goodwill inclus (RPC 30.14).",
+          "co": "Au coût d'acquisition."
+        },
+        {
+          "aspect": "Évaluation subséquente",
+          "ifrs": "Ajustement annuel pour la quote-part du résultat de l'associée. Élimination des bénéfices intra-groupe (IAS 28.10-15).",
+          "rpc": "Quote-part du résultat ajustée annuellement (RPC 30.14).",
+          "co": "Pas de MEE dans les comptes individuels CO."
+        },
+        {
+          "aspect": "Pertes excédant l'investissement",
+          "ifrs": "Quote-part des pertes limitée à la VNC de la participation (ramenée à zéro). Reprise si bénéfices ultérieurs (IAS 28.38-39).",
+          "rpc": "Même principe : pas de valeur négative (RPC 30).",
+          "co": "N/A"
+        },
+        {
+          "aspect": "Dépréciation",
+          "ifrs": "Test si indices de perte de valeur. La participation est testée comme un seul actif (IAS 28.40-43).",
+          "rpc": "Test si indices de dépréciation.",
+          "co": "N/A"
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "Résumé des informations financières de l'associée, nature de la relation, restrictions, engagements (IAS 28.19-23).",
+          "rpc": "Informations sur les participations significatives (RPC 30.29).",
+          "co": "Liste des participations importantes avec nom, capital, % détenu (art. 959c CO)."
+        }
+      ],
+      "key_takeaway": "IFRS et RPC appliquent la MEE de façon similaire. La différence clé est l'intégration proportionnelle : interdite sous IFRS 11, possible sous RPC 30.",
+      "exam_tip": "⚠️ Intégration proportionnelle : INTERDITE sous IFRS (uniquement MEE pour les JV), AUTORISÉE sous RPC. Savoir calculer la MEE : coût + quote-part résultat - dividendes."
+    },
+    {
+      "id": "etats_financiers",
+      "title": "États financiers obligatoires",
+      "icon": "📑",
+      "category": "Présentation",
+      "norms": {"ifrs": "IAS 1", "rpc": "RPC 3 / RPC 4 / RPC 5", "co": "art. 958-959b CO"},
+      "rows": [
+        {
+          "aspect": "Composantes obligatoires",
+          "ifrs": "5 états : bilan, compte de résultat global (résultat + OCI), tableau de variation des FP, tableau des flux de trésorerie, annexe (IAS 1.10).",
+          "rpc": "4 états : bilan, compte de résultat, tableau des flux de trésorerie, annexe. Pas d'OCI ni de variation des FP obligatoire (RPC 3).",
+          "co": "3 états : bilan, compte de résultat, annexe. Pas de TFT obligatoire pour les comptes individuels (art. 958 CO).",
+          "piege": "⚠️ IFRS = 5 états obligatoires. RPC = 4 (pas d'OCI). CO = 3 (pas de TFT ni variation FP). Connaître ces différences."
+        },
+        {
+          "aspect": "Tableau des flux de trésorerie (TFT)",
+          "ifrs": "Obligatoire. 3 activités : exploitation, investissement, financement. Option : méthode directe ou indirecte pour l'exploitation (IAS 7).",
+          "rpc": "Obligatoire (RPC 4). Méthode directe ou indirecte.",
+          "co": "Non obligatoire dans les comptes individuels. Obligatoire en consolidation (art. 961 CO) pour les grandes entreprises."
+        },
+        {
+          "aspect": "Bilan — classification",
+          "ifrs": "Courant / non courant obligatoire, sauf si présentation par liquidité plus pertinente (IAS 1.60-76).",
+          "rpc": "Circulant / immobilisé (RPC 3.5-6).",
+          "co": "Actifs circulants / actifs immobilisés. Dettes à court terme / dettes à long terme (art. 959a CO)."
+        },
+        {
+          "aspect": "Compte de résultat — format",
+          "ifrs": "Par nature ou par fonction. Si par fonction : information par nature en annexe (IAS 1.99-105).",
+          "rpc": "Par nature ou par fonction (RPC 3.7).",
+          "co": "Structure minimale prévue par la loi. Par nature ou par fonction (art. 959b CO). Production = par nature, négoce = par fonction."
+        },
+        {
+          "aspect": "Information comparative",
+          "ifrs": "Obligatoire : au minimum N-1 pour tous les montants. 3 bilans si changement rétroactif (IAS 1.38-44).",
+          "rpc": "Obligatoire : N-1 (RPC 3.4).",
+          "co": "Obligatoire : N-1 (art. 958d al. 2 CO)."
+        },
+        {
+          "aspect": "Résultat global (OCI)",
+          "ifrs": "Résultat net + OCI = résultat global. Peut être 1 état ou 2 états séparés (IAS 1.81-105).",
+          "rpc": "Pas de concept de résultat global / OCI.",
+          "co": "Pas de concept de résultat global / OCI."
+        },
+        {
+          "aspect": "Continuité d'exploitation",
+          "ifrs": "Présomption de continuité. Évaluation requise. Information si incertitude significative (IAS 1.25-26).",
+          "rpc": "Présomption de continuité. Mention en cas de doute (RPC CC 4).",
+          "co": "Comptes établis selon le principe de continuité d'exploitation sauf intention contraire (art. 958a al. 2 CO)."
+        },
+        {
+          "aspect": "Seuils pour rapport de gestion",
+          "ifrs": "Pas de seuils spécifiques IFRS.",
+          "rpc": "Pas de seuils spécifiques.",
+          "co": "Grandes entreprises (bilan 20M, CA 40M, 250 ETP — 2/3 critères dépassés) : rapport de gestion + comptes complémentaires (art. 961-961d CO)."
+        }
+      ],
+      "key_takeaway": "IFRS est le plus exigeant (5 états, OCI). RPC exige 4 états. CO requiert seulement 3 états minimum (bilan, résultat, annexe).",
+      "exam_tip": "💡 Retenir les composantes obligatoires par référentiel. Seuils CO pour grandes entreprises (20M/40M/250) = question récurrente."
+    },
+    {
+      "id": "annexe",
+      "title": "Contenu de l'annexe",
+      "icon": "📎",
+      "category": "Présentation",
+      "norms": {"ifrs": "IAS 1 / normes individuelles", "rpc": "RPC 6", "co": "art. 959c CO"},
+      "rows": [
+        {
+          "aspect": "Principes généraux",
+          "ifrs": "Toute information nécessaire à la compréhension des états financiers. Niveau de détail très élevé prescrit par chaque norme (IAS 1.112-138).",
+          "rpc": "Informations complémentaires nécessaires à l'appréciation de la situation (RPC 6.1-2).",
+          "co": "Informations prescrites par la loi (art. 959c CO). Liste exhaustive mais moins détaillée que IFRS."
+        },
+        {
+          "aspect": "Méthodes comptables",
+          "ifrs": "Déclaration de conformité aux IFRS. Résumé des méthodes significatives. Jugements et estimations (IAS 1.117-124).",
+          "rpc": "Déclaration de conformité aux RPC. Méthodes appliquées (RPC 6.3).",
+          "co": "Principes d'évaluation appliqués (art. 959c al. 1 ch. 1 CO)."
+        },
+        {
+          "aspect": "Engagements hors bilan",
+          "ifrs": "Passifs éventuels (IAS 37), engagements de location (IFRS 16), garanties données (IFRS 7).",
+          "rpc": "Engagements conditionnels, garanties, gages (RPC 6.5).",
+          "co": "Garanties en faveur de tiers, cautionnements, engagements de leasing, engagements envers IP (art. 959c al. 2 ch. 7-10 CO)."
+        },
+        {
+          "aspect": "Parties liées",
+          "ifrs": "Disclosure complète : transactions, soldes, conditions, rémunération des dirigeants (IAS 24).",
+          "rpc": "Transactions significatives avec les parties liées (RPC 15).",
+          "co": "Rémunération du CA et de la direction (art. 959c al. 2 ch. 11 CO pour SA). Participations significatives."
+        },
+        {
+          "aspect": "Événements postérieurs",
+          "ifrs": "Ajustement si l'événement confirme une situation existante à la clôture. Disclosure si non adjusting (IAS 10).",
+          "rpc": "Même distinction adjusting / non-adjusting (RPC CC).",
+          "co": "Mention des événements importants postérieurs à la date du bilan (art. 959c al. 2 ch. 13 CO)."
+        },
+        {
+          "aspect": "Information sectorielle",
+          "ifrs": "IFRS 8 : segments opérationnels selon le management approach. CA, résultat, actifs par segment.",
+          "rpc": "Ventilation du CA par segment géographique ou d'activité (RPC 6.8).",
+          "co": "Pas d'obligation sectorielle dans les comptes individuels."
+        },
+        {
+          "aspect": "Réserves latentes",
+          "ifrs": "N/A (interdites).",
+          "rpc": "N/A (interdites).",
+          "co": "Mention obligatoire si dissolution nette de RL significative (art. 959c al. 1 ch. 3 CO)."
+        }
+      ],
+      "key_takeaway": "IFRS exige une annexe très détaillée (chaque norme prescrit ses propres disclosures). RPC est plus synthétique. CO a une liste légale d'éléments à fournir.",
+      "exam_tip": "💡 Connaître les éléments obligatoires de l'annexe CO (art. 959c) et les exigences spécifiques des normes IFRS les plus importantes."
+    },
+    {
+      "id": "changements_methodes",
+      "title": "Changements de méthodes et erreurs",
+      "icon": "🔄",
+      "category": "Présentation",
+      "norms": {"ifrs": "IAS 8", "rpc": "RPC CC", "co": "CO"},
+      "rows": [
+        {
+          "aspect": "Changement de méthode comptable",
+          "ifrs": "Application rétrospective obligatoire : retraitement des comparatifs comme si la nouvelle méthode avait toujours été appliquée (IAS 8.19-22).",
+          "rpc": "Application rétrospective de principe (RPC CC 7).",
+          "co": "Pas de règle spécifique. Le changement est appliqué prospectivement en pratique.",
+          "piege": "⚠️ Sous IFRS, un changement de méthode = retraitement RÉTROSPECTIF. Sous CO, souvent prospectif. Impact sur les comparatifs."
+        },
+        {
+          "aspect": "Changement d'estimation",
+          "ifrs": "Application prospective (pas de retraitement). Affecte la période courante et futures (IAS 8.32-38).",
+          "rpc": "Application prospective (RPC CC).",
+          "co": "Application prospective."
+        },
+        {
+          "aspect": "Distinction méthode vs estimation",
+          "ifrs": "Méthode = choix (FIFO vs CMP). Estimation = durée de vie, provision, % d'achèvement. En cas de doute : traiter comme estimation (IAS 8.32-35).",
+          "rpc": "Même distinction de principe.",
+          "co": "Pas de distinction formelle."
+        },
+        {
+          "aspect": "Correction d'erreurs",
+          "ifrs": "Retraitement rétrospectif obligatoire des comparatifs. Erreur = omission ou anomalie résultant d'une information disponible (IAS 8.41-48).",
+          "rpc": "Correction rétrospective de principe (RPC CC).",
+          "co": "Correction dans l'exercice de découverte. Pas de retraitement rétrospectif obligatoire."
+        },
+        {
+          "aspect": "Impraticabilité",
+          "ifrs": "Si rétrospectivité impraticable : application prospective dès la première période faisable (IAS 8.23-27).",
+          "rpc": "Exemption si impraticable.",
+          "co": "N/A"
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "Nature du changement, raison, impact sur chaque poste, montant de l'ajustement pour chaque période présentée (IAS 8.28-31, 49).",
+          "rpc": "Nature et impact des changements (RPC 6).",
+          "co": "Mention des changements de méthode dans l'annexe si impact significatif."
+        }
+      ],
+      "key_takeaway": "IFRS distingue clairement méthodes (rétrospectif) vs estimations (prospectif) vs erreurs (rétrospectif). CO est moins formel.",
+      "exam_tip": "⚠️ Savoir distinguer changement de méthode (rétrospectif) et changement d'estimation (prospectif). Piège classique d'examen."
+    },
+    {
+      "id": "evenements_posterieurs",
+      "title": "Événements postérieurs à la clôture",
+      "icon": "📅",
+      "category": "Présentation",
+      "norms": {"ifrs": "IAS 10", "rpc": "RPC CC", "co": "art. 959c CO"},
+      "rows": [
+        {
+          "aspect": "Période concernée",
+          "ifrs": "Entre la date de clôture et la date d'autorisation de publication des états financiers (IAS 10.3).",
+          "rpc": "Entre la date de clôture et l'approbation des comptes.",
+          "co": "Entre la date de clôture et la date d'approbation par l'assemblée générale."
+        },
+        {
+          "aspect": "Événements adjusting",
+          "ifrs": "Fournissent la preuve de conditions existant à la date de clôture. Les états financiers sont AJUSTÉS (IAS 10.8-9). Ex : faillite d'un débiteur, jugement confirmant une obligation, fraude découverte.",
+          "rpc": "Même principe : ajustement si l'événement confirme une condition existante à la clôture.",
+          "co": "Ajustement si la condition existait à la clôture (principe de prudence)."
+        },
+        {
+          "aspect": "Événements non-adjusting",
+          "ifrs": "Indicatifs de conditions apparues APRÈS la clôture. Pas d'ajustement mais disclosure en annexe si significatif (IAS 10.10-11). Ex : catastrophe naturelle, acquisition importante.",
+          "rpc": "Pas d'ajustement. Information en annexe (RPC CC).",
+          "co": "Mention en annexe des événements importants postérieurs (art. 959c al. 2 ch. 13 CO)."
+        },
+        {
+          "aspect": "Dividendes déclarés après clôture",
+          "ifrs": "Non-adjusting : pas de dette au bilan de clôture. Disclosure en annexe (IAS 10.12-13).",
+          "rpc": "Non-adjusting : pas de dette à la clôture.",
+          "co": "Les dividendes sont décidés par l'AG postérieure. Pas de dette à la clôture.",
+          "piege": "⚠️ Les dividendes proposés APRÈS la clôture ne sont PAS une dette au bilan. C'est un non-adjusting event. Piège fréquent."
+        },
+        {
+          "aspect": "Continuité d'exploitation",
+          "ifrs": "Si la direction décide de liquider APRÈS la clôture : changement fondamental de base de préparation (IAS 10.14-16).",
+          "rpc": "Même principe : remise en cause de la continuité = impact majeur.",
+          "co": "Obligation de mentionner si la continuité est compromise."
+        },
+        {
+          "aspect": "Disclosure requise",
+          "ifrs": "Date d'autorisation, nature de l'événement, estimation de l'impact financier ou mention d'impossibilité (IAS 10.17-22).",
+          "rpc": "Nature et estimation de l'impact.",
+          "co": "Mention des événements importants postérieurs à la date du bilan (art. 959c al. 2 ch. 13 CO)."
+        }
+      ],
+      "key_takeaway": "La distinction adjusting / non-adjusting est commune aux 3 référentiels. IFRS et RPC sont détaillés. CO exige une mention en annexe.",
+      "exam_tip": "💡 Toujours se poser la question : la condition existait-elle DÉJÀ à la clôture ? Si oui = adjusting (on ajuste). Si non = non-adjusting (on disclose)."
+    },
+    {
+      "id": "revision",
+      "title": "Types de révision et normes d'audit",
+      "icon": "🔍",
+      "category": "Révision",
+      "norms": {"ifrs": "ISA", "rpc": "NAS (SAS)", "co": "art. 727-731 CO"},
+      "rows": [
+        {
+          "aspect": "Contrôle ordinaire",
+          "ifrs": "ISA (International Standards on Auditing) : audit complet, opinion d'assurance raisonnable.",
+          "rpc": "NAS (Normes d'audit suisses) basées sur les ISA avec adaptations suisses.",
+          "co": "Obligatoire pour les entreprises soumises au contrôle ordinaire (art. 727 CO) : sociétés ouvertes au public, dépassant 2/3 seuils (bilan 20M, CA 40M, 250 ETP), sociétés avec obligation de consolider.",
+          "piege": "⚠️ Les seuils du contrôle ordinaire sont les MÊMES que pour la consolidation et les grandes entreprises (20M/40M/250). À retenir absolument."
+        },
+        {
+          "aspect": "Contrôle restreint",
+          "ifrs": "N/A (concept suisse uniquement).",
+          "rpc": "NAS 910 (review) : assurance limitée, procédures analytiques et entretiens.",
+          "co": "Pour les entreprises non soumises au contrôle ordinaire (art. 727a CO). Renonciation possible si ≤ 10 ETP en moyenne annuelle avec accord de tous les actionnaires (art. 727a al. 2 CO = opting out).",
+          "piege": "⚠️ Opting out (renoncement au contrôle restreint) uniquement si ≤ 10 ETP en moyenne annuelle ET accord unanime de tous les actionnaires."
+        },
+        {
+          "aspect": "Niveau d'assurance",
+          "ifrs": "Audit (ISA) = assurance raisonnable (élevée mais pas absolue). Revue = assurance limitée (ISRE 2400).",
+          "rpc": "Contrôle ordinaire = assurance raisonnable. Contrôle restreint = assurance limitée (NAS 910).",
+          "co": "Contrôle ordinaire = rapport détaillé au CA + rapport succinct à l'AG. Contrôle restreint = rapport à l'AG."
+        },
+        {
+          "aspect": "Indépendance du réviseur",
+          "ifrs": "Code d'éthique IESBA. Indépendance d'esprit et d'apparence.",
+          "rpc": "LSR (Loi sur la surveillance de la révision). Agrément de l'ASR. Indépendance selon art. 728-728a CO.",
+          "co": "Exigences d'indépendance (art. 728 CO pour contrôle ordinaire, art. 729 pour restreint). Rotation du réviseur responsable tous les 7 ans.",
+          "piege": "⚠️ Rotation du réviseur responsable = 7 ans (contrôle ordinaire). Agrément ASR obligatoire : expert-réviseur pour ordinaire, réviseur pour restreint."
+        },
+        {
+          "aspect": "Rapport d'audit",
+          "ifrs": "ISA 700-705 : opinion sans réserve, avec réserve, défavorable, impossibilité. KAM (key audit matters) pour les EIP.",
+          "rpc": "NAS correspondantes. Rapport au CA (détaillé) et à l'AG (abrégé).",
+          "co": "Rapport de révision à l'AG recommandant d'approuver ou non les comptes (art. 728b CO)."
+        },
+        {
+          "aspect": "Agrément du réviseur",
+          "ifrs": "Selon la juridiction locale.",
+          "rpc": "Selon la LSR et l'ASR (Autorité de surveillance de la révision).",
+          "co": "Expert-réviseur agréé ASR pour le contrôle ordinaire. Réviseur agréé ASR pour le contrôle restreint (art. 727b-727c CO)."
+        },
+        {
+          "aspect": "Responsabilité du réviseur",
+          "ifrs": "Responsabilité professionnelle selon ISA.",
+          "rpc": "Responsabilité civile et pénale selon le droit suisse.",
+          "co": "Responsabilité solidaire limitée pour le contrôle restreint. Responsabilité civile pour le contrôle ordinaire (art. 755 CO)."
+        }
+      ],
+      "key_takeaway": "La Suisse a un système dual (ordinaire/restreint). Les ISA sont la base des NAS suisses. Les seuils CO déterminent le type de contrôle.",
+      "exam_tip": "⚠️ Seuils du contrôle ordinaire = mêmes que grandes entreprises = mêmes que consolidation (20M/40M/250). Opting out ≤ 10 ETP + unanimité."
+    },
+    {
+      "id": "parties_liees",
+      "title": "Parties liées",
+      "icon": "👥",
+      "category": "Révision",
+      "norms": {"ifrs": "IAS 24", "rpc": "RPC 15", "co": "art. 959c CO"},
+      "rows": [
+        {
+          "aspect": "Définition",
+          "ifrs": "Personne ou entité liée à l'entité présentant ses états financiers : contrôle, influence notable, direction, famille des dirigeants, plans post-emploi (IAS 24.9).",
+          "rpc": "Personnes physiques ou morales ayant un lien direct ou indirect permettant d'influencer les décisions (RPC 15.3).",
+          "co": "Pas de définition exhaustive. Notion de personnes proches."
+        },
+        {
+          "aspect": "Transactions à divulguer",
+          "ifrs": "Toutes les transactions avec les parties liées : nature, montant, soldes, conditions, garanties, provisions (IAS 24.18-22).",
+          "rpc": "Transactions significatives avec les parties liées hors conditions de marché (RPC 15.5).",
+          "co": "Participations significatives, rémunération du CA et de la direction (art. 959c al. 2 ch. 11 CO).",
+          "piege": "⚠️ IFRS exige la divulgation de TOUTES les transactions parties liées. RPC = seulement celles hors conditions de marché. CO = principalement les rémunérations."
+        },
+        {
+          "aspect": "Rémunération des dirigeants",
+          "ifrs": "Rémunération détaillée des principaux dirigeants par catégorie : CT, post-emploi, autres avantages LT, indemnités de départ, paiements en actions (IAS 24.17).",
+          "rpc": "Rémunération du CA et de la direction, prêts et garanties en faveur des organes (RPC 15.6).",
+          "co": "Montant total des rémunérations du CA et de la direction. Prêts et crédits (art. 663c ancien, art. 959c al. 2 ch. 11 CO)."
+        },
+        {
+          "aspect": "Mention 'arm's length'",
+          "ifrs": "L'entité ne peut déclarer que les transactions sont à des conditions de marché que si elle peut le prouver (IAS 24.23).",
+          "rpc": "Si les conditions sont celles du marché : mention possible (RPC 15.5).",
+          "co": "Pas de mention spécifique requise."
+        },
+        {
+          "aspect": "Entités liées à l'État",
+          "ifrs": "Exemption partielle : pas besoin de divulguer toutes les transactions avec d'autres entités contrôlées par le même État (IAS 24.25-27).",
+          "rpc": "Pas d'exemption spécifique.",
+          "co": "Pas d'exemption spécifique."
+        },
+        {
+          "aspect": "Informations en annexe",
+          "ifrs": "Relations (même sans transaction), nature des transactions, montants, soldes, conditions inhabituelles, rémunérations détaillées (IAS 24.12-22).",
+          "rpc": "Transactions significatives hors conditions normales du marché (RPC 15.5-6).",
+          "co": "Rémunérations, prêts, participations significatives."
+        }
+      ],
+      "key_takeaway": "IFRS est très exigeant sur les parties liées (toutes les transactions). RPC se concentre sur les transactions hors marché. CO est minimaliste.",
+      "exam_tip": "💡 Savoir identifier une partie liée (contrôle, influence notable, famille, dirigeants). IFRS divulgue même les relations sans transaction."
+    }
+  ]
+}

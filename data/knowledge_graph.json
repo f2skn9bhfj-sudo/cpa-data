@@ -1,0 +1,1141 @@
+{
+  "nodes": [
+    {
+      "id": "rpc3",
+      "label": "RPC 3 – Présentation",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          6,
+          7,
+          200
+        ],
+        "files": [
+          "Swiss Gaap/RPC 3/Fiche_Revision_RPC3_Presentation_Structure.docx"
+        ],
+        "related": []
+      }
+    },
+    {
+      "id": "rpc2",
+      "label": "RPC 2 – Évaluation",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          8,
+          9,
+          10,
+          201,
+          202,
+          203,
+          204,
+          205,
+          30,
+          35,
+          40,
+          36,
+          43,
+          46,
+          300,
+          307,
+          309,
+          400,
+          402,
+          421,
+          601
+        ],
+        "files": [
+          "Swiss Gaap/RPC 18/RPC20_Depreciations_Actifs.docx",
+          "Swiss Gaap/RPC 2/Fiche_Revision_RPC2_Evaluation.docx",
+          "Swiss Gaap/RPC 20/RPC20_Depreciations_Actifs.docx",
+          "Swiss Gaap/RPC 22/RPC22_Contrats_Long_Terme.docx",
+          "Swiss Gaap/RPC 23/Fiche_RPC_23_Provisions.pdf",
+          "Swiss Gaap/RPC 24/RPC24_FondsPropres_Fiche_Revision.docx",
+          "Swiss Gaap/RPC 27/RPC27_Derives_Fiche_Revision.docx",
+          "Swiss Gaap/RPC 28/Fiche_RPC_28_Subventions_Publiques.pdf",
+          "Swiss Gaap/RPC 28/RPC28 Subventions Publiques.docx"
+        ],
+        "related": [
+          "ias16",
+          "ias8",
+          "ifrs15",
+          "rpc20",
+          "rpc30"
+        ]
+      }
+    },
+    {
+      "id": "rpc10",
+      "label": "RPC 10 – Incorporelles",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          11,
+          12,
+          206,
+          207,
+          208
+        ],
+        "files": [
+          "Swiss Gaap/RPC 10/Fiche_Revision_RPC10_Valeurs_Incorporelles.docx"
+        ],
+        "related": [
+          "rpc30"
+        ]
+      }
+    },
+    {
+      "id": "rpc13",
+      "label": "RPC 13 – Leasing",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          13,
+          14,
+          209
+        ],
+        "files": [
+          "Swiss Gaap/RPC 13/Fiche_Revision_RPC13_Transactions_Leasing.docx"
+        ],
+        "related": [
+          "ifrs16"
+        ]
+      }
+    },
+    {
+      "id": "rpc16",
+      "label": "RPC 16 – Prévoyance",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          15,
+          210,
+          47
+        ],
+        "files": [
+          "Swiss Gaap/RPC 16/RPC16 Engagements Prevoyance.docx"
+        ],
+        "related": [
+          "ias19"
+        ]
+      }
+    },
+    {
+      "id": "rpc20",
+      "label": "RPC 20 – Dépréciation",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          16,
+          17,
+          41,
+          42,
+          211,
+          212,
+          604
+        ],
+        "files": [
+          "Swiss Gaap/RPC 18/RPC20_Depreciations_Actifs.docx",
+          "Swiss Gaap/RPC 20/RPC20_Depreciations_Actifs.docx"
+        ],
+        "related": [
+          "ias36"
+        ]
+      }
+    },
+    {
+      "id": "rpc22",
+      "label": "RPC 22 – Contrats LT",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          18,
+          39,
+          403
+        ],
+        "files": [
+          "Swiss Gaap/RPC 22/RPC22_Contrats_Long_Terme.docx"
+        ],
+        "related": []
+      }
+    },
+    {
+      "id": "rpc23",
+      "label": "RPC 23 – Provisions",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          19,
+          213,
+          214,
+          308,
+          605
+        ],
+        "files": [
+          "Swiss Gaap/RPC 23/Fiche_RPC_23_Provisions.pdf"
+        ],
+        "related": [
+          "ias37"
+        ]
+      }
+    },
+    {
+      "id": "rpc24",
+      "label": "RPC 24 – Fonds propres",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          20,
+          215,
+          616
+        ],
+        "files": [
+          "Swiss Gaap/RPC 24/RPC24_FondsPropres_Fiche_Revision.docx"
+        ],
+        "related": [
+          "rpc3"
+        ]
+      }
+    },
+    {
+      "id": "rpc27",
+      "label": "RPC 27 – Dérivés",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          21
+        ],
+        "files": [
+          "Swiss Gaap/RPC 27/RPC27_Derives_Fiche_Revision.docx"
+        ],
+        "related": []
+      }
+    },
+    {
+      "id": "rpc30",
+      "label": "RPC 30 – Consolidation",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          22,
+          23,
+          24,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          303,
+          304,
+          305,
+          306,
+          312,
+          401,
+          422,
+          615
+        ],
+        "files": [],
+        "related": [
+          "ifrs10"
+        ]
+      }
+    },
+    {
+      "id": "rpc28",
+      "label": "RPC 28 – Subventions",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          27
+        ],
+        "files": [
+          "Swiss Gaap/RPC 28/Fiche_RPC_28_Subventions_Publiques.pdf",
+          "Swiss Gaap/RPC 28/RPC28 Subventions Publiques.docx"
+        ],
+        "related": []
+      }
+    },
+    {
+      "id": "rpc31",
+      "label": "RPC 31 – Sociétés cotées",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          28,
+          223
+        ],
+        "files": [],
+        "related": [
+          "rpc30"
+        ]
+      }
+    },
+    {
+      "id": "rpc4",
+      "label": "RPC 4 – Flux trésorerie",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          29,
+          311
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "rpc5",
+      "label": "RPC 5 – Hors bilan",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          34
+        ],
+        "files": [
+          "Swiss Gaap/RPC 5/Fiche_Revision_RPC5_Operations_Hors_Bilan.docx"
+        ],
+        "related": []
+      }
+    },
+    {
+      "id": "rpc6",
+      "label": "RPC 6 – Annexe",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          37
+        ],
+        "files": [
+          "Swiss Gaap/RPC 6/Fiche_Revision_RPC6_Annexe_v2.docx"
+        ],
+        "related": []
+      }
+    },
+    {
+      "id": "rpc17",
+      "label": "RPC 17 – Stocks",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          31,
+          301,
+          602
+        ],
+        "files": [
+          "Swiss Gaap/RPC 17/Fiche_RPC_17_Stocks.pdf",
+          "Swiss Gaap/RPC 17/RPC17 Stocks.docx"
+        ],
+        "related": []
+      }
+    },
+    {
+      "id": "rpc18",
+      "label": "RPC 18 – Corporelles",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          32,
+          33,
+          302,
+          406,
+          603
+        ],
+        "files": [
+          "Swiss Gaap/RPC 18/RPC18_Immobilisations_Corporelles.docx"
+        ],
+        "related": [
+          "ias16",
+          "ias23",
+          "ias8"
+        ]
+      }
+    },
+    {
+      "id": "rpc15",
+      "label": "RPC 15 – Parties liées",
+      "category": "Swiss GAAP RPC",
+      "links": {
+        "flashcards": [
+          26,
+          404
+        ],
+        "files": [
+          "Swiss Gaap/RPC 15/Fiche_Revision_RPC15_Transactions_Parties_Liees.docx"
+        ],
+        "related": []
+      }
+    },
+    {
+      "id": "ias1",
+      "label": "IAS 1 – Présentation",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          50,
+          51,
+          424,
+          606
+        ],
+        "files": [
+          "IFRS/IAS 1/Fiche IFRS IAS 1 Presentation Etats Financiers.docx",
+          "IFRS/IAS 10/Fiche IFRS IAS 10 Evenements Posterieurs.docx",
+          "IFRS/IAS 16/IAS16_Fiche_Complete.docx",
+          "IFRS/IAS 19/Fiche IFRS IAS 19 Avantages du Personnel.docx"
+        ],
+        "related": [
+          "ias16",
+          "ias19",
+          "ias21",
+          "ifrs9"
+        ]
+      }
+    },
+    {
+      "id": "ias2",
+      "label": "IAS 2 – Stocks",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          52,
+          77,
+          333,
+          521,
+          617
+        ],
+        "files": [
+          "IFRS/IAS 2/IAS_2_Fiche_Revision.docx"
+        ],
+        "related": [
+          "ifrs13",
+          "ifrs15",
+          "rpc22"
+        ]
+      }
+    },
+    {
+      "id": "ias8",
+      "label": "IAS 8 – Méthodes",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          53
+        ],
+        "files": [
+          "IFRS/IAS 8/Fiche IFRS IAS 8 Methodes Estimations Erreurs.docx"
+        ],
+        "related": []
+      }
+    },
+    {
+      "id": "ias10",
+      "label": "IAS 10 – Post-clôture",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          54
+        ],
+        "files": [
+          "IFRS/IAS 10/Fiche IFRS IAS 10 Evenements Posterieurs.docx"
+        ],
+        "related": []
+      }
+    },
+    {
+      "id": "ias16",
+      "label": "IAS 16 – Corporelles",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          55,
+          56,
+          79,
+          231,
+          320,
+          321,
+          341,
+          411,
+          520,
+          607
+        ],
+        "files": [
+          "IFRS/IAS 16/IAS16_Fiche_Complete.docx"
+        ],
+        "related": [
+          "ias20",
+          "ias23",
+          "ias37",
+          "ifrs5",
+          "rpc18",
+          "rpc28"
+        ]
+      }
+    },
+    {
+      "id": "ias36",
+      "label": "IAS 36 – Dépréciation",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          57,
+          58,
+          59,
+          226,
+          322,
+          323,
+          407,
+          524,
+          609
+        ],
+        "files": [
+          "IFRS/IAS 36/IAS_36_Fiche_Revision.docx"
+        ],
+        "related": [
+          "isa620",
+          "rpc20",
+          "rpc30"
+        ]
+      }
+    },
+    {
+      "id": "ias37",
+      "label": "IAS 37 – Provisions",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          60,
+          228,
+          236,
+          328,
+          523
+        ],
+        "files": [
+          "IFRS/IAS 37/Fiche IFRS IAS 37 Provisions Passifs Eventuels.docx"
+        ],
+        "related": [
+          "rpc23"
+        ]
+      }
+    },
+    {
+      "id": "ias38",
+      "label": "IAS 38 – Incorporelles",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          61,
+          227,
+          329,
+          409
+        ],
+        "files": [
+          "IFRS/IAS 38/IAS_38_Fiche_Revision.docx"
+        ],
+        "related": [
+          "rpc10"
+        ]
+      }
+    },
+    {
+      "id": "ias40",
+      "label": "IAS 40 – Immeubles",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          62,
+          63,
+          235,
+          340
+        ],
+        "files": [],
+        "related": [
+          "ias16"
+        ]
+      }
+    },
+    {
+      "id": "ifrs9",
+      "label": "IFRS 9 – Instruments",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          64,
+          65,
+          75,
+          233,
+          334,
+          335,
+          410,
+          526
+        ],
+        "files": [
+          "IFRS/IFRS 9/Fiche IFRS 9 Instruments Financiers.docx"
+        ],
+        "related": [
+          "rpc27"
+        ]
+      }
+    },
+    {
+      "id": "ifrs13",
+      "label": "IFRS 13 – Juste valeur",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          66,
+          608
+        ],
+        "files": [
+          "IFRS/IFRS 13/Fiche_IFRS_13_Evaluation_Juste_Valeur.docx",
+          "IFRS/IFRS 13/IFRS 13.docx"
+        ],
+        "related": []
+      }
+    },
+    {
+      "id": "ifrs15",
+      "label": "IFRS 15 – Revenus",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          67,
+          68,
+          224,
+          225,
+          324,
+          325,
+          408,
+          522
+        ],
+        "files": [],
+        "related": [
+          "isa240"
+        ]
+      }
+    },
+    {
+      "id": "ifrs16",
+      "label": "IFRS 16 – Leasing",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          69,
+          70,
+          78,
+          232,
+          326,
+          342,
+          425,
+          525
+        ],
+        "files": [
+          "IFRS/IFRS 16/IFRS_16_Fiche_Revision.docx"
+        ],
+        "related": [
+          "rpc13"
+        ]
+      }
+    },
+    {
+      "id": "ias19",
+      "label": "IAS 19 – Personnel",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          71,
+          83,
+          332
+        ],
+        "files": [
+          "IFRS/IAS 19/Fiche IFRS IAS 19 Avantages du Personnel.docx"
+        ],
+        "related": []
+      }
+    },
+    {
+      "id": "ias12",
+      "label": "IAS 12 – Impôts",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          72,
+          229,
+          327,
+          343,
+          527
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "ifrs3",
+      "label": "IFRS 3 – Regroupements",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          73,
+          230,
+          330,
+          344,
+          423
+        ],
+        "files": [],
+        "related": [
+          "ias36",
+          "ias37",
+          "rpc30"
+        ]
+      }
+    },
+    {
+      "id": "ias21",
+      "label": "IAS 21 – Monnaies",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          74
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "ias23",
+      "label": "IAS 23 – Coûts d'emprunt",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          76,
+          675
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "ifrs10",
+      "label": "IFRS 10 – Consolidation",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          82,
+          331
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa200",
+      "label": "ISA 200 – Objectifs",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          100,
+          101,
+          426,
+          610
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa300",
+      "label": "ISA 300 – Planification",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          102
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa315",
+      "label": "ISA 315 – Risques",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          103,
+          104,
+          122,
+          350,
+          413,
+          611
+        ],
+        "files": [],
+        "related": [
+          "isa240"
+        ]
+      }
+    },
+    {
+      "id": "isa320",
+      "label": "ISA 320 – Matérialité",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          105,
+          612
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa330",
+      "label": "ISA 330 – Réponses",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          106,
+          107,
+          351,
+          414
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa500",
+      "label": "ISA 500 – Preuves",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          108
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa240",
+      "label": "ISA 240 – Fraude",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          110,
+          352,
+          416
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa700",
+      "label": "ISA 700 – Opinion",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          113,
+          355
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa520",
+      "label": "ISA 520 – Analytiques",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          353
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa580",
+      "label": "ISA 580 – Déclarations",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          354
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa265",
+      "label": "ISA 265 – SCI",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          356
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa505",
+      "label": "ISA 505 – Confirmations",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          357
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa560",
+      "label": "ISA 560 – Post-clôture",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          358
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa450",
+      "label": "ISA 450 – Anomalies",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          415
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "ifrs5",
+      "label": "IFRS 5 – Held for Sale",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          500,
+          501
+        ],
+        "files": [],
+        "related": [
+          "ias37"
+        ]
+      }
+    },
+    {
+      "id": "ias7",
+      "label": "IAS 7 – Flux de trésorerie",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          502,
+          503
+        ],
+        "files": [],
+        "related": [
+          "ifrs16"
+        ]
+      }
+    },
+    {
+      "id": "ias24",
+      "label": "IAS 24 – Parties liées",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          504
+        ],
+        "files": [],
+        "related": [
+          "rpc15"
+        ]
+      }
+    },
+    {
+      "id": "ias28",
+      "label": "IAS 28 – Mise en équivalence",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          505,
+          506
+        ],
+        "files": [],
+        "related": [
+          "rpc30"
+        ]
+      }
+    },
+    {
+      "id": "ifrs11",
+      "label": "IFRS 11 – Partenariats",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          507
+        ],
+        "files": [],
+        "related": [
+          "ias28",
+          "rpc30"
+        ]
+      }
+    },
+    {
+      "id": "ias32",
+      "label": "IAS 32 – Instruments financiers",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          508,
+          509
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "ias33",
+      "label": "IAS 33 – Résultat par action",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          510,
+          511
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "ias20",
+      "label": "IAS 20 – Subventions",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          670,
+          671
+        ],
+        "files": [],
+        "related": [
+          "rpc28"
+        ]
+      }
+    },
+    {
+      "id": "ifrs2",
+      "label": "IFRS 2 – Paiements en actions",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          672,
+          673
+        ],
+        "files": [],
+        "related": [
+          "rpc31"
+        ]
+      }
+    },
+    {
+      "id": "ifrs7",
+      "label": "IFRS 7 – Disclosures instruments financiers",
+      "category": "IFRS / IAS",
+      "links": {
+        "flashcards": [
+          674
+        ],
+        "files": [],
+        "related": [
+          "ifrs9"
+        ]
+      }
+    },
+    {
+      "id": "isa570",
+      "label": "ISA 570 – Going concern",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          740,
+          741
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa550",
+      "label": "ISA 550 – Parties liées",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          742
+        ],
+        "files": [],
+        "related": [
+          "isa240"
+        ]
+      }
+    },
+    {
+      "id": "isa600",
+      "label": "ISA 600 – Audit de groupe",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          743
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa620",
+      "label": "ISA 620 – Expert",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          744
+        ],
+        "files": [],
+        "related": [
+          "ias19",
+          "ias36",
+          "ias37",
+          "ias40"
+        ]
+      }
+    },
+    {
+      "id": "isa610",
+      "label": "ISA 610 – Audit interne",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          745
+        ],
+        "files": [],
+        "related": []
+      }
+    },
+    {
+      "id": "isa530",
+      "label": "ISA 530 – Sondages",
+      "category": "Audit / ISA",
+      "links": {
+        "flashcards": [
+          748,
+          749
+        ],
+        "files": [],
+        "related": []
+      }
+    }
+  ]
+}
