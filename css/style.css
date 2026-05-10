@@ -3814,3 +3814,69 @@ body.light-mode .app-zoom-level:hover { background: rgba(15, 23, 42, .05); color
         font-size: 12.5px;
     }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Audio player pour fiches normes (podcasts, NotebookLM-style)
+   ═══════════════════════════════════════════════════════════════════════ */
+.mod-audio {
+    margin: 16px 0 22px 0;
+    padding: 14px 18px;
+    background: linear-gradient(135deg,
+        color-mix(in oklch, var(--accent, #3b82f6) 8%, var(--bg-secondary, #0f172a)),
+        var(--bg-secondary, #0f172a));
+    border: 1px solid color-mix(in oklch, var(--accent, #3b82f6) 25%, transparent);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.20);
+}
+body.light-mode .mod-audio {
+    background: linear-gradient(135deg, #eff6ff, #ffffff);
+    border-color: rgba(37, 99, 235, 0.20);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.06);
+}
+.mod-audio-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+.mod-audio-icon {
+    font-size: 26px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+.mod-audio-meta {
+    flex: 1;
+    min-width: 0;
+}
+.mod-audio-kind {
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent, #60a5fa);
+    margin-bottom: 2px;
+}
+body.light-mode .mod-audio-kind { color: #2563eb; }
+.mod-audio-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-bright, #f1f5f9);
+    line-height: 1.3;
+}
+body.light-mode .mod-audio-title { color: #0f172a; }
+.mod-audio-player {
+    width: 100%;
+    height: 38px;
+    border-radius: 8px;
+    outline: none;
+}
+@media (max-width: 768px) {
+    .mod-audio {
+        margin: 14px 0 18px 0;
+        padding: 12px 14px;
+        border-radius: 12px;
+    }
+    .mod-audio-icon { font-size: 22px; }
+    .mod-audio-title { font-size: 14px; }
+}

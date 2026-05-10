@@ -521,6 +521,29 @@ function modRenderNormDetail(n, m) {
         ${n.last_revised ? `<div class="mod-hc-meta">Derniere revision : ${modTimeAgo(n.last_revised)} · Revise ${n.revision_count}x</div>` : '<div class="mod-hc-meta">Jamais revise</div>'}
     </div>`;
 
+    // ── Audio files (podcasts, NotebookLM-style) ──
+    if (Array.isArray(n.audio_files) && n.audio_files.length > 0) {
+        for (const af of n.audio_files) {
+            if (!af || !af.path) continue;
+            const mime = af.mime || 'audio/mpeg';
+            const title = af.title || 'Audio';
+            const kindLabel = af.kind === 'podcast' ? 'Podcast' : af.kind === 'lecture' ? 'Cours audio' : 'Audio';
+            html += `<div class="mod-audio">
+                <div class="mod-audio-head">
+                    <span class="mod-audio-icon" aria-hidden="true">🎧</span>
+                    <div class="mod-audio-meta">
+                        <div class="mod-audio-kind">${escapeHtml(kindLabel)}</div>
+                        <div class="mod-audio-title">${escapeHtml(title)}</div>
+                    </div>
+                </div>
+                <audio class="mod-audio-player" controls preload="metadata">
+                    <source src="${escapeAttr(af.path)}" type="${escapeAttr(mime)}">
+                    Ton navigateur ne supporte pas la lecture audio.
+                </audio>
+            </div>`;
+        }
+    }
+
     // ── Summary — always visible at top ──
     if (n.summary) {
         html += `<div class="mod-section">
@@ -537,17 +560,47 @@ function modRenderNormDetail(n, m) {
     }
 
     // ── Sections from docx — ALL displayed directly, NO accordion ──
+    // Garde toute section qui a un titre OU du contenu substantiel : les
+    // titres-parents (ex: "2. Définition et concepts") n'ont pas de contenu
+    // propre — leurs enfants 2.1, 2.2 le portent — mais on doit les afficher
+    // comme séparateurs hiérarchiques, sinon la leçon paraît tronquée.
     if (n.sections && n.sections.length > 0) {
-        const meaningful = n.sections.filter(s => s.title && s.content && s.content.length > 20);
+        // Callouts pour les normes : même structure que les leçons IFP
+        // (cf. modRenderLessonIfpDetail). Champs optionnels par section :
+        // info, legal_quote, example, comparison, key_point, tip, warning.
+        const renderCallout = (variant, icon, label, content) => content
+            ? `<aside class="callout callout--${variant}" role="note">
+                <span class="callout-icon" aria-hidden="true">${icon}</span>
+                <div class="callout-label">${escapeHtml(label)}</div>
+                <div class="callout-body">${formatAnswer(content)}</div>
+               </aside>`
+            : '';
+
+        const meaningful = n.sections.filter(s =>
+            (s.title && s.title.trim())
+            || (s.content && s.content.trim().length > 20)
+            || s.info || s.legal_quote || s.example || s.comparison
+            || s.key_point || s.tip || s.warning
+        );
         meaningful.forEach((sec, i) => {
-            // section_id : ancre stable pour le deep-linking depuis les QCMs.
-            // Fallback `<norm_id>_s<i+1>` si pas de section_id stocké.
             const secId = sec.section_id || `${n.id}_s${i + 1}`;
-            html += `
-            <div class="mod-section">
-                <h3 class="mod-section-title" id="${escapeAttr(secId)}">${escapeHtml(sec.title)}</h3>
-                <div class="mod-section-text">${formatAnswer(sec.content)}</div>
-            </div>`;
+            const hasTitle = sec.title && sec.title.trim();
+            const hasContent = sec.content && sec.content.trim().length > 0;
+            html += `<div class="mod-section">`;
+            if (hasTitle) {
+                html += `<h3 class="mod-section-title" id="${escapeAttr(secId)}">${escapeHtml(sec.title)}</h3>`;
+            }
+            if (hasContent) {
+                html += `<div class="mod-section-text">${formatAnswer(sec.content)}</div>`;
+            }
+            html += renderCallout('info',    '💡', 'Pour info',       sec.info);
+            html += renderCallout('legal',   '⚖️', 'Texte légal',     sec.legal_quote);
+            html += renderCallout('example', '🟢', 'Exemple concret', sec.example);
+            html += renderCallout('comp',    '📊', 'Comparaison',     sec.comparison);
+            html += renderCallout('key',     '🎯', 'Point clé',       sec.key_point);
+            html += renderCallout('tip',     '🧠', 'Astuce mémo',     sec.tip);
+            html += renderCallout('warn',    '⚠️', 'Attention',       sec.warning);
+            html += `</div>`;
         });
     }
 

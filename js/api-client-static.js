@@ -36,7 +36,7 @@
     async function _loadJson(filename) {
         if (_dataCache[filename] !== undefined) return _dataCache[filename];
         try {
-            const r = await fetch('data/' + filename, { cache: 'force-cache' });
+            const r = await fetch('data/' + filename, { cache: 'no-cache' });
             if (!r.ok) {
                 console.warn('[api-static] HTTP', r.status, 'on', filename);
                 _dataCache[filename] = null;
