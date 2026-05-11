@@ -22107,6 +22107,14 @@
               "difficulty": "easy",
               "section_id": "ias16_s4"
             }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ias16_droit_suisse.m4a",
+              "title": "L'IAS 16 face au droit suisse",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -22375,6 +22383,14 @@
               "difficulty": "medium",
               "section_id": "ias19_s8"
             }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ias19_lpp.m4a",
+              "title": "IAS 19 et le casse-tête LPP",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -22583,6 +22599,14 @@
               "difficulty": "medium",
               "section_id": "ias20_s3"
             }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ias20_subventions.m4a",
+              "title": "Comptabiliser les subventions publiques selon IAS 20",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -22785,6 +22809,14 @@
               "explanation": "IAS 21.38 : la monnaie de présentation est un CHOIX LIBRE de l'entité, indépendant de la monnaie fonctionnelle. La conversion fonctionnelle → présentation suit la méthode du cours de clôture (IAS 21.39). Cas typique : entité suisse avec monnaie fonctionnelle EUR qui présente en CHF pour ses parties prenantes locales.",
               "difficulty": "medium",
               "section_id": "ias21_s1"
+            }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ias21_effets_change.m4a",
+              "title": "Maîtriser les effets de change — IAS 21",
+              "kind": "podcast",
+              "mime": "audio/mp4"
             }
           ]
         },
@@ -23001,6 +23033,14 @@
               "difficulty": "hard",
               "section_id": "ias23_s4"
             }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ias23_capitalisation_emprunt.m4a",
+              "title": "Capitalisation des coûts d'emprunt — IAS 23",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -23209,6 +23249,14 @@
               "explanation": "IAS 24.9 inclut explicitement les administrateurs executifs ET non executifs dans la definition des KMP, des lors qu'ils participent a la planification, direction et controle des activites. Le caractere non executif n'exclut pas la qualification.",
               "difficulty": "hard",
               "section_id": "ias24_s1"
+            }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ias24_audit_parties_liees.m4a",
+              "title": "L'audit des parties liées — IAS 24",
+              "kind": "podcast",
+              "mime": "audio/mp4"
             }
           ]
         },
