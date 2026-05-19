@@ -23463,6 +23463,14 @@
               "difficulty": "hard",
               "section_id": "ias32_s2"
             }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ias32_dette_ou_cp.m4a",
+              "title": "Verdict IAS 32 — dette ou capitaux propres ?",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -23664,6 +23672,14 @@
               "explanation": "IAS 33.49 : si conversion supposee, le numerateur est ajuste : on ajoute l'economie d'interets (nets d'impot) qui auraient ete payes sur la dette convertie. Le denominateur ajoute le nombre d'actions issues de la conversion.",
               "difficulty": "hard",
               "section_id": "ias33_s2"
+            }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ias33_resultat_par_action.m4a",
+              "title": "Le calcul du Résultat Par Action (IAS 33)",
+              "kind": "podcast",
+              "mime": "audio/mp4"
             }
           ]
         },
@@ -24034,6 +24050,14 @@
               "difficulty": "hard",
               "section_id": "ias36_s7"
             }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ias36_depreciation.m4a",
+              "title": "La dépréciation d'actifs selon IAS 36",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -24345,6 +24369,14 @@
               "explanation": "IAS 37.86 : un passif eventuel n'est PAS comptabilise au bilan (probabilite < 50% ou montant non fiable) mais doit etre mentionne en annexe : nature, estimation de l'effet financier (ou impraticable), incertitudes, possibilites de remboursement. Exception : aucune mention si la sortie est improbable au point d'etre negligeable.",
               "difficulty": "medium",
               "section_id": "ias37_s6"
+            }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ias37_provisions.m4a",
+              "title": "Provisions IAS 37 pour l'examen EXPERTsuisse",
+              "kind": "podcast",
+              "mime": "audio/mp4"
             }
           ]
         },
@@ -24665,6 +24697,14 @@
               "difficulty": "hard",
               "section_id": "ias38_s7"
             }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ias38_incorporels.m4a",
+              "title": "Actifs incorporels et IAS 38 pour EXPERTsuisse",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -24922,6 +24962,14 @@
               "explanation": "IAS 40.10 : si non separable et occupation propre INSIGNIFIANTE -> integralement IAS 40. Si occupation propre significative -> IAS 16. Si separable physiquement/juridiquement -> IAS 40 + IAS 16 separement.",
               "difficulty": "hard",
               "section_id": "ias40_s1"
+            }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ias40_immeubles_placement.m4a",
+              "title": "Maîtriser l'IAS 40 pour l'EXPERTsuisse",
+              "kind": "podcast",
+              "mime": "audio/mp4"
             }
           ]
         },
