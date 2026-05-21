@@ -1,0 +1,89 @@
+{
+  "code": "III.4.2",
+  "title": "III.4.2 Tests de procédures (test of controls)",
+  "category": "Audit — Contrôle ordinaire",
+  "ref_msa": "MSA 2016, Tome « Contrôle ordinaire », Partie III, ch. III.4.2, p. 220 ss (paraphrasé)",
+  "bases_legales": "CO art. 728a (tâches OR)",
+  "normes": "ISA-CH 330 (Responses to assessed risks) · ISA-CH 315 Revised (Understanding the entity) · ISA-CH 530 (Sampling) · NAS-CH 890 (SCI)",
+  "niveau": "Staff 1 EY",
+  "summary": "Les **tests de procédures** (*tests of controls*) sont les procédures que l'auditeur applique pour **vérifier que les contrôles internes du client fonctionnent comme prévu**. Si ces tests confirment l'efficacité opérationnelle du SCI, l'auditeur peut **s'appuyer** sur les contrôles et **réduire** les tests substantifs (approche combinée). C'est l'un des leviers majeurs d'efficience de l'audit moderne — mais avec une condition stricte : on ne s'appuie pas sur un contrôle non testé.",
+  "mnemonics": "**Test of controls = test d'EFFICACITÉ OPÉRATIONNELLE** (ne pas confondre avec walkthrough = test de COMPRÉHENSION du design). On teste ce qu'on veut « *rely on* ».",
+  "sections": [
+    {
+      "anchor": "iii-4-2-1",
+      "title": "III.4.2.1 Importance pour l'approche d'audit",
+      "content": "Les **tests de procédures** sont la pierre angulaire de l'**approche combinée** (*combined approach*) en audit. Logique : si les contrôles internes du client fonctionnent réellement, alors une partie significative du risque de contrôle (**RC**) est neutralisée, et l'auditeur peut accepter un risque de non-détection (**RND**) plus élevé → tests substantifs plus légers.\n\nL'équation s'appuie sur **ISA-CH 330** : *responses to assessed risks*. L'auditeur a deux familles de réponses possibles aux risques d'anomalies significatives :\n\n1. **Tests de procédures** → s'appuyer sur les contrôles → tests substantifs réduits.\n2. **Approche purement substantielle** → ne pas s'appuyer sur les contrôles → tests substantifs étendus.\n\n**Conditions pour s'appuyer sur les contrôles** (ISA-CH 330) :\n- Le contrôle doit **adresser le risque** identifié (design pertinent — vérifié au walkthrough en planification).\n- Le contrôle doit **fonctionner efficacement** sur la période auditée (à confirmer par les tests de procédures).\n- La fiabilité doit être **cohérente sur l'exercice** (pas seulement à un instant T).\n\n**Quand on NE peut PAS s'appuyer sur les contrôles** :\n- Contrôles inexistants ou très informels (PME en mode propriétaire-gestionnaire).\n- Contrôles dont le design est inadéquat.\n- Risques significatifs liés à des transactions inhabituelles (où les contrôles standards n'opèrent pas).\n- Estimations comptables impliquant un fort jugement — toujours tests substantifs directs sur ces postes.",
+      "key_point": "**Pas de raccourci.** S'appuyer sur les contrôles **exige** de les tester sur la période. Sinon = supposition non documentée = workpaper retoqué en review. La règle est sans exception : *no test, no reliance*.",
+      "comparison": "**Approche combinée vs purement substantielle** :\n\n| Critère | Combinée | Substantielle pure |\n|---|---|---|\n| **SCI fiable et testable ?** | Oui | Non |\n| **Tests of controls** | Effectués sur échantillon | Aucun |\n| **Tests substantifs** | Réduits (s'appuie sur SCI) | Étendus (compense l'absence de SCI fiable) |\n| **Efficience** | Bonne sur grands volumes répétitifs | Lourde |\n| **Cas typique** | Grandes entreprises, ERP, transactions à fort volume | PMEs, transactions inhabituelles, estimations |"
+    },
+    {
+      "anchor": "iii-4-2-2-1",
+      "title": "III.4.2.2.1 Étendue des tests de procédures",
+      "content": "L'**étendue** d'un test de procédures = combien de fois je teste l'opération du contrôle. Elle dépend de plusieurs facteurs :\n\n1. **Fréquence du contrôle** :\n   - Contrôle **quotidien** (ex. autorisation des factures) → grand échantillon (souvent 25-60 occurrences sur la période).\n   - Contrôle **mensuel** (ex. rapprochement bancaire) → 2-4 mois testés.\n   - Contrôle **trimestriel** ou ponctuel → 1-2 occurrences.\n   - Contrôle **automatique IT** → 1 occurrence suffit en général, *si* les ITGC sont fiables (sinon, tester comme un contrôle manuel).\n\n2. **Risque évalué** sur le poste — plus le risque est élevé, plus l'échantillon est étendu.\n\n3. **Confiance souhaitée** sur le contrôle — l'auditeur décide à l'avance le niveau d'assurance qu'il cherche du contrôle, ce qui calibre l'échantillon (ISA-CH 530 — tables de sondages).\n\n4. **Effet d'un éventuel échec** — si le contrôle échoue sur un cas testé, est-ce que je tolère une déviation ? Combien ? À documenter avant le test.",
+      "info": "**Tables EY de sampling** — chez EY, des tables internes (issues d'ISA-CH 530) donnent les tailles d'échantillon pour chaque combinaison fréquence × risque × niveau d'assurance recherché. Tu n'as PAS à calculer toi-même — tu suis la table EY. Comprendre **pourquoi** elle donne tel chiffre est en revanche important.",
+      "warning": "**Échantillon insuffisant = test invalide.** Si tu testes 5 occurrences sur 365 contrôles quotidiens, c'est statistiquement non concluant. Les tables EY existent précisément pour éviter ce piège — utilise-les."
+    },
+    {
+      "anchor": "iii-4-2-2-2",
+      "title": "III.4.2.2.2 Déroulement d'un test de procédures",
+      "content": "**Étapes typiques** d'un test de procédures :\n\n1. **Définir le contrôle** précisément : qui le fait, quand, sur quelles transactions, quelle évidence est laissée.\n2. **Sélectionner l'échantillon** (selon ISA-CH 530 — *sampling*, voir fiche III.4.5 à venir). Sélection aléatoire, systématique, ou par jugement selon le contexte.\n3. **Obtenir les éléments probants** :\n   - **Inspection** (vérifier la signature/initiales, le tampon, l'horodatage, l'écran ERP avec trace utilisateur).\n   - **Réexécution** (*re-performance*) — refaire le contrôle soi-même, comparer le résultat.\n   - **Observation** (assister à l'exécution, ex. observer la séparation des tâches au comptoir caisse).\n   - **Inquiry** (questionner le préposé) — *jamais suffisant seul*, toujours en complément.\n4. **Évaluer les résultats** :\n   - **0 déviation sur l'échantillon prévu** → contrôle confirmé efficace → on peut s'appuyer.\n   - **Déviations détectées** → enquête sur les causes, possible extension de l'échantillon, possible bascule en approche substantielle.\n5. **Documenter** dans le workpaper : références des pièces testées, conclusions, niveau d'assurance obtenu.",
+      "example": "**Cas Staff 1 — autorisation des factures fournisseurs** : contrôle = toute facture > 5 000 CHF doit être contresignée par un manager avant paiement. Test : (a) sélection 30 factures > 5 000 CHF de l'exercice par échantillonnage aléatoire ; (b) vérification de la signature manager sur chaque facture sélectionnée ; (c) re-performance : recalculer si la facture aurait dû être contresignée (montants, dates) ; (d) résultat : 30/30 conformes → contrôle confirmé efficace → on peut s'appuyer dessus pour réduire les tests substantifs sur les achats.",
+      "key_point": "**Inquiry alone is never enough.** Une parole du contrôleur n'est pas un élément probant suffisant. On doit *inspecter* l'évidence (signature, trace IT) ou *réexécuter* le contrôle. C'est la base du scepticisme professionnel (ISA-CH 200)."
+    },
+    {
+      "anchor": "iii-4-2-2-3",
+      "title": "III.4.2.2.3 Calendrier des tests de procédures",
+      "content": "Les tests de procédures peuvent être exécutés à **deux moments** :\n\n1. **En interim** (typiquement 3-6 mois avant la clôture) — tests sur une période représentative de l'exercice partiellement écoulé. **Avantage** : lisse la charge de travail, permet d'identifier les problèmes tôt.\n2. **À la clôture** ou **post-clôture** — tests sur l'exercice complet. **Désavantage** : pression calendaire en haute saison.\n\n**Période de couverture** : les tests doivent couvrir une période représentative de l'**exercice entier**. En pratique :\n- Tests interim couvrant 6 à 9 mois → procédures de **roll-forward** (compléter le périmètre couvert) entre la date d'interim et la clôture.\n- Le roll-forward est plus simple si la période non couverte est courte et si rien de matériel n'a changé (process, équipe, systèmes).\n\n**Rotation des tests of controls** (ISA-CH 330) — pour les contrôles testés efficacement à plusieurs exercices consécutifs, l'auditeur peut, **sous conditions strictes**, *réduire la fréquence* à un test tous les 2 ou 3 ans :\n- Pas applicable aux contrôles couvrant un *risque significatif*.\n- Pas applicable si le contrôle a changé.\n- Pas applicable si l'environnement de contrôle s'est dégradé.\n- Tester au moins **un contrôle sur trois** chaque année (rotation).",
+      "warning": "**Roll-forward bâclé = test invalide.** Si tu testes l'efficacité d'un contrôle de janvier à septembre puis tu *présumes* que cela vaut jusqu'à décembre sans vérifier qu'aucun changement matériel n'a eu lieu, tu prends un risque. **Toujours documenter** le test de roll-forward : « entretien avec X le 15 janvier confirmant que le contrôle Y est resté inchangé d'octobre à décembre ».",
+      "info": "**Combinaison de tests** — on peut combiner inspection + observation + re-performance pour un même contrôle, augmentant la robustesse de la conclusion. Plus de procédures sur un échantillon plus petit = parfois plus puissant qu'un grand échantillon avec une seule procédure."
+    },
+    {
+      "anchor": "demarche",
+      "title": "📋 Synthèse Staff 1 — démarche pratique sur les tests de procédures",
+      "content": "Ce que tu fais concrètement comme Staff 1 sur des tests of controls :\n\n1. **Reçois la liste des contrôles testables** de ton senior — issue de la stratégie (III.3) et du walkthrough.\n2. **Définis l'échantillon** avec la table EY — taille, méthode de sélection (aléatoire, systématique).\n3. **Tire l'échantillon** dans le système (souvent EY Helix te le génère automatiquement à partir du dataset client).\n4. **Demande les pièces** au client (factures, PV, captures ERP) — délai raisonnable, batch par jour.\n5. **Teste chaque occurrence** — inspection / re-performance / observation selon le cas.\n6. **Documente** chaque test dans un workpaper structuré : référence pièce, procédure appliquée, résultat (« sat. » / « non sat. »), conclusion.\n7. **En cas de déviation**, escalation immédiate au senior — *ne jamais* dissimuler ou minimiser. Une déviation peut signaler un problème SCI plus large.\n8. **Conclus** : « contrôle confirmé efficace → reliance possible » ou « contrôle non confirmé → bascule en substantif ».",
+      "key_point": "**Documente toujours le PURPOSE** du test en début de workpaper : *« Test of control aimed at confirming the operating effectiveness of [control X] addressing the [completeness assertion] for [account Y] »*. Sans ce purpose, le reviewer ne sait pas ce que tu cherchais.",
+      "tip": "**Anomalie détectée** ≠ **fraude**. Une déviation peut venir d'une erreur ponctuelle, d'une faiblesse de design, ou d'une fraude. L'auditeur enquête sur la *cause racine* avant de conclure. Mais toujours **remonter au senior** dès la première anomalie."
+    },
+    {
+      "anchor": "pieges",
+      "title": "🚧 Pièges et points d'attention",
+      "content": "Erreurs et confusions fréquentes sur les tests de procédures :",
+      "warning": "**Confondre walkthrough et test of controls.** Le walkthrough (planning, III.3.8) sert à **comprendre** le design des contrôles — 1 transaction. Le test of controls (exécution, III.4.2) sert à **confirmer l'efficacité opérationnelle** — échantillon statistique. Le walkthrough ne suffit JAMAIS à fonder une reliance.",
+      "comparison": "**Inquiry-only ≠ test of controls.** Une simple parole du contrôleur n'est pas un élément probant. Toujours coupler à **inspection** (évidence) ou **re-performance** (refaire soi-même). Sinon le test est invalide.",
+      "tip": "**Rotation des contrôles testés** — possible mais sous conditions strictes (ISA-CH 330). À jamais appliquer pour les contrôles adressant un *significant risk*. À documenter explicitement quand utilisée.",
+      "key_point": "**Échantillon = ISA-CH 530.** Pas de pioche au feeling. Toujours utiliser les tables EY / méthodologie GAM pour calibrer la taille d'échantillon en fonction du risque et du niveau d'assurance recherché."
+    }
+  ],
+  "auto_test": [
+    {
+      "q": "Quelle est la différence fondamentale entre un walkthrough et un test of controls ?",
+      "a": "**Walkthrough** = test de **compréhension du design** d'un contrôle, sur **une seule transaction** suivie de bout en bout. Sert à confirmer que le contrôle est *bien conçu*. **Test of controls** = test de **l'efficacité opérationnelle** sur un **échantillon statistique** d'occurrences. Sert à confirmer que le contrôle *fonctionne effectivement* sur la période. Le walkthrough ne suffit JAMAIS pour fonder une reliance — il faut tester l'efficacité opérationnelle séparément."
+    },
+    {
+      "q": "Tu testes un contrôle d'autorisation des factures > 5 000 CHF. Tu sélectionnes 30 factures et 29 sont correctement contresignées, 1 ne l'est pas. Que fais-tu ?",
+      "a": "**Étape 1** : enquêter sur la cause racine (erreur unique ? défaillance systémique ? période spécifique ?). **Étape 2** : décider — selon la cause et le seuil de tolérance défini avant le test, soit (a) étendre l'échantillon pour confirmer si c'est isolé, soit (b) conclure que le contrôle n'est pas confirmé efficace → bascule en approche substantielle sur les achats. **Étape 3** : remonter immédiatement au senior — une déviation n'est *jamais* anodine. Ne JAMAIS dissimuler ou requalifier en « cas isolé » sans documentation."
+    },
+    {
+      "q": "Quelles sont les 4 procédures de test de procédures (en plus de l'inquiry) ?",
+      "a": "**Inspection** (vérifier l'évidence physique ou IT du contrôle — signature, tampon, écran ERP) · **Re-performance** (refaire le contrôle soi-même et comparer) · **Observation** (assister à l'exécution) · **Inquiry** (questionner, mais *jamais suffisant seul* — toujours combiner)."
+    },
+    {
+      "q": "Peut-on s'appuyer sur les contrôles internes d'un client sans les tester ?",
+      "a": "**Non.** ISA-CH 330 est explicite : pour s'appuyer sur des contrôles, l'auditeur doit obtenir des éléments probants sur leur **efficacité opérationnelle** par des tests de procédures sur la période auditée. Aucune exception. Le walkthrough confirme seulement le design, pas l'efficacité opérationnelle."
+    },
+    {
+      "q": "Rotation des tests of controls (ISA-CH 330) : quand est-elle permise et avec quelles limites ?",
+      "a": "Permise pour les contrôles **testés efficacement à plusieurs exercices consécutifs**. Limites : **(1)** pas pour les contrôles adressant un *significant risk* ; **(2)** pas si le contrôle a changé ; **(3)** pas si l'environnement de contrôle s'est dégradé ; **(4)** tester au moins **un contrôle sur trois** chaque année (rotation). À documenter explicitement quand utilisée."
+    }
+  ],
+  "sources": [
+    "ISA-CH 330 — The Auditor's Responses to Assessed Risks (NA-CH 2022) : EXPERTsuisse https://expertsuisse.ch/fr-ch/normes-suisses-daudit-des-etats-financiers-na-ch",
+    "ISA-CH 315 Revised — Identifying and assessing the risks of material misstatement",
+    "ISA-CH 530 — Audit sampling",
+    "NAS-CH 890 — Vérification de l'existence du SCI",
+    "Fedlex — RS 220, CO art. 728a : https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr",
+    "MSA 2016, Tome « Contrôle ordinaire », Partie III, ch. III.4.2, p. 220 ss — paraphrasé, non reproduit"
+  ],
+  "statut": "✅ Complet — corps développé sur les 2 sous-chapitres MSA (importance + application avec étendue/déroulement/calendrier) + 2 closing pédagogiques, sources Fedlex + EXPERTsuisse vérifiées.",
+  "maj": "2026-05-19"
+}

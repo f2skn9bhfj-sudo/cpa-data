@@ -1,0 +1,153 @@
+{
+  "code": "I.2",
+  "title": "I.2 Bases légales",
+  "category": "Audit — Contrôle ordinaire",
+  "ref_msa": "MSA 2016, Tome « Contrôle ordinaire », Partie I, ch. I.2, p. 10 ss (paraphrasé)",
+  "bases_legales": "CO art. 727–731a (RS 220) · LSR (RS 221.302) · OSRev (RS 221.302.3) · LFus (RS 221.301) · LDIP (RS 291)",
+  "normes": "ISA-CH 200–720 · NAS-CH 890 · ISQM-CH 1 / ISQM-CH 2",
+  "niveau": "Staff 1 EY",
+  "summary": "Cette fiche déroule **toutes les bases légales** du contrôle ordinaire en Suisse, en suivant exactement le plan du MSA : généralités, cas d'audits, missions d'assurance, surveillance, **système d'opting** (up/out/down/in), formes juridiques (SA, Sàrl, coopérative, association, fondation), rôle de l'OR comme organe de la société, **élection et fin du mandat**, **responsabilité civile et pénale**, et **agrément ASR**. C'est la fiche-référence à connaître par cœur pour discuter cadre légal avec un senior ou un client.",
+  "mnemonics": "**4 piliers** : **C**O (l'obligation) · **L**SR (les auditeurs) · **O**SRev (l'application) · **N**A-CH (les normes). Ordre de citation à l'examen : C → L → O → N.",
+  "sections": [
+    {
+      "anchor": "i-2-1",
+      "title": "I.2.1 Généralités",
+      "content": "Le cadre légal de l'audit suisse s'articule autour de **quatre textes** complémentaires qu'il faut savoir hiérarchiser :\n\n1. **Code des obligations (CO, RS 220)** — fixe **l'obligation** de révision, ses modalités et ses conséquences (art. 727 à 731a CO).\n2. **Loi sur la surveillance de la révision (LSR, RS 221.302)** — régit **qui peut auditer** : agrément des personnes et des entreprises de révision, surveillance de la profession par l'ASR.\n3. **Ordonnance sur la surveillance de la révision (OSRev, RS 221.302.3)** — détaille l'**application** de la LSR (formation continue, indépendance organisationnelle, contrôle qualité).\n4. **Règles de la profession** — NA-CH 2022 (ISA-CH 200–720 + NAS-CH 890), Recommandations d'audit (RA), Norme suisse relative au contrôle restreint (NCR), ISQM-CH 1 et 2 pour la gestion de la qualité.\n\nÀ ces piliers s'ajoutent des **lois spéciales** par secteur (banques, assurances, fonds, marchés) et par opération (LFus pour les fusions, LDIP en contexte international).",
+      "key_point": "**Hiérarchie à connaître par cœur** : *Constitution / loi internationale ➜ CO ➜ LSR ➜ OSRev ➜ NA-CH / RA / NCR ➜ ISQM-CH ➜ guidance interne EY*. Si une question d'examen porte sur les bases légales, commence toujours par le **CO**, puis descends dans la hiérarchie. C'est ce qu'attend un correcteur.",
+      "tip": "**Réflexe en mission** : devant une question juridique ambiguë, vérifie d'abord le **CO sur Fedlex**, puis lis le **rapport ASR** sur le sujet si disponible. Ne te fie jamais à un cours imprimé pour une référence légale — toujours vérifier la version en vigueur."
+    },
+    {
+      "anchor": "i-2-2",
+      "title": "I.2.2 Cas d'audits",
+      "content": "Le MSA distingue trois familles d'audits qu'un Staff 1 va rencontrer.\n\n**I.2.2.1 Audit des états financiers** — c'est le **cas standard** : la révision annuelle des comptes annuels (et, le cas échéant, des comptes consolidés), fondée sur l'art. 727 CO (ordinaire) ou 727a CO (restreint). Tout le reste du MSA tourne autour de ce cas.\n\n**I.2.2.2 Contrôles particuliers** — missions ponctuelles imposées par des lois spécifiques :\n- **LFus (RS 221.301)** — audit du bilan de fusion, scission, transformation, transfert de patrimoine.\n- **LDIP (RS 291)** — audits en contexte international privé (sociétés étrangères, transferts de siège).\n- **CO art. 652f, 670 et al.** — audit lors d'une augmentation de capital, d'une libération par compensation, d'une réévaluation, etc.\n\n**I.2.2.3 Tour d'horizon des prescriptions spéciales** — certaines branches imposent des audits supplémentaires : **LB** (banques), **LSA** (assurances), **LIMF** (marchés financiers), **LBA** (lutte contre le blanchiment), **LPP** (caisses de pension). L'auditeur doit savoir les reconnaître pour orienter le client vers le bon expert si nécessaire.",
+      "example": "**Cas standard fusion** : deux SA décident de fusionner ; la LFus impose un **audit du bilan de fusion** par un expert-réviseur agréé pour protéger les créanciers. Ce n'est pas un audit annuel mais un audit **ponctuel** spécifique à l'opération."
+    },
+    {
+      "anchor": "i-2-3",
+      "title": "I.2.3 Autres missions d'assurance",
+      "content": "Au-delà du mandat statutaire d'organe de révision, l'auditeur peut être engagé sur des missions **contractuelles** : due diligence d'acquisition, attestations diverses, audits de procédures convenues (*agreed-upon procedures*), missions selon **ISAE 3000** (assurance autre que l'audit historique).\n\n**Délimitation cruciale** : le mandat d'OR a un caractère **légal** (responsabilité civile et pénale renforcée, indépendance stricte) ; le mandat contractuel a un caractère **conventionnel** (responsabilité contractuelle, conditions négociées). Confondre les deux est une faute fréquente.",
+      "warning": "**Ne JAMAIS étendre tacitement le mandat d'OR à des prestations annexes.** Si le client demande une attestation supplémentaire (ex. attestation fiscale, due diligence), c'est une **mission séparée** avec sa propre lettre de mission, sa propre indépendance à évaluer, et son propre niveau d'assurance.",
+      "info": "**ISAE 3000** (International Standard on Assurance Engagements) est la norme internationale de référence pour les missions d'assurance qui ne sont pas des audits historiques. Distincte des ISA. À connaître pour le terrain."
+    },
+    {
+      "anchor": "i-2-4",
+      "title": "I.2.4 Surveillance de l'audit et obligations de l'OR",
+      "content": "La **surveillance** de la profession en Suisse est exercée par l'**ASR** (Autorité fédérale de surveillance en matière de révision), au titre de la LSR. L'ASR :\n\n- **délivre les agréments** (réviseur agréé, expert-réviseur agréé, entreprise de révision) ;\n- **inspecte** les entreprises soumises à surveillance étatique (sociétés cotées et autres entités d'intérêt public) ;\n- **sanctionne** les manquements (avertissement, blâme, retrait temporaire ou définitif d'agrément) ;\n- **tient un registre public** consultable des agréés.\n\nDu côté OR, les **obligations** principales sont : maintenir l'agrément valide, garantir l'indépendance, suivre une formation continue, appliquer un système de gestion de la qualité (ISQM-CH 1 et 2), respecter les normes professionnelles, et **communiquer** tout changement à l'ASR.",
+      "legal_quote": "**art. 16 LSR — Staff 1 reformulé.** Les entreprises de révision qui auditent des sociétés ouvertes au public sont soumises à la **surveillance directe** de l'ASR (avec inspections périodiques). Les autres relèvent d'un régime d'autorégulation surveillé. *Texte officiel sur Fedlex (RS 221.302) — non reproduit, paraphrasé.*",
+      "key_point": "**ASR ≠ FINMA.** L'ASR surveille les auditeurs (LSR) ; la FINMA surveille les acteurs des marchés financiers (banques, assurances). Les deux coopèrent mais ont des périmètres distincts."
+    },
+    {
+      "anchor": "i-2-5",
+      "title": "I.2.5 Système d'opting et autres possibilités d'aménagement",
+      "content": "Le « système d'opting » regroupe **quatre mécanismes** qui permettent à une société de choisir un régime de contrôle différent du régime légal par défaut. Sujet ULTRA-classique à l'examen.\n\n**I.2.5.2 Opting-up** — une société non soumise au contrôle ordinaire le demande volontairement, ou des **actionnaires représentant ≥ 10 % du capital-actions** l'exigent (art. 727 al. 1 ch. 2 CO). Effet : passage du restreint à l'ordinaire.\n\n**I.2.5.3 Opting-out** — une société soumise au contrôle restreint y **renonce** (art. 727a al. 2 CO). Conditions cumulatives strictes : effectif moyen annuel **≤ 10 ETP** et **accord unanime** de tous les actionnaires. Effet : plus de contrôle du tout (situation rare réservée aux toutes petites structures).\n\n**I.2.5.4 Opting-down** — une société soumise au contrôle ordinaire **descend** au restreint (ex. après une réduction d'effectif, hors période où elle dépassait les seuils). Suppose que les seuils art. 727 ne sont plus dépassés sur 2 exercices.\n\n**I.2.5.5 Opting-in** — une société non soumise à un contrôle légal demande un **audit volontaire** (sans obligation). Souvent pour rassurer banques, créanciers, partenaires.\n\n**I.2.5.6 Autres possibilités** — modifications statutaires fines (ex. clauses sur la durée du mandat, plusieurs OR).",
+      "comparison": "| Mécanisme | Direction | Article CO | Condition principale |\n|---|---|---|---|\n| **Opting-up** | Restreint → Ordinaire | 727 al. 1 ch. 2 | ≥ 10 % actionnaires demandent |\n| **Opting-out** | Restreint → Rien | 727a al. 2 | ≤ 10 ETP **+** unanimité actionnaires |\n| **Opting-down** | Ordinaire → Restreint | 727 a contrario | Seuils non dépassés sur 2 exercices |\n| **Opting-in** | Rien → Audit volontaire | n/a (statutaire) | Décision de la société |",
+      "warning": "**Opting-out — piège classique.** L'unanimité requise concerne **tous** les actionnaires (y compris minoritaires). Une seule voix contre suffit à bloquer. À l'examen, ne jamais dire « majorité » — c'est UNANIMITÉ.",
+      "example": "**Cas standard PME** : Sàrl industrielle, 8 ETP en moyenne annuelle, 3 associés tous d'accord pour économiser les coûts d'un contrôle restreint. → **Opting-out possible** (≤10 ETP + unanimité). Si un 4ᵉ associé entre au capital et refuse, l'opting-out tombe automatiquement."
+    },
+    {
+      "anchor": "i-2-6",
+      "title": "I.2.6 « Numerus clausus » des types de contrôle ?",
+      "content": "Question juridique classique : peut-on **inventer** un type de contrôle « intermédiaire » entre l'ordinaire et le restreint, par exemple via les statuts ou un mandat sur mesure ?\n\n**Réponse de la doctrine et de la pratique :** non. Le droit suisse pose un **numerus clausus** (liste fermée) — ordinaire (art. 727 CO), restreint (art. 727a CO), ou opting-out (pas de contrôle légal). Pas de régime hybride.\n\nUne société peut en revanche **renforcer** son audit par un mandat contractuel additionnel (ex. demander à l'OR des procédures convenues supplémentaires), mais cela reste **distinct** du contrôle statutaire et ne crée pas un nouveau « type » au sens légal.",
+      "info": "Le **numerus clausus** est un principe juridique général : seules les catégories prévues par la loi existent. On le retrouve aussi en droits réels (droits réels limitativement énumérés) ou en sociétés (formes juridiques fermées : SA, Sàrl, coop, etc.)."
+    },
+    {
+      "anchor": "i-2-7",
+      "title": "I.2.7 Réglementation du contrôle par forme juridique",
+      "content": "L'obligation de révision varie selon la **forme juridique** de l'entité.\n\n- **I.2.7.2 Société anonyme (SA)** — régime de référence (art. 727 ss CO). C'est sur la SA que tout le MSA est calibré.\n- **I.2.7.3 Société en commandite par actions (SCA)** — renvoi général aux règles SA.\n- **I.2.7.4 Société à responsabilité limitée (Sàrl)** — art. 818 al. 1 ch. 4 CO renvoie aux dispositions SA (art. 727 ss). Donc régime quasi identique à la SA.\n- **I.2.7.5 Société coopérative** — art. 906 al. 1 CO renvoie également aux règles SA.\n- **I.2.7.6 Association** — art. 69b CC : audit obligatoire si l'association dépasse certains seuils (≥ 2 critères : total bilan 10 M, recettes 20 M, 50 ETP en moyenne annuelle), ou si un membre l'exige et que les statuts le prévoient.\n- **I.2.7.7 Fondation** — art. 83b CC : audit obligatoire, l'autorité de surveillance des fondations supervise en complément.",
+      "key_point": "**Règle pratique à retenir** : pour SA, Sàrl, SCA et coopérative, c'est essentiellement le **régime SA** (art. 727 ss CO) qui s'applique. **Association et fondation** ont leurs propres dispositions au **Code civil** (CC, art. 69b et 83b), plus souples mais à part."
+    },
+    {
+      "anchor": "i-2-8",
+      "title": "I.2.8 L'OR comme organe secondaire de la société",
+      "content": "L'**organe de révision** est juridiquement un **organe** de la société (au même titre que le CA et l'AG), mais qualifié de **secondaire** parce qu'il ne participe ni à la direction ni à la gestion. Cette qualification a deux conséquences pratiques :\n\n1. **L'OR a des droits propres** vis-à-vis des autres organes : accès aux documents, droit d'assister à l'AG, droit d'être entendu. Il n'est pas un simple prestataire externe.\n2. **L'OR a des devoirs propres** envers la société et envers les tiers : indépendance, communication, signalement (CO 728c en contrôle ordinaire, 729c en restreint).\n\nRelation triangulaire : **CA** (responsable des comptes) ↔ **OR** (audite, opinion) ↔ **AG** (élit l'OR, approuve les comptes). L'OR n'est pas le « bras armé » du CA — il en est indépendant.",
+      "key_point": "**L'OR est un organe — pas un prestataire.** En conséquence : il a une responsabilité **légale** (CO, LSR) et non seulement contractuelle. Confondre les deux est une erreur fréquente de jeune auditeur."
+    },
+    {
+      "anchor": "i-2-9",
+      "title": "I.2.9 Élection de l'organe de révision",
+      "content": "L'**élection** de l'OR suit une procédure stricte (art. 698 al. 2 ch. 2 CO pour la SA — compétence exclusive de l'AG) :\n\n- **I.2.9.1 Élection par l'AG** — décision indélégable au CA.\n- **I.2.9.2 Conditions** : agrément ASR valide (réviseur ou expert-réviseur selon le type de contrôle), indépendance vérifiée.\n- **I.2.9.3 Acceptation** par l'OR (formelle, par écrit).\n- **I.2.9.4 Confirmation de mandat / lettre de mission d'audit** (*engagement letter*) — formalise le mandat, ses limites, les responsabilités.\n- **I.2.9.5 Première élection** — formalités plus lourdes (vérification de l'indépendance, premier contact avec le client, *acceptance procedures*).\n- **I.2.9.6 Réélection** — généralement annuelle ; renouvellement implicite par l'AG.\n- **I.2.9.7 Plusieurs OR** — possibilité d'élire plusieurs personnes ou plusieurs entreprises (rare, typiquement réseaux internationaux).\n- **I.2.9.8 Inscription au registre du commerce** — l'OR doit y figurer pour être opposable aux tiers.",
+      "info": "**Engagement letter** (lettre de mission) est exigée par la NA-CH (≈ ISA 210). Elle précise : objet de l'audit, référentiel applicable, responsabilités CA/OR, accès aux documents, rapport attendu, honoraires. À signer avant de commencer les travaux.",
+      "tip": "**Premier jour d'une mission EY** : lis la lettre de mission **et** le PV de l'AG qui a élu l'OR. Tu sauras le mandat exact et les zones potentiellement sensibles."
+    },
+    {
+      "anchor": "i-2-10",
+      "title": "I.2.10 Durée de fonction et fin du mandat",
+      "content": "**Durée** — généralement **un exercice**, renouvelable par l'AG (art. 730 al. 2 CO). Possibilité de durées plus longues dans les statuts, mais rare en pratique.\n\n**Fin du mandat** — 5 causes principales :\n\n- **I.2.10.3 Expiration** — fin normale, sans renouvellement.\n- **I.2.10.4 Démission** — l'OR peut démissionner, mais doit respecter un préavis raisonnable et finir les travaux en cours si possible. La démission **ne libère pas** des responsabilités passées.\n- **I.2.10.5 Révocation par l'AG** — à tout moment et sans motif (mais l'AG doit en informer l'ASR).\n- **I.2.10.6 Révocation par le juge** — rare, sur demande motivée d'un actionnaire ou créancier, en cas de manquement grave.\n- **I.2.10.7 Radiation du RC** — formalité finale (l'OR doit être radié pour matérialiser la fin).\n\nÀ la fin : **I.2.10.8 restitution des documents** (originaux au client ; copies de travail conservées **10 ans** chez l'OR).",
+      "warning": "**Démission stratégique = piège.** Démissionner pour éviter de signaler un surendettement n'exonère pas de la responsabilité passée. Au contraire, ça peut aggraver le dossier en justice. Le bon réflexe : **signaler** au CA, puis à l'AG, puis au juge si nécessaire (CO 728c/729c et 725b CO nouveau).",
+      "tip": "**À la prise de mandat d'une nouvelle mission** : demande pourquoi l'OR précédent a quitté (motif de démission ou de non-réélection). Si la réponse est floue, redouble de vigilance sur les zones sensibles. C'est un *red flag* d'acceptance."
+    },
+    {
+      "anchor": "i-2-11",
+      "title": "I.2.11 Responsabilité (civile et pénale)",
+      "content": "La **responsabilité** de l'OR est l'un des sujets les plus sensibles de la profession — un audit bâclé peut coûter cher.\n\n**I.2.11.2 Responsabilité civile au sens du droit de la SA** — base : **art. 755 CO** (responsabilité spécifique de l'OR, en parallèle de l'art. 754 CO pour le CA). L'OR répond du dommage causé à la société, aux actionnaires et aux créanciers par une violation **intentionnelle** ou **par négligence** de ses obligations.\n\n**I.2.11.3 Conditions cumulatives** (les 4 que tu DOIS connaître par cœur) :\n1. **Manquement à une obligation** (acte ou omission contraire aux normes).\n2. **Dommage** (perte chiffrable).\n3. **Lien de causalité adéquate** entre le manquement et le dommage.\n4. **Faute** (intention ou négligence).\n\n**I.2.11.4 Autres aspects civils** — partage du fardeau de la preuve, solidarité avec les autres organes (CA notamment) et droit de recours entre solidaires, prescription, for.\n\n**I.2.11.5 Responsabilité pénale en général** — Code pénal (escroquerie, faux dans les titres, gestion déloyale, etc.) si manquements graves.\n\n**I.2.11.6 Dispositions pénales spécifiques de la LSR** :\n- **art. 39 LSR** + art. 45 OSRev — **contraventions** (amende) : fausses informations à l'ASR, violation d'obligations de communiquer, etc.\n- **art. 40 LSR** — **délits** (peine pécuniaire ou privative de liberté) : exercice de l'activité sans agrément, fausses attestations.",
+      "key_point": "**Les 4 conditions de la responsabilité civile (à savoir par cœur)** : **M**anquement · **D**ommage · **C**ausalité adéquate · **F**aute. Mnémonique : **« MDCF »**. Sans l'un des quatre, pas de responsabilité.",
+      "warning": "**Jurisprudence Swissair** (TF 2003) et autres affaires lourdes ont montré que les juges suisses peuvent condamner les auditeurs à des montants très importants. La responsabilité civile peut être **solidaire** avec le CA — l'OR n'est pas un simple « second rôle » en cas de litige."
+    },
+    {
+      "anchor": "i-2-12",
+      "title": "I.2.12 Position de l'OR en cas de dissolution de l'entreprise",
+      "content": "La **dissolution** d'une société (volontaire ou forcée) ne met **pas** fin automatiquement au mandat d'OR. La société entre en **liquidation** et conserve sa personnalité juridique jusqu'à la radiation du registre du commerce.\n\nPendant la liquidation :\n- L'OR continue d'auditer (sauf décision contraire de l'AG ou révocation).\n- Il vérifie les **comptes de liquidation** (bilan d'ouverture de liquidation, bilan(s) intermédiaire(s), bilan de clôture).\n- Il s'assure que la **liquidation** est conduite conformément à la loi et aux statuts.\n\nEn cas de **faillite** (régime spécifique LP/SchKG) : l'OR peut être maintenu pour vérifier le bilan de faillite, mais l'office des faillites prend la main sur la liquidation des actifs.",
+      "info": "Un OR qui démissionne en pleine liquidation doit s'assurer de la **continuité** : tant que la société existe, elle doit avoir un OR (sauf opting-out). C'est l'AG qui doit en élire un nouveau."
+    },
+    {
+      "anchor": "i-2-13",
+      "title": "I.2.13 Agrément et surveillance ASR",
+      "content": "L'**ASR** est l'autorité fédérale qui gère le **régime d'agrément** des auditeurs en Suisse, au titre de la LSR.\n\n**I.2.13.1 Agrément par l'ASR** — délivré sur demande, après vérification des conditions. Trois niveaux :\n\n- **I.2.13.2 Réviseur agréé** — formation reconnue + 3 à 5 ans d'expérience pratique. Permet uniquement le **contrôle restreint**.\n- **I.2.13.3 Expert-réviseur agréé** — formation supérieure (diplôme d'expert-comptable / d'expert fiduciaire) + 5 à 12 ans d'expérience. Permet **contrôle ordinaire ET restreint**.\n- **I.2.13.4 Entreprises de révision** — agrément organisationnel : majorité d'experts-réviseurs au capital et à la direction, indépendance, gestion de la qualité (ISQM-CH 1).\n- **I.2.13.5 Entreprises soumises à la surveillance étatique** — niveau supérieur, requis pour auditer les **sociétés ouvertes au public** (SIX). Inspections périodiques de l'ASR.\n\n**I.2.13.6–7 Pratique professionnelle et réputation** — formation continue obligatoire, casier judiciaire vierge, pas de procédure disciplinaire ouverte.\n\n**I.2.13.8 Obligations de communication** — informer l'ASR de tout changement (composition, structure, indépendance), fournir renseignements sur demande, garantir l'accès aux locaux et documents lors des inspections.\n\n**I.2.13.9 Retrait de l'agrément** — sanction ultime, prononcée par l'ASR en cas de manquements graves ou répétés. Conséquence : **fin de la possibilité d'exercer**.",
+      "example": "**Cas pratique** : tu démarres comme Staff 1 chez EY (entreprise de révision soumise à la surveillance étatique). EY a l'agrément le plus élevé. Tu personnellement n'auras ton propre agrément qu'après ~5 ans (réviseur agréé) puis ~12 ans (expert-réviseur agréé), une fois ton diplôme fédéral obtenu.",
+      "comparison": "| Niveau d'agrément | Contrôle ordinaire | Contrôle restreint | Sociétés cotées |\n|---|---|---|---|\n| **Réviseur agréé** | ❌ | ✅ | ❌ |\n| **Expert-réviseur agréé** | ✅ | ✅ | ❌ |\n| **Entreprise de révision** | ✅ | ✅ | ❌ |\n| **Entreprise soumise à la surveillance étatique** | ✅ | ✅ | ✅ |",
+      "warning": "**Retrait d'agrément = mort professionnelle.** Pour un auditeur individuel, c'est l'impossibilité d'exercer en Suisse comme OR. Les sanctions les plus lourdes de l'ASR sont publiées dans le registre public — réputationnel désastreux."
+    },
+    {
+      "anchor": "demarche",
+      "title": "📋 Synthèse Staff 1 — démarche pratique sur le cadre légal",
+      "content": "Sur n'importe quelle mission, tes réflexes « cadre légal » :\n\n1. **Identifier l'entité** : SA, Sàrl, coopérative, association, fondation ? Le régime change.\n2. **Vérifier le type de contrôle** : ordinaire (727 CO), restreint (727a), opting-out, ou audit volontaire ?\n3. **Vérifier l'agrément de l'OR (= ton cabinet)** : est-il adapté au type de mission ? Pour EY sur une cotée, OK. Pour un mandat plus rare (LFus, LDIP), confirmer.\n4. **Lire la lettre de mission** (*engagement letter*) — référentiel, périmètre, responsabilités, honoraires.\n5. **Repérer la dernière AG** ayant élu l'OR — date, modalités, durée du mandat.\n6. **Vérifier l'inscription au RC** — l'OR doit y figurer pour être opposable aux tiers.\n7. **Signaler tout doute** à ton senior — la responsabilité (art. 755 CO + LSR) est lourde, le manager apprécie qu'on remonte tôt.",
+      "tip": "**Sur Fedlex**, mémorise tes 4 URLs de base : CO (RS 220), LSR (RS 221.302), OSRev (RS 221.302.3), LFus (RS 221.301). Mets-les en favori. Le réflexe « vérifier dans Fedlex avant de citer » t'évitera 90 % des erreurs juniors."
+    },
+    {
+      "anchor": "pieges",
+      "title": "🚧 Pièges et points d'attention",
+      "content": "Erreurs les plus fréquentes sur le cadre légal :",
+      "warning": "**Opting-out : confondre majorité et unanimité.** L'art. 727a al. 2 CO exige **l'unanimité** de TOUS les actionnaires, et un effectif **moyen annuel ≤ 10 ETP**. À l'examen, un piège classique sera de te donner « majorité 90% » — réponse : opting-out **impossible**, il faut 100 %.",
+      "comparison": "**Mandat OR vs mandat contractuel.** Mandat OR = légal, responsabilité art. 755 CO, indépendance LSR, agrément exigé. Mandat contractuel (DD, ISAE 3000…) = conventionnel, responsabilité contractuelle, indépendance modulée selon mission. **Ne JAMAIS** étendre un mandat OR à du conseil tacite.",
+      "tip": "**Citer un article de loi périmé.** Réflexe : depuis le **1ᵉʳ janvier 2023**, le droit de la SA a été révisé (notamment art. 725 ss CO sur la perte de capital / surendettement). Toujours vérifier la version **en vigueur** sur Fedlex avant de citer.",
+      "key_point": "**MDCF** = les 4 conditions de la responsabilité civile (Manquement / Dommage / Causalité / Faute). Si une seule manque, pas de responsabilité. À mémoriser absolument pour l'examen comme pour les discussions avec un manager."
+    }
+  ],
+  "auto_test": [
+    {
+      "q": "Une PME Sàrl a 8 ETP en moyenne annuelle et 4 associés. Les 3 majoritaires (95 % des parts) souhaitent renoncer au contrôle restreint pour économiser des coûts. Le 4ᵉ associé (5 %) refuse. L'opting-out est-il possible ?",
+      "a": "**NON.** L'art. 727a al. 2 CO exige **l'unanimité** des actionnaires (ici associés), pas la majorité. Le refus d'un seul (même minoritaire à 5 %) suffit à bloquer l'opting-out. La société reste soumise au contrôle restreint."
+    },
+    {
+      "q": "Quels sont les 4 critères cumulatifs de la responsabilité civile de l'organe de révision (art. 755 CO) ?",
+      "a": "Les **4 conditions MDCF** : **M**anquement à une obligation, **D**ommage chiffrable, **C**ausalité adéquate entre le manquement et le dommage, **F**aute (intention ou négligence). Si une seule manque, pas de responsabilité."
+    },
+    {
+      "q": "Une société anonyme cotée à la SIX doit être auditée par quel type d'entreprise de révision ?",
+      "a": "Une **entreprise de révision soumise à la surveillance étatique** (le niveau d'agrément le plus élevé, art. 7 LSR). Inspections périodiques de l'ASR. Une simple entreprise de révision ne suffit pas pour les sociétés ouvertes au public."
+    },
+    {
+      "q": "Un client demande à EY d'effectuer en plus de l'audit annuel une attestation fiscale pour la banque. Comment traiter ?",
+      "a": "C'est une **mission contractuelle séparée**, distincte du mandat OR. Il faut : (1) évaluer l'indépendance pour cette mission spécifique, (2) rédiger une lettre de mission dédiée, (3) appliquer la norme appropriée (ex. ISAE 3000), (4) ne pas mélanger les rapports. **Ne JAMAIS** intégrer tacitement la mission au mandat OR."
+    },
+    {
+      "q": "Quels sont les 4 piliers du cadre légal de l'audit en Suisse, dans l'ordre de hiérarchie ?",
+      "a": "**CO** (obligation et modalités, art. 727 ss) → **LSR** (qui peut auditer, surveillance ASR) → **OSRev** (application LSR) → **règles professionnelles** (NA-CH 2022 : ISA-CH 200–720, NAS-CH 890, ISQM-CH 1/2 ; Recommandations d'audit ; NCR). Mnémonique « CLON »."
+    },
+    {
+      "q": "Un OR démissionne en cours d'exercice après avoir détecté des indices de surendettement non corrigés par le CA. Cette démission le libère-t-elle de ses responsabilités ?",
+      "a": "**NON.** La démission ne libère pas l'OR des responsabilités liées aux travaux passés ni à l'obligation de signalement (CO 728c / 725b CO nouveau droit). Au contraire, démissionner sans avoir signalé peut **aggraver** la position juridique de l'OR. Le bon réflexe : signaler au CA, puis à l'AG, puis au juge si nécessaire."
+    }
+  ],
+  "sources": [
+    "Fedlex — RS 220, Code des obligations : https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr (vérifié — art. 727 à 731a)",
+    "Fedlex — RS 221.302, LSR : https://www.fedlex.admin.ch/eli/cc/2007/533/fr (vérifié)",
+    "Fedlex — RS 221.302.3, OSRev : https://www.fedlex.admin.ch/eli/cc/2007/534/fr (vérifié)",
+    "Fedlex — RS 221.301, LFus (loi sur la fusion) (vérifié)",
+    "EXPERTsuisse — NA-CH 2022 (ISA-CH 200–720, NAS-CH 890, ISQM-CH 1 et 2) : https://expertsuisse.ch/fr-ch/normes-suisses-daudit-des-etats-financiers-na-ch (vérifié)",
+    "ASR (Autorité fédérale de surveillance en matière de révision) : https://www.rab-asr.ch",
+    "MSA 2016, Tome « Contrôle ordinaire », Partie I, ch. I.2, p. 10 ss — paraphrasé, non reproduit"
+  ],
+  "statut": "✅ Complet — corps développé sur les 13 sous-chapitres MSA, sourcé Fedlex + EXPERTsuisse (NA-CH 2022 vérifié, ISQM-CH 1/2 confirmé), nouveau droit SA 2023 mentionné en pièges. Aucune ⚠️ résiduelle.",
+  "maj": "2026-05-19"
+}

@@ -1,0 +1,61 @@
+{
+  "code": "NCR.5",
+  "title": "NCR 5 — Caractère essentiel (importance relative / materiality)",
+  "category": "Audit — Contrôle restreint",
+  "ref_msa": "Norme suisse relative au contrôle restreint (NCR 2022)",
+  "bases_legales": "CO art. 727a · CO art. 729",
+  "normes": "NCR 2022",
+  "niveau": "Staff 1 EY",
+  "summary": "Le **caractère essentiel** (*importance relative*, *materiality*) est le **seuil au-dessus duquel une anomalie est considérée significative** pour les utilisateurs des EF. En contrôle restreint, la mécanique est **simplifiée** par rapport au contrôle ordinaire (ISA-CH 320 — 4 seuils OM/PM/CTT/SM). NCR retient typiquement **un seul seuil** (parfois deux), calibré selon l'entité. Cette fiche couvre la **détermination** du caractère essentiel, son **utilisation**, et le **lien avec la matérialité du contrôle ordinaire**.",
+  "mnemonics": "**Caractère essentiel NCR — 3 références CRR** : **C**A (chiffre d'affaires, typique 0.5-1 %) · **R**ésultat avant impôts (typique 5-10 %) · **R**éférence patrimoniale (total bilan ou capitaux propres, typique 1-2 %).",
+  "sections": [
+    {
+      "anchor": "ncr-5-1",
+      "title": "NCR.5.1 Détermination du caractère essentiel",
+      "content": "**Caractère essentiel** = seuil au-dessus duquel une **anomalie** est considérée comme **significative** pour les utilisateurs des EF.\n\n**Trois références typiques** (mnémonique **CRR**) :\n\n**1. Pourcentage du chiffre d'affaires (CA)** : typiquement **0.5 à 1 %** du CA.\n- Adapté pour : sociétés à activité régulière, marges fluctuantes.\n- Exemple : CA 10 M CHF → caractère essentiel ~100 k CHF.\n\n**2. Pourcentage du résultat avant impôts** : typiquement **5 à 10 %**.\n- Adapté pour : sociétés rentables à résultat stable.\n- Exemple : Résultat avant IS 2 M → caractère essentiel 100-200 k.\n- **Limite** : pertes ou résultat très faible/négatif → résultat non utilisable, basculer sur CA ou patrimoine.\n\n**3. Pourcentage du total bilan ou capitaux propres** : typiquement **1-2 % total bilan** ou **2-5 % capitaux propres**.\n- Adapté pour : sociétés patrimoniales (immobilier, holdings).\n- Exemple : Total bilan 50 M → caractère essentiel 500-1000 k.\n\n**Choix de la référence** :\n- Selon **profil de l'entité** : activité opérationnelle (CA, résultat) vs patrimoniale (bilan).\n- Selon **utilisateurs principaux** des EF : actionnaires (résultat), banques (patrimoine, ratios), fournisseurs (liquidité).\n- Selon **stabilité** : variations annuelles importantes du résultat → privilégier CA ou bilan.\n\n**Approche pragmatique** :\n- Calculer **plusieurs références** (CA, résultat, bilan).\n- Choisir la **plus appropriée** au contexte.\n- **Documenter** le raisonnement.\n- Mise à jour annuelle (si profil entité évolue).\n\n**Comparaison avec contrôle ordinaire (ISA-CH 320)** :\n\n| Critère | Contrôle ordinaire | Contrôle restreint |\n|---|---|---|\n| **Nombre seuils** | 4 (OM/PM/CTT/SM) | 1-2 (caractère essentiel + parfois clearly trivial) |\n| **Performance materiality (PM)** | Oui, ~50-75 % OM | Souvent omis |\n| **Materiality spécifique (SM)** | Possible | Rare |\n| **Documentation** | Détaillée formalisée | Plus simple |",
+      "key_point": "**Choix de la référence à documenter.** Pas une formule magique. Sociétés industrielles avec activité régulière → CA ou résultat. Sociétés patrimoniales (immobilier, holdings) → total bilan. Profil mixte → combinaison. Documentation du raisonnement requise."
+    },
+    {
+      "anchor": "ncr-5-2",
+      "title": "NCR.5.2 Utilisation du caractère essentiel",
+      "content": "**Utilisations du caractère essentiel** dans la mission :\n\n**1. Calibrage des procédures** :\n- Soldes > caractère essentiel = procédures plus approfondies.\n- Soldes < caractère essentiel = procédures plus légères.\n- Transactions individuelles > caractère essentiel = tests systématiques.\n\n**2. Sélection d'échantillons** :\n- Audit exhaustif sur soldes ou transactions > caractère essentiel.\n- Sondage par jugement sur le reste.\n\n**3. Évaluation des anomalies** (SAD restreint) :\n- Anomalies > caractère essentiel = matérielles individuellement → correction ou inscription.\n- Total anomalies non corrigées vs caractère essentiel : si > caractère essentiel → opinion modifiée possible.\n\n**4. Décision sur l'opinion** :\n- Anomalies non corrigées matérielles → opinion modifiée (réserve).\n- Anomalies non corrigées sub-matérielles → opinion non modifiée possible.\n\n**5. Communications** :\n- Anomalies > caractère essentiel = communication direction et CA.\n- Sujets significatifs = mention rapport détaillé (si appliqué) ou rapport succinct.\n\n**Évaluation qualitative en complément** :\n\nMême en restreint, l'évaluation qualitative s'applique. Une anomalie sub-matérielle peut être matérielle qualitativement :\n- Concerne une **partie liée**.\n- Affecte un **covenant bancaire**.\n- Indique une **fraude**.\n- Affecte les **ratios financiers** communiqués.\n- Concerne une **estimation très sensible**.\n\n**Documentation** :\n\n- Workpaper \"caractère essentiel\" : référence choisie, calcul, justification.\n- Mise à jour si changement matériel.\n- Communication équipe.",
+      "tip": "**Approche pratique** : calculer 3 références (0.5 % CA, 5 % résultat, 1 % bilan), prendre la plus appropriée selon contexte, arrondir à un montant rond pour usage opérationnel. Exemple : CA 8 M / résultat 1 M / bilan 12 M → calculs 40 k / 50 k / 120 k → retenir **50 k** (résultat-based pour société opérationnelle stable, montant rond). Documenter."
+    },
+    {
+      "anchor": "demarche",
+      "title": "📋 Synthèse Staff 1 — démarche caractère essentiel NCR",
+      "content": "**Démarche en 5 étapes** :\n\n1. **Identifier le profil de l'entité** : opérationnelle / patrimoniale / mixte.\n2. **Calculer 3 références CRR** : CA (0.5-1 %), Résultat avant IS (5-10 %), Bilan ou CP (1-2 %).\n3. **Choisir** la référence la plus appropriée selon contexte (utilisateurs EF, stabilité, profil).\n4. **Arrondir** à un montant opérationnel.\n5. **Documenter** le raisonnement dans workpaper.\n\n**Utilisations** : calibrage procédures, sélection échantillons, évaluation anomalies (SAD), décision opinion, communications. Évaluation qualitative en complément (parties liées, covenants, fraude, ratios, estimations).\n\n**Comparaison ordinaire vs restreint** : ordinaire = 4 seuils OM/PM/CTT/SM, restreint = 1-2 seuils simplifiés.",
+      "tip": "**Évaluation qualitative en plus du quantitatif.** Une anomalie sub-matérielle quantitativement peut être matérielle qualitativement. Toujours challenger sous les deux angles."
+    },
+    {
+      "anchor": "pieges",
+      "title": "🚧 Pièges et points d'attention",
+      "content": "Erreurs et confusions sur le caractère essentiel NCR :",
+      "warning": "**Évaluation qualitative obligatoire en plus du quantitatif.** Pattern : anomalie sub-OM mais touchant covenant bancaire ou partie liée = matérielle qualitativement, opinion modifiée possible.",
+      "comparison": "**Caractère essentiel NCR vs Materiality ISA-CH 320.** NCR plus simple (1-2 seuils vs 4). Mais principe identique : seuil au-dessus duquel anomalie matérielle.",
+      "tip": "**Choix de référence selon profil entité.** Industrielle opérationnelle = CA/résultat. Patrimoniale (immobilier, holdings) = bilan. Mixte = combinaison. Documentation requise.",
+      "key_point": "**Pertes ou résultat très faible** → résultat non utilisable comme référence. Basculer sur CA ou patrimoine. Documentation du choix."
+    }
+  ],
+  "auto_test": [
+    {
+      "q": "Quelles sont les 3 références typiques pour le caractère essentiel NCR (mnémonique CRR) ?",
+      "a": "**C**A (chiffre d'affaires, **0.5 à 1 %** typique — adapté sociétés à activité régulière) · **R**ésultat avant impôts (**5 à 10 %** — adapté sociétés rentables à résultat stable, limite si pertes/résultat faible) · **R**éférence patrimoniale (total bilan **1-2 %** ou capitaux propres **2-5 %** — adapté sociétés patrimoniales : immobilier, holdings). **Choix selon profil entité, utilisateurs EF, stabilité.** Documentation du raisonnement obligatoire."
+    },
+    {
+      "q": "Quelle est la différence entre caractère essentiel NCR et materiality ISA-CH 320 (ordinaire) ?",
+      "a": "**ISA-CH 320 (ordinaire)** : 4 seuils — **OM** (Overall Materiality, sur EF globaux), **PM** (Performance Materiality, ~50-75 % OM pour buffer cumul anomalies), **CTT** (Clearly Trivial Threshold, ~5 % PM pour signalement), **SM** (Specific Materiality, sur soldes/transactions spécifiques sensibles). **NCR (restreint)** : 1-2 seuils — **caractère essentiel** unique (équivalent OM), parfois 1 seuil de signalement (équivalent CTT). **Performance materiality omis** typiquement. **Documentation** plus simple. **Principe identique** : seuil au-dessus duquel anomalie matérielle."
+    },
+    {
+      "q": "Une PME a CA 5 M, résultat avant IS de 200 k, total bilan 8 M. Quel caractère essentiel retenir ?",
+      "a": "**Calculs** : (1) CA 0.5-1 % → 25-50 k ; (2) Résultat 5-10 % → 10-20 k ; (3) Bilan 1-2 % → 80-160 k. **Décision** : Résultat est plutôt faible (200 k seulement), donc Résultat × 10 % = 20 k semble trop bas. CA × 0.5 % = 25 k réaliste. Bilan × 1 % = 80 k semble élevé pour cette taille. **Recommandation** : retenir **25-30 k** (CA-based, sociétés opérationnelle, montant rond), documenter le raisonnement. Possibilité d'ajuster selon profil utilisateurs EF (si banques sensibles au patrimoine, monter à 40-50 k)."
+    }
+  ],
+  "sources": [
+    "Norme suisse relative au contrôle restreint (NCR 2022) — EXPERTsuisse / TREUHAND|SUISSE",
+    "ISA-CH 320 — Materiality (comparaison) — NA-CH 2022",
+    "Fedlex — RS 220, CO art. 727a, 729"
+  ],
+  "statut": "✅ Complet — corps développé sur 3 références CRR, choix selon profil, utilisations (calibrage, échantillon, SAD, opinion, communications), évaluation qualitative + 2 closing pédagogiques.",
+  "maj": "2026-05-20"
+}

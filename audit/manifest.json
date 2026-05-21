@@ -1,0 +1,219 @@
+{
+  "_meta": {
+    "projet": "Base de cours Audit — Vincent Baldy",
+    "version": "0.1.0-structure",
+    "date": "2026-05-19",
+    "statut": "Structure seule — fiches a rediger",
+    "ancres_standard": [
+      "concept-cle", "importance", "cadre-legal", "demarche",
+      "exemple", "pieges", "auto-test", "liens"
+    ]
+  },
+  "controle_ordinaire": {
+    "titre": "MSA — Contrôle ordinaire",
+    "source": "MSA 2016, Tome Contrôle ordinaire (EXPERTsuisse, ISBN 978-3-906076-17-1)",
+    "parties": [
+      {
+        "id": "partie_1_bases",
+        "titre": "Partie I — Bases du contrôle ordinaire",
+        "fiches": [
+          {
+            "id": "01_tour_horizon",
+            "titre": "I.1 Tour d'horizon",
+            "fichier": "controle_ordinaire/partie_1_bases/01_tour_horizon.json",
+            "statut": "complet",
+            "ancres": [
+              {"id": "concept-cle", "titre": "I.1.1 Définition de l'audit"},
+              {"id": "cadre-legal", "titre": "I.1.2 Dispositions légales · I.1.3 Règles de la profession"},
+              {"id": "importance", "titre": "I.1.4 Parties prenantes"},
+              {"id": "pieges", "titre": "I.1.5 Expectation gap"}
+            ]
+          },
+          {
+            "id": "02_bases_legales",
+            "titre": "I.2 Bases légales",
+            "fichier": "controle_ordinaire/partie_1_bases/02_bases_legales.json",
+            "statut": "complet",
+            "ancres": [
+              {"id": "concept-cle", "titre": "I.2.1 Généralités"},
+              {"id": "cadre-legal", "titre": "I.2.2 Cas d'audits · I.2.4 Surveillance · I.2.13 Agrément ASR"},
+              {"id": "demarche", "titre": "I.2.5 Opting · I.2.7 Formes juridiques · I.2.9 Élection · I.2.10 Durée/fin"},
+              {"id": "pieges", "titre": "I.2.11 Responsabilité civile et pénale"}
+            ]
+          },
+          {
+            "id": "_synthese",
+            "titre": "Synthèse Partie I",
+            "fichier": "controle_ordinaire/partie_1_bases/_synthese.json",
+            "statut": "complet",
+            "ancres": []
+          }
+        ]
+      },
+      {
+        "id": "partie_2_ethique",
+        "titre": "Partie II — Règles d'éthique et publications professionnelles",
+        "fiches": [
+          {
+            "id": "01_regles_ethique",
+            "titre": "II.1–II.2 Règles d'éthique professionnelle",
+            "fichier": "controle_ordinaire/partie_2_ethique/01_regles_ethique.json",
+            "statut": "complet",
+            "ancres": [
+              {"id": "concept-cle", "titre": "II.1 Introduction"},
+              {"id": "cadre-legal", "titre": "II.2.1 Éthique en Suisse · II.2.2 Contexte international"},
+              {"id": "demarche", "titre": "II.2.3 Indépendance (ordinaire/restreint, rotation)"}
+            ]
+          },
+          {
+            "id": "02_publications_pro",
+            "titre": "II.3 Publications professionnelles",
+            "fichier": "controle_ordinaire/partie_2_ethique/02_publications_pro.json",
+            "statut": "complet",
+            "ancres": [
+              {"id": "cadre-legal", "titre": "II.3.1 Normes d'audit (NA-CH, RA, NCR ; ISA, ISQC, ISAE)"},
+              {"id": "demarche", "titre": "II.3.2 Contrôle qualité (NCQ 1)"}
+            ]
+          },
+          {
+            "id": "_synthese",
+            "titre": "Synthèse Partie II",
+            "fichier": "controle_ordinaire/partie_2_ethique/_synthese.json",
+            "statut": "complet",
+            "ancres": []
+          }
+        ]
+      },
+      {
+        "id": "partie_3_processus",
+        "titre": "Partie III — Processus d'audit (contrôle ordinaire)",
+        "fiches": [
+          {
+            "id": "01_objectif_objet",
+            "titre": "III.1 Objectif et objet du contrôle ordinaire",
+            "fichier": "controle_ordinaire/partie_3_processus/01_objectif_objet.json",
+            "statut": "complet", "ancres": []
+          },
+          {
+            "id": "02_mission_audit",
+            "titre": "III.2 Mission d'audit",
+            "fichier": "controle_ordinaire/partie_3_processus/02_mission_audit.json",
+            "statut": "complet", "ancres": []
+          },
+          {
+            "id": "03_planification",
+            "titre": "III.3 Planification de l'audit",
+            "fichier": "controle_ordinaire/partie_3_processus/03_planification.json",
+            "statut": "complet",
+            "ancres": [
+              {"id": "demarche", "titre": "III.3.5 Caractère significatif · III.3.6 Stratégie · III.3.8 SCI · III.3.13 Programme"},
+              {"id": "pieges", "titre": "III.3.9 Fraudes · III.3.10 Société de services · III.3.11 IT"}
+            ]
+          },
+          {
+            "id": "04_execution",
+            "titre": "III.4 Exécution de l'audit",
+            "sous_fiches": [
+              {"id": "01_tests_procedures", "titre": "III.4.2 Tests de procédures", "fichier": "controle_ordinaire/partie_3_processus/04_execution/01_tests_procedures.json", "statut": "complet"},
+              {"id": "02_controles_substance", "titre": "III.4.3 Contrôles de substance", "fichier": "controle_ordinaire/partie_3_processus/04_execution/02_controles_substance.json", "statut": "complet"},
+              {"id": "03_techniques_audit", "titre": "III.4.4 Techniques d'audit", "fichier": "controle_ordinaire/partie_3_processus/04_execution/03_techniques_audit.json", "statut": "complet"},
+              {"id": "04_echantillonnage", "titre": "III.4.5 Étendue et sélection (sondages)", "fichier": "controle_ordinaire/partie_3_processus/04_execution/04_echantillonnage.json", "statut": "complet"},
+              {"id": "05_it_caat", "titre": "III.4.6 TI en tant qu'outils d'audit (CAAT)", "fichier": "controle_ordinaire/partie_3_processus/04_execution/05_it_caat.json", "statut": "complet"},
+              {"id": "06_documentation", "titre": "III.4.7 Documentation", "fichier": "controle_ordinaire/partie_3_processus/04_execution/06_documentation.json", "statut": "complet"},
+              {"id": "07_communication", "titre": "III.4.8 Communication gouvernance", "fichier": "controle_ordinaire/partie_3_processus/04_execution/07_communication.json", "statut": "complet"},
+              {"id": "08_travaux_autres_prof", "titre": "III.4.10 Travaux d'autres professionnels (NAS 600/610/620)", "fichier": "controle_ordinaire/partie_3_processus/04_execution/08_travaux_autres_prof.json", "statut": "complet"},
+              {"id": "09_elements_probants_particuliers", "titre": "III.4.11 Éléments probants particuliers (NAS 540/550/570)", "fichier": "controle_ordinaire/partie_3_processus/04_execution/09_elements_probants_particuliers.json", "statut": "complet"},
+              {"id": "10_donnees_comparatives", "titre": "III.4.12 Données comparatives (NAS 710)", "fichier": "controle_ordinaire/partie_3_processus/04_execution/10_donnees_comparatives.json", "statut": "complet"},
+              {"id": "11_perte_capital_surendettement", "titre": "III.4.13 Perte de capital et surendettement — ⚠️ nouveau droit SA 2023", "fichier": "controle_ordinaire/partie_3_processus/04_execution/11_perte_capital_surendettement.json", "statut": "complet"}
+            ],
+            "cycles": [
+              {"id": "01_tresorerie", "titre": "Trésorerie et titres court terme", "fichier": "controle_ordinaire/partie_3_processus/04_execution/cycles/01_tresorerie.json", "statut": "complet"},
+              {"id": "02_creances_clients", "titre": "Créances ventes et prestations", "fichier": "controle_ordinaire/partie_3_processus/04_execution/cycles/02_creances_clients.json", "statut": "complet"},
+              {"id": "03_stocks", "titre": "Stocks et prestations non facturées", "fichier": "controle_ordinaire/partie_3_processus/04_execution/cycles/03_stocks.json", "statut": "complet"},
+              {"id": "04_immobilisations_corporelles", "titre": "Immobilisations corporelles", "fichier": "controle_ordinaire/partie_3_processus/04_execution/cycles/04_immobilisations_corporelles.json", "statut": "complet"},
+              {"id": "05_immobilisations_incorporelles", "titre": "Actifs incorporels", "fichier": "controle_ordinaire/partie_3_processus/04_execution/cycles/05_immobilisations_incorporelles.json", "statut": "complet"},
+              {"id": "06_participations", "titre": "Immobilisations financières et participations", "fichier": "controle_ordinaire/partie_3_processus/04_execution/cycles/06_participations.json", "statut": "complet"},
+              {"id": "07_dettes_fournisseurs", "titre": "Dettes achats et prestations", "fichier": "controle_ordinaire/partie_3_processus/04_execution/cycles/07_dettes_fournisseurs.json", "statut": "complet"},
+              {"id": "08_provisions", "titre": "Provisions et postes analogues", "fichier": "controle_ordinaire/partie_3_processus/04_execution/cycles/08_provisions.json", "statut": "complet"},
+              {"id": "09_capitaux_propres", "titre": "Capitaux propres", "fichier": "controle_ordinaire/partie_3_processus/04_execution/cycles/09_capitaux_propres.json", "statut": "complet"},
+              {"id": "10_compte_resultat", "titre": "Compte de résultat", "fichier": "controle_ordinaire/partie_3_processus/04_execution/cycles/10_compte_resultat.json", "statut": "complet"},
+              {"id": "11_annexe", "titre": "Annexe et tableau des flux de trésorerie", "fichier": "controle_ordinaire/partie_3_processus/04_execution/cycles/11_annexe.json", "statut": "complet"}
+            ]
+          },
+          {
+            "id": "05_achevement",
+            "titre": "III.5 Achèvement de l'audit",
+            "fichier": "controle_ordinaire/partie_3_processus/05_achevement.json",
+            "statut": "complet", "ancres": []
+          },
+          {
+            "id": "06_verification_sci",
+            "titre": "III.6 Vérification de l'existence du SCI (art. 728a al. 1 ch. 3 CO)",
+            "fichier": "controle_ordinaire/partie_3_processus/06_verification_sci.json",
+            "statut": "complet", "ancres": []
+          },
+          {
+            "id": "07_emploi_benefice",
+            "titre": "III.7 Vérification de la proposition d'emploi du bénéfice",
+            "fichier": "controle_ordinaire/partie_3_processus/07_emploi_benefice.json",
+            "statut": "complet", "ancres": []
+          },
+          {
+            "id": "08_rapport",
+            "titre": "III.8 Rapport (succinct AG, opinions, détaillé CA, management letter)",
+            "fichier": "controle_ordinaire/partie_3_processus/08_rapport.json",
+            "statut": "complet", "ancres": []
+          },
+          {
+            "id": "09_rapport_remuneration",
+            "titre": "III.9 Rapport de rémunération",
+            "fichier": "controle_ordinaire/partie_3_processus/09_rapport_remuneration.json",
+            "statut": "complet", "ancres": []
+          }
+        ]
+      },
+      {
+        "id": "partie_4_groupe",
+        "titre": "Partie IV — Aspects particuliers de l'audit de groupe",
+        "fiches": [
+          {"id": "01_conditions", "titre": "IV.1–IV.2 Introduction, dispositions et conditions", "fichier": "controle_ordinaire/partie_4_groupe/01_conditions.json", "statut": "complet", "ancres": []},
+          {"id": "02_planification", "titre": "IV.3–IV.4 Planification et directives de consolidation", "fichier": "controle_ordinaire/partie_4_groupe/02_planification.json", "statut": "complet", "ancres": []},
+          {"id": "03_realisation", "titre": "IV.5–IV.7 Réalisation au niveau du groupe et procédures", "fichier": "controle_ordinaire/partie_4_groupe/03_realisation.json", "statut": "complet", "ancres": []},
+          {"id": "04_fin_audit", "titre": "IV.8 Fin de l'audit de groupe", "fichier": "controle_ordinaire/partie_4_groupe/04_fin_audit.json", "statut": "complet", "ancres": []}
+        ]
+      }
+    ]
+  },
+  "controle_restreint": {
+    "titre": "NCR — Contrôle restreint",
+    "source": "Norme suisse relative au contrôle restreint (NCR), édition 2022 — contenu généré depuis Fedlex + publications libres (pas de PDF NCR)",
+    "parties": [
+      {
+        "id": "principale",
+        "titre": "Partie principale",
+        "fiches": [
+          {"id": "01_essence", "titre": "Introduction & 1. Essence du contrôle restreint", "fichier": "controle_restreint/01_essence.json", "statut": "complet", "ancres": [{"id": "concept-cle", "titre": "Définition, assurance limitée"}, {"id": "cadre-legal", "titre": "art. 727a CO, opting"}]},
+          {"id": "02_approche_controle", "titre": "2. Approche de contrôle", "fichier": "controle_restreint/02_approche_controle.json", "statut": "complet", "ancres": []},
+          {"id": "03_evaluation_risques", "titre": "3. Évaluation des risques", "fichier": "controle_restreint/03_evaluation_risques.json", "statut": "complet", "ancres": []},
+          {"id": "04_planification", "titre": "4. Planification des contrôles", "fichier": "controle_restreint/04_planification.json", "statut": "complet", "ancres": []},
+          {"id": "05_caractere_essentiel", "titre": "5. Caractère essentiel (importance relative)", "fichier": "controle_restreint/05_caractere_essentiel.json", "statut": "complet", "ancres": []},
+          {"id": "06_operations_controle", "titre": "6. Opérations de contrôle (+ Annexe 4)", "fichier": "controle_restreint/06_operations_controle.json", "statut": "complet", "ancres": []},
+          {"id": "07_documentation", "titre": "7. Documentation de contrôle (+ Annexe 2)", "fichier": "controle_restreint/07_documentation.json", "statut": "complet", "ancres": []},
+          {"id": "08_rapport", "titre": "8. Rapport", "fichier": "controle_restreint/08_rapport.json", "statut": "complet", "ancres": []}
+        ]
+      },
+      {
+        "id": "annexes",
+        "titre": "Annexes",
+        "fiches": [
+          {"id": "01_dispositions_legales", "titre": "Annexe 1 — Dispositions légales (art. 727a–731a CO, LSR, OSRev)", "fichier": "controle_restreint/annexes/01_dispositions_legales.json", "statut": "complet", "ancres": []},
+          {"id": "03_acceptation_mandat", "titre": "Annexe 3 — Acceptation et maintien du mandat", "fichier": "controle_restreint/annexes/03_acceptation_mandat.json", "statut": "complet", "ancres": []},
+          {"id": "05_lettre_mission", "titre": "Annexe 5 — Lettre de mission", "fichier": "controle_restreint/annexes/05_lettre_mission.json", "statut": "complet", "ancres": []},
+          {"id": "06_modeles_rapports", "titre": "Annexe 6 — Rapport (modèles)", "fichier": "controle_restreint/annexes/06_modeles_rapports.json", "statut": "complet", "ancres": []},
+          {"id": "07_going_concern", "titre": "Annexe 7 — Continuité d'exploitation", "fichier": "controle_restreint/annexes/07_going_concern.json", "statut": "complet", "ancres": []},
+          {"id": "08_surendettement", "titre": "Annexe 8 — Surendettement — ⚠️ nouveau droit SA 2023", "fichier": "controle_restreint/annexes/08_surendettement.json", "statut": "complet", "ancres": []}
+        ]
+      }
+    ]
+  }
+}

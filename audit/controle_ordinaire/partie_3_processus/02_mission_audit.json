@@ -1,0 +1,80 @@
+{
+  "code": "III.2",
+  "title": "III.2 Mission d'audit",
+  "category": "Audit — Contrôle ordinaire",
+  "ref_msa": "MSA 2016, Tome « Contrôle ordinaire », Partie III, ch. III.2, p. 102 ss (paraphrasé)",
+  "bases_legales": "CO art. 728a (tâches OR) · 730 (élection) · LSR (RS 221.302) · OSRev",
+  "normes": "ISA-CH 210 (Engagement Letters) · ISA-CH 220 (Quality Management for the Audit) · ISQM-CH 1 composante 4 (Acceptance & Continuance)",
+  "niveau": "Staff 1 EY",
+  "summary": "La **mission d'audit** est le pont entre la décision de l'AG (élire l'OR) et le démarrage des travaux. Cette fiche couvre deux thèmes serrés mais critiques : (1) **la définition de la mission** — sa nature légale (statutaire vs contractuelle), son périmètre, son fondement ; (2) **les termes de la mission** — la fameuse *engagement letter* (lettre de mission) imposée par ISA-CH 210, plus toute la procédure d'**acceptance and continuance** (composante 4 d'ISQM-CH 1). Tu signeras cette lettre à chaque mission ; tu dois savoir ce qu'elle contient, pourquoi elle existe, et ce qui peut t'amener à refuser une mission.",
+  "mnemonics": "**Engagement letter** = 7 éléments clés : **R**éférentiel comptable · **P**érimètre · **R**esponsabilités (CA/OR) · **A**ccès aux documents · **R**apport attendu · **H**onoraires · **L**imites. Mnémonique « RPRARH-L ».",
+  "sections": [
+    {
+      "anchor": "iii-2-1",
+      "title": "III.2.1 Définition de la mission d'audit",
+      "content": "Une **mission d'audit** statutaire est l'**ensemble du travail** que l'OR effectue depuis son élection par l'AG jusqu'à la remise des rapports finaux. Trois caractéristiques juridiques essentielles :\n\n**1. Nature légale, pas contractuelle pure** — bien qu'il y ait une lettre signée, le mandat d'OR a un fondement **légal** (CO 728a). L'OR ne peut donc pas refuser arbitrairement d'auditer un poste prévu par la loi, ni se faire substituer aux organes de la société sur leurs propres responsabilités. C'est une distinction clé avec un simple mandat contractuel de prestation de service.\n\n**2. Périmètre légalement défini** — le contenu minimum est fixé par l'art. 728a CO (voir [III.1.2 Objet](01_objectif_objet.json#iii-1-2)). Les parties peuvent **étendre** le mandat à des prestations supplémentaires (revue intermédiaire, ISAE 3402, attestations diverses), mais ces extensions sont des missions **contractuelles séparées** distinctes du mandat statutaire.\n\n**3. Indépendance organique** — l'OR est élu par l'**AG** (art. 730 CO), pas désigné par le CA. Cela lui confère une autonomie vis-à-vis de la direction. En contrepartie, l'OR ne peut être révoqué qu'à des conditions strictes (voir [I.2.10](../partie_1_bases/02_bases_legales.json#i-2-10)).",
+      "key_point": "**Mandat statutaire ≠ mandat contractuel.** Mandat statutaire d'OR = base légale CO 728a, responsabilité civile spécifique art. 755 CO, indépendance LSR, agrément ASR requis. Mandat contractuel (DD, ISAE 3000, conseil...) = base conventionnelle, responsabilité contractuelle, indépendance modulée. Ne JAMAIS étendre l'un à l'autre tacitement.",
+      "info": "**Première vs continuation de mission.** Une **première mission** sur un nouveau client implique des diligences renforcées : prise de connaissance de l'entité (ISA-CH 315), revue des soldes d'ouverture (ISA-CH 510 — audit du bilan d'entrée), communication avec l'OR précédent (ISA-CH 300). Une **continuation** s'appuie sur la connaissance accumulée des exercices antérieurs."
+    },
+    {
+      "anchor": "iii-2-2",
+      "title": "III.2.2 Termes de la mission d'audit (engagement letter)",
+      "content": "Les **termes de la mission** sont formalisés dans une **lettre de mission** (*engagement letter*) imposée par **ISA-CH 210**. Ce document est signé par l'OR et le client (CA ou personne mandatée) avant le début des travaux.\n\n**Contenu obligatoire** (mnémonique RPRARH-L) :\n- **Référentiel comptable** appliqué (CO seul, Swiss GAAP RPC, IFRS) — c'est la base de l'opinion.\n- **Périmètre** — comptes annuels, comptes consolidés, SCI, emploi du bénéfice, rapport rémunération.\n- **Responsabilités** — du CA (établissement et conservation des comptes, contrôles internes) et de l'OR (opinion d'audit, assurance raisonnable, limites inhérentes).\n- **Accès aux documents** — engagement du client à fournir tout ce qui est nécessaire (PBC — *prepared by client*).\n- **Rapport** — format attendu, calendrier, destinataires (rapport succinct AG + rapport détaillé CA).\n- **Honoraires** — montant, modalités de facturation, conditions.\n- **Limites** — clause de responsabilité civile, prescription, recours.\n\n**Procédure d'acceptation** (*acceptance procedures*) — avant de signer la lettre, le cabinet vérifie sa propre indépendance (Independence office), évalue l'intégrité du client, vérifie qu'il dispose des ressources et compétences, identifie les conflits potentiels. C'est la composante 4 d'**ISQM-CH 1** (voir [II.3.2.3](../partie_2_ethique/02_publications_pro.json#ii-3-2-3)).\n\nPour les **continuations** de mission, une revue annuelle simplifiée est effectuée : confirmer que les conditions d'acceptation restent satisfaites (indépendance, intégrité, ressources). Si un *red flag* apparaît, la décision est rouverte.",
+      "example": "**Cas Staff 1 — première mission EY** : un nouveau client mid-cap soumis au contrôle ordinaire bascule chez EY. Avant ta première journée terrain : (a) l'**Independence office** vérifie que personne dans le réseau EY global n'a de lien proscrit avec le client ; (b) le partner et le manager rencontrent l'OR sortant pour avoir le contexte (motifs de changement, zones sensibles) ; (c) la lettre de mission est rédigée, négociée sur les honoraires, signée par les deux parties ; (d) la planification peut démarrer.",
+      "warning": "**Modification du mandat en cours d'exercice** (ex. le client demande de réduire le périmètre ou de skipper un poste). À traiter avec une extrême prudence : ISA-CH 210 exige que toute modification soit **justifiée** et **documentée**. Si la modification revient à dégrader le niveau d'assurance, l'OR doit **refuser** ou émettre une opinion modifiée. Communiquer immédiatement au partner.",
+      "tip": "**À ton arrivée sur une mission**, lis dans cet ordre : (1) la **lettre de mission** signée (5 min) ; (2) le **rapport d'audit N-1** (15 min) ; (3) le **management letter N-1** (10 min). Tu auras 80 % du contexte en moins d'une demi-heure."
+    },
+    {
+      "anchor": "demarche",
+      "title": "📋 Synthèse Staff 1 — démarche pratique sur la mission",
+      "content": "Réflexes concrets autour de la mission d'audit :\n\n1. **Avant ta première journée** chez un client, ton senior te transmet la **lettre de mission**. Lis-la — c'est ton « contrat » pour cette mission. Si tu vois quelque chose d'inhabituel (périmètre étrange, clause sortie de l'ordinaire), pose la question.\n2. **Repère la nature du mandat** : statutaire (OR élu par AG, base CO 728a) ou contractuel (autres missions ISAE, ISRS, conseil). Les règles d'indépendance et de responsabilité diffèrent.\n3. **Continuance vs première mission** : si c'est une **première mission**, attends-toi à plus de diligences (soldes d'ouverture, communication avec OR précédent, prise de connaissance approfondie). Si c'est une **continuation**, tu pars de la base de l'an dernier.\n4. **Acceptance and continuance — composante 4 d'ISQM-CH 1** : ne *jamais* commencer à travailler avant d'avoir confirmation que la mission est officiellement acceptée par le cabinet. Si l'Independence office signale un blocage, on s'arrête.\n5. **Tout changement de périmètre** (ajout/retrait d'entités, modification de référentiel comptable) doit faire l'objet d'une **lettre de mission révisée**. Pas de modification tacite.",
+      "key_point": "**Acceptance and continuance est la première ligne de défense du cabinet.** C'est à ce moment qu'on refuse les clients à risque inacceptable (intégrité douteuse, secteurs sensibles, conflits d'indépendance impossibles à neutraliser). Une fois la mission acceptée, tout problème ultérieur coûtera bien plus cher à gérer."
+    },
+    {
+      "anchor": "pieges",
+      "title": "🚧 Pièges et points d'attention",
+      "content": "Erreurs et confusions fréquentes sur la mission d'audit :",
+      "warning": "**Confondre mandat statutaire et mandat contractuel.** L'OR statutaire (CO 728a) a une responsabilité légale renforcée (art. 755 CO) et un agrément spécifique requis. Toute mission « en plus » (ISAE 3402, due diligence, conseil) est un **mandat contractuel séparé** avec sa propre lettre, sa propre indépendance à valider.",
+      "comparison": "**Lettre de mission ≠ confirmation de mandat ≠ rapport d'audit.** Trois documents distincts à ne pas mélanger : (a) la lettre de mission (avant) fixe le périmètre et les termes ; (b) la déclaration d'intégralité du client (à la fin de l'audit, *management representation letter*) confirme que rien n'a été dissimulé ; (c) le rapport d'audit exprime l'opinion. Trois moments, trois documents.",
+      "tip": "**Pas de travail sans lettre signée.** Règle absolue chez EY. Si on te demande de commencer un test sur un client dont la lettre n'est pas encore signée, escalade au manager. La protection juridique du cabinet et la tienne en dépendent.",
+      "key_point": "**Modification de mandat en cours d'exercice** : toujours par **avenant à la lettre de mission**, jamais tacitement. Documenter la raison (changement de référentiel, retrait d'une filiale du périmètre, etc.) et faire signer."
+    }
+  ],
+  "auto_test": [
+    {
+      "q": "Cite les 7 éléments minimums d'une lettre de mission selon ISA-CH 210 (mnémonique).",
+      "a": "**RPRARH-L** : **R**éférentiel comptable · **P**érimètre (annuels, consolidés, SCI, emploi du bénéfice, rémunération) · **R**esponsabilités du CA et de l'OR · **A**ccès aux documents (PBC) · **R**apport attendu (format, calendrier, destinataires) · **H**onoraires · **L**imites (responsabilité civile, prescription)."
+    },
+    {
+      "q": "Quelle est la différence entre une première mission et une continuation, en termes de procédures ?",
+      "a": "**Première mission** : diligences renforcées — prise de connaissance approfondie de l'entité (ISA-CH 315), audit des soldes d'ouverture (ISA-CH 510), communication avec l'OR précédent (ISA-CH 300), évaluation d'acceptance complète (ISQM-CH 1 composante 4). **Continuation** : revue annuelle simplifiée de l'acceptance — confirmer que les conditions restent satisfaites, s'appuyer sur la connaissance accumulée."
+    },
+    {
+      "q": "Un client demande à EY de retirer du périmètre d'audit la filiale française du groupe pour économiser. Que faire ?",
+      "a": "**(1)** Évaluer si la filiale est matérielle (souvent OUI dans un audit consolidé). **(2)** Si la restriction est matérielle, ISA-CH 210 impose de **refuser** la modification — sinon l'OR ne peut plus émettre une opinion non modifiée. **(3)** Si le client insiste, l'OR doit envisager (a) modification de l'opinion (réserve ou impossibilité d'exprimer) ou (b) retrait de la mission. **(4)** Toujours documenter et escalation au partner. Pas de décision Staff 1."
+    },
+    {
+      "q": "Qu'est-ce que l'acceptance and continuance, et à quelle composante d'ISQM-CH 1 cela correspond ?",
+      "a": "**Acceptance and continuance** = procédure d'évaluation par le cabinet avant d'accepter une nouvelle mission (acceptance) ou de la poursuivre annuellement (continuance). Vérifications : indépendance, intégrité du client, ressources et compétences disponibles, conflits potentiels. C'est la **composante 4** d'ISQM-CH 1. Une mission ne peut JAMAIS démarrer sans validation acceptance."
+    },
+    {
+      "q": "L'OR peut-il décider unilatéralement d'étendre le périmètre de l'audit à une revue ISAE 3000 supplémentaire demandée par le client ?",
+      "a": "**Non.** Une extension est une **mission contractuelle séparée** distincte du mandat statutaire d'OR. Elle nécessite (a) une **lettre de mission dédiée**, (b) une évaluation d'indépendance pour cette mission spécifique, (c) l'application de la **norme appropriée** (ISAE 3000 a sa propre logique d'assurance). NE PAS étendre tacitement le mandat OR — confusion de référentiels = faute."
+    },
+    {
+      "q": "Pourquoi l'OR est-il élu par l'AG et non par le CA ?",
+      "a": "Pour garantir l'**indépendance organique** de l'OR vis-à-vis des organes qu'il audite. Le CA prépare et arrête les comptes — il ne peut pas en plus choisir l'auditeur sans biais. L'AG (qui représente les actionnaires) est l'instance neutre qui désigne l'OR. C'est un principe structurel du droit suisse de la SA (art. 730 CO + 698 al. 2 ch. 2 CO)."
+    }
+  ],
+  "sources": [
+    "Fedlex — RS 220, CO art. 728a (tâches OR), 730 (élection) : https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr",
+    "Fedlex — RS 221.302, LSR : https://www.fedlex.admin.ch/eli/cc/2007/533/fr",
+    "ISA-CH 210 — Engagement Letters (NA-CH 2022) : EXPERTsuisse https://expertsuisse.ch/fr-ch/normes-suisses-daudit-des-etats-financiers-na-ch",
+    "ISA-CH 220 — Quality Management for the Audit of Financial Statements (NA-CH 2022)",
+    "ISQM-CH 1 — Système de gestion de la qualité au niveau cabinet (composante 4 : Acceptance and Continuance)",
+    "ISA-CH 510 — Initial Audit Engagements (audit des soldes d'ouverture, première mission)",
+    "MSA 2016, Tome « Contrôle ordinaire », Partie III, ch. III.2, p. 102 ss — paraphrasé, non reproduit"
+  ],
+  "statut": "✅ Complet — corps développé sur III.2.1 (définition) et III.2.2 (termes / engagement letter / acceptance) + 2 closing pédagogiques, sources Fedlex + EXPERTsuisse vérifiées.",
+  "maj": "2026-05-19"
+}

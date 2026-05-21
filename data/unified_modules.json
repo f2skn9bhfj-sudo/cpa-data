@@ -2327,6 +2327,14 @@
             "LSR",
             "OSRev",
             "NCR (contrôle restreint)"
+          ],
+          "audio_files": [
+            {
+              "path": "audio/audit_seuils_opting_out.m4a",
+              "title": "Seuils, opting-out et responsabilité du réviseur",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -2421,6 +2429,20 @@
             "m2_L13",
             "NAS",
             "Code IESBA"
+          ],
+          "audio_files": [
+            {
+              "path": "audio/audit_isa_serie_200.m4a",
+              "title": "Normes ISA série 200 et audit suisse",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            },
+            {
+              "path": "audio/audit_isa_402_soc.m4a",
+              "title": "ISA 402 et rapports SOC pour EXPERTsuisse",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -2459,6 +2481,14 @@
           "cross_refs": [
             "m2_L8",
             "ISA 200-810"
+          ],
+          "audio_files": [
+            {
+              "path": "audio/audit_hierarchie_missions.m4a",
+              "title": "La hiérarchie des missions d'audit suisse",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -2652,6 +2682,26 @@
             "m2_L4",
             "ISA 200-810",
             "NCR (contrôle restreint)"
+          ],
+          "audio_files": [
+            {
+              "path": "audio/audit_sci_coso.m4a",
+              "title": "L'audit du SCI et du COSO",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            },
+            {
+              "path": "audio/audit_architecture_isa_nas.m4a",
+              "title": "L'architecture des normes ISA et NAS",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            },
+            {
+              "path": "audio/audit_cycle_pcmr.m4a",
+              "title": "Maîtriser le cycle PCMR en audit",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -2692,6 +2742,14 @@
             "m2_L3",
             "CO 727-731a",
             "NAS"
+          ],
+          "audio_files": [
+            {
+              "path": "audio/audit_controle_restreint.m4a",
+              "title": "L'essentiel du contrôle restreint suisse",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -25389,6 +25447,14 @@
               "difficulty": "hard",
               "section_id": "ifrs5_s1"
             }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ifrs5_actifs_destines_vente.m4a",
+              "title": "Maîtriser l'IFRS 5 pour l'EXPERTsuisse",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -26115,6 +26181,20 @@
               "difficulty": "hard",
               "section_id": "ifrs9_s2"
             }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ifrs9_sppi_ecl.m4a",
+              "title": "IFRS 9 — du SPPI à l'ECL",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            },
+            {
+              "path": "audio/ifrs_recyclage_oci.m4a",
+              "title": "Le recyclage de l'OCI en IFRS",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -26396,6 +26476,14 @@
               "difficulty": "hard",
               "section_id": "ifrs13_s4"
             }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ifrs13_juste_valeur.m4a",
+              "title": "Les clés d'IFRS 13 pour EXPERTsuisse",
+              "kind": "podcast",
+              "mime": "audio/mp4"
+            }
           ]
         },
         {
@@ -26672,6 +26760,14 @@
               "explanation": "RPC 22 : POC autorisee si 4 conditions (base contractuelle, haute probabilite, organisation appropriee, determination fiable). Sinon Completed Contract ou POC modifiee sans marge. Difference notable avec IFRS 15.",
               "difficulty": "hard",
               "section_id": "ifrs15_s6"
+            }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ifrs15_transfert_controle.m4a",
+              "title": "IFRS 15 et le transfert du contrôle",
+              "kind": "podcast",
+              "mime": "audio/mp4"
             }
           ]
         },
@@ -27040,6 +27136,14 @@
               "explanation": "RPC 13 conserve la distinction historique : leasing financier (4 criteres qualitatifs) au bilan ; leasing operationnel hors bilan avec simple mention en annexe. Sous CO art. 959c al. 2 ch. 5, mention en annexe du montant des dettes de leasing non inscrites. Le piege classique : sous IFRS 16, presque tout est au bilan ; sous RPC 13, seuls les financiers.",
               "difficulty": "medium",
               "section_id": "ifrs16_s8"
+            }
+          ],
+          "audio_files": [
+            {
+              "path": "audio/ifrs16_fin_hors_bilan.m4a",
+              "title": "IFRS 16 et la fin du hors-bilan",
+              "kind": "podcast",
+              "mime": "audio/mp4"
             }
           ]
         },

@@ -1,0 +1,98 @@
+{
+  "code": "III.1",
+  "title": "III.1 Objectif et objet du contrôle ordinaire",
+  "category": "Audit — Contrôle ordinaire",
+  "ref_msa": "MSA 2016, Tome « Contrôle ordinaire », Partie III, ch. III.1, p. 94 ss (paraphrasé)",
+  "bases_legales": "CO art. 728 (indépendance) · 728a (tâches) · 728b (rapport) · 728c (communication CA/AG) · 731a (raisons sérieuses)",
+  "normes": "ISA-CH 200 (Objectifs généraux de l'auditeur) · NAS-CH 890 (vérification SCI)",
+  "niveau": "Staff 1 EY",
+  "summary": "Cette fiche pose **ce que vise** un contrôle ordinaire (l'**objectif** : exprimer une opinion sur les EF avec assurance raisonnable) et **ce sur quoi il porte** (l'**objet** : comptes annuels et de groupe, SCI, proposition d'emploi du bénéfice, rapport de rémunération pour les cotées). C'est la fiche-fondation de toute la Partie III — sans elle, les chapitres suivants (planification, exécution, achèvement, rapport) flottent dans le vide. Tu dois savoir, à tout moment d'une mission, **à quoi sert ce que tu fais**.",
+  "mnemonics": "**Objectif** = opinion d'**audit** + assurance **raisonnable** sur les EF. **Objet** = EF (annuels + consolidés) + SCI (NAS-CH 890) + emploi du bénéfice + rapport rémunération si cotée. Mnémonique : **« Opinion sur ces 5 objets »**.",
+  "sections": [
+    {
+      "anchor": "iii-1-1",
+      "title": "III.1.1 Introduction",
+      "content": "Le **contrôle ordinaire** est encadré par les art. **728 à 728c CO** (et 731a pour les raisons sérieuses). Quatre acteurs interviennent en parallèle, chacun avec un rôle distinct qu'il ne faut **JAMAIS** confondre :\n\n- **Direction et CA** — préparent et arrêtent les comptes annuels (responsabilité légale, art. 716a CO). Ils choisissent le référentiel comptable, font les estimations, gèrent le SCI.\n- **Organe de révision (OR)** — vérifie ces comptes de manière indépendante, exprime une **opinion** sur leur conformité.\n- **Assemblée générale (AG)** — approuve les comptes (ou les renvoie au CA), élit l'OR, donne décharge au CA.\n- **Utilisateurs des comptes** — actionnaires, créanciers, fisc, public — sont les **bénéficiaires** ultimes de l'audit.\n\nL'auditeur n'est ni le **garant** des comptes (c'est le CA), ni leur **rédacteur** (c'est la direction). Il est un **vérificateur indépendant** qui prend position sur la fiabilité du produit fini.",
+      "key_point": "**Règle d'or à mémoriser pour le terrain** : « Le CA arrête les comptes, la direction les prépare, l'OR les audite, l'AG les approuve. » Confondre ces rôles est la première erreur de débutant — et celle qui peut coûter cher en responsabilité (art. 755 CO).",
+      "warning": "**Piège classique en mission** : un client dit « vous tenez bien notre compta, non ? ». En **contrôle ordinaire**, NON — c'est interdit (art. 728 al. 2 ch. 4 CO, voir [II.2.3.2](../partie_2_ethique/01_regles_ethique.json#ii-2-3-2)). Tu auditeur, pas comptable du client."
+    },
+    {
+      "anchor": "iii-1-2",
+      "title": "III.1.2 Objet de l'audit",
+      "content": "L'**objet** du contrôle ordinaire — ce sur quoi l'auditeur travaille concrètement — est défini à l'**art. 728a al. 1 CO** et comprend **cinq éléments** :\n\n1. **Les comptes annuels** — bilan, compte de résultat, annexe (et tableau de variation des capitaux propres pour les entités complexes). Selon le droit comptable du CO (art. 957–963b) ou un référentiel reconnu (Swiss GAAP RPC, IFRS).\n2. **Les comptes consolidés** — si la société est tenue d'en établir (art. 963 CO : seuils + entité contrôlante).\n3. **L'existence du SCI** — système de contrôle interne, vérifié sur la base de **NAS-CH 890** (art. 728a al. 1 ch. 3 CO).\n4. **La proposition d'emploi du bénéfice** — conformité aux statuts et à la loi (vérifié par l'OR avant l'AG).\n5. **Pour les sociétés cotées** — le **rapport de rémunération** (art. 734 ss CO depuis 2013, post-initiative Minder).\n\nAttention : pour l'audit des EF, l'OR ne se prononce pas sur la **gestion** du CA, ni sur la **performance** économique, ni sur la **qualité des décisions de management** — uniquement sur la **fiabilité de l'information financière publiée**.",
+      "info": "**Différence avec le contrôle restreint** : l'OR restreint vérifie aussi les comptes, mais (a) avec une assurance limitée, (b) sans audit du SCI (NAS-CH 890 ne s'applique pas), (c) avec des procédures plus légères. Voir fiche [I.2.6 numerus clausus](../partie_1_bases/02_bases_legales.json#i-2-6).",
+      "example": "**Cas typique d'une SA suisse moyenne** : EY audite (a) les comptes annuels en Swiss GAAP RPC, (b) les comptes consolidés du groupe en IFRS, (c) vérifie l'existence du SCI, (d) examine la proposition de dividende du CA. Quatre livrables distincts à coordonner — d'où l'importance d'une bonne **planification**."
+    },
+    {
+      "anchor": "iii-1-3",
+      "title": "III.1.3 Contenu de l'audit",
+      "content": "Le **contenu** — *comment* l'auditeur travaille — repose sur trois piliers techniques :\n\n**1. Approche par les risques** (*risk-based*) — on ne teste pas tout, on cible les zones où le risque d'anomalie significative est le plus élevé. C'est la philosophie d'**ISA-CH 315** et structure toute la planification (voir [III.3](03_planification.json) à venir).\n\n**2. Combinaison de procédures** — l'auditeur dispose de plusieurs outils :\n- **Tests de procédures** (*tests of controls*) — vérifier que les contrôles internes du client fonctionnent (ISA-CH 330).\n- **Contrôles de substance** (*substantive procedures*) — tester directement les chiffres : *procédures analytiques* (ISA-CH 520) + *vérifications de détail* (échantillonnage, confirmations externes, observation physique, etc.).\n- **Mixte** — combiner les deux selon le risque évalué et l'efficacité des contrôles internes du client.\n\n**3. Évaluation par rapport au référentiel comptable applicable** — l'opinion porte sur la **conformité** des EF au CO / Swiss GAAP RPC / IFRS. L'auditeur doit donc maîtriser le référentiel et les zones de jugement (estimations, juste valeur, going concern…).\n\nObjectif final : détecter les **anomalies significatives** — qu'elles soient le résultat d'**erreurs** (involontaires) ou de **fraudes** (intentionnelles, ISA-CH 240).",
+      "key_point": "**Approche risk-based en une phrase** : l'effort d'audit est **inversement proportionnel** à la fiabilité du contrôle interne du client. Bon SCI testé efficace → moins de tests substantifs. SCI faible ou non testé → plus de substantif. C'est la mécanique centrale de l'audit moderne.",
+      "comparison": "**Tests de procédures vs contrôles de substance** :\n\n| Approche | Quoi | Quand | Effet sur l'opinion |\n|---|---|---|---|\n| **Tests de procédures** | Vérifier que les contrôles fonctionnent | SCI évalué fiable, on s'y appuie | Réduit les tests substantifs nécessaires |\n| **Procédures analytiques** | Comparer ratios, tendances, attendus | Tous types d'audit, en planning et achèvement | Détecte anomalies grossières |\n| **Vérifications de détail** | Tester chaque opération (échantillon) | Postes sensibles, comptes complexes | Validation directe des chiffres |"
+    },
+    {
+      "anchor": "iii-1-4",
+      "title": "III.1.4 But de l'audit",
+      "content": "Le **but** ultime du contrôle ordinaire est défini par **ISA-CH 200** et tient en deux objectifs jumeaux :\n\n1. **Obtenir une assurance raisonnable** que les EF, pris dans leur ensemble, sont **exempts d'anomalies significatives** — qu'elles soient dues à des fraudes ou à des erreurs. « Raisonnable » = niveau d'assurance élevé, mais non absolu (limites inhérentes : sondages, jugement, fraudes par collusion).\n2. **Émettre un rapport** sur les EF contenant l'opinion d'audit, et communiquer les éléments importants au gouvernement d'entreprise (CA, comité d'audit s'il existe).\n\nLa **finalité économique** de l'audit n'est pas dans le rapport lui-même — elle est dans la **confiance** que ce rapport crée dans le marché. Banques, fisc, investisseurs, partenaires commerciaux s'appuient sur les EF audités pour prendre des décisions (crédit, investissement, partenariats). Sans audit fiable, ces décisions seraient prises à l'aveugle.\n\nC'est pour cela que l'auditeur a une **responsabilité d'intérêt public** (*public interest responsibility*), au-delà de sa relation contractuelle avec le client.",
+      "info": "**ISA-CH 200 — Objectifs généraux de l'auditeur** : la norme-cadre qui chapote tout l'audit moderne. À lire au moins une fois dans l'année 1 chez EY. Définit l'assurance raisonnable, le scepticisme professionnel (*professional skepticism*), le jugement professionnel, et les attentes du public.",
+      "tip": "**Scepticisme professionnel** (*professional skepticism*) — concept central d'ISA-CH 200. Ce n'est PAS de la méfiance systématique envers le client ; c'est une **attitude mentale** qui consiste à remettre en cause les explications reçues, à chercher des éléments probants corroborants, et à ne jamais se contenter d'une parole pour confirmer un chiffre matériel. À pratiquer dès la première mission."
+    },
+    {
+      "anchor": "iii-1-5",
+      "title": "III.1.5 Autres buts de l'audit",
+      "content": "Au-delà de l'opinion principale, le contrôle ordinaire produit **plusieurs autres effets** que tu vas découvrir progressivement :\n\n**1. Communication avec le gouvernement d'entreprise** (art. 728c CO + ISA-CH 260) — l'OR doit informer le CA des constatations matérielles, des risques identifiés, des points de désaccord avec la direction, des déficiences significatives du SCI. En contrôle ordinaire, le rapport **détaillé** au CA (art. 728b al. 2 CO) est un livrable distinct du rapport succinct à l'AG.\n\n**2. Avis obligatoires (art. 728c CO)** — l'OR doit **signaler au CA** les violations de la loi ou des statuts constatées. Si le CA ne corrige pas, escalation à l'**AG**. En cas de **raisons sérieuses** d'admettre un surendettement (art. 725b CO nouveau droit, ex-731a), l'OR doit en informer le juge si le CA ne le fait pas.\n\n**3. Conseil indirect via le *management letter*** — recommandations sur l'amélioration des processus, du SCI, de la conformité. Pas une obligation légale, mais une pratique courante qui apporte une valeur ajoutée au client.\n\n**4. Détection précoce des problèmes de continuité d'exploitation** (*going concern*, ISA-CH 570) — l'auditeur doit évaluer la capacité de l'entité à poursuivre son activité dans un horizon de 12 mois et alerter si les indices sont défavorables.\n\n**5. Vérification de la conformité** — l'OR vérifie que les comptes respectent la loi (CO) et les statuts (sur les aspects financiers). C'est différent d'une mission de conformité réglementaire complète, mais ça en couvre une partie.",
+      "warning": "**Limites importantes** : l'auditeur **n'audite PAS** (a) la qualité économique des décisions du CA, (b) l'éthique des pratiques commerciales, (c) la conformité fiscale détaillée (sauf si liée aux EF), (d) le bon fonctionnement de chaque contrôle (sauf SCI globalement). Ces éléments peuvent faire l'objet de missions **séparées** (forensic, audit interne, missions de conseil), pas du mandat statutaire d'OR.",
+      "info": "**Management letter** — bonne pratique mais pas obligation légale. Contient typiquement : déficiences SCI non significatives, suggestions d'amélioration des processus, observations sur la documentation. Distinct du rapport détaillé (728b al. 2 CO) qui, lui, est obligatoire en contrôle ordinaire."
+    },
+    {
+      "anchor": "demarche",
+      "title": "📋 Synthèse Staff 1 — démarche pratique sur les objectifs",
+      "content": "Réflexes à intégrer dès tes premières missions :\n\n1. **Avant toute procédure**, demande-toi : *à quel objectif d'audit cela contribue ? quelle assertion ?* Si tu ne sais pas répondre, soit la procédure est inutile, soit tu n'as pas compris la mission.\n2. **Le rapport est le but** — chaque workpaper que tu prépares doit pouvoir se relier à une assertion d'audit, à un risque évalué, et in fine à l'opinion. C'est la **traçabilité** exigée par NA-CH 230.\n3. **Distingue les 5 objets** — quand un manager te demande « tu travailles sur quoi ? », précise : « tests substantifs sur le poste *créances clients* dans les comptes annuels, pour répondre à l'assertion *existence* ». Pas « audit de la compta ».\n4. **Pense intérêt public** — derrière le client, il y a des actionnaires, créanciers, fisc, public. C'est eux que tu protèges en faisant un audit rigoureux.",
+      "key_point": "**Tu n'es pas le bras armé du client** — tu es son **vérificateur indépendant**, au service de l'intérêt public (actionnaires + créanciers + fisc + public). Cette posture mentale est ce qui distingue un bon auditeur d'un mauvais."
+    },
+    {
+      "anchor": "pieges",
+      "title": "🚧 Pièges et points d'attention",
+      "content": "Erreurs et confusions fréquentes sur les objectifs et l'objet :",
+      "warning": "**Confondre objet et objectif.** *Objet* = sur quoi (les EF, le SCI, l'emploi du bénéfice). *Objectif* = pourquoi (exprimer une opinion d'assurance raisonnable, communiquer au CA, alerter sur going concern). Les deux mots se ressemblent ; à l'examen, ne jamais les substituer.",
+      "comparison": "**Audit (728a) ≠ audit de gestion ≠ audit interne ≠ audit forensique.** L'OR ne juge pas la qualité économique des choix du CA. Il vérifie la fiabilité de l'information financière. Pour la gestion : c'est l'audit interne ou les missions de conseil. Pour la fraude approfondie : forensic.",
+      "tip": "**Scepticisme professionnel** se prouve par la documentation. Si tu acceptes une explication orale du client sur un point matériel sans la corroborer par un élément probant écrit, ton workpaper sera retoqué en review. Toujours documenter : *« j'ai obtenu telle confirmation, vérifié telle pièce »*.",
+      "key_point": "**5 objets de l'audit ordinaire** (mnémo « les 5 O ») : c**O**mptes annuels · c**O**mptes consolidés · SCI (NAS-CH 890) · emploi bénéfice · rapport rémunération (cotées). À mémoriser pour l'examen."
+    }
+  ],
+  "auto_test": [
+    {
+      "q": "Cite les 5 éléments qui constituent l'objet du contrôle ordinaire selon l'art. 728a al. 1 CO.",
+      "a": "(1) Les **comptes annuels** ; (2) les **comptes consolidés** si applicables ; (3) l'**existence du SCI** (sur la base de NAS-CH 890) ; (4) la **proposition d'emploi du bénéfice** ; (5) le **rapport de rémunération** pour les sociétés cotées (art. 734 ss CO post-Minder)."
+    },
+    {
+      "q": "Quelle est la différence entre tests de procédures et contrôles de substance ?",
+      "a": "**Tests de procédures** (*tests of controls*) = vérifier que les contrôles internes du client fonctionnent ; on s'y appuie ensuite pour réduire les tests substantifs. **Contrôles de substance** = tester directement les chiffres (procédures analytiques + vérifications de détail). En pratique : on combine selon le risque évalué et l'efficacité du SCI."
+    },
+    {
+      "q": "L'auditeur audite-t-il la qualité des décisions de gestion du CA ?",
+      "a": "**Non.** L'OR vérifie la fiabilité de l'information financière publiée, pas la qualité économique des décisions. Pour juger la gestion : c'est l'**audit interne** ou des missions de conseil, pas le mandat statutaire d'OR. C'est une délimitation **essentielle** à expliquer à un client confus."
+    },
+    {
+      "q": "Qu'est-ce que le scepticisme professionnel et comment se prouve-t-il ?",
+      "a": "C'est une **attitude mentale** (ISA-CH 200) : remettre en cause les explications reçues, chercher des éléments probants corroborants, ne jamais se contenter d'une parole pour valider un chiffre matériel. **Se prouve par la documentation** : workpapers traçant les explications reçues + les corroborations obtenues. Sans doc, pas de scepticisme prouvé en review."
+    },
+    {
+      "q": "L'OR détecte une violation des statuts par le CA. Que doit-il faire ?",
+      "a": "**Art. 728c CO** : (1) signaler au **CA** ; (2) si le CA ne corrige pas, escalation à l'**AG** ; (3) pour les cas graves (surendettement notamment, art. 725b CO nouveau droit), peut/doit signaler au **juge** si CA inactif. Démissionner sans avoir signalé n'exonère pas de la responsabilité."
+    },
+    {
+      "q": "Quelle est la finalité économique de l'audit ?",
+      "a": "Créer la **confiance** dans l'information financière publiée, permettant aux **utilisateurs** (actionnaires, créanciers, fisc, partenaires) de prendre des décisions économiques éclairées. C'est la **responsabilité d'intérêt public** de l'auditeur, qui dépasse sa simple relation contractuelle avec le client."
+    }
+  ],
+  "sources": [
+    "Fedlex — RS 220, CO art. 728 à 728c et 731a : https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr (vérifié)",
+    "ISA-CH 200 — Objectifs généraux de l'auditeur (NA-CH 2022) : EXPERTsuisse https://expertsuisse.ch/fr-ch/normes-suisses-daudit-des-etats-financiers-na-ch",
+    "NAS-CH 890 — Vérification de l'existence du SCI : EXPERTsuisse (norme spécifiquement suisse)",
+    "Initiative Minder / Art. 734 ss CO rapport de rémunération (entrée en vigueur 2013) — Fedlex RS 220",
+    "MSA 2016, Tome « Contrôle ordinaire », Partie III, ch. III.1, p. 94 ss — paraphrasé, non reproduit"
+  ],
+  "statut": "✅ Complet — corps développé sur les 5 sous-chapitres MSA (III.1.1 à III.1.5) + 2 closing pédagogiques, sources Fedlex + EXPERTsuisse vérifiées.",
+  "maj": "2026-05-19"
+}

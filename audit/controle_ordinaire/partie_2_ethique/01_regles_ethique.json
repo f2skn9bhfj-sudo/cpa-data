@@ -1,0 +1,129 @@
+{
+  "code": "II.1–II.2",
+  "title": "II.1–II.2 Règles d'éthique professionnelle",
+  "category": "Audit — Contrôle ordinaire",
+  "ref_msa": "MSA 2016, Tome « Contrôle ordinaire », Partie II, ch. II.1 et II.2, p. 64 ss (paraphrasé)",
+  "bases_legales": "CO art. 728 (indépendance ordinaire) · 729 (restreint) · 730a (rotation) · LSR (RS 221.302) · OSRev (RS 221.302.3)",
+  "normes": "Code IESBA · directives d'indépendance EXPERTsuisse (DI) · NA-CH 2022",
+  "niveau": "Staff 1 EY",
+  "summary": "L'**éthique professionnelle** est le socle invisible de l'audit. Sans elle, aucune opinion n'a de valeur. Cette fiche couvre les deux cadres en parallèle — **suisse** (CO 728/729, LSR, OSRev, directives DI EXPERTsuisse) et **international** (**Code IESBA** de l'IFAC : 5 principes fondamentaux, cadre conceptuel, menaces et sauvegardes) — puis détaille en profondeur l'**indépendance** : régime du contrôle ordinaire (CO 728, le plus strict), régime du contrôle restreint (CO 729, plus souple), comparaison des deux, et la **rotation obligatoire 7 ans** (CO 730a) qui sera ton premier vrai sujet d'attention chez EY.",
+  "mnemonics": "**5 principes IESBA** : **I**ntégrité · **O**bjectivité · **C**ompétence professionnelle · **C**onfidentialité · **C**omportement professionnel (« IOCCC »). **Rotation** : 7 ans max, **carence 3 ans** (730a al. 2 CO).",
+  "sections": [
+    {
+      "anchor": "ii-1",
+      "title": "II.1 Introduction",
+      "content": "L'**éthique professionnelle** structure la profession d'auditeur. Sans confiance dans l'éthique de l'auditeur, l'opinion d'audit n'a aucune valeur économique — c'est précisément la raison pour laquelle la loi (CO, LSR, OSRev) **et** la profession (NA-CH, Code IESBA, directives EXPERTsuisse) imposent un cadre extrêmement précis.\n\nDeux niveaux à distinguer dès le départ :\n\n- **II.1.1 Règles d'éthique professionnelle** — *qui peut* auditer et *comment se comporter* (intégrité, indépendance, confidentialité, compétence). C'est le sujet de la Partie II.\n- **II.1.2 Publications professionnelles** — *quelles normes* appliquer concrètement (NA-CH, ISA, ISQM-CH, RA, NCR). Traité dans la fiche [II.3](02_publications_pro.json).\n\nLes deux sont indissociables : on ne peut pas appliquer correctement les normes (II.3) sans respecter l'éthique (II.2), et l'éthique impose le respect des normes. Pour un Staff 1, l'éthique n'est pas un cours abstrait — c'est ce qui détermine si tu peux signer un papier de travail, accepter une mission ou même travailler chez EY.",
+      "key_point": "**Trois piliers à connaître** :\n1. Les **5 principes fondamentaux** (Code IESBA, repris par EXPERTsuisse) — voir mnémonique IOCCC.\n2. Le **cadre conceptuel** : identifier les **menaces** à l'indépendance, évaluer leur niveau, appliquer des **sauvegardes**.\n3. Les **règles spécifiques** au contrôle ordinaire (CO 728, plus strict) et au contrôle restreint (CO 729, plus souple).",
+      "tip": "Chez EY, **EthicsPoint** et la fonction **Independence** te demanderont chaque année de déclarer tes investissements, ceux de tes proches, et tout lien avec des clients. Ce n'est pas de la bureaucratie — c'est l'application directe du Code IESBA. Prends-le au sérieux dès le premier jour."
+    },
+    {
+      "anchor": "ii-2-1",
+      "title": "II.2.1 Règles d'éthique professionnelle en Suisse",
+      "content": "En Suisse, l'éthique de l'auditeur est encadrée par **quatre couches** complémentaires :\n\n1. **Code des obligations (CO)** — base légale. Art. **728** (indépendance lors du contrôle ordinaire), art. **729** (indépendance lors du contrôle restreint), art. **730a** (rotation), art. **730b** (confidentialité), art. **730c** (devoir de discrétion vis-à-vis du CA).\n2. **LSR (RS 221.302)** — agrément subordonné à une **réputation irréprochable** (art. 4 al. 1) et à une indépendance organisationnelle. Manquement = retrait possible d'agrément.\n3. **OSRev (RS 221.302.3)** — précise les conditions d'indépendance, formation continue, vérification de la réputation.\n4. **Directives d'indépendance EXPERTsuisse (DI)** — règles professionnelles détaillées qui s'inspirent largement du Code IESBA tout en intégrant les spécificités du droit suisse. Obligatoires pour les membres d'EXPERTsuisse (≈ toute la profession).\n\nEn pratique, **EY** applique ses propres directives globales d'indépendance, alignées sur l'IESBA et plus strictes que le minimum légal suisse — c'est le standard du marché Big Four.",
+      "info": "**Hiérarchie en cas de conflit** : la loi suisse prime sur les directives professionnelles ; les directives EY (Big Four) sont **au moins** aussi strictes que la loi et le Code IESBA. Quand tu as un doute, applique **la règle la plus contraignante** — c'est le principe de prudence professionnelle.",
+      "warning": "**Sanctions en cas de manquement à l'indépendance en Suisse** : sanctions ASR (avertissement, blâme, retrait temporaire ou définitif d'agrément), responsabilité civile (art. 755 CO), responsabilité pénale (art. 39 / 40 LSR), perte du droit d'exercer. Pour le cabinet : perte de la mission, dommages-réputationnels graves, ouverture d'une inspection ASR."
+    },
+    {
+      "anchor": "ii-2-2",
+      "title": "II.2.2 Règles d'éthique professionnelle dans le contexte international",
+      "content": "Au niveau international, le référentiel d'éthique est le **Code IESBA** (*International Code of Ethics for Professional Accountants*), édité par l'**IESBA** (*International Ethics Standards Board for Accountants*), un comité indépendant de l'**IFAC** (*International Federation of Accountants*).\n\n**Cinq principes fondamentaux** structurent tout le Code (mnémonique IOCCC) :\n\n1. **Intégrité** — être direct et honnête dans toutes les relations professionnelles.\n2. **Objectivité** — ne pas laisser de biais, conflit d'intérêts ou influence indue compromettre le jugement professionnel.\n3. **Compétence professionnelle et soin requis** — maintenir les connaissances/aptitudes nécessaires, agir avec diligence selon les normes en vigueur.\n4. **Confidentialité** — protéger les informations obtenues dans le cadre des relations professionnelles, sauf obligation légale de les divulguer.\n5. **Comportement professionnel** — respecter les lois et règlements et éviter toute conduite jetant le discrédit sur la profession.\n\n**Cadre conceptuel** appliqué à chaque situation : (a) **identifier** les menaces aux principes fondamentaux, (b) **évaluer** leur niveau (significatif ou non), (c) appliquer des **sauvegardes** pour ramener la menace à un niveau acceptable, (d) si impossible — **refuser** la mission ou s'en retirer.",
+      "comparison": "**Les 5 menaces à l'indépendance** (Code IESBA — à connaître absolument) :\n\n| Menace | Description | Exemple Staff 1 |\n|---|---|---|\n| **Intérêt personnel** | Bénéfice financier ou autre de l'auditeur | Actions du client détenues par l'auditeur |\n| **Auto-révision** (*self-review*) | Évaluer son propre travail | Cabinet a tenu la compta du client puis l'audite |\n| **Représentation** (*advocacy*) | Défendre la position du client | Aider le client en litige fiscal |\n| **Familiarité** | Relation longue ou proche compromettant le scepticisme | 10 ans sur le même client, ami du CFO |\n| **Intimidation** | Pression du client (économique, hiérarchique, menace) | Client menace de changer d'auditeur si réserve |",
+      "info": "**Sauvegardes (*safeguards*)** typiques : rotation du responsable de mandat (cas familiarité), équipes séparées pour conseil vs audit (cas auto-révision), revue indépendante (*EQR* — Engagement Quality Reviewer, voir [ISQM-CH 2](02_publications_pro.json#ii-3-2-3)), refus ou retrait de la mission si impossible de neutraliser."
+    },
+    {
+      "anchor": "ii-2-3",
+      "title": "II.2.3 Indépendance — vue d'ensemble",
+      "content": "L'**indépendance** est *la* règle déontologique majeure de l'audit. Elle se décline en deux dimensions complémentaires :\n\n- **Indépendance d'esprit** (*independence of mind*) — état mental qui permet d'exprimer une opinion sans être influencé. C'est l'attitude réelle, interne.\n- **Indépendance d'apparence** (*independence in appearance*) — éviter les faits et circonstances **qui amèneraient un tiers raisonnable et informé à conclure que l'indépendance a été compromise**. C'est la perception externe.\n\nLes deux doivent être simultanément satisfaites. Une indépendance d'esprit parfaite ne suffit pas si l'apparence est compromise — le public ne peut pas lire dans la tête de l'auditeur. Inversement, une apparence neutre sans indépendance d'esprit réelle est de la mauvaise foi.\n\nLe régime suisse distingue **deux niveaux** selon le type de contrôle (CO 728 pour ordinaire, CO 729 pour restreint), traités dans les sections suivantes.",
+      "key_point": "**Double test à appliquer systématiquement** :\n1. Suis-je *réellement* indépendant (état d'esprit) ?\n2. Un *tiers raisonnable* informé conclurait-il que je suis indépendant (apparence) ?\n\nSi la réponse n'est pas un OUI clair aux deux questions, **applique une sauvegarde ou refuse la mission**.",
+      "tip": "Le **test du tiers raisonnable** est la formulation EXPERTsuisse + IESBA. Imagine que tu expliques la situation à un journaliste de la NZZ ou du Temps : trouverait-il cela acceptable ? Si tu hésites, c'est probablement non."
+    },
+    {
+      "anchor": "ii-2-3-1",
+      "title": "II.2.3.1 Indépendance en général",
+      "content": "Le **principe d'indépendance** s'applique à toute mission d'assurance, mais avec des modulations selon la nature et le risque. Trois cercles concentriques en pratique :\n\n1. **L'auditeur lui-même** — la personne physique chargée de la mission ne doit avoir aucun lien financier, familial ou professionnel compromettant avec le client (intérêts financiers, prêts, créances, parents proches dans les organes du client, ex-emploi récent chez le client).\n2. **L'équipe de mission** (*audit team*) — ces règles s'étendent à tous les membres de l'équipe, y compris Staff 1, seniors, managers et associé.\n3. **Le cabinet (et le réseau)** — l'entreprise de révision elle-même doit être indépendante, ainsi que les entités du même réseau (pour les Big Four, c'est crucial : EY Global = un seul réseau).\n\n**Cercle de personnes concernées** (*close family / immediate family*) — règles strictes pour conjoint, partenaire enregistré, enfants à charge ; règles plus souples pour autres parents (parents, frères/sœurs, enfants adultes indépendants). Chez EY tu déclares annuellement tes investissements ET ceux de ton conjoint(e)/partenaire.",
+      "warning": "**Piège classique** : penser que l'indépendance se résume à « ne pas avoir d'actions du client ». **Faux**. Couvre aussi : prêts, créances, garanties, fonctions actuelles ou passées chez le client (cooling-off period), cadeaux/avantages d'une certaine valeur, liens familiaux, conflits d'intérêts personnels.",
+      "example": "**Cas Staff 1** : ta sœur travaille comme contrôleuse de gestion senior chez Holcim, qu'EY audite. Conflit potentiel — il faut le déclarer à l'**Independence office** d'EY. Selon la sensibilité du poste de ta sœur et ton rôle dans l'audit (Staff 1 sur un cycle non lié à elle), des sauvegardes seront mises en place (toi exclu de tout test lié à son périmètre)."
+    },
+    {
+      "anchor": "ii-2-3-2",
+      "title": "II.2.3.2 Indépendance lors du contrôle ordinaire (art. 728 CO)",
+      "content": "L'**art. 728 CO** est l'article central de l'indépendance en Suisse — règles **strictes** pour le contrôle ordinaire.\n\n**II.2.3.2.1 Principe (al. 1)** — l'organe de révision doit être indépendant et former son appréciation en toute objectivité ; l'**apparence** d'indépendance ne doit pas être compromise.\n\n**II.2.3.2.2 Cas incompatibles (al. 2)** — liste légale de situations qui excluent ipso facto l'indépendance. Notamment :\n- Appartenance au CA, autre fonction décisionnelle ou rapport de travail avec la société auditée.\n- Participation directe ou participation importante indirecte au capital du client, créance ou dette importante envers lui.\n- Relation étroite avec un membre du CA, une autre personne ayant une fonction décisionnelle, ou un actionnaire important.\n- Collaboration à la **tenue de la comptabilité** ou prestation de services qui présentent un **risque** d'avoir à contrôler son propre travail.\n- Acceptation d'un mandat qui entraîne une **dépendance économique**.\n- Conclusion d'un contrat à conditions non conformes au marché ou réception d'avantages personnels.\n\n**II.2.3.2.3 Cercle de personnes concernées (al. 3)** — les règles d'indépendance s'appliquent aussi aux personnes qui dirigent la révision, aux autres personnes participant à l'audit, et au réseau auquel l'entreprise de révision appartient.",
+      "legal_quote": "**art. 728 al. 2 ch. 4 CO — Staff 1 reformulé.** L'indépendance n'est notamment pas garantie lorsque l'organe de révision (ou ses membres) **collabore à la tenue de la comptabilité** ou fournit d'autres prestations qui présentent le **risque** de devoir contrôler son propre travail. *(Source : Fedlex RS 220 — paraphrasé pour Staff 1.)*",
+      "warning": "**Règle « pas de tenue de compta + audit » en contrôle ordinaire** : c'est l'application directe du risque d'**auto-révision** (*self-review*). Si EY tient la comptabilité d'un client, EY ne peut pas être son OR en contrôle ordinaire. C'est pour cela que les Big Four ont une **séparation stricte audit / advisory** sur les clients audités."
+    },
+    {
+      "anchor": "ii-2-3-3",
+      "title": "II.2.3.3 Indépendance lors du contrôle restreint (art. 729 CO)",
+      "content": "L'**art. 729 CO** prévoit des règles d'indépendance pour le contrôle restreint qui sont, dans l'ensemble, **plus souples** que celles du contrôle ordinaire.\n\n**Principe** identique (al. 1) : l'OR doit être indépendant et former son jugement en toute objectivité.\n\n**Différence cruciale** : la **collaboration à la tenue de la comptabilité** et la fourniture d'**autres prestations** au client soumis à un contrôle restreint sont **autorisées** (al. 2) — à condition que des mesures organisationnelles et personnelles garantissent une exécution **fiable** du contrôle. C'est précisément ce qui permet aux fiduciaires PME suisses de tenir la compta de leurs clients ET d'en effectuer le contrôle restreint.\n\n**Limites quand même** : la dépendance économique (un seul gros client = 90 % du chiffre du cabinet), les liens familiaux étroits avec les organes du client, et les participations importantes restent incompatibles. Et même en contrôle restreint, l'**apparence** d'indépendance doit être préservée.",
+      "comparison": "**Différence-clé ordinaire ↔ restreint** :\n\n- **Contrôle ordinaire (728 CO)** : tenue de comptabilité **interdite** (risque d'auto-révision = non sauvegardable au niveau requis).\n- **Contrôle restreint (729 CO)** : tenue de comptabilité **autorisée** avec sauvegardes organisationnelles (séparation des équipes au sein du cabinet).\n\nC'est *la* spécificité suisse à retenir.",
+      "info": "**Pourquoi cette différence ?** Le contrôle restreint fournit une assurance limitée (et non raisonnable). Le risque d'auto-révision est moins critique parce que le niveau d'assurance attendu est plus bas. Le législateur suisse a fait un arbitrage pragmatique pour permettre aux PME d'avoir un même prestataire (fiduciaire) pour la compta et l'audit, ce qui réduit leurs coûts."
+    },
+    {
+      "anchor": "ii-2-3-4",
+      "title": "II.2.3.4 Comparaison ordinaire vs restreint",
+      "content": "Synthèse du régime d'indépendance suisse, par dimension :",
+      "comparison": "| Dimension | Contrôle ordinaire (art. 728) | Contrôle restreint (art. 729) |\n|---|---|---|\n| **Principe général** | Indépendance d'esprit + d'apparence | Indépendance d'esprit + d'apparence |\n| **Tenue de la comptabilité** | ❌ Interdite | ✅ Autorisée (avec sauvegardes) |\n| **Autres prestations** | ❌ Si risque d'auto-révision | ✅ Avec sauvegardes |\n| **Rotation responsable** | ✅ 7 ans max (730a al. 2) | ❌ Pas d'obligation légale |\n| **Cercle de personnes** | Étendu (équipe + réseau) | Étendu (équipe + réseau) |\n| **Avantages personnels** | ❌ Interdits | ❌ Interdits |\n| **Lien familial étroit** | ❌ Avec organes dirigeants | ❌ Avec organes dirigeants |\n| **Sanctions** | LSR + 755 CO + ASR | LSR + 755 CO + ASR |",
+      "key_point": "**Les deux régimes partagent le même principe**, ne diffèrent que sur l'autorisation de prestations annexes et la rotation. Tout le reste (indépendance d'apparence, cercle de personnes, sanctions) est identique."
+    },
+    {
+      "anchor": "ii-2-3-5",
+      "title": "II.2.3.5 Indépendance et rotation (art. 730a CO)",
+      "content": "La **rotation** est l'une des sauvegardes majeures contre la **menace de familiarité** — un même auditeur sur un même client pendant des années finit par perdre du scepticisme professionnel.\n\n**Règle (art. 730a al. 2 CO, contrôle ordinaire)** :\n- La personne qui **dirige la révision** (signataire responsable, *audit partner*) peut exercer ce mandat pendant **7 ans au plus** pour la même société.\n- Elle peut **reprendre** le même mandat après une interruption de **3 ans** (*cooling-off period*).\n\n**Ce qui rote** : la **personne** qui dirige la révision, pas le cabinet. EY peut rester l'OR de Nestlé pendant 30 ans ; en revanche, le partner signataire EY doit changer tous les 7 ans.\n\n**Ce qui ne rote PAS (en droit suisse)** : le cabinet lui-même. Pas de rotation obligatoire du cabinet en droit suisse (contrairement à certaines juridictions européennes, voir UE règlement 537/2014 qui impose 10 ans pour les entités d'intérêt public).\n\n**Application au contrôle restreint** : pas de règle légale équivalente. La rotation reste une **bonne pratique** professionnelle pour les missions de longue durée mais n'est pas imposée.",
+      "warning": "**Piège terminologique fréquent.** « Rotation » désigne uniquement la **personne dirigeant la révision**, pas l'équipe entière ni le cabinet. Un Staff 1 peut rester sur le même client autant que voulu (il n'est pas le « responsable » au sens 730a). C'est le **partner** qui rote.",
+      "info": "**Initiative ISS / Swisscanto 2025** : certains investisseurs institutionnels suisses (Swisscanto, ISS) poussent pour une rotation **du cabinet** lui-même tous les 10–15 ans, alignée sur le standard UE. La législation suisse n'a pas (encore) suivi, mais c'est un débat actif. Suivre l'actualité ASR.",
+      "tip": "**Calculer la rotation** : compter les exercices, pas les années calendaires. Si le partner signe pour la première fois l'audit de l'exercice 2026, son dernier mandat possible est l'audit de l'exercice 2032 (7 exercices). Puis carence 2033-2035, retour possible sur l'audit 2036."
+    },
+    {
+      "anchor": "demarche",
+      "title": "📋 Synthèse Staff 1 — démarche pratique sur l'éthique",
+      "content": "Réflexes éthiques que tu dois avoir intégrés à la fin de ta première année chez EY :\n\n1. **Acceptance / continuance** : pour chaque nouvelle mission, vérifier (a) que ton cabinet est indépendant du client, (b) que ton équipe n'a aucun conflit, (c) que toi personnellement non plus (déclaration annuelle d'investissements EY).\n2. **Réflexe « tiers raisonnable »** : devant toute situation ambiguë (cadeau, invitation, lien personnel), demande-toi : *un journaliste financier raisonnable trouverait-il cela acceptable ?*\n3. **Escalation** : tu n'es pas seul. En cas de doute, parle à ton senior, au manager, et en dernier ressort à l'**Independence office** d'EY. Mieux vaut signaler tôt qu'enterrer un problème.\n4. **Confidentialité absolue** : tout ce que tu vois en mission reste confidentiel. Pas de discussion en ascenseur, pas de capture d'écran client sur LinkedIn, pas de mention du client par son nom hors équipe.\n5. **Formation continue** : EXPERTsuisse + EY imposent des heures de formation annuelle. C'est une exigence légale (OSRev) — pas négociable.",
+      "key_point": "**Au moindre doute éthique : ARRÊTE et DEMANDE.** Pas d'audit qui mérite ta carrière. Tous les cas remontés tôt se résolvent ; tous les cas enterrés finissent en sanction ASR ou licenciement EY."
+    },
+    {
+      "anchor": "pieges",
+      "title": "🚧 Pièges et points d'attention",
+      "content": "Erreurs et confusions les plus fréquentes sur l'éthique audit suisse :",
+      "warning": "**Confondre rotation du PARTNER et rotation du CABINET.** En Suisse, seul le **partner signataire** rote (7 ans, 730a CO). Le **cabinet** lui-même n'a pas d'obligation de rotation légale. À l'examen, formulation rigoureuse exigée.",
+      "comparison": "**« Compta + audit » : oui en restreint, non en ordinaire.** Piège classique : oublier la différence. CO 728 = interdit pour contrôle ordinaire ; CO 729 = autorisé pour contrôle restreint **avec sauvegardes**.",
+      "tip": "**Indépendance d'apparence ≠ paranoïa, ≠ formalisme.** Le test est : *un tiers raisonnable et informé*. Pas un tiers paranoïaque. Pas non plus une simple coche dans une checklist. Garde ton bon sens, mais documente toujours la réflexion (workpaper).",
+      "key_point": "**5 menaces IESBA + 5 principes IOCCC** : connais les deux listes par cœur. Tout cas éthique se résout en identifiant (a) le principe menacé et (b) la nature de la menace, puis en cherchant la sauvegarde appropriée."
+    }
+  ],
+  "auto_test": [
+    {
+      "q": "Cite les 5 principes fondamentaux du Code IESBA dans l'ordre (mnémonique).",
+      "a": "**IOCCC** : **I**ntégrité · **O**bjectivité · **C**ompétence professionnelle et soin requis · **C**onfidentialité · **C**omportement professionnel."
+    },
+    {
+      "q": "Un cabinet fiduciaire tient la comptabilité d'une PME (8 ETP, en contrôle restreint) ET en effectue le contrôle restreint. Est-ce admissible ?",
+      "a": "**OUI**, à condition de mettre en place des sauvegardes organisationnelles (séparation des équipes, revue indépendante). C'est l'art. 729 al. 2 CO. En contrôle **ordinaire** ce serait **interdit** (art. 728 al. 2 ch. 4 CO — risque d'auto-révision)."
+    },
+    {
+      "q": "Un partner EY a signé l'audit de Geberit pour les exercices 2020 à 2026 (7 exercices). Peut-il signer aussi l'exercice 2027 ?",
+      "a": "**NON**. L'art. 730a al. 2 CO impose une rotation après **7 ans au plus**. Le partner doit céder le mandat à un autre partner et observer une **carence de 3 ans** avant de pouvoir reprendre. Le cabinet EY, lui, peut continuer (la rotation porte sur la personne, pas sur le cabinet)."
+    },
+    {
+      "q": "Quelles sont les 5 menaces à l'indépendance selon le Code IESBA ?",
+      "a": "**Intérêt personnel · Auto-révision · Représentation (*advocacy*) · Familiarité · Intimidation**. Pour chacune, identifier la menace, évaluer son niveau, appliquer une sauvegarde — ou refuser/se retirer si non sauvegardable."
+    },
+    {
+      "q": "Ton conjoint(e) hérite d'actions Nestlé. EY audite Nestlé. Tu es Staff 1 sur l'audit Nestlé. Que faut-il faire ?",
+      "a": "**Déclarer immédiatement** à l'Independence office d'EY. La détention d'actions du client par un membre de l'**immediate family** (conjoint) compromet l'indépendance (intérêt personnel + apparence). Sauvegardes possibles : céder les titres, ou retirer le Staff 1 de l'équipe Nestlé. Ne JAMAIS dissimuler."
+    },
+    {
+      "q": "Indépendance d'esprit vs d'apparence : quelle distinction et pourquoi les deux comptent ?",
+      "a": "**Indépendance d'esprit** = attitude mentale réelle, capacité d'exprimer une opinion sans biais. **Indépendance d'apparence** = ce qu'un tiers raisonnable et informé conclurait. Les deux doivent être simultanément satisfaites : (a) le public ne peut pas lire dans la tête de l'auditeur, donc l'apparence compte ; (b) l'apparence neutre sans indépendance réelle est de la mauvaise foi."
+    }
+  ],
+  "sources": [
+    "Fedlex — RS 220, CO : https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr (vérifié — art. 728 indépendance ordinaire, 729 restreint, 730a rotation 7 ans)",
+    "Fedlex — RS 221.302, LSR (réputation irréprochable, art. 4) : https://www.fedlex.admin.ch/eli/cc/2007/533/fr (vérifié)",
+    "Fedlex — RS 221.302.3, OSRev : https://www.fedlex.admin.ch/eli/cc/2007/534/fr (vérifié)",
+    "IESBA — Code of Ethics for Professional Accountants : https://www.ifac.org/_flysystem/azure-private/publications/files/IESBA-Code-of-Ethics.pdf (Code IESBA — 5 principes fondamentaux, cadre conceptuel des menaces et sauvegardes)",
+    "EXPERTsuisse — Directives d'indépendance (DI), édition en vigueur : à consulter sur expertsuisse.ch (directives professionnelles obligatoires en CH)",
+    "Rotation 730a CO 7 ans + carence 3 ans — confirmé : https://www.droit-bilingue.ch/rs/lex/1911/00/19110009-a730a-fr-en.html",
+    "MSA 2016, Tome « Contrôle ordinaire », Partie II, ch. II.1 et II.2, p. 64 ss — paraphrasé, non reproduit"
+  ],
+  "statut": "✅ Complet — corps développé sur II.1 + II.2 (avec II.2.3 décomposé en 5 sous-sections), sources Fedlex + IESBA + EXPERTsuisse vérifiées, rotation 730a CO vérifiée.",
+  "maj": "2026-05-19"
+}

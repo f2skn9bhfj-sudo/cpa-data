@@ -1,0 +1,211 @@
+/* ═══════════════════════════════════════════════════════════════
+   Audit › Cours MSA — visionneuse de fiches
+   ═══════════════════════════════════════════════════════════════ */
+
+.ac-toggle {
+    display: flex; gap: 8px; margin-bottom: 16px;
+}
+.ac-tg {
+    flex: 1 1 auto;
+    padding: 11px 16px;
+    border-radius: 9px;
+    border: 1px solid transparent;
+    background: var(--bg-tertiary, #1e293b);
+    color: var(--text-secondary, #94a3b8);
+    font-size: 13.5px; font-weight: 600;
+    cursor: pointer; transition: all 0.15s;
+}
+.ac-tg:hover { color: var(--text-bright, #f1f5f9); background: var(--bg-quaternary, #334155); }
+.ac-tg.active {
+    background: #3c1d6e; color: #e9d8fd; border-color: #805ad5;
+}
+body.light-mode .ac-tg { background: #f1f5f9; color: #475569; }
+body.light-mode .ac-tg:hover { background: #e2e8f0; color: #0f172a; }
+body.light-mode .ac-tg.active { background: #f3e8ff; color: #6b21a8; border-color: #a855f7; }
+
+.ac-viewer {
+    background: var(--bg-secondary, #0f172a);
+    border: 1px solid var(--border, #1e293b);
+    border-radius: 12px;
+    padding: 8px 4px;
+    max-height: 72vh;
+    overflow-y: auto;
+}
+body.light-mode .ac-viewer { background: #ffffff; border-color: rgba(15,23,42,0.10); }
+
+.ac-backbar {
+    display: flex; align-items: center; gap: 10px;
+    padding: 6px 10px; margin: 0 0 4px;
+    border-bottom: 1px solid var(--border, #1e293b);
+    background: transparent;
+}
+body.light-mode .ac-backbar { border-color: rgba(15,23,42,0.06); }
+.ac-back {
+    background: transparent; color: var(--text-secondary, #94a3b8);
+    border: 1px solid var(--border, #334155);
+    padding: 4px 10px; border-radius: 6px; font-size: 12px;
+    font-weight: 500; cursor: pointer; transition: all 0.15s;
+}
+.ac-back:hover { color: #c4b5fd; border-color: #805ad5; background: rgba(128,90,213,0.08); }
+body.light-mode .ac-back { color: #475569; border-color: rgba(15,23,42,0.15); }
+body.light-mode .ac-back:hover { color: #7c3aed; border-color: #a855f7; background: rgba(168,85,247,0.06); }
+.ac-crumb { font-size: 11.5px; color: var(--text-secondary, #64748b); font-style: italic; }
+
+/* ── Markdown rendu ── */
+.ac-md {
+    padding: 18px 26px 40px;
+    color: var(--text-primary, #cbd5e1);
+    font-size: 15px; line-height: 1.7;
+    max-width: 980px;
+    margin: 0 auto;
+}
+body.light-mode .ac-md { color: #1e293b; }
+
+.ac-md .ac-h1 {
+    font-size: 25px; font-weight: 700;
+    color: var(--text-bright, #f1f5f9);
+    margin: 4px 0 16px; padding-bottom: 10px;
+    border-bottom: 2px solid #805ad5;
+}
+.ac-md .ac-h2 {
+    font-size: 19px; font-weight: 700;
+    color: var(--text-bright, #f1f5f9);
+    margin: 26px 0 10px; padding-bottom: 6px;
+    border-bottom: 1px solid var(--border, #334155);
+}
+.ac-md .ac-h3 {
+    font-size: 16px; font-weight: 600;
+    color: #c4b5fd; margin: 18px 0 8px;
+}
+.ac-md .ac-h4 {
+    font-size: 14.5px; font-weight: 600;
+    color: var(--text-secondary, #94a3b8); margin: 14px 0 6px;
+}
+body.light-mode .ac-md .ac-h1,
+body.light-mode .ac-md .ac-h2 { color: #0f172a; }
+body.light-mode .ac-md .ac-h3 { color: #7c3aed; }
+
+.ac-md .ac-p { margin: 8px 0; }
+.ac-md .ac-ul, .ac-md .ac-ol { margin: 8px 0 8px 22px; }
+.ac-md .ac-ul li, .ac-md .ac-ol li { margin: 4px 0; }
+.ac-md .ac-ul li.ac-sub { list-style: circle; margin-left: 16px; color: var(--text-secondary, #94a3b8); }
+.ac-md .ac-hr { border: 0; border-top: 1px solid var(--border, #334155); margin: 22px 0; }
+
+.ac-md a { color: #a78bfa; text-decoration: none; border-bottom: 1px dotted #a78bfa; }
+.ac-md a:hover { color: #c4b5fd; border-bottom-style: solid; }
+body.light-mode .ac-md a { color: #7c3aed; border-color: #7c3aed; }
+
+.ac-md code {
+    background: var(--bg-tertiary, #1e293b);
+    color: #c4b5fd;
+    padding: 1px 6px; border-radius: 4px;
+    font-family: 'JetBrains Mono', Consolas, monospace; font-size: 0.9em;
+}
+body.light-mode .ac-md code { background: #f3e8ff; color: #6b21a8; }
+.ac-md .ac-pre {
+    background: #0b1120; border: 1px solid var(--border, #1e293b);
+    border-radius: 8px; padding: 12px 14px; overflow-x: auto; margin: 12px 0;
+}
+.ac-md .ac-pre code { background: none; color: #cbd5e1; padding: 0; }
+body.light-mode .ac-md .ac-pre { background: #f8fafc; }
+body.light-mode .ac-md .ac-pre code { color: #334155; }
+
+/* Citations / encarts */
+.ac-md .ac-quote {
+    margin: 12px 0; padding: 10px 16px;
+    border-left: 3px solid #64748b;
+    background: var(--bg-tertiary, #1e293b);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary, #94a3b8); font-size: 14px;
+}
+.ac-md .ac-quote-warn { border-left-color: #f59e0b; background: rgba(245,158,11,0.08); color: #fbbf24; }
+.ac-md .ac-quote-evol { border-left-color: #3b82f6; background: rgba(59,130,246,0.08); color: #93c5fd; }
+body.light-mode .ac-md .ac-quote { background: #f8fafc; color: #475569; }
+body.light-mode .ac-md .ac-quote-warn { background: #fffbeb; color: #b45309; }
+body.light-mode .ac-md .ac-quote-evol { background: #eff6ff; color: #1d4ed8; }
+
+/* Tables */
+.ac-md .ac-table {
+    border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 13.5px;
+}
+.ac-md .ac-table th, .ac-md .ac-table td {
+    border: 1px solid var(--border, #334155); padding: 7px 10px; text-align: left; vertical-align: top;
+}
+.ac-md .ac-table th { background: var(--bg-tertiary, #1e293b); color: var(--text-bright, #f1f5f9); font-weight: 600; }
+body.light-mode .ac-md .ac-table th { background: #f1f5f9; color: #0f172a; }
+body.light-mode .ac-md .ac-table td, body.light-mode .ac-md .ac-table th { border-color: rgba(15,23,42,0.12); }
+
+/* details / summary (auto-test) */
+.ac-md details {
+    margin: 12px 0; padding: 10px 14px;
+    background: var(--bg-tertiary, #1e293b);
+    border: 1px solid var(--border, #334155); border-radius: 8px;
+}
+.ac-md summary { cursor: pointer; font-weight: 600; color: #c4b5fd; }
+body.light-mode .ac-md details { background: #faf5ff; border-color: #e9d8fd; }
+body.light-mode .ac-md summary { color: #7c3aed; }
+
+@media (max-width: 768px) {
+    .ac-md { padding: 14px 16px 30px; font-size: 15.5px; }
+    .ac-toggle { flex-direction: column; }
+    .ac-viewer { max-height: none; }
+}
+
+/* ── Fiche JSON (DA Modules) : éléments propres au cours ── */
+.ac-statut {
+    margin: 20px 4px 8px; padding: 10px 14px;
+    font-size: 12.5px; font-style: italic;
+    color: var(--text-secondary, #94a3b8);
+    border-top: 1px dashed var(--border, #334155);
+}
+.ac-answers {
+    margin-top: 10px; padding: 10px 14px;
+    background: var(--bg-tertiary, #1e293b);
+    border: 1px solid var(--border, #334155); border-radius: 8px;
+}
+.ac-answers summary { cursor: pointer; font-weight: 600; color: #c4b5fd; }
+body.light-mode .ac-answers { background: #faf5ff; border-color: #e9d8fd; }
+body.light-mode .ac-answers summary { color: #7c3aed; }
+.ac-answer { margin: 10px 0; padding-left: 6px; line-height: 1.65; }
+.ac-md .mod-header-card .mod-hc-meta { font-size: 12.5px; line-height: 1.7; opacity: 0.92; }
+
+/* ── Mode lecture (fiche ouverte) ──
+   On masque toute la chrome de l'onglet Audit pour laisser respirer le cours :
+   1. le bandeau d'en-tête du module
+   2. la rangée de sous-onglets (Canvas / Mission / Seuils / NAS / …)
+   3. la bascule Ordinaire / Restreint (le crumb suffit)
+   On peut revenir au sommaire via le bouton ← Sommaire. */
+/* !important nécessaire : la rangée de sous-onglets est rendue avec un
+   style="display:flex" inline (audit.js _renderAuditSubTabs) qui bat la
+   spécificité d'un sélecteur de classe. */
+.audit-module.ac-reading > :nth-child(-n+2) { display: none !important; }
+.ac-reading .ac-toggle { display: none; }
+.ac-reading .ac-viewer {
+    max-height: 84vh;
+    border: 0;
+    background: transparent;
+}
+
+/* ── Lisibilité paragraphes (DA Modules + bumps confort) ── */
+.ac-md {
+    font-size: 16px;
+    line-height: 1.78;
+    letter-spacing: 0.003em;
+}
+.ac-md .mod-section { margin: 26px 0; }
+.ac-md .mod-section-text {
+    font-size: 16px;
+    line-height: 1.78;
+    color: var(--text-primary, #d1d5db);
+}
+.ac-md .mod-section-text p { margin: 0 0 14px; }
+.ac-md .mod-section-text p:last-child { margin-bottom: 0; }
+.ac-md .mod-section-text strong { color: var(--text-bright, #f1f5f9); font-weight: 700; }
+body.light-mode .ac-md .mod-section-text { color: #1e293b; }
+body.light-mode .ac-md .mod-section-text strong { color: #0f172a; }
+/* Listes en mod-section-text — un peu plus aérées */
+.ac-md .mod-section-text ul, .ac-md .mod-section-text ol { margin: 8px 0 14px 22px; }
+.ac-md .mod-section-text li { margin-bottom: 6px; }
+/* Italique cohérent */
+.ac-md em { color: #c4b5fd; font-style: italic; }
+body.light-mode .ac-md em { color: #7c3aed; }

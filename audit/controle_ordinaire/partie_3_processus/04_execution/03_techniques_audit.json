@@ -1,0 +1,80 @@
+{
+  "code": "III.4.4",
+  "title": "III.4.4 Techniques d'audit",
+  "category": "Audit — Contrôle ordinaire",
+  "ref_msa": "MSA 2016, Tome « Contrôle ordinaire », Partie III, ch. III.4.4, p. 234 ss (paraphrasé)",
+  "bases_legales": "CO art. 728a (tâches OR)",
+  "normes": "ISA-CH 500 (Audit evidence) · ISA-CH 520 (Analytical procedures) · ISA-CH 230 (Audit documentation)",
+  "niveau": "Staff 1 EY",
+  "summary": "Cette fiche est le **catalogue opérationnel** des techniques d'audit — la « boîte à outils » de l'auditeur. **Techniques pour procédures analytiques** (comparaisons inter-périodes, ratios, budgets, tendances, sectorielles, benchmarking, liens de causalité, modèles prédictifs). **Techniques pour vérifications de détail** (inspection des pièces justificatives, recalcul, vérification de concordance, examen critique, étude de dossiers, demande d'informations, visites sur site, observation). On termine par une **table de mapping** assertion ↔ technique la plus efficace — outil mental à interner.",
+  "mnemonics": "**Choix de technique = (assertion ciblée × force probante recherchée × coût-efficacité)**. Pour assertion **Existence** : inspection / observation / confirmation externe. Pour **Complétude** : tests recherchant ce qui DEVRAIT être là (cut-off, SURL, accumulation de petits). Pour **Valuation** : recalcul, comparaisons, expertise.",
+  "sections": [
+    {
+      "anchor": "iii-4-4-1",
+      "title": "III.4.4.1 Techniques pour procédures analytiques",
+      "content": "Le catalogue des **8 techniques analytiques** que tu vas appliquer en mission, avec leur usage typique :\n\n**1. Comparaisons avec les années antérieures** — le plus basique : N vs N-1 sur chaque poste matériel. Permet d'identifier les variations inattendues. Limites : un poste manipulé de manière constante sur plusieurs exercices reste invisible (auto-corroboration).\n\n**2. Analyse des ratios** — marge brute, taux de rotation des stocks, jours de créances (DSO), jours de dettes (DPO), ratio de couverture des intérêts, ratio fonds de roulement. Puissant pour identifier les inflexions structurelles. À comparer historiquement *et* sectoriellement.\n\n**3. Comparaisons budgétaires** — réel vs budget de l'entité. Si le client a un processus budgétaire mature, c'est un référentiel utile. Limite : un budget « ajusté » au réel n'apporte rien.\n\n**4. Analyse des états financiers** — lecture critique de la cohérence interne des EF (ex. les amortissements vs les VC immobilisations, les charges d'intérêts vs la dette moyenne, etc.).\n\n**5. Contrôle des liens de causalité** — vérifier les liens attendus entre comptes : masse salariale ↔ effectifs ↔ heures travaillées ↔ charges sociales. Si la masse salariale augmente de 10 % sans variation d'effectif ni de salaire moyen, anomalie potentielle.\n\n**6. Analyse des tendances** — observation sur plusieurs exercices (3-5 ans typiquement). Identifie les ruptures de tendance (passage de croissance à stagnation, marge en érosion, etc.).\n\n**7. Comparaisons sectorielles** — performance du client vs concurrents, vs moyenne de marché. Disponible via bases de données financières (capital markets, Bloomberg, EY internal benchmarking).\n\n**8. Benchmarking et modèles prédictifs** — formules construites à partir de variables indépendantes pour calculer un attendu précis (ex. *charges intérêts = dette moyenne × taux moyen*). Très puissant quand on a les données fiables.",
+      "key_point": "**Force probante variable selon la précision de l'attendu.** Un attendu vague (« proche de l'an dernier ») = faible force probante. Un attendu calculé via modèle prédictif à partir de variables indépendantes = forte force probante. **Investir dans la qualité de l'attendu** = audit plus efficient.",
+      "example": "**Cas pratique** — tester les charges d'intérêts annuelles d'un client. **Approche faible** : comparer N vs N-1 ; si N = 1 250 et N-1 = 1 200, on dit « cohérent ». **Approche forte** : construire l'attendu = (dette moyenne pondérée du portefeuille × taux moyen pondéré) × 12 mois ; si l'attendu est 1 230 et le réel 1 250, écart 20 = OK. Si l'attendu est 1 230 et le réel 1 600, écart 370 → enquête."
+    },
+    {
+      "anchor": "iii-4-4-2",
+      "title": "III.4.4.2 Techniques pour vérifications de détail",
+      "content": "Le catalogue des **6 techniques principales** pour les vérifications de détail :\n\n**1. Vérification des pièces justificatives** (*inspection of documents*) — examiner les contrats, factures, bons de commande/livraison/réception, PV, relevés bancaires. Force probante variable selon la source : pièce **externe** (facture fournisseur, relevé bancaire) > pièce **interne** (note de service, mémo). Tracking de la pièce de bout en bout (*tracing*) ou de la comptabilisation vers la pièce (*vouching*).\n\n**2. Contrôle arithmétique** (*re-performance / recalculation*) — refaire les calculs : amortissements, impôts différés, provisions, intérêts courus, parités. Souvent automatisable via Excel ou EY Helix. Force probante très élevée (élément probant créé par l'auditeur lui-même).\n\n**3. Vérification de la concordance et des reports** — s'assurer que les montants sont cohérents entre documents : (a) grand livre ↔ balance ↔ EF ; (b) tableau de variation immo ↔ bilan ↔ annexe ; (c) états financiers individuels ↔ reporting groupe. Procédure simple mais essentielle pour la cohérence finale.\n\n**4. Examen critique** (*critical review*) — lecture en profondeur des documents avec scepticisme : PV CA/AG, contrats matériels, rapports d'audit interne, lettres d'avocats. Recherche d'éléments incohérents, signaux faibles, engagements off-balance. Procédure **transversale** sur tous les cycles.\n\n**5. Étude de dossiers** (*file review*) — examen complet d'un dossier client (ex. un litige, un projet d'investissement, un contrat de leasing) pour comprendre la transaction et ses implications comptables. Souvent nécessaire pour les estimations complexes ou les transactions inhabituelles.\n\n**6. Demande d'informations + visites sur site + observation** — *inquiry, site visit, observation*. Posées au client (direction, comptables, opérationnels). **Jamais suffisantes seules** — toujours combiner à une procédure produisant un élément probant indépendant (inspection, confirmation, recalcul).",
+      "info": "**Tracing vs vouching** — deux directions de test :\n- **Tracing** (de la source à la comptabilisation) — sélectionner une transaction au début du processus (ex. un bon de réception) et la suivre jusqu'à la comptabilisation. Cible l'assertion **complétude**.\n- **Vouching** (de la comptabilisation à la source) — sélectionner une écriture comptable et remonter aux pièces justificatives. Cible l'assertion **existence / occurrence**.\n\nÀ utiliser selon l'assertion ciblée. C'est la grammaire de base du testing d'audit.",
+      "warning": "**Inquiry alone is never enough.** Une réponse orale du client n'est jamais un élément probant suffisant pour un montant matériel. Toujours coupler à inspection / re-performance / confirmation. C'est l'erreur la plus fréquente des débutants — la corriger dès la première mission."
+    },
+    {
+      "anchor": "iii-4-4-3",
+      "title": "Synthèse — choisir la technique selon l'assertion",
+      "content": "L'auditeur efficient ne choisit pas une technique au hasard : il **part de l'assertion à couvrir**, puis sélectionne la technique la plus efficace.\n\n**Mapping assertion ↔ techniques privilégiées** :",
+      "comparison": "| Assertion | Techniques privilégiées | Exemple concret |\n|---|---|---|\n| **Existence** (l'actif/passif existe) | Observation physique · Confirmation externe · Inspection | Stocks (observation), créances (confirm), immo (inspection) |\n| **Rights and obligations** | Inspection de titres / contrats · Confirmation externe (banque, custodian) | Propriété de l'immo (acte authentique), titres (custody) |\n| **Completeness** (rien d'omis) | Recherche dettes non comptabilisées (SURL) · Cut-off · Tracing · Analytiques avec attendu solide | Dettes (SURL post-clôture), revenue (cut-off), masse salariale (tracing du système RH) |\n| **Accuracy / valuation / allocation** | Recalcul · Inspection de l'évidence d'évaluation · Confirmation · Expert (estimations) | Amortissements (recalcul), provisions (inspection des bases + recalcul), instruments financiers (expert) |\n| **Cut-off** (bon exercice) | Tests sur opérations à cheval (3-5 jours avant/après clôture) · Examen pièces post-clôture | Ventes décembre/janvier, factures fournisseurs décembre/janvier |\n| **Classification / presentation** | Examen critique · Vérification de concordance · Comparaison aux normes | Reclassements bilan, mentions annexes, présentation des dettes courantes vs LT |\n| **Occurrence** (transaction réelle) | Vouching · Inspection externe (facture client, bon de livraison signé) | Revenue (vouching aux contrats + livraisons) |",
+      "key_point": "**Toute procédure se justifie par l'assertion qu'elle couvre.** Workpaper sans assertion explicite = workpaper retoqué en review. Réflexe : *« cette procédure répond à quelle assertion ? »* — toujours la première question en planning et en review.",
+      "info": "**Combinaisons puissantes** :\n- *Existence + Valuation* sur les créances clients = confirmation externe (couvre existence) + revue de la collectabilité post-clôture (couvre valuation).\n- *Existence + Cut-off* sur les stocks = observation au 31.12 + identification des derniers bons d'expédition/réception.\n- *Completeness + Valuation* sur les dettes = SURL + recalcul des provisions à partir des bases."
+    },
+    {
+      "anchor": "demarche",
+      "title": "📋 Synthèse Staff 1 — démarche pratique sur les techniques",
+      "content": "Comment choisir et combiner les techniques en pratique :\n\n1. **Pars de l'assertion** (pas du compte). Pour un poste *Créances clients* matériel, les assertions à couvrir sont : Existence, Valuation (collectabilité), Cut-off (rattachement à l'exercice). Trois assertions → trois (familles de) procédures.\n2. **Choisis la technique la plus efficace** pour chaque assertion (cf. table III.4.4.3 ci-dessus).\n3. **Évalue le rapport force probante / coût-effort**. Une confirmation externe positive est puissante mais lourde ; une analytique sur le DSO est rapide mais moins forte. Combiner selon le risque évalué.\n4. **Combine les techniques** quand pertinent — une procédure ne couvre rarement qu'une assertion. Par exemple : *vouching* d'une facture client → couvre Existence, Occurrence, Accuracy.\n5. **Documente le purpose** dans le workpaper : *« This procedure addresses assertion [X] for account [Y] under risk [Z] »*. Le reviewer cherche ces tags.",
+      "key_point": "**Choix de technique = choix stratégique, pas réflexe.** Les meilleurs Staff 1 sont ceux qui peuvent expliquer *pourquoi* une procédure et pas une autre. La technique se choisit, ne se subit pas."
+    },
+    {
+      "anchor": "pieges",
+      "title": "🚧 Pièges et points d'attention",
+      "content": "Erreurs et confusions fréquentes sur le choix de technique :",
+      "warning": "**Inquiry uniquement.** L'erreur la plus fréquente des débutants : se contenter d'une réponse orale du client. Toujours coupler à une procédure produisant un élément probant indépendant (inspection, confirmation, recalcul).",
+      "comparison": "**Tracing vs vouching — direction = assertion**. Tracing (source → compta) couvre **complétude**. Vouching (compta → source) couvre **existence / occurrence**. Ne JAMAIS confondre — c'est la grammaire de base du testing d'audit, examen comme review EY.",
+      "tip": "**Recalcul automatisable** — pour amortissements, intérêts, parités, prends 5 minutes pour formuler un attendu Excel ; tu le réutiliseras chaque année. Investis dans des templates personnels efficaces.",
+      "key_point": "**Pièces externes > pièces internes** en force probante. Confirmation banque (externe) > tableau Excel de la trésorerie client (interne). Inspection facture fournisseur (externe) > mémo interne du DAF (interne). Toujours privilégier l'évidence externe quand disponible."
+    }
+  ],
+  "auto_test": [
+    {
+      "q": "Quelle technique privilégier pour tester l'assertion d'EXISTENCE des stocks ?",
+      "a": "**Observation physique de l'inventaire** (ISA-CH 501) — assister à la prise d'inventaire, effectuer des comptages de test bidirectionnels (listing-to-floor et floor-to-listing). Complétée éventuellement par confirmation externe pour les stocks détenus chez des tiers."
+    },
+    {
+      "q": "Quelle est la différence entre tracing et vouching, et quelle assertion chacun cible ?",
+      "a": "**Tracing** = de la **source** (bon de livraison, facture) **vers la comptabilisation** (grand livre) — cible l'assertion **complétude** (« rien d'omis »). **Vouching** = de la **comptabilisation** vers la **source** — cible l'assertion **existence / occurrence** (« la transaction est réelle »). La direction du test détermine l'assertion couverte."
+    },
+    {
+      "q": "Pour la masse salariale, quelle technique analytique est particulièrement puissante ?",
+      "a": "Le **contrôle des liens de causalité** : masse salariale = effectifs moyens × salaire moyen + charges sociales attendues. Si l'un des composants évolue, l'autre doit suivre. Une variation de la masse salariale isolée (sans variation d'effectif ni de taux) est une anomalie potentielle à enquêter. C'est plus puissant qu'une simple comparaison N vs N-1."
+    },
+    {
+      "q": "Un client te dit « tout va bien, on a tout comptabilisé ». Est-ce un élément probant suffisant pour conclure sur la complétude des dettes ?",
+      "a": "**Non, jamais.** L'inquiry seule n'est pas un élément probant suffisant (ISA-CH 500). Pour l'assertion *complétude* sur les dettes, il faut des procédures indépendantes : **SURL** (examen des paiements et factures post-clôture), **confirmations externes** auprès des fournisseurs matériels, **revue des contrats** pour engagements potentiels, **analyses analytiques** comparant les niveaux de dettes aux volumes d'activité."
+    },
+    {
+      "q": "Force probante : pièce externe vs interne — pourquoi cette hiérarchie ?",
+      "a": "Une pièce **externe** (facture fournisseur, relevé bancaire, confirmation tiers) est créée par une partie **indépendante** du client — elle n'a pas été manipulée par le management. Une pièce **interne** (mémo, tableau Excel client, PV) peut avoir été préparée pour induire l'auditeur en erreur. **Hiérarchie** : externe en provenance directe (confirmation) > externe en possession du client (facture) > interne client. ISA-CH 500."
+    }
+  ],
+  "sources": [
+    "ISA-CH 500 — Audit evidence · ISA-CH 520 — Analytical procedures · ISA-CH 230 — Audit documentation — NA-CH 2022 EXPERTsuisse https://expertsuisse.ch/fr-ch/normes-suisses-daudit-des-etats-financiers-na-ch",
+    "Assertions d'audit (ISA-CH 315 Revised) : 6 assertions pour soldes / classes de transactions",
+    "Fedlex — RS 220, CO art. 728a : https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr",
+    "MSA 2016, Tome « Contrôle ordinaire », Partie III, ch. III.4.4, p. 234 ss — paraphrasé, non reproduit"
+  ],
+  "statut": "✅ Complet — corps développé : 8 techniques analytiques + 6 techniques de détail + table de mapping assertion ↔ technique + 2 closing pédagogiques, sources EXPERTsuisse vérifiées.",
+  "maj": "2026-05-19"
+}

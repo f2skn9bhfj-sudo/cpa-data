@@ -1,0 +1,88 @@
+{
+  "code": "I.1",
+  "title": "I.1 Tour d'horizon",
+  "category": "Audit — Contrôle ordinaire",
+  "ref_msa": "MSA 2016, Tome « Contrôle ordinaire », Partie I, ch. I.1, p. 2 ss (paraphrasé)",
+  "bases_legales": "art. 727 et 727a CO (RS 220) · LSR (RS 221.302)",
+  "normes": "NA-CH 2022 (ISA-CH 200–720, NAS-CH 890) · ISQM-CH 1 & 2",
+  "niveau": "Staff 1 EY",
+  "summary": "Le **contrôle ordinaire** est le type d'audit suisse le plus poussé : un examen **indépendant** des comptes annuels (et, le cas échéant, des comptes de groupe) destiné à exprimer une **opinion d'audit** offrant une **assurance raisonnable** que les états financiers ne comportent pas d'anomalie significative. Ce tour d'horizon installe le vocabulaire et les distinctions que tu utiliseras chaque jour chez EY : niveau d'assurance, approche par les risques, rôle de chaque partie prenante, et le fameux *expectation gap*.",
+  "mnemonics": "**A-R-O** : **A**ssurance raisonnable (≠ absolue) · **R**isk-based (l'effort suit le risque) · **O**pinion (le livrable final que tout workpaper doit étayer).",
+  "sections": [
+    {
+      "anchor": "i-1-1",
+      "title": "I.1.1 Définition de l'audit",
+      "content": "Un **audit** est l'examen **indépendant** et systématique des états financiers d'une entité, mené selon des normes professionnelles, en vue d'exprimer une **opinion** sur le fait que ces états donnent ou non une image fidèle de la situation, conformément au référentiel comptable applicable.\n\nEn Suisse, le référentiel de base est le **droit comptable du CO** (art. 957 ss). L'entité peut aussi appliquer un référentiel reconnu (Swiss GAAP RPC, IFRS) : c'est lui qui sert de « mètre-étalon » à l'opinion.\n\n**I.1.1.1 Objectifs et objet** — l'objet est l'ensemble des **états financiers** (comptes annuels, et le cas échéant comptes consolidés) ; l'objectif est l'**opinion d'audit** sur leur conformité.\n\n**I.1.1.2 Délimitation** — un audit n'est ni une revue (assurance limitée), ni une procédure convenue, ni une compilation, ni un conseil. Chaque type de mission a son propre référentiel de normes et son propre niveau d'assurance.\n\n**I.1.1.3 Assurance limitée vs assurance raisonnable** — c'est LA distinction-clé. L'audit ordinaire vise l'**assurance raisonnable** (*reasonable assurance*) : un degré de confiance **élevé mais non absolu**. La revue (et le contrôle restreint) visent une **assurance limitée** : un degré modéré, formulé négativement.",
+      "key_point": "**Le contrôle ordinaire ne garantit pas l'absence d'erreur à 100 %.** L'auditeur fournit une assurance *raisonnable* — c'est-à-dire élevée, mais **intrinsèquement limitée** par les sondages, le jugement professionnel et la possibilité de fraudes dissimulées par collusion. Promettre une « garantie » est une faute professionnelle.",
+      "info": "« Assurance raisonnable » est un concept normatif (≈ ISA 200 / NA-CH). C'est le niveau **le plus élevé** qu'un audit puisse offrir, mais il reste limité. À l'oral EY, sois précis : « assurance raisonnable » ≠ « certitude »."
+    },
+    {
+      "anchor": "i-1-2",
+      "title": "I.1.2 Dispositions légales",
+      "content": "Hiérarchie du droit applicable, du général au spécifique :\n\n- **CO (RS 220)** — fixe l'**obligation de révision** et ses modalités. Deux articles centraux à connaître par cœur :\n  - **art. 727 CO** : impose le **contrôle ordinaire** aux sociétés ouvertes au public, à celles qui dépassent les seuils légaux sur deux exercices, et à celles tenues d'établir des comptes consolidés. Le contrôle ordinaire est **aussi** déclenché si des actionnaires représentant au moins **10 %** du capital-actions le demandent (*opting-up*).\n  - **art. 727a CO** : prévoit le **contrôle restreint** pour les sociétés non soumises au contrôle ordinaire, avec une possibilité d'y renoncer (*opting-out*) aux conditions légales.\n- **LSR (RS 221.302)** — régit l'**agrément** des réviseurs / experts-réviseurs et la **surveillance** de la profession par l'**ASR** (Autorité fédérale de surveillance en matière de révision). Détail en fiche I.2.\n- **OSRev (RS 221.302.3)** — ordonnance d'application de la LSR (détails techniques de l'agrément).",
+      "legal_quote": "**art. 727 CO — Staff 1 reformulé.** Sont soumises au contrôle ordinaire : (a) les sociétés ouvertes au public ; (b) les sociétés dépassant deux des trois seuils (total du bilan, chiffre d'affaires, effectif) sur deux exercices consécutifs ; (c) les sociétés tenues d'établir des comptes consolidés. Le contrôle ordinaire peut **en outre** être exigé par des actionnaires détenant ≥ 10 % du capital. *Texte officiel sur Fedlex (RS 220) — non reproduit ici, paraphrasé pour le niveau Staff 1.*",
+      "warning": "📅 **Nouveau droit de la SA (1ᵉʳ janvier 2023).** Le MSA 2016 cite l'ancien régime des art. 725 ss CO (perte de capital / surendettement). Ces dispositions ont été restructurées en **art. 725 / 725a / 725b CO**. Toute fiche sur ces thèmes (III.4.13) doit être rédigée sur le **nouveau droit vérifié Fedlex**, pas paraphrasée du MSA."
+    },
+    {
+      "anchor": "i-1-3",
+      "title": "I.1.3 Règles de la profession",
+      "content": "Au-dessus de la loi viennent les **normes professionnelles** qui détaillent la manière de conduire un audit. Édition en vigueur en 2026 :\n\n- **NA-CH 2022 (Normes suisses d'audit des états financiers)** — éditées par EXPERTsuisse, alignées sur les **ISA** d'octobre 2018 (avec les projets *Auditor Reporting*, *Disclosure*, *NOCLAR* et l'ISA 540 *Revised* intégrés). Applicable aux exercices clos à partir du 15.12.2022. Nomenclature : **ISA-CH 200 à ISA-CH 720** pour les normes d'audit, **NAS-CH 890** pour la norme spécifiquement suisse.\n- **ISQM-CH 1 et 2** — Normes suisses de **gestion de la qualité** (édition 2022). Elles ont remplacé l'ancienne NCQ 1 / ISQC-CH 1 et imposent un système plus dynamique fondé sur l'évaluation des risques au niveau cabinet (ISQM-CH 1) et au niveau mission (ISQM-CH 2).\n- **Recommandations d'audit (RA)** — complètent les normes sur des points spécifiques.\n- **NCR 2022** — Norme suisse relative au contrôle restreint.\n- **ISA** (*International Standards on Auditing*, IAASB) — référence internationale dont NA-CH s'inspire directement.",
+      "info": "📅 **Évolution depuis MSA 2016.** Le MSA 2016 s'appuie sur les NAS édition 2013 et cite la **NCQ 1**. Aujourd'hui : NA-CH 2022 (ISA-CH / NAS-CH) et **ISQM-CH 1 et 2** ont pris le relais. Quand tu lis le MSA 2016, lis « NAS XYZ » comme « ISA-CH XYZ » dans 95 % des cas (mêmes principes, numérotation alignée).",
+      "tip": "À l'examen comme chez EY, l'ordre à citer : (1) base **légale** (CO + LSR), (2) **norme professionnelle** (NA-CH / ISA-CH / ISQM-CH), (3) **guidance interne** (méthodologie EY). Toujours dans cet ordre."
+    },
+    {
+      "anchor": "i-1-4",
+      "title": "I.1.4 Parties prenantes",
+      "content": "Le contrôle ordinaire met en relation des acteurs aux responsabilités **distinctes** — les confondre est une erreur classique en review.\n\n- **Assemblée générale (AG)** : **élit** l'organe de révision et approuve les comptes.\n- **Conseil d'administration (CA)** : **répond** de l'établissement des comptes annuels et du rapport de gestion. C'est sa responsabilité, pas celle de l'auditeur.\n- **Direction** : **prépare** concrètement les états financiers et tient la comptabilité.\n- **Organe de révision (OR)** : **audite** de manière indépendante et **émet l'opinion**. Il est un **organe de la société**, pas un simple prestataire.\n- **Actionnaires, créanciers, fisc, public** : **utilisateurs** des comptes audités ; ce sont eux que l'audit protège en renforçant la fiabilité de l'information.",
+      "key_point": "**Règle d'or :** le **CA est responsable des comptes** ; l'**OR est responsable de l'opinion** sur ces comptes. L'auditeur n'« établit » jamais les comptes du client — ce serait une atteinte à son indépendance (voir fiche Éthique).",
+      "example": "**Cas standard.** PME industrielle SA dépassant deux des trois seuils de l'art. 727 CO sur deux exercices → contrôle ordinaire obligatoire. L'AG élit EY comme OR ; le CA arrête les comptes ; la direction les prépare ; EY audite et remet (a) un **rapport succinct à l'AG** avec l'opinion, (b) un **rapport détaillé au CA**. Aucun chiffre inventé : seule la répartition des rôles est illustrée — identique sur toute mission de contrôle ordinaire."
+    },
+    {
+      "anchor": "i-1-5",
+      "title": "I.1.5 Décalage entre les attentes et la réalité (expectation gap)",
+      "content": "L'**expectation gap** est l'écart entre ce que le public **attend** de l'audit et ce que l'audit **fournit** réellement.\n\nLe public croit souvent que l'auditeur :\n- garantit l'exactitude des comptes au franc près ;\n- détecte **toutes** les fraudes ;\n- est responsable de l'établissement des comptes.\n\nEn réalité, l'auditeur :\n- exprime une assurance **raisonnable** (élevée, pas absolue) sur les **anomalies significatives** ;\n- évalue le risque de fraude mais ne garantit pas sa détection (surtout si collusion ou complicité de direction) ;\n- n'est pas responsable des comptes — c'est le CA.\n\nSavoir l'expliquer calmement à un client (ou à ton entourage) fait partie du métier dès le premier jour.",
+      "warning": "**Erreur classique débutant :** dire à un client « on a signé, donc tout est bon ». FAUX. La formulation correcte : « nous fournissons une assurance raisonnable sur l'absence d'anomalies *significatives* dans les comptes, sur la base de procédures d'audit ciblées par les risques. »",
+      "tip": "Quand un client te dit « vous garantissez qu'il n'y a aucune fraude ? », ramène toujours en **3 temps** : (1) responsabilité primaire CA/direction pour prévenir et détecter ; (2) rôle de l'auditeur : évaluer le risque de fraude et concevoir des procédures pour détecter les anomalies *significatives* ; (3) limites inhérentes (collusion, falsification sophistiquée) qui empêchent une garantie absolue."
+    },
+    {
+      "anchor": "demarche",
+      "title": "📋 Synthèse Staff 1 — démarche pratique sur une nouvelle mission",
+      "content": "Avant même la planification, ton réflexe « tour d'horizon » sur une nouvelle mission EY :\n\n1. **Identifier le type de mission** : contrôle ordinaire ou restreint ? L'info est dans la **lettre de mission** (*engagement letter*) et au **registre du commerce**.\n2. **Repérer le référentiel comptable** appliqué (CO seul, Swiss GAAP RPC, IFRS) — c'est la base de l'opinion.\n3. **Cartographier les acteurs** (AG, CA, direction, OR, utilisateurs) — savoir qui fait quoi.\n4. **Demander les documents de base en PBC** (*prepared by client*) : comptes annuels N-1, grand livre, PV du CA et de l'AG, organigramme, rapport d'audit N-1.\n5. **Garder l'opinion en ligne de mire** : chaque workpaper doit, in fine, contribuer à l'opinion.",
+      "tip": "**Premier jour sur une mission** : lis la lettre de mission et le rapport d'audit N-1 *avant tout*. En 10 minutes tu auras le type de contrôle, le référentiel, les zones sensibles déjà connues et le wording attendu — gain de temps énorme."
+    },
+    {
+      "anchor": "pieges",
+      "title": "🚧 Pièges et points d'attention",
+      "content": "Les erreurs les plus fréquentes d'un débutant sur ces fondamentaux :",
+      "warning": "**« Audit = garantie zéro erreur »** — FAUX. Assurance *raisonnable*, jamais absolue. C'est précisément l'**expectation gap**.",
+      "comparison": "**Ne pas confondre contrôle ordinaire et restreint** : niveaux d'assurance différents → travaux et rapports différents. **Toujours vérifier le type de mission avant de commencer.**",
+      "tip": "**Citer une référence légale périmée** : depuis le 1ᵉʳ janvier 2023, plusieurs articles du droit de la SA ont changé (notamment art. 725 ss). Réflexe : vérifier la version **en vigueur** sur Fedlex avant de citer un article, jamais de mémoire."
+    }
+  ],
+  "auto_test": [
+    {
+      "q": "Pourquoi parle-t-on d'assurance « raisonnable » et non « absolue » ?",
+      "a": "À cause des **limites inhérentes** de l'audit : recours aux sondages (on ne teste pas 100 % des opérations), part de jugement professionnel, et possibilité qu'une fraude soit dissimulée par collusion. L'auditeur **réduit** le risque à un niveau acceptable, il ne l'élimine pas."
+    },
+    {
+      "q": "Une PME dépasse deux des trois seuils de l'art. 727 CO sur deux exercices. Quel type de contrôle, et qui élit l'organe de révision ?",
+      "a": "**Contrôle ordinaire** (art. 727 CO). L'organe de révision est élu par l'**assemblée générale**. Le **conseil d'administration** reste responsable de l'établissement des comptes ; l'auditeur, lui, est responsable de l'opinion."
+    },
+    {
+      "q": "Un client affirme : « vous signez, donc vous garantissez qu'il n'y a aucune fraude. » Que réponds-tu (notion clé) ?",
+      "a": "On explique l'**expectation gap** : l'audit fournit une assurance *raisonnable* sur l'absence d'anomalies **significatives**, sur la base de sondages et du jugement professionnel. Ce n'est pas une garantie exhaustive anti-fraude — la responsabilité première de prévention/détection de la fraude incombe au CA et à la direction."
+    },
+    {
+      "q": "Quelle est la différence de niveau d'assurance entre contrôle ordinaire et contrôle restreint ?",
+      "a": "Ordinaire = assurance **raisonnable** (élevée), opinion **positive**. Restreint = assurance **limitée** (modérée), conclusion **négative** (« nous n'avons pas relevé d'éléments… »). Cette différence détermine l'étendue des procédures et le modèle de rapport."
+    }
+  ],
+  "sources": [
+    "Fedlex — RS 220, Code des obligations : https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr (vérifié — art. 727 = obligation de révision / contrôle ordinaire ; art. 727a = contrôle restreint)",
+    "Fedlex — RS 221.302, LSR : https://www.fedlex.admin.ch/eli/cc/2007/533/fr (vérifié)",
+    "EXPERTsuisse — NA-CH 2022 (ISA-CH 200–720, NAS-CH 890) + ISQM-CH 1 et 2 : https://expertsuisse.ch/fr-ch/normes-suisses-daudit-des-etats-financiers-na-ch (vérifié — édition 2022 = état des ISA d'octobre 2018 ; applicable aux exercices clos à partir du 15.12.2022)",
+    "MSA 2016, Tome « Contrôle ordinaire », Partie I, ch. I.1, p. 2 ss — paraphrasé, non reproduit"
+  ],
+  "statut": "✅ Complet — corps développé et sourcé : CO + LSR vérifiés Fedlex ; NA-CH 2022 et ISQM-CH 1/2 vérifiés EXPERTsuisse.",
+  "maj": "2026-05-19"
+}

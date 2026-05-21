@@ -378,6 +378,35 @@
             return data || { courses: [] };
         },
 
+        // ── Base de cours Audit (MSA / NCR) ──
+        async get_audit_manifest() {
+            try {
+                const r = await fetch('audit/manifest.json', { cache: 'no-cache' });
+                if (!r.ok) return {};
+                return await r.json();
+            } catch (e) {
+                console.warn('[api-static] get_audit_manifest:', e);
+                return {};
+            }
+        },
+
+        async get_audit_fiche(relPath) {
+            if (!relPath || typeof relPath !== 'string') return null;
+            const safe = relPath.replace(/\\/g, '/').replace(/^\/+/, '');
+            if (safe.includes('..')) return null;
+            try {
+                const r = await fetch('audit/' + safe, { cache: 'no-cache' });
+                if (!r.ok) {
+                    return '# Fiche à rédiger\n\n> 🔴 **Stub** — cette fiche '
+                        + "n'a pas encore été générée.\n\n`" + safe + '`\n';
+                }
+                return await r.text();
+            } catch (e) {
+                console.warn('[api-static] get_audit_fiche:', e);
+                return null;
+            }
+        },
+
         async get_modules() {
             const u = await api.get_unified_modules();
             return (u.modules || []).map(m => ({ id: m.id, code: m.code, name: m.name }));
@@ -957,6 +986,7 @@
 
         async export_norm_pdf() { return { ok: false, error: 'PDF export desktop only' }; },
         async export_lesson_pdf() { return { ok: false, error: 'PDF export desktop only' }; },
+        async export_audit_fiche_pdf() { return { ok: false, error: 'PDF export desktop only' }; },
         async list_audit_templates() { return []; },
         async download_audit_template() { return { ok: false, error: 'Excel export desktop only' }; },
 

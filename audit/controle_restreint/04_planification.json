@@ -1,0 +1,84 @@
+{
+  "code": "NCR.4",
+  "title": "NCR 4 — Planification des contrôles",
+  "category": "Audit — Contrôle restreint",
+  "ref_msa": "Norme suisse relative au contrôle restreint (NCR 2022) — EXPERTsuisse / TREUHAND|SUISSE",
+  "bases_legales": "CO art. 727a · CO art. 729-729c",
+  "normes": "NCR 2022",
+  "niveau": "Staff 1 EY",
+  "summary": "La **planification** en contrôle restreint formalise la stratégie : équipe, calendrier, étendue, opérations prévues. **Allégée** par rapport au contrôle ordinaire mais structurée. Cette fiche couvre les **étapes** de planification, la **stratégie d'audit**, le **programme d'opérations**, et les **outils de coordination**.",
+  "mnemonics": "**Programme d'audit NCR — 4 dimensions ECEC** : **E**quipe (ressources, compétences) · **C**alendrier (jalons, délais) · **E**tendue (procédures par cycle) · **C**oordination (client, équipe, fiduciaire).",
+  "sections": [
+    {
+      "anchor": "ncr-4-1",
+      "title": "NCR.4.1 Stratégie d'audit et plan global",
+      "content": "**Stratégie d'audit** définit l'**approche globale** du contrôle restreint :\n\n1. **Périmètre** : EF à auditer (bilan, P&L, annexe).\n2. **Référentiel** comptable applicable.\n3. **Calendrier** : jalons clés (clôture, observation inventaire si applicable, terrain, rapport).\n4. **Équipe EY** : composition, expériences, allocation par cycle.\n5. **Caractère essentiel** (cf. NCR 5).\n6. **Risques** significatifs identifiés et réponses (cf. NCR 3).\n7. **Recours** à autres professionnels si pertinent (experts, autres réviseurs).\n8. **Communication** avec direction et CA.\n\n**Plan d'audit** (programme détaillé) :\n\nPar cycle / par compte / par procédure :\n- **Objectif** de la procédure.\n- **Risques adressés**.\n- **Type d'opération** : audition / analytique / vérification détaillée.\n- **Étendue** (sélection, période).\n- **Documentation** attendue.\n- **Référent** Staff/Senior.\n\nPlan typique en colonnes :\n\n| Cycle | Risques | Procédures | Étendue | Référent | Date prévue |\n|---|---|---|---|---|---|\n| Trésorerie | Existence, cut-off | Confirmation bque + rapprochement | 100 % comptes | Staff 1 | Janvier |\n| AR | Existence, valuation | Aging + encaissements post-clôture | Top 10 + échantillon | Staff 1 | Janvier |\n| ... | | | | | |\n\n**Coordination client** :\n\n- **Lettre de mission** signée en amont (cf. Annexe 5).\n- **Demande de documents** (PBC list — Provided By Client) envoyée à temps.\n- **Calendrier convenu** avec direction / comptable.\n- **Visites** sur site planifiées.",
+      "key_point": "**Planification = investissement amont rentable.** 1 jour de planification = 3 jours d'exécution efficace. Bon plan = peu de retours, peu de surprise, audit dans les délais. Mauvais plan = improvisation, friction client, dépassements."
+    },
+    {
+      "anchor": "ncr-4-2",
+      "title": "NCR.4.2 Équipe et compétences",
+      "content": "**Composition équipe** typique en contrôle restreint PME :\n\n- **Réviseur agréé responsable** (équivalent partner / associé) : signataire de l'opinion.\n- **Senior** : supervision, coordination terrain.\n- **Staff 1-2** : exécution des procédures.\n- Possible **spécialiste** ponctuel (fiscal, IT) si sujet matériel.\n\n**Compétences requises** :\n\n- **Réviseur agréé** : qualification ASR de base.\n- **Connaissance secteur** du client.\n- **Maîtrise outils** comptables (logiciels client + Excel).\n- **Soft skills** : communication, scepticisme, jugement.\n\n**Différence avec contrôle ordinaire** :\n\n- Pas obligatoirement **expert-réviseur agréé** (sauf opting-up).\n- **EQR** (Engagement Quality Reviewer) **non obligatoire** typiquement.\n- Spécialistes **moins fréquents**.\n\n**Allocation par cycle** :\n\nStaff 1 = typiquement :\n- Trésorerie (procédures relativement simples).\n- Cycle complet d'un poste (AR, AP, ou stocks).\n- Procédures analytiques globales.\n- Documentation.\n\nSenior = :\n- Cycles complexes (revenus, immobilisations, capitaux propres).\n- Estimations (provisions, impairment).\n- Revue Staff.\n\n**Indépendance équipe** :\n\nVérification systématique :\n- Pas de relation personnelle avec direction client.\n- Pas de détention actions client.\n- Conformité CO 729 et politiques internes.\n- Documentation dans le workpaper.",
+      "tip": "**Réviseur agréé suffit pour le contrôle restreint** (vs expert-réviseur agréé pour ordinaire). Voie d'entrée plus accessible pour les jeunes professionnels. Cabinet doit néanmoins être inscrit ASR."
+    },
+    {
+      "anchor": "ncr-4-3",
+      "title": "NCR.4.3 Calendrier et étapes",
+      "content": "**Calendrier type** d'un contrôle restreint clôture 31/12 :\n\n```\nÉTAPE 1 — Pré-clôture (Q4)\n  - Acceptation/continuation mandat\n  - Lettre de mission\n  - Compréhension entité (mise à jour)\n  - Évaluation risques\n  - Planification\n  - PBC list envoyée\n  - Visite préliminaire éventuelle\n\nÉTAPE 2 — Clôture (31/12)\n  - Observation inventaire si stocks matériels\n  - Confirmations bancaires lancées (à recevoir)\n\nÉTAPE 3 — Terrain (Q1 N+1, typiquement février-mars)\n  - Réception PBC\n  - Auditions structurées\n  - Procédures analytiques\n  - Vérifications détaillées\n  - Documentation continue\n\nÉTAPE 4 — Pré-rapport (Q1-Q2 N+1)\n  - Analytiques finales\n  - Lettre d'affirmation direction\n  - Synthèse anomalies (SAD)\n  - Communication direction (closing)\n  - Draft rapport\n\nÉTAPE 5 — Rapport (Q2 N+1, typiquement avril-mai)\n  - Revue manager/associé\n  - Émission rapport\n  - Présentation AG\n  - Archivage dossier\n```\n\n**Délais réglementaires** :\n\n- **AG annuelle** : dans les 6 mois suivant clôture (CO 699 al. 2). Donc rapport audit avant.\n- **Conservation** : 10 ans (CO 730c).\n\n**Optimisation calendrier** :\n\n- Demande PBC anticipée (avant clôture pour pièces continues).\n- Visite pré-clôture pour observation inventaire (si applicable).\n- Confirmation bancaire lancée fin décembre (délai 4-6 semaines).\n- Terrain dès que comptes pré-finalisés disponibles.\n\n**Coordination avec fiduciaire si client externalisé** :\n\nBeaucoup de PME suisses ont leur compta tenue par un **fiduciaire externe** (différent de l'auditeur). Coordination :\n- Demande de fichiers (FEC, balance, sub-ledgers) via fiduciaire.\n- Calendrier d'élaboration des EF.\n- Communication efficace pour éviter délais.",
+      "info": "**AG annuelle dans les 6 mois suivant clôture** (CO 699 al. 2). Pour clôture 31/12 → AG avant 30 juin. Donc rapport d'audit doit être prêt typique mai. Calendrier serré, planification anticipée essentielle. Sociétés cotées : encore plus tôt (souvent mars-avril)."
+    },
+    {
+      "anchor": "ncr-4-4",
+      "title": "NCR.4.4 Documentation du plan et adaptation continue",
+      "content": "**Documentation du plan d'audit** :\n\nWorkpaper \"plan d'audit\" structuré :\n- Description entité.\n- Évaluation risques (cf. NCR 3).\n- Caractère essentiel (cf. NCR 5).\n- Stratégie générale.\n- Programme détaillé par cycle.\n- Équipe et responsabilités.\n- Calendrier détaillé.\n- Documentation attendue.\n- Communications planifiées.\n\n**Adaptation continue** :\n\nLe plan n'est pas figé. Adaptation si :\n- **Nouveaux risques** identifiés en cours d'audit.\n- **Anomalies** majeures détectées.\n- **Événements** post-clôture significatifs.\n- **Difficultés** rencontrées (refus accès, document manquant).\n- **Changements** chez le client (direction, structure).\n\nDocumentation des **modifications** dans le workpaper.\n\n**Communication équipe** :\n\nMeetings réguliers :\n- **Kick-off** en début de mission.\n- **Suivi hebdo** ou bi-hebdo pendant terrain.\n- **Closing** en fin de mission.\n\nIssues log centralisé : sujets émergents notés et suivis.\n\n**Outils EY** :\n\n- **EY Canvas** : templates de plan d'audit pour contrôle restreint.\n- **Microsoft Teams / Outlook** : coordination équipe.\n- **Excel** : tableaux de bord planning.\n\n**Pour cabinets fiduciaires (non EY)** :\n\nOutils plus simples souvent :\n- Word + Excel.\n- Logiciels métier (Dr. Tax, AbaWeb pour la compta).\n- Templates EXPERTsuisse / TREUHAND|SUISSE.\n\n**Lien avec autres fiches** :\n\n- **NCR 3** : Évaluation des risques (input).\n- **NCR 5** : Caractère essentiel (input).\n- **NCR 6** : Opérations de contrôle (exécution).\n- **NCR 7** : Documentation (transversale).",
+      "tip": "**Plan d'audit = document vivant.** Pas figé. Adaptation continue selon évolutions. Documentation des modifications dans le workpaper. Bonne planification + bonne exécution + bonne documentation = audit défendable."
+    },
+    {
+      "anchor": "demarche",
+      "title": "📋 Synthèse Staff 1 — démarche planification NCR",
+      "content": "**Démarche en 4 étapes ECEC** :\n\n1. **E**quipe : composition (réviseur agréé + senior + staff), allocation par cycle, indépendance vérifiée.\n2. **C**alendrier : jalons (acceptance, lettre mission, pré-clôture, observation inventaire, terrain Q1, rapport Q2), AG dans 6 mois CO 699.\n3. **E**tendue : programme par cycle (objectif, risques, procédures AAV, étendue, documentation), calibrage selon risques (significatif/standard/faible).\n4. **C**oordination : lettre mission, PBC list, visites, communication client/fiduciaire/équipe.\n\n**Plan d'audit = document structuré** : description entité, risques, caractère essentiel, stratégie, programme détaillé, équipe, calendrier, documentation, communications.\n\n**Adaptation continue** : nouveaux risques, anomalies, événements, difficultés → mise à jour du plan.\n\n**Documentation rigoureuse** : workpaper plan d'audit + issues log + meetings.",
+      "tip": "**Bonne planification = ROI maximal.** Investis 1-2 jours en planification approfondie. Économies en exécution (peu d'improvisation, peu de retours, calendrier tenu). Et audit défendable en review qualité."
+    },
+    {
+      "anchor": "pieges",
+      "title": "🚧 Pièges et points d'attention",
+      "content": "Erreurs et confusions fréquentes sur la planification NCR :",
+      "warning": "**Délai AG 6 mois CO 699** = contrainte forte. Rapport audit prêt mai pour clôture 31/12. Planification anticipée + PBC efficient + terrain rapide = clé pour tenir les délais.",
+      "comparison": "**Allocation Staff 1 vs Senior** : Staff = cycles simples (trésorerie, AR, AP, analytiques). Senior = cycles complexes (revenu, immobilisations, capitaux propres, estimations). Pas de règle stricte, dépend complexité mandat et expérience équipe.",
+      "tip": "**PBC list complète envoyée à temps** = critique. Liste des documents demandés au client (PBC = Provided By Client) : EF préliminaires, sub-ledgers, contrats matériels, PV CA, déclarations fiscales/sociales, factures top, etc. Envoyée 2-4 semaines avant terrain. Bonne PBC list = terrain fluide.",
+      "key_point": "**Adaptation continue du plan** : pas figé. Nouveaux risques, anomalies, événements → mise à jour. Documentation des modifications dans le workpaper. Audit risk-based en évolution permanente."
+    }
+  ],
+  "auto_test": [
+    {
+      "q": "Quelles sont les 4 dimensions de la planification NCR (mnémonique ECEC) ?",
+      "a": "**E**quipe (composition réviseur agréé/senior/staff, allocation par cycle, indépendance) · **C**alendrier (jalons, AG dans 6 mois CO 699, terrain Q1, rapport Q2) · **E**tendue (programme par cycle, calibrage selon risques significatif/standard/faible) · **C**oordination (lettre mission, PBC list, visites, communication client/équipe/fiduciaire). Documentation : workpaper plan d'audit structuré, adaptation continue selon évolutions."
+    },
+    {
+      "q": "Quel est le délai légal pour l'AG annuelle en Suisse, et son impact sur le calendrier d'audit ?",
+      "a": "**CO art. 699 al. 2** : AG annuelle dans les **6 mois suivant la clôture**. Pour clôture 31/12 → AG avant 30 juin N+1. **Impact audit** : rapport d'audit doit être prêt avant AG (typiquement émis 2-4 semaines avant pour permettre revue actionnaires + convocation). Donc pour clôture 31/12, rapport prêt typiquement **mai N+1**. **Sociétés cotées** : encore plus tôt (mars-avril) pour respect calendriers réglementaires. **Conséquence** : planification anticipée + PBC efficient + terrain rapide = clé. Beaucoup d'audit cycle 4 (avril) à terminer en mai/juin si clôture standard. Pic d'activité Q1-Q2 chez tous les cabinets."
+    },
+    {
+      "q": "Qu'est-ce qu'une PBC list et pourquoi est-elle critique ?",
+      "a": "**PBC** = *Provided By Client* — liste des documents que l'auditeur demande au client en amont du terrain. **Contenu type** : EF préliminaires (balance, bilan, P&L, annexe), sub-ledgers (AR, AP, immo, salaires), contrats matériels (location, financement, partenariats), PV CA et AG, déclarations fiscales (IS, TVA, retenue source), déclarations sociales (AVS, LAA, LPP), factures top, registres (commerce, actions). **Pourquoi critique** : (a) sans documents, pas de procédures ; (b) délais : envoyée 2-4 semaines avant terrain, client doit avoir le temps ; (c) **bonne PBC** = terrain fluide, pas de retards ; (d) **mauvaise PBC** = improvisations, retards, friction client, dépassement délais."
+    },
+    {
+      "q": "Quelle est l'allocation typique des cycles entre Staff 1 et Senior ?",
+      "a": "**Staff 1** (typiquement) : cycles **simples** ou répétitifs — **Trésorerie** (confirmation, rapprochement), **AR** (aging, encaissements post-clôture, confirmations), **AP** (SURL allégé, cut-off), **Procédures analytiques** globales, **Documentation** des workpapers. **Senior** : cycles **complexes** ou à fort jugement — **Revenus** (cut-off, JET, ISA 240 §27 si applicable), **Immobilisations** (capitalisation, amortissement, impairment), **Capitaux propres** (opérations sur capital, réserves), **Estimations** (provisions, lettre d'avocat), **Revue Staff** + supervision continue. **Pas de règle stricte** : dépend complexité mandat, expérience équipe, formation Staff. Évolution Staff 1 vers Senior progressive sur 2-3 ans."
+    },
+    {
+      "q": "Quelle est la différence d'équipe entre contrôle restreint et contrôle ordinaire ?",
+      "a": "**Contrôle restreint** : **réviseur agréé** suffit comme signataire ; pas d'**EQR** (Engagement Quality Reviewer) obligatoire ; spécialistes (valuation, fiscal, IT) **moins fréquents** ; équipe plus petite typique (1-2 staffs + senior + associé). **Contrôle ordinaire** : **expert-réviseur agréé** requis comme signataire ; **EQR** obligatoire pour sociétés cotées + entités d'intérêt public + mandats à risque ; **specialists EY** fréquents (Valuation, Tech Risk, Tax) ; équipe plus large (multiples staffs + senior + manager + partner). **Conséquences** : honoraires différents (typique 30-50 % moins en restreint), profil collaborateur différent (restreint = entry-level réviseur ; ordinaire = profil progressivement plus expérimenté)."
+    },
+    {
+      "q": "Comment adapte-t-on le plan d'audit en cours de mission ?",
+      "a": "**Déclencheurs d'adaptation** : (a) **Nouveaux risques** identifiés en auditions ou analytiques ; (b) **Anomalies majeures** détectées en vérifications ; (c) **Événements post-clôture** significatifs (litige, perte client, etc.) ; (d) **Difficultés** rencontrées (refus accès direction, document manquant) ; (e) **Changements client** (direction, structure, activités) ; (f) **Découverte** parties liées non révélées. **Action** : (1) **Évaluation** de l'impact sur les risques et procédures ; (2) **Décision** : étendre procédures, modifier focus, mobiliser specialists ; (3) **Communication équipe** (issues log, meeting) ; (4) **Discussion direction client** si applicable ; (5) **Documentation** des modifications dans workpaper plan d'audit ; (6) **Escalation senior/manager/partner** si matériel."
+    }
+  ],
+  "sources": [
+    "Norme suisse relative au contrôle restreint (NCR 2022) — EXPERTsuisse / TREUHAND|SUISSE https://expertsuisse.ch/fr-ch/normes-suisses-daudit-des-etats-financiers-na-ch",
+    "Fedlex — RS 220, CO art. 727a, 699 al. 2 (AG 6 mois), 729, 730c : https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+  ],
+  "statut": "✅ Complet — corps développé sur stratégie + plan global, équipe et compétences, calendrier 5 étapes (pré-clôture/clôture/terrain/pré-rapport/rapport), AG CO 699, PBC list, documentation et adaptation continue + 2 closing pédagogiques.",
+  "maj": "2026-05-20"
+}

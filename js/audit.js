@@ -5,6 +5,7 @@
    ═══════════════════════════════════════════════ */
 
 const AUDIT_TABS = [
+    { id: 'cours',        label: 'Cours MSA',     icon: '📚', desc: 'Base de cours — contrôle ordinaire (MSA) + restreint (NCR)' },
     { id: 'canvas',       label: 'Canvas Perso',  icon: '🏢', desc: 'Tes propres engagements d\'audit' },
     { id: 'mission',      label: 'Mission Lab',   icon: '🎬', desc: 'Mission immersive end-to-end chez EY' },
     { id: 'seuils',       label: 'Seuils & Exos', icon: '🎯', desc: 'Comprendre tous les seuils + exercices pas-à-pas' },
@@ -124,6 +125,10 @@ function _renderAuditSubContent(subTab) {
     if (!host) return;
 
     switch (subTab) {
+        case 'cours':
+            if (typeof window._renderAuditCours === 'function') window._renderAuditCours(host);
+            else host.innerHTML = '<p>Module Cours indisponible.</p>';
+            break;
         case 'canvas':
             if (typeof renderCanvas === 'function') renderCanvas(host);
             else host.innerHTML = '<p>Module Canvas indisponible.</p>';

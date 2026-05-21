@@ -84,6 +84,7 @@ const TAB_LABELS = {
     fs: 'États Financiers', references: 'Références',
     audit: '🔍 Audit',
     english: '🇬🇧 Anglais',
+    podcasts: '🎧 Podcasts',
     flashcards: 'Flashcards' // legacy redirect
 };
 
@@ -148,6 +149,10 @@ function navigate(tab, subTab) {
         case 'english':
             if (typeof renderEnglish === 'function') renderEnglish(main, subTab);
             else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module Anglais en cours de chargement...</p>';
+            break;
+        case 'podcasts':
+            if (typeof renderPodcasts === 'function') renderPodcasts(main);
+            else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module Podcasts en cours de chargement...</p>';
             break;
         default: main.innerHTML = '<p>Page inconnue.</p>';
     }

@@ -21,8 +21,8 @@ const engState = {
     isFlipped: false,
     cardMode: 'vocab',           // 'vocab' | 'phrases-as-cards' — drives card rendering
     filters: {
-        domain: null,            // 'audit' | 'business' | 'daily' | null
-        level:  null,            // 'A2' | 'B1' | null
+        domain: null,            // 'audit' | 'ifrs' | 'business' | 'daily' | null
+        level:  null,            // 'A2' | 'B1' | 'B2' | null
         neverSeen: false,
         overdue: false,
     },
@@ -37,6 +37,44 @@ const engState = {
         result: null,            // {matches: [...]} or {error: '...'}
         loading: false,
     },
+    audio: {
+        voice: 'en-GB',          // 'en-GB' | 'en-US'
+        autoplay: false,         // speak EN automatically when card is flipped to back
+        rate: 0.95,              // slightly slowed for non-native ears
+    },
+    constructor: {
+        view: 'list',            // 'list' | 'exercise'
+        category: null,
+        currentPatternId: null,
+        currentExampleIdx: 0,
+        userAnswer: '',
+        checked: false,          // has the user submitted yet?
+        score: { total: 0, correct: 0 },
+    },
+    videos: {
+        theme: null,             // filter by VIDEO_THEMES key
+        watched: {},             // { id: true } — persisted to localStorage
+    },
+    conversations: {
+        view: 'list',            // 'list' | 'play'
+        currentConvId: null,
+        turnIdx: 0,
+        choiceIdx: null,         // user's choice for the current turn
+        history: [],             // [{turnIdx, choiceIdx, correct}, ...]
+    },
+    essentials: {
+        done: {},                // { id: true } — persisted to localStorage
+        collapsed: {},           // { group: true } — UI fold state
+    },
+    dictation: {
+        source: 'phrases',       // 'vocab' | 'phrases' | 'essentials' | 'mixed'
+        currentItem: null,       // {id, en, fr, kind} or null
+        userInput: '',
+        checked: false,
+        result: null,            // 'exact' | 'close' | 'wrong'
+        score: { correct: 0, close: 0, total: 0 },
+        seenIds: {},             // avoid repeating in same session
+    },
 };
 
 // ── Constants ────────────────────────────────────────────────
@@ -44,25 +82,67 @@ const engState = {
 const ENG_LS_SUBTAB   = 'swisscpa_eng_subtab';
 const ENG_LS_PROGRESS = 'swisscpa_eng_progress';
 const ENG_LS_FILTERS  = 'swisscpa_eng_filters';
+const ENG_LS_AUDIO    = 'swisscpa_eng_audio';
 
 const DOMAIN_LABELS = {
-    audit:    { icon: '📊', label: 'Audit / Finance', color: '#3b82f6' },
-    business: { icon: '💼', label: 'Business',        color: '#8b5cf6' },
-    daily:    { icon: '🌍', label: 'Vie courante',    color: '#10b981' },
+    audit:    { icon: '📊', label: 'Audit / ISA',      color: '#3b82f6' },
+    ifrs:     { icon: '📘', label: 'IFRS',             color: '#0ea5e9' },
+    business: { icon: '💼', label: 'Big 4 / Business', color: '#8b5cf6' },
+    daily:    { icon: '🌍', label: 'Vie courante',     color: '#10b981' },
 };
 
 const PHRASE_CATEGORIES = {
-    email_opening: { icon: '✉️', label: 'Ouverture email' },
-    email_closing: { icon: '📩', label: 'Clôture email'  },
-    meeting:       { icon: '🗓️', label: 'Réunion'        },
-    idiom:         { icon: '💬', label: 'Idiomes'         },
-    transition:    { icon: '🔗', label: 'Transitions'     },
-    politeness:    { icon: '🙏', label: 'Politesse'       },
+    email_opening:  { icon: '✉️', label: 'Ouverture email'  },
+    email_closing:  { icon: '📩', label: 'Clôture email'    },
+    meeting:        { icon: '🗓️', label: 'Réunion'          },
+    idiom:          { icon: '💬', label: 'Idiomes'           },
+    transition:     { icon: '🔗', label: 'Transitions'       },
+    politeness:     { icon: '🙏', label: 'Politesse'         },
+    client_request: { icon: '📋', label: 'Demande client'    },
+    escalation:     { icon: '🚨', label: 'Escalade'          },
+    pushback:       { icon: '🛡️', label: 'Push-back poli'    },
+    clarification:  { icon: '❓', label: 'Clarification'     },
+    audit_specific: { icon: '🔍', label: 'Audit terrain'     },
+    status_update:  { icon: '📊', label: 'Point avancement'  },
+};
+
+const PATTERN_CATEGORIES = {
+    audit_findings:         { icon: '🔍', label: 'Constatations audit' },
+    audit_questions:        { icon: '❓', label: 'Questions client'    },
+    email_pro:              { icon: '✉️', label: 'Email pro'           },
+    meeting:                { icon: '🗓️', label: 'Réunion'             },
+    ifrs_explanations:      { icon: '📘', label: 'Explications IFRS'   },
+    client_communication:   { icon: '💬', label: 'Communication client'},
+    decline:                { icon: '🛑', label: 'Décliner'            },
+    negotiate:              { icon: '⚖️', label: 'Négocier'            },
+    defend_position:        { icon: '🛡️', label: 'Défendre position'   },
+    request_delay:          { icon: '⏳', label: 'Demander délai'      },
+    express_caution:        { icon: '⚠️', label: 'Exprimer prudence'   },
+    acknowledge_constraint: { icon: '🤝', label: 'Reconnaître contraintes' },
+};
+
+const VIDEO_THEMES = {
+    channels:         { icon: '📺', label: 'Chaînes officielles' },
+    ifrs_standards:   { icon: '📘', label: 'Normes IFRS'         },
+    audit:            { icon: '🔍', label: 'Audit / ISA'         },
+    business_english: { icon: '💼', label: 'Business English'    },
+};
+
+const ENG_LS_VIDEOS = 'swisscpa_eng_videos_watched';
+const ENG_LS_ESSENTIALS = 'swisscpa_eng_essentials_done';
+
+const ESSENTIAL_GROUPS = {
+    survival:   { icon: '🆘', label: 'Survie semaine 1', color: '#ef4444' },
+    meetings:   { icon: '🗓️', label: 'Réunions', color: '#3b82f6' },
+    email:      { icon: '✉️', label: 'Email pro', color: '#8b5cf6' },
+    fieldwork:  { icon: '🔍', label: 'Audit terrain', color: '#10b981' },
+    self:       { icon: '🧭', label: 'Self-management', color: '#f59e0b' },
 };
 
 const LEVEL_LABELS = {
     A2: { label: 'A2', color: '#10b981' },
     B1: { label: 'B1', color: '#f59e0b' },
+    B2: { label: 'B2', color: '#ef4444' },
 };
 
 const MASTERY_COLORS = {
@@ -134,6 +214,171 @@ const MASTERY_COLORS = {
     `;
     document.head.appendChild(s);
 })();
+
+// ── Audio (TTS via Web Speech API) ───────────────────────────
+
+function engLoadAudio() {
+    try {
+        const raw = localStorage.getItem(ENG_LS_AUDIO);
+        if (!raw) return;
+        const a = JSON.parse(raw);
+        if (a && typeof a === 'object') {
+            engState.audio = Object.assign(engState.audio, a);
+        }
+    } catch (_) {}
+}
+
+function engSaveAudio() {
+    try { localStorage.setItem(ENG_LS_AUDIO, JSON.stringify(engState.audio)); }
+    catch (_) {}
+}
+
+// Cache available English voices once the synthesis is ready.
+let _engVoicesCache = null;
+function engGetEnglishVoices() {
+    if (!('speechSynthesis' in window)) return [];
+    if (_engVoicesCache) return _engVoicesCache;
+    const voices = window.speechSynthesis.getVoices() || [];
+    _engVoicesCache = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+    return _engVoicesCache;
+}
+
+if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    // Some browsers populate voices asynchronously.
+    window.speechSynthesis.onvoiceschanged = () => { _engVoicesCache = null; };
+}
+
+function engPickVoice(lang) {
+    const wanted = (lang || engState.audio.voice || 'en-GB').toLowerCase();
+    const voices = engGetEnglishVoices();
+    // Exact match first
+    let v = voices.find(v => v.lang && v.lang.toLowerCase() === wanted);
+    if (v) return v;
+    // Same major language (en-*)
+    v = voices.find(v => v.lang && v.lang.toLowerCase().startsWith(wanted.split('-')[0]));
+    if (v) return v;
+    return voices[0] || null;
+}
+
+function engSpeak(text) {
+    if (!('speechSynthesis' in window)) {
+        // Soft fallback — show a toast or just log; the UI will show no error.
+        console.warn('[english] SpeechSynthesis not available in this browser.');
+        return;
+    }
+    if (!text || typeof text !== 'string') return;
+    try {
+        window.speechSynthesis.cancel();           // stop any current speech
+        const u = new SpeechSynthesisUtterance(text);
+        const v = engPickVoice(engState.audio.voice);
+        if (v) u.voice = v;
+        u.lang = engState.audio.voice || 'en-GB';
+        u.rate = engState.audio.rate || 0.95;
+        u.pitch = 1.0;
+        window.speechSynthesis.speak(u);
+    } catch (e) {
+        console.warn('[english] speak failed:', e);
+    }
+}
+
+function engSpeakCard(id) {
+    const c = (engState.data && engState.data.vocab || []).find(v => v.id === id)
+           || (engState.data && engState.data.phrases || []).find(p => p.id === id);
+    if (c) engSpeak(c.en);
+}
+
+function engSpeakPhrase(id) {
+    const p = (engState.data && engState.data.phrases || []).find(p => p.id === id);
+    if (p) engSpeak(p.en);
+}
+
+// Tiny HTML helper for speaker buttons.
+function engSpeakerBtnHtml(id, opts) {
+    opts = opts || {};
+    const title = opts.title || 'Écouter (TTS)';
+    const size = opts.size || 'md'; // sm | md
+    const padding = size === 'sm' ? '4px 8px' : '6px 10px';
+    const fontSize = size === 'sm' ? '13px' : '15px';
+    return `<button class="eng-speak-btn" title="${engEscapeAttr(title)}"
+        onclick="event.stopPropagation();engSpeakCard('${engEscapeAttr(id)}')"
+        style="background:transparent;border:1px solid var(--border-light);
+        border-radius:8px;padding:${padding};font-size:${fontSize};cursor:pointer;
+        color:#93c5fd;line-height:1">🔊</button>`;
+}
+
+function engToggleAudioAutoplay() {
+    engState.audio.autoplay = !engState.audio.autoplay;
+    engSaveAudio();
+    // Re-render the audio bar to reflect toggle state
+    const bar = document.getElementById('engAudioBar');
+    if (bar) engRenderAudioBar();
+}
+
+function engSetAudioVoice(v) {
+    engState.audio.voice = v;
+    engSaveAudio();
+    const bar = document.getElementById('engAudioBar');
+    if (bar) engRenderAudioBar();
+}
+
+function engSetAudioRate(rate) {
+    engState.audio.rate = parseFloat(rate);
+    engSaveAudio();
+    const bar = document.getElementById('engAudioBar');
+    if (bar) engRenderAudioBar();
+}
+
+function engRenderAudioBar() {
+    const bar = document.getElementById('engAudioBar');
+    if (!bar) return;
+    const a = engState.audio;
+    const supported = 'speechSynthesis' in window;
+
+    if (!supported) {
+        bar.innerHTML = `<div style="font-size:11px;color:var(--text-muted);font-style:italic">
+            🔇 Synthèse vocale non disponible dans ce navigateur.
+        </div>`;
+        return;
+    }
+
+    const voiceBtn = (val, label) => {
+        const active = a.voice === val;
+        return `<button onclick="engSetAudioVoice('${val}')"
+            style="font-size:11px;padding:4px 9px;border-radius:999px;cursor:pointer;
+            background:${active ? '#1e3a5f' : 'transparent'};
+            color:${active ? '#93c5fd' : 'var(--text-secondary)'};
+            border:1px solid ${active ? '#3b82f6' : 'var(--border-light)'}">
+            ${engEscape(label)}</button>`;
+    };
+
+    const rateBtn = (val, label) => {
+        const active = Math.abs(a.rate - val) < 0.01;
+        return `<button onclick="engSetAudioRate(${val})"
+            style="font-size:11px;padding:4px 9px;border-radius:999px;cursor:pointer;
+            background:${active ? '#14532d' : 'transparent'};
+            color:${active ? '#86efac' : 'var(--text-secondary)'};
+            border:1px solid ${active ? '#10b981' : 'var(--border-light)'}">
+            ${engEscape(label)}</button>`;
+    };
+
+    bar.innerHTML = `
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:11px;
+            color:var(--text-muted);padding:8px 12px;background:var(--bg-tertiary);
+            border:1px solid var(--border-light);border-radius:10px;margin-bottom:14px">
+            <span>🔊 Audio :</span>
+            <div style="display:flex;gap:5px">${voiceBtn('en-GB', '🇬🇧 UK')}${voiceBtn('en-US', '🇺🇸 US')}</div>
+            <span style="margin-left:6px">Vitesse :</span>
+            <div style="display:flex;gap:5px">
+                ${rateBtn(0.75, '0.75×')}${rateBtn(0.95, '1×')}${rateBtn(1.15, '1.15×')}
+            </div>
+            <label style="display:inline-flex;align-items:center;gap:5px;margin-left:auto;cursor:pointer">
+                <input type="checkbox" ${a.autoplay ? 'checked' : ''}
+                    onchange="engToggleAudioAutoplay()" style="margin:0">
+                <span>Auto-play au retournement</span>
+            </label>
+        </div>
+    `;
+}
 
 // ── Persistence helpers ──────────────────────────────────────
 
@@ -234,6 +479,7 @@ function engEscapeAttr(s) {
 async function renderEnglish(container, subTab) {
     engLoadProgress();
     engLoadFilters();
+    engLoadAudio();
 
     const sub = subTab || engGetSubTab('vocab');
     engState.section = sub;
@@ -241,13 +487,15 @@ async function renderEnglish(container, subTab) {
 
     container.innerHTML = `
         <div class="page-title">🇬🇧 Anglais</div>
-        <div class="page-subtitle">Niveau visé A2 → B1</div>
+        <div class="page-subtitle" id="engSubtitle">Niveau visé A2 → B2</div>
 
+        <div id="engAudioBar"></div>
         <div id="engSubTabs" style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap"></div>
 
         <div id="engContent"></div>
     `;
 
+    engRenderAudioBar();
     engRenderSubTabs();
 
     // Lazy-load data (cached on engState.data after first call).
@@ -256,19 +504,41 @@ async function renderEnglish(container, subTab) {
         engState.data = data || { vocab: [], phrases: [] };
     }
 
-    if (sub === 'vocab')        engRenderVocab();
-    else if (sub === 'phrases') engRenderPhrases();
-    else if (sub === 'writing') engRenderWriting();
-    else                        engRenderVocab();
+    // Once data is loaded, enrich the subtitle with counts.
+    const subtitleEl = document.getElementById('engSubtitle');
+    if (subtitleEl) {
+        const nv  = (engState.data.vocab || []).length;
+        const np  = (engState.data.phrases || []).length;
+        const npa = (engState.data.patterns || []).length;
+        const nvi = (engState.data.videos || []).length;
+        const nc  = (engState.data.conversations || []).length;
+        const ne  = (engState.data.essentials || []).length;
+        subtitleEl.textContent = `A2→B2 · ${ne} essentiels · ${nv} mots · ${np} phrases · ${npa} patterns · ${nc} conversations · ${nvi} vidéos`;
+    }
+
+    if (sub === 'essentials')         engRenderEssentials();
+    else if (sub === 'vocab')         engRenderVocab();
+    else if (sub === 'phrases')       engRenderPhrases();
+    else if (sub === 'constructor')   engRenderConstructor();
+    else if (sub === 'dictation')     engRenderDictation();
+    else if (sub === 'conversations') engRenderConversations();
+    else if (sub === 'videos')        engRenderVideos();
+    else if (sub === 'writing')       engRenderWriting();
+    else                            engRenderVocab();
 }
 
 function engRenderSubTabs() {
     const bar = document.getElementById('engSubTabs');
     if (!bar) return;
     const tabs = [
-        { id: 'vocab',   icon: '📚', label: 'Vocabulaire' },
-        { id: 'phrases', icon: '💬', label: 'Phrases & expressions' },
-        { id: 'writing', icon: '✍️', label: 'Écriture' },
+        { id: 'essentials',    icon: '🎯', label: 'Day-1 EY'              },
+        { id: 'vocab',         icon: '📚', label: 'Vocabulaire'          },
+        { id: 'phrases',       icon: '💬', label: 'Phrases & expressions'},
+        { id: 'constructor',   icon: '🏗️', label: 'Constructeur'         },
+        { id: 'dictation',     icon: '🎧', label: 'Dictée'                },
+        { id: 'conversations', icon: '🎙️', label: 'Conversations'        },
+        { id: 'videos',        icon: '🎬', label: 'Vidéos YouTube'       },
+        { id: 'writing',       icon: '✍️', label: 'Écriture'             },
     ];
     bar.innerHTML = tabs.map(t => {
         const active = engState.section === t.id;
@@ -285,9 +555,14 @@ function engSwitchSection(sub) {
     engState.currentIdx = 0;
     engState.isFlipped = false;
     engRenderSubTabs();
-    if (sub === 'vocab')        engRenderVocab();
-    else if (sub === 'phrases') engRenderPhrases();
-    else if (sub === 'writing') engRenderWriting();
+    if (sub === 'essentials')         engRenderEssentials();
+    else if (sub === 'vocab')         engRenderVocab();
+    else if (sub === 'phrases')       engRenderPhrases();
+    else if (sub === 'constructor')   engRenderConstructor();
+    else if (sub === 'dictation')     engRenderDictation();
+    else if (sub === 'conversations') engRenderConversations();
+    else if (sub === 'videos')        engRenderVideos();
+    else if (sub === 'writing')       engRenderWriting();
 }
 
 // ════════════════════════════════════════════════════════════
@@ -531,8 +806,11 @@ function engRenderCard() {
                     <div style="display:flex;justify-content:space-between;width:100%;
                         align-items:center;margin-bottom:14px">
                         <div style="display:flex;gap:6px;flex-wrap:wrap">${domainBadge} ${levelBadge}</div>
+                        ${engSpeakerBtnHtml(card.id, {title: 'Écouter en anglais'})}
                     </div>
-                    <div class="eng-card-en">${engEscape(card.en)}</div>
+                    <div style="display:flex;align-items:center;gap:10px;justify-content:center">
+                        <div class="eng-card-en">${engEscape(card.en)}</div>
+                    </div>
                     ${ipaHtml}
                     ${notesHtml}
                     ${contextHtml}
@@ -585,6 +863,15 @@ function engFlip() {
     if (cardEl) cardEl.classList.toggle('flipped', engState.isFlipped);
     const btns = document.getElementById('engRateBtns');
     if (btns) btns.style.display = engState.isFlipped ? 'flex' : 'none';
+
+    // Auto-play EN when flipping to the back, if enabled.
+    if (engState.isFlipped && engState.audio && engState.audio.autoplay) {
+        const card = engState.cards[engState.currentIdx];
+        if (card) {
+            // Slight delay so the flip animation isn't masked by speech start latency.
+            setTimeout(() => engSpeak(card.en), 250);
+        }
+    }
 }
 
 async function engRate(rating) {
@@ -742,7 +1029,10 @@ function engRenderPhraseList() {
                     </div>
                 </div>
                 ${expanded ? `
-                    <div class="eng-phrase-en">${engEscape(p.en)}</div>
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-top:8px">
+                        <div class="eng-phrase-en" style="flex:1;margin-top:0">${engEscape(p.en)}</div>
+                        ${engSpeakerBtnHtml(p.id, {title: 'Écouter en anglais', size: 'sm'})}
+                    </div>
                     ${p.context ? `<div class="eng-phrase-ctx">📖 ${engEscape(p.context)}</div>` : ''}
                 ` : ''}
             </div>
@@ -819,23 +1109,46 @@ function engRenderWriting() {
     const root = document.getElementById('engContent');
     if (!root) return;
 
+    const templates = (engState.data && engState.data.email_templates) || [];
+    const templatesBar = templates.length ? `
+        <div style="background:var(--bg-tertiary);border:1px solid var(--border-light);
+            border-radius:10px;padding:10px 12px;margin-bottom:14px">
+            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;
+                letter-spacing:1px;margin-bottom:8px">📥 Insérer un template</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+                ${templates.map(t => `
+                    <button onclick="engInsertTemplate('${engEscapeAttr(t.id)}')"
+                        title="${engEscapeAttr(t.scenario_fr)}"
+                        style="font-size:11px;padding:5px 11px;border-radius:999px;cursor:pointer;
+                        background:transparent;color:#93c5fd;border:1px solid #3b82f6">
+                        ${engEscape(t.label_fr)}</button>
+                `).join('')}
+            </div>
+        </div>
+    ` : '';
+
     root.innerHTML = `
         <div style="max-width:760px;margin:0 auto">
             <div style="font-size:18px;font-weight:600;color:var(--text-bright);margin-bottom:6px">
-                Corrigeur de texte anglais
+                Atelier d'écriture
             </div>
             <div style="font-size:13px;color:var(--text-muted);margin-bottom:14px">
-                Écris ton texte en anglais et clique sur Corriger.
-                Souligné rouge = erreur — clic pour voir les suggestions.
+                Écris en anglais ou pars d'un template, puis clique sur <strong>Corriger</strong>
+                pour analyser ton texte. Tu verras les erreurs (LanguageTool), le registre détecté
+                et un niveau CEFR estimé.
             </div>
 
-            <textarea id="engWriteArea" rows="8"
-                placeholder="Écris ton texte en anglais ici..."
+            ${templatesBar}
+
+            <textarea id="engWriteArea" rows="10"
+                placeholder="Écris ton texte en anglais ici, ou insère un template ci-dessus..."
                 oninput="engUpdateWordCount()"
                 style="width:100%;background:var(--bg-tertiary);color:var(--text-bright);
                 border:1px solid var(--border-light);border-radius:8px;padding:12px 14px;
                 font-size:14px;line-height:1.6;resize:vertical;font-family:inherit"
             >${engEscape(engState.writing.text)}</textarea>
+
+            <div id="engWritingMeta" style="margin-top:8px"></div>
 
             <div style="display:flex;justify-content:space-between;align-items:center;
                 margin-top:8px;gap:10px;flex-wrap:wrap">
@@ -855,7 +1168,133 @@ function engRenderWriting() {
     `;
 
     engUpdateWordCount();
+    engRenderWritingMeta();
     if (engState.writing.result) engRenderWritingResult();
+}
+
+function engInsertTemplate(templateId) {
+    const t = (engState.data && engState.data.email_templates || []).find(x => x.id === templateId);
+    if (!t) return;
+    const ta = document.getElementById('engWriteArea');
+    if (!ta) return;
+    const body = `Subject: ${t.subject}\n\n${t.body}`;
+    // Insert at cursor, or replace if empty
+    if (!ta.value.trim()) {
+        ta.value = body;
+    } else {
+        const conf = confirm("Le textarea n'est pas vide — veux-tu remplacer son contenu par le template ?");
+        if (!conf) return;
+        ta.value = body;
+    }
+    engState.writing.text = ta.value;
+    engUpdateWordCount();
+    engRenderWritingMeta();
+    ta.focus();
+}
+
+// Quick heuristics for register + CEFR estimate, computed locally.
+function engAnalyseText(text) {
+    const t = String(text || '');
+    if (!t.trim()) {
+        return null;
+    }
+
+    const words = t.trim().split(/\s+/);
+    const wordCount = words.length;
+    const sentences = t.split(/[.!?]+/).filter(s => s.trim().length > 0);
+    const sentenceCount = Math.max(1, sentences.length);
+    const avgWordsPerSentence = wordCount / sentenceCount;
+
+    const lower = t.toLowerCase();
+
+    // Informal markers
+    const informalMarkers = [
+        /\bgonna\b/, /\bwanna\b/, /\bgotta\b/, /\bhey\b/, /\byeah\b/,
+        /\bkinda\b/, /\bsorta\b/, /\bdunno\b/, /\bya\b(?!\w)/,
+    ];
+    const contractions = (lower.match(/\b\w+'(t|s|re|ve|ll|d|m)\b/g) || []).length;
+    const informalCount = informalMarkers.filter(rx => rx.test(lower)).length;
+
+    // Formal markers
+    const formalMarkers = [
+        /\bdear\s+(mr|mrs|ms|sir|madam)\b/, /\byours\s+(sincerely|faithfully)\b/,
+        /\bplease\s+find\s+attached\b/, /\bkind\s+regards\b/, /\bbest\s+regards\b/,
+        /\bi\s+would\s+be\s+grateful\b/, /\bi\s+would\s+appreciate\b/,
+        /\bfurther\s+to\b/, /\bin\s+accordance\s+with\b/,
+    ];
+    const formalCount = formalMarkers.filter(rx => rx.test(lower)).length;
+
+    let register;
+    if (formalCount >= 2 && contractions === 0 && informalCount === 0) {
+        register = { label: 'Formel', color: '#3b82f6', note: 'Ton soutenu — idéal pour un client ou un partner.' };
+    } else if (informalCount >= 1 || contractions >= 2) {
+        register = { label: 'Informel', color: '#f59e0b',
+            note: 'Ton détendu — OK pour un collègue ou un email interne décontracté. Évite avec un client formel.' };
+    } else if (formalCount >= 1) {
+        register = { label: 'Mi-formel', color: '#10b981',
+            note: 'Registre professionnel standard — sûr dans la plupart des contextes Big 4.' };
+    } else {
+        register = { label: 'Neutre', color: '#94a3b8',
+            note: 'Difficile à juger — vérifie tes salutations et formules de clôture.' };
+    }
+
+    // Very rough CEFR heuristic, only for English text.
+    // Signals:
+    //   - average sentence length
+    //   - vocab "complexity" approximated by unique long words (>= 7 letters)
+    //   - presence of complex structures (relative clauses, modals)
+    const longWords = words.filter(w => /^[a-z'-]+$/i.test(w) && w.length >= 7).length;
+    const longRatio = longWords / wordCount;
+    const modalCount = (lower.match(/\b(would|could|should|might|shall|may)\b/g) || []).length;
+    const relativeCount = (lower.match(/\b(which|whose|whereby|though|whereas|nevertheless|however)\b/g) || []).length;
+
+    let cefr;
+    if (wordCount < 20) {
+        cefr = '?';
+    } else if (avgWordsPerSentence < 9 && longRatio < 0.10 && modalCount === 0) {
+        cefr = 'A2';
+    } else if (avgWordsPerSentence < 13 && longRatio < 0.16 && (modalCount + relativeCount) < 3) {
+        cefr = 'B1';
+    } else if (avgWordsPerSentence < 18 && longRatio < 0.22) {
+        cefr = 'B2';
+    } else {
+        cefr = 'C1';
+    }
+
+    return {
+        wordCount, sentenceCount, avgWordsPerSentence: Math.round(avgWordsPerSentence * 10) / 10,
+        register, cefr,
+        signals: { informalCount, contractions, formalCount, longRatio: Math.round(longRatio * 100) },
+    };
+}
+
+function engRenderWritingMeta() {
+    const root = document.getElementById('engWritingMeta');
+    if (!root) return;
+    const a = engAnalyseText(engState.writing.text);
+    if (!a) { root.innerHTML = ''; return; }
+
+    const cefrColor = { A2: '#10b981', B1: '#f59e0b', B2: '#ef4444', C1: '#8b5cf6', '?': '#64748b' }[a.cefr];
+
+    root.innerHTML = `
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:11px;
+            padding:8px 10px;background:var(--bg-tertiary);border:1px solid var(--border-light);
+            border-radius:8px">
+            <span class="badge" style="background:transparent;color:${a.register.color};
+                border:1px solid ${a.register.color};font-size:11px">
+                Registre : ${engEscape(a.register.label)}</span>
+            <span class="badge" style="background:transparent;color:${cefrColor};
+                border:1px solid ${cefrColor};font-size:11px">
+                Estimation CEFR : ${a.cefr}</span>
+            <span style="color:var(--text-muted)">
+                ${a.sentenceCount} phrase${a.sentenceCount > 1 ? 's' : ''} ·
+                ${a.avgWordsPerSentence} mots/phrase
+            </span>
+            <span style="color:var(--text-muted);margin-left:auto;font-style:italic">
+                ${engEscape(a.register.note)}
+            </span>
+        </div>
+    `;
 }
 
 function engUpdateWordCount() {
@@ -866,6 +1305,7 @@ function engUpdateWordCount() {
     const words = ta.value.trim() ? ta.value.trim().split(/\s+/).length : 0;
     const chars = ta.value.length;
     counter.textContent = `${words} mot${words > 1 ? 's' : ''} · ${chars} caractère${chars > 1 ? 's' : ''}`;
+    engRenderWritingMeta();
 }
 
 function engClearWriting() {
@@ -1046,6 +1486,1167 @@ function engClosePopover() {
 }
 
 // ════════════════════════════════════════════════════════════
+// CONSTRUCTOR SUB-SECTION (sentence patterns with fill-in exercise)
+// ════════════════════════════════════════════════════════════
+
+function engRenderConstructor() {
+    const root = document.getElementById('engContent');
+    if (!root) return;
+    const patterns = (engState.data && engState.data.patterns) || [];
+
+    if (!patterns.length) {
+        root.innerHTML = `
+            <div class="card" style="max-width:520px;margin:40px auto;text-align:center;padding:32px">
+                <div style="font-size:42px;margin-bottom:10px">🏗️</div>
+                <div style="font-size:16px;font-weight:600;color:var(--text-bright);margin-bottom:8px">
+                    Aucun pattern disponible
+                </div>
+                <div style="font-size:13px;color:var(--text-secondary)">
+                    Le contenu sera bientôt disponible.
+                </div>
+            </div>`;
+        return;
+    }
+
+    if (engState.constructor.view === 'exercise' && engState.constructor.currentPatternId) {
+        engRenderConstructorExercise();
+        return;
+    }
+
+    // LIST VIEW
+    const counts = {};
+    patterns.forEach(p => { counts[p.category] = (counts[p.category] || 0) + 1; });
+
+    const f = engState.constructor;
+    const catChips = Object.keys(counts).map(k => {
+        const meta = PATTERN_CATEGORIES[k] || { icon: '•', label: k };
+        const active = f.category === k;
+        return `<button class="badge" style="cursor:pointer;padding:6px 12px;font-size:12px;
+                background:${active ? '#3b82f6' : 'transparent'};
+                color:${active ? '#fff' : '#3b82f6'};
+                border:1px solid #3b82f6"
+                onclick="engToggleConstructorCat('${k}')">
+                ${meta.icon} ${engEscape(meta.label)} (${counts[k]})</button>`;
+    }).join('');
+
+    let filtered = patterns.slice();
+    if (f.category) filtered = filtered.filter(p => p.category === f.category);
+
+    const score = engState.constructor.score;
+    const scoreHtml = score.total > 0
+        ? `<span style="font-size:12px;color:var(--text-secondary);margin-left:auto">
+            Score session : <strong style="color:#86efac">${score.correct}</strong> /
+            <strong>${score.total}</strong></span>`
+        : '';
+
+    const list = filtered.map(p => {
+        const meta = PATTERN_CATEGORIES[p.category] || { icon: '•', label: p.category };
+        const lvl = LEVEL_LABELS[p.level] || { label: p.level || '', color: '#64748b' };
+        return `
+            <div class="card" style="padding:16px;margin-bottom:10px;cursor:pointer;
+                transition:border-color 0.15s"
+                onmouseover="this.style.borderColor='#3b82f6'"
+                onmouseout="this.style.borderColor=''"
+                onclick="engStartPatternExercise('${engEscapeAttr(p.id)}')">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+                    <div style="flex:1">
+                        <div style="font-size:14px;color:var(--text-bright);font-weight:600;margin-bottom:6px">
+                            ${engEscape(p.fr_template)}
+                        </div>
+                        <div style="font-size:13px;color:#93c5fd;font-style:italic;margin-bottom:6px">
+                            ${engEscape(p.en_template)}
+                        </div>
+                        ${p.context ? `<div style="font-size:11px;color:var(--text-muted);margin-top:4px">
+                            📖 ${engEscape(p.context)}</div>` : ''}
+                    </div>
+                    <div style="display:flex;gap:6px;flex-direction:column;align-items:flex-end">
+                        <span class="badge" style="background:#1e3a5f;color:#93c5fd;
+                            border:1px solid #3b82f6;font-size:11px">${meta.icon}</span>
+                        <span class="badge" style="background:transparent;color:${lvl.color};
+                            border:1px solid ${lvl.color};font-size:11px">${lvl.label}</span>
+                    </div>
+                </div>
+                <div style="margin-top:10px;font-size:11px;color:var(--text-muted);
+                    display:flex;align-items:center;gap:6px">
+                    <span>▶</span> S'entraîner sur ce pattern (${(p.examples || []).length} ex.)
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    root.innerHTML = `
+        <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:14px">
+            ${catChips}
+            ${f.category ? `<button class="btn btn-outline" onclick="engResetConstructorCat()"
+                style="font-size:12px;padding:5px 10px;color:#fca5a5">↺ Tous</button>` : ''}
+            ${scoreHtml}
+        </div>
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px">
+            Clique sur un pattern pour t'entraîner à le traduire en contexte.
+        </div>
+        <div>${list}</div>
+    `;
+}
+
+function engToggleConstructorCat(c) {
+    engState.constructor.category = engState.constructor.category === c ? null : c;
+    engRenderConstructor();
+}
+
+function engResetConstructorCat() {
+    engState.constructor.category = null;
+    engRenderConstructor();
+}
+
+function engStartPatternExercise(patternId) {
+    engState.constructor.view = 'exercise';
+    engState.constructor.currentPatternId = patternId;
+    engState.constructor.currentExampleIdx = 0;
+    engState.constructor.userAnswer = '';
+    engState.constructor.checked = false;
+    engRenderConstructor();
+}
+
+function engExitPatternExercise() {
+    engState.constructor.view = 'list';
+    engState.constructor.currentPatternId = null;
+    engState.constructor.checked = false;
+    engRenderConstructor();
+}
+
+function engRenderConstructorExercise() {
+    const root = document.getElementById('engContent');
+    if (!root) return;
+    const patterns = (engState.data && engState.data.patterns) || [];
+    const c = engState.constructor;
+    const pat = patterns.find(p => p.id === c.currentPatternId);
+    if (!pat) { engExitPatternExercise(); return; }
+
+    const meta = PATTERN_CATEGORIES[pat.category] || { icon: '•', label: pat.category };
+    const examples = pat.examples || [];
+    const example = examples[c.currentExampleIdx];
+
+    const checked = c.checked;
+    const userAnswer = c.userAnswer || '';
+
+    // Render the expected answer with the example value substituted
+    const expectedEn = example ? pat.en_template.replace(/\{[^}]+\}/g, example.en) : pat.en_template;
+    const promptFr = example ? pat.fr_template.replace(/\{[^}]+\}/g, example.fr) : pat.fr_template;
+
+    // Soft comparison: lowercased, punctuation-trimmed, whitespace-normalised.
+    function normalise(s) {
+        return String(s || '')
+            .toLowerCase()
+            .replace(/[.,;:!?'"„""''«»()]/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+    const isCorrect = checked && normalise(userAnswer) === normalise(expectedEn);
+
+    root.innerHTML = `
+        <div style="max-width:760px;margin:0 auto">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px">
+                <button class="btn btn-outline" onclick="engExitPatternExercise()"
+                    style="font-size:12px;padding:6px 12px">← Retour aux patterns</button>
+                <div style="font-size:12px;color:var(--text-secondary)">
+                    ${meta.icon} ${engEscape(meta.label)} ·
+                    Exemple ${c.currentExampleIdx + 1} / ${examples.length}
+                </div>
+            </div>
+
+            <div class="card" style="padding:18px 20px;margin-bottom:14px">
+                <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;
+                    letter-spacing:1px;margin-bottom:8px">Pattern</div>
+                <div style="font-size:15px;color:var(--text-bright);margin-bottom:6px">
+                    ${engEscape(pat.fr_template)}
+                </div>
+                <div style="font-size:14px;color:#93c5fd;font-style:italic">
+                    ${engEscape(pat.en_template)}
+                </div>
+                ${pat.context ? `<div style="font-size:12px;color:var(--text-muted);margin-top:10px">
+                    📖 ${engEscape(pat.context)}</div>` : ''}
+            </div>
+
+            <div class="card" style="padding:18px 20px">
+                <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;
+                    letter-spacing:1px;margin-bottom:8px">À traduire</div>
+                <div style="font-size:16px;color:var(--text-bright);margin-bottom:14px;line-height:1.5">
+                    ${engEscape(promptFr)}
+                </div>
+
+                <textarea id="engPatternAnswer" rows="3"
+                    placeholder="Tape ta traduction anglaise..."
+                    ${checked ? 'disabled' : ''}
+                    oninput="engState.constructor.userAnswer = this.value"
+                    style="width:100%;background:var(--bg-tertiary);color:var(--text-bright);
+                    border:1px solid ${isCorrect ? '#10b981' : (checked ? '#ef4444' : 'var(--border-light)')};
+                    border-radius:8px;padding:10px 12px;font-size:14px;line-height:1.5;
+                    resize:vertical;font-family:inherit;margin-bottom:10px">${engEscape(userAnswer)}</textarea>
+
+                ${!checked ? `
+                    <div style="display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap">
+                        <button class="btn btn-outline" onclick="engPatternRevealHint()"
+                            style="font-size:12px;padding:6px 12px">💡 Indice</button>
+                        <button class="btn btn-primary" onclick="engPatternCheck()"
+                            style="font-size:13px;padding:8px 16px">✓ Vérifier</button>
+                    </div>
+                ` : `
+                    <div style="background:${isCorrect ? '#14532d22' : '#7f1d1d22'};
+                        border:1px solid ${isCorrect ? '#14532d' : '#7f1d1d'};
+                        border-radius:8px;padding:12px 14px;margin-bottom:10px">
+                        <div style="font-weight:600;color:${isCorrect ? '#86efac' : '#fca5a5'};margin-bottom:6px">
+                            ${isCorrect ? '✓ Excellent !' : '✗ Pas tout à fait — voici la réponse attendue :'}
+                        </div>
+                        <div style="color:${isCorrect ? '#86efac' : '#fecaca'};font-size:14px;
+                            font-style:italic;line-height:1.5">
+                            ${engEscape(expectedEn)}
+                            ${engSpeakerBtnHtml(pat.id, {size: 'sm', title: 'Écouter la réponse'}).replace(/engSpeakCard\([^)]+\)/, `engSpeak(${JSON.stringify(expectedEn)})`)}
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap">
+                        <button class="btn btn-outline" onclick="engPatternReset()"
+                            style="font-size:12px;padding:6px 12px">↻ Réessayer ce pattern</button>
+                        <div style="display:flex;gap:8px">
+                            ${c.currentExampleIdx < examples.length - 1 ? `
+                                <button class="btn btn-primary" onclick="engPatternNextExample()"
+                                    style="font-size:13px;padding:8px 16px">Exemple suivant →</button>
+                            ` : `
+                                <button class="btn btn-primary" onclick="engExitPatternExercise()"
+                                    style="font-size:13px;padding:8px 16px">Terminer ce pattern</button>
+                            `}
+                        </div>
+                    </div>
+                `}
+            </div>
+        </div>
+    `;
+
+    // Auto-focus the textarea for fast typing
+    const ta = document.getElementById('engPatternAnswer');
+    if (ta && !checked) ta.focus();
+}
+
+function engPatternCheck() {
+    const ta = document.getElementById('engPatternAnswer');
+    if (ta) engState.constructor.userAnswer = ta.value;
+    if (!engState.constructor.userAnswer.trim()) return;
+
+    engState.constructor.checked = true;
+
+    // Compute correctness for scoring
+    const patterns = (engState.data && engState.data.patterns) || [];
+    const pat = patterns.find(p => p.id === engState.constructor.currentPatternId);
+    if (pat) {
+        const example = (pat.examples || [])[engState.constructor.currentExampleIdx];
+        const expected = example ? pat.en_template.replace(/\{[^}]+\}/g, example.en) : pat.en_template;
+        const normalise = s => String(s || '').toLowerCase().replace(/[.,;:!?'"„""''«»()]/g, ' ').replace(/\s+/g, ' ').trim();
+        const correct = normalise(engState.constructor.userAnswer) === normalise(expected);
+        engState.constructor.score.total++;
+        if (correct) engState.constructor.score.correct++;
+    }
+    engRenderConstructor();
+}
+
+function engPatternReset() {
+    engState.constructor.userAnswer = '';
+    engState.constructor.checked = false;
+    engRenderConstructor();
+}
+
+function engPatternNextExample() {
+    engState.constructor.currentExampleIdx++;
+    engState.constructor.userAnswer = '';
+    engState.constructor.checked = false;
+    engRenderConstructor();
+}
+
+// ════════════════════════════════════════════════════════════
+// DICTATION SUB-SECTION (listening practice: hear EN, type what you hear)
+// ════════════════════════════════════════════════════════════
+
+function engDictationPool() {
+    const src = engState.dictation.source;
+    const data = engState.data || {};
+    let pool = [];
+    if (src === 'vocab' || src === 'mixed') {
+        pool = pool.concat((data.vocab || []).map(v => ({id: v.id, en: v.en, fr: v.fr, kind: 'vocab'})));
+    }
+    if (src === 'phrases' || src === 'mixed') {
+        pool = pool.concat((data.phrases || []).map(p => ({id: p.id, en: p.en, fr: p.fr, kind: 'phrase'})));
+    }
+    if (src === 'essentials' || src === 'mixed') {
+        pool = pool.concat((data.essentials || []).map(e => ({id: e.id, en: e.en, fr: e.fr, kind: 'essential'})));
+    }
+    // Filter out items already seen in this session (loop back when exhausted)
+    const seen = engState.dictation.seenIds;
+    const unseen = pool.filter(x => !seen[x.id]);
+    return unseen.length ? unseen : pool;
+}
+
+function engDictationNext() {
+    const pool = engDictationPool();
+    if (!pool.length) return null;
+    const idx = Math.floor(Math.random() * pool.length);
+    const item = pool[idx];
+    engState.dictation.currentItem = item;
+    engState.dictation.userInput = '';
+    engState.dictation.checked = false;
+    engState.dictation.result = null;
+    engState.dictation.seenIds[item.id] = true;
+    // Auto-play after a small delay
+    setTimeout(() => engSpeak(item.en), 350);
+    engRenderDictation();
+    return item;
+}
+
+function engDictationReplay() {
+    const it = engState.dictation.currentItem;
+    if (it) engSpeak(it.en);
+}
+
+function engDictationSetSource(src) {
+    engState.dictation.source = src;
+    engState.dictation.currentItem = null;
+    engState.dictation.userInput = '';
+    engState.dictation.checked = false;
+    engState.dictation.result = null;
+    engState.dictation.seenIds = {};
+    engState.dictation.score = { correct: 0, close: 0, total: 0 };
+    engRenderDictation();
+}
+
+function engDictationCheck() {
+    const ta = document.getElementById('engDictationInput');
+    if (ta) engState.dictation.userInput = ta.value;
+    const it = engState.dictation.currentItem;
+    if (!it) return;
+    if (!engState.dictation.userInput.trim()) return;
+
+    function normalise(s) {
+        return String(s || '').toLowerCase()
+            .replace(/[.,;:!?'"„""''«»()]/g, ' ')
+            .replace(/\s+/g, ' ').trim();
+    }
+    const user = normalise(engState.dictation.userInput);
+    const expected = normalise(it.en);
+    let result;
+    if (user === expected) {
+        result = 'exact';
+        engState.dictation.score.correct++;
+    } else {
+        // Close match heuristic: 80%+ word overlap
+        const expWords = new Set(expected.split(' '));
+        const userWords = user.split(' ');
+        const matched = userWords.filter(w => expWords.has(w)).length;
+        const overlap = matched / Math.max(expWords.size, 1);
+        if (overlap >= 0.75 && Math.abs(userWords.length - expWords.size) <= 2) {
+            result = 'close';
+            engState.dictation.score.close++;
+        } else {
+            result = 'wrong';
+        }
+    }
+    engState.dictation.score.total++;
+    engState.dictation.result = result;
+    engState.dictation.checked = true;
+    engRenderDictation();
+}
+
+function engDictationSkip() {
+    engDictationNext();
+}
+
+function engRenderDictation() {
+    const root = document.getElementById('engContent');
+    if (!root) return;
+
+    const d = engState.dictation;
+    const sources = [
+        { id: 'phrases',    label: '💬 Phrases',     count: (engState.data?.phrases || []).length },
+        { id: 'vocab',      label: '📚 Vocab',       count: (engState.data?.vocab || []).length },
+        { id: 'essentials', label: '🎯 Day-1',       count: (engState.data?.essentials || []).length },
+        { id: 'mixed',      label: '🔀 Tout mélangé', count: (engState.data?.vocab || []).length
+            + (engState.data?.phrases || []).length
+            + (engState.data?.essentials || []).length },
+    ];
+
+    const sourceBar = sources.map(s => {
+        const active = d.source === s.id;
+        return `<button onclick="engDictationSetSource('${s.id}')"
+            style="font-size:12px;padding:6px 12px;border-radius:999px;cursor:pointer;
+            background:${active ? '#3b82f6' : 'transparent'};
+            color:${active ? '#fff' : '#93c5fd'};
+            border:1px solid #3b82f6">
+            ${s.label} (${s.count})</button>`;
+    }).join('');
+
+    const scorePct = d.score.total
+        ? Math.round(((d.score.correct + d.score.close * 0.5) / d.score.total) * 100)
+        : 0;
+    const scoreBar = d.score.total > 0 ? `
+        <div style="font-size:11px;color:var(--text-secondary);margin-left:auto;
+            display:flex;align-items:center;gap:8px">
+            <span><strong style="color:#86efac">${d.score.correct}</strong> exacts</span>
+            <span><strong style="color:#fbbf24">${d.score.close}</strong> approchés</span>
+            <span><strong>${d.score.total}</strong> total</span>
+            <span style="color:#93c5fd">·</span>
+            <span><strong>${scorePct}%</strong></span>
+        </div>
+    ` : '';
+
+    const it = d.currentItem;
+
+    let main;
+    if (!it) {
+        main = `
+            <div class="card" style="padding:24px;text-align:center;margin-top:16px">
+                <div style="font-size:48px;margin-bottom:10px">🎧</div>
+                <div style="font-size:18px;color:var(--text-bright);font-weight:600;margin-bottom:8px">
+                    Mode dictée
+                </div>
+                <div style="font-size:13px;color:var(--text-secondary);margin-bottom:18px;line-height:1.5">
+                    L'app va te lire un mot ou une phrase en anglais.<br>
+                    Tape ce que tu entends — autant de fois que nécessaire pour bien capter.
+                </div>
+                <button class="btn btn-primary" onclick="engDictationNext()"
+                    style="font-size:14px;padding:10px 22px">▶️ Démarrer</button>
+            </div>
+        `;
+    } else if (!d.checked) {
+        main = `
+            <div class="card" style="padding:20px;margin-top:16px">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+                    <button class="btn btn-outline" onclick="engDictationReplay()"
+                        style="font-size:13px;padding:8px 14px">🔊 Rejouer</button>
+                    <span style="font-size:11px;color:var(--text-muted)">
+                        Tu peux rejouer autant de fois que tu veux.
+                    </span>
+                </div>
+                <textarea id="engDictationInput" rows="3"
+                    placeholder="Tape ce que tu entends en anglais..."
+                    oninput="engState.dictation.userInput = this.value"
+                    autofocus
+                    style="width:100%;background:var(--bg-tertiary);color:var(--text-bright);
+                    border:1px solid var(--border-light);border-radius:8px;padding:10px 12px;
+                    font-size:14px;line-height:1.5;resize:vertical;font-family:inherit;
+                    margin-bottom:10px">${engEscape(d.userInput)}</textarea>
+                <div style="display:flex;gap:8px;justify-content:flex-end">
+                    <button class="btn btn-outline" onclick="engDictationSkip()"
+                        style="font-size:12px;padding:6px 12px">Passer →</button>
+                    <button class="btn btn-primary" onclick="engDictationCheck()"
+                        style="font-size:13px;padding:8px 16px">✓ Vérifier</button>
+                </div>
+            </div>
+        `;
+    } else {
+        const r = d.result;
+        const verdict = {
+            exact: { color: '#86efac', bg: '#14532d', icon: '✓', label: 'Parfait !' },
+            close: { color: '#fbbf24', bg: '#78350f', icon: '~', label: 'Presque' },
+            wrong: { color: '#fca5a5', bg: '#7f1d1d', icon: '✗', label: 'Pas tout à fait' },
+        }[r] || { color: '#fca5a5', bg: '#7f1d1d', icon: '✗', label: 'Pas tout à fait' };
+
+        main = `
+            <div class="card" style="padding:20px;margin-top:16px">
+                <div style="background:${verdict.bg}22;border:1px solid ${verdict.bg};
+                    border-radius:10px;padding:14px 16px;margin-bottom:12px">
+                    <div style="font-size:14px;color:${verdict.color};font-weight:600;margin-bottom:8px">
+                        ${verdict.icon} ${engEscape(verdict.label)}
+                    </div>
+                    <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;
+                        letter-spacing:1px;margin-bottom:4px">Ta réponse</div>
+                    <div style="font-size:13px;color:var(--text-bright);margin-bottom:12px;
+                        font-style:italic">${engEscape(d.userInput)}</div>
+                    <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;
+                        letter-spacing:1px;margin-bottom:4px">Attendu</div>
+                    <div style="display:flex;align-items:center;gap:10px">
+                        <div style="font-size:14px;color:#93c5fd;font-weight:600;flex:1">
+                            ${engEscape(it.en)}
+                        </div>
+                        <button onclick="engDictationReplay()"
+                            title="Réécouter"
+                            style="background:transparent;border:1px solid var(--border-light);
+                            border-radius:6px;padding:4px 10px;cursor:pointer;color:#93c5fd;
+                            font-size:13px">🔊</button>
+                    </div>
+                    <div style="font-size:11px;color:var(--text-muted);margin-top:10px">
+                        Traduction : ${engEscape(it.fr)}
+                    </div>
+                </div>
+                <div style="text-align:center">
+                    <button class="btn btn-primary" onclick="engDictationNext()"
+                        style="font-size:13px;padding:8px 22px">Suivant →</button>
+                </div>
+            </div>
+        `;
+    }
+
+    root.innerHTML = `
+        <div style="background:var(--bg-tertiary);border:1px solid var(--border-light);
+            border-radius:10px;padding:12px 14px;margin-bottom:14px">
+            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;
+                letter-spacing:1px;margin-bottom:8px">Source</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+                ${sourceBar}
+                ${scoreBar}
+            </div>
+        </div>
+        ${main}
+    `;
+
+    // Auto-focus the textarea if active
+    setTimeout(() => {
+        const ta = document.getElementById('engDictationInput');
+        if (ta && !d.checked) ta.focus();
+    }, 50);
+}
+
+// ════════════════════════════════════════════════════════════
+// ESSENTIALS SUB-SECTION (Day-1 EY hand-picked checklist)
+// ════════════════════════════════════════════════════════════
+
+function engLoadEssentialsDone() {
+    try {
+        const raw = localStorage.getItem(ENG_LS_ESSENTIALS);
+        engState.essentials.done = raw ? (JSON.parse(raw) || {}) : {};
+    } catch (_) { engState.essentials.done = {}; }
+}
+
+function engSaveEssentialsDone() {
+    try { localStorage.setItem(ENG_LS_ESSENTIALS, JSON.stringify(engState.essentials.done)); }
+    catch (_) {}
+}
+
+function engToggleEssentialDone(id) {
+    if (engState.essentials.done[id]) delete engState.essentials.done[id];
+    else engState.essentials.done[id] = new Date().toISOString();
+    engSaveEssentialsDone();
+    engRenderEssentials();
+}
+
+function engToggleEssentialGroup(group) {
+    engState.essentials.collapsed[group] = !engState.essentials.collapsed[group];
+    engRenderEssentials();
+}
+
+function engSpeakEssential(id) {
+    const e = (engState.data.essentials || []).find(x => x.id === id);
+    if (e) engSpeak(e.en);
+}
+
+function engRenderEssentials() {
+    const root = document.getElementById('engContent');
+    if (!root) return;
+    engLoadEssentialsDone();
+    const all = (engState.data && engState.data.essentials) || [];
+
+    if (!all.length) {
+        root.innerHTML = `
+            <div class="card" style="max-width:520px;margin:40px auto;text-align:center;padding:32px">
+                <div style="font-size:42px;margin-bottom:10px">🎯</div>
+                <div style="font-size:16px;font-weight:600;color:var(--text-bright)">
+                    Aucun essential disponible
+                </div>
+            </div>`;
+        return;
+    }
+
+    const doneCount = Object.keys(engState.essentials.done).length;
+    const total = all.length;
+    const pct = total ? Math.round((doneCount / total) * 100) : 0;
+
+    // Group items
+    const byGroup = {};
+    for (const item of all) {
+        (byGroup[item.group] = byGroup[item.group] || []).push(item);
+    }
+
+    const sections = Object.keys(ESSENTIAL_GROUPS).map(g => {
+        const items = byGroup[g] || [];
+        if (!items.length) return '';
+        const meta = ESSENTIAL_GROUPS[g];
+        const collapsed = !!engState.essentials.collapsed[g];
+        const groupDone = items.filter(i => engState.essentials.done[i.id]).length;
+
+        const itemsHtml = collapsed ? '' : items.map(item => {
+            const isDone = !!engState.essentials.done[item.id];
+            const kindBadge = item.kind === 'vocab' ? '📚 Mot' : '💬 Phrase';
+            return `
+                <div class="card" style="padding:14px 16px;margin-bottom:8px;
+                    ${isDone ? 'border-color:#14532d;background:linear-gradient(180deg,var(--bg-secondary) 0%,rgba(20,83,45,0.05) 100%);' : ''}">
+                    <div style="display:flex;gap:12px;align-items:flex-start">
+                        <label style="cursor:pointer;display:flex;align-items:center;padding-top:2px">
+                            <input type="checkbox" ${isDone ? 'checked' : ''}
+                                onchange="engToggleEssentialDone('${engEscapeAttr(item.id)}')"
+                                style="width:18px;height:18px;cursor:pointer">
+                        </label>
+                        <div style="flex:1">
+                            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap">
+                                <span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;
+                                    letter-spacing:1px">${kindBadge}</span>
+                                ${isDone ? `<span class="badge" style="background:#14532d;color:#86efac;
+                                    border:1px solid #14532d;font-size:10px;padding:2px 8px">✓ Acquis</span>` : ''}
+                            </div>
+                            <div style="font-size:15px;color:var(--text-bright);font-weight:600;margin-bottom:4px">
+                                ${engEscape(item.fr)}
+                            </div>
+                            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+                                <div style="font-size:14px;color:#93c5fd;font-style:italic;flex:1">
+                                    ${engEscape(item.en)}
+                                </div>
+                                <button onclick="event.stopPropagation();engSpeakEssential('${engEscapeAttr(item.id)}')"
+                                    title="Écouter"
+                                    style="background:transparent;border:1px solid var(--border-light);
+                                    border-radius:6px;padding:4px 8px;cursor:pointer;color:#93c5fd;
+                                    font-size:13px;line-height:1">🔊</button>
+                            </div>
+                            <div style="font-size:12px;color:var(--text-secondary);line-height:1.5;
+                                background:var(--bg-tertiary);padding:8px 10px;border-radius:6px;
+                                border-left:3px solid ${meta.color}">
+                                💡 ${engEscape(item.why_fr)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        return `
+            <div style="margin-bottom:18px">
+                <div onclick="engToggleEssentialGroup('${g}')"
+                    style="display:flex;align-items:center;gap:10px;cursor:pointer;
+                    padding:10px 12px;background:var(--bg-tertiary);
+                    border:1px solid var(--border-light);border-radius:10px;
+                    margin-bottom:10px;border-left:4px solid ${meta.color}">
+                    <span style="font-size:18px">${meta.icon}</span>
+                    <div style="flex:1">
+                        <div style="font-size:14px;color:var(--text-bright);font-weight:600">
+                            ${engEscape(meta.label)}
+                        </div>
+                        <div style="font-size:11px;color:var(--text-muted)">
+                            ${groupDone} / ${items.length} acquis
+                        </div>
+                    </div>
+                    <span style="font-size:14px;color:var(--text-muted)">${collapsed ? '▶' : '▼'}</span>
+                </div>
+                ${itemsHtml}
+            </div>
+        `;
+    }).join('');
+
+    root.innerHTML = `
+        <div style="background:var(--bg-tertiary);border:1px solid var(--border-light);
+            border-radius:10px;padding:14px 16px;margin-bottom:16px">
+            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+                <span style="font-size:16px;font-weight:600;color:var(--text-bright)">
+                    🎯 Day-1 EY — 50 essentiels pour ta première semaine
+                </span>
+                <span style="font-size:13px;color:var(--text-secondary);margin-left:auto">
+                    <strong style="color:#86efac">${doneCount}</strong> / ${total} acquis · ${pct}%
+                </span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:10px;line-height:1.5">
+                Coche les éléments quand tu te sens à l'aise. L'objectif : tout maîtriser avant octobre 2026.
+                Tu n'as pas besoin de tout faire d'un coup — vise ~5 par jour.
+            </div>
+        </div>
+        ${sections}
+    `;
+}
+
+// ════════════════════════════════════════════════════════════
+// CONVERSATIONS SUB-SECTION (simulated audit dialogues with choices)
+// ════════════════════════════════════════════════════════════
+
+const SPEAKER_STYLES = {
+    client:    { color: '#3b82f6', bg: '#1e3a5f', icon: '👤' },
+    manager:   { color: '#8b5cf6', bg: '#3b1e5f', icon: '🧑‍💼' },
+    partner:   { color: '#ef4444', bg: '#5f1e1e', icon: '🎩' },
+    colleague: { color: '#10b981', bg: '#1e5f3b', icon: '👥' },
+    you:       { color: '#f59e0b', bg: '#5f3b1e', icon: '🗣️' },
+};
+
+function engRenderConversations() {
+    const root = document.getElementById('engContent');
+    if (!root) return;
+    const convs = (engState.data && engState.data.conversations) || [];
+
+    if (!convs.length) {
+        root.innerHTML = `
+            <div class="card" style="max-width:520px;margin:40px auto;text-align:center;padding:32px">
+                <div style="font-size:42px;margin-bottom:10px">🎙️</div>
+                <div style="font-size:16px;font-weight:600;color:var(--text-bright);margin-bottom:8px">
+                    Aucune conversation disponible
+                </div>
+            </div>`;
+        return;
+    }
+
+    if (engState.conversations.view === 'play' && engState.conversations.currentConvId) {
+        engRenderConversationPlay();
+        return;
+    }
+
+    // LIST view
+    const list = convs.map(c => {
+        const lvl = LEVEL_LABELS[c.level] || { label: c.level || '', color: '#64748b' };
+        const choices = (c.turns || []).filter(t => t.type === 'choice').length;
+        return `
+            <div class="card" style="padding:16px;margin-bottom:10px;cursor:pointer;
+                transition:border-color 0.15s"
+                onmouseover="this.style.borderColor='#3b82f6'"
+                onmouseout="this.style.borderColor=''"
+                onclick="engStartConversation('${engEscapeAttr(c.id)}')">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+                    <div style="flex:1">
+                        <div style="font-size:15px;color:var(--text-bright);font-weight:600;margin-bottom:6px">
+                            ${engEscape(c.title)}
+                        </div>
+                        <div style="font-size:12px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px">
+                            ${engEscape(c.context)}
+                        </div>
+                        <div style="font-size:11px;color:var(--text-muted)">
+                            ⏱️ ~${c.duration_min || '?'} min · 🗣️ ${choices} choix à faire
+                        </div>
+                    </div>
+                    <span class="badge" style="background:transparent;color:${lvl.color};
+                        border:1px solid ${lvl.color};font-size:11px">${lvl.label}</span>
+                </div>
+                <div style="margin-top:10px;font-size:11px;color:var(--text-muted)">
+                    ▶ Démarrer la conversation
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    root.innerHTML = `
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;line-height:1.5">
+            Dialogues simulés en contexte audit. Lis chaque réplique anglaise (avec audio si tu veux),
+            puis choisis la meilleure réponse aux moments clés. Tu auras un feedback immédiat à chaque choix.
+        </div>
+        <div>${list}</div>
+    `;
+}
+
+function engStartConversation(convId) {
+    engState.conversations.view = 'play';
+    engState.conversations.currentConvId = convId;
+    engState.conversations.turnIdx = 0;
+    engState.conversations.choiceIdx = null;
+    engState.conversations.history = [];
+    engRenderConversations();
+}
+
+function engExitConversation() {
+    engState.conversations.view = 'list';
+    engState.conversations.currentConvId = null;
+    engRenderConversations();
+}
+
+function engConvChoose(choiceIdx) {
+    const conv = (engState.data.conversations || []).find(
+        c => c.id === engState.conversations.currentConvId
+    );
+    if (!conv) return;
+    const turn = conv.turns[engState.conversations.turnIdx];
+    if (!turn || turn.type !== 'choice') return;
+    engState.conversations.choiceIdx = choiceIdx;
+    const opt = turn.options[choiceIdx];
+    engState.conversations.history.push({
+        turnIdx: engState.conversations.turnIdx,
+        choiceIdx,
+        correct: !!opt.correct,
+    });
+    // If the choice is correct AND audio autoplay enabled, speak the EN answer.
+    if (opt && engState.audio && engState.audio.autoplay) {
+        setTimeout(() => engSpeak(opt.en), 200);
+    }
+    engRenderConversations();
+}
+
+function engConvAdvance() {
+    engState.conversations.turnIdx++;
+    engState.conversations.choiceIdx = null;
+    engRenderConversations();
+}
+
+function engConvSpeakLine(text) {
+    engSpeak(text);
+}
+
+function engRenderConversationPlay() {
+    const root = document.getElementById('engContent');
+    if (!root) return;
+    const convs = (engState.data && engState.data.conversations) || [];
+    const conv = convs.find(c => c.id === engState.conversations.currentConvId);
+    if (!conv) { engExitConversation(); return; }
+
+    const cs = engState.conversations;
+    const total = conv.turns.length;
+    const turnIdx = cs.turnIdx;
+    const isEnd = turnIdx >= total;
+
+    // (Past turns are rendered inline within the final template via slice.)
+    let currentTurnHtml = '';
+    if (!isEnd) {
+        const turn = conv.turns[turnIdx];
+        if (turn.type === 'choice') {
+            // Active choice — show prompt + options
+            if (cs.choiceIdx == null) {
+                currentTurnHtml = engRenderActiveChoiceHtml(turn);
+            } else {
+                // Choice made — show feedback and "next" button
+                currentTurnHtml = engRenderChoiceFeedbackHtml(turn, cs.choiceIdx);
+            }
+        } else {
+            // NPC line — show it and "continue" button
+            currentTurnHtml = engRenderConvTurnHtml(turn, turnIdx, cs) + `
+                <div style="text-align:center;margin:12px 0">
+                    <button class="btn btn-primary" onclick="engConvAdvance()"
+                        style="font-size:13px;padding:8px 18px">Continuer →</button>
+                </div>
+            `;
+            // Skip the past-turns render of this turn since we just rendered it
+            // (We rendered it via slice 0..turnIdx). Let's drop it from past.
+        }
+    }
+
+    // Final summary
+    let summaryHtml = '';
+    if (isEnd) {
+        const choicesMade = cs.history.length;
+        const correctCount = cs.history.filter(h => h.correct).length;
+        const pct = choicesMade > 0 ? Math.round((correctCount / choicesMade) * 100) : 0;
+        const verdict = pct >= 80 ? '🎉 Excellent !' : pct >= 60 ? '👍 Bien' : '💪 À retravailler';
+        summaryHtml = `
+            <div class="card" style="padding:20px;text-align:center;margin-top:14px">
+                <div style="font-size:32px;margin-bottom:8px">${verdict.split(' ')[0]}</div>
+                <div style="font-size:18px;font-weight:700;color:var(--text-bright);margin-bottom:6px">
+                    ${engEscape(verdict.substring(verdict.indexOf(' ') + 1))}
+                </div>
+                <div style="font-size:14px;color:var(--text-secondary);margin-bottom:14px">
+                    Tu as choisi la meilleure réponse <strong style="color:#86efac">${correctCount}</strong>
+                    fois sur <strong>${choicesMade}</strong> (${pct}%).
+                </div>
+                <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+                    <button class="btn btn-primary" onclick="engStartConversation('${engEscapeAttr(conv.id)}')"
+                        style="font-size:13px;padding:8px 18px">↻ Recommencer</button>
+                    <button class="btn btn-outline" onclick="engExitConversation()"
+                        style="font-size:13px;padding:8px 18px">Liste des conversations</button>
+                </div>
+            </div>
+        `;
+    }
+
+    // Header (always)
+    const lvl = LEVEL_LABELS[conv.level] || { label: conv.level || '', color: '#64748b' };
+    const progress = total > 0 ? Math.round((turnIdx / total) * 100) : 0;
+
+    root.innerHTML = `
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+            <button class="btn btn-outline" onclick="engExitConversation()"
+                style="font-size:12px;padding:6px 12px">← Retour</button>
+            <div style="flex:1">
+                <div style="font-size:14px;color:var(--text-bright);font-weight:600">
+                    ${engEscape(conv.title)}
+                </div>
+                <div style="font-size:11px;color:var(--text-muted)">
+                    ${engEscape(conv.context)}
+                </div>
+            </div>
+            <span class="badge" style="background:transparent;color:${lvl.color};
+                border:1px solid ${lvl.color};font-size:11px">${lvl.label}</span>
+        </div>
+        <div class="progress-bar" style="margin-bottom:14px">
+            <div class="progress-fill" style="width:${progress}%"></div>
+        </div>
+        ${(() => {
+            // For the past turns: render only those that have been "consumed" (not the current one)
+            const pastHtml = conv.turns.slice(0, turnIdx).map((t, i) => engRenderConvTurnHtml(t, i, cs)).join('');
+            return pastHtml;
+        })()}
+        ${currentTurnHtml}
+        ${summaryHtml}
+    `;
+}
+
+function engRenderConvTurnHtml(turn, idx, cs) {
+    if (turn.type === 'choice') {
+        // For a past choice, show only the chosen option text + feedback summary
+        const past = (cs.history || []).find(h => h.turnIdx === idx);
+        if (!past) return '';
+        const opt = turn.options[past.choiceIdx];
+        const style = SPEAKER_STYLES.you;
+        return `
+            <div style="margin:8px 0 8px 30px;text-align:right">
+                <div style="display:inline-block;background:${past.correct ? '#14532d' : '#7f1d1d'};
+                    color:${past.correct ? '#86efac' : '#fecaca'};
+                    border:1px solid ${past.correct ? '#14532d' : '#7f1d1d'};
+                    border-radius:14px;padding:10px 14px;max-width:80%;text-align:left">
+                    <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;
+                        margin-bottom:4px;opacity:0.8">
+                        ${style.icon} Toi · ${past.correct ? '✓' : '✗'}
+                    </div>
+                    <div style="font-size:13px;line-height:1.5">${engEscape(opt.en)}</div>
+                </div>
+            </div>
+        `;
+    }
+    const style = SPEAKER_STYLES[turn.speaker] || SPEAKER_STYLES.client;
+    return `
+        <div style="margin:8px 30px 8px 0">
+            <div style="display:inline-block;background:${style.bg};
+                color:${style.color};border:1px solid ${style.color};
+                border-radius:14px;padding:10px 14px;max-width:80%">
+                <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;
+                    margin-bottom:4px;opacity:0.85;display:flex;align-items:center;
+                    justify-content:space-between;gap:10px">
+                    <span>${style.icon} ${engEscape(turn.name || turn.speaker)}</span>
+                    <button onclick="event.stopPropagation();engConvSpeakLine(${JSON.stringify(turn.en).replace(/"/g, '&quot;')})"
+                        title="Écouter"
+                        style="background:transparent;border:0;cursor:pointer;color:inherit;
+                        font-size:13px;padding:0;line-height:1">🔊</button>
+                </div>
+                <div style="font-size:13px;line-height:1.5;color:var(--text-bright)">
+                    ${engEscape(turn.en)}
+                </div>
+                ${turn.fr ? `<div style="font-size:11px;line-height:1.5;color:var(--text-muted);
+                    margin-top:6px;font-style:italic">${engEscape(turn.fr)}</div>` : ''}
+            </div>
+        </div>
+    `;
+}
+
+function engRenderActiveChoiceHtml(turn) {
+    const opts = turn.options.map((o, i) => `
+        <button onclick="engConvChoose(${i})" class="card"
+            style="text-align:left;padding:12px 14px;margin-bottom:8px;
+            cursor:pointer;width:100%;background:var(--bg-tertiary);
+            border:1px solid var(--border-light);transition:all 0.15s"
+            onmouseover="this.style.borderColor='#3b82f6'"
+            onmouseout="this.style.borderColor=''">
+            <div style="font-size:13px;color:var(--text-bright);line-height:1.5">
+                ${String.fromCharCode(65 + i)}. ${engEscape(o.en)}
+            </div>
+        </button>
+    `).join('');
+
+    return `
+        <div class="card" style="padding:16px 18px;border-color:#f59e0b;margin:14px 0">
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;
+                color:#f59e0b;margin-bottom:6px">🗣️ À toi de répondre</div>
+            <div style="font-size:14px;color:var(--text-bright);margin-bottom:14px">
+                ${engEscape(turn.prompt_fr)}
+            </div>
+            <div>${opts}</div>
+        </div>
+    `;
+}
+
+function engRenderChoiceFeedbackHtml(turn, choiceIdx) {
+    const opt = turn.options[choiceIdx];
+    const correct = !!opt.correct;
+    return `
+        <div style="margin:8px 0 8px 30px;text-align:right">
+            <div style="display:inline-block;background:${correct ? '#14532d' : '#7f1d1d'};
+                color:${correct ? '#86efac' : '#fecaca'};
+                border:1px solid ${correct ? '#14532d' : '#7f1d1d'};
+                border-radius:14px;padding:10px 14px;max-width:80%;text-align:left">
+                <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;
+                    margin-bottom:4px;opacity:0.8">
+                    🗣️ Toi · ${correct ? '✓' : '✗'}
+                </div>
+                <div style="font-size:13px;line-height:1.5">${engEscape(opt.en)}</div>
+            </div>
+        </div>
+        <div style="margin:0 30px 12px 30px;background:var(--bg-tertiary);
+            border:1px solid var(--border-light);border-radius:10px;padding:12px 14px">
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;
+                color:var(--text-muted);margin-bottom:6px">
+                💡 Feedback
+            </div>
+            <div style="font-size:13px;color:var(--text-bright);line-height:1.5">
+                ${engEscape(opt.feedback_fr)}
+            </div>
+        </div>
+        <div style="text-align:center;margin:14px 0">
+            <button class="btn btn-primary" onclick="engConvAdvance()"
+                style="font-size:13px;padding:8px 18px">Continuer →</button>
+        </div>
+    `;
+}
+
+// ════════════════════════════════════════════════════════════
+// VIDEOS SUB-SECTION (curated YouTube resources)
+// ════════════════════════════════════════════════════════════
+
+function engLoadVideosWatched() {
+    try {
+        const raw = localStorage.getItem(ENG_LS_VIDEOS);
+        engState.videos.watched = raw ? (JSON.parse(raw) || {}) : {};
+    } catch (_) { engState.videos.watched = {}; }
+}
+
+function engSaveVideosWatched() {
+    try { localStorage.setItem(ENG_LS_VIDEOS, JSON.stringify(engState.videos.watched)); }
+    catch (_) {}
+}
+
+function engToggleVideoWatched(id) {
+    if (engState.videos.watched[id]) {
+        delete engState.videos.watched[id];
+    } else {
+        engState.videos.watched[id] = new Date().toISOString();
+    }
+    engSaveVideosWatched();
+    engRenderVideos();
+}
+
+function engOpenVideo(id, url) {
+    // Mark as watched and open in a new tab
+    engState.videos.watched[id] = new Date().toISOString();
+    engSaveVideosWatched();
+    try {
+        window.open(url, '_blank', 'noopener,noreferrer');
+    } catch (_) {}
+    engRenderVideos();
+}
+
+function engToggleVideoTheme(t) {
+    engState.videos.theme = engState.videos.theme === t ? null : t;
+    engRenderVideos();
+}
+
+function engRenderVideos() {
+    const root = document.getElementById('engContent');
+    if (!root) return;
+    engLoadVideosWatched();
+
+    const videos = (engState.data && engState.data.videos) || [];
+
+    if (!videos.length) {
+        root.innerHTML = `
+            <div class="card" style="max-width:520px;margin:40px auto;text-align:center;padding:32px">
+                <div style="font-size:42px;margin-bottom:10px">🎬</div>
+                <div style="font-size:16px;font-weight:600;color:var(--text-bright);margin-bottom:8px">
+                    Aucune ressource vidéo disponible
+                </div>
+            </div>`;
+        return;
+    }
+
+    const counts = {};
+    videos.forEach(v => { counts[v.theme] = (counts[v.theme] || 0) + 1; });
+
+    const watchedCount = Object.keys(engState.videos.watched).length;
+    const totalCount = videos.length;
+    const progressPct = totalCount > 0 ? Math.round((watchedCount / totalCount) * 100) : 0;
+
+    const themeChips = Object.keys(counts).map(k => {
+        const meta = VIDEO_THEMES[k] || { icon: '•', label: k };
+        const active = engState.videos.theme === k;
+        return `<button class="badge" style="cursor:pointer;padding:6px 12px;font-size:12px;
+                background:${active ? '#3b82f6' : 'transparent'};
+                color:${active ? '#fff' : '#3b82f6'};
+                border:1px solid #3b82f6"
+                onclick="engToggleVideoTheme('${k}')">
+                ${meta.icon} ${engEscape(meta.label)} (${counts[k]})</button>`;
+    }).join('');
+
+    let filtered = videos.slice();
+    if (engState.videos.theme) {
+        filtered = filtered.filter(v => v.theme === engState.videos.theme);
+    }
+
+    const list = filtered.map(v => {
+        const meta = VIDEO_THEMES[v.theme] || { icon: '•', label: v.theme };
+        const lvl = LEVEL_LABELS[v.level] || { label: v.level || '', color: '#64748b' };
+        const isWatched = !!engState.videos.watched[v.id];
+        let kindIcon, kindLabel;
+        if (v.kind === 'channel')      { kindIcon = '📺'; kindLabel = 'Chaîne'; }
+        else if (v.kind === 'video')   { kindIcon = '🎥'; kindLabel = 'Vidéo'; }
+        else                           { kindIcon = '🔎'; kindLabel = 'Recherche'; }
+
+        return `
+            <div class="card" style="padding:16px;margin-bottom:10px;
+                ${isWatched ? 'border-color:#14532d;background:linear-gradient(180deg,var(--bg-secondary) 0%,rgba(20,83,45,0.08) 100%);' : ''}">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+                    <div style="flex:1">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+                            <span style="font-size:11px;color:var(--text-muted)">${kindIcon} ${kindLabel}</span>
+                            <span class="badge" style="background:#1e3a5f;color:#93c5fd;
+                                border:1px solid #3b82f6;font-size:10px;padding:2px 8px">
+                                ${meta.icon} ${engEscape(meta.label)}</span>
+                            <span class="badge" style="background:transparent;color:${lvl.color};
+                                border:1px solid ${lvl.color};font-size:10px;padding:2px 8px">
+                                ${lvl.label}</span>
+                            ${isWatched ? `<span class="badge" style="background:#14532d;color:#86efac;
+                                border:1px solid #14532d;font-size:10px;padding:2px 8px">✓ Vu</span>` : ''}
+                        </div>
+                        <div style="font-size:15px;color:var(--text-bright);font-weight:600;margin-bottom:6px">
+                            ${engEscape(v.title)}
+                        </div>
+                        <div style="font-size:12px;color:var(--text-secondary);line-height:1.5;margin-bottom:10px">
+                            ${engEscape(v.description)}
+                        </div>
+                        <div style="display:flex;gap:8px;flex-wrap:wrap">
+                            <button class="btn btn-primary" onclick="engOpenVideo('${engEscapeAttr(v.id)}','${engEscapeAttr(v.url)}')"
+                                style="font-size:12px;padding:6px 14px">
+                                ${v.kind === 'channel' ? '📺 Ouvrir la chaîne'
+                                  : v.kind === 'video' ? '▶️ Regarder la vidéo'
+                                  : '🔎 Lancer la recherche YouTube'}
+                            </button>
+                            <button class="btn btn-outline" onclick="engToggleVideoWatched('${engEscapeAttr(v.id)}')"
+                                style="font-size:11px;padding:6px 10px">
+                                ${isWatched ? '↺ Marquer comme à voir' : '✓ Marquer vu'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    root.innerHTML = `
+        <div style="background:var(--bg-tertiary);border:1px solid var(--border-light);
+            border-radius:10px;padding:12px 14px;margin-bottom:14px;display:flex;
+            align-items:center;gap:12px;flex-wrap:wrap">
+            <span style="font-size:12px;color:var(--text-secondary)">
+                Progression : <strong style="color:#86efac">${watchedCount}</strong> /
+                <strong>${totalCount}</strong> ressources vues
+            </span>
+            <div class="progress-bar" style="flex:1;min-width:120px">
+                <div class="progress-fill" style="width:${progressPct}%"></div>
+            </div>
+            <span style="font-size:12px;color:var(--text-muted)">${progressPct}%</span>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:14px">
+            ${themeChips}
+            ${engState.videos.theme ? `<button class="btn btn-outline" onclick="engToggleVideoTheme('${engState.videos.theme}')"
+                style="font-size:12px;padding:5px 10px;color:#fca5a5">↺ Tous</button>` : ''}
+        </div>
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;line-height:1.5">
+            Cliquer sur une vidéo l'ouvre dans un nouvel onglet et la marque automatiquement comme vue.
+            Sélection May 2026 — chaînes éducatives reconnues (ACCA, Adam Deller, IFRS Foundation, etc.).
+        </div>
+        <div>${list}</div>
+    `;
+}
+
+function engPatternRevealHint() {
+    // Hint = show the first 3 words of the expected EN
+    const patterns = (engState.data && engState.data.patterns) || [];
+    const pat = patterns.find(p => p.id === engState.constructor.currentPatternId);
+    if (!pat) return;
+    const example = (pat.examples || [])[engState.constructor.currentExampleIdx];
+    const expected = example ? pat.en_template.replace(/\{[^}]+\}/g, example.en) : pat.en_template;
+    const words = expected.split(/\s+/);
+    const hint = words.slice(0, Math.max(3, Math.ceil(words.length / 4))).join(' ');
+    alert('💡 Début attendu :\n\n' + hint + '...');
+}
+
+// ════════════════════════════════════════════════════════════
 // GLOBAL KEY HANDLER (only when english tab is active)
 // ════════════════════════════════════════════════════════════
 
@@ -1121,3 +2722,34 @@ window.engClearWriting = engClearWriting;
 window.engCheckText = engCheckText;
 window.engShowCorrection = engShowCorrection;
 window.engApplySuggestion = engApplySuggestion;
+window.engSpeak = engSpeak;
+window.engSpeakCard = engSpeakCard;
+window.engSpeakPhrase = engSpeakPhrase;
+window.engToggleAudioAutoplay = engToggleAudioAutoplay;
+window.engSetAudioVoice = engSetAudioVoice;
+window.engSetAudioRate = engSetAudioRate;
+window.engToggleConstructorCat = engToggleConstructorCat;
+window.engResetConstructorCat = engResetConstructorCat;
+window.engStartPatternExercise = engStartPatternExercise;
+window.engExitPatternExercise = engExitPatternExercise;
+window.engPatternCheck = engPatternCheck;
+window.engPatternReset = engPatternReset;
+window.engPatternNextExample = engPatternNextExample;
+window.engPatternRevealHint = engPatternRevealHint;
+window.engToggleVideoTheme = engToggleVideoTheme;
+window.engToggleVideoWatched = engToggleVideoWatched;
+window.engOpenVideo = engOpenVideo;
+window.engStartConversation = engStartConversation;
+window.engExitConversation = engExitConversation;
+window.engConvChoose = engConvChoose;
+window.engConvAdvance = engConvAdvance;
+window.engConvSpeakLine = engConvSpeakLine;
+window.engInsertTemplate = engInsertTemplate;
+window.engToggleEssentialDone = engToggleEssentialDone;
+window.engToggleEssentialGroup = engToggleEssentialGroup;
+window.engSpeakEssential = engSpeakEssential;
+window.engDictationNext = engDictationNext;
+window.engDictationReplay = engDictationReplay;
+window.engDictationSetSource = engDictationSetSource;
+window.engDictationCheck = engDictationCheck;
+window.engDictationSkip = engDictationSkip;
