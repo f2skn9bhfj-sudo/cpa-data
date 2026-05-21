@@ -513,6 +513,9 @@ function modRenderNormDetail(n, m) {
                 <button class="btn btn-outline" style="padding:6px 12px;font-size:12px" onclick="modExportNormPdf('${escapeAttr(n.id)}', this)" title="Exporter cette norme en PDF">
                     📄 PDF
                 </button>
+                <button class="btn btn-outline" style="padding:6px 12px;font-size:12px;color:#8b5cf6;border-color:#8b5cf644" onclick="modOpenMindmap('${escapeAttr(n.code || n.id)}')" title="Voir la mindmap de cette norme">
+                    🧠 Mindmap
+                </button>
                 ${n.revision_count > 0 ? `<button class="btn btn-outline" style="padding:6px 12px;font-size:12px;color:#ef4444;border-color:#ef444444" onclick="modUndoRevised('${escapeAttr(n.id)}')" title="Annuler la derniere revision">
                     ↩ Annuler
                 </button>` : ''}
@@ -1042,6 +1045,9 @@ function modRenderLessonIfpDetail(l, m) {
                 <span class="mod-relevance ${rel.cls}">Pertinence : ${rel.label}</span>
                 <button class="btn btn-outline" style="padding:6px 12px;font-size:12px" onclick="modExportLessonPdf('${escapeAttr(m.id)}', '${escapeAttr(l.id)}', this)" title="Exporter cette leçon en PDF">
                     📄 PDF
+                </button>
+                <button class="btn btn-outline" style="padding:6px 12px;font-size:12px;color:#8b5cf6;border-color:#8b5cf644" onclick="modOpenMindmap('${escapeAttr(l.id)}')" title="Voir la mindmap de cette leçon">
+                    🧠 Mindmap
                 </button>
             </div>
         </div>
