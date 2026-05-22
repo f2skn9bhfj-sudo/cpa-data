@@ -1053,6 +1053,29 @@ function modRenderLessonIfpDetail(l, m) {
         </div>
     </div>`;
 
+    // ── Audio files (podcasts NotebookLM-style) ──
+    if (Array.isArray(l.audio_files) && l.audio_files.length > 0) {
+        for (const af of l.audio_files) {
+            if (!af || !af.path) continue;
+            const mime = af.mime || 'audio/mpeg';
+            const title = af.title || 'Audio';
+            const kindLabel = af.kind === 'podcast' ? 'Podcast' : af.kind === 'lecture' ? 'Cours audio' : 'Audio';
+            html += `<div class="mod-audio">
+                <div class="mod-audio-head">
+                    <span class="mod-audio-icon" aria-hidden="true">🎧</span>
+                    <div class="mod-audio-meta">
+                        <div class="mod-audio-kind">${escapeHtml(kindLabel)}</div>
+                        <div class="mod-audio-title">${escapeHtml(title)}</div>
+                    </div>
+                </div>
+                <audio class="mod-audio-player" controls preload="metadata">
+                    <source src="${escapeAttr(af.path)}" type="${escapeAttr(mime)}">
+                    Ton navigateur ne supporte pas la lecture audio.
+                </audio>
+            </div>`;
+        }
+    }
+
     // Content sections (main course content)
     if (l.content && l.content.length > 0) {
         l.content.forEach((sec, i) => {

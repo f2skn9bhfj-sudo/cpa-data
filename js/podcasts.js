@@ -28,28 +28,46 @@
     }
 
     function _collectPodcasts(data) {
-        // Renvoie liste plate : [{module_id, module_name, module_color, norm_code, norm_title, audio}]
+        // Renvoie liste plate dédupliquée par path :
+        // [{module_id, module_name, module_color, norm/lesson info, audio}]
+        // Un même podcast peut être rattaché à une norme ET à une leçon — on
+        // garde uniquement la première occurrence (priorité aux normes pour
+        // l'affichage du code de la norme dans la carte podcast).
+        const seen = new Set();
         const out = [];
         const modules = (data && data.modules) || [];
         for (const m of modules) {
             const modId = m.id || '';
             const modName = m.name || modId;
             const modColor = m.color || MODULE_COLORS[modId] || '#64748b';
+
+            // Normes d'abord (priorité d'affichage)
             for (const n of (m.norms || [])) {
                 if (!Array.isArray(n.audio_files) || n.audio_files.length === 0) continue;
                 for (const a of n.audio_files) {
-                    if (!a || !a.path) continue;
+                    if (!a || !a.path || seen.has(a.path)) continue;
+                    seen.add(a.path);
                     out.push({
-                        module_id: modId,
-                        module_name: modName,
-                        module_color: modColor,
-                        norm_id: n.id || '',
-                        norm_code: n.code || '',
-                        norm_title: n.title || '',
-                        path: a.path,
-                        title: a.title || 'Audio',
-                        kind: a.kind || 'podcast',
-                        mime: a.mime || 'audio/mp4'
+                        module_id: modId, module_name: modName, module_color: modColor,
+                        norm_id: n.id || '', norm_code: n.code || '', norm_title: n.title || '',
+                        path: a.path, title: a.title || 'Audio',
+                        kind: a.kind || 'podcast', mime: a.mime || 'audio/mp4'
+                    });
+                }
+            }
+
+            // Puis leçons IFP (pour les podcasts présents uniquement sur les leçons)
+            for (const l of (m.lessons_ifp || [])) {
+                if (!Array.isArray(l.audio_files) || l.audio_files.length === 0) continue;
+                for (const a of l.audio_files) {
+                    if (!a || !a.path || seen.has(a.path)) continue;
+                    seen.add(a.path);
+                    out.push({
+                        module_id: modId, module_name: modName, module_color: modColor,
+                        norm_id: l.id || '', norm_code: l.code || ('L' + (l.number || '')),
+                        norm_title: l.title || '',
+                        path: a.path, title: a.title || 'Audio',
+                        kind: a.kind || 'podcast', mime: a.mime || 'audio/mp4'
                     });
                 }
             }
