@@ -2337,14 +2337,6 @@
             "OSRev",
             "NCR (contrôle restreint)"
           ],
-          "audio_files": [
-            {
-              "path": "audio/audit_seuils_opting_out.m4a",
-              "title": "Seuils, opting-out et responsabilité du réviseur",
-              "kind": "podcast",
-              "mime": "audio/mp4"
-            }
-          ],
           "mindmap_md": "# CO 727-731a\n## Cadre légal suisse de l'audit\n\n### Architecture du dispositif (CO 727)\n- **CO 727 al.1** — Seuils contrôle ordinaire\n  - Bilan ≥ **20 MCHF**\n  - CA ≥ **40 MCHF**\n  - **≥ 250 ETP** annuels moyens\n  - Règle : **2/3 sur 2 exercices consécutifs**\n- **CO 727 al.2** — Sociétés **toujours** soumises au contrôle ordinaire\n  - Sociétés **cotées** en bourse\n  - Sociétés tenues d'établir des **comptes consolidés**\n  - Sur demande de **10% des actionnaires** ou minorité\n- **CO 727a** — Contrôle restreint (régime par défaut sous seuils)\n- **CO 727a al.2** — Opting-out (≤ 10 ETP + unanimité)\n\n### Indépendance et tâches (CO 728-729)\n#### CO 728 — Contrôle ordinaire\n- Indépendance **en fait** ET **en apparence**\n- 7 incompatibilités spécifiques (al.2)\n- Concentration honoraires : **max 10%** du cabinet\n- **CO 728a** — Tâches (5 constatations obligatoires)\n- **CO 728b** — Rapport AG\n- **CO 728c** — Avis au juge si surendettement\n#### CO 729 — Contrôle restreint\n- Indépendance **assouplie**\n- Tenue de la comptabilité **autorisée** (sauf décision)\n- **CO 729a** — Procédures (interrogations + analytiques)\n- **CO 729b** — Rapport (formule négative)\n- **CO 729c** — Démission + communication\n\n### Surendettement et raisons sérieuses (CO 731a)\n- **CO 731a** — Devoirs en cas de **violation manifeste**\n  - Avis au CA et à l'AG\n  - Si pas de mesures → procédure formelle\n- **CO 730a** — Rotation **responsable mandat** : 7 ans\n- **CO 731** — Élection annuelle par AG\n- **CO 731b** — Démission de l'organe de révision\n\n### Règles essentielles\n- **20-40-250** — seuils contrôle ordinaire\n- **2/3 sur 2 ans** — règle de déclenchement\n- Cotées + consolidées → **toujours** ordinaire\n- **10 ETP unanimité** — opting-out\n- **10% honoraires** — concentration limite\n- **7 ans** — rotation responsable\n- **3 ans / 10 ans** — prescription responsabilité (CO 755)\n\n### ⚠️ Pièges examen\n- Seuils 20-40-250 ≠ seuils RPC 10-20-50 (M3)\n- Opting-out = **unanimité**, pas majorité\n- Cotées = toujours ordinaire (peu importe la taille)\n- Concentration honoraires = 10% (chiffre clé)\n- 728a vs 728b = CA détaillé vs AG court\n\n### 💡 Mnémoniques\n- **« 727-728-729 »** — Architecture / Ordinaire / Restreint\n- **« 727a »** — Restreint + Opting-out\n- **« 728a/b/c »** — Tâches / Rapport AG / Juge\n- **« 730a = 7 ans »** — Rotation\n- **« 731a = violations »** — Devoirs spéciaux\n\n### 🔗 Renvois\n- **m2_L1** — Cadre légal (détail)\n- **m2_L2** — Types de mandats\n- **m2_L3** — Contrôle restreint\n- **m2_L14** — Rapports CA vs AG\n- **m2_L16** — Surendettement\n"
         },
         {
@@ -2441,20 +2433,6 @@
             "NAS",
             "Code IESBA"
           ],
-          "audio_files": [
-            {
-              "path": "audio/audit_isa_serie_200.m4a",
-              "title": "Normes ISA série 200 et audit suisse",
-              "kind": "podcast",
-              "mime": "audio/mp4"
-            },
-            {
-              "path": "audio/audit_isa_402_soc.m4a",
-              "title": "ISA 402 et rapports SOC pour EXPERTsuisse",
-              "kind": "podcast",
-              "mime": "audio/mp4"
-            }
-          ],
           "mindmap_md": "# ISA 200-810\n## International Standards on Auditing\n\n### Architecture du référentiel\n#### Émetteur\n- **IAASB** (International Auditing and Assurance Standards Board)\n- Rattaché à l'**IFAC**\n- Adoption volontaire par les pays\n- Adapté en CH par EXPERTsuisse → **NAS**\n\n#### 8 séries (200-899)\n- **100-199** — Cadre & glossaire (informatif)\n- **200-299** — Principes généraux & responsabilités\n- **300-499** — Évaluation risques + planification\n- **500-599** — Éléments probants\n- **600-699** — Travaux d'autres auditeurs\n- **700-799** — Conclusions & rapports\n- **800-899** — Domaines spécialisés\n\n### Norme pivot : ISA 200 — Objectifs généraux\n- Objectif : opinion sur les comptes\n- **Assurance raisonnable** ≠ absolue\n- **Risque d'audit** = R(inhérent) × R(contrôle) × R(détection)\n- **RMM** = inhérent × contrôle\n- Concepts clés :\n  - **Professional skepticism**\n  - **Professional judgment**\n  - **Materiality**\n  - **Sufficient appropriate audit evidence**\n\n### Évolutions majeures récentes\n- **ISA 315 (R2019)** — Évaluation risques refondue\n- **ISA 540 (R2018)** — Estimations\n- **ISA 600 (R2022)** — Audits de groupe risk-based\n- **ISA 570 (R2024)** — Going concern renforcé\n- **ISA 220 (R2020)** — Qualité au niveau mission\n- **ISQM 1 / 2** — Remplacent ISQC 1 depuis 12.2022\n\n### Liens avec autres familles\n- **ISRE** — Engagements de revue (limited assurance)\n- **ISAE** — Autres missions d'assurance\n- **ISRS** — Services connexes (no assurance)\n- **ISQM** — Qualité cabinet + mission\n- **IESBA** — Éthique (Section 1 = principes)\n\n### ⚠️ Pièges examen\n- IAASB ≠ IFAC ≠ IESBA (3 entités distinctes)\n- **7 séries actives** (100 informatives)\n- ISA = international, **NAS = suisse** (adaptation)\n- 4 ISA récentes révisées (315, 540, 600, 570)\n- ISQM remplace ISQC depuis 12.2022\n\n### 💡 Mnémoniques\n- **« 2-3-4-5-6-7-8 »** — 7 séries actives\n- **« 315-540-600-570 »** — révisions majeures récentes\n- **« 200 = pivot »** — concepts fondamentaux\n- **« IAASB / IFAC / IESBA »** — gouvernance internationale\n\n### 🔗 Renvois\n- **m2_L4** — Architecture détaillée\n- **m2_L5 à L13** — Détail séries\n- **Code IESBA** — Éthique\n- **NAS** — Adaptation suisse\n"
         },
         {
@@ -2493,14 +2471,6 @@
           "cross_refs": [
             "m2_L8",
             "ISA 200-810"
-          ],
-          "audio_files": [
-            {
-              "path": "audio/audit_hierarchie_missions.m4a",
-              "title": "La hiérarchie des missions d'audit suisse",
-              "kind": "podcast",
-              "mime": "audio/mp4"
-            }
           ],
           "mindmap_md": "# ISAE 3000/3402/3410/3420\n## Missions d'assurance autres qu'audit historique\n\n### Cadre général — ISAE 3000 (R2013)\n- **International Standards on Assurance Engagements**\n- Pour les missions d'assurance qui **ne portent pas** sur des états financiers historiques\n- Émetteur : **IAASB**\n- 2 niveaux d'assurance :\n  - **Raisonnable** (reasonable) — proche audit\n  - **Limitée** (limited) — proche revue\n- Champ : sustainability reporting, KPIs, controls, GHG, pro forma\n\n### ISAE 3402 — Organismes de service\n- Rapport sur **contrôles** d'un prestataire de service\n- Équivalent du **SOC 1** (US — SSAE 18)\n- Pertinent quand l'utilisateur externalise un processus impactant ses comptes\n- **Type 1** (design à une date) vs **Type 2** (effectiveness sur période)\n- Utilisateur s'appuie via ISA 402\n\n### ISAE 3410 — Gaz à effet de serre\n- Rapport sur **inventaire GES** (Scope 1, 2, 3)\n- Référentiels :\n  - GHG Protocol\n  - ISO 14064\n  - Réglementations nationales (CSRD UE)\n- Niveau : limité ou raisonnable\n- En forte croissance avec exigences CSRD\n\n### ISAE 3420 — Informations financières pro forma\n- Pro forma = **simulation** d'événement (acquisition, restructuration)\n- Contexte : **prospectus IPO**, communication financière majeure\n- Évaluer :\n  - Compilation correcte\n  - Critères applicables suivis\n  - Hypothèses raisonnables\n\n### Distinction avec autres familles\n| Famille | Champ | Niveau |\n|---|---|---|\n| **ISA** | États financiers historiques | Raisonnable |\n| **ISRE** | États financiers historiques | Limitée |\n| **ISAE** | Autres (non-financier, controls, GES) | Raisonnable ou limitée |\n| **ISRS** | Services connexes (PCC, compilation) | **Aucune** assurance |\n\n### ⚠️ Pièges examen\n- ISAE 3000 = **cadre général**, autres = spécialisées\n- ISAE 3402 = **SOC 1**, pas SOC 2\n- ISAE 3410 = **GES uniquement** (pas tout sustainability)\n- ISAE 3420 = **pro forma** uniquement\n- Niveau **raisonnable OU limitée** (à choisir)\n\n### 💡 Mnémoniques\n- **« 3000-3402-3410-3420 »** — 4 ISAE clés\n- **« 3402 = SOC 1 = Service org. »**\n- **« 3410 = GES »** (10 = carbone... mnémo perso)\n- **« 3420 = pro forma »**\n- Famille : **« A-A-B-C-D »** Assurance générale / Audit service / Bilan carbone / Documents pro forma\n\n### 🔗 Renvois\n- **m2_L8** — Organismes de service (ISA 402 + ISAE 3402)\n- **m2_L2** — Types de mandats (vue d'ensemble)\n- **ISA 200-810** — Lien avec audit financier\n"
         },
@@ -2700,26 +2670,6 @@
             "ISA 200-810",
             "NCR (contrôle restreint)"
           ],
-          "audio_files": [
-            {
-              "path": "audio/audit_sci_coso.m4a",
-              "title": "L'audit du SCI et du COSO",
-              "kind": "podcast",
-              "mime": "audio/mp4"
-            },
-            {
-              "path": "audio/audit_architecture_isa_nas.m4a",
-              "title": "L'architecture des normes ISA et NAS",
-              "kind": "podcast",
-              "mime": "audio/mp4"
-            },
-            {
-              "path": "audio/audit_cycle_pcmr.m4a",
-              "title": "Maîtriser le cycle PCMR en audit",
-              "kind": "podcast",
-              "mime": "audio/mp4"
-            }
-          ],
           "mindmap_md": "# NAS\n## Normes d'Audit Suisses (EXPERTsuisse)\n\n### Architecture & statut\n- Émises par **EXPERTsuisse**\n- Adoption suisse des **ISA** internationales\n- **Mappage 1-pour-1** sur la numérotation ISA\n- Adaptations CH pour spécificités du droit suisse (LSR, OSRev, CO)\n- Sont **prescrites** pour le contrôle ordinaire en CH (CO 728a)\n\n### Composition\n- NAS = traduction officielle + adaptation des ISA 200-810\n- Inclut commentaires CH-spécifiques\n- Publication trilingue : **français, allemand, italien**\n- Mise à jour à chaque révision majeure des ISA\n\n### Adaptations principales CH\n- **CO 728** — Indépendance suisse plus stricte sur certains points\n- **CO 728a** — 5 constatations obligatoires (SCI ch.3, etc.)\n- **CO 728b vs 728a** — 2 rapports (AG public + CA confidentiel)\n- **CO 730a** — Rotation responsable 7 ans (vs international)\n- Renvois fréquents aux LSR / OSRev pour l'agrément\n\n### Lien avec NCR (contrôle restreint)\n- **NAS = contrôle ordinaire** uniquement\n- **NCR** = contrôle restreint (norme distincte EXPERTsuisse)\n- Pas de référence ISA dans NCR (cadre suisse autonome)\n\n### Hiérarchie référentielle CH\n- 1. Loi (CO + LSR + OSRev)\n- 2. NAS (audit ordinaire)\n- 3. NCR (contrôle restreint)\n- 4. Code EXPERTsuisse (éthique CH)\n- 5. Code IESBA (éthique internationale, applicable par renvoi)\n\n### ⚠️ Pièges examen\n- NAS = **suisse**, ISA = international (95% alignées)\n- NAS s'applique au **contrôle ordinaire**, NCR au restreint\n- **3 langues officielles** (fr/de/it)\n- Rotation 7 ans = spécificité CH (international va à 5 dans certains pays)\n- NAS = obligatoire CO 728a\n\n### 💡 Mnémoniques\n- **« NAS = NAS suisse »** — pour ne pas confondre avec autres \"NAS\"\n- **« NAS ↔ ISA »** — quasi-bijection\n- **« Trilingue »** — fr/de/it\n- **« 728a obligation »** — base légale d'application\n\n### 🔗 Renvois\n- **ISA 200-810** — Référentiel parent\n- **NCR** — Pendant pour restreint\n- **m2_L4** — Architecture des normes\n"
         },
         {
@@ -2760,14 +2710,6 @@
             "m2_L3",
             "CO 727-731a",
             "NAS"
-          ],
-          "audio_files": [
-            {
-              "path": "audio/audit_controle_restreint.m4a",
-              "title": "L'essentiel du contrôle restreint suisse",
-              "kind": "podcast",
-              "mime": "audio/mp4"
-            }
           ],
           "mindmap_md": "# NCR\n## Norme suisse pour le contrôle restreint\n\n### Identification\n- Émise par **EXPERTsuisse**\n- Référentiel **spécifique CH** pour le contrôle restreint\n- Pendant de la **ISRE 2400** internationale mais cadre autonome\n- Base légale d'application : **CO 729-729c**\n\n### Procédures et étendue\n#### Procédures **principales**\n- **Interrogations** de la direction\n- **Procédures analytiques** (ratios, comparaisons, tendances)\n- Compréhension de l'activité et de l'organisation\n#### Procédures **complémentaires**\n- Tests détaillés **si nécessaire** (en cas de doute matériel)\n- Confirmations externes (banques notamment)\n- Inspection de documents clés\n#### Procédures **non requises**\n- Tests de contrôles systématiques\n- Observation physique des stocks (sauf signal)\n- Évaluation détaillée du SCI\n\n### Rapport (CO 729b)\n- **Forme courte** (~1 page)\n- Formulation **négative** type :\n  > \"Sur la base de notre contrôle, rien n'a attiré notre attention qui nous permette de conclure que les comptes annuels ne sont pas conformes…\"\n- Pas de mention \"image fidèle\" — uniquement conformité légale\n- Constatations sur surendettement si applicable (CO 729c)\n\n### Exigences éthiques particulières (CO 729)\n- Indépendance **assouplie** par rapport au contrôle ordinaire (CO 728)\n- **Tenue de la comptabilité autorisée** (différence majeure)\n- Mais autres prestations interdites : évaluation déterminante, recrutement, défense en justice\n- Concentration honoraires : prudence\n\n### Différences clés vs NAS (ordinaire)\n| Critère | NAS / Audit | NCR / Restreint |\n|---|---|---|\n| Assurance | Raisonnable | Limitée |\n| Opinion | Positive | Négative |\n| Procédures | Tests + analytiques + contrôles | Inquiry + analytiques |\n| Référentiel | ISA + NAS | NCR seule |\n| Tenue compta | Interdite | **Autorisée** |\n| Cotées | Obligatoire | **Interdit** |\n| Coût relatif | 100% | ~30-50% |\n\n### ⚠️ Pièges examen\n- NCR = **suisse uniquement** (pas équivalent ISA)\n- Tenue compta **autorisée** (vs ordinaire)\n- Rapport **formulation négative**\n- Cotées **interdit** (peu importe la taille)\n- Surendettement → avis au juge obligatoire (CO 729c)\n\n### 💡 Mnémoniques\n- **« NCR ≠ ISRE 2400 »** — référentiels parallèles\n- **« 729a-b-c »** — articles CO (procédures, rapport, surendettement)\n- **« Tenue OK »** — différence d'indépendance majeure\n- **« Limitée + Négative »** — niveau et formulation\n\n### 🔗 Renvois\n- **m2_L3** — Contrôle restreint approfondi\n- **NAS** — Pendant ordinaire\n- **ISRE 2400** — Équivalent international\n- **CO 729-729c** — Base légale\n"
         },
