@@ -407,6 +407,32 @@
             }
         },
 
+        // ── Base de cours HEC ──
+        async get_hec_manifest() {
+            try {
+                const r = await fetch('hec/manifest.json', { cache: 'no-cache' });
+                if (!r.ok) return {};
+                return await r.json();
+            } catch (e) {
+                console.warn('[api-static] get_hec_manifest:', e);
+                return {};
+            }
+        },
+
+        async get_hec_fiche(relPath) {
+            if (!relPath || typeof relPath !== 'string') return null;
+            const safe = relPath.replace(/\\/g, '/').replace(/^\/+/, '');
+            if (safe.includes('..')) return null;
+            try {
+                const r = await fetch('hec/' + safe, { cache: 'no-cache' });
+                if (!r.ok) return null;
+                return await r.text();
+            } catch (e) {
+                console.warn('[api-static] get_hec_fiche:', e);
+                return null;
+            }
+        },
+
         async get_modules() {
             const u = await api.get_unified_modules();
             return (u.modules || []).map(m => ({ id: m.id, code: m.code, name: m.name }));
@@ -987,6 +1013,7 @@
         async export_norm_pdf() { return { ok: false, error: 'PDF export desktop only' }; },
         async export_lesson_pdf() { return { ok: false, error: 'PDF export desktop only' }; },
         async export_audit_fiche_pdf() { return { ok: false, error: 'PDF export desktop only' }; },
+        async export_hec_fiche_pdf() { return { ok: false, error: 'PDF export desktop only' }; },
         async list_audit_templates() { return []; },
         async download_audit_template() { return { ok: false, error: 'Excel export desktop only' }; },
 

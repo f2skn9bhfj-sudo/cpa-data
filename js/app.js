@@ -154,6 +154,10 @@ function navigate(tab, subTab) {
             if (typeof renderPodcasts === 'function') renderPodcasts(main);
             else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module Podcasts en cours de chargement...</p>';
             break;
+        case 'hec':
+            if (typeof _renderHEC === 'function') _renderHEC(main);
+            else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module HEC en cours de chargement...</p>';
+            break;
         default: main.innerHTML = '<p>Page inconnue.</p>';
     }
 

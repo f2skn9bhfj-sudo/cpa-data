@@ -1,0 +1,75 @@
+{
+  "code": "ICCF — Semaine 1",
+  "title": "🟦 Semaine 1 — Les grands équilibres du bilan & typologies de dette",
+  "category": "HEC Paris — ICCF Cours 1",
+  "ref_msa": "Cours ICCF — Structure Financière & Financements",
+  "bases_legales": "Comptabilité économique vs comptable",
+  "normes": "Cadre standard finance d'entreprise (Vernimmen, Brealey-Myers)",
+  "niveau": "Initiation finance d'entreprise",
+  "summary": "Comprendre comment lire le bilan d'une entreprise en mode **bilan économique** (les 4 grandes boîtes), savoir s'il existe une structure financière optimale (spoiler : non), maîtriser les concepts de **liquidité vs solvabilité** et de **Free Cash-Flow**, et avoir une vue d'ensemble des financements en dette possibles. C'est la **fondation** sur laquelle tout le reste du cours s'appuie.",
+  "mnemonics": "**Bilan économique en 4 boîtes — IBC D** : **I**mmobilisations + **B**FR (à gauche, actif éco) = **C**apitaux propres + **D**ette financière nette (à droite, financement). Par construction : Actif éco = Capitaux investis 🟰. **BFR** : « Stocks + Clients moins Fournisseurs » → **S + C – F**.",
+  "sections": [
+    {
+      "anchor": "s1-1",
+      "title": "1️⃣ Les 4 composantes-clés du bilan économique",
+      "content": "Le **bilan comptable**, c'est sympa, mais c'est **patrimonial** : il dit *qui possède quoi*. Le **bilan économique**, lui, regroupe tout en **4 grandes boîtes** pour répondre à 2 questions essentielles :\n\n1. Combien d'argent est **investi dans l'activité** ?\n2. Comment est-il **financé** ?\n\n**Les 4 boîtes** :\n\n| 📦 ACTIF ÉCONOMIQUE (gauche) | 💰 CAPITAUX INVESTIS (droite) |\n|---|---|\n| 🏭 **Actifs immobilisés** (corporels, incorporels, financiers) | 🪙 **Capitaux propres** (capital + réserves) |\n| 🔄 **BFR** = Stocks + Clients – Fournisseurs | 🏦 **Dette financière nette** = Dette brute – Trésorerie |\n\n**Règles d'or** :\n- ✅ Actif économique = Actifs immobilisés + BFR\n- ✅ Capitaux investis = Capitaux propres + Dette financière nette\n- ✅ Par construction : **Actif économique = Capitaux investis** 🟰\n\n**Cas particuliers à connaître** :\n- 🔹 **Dette nette négative** = cash net positif (entreprise « surcapitalisée »)\n- 🔹 **BFR négatif** = sociétés type grande distribution (Carrefour, Lidl…) ou jouets : les clients paient cash mais les fournisseurs sont payés à 60-90 jours → c'est un **FINANCEMENT**, pas un besoin\n- 🔹 **BFR saisonnier** = fabricants de jouets, agriculture, événementiel",
+      "key_point": "**BFR négatif = ressource gratuite de financement.** C'est exactement pour ça que la grande distribution peut tourner avec des marges fines : le BFR négatif finance une partie des immobilisations sans coût.",
+      "info": "**Bilan comptable vs économique** — le bilan comptable suit la logique patrimoniale (actif/passif au sens juridique). Le bilan économique reclasse pour faire ressortir 2 blocs : ce qui est INVESTI dans l'exploitation (gauche) vs comment c'est FINANCÉ (droite). C'est ce dernier qui sert à analyser la structure financière.",
+      "tip": "**Mnémonique BFR** : « **S**tocks + **C**lients moins **F**ournisseurs » → **S + C – F**. C'est l'argent immobilisé dans le cycle d'exploitation."
+    },
+    {
+      "anchor": "s1-2",
+      "title": "2️⃣ Existe-t-il une structure financière optimale ?",
+      "content": "**Spoiler : NON !** ❌ Il n'y a pas de recette magique. Mais il faut quand même piloter sa structure selon **DEUX approches complémentaires**.\n\n**Approche MICRO** (court terme) :\n- Pouvoir payer ses fournisseurs, impôts, salaires **à tout moment**\n- C'est le job du **TRÉSORIER** au quotidien\n- Risque : défaut de paiement → faillite 💀\n\n**Approche MACRO** (long terme) :\n- Financer le **développement** de l'entreprise **dans la durée**\n- C'est le job du **DAF** (Directeur Administratif et Financier)\n- Ressources : capitaux propres, dette LT, cessions…\n\n**💎 Liquidité ≠ Solvabilité** (à ne JAMAIS confondre) :\n\n- 💧 **LIQUIDITÉ** = capacité à payer ses dettes **à tout moment** (avoir du cash dispo)\n- 🏛️ **SOLVABILITÉ** = avoir assez d'**actifs** pour rembourser TOUS ses créanciers in fine\n\n**🎬 Parabole pour mémoriser** : un milliardaire arrêté par la police américaine qui a oublié son portefeuille à l'hôtel : il est **SOLVABLE** (riche) mais **ILLIQUIDE** (pas de cash sur lui) → on lui confisque sa voiture 🚗.\n\nÀ l'inverse : une startup qui vient de lever des fonds = **LIQUIDE** (plein de cash) mais peut être **INSOLVABLE** (pertes accumulées, fonds propres insuffisants).\n\n**💸 Le Free Cash-Flow (FTD) — la clé de tout** :\n\n```\n  Résultat net\n+ Dotations aux amortissements (charge sans débours de cash → on l'extourne)\n- Variation du BFR (Δ BFR sur l'année)\n- Dépenses d'investissements (CAPEX)\n= 💰 FTD\n```\n\n- 👉 Si **FTD positif** : on rembourse de la dette ou on verse des dividendes\n- 👉 Si **FTD négatif** : il faut TROUVER du cash (augmentation de capital ou nouvelle dette)\n\n**4 facteurs qui influencent les FTD** :\n1. Croissance de l'activité\n2. Évolution des marges\n3. Gestion du BFR\n4. Ampleur des investissements",
+      "warning": "**Une entreprise peut être profitable au P&L mais MOURIR par manque de cash.** En période de crise ou de forte croissance, c'est le cash qui prime. *Cash is King* — mantra à graver.",
+      "example": "**Exemple parlant** : une startup qui vient de lever 5 M€ = très LIQUIDE. Mais si elle accumule 10 M€ de pertes sur 3 ans avant d'atteindre le break-even, elle peut devenir INSOLVABLE (capitaux propres négatifs) tout en restant liquide quelques mois. À surveiller en audit !"
+    },
+    {
+      "anchor": "s1-3",
+      "title": "3️⃣ Les critères de choix + le ratio Dette nette / EBITDA",
+      "content": "Pas de structure optimale unique, mais des **critères de choix** :\n\n**🏠 Critères INTERNES** :\n- Situation dans le cycle de vie (startup vs mature)\n- Nature de l'entreprise (cyclique ? résiliente ?)\n- Structure des coûts\n- Flexibilité voulue\n- Goût des actionnaires pour le risque\n\n**🌍 Critères EXTERNES** :\n- Environnement économique\n- Benchmark concurrents\n- Disponibilité des marchés\n- Avis des analystes\n- **Notation** (rating)\n\n**⭐ LE RATIO ROI : Dette nette / EBITDA**\n\nC'est **LE** ratio universel utilisé par TOUS les financiers (banquiers, agences de notation, analystes…).\n\n**📊 Repères pratiques** :\n\n| Ratio | Interprétation |\n|---|---|\n| 🟢 **< 1,5x** | Levier FAIBLE — entreprise peu endettée |\n| 🟡 **1,5x – 3x** | Levier MODÉRÉ — zone confortable |\n| 🟠 **3x – 4x** | Levier ÉLEVÉ — attention ! difficile d'entrer en bourse au-dessus de 3x |\n| 🔴 **> 4x** | Levier PRÉOCCUPANT (hors LBO) |\n| 💀 **6x ou plus** | Niveau typique d'un LBO |\n\n**Interprétation** : ce ratio dit combien d'**années d'EBITDA** seraient nécessaires pour rembourser toute la dette nette.\n\n⚠️ Quand **dette nette < 0** (cash net positif), le ratio devient négatif → on ne le produit pas.",
+      "comparison": "**🎯 L'effet de levier — concept fondamental.**\n\nQuand la rentabilité économique > coût de la dette, l'endettement **AUGMENTE** la rentabilité des capitaux propres (ROE).\n\n- ✅ Avantage : dope la rentabilité actionnaire\n- ⚠️ Revers : amplifie aussi les **pertes** en cas de retournement = la dette accroît le **RISQUE** des capitaux propres\n\n👉 La structure de financement est donc un **CHOIX FONDAMENTAL D'ACTIONNAIRE**.",
+      "tip": "**Pour l'examen** : connaître par cœur les seuils 1,5x / 3x / 4x / 6x. Quand on te montre un ratio Dette nette/EBITDA, tu dois immédiatement positionner l'entreprise (modérée / inquiétante / LBO)."
+    },
+    {
+      "anchor": "s1-4",
+      "title": "4️⃣ Cartographie d'ensemble des financements en dette",
+      "content": "Schématiquement, on classe les financements selon **3 critères** :\n\n1. 🎯 **Financement GÉNÉRAL** (crédit à l'entreprise) **vs DÉDIÉ/ADOSSÉ** (lié à un actif spécifique)\n2. ⏱️ **Maturité** : COURT TERME (≤ 1 an) vs MOYEN/LONG TERME (jusqu'à 5-7 ans, voire +)\n3. 🏦 **Source** : BANCAIRE vs OBLIGATAIRE (marché financier)\n\n**Matrice complète** :\n\n| | **COURT TERME (≤ 1 an)** | **MOYEN/LONG TERME** |\n|---|---|---|\n| **🏢 CRÉDIT À L'ENTREPRISE** *(général, avec recours)* | 🏦 *Bancaire* : Facilité de caisse / Découvert, Crédit de campagne, Crédit-relais, Avances en devises, RCF<br>📈 *Marché* : Papier commercial (NEU CP), Euro CP / US CP | 🏦 *Bancaire* : Prêt à terme (Term Loan), RCF, PGE (Covid), Titres hybrides (TSS, prêts participatifs)<br>📈 *Marché* : Obligations IG / High Yield, EMTN, Placements privés (Euro PP, Schuldschein, US PP), Equity-linked (OC, échangeables), Crowdlending |\n| **🔗 FINANCEMENT DÉDIÉ/ADOSSÉ** *(sans recours, sur actif)* | 🏦 *Bancaire* : Escompte, Dailly, Financement sur stocks, Affacturage (factoring), Crédits documentaires (export)<br>📈 *Marché* : Titrisation CT | 🏦 *Bancaire* : Crédit-bail (leasing) mobilier/immobilier, Crédit hypothécaire, Sale & Lease Back, Crédit acheteur (export), Project finance, Dette LBO, Financement avions/navires…<br>📈 *Marché* : Émissions High Yield pour LBO, Titrisation |\n\n**🎓 À retenir pour l'examen** :\n- **AVEC RECOURS** = le prêteur peut se retourner contre toute la surface financière de l'emprunteur\n- **SANS RECOURS** = le prêteur ne peut compter que sur l'actif financé\n- Le crédit **dédié** est en général **plus cher** (plus de risque pour le prêteur)\n- Le crédit **général** est **plus rapide** à mettre en place pour les bons clients (approche relationnelle)",
+      "key_point": "**Cette matrice est le squelette de toute la finance d'entreprise.** Chaque mode de financement étudié dans les semaines suivantes se range dans une case. Toujours te demander : avec ou sans recours ? court ou long terme ? banque ou marché ?",
+      "info": "**Désintermédiation** : tendance lourde où les marchés financiers (obligations) prennent la place des banques. Aux USA : ~2/3 marché, 1/3 bancaire. En Europe : ~80 % bancaire encore, en glissement vers le marché. France : 70/30."
+    }
+  ],
+  "auto_test": [
+    {
+      "q": "Quelles sont les 4 composantes du bilan économique et comment se rangent-elles ?",
+      "a": "**Gauche (Actif économique)** : (1) **Actifs immobilisés** (corporels, incorporels, financiers) + (2) **BFR** (Stocks + Clients – Fournisseurs). **Droite (Capitaux investis)** : (3) **Capitaux propres** (capital + réserves) + (4) **Dette financière nette** (Dette brute – Trésorerie). Par construction : Actif économique = Capitaux investis."
+    },
+    {
+      "q": "Quelle est la différence entre liquidité et solvabilité ?",
+      "a": "**Liquidité** = capacité à payer ses dettes À TOUT MOMENT (avoir du cash dispo). C'est une question de timing/trésorerie. **Solvabilité** = avoir assez d'ACTIFS pour rembourser TOUS ses créanciers in fine. C'est une question patrimoniale. Le milliardaire au portefeuille oublié est solvable mais illiquide. La startup qui vient de lever est liquide mais peut être insolvable (pertes accumulées)."
+    },
+    {
+      "q": "Formule du Free Cash-Flow (FTD) ?",
+      "a": "**FTD = Résultat net + Dotations aux amortissements – Variation du BFR – CAPEX**. On extourne les amortissements (charge non cash), on retranche la variation de BFR et les investissements. Si FTD > 0 : on rembourse de la dette ou on verse des dividendes. Si FTD < 0 : il faut trouver du cash (augmentation de capital ou nouvelle dette)."
+    },
+    {
+      "q": "Quel est LE ratio universel pour mesurer le levier financier et quels sont les seuils-clés ?",
+      "a": "**Dette nette / EBITDA**. Seuils : **< 1,5x** levier faible · **1,5x – 3x** modéré (zone confortable) · **3x – 4x** élevé (difficile d'entrer en bourse au-dessus de 3x) · **> 4x** préoccupant hors LBO · **6x+** niveau typique LBO. Interprétation : nombre d'années d'EBITDA pour rembourser la dette nette."
+    },
+    {
+      "q": "Différence entre financement avec recours et sans recours ?",
+      "a": "**AVEC RECOURS** = le prêteur peut se retourner contre **toute la surface financière** de l'emprunteur (crédit à l'entreprise général). **SANS RECOURS** = le prêteur ne peut compter que sur **l'actif financé** (crédit dédié/adossé). Conséquences : sans recours = plus risqué pour le prêteur = généralement plus cher. Mais permet de **déconsolider** dans certains cas (offrir une capacité d'endettement complémentaire)."
+    },
+    {
+      "q": "Pourquoi un BFR négatif est-il une bonne nouvelle ?",
+      "a": "Parce que **les clients paient AVANT que l'entreprise paie ses fournisseurs**. C'est une **ressource gratuite de financement** : l'entreprise dispose temporairement du cash de ses clients. Cas classique : **grande distribution** (Carrefour, Lidl, Aldi) — encaissement immédiat des clients, paiement fournisseurs à 60-90 jours. Le BFR négatif finance une partie des immobilisations sans coût."
+    }
+  ],
+  "sources": [
+    "Cours ICCF — HEC Paris — Initiation à la Comptabilité et la Finance",
+    "Vernimmen — Finance d'entreprise (référence académique française)",
+    "Brealey, Myers, Allen — Principles of Corporate Finance"
+  ],
+  "statut": "✅ Complet — 4 sections (bilan économique, structure optimale, ratio levier, cartographie financements) + 6 auto-tests.",
+  "maj": "2026-05-22"
+}

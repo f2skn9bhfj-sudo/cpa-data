@@ -75,6 +75,7 @@ const engState = {
         score: { correct: 0, close: 0, total: 0 },
         seenIds: {},             // avoid repeating in same session
     },
+    deletedCards: {},            // { id: ISO_timestamp } — user-hidden cards/phrases, persisted to localStorage
 };
 
 // ── Constants ────────────────────────────────────────────────
@@ -130,6 +131,7 @@ const VIDEO_THEMES = {
 
 const ENG_LS_VIDEOS = 'swisscpa_eng_videos_watched';
 const ENG_LS_ESSENTIALS = 'swisscpa_eng_essentials_done';
+const ENG_LS_DELETED = 'swisscpa_eng_deleted_cards';
 
 const ESSENTIAL_GROUPS = {
     survival:   { icon: '🆘', label: 'Survie semaine 1', color: '#ef4444' },
@@ -306,6 +308,24 @@ function engSpeakerBtnHtml(id, opts) {
         color:#93c5fd;line-height:1">🔊</button>`;
 }
 
+// Speaker button for an arbitrary text (e.g. example sentence inside a card).
+// The text is JSON-encoded so it survives the inline onclick attribute safely.
+function engSpeakerBtnTextHtml(text, opts) {
+    opts = opts || {};
+    const title = opts.title || 'Écouter cette phrase';
+    const size = opts.size || 'sm'; // sm | md
+    const padding = size === 'sm' ? '2px 7px' : '4px 9px';
+    const fontSize = size === 'sm' ? '12px' : '14px';
+    // JSON.stringify gives proper escaping; replace " with &quot; to fit inside the
+    // double-quoted onclick attribute.
+    const safeArg = JSON.stringify(text).replace(/"/g, '&quot;');
+    return `<button class="eng-speak-btn" title="${engEscapeAttr(title)}"
+        onclick="event.stopPropagation();engSpeak(${safeArg})"
+        style="background:transparent;border:1px solid var(--border-light);
+        border-radius:6px;padding:${padding};font-size:${fontSize};cursor:pointer;
+        color:#93c5fd;line-height:1;flex-shrink:0">🔊</button>`;
+}
+
 function engToggleAudioAutoplay() {
     engState.audio.autoplay = !engState.audio.autoplay;
     engSaveAudio();
@@ -378,6 +398,67 @@ function engRenderAudioBar() {
             </label>
         </div>
     `;
+}
+
+// ── Deleted-cards helpers (user can hide cards they find useless) ──
+
+function engLoadDeleted() {
+    try {
+        const raw = localStorage.getItem(ENG_LS_DELETED);
+        engState.deletedCards = raw ? (JSON.parse(raw) || {}) : {};
+    } catch (_) { engState.deletedCards = {}; }
+}
+
+function engSaveDeleted() {
+    try { localStorage.setItem(ENG_LS_DELETED, JSON.stringify(engState.deletedCards)); }
+    catch (_) {}
+}
+
+function engIsDeleted(id) {
+    return !!engState.deletedCards[id];
+}
+
+function engDeleteCard(id) {
+    if (!id) return;
+    engState.deletedCards[id] = new Date().toISOString();
+    engSaveDeleted();
+
+    // If we're on the vocab card UI, skip to the next available card.
+    if (engState.section === 'vocab') {
+        // Remove the deleted card from the active pool to keep indices coherent.
+        const beforeIdx = engState.currentIdx;
+        engState.cards = engState.cards.filter(c => c.id !== id);
+        // If the deleted card was at or after current index, the index now points
+        // to the next item; cap at the end.
+        if (engState.currentIdx >= engState.cards.length) {
+            engState.currentIdx = engState.cards.length; // triggers "end of pool" view
+        }
+        engState.isFlipped = false;
+        engRenderCard();
+        // Also refresh the filters bar (deleted count chip).
+        engRenderVocabFilters();
+    } else {
+        // For other contexts (phrase list, essentials, etc.), just re-render.
+        if (engState.section === 'phrases') engRenderPhrases();
+    }
+}
+
+function engRestoreAllDeleted() {
+    const n = Object.keys(engState.deletedCards).length;
+    if (!n) return;
+    if (!confirm(`Restaurer les ${n} carte(s) supprimée(s) ?`)) return;
+    engState.deletedCards = {};
+    engSaveDeleted();
+    // Reset current session
+    engState.currentIdx = 0;
+    engState.isFlipped = false;
+    if (engState.section === 'vocab') {
+        engRebuildCardPool();
+        engRenderVocabFilters();
+        engRenderCard();
+    } else if (engState.section === 'phrases') {
+        engRenderPhrases();
+    }
 }
 
 // ── Persistence helpers ──────────────────────────────────────
@@ -480,6 +561,7 @@ async function renderEnglish(container, subTab) {
     engLoadProgress();
     engLoadFilters();
     engLoadAudio();
+    engLoadDeleted();
 
     const sub = subTab || engGetSubTab('vocab');
     engState.section = sub;
@@ -629,6 +711,17 @@ function engRenderVocabFilters() {
                 onchange="engSetFilter('overdue', this.checked)"
                 style="margin:0"> 🔴 En retard</label>`;
 
+    const deletedCount = Object.keys(engState.deletedCards || {}).length;
+    const deletedIndicator = deletedCount > 0 ? `
+        <div style="display:inline-flex;align-items:center;gap:8px;padding:5px 10px;
+            font-size:11px;border-radius:999px;background:rgba(127,29,29,0.15);
+            border:1px solid #7f1d1d;color:#fca5a5">
+            🗑️ ${deletedCount} supprimée${deletedCount > 1 ? 's' : ''}
+            <button onclick="engRestoreAllDeleted()"
+                style="background:transparent;border:0;cursor:pointer;color:#fca5a5;
+                text-decoration:underline;font-size:11px;padding:0">Restaurer</button>
+        </div>` : '';
+
     bar.innerHTML = `
         <div style="display:flex;gap:6px;flex-wrap:wrap">${domainPills}</div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
@@ -640,6 +733,7 @@ function engRenderVocabFilters() {
         ${(f.domain || f.level || f.neverSeen || f.overdue) ? `
             <button class="btn btn-outline" onclick="engResetFilters()"
                 style="font-size:12px;padding:5px 10px;color:#fca5a5">↺ Réinit.</button>` : ''}
+        ${deletedIndicator}
     `;
 }
 
@@ -683,6 +777,9 @@ function engRebuildCardPool() {
     const f = engState.filters;
     const source = (engState.data && engState.data.vocab) || [];
     let pool = source.slice();
+
+    // Exclude user-hidden cards first — they should never appear in any pool.
+    pool = pool.filter(c => !engIsDeleted(c.id));
 
     if (f.domain)    pool = pool.filter(c => c.domain === f.domain);
     if (f.level)     pool = pool.filter(c => c.level === f.level);
@@ -755,12 +852,21 @@ function engRenderCard() {
         ${m.label}</span>`;
 
     // FRONT (FR) and BACK (EN) — single-card layout, click to flip.
+    // Each example shows FR + EN with a 🔊 button to hear the EN sentence
+    // (the word in context — much more useful than the isolated word).
     const examplesHtml = (card.examples && card.examples.length > 0) ? `
         <div class="eng-card-examples">
             ${card.examples.map(ex => `
-                <div style="margin-bottom:8px">
+                <div style="margin-bottom:10px;padding:8px 10px;
+                    background:rgba(59,130,246,0.04);border-radius:6px;
+                    border-left:2px solid #3b82f6">
                     <div class="eng-card-examples-fr">${engEscape(ex.fr)}</div>
-                    <div class="eng-card-examples-en">${engEscape(ex.en)}</div>
+                    <div style="display:flex;align-items:flex-start;gap:8px;margin-top:4px">
+                        <div class="eng-card-examples-en" style="flex:1;margin-bottom:0">
+                            ${engEscape(ex.en)}
+                        </div>
+                        ${engSpeakerBtnTextHtml(ex.en, {title: 'Écouter la phrase en contexte'})}
+                    </div>
                 </div>
             `).join('')}
         </div>` : '';
@@ -804,9 +910,17 @@ function engRenderCard() {
                 <!-- Back (EN) -->
                 <div class="flashcard-face flashcard-back eng-card-back">
                     <div style="display:flex;justify-content:space-between;width:100%;
-                        align-items:center;margin-bottom:14px">
+                        align-items:center;margin-bottom:14px;gap:8px">
                         <div style="display:flex;gap:6px;flex-wrap:wrap">${domainBadge} ${levelBadge}</div>
-                        ${engSpeakerBtnHtml(card.id, {title: 'Écouter en anglais'})}
+                        <div style="display:flex;gap:6px">
+                            ${engSpeakerBtnHtml(card.id, {title: 'Écouter en anglais'})}
+                            <button class="eng-delete-btn"
+                                title="Supprimer cette carte (réversible)"
+                                onclick="event.stopPropagation();engDeleteCard('${engEscapeAttr(card.id)}')"
+                                style="background:transparent;border:1px solid #7f1d1d;
+                                border-radius:8px;padding:6px 10px;font-size:14px;cursor:pointer;
+                                color:#fca5a5;line-height:1">🗑️</button>
+                        </div>
                     </div>
                     <div style="display:flex;align-items:center;gap:10px;justify-content:center">
                         <div class="eng-card-en">${engEscape(card.en)}</div>
@@ -996,7 +1110,8 @@ function engRenderPhraseList() {
     const f = engState.phrasesFilters;
     const q = (f.search || '').trim().toLowerCase();
 
-    let filtered = phrases;
+    // Hide phrases the user marked as useless (same mechanism as vocab cards).
+    let filtered = phrases.filter(p => !engIsDeleted(p.id));
     if (f.category) filtered = filtered.filter(p => p.category === f.category);
     if (q) {
         filtered = filtered.filter(p =>
@@ -1066,7 +1181,7 @@ function engResetPhraseFilters() {
 // "Réviser comme flashcards" : reuse the vocab card UI but feed it phrases.
 function engPhrasesAsFlashcards() {
     const phrases = (engState.data && engState.data.phrases) || [];
-    let pool = phrases.slice();
+    let pool = phrases.filter(p => !engIsDeleted(p.id));
     const f = engState.phrasesFilters;
     if (f.category) pool = pool.filter(p => p.category === f.category);
 
@@ -1777,6 +1892,8 @@ function engDictationPool() {
     if (src === 'essentials' || src === 'mixed') {
         pool = pool.concat((data.essentials || []).map(e => ({id: e.id, en: e.en, fr: e.fr, kind: 'essential'})));
     }
+    // Hide cards the user has explicitly marked as useless.
+    pool = pool.filter(x => !engIsDeleted(x.id));
     // Filter out items already seen in this session (loop back when exhausted)
     const seen = engState.dictation.seenIds;
     const unseen = pool.filter(x => !seen[x.id]);
@@ -2753,3 +2870,5 @@ window.engDictationReplay = engDictationReplay;
 window.engDictationSetSource = engDictationSetSource;
 window.engDictationCheck = engDictationCheck;
 window.engDictationSkip = engDictationSkip;
+window.engDeleteCard = engDeleteCard;
+window.engRestoreAllDeleted = engRestoreAllDeleted;

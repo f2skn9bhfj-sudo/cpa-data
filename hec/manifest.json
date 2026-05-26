@@ -1,0 +1,41 @@
+{
+  "titre": "HEC — Cours certifiants",
+  "description": "Fiches de synthèse des cours HEC suivis en parallèle de la préparation Swiss CPA. Reprend la DA des fiches Audit (callouts, mnémoniques, auto-test, sources).",
+  "cours": [
+    {
+      "id": "cours_1_iccf_structure_financiere",
+      "code": "ICCF — Cours 1",
+      "titre": "Structure financière & Financements",
+      "ecole": "HEC Paris",
+      "description": "Cours ICCF (Initiation à la Comptabilité et la Finance) — 4 semaines sur la structure financière de l'entreprise et les différents modes de financement (bilan économique, leviers de structuration, obligations & hybrides, restructuration de la dette).",
+      "sommaire": "cours_1_iccf_structure_financiere/_sommaire.md",
+      "couleur": "#8B1A2E",
+      "fiches": [
+        {
+          "id": "semaine_1",
+          "titre": "Semaine 1 — Les grands équilibres du bilan & typologies de dette",
+          "fichier": "cours_1_iccf_structure_financiere/semaine_1.json",
+          "statut": "complet"
+        },
+        {
+          "id": "semaine_2",
+          "titre": "Semaine 2 — Structurer sa dette + crédits bancaires + financements dédiés",
+          "fichier": "cours_1_iccf_structure_financiere/semaine_2.json",
+          "statut": "complet"
+        },
+        {
+          "id": "semaine_3",
+          "titre": "Semaine 3 — Obligations, hybrides, finance durable",
+          "fichier": "cours_1_iccf_structure_financiere/semaine_3.json",
+          "statut": "complet"
+        },
+        {
+          "id": "semaine_4",
+          "titre": "Semaine 4 — Restructuration du passif",
+          "fichier": "cours_1_iccf_structure_financiere/semaine_4.json",
+          "statut": "complet"
+        }
+      ]
+    }
+  ]
+}

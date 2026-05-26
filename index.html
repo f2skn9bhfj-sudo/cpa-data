@@ -10,9 +10,9 @@
         Migration progressive : chaque écran refait en Tailwind remplace
         ses règles dans style.css (Phase 4b).
     -->
-    <link rel="stylesheet" href="css/style.css?v=1779438999">
-    <link rel="stylesheet" href="css/pdf_export.css?v=1779438999">
-    <link rel="stylesheet" href="css/audit_cours.css?v=1779438999">
+    <link rel="stylesheet" href="css/style.css?v=1779821893">
+    <link rel="stylesheet" href="css/pdf_export.css?v=1779821893">
+    <link rel="stylesheet" href="css/audit_cours.css?v=1779821893">
 </head>
 <body>
     <!-- ARIA live region for page changes (assertive nav announcements) -->
@@ -33,6 +33,7 @@
         <button class="tab" data-tab="audit" onclick="navigate('audit')" aria-label="Module Audit" style="background:linear-gradient(135deg,#3c1d6e,#553c9a);color:#e9d8fd;border:1px solid #805ad5;font-weight:700"><span aria-hidden="true">🔍 </span>Audit</button>
         <button class="tab" data-tab="podcasts" onclick="navigate('podcasts')" aria-label="Podcasts" style="background:linear-gradient(135deg,#1e3a5f,#312e81);color:#a5b4fc;border:1px solid #6366f1;font-weight:700"><span aria-hidden="true">🎧 </span>Podcasts</button>
         <button class="tab english-tab" data-tab="english" onclick="navigate('english')" aria-label="Module Anglais" style="background:linear-gradient(135deg,#7c2d12,#9a3412);color:#fed7aa;border:1px solid #ea580c;font-weight:700"><span aria-hidden="true">🇬🇧 </span>Anglais</button>
+        <button class="tab" data-tab="hec" onclick="navigate('hec')" aria-label="Cours HEC" style="background:linear-gradient(135deg,#5A1020,#8B1A2E);color:#fecaca;border:1px solid #8B1A2E;font-weight:700"><span aria-hidden="true">🎓 </span>HEC</button>
         <div class="search-box" role="search">
             <label for="globalSearch" class="sr-only">Rechercher dans toute l'application</label>
             <input type="text" id="globalSearch" placeholder="Rechercher..." oninput="handleSearch(this.value)" onfocus="showSearchResults()" aria-describedby="searchHint" autocomplete="off" />
@@ -70,36 +71,37 @@
     <!-- Scripts -->
     <!-- api-client.js DOIT être chargé en premier : il installe window.pywebview.api
          en mode web (no-op en mode desktop). Cf. commentaire dans le fichier. -->
-    <script src="js/api-client-static.js?v=1779438999"></script>
-    <script src="js/crossref.js?v=1779438999"></script>
-    <script src="js/search.js?v=1779438999"></script>
-    <script src="js/dashboard.js?v=1779438999"></script>
-    <script src="js/modules.js?v=1779438999"></script>
-    <script src="js/flashcards.js?v=1779438999"></script>
-    <script src="js/fcdb.js?v=1779438999"></script>
-    <script src="js/free_recall.js?v=1779438999"></script>
-    <script src="js/exam_mode.js?v=1779438999"></script>
-    <script src="js/references.js?v=1779438999"></script>
-    <script src="js/ref_glossary.js?v=1779438999"></script>
-    <script src="js/ref_seuils.js?v=1779438999"></script>
-    <script src="js/ref_cas.js?v=1779438999"></script>
-    <script src="js/ref_arbres.js?v=1779438999"></script>
-    <script src="js/ref_terrain.js?v=1779438999"></script>
-    <script src="js/comparisons.js?v=1779438999"></script>
-    <script src="js/fs_explorer.js?v=1779438999"></script>
-    <script src="js/progress.js?v=1779438999"></script>
-    <script src="js/qcm.js?v=1779438999"></script>
-    <script src="js/trainer.js?v=1779438999"></script>
-    <script src="js/audit.js?v=1779438999"></script>
-    <script src="js/audit_cours.js?v=1779438999"></script>
-    <script src="js/mission.js?v=1779438999"></script>
-    <script src="js/audit_seuils.js?v=1779438999"></script>
-    <script src="js/canvas.js?v=1779438999"></script>
-    <script src="js/english.js?v=1779438999"></script>
-    <script src="js/podcasts.js?v=1779438999"></script>
-    <script src="js/ai_explain.js?v=1779438999"></script>
-    <script src="js/pdf_export.js?v=1779438999"></script>
-    <script src="js/mindmap.js?v=1779438999"></script>
-    <script src="js/app.js?v=1779438999"></script>
+    <script src="js/api-client-static.js?v=1779821893"></script>
+    <script src="js/crossref.js?v=1779821893"></script>
+    <script src="js/search.js?v=1779821893"></script>
+    <script src="js/dashboard.js?v=1779821893"></script>
+    <script src="js/modules.js?v=1779821893"></script>
+    <script src="js/flashcards.js?v=1779821893"></script>
+    <script src="js/fcdb.js?v=1779821893"></script>
+    <script src="js/free_recall.js?v=1779821893"></script>
+    <script src="js/exam_mode.js?v=1779821893"></script>
+    <script src="js/references.js?v=1779821893"></script>
+    <script src="js/ref_glossary.js?v=1779821893"></script>
+    <script src="js/ref_seuils.js?v=1779821893"></script>
+    <script src="js/ref_cas.js?v=1779821893"></script>
+    <script src="js/ref_arbres.js?v=1779821893"></script>
+    <script src="js/ref_terrain.js?v=1779821893"></script>
+    <script src="js/comparisons.js?v=1779821893"></script>
+    <script src="js/fs_explorer.js?v=1779821893"></script>
+    <script src="js/progress.js?v=1779821893"></script>
+    <script src="js/qcm.js?v=1779821893"></script>
+    <script src="js/trainer.js?v=1779821893"></script>
+    <script src="js/audit.js?v=1779821893"></script>
+    <script src="js/audit_cours.js?v=1779821893"></script>
+    <script src="js/hec.js?v=1779821893"></script>
+    <script src="js/mission.js?v=1779821893"></script>
+    <script src="js/audit_seuils.js?v=1779821893"></script>
+    <script src="js/canvas.js?v=1779821893"></script>
+    <script src="js/english.js?v=1779821893"></script>
+    <script src="js/podcasts.js?v=1779821893"></script>
+    <script src="js/ai_explain.js?v=1779821893"></script>
+    <script src="js/pdf_export.js?v=1779821893"></script>
+    <script src="js/mindmap.js?v=1779821893"></script>
+    <script src="js/app.js?v=1779821893"></script>
 </body>
 </html>
