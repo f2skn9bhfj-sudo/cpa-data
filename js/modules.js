@@ -516,9 +516,21 @@ function modRenderNormDetail(n, m) {
                 <button class="btn btn-outline" style="padding:6px 12px;font-size:12px;color:#8b5cf6;border-color:#8b5cf644" onclick="modOpenMindmap('${escapeAttr(n.code || n.id)}')" title="Voir la mindmap de cette norme">
                     🧠 Mindmap
                 </button>
-                <button class="btn btn-outline tr-toggle-btn" id="trToggle_${escapeAttr(n.id)}" data-lang="fr" style="padding:6px 12px;font-size:12px;color:#38bdf8;border-color:#38bdf844" onclick="modToggleNormLang('${escapeAttr(n.id)}', this)" title="Traduire en anglais — clique aussi sur un mot dans le texte pour traduire">
-                    🇬🇧 EN
-                </button>
+                ${(function () {
+                    // État courant : FR par défaut, EN si toggle persistant
+                    const curLang = (window.Translator && window.Translator.getCurrentLang)
+                        ? window.Translator.getCurrentLang(n.id) : 'fr';
+                    const hasEn = !!(window.Translator && window.Translator.hasEnglishVersion && window.Translator.hasEnglishVersion(n));
+                    const label = (curLang === 'en') ? '🇫🇷 FR' : '🇬🇧 EN';
+                    const title = (curLang === 'en')
+                        ? 'Revenir au français'
+                        : (hasEn
+                            ? 'Afficher en anglais (traduction pré-faite, instantané)'
+                            : 'Traduction EN à venir — click sur un mot pour traduire un terme isolé');
+                    const dis = (curLang === 'fr' && !hasEn) ? '' : '';
+                    const bg = hasEn || curLang === 'en' ? '' : 'opacity:0.55;';
+                    return `<button class="btn btn-outline tr-toggle-btn" id="trToggle_${escapeAttr(n.id)}" data-lang="${curLang}" style="padding:6px 12px;font-size:12px;color:#38bdf8;border-color:#38bdf844;${bg}" onclick="modToggleNormLang('${escapeAttr(n.id)}', this)" title="${title}">${label}</button>`;
+                })()}
                 ${n.revision_count > 0 ? `<button class="btn btn-outline" style="padding:6px 12px;font-size:12px;color:#ef4444;border-color:#ef444444" onclick="modUndoRevised('${escapeAttr(n.id)}')" title="Annuler la derniere revision">
                     ↩ Annuler
                 </button>` : ''}
@@ -860,17 +872,46 @@ async function modExportLessonPdf(moduleId, lessonId, btn) {
     }
 }
 
-// ── Toggle EN/FR d'une norme (traduction live via translator.js) ──
-async function modToggleNormLang(normId, btn) {
+// ── Toggle EN/FR d'une norme via swap pré-traduit (translator.js v2) ──
+// Au lieu de traduire via API, on re-render la norme avec ses champs
+// *_en (sections_en, title_en, summary_en…). Si pas de version EN dispo,
+// translator.js affiche un message "Traduction EN à venir".
+function modToggleNormLang(normId, btn) {
     if (typeof window.Translator === 'undefined') {
-        alert('Module de traduction non chargé. Vérifie translator.js.');
+        alert('Module de traduction non chargé.');
         return;
     }
-    const reading = document.getElementById('modReading');
-    if (!reading) return;
-    const detailEl = reading.querySelector('.mod-detail');
-    if (!detailEl) return;
-    await window.Translator.toggleNormLang(normId, detailEl, btn);
+    // Cherche la norme dans modData (chargé par modRender)
+    let norm = null, owner = null;
+    if (Array.isArray(modData)) {
+        for (const m of modData) {
+            for (const n of (m.norms || [])) {
+                if (n.id === normId) { norm = n; owner = m; break; }
+            }
+            if (norm) break;
+            // Cherche aussi dans lessons_ifp (M1 a son contenu structuré ainsi)
+            for (const l of (m.lessons_ifp || [])) {
+                if (l.id === normId) { norm = l; owner = m; break; }
+            }
+            if (norm) break;
+        }
+    }
+    if (!norm || !owner) {
+        console.warn('[modules] toggleNormLang : norme introuvable', normId);
+        return;
+    }
+
+    window.Translator.toggleNormLang(norm, null, btn, function (nextLang) {
+        // Callback : re-render dans la nouvelle langue
+        const view = window.Translator.applyLang(norm, nextLang);
+        // Si c'est une lesson_ifp on appelle un autre renderer
+        if (typeof modRenderLessonIfpDetail === 'function' && norm.code && norm.code.startsWith('L')) {
+            // Heuristique : pour les leçons IFP, on a une fonction dédiée
+            modRenderLessonIfpDetail(view, owner);
+        } else if (typeof modRenderNormDetail === 'function') {
+            modRenderNormDetail(view, owner);
+        }
+    });
 }
 
 function modShowExportFeedback(btn, res, originalLabel, defaultLabel) {
@@ -1071,6 +1112,19 @@ function modRenderLessonIfpDetail(l, m) {
                 <button class="btn btn-outline" style="padding:6px 12px;font-size:12px;color:#8b5cf6;border-color:#8b5cf644" onclick="modOpenMindmap('${escapeAttr(l.id)}')" title="Voir la mindmap de cette leçon">
                     🧠 Mindmap
                 </button>
+                ${(function () {
+                    const curLang = (window.Translator && window.Translator.getCurrentLang)
+                        ? window.Translator.getCurrentLang(l.id) : 'fr';
+                    const hasEn = !!(window.Translator && window.Translator.hasEnglishVersion && window.Translator.hasEnglishVersion(l));
+                    const label = (curLang === 'en') ? '🇫🇷 FR' : '🇬🇧 EN';
+                    const title = (curLang === 'en')
+                        ? 'Revenir au français'
+                        : (hasEn
+                            ? 'Afficher en anglais (traduction pré-faite, instantané)'
+                            : 'Traduction EN à venir — click sur un mot pour traduire un terme isolé');
+                    const opacity = (hasEn || curLang === 'en') ? '' : 'opacity:0.55;';
+                    return `<button class="btn btn-outline tr-toggle-btn" id="trToggle_${escapeAttr(l.id)}" data-lang="${curLang}" style="padding:6px 12px;font-size:12px;color:#38bdf8;border-color:#38bdf844;${opacity}" onclick="modToggleNormLang('${escapeAttr(l.id)}', this)" title="${title}">${label}</button>`;
+                })()}
             </div>
         </div>
     </div>`;

@@ -2077,6 +2077,100 @@ function engFsSwitchView(view) {
     engRenderFinancialStatements();
 }
 
+function engFsRenderTable(stmt) {
+    // Render multi-column statement (changes in equity).
+    const cols = stmt.columns || [];
+
+    // Column headers with hover for FR translation.
+    const headerCells = cols.map(c => {
+        const note = c.note_fr || '';
+        const bold = c.bold ? 'font-weight:700;color:#f0f9ff' : 'font-weight:500;color:#93c5fd';
+        return `<th
+            data-fr="${engEscapeAttr(c.label_fr || '')}"
+            data-note="${engEscapeAttr(note)}"
+            onmouseenter="engFsShowTooltip(event)"
+            onmouseleave="engFsHideTooltip()"
+            onmousemove="engFsMoveTooltip(event)"
+            style="${bold};font-size:10px;text-transform:uppercase;letter-spacing:0.5px;
+            text-align:right;padding:8px 6px;border-bottom:1px solid var(--border-light);
+            white-space:nowrap;cursor:help;min-width:78px">
+            ${engEscape(c.label_en)}
+        </th>`;
+    }).join('');
+
+    function fmtCell(v, bold) {
+        if (v === null || v === undefined || v === 0) return '<span style="color:var(--text-muted);font-size:11px">—</span>';
+        const abs = Math.abs(v);
+        const formatted = abs.toLocaleString('en-US').replace(/,/g, "'");
+        const neg = v < 0;
+        const cls = neg ? 'color:#fca5a5' : (bold ? 'color:#f0f9ff' : 'color:var(--text-secondary)');
+        const weight = bold ? 'font-weight:700' : '';
+        return `<span style="${cls};${weight}">${neg ? `(${formatted})` : formatted}</span>`;
+    }
+
+    const rowsHtml = (stmt.rows || []).map(row => {
+        const type = row.type || 'line';
+        const isOpening = type === 'opening';
+        const isClosing = type === 'closing';
+        const isSubtotal = type === 'subtotal';
+
+        let rowStyle = 'border-bottom:1px solid rgba(255,255,255,0.04);';
+        let labelStyle = 'color:var(--text-bright);font-size:13px;text-align:left;padding:8px 10px 8px 6px';
+        if (isOpening || isClosing) {
+            rowStyle = 'background:rgba(30,58,95,0.30);border-top:2px double #475569;border-bottom:2px double #475569;';
+            labelStyle += ';font-weight:700;color:#f0f9ff';
+        } else if (isSubtotal) {
+            rowStyle = 'background:rgba(30,58,95,0.15);border-top:1px solid #334155;';
+            labelStyle += ';font-weight:600';
+        }
+
+        const refHtml = row.ref ? `<span class="ifrs-ref" style="margin-left:6px">${engEscape(row.ref)}</span>` : '';
+        const noteMark = row.note_fr ? `<span style="color:#fbbf24;font-size:11px;opacity:0.7;margin-left:4px" title="Note">💡</span>` : '';
+
+        const tooltipAttrs = `
+            data-fr="${engEscapeAttr(row.label_fr || '')}"
+            data-note="${engEscapeAttr(row.note_fr || '')}"
+            data-ref="${engEscapeAttr(row.ref || '')}"
+            onmouseenter="engFsShowTooltip(event)"
+            onmouseleave="engFsHideTooltip()"
+            onmousemove="engFsMoveTooltip(event)"`;
+
+        const cells = cols.map(c => {
+            const v = row.values?.[c.key];
+            return `<td style="text-align:right;padding:8px 6px;font-variant-numeric:tabular-nums;
+                white-space:nowrap;font-size:12px">${fmtCell(v, c.bold)}</td>`;
+        }).join('');
+
+        return `
+            <tr style="${rowStyle}">
+                <th scope="row" ${tooltipAttrs}
+                    style="${labelStyle};cursor:help;position:sticky;left:0;background:inherit;z-index:2;min-width:230px">
+                    ${engEscape(row.label_en)}${refHtml}${noteMark}
+                </th>
+                ${cells}
+            </tr>
+        `;
+    }).join('');
+
+    return `
+        <div style="overflow-x:auto;margin:0 -4px">
+            <table style="border-collapse:collapse;width:100%;min-width:1100px">
+                <thead>
+                    <tr>
+                        <th style="text-align:left;padding:8px 10px 8px 6px;
+                            font-size:10px;text-transform:uppercase;color:#94a3b8;
+                            letter-spacing:0.5px;font-weight:500;
+                            border-bottom:1px solid var(--border-light);
+                            position:sticky;left:0;background:var(--bg-secondary);z-index:2;min-width:230px"></th>
+                        ${headerCells}
+                    </tr>
+                </thead>
+                <tbody>${rowsHtml}</tbody>
+            </table>
+        </div>
+    `;
+}
+
 function engRenderFinancialStatements() {
     const root = document.getElementById('engContent');
     if (!root) return;
@@ -2090,9 +2184,11 @@ function engRenderFinancialStatements() {
 
     const view = engState.fs.view;
     const map = {
-        income:  fs.income_statement,
-        balance: fs.balance_sheet,
-        conso:   fs.balance_sheet_conso,
+        income:    fs.income_statement,
+        balance:   fs.balance_sheet,
+        conso:     fs.balance_sheet_conso,
+        cashflow:  fs.cash_flow_statement,
+        equity:    fs.changes_in_equity,
     };
     const stmt = map[view];
     if (!stmt) {
@@ -2113,19 +2209,24 @@ function engRenderFinancialStatements() {
             </button>`;
     };
 
-    const linesHtml = (stmt.lines || []).map(engFsRenderLine).join('');
+    // Choose render path: list of lines or table (multi-column).
+    const isTable = stmt.type === 'table';
+    const bodyHtml = isTable
+        ? engFsRenderTable(stmt)
+        : `<div>${(stmt.lines || []).map(engFsRenderLine).join('')}</div>`;
 
     root.innerHTML = `
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
-            ${tabBtn('income',  '📈 Compte de résultat', 'P&amp;L + OCI')}
-            ${tabBtn('balance', '⚖️ Bilan statutaire',   'Standalone')}
-            ${tabBtn('conso',   '🌐 Bilan consolidé',    'Groupe')}
+            ${tabBtn('income',   '📈 Compte de résultat', 'P&amp;L + OCI')}
+            ${tabBtn('balance',  '⚖️ Bilan statutaire',   'Standalone')}
+            ${tabBtn('conso',    '🌐 Bilan consolidé',    'Groupe')}
+            ${tabBtn('cashflow', '💧 Flux de trésorerie', 'IAS 7 indirecte')}
+            ${tabBtn('equity',   '📋 Variations CP',      'Tableau multi-colonnes')}
         </div>
 
         <div class="card" style="padding:18px 16px">
             <div style="border-bottom:1px solid var(--border-light);padding-bottom:12px;margin-bottom:8px">
-                <div style="font-size:17px;font-weight:700;color:var(--text-bright);margin-bottom:4px"
-                    title="${engEscapeAttr(stmt.title_fr || '')}">
+                <div style="font-size:17px;font-weight:700;color:var(--text-bright);margin-bottom:4px">
                     ${engEscape(stmt.title_en)}
                 </div>
                 <div style="font-size:11px;color:var(--text-muted);font-style:italic">
@@ -2137,10 +2238,10 @@ function engRenderFinancialStatements() {
                 </div>
             </div>
             <div style="font-size:11px;color:var(--text-muted);margin-bottom:14px;line-height:1.5">
-                🖱️ Survole n'importe quelle ligne pour voir la traduction française, la référence IFRS et la note explicative.
+                🖱️ Survole n'importe quelle ligne ${isTable ? 'ou colonne ' : ''}pour voir la traduction française, la référence IFRS et la note explicative.
                 💡 indique une note disponible.
             </div>
-            <div>${linesHtml}</div>
+            ${bodyHtml}
         </div>
     `;
 }

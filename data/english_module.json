@@ -12358,6 +12358,705 @@
           "indent": 0
         }
       ]
+    },
+    "cash_flow_statement": {
+      "title_en": "Consolidated statement of cash flows (indirect method)",
+      "title_fr": "Tableau consolidé des flux de trésorerie (méthode indirecte)",
+      "period_en": "Year ended 31 December 2025",
+      "period_fr": "Exercice clos le 31 décembre 2025",
+      "currency": "CHF thousands",
+      "currency_fr": "Milliers de CHF",
+      "lines": [
+        {
+          "label_en": "Cash flows from operating activities",
+          "label_fr": "Flux de trésorerie liés aux activités opérationnelles",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Profit before tax",
+          "label_fr": "Résultat avant impôts",
+          "type": "line",
+          "indent": 0,
+          "value": 1468000,
+          "note_fr": "Point de départ de la méthode indirecte. On reconstitue le cash depuis le résultat comptable."
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Adjustments for non-cash items:",
+          "label_fr": "Ajustements pour éléments sans incidence sur la trésorerie :",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Depreciation of property, plant and equipment",
+          "label_fr": "Amortissement des immobilisations corporelles",
+          "type": "line",
+          "indent": 1,
+          "value": 1240000,
+          "ref": "IAS 16"
+        },
+        {
+          "label_en": "Amortisation of intangible assets",
+          "label_fr": "Amortissement des immobilisations incorporelles",
+          "type": "line",
+          "indent": 1,
+          "value": 285000,
+          "ref": "IAS 38"
+        },
+        {
+          "label_en": "Depreciation of right-of-use assets",
+          "label_fr": "Amortissement des droits d'utilisation",
+          "type": "line",
+          "indent": 1,
+          "value": 320000,
+          "ref": "IFRS 16"
+        },
+        {
+          "label_en": "Impairment losses on goodwill",
+          "label_fr": "Pertes de valeur sur goodwill",
+          "type": "line",
+          "indent": 1,
+          "value": 120000,
+          "ref": "IAS 36"
+        },
+        {
+          "label_en": "Impairment of trade receivables (ECL)",
+          "label_fr": "Pertes de crédit attendues sur créances",
+          "type": "line",
+          "indent": 1,
+          "value": 38000,
+          "ref": "IFRS 9"
+        },
+        {
+          "label_en": "Loss/(gain) on disposal of PPE",
+          "label_fr": "(Plus)/moins-value sur cession d'immobilisations",
+          "type": "line",
+          "indent": 1,
+          "value": -25000
+        },
+        {
+          "label_en": "Share of profit of equity-accounted investees",
+          "label_fr": "Quote-part de résultat des mises en équivalence",
+          "type": "line",
+          "indent": 1,
+          "value": -38000,
+          "ref": "IAS 28",
+          "note_fr": "On retranche car c'est non-cash (juste un ajustement de la valeur comptable)."
+        },
+        {
+          "label_en": "Share-based payment expense",
+          "label_fr": "Charge de paiement fondé sur des actions",
+          "type": "line",
+          "indent": 1,
+          "value": 32000,
+          "ref": "IFRS 2",
+          "note_fr": "Non-cash : rémunération en actions / stock-options."
+        },
+        {
+          "label_en": "Finance income",
+          "label_fr": "Produits financiers",
+          "type": "line",
+          "indent": 1,
+          "value": -22000,
+          "note_fr": "Reclassement plus bas (intérêts reçus)."
+        },
+        {
+          "label_en": "Finance costs",
+          "label_fr": "Charges financières",
+          "type": "line",
+          "indent": 1,
+          "value": 118000,
+          "note_fr": "Reclassement plus bas (intérêts payés)."
+        },
+        {
+          "label_en": "Net foreign exchange differences",
+          "label_fr": "Écarts de change nets non réalisés",
+          "type": "line",
+          "indent": 1,
+          "value": 14000,
+          "ref": "IAS 21"
+        },
+        {
+          "label_en": "Movement in provisions",
+          "label_fr": "Variation des provisions",
+          "type": "line",
+          "indent": 1,
+          "value": 28000,
+          "ref": "IAS 37"
+        },
+        {
+          "label_en": "Movement in defined benefit obligations",
+          "label_fr": "Variation des engagements de retraite",
+          "type": "line",
+          "indent": 1,
+          "value": 45000,
+          "ref": "IAS 19"
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Operating cash flows before working capital changes",
+          "label_fr": "Flux opérationnels avant variation du BFR",
+          "value": 3623000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Working capital changes:",
+          "label_fr": "Variation du besoin en fonds de roulement (BFR) :",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "(Increase)/decrease in inventories",
+          "label_fr": "(Augmentation)/diminution des stocks",
+          "type": "line",
+          "indent": 1,
+          "value": -180000,
+          "note_fr": "Stocks qui montent = consomment du cash. Stocks qui baissent = libèrent du cash."
+        },
+        {
+          "label_en": "(Increase)/decrease in trade and other receivables",
+          "label_fr": "(Augmentation)/diminution des créances",
+          "type": "line",
+          "indent": 1,
+          "value": -240000
+        },
+        {
+          "label_en": "(Increase)/decrease in contract assets",
+          "label_fr": "(Augmentation)/diminution des actifs sur contrat",
+          "type": "line",
+          "indent": 1,
+          "value": -45000,
+          "ref": "IFRS 15"
+        },
+        {
+          "label_en": "Increase/(decrease) in trade and other payables",
+          "label_fr": "Augmentation/(diminution) des dettes fournisseurs",
+          "type": "line",
+          "indent": 1,
+          "value": 180000,
+          "note_fr": "Dettes qui montent = on retarde le paiement = on garde du cash."
+        },
+        {
+          "label_en": "Increase/(decrease) in contract liabilities",
+          "label_fr": "Augmentation/(diminution) des passifs sur contrat",
+          "type": "line",
+          "indent": 1,
+          "value": 95000,
+          "ref": "IFRS 15",
+          "note_fr": "Acomptes clients reçus en avance."
+        },
+        {
+          "label_en": "Increase/(decrease) in employee benefit liabilities",
+          "label_fr": "Augmentation/(diminution) des dettes envers le personnel",
+          "type": "line",
+          "indent": 1,
+          "value": 35000
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Cash generated from operations",
+          "label_fr": "Trésorerie générée par les opérations",
+          "value": 3468000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "label_en": "Interest paid",
+          "label_fr": "Intérêts payés",
+          "type": "line",
+          "indent": 0,
+          "value": -125000
+        },
+        {
+          "label_en": "Income taxes paid",
+          "label_fr": "Impôts sur le résultat payés",
+          "type": "line",
+          "indent": 0,
+          "value": -285000
+        },
+        {
+          "label_en": "Net cash flows from operating activities",
+          "label_fr": "Flux nets de trésorerie liés aux activités opérationnelles",
+          "value": 3058000,
+          "type": "total",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Cash flows from investing activities",
+          "label_fr": "Flux de trésorerie liés aux activités d'investissement",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Purchases of property, plant and equipment",
+          "label_fr": "Acquisitions d'immobilisations corporelles",
+          "type": "line",
+          "indent": 0,
+          "value": -1580000
+        },
+        {
+          "label_en": "Proceeds from disposal of PPE",
+          "label_fr": "Cessions d'immobilisations corporelles",
+          "type": "line",
+          "indent": 0,
+          "value": 85000
+        },
+        {
+          "label_en": "Purchases of intangible assets",
+          "label_fr": "Acquisitions d'immobilisations incorporelles",
+          "type": "line",
+          "indent": 0,
+          "value": -195000
+        },
+        {
+          "label_en": "Acquisition of subsidiaries, net of cash acquired",
+          "label_fr": "Acquisitions de filiales, net de la trésorerie acquise",
+          "type": "line",
+          "indent": 0,
+          "value": -485000,
+          "ref": "IFRS 3",
+          "note_fr": "Prix payé moins la trésorerie de la filiale acquise."
+        },
+        {
+          "label_en": "Disposal of subsidiaries, net of cash disposed",
+          "label_fr": "Cessions de filiales, net de la trésorerie cédée",
+          "type": "line",
+          "indent": 0,
+          "value": 145000,
+          "ref": "IFRS 10"
+        },
+        {
+          "label_en": "Investment in associates and joint ventures",
+          "label_fr": "Investissements dans entreprises mises en équivalence",
+          "type": "line",
+          "indent": 0,
+          "value": -65000,
+          "ref": "IAS 28"
+        },
+        {
+          "label_en": "Dividends received from associates",
+          "label_fr": "Dividendes reçus des associées",
+          "type": "line",
+          "indent": 0,
+          "value": 28000
+        },
+        {
+          "label_en": "Purchases of financial assets",
+          "label_fr": "Acquisitions d'actifs financiers",
+          "type": "line",
+          "indent": 0,
+          "value": -120000,
+          "ref": "IFRS 9"
+        },
+        {
+          "label_en": "Proceeds from disposal of financial assets",
+          "label_fr": "Cessions d'actifs financiers",
+          "type": "line",
+          "indent": 0,
+          "value": 95000
+        },
+        {
+          "label_en": "Interest received",
+          "label_fr": "Intérêts reçus",
+          "type": "line",
+          "indent": 0,
+          "value": 22000
+        },
+        {
+          "label_en": "Net cash flows used in investing activities",
+          "label_fr": "Flux nets de trésorerie liés aux activités d'investissement",
+          "value": -2070000,
+          "type": "total",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Cash flows from financing activities",
+          "label_fr": "Flux de trésorerie liés aux activités de financement",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Proceeds from issue of share capital",
+          "label_fr": "Augmentation de capital",
+          "type": "line",
+          "indent": 0,
+          "value": 50000
+        },
+        {
+          "label_en": "Treasury shares purchased",
+          "label_fr": "Rachat d'actions propres",
+          "type": "line",
+          "indent": 0,
+          "value": -45000
+        },
+        {
+          "label_en": "Proceeds from long-term borrowings",
+          "label_fr": "Emprunts à long terme contractés",
+          "type": "line",
+          "indent": 0,
+          "value": 850000
+        },
+        {
+          "label_en": "Repayments of long-term borrowings",
+          "label_fr": "Remboursements d'emprunts à long terme",
+          "type": "line",
+          "indent": 0,
+          "value": -680000
+        },
+        {
+          "label_en": "Net movement in short-term borrowings",
+          "label_fr": "Variation nette des emprunts à court terme",
+          "type": "line",
+          "indent": 0,
+          "value": -120000
+        },
+        {
+          "label_en": "Payment of lease liabilities (principal portion)",
+          "label_fr": "Remboursements de passifs de location (capital)",
+          "type": "line",
+          "indent": 0,
+          "value": -385000,
+          "ref": "IFRS 16",
+          "note_fr": "La partie capital des baux IFRS 16 — la partie intérêt est dans 'Interest paid'."
+        },
+        {
+          "label_en": "Dividends paid to owners of the parent",
+          "label_fr": "Dividendes versés aux actionnaires de la mère",
+          "type": "line",
+          "indent": 0,
+          "value": -480000
+        },
+        {
+          "label_en": "Dividends paid to non-controlling interests",
+          "label_fr": "Dividendes versés aux minoritaires (NCI)",
+          "type": "line",
+          "indent": 0,
+          "value": -85000,
+          "ref": "IFRS 10"
+        },
+        {
+          "label_en": "Acquisition of NCI without loss of control",
+          "label_fr": "Acquisition de NCI sans perte de contrôle",
+          "type": "line",
+          "indent": 0,
+          "value": -65000,
+          "note_fr": "Transaction en capitaux propres (pas P&L) — flux de trésorerie financier."
+        },
+        {
+          "label_en": "Net cash flows from/(used in) financing activities",
+          "label_fr": "Flux nets de trésorerie liés aux activités de financement",
+          "value": -960000,
+          "type": "total",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Net increase/(decrease) in cash and cash equivalents",
+          "label_fr": "Variation nette de la trésorerie",
+          "value": 28000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "label_en": "Cash and cash equivalents at beginning of the year",
+          "label_fr": "Trésorerie et équivalents au début de l'exercice",
+          "type": "line",
+          "indent": 0,
+          "value": 2855000
+        },
+        {
+          "label_en": "Effect of exchange rate changes on cash",
+          "label_fr": "Effet des variations de change sur la trésorerie",
+          "type": "line",
+          "indent": 0,
+          "value": -43000,
+          "ref": "IAS 21",
+          "note_fr": "Conversion des trésoreries en devises étrangères au taux de clôture."
+        },
+        {
+          "label_en": "Cash and cash equivalents at end of the year",
+          "label_fr": "Trésorerie et équivalents à la fin de l'exercice",
+          "value": 2840000,
+          "type": "total",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Additional information (disclosed in notes):",
+          "label_fr": "Informations complémentaires (en annexes) :",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Cash and cash equivalents",
+          "label_fr": "Trésorerie et équivalents",
+          "type": "line",
+          "indent": 1,
+          "value": 2840000
+        },
+        {
+          "label_en": "Bank overdrafts included above",
+          "label_fr": "Découverts bancaires inclus ci-dessus",
+          "type": "line",
+          "indent": 1,
+          "value": -45000,
+          "note_fr": "Les découverts intégrés au cash management peuvent figurer dans la trésorerie sous IAS 7.8."
+        },
+        {
+          "label_en": "Cash and cash equivalents in the statement of financial position",
+          "label_fr": "Trésorerie et équivalents au bilan",
+          "value": 2795000,
+          "type": "subtotal",
+          "indent": 1
+        }
+      ]
+    },
+    "changes_in_equity": {
+      "title_en": "Consolidated statement of changes in equity",
+      "title_fr": "État consolidé des variations des capitaux propres",
+      "period_en": "Year ended 31 December 2025",
+      "period_fr": "Exercice clos le 31 décembre 2025",
+      "currency": "CHF thousands",
+      "currency_fr": "Milliers de CHF",
+      "type": "table",
+      "columns": [
+        {
+          "key": "share_capital",
+          "label_en": "Share capital",
+          "label_fr": "Capital-actions"
+        },
+        {
+          "key": "share_premium",
+          "label_en": "Share premium",
+          "label_fr": "Prime d'émission"
+        },
+        {
+          "key": "treasury",
+          "label_en": "Treasury shares",
+          "label_fr": "Actions propres",
+          "note_fr": "Actions rachetées par la société — déduction directe des CP."
+        },
+        {
+          "key": "retained",
+          "label_en": "Retained earnings",
+          "label_fr": "Bénéfices reportés"
+        },
+        {
+          "key": "fct",
+          "label_en": "FCT reserve",
+          "label_fr": "Réserve de conversion",
+          "note_fr": "IAS 21 — cumul des écarts de change sur la consolidation des filiales étrangères."
+        },
+        {
+          "key": "hedging",
+          "label_en": "Hedging reserve",
+          "label_fr": "Réserve de couverture",
+          "note_fr": "IFRS 9 — partie efficace des couvertures de flux de trésorerie."
+        },
+        {
+          "key": "revaluation",
+          "label_en": "Revaluation reserve",
+          "label_fr": "Réserve de réévaluation",
+          "note_fr": "IAS 16 — gains de réévaluation des PPE (modèle de réévaluation)."
+        },
+        {
+          "key": "other",
+          "label_en": "Other reserves",
+          "label_fr": "Autres réserves"
+        },
+        {
+          "key": "parent_total",
+          "label_en": "Parent total",
+          "label_fr": "Total part du groupe",
+          "bold": true
+        },
+        {
+          "key": "nci",
+          "label_en": "NCI",
+          "label_fr": "Part. ne donnant pas le contrôle",
+          "note_fr": "IFRS 10 — quote-part des minoritaires dans les filiales consolidées."
+        },
+        {
+          "key": "total",
+          "label_en": "Total equity",
+          "label_fr": "Total capitaux propres",
+          "bold": true
+        }
+      ],
+      "rows": [
+        {
+          "label_en": "Balance at 1 January 2025",
+          "label_fr": "Solde au 1er janvier 2025",
+          "type": "opening",
+          "values": {
+            "share_capital": 195000,
+            "share_premium": 820000,
+            "treasury": -25000,
+            "retained": 9580000,
+            "fct": -351000,
+            "hedging": 100000,
+            "revaluation": 285000,
+            "other": 200000,
+            "parent_total": 10804000,
+            "nci": 1478000,
+            "total": 12282000
+          }
+        },
+        {
+          "label_en": "Profit for the year",
+          "label_fr": "Résultat de l'exercice",
+          "type": "line",
+          "values": {
+            "retained": 1060000,
+            "parent_total": 1060000,
+            "nci": 98000,
+            "total": 1158000
+          },
+          "note_fr": "Résultat net affecté à chaque catégorie de propriétaires."
+        },
+        {
+          "label_en": "Other comprehensive income, net of tax",
+          "label_fr": "Autres éléments du résultat global, net d'impôts",
+          "type": "line",
+          "values": {
+            "retained": -19000,
+            "fct": -34000,
+            "hedging": 24000,
+            "revaluation": 35000,
+            "other": -34000,
+            "parent_total": -28000,
+            "nci": -5000,
+            "total": -33000
+          },
+          "note_fr": "Réévaluations DB, hedge, change, FVOCI — net d'impôts."
+        },
+        {
+          "label_en": "Total comprehensive income for the year",
+          "label_fr": "Résultat global total de l'exercice",
+          "type": "subtotal",
+          "values": {
+            "retained": 1041000,
+            "fct": -34000,
+            "hedging": 24000,
+            "revaluation": 35000,
+            "other": -34000,
+            "parent_total": 1032000,
+            "nci": 93000,
+            "total": 1125000
+          }
+        },
+        {
+          "label_en": "Dividends paid",
+          "label_fr": "Dividendes versés",
+          "type": "line",
+          "values": {
+            "retained": -480000,
+            "parent_total": -480000,
+            "nci": -85000,
+            "total": -565000
+          },
+          "note_fr": "Distribution aux actionnaires de la mère et aux minoritaires."
+        },
+        {
+          "label_en": "Issue of share capital",
+          "label_fr": "Augmentation de capital",
+          "type": "line",
+          "values": {
+            "share_capital": 5000,
+            "share_premium": 30000,
+            "parent_total": 35000,
+            "total": 35000
+          },
+          "note_fr": "5'000 actions nouvelles à CHF 7 (capital 1, prime 6)."
+        },
+        {
+          "label_en": "Treasury shares purchased",
+          "label_fr": "Rachat d'actions propres",
+          "type": "line",
+          "values": {
+            "treasury": -20000,
+            "parent_total": -20000,
+            "total": -20000
+          },
+          "note_fr": "Rachat sur le marché — déduction directe sans impact P&L."
+        },
+        {
+          "label_en": "Share-based payment",
+          "label_fr": "Paiement fondé sur des actions",
+          "type": "line",
+          "values": {
+            "other": 32000,
+            "parent_total": 32000,
+            "total": 32000
+          },
+          "ref": "IFRS 2",
+          "note_fr": "Charge non-cash comptabilisée en réserve."
+        },
+        {
+          "label_en": "Acquisition of NCI (without loss of control)",
+          "label_fr": "Acquisition de NCI (sans perte de contrôle)",
+          "type": "line",
+          "values": {
+            "retained": -22000,
+            "parent_total": -22000,
+            "nci": -1000,
+            "total": -23000
+          },
+          "ref": "IFRS 10",
+          "note_fr": "Transaction entre actionnaires — pas de goodwill généré."
+        },
+        {
+          "label_en": "Transfer between reserves",
+          "label_fr": "Transferts entre réserves",
+          "type": "line",
+          "values": {
+            "retained": 60000,
+            "other": 20000,
+            "parent_total": 80000,
+            "total": 80000
+          },
+          "note_fr": "Réserves légales / réserves de réévaluation réalisées."
+        },
+        {
+          "label_en": "Balance at 31 December 2025",
+          "label_fr": "Solde au 31 décembre 2025",
+          "type": "closing",
+          "values": {
+            "share_capital": 200000,
+            "share_premium": 850000,
+            "treasury": -45000,
+            "retained": 10180000,
+            "fct": -385000,
+            "hedging": 124000,
+            "revaluation": 320000,
+            "other": 218000,
+            "parent_total": 11462000,
+            "nci": 1485000,
+            "total": 12947000
+          }
+        }
+      ]
     }
   }
 }
