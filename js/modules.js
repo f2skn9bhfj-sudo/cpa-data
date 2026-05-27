@@ -878,35 +878,34 @@ async function modExportLessonPdf(moduleId, lessonId, btn) {
 // translator.js affiche un message "Traduction EN à venir".
 function modToggleNormLang(normId, btn) {
     if (typeof window.Translator === 'undefined') {
+        console.error('[modules] Translator non chargé');
         alert('Module de traduction non chargé.');
         return;
     }
-    // Cherche la norme dans modData (chargé par modRender)
-    let norm = null, owner = null;
+    // Cherche la norme/leçon dans modData en gardant le type
+    let item = null, owner = null, kind = null;
     if (Array.isArray(modData)) {
         for (const m of modData) {
             for (const n of (m.norms || [])) {
-                if (n.id === normId) { norm = n; owner = m; break; }
+                if (n.id === normId) { item = n; owner = m; kind = 'norm'; break; }
             }
-            if (norm) break;
-            // Cherche aussi dans lessons_ifp (M1 a son contenu structuré ainsi)
+            if (item) break;
             for (const l of (m.lessons_ifp || [])) {
-                if (l.id === normId) { norm = l; owner = m; break; }
+                if (l.id === normId) { item = l; owner = m; kind = 'lesson'; break; }
             }
-            if (norm) break;
+            if (item) break;
         }
     }
-    if (!norm || !owner) {
-        console.warn('[modules] toggleNormLang : norme introuvable', normId);
+    if (!item || !owner) {
+        console.warn('[modules] toggleNormLang : item introuvable', normId);
         return;
     }
+    console.log('[modules] toggleNormLang:', { normId, kind, hasEn: window.Translator.hasEnglishVersion(item) });
 
-    window.Translator.toggleNormLang(norm, null, btn, function (nextLang) {
-        // Callback : re-render dans la nouvelle langue
-        const view = window.Translator.applyLang(norm, nextLang);
-        // Si c'est une lesson_ifp on appelle un autre renderer
-        if (typeof modRenderLessonIfpDetail === 'function' && norm.code && norm.code.startsWith('L')) {
-            // Heuristique : pour les leçons IFP, on a une fonction dédiée
+    window.Translator.toggleNormLang(item, null, btn, function (nextLang) {
+        const view = window.Translator.applyLang(item, nextLang);
+        console.log('[modules] re-render', { kind, nextLang, viewKeys: Object.keys(view) });
+        if (kind === 'lesson' && typeof modRenderLessonIfpDetail === 'function') {
             modRenderLessonIfpDetail(view, owner);
         } else if (typeof modRenderNormDetail === 'function') {
             modRenderNormDetail(view, owner);
@@ -1251,6 +1250,12 @@ function modRenderLessonIfpDetail(l, m) {
     html += `</div>`;
     el.innerHTML = html;
     el.scrollTop = 0;
+
+    // ── Active la traduction live (click-to-translate + selection) ──
+    if (typeof window.Translator !== 'undefined') {
+        const detailEl = el.querySelector('.mod-detail');
+        if (detailEl) window.Translator.attachInteractive(detailEl);
+    }
 
     // Async-load flashcards for this lesson
     if (lessonCodeShort) {
