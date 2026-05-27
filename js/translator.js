@@ -250,7 +250,9 @@
         if (!norm) return false;
         return !!(norm.title_en || norm.summary_en
             || (Array.isArray(norm.sections_en) && norm.sections_en.length > 0)
-            || (Array.isArray(norm.content_en) && norm.content_en.length > 0));
+            || (Array.isArray(norm.content_en) && norm.content_en.length > 0)
+            || (Array.isArray(norm.key_rules_en) && norm.key_rules_en.length > 0)
+            || (Array.isArray(norm.exam_tips_en) && norm.exam_tips_en.length > 0));
     }
 
     // ── Toggle EN/FR via swap des champs pré-traduits ──
@@ -350,6 +352,8 @@
         if (Array.isArray(norm.sections_en) && norm.sections_en.length) copy.sections = norm.sections_en;
         if (Array.isArray(norm.content_en) && norm.content_en.length) copy.content = norm.content_en;
         if (norm.mnemonics_en) copy.mnemonics = norm.mnemonics_en;
+        if (Array.isArray(norm.key_rules_en) && norm.key_rules_en.length) copy.key_rules = norm.key_rules_en;
+        if (Array.isArray(norm.exam_tips_en) && norm.exam_tips_en.length) copy.exam_tips = norm.exam_tips_en;
         return copy;
     }
 
