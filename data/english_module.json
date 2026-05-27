@@ -11051,5 +11051,1313 @@
       "en": "Here are the three key takeaways.",
       "why_fr": "Conclusion structurée — pattern Big 4 absolu. À utiliser en réunion et en email."
     }
-  ]
+  ],
+  "financial_statements": {
+    "income_statement": {
+      "title_en": "Statement of profit or loss and other comprehensive income",
+      "title_fr": "Compte de résultat et état du résultat global",
+      "period_en": "Year ended 31 December 2025",
+      "period_fr": "Exercice clos le 31 décembre 2025",
+      "currency": "CHF thousands",
+      "currency_fr": "Milliers de CHF",
+      "lines": [
+        {
+          "label_en": "Statement of profit or loss",
+          "label_fr": "Compte de résultat",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Revenue",
+          "label_fr": "Chiffre d'affaires",
+          "type": "line",
+          "indent": 0,
+          "value": 8420000,
+          "ref": "IFRS 15",
+          "note_fr": "Produits des activités ordinaires — reconnaissance selon le modèle en 5 étapes IFRS 15."
+        },
+        {
+          "label_en": "Cost of sales",
+          "label_fr": "Coût des ventes",
+          "type": "line",
+          "indent": 0,
+          "value": -5180000,
+          "note_fr": "Coût des biens vendus ou services rendus — matières, main-d'œuvre directe, amortissement de l'outil productif."
+        },
+        {
+          "label_en": "Gross profit",
+          "label_fr": "Marge brute",
+          "value": 3240000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "label_en": "Other operating income",
+          "label_fr": "Autres produits opérationnels",
+          "type": "line",
+          "indent": 0,
+          "value": 145000,
+          "note_fr": "Subventions, plus-values de cession d'actifs courants, etc."
+        },
+        {
+          "label_en": "Selling and distribution expenses",
+          "label_fr": "Frais commerciaux et de distribution",
+          "type": "line",
+          "indent": 0,
+          "value": -780000
+        },
+        {
+          "label_en": "General and administrative expenses",
+          "label_fr": "Frais généraux et administratifs",
+          "type": "line",
+          "indent": 0,
+          "value": -540000
+        },
+        {
+          "label_en": "Research and development expenses",
+          "label_fr": "Frais de recherche et développement",
+          "type": "line",
+          "indent": 0,
+          "value": -310000,
+          "ref": "IAS 38",
+          "note_fr": "Phase recherche = charge ; phase développement = capitalisable sous conditions."
+        },
+        {
+          "label_en": "Other operating expenses",
+          "label_fr": "Autres charges opérationnelles",
+          "type": "line",
+          "indent": 0,
+          "value": -95000
+        },
+        {
+          "label_en": "Impairment loss on goodwill",
+          "label_fr": "Perte de valeur sur goodwill",
+          "type": "line",
+          "indent": 0,
+          "value": -120000,
+          "ref": "IAS 36",
+          "note_fr": "Test annuel obligatoire ; non récupérable même si la valeur recouvrable remonte."
+        },
+        {
+          "label_en": "Share of profit/(loss) of equity-accounted investees",
+          "label_fr": "Quote-part de résultat des entreprises mises en équivalence",
+          "type": "line",
+          "indent": 0,
+          "value": 38000,
+          "ref": "IAS 28"
+        },
+        {
+          "label_en": "Operating profit (EBIT)",
+          "label_fr": "Résultat opérationnel (EBIT)",
+          "value": 1578000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "label_en": "Finance income",
+          "label_fr": "Produits financiers",
+          "type": "line",
+          "indent": 0,
+          "value": 22000
+        },
+        {
+          "label_en": "Finance costs",
+          "label_fr": "Charges financières",
+          "type": "line",
+          "indent": 0,
+          "value": -118000,
+          "note_fr": "Intérêts sur emprunts + charge d'actualisation des passifs longs (provisions, baux IFRS 16)."
+        },
+        {
+          "label_en": "Net foreign exchange gains/(losses)",
+          "label_fr": "Écarts de change nets",
+          "type": "line",
+          "indent": 0,
+          "value": -14000,
+          "ref": "IAS 21"
+        },
+        {
+          "label_en": "Profit before tax",
+          "label_fr": "Résultat avant impôts",
+          "value": 1468000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "label_en": "Income tax expense",
+          "label_fr": "Charge d'impôts",
+          "type": "line",
+          "indent": 0,
+          "value": -310000,
+          "ref": "IAS 12",
+          "note_fr": "Comprend impôt courant et impôt différé."
+        },
+        {
+          "label_en": "Profit for the year",
+          "label_fr": "Résultat net de l'exercice",
+          "value": 1158000,
+          "type": "total",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Attributable to:",
+          "label_fr": "Attribuable à :",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Owners of the parent",
+          "label_fr": "Actionnaires de la société mère",
+          "type": "line",
+          "indent": 1,
+          "value": 1060000
+        },
+        {
+          "label_en": "Non-controlling interests",
+          "label_fr": "Participations ne donnant pas le contrôle (NCI)",
+          "type": "line",
+          "indent": 1,
+          "value": 98000,
+          "ref": "IFRS 10"
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Earnings per share (CHF):",
+          "label_fr": "Résultat par action (CHF) :",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Basic earnings per share",
+          "label_fr": "Résultat de base par action",
+          "type": "line",
+          "indent": 1,
+          "value": 5.3,
+          "ref": "IAS 33"
+        },
+        {
+          "label_en": "Diluted earnings per share",
+          "label_fr": "Résultat dilué par action",
+          "type": "line",
+          "indent": 1,
+          "value": 5.21,
+          "note_fr": "Inclut l'effet dilutif des stock-options et obligations convertibles."
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Statement of other comprehensive income",
+          "label_fr": "État des autres éléments du résultat global",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Profit for the year (carried forward)",
+          "label_fr": "Résultat net de l'exercice (report)",
+          "type": "line",
+          "indent": 0,
+          "value": 1158000
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Items that will not be reclassified to profit or loss",
+          "label_fr": "Éléments non recyclables en résultat",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Remeasurements of defined benefit plans",
+          "label_fr": "Réévaluations des régimes à prestations définies",
+          "type": "line",
+          "indent": 1,
+          "value": -85000,
+          "ref": "IAS 19",
+          "note_fr": "Écarts actuariels — passés directement et définitivement en capitaux propres."
+        },
+        {
+          "label_en": "Revaluation of property, plant and equipment",
+          "label_fr": "Réévaluation des immobilisations corporelles",
+          "type": "line",
+          "indent": 1,
+          "value": 42000,
+          "ref": "IAS 16"
+        },
+        {
+          "label_en": "Fair value changes on equity instruments at FVOCI",
+          "label_fr": "Variations de juste valeur des instruments de capitaux propres au FVOCI",
+          "type": "line",
+          "indent": 1,
+          "value": 18000,
+          "ref": "IFRS 9"
+        },
+        {
+          "label_en": "Tax effect on items not to be reclassified",
+          "label_fr": "Effet d'impôt sur éléments non recyclables",
+          "type": "line",
+          "indent": 1,
+          "value": 6000
+        },
+        {
+          "label_en": "Items that will not be reclassified, net of tax",
+          "label_fr": "Total éléments non recyclables, net d'impôts",
+          "value": -19000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Items that may be reclassified to profit or loss",
+          "label_fr": "Éléments recyclables en résultat",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Foreign currency translation differences",
+          "label_fr": "Écarts de conversion",
+          "type": "line",
+          "indent": 1,
+          "value": -34000,
+          "ref": "IAS 21"
+        },
+        {
+          "label_en": "Cash flow hedges — effective portion",
+          "label_fr": "Couvertures de flux de trésorerie — partie efficace",
+          "type": "line",
+          "indent": 1,
+          "value": 24000,
+          "ref": "IFRS 9"
+        },
+        {
+          "label_en": "Debt instruments at FVOCI — net change",
+          "label_fr": "Instruments de dette au FVOCI — variation nette",
+          "type": "line",
+          "indent": 1,
+          "value": -8000
+        },
+        {
+          "label_en": "Tax effect on items to be reclassified",
+          "label_fr": "Effet d'impôt sur éléments recyclables",
+          "type": "line",
+          "indent": 1,
+          "value": 4000
+        },
+        {
+          "label_en": "Items that may be reclassified, net of tax",
+          "label_fr": "Total éléments recyclables, net d'impôts",
+          "value": -14000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "label_en": "Other comprehensive income for the year, net of tax",
+          "label_fr": "Autres éléments du résultat global, net d'impôts",
+          "value": -33000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "label_en": "Total comprehensive income for the year",
+          "label_fr": "Résultat global total de l'exercice",
+          "value": 1125000,
+          "type": "total",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Total comprehensive income attributable to:",
+          "label_fr": "Résultat global attribuable à :",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Owners of the parent",
+          "label_fr": "Actionnaires de la société mère",
+          "type": "line",
+          "indent": 1,
+          "value": 1032000
+        },
+        {
+          "label_en": "Non-controlling interests",
+          "label_fr": "Participations ne donnant pas le contrôle",
+          "type": "line",
+          "indent": 1,
+          "value": 93000
+        }
+      ]
+    },
+    "balance_sheet": {
+      "title_en": "Statement of financial position (standalone)",
+      "title_fr": "État de la situation financière (statutaire)",
+      "period_en": "As at 31 December 2025",
+      "period_fr": "Au 31 décembre 2025",
+      "currency": "CHF thousands",
+      "currency_fr": "Milliers de CHF",
+      "lines": [
+        {
+          "label_en": "ASSETS",
+          "label_fr": "ACTIFS",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Non-current assets",
+          "label_fr": "Actifs non courants",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Property, plant and equipment",
+          "label_fr": "Immobilisations corporelles",
+          "type": "line",
+          "indent": 0,
+          "value": 4280000,
+          "ref": "IAS 16",
+          "note_fr": "Cost model ou revaluation model — net des amortissements et dépréciations cumulés."
+        },
+        {
+          "label_en": "Investment property",
+          "label_fr": "Immeubles de placement",
+          "type": "line",
+          "indent": 0,
+          "value": 320000,
+          "ref": "IAS 40",
+          "note_fr": "Détenus pour location ou plus-value — modèle juste valeur ou coût."
+        },
+        {
+          "label_en": "Right-of-use assets",
+          "label_fr": "Droits d'utilisation (leasing)",
+          "type": "line",
+          "indent": 0,
+          "value": 480000,
+          "ref": "IFRS 16",
+          "note_fr": "Tous les baux opérationnels sont désormais au bilan du preneur."
+        },
+        {
+          "label_en": "Goodwill",
+          "label_fr": "Écart d'acquisition (goodwill)",
+          "type": "line",
+          "indent": 0,
+          "value": 1120000,
+          "ref": "IFRS 3 / IAS 36",
+          "note_fr": "Non amortissable — test de dépréciation annuel obligatoire."
+        },
+        {
+          "label_en": "Other intangible assets",
+          "label_fr": "Autres immobilisations incorporelles",
+          "type": "line",
+          "indent": 0,
+          "value": 295000,
+          "ref": "IAS 38",
+          "note_fr": "Logiciels, brevets, marques. Capitalisation conditionnelle pour le R&D développement."
+        },
+        {
+          "label_en": "Investments in subsidiaries (at cost)",
+          "label_fr": "Participations dans filiales (au coût)",
+          "type": "line",
+          "indent": 0,
+          "value": 1840000,
+          "ref": "IAS 27 (séparés)",
+          "note_fr": "Au coût d'acquisition dans les comptes statutaires (uniquement en standalone)."
+        },
+        {
+          "label_en": "Investments in associates and joint ventures",
+          "label_fr": "Participations dans entreprises associées et coentreprises",
+          "type": "line",
+          "indent": 0,
+          "value": 235000,
+          "ref": "IAS 28 / IFRS 11"
+        },
+        {
+          "label_en": "Deferred tax assets",
+          "label_fr": "Actifs d'impôts différés",
+          "type": "line",
+          "indent": 0,
+          "value": 145000,
+          "ref": "IAS 12",
+          "note_fr": "Reconnu si récupération probable via bénéfices futurs."
+        },
+        {
+          "label_en": "Other non-current financial assets",
+          "label_fr": "Autres actifs financiers non courants",
+          "type": "line",
+          "indent": 0,
+          "value": 88000
+        },
+        {
+          "label_en": "Other non-current assets",
+          "label_fr": "Autres actifs non courants",
+          "type": "line",
+          "indent": 0,
+          "value": 42000
+        },
+        {
+          "label_en": "Total non-current assets",
+          "label_fr": "Total actifs non courants",
+          "value": 8845000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Current assets",
+          "label_fr": "Actifs courants",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Inventories",
+          "label_fr": "Stocks",
+          "type": "line",
+          "indent": 0,
+          "value": 1240000,
+          "ref": "IAS 2",
+          "note_fr": "Évalués au plus bas du coût et de la valeur nette de réalisation (VNR)."
+        },
+        {
+          "label_en": "Trade and other receivables",
+          "label_fr": "Créances clients et autres créances",
+          "type": "line",
+          "indent": 0,
+          "value": 1180000,
+          "ref": "IFRS 9",
+          "note_fr": "Net des pertes de crédit attendues (ECL)."
+        },
+        {
+          "label_en": "Contract assets",
+          "label_fr": "Actifs sur contrat",
+          "type": "line",
+          "indent": 0,
+          "value": 95000,
+          "ref": "IFRS 15",
+          "note_fr": "Droit conditionnel à un paiement (services rendus mais non encore facturés)."
+        },
+        {
+          "label_en": "Current tax assets",
+          "label_fr": "Actifs d'impôts courants",
+          "type": "line",
+          "indent": 0,
+          "value": 28000
+        },
+        {
+          "label_en": "Other current financial assets",
+          "label_fr": "Autres actifs financiers courants",
+          "type": "line",
+          "indent": 0,
+          "value": 65000
+        },
+        {
+          "label_en": "Prepayments",
+          "label_fr": "Charges constatées d'avance",
+          "type": "line",
+          "indent": 0,
+          "value": 48000
+        },
+        {
+          "label_en": "Cash and cash equivalents",
+          "label_fr": "Trésorerie et équivalents de trésorerie",
+          "type": "line",
+          "indent": 0,
+          "value": 985000,
+          "ref": "IAS 7",
+          "note_fr": "Liquidités + placements à très court terme (< 3 mois) très liquides."
+        },
+        {
+          "label_en": "Total current assets",
+          "label_fr": "Total actifs courants",
+          "value": 3641000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Assets held for sale",
+          "label_fr": "Actifs détenus en vue de la vente",
+          "type": "line",
+          "indent": 0,
+          "value": 175000,
+          "ref": "IFRS 5",
+          "note_fr": "Vente probable < 12 mois ; au minimum entre valeur comptable et JV nette des coûts de cession."
+        },
+        {
+          "label_en": "TOTAL ASSETS",
+          "label_fr": "TOTAL DES ACTIFS",
+          "value": 12661000,
+          "type": "total",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "EQUITY AND LIABILITIES",
+          "label_fr": "CAPITAUX PROPRES ET PASSIFS",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Equity",
+          "label_fr": "Capitaux propres",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Share capital",
+          "label_fr": "Capital-actions",
+          "type": "line",
+          "indent": 0,
+          "value": 200000,
+          "note_fr": "Valeur nominale du capital émis."
+        },
+        {
+          "label_en": "Share premium",
+          "label_fr": "Prime d'émission",
+          "type": "line",
+          "indent": 0,
+          "value": 850000,
+          "note_fr": "Excédent du prix d'émission sur la valeur nominale."
+        },
+        {
+          "label_en": "Treasury shares",
+          "label_fr": "Actions propres",
+          "type": "line",
+          "indent": 0,
+          "value": -45000,
+          "note_fr": "Actions rachetées par la société — déduction directe des CP."
+        },
+        {
+          "label_en": "Retained earnings",
+          "label_fr": "Bénéfices reportés",
+          "type": "line",
+          "indent": 0,
+          "value": 4180000
+        },
+        {
+          "label_en": "Revaluation reserve",
+          "label_fr": "Réserve de réévaluation",
+          "type": "line",
+          "indent": 0,
+          "value": 165000,
+          "ref": "IAS 16"
+        },
+        {
+          "label_en": "Other reserves",
+          "label_fr": "Autres réserves",
+          "type": "line",
+          "indent": 0,
+          "value": 78000
+        },
+        {
+          "label_en": "Total equity",
+          "label_fr": "Total capitaux propres",
+          "value": 5428000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Non-current liabilities",
+          "label_fr": "Passifs non courants",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Long-term borrowings",
+          "label_fr": "Emprunts à long terme",
+          "type": "line",
+          "indent": 0,
+          "value": 2650000,
+          "ref": "IFRS 9",
+          "note_fr": "Évalués au coût amorti via la méthode du TIE (taux d'intérêt effectif)."
+        },
+        {
+          "label_en": "Lease liabilities (non-current portion)",
+          "label_fr": "Passifs de location (part non courante)",
+          "type": "line",
+          "indent": 0,
+          "value": 380000,
+          "ref": "IFRS 16"
+        },
+        {
+          "label_en": "Defined benefit obligations",
+          "label_fr": "Engagements de retraite à prestations définies",
+          "type": "line",
+          "indent": 0,
+          "value": 520000,
+          "ref": "IAS 19",
+          "note_fr": "Méthode des unités de crédit projetées — actuariel."
+        },
+        {
+          "label_en": "Deferred tax liabilities",
+          "label_fr": "Passifs d'impôts différés",
+          "type": "line",
+          "indent": 0,
+          "value": 215000,
+          "ref": "IAS 12"
+        },
+        {
+          "label_en": "Provisions (non-current)",
+          "label_fr": "Provisions (non courantes)",
+          "type": "line",
+          "indent": 0,
+          "value": 145000,
+          "ref": "IAS 37",
+          "note_fr": "Litiges, restructuration, démantèlement, etc."
+        },
+        {
+          "label_en": "Contract liabilities (non-current)",
+          "label_fr": "Passifs sur contrat (non courants)",
+          "type": "line",
+          "indent": 0,
+          "value": 65000,
+          "ref": "IFRS 15",
+          "note_fr": "Acomptes clients pour prestations à exécuter à plus d'un an."
+        },
+        {
+          "label_en": "Other non-current liabilities",
+          "label_fr": "Autres passifs non courants",
+          "type": "line",
+          "indent": 0,
+          "value": 32000
+        },
+        {
+          "label_en": "Total non-current liabilities",
+          "label_fr": "Total passifs non courants",
+          "value": 4007000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Current liabilities",
+          "label_fr": "Passifs courants",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Trade and other payables",
+          "label_fr": "Dettes fournisseurs et autres dettes",
+          "type": "line",
+          "indent": 0,
+          "value": 1240000
+        },
+        {
+          "label_en": "Short-term borrowings",
+          "label_fr": "Emprunts à court terme",
+          "type": "line",
+          "indent": 0,
+          "value": 580000
+        },
+        {
+          "label_en": "Current portion of long-term borrowings",
+          "label_fr": "Part courante des emprunts à long terme",
+          "type": "line",
+          "indent": 0,
+          "value": 320000
+        },
+        {
+          "label_en": "Lease liabilities (current portion)",
+          "label_fr": "Passifs de location (part courante)",
+          "type": "line",
+          "indent": 0,
+          "value": 125000,
+          "ref": "IFRS 16"
+        },
+        {
+          "label_en": "Current tax liabilities",
+          "label_fr": "Passifs d'impôts courants",
+          "type": "line",
+          "indent": 0,
+          "value": 175000
+        },
+        {
+          "label_en": "Provisions (current)",
+          "label_fr": "Provisions (courantes)",
+          "type": "line",
+          "indent": 0,
+          "value": 95000,
+          "ref": "IAS 37"
+        },
+        {
+          "label_en": "Contract liabilities (current)",
+          "label_fr": "Passifs sur contrat (courants)",
+          "type": "line",
+          "indent": 0,
+          "value": 215000,
+          "ref": "IFRS 15"
+        },
+        {
+          "label_en": "Employee benefit liabilities (short-term)",
+          "label_fr": "Dettes envers le personnel (court terme)",
+          "type": "line",
+          "indent": 0,
+          "value": 285000,
+          "note_fr": "Salaires non payés, bonus, vacances accumulées."
+        },
+        {
+          "label_en": "Other current liabilities",
+          "label_fr": "Autres passifs courants",
+          "type": "line",
+          "indent": 0,
+          "value": 78000
+        },
+        {
+          "label_en": "Total current liabilities",
+          "label_fr": "Total passifs courants",
+          "value": 3113000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Liabilities directly associated with assets held for sale",
+          "label_fr": "Passifs directement associés aux actifs détenus en vue de la vente",
+          "type": "line",
+          "indent": 0,
+          "value": 113000,
+          "ref": "IFRS 5"
+        },
+        {
+          "label_en": "Total liabilities",
+          "label_fr": "Total des passifs",
+          "value": 7233000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "label_en": "TOTAL EQUITY AND LIABILITIES",
+          "label_fr": "TOTAL DES CAPITAUX PROPRES ET PASSIFS",
+          "value": 12661000,
+          "type": "total",
+          "indent": 0
+        }
+      ]
+    },
+    "balance_sheet_conso": {
+      "title_en": "Consolidated statement of financial position",
+      "title_fr": "État consolidé de la situation financière",
+      "period_en": "As at 31 December 2025",
+      "period_fr": "Au 31 décembre 2025",
+      "currency": "CHF thousands",
+      "currency_fr": "Milliers de CHF",
+      "lines": [
+        {
+          "label_en": "ASSETS",
+          "label_fr": "ACTIFS",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Non-current assets",
+          "label_fr": "Actifs non courants",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Property, plant and equipment",
+          "label_fr": "Immobilisations corporelles",
+          "type": "line",
+          "indent": 0,
+          "value": 12485000,
+          "ref": "IAS 16"
+        },
+        {
+          "label_en": "Investment property",
+          "label_fr": "Immeubles de placement",
+          "type": "line",
+          "indent": 0,
+          "value": 980000,
+          "ref": "IAS 40"
+        },
+        {
+          "label_en": "Right-of-use assets",
+          "label_fr": "Droits d'utilisation (leasing)",
+          "type": "line",
+          "indent": 0,
+          "value": 1640000,
+          "ref": "IFRS 16"
+        },
+        {
+          "label_en": "Goodwill",
+          "label_fr": "Écart d'acquisition (goodwill)",
+          "type": "line",
+          "indent": 0,
+          "value": 3280000,
+          "ref": "IFRS 3 / IAS 36",
+          "note_fr": "Goodwill généré par les acquisitions consolidées — non amortissable, testé annuellement."
+        },
+        {
+          "label_en": "Other intangible assets",
+          "label_fr": "Autres immobilisations incorporelles",
+          "type": "line",
+          "indent": 0,
+          "value": 1125000,
+          "ref": "IAS 38"
+        },
+        {
+          "label_en": "Investments accounted for using the equity method",
+          "label_fr": "Participations mises en équivalence",
+          "type": "line",
+          "indent": 0,
+          "value": 685000,
+          "ref": "IAS 28",
+          "note_fr": "Associées et coentreprises — quote-part dans l'actif net + écart d'acquisition implicite."
+        },
+        {
+          "label_en": "Investments in joint operations",
+          "label_fr": "Quote-part dans les activités conjointes",
+          "type": "line",
+          "indent": 0,
+          "value": 90000,
+          "ref": "IFRS 11",
+          "note_fr": "Intégration proportionnelle ligne à ligne."
+        },
+        {
+          "label_en": "Deferred tax assets",
+          "label_fr": "Actifs d'impôts différés",
+          "type": "line",
+          "indent": 0,
+          "value": 425000,
+          "ref": "IAS 12"
+        },
+        {
+          "label_en": "Other non-current financial assets",
+          "label_fr": "Autres actifs financiers non courants",
+          "type": "line",
+          "indent": 0,
+          "value": 285000,
+          "ref": "IFRS 9"
+        },
+        {
+          "label_en": "Other non-current assets",
+          "label_fr": "Autres actifs non courants",
+          "type": "line",
+          "indent": 0,
+          "value": 145000
+        },
+        {
+          "label_en": "Total non-current assets",
+          "label_fr": "Total actifs non courants",
+          "value": 21140000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Current assets",
+          "label_fr": "Actifs courants",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Inventories",
+          "label_fr": "Stocks",
+          "type": "line",
+          "indent": 0,
+          "value": 3840000,
+          "ref": "IAS 2"
+        },
+        {
+          "label_en": "Trade and other receivables",
+          "label_fr": "Créances clients et autres créances",
+          "type": "line",
+          "indent": 0,
+          "value": 3580000,
+          "ref": "IFRS 9",
+          "note_fr": "Net des ECL groupe — modèle ECL forward-looking par segment."
+        },
+        {
+          "label_en": "Contract assets",
+          "label_fr": "Actifs sur contrat",
+          "type": "line",
+          "indent": 0,
+          "value": 385000,
+          "ref": "IFRS 15"
+        },
+        {
+          "label_en": "Current tax assets",
+          "label_fr": "Actifs d'impôts courants",
+          "type": "line",
+          "indent": 0,
+          "value": 95000
+        },
+        {
+          "label_en": "Derivative financial assets",
+          "label_fr": "Instruments financiers dérivés (actifs)",
+          "type": "line",
+          "indent": 0,
+          "value": 68000,
+          "ref": "IFRS 9"
+        },
+        {
+          "label_en": "Other current financial assets",
+          "label_fr": "Autres actifs financiers courants",
+          "type": "line",
+          "indent": 0,
+          "value": 215000
+        },
+        {
+          "label_en": "Prepayments",
+          "label_fr": "Charges constatées d'avance",
+          "type": "line",
+          "indent": 0,
+          "value": 165000
+        },
+        {
+          "label_en": "Cash and cash equivalents",
+          "label_fr": "Trésorerie et équivalents de trésorerie",
+          "type": "line",
+          "indent": 0,
+          "value": 2840000,
+          "ref": "IAS 7"
+        },
+        {
+          "label_en": "Total current assets",
+          "label_fr": "Total actifs courants",
+          "value": 11188000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Assets held for sale",
+          "label_fr": "Actifs détenus en vue de la vente",
+          "type": "line",
+          "indent": 0,
+          "value": 580000,
+          "ref": "IFRS 5"
+        },
+        {
+          "label_en": "TOTAL ASSETS",
+          "label_fr": "TOTAL DES ACTIFS",
+          "value": 32908000,
+          "type": "total",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "EQUITY AND LIABILITIES",
+          "label_fr": "CAPITAUX PROPRES ET PASSIFS",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Equity attributable to owners of the parent",
+          "label_fr": "Capitaux propres part du groupe",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Share capital",
+          "label_fr": "Capital-actions",
+          "type": "line",
+          "indent": 1,
+          "value": 200000
+        },
+        {
+          "label_en": "Share premium",
+          "label_fr": "Prime d'émission",
+          "type": "line",
+          "indent": 1,
+          "value": 850000
+        },
+        {
+          "label_en": "Treasury shares",
+          "label_fr": "Actions propres",
+          "type": "line",
+          "indent": 1,
+          "value": -45000
+        },
+        {
+          "label_en": "Retained earnings",
+          "label_fr": "Bénéfices reportés",
+          "type": "line",
+          "indent": 1,
+          "value": 10180000
+        },
+        {
+          "label_en": "Foreign currency translation reserve",
+          "label_fr": "Réserve de conversion",
+          "type": "line",
+          "indent": 1,
+          "value": -385000,
+          "ref": "IAS 21",
+          "note_fr": "Cumul des écarts de change sur la consolidation des filiales étrangères."
+        },
+        {
+          "label_en": "Hedging reserve (cash flow hedges)",
+          "label_fr": "Réserve de couverture (CFH)",
+          "type": "line",
+          "indent": 1,
+          "value": 124000,
+          "ref": "IFRS 9"
+        },
+        {
+          "label_en": "Revaluation reserve",
+          "label_fr": "Réserve de réévaluation",
+          "type": "line",
+          "indent": 1,
+          "value": 320000,
+          "ref": "IAS 16"
+        },
+        {
+          "label_en": "Other reserves",
+          "label_fr": "Autres réserves",
+          "type": "line",
+          "indent": 1,
+          "value": 218000
+        },
+        {
+          "label_en": "Equity attributable to owners of the parent",
+          "label_fr": "Total capitaux propres part du groupe",
+          "value": 11462000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "label_en": "Non-controlling interests (NCI)",
+          "label_fr": "Participations ne donnant pas le contrôle (NCI)",
+          "type": "line",
+          "indent": 0,
+          "value": 1485000,
+          "ref": "IFRS 10",
+          "note_fr": "Quote-part des minoritaires dans les filiales consolidées."
+        },
+        {
+          "label_en": "Total equity",
+          "label_fr": "Total capitaux propres",
+          "value": 12947000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Non-current liabilities",
+          "label_fr": "Passifs non courants",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Long-term borrowings",
+          "label_fr": "Emprunts à long terme",
+          "type": "line",
+          "indent": 0,
+          "value": 6850000,
+          "ref": "IFRS 9"
+        },
+        {
+          "label_en": "Lease liabilities (non-current portion)",
+          "label_fr": "Passifs de location (part non courante)",
+          "type": "line",
+          "indent": 0,
+          "value": 1280000,
+          "ref": "IFRS 16"
+        },
+        {
+          "label_en": "Defined benefit obligations",
+          "label_fr": "Engagements de retraite à prestations définies",
+          "type": "line",
+          "indent": 0,
+          "value": 1820000,
+          "ref": "IAS 19"
+        },
+        {
+          "label_en": "Deferred tax liabilities",
+          "label_fr": "Passifs d'impôts différés",
+          "type": "line",
+          "indent": 0,
+          "value": 985000,
+          "ref": "IAS 12",
+          "note_fr": "Inclut DTL générés par PPA (purchase price allocation) sur acquisitions."
+        },
+        {
+          "label_en": "Provisions (non-current)",
+          "label_fr": "Provisions (non courantes)",
+          "type": "line",
+          "indent": 0,
+          "value": 485000,
+          "ref": "IAS 37"
+        },
+        {
+          "label_en": "Contract liabilities (non-current)",
+          "label_fr": "Passifs sur contrat (non courants)",
+          "type": "line",
+          "indent": 0,
+          "value": 245000,
+          "ref": "IFRS 15"
+        },
+        {
+          "label_en": "Derivative financial liabilities",
+          "label_fr": "Instruments financiers dérivés (passifs)",
+          "type": "line",
+          "indent": 0,
+          "value": 95000,
+          "ref": "IFRS 9"
+        },
+        {
+          "label_en": "Other non-current liabilities",
+          "label_fr": "Autres passifs non courants",
+          "type": "line",
+          "indent": 0,
+          "value": 165000
+        },
+        {
+          "label_en": "Total non-current liabilities",
+          "label_fr": "Total passifs non courants",
+          "value": 11925000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Current liabilities",
+          "label_fr": "Passifs courants",
+          "type": "header",
+          "indent": 0
+        },
+        {
+          "label_en": "Trade and other payables",
+          "label_fr": "Dettes fournisseurs et autres dettes",
+          "type": "line",
+          "indent": 0,
+          "value": 3640000
+        },
+        {
+          "label_en": "Short-term borrowings",
+          "label_fr": "Emprunts à court terme",
+          "type": "line",
+          "indent": 0,
+          "value": 1280000
+        },
+        {
+          "label_en": "Current portion of long-term borrowings",
+          "label_fr": "Part courante des emprunts à long terme",
+          "type": "line",
+          "indent": 0,
+          "value": 880000
+        },
+        {
+          "label_en": "Lease liabilities (current portion)",
+          "label_fr": "Passifs de location (part courante)",
+          "type": "line",
+          "indent": 0,
+          "value": 425000,
+          "ref": "IFRS 16"
+        },
+        {
+          "label_en": "Current tax liabilities",
+          "label_fr": "Passifs d'impôts courants",
+          "type": "line",
+          "indent": 0,
+          "value": 425000
+        },
+        {
+          "label_en": "Provisions (current)",
+          "label_fr": "Provisions (courantes)",
+          "type": "line",
+          "indent": 0,
+          "value": 285000,
+          "ref": "IAS 37"
+        },
+        {
+          "label_en": "Contract liabilities (current)",
+          "label_fr": "Passifs sur contrat (courants)",
+          "type": "line",
+          "indent": 0,
+          "value": 685000,
+          "ref": "IFRS 15"
+        },
+        {
+          "label_en": "Employee benefit liabilities (short-term)",
+          "label_fr": "Dettes envers le personnel (court terme)",
+          "type": "line",
+          "indent": 0,
+          "value": 685000
+        },
+        {
+          "label_en": "Other current liabilities",
+          "label_fr": "Autres passifs courants",
+          "type": "line",
+          "indent": 0,
+          "value": 285000
+        },
+        {
+          "label_en": "Total current liabilities",
+          "label_fr": "Total passifs courants",
+          "value": 8590000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "type": "space"
+        },
+        {
+          "label_en": "Liabilities directly associated with assets held for sale",
+          "label_fr": "Passifs directement associés aux actifs détenus en vue de la vente",
+          "type": "line",
+          "indent": 0,
+          "value": -554000,
+          "ref": "IFRS 5",
+          "note_fr": "Effectif négatif dû à l'arrondi des sous-totaux exemplifiés ; à recalculer si besoin sur cas réel."
+        },
+        {
+          "label_en": "Total liabilities",
+          "label_fr": "Total des passifs",
+          "value": 19961000,
+          "type": "subtotal",
+          "indent": 0
+        },
+        {
+          "label_en": "TOTAL EQUITY AND LIABILITIES",
+          "label_fr": "TOTAL DES CAPITAUX PROPRES ET PASSIFS",
+          "value": 32908000,
+          "type": "total",
+          "indent": 0
+        }
+      ]
+    }
+  }
 }

@@ -516,6 +516,9 @@ function modRenderNormDetail(n, m) {
                 <button class="btn btn-outline" style="padding:6px 12px;font-size:12px;color:#8b5cf6;border-color:#8b5cf644" onclick="modOpenMindmap('${escapeAttr(n.code || n.id)}')" title="Voir la mindmap de cette norme">
                     🧠 Mindmap
                 </button>
+                <button class="btn btn-outline tr-toggle-btn" id="trToggle_${escapeAttr(n.id)}" data-lang="fr" style="padding:6px 12px;font-size:12px;color:#38bdf8;border-color:#38bdf844" onclick="modToggleNormLang('${escapeAttr(n.id)}', this)" title="Traduire en anglais — clique aussi sur un mot dans le texte pour traduire">
+                    🇬🇧 EN
+                </button>
                 ${n.revision_count > 0 ? `<button class="btn btn-outline" style="padding:6px 12px;font-size:12px;color:#ef4444;border-color:#ef444444" onclick="modUndoRevised('${escapeAttr(n.id)}')" title="Annuler la derniere revision">
                     ↩ Annuler
                 </button>` : ''}
@@ -702,6 +705,12 @@ function modRenderNormDetail(n, m) {
     el.innerHTML = html;
     el.scrollTop = 0;
 
+    // ── Active la traduction live (click-to-translate + selection) ──
+    if (typeof window.Translator !== 'undefined') {
+        const detailEl = el.querySelector('.mod-detail');
+        if (detailEl) window.Translator.attachInteractive(detailEl);
+    }
+
     // Lazy-load QCMs (réutilise modLoadLessonQcms — `n` a un `id` et un `code`)
     if (typeof modLoadLessonQcms === 'function') {
         // Adapter : on passe n comme "lesson" (l.id est consulté), wrapper la
@@ -849,6 +858,19 @@ async function modExportLessonPdf(moduleId, lessonId, btn) {
     } catch (e) {
         modShowExportFeedback(btn, { ok: false, error: String(e) }, original, '📄 PDF');
     }
+}
+
+// ── Toggle EN/FR d'une norme (traduction live via translator.js) ──
+async function modToggleNormLang(normId, btn) {
+    if (typeof window.Translator === 'undefined') {
+        alert('Module de traduction non chargé. Vérifie translator.js.');
+        return;
+    }
+    const reading = document.getElementById('modReading');
+    if (!reading) return;
+    const detailEl = reading.querySelector('.mod-detail');
+    if (!detailEl) return;
+    await window.Translator.toggleNormLang(normId, detailEl, btn);
 }
 
 function modShowExportFeedback(btn, res, originalLabel, defaultLabel) {

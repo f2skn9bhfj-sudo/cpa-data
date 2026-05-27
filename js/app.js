@@ -300,16 +300,65 @@ function toggleMindDump() {
     if (panel) { panel.remove(); return; }
     panel = document.createElement('div');
     panel.id = 'mindDumpPanel';
-    panel.style.cssText = 'position:fixed;bottom:74px;left:20px;z-index:300;background:#0f172a;border:1px solid #1e3a5f;border-radius:12px;padding:14px;width:290px;box-shadow:0 4px 20px rgba(0,0,0,0.7)';
+    panel.style.cssText = 'position:fixed;bottom:74px;left:20px;z-index:300;background:#0f172a;border:1px solid #1e3a5f;border-radius:12px;padding:14px;width:340px;max-height:520px;box-shadow:0 4px 20px rgba(0,0,0,0.7);display:flex;flex-direction:column;gap:10px';
     panel.innerHTML = `
-        <div style="font-size:12px;color:#64748b;margin-bottom:8px">💭 Décharge mentale — vide ton cerveau, reviens après</div>
+        <div style="display:flex;align-items:center;gap:8px">
+            <div style="font-size:13px;color:var(--text-bright,#e2e8f0);font-weight:600">💭 Décharge mentale</div>
+            <div style="font-size:11px;color:#64748b;margin-left:auto" id="mindDumpCount"></div>
+        </div>
+        <div style="font-size:11px;color:#64748b">Vide ton cerveau ici, retrouve tes notes à tout moment.</div>
         <textarea id="mindDumpText" placeholder="Écris ce qui t'occupe l'esprit..."
-            style="width:100%;background:#1e293b;color:#e2e8f0;border:1px solid #334155;border-radius:6px;padding:8px;font-size:12px;resize:none;height:90px;font-family:inherit;box-sizing:border-box" autofocus></textarea>
-        <button onclick="saveMindDump()" style="width:100%;margin-top:8px;background:#1e3a5f;border:1px solid #3b82f6;color:#93c5fd;border-radius:6px;padding:7px;font-size:12px;cursor:pointer">
+            style="width:100%;background:#1e293b;color:#e2e8f0;border:1px solid #334155;border-radius:6px;padding:8px;font-size:12px;resize:none;height:80px;font-family:inherit;box-sizing:border-box" autofocus></textarea>
+        <button onclick="saveMindDump()" style="background:#1e3a5f;border:1px solid #3b82f6;color:#93c5fd;border-radius:6px;padding:7px;font-size:12px;cursor:pointer">
             ✓ Noté — retour à la révision
-        </button>`;
+        </button>
+        <div style="border-top:1px solid #1e293b;padding-top:10px;display:flex;align-items:center;gap:8px">
+            <div style="font-size:11px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Tes notes</div>
+            <button id="mindDumpClearAll" onclick="clearAllMindDumps()"
+                style="margin-left:auto;background:transparent;border:0;color:#fca5a5;font-size:11px;cursor:pointer;text-decoration:underline;display:none">
+                Tout vider
+            </button>
+        </div>
+        <div id="mindDumpList" style="flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:6px;min-height:60px"></div>`;
     document.body.appendChild(panel);
+    renderMindDumpList();
     setTimeout(() => document.getElementById('mindDumpText')?.focus(), 50);
+}
+
+function renderMindDumpList() {
+    const list = document.getElementById('mindDumpList');
+    const counter = document.getElementById('mindDumpCount');
+    const clearAllBtn = document.getElementById('mindDumpClearAll');
+    if (!list) return;
+    const dumps = JSON.parse(localStorage.getItem('swisscpa_mindDumps') || '[]');
+    if (counter) counter.textContent = dumps.length ? `${dumps.length} note${dumps.length > 1 ? 's' : ''}` : '';
+    if (clearAllBtn) clearAllBtn.style.display = dumps.length ? 'inline' : 'none';
+    if (!dumps.length) {
+        list.innerHTML = `<div style="font-size:11px;color:#475569;font-style:italic;padding:6px 0">Aucune note pour l'instant.</div>`;
+        return;
+    }
+    // Show newest first.
+    list.innerHTML = dumps.slice().reverse().map((d, idxFromEnd) => {
+        const idx = dumps.length - 1 - idxFromEnd;
+        const date = d.time ? new Date(d.time) : null;
+        const dateStr = date ? date.toLocaleString('fr-CH', {
+            day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'
+        }) : '';
+        const safe = String(d.text || '')
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+        return `
+            <div style="background:#1e293b;border:1px solid #334155;border-radius:6px;padding:8px 10px;font-size:12px;color:#e2e8f0;display:flex;flex-direction:column;gap:4px">
+                <div style="display:flex;align-items:center;gap:6px">
+                    <span style="font-size:10px;color:#64748b">${dateStr}</span>
+                    <button onclick="deleteMindDump(${idx})"
+                        title="Supprimer cette note"
+                        style="margin-left:auto;background:transparent;border:0;color:#fca5a5;font-size:12px;cursor:pointer;line-height:1;padding:2px 4px">🗑️</button>
+                </div>
+                <div style="white-space:pre-wrap;word-break:break-word;line-height:1.4">${safe}</div>
+            </div>
+        `;
+    }).join('');
 }
 
 function saveMindDump() {
@@ -319,7 +368,25 @@ function saveMindDump() {
         dumps.push({ time: new Date().toISOString(), text: text.trim() });
         localStorage.setItem('swisscpa_mindDumps', JSON.stringify(dumps.slice(-50)));
     }
-    document.getElementById('mindDumpPanel')?.remove();
+    // Clear textarea and re-render list (panel stays open so you can keep adding/reviewing).
+    const ta = document.getElementById('mindDumpText');
+    if (ta) ta.value = '';
+    renderMindDumpList();
+    if (ta) ta.focus();
+}
+
+function deleteMindDump(idx) {
+    const dumps = JSON.parse(localStorage.getItem('swisscpa_mindDumps') || '[]');
+    if (idx < 0 || idx >= dumps.length) return;
+    dumps.splice(idx, 1);
+    localStorage.setItem('swisscpa_mindDumps', JSON.stringify(dumps));
+    renderMindDumpList();
+}
+
+function clearAllMindDumps() {
+    if (!confirm('Supprimer toutes les notes ?')) return;
+    localStorage.setItem('swisscpa_mindDumps', '[]');
+    renderMindDumpList();
 }
 
 // ── Global keyboard shortcuts ──

@@ -76,6 +76,9 @@ const engState = {
         seenIds: {},             // avoid repeating in same session
     },
     deletedCards: {},            // { id: ISO_timestamp } — user-hidden cards/phrases, persisted to localStorage
+    fs: {
+        view: 'income',          // 'income' | 'balance' | 'conso'
+    },
 };
 
 // ── Constants ────────────────────────────────────────────────
@@ -601,6 +604,7 @@ async function renderEnglish(container, subTab) {
     if (sub === 'essentials')         engRenderEssentials();
     else if (sub === 'vocab')         engRenderVocab();
     else if (sub === 'phrases')       engRenderPhrases();
+    else if (sub === 'fs')            engRenderFinancialStatements();
     else if (sub === 'constructor')   engRenderConstructor();
     else if (sub === 'dictation')     engRenderDictation();
     else if (sub === 'conversations') engRenderConversations();
@@ -616,6 +620,7 @@ function engRenderSubTabs() {
         { id: 'essentials',    icon: '🎯', label: 'Day-1 EY'              },
         { id: 'vocab',         icon: '📚', label: 'Vocabulaire'          },
         { id: 'phrases',       icon: '💬', label: 'Phrases & expressions'},
+        { id: 'fs',            icon: '📊', label: 'États financiers'     },
         { id: 'constructor',   icon: '🏗️', label: 'Constructeur'         },
         { id: 'dictation',     icon: '🎧', label: 'Dictée'                },
         { id: 'conversations', icon: '🎙️', label: 'Conversations'        },
@@ -640,6 +645,7 @@ function engSwitchSection(sub) {
     if (sub === 'essentials')         engRenderEssentials();
     else if (sub === 'vocab')         engRenderVocab();
     else if (sub === 'phrases')       engRenderPhrases();
+    else if (sub === 'fs')            engRenderFinancialStatements();
     else if (sub === 'constructor')   engRenderConstructor();
     else if (sub === 'dictation')     engRenderDictation();
     else if (sub === 'conversations') engRenderConversations();
@@ -1876,6 +1882,270 @@ function engPatternNextExample() {
 }
 
 // ════════════════════════════════════════════════════════════
+// FINANCIAL STATEMENTS SUB-SECTION (P&L + Balance sheet + Conso)
+// ════════════════════════════════════════════════════════════
+
+// Inject FS-specific CSS once
+(function engInjectFsCss() {
+    if (document.getElementById('eng-fs-style')) return;
+    const s = document.createElement('style');
+    s.id = 'eng-fs-style';
+    s.textContent = `
+        .eng-fs-row {
+            display: grid; grid-template-columns: 1fr auto;
+            gap: 12px; padding: 6px 12px;
+            border-bottom: 1px solid transparent;
+            font-size: 13px; line-height: 1.5;
+            position: relative; cursor: help;
+            transition: background 0.12s;
+        }
+        .eng-fs-row:hover {
+            background: rgba(59, 130, 246, 0.10);
+            border-bottom-color: rgba(59, 130, 246, 0.3);
+        }
+        .eng-fs-row .lbl {
+            color: var(--text-bright); display: flex; align-items: center; gap: 6px;
+            min-width: 0;
+        }
+        .eng-fs-row .val {
+            color: var(--text-secondary); font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
+        .eng-fs-row.eng-fs-header {
+            background: rgba(30, 58, 95, 0.4); padding: 10px 12px;
+            margin-top: 12px; border-radius: 6px 6px 0 0;
+        }
+        .eng-fs-row.eng-fs-header .lbl {
+            font-weight: 700; color: #93c5fd; text-transform: uppercase;
+            font-size: 12px; letter-spacing: 0.5px;
+        }
+        .eng-fs-row.eng-fs-subtotal {
+            font-weight: 600; border-top: 1px solid #334155;
+            background: rgba(30, 58, 95, 0.15);
+        }
+        .eng-fs-row.eng-fs-subtotal .lbl { color: var(--text-bright); }
+        .eng-fs-row.eng-fs-subtotal .val { color: var(--text-bright); }
+        .eng-fs-row.eng-fs-total {
+            font-weight: 800; border-top: 2px double #475569;
+            border-bottom: 2px double #475569;
+            background: rgba(30, 58, 95, 0.30);
+        }
+        .eng-fs-row.eng-fs-total .lbl,
+        .eng-fs-row.eng-fs-total .val { color: #f0f9ff; font-size: 14px; }
+        .eng-fs-row .ifrs-ref {
+            display: inline-block; font-size: 9px; font-weight: 600;
+            padding: 1px 6px; border-radius: 4px;
+            background: rgba(14, 165, 233, 0.15);
+            color: #93c5fd; border: 1px solid rgba(14, 165, 233, 0.4);
+            white-space: nowrap;
+        }
+        .eng-fs-row .note-mark {
+            color: #fbbf24; font-size: 11px; opacity: 0.7;
+        }
+        .eng-fs-indent-1 { padding-left: 28px; }
+        .eng-fs-indent-2 { padding-left: 44px; }
+        .eng-fs-indent-3 { padding-left: 60px; }
+        .eng-fs-space { height: 8px; }
+        .eng-fs-negative { color: #fca5a5; }
+        #engFsTooltip {
+            position: fixed; z-index: 5000; pointer-events: none;
+            background: var(--bg-secondary); border: 1px solid #3b82f6;
+            border-radius: 8px; padding: 10px 12px; max-width: 380px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            font-size: 12px; color: var(--text-bright);
+            opacity: 0; transition: opacity 0.12s;
+        }
+        #engFsTooltip.visible { opacity: 1; }
+        #engFsTooltip .tt-fr {
+            font-weight: 600; color: #93c5fd; margin-bottom: 4px; font-size: 13px;
+        }
+        #engFsTooltip .tt-note {
+            color: var(--text-secondary); line-height: 1.5; margin-top: 6px;
+            padding-top: 6px; border-top: 1px solid var(--border-light);
+            font-style: italic;
+        }
+        #engFsTooltip .tt-ref {
+            display: inline-block; font-size: 10px; font-weight: 600;
+            padding: 2px 8px; border-radius: 4px; margin-bottom: 6px;
+            background: rgba(14, 165, 233, 0.15); color: #93c5fd;
+            border: 1px solid rgba(14, 165, 233, 0.4);
+        }
+    `;
+    document.head.appendChild(s);
+})();
+
+function engFsFormatValue(v, isNegative) {
+    if (v === null || v === undefined) return '';
+    if (typeof v === 'string') return engEscape(v);
+    if (typeof v !== 'number') return '';
+    // Decimal numbers (EPS) keep 2 decimals.
+    if (!Number.isInteger(v) && Math.abs(v) < 1000) {
+        return v.toFixed(2);
+    }
+    // Format thousands separator (Swiss style — apostrophe).
+    const abs = Math.abs(v);
+    const formatted = abs.toLocaleString('en-US').replace(/,/g, "'");
+    return v < 0 ? `(${formatted})` : formatted;
+}
+
+function engFsRenderLine(line) {
+    if (!line) return '';
+    if (line.type === 'space') {
+        return `<div class="eng-fs-space"></div>`;
+    }
+
+    const indent = line.indent || 0;
+    const classes = ['eng-fs-row'];
+    if (line.type === 'header')   classes.push('eng-fs-header');
+    if (line.type === 'subtotal') classes.push('eng-fs-subtotal');
+    if (line.type === 'total')    classes.push('eng-fs-total');
+    if (indent === 1) classes.push('eng-fs-indent-1');
+    if (indent === 2) classes.push('eng-fs-indent-2');
+    if (indent === 3) classes.push('eng-fs-indent-3');
+
+    const value = engFsFormatValue(line.value);
+    const isNeg = typeof line.value === 'number' && line.value < 0;
+    const valClass = isNeg ? 'val eng-fs-negative' : 'val';
+
+    const refHtml = line.ref ? `<span class="ifrs-ref">${engEscape(line.ref)}</span>` : '';
+    const noteMark = line.note_fr ? `<span class="note-mark" title="Note disponible">💡</span>` : '';
+
+    // Pack tooltip data into data-attrs (read on mouseenter).
+    const fr = engEscapeAttr(line.label_fr || '');
+    const note = engEscapeAttr(line.note_fr || '');
+    const ref = engEscapeAttr(line.ref || '');
+
+    return `
+        <div class="${classes.join(' ')}"
+            data-fr="${fr}"
+            data-note="${note}"
+            data-ref="${ref}"
+            onmouseenter="engFsShowTooltip(event)"
+            onmouseleave="engFsHideTooltip()"
+            onmousemove="engFsMoveTooltip(event)">
+            <span class="lbl">
+                ${engEscape(line.label_en)}
+                ${refHtml}
+                ${noteMark}
+            </span>
+            <span class="${valClass}">${value}</span>
+        </div>
+    `;
+}
+
+function engFsShowTooltip(e) {
+    let tt = document.getElementById('engFsTooltip');
+    if (!tt) {
+        tt = document.createElement('div');
+        tt.id = 'engFsTooltip';
+        document.body.appendChild(tt);
+    }
+    const row = e.currentTarget;
+    const fr = row.getAttribute('data-fr') || '';
+    const note = row.getAttribute('data-note') || '';
+    const ref = row.getAttribute('data-ref') || '';
+    tt.innerHTML = `
+        ${ref ? `<span class="tt-ref">📘 ${engEscape(ref)}</span>` : ''}
+        <div class="tt-fr">${engEscape(fr)}</div>
+        ${note ? `<div class="tt-note">${engEscape(note)}</div>` : ''}
+    `;
+    engFsMoveTooltip(e);
+    tt.classList.add('visible');
+}
+
+function engFsMoveTooltip(e) {
+    const tt = document.getElementById('engFsTooltip');
+    if (!tt) return;
+    let x = e.clientX + 16;
+    let y = e.clientY + 16;
+    const rect = tt.getBoundingClientRect();
+    if (x + rect.width + 10 > window.innerWidth) x = e.clientX - rect.width - 16;
+    if (y + rect.height + 10 > window.innerHeight) y = e.clientY - rect.height - 16;
+    if (x < 8) x = 8;
+    if (y < 8) y = 8;
+    tt.style.left = x + 'px';
+    tt.style.top = y + 'px';
+}
+
+function engFsHideTooltip() {
+    const tt = document.getElementById('engFsTooltip');
+    if (tt) tt.classList.remove('visible');
+}
+
+function engFsSwitchView(view) {
+    engState.fs.view = view;
+    engRenderFinancialStatements();
+}
+
+function engRenderFinancialStatements() {
+    const root = document.getElementById('engContent');
+    if (!root) return;
+    const fs = engState.data?.financial_statements;
+    if (!fs) {
+        root.innerHTML = `<div class="card" style="text-align:center;padding:40px">
+            <div style="font-size:42px;margin-bottom:10px">📊</div>
+            <div>États financiers non disponibles.</div></div>`;
+        return;
+    }
+
+    const view = engState.fs.view;
+    const map = {
+        income:  fs.income_statement,
+        balance: fs.balance_sheet,
+        conso:   fs.balance_sheet_conso,
+    };
+    const stmt = map[view];
+    if (!stmt) {
+        engState.fs.view = 'income';
+        return engRenderFinancialStatements();
+    }
+
+    const tabBtn = (id, label, sub) => {
+        const active = view === id;
+        return `<button onclick="engFsSwitchView('${id}')"
+            style="font-size:13px;padding:8px 14px;border-radius:8px;cursor:pointer;
+            background:${active ? '#3b82f6' : 'transparent'};
+            color:${active ? '#fff' : '#93c5fd'};
+            border:1px solid ${active ? '#3b82f6' : 'var(--border-light)'};
+            transition:all 0.12s;text-align:left;line-height:1.3">
+            <div style="font-weight:600">${label}</div>
+            <div style="font-size:10px;opacity:0.85;font-weight:400;margin-top:2px">${sub}</div>
+            </button>`;
+    };
+
+    const linesHtml = (stmt.lines || []).map(engFsRenderLine).join('');
+
+    root.innerHTML = `
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+            ${tabBtn('income',  '📈 Compte de résultat', 'P&amp;L + OCI')}
+            ${tabBtn('balance', '⚖️ Bilan statutaire',   'Standalone')}
+            ${tabBtn('conso',   '🌐 Bilan consolidé',    'Groupe')}
+        </div>
+
+        <div class="card" style="padding:18px 16px">
+            <div style="border-bottom:1px solid var(--border-light);padding-bottom:12px;margin-bottom:8px">
+                <div style="font-size:17px;font-weight:700;color:var(--text-bright);margin-bottom:4px"
+                    title="${engEscapeAttr(stmt.title_fr || '')}">
+                    ${engEscape(stmt.title_en)}
+                </div>
+                <div style="font-size:11px;color:var(--text-muted);font-style:italic">
+                    ${engEscape(stmt.title_fr)}
+                </div>
+                <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:var(--text-secondary)">
+                    <span>${engEscape(stmt.period_en)} <span style="color:var(--text-muted);font-style:italic">— ${engEscape(stmt.period_fr)}</span></span>
+                    <span>(${engEscape(stmt.currency)})</span>
+                </div>
+            </div>
+            <div style="font-size:11px;color:var(--text-muted);margin-bottom:14px;line-height:1.5">
+                🖱️ Survole n'importe quelle ligne pour voir la traduction française, la référence IFRS et la note explicative.
+                💡 indique une note disponible.
+            </div>
+            <div>${linesHtml}</div>
+        </div>
+    `;
+}
+
+// ════════════════════════════════════════════════════════════
 // DICTATION SUB-SECTION (listening practice: hear EN, type what you hear)
 // ════════════════════════════════════════════════════════════
 
@@ -2872,3 +3142,7 @@ window.engDictationCheck = engDictationCheck;
 window.engDictationSkip = engDictationSkip;
 window.engDeleteCard = engDeleteCard;
 window.engRestoreAllDeleted = engRestoreAllDeleted;
+window.engFsSwitchView = engFsSwitchView;
+window.engFsShowTooltip = engFsShowTooltip;
+window.engFsMoveTooltip = engFsMoveTooltip;
+window.engFsHideTooltip = engFsHideTooltip;
