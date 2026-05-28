@@ -15,6 +15,7 @@ const AUDIT_TABS = [
     { id: 'cycles',       label: 'Cycles',        icon: '🔄', desc: 'Ventes, achats, paie, stocks, immo, tréso, FP, impôts' },
     { id: 'terrain',      label: 'Terrain EY',    icon: '🛠️', desc: 'Phases de mission, livrables, soft skills' },
     { id: 'outils',       label: 'Outils',        icon: '🧮', desc: 'Calculateurs (matérialité, sampling, opinion), wording, glossaire' },
+    { id: 'lexique',      label: 'Lexique',       icon: '📖', desc: 'Acronymes audit (ISA/NAS/CO/LSR), vocabulaire FR↔EN, latin, jargon EY, phrases types' },
     { id: 'quiz',         label: 'Quiz',          icon: '🎯', desc: 'Quiz par NAS, arbres de décision, simulateur' },
 ];
 
@@ -147,8 +148,165 @@ function _renderAuditSubContent(subTab) {
         case 'cycles':      _renderAuditCycles(host);     break;
         case 'terrain':     _renderAuditTerrain(host);    break;
         case 'outils':      _renderAuditOutils(host); _initOutilsCalculators(); break;
+        case 'lexique':     _renderAuditLexique(host);    break;
         case 'quiz':        _renderAuditQuiz(host);       break;
         default:            _renderAuditNas(host);
+    }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// LEXIQUE — Acronymes, vocabulaire FR/EN, latin, jargon EY, phrases types
+// ─────────────────────────────────────────────────────────────────
+let _lexiqueFilterCat = 'all';
+let _lexiqueSearch = '';
+
+function _renderAuditLexique(host) {
+    const lex = _auditData.lexique || {};
+    const cats = lex.categories || [];
+    const totalItems = cats.reduce((s, c) => s + (c.items?.length || 0), 0);
+
+    host.innerHTML = `
+        <div class="ref-section-title">${lex._icon || '📖'} ${escapeHtml(lex._label || 'Lexique Audit')}</div>
+        <p style="color:#94a3b8;font-size:13px;line-height:1.6;margin-bottom:14px">
+            ${escapeHtml(lex._description || '')}
+        </p>
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:14px;flex-wrap:wrap">
+            <span style="background:#3c1d6e;padding:4px 10px;border-radius:12px;font-size:12px;color:#c4b5fd">
+                📚 ${totalItems} entrées
+            </span>
+            <span style="background:#3c1d6e;padding:4px 10px;border-radius:12px;font-size:12px;color:#c4b5fd">
+                🗂️ ${cats.length} catégories
+            </span>
+            <input type="text" id="lexiqueSearch" placeholder="🔍 Rechercher acronyme, FR, EN, contexte…"
+                   value="${escapeHtml(_lexiqueSearch)}"
+                   oninput="_filterLexique(this.value)"
+                   style="flex:1;min-width:240px;background:#0f172a;border:1px solid #334155;color:#e2e8f0;
+                          padding:8px 12px;border-radius:7px;font-size:13px" />
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+            <button onclick="_setLexiqueCat('all')"
+                    style="padding:7px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:700;
+                           background:${_lexiqueFilterCat === 'all' ? AUDIT_ACCENT : '#1e293b'};
+                           color:${_lexiqueFilterCat === 'all' ? '#fff' : '#94a3b8'};
+                           border:1px solid ${_lexiqueFilterCat === 'all' ? AUDIT_ACCENT : '#334155'}">
+                🔍 Toutes (${totalItems})
+            </button>
+            ${cats.map(c => `
+                <button onclick="_setLexiqueCat('${c.id}')"
+                        style="padding:7px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;
+                               background:${_lexiqueFilterCat === c.id ? (c.color || AUDIT_ACCENT) : '#1e293b'};
+                               color:${_lexiqueFilterCat === c.id ? '#fff' : '#94a3b8'};
+                               border:1px solid ${_lexiqueFilterCat === c.id ? (c.color || AUDIT_ACCENT) : '#334155'}">
+                    ${escapeHtml(c.label)} (${c.items.length})
+                </button>
+            `).join('')}
+        </div>
+        <div id="lexiqueGroupList">
+            ${cats.map(c => _renderLexiqueGroup(c)).join('')}
+        </div>
+    `;
+    _applyLexiqueFilter();
+}
+
+function _renderLexiqueGroup(c) {
+    const color = c.color || AUDIT_ACCENT;
+    const groupId = `lex-${c.id}`;
+    return `
+        <div class="card lexique-group" data-cat-id="${c.id}" style="margin-bottom:14px;border-left:3px solid ${color}">
+            <div onclick="_toggleLexiqueGroup('${groupId}')"
+                 style="padding:12px 16px;font-size:14px;font-weight:700;color:${color};
+                        border-bottom:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center;
+                        cursor:pointer;transition:background 0.15s"
+                 onmouseover="this.style.background='#1e293b'" onmouseout="this.style.background=''">
+                <span>${escapeHtml(c.label)}</span>
+                <span style="font-size:11px;color:#64748b;font-weight:500">
+                    ${c.items?.length || 0} entrée(s)
+                    <span id="${groupId}-arrow" style="margin-left:6px;color:${color}">▾</span>
+                </span>
+            </div>
+            <div id="${groupId}" style="display:block">
+                ${(c.items || []).map((it, idx) => _renderLexiqueItem(c.id, idx, it, color)).join('')}
+            </div>
+        </div>`;
+}
+
+function _renderLexiqueItem(catId, idx, item, color) {
+    const searchHay = [item.acronym, item.fr, item.en, item.context]
+        .filter(Boolean).join(' ').toLowerCase();
+    return `
+        <div class="lexique-item" data-lex-search="${escapeHtml(searchHay)}" data-cat-id="${catId}"
+             style="padding:12px 16px;border-bottom:1px solid #0f172a">
+            <div style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap">
+                <div style="flex:0 0 200px;min-width:160px">
+                    <div style="font-size:14px;font-weight:800;color:${color};line-height:1.3">
+                        ${escapeHtml(item.acronym || '—')}
+                    </div>
+                    ${item.context ? `<div style="font-size:11px;color:#64748b;margin-top:4px;font-style:italic">${escapeHtml(item.context)}</div>` : ''}
+                </div>
+                <div style="flex:1;min-width:240px;display:flex;flex-direction:column;gap:6px">
+                    <div style="display:flex;gap:8px;align-items:flex-start">
+                        <span style="background:#1e1b4b;color:#a78bfa;font-size:10px;font-weight:700;
+                                     padding:2px 7px;border-radius:4px;letter-spacing:0.5px;flex-shrink:0;margin-top:2px">FR</span>
+                        <span style="font-size:13px;color:#e2e8f0;line-height:1.5">${escapeHtml(item.fr || '—')}</span>
+                    </div>
+                    <div style="display:flex;gap:8px;align-items:flex-start">
+                        <span style="background:#1e3a5f;color:#7dd3fc;font-size:10px;font-weight:700;
+                                     padding:2px 7px;border-radius:4px;letter-spacing:0.5px;flex-shrink:0;margin-top:2px">EN</span>
+                        <span style="font-size:13px;color:#cbd5e1;line-height:1.5">${escapeHtml(item.en || '—')}</span>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+}
+
+function _setLexiqueCat(catId) {
+    _lexiqueFilterCat = catId;
+    const host = document.getElementById('auditContent');
+    if (host) _renderAuditLexique(host);
+    // Restore search input focus
+    setTimeout(() => {
+        const search = document.getElementById('lexiqueSearch');
+        if (search) search.focus();
+    }, 0);
+}
+
+function _filterLexique(value) {
+    _lexiqueSearch = (value || '').toLowerCase().trim();
+    _applyLexiqueFilter();
+}
+
+function _applyLexiqueFilter() {
+    const items = document.querySelectorAll('.lexique-item');
+    const groups = document.querySelectorAll('.lexique-group');
+    const groupCounts = {};
+
+    items.forEach(it => {
+        const catId = it.dataset.catId;
+        const hay = it.dataset.lexSearch || '';
+        const matchCat = (_lexiqueFilterCat === 'all') || (catId === _lexiqueFilterCat);
+        const matchSearch = !_lexiqueSearch || hay.includes(_lexiqueSearch);
+        const visible = matchCat && matchSearch;
+        it.style.display = visible ? '' : 'none';
+        if (visible) groupCounts[catId] = (groupCounts[catId] || 0) + 1;
+    });
+
+    groups.forEach(g => {
+        const catId = g.dataset.catId;
+        const count = groupCounts[catId] || 0;
+        g.style.display = count > 0 ? '' : 'none';
+    });
+}
+
+function _toggleLexiqueGroup(groupId) {
+    const el = document.getElementById(groupId);
+    const arrow = document.getElementById(groupId + '-arrow');
+    if (!el) return;
+    if (el.style.display === 'none') {
+        el.style.display = 'block';
+        if (arrow) arrow.textContent = '▾';
+    } else {
+        el.style.display = 'none';
+        if (arrow) arrow.textContent = '▸';
     }
 }
 
