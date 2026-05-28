@@ -17055,7 +17055,9 @@
               "difficulty": "medium",
               "section_id": "co_tenue_s8"
             }
-          ]
+          ],
+          "title_en": "CO — Bookkeeping and accounting obligations (art. 957-958f)",
+          "summary_en": "The Swiss Code of Obligations requires all commercial enterprises to keep accounts and prepare annual accounts. The obligation varies by size: simplified accounting (art. 957 para. 2) for small enterprises (<CHF 100k revenue), full accounting for others. Accounts must be drawn up in national currency or foreign currency, signed by the senior body, and preserved for 10 years (art. 958f). Annual accounts comprise the balance sheet, income statement and notes (art. 958). Going concern (art. 958a), matching principle (art. 958b), and clarity/completeness (art. 958c) are the fundamental principles."
         },
         {
           "id": "co_bilan",
@@ -17281,7 +17283,9 @@
               "difficulty": "medium",
               "section_id": "co_bilan_s7"
             }
-          ]
+          ],
+          "title_en": "CO — Balance sheet and income statement structure (art. 959-959c)",
+          "summary_en": "The CO imposes a minimum balance sheet structure (art. 959a) and income statement (art. 959b). The balance sheet distinguishes current/fixed assets and short-term/long-term liabilities + equity. The income statement can be presented by nature or by function. The notes (art. 959c) supplement accounts with mandatory information on methods, commitments, hidden reserves and significant items."
         },
         {
           "id": "co_evaluation",
@@ -17540,7 +17544,9 @@
               "difficulty": "medium",
               "section_id": "co_evaluation_s8"
             }
-          ]
+          ],
+          "title_en": "CO — Valuation of assets, liabilities and hidden reserves (art. 960-960e)",
+          "summary_en": "The CO sets valuation rules based on prudence. The general rule (art. 960) requires acquisition or production cost, capped at market value. Listed assets can be valued at market price (art. 960b). Inventory at cost or lower NRV (art. 960c). Art. 960a para. 4 explicitly allows the creation of hidden reserves (Swiss specificity vs IFRS/RPC). Liabilities at nominal value, provisions at best estimate (art. 960e). The historical cost principle dominates."
         },
         {
           "id": "co_grandes",
@@ -17793,7 +17799,9 @@
               "difficulty": "hard",
               "section_id": "co_grandes_s7"
             }
-          ]
+          ],
+          "title_en": "CO — Large enterprises: management report and consolidation (art. 961-961d)",
+          "summary_en": "Large enterprises (art. 961 para. 1: 2 of 3 criteria exceeded — balance sheet > CHF 20M, revenue > CHF 40M, FTE > 250) must prepare a cash flow statement and an annual management report. Public-interest entities (art. 961d) may be exempted if they submit accounts under a recognised standard. Consolidation is mandatory for groups exceeding these thresholds (art. 963)."
         },
         {
           "id": "co_normes",
@@ -18005,7 +18013,9 @@
               "difficulty": "hard",
               "section_id": "co_normes_s6"
             }
-          ]
+          ],
+          "title_en": "CO — Recognised accounting standards and framework choice (art. 962-962a)",
+          "summary_en": "The CO allows enterprises to voluntarily adopt a recognised accounting standard (IFRS, US GAAP, full Swiss GAAP RPC) in place of CO alone. Certain entities are REQUIRED to adopt a recognised standard: listed companies, cooperatives > 2000 members, supervised foundations. Once chosen, the standard must be applied integrally and consistently. The chosen framework determines the level of detail and disclosure."
         },
         {
           "id": "co_sa_capital",
@@ -18276,7 +18286,9 @@
               "difficulty": "hard",
               "section_id": "co_sa_capital_s7"
             }
-          ]
+          ],
+          "title_en": "CO — SA: Formation, share capital and share categories (art. 620-659)",
+          "summary_en": "The Swiss public limited company (SA) is a capital company with capital divided into shares. The 2023 reform modernised the law: minimum capital unchanged (CHF 100,000), new capital forms (fluctuation margin art. 653s, foreign currency capital), new share categories (preferential voting shares 1:100), interim dividends (art. 675a). Formation requires a public deed and Commercial Register entry. Liability is limited to the share capital."
         },
         {
           "id": "co_sa_gouv",
@@ -18513,7 +18525,9 @@
               "difficulty": "hard",
               "section_id": "co_sa_gouv_s7"
             }
-          ]
+          ],
+          "title_en": "CO — SA: General meeting — inalienable powers and operations (art. 698-706)",
+          "summary_en": "The General Meeting (GM) is the supreme body of the SA. It holds inalienable powers listed in art. 698 para. 2 CO that neither the articles nor the Board can withdraw. The GM meets at least once a year (ordinary GM). The 2023 reform introduces the virtual GM and facilitated circular resolutions. Shareholders have individual rights (information, control) protected by law."
         },
         {
           "id": "co_sa_crise",
@@ -18773,7 +18787,9 @@
               "difficulty": "hard",
               "section_id": "co_sa_crise_s8"
             }
-          ]
+          ],
+          "title_en": "CO — SA: Capital loss and over-indebtedness (art. 725-725c) — CRITICAL EXPERTSUISSE",
+          "summary_en": "Art. 725 CO imposes on the Board ongoing financial monitoring. The 2023 reform restructures art. 725-725c with 4 progressive alert thresholds: (1) capital loss → AGM call + restructuring (art. 725a); (2) over-indebtedness → interim balance sheet + notice to the judge (art. 725b); (3) deferral of judicial notice if serious restructuring chances (art. 725b para. 4); (4) imminent insolvency (art. 725 forward-looking). One of the most exam-tested topics."
         },
         {
           "id": "co_sarl",
@@ -19024,7 +19040,9 @@
               "difficulty": "medium",
               "section_id": "co_sarl_s7"
             }
-          ]
+          ],
+          "title_en": "CO — Sàrl: Formation, quotas and differences with SA (art. 772-827)",
+          "summary_en": "The limited liability company (Sàrl/GmbH) is an intermediate form between the SA and partnership. Minimum capital CHF 20,000, divided into quotas (minimum CHF 100 each). Members are known and registered. Liability is limited to contribution unless articles provide for additional contributions (art. 795). The Sàrl is more flexible than the SA for personal management."
         },
         {
           "id": "co_revision",
@@ -19274,7 +19292,9 @@
               "difficulty": "hard",
               "section_id": "co_revision_s6"
             }
-          ]
+          ],
+          "title_en": "CO — SA: Statutory audit — opting-out, limited audit and ordinary audit (art. 727-731)",
+          "summary_en": "Statutory audit is mandatory for most SAs. Three regimes exist: ordinary audit (art. 727 — large entities + listed), limited audit (art. 727a — small SAs) and opting-out (art. 727a para. 2 — SA with ≤ 10 shareholders, unanimous decision). The auditor must be independent of management. The 2023 reform extends independence and mandatory rotation. In case of over-indebtedness, the auditor has specific obligations (art. 725b)."
         },
         {
           "id": "co_propres",
@@ -19499,7 +19519,9 @@
               "difficulty": "medium",
               "section_id": "co_propres_s6"
             }
-          ]
+          ],
+          "title_en": "CO — SA: Treasury shares — buyback, limits and accounting (art. 659-659b)",
+          "summary_en": "The SA may buy back its own shares within a limit of 10% of share capital (art. 659 para. 1), or up to 20% if shares beyond 10% are resold within 2 years. While held, voting rights and dividend rights are suspended. Accounting-wise, they are deducted from equity (not recognised as assets). A corresponding reserve is created. Resale gains/losses go to equity (not P&L)."
         },
         {
           "code": "CO 660-675a",
@@ -19691,7 +19713,9 @@
               "difficulty": "medium",
               "section_id": "co_660_675a_s6"
             }
-          ]
+          ],
+          "title_en": "CO — SA: Legal reserves, dividends and interim dividends (art. 660-675a)",
+          "summary_en": "The CO requires the creation of mandatory legal reserves (art. 671) and strictly regulates dividend distribution (art. 675). Only available profit (retained earnings + period profit after allocation to mandatory reserves) can be distributed. The 2023 reform introduces interim dividends (art. 675a) allowing distribution during the year on the basis of audited interim accounts."
         },
         {
           "code": "CO 707-726a",
@@ -19898,7 +19922,9 @@
               "difficulty": "medium",
               "section_id": "co_707_726a_s6"
             }
-          ]
+          ],
+          "title_en": "CO — SA: Board of Directors — inalienable powers and liability (art. 707-726a)",
+          "summary_en": "The Board of Directors (BoD) is the supreme management body of the SA. Its inalienable powers (art. 716a CO) cannot be delegated to management. The BoD is jointly and severally liable for damage caused to the company through intentional or negligent breach (art. 754 CO). The 2023 reform strengthens governance requirements: Board diversity, remuneration transparency and new responsibilities under art. 725-725c."
         },
         {
           "code": "CO 736-771",
@@ -20072,7 +20098,9 @@
               "difficulty": "medium",
               "section_id": "co_736_771_s6"
             }
-          ]
+          ],
+          "title_en": "CO — SA: Dissolution, transformation and liquidation (art. 736-771)",
+          "summary_en": "The SA may be dissolved under 6 legal causes (art. 736 CO): GM resolution by qualified majority, court judgment (bankruptcy, RC cancellation), articles term, merger, etc. Dissolution leads to liquidation (asset realisation, creditor payment, balance distribution to shareholders). Transformation into another legal form (Sàrl, cooperative) is performed under LFus (merger law)."
         },
         {
           "code": "CO 552-619",
@@ -20272,7 +20300,9 @@
               "difficulty": "hard",
               "section_id": "co_552_619_s4"
             }
-          ]
+          ],
+          "title_en": "CO — Partnerships: SNC (art. 552-593) and Limited Partnership (art. 594-619)",
+          "summary_en": "The general partnership (SNC, art. 552) and limited partnership (SC, art. 594) are partnerships. In the SNC, all partners are jointly and severally liable indefinitely. In the SC, limited partners (art. 594) have liability limited to their contribution, while general partners are indefinitely liable. Neither form is a legal entity, but they have their own substance."
         },
         {
           "code": "CO-ASSOC-FOND",
@@ -20440,7 +20470,9 @@
               "difficulty": "hard",
               "section_id": "co_assoc_fond_s6"
             }
-          ]
+          ],
+          "title_en": "CC/CO — Associations (CC 60-79) and Foundations (CC 80-89) for EXPERTSUISSE",
+          "summary_en": "Associations (CC 60-79) are non-profit groups of persons (NPO). Foundations (CC 80-89) are pools of assets earmarked for a specific purpose, without members. For EXPERTSUISSE, key points are: NPO accounting (Swiss GAAP RPC 21), foundation supervision, audit obligations, and distinctions between forms (association vs foundation vs cooperative)."
         },
         {
           "code": "LFUS",
@@ -20652,7 +20684,9 @@
               "difficulty": "hard",
               "section_id": "lfus_s6"
             }
-          ]
+          ],
+          "title_en": "LFus — Merger, demerger, conversion and asset transfer (Merger Act)",
+          "summary_en": "LFus (Federal Act on Merger, Demerger, Conversion and Asset Transfer) governs corporate restructurings in Switzerland. Merger = absorption of one company by another or creation of a new one. Demerger = division of a company. Conversion = change of legal form without dissolution. Asset transfer = transfer of assets or business line. LFus protects creditors and employees during these operations."
         },
         {
           "code": "CO-REF2023",
@@ -20840,7 +20874,9 @@
               "difficulty": "medium",
               "section_id": "co_ref2023_s6"
             }
-          ]
+          ],
+          "title_en": "CO — 2023 SA Law Reform: overview of main changes",
+          "summary_en": "The SA law reform (in force since 1 January 2023) profoundly modernises the CO. Main changes: foreign currency capital, capital fluctuation margin (art. 653s), preferred voting ratio raised to 1:100, interim dividends (art. 675a), virtual AGM (art. 701d), lowered agenda threshold (0.5%), restructuring art. 725-725c (over-indebtedness), transparent representation of women on Board (gender quota for large entities), Say-on-Pay binding."
         },
         {
           "code": "CO-COMP",
@@ -21028,7 +21064,9 @@
               "difficulty": "medium",
               "section_id": "co_comp_s4"
             }
-          ]
+          ],
+          "title_en": "CO/CC — Comparison table of all Swiss legal forms (EXPERTSUISSE)",
+          "summary_en": "This summary table compares the 7 main legal forms in Switzerland: SA, Sàrl, SNC, SC, Cooperative, Association and Foundation. For EXPERTSUISSE, the ability to quickly distinguish key characteristics (liability, capital, bodies, audit, tax) is fundamental. This comparison covers all classic exam pitfalls."
         }
       ],
       "lessons_ifp": [
