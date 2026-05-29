@@ -6,6 +6,7 @@
 
 const AUDIT_TABS = [
     { id: 'cours',        label: 'Cours MSA',     icon: '📚', desc: 'Base de cours — contrôle ordinaire (MSA) + restreint (NCR)' },
+    { id: 'cas',          label: 'Cas pratiques', icon: '📝', desc: 'Études de cas examen EXPERTsuisse — énoncé + solution pas-à-pas' },
     { id: 'canvas',       label: 'Canvas Perso',  icon: '🏢', desc: 'Tes propres engagements d\'audit' },
     { id: 'mission',      label: 'Mission Lab',   icon: '🎬', desc: 'Mission immersive end-to-end chez EY' },
     { id: 'seuils',       label: 'Seuils & Exos', icon: '🎯', desc: 'Comprendre tous les seuils + exercices pas-à-pas' },
@@ -151,9 +152,101 @@ function _renderAuditSubContent(subTab) {
         case 'outils':      _renderAuditOutils(host); _initOutilsCalculators(); break;
         case 'lexique':     _renderAuditLexique(host);    break;
         case 'annuaire':    _renderAuditAnnuaire(host);   break;
+        case 'cas':         _renderAuditCas(host);        break;
         case 'quiz':        _renderAuditQuiz(host);       break;
         default:            _renderAuditNas(host);
     }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// CAS PRATIQUES — Études de cas examen avec solutions dépliables
+// ─────────────────────────────────────────────────────────────────
+function _renderAuditCas(host) {
+    const cp = _auditData.cas_pratiques || {};
+    const cas = cp.cas || [];
+
+    host.innerHTML = `
+        <div class="ref-section-title">${cp._icon || '📝'} ${escapeHtml(cp._label || 'Cas pratiques')}</div>
+        <p style="color:#94a3b8;font-size:13px;line-height:1.6;margin-bottom:18px">
+            ${escapeHtml(cp._description || '')}
+        </p>
+        <div id="casList">
+            ${cas.map((c, idx) => _renderCasCard(idx, c)).join('')}
+        </div>
+    `;
+}
+
+function _renderCasCard(idx, c) {
+    const id = `cas-${idx}`;
+    const niveauColor = c.niveau === 'Avancé' ? '#dc2626' : (c.niveau === 'Intermédiaire' ? '#f59e0b' : '#16a34a');
+    return `
+        <div class="card" style="margin-bottom:16px;border-left:3px solid ${AUDIT_ACCENT}">
+            <div onclick="_toggleCas('${id}')"
+                 style="padding:14px 18px;cursor:pointer;transition:background 0.15s"
+                 onmouseover="this.style.background='#1e293b'" onmouseout="this.style.background=''">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+                    <div style="flex:1;min-width:0">
+                        <div style="font-size:15px;font-weight:800;color:${AUDIT_LIGHT}">📝 ${escapeHtml(c.titre)}</div>
+                        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;font-size:11px">
+                            <span style="background:${niveauColor};color:#fff;padding:2px 9px;border-radius:10px;font-weight:700">${escapeHtml(c.niveau)}</span>
+                            <span style="background:#1e1b4b;color:#a78bfa;padding:2px 9px;border-radius:10px">⏱️ ${escapeHtml(c.duree)}</span>
+                            ${(c.themes || []).map(t => `<span style="background:#1e293b;color:#94a3b8;padding:2px 9px;border-radius:10px">${escapeHtml(t)}</span>`).join('')}
+                        </div>
+                    </div>
+                    <span id="${id}-arrow" style="color:${AUDIT_ACCENT};font-size:14px">▸</span>
+                </div>
+            </div>
+            <div id="${id}" style="display:none;padding:0 18px 18px 18px">
+                <div style="margin:6px 0 16px 0;padding:14px 16px;background:#0a0f1c;border-radius:8px;border-left:3px solid #3b82f6">
+                    <div style="font-size:12px;font-weight:700;color:#60a5fa;margin-bottom:8px">📋 CONTEXTE</div>
+                    <div style="font-size:13px;color:#cbd5e1;line-height:1.7;white-space:pre-wrap">${_auditCrossRef(c.contexte)}</div>
+                </div>
+                <div style="font-size:12px;font-weight:700;color:${AUDIT_ACCENT};margin-bottom:10px">❓ QUESTIONS & SOLUTIONS</div>
+                ${(c.questions || []).map((q, qi) => _renderCasQuestion(id, qi, q)).join('')}
+                ${(c.points_cles || []).length ? `
+                    <div style="margin-top:16px;padding:14px 16px;background:#0a1a0f;border-radius:8px;border-left:3px solid #16a34a">
+                        <div style="font-size:12px;font-weight:700;color:#4ade80;margin-bottom:8px">🎯 POINTS CLÉS À RETENIR</div>
+                        <ul style="margin:0;padding-left:20px;color:#bbf7d0;font-size:13px;line-height:1.7">
+                            ${c.points_cles.map(p => `<li>${_auditCrossRef(p)}</li>`).join('')}
+                        </ul>
+                    </div>` : ''}
+            </div>
+        </div>`;
+}
+
+function _renderCasQuestion(casId, qi, q) {
+    const solId = `${casId}-sol-${qi}`;
+    return `
+        <div style="margin-bottom:12px;border:1px solid #1e293b;border-radius:7px;overflow:hidden">
+            <div style="padding:11px 14px;background:#141d33;font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.5">
+                ${_auditCrossRef(q.q)}
+            </div>
+            <div style="padding:8px 14px;background:#0d1424">
+                <button onclick="_toggleCasSol('${solId}')"
+                        style="background:linear-gradient(135deg, ${AUDIT_ACCENT}, #4c1d95);border:none;color:#fff;
+                               padding:7px 14px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:700">
+                    💡 Voir la solution
+                </button>
+                <div id="${solId}" style="display:none;margin-top:10px;padding:12px 14px;background:#0a0f1c;
+                            border-radius:6px;border-left:3px solid #16a34a;font-size:13px;color:#cbd5e1;
+                            line-height:1.7;white-space:pre-wrap">${_auditCrossRef(q.solution)}</div>
+            </div>
+        </div>`;
+}
+
+function _toggleCas(id) {
+    const el = document.getElementById(id);
+    const arrow = document.getElementById(id + '-arrow');
+    if (!el) return;
+    const show = el.style.display === 'none';
+    el.style.display = show ? 'block' : 'none';
+    if (arrow) arrow.textContent = show ? '▾' : '▸';
+}
+
+function _toggleCasSol(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
 }
 
 // ─────────────────────────────────────────────────────────────────

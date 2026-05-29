@@ -8903,5 +8903,248 @@
         ]
       }
     ]
+  },
+  "cas_pratiques": {
+    "_label": "Cas pratiques",
+    "_icon": "📝",
+    "_description": "Études de cas complètes façon examen EXPERTsuisse. Chaque cas : contexte réaliste + questions + solution détaillée pas-à-pas + points clés à retenir. Travaille d'abord seul, puis déplie la solution.",
+    "cas": [
+      {
+        "id": "cas1",
+        "titre": "Matérialité & évaluation des risques — PME industrielle",
+        "niveau": "Intermédiaire",
+        "duree": "40 min",
+        "themes": [
+          "ISA 320",
+          "ISA 315",
+          "matérialité",
+          "risques"
+        ],
+        "contexte": "Vous êtes le manager EY sur l'audit (contrôle ordinaire) de **Helvetia Precision SA**, fabricant de composants horlogers à Bienne. Données exercice 2025 :\n\n• Chiffre d'affaires : CHF 48'000'000 (croissance +12%)\n• Résultat net avant impôts : CHF 3'200'000\n• Total bilan : CHF 35'000'000\n• Fonds propres : CHF 14'000'000\n• Stocks : CHF 9'500'000 (dont 2'100'000 de composants spécifiques à 1 client)\n• 215 employés EPT\n\nLa société est détenue à 80% par une holding familiale, 20% par un investisseur tiers. Nouveau CFO arrivé en cours d'année. Migration ERP (SAP) déployée en septembre 2025. Un litige fournisseur est en cours (montant réclamé : CHF 800'000).",
+        "questions": [
+          {
+            "q": "1. Le contrôle ordinaire est-il obligatoire ? Justifiez avec les seuils.",
+            "solution": "**OUI, contrôle ordinaire obligatoire** (CO 727 al.1 ch.2). Seuils dépassés (2 sur 3 pendant 2 exercices consécutifs) :\n• Total bilan 35M > 20M ✓\n• CA 48M > 40M ✓\n• 215 EPT < 250 ✗\n\n2 critères sur 3 dépassés → contrôle ordinaire (en supposant le dépassement confirmé sur 2 exercices, cohérent avec la croissance +12%)."
+          },
+          {
+            "q": "2. Déterminez la matérialité globale (overall) en justifiant le benchmark.",
+            "solution": "**Benchmark : résultat net avant impôts** (société rentable, mature) = base la plus pertinente pour les utilisateurs (actionnaires + investisseur tiers).\n\n• Overall materiality = 5-10% × 3'200'000 = **CHF 160'000 à 320'000**\n• Choix prudent retenu : **5% = CHF 160'000** (présence d'un investisseur minoritaire tiers + nouveau CFO = risque accru → matérialité plus basse)\n\n*Alternative rejetée* : CA (0,5-1% = 240-480k) moins pertinent car la profitabilité est l'enjeu principal pour les actionnaires."
+          },
+          {
+            "q": "3. Calculez la matérialité de performance et le seuil de remontée (CTT).",
+            "solution": "• **Performance materiality** = 50-75% de l'overall. Vu les facteurs de risque (nouveau CFO, migration ERP, croissance), on retient un % bas : **65% × 160'000 = CHF 104'000**\n• **Clearly Trivial Threshold (CTT)** = ~5% de l'overall = **CHF 8'000** (seuil en dessous duquel les anomalies ne sont pas accumulées)"
+          },
+          {
+            "q": "4. Identifiez 4 risques importants (significant risks) et justifiez.",
+            "solution": "**a) Migration ERP SAP en septembre** → risque sur l'intégrité des données, ITGC, cut-off (ISA 315 R2019 — considérations IT). *Significant risk.*\n\n**b) Stocks spécifiques 1 client (2,1M)** → risque de valorisation / obsolescence si le client annule (lower of cost or market, RPC 17). *Significant risk.*\n\n**c) Reconnaissance du revenu** → présomption de risque de fraude (ISA 240 §26), accentuée par la croissance +12% et le nouveau CFO. *Significant risk présumé.*\n\n**d) Litige fournisseur 800'000** → provision (RPC 23) : obligation actuelle ? sortie probable ? estimation fiable ? Jugement + avis juridique requis. *Significant risk (subjectivité).*\n\n+ Toujours : **management override of controls** (ISA 240 §32) — risque inhérent à toute mission."
+          },
+          {
+            "q": "5. Quelles réponses d'audit (ISA 330) pour le risque ERP ?",
+            "solution": "**Réponses globales** : impliquer un spécialiste IT EY, scepticisme renforcé sur la période de transition.\n\n**Procédures spécifiques** :\n• Tester les **ITGC** autour de la migration (accès, change management, data migration controls)\n• **Réconcilier** les balances pré/post-migration (intégrité des données reportées)\n• Tests de **cut-off** renforcés autour de septembre (ventes, achats, stocks)\n• Tester les **ITAC** (contrôles applicatifs) sur les processus clés post-migration\n• Si ITGC défaillants → bascule vers des procédures de **substance étendues** (100% substantif)"
+          }
+        ],
+        "points_cles": [
+          "Benchmark matérialité = résultat net pour société rentable (5-10%)",
+          "Facteurs de risque (nouveau CFO, ERP, croissance) → matérialité plus basse + PM à 50-65%",
+          "Migration ERP = significant risk IT (ISA 315 R2019)",
+          "Revenu = présomption de fraude (ISA 240 §26), management override toujours (§32)",
+          "Procédures de substance obligatoires pour chaque significant risk (ISA 330 §21)"
+        ]
+      },
+      {
+        "id": "cas2",
+        "titre": "Type d'opinion — anomalie sur les stocks",
+        "niveau": "Intermédiaire",
+        "duree": "30 min",
+        "themes": [
+          "ISA 705",
+          "ISA 700",
+          "opinion",
+          "pervasive"
+        ],
+        "contexte": "Audit de **Logimat SA** (distribution, contrôle ordinaire). Overall materiality = CHF 250'000.\n\nÀ la clôture, vous constatez que les stocks (CHF 4'200'000, soit 35% du total bilan) sont évalués au coût d'acquisition SANS test de valeur nette de réalisation. Votre analyse montre que **CHF 600'000 de stocks sont obsolètes** (rotation > 24 mois, produits électroniques dépassés) et devraient être dépréciés.\n\nLa direction REFUSE de comptabiliser la dépréciation, estimant que les produits « finiront par se vendre ».",
+        "questions": [
+          {
+            "q": "1. Y a-t-il une anomalie ? Est-elle significative ?",
+            "solution": "**OUI, anomalie significative.** Violation de RPC 17 (et CO 960c) : les stocks doivent être évalués au plus bas du coût et de la VNR. La non-dépréciation de 600'000 surévalue l'actif et le résultat.\n\n• Montant 600'000 > overall materiality 250'000 → **significative** ✓"
+          },
+          {
+            "q": "2. L'anomalie est-elle généralisée (pervasive) ? Quel type d'opinion ?",
+            "solution": "**Test pervasive (ISA 705.5)** — l'anomalie est-elle :\n• limitée à un poste (stocks) ? → OUI, isolée à 1 poste\n• une part substantielle des EF ? → significative mais pas l'essentiel des EF\n• fondamentale à la compréhension ? → non\n\n→ Anomalie **significative MAIS PAS généralisée** = **OPINION AVEC RÉSERVE (Qualified, « except for »)**.\n\n*Si l'anomalie avait affecté plusieurs postes ou déformé fondamentalement les EF → Adverse.*"
+          },
+          {
+            "q": "3. Rédigez le paragraphe d'opinion.",
+            "solution": "**Opinion avec réserve :**\n\n*« À notre avis, à l'exception des effets de la question décrite dans la section 'Fondement de l'opinion avec réserve', les comptes annuels présentent une image fidèle de la situation financière... et sont conformes à la loi suisse et aux statuts. »*\n\n**Fondement de l'opinion avec réserve :**\n*« Les stocks sont comptabilisés à CHF 4'200'000 sans tenir compte d'une dépréciation nécessaire de CHF 600'000 pour obsolescence. En conséquence, les stocks et le résultat avant impôts sont surévalués de CHF 600'000, et les fonds propres de CHF [600'000 net d'impôt]. »*"
+          },
+          {
+            "q": "4. Et si la direction avait simplement omis de faire l'inventaire physique (vous n'avez pas pu y assister) ?",
+            "solution": "Ce serait une **limitation de l'étendue** (≠ anomalie). Si vous ne pouvez pas obtenir d'éléments probants suffisants sur l'existence des stocks par des procédures alternatives :\n\n• Limitation significative MAIS pas généralisée → **Qualified (« except for »)**\n• Limitation significative ET généralisée (stocks = 35% bilan, impossible de conclure) → **Disclaimer (impossibilité d'exprimer une opinion)**\n\n*Distinction clé : anomalie = Qualified/Adverse ; limitation = Qualified/Disclaimer.*"
+          }
+        ],
+        "points_cles": [
+          "Anomalie significative + isolée = Qualified ('except for')",
+          "Anomalie significative + pervasive = Adverse",
+          "Limitation significative + isolée = Qualified",
+          "Limitation significative + pervasive = Disclaimer",
+          "Pervasive = MSF (Multiples postes / Substantielle / Fondamentale)"
+        ]
+      },
+      {
+        "id": "cas3",
+        "titre": "Going concern & surendettement (CO 725b)",
+        "niveau": "Avancé",
+        "duree": "45 min",
+        "themes": [
+          "ISA 570",
+          "CO 725",
+          "going concern",
+          "surendettement"
+        ],
+        "contexte": "**Tau Manufacturing SA** (Genève, contrôle ordinaire). Clôture 2025 :\n\n• Capital-actions : CHF 1'000'000\n• Réserves légales : CHF 200'000\n• Déficit cumulé : CHF 3'100'000\n• **Fonds propres : CHF -1'900'000** (négatifs)\n\nLa société a perdu son principal client (40% du CA) en 2025. Pertes sur les 3 derniers exercices. La holding-mère a verbalement promis un soutien financier. Le CA vous présente un bilan à valeur d'exploitation montrant des FP négatifs.",
+        "questions": [
+          {
+            "q": "1. Quelle est la situation au regard du droit de la SA (CO 725) ?",
+            "solution": "Les fonds propres sont **négatifs** (-1'900'000) → situation de **SURENDETTEMENT** potentiel (CO 725b).\n\nRappel des seuils (réforme 2023) :\n• CO 725 : risque d'insolvabilité (12 mois)\n• CO 725a : perte de capital (FP < ½ du capital + réserves légales = < 600'000) — déjà franchi\n• **CO 725b : surendettement (FP négatifs)** — c'est le cas ici"
+          },
+          {
+            "q": "2. Quelles sont les obligations du CA selon CO 725b ?",
+            "solution": "En cas de **soupçon fondé de surendettement**, le CA doit établir **DEUX bilans intermédiaires** :\n• un bilan à **valeur d'exploitation** (going concern)\n• un bilan à **valeur de liquidation**\n\nCes bilans doivent être **vérifiés par l'organe de révision agréé**.\n\nSi les DEUX bilans confirment le surendettement → le CA doit **AVISER LE JUGE** (art. 725b al.3), SAUF si :\n• postpositions de créances suffisantes (al.4 ch.1), OU\n• probabilité d'assainissement à court terme (max 90 jours, al.4 ch.2)"
+          },
+          {
+            "q": "3. La promesse verbale de la holding suffit-elle à éviter l'avis au juge ?",
+            "solution": "**NON.** Une promesse VERBALE est insuffisante. Pour écarter le surendettement, il faut :\n• une **postposition de créances** juridiquement valable (acte signé, montant suffisant, rang explicite), OU\n• une lettre de soutien (letter of support) **contraignante et crédible**, OU\n• un apport effectif de fonds\n\n*Piège classique : une lettre de confort informelle ne suffit PAS. La postposition doit être notariée/signée et couvrir le montant du surendettement.*"
+          },
+          {
+            "q": "4. Quelle est la responsabilité de l'auditeur si le CA n'agit pas ?",
+            "solution": "**Obligation subsidiaire de l'organe de révision (CO 725b al.4 in fine) :**\n\nSi le CA, malgré le surendettement avéré, **ne réagit pas** (ne convoque pas, ne dépose pas le bilan), l'**organe de révision DOIT aviser le juge lui-même**.\n\n• Responsabilité civile (CO 755) : 5 ans, solidaire\n• Responsabilité pénale possible (CP 251 si rapport conforme signé alors que surendettement tu)\n\n*C'est une spécificité suisse unique : l'auditeur a une obligation POSITIVE d'agir.*"
+          },
+          {
+            "q": "5. Quel impact sur le rapport d'audit (ISA 570) ?",
+            "solution": "Selon les mesures prises :\n\n**Scénario A** — postposition valable obtenue + plan d'assainissement crédible :\n→ Going concern maintenue + **paragraphe « Incertitude significative liée à la continuité d'exploitation »** (Material Uncertainty). Opinion **clean** mais avec ce paragraphe spécial. La note doit décrire les conditions (perte client, FP négatifs, soutien actionnaire).\n\n**Scénario B** — disclosure inadéquate de l'incertitude :\n→ **Opinion modifiée** (qualified ou adverse).\n\n**Scénario C** — aucune mesure, continuité non tenable mais EF en valeurs d'exploitation :\n→ **Opinion adverse** (base comptable erronée, devrait être en valeurs de liquidation)."
+          }
+        ],
+        "points_cles": [
+          "FP négatifs = surendettement CO 725b → 2 bilans (exploitation + liquidation) vérifiés",
+          "Promesse verbale insuffisante : postposition VALABLE (signée, suffisante) requise",
+          "Si CA inactif, l'auditeur DOIT aviser le juge (CO 725b al.4) — spécificité suisse",
+          "Incertitude significative + disclosure adéquate = opinion CLEAN + paragraphe Material Uncertainty",
+          "Going concern = 12 mois depuis la date du RAPPORT (pas la clôture)"
+        ]
+      },
+      {
+        "id": "cas4",
+        "titre": "Indépendance — menaces et sauvegardes",
+        "niveau": "Intermédiaire",
+        "duree": "35 min",
+        "themes": [
+          "IESBA",
+          "CO 728",
+          "indépendance",
+          "éthique"
+        ],
+        "contexte": "Vous êtes associé EY. Pour le client **NovaBank SA** (établissement bancaire coté, EIP), vous constatez les situations suivantes :\n\n1. EY a facturé CHF 200'000 de conseil (transformation digitale) + CHF 150'000 d'audit cette année.\n2. Vous êtes l'associé signataire de NovaBank depuis **8 ans**.\n3. Le neveu du partner audit travaille comme analyste junior chez NovaBank (hors comptabilité).\n4. NovaBank propose à l'équipe d'audit un week-end VIP à Davos (valeur CHF 3'000/personne).",
+        "questions": [
+          {
+            "q": "1. Identifiez la menace pour chaque situation (catégorie IESBA).",
+            "solution": "**Situation 1** (conseil 200k + audit 150k) → menace d'**auto-révision** (self-review : EY auditerait les effets de son propre conseil) + **intérêt personnel** (honoraires significatifs).\n\n**Situation 2** (8 ans signataire) → menace de **familiarité** (relation trop proche dans le temps).\n\n**Situation 3** (neveu junior) → menace de **familiarité** (lien familial), à évaluer selon le poste (junior hors compta = menace faible).\n\n**Situation 4** (week-end VIP 3'000) → menace d'**intérêt personnel** + risque d'**intimidation** future (cadeau créant une obligation morale)."
+          },
+          {
+            "q": "2. Quelles sauvegardes / mesures pour chaque cas ?",
+            "solution": "**1.** EIP : interdiction de fournir certains services non-audit. Vérifier le **plafond honoraires NAS** (>70% cumulé sur 3 ans = incompatible, R410.18). Si le conseil compromet l'indépendance → **décliner le conseil OU l'audit**. Séparation stricte des équipes Advisory/Audit.\n\n**2.** **Rotation obligatoire** : pour une EIP, le lead partner tourne tous les **7 ans** (IESBA + CO 730a). 8 ans = dépassement → **rotation immédiate** + cooling-off de 5 ans.\n\n**3.** Documenter, évaluer le poste du neveu. Junior sans influence sur les comptes = menace acceptable avec surveillance. Si poste sensible → l'écarter de la mission.\n\n**4.** **REFUSER** le week-end VIP (seuil EY : hospitalité modeste seulement, ~100 CHF). 3'000 CHF = clairement excessif → décliner poliment."
+          },
+          {
+            "q": "3. La situation 2 (8 ans) est-elle régularisable par des sauvegardes ?",
+            "solution": "**NON.** La rotation du partner est une règle **absolue** pour les EIP (7 ans max + cooling-off 5 ans). Aucune sauvegarde ne peut compenser le dépassement.\n\n→ Action : **remplacer immédiatement** l'associé signataire. C'est non négociable (vs d'autres menaces qui peuvent être gérées par des sauvegardes)."
+          },
+          {
+            "q": "4. Rappelez la démarche IESBA en 3 étapes.",
+            "solution": "**1. Identifier** la menace (5 catégories : SARFI — Self-interest, Advocacy, self-Review, Familiarity, Intimidation).\n\n**2. Évaluer** sa significativité (atteint-elle un niveau inacceptable ?).\n\n**3. Répondre** : appliquer des sauvegardes pour ramener la menace à un niveau acceptable. **Si aucune sauvegarde n'est suffisante → décliner ou résilier la mission.**"
+          }
+        ],
+        "points_cles": [
+          "5 menaces IESBA : SARFI (Self-interest, Advocacy, self-Review, Familiarity, Intimidation)",
+          "Rotation lead partner EIP = 7 ans + cooling-off 5 ans (règle absolue, non régularisable)",
+          "Honoraires NAS > 70% cumulé 3 ans pour EIP = indépendance incompatible (R410.18)",
+          "Cadeaux/hospitalité : seuil modeste (~100 CHF), refuser au-delà",
+          "Démarche : Identifier → Évaluer → Sauvegardes (sinon décliner)"
+        ]
+      },
+      {
+        "id": "cas5",
+        "titre": "Audit de groupe (ISA 600)",
+        "niveau": "Avancé",
+        "duree": "40 min",
+        "themes": [
+          "ISA 600",
+          "groupe",
+          "consolidation",
+          "component"
+        ],
+        "contexte": "EY Zurich est l'auditeur du groupe **Alpine Holding SA**. Périmètre de consolidation :\n\n• Maison-mère Alpine Holding (Zurich) — auditée par EY Zurich\n• Filiale A (Suisse, 60% du CA groupe) — auditée par EY Genève\n• Filiale B (Allemagne, 25% du CA) — auditée par un cabinet local indépendant (non-EY)\n• Filiale C (France, 8% du CA) — petite, peu de risques\n• Filiale D (Italie, 7% du CA) — acquise en cours d'année",
+        "questions": [
+          {
+            "q": "1. Comment qualifier chaque composant (approche ISA 600 R2022) ?",
+            "solution": "**ISA 600 R2022 abandonne le terme 'significant component'** au profit d'une approche **fondée sur les risques** :\n\n• **Filiale A (60%)** : significative par sa taille financière → audit complet (full scope), équipe EY Genève.\n• **Filiale B (25%)** : significative + auditeur non-EY → attention particulière sur la communication et la qualité du component auditor.\n• **Filiale D (Italie, acquise)** : risque élevé (comptabilité d'acquisition IFRS 3, première année) malgré sa taille modeste → procédures ciblées sur les risques.\n• **Filiale C (8%)** : peu de risques → procédures analytiques au niveau du groupe peuvent suffire."
+          },
+          {
+            "q": "2. Quelles diligences vis-à-vis du cabinet local allemand (Filiale B) ?",
+            "solution": "L'équipe du groupe (EY Zurich) doit :\n• Évaluer la **compétence et l'indépendance** du component auditor\n• Communiquer clairement les **instructions de groupe** (group instructions) : matérialité du composant, risques identifiés, calendrier, format de reporting\n• **Diriger, superviser et réviser** ses travaux (responsabilité renforcée R2022)\n• Évaluer la pertinence des conclusions et la documentation reçue\n• Effectuer une revue de dossier si le composant est à risque élevé\n\n*L'équipe du groupe reste seule responsable de l'opinion du groupe.*"
+          },
+          {
+            "q": "3. Quelle matérialité pour les composants ?",
+            "solution": "Deux niveaux :\n• **Matérialité du groupe** (group materiality) : fixée sur les EF consolidés.\n• **Matérialité des composants** (component materiality) : INFÉRIEURE à celle du groupe, pour réduire le risque que des anomalies non détectées au niveau des composants s'agrègent au-dessus de la matérialité du groupe.\n\nTypiquement : component materiality = 50-75% de la group materiality (jugement selon le nombre de composants et les risques d'agrégation)."
+          },
+          {
+            "q": "4. Quelles procédures spécifiques pour la Filiale D (acquise) ?",
+            "solution": "Première consolidation = risques spécifiques :\n• Vérifier l'**affectation du prix d'acquisition** (PPA / IFRS 3) : actifs/passifs identifiables à la juste valeur, calcul du **goodwill**\n• Vérifier la **date de prise de contrôle** (consolidation à partir de cette date)\n• Vérifier les **soldes d'ouverture** (ISA 510)\n• Tester les **éliminations intragroupe** (transactions Alpine ↔ Filiale D)\n• Évaluer le **goodwill** (test de dépréciation si indicateurs)"
+          }
+        ],
+        "points_cles": [
+          "ISA 600 R2022 = approche risk-based (fin du 'significant component')",
+          "Component materiality < group materiality (éviter agrégation d'anomalies)",
+          "Component auditor : évaluer compétence + indépendance, diriger/superviser/réviser",
+          "Le group partner garde l'ENTIÈRE responsabilité de l'opinion du groupe",
+          "Filiale acquise = PPA (IFRS 3), goodwill, soldes d'ouverture (ISA 510), date de contrôle"
+        ]
+      },
+      {
+        "id": "cas6",
+        "titre": "Fraude & management override (ISA 240)",
+        "niveau": "Avancé",
+        "duree": "35 min",
+        "themes": [
+          "ISA 240",
+          "fraude",
+          "JE testing",
+          "override"
+        ],
+        "contexte": "Audit de **Quantum Trading SA**. En fin d'exercice, vous remarquez :\n\n• Plusieurs écritures de journal manuelles passées le **31 décembre à 23h** par le CFO lui-même, augmentant le revenu de CHF 450'000.\n• Ces écritures n'ont **pas de pièce justificative** claire (libellé « ajustement revenu Q4 »).\n• Le bonus du CFO dépend de l'atteinte d'un objectif de CA fixé à CHF 20M — le CA réalisé sans ces écritures est de CHF 19'600'000.\n• Overall materiality = CHF 200'000.",
+        "questions": [
+          {
+            "q": "1. Analysez la situation avec le triangle de la fraude.",
+            "solution": "**Triangle de Cressey (POR) :**\n• **Pression** : le bonus du CFO dépend d'un objectif de CA (20M) tout juste manqué (19,6M). Incitation directe à gonfler le revenu de 400k.\n• **Opportunité** : le CFO peut passer des écritures manuelles sans contrôle (management override), surtout en fin de période.\n• **Rationalisation** : « ajustement Q4 » présenté comme normal, montant « pas si grand ».\n\n→ Les 3 éléments sont réunis = **forte présomption de fraude** (information financière frauduleuse)."
+          },
+          {
+            "q": "2. Quel risque ISA 240 est concerné ?",
+            "solution": "Deux présomptions ISA 240 sont activées :\n• **§26 — Reconnaissance du revenu** : risque de fraude présumé, ici matérialisé (écritures gonflant le revenu).\n• **§32 — Contournement des contrôles par la direction (management override)** : le CFO passe des écritures sans justificatif → risque inhérent réalisé.\n\nMontant 450'000 > matérialité 200'000 → **anomalie significative**."
+          },
+          {
+            "q": "3. Quelles procédures (JE testing) mettre en œuvre ?",
+            "solution": "**Tests des écritures de journal (obligatoires ISA 240.32) :**\n• Obtenir TOUTES les écritures manuelles de la période + écritures de fin de période\n• Filtrer les **caractéristiques de risque** : utilisateurs atypiques (CFO), montants ronds, écritures de nuit/weekend, comptes de revenu, libellés génériques, absence de pièce\n• Les écritures du 31.12 à 23h par le CFO cochent TOUTES ces cases\n• Demander les pièces justificatives → si absentes/insuffisantes → escalade\n• Revoir les estimations pour biais, analyser les transactions inhabituelles"
+          },
+          {
+            "q": "4. Quelles sont vos obligations de communication et de reporting ?",
+            "solution": "• **Communication immédiate à la gouvernance** (CA / comité d'audit, ISA 260) — PAS au CFO impliqué.\n• Réévaluer le **scepticisme** sur l'ensemble de la mission (si fraude à un endroit, suspecter ailleurs).\n• Si confirmé : impact sur l'**opinion** (anomalie significative non corrigée → qualified/adverse).\n• Considérer le **NOCLAR** (IESBA Section 360) et un éventuel signalement.\n• Suisse : possible avis aux organes (CO 728c), voire signalement ASR (LSR 22).\n• Documenter rigoureusement (ISA 230)."
+          }
+        ],
+        "points_cles": [
+          "Triangle fraude = Pression + Opportunité + Rationalisation (POR)",
+          "ISA 240 : 2 présomptions = revenu (§26) + management override (§32)",
+          "JE testing obligatoire : écritures atypiques (CFO, nuit, montants ronds, sans pièce)",
+          "Communication à la GOUVERNANCE (pas au fraudeur), scepticisme global renforcé",
+          "Fraude confirmée → impact opinion + NOCLAR + avis organes/ASR possible"
+        ]
+      }
+    ]
   }
 }
