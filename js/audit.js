@@ -10,6 +10,7 @@ const AUDIT_TABS = [
     { id: 'mission',      label: 'Mission Lab',   icon: '🎬', desc: 'Mission immersive end-to-end chez EY' },
     { id: 'seuils',       label: 'Seuils & Exos', icon: '🎯', desc: 'Comprendre tous les seuils + exercices pas-à-pas' },
     { id: 'nas',          label: 'NAS / ISA',     icon: '📐', desc: 'Normes d\'audit suisses + équivalents ISA' },
+    { id: 'annuaire',     label: 'Annuaire ISA',  icon: '📇', desc: 'Répertoire exhaustif de TOUTES les ISA (200-810) en détail + ISRE/ISAE/ISRS/ISQM' },
     { id: 'cadre_legal',  label: 'Cadre légal',   icon: '⚖️', desc: 'CO 727ss, LSR, MSA, indépendance' },
     { id: 'comparatifs',  label: 'Comparatifs',   icon: '📊', desc: 'IFRS vs RPC vs CO — sujets d\'audit' },
     { id: 'cycles',       label: 'Cycles',        icon: '🔄', desc: 'Ventes, achats, paie, stocks, immo, tréso, FP, impôts' },
@@ -149,8 +150,200 @@ function _renderAuditSubContent(subTab) {
         case 'terrain':     _renderAuditTerrain(host);    break;
         case 'outils':      _renderAuditOutils(host); _initOutilsCalculators(); break;
         case 'lexique':     _renderAuditLexique(host);    break;
+        case 'annuaire':    _renderAuditAnnuaire(host);   break;
         case 'quiz':        _renderAuditQuiz(host);       break;
         default:            _renderAuditNas(host);
+    }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// ANNUAIRE ISA — Répertoire exhaustif de toutes les normes ISA en détail
+// ─────────────────────────────────────────────────────────────────
+let _annuaireFilterSerie = 'all';
+let _annuaireSearch = '';
+
+function _renderAuditAnnuaire(host) {
+    const ann = _auditData.annuaire || {};
+    const series = ann.series || [];
+    const totalStd = series.reduce((s, sr) => s + (sr.standards?.length || 0), 0);
+
+    host.innerHTML = `
+        <div class="ref-section-title">${ann._icon || '📇'} ${escapeHtml(ann._label || 'Annuaire ISA')}</div>
+        <p style="color:#94a3b8;font-size:13px;line-height:1.6;margin-bottom:14px">
+            ${escapeHtml(ann._description || '')}
+        </p>
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:14px;flex-wrap:wrap">
+            <span style="background:#3c1d6e;padding:4px 10px;border-radius:12px;font-size:12px;color:#c4b5fd">
+                📚 ${totalStd} normes
+            </span>
+            <span style="background:#3c1d6e;padding:4px 10px;border-radius:12px;font-size:12px;color:#c4b5fd">
+                🗂️ ${series.length} séries
+            </span>
+            <input type="text" id="annuaireSearch" placeholder="🔍 Rechercher (ex: 315, going concern, fraude, KAM…)"
+                   value="${escapeHtml(_annuaireSearch)}"
+                   oninput="_filterAnnuaire(this.value)"
+                   style="flex:1;min-width:240px;background:#0f172a;border:1px solid #334155;color:#e2e8f0;
+                          padding:8px 12px;border-radius:7px;font-size:13px" />
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+            <button onclick="_setAnnuaireSerie('all')"
+                    style="padding:7px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:700;
+                           background:${_annuaireFilterSerie === 'all' ? AUDIT_ACCENT : '#1e293b'};
+                           color:${_annuaireFilterSerie === 'all' ? '#fff' : '#94a3b8'};
+                           border:1px solid ${_annuaireFilterSerie === 'all' ? AUDIT_ACCENT : '#334155'}">
+                🔍 Toutes (${totalStd})
+            </button>
+            ${series.map(sr => `
+                <button onclick="_setAnnuaireSerie('${sr.id}')"
+                        title="${escapeHtml(sr.intro || '')}"
+                        style="padding:7px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;
+                               background:${_annuaireFilterSerie === sr.id ? (sr.color || AUDIT_ACCENT) : '#1e293b'};
+                               color:${_annuaireFilterSerie === sr.id ? '#fff' : '#94a3b8'};
+                               border:1px solid ${_annuaireFilterSerie === sr.id ? (sr.color || AUDIT_ACCENT) : '#334155'}">
+                    ${escapeHtml(sr.range)} (${sr.standards.length})
+                </button>
+            `).join('')}
+        </div>
+        <div id="annuaireList">
+            ${series.map(sr => _renderAnnuaireSerie(sr)).join('')}
+        </div>
+    `;
+    _applyAnnuaireFilter();
+}
+
+function _renderAnnuaireSerie(sr) {
+    const color = sr.color || AUDIT_ACCENT;
+    return `
+        <div class="annuaire-serie" data-serie-id="${sr.id}" style="margin-bottom:22px">
+            <div style="padding:10px 14px;border-radius:8px 8px 0 0;background:linear-gradient(135deg, ${color}33, transparent);
+                        border-left:4px solid ${color};margin-bottom:2px">
+                <div style="font-size:15px;font-weight:800;color:${color}">${escapeHtml(sr.label)}</div>
+                <div style="font-size:12px;color:#94a3b8;margin-top:3px;line-height:1.5">${escapeHtml(sr.intro || '')}</div>
+            </div>
+            ${(sr.standards || []).map((std, idx) => _renderAnnuaireStandard(sr.id, idx, std, color)).join('')}
+        </div>`;
+}
+
+function _renderAnnuaireStandard(serieId, idx, std, color) {
+    const id = `ann-${serieId}-${idx}`;
+    const searchHay = [std.num, std.code, std.title_fr, std.title_en, std.objective, std.scope,
+                       (std.requirements || []).join(' '), std.swiss, std.exam_tip,
+                       (std.related || []).join(' ')]
+        .filter(Boolean).join(' ').toLowerCase();
+    return `
+        <div class="annuaire-item" data-ann-search="${escapeHtml(searchHay)}" data-serie-id="${serieId}"
+             style="border:1px solid #1e293b;border-left:3px solid ${color};border-radius:6px;margin-bottom:8px;background:#0d1424">
+            <div onclick="_toggleAnnuaire('${id}')"
+                 style="padding:12px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;
+                        transition:background 0.15s" onmouseover="this.style.background='#141d33'" onmouseout="this.style.background=''">
+                <div style="flex:1;min-width:0">
+                    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+                        <span style="background:${color};color:#fff;font-size:12px;font-weight:800;padding:3px 10px;border-radius:5px;letter-spacing:0.3px;flex-shrink:0">
+                            ${escapeHtml(std.code)}
+                        </span>
+                        <span style="font-size:13px;font-weight:700;color:${AUDIT_LIGHT}">${escapeHtml(std.title_fr)}</span>
+                    </div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:5px;font-size:11px">
+                        ${std.status ? `<span style="color:#a78bfa;background:#1e1b4b;padding:1px 8px;border-radius:10px">${escapeHtml(std.status)}</span>` : ''}
+                        ${std.effective ? `<span style="color:#64748b">🕰️ ${escapeHtml(std.effective)}</span>` : ''}
+                    </div>
+                </div>
+                <span id="${id}-arrow" style="color:${color};font-size:14px;flex-shrink:0">▸</span>
+            </div>
+            <div id="${id}" style="display:none;padding:0 18px 18px 18px">
+                <div style="font-size:12px;color:#7dd3fc;font-style:italic;margin:4px 0 14px 0;padding-left:10px;border-left:2px solid #1e3a5f">
+                    🇬🇧 ${escapeHtml(std.title_en || '')}
+                </div>
+
+                ${std.objective ? `
+                    <div style="margin-bottom:14px">
+                        <div style="font-size:12px;font-weight:700;color:${color};margin-bottom:5px">🎯 Objectif</div>
+                        <div style="font-size:13px;color:#cbd5e1;line-height:1.6">${_auditCrossRef(std.objective)}</div>
+                    </div>` : ''}
+
+                ${std.scope ? `
+                    <div style="margin-bottom:14px">
+                        <div style="font-size:12px;font-weight:700;color:${color};margin-bottom:5px">📋 Champ d'application</div>
+                        <div style="font-size:13px;color:#cbd5e1;line-height:1.6">${_auditCrossRef(std.scope)}</div>
+                    </div>` : ''}
+
+                ${(std.requirements || []).length ? `
+                    <div style="margin-bottom:14px">
+                        <div style="font-size:12px;font-weight:700;color:${color};margin-bottom:6px">🔑 Exigences clés</div>
+                        <ul style="margin:0;padding-left:20px;color:#cbd5e1;font-size:13px;line-height:1.7">
+                            ${std.requirements.map(r => `<li>${_auditCrossRef(r)}</li>`).join('')}
+                        </ul>
+                    </div>` : ''}
+
+                ${std.swiss ? `
+                    <div style="margin-bottom:14px;padding:10px 12px;background:#3f1612;border-left:3px solid #dc2626;border-radius:5px">
+                        <div style="font-size:12px;font-weight:700;color:#fca5a5;margin-bottom:5px">🇨🇭 Spécificité suisse</div>
+                        <div style="font-size:12px;color:#fecaca;line-height:1.6">${_auditCrossRef(std.swiss)}</div>
+                    </div>` : ''}
+
+                ${(std.related || []).length ? `
+                    <div style="margin-bottom:14px">
+                        <div style="font-size:12px;font-weight:700;color:${color};margin-bottom:6px">🔗 Normes liées</div>
+                        <div style="display:flex;gap:6px;flex-wrap:wrap">
+                            ${std.related.map(r => `<span style="font-size:11px;background:#1e293b;color:#94a3b8;padding:3px 9px;border-radius:5px;border:1px solid #334155">${escapeHtml(r)}</span>`).join('')}
+                        </div>
+                    </div>` : ''}
+
+                ${std.exam_tip ? `
+                    <div style="padding:10px 12px;background:#1e1b0a;border-left:3px solid #fbbf24;border-radius:5px">
+                        <div style="font-size:12px;font-weight:700;color:#fbbf24;margin-bottom:5px">💡 Astuce examen</div>
+                        <div style="font-size:12px;color:#fde68a;line-height:1.6">${_auditCrossRef(std.exam_tip)}</div>
+                    </div>` : ''}
+            </div>
+        </div>`;
+}
+
+function _setAnnuaireSerie(serieId) {
+    _annuaireFilterSerie = serieId;
+    const host = document.getElementById('auditContent');
+    if (host) _renderAuditAnnuaire(host);
+    setTimeout(() => {
+        const search = document.getElementById('annuaireSearch');
+        if (search) search.focus();
+    }, 0);
+}
+
+function _filterAnnuaire(value) {
+    _annuaireSearch = (value || '').toLowerCase().trim();
+    _applyAnnuaireFilter();
+}
+
+function _applyAnnuaireFilter() {
+    const items = document.querySelectorAll('.annuaire-item');
+    const series = document.querySelectorAll('.annuaire-serie');
+    const serieCounts = {};
+
+    items.forEach(it => {
+        const serieId = it.dataset.serieId;
+        const hay = it.dataset.annSearch || '';
+        const matchSerie = (_annuaireFilterSerie === 'all') || (serieId === _annuaireFilterSerie);
+        const matchSearch = !_annuaireSearch || hay.includes(_annuaireSearch);
+        const visible = matchSerie && matchSearch;
+        it.style.display = visible ? '' : 'none';
+        if (visible) serieCounts[serieId] = (serieCounts[serieId] || 0) + 1;
+    });
+
+    series.forEach(sr => {
+        const serieId = sr.dataset.serieId;
+        sr.style.display = (serieCounts[serieId] || 0) > 0 ? '' : 'none';
+    });
+}
+
+function _toggleAnnuaire(id) {
+    const el = document.getElementById(id);
+    const arrow = document.getElementById(id + '-arrow');
+    if (!el) return;
+    if (el.style.display === 'none') {
+        el.style.display = 'block';
+        if (arrow) arrow.textContent = '▾';
+    } else {
+        el.style.display = 'none';
+        if (arrow) arrow.textContent = '▸';
     }
 }
 

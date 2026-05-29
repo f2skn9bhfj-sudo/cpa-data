@@ -7743,5 +7743,1165 @@
         ]
       }
     ]
+  },
+  "annuaire": {
+    "_label": "Annuaire ISA",
+    "_icon": "📇",
+    "_description": "Répertoire exhaustif de TOUTES les Normes Internationales d'Audit (ISA 200 à 810) + familles connexes (ISRE, ISAE, ISRS, ISQM) et leurs équivalents suisses (NA-CH). Chaque norme : objectif, champ, exigences clés, date d'entrée en vigueur, spécificité suisse, normes liées, astuce examen.",
+    "series": [
+      {
+        "id": "s200",
+        "label": "ISA 200-299 — Principes généraux & responsabilités",
+        "range": "200-299",
+        "color": "#dc2626",
+        "intro": "Le socle de l'audit : objectifs de l'auditeur, termes de mission, qualité, documentation, fraude, lois, communication.",
+        "standards": [
+          {
+            "num": "200",
+            "code": "ISA 200",
+            "title_fr": "Objectifs généraux de l'auditeur indépendant et conduite d'un audit selon les ISA",
+            "title_en": "Overall Objectives of the Independent Auditor and the Conduct of an Audit in Accordance with ISAs",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Définir les objectifs globaux de l'auditeur indépendant et expliquer la nature et l'étendue d'un audit conçu pour lui permettre d'atteindre ces objectifs.",
+            "scope": "Norme-cadre applicable à tous les audits d'états financiers. Pose les concepts fondamentaux : assurance raisonnable, risque d'audit, caractère significatif, scepticisme et jugement professionnels.",
+            "requirements": [
+              "Respecter les règles d'éthique pertinentes (indépendance incluse)",
+              "Exercer le scepticisme professionnel tout au long de la mission",
+              "Exercer le jugement professionnel pour les décisions",
+              "Obtenir des éléments probants suffisants et appropriés pour réduire le risque d'audit à un niveau acceptablement faible",
+              "Conduire l'audit conformément à toutes les ISA pertinentes"
+            ],
+            "swiss": "NA-CH 200. Identique aux ISA. Base de tout le référentiel suisse d'audit (contrôle ordinaire).",
+            "related": [
+              "ISA 220",
+              "ISA 240",
+              "ISA 320",
+              "ISA 500"
+            ],
+            "exam_tip": "Mémoriser : assurance RAISONNABLE (≠ absolue), risque d'audit = RI × RC × RND, scepticisme + jugement = ADN de l'auditeur."
+          },
+          {
+            "num": "210",
+            "code": "ISA 210",
+            "title_fr": "Accord sur les termes des missions d'audit",
+            "title_en": "Agreeing the Terms of Audit Engagements",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "N'accepter ou ne poursuivre une mission d'audit que lorsque les bases sur lesquelles elle doit être réalisée ont été convenues.",
+            "scope": "Pré-conditions à l'audit + contenu de la lettre de mission.",
+            "requirements": [
+              "Vérifier les préconditions : référentiel comptable acceptable + accord direction sur ses responsabilités (prémisse)",
+              "Convenir des termes dans une lettre de mission écrite",
+              "Contenu minimum : objectif/étendue, responsabilités auditeur, responsabilités direction, référentiel, forme du rapport",
+              "Audits récurrents : évaluer s'il faut réviser les termes"
+            ],
+            "swiss": "NA-CH 210. La lettre de mission (engagement letter) est une bonne pratique systématique chez EY Suisse.",
+            "related": [
+              "ISA 220",
+              "ISA 580",
+              "ISA 300"
+            ],
+            "exam_tip": "« Premise » = condition préalable : la direction reconnaît sa responsabilité pour les EF, le SCI et l'accès à l'information."
+          },
+          {
+            "num": "220",
+            "code": "ISA 220 (Revised)",
+            "title_fr": "Gestion de la qualité d'un audit d'états financiers",
+            "title_en": "Quality Management for an Audit of Financial Statements",
+            "status": "Révisée 2022",
+            "effective": "Exercices ouverts dès le 15.12.2022",
+            "objective": "Gérer la qualité au niveau de la mission de manière à fournir une assurance raisonnable que l'audit est conforme aux normes et que le rapport est approprié.",
+            "scope": "Responsabilités de l'associé responsable + articulation avec le système qualité du cabinet (ISQM 1).",
+            "requirements": [
+              "L'associé responsable (engagement partner) est responsable global de la qualité",
+              "Approche fondée sur les risques (risk-based) — nouveauté R2022",
+              "Revue de qualité (EQR) obligatoire pour EIP, cotées et missions à risque élevé",
+              "Documentation des consultations sur sujets complexes",
+              "Ressources suffisantes et appropriées (humaines, techniques, intellectuelles)"
+            ],
+            "swiss": "NA-CH 220. Coordination avec NCQ 1 (équivalent ISQM 1). EQR = cooling-off 2 ans pour ex-lead partner.",
+            "related": [
+              "ISQM 1",
+              "ISQM 2",
+              "ISA 200"
+            ],
+            "exam_tip": "R2022 : passage check-list → risk-based. EQR obligatoire = PIE + listed + high-risk. Ne pas confondre ISQM (cabinet) et ISA 220 (mission)."
+          },
+          {
+            "num": "230",
+            "code": "ISA 230",
+            "title_fr": "Documentation d'audit",
+            "title_en": "Audit Documentation",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Préparer une documentation fournissant une trace suffisante et appropriée des travaux + base de l'opinion + preuve de conformité aux ISA.",
+            "scope": "Forme, contenu et étendue des papiers de travail (working papers).",
+            "requirements": [
+              "Documentation suffisante pour qu'un auditeur expérimenté SANS lien antérieur comprenne les travaux",
+              "Consigner : nature/calendrier/étendue, résultats, conclusions, questions importantes",
+              "Constitution du dossier final : dans les 60 jours suivant la date du rapport",
+              "Conservation : minimum 5 ans (ISA) — 10 ans en Suisse (LSR/CO)",
+              "Modifications post-rapport : documenter quand, par qui, pourquoi"
+            ],
+            "swiss": "NA-CH 230. Conservation 10 ans (art. 730c CO + LSR). Délai wrap-up 60 jours.",
+            "related": [
+              "ISA 220",
+              "ISA 200"
+            ],
+            "exam_tip": "Test clé : « auditeur expérimenté sans lien antérieur ». Wrap-up = 60 jours. Conservation CH = 10 ans (≠ 5 ans ISA)."
+          },
+          {
+            "num": "240",
+            "code": "ISA 240",
+            "title_fr": "Responsabilités de l'auditeur concernant les fraudes lors d'un audit",
+            "title_en": "The Auditor's Responsibilities Relating to Fraud in an Audit of Financial Statements",
+            "status": "En vigueur (révision en cours)",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Identifier et évaluer les risques d'anomalies significatives résultant de fraudes, obtenir des éléments probants et répondre de manière appropriée.",
+            "scope": "Fraude = acte intentionnel (≠ erreur). 2 types : information financière frauduleuse + détournement d'actifs.",
+            "requirements": [
+              "Scepticisme renforcé (présomption de risque)",
+              "Discussion d'équipe (brainstorming) sur la vulnérabilité à la fraude",
+              "Présomption de risque de fraude sur la reconnaissance du revenu (§26) — à réfuter par écrit",
+              "Risque de contournement des contrôles par la direction (§32) toujours significatif",
+              "Tests des écritures de journal (JE testing) OBLIGATOIRES",
+              "Revue des estimations pour biais + transactions inhabituelles"
+            ],
+            "swiss": "NA-CH 240. Lien CO 728c (avis aux organes) + LBA art. 9 (MROS) + NOCLAR (IESBA 360).",
+            "related": [
+              "ISA 250",
+              "ISA 315",
+              "ISA 330"
+            ],
+            "exam_tip": "Triangle de la fraude (Cressey) = Pression-Opportunité-Rationalisation (POR). 2 présomptions : revenu (§26) + management override (§32). JE testing = toujours."
+          },
+          {
+            "num": "250",
+            "code": "ISA 250 (Revised)",
+            "title_fr": "Prise en compte des textes légaux et réglementaires",
+            "title_en": "Consideration of Laws and Regulations in an Audit of Financial Statements",
+            "status": "Révisée 2017",
+            "effective": "Exercices ouverts dès le 15.12.2017",
+            "objective": "Identifier les anomalies significatives résultant du non-respect de textes légaux et réglementaires.",
+            "scope": "Distinction : lois à effet DIRECT sur les EF (fiscal, droit des sociétés) vs effet INDIRECT (environnement, concurrence, RGPD).",
+            "requirements": [
+              "Comprendre le cadre légal applicable à l'entité et son secteur",
+              "Effet direct : audit direct des montants et disclosures",
+              "Effet indirect : vigilance + demandes + inspection correspondance autorités",
+              "Demander des représentations écrites (toutes non-conformités divulguées)",
+              "Communiquer à la gouvernance + considérer NOCLAR"
+            ],
+            "swiss": "NA-CH 250. Articulé avec NOCLAR EXPERTsuisse (2018) + LSR art. 22 (signalement ASR).",
+            "related": [
+              "ISA 240",
+              "ISA 260",
+              "ISA 705"
+            ],
+            "exam_tip": "Direct effect = audit direct ; indirect effect = vigilance. NOCLAR = dérogation au secret pro pour signaler les non-conformités graves."
+          },
+          {
+            "num": "260",
+            "code": "ISA 260 (Revised)",
+            "title_fr": "Communication avec les responsables de la gouvernance",
+            "title_en": "Communication with Those Charged with Governance",
+            "status": "Révisée 2015",
+            "effective": "Exercices ouverts dès le 15.12.2016",
+            "objective": "Communiquer clairement aux responsables de la gouvernance (TCWG) les questions d'audit pertinentes.",
+            "scope": "Qui = CA / comité d'audit. Quoi = responsabilités, étendue/calendrier, constatations significatives, indépendance.",
+            "requirements": [
+              "Communiquer les responsabilités de l'auditeur",
+              "Communiquer l'étendue et le calendrier planifiés de l'audit",
+              "Communiquer les constatations significatives (jugements, difficultés, déficiences)",
+              "Pour les EIP : déclaration d'indépendance + sauvegardes",
+              "Communication bidirectionnelle, en temps utile, forme écrite si nécessaire"
+            ],
+            "swiss": "NA-CH 260. En contrôle ordinaire = communication au CA via rapport détaillé (CO 728a).",
+            "related": [
+              "ISA 265",
+              "ISA 230",
+              "ISA 700"
+            ],
+            "exam_tip": "TCWG = Those Charged With Governance = CA + comité d'audit. Communication = bidirectionnelle et en temps utile."
+          },
+          {
+            "num": "265",
+            "code": "ISA 265",
+            "title_fr": "Communication des déficiences du contrôle interne",
+            "title_en": "Communicating Deficiencies in Internal Control to Those Charged with Governance and Management",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Communiquer de façon appropriée les déficiences du contrôle interne identifiées durant l'audit.",
+            "scope": "Distinction déficience simple vs déficience SIGNIFICATIVE (communication écrite à la gouvernance).",
+            "requirements": [
+              "Déterminer si les déficiences identifiées sont, isolément ou combinées, significatives",
+              "Communication écrite des déficiences significatives à la gouvernance",
+              "Communication des autres déficiences à la direction (niveau approprié)",
+              "Communication en temps utile (sans retard pour les graves)"
+            ],
+            "swiss": "NA-CH 265. En contrôle ordinaire, intégré au rapport détaillé au CA (management letter).",
+            "related": [
+              "ISA 260",
+              "ISA 315",
+              "ISA 330"
+            ],
+            "exam_tip": "Déficience significative = communication ÉCRITE obligatoire. Lien direct avec le management letter EY."
+          }
+        ]
+      },
+      {
+        "id": "s300",
+        "label": "ISA 300-499 — Évaluation des risques & réponses",
+        "range": "300-499",
+        "color": "#ea580c",
+        "intro": "Planification, compréhension de l'entité, identification/évaluation des risques, matérialité, réponses aux risques, sociétés de service, évaluation des anomalies.",
+        "standards": [
+          {
+            "num": "300",
+            "code": "ISA 300",
+            "title_fr": "Planification d'un audit d'états financiers",
+            "title_en": "Planning an Audit of Financial Statements",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Planifier l'audit pour qu'il soit réalisé de manière efficace.",
+            "scope": "Stratégie générale d'audit (haut niveau) + plan d'audit détaillé.",
+            "requirements": [
+              "Activités préliminaires (acceptation/continuité, éthique, lettre de mission)",
+              "Établir une stratégie générale : périmètre, calendrier, orientation, ressources",
+              "Développer un plan d'audit : nature/calendrier/étendue des procédures (évaluation risques + tests)",
+              "Mettre à jour la stratégie et le plan en cours de mission si nécessaire",
+              "Documenter stratégie, plan et changements significatifs"
+            ],
+            "swiss": "NA-CH 300. Planification documentée avant les tests substantifs significatifs.",
+            "related": [
+              "ISA 315",
+              "ISA 320",
+              "ISA 330"
+            ],
+            "exam_tip": "Stratégie (haut niveau) ≠ Plan (détaillé). Planification = processus continu, pas un événement ponctuel."
+          },
+          {
+            "num": "315",
+            "code": "ISA 315 (Revised 2019)",
+            "title_fr": "Identification et évaluation des risques d'anomalies significatives",
+            "title_en": "Identifying and Assessing the Risks of Material Misstatement",
+            "status": "Révisée 2019",
+            "effective": "Exercices ouverts dès le 15.12.2021",
+            "objective": "Identifier et évaluer les risques d'anomalies significatives (au niveau des EF et des assertions) via la compréhension de l'entité et de son SCI.",
+            "scope": "Norme PIVOT de la planification. Révision majeure 2019 : approche par spectre (spectrum) du risque inhérent + considérations IT renforcées.",
+            "requirements": [
+              "Comprendre l'entité, son environnement, le référentiel applicable et son système de contrôle interne",
+              "Évaluer le risque inhérent sur un SPECTRE (spectrum) — innovation R2019",
+              "Identifier les risques importants (significant risks) en haut du spectre",
+              "Évaluer les contrôles généraux informatiques (ITGC)",
+              "Test de recul (stand-back) sur la cohérence globale de l'évaluation",
+              "Documentation renforcée (facteurs, jugements, réfutations)"
+            ],
+            "swiss": "NA-CH 315. COSO 2013 comme cadre de référence du SCI.",
+            "related": [
+              "ISA 330",
+              "ISA 320",
+              "ISA 240"
+            ],
+            "exam_tip": "R2019 = spectre continuum (≠ binaire) + IT considerations + stand-back test. Significant risk = partie haute du spectre du risque inhérent."
+          },
+          {
+            "num": "320",
+            "code": "ISA 320",
+            "title_fr": "Caractère significatif lors de la planification et de la réalisation d'un audit",
+            "title_en": "Materiality in Planning and Performing an Audit",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Appliquer correctement le concept de caractère significatif lors de la planification et de la réalisation de l'audit.",
+            "scope": "Matérialité globale (overall) + matérialité de performance + seuil de remontée (clearly trivial).",
+            "requirements": [
+              "Déterminer la matérialité globale au niveau des EF (benchmark + %)",
+              "Déterminer la/les matérialité(s) spécifique(s) pour certaines catégories",
+              "Déterminer la matérialité de performance (buffer, ~50-75% de l'overall)",
+              "Réviser la matérialité si nouvelles informations en cours d'audit",
+              "Seuil de remontée (CTT) : ~5% de l'overall"
+            ],
+            "swiss": "NA-CH 320. Benchmarks pratiques EY : 5-10% résultat net, 0,5-1% CA, 1-2% actif/FP.",
+            "related": [
+              "ISA 450",
+              "ISA 315",
+              "ISA 330"
+            ],
+            "exam_tip": "Overall (5-10% RN) > Performance (50-75% overall) > CTT (~5% overall). Toujours justifier le BENCHMARK choisi."
+          },
+          {
+            "num": "330",
+            "code": "ISA 330",
+            "title_fr": "Réponses de l'auditeur aux risques évalués",
+            "title_en": "The Auditor's Responses to Assessed Risks",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Concevoir et mettre en œuvre des réponses appropriées aux risques d'anomalies significatives évalués.",
+            "scope": "Réponses globales + procédures d'audit complémentaires (tests des contrôles + procédures de substance).",
+            "requirements": [
+              "Réponses globales (overall responses) : scepticisme, supervision, ressources, imprévisibilité",
+              "Tests des contrôles si l'auditeur compte s'appuyer sur leur efficacité",
+              "Procédures de substance pour CHAQUE catégorie significative (obligatoire §18)",
+              "Procédures de substance pour CHAQUE risque important (obligatoire §21)",
+              "Évaluer le caractère suffisant et approprié des éléments probants"
+            ],
+            "swiss": "NA-CH 330. Procédures de substance toujours requises pour les risques importants.",
+            "related": [
+              "ISA 315",
+              "ISA 500",
+              "ISA 520"
+            ],
+            "exam_tip": "§21 ABSOLU : procédures de substance obligatoires pour tout significant risk, même si les contrôles sont efficaces."
+          },
+          {
+            "num": "402",
+            "code": "ISA 402",
+            "title_fr": "Facteurs à considérer pour l'audit d'une entité faisant appel à une société de services",
+            "title_en": "Audit Considerations Relating to an Entity Using a Service Organization",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Comprendre les services externalisés et leur impact sur le SCI, obtenir des éléments probants suffisants.",
+            "scope": "Externalisation (paie, IT, cloud, gestion d'actifs). Recours aux rapports SOC 1 (ISAE 3402).",
+            "requirements": [
+              "Comprendre la nature des services et leur importance pour le SCI de l'entité",
+              "Méthode inclusive (tests directs) OU carve-out (recours rapport du service auditor)",
+              "Évaluer les rapports type 1 (design) vs type 2 (efficacité opérationnelle)",
+              "Considérer les CUEC (Complementary User Entity Controls)"
+            ],
+            "swiss": "NA-CH 402. Très pertinent avec le cloud/SaaS (lien module M9).",
+            "related": [
+              "ISAE 3402",
+              "ISA 315",
+              "ISA 330"
+            ],
+            "exam_tip": "SOC 1 type 2 = design + operating effectiveness sur période = exploitable par l'auditeur. CUEC = contrôles à la charge de l'utilisateur."
+          },
+          {
+            "num": "450",
+            "code": "ISA 450",
+            "title_fr": "Évaluation des anomalies relevées au cours de l'audit",
+            "title_en": "Evaluation of Misstatements Identified during the Audit",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Évaluer l'incidence des anomalies relevées sur l'audit et des anomalies non corrigées sur les EF.",
+            "scope": "Cumul des anomalies, anomalies corrigées vs non corrigées, considérations qualitatives.",
+            "requirements": [
+              "Accumuler les anomalies identifiées (sauf clairement insignifiantes < CTT)",
+              "Communiquer en temps utile et demander leur correction",
+              "Évaluer si la matérialité globale reste appropriée",
+              "Évaluer l'incidence des anomalies non corrigées (individuellement + cumulées)",
+              "Obtenir une déclaration écrite sur les anomalies non corrigées (ISA 580)"
+            ],
+            "swiss": "NA-CH 450. Tableau des passed adjustments comparé à la matérialité de performance.",
+            "related": [
+              "ISA 320",
+              "ISA 700",
+              "ISA 580"
+            ],
+            "exam_tip": "Matérialité QUALITATIVE : une anomalie quantitativement faible peut être significative (inversion résultat, covenant, fraude, partie liée)."
+          }
+        ]
+      },
+      {
+        "id": "s500",
+        "label": "ISA 500-599 — Éléments probants",
+        "range": "500-599",
+        "color": "#16a34a",
+        "intro": "Le cœur technique : nature et obtention des éléments probants, postes spécifiques, confirmations, premiers audits, procédures analytiques, sondages, estimations, parties liées, événements postérieurs, going concern, déclarations écrites.",
+        "standards": [
+          {
+            "num": "500",
+            "code": "ISA 500",
+            "title_fr": "Éléments probants",
+            "title_en": "Audit Evidence",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Concevoir et mettre en œuvre des procédures pour obtenir des éléments probants suffisants et appropriés.",
+            "scope": "Suffisance (quantité) + caractère approprié (pertinence + fiabilité). 7 types de procédures.",
+            "requirements": [
+              "Suffisance = quantité ; Caractère approprié = pertinence + fiabilité",
+              "Fiabilité accrue : source externe, contrôle efficace, obtention directe, écrit, original",
+              "7 procédures : inspection, observation, confirmation externe, recalcul, ré-exécution, procédures analytiques, demandes d'informations",
+              "Évaluer la pertinence et la fiabilité des informations utilisées comme éléments probants"
+            ],
+            "swiss": "NA-CH 500. Norme fondatrice de toutes les procédures d'audit.",
+            "related": [
+              "ISA 501",
+              "ISA 505",
+              "ISA 520",
+              "ISA 530"
+            ],
+            "exam_tip": "Suffisant (quantité) + Approprié (qualité = pertinence + fiabilité). Externe > interne, écrit > oral, direct > indirect."
+          },
+          {
+            "num": "501",
+            "code": "ISA 501",
+            "title_fr": "Éléments probants — Considérations spécifiques (stocks, litiges, segments)",
+            "title_en": "Audit Evidence — Specific Considerations for Selected Items",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Obtenir des éléments probants suffisants sur les stocks, les litiges/contentieux et l'information sectorielle.",
+            "scope": "3 domaines spécifiques nécessitant des procédures dédiées.",
+            "requirements": [
+              "Stocks : assister à l'inventaire physique si significatif (existence + état)",
+              "Litiges et contentieux : demandes à la direction + communication avec les avocats",
+              "Information sectorielle : évaluer la présentation conforme au référentiel"
+            ],
+            "swiss": "NA-CH 501. L'assistance à l'inventaire est une procédure clé du terrain.",
+            "related": [
+              "ISA 500",
+              "ISA 505",
+              "RPC 17 / IAS 2"
+            ],
+            "exam_tip": "Stocks significatifs = assistance physique OBLIGATOIRE. Litiges = lettre à l'avocat de l'entité."
+          },
+          {
+            "num": "505",
+            "code": "ISA 505",
+            "title_fr": "Confirmations externes",
+            "title_en": "External Confirmations",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Concevoir des procédures de confirmation externe pour obtenir des éléments probants pertinents et fiables.",
+            "scope": "Demandes positives vs négatives. Banques, clients, fournisseurs, avocats.",
+            "requirements": [
+              "Maîtriser les demandes : sélection, conception, envoi, suivi",
+              "Confirmation positive (réponse demandée) > négative (réponse seulement si désaccord)",
+              "Contrôler le processus pour éviter l'interception par le client",
+              "Traiter les non-réponses par des procédures alternatives",
+              "Évaluer la fiabilité des réponses (origine, intégrité)"
+            ],
+            "swiss": "NA-CH 505. Confirmations bancaires systématiques (existence trésorerie).",
+            "related": [
+              "ISA 500",
+              "ISA 330"
+            ],
+            "exam_tip": "Positive (toujours répondre) plus fiable que négative (répondre si désaccord). L'auditeur garde le CONTRÔLE de l'envoi."
+          },
+          {
+            "num": "510",
+            "code": "ISA 510",
+            "title_fr": "Missions d'audit initiales — Soldes d'ouverture",
+            "title_en": "Initial Audit Engagements — Opening Balances",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Obtenir des éléments probants suffisants sur les soldes d'ouverture lors d'un premier audit.",
+            "scope": "Premier audit (nouvelle entité ou changement d'auditeur). Soldes d'ouverture + cohérence des méthodes.",
+            "requirements": [
+              "Vérifier l'absence d'anomalies dans les soldes d'ouverture affectant l'exercice",
+              "Vérifier la cohérence des méthodes comptables",
+              "Consulter le dossier de l'auditeur précédent (si autorisé)",
+              "Si soldes d'ouverture erronés → impact sur l'opinion (qualified)"
+            ],
+            "swiss": "NA-CH 510. Crucial lors d'une reprise de mandat (changement de réviseur).",
+            "related": [
+              "ISA 300",
+              "ISA 710",
+              "ISA 705"
+            ],
+            "exam_tip": "Premier audit = soldes d'ouverture à valider. Contact auditeur précédent (avec accord client)."
+          },
+          {
+            "num": "520",
+            "code": "ISA 520",
+            "title_fr": "Procédures analytiques",
+            "title_en": "Analytical Procedures",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Utiliser les procédures analytiques comme procédures de substance et à la fin de l'audit.",
+            "scope": "Analyse des relations plausibles entre données financières et non financières.",
+            "requirements": [
+              "Procédures analytiques de substance : développer une attente + seuil d'écart acceptable",
+              "Investiguer les écarts significatifs par rapport aux attentes",
+              "Procédures analytiques finales (overall review) en fin d'audit obligatoires",
+              "Évaluer la fiabilité des données utilisées"
+            ],
+            "swiss": "NA-CH 520. Revue analytique finale obligatoire avant signature.",
+            "related": [
+              "ISA 315",
+              "ISA 330",
+              "ISA 500"
+            ],
+            "exam_tip": "Analytiques : préliminaires (planification) + substance (terrain) + finales (conclusion, obligatoires)."
+          },
+          {
+            "num": "530",
+            "code": "ISA 530",
+            "title_fr": "Sondages en audit",
+            "title_en": "Audit Sampling",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Concevoir et sélectionner un échantillon, et évaluer les résultats des sondages.",
+            "scope": "Échantillonnage statistique vs non statistique. Risque d'échantillonnage.",
+            "requirements": [
+              "Concevoir l'échantillon : objectif, population, taille",
+              "Sélectionner des éléments représentatifs (aléatoire, systématique, MUS)",
+              "Investiguer la nature et la cause des anomalies/déviations détectées",
+              "Extrapoler les anomalies à la population (procédures de substance)",
+              "Évaluer si le sondage fournit une base raisonnable de conclusion"
+            ],
+            "swiss": "NA-CH 530. MUS (Monetary Unit Sampling) fréquent pour les tests de substance.",
+            "related": [
+              "ISA 500",
+              "ISA 330"
+            ],
+            "exam_tip": "Attribute sampling (tests des contrôles) vs Variable/MUS (substance). Toujours analyser la CAUSE d'une anomalie."
+          },
+          {
+            "num": "540",
+            "code": "ISA 540 (Revised)",
+            "title_fr": "Audit des estimations comptables et des informations y afférentes",
+            "title_en": "Auditing Accounting Estimates and Related Disclosures",
+            "status": "Révisée 2018",
+            "effective": "Exercices ouverts dès le 15.12.2019",
+            "objective": "Obtenir des éléments probants suffisants sur le caractère raisonnable des estimations comptables et des disclosures.",
+            "scope": "Estimations complexes : dépréciations, provisions, juste valeur niveau 3, ECL IFRS 9, engagements de retraite.",
+            "requirements": [
+              "Évaluer le risque inhérent via 3 facteurs : complexité, subjectivité, incertitude d'estimation",
+              "Tester selon 3 dimensions : MÉTHODE, HYPOTHÈSES, DONNÉES",
+              "Évaluer les indices de biais de la direction (management bias)",
+              "Test de recul (stand-back) sur le caractère raisonnable global",
+              "Scepticisme renforcé sur les estimations subjectives"
+            ],
+            "swiss": "NA-CH 540. Norme bien plus exigeante depuis R2018. Lien fort avec IAS 36, IFRS 9, IAS 19.",
+            "related": [
+              "ISA 500",
+              "ISA 315",
+              "ISA 700"
+            ],
+            "exam_tip": "R2018 = 3 dimensions (Méthode-Hypothèses-Données = MHD) + stand-back + détection du management bias."
+          },
+          {
+            "num": "550",
+            "code": "ISA 550",
+            "title_fr": "Parties liées",
+            "title_en": "Related Parties",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Identifier et évaluer les risques liés aux relations et transactions avec des parties liées.",
+            "scope": "Risque de fraude accru, transactions hors marché, opacité des structures.",
+            "requirements": [
+              "Comprendre les relations et transactions avec les parties liées",
+              "Rester vigilant sur les parties liées non identifiées par la direction",
+              "Évaluer les transactions hors du cours normal des affaires",
+              "Évaluer la comptabilisation et la présentation (disclosures)"
+            ],
+            "swiss": "NA-CH 550. Lien direct avec RPC 15 / IAS 24 (présentation).",
+            "related": [
+              "ISA 240",
+              "ISA 315",
+              "RPC 15 / IAS 24"
+            ],
+            "exam_tip": "Parties liées = risque de fraude. Vigilance sur les parties liées NON divulguées par la direction."
+          },
+          {
+            "num": "560",
+            "code": "ISA 560",
+            "title_fr": "Événements postérieurs à la clôture",
+            "title_en": "Subsequent Events",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Obtenir des éléments probants sur les événements survenus entre la date des EF et la date du rapport, et réagir aux faits découverts après.",
+            "scope": "3 périodes : avant date du rapport / entre rapport et publication / après publication.",
+            "requirements": [
+              "Période 1 (avant rapport) : procédures actives (lecture PV, demandes, recherche événements)",
+              "Période 2 (entre rapport et publication) : pas d'obligation active, réagir si info reçue",
+              "Période 3 (après publication) : pas d'obligation, mais agir si fait matériel découvert",
+              "Distinguer événements ajustables (IAS 10) vs non ajustables"
+            ],
+            "swiss": "NA-CH 560. Date du rapport = obtention des éléments probants suffisants.",
+            "related": [
+              "ISA 700",
+              "IAS 10 / RPC 6"
+            ],
+            "exam_tip": "3 périodes. Ajustable (condition existait à la clôture) → ajuster. Non ajustable → disclosure si significatif."
+          },
+          {
+            "num": "570",
+            "code": "ISA 570 (Revised)",
+            "title_fr": "Continuité d'exploitation",
+            "title_en": "Going Concern",
+            "status": "Révisée 2024",
+            "effective": "Exercices ouverts dès le 15.12.2026 (phasé)",
+            "objective": "Obtenir des éléments probants suffisants sur le caractère approprié de l'hypothèse de continuité retenue par la direction et conclure.",
+            "scope": "Évaluation sur 12 mois min depuis la date du rapport. 4 scénarios d'opinion.",
+            "requirements": [
+              "Évaluer l'analyse de continuité de la direction (≥ 12 mois depuis la date du rapport)",
+              "Tester les hypothèses clés (refinancement, trésorerie, covenants, actions de la direction)",
+              "Identifier toute incertitude significative",
+              "4 scénarios : clean / incertitude+disclosure adéquate (EOM) / disclosure inadéquate (modifiée) / GC inappropriée (adverse)",
+              "R2024 : scepticisme et documentation renforcés"
+            ],
+            "swiss": "NA-CH 570. Lien CRITIQUE avec CO 725/725a/725b (surendettement, avis au juge).",
+            "related": [
+              "ISA 700",
+              "ISA 705",
+              "ISA 706",
+              "CO 725b"
+            ],
+            "exam_tip": "PIÈGE : incertitude significative + disclosure ADÉQUATE = opinion CLEAN + paragraphe Material Uncertainty (pas qualified). 12 mois depuis le RAPPORT."
+          },
+          {
+            "num": "580",
+            "code": "ISA 580",
+            "title_fr": "Déclarations écrites",
+            "title_en": "Written Representations",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Obtenir des déclarations écrites de la direction comme éléments probants nécessaires.",
+            "scope": "Lettre de représentation (LoR / management representation letter).",
+            "requirements": [
+              "Obtenir la confirmation écrite que la direction a rempli ses responsabilités (EF, SCI, information)",
+              "Déclarations spécifiques requises par d'autres ISA (fraude, litiges, anomalies non corrigées)",
+              "Date proche de celle du rapport, signée par le niveau approprié",
+              "Si déclarations non fiables ou refusées → impact possible sur l'opinion (disclaimer)"
+            ],
+            "swiss": "NA-CH 580. La LoR est obtenue avant la signature du rapport.",
+            "related": [
+              "ISA 240",
+              "ISA 450",
+              "ISA 700"
+            ],
+            "exam_tip": "La LoR complète mais ne REMPLACE pas les autres éléments probants. Refus de signer = limitation potentielle (disclaimer)."
+          }
+        ]
+      },
+      {
+        "id": "s600",
+        "label": "ISA 600-699 — Recours aux travaux d'autres",
+        "range": "600-699",
+        "color": "#0891b2",
+        "intro": "Audits de groupes, recours à l'audit interne, recours aux experts de l'auditeur.",
+        "standards": [
+          {
+            "num": "600",
+            "code": "ISA 600 (Revised)",
+            "title_fr": "Considérations particulières — Audits des états financiers de groupe",
+            "title_en": "Special Considerations — Audits of Group Financial Statements (Including the Work of Component Auditors)",
+            "status": "Révisée 2022",
+            "effective": "Exercices ouverts dès le 15.12.2023",
+            "objective": "Auditer les EF de groupe lorsque des composants sont audités par d'autres auditeurs (component auditors).",
+            "scope": "Équipe d'audit du groupe (group engagement team) + auditeurs de composants. Révision majeure 2022 (risk-based).",
+            "requirements": [
+              "Approche fondée sur les risques (R2022, suppression du terme 'significant component')",
+              "L'équipe du groupe dirige, supervise et révise les travaux",
+              "Communiquer clairement avec les auditeurs de composants",
+              "Évaluer la compétence et l'indépendance des component auditors",
+              "Procédures analytiques au niveau du groupe pour les composants non significatifs"
+            ],
+            "swiss": "NA-CH 600. R2022 renforce la responsabilité du group engagement partner.",
+            "related": [
+              "ISA 220",
+              "ISA 315",
+              "ISA 330"
+            ],
+            "exam_tip": "R2022 = risk-based (≠ significant/non-significant component). Le group partner reste responsable de l'opinion globale."
+          },
+          {
+            "num": "610",
+            "code": "ISA 610 (Revised 2013)",
+            "title_fr": "Utilisation des travaux des auditeurs internes",
+            "title_en": "Using the Work of Internal Auditors",
+            "status": "Révisée 2013",
+            "effective": "Exercices ouverts dès le 15.12.2013",
+            "objective": "Définir les responsabilités de l'auditeur externe lorsqu'il utilise les travaux de la fonction d'audit interne.",
+            "scope": "Utilisation des travaux de l'audit interne + assistance directe (direct assistance).",
+            "requirements": [
+              "Évaluer la fonction d'audit interne : objectivité, compétence, approche systématique",
+              "Déterminer dans quels domaines et dans quelle mesure utiliser ses travaux",
+              "Direct assistance : sous direction/supervision/revue de l'auditeur externe (interdit dans certaines juridictions)",
+              "L'auditeur externe reste seul responsable de l'opinion"
+            ],
+            "swiss": "NA-CH 610. La responsabilité de l'opinion ne se partage jamais.",
+            "related": [
+              "ISA 315",
+              "ISA 600"
+            ],
+            "exam_tip": "L'audit interne peut être UTILISÉ mais l'auditeur externe garde l'ENTIÈRE responsabilité de l'opinion."
+          },
+          {
+            "num": "620",
+            "code": "ISA 620",
+            "title_fr": "Utilisation des travaux d'un expert désigné par l'auditeur",
+            "title_en": "Using the Work of an Auditor's Expert",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Utiliser de façon appropriée les travaux d'un expert dans un domaine autre que la comptabilité/l'audit.",
+            "scope": "Experts : actuaires, évaluateurs immobiliers, ingénieurs, experts juridiques, valuation.",
+            "requirements": [
+              "Évaluer la compétence, les capacités et l'objectivité de l'expert",
+              "Comprendre le domaine d'expertise",
+              "Convenir de l'étendue des travaux de l'expert",
+              "Évaluer le caractère adéquat des travaux comme éléments probants",
+              "Ne pas référer à l'expert dans le rapport (sauf si requis par la loi)"
+            ],
+            "swiss": "NA-CH 620. Fréquent pour les évaluations immobilières et actuarielles (LPP).",
+            "related": [
+              "ISA 500",
+              "ISA 540"
+            ],
+            "exam_tip": "Expert de l'AUDITEUR (≠ expert de la direction). Compétence + capacités + objectivité = 3 critères."
+          }
+        ]
+      },
+      {
+        "id": "s700",
+        "label": "ISA 700-799 — Conclusions & rapport d'audit",
+        "range": "700-799",
+        "color": "#7c3aed",
+        "intro": "Le produit final : formation de l'opinion, KAM, modifications d'opinion, paragraphes d'observation, données comparatives, autres informations.",
+        "standards": [
+          {
+            "num": "700",
+            "code": "ISA 700 (Revised)",
+            "title_fr": "Fondement de l'opinion et rapport d'audit sur des états financiers",
+            "title_en": "Forming an Opinion and Reporting on Financial Statements",
+            "status": "Révisée 2015",
+            "effective": "Exercices ouverts dès le 15.12.2016",
+            "objective": "Former une opinion sur les EF et la communiquer clairement dans un rapport écrit.",
+            "scope": "Structure standardisée du rapport (opinion EN PREMIER depuis 2016).",
+            "requirements": [
+              "Conclure sur l'obtention d'une assurance raisonnable",
+              "Opinion EN PREMIER (titre, destinataire, opinion, fondement de l'opinion)",
+              "Mention explicite de l'indépendance dans le fondement de l'opinion",
+              "Responsabilités direction + auditeur, signature, date, lieu",
+              "Pour les EIP : KAM (ISA 701)"
+            ],
+            "swiss": "NA-CH 700. Rapport AG = CO 728b. Double signature (lead + EQR) + numéros d'agrément ASR.",
+            "related": [
+              "ISA 701",
+              "ISA 705",
+              "ISA 706",
+              "ISA 720"
+            ],
+            "exam_tip": "Depuis 2016 : opinion EN PREMIER + indépendance explicite. UQAD = Unmodified/Qualified/Adverse/Disclaimer."
+          },
+          {
+            "num": "701",
+            "code": "ISA 701",
+            "title_fr": "Communication des questions clés de l'audit (KAM)",
+            "title_en": "Communicating Key Audit Matters in the Independent Auditor's Report",
+            "status": "En vigueur (nouvelle 2015)",
+            "effective": "Exercices ouverts dès le 15.12.2016",
+            "objective": "Communiquer les questions clés de l'audit (Key Audit Matters) dans le rapport d'audit.",
+            "scope": "Obligatoire pour les EIP (cotées). Optionnel/recommandé pour les autres.",
+            "requirements": [
+              "Sélectionner les questions ayant nécessité le plus d'attention (parmi celles communiquées à la gouvernance)",
+              "Critères : risques importants, jugements/estimations significatifs, événements majeurs",
+              "Décrire chaque KAM + pourquoi + comment l'audit l'a traité",
+              "Position dans le rapport : après le fondement de l'opinion (après Material Uncertainty GC)",
+              "Typiquement 2-5 KAM"
+            ],
+            "swiss": "NA-CH 701. Obligatoire pour les sociétés cotées SIX.",
+            "related": [
+              "ISA 700",
+              "ISA 260",
+              "ISA 705"
+            ],
+            "exam_tip": "KAM = EIP/cotées seulement. KAM ≠ opinion modifiée (une opinion qualified peut avoir des KAM en plus)."
+          },
+          {
+            "num": "705",
+            "code": "ISA 705 (Revised)",
+            "title_fr": "Modifications de l'opinion dans le rapport de l'auditeur indépendant",
+            "title_en": "Modifications to the Opinion in the Independent Auditor's Report",
+            "status": "Révisée 2015",
+            "effective": "Exercices ouverts dès le 15.12.2016",
+            "objective": "Émettre une opinion modifiée appropriée lorsque les EF comportent des anomalies significatives ou en cas de limitation.",
+            "scope": "3 types d'opinion modifiée : qualified, adverse, disclaimer.",
+            "requirements": [
+              "Qualified (« except for ») : anomalie OU limitation matérielle MAIS pas généralisée",
+              "Adverse : anomalie matérielle ET généralisée (pervasive)",
+              "Disclaimer : limitation matérielle ET généralisée (impossible de se forger une opinion)",
+              "Pervasive : touche plusieurs postes / part substantielle / disclosure fondamentale",
+              "Section 'Fondement de l'opinion modifiée' décrivant les raisons"
+            ],
+            "swiss": "NA-CH 705. Matrice fondamentale anomalie/limitation × matérielle/généralisée.",
+            "related": [
+              "ISA 700",
+              "ISA 706",
+              "ISA 570"
+            ],
+            "exam_tip": "Matrice : Anomalie pervasive → Adverse ; Limitation pervasive → Disclaimer. Pervasive = MSF (Multiples/Substantielle/Fondamentale)."
+          },
+          {
+            "num": "706",
+            "code": "ISA 706 (Revised)",
+            "title_fr": "Paragraphes d'observation et paragraphes sur d'autres points",
+            "title_en": "Emphasis of Matter Paragraphs and Other Matter Paragraphs in the Independent Auditor's Report",
+            "status": "Révisée 2015",
+            "effective": "Exercices ouverts dès le 15.12.2016",
+            "objective": "Attirer l'attention des lecteurs sur des questions présentées (EOM) ou non présentées (Other Matter) sans modifier l'opinion.",
+            "scope": "Emphasis of Matter (EOM) + Other Matter (OM).",
+            "requirements": [
+              "EOM : attire l'attention sur une question PRÉSENTÉE dans les EF, fondamentale à la compréhension",
+              "Other Matter : communique une question NON présentée, pertinente pour la compréhension de l'audit",
+              "Ces paragraphes ne MODIFIENT PAS l'opinion",
+              "Position : après l'opinion / la section KAM selon le cas"
+            ],
+            "swiss": "NA-CH 706. EOM ≠ modification d'opinion.",
+            "related": [
+              "ISA 700",
+              "ISA 705",
+              "ISA 570"
+            ],
+            "exam_tip": "EOM = question DANS les EF ; Other Matter = question HORS des EF. Aucun n'altère l'opinion."
+          },
+          {
+            "num": "710",
+            "code": "ISA 710",
+            "title_fr": "Informations comparatives — Chiffres correspondants et états financiers comparatifs",
+            "title_en": "Comparative Information — Corresponding Figures and Comparative Financial Statements",
+            "status": "En vigueur",
+            "effective": "Exercices depuis 15.12.2009",
+            "objective": "Obtenir des éléments probants sur les informations comparatives et traiter leur incidence sur l'opinion.",
+            "scope": "Chiffres correspondants (corresponding figures) vs états financiers comparatifs.",
+            "requirements": [
+              "Vérifier que les comparatifs sont conformes au référentiel",
+              "Cohérence avec les montants de l'exercice précédent",
+              "Chiffres correspondants : l'opinion porte sur la période courante seulement",
+              "EF comparatifs : l'opinion porte sur chaque période présentée"
+            ],
+            "swiss": "NA-CH 710. Modèle suisse = chiffres correspondants (opinion sur l'exercice courant).",
+            "related": [
+              "ISA 510",
+              "ISA 700"
+            ],
+            "exam_tip": "Corresponding figures (CH) : opinion sur N seulement. Comparative FS : opinion sur N ET N-1."
+          },
+          {
+            "num": "720",
+            "code": "ISA 720 (Revised)",
+            "title_fr": "Responsabilités de l'auditeur concernant les autres informations",
+            "title_en": "The Auditor's Responsibilities Relating to Other Information",
+            "status": "Révisée 2015",
+            "effective": "Exercices ouverts dès le 15.12.2016",
+            "objective": "Lire et considérer les autres informations (rapport de gestion, etc.) pour détecter des incohérences significatives avec les EF.",
+            "scope": "Other Information = rapport annuel hors EF audités (rapport de gestion, message du CEO).",
+            "requirements": [
+              "Lire les autres informations et identifier les incohérences avec les EF ou les connaissances de l'auditeur",
+              "Réagir aux incohérences (correction par la direction, ou mention au rapport)",
+              "Section dédiée 'Autres informations' dans le rapport d'audit",
+              "L'auditeur n'exprime pas d'opinion sur les autres informations"
+            ],
+            "swiss": "NA-CH 720. Le rapport de gestion (CO 961c) est une 'autre information'.",
+            "related": [
+              "ISA 700",
+              "ISA 706"
+            ],
+            "exam_tip": "L'auditeur LIT les autres infos (pas d'opinion) mais signale les incohérences MATÉRIELLES avec les EF audités."
+          }
+        ]
+      },
+      {
+        "id": "s800",
+        "label": "ISA 800-899 — Domaines spécialisés + ISA for LCE",
+        "range": "800-899",
+        "color": "#be185d",
+        "intro": "Référentiels à usage particulier, états financiers isolés, états financiers résumés, et la nouvelle norme dédiée aux entités moins complexes (ISA for LCE).",
+        "standards": [
+          {
+            "num": "800",
+            "code": "ISA 800 (Revised)",
+            "title_fr": "Considérations spéciales — Audits d'EF établis selon un référentiel à usage particulier",
+            "title_en": "Special Considerations — Audits of Financial Statements Prepared in Accordance with Special Purpose Frameworks",
+            "status": "Révisée 2015",
+            "effective": "Exercices ouverts dès le 15.12.2016",
+            "objective": "Traiter les considérations spéciales pour l'audit d'EF préparés selon un référentiel à usage particulier.",
+            "scope": "Référentiels spéciaux : base fiscale, base de trésorerie, exigences contractuelles, réglementaires.",
+            "requirements": [
+              "Évaluer l'acceptabilité du référentiel à usage particulier",
+              "Adapter le rapport (description du référentiel + utilisateurs visés)",
+              "Paragraphe sur la restriction d'utilisation/de distribution si nécessaire",
+              "Appliquer toutes les ISA pertinentes"
+            ],
+            "swiss": "NA-CH 800. Ex : comptes selon une convention de prêt bancaire, base fiscale.",
+            "related": [
+              "ISA 700",
+              "ISA 805",
+              "ISA 810"
+            ],
+            "exam_tip": "Référentiel à usage particulier = pas l'image fidèle générale, mais une base spécifique (fiscale, contractuelle, cash)."
+          },
+          {
+            "num": "805",
+            "code": "ISA 805 (Revised)",
+            "title_fr": "Considérations spéciales — Audits d'états financiers isolés et d'éléments spécifiques",
+            "title_en": "Special Considerations — Audits of Single Financial Statements and Specific Elements, Accounts or Items of a Financial Statement",
+            "status": "Révisée 2015",
+            "effective": "Exercices ouverts dès le 15.12.2016",
+            "objective": "Traiter l'audit d'un état financier isolé ou d'un élément, compte ou poste spécifique.",
+            "scope": "Ex : audit du seul bilan, du seul tableau de flux, ou d'un poste (créances, stocks).",
+            "requirements": [
+              "Déterminer l'acceptabilité du référentiel pour l'élément audité",
+              "Appliquer les ISA pertinentes à l'élément spécifique",
+              "Matérialité au niveau de l'élément audité",
+              "Rapport adapté à l'objet de l'audit"
+            ],
+            "swiss": "NA-CH 805. Audit ciblé d'un poste/état isolé sur demande.",
+            "related": [
+              "ISA 800",
+              "ISA 700"
+            ],
+            "exam_tip": "Audit d'UN seul état (bilan) ou d'UN poste (stocks). Matérialité fixée au niveau de l'élément, pas des EF complets."
+          },
+          {
+            "num": "810",
+            "code": "ISA 810 (Revised)",
+            "title_fr": "Missions visant à délivrer un rapport sur des états financiers résumés",
+            "title_en": "Engagements to Report on Summary Financial Statements",
+            "status": "Révisée 2015",
+            "effective": "Exercices ouverts dès le 15.12.2016",
+            "objective": "Émettre un rapport sur des états financiers résumés dérivés d'EF audités.",
+            "scope": "EF résumés (summary FS) destinés à des utilisateurs souhaitant une vue condensée.",
+            "requirements": [
+              "Les EF résumés doivent dériver d'EF audités",
+              "Évaluer si les EF résumés sont cohérents avec les EF audités",
+              "Opinion sur la cohérence des EF résumés (pas une nouvelle opinion d'audit)",
+              "Critères appliqués pour la préparation des EF résumés"
+            ],
+            "swiss": "NA-CH 810. Utilisé pour les versions condensées de rapports annuels.",
+            "related": [
+              "ISA 800",
+              "ISA 805",
+              "ISA 700"
+            ],
+            "exam_tip": "EF résumés = dérivés d'EF déjà audités. L'opinion porte sur la COHÉRENCE avec les EF complets."
+          },
+          {
+            "num": "LCE",
+            "code": "ISA for LCE",
+            "title_fr": "Norme internationale d'audit pour les entités moins complexes",
+            "title_en": "International Standard on Auditing for Audits of Financial Statements of Less Complex Entities",
+            "status": "Nouvelle 2023",
+            "effective": "Exercices ouverts dès le 15.12.2025",
+            "objective": "Fournir un référentiel d'audit autonome, proportionné, pour les entités moins complexes (LCE).",
+            "scope": "Norme STANDALONE (autonome) — pas un allègement des ISA, mais un référentiel complet adapté aux LCE.",
+            "requirements": [
+              "Audit complet donnant une assurance raisonnable (même niveau que les ISA)",
+              "Documentation et procédures simplifiées et proportionnées",
+              "Critères d'éligibilité : qualitatifs (complexité) — exclut les EIP et groupes complexes",
+              "Couvre l'intégralité du processus d'audit dans un document unique"
+            ],
+            "swiss": "Adoption suisse en cours d'évaluation par EXPERTsuisse. Pertinent pour les PME.",
+            "related": [
+              "ISA 200",
+              "Contrôle restreint (CO 729b)"
+            ],
+            "exam_tip": "ISA for LCE = audit COMPLET simplifié (≠ contrôle restreint suisse qui est une assurance LIMITÉE). Standalone, pas un sous-ensemble des ISA."
+          }
+        ]
+      },
+      {
+        "id": "sother",
+        "label": "Familles connexes — ISRE · ISAE · ISRS · ISQM",
+        "range": "Autres",
+        "color": "#0d9488",
+        "intro": "Le périmètre IAASB au-delà de l'audit : examens limités (ISRE), missions d'assurance (ISAE), services connexes (ISRS), gestion de la qualité (ISQM).",
+        "standards": [
+          {
+            "num": "2400",
+            "code": "ISRE 2400 (Revised)",
+            "title_fr": "Missions d'examen limité d'états financiers historiques",
+            "title_en": "Engagements to Review Historical Financial Statements",
+            "status": "Révisée 2012",
+            "effective": "Périodes dès le 31.12.2013",
+            "objective": "Réaliser un examen limité (review) d'états financiers historiques avec une assurance limitée (modérée).",
+            "scope": "Assurance LIMITÉE (formulation négative). Équivalent international du contrôle restreint suisse.",
+            "requirements": [
+              "Procédures principalement : demandes d'informations + procédures analytiques",
+              "Conclusion sous forme NÉGATIVE (« rien n'a attiré notre attention... »)",
+              "Indépendance requise",
+              "Documentation de la conclusion"
+            ],
+            "swiss": "Base du contrôle restreint suisse (NCR, CO 729b).",
+            "related": [
+              "ISRE 2410",
+              "NCR",
+              "CO 729b"
+            ],
+            "exam_tip": "Assurance LIMITÉE = formulation négative. ISRE 2400 ≈ contrôle restreint CH (NCR)."
+          },
+          {
+            "num": "2410",
+            "code": "ISRE 2410",
+            "title_fr": "Examen limité d'informations financières intermédiaires par l'auditeur de l'entité",
+            "title_en": "Review of Interim Financial Information Performed by the Independent Auditor of the Entity",
+            "status": "En vigueur",
+            "effective": "En vigueur",
+            "objective": "Réaliser l'examen limité d'informations financières intermédiaires par l'auditeur de l'entité.",
+            "scope": "Comptes intermédiaires (semestriels/trimestriels) des entités cotées.",
+            "requirements": [
+              "Demandes + procédures analytiques adaptées à l'interim",
+              "Conclusion sous forme négative (assurance limitée)",
+              "S'appuie sur la connaissance de l'entité issue de l'audit annuel"
+            ],
+            "swiss": "Pertinent pour les cotées SIX (rapports semestriels).",
+            "related": [
+              "ISRE 2400",
+              "RPC 31",
+              "IAS 34"
+            ],
+            "exam_tip": "Pour les comptes INTERMÉDIAIRES des cotées. Assurance limitée, réalisée par l'auditeur annuel."
+          },
+          {
+            "num": "3000",
+            "code": "ISAE 3000 (Revised)",
+            "title_fr": "Missions d'assurance autres que les audits ou examens d'informations financières historiques",
+            "title_en": "Assurance Engagements Other Than Audits or Reviews of Historical Financial Information",
+            "status": "Révisée 2013",
+            "effective": "Rapports dès le 15.12.2015",
+            "objective": "Réaliser des missions d'assurance (raisonnable ou limitée) sur des objets autres que les EF historiques.",
+            "scope": "Cadre GÉNÉRAL : RSE/ESG, contrôles internes, conformité, durabilité. Assurance raisonnable OU limitée.",
+            "requirements": [
+              "5 éléments : relation tripartite, objet, critères, éléments probants, rapport écrit",
+              "Choisir le niveau : assurance raisonnable (positive) ou limitée (négative)",
+              "Indépendance + contrôle qualité",
+              "Critères appropriés et disponibles aux utilisateurs"
+            ],
+            "swiss": "Base des rapports ESG/durabilité (lien CSRD, ISSB).",
+            "related": [
+              "ISAE 3402",
+              "ISAE 3410",
+              "CSRD/ESRS"
+            ],
+            "exam_tip": "ISAE 3000 = cadre général de toute mission d'assurance non-EF. Raisonnable (positive) ou limitée (négative)."
+          },
+          {
+            "num": "3402",
+            "code": "ISAE 3402",
+            "title_fr": "Rapports d'assurance sur les contrôles d'une société de services",
+            "title_en": "Assurance Reports on Controls at a Service Organization",
+            "status": "En vigueur",
+            "effective": "Rapports dès le 15.06.2011",
+            "objective": "Émettre un rapport d'assurance sur les contrôles d'une société de services (SOC 1).",
+            "scope": "SOC 1 (impact reporting financier). Type 1 (design) vs Type 2 (efficacité opérationnelle).",
+            "requirements": [
+              "Type 1 : description + conception des contrôles à une date",
+              "Type 2 : Type 1 + efficacité opérationnelle sur une période (6-12 mois)",
+              "Assertion de la direction de la société de services + opinion de l'auditeur",
+              "Exploitable par l'auditeur de l'entité utilisatrice (ISA 402)"
+            ],
+            "swiss": "Lien direct avec ISA 402 (entités utilisant des sociétés de services).",
+            "related": [
+              "ISA 402",
+              "ISAE 3000"
+            ],
+            "exam_tip": "SOC 1 = ISAE 3402 (financial reporting). Type 2 = design + efficacité = exploitable par l'auditeur utilisateur."
+          },
+          {
+            "num": "3410",
+            "code": "ISAE 3410",
+            "title_fr": "Missions d'assurance sur les déclarations de gaz à effet de serre",
+            "title_en": "Assurance Engagements on Greenhouse Gas Statements",
+            "status": "En vigueur",
+            "effective": "Périodes dès le 30.09.2013",
+            "objective": "Réaliser une mission d'assurance sur une déclaration de gaz à effet de serre (GES).",
+            "scope": "Émissions GES Scope 1/2/3. Assurance raisonnable ou limitée. Croissance avec la CSRD.",
+            "requirements": [
+              "Comprendre la quantification des émissions (méthodes, incertitudes)",
+              "Scope 1 (directes), Scope 2 (énergie achetée), Scope 3 (chaîne de valeur)",
+              "Référentiels : GHG Protocol, ISO 14064-1",
+              "Niveau d'assurance choisi (raisonnable ou limitée)"
+            ],
+            "swiss": "Pertinent pour le reporting climat (CSRD, ISSB S2, OR 964).",
+            "related": [
+              "ISAE 3000",
+              "TCFD",
+              "ISSB S2"
+            ],
+            "exam_tip": "GES = Scope 1 (combustion directe) / Scope 2 (électricité achetée) / Scope 3 (chaîne de valeur, le + difficile)."
+          },
+          {
+            "num": "4400",
+            "code": "ISRS 4400 (Revised)",
+            "title_fr": "Missions de procédures convenues",
+            "title_en": "Agreed-Upon Procedures Engagements",
+            "status": "Révisée 2020",
+            "effective": "Rapports dès le 01.01.2022",
+            "objective": "Réaliser des procédures convenues et rapporter les constatations factuelles, SANS assurance.",
+            "scope": "AUCUNE assurance. Procédures convenues entre les parties. Rapport factuel.",
+            "requirements": [
+              "Convenir des procédures avec le client et les utilisateurs visés",
+              "Exécuter les procédures convenues",
+              "Rapporter les constatations FACTUELLES (pas d'opinion ni de conclusion)",
+              "Restriction d'utilisation aux parties ayant convenu des procédures"
+            ],
+            "swiss": "Fréquent en due diligence M&A, vérification de covenants.",
+            "related": [
+              "ISRS 4410",
+              "ISAE 3000"
+            ],
+            "exam_tip": "AUP = AUCUNE assurance, constatations factuelles seulement, usage RESTREINT aux parties convenant."
+          },
+          {
+            "num": "4410",
+            "code": "ISRS 4410 (Revised)",
+            "title_fr": "Missions de compilation",
+            "title_en": "Compilation Engagements",
+            "status": "Révisée 2011",
+            "effective": "Rapports dès le 01.07.2013",
+            "objective": "Aider la direction à préparer et présenter des informations financières, SANS assurance.",
+            "scope": "AUCUNE assurance. Le praticien PRÉPARE les EF à partir des données fournies.",
+            "requirements": [
+              "Compiler les informations financières selon le référentiel applicable",
+              "Mention claire « compilé » sans assurance",
+              "Pas de vérification ni de validation des données",
+              "Compétence en comptabilité requise"
+            ],
+            "swiss": "Utilisé pour les comptes de PME non soumises à révision.",
+            "related": [
+              "ISRS 4400",
+              "ISRE 2400"
+            ],
+            "exam_tip": "Compilation = le praticien PRÉPARE les EF (données client). Mention « compiled ». Aucune assurance."
+          },
+          {
+            "num": "ISQM1",
+            "code": "ISQM 1",
+            "title_fr": "Gestion de la qualité pour les cabinets réalisant des audits/examens",
+            "title_en": "Quality Management for Firms that Perform Audits or Reviews of Financial Statements, or Other Assurance or Related Services Engagements",
+            "status": "Nouvelle 2020 (remplace ISQC 1)",
+            "effective": "Systèmes opérationnels dès le 15.12.2022",
+            "objective": "Concevoir, mettre en œuvre et faire fonctionner un système de gestion de la qualité (SoQM) au niveau du CABINET.",
+            "scope": "Approche fondée sur les risques (≠ check-list ISQC 1). 8 composantes.",
+            "requirements": [
+              "8 composantes : évaluation des risques, gouvernance, éthique, acceptation/maintien, réalisation, ressources, information/communication, surveillance/remédiation",
+              "Processus d'évaluation des risques qualité (objectifs → risques → réponses)",
+              "Revue annuelle du SoQM par la direction du cabinet",
+              "Surveillance et actions correctives continues"
+            ],
+            "swiss": "NCQ 1 (équivalent suisse). Effectif depuis 15.12.2022.",
+            "related": [
+              "ISQM 2",
+              "ISA 220"
+            ],
+            "exam_tip": "ISQM 1 = niveau CABINET (≠ ISA 220 = niveau mission). Risk-based (≠ ISQC 1 check-list). 8 composantes."
+          },
+          {
+            "num": "ISQM2",
+            "code": "ISQM 2",
+            "title_fr": "Revues de la qualité des missions",
+            "title_en": "Engagement Quality Reviews",
+            "status": "Nouvelle 2020",
+            "effective": "Désignations dès le 15.12.2022",
+            "objective": "Encadrer la nomination, l'éligibilité et les responsabilités du réviseur qualité de la mission (EQR).",
+            "scope": "Engagement Quality Reviewer (EQR) pour EIP, cotées, missions à risque élevé.",
+            "requirements": [
+              "Critères d'éligibilité de l'EQR (compétence, autorité, temps suffisant)",
+              "Indépendance de l'EQR vis-à-vis de l'équipe (cooling-off 2 ans)",
+              "Revue des jugements significatifs et de la formation de l'opinion",
+              "Documentation de la revue avant la date du rapport"
+            ],
+            "swiss": "EQR obligatoire pour les EIP suisses. Cooling-off 2 ans.",
+            "related": [
+              "ISQM 1",
+              "ISA 220"
+            ],
+            "exam_tip": "EQR = indépendant de l'équipe, cooling-off 2 ans, revue AVANT la signature du rapport."
+          }
+        ]
+      }
+    ]
   }
 }
