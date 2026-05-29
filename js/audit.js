@@ -8,6 +8,7 @@ const AUDIT_TABS = [
     { id: 'cours',        label: 'Cours MSA',     icon: '📚', desc: 'Base de cours — contrôle ordinaire (MSA) + restreint (NCR)' },
     { id: 'cas',          label: 'Cas pratiques', icon: '📝', desc: 'Études de cas examen EXPERTsuisse — énoncé + solution pas-à-pas' },
     { id: 'arbres',       label: 'Arbres décision', icon: '🌳', desc: 'Logigrammes interactifs : opinion, going concern, leasing, révision, consolidation' },
+    { id: 'procedures',   label: 'Procédures',    icon: '✅', desc: 'Matrice assertions × procédures par cycle (terrain)' },
     { id: 'canvas',       label: 'Canvas Perso',  icon: '🏢', desc: 'Tes propres engagements d\'audit' },
     { id: 'mission',      label: 'Mission Lab',   icon: '🎬', desc: 'Mission immersive end-to-end chez EY' },
     { id: 'seuils',       label: 'Seuils & Exos', icon: '🎯', desc: 'Comprendre tous les seuils + exercices pas-à-pas' },
@@ -155,9 +156,92 @@ function _renderAuditSubContent(subTab) {
         case 'annuaire':    _renderAuditAnnuaire(host);   break;
         case 'cas':         _renderAuditCas(host);        break;
         case 'arbres':      _renderAuditArbres(host);     break;
+        case 'procedures':  _renderAuditProcedures(host); break;
         case 'quiz':        _renderAuditQuiz(host);       break;
         default:            _renderAuditNas(host);
     }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// PROCÉDURES PAR ASSERTION — Matrice assertions × procédures par cycle
+// ─────────────────────────────────────────────────────────────────
+let _procActiveCycle = null;
+
+function _renderAuditProcedures(host) {
+    const pr = _auditData.procedures_assertions || {};
+    const cycles = pr.cycles || [];
+    const assertions = pr.assertions_ref || [];
+    if (!_procActiveCycle && cycles.length) _procActiveCycle = cycles[0].id;
+
+    host.innerHTML = `
+        <div class="ref-section-title">${pr._icon || '✅'} ${escapeHtml(pr._label || 'Procédures par assertion')}</div>
+        <p style="color:#94a3b8;font-size:13px;line-height:1.6;margin-bottom:14px">
+            ${escapeHtml(pr._description || '')}
+        </p>
+        <details style="margin-bottom:16px;background:#0a0f1c;border-radius:8px;border:1px solid #1e293b">
+            <summary style="padding:10px 14px;cursor:pointer;font-size:13px;font-weight:700;color:${AUDIT_ACCENT}">
+                📖 Rappel des assertions (ISA 315)
+            </summary>
+            <div style="padding:0 14px 14px 14px;display:flex;flex-direction:column;gap:8px">
+                ${assertions.map(a => `
+                    <div style="display:flex;gap:10px;align-items:flex-start">
+                        <span style="background:${a.color};color:#fff;font-size:11px;font-weight:800;padding:2px 8px;border-radius:4px;flex-shrink:0;min-width:28px;text-align:center">${escapeHtml(a.code)}</span>
+                        <div><span style="font-size:13px;font-weight:700;color:#e2e8f0">${escapeHtml(a.nom)}</span>
+                        <span style="font-size:12px;color:#94a3b8"> — ${escapeHtml(a.def)}</span></div>
+                    </div>`).join('')}
+            </div>
+        </details>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+            ${cycles.map(c => `
+                <button onclick="_setProcCycle('${c.id}')"
+                        style="padding:8px 13px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:600;
+                               background:${_procActiveCycle === c.id ? (c.color || AUDIT_ACCENT) : '#1e293b'};
+                               color:${_procActiveCycle === c.id ? '#fff' : '#94a3b8'};
+                               border:1px solid ${_procActiveCycle === c.id ? (c.color || AUDIT_ACCENT) : '#334155'}">
+                    ${c.icon || ''} ${escapeHtml(c.nom)}
+                </button>`).join('')}
+        </div>
+        <div id="procCycleContent">${_renderProcCycle(cycles.find(c => c.id === _procActiveCycle), assertions)}</div>
+    `;
+}
+
+function _renderProcCycle(cycle, assertions) {
+    if (!cycle) return '';
+    const color = cycle.color || AUDIT_ACCENT;
+    const aMap = {};
+    (assertions || []).forEach(a => aMap[a.code] = a);
+    return `
+        <div style="margin-bottom:14px;padding:12px 16px;background:#0d1424;border-radius:8px;border-left:4px solid ${color}">
+            <div style="font-size:16px;font-weight:800;color:${color};margin-bottom:8px">${cycle.icon || ''} ${escapeHtml(cycle.nom)}</div>
+            <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:6px">⚠️ RISQUES PRINCIPAUX</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+                ${(cycle.risques || []).map(r => `<span style="font-size:11px;background:#3f1612;color:#fca5a5;padding:3px 9px;border-radius:10px">${escapeHtml(r)}</span>`).join('')}
+            </div>
+        </div>
+        ${(cycle.lignes || []).map(l => {
+            const a = aMap[l.assertion] || {code: l.assertion, nom: l.assertion, color: AUDIT_ACCENT};
+            return `
+                <div style="margin-bottom:10px;border:1px solid #1e293b;border-radius:8px;overflow:hidden">
+                    <div style="padding:11px 14px;background:#141d33;display:flex;gap:10px;align-items:center">
+                        <span style="background:${a.color};color:#fff;font-size:11px;font-weight:800;padding:3px 9px;border-radius:5px;flex-shrink:0;min-width:30px;text-align:center">${escapeHtml(a.code)}</span>
+                        <span style="font-size:13px;font-weight:700;color:#e2e8f0">${escapeHtml(a.nom)}</span>
+                    </div>
+                    <div style="padding:12px 14px;background:#0d1424">
+                        <div style="font-size:12px;color:#fca5a5;margin-bottom:8px"><strong>Risque :</strong> ${_auditCrossRef(l.risque)}</div>
+                        <div style="font-size:11px;font-weight:700;color:${color};margin-bottom:5px">🔧 PROCÉDURES</div>
+                        <ul style="margin:0;padding-left:20px;color:#cbd5e1;font-size:13px;line-height:1.7">
+                            ${(l.procedures || []).map(p => `<li>${_auditCrossRef(p)}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>`;
+        }).join('')}
+    `;
+}
+
+function _setProcCycle(cycleId) {
+    _procActiveCycle = cycleId;
+    const host = document.getElementById('auditContent');
+    if (host) _renderAuditProcedures(host);
 }
 
 // ─────────────────────────────────────────────────────────────────

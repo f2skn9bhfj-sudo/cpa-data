@@ -9555,5 +9555,399 @@
         }
       }
     ]
+  },
+  "procedures_assertions": {
+    "_label": "Procédures par assertion",
+    "_icon": "✅",
+    "_description": "La matrice pratique du terrain : pour chaque cycle, quelles assertions tester et avec quelles procédures concrètes. C'est ce qu'on te demande vraiment de faire en mission. Assertions selon ISA 315.",
+    "assertions_ref": [
+      {
+        "code": "E",
+        "nom": "Existence",
+        "def": "Les actifs/passifs/transactions existent réellement à la date de clôture.",
+        "color": "#3b82f6"
+      },
+      {
+        "code": "EX",
+        "nom": "Exhaustivité",
+        "def": "Tous les éléments qui devaient être enregistrés l'ont été (rien d'omis).",
+        "color": "#16a34a"
+      },
+      {
+        "code": "V",
+        "nom": "Valorisation / Exactitude",
+        "def": "Les montants sont correctement évalués et enregistrés.",
+        "color": "#f59e0b"
+      },
+      {
+        "code": "D",
+        "nom": "Droits & Obligations",
+        "def": "L'entité détient/contrôle les actifs ; les dettes sont ses obligations.",
+        "color": "#a855f7"
+      },
+      {
+        "code": "C",
+        "nom": "Cut-off (séparation périodes)",
+        "def": "Les transactions sont enregistrées dans la bonne période.",
+        "color": "#06b6d4"
+      },
+      {
+        "code": "P",
+        "nom": "Présentation & Classification",
+        "def": "Les éléments sont correctement classés, présentés et l'information est complète.",
+        "color": "#ec4899"
+      }
+    ],
+    "cycles": [
+      {
+        "id": "tresorerie",
+        "nom": "Trésorerie & titres CT",
+        "icon": "💰",
+        "color": "#16a34a",
+        "risques": [
+          "Détournement de fonds",
+          "Solde fictif",
+          "Erreurs de change",
+          "Comptes non divulgués"
+        ],
+        "lignes": [
+          {
+            "assertion": "E",
+            "risque": "Soldes bancaires fictifs ou surévalués",
+            "procedures": [
+              "Confirmation bancaire directe (toutes les banques, ISA 505)",
+              "Rapprochement bancaire à la clôture + vérifier les éléments en suspens",
+              "Vérifier les chèques en circulation et les virements en transit"
+            ]
+          },
+          {
+            "assertion": "EX",
+            "risque": "Comptes bancaires non comptabilisés",
+            "procedures": [
+              "Demander la liste exhaustive des comptes (y compris clôturés dans l'année)",
+              "Confirmation bancaire = mentionne TOUS les comptes ouverts au nom de l'entité",
+              "Revue des relevés pour détecter des comptes non listés"
+            ]
+          },
+          {
+            "assertion": "V",
+            "risque": "Erreur de conversion devises",
+            "procedures": [
+              "Recalcul de la conversion des soldes en devises au cours de clôture",
+              "Vérifier les titres CT cotés à la valeur de cours (RPC / IAS)"
+            ]
+          },
+          {
+            "assertion": "C",
+            "risque": "Cut-off des encaissements/décaissements",
+            "procedures": [
+              "Tester les dernières/premières transactions autour de la clôture",
+              "Vérifier les virements interbancaires de fin d'année (pas de double comptage)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "creances",
+        "nom": "Ventes & créances clients",
+        "icon": "🧾",
+        "color": "#3b82f6",
+        "risques": [
+          "Revenu fictif (fraude ISA 240)",
+          "Créances irrécouvrables",
+          "Cut-off des ventes",
+          "Survalorisation"
+        ],
+        "lignes": [
+          {
+            "assertion": "E",
+            "risque": "Créances fictives / clients inexistants",
+            "procedures": [
+              "Confirmation externe des créances (positive pour les gros soldes, ISA 505)",
+              "Vérifier les encaissements postérieurs (subsequent receipts)",
+              "Rapprochement avec les pièces (factures, bons de livraison signés)"
+            ]
+          },
+          {
+            "assertion": "EX",
+            "risque": "Ventes non enregistrées",
+            "procedures": [
+              "Rapprocher les bons de livraison non facturés",
+              "Revue analytique du CA (par mois, par produit, vs N-1)",
+              "Tester la séquence numérique des factures"
+            ]
+          },
+          {
+            "assertion": "V",
+            "risque": "Créances surévaluées (irrécouvrables)",
+            "procedures": [
+              "Analyse de la balance âgée (aged trial balance)",
+              "Évaluer la correction de valeur (delcredere) : taux forfaitaire + individuel",
+              "Tester les créances anciennes / litigieuses individuellement"
+            ]
+          },
+          {
+            "assertion": "C",
+            "risque": "Cut-off des ventes (revenu anticipé)",
+            "procedures": [
+              "Tester les dernières factures/livraisons avant clôture + premières après",
+              "Vérifier la date de transfert des risques (Incoterms, conditions de vente)",
+              "Significant risk fraude revenu (ISA 240 §26) → procédures renforcées"
+            ]
+          },
+          {
+            "assertion": "P",
+            "risque": "Classification / parties liées",
+            "procedures": [
+              "Séparer créances clients vs créances parties liées (présentation séparée)",
+              "Vérifier les disclosures (RPC 15 / IAS 24)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stocks",
+        "nom": "Stocks & WIP",
+        "icon": "📦",
+        "color": "#f59e0b",
+        "risques": [
+          "Existence / quantités",
+          "Obsolescence",
+          "Valorisation (LCM)",
+          "Cut-off"
+        ],
+        "lignes": [
+          {
+            "assertion": "E",
+            "risque": "Stocks inexistants / quantités gonflées",
+            "procedures": [
+              "Assistance à l'inventaire physique (ISA 501) — obligatoire si significatif",
+              "Comptages tests (test counts) dans les deux sens (floor-to-sheet, sheet-to-floor)",
+              "Vérifier les stocks chez des tiers (confirmation)"
+            ]
+          },
+          {
+            "assertion": "V",
+            "risque": "Surévaluation / obsolescence",
+            "procedures": [
+              "Test du lower of cost or market (coût vs valeur nette de réalisation)",
+              "Identifier les stocks à rotation lente / obsolètes → dépréciation",
+              "Vérifier la méthode de valorisation (FIFO/CMP ; LIFO interdit RPC/IAS)",
+              "Recalcul du coût de revient (matières + MO + frais généraux à capacité normale)"
+            ]
+          },
+          {
+            "assertion": "EX",
+            "risque": "Stocks non comptabilisés",
+            "procedures": [
+              "Rapprocher comptage physique ↔ comptabilité",
+              "Vérifier les marchandises en transit, en consignation"
+            ]
+          },
+          {
+            "assertion": "C",
+            "risque": "Cut-off achats/ventes autour de l'inventaire",
+            "procedures": [
+              "Noter les derniers numéros de réception/expédition à la date d'inventaire",
+              "Tester le cut-off des entrées et sorties de stock"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "immo",
+        "nom": "Immobilisations corporelles",
+        "icon": "🏭",
+        "color": "#a855f7",
+        "risques": [
+          "Existence",
+          "Capitalisation vs charge",
+          "Amortissement",
+          "Dépréciation"
+        ],
+        "lignes": [
+          {
+            "assertion": "E",
+            "risque": "Actifs cédés/mis au rebut non sortis",
+            "procedures": [
+              "Inspection physique des actifs significatifs",
+              "Rapprocher le registre des immobilisations ↔ comptabilité",
+              "Vérifier les cessions et mises au rebut de l'exercice"
+            ]
+          },
+          {
+            "assertion": "V",
+            "risque": "Amortissement incorrect / capitalisation erronée",
+            "procedures": [
+              "Recalcul des amortissements (méthode, durée, base)",
+              "Tester les acquisitions : capitalisation justifiée (vs charge d'entretien)",
+              "Vérifier la cohérence des durées d'utilité",
+              "Test de dépréciation si indicateurs (RPC 20 / IAS 36)"
+            ]
+          },
+          {
+            "assertion": "D",
+            "risque": "Actifs non détenus / grevés",
+            "procedures": [
+              "Vérifier les titres de propriété / actes",
+              "Identifier les actifs nantis/hypothéqués (annexe RPC 5)",
+              "Distinguer leasing financier vs exploitation (RPC 13 / IFRS 16)"
+            ]
+          },
+          {
+            "assertion": "EX",
+            "risque": "Acquisitions non enregistrées",
+            "procedures": [
+              "Revue des charges d'entretien (capitalisation omise ?)",
+              "Rapprocher les ajouts avec factures et contrats"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dettes",
+        "nom": "Achats & dettes fournisseurs",
+        "icon": "🛒",
+        "color": "#dc2626",
+        "risques": [
+          "Dettes non comptabilisées (unrecorded liabilities)",
+          "Cut-off achats",
+          "Exactitude"
+        ],
+        "lignes": [
+          {
+            "assertion": "EX",
+            "risque": "Dettes omises (risque principal du passif !)",
+            "procedures": [
+              "Recherche des passifs non enregistrés (search for unrecorded liabilities)",
+              "Examiner les paiements postérieurs à la clôture",
+              "Examiner les factures reçues après clôture mais relatives à N",
+              "Confirmation fournisseurs (surtout soldes faibles/nuls mais actifs)"
+            ]
+          },
+          {
+            "assertion": "E",
+            "risque": "Dettes fictives",
+            "procedures": [
+              "Rapprocher dettes ↔ factures et bons de réception",
+              "Confirmation externe des principaux fournisseurs"
+            ]
+          },
+          {
+            "assertion": "C",
+            "risque": "Cut-off des achats",
+            "procedures": [
+              "Tester les dernières réceptions avant clôture + premières après",
+              "Rapprocher réception ↔ enregistrement de la dette"
+            ]
+          },
+          {
+            "assertion": "V",
+            "risque": "Exactitude des montants",
+            "procedures": [
+              "Recalcul, rapprochement prix facturé vs commande",
+              "Vérifier les dettes en devises au cours de clôture"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "provisions",
+        "nom": "Provisions & litiges",
+        "icon": "⚖️",
+        "color": "#06b6d4",
+        "risques": [
+          "Sous-provisionnement",
+          "Sur-provisionnement (lissage)",
+          "Estimation subjective"
+        ],
+        "lignes": [
+          {
+            "assertion": "EX",
+            "risque": "Provisions/litiges omis",
+            "procedures": [
+              "Lettre à l'avocat de l'entité (litiges en cours)",
+              "Lecture des PV du CA / AG",
+              "Demandes à la direction sur les obligations potentielles"
+            ]
+          },
+          {
+            "assertion": "V",
+            "risque": "Estimation incorrecte (ISA 540)",
+            "procedures": [
+              "Tester les 3 dimensions : méthode, hypothèses, données (ISA 540 R2019)",
+              "Évaluer la meilleure estimation (vs minimum de fourchette RPC 23)",
+              "Vérifier l'actualisation si effet temps significatif",
+              "Détecter le biais de la direction (lissage de résultat)"
+            ]
+          },
+          {
+            "assertion": "E",
+            "risque": "Provisions sans obligation réelle",
+            "procedures": [
+              "Vérifier les 3 conditions : obligation actuelle + sortie probable + estimation fiable",
+              "Distinguer provision (bilan) vs passif éventuel (annexe)"
+            ]
+          },
+          {
+            "assertion": "P",
+            "risque": "Présentation des passifs éventuels",
+            "procedures": [
+              "Vérifier les disclosures des engagements hors bilan (RPC 5)",
+              "Vérifier la classification CT/LT des provisions"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fp",
+        "nom": "Capitaux propres",
+        "icon": "🏛️",
+        "color": "#ec4899",
+        "risques": [
+          "Mouvements non autorisés",
+          "Réserves légales",
+          "Actions propres",
+          "Dividendes"
+        ],
+        "lignes": [
+          {
+            "assertion": "E",
+            "risque": "Mouvements de capital non réels",
+            "procedures": [
+              "Rapprocher avec les PV de l'AG et du CA",
+              "Vérifier les inscriptions au registre du commerce",
+              "Vérifier l'acte authentique pour les augmentations de capital"
+            ]
+          },
+          {
+            "assertion": "V",
+            "risque": "Réserves légales / dividendes incorrects",
+            "procedures": [
+              "Recalcul de la réserve légale (CO 671 : 5% → 20% du capital)",
+              "Vérifier que les dividendes ne dépassent pas le bénéfice distribuable",
+              "Vérifier l'agio et son affectation"
+            ]
+          },
+          {
+            "assertion": "P",
+            "risque": "Présentation des actions propres",
+            "procedures": [
+              "Vérifier les actions propres déduites des FP (pas à l'actif)",
+              "Vérifier le tableau de variation des fonds propres",
+              "Vérifier la limite de 10% (CO 659) pour les actions propres"
+            ]
+          },
+          {
+            "assertion": "C",
+            "risque": "Cut-off des dividendes",
+            "procedures": [
+              "Dividende = dette à la date de la décision de l'AG (pas à la clôture)",
+              "Vérifier le traitement de l'impôt anticipé (35%)"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }
