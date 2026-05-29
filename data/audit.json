@@ -9949,5 +9949,245 @@
         ]
       }
     ]
+  },
+  "independance": {
+    "_label": "Indépendance & Éthique",
+    "_icon": "⚖️",
+    "_description": "L'ADN de l'auditeur : sans indépendance, l'opinion n'a aucune valeur. Code IESBA, 5 principes, 5 menaces × sauvegardes, rotation, honoraires, incompatibilités suisses (CO 728), NOCLAR. Sujet récurrent et piégeux à l'examen.",
+    "blocs": [
+      {
+        "id": "principes",
+        "titre": "5 principes fondamentaux (Code IESBA)",
+        "icon": "🧭",
+        "color": "#3b82f6",
+        "intro": "Code IESBA Section 110. Mnémonique : I-O-C-C-P.",
+        "table": {
+          "headers": [
+            "Principe",
+            "Définition",
+            "Exemple concret"
+          ],
+          "rows": [
+            [
+              "1. Intégrité",
+              "Être honnête et droit dans toutes les relations professionnelles",
+              "Ne pas signer un rapport qu'on sait erroné, même sous pression"
+            ],
+            [
+              "2. Objectivité",
+              "Ne pas laisser biais, conflit d'intérêt ou influence indue compromettre le jugement",
+              "Refuser cadeaux/hospitalités significatifs (seuil ~100 CHF)"
+            ],
+            [
+              "3. Compétence & diligence",
+              "Maintenir savoir et compétences ; agir avec soin selon les normes",
+              "120h CPD / 3 ans (EXPERTsuisse), min 20h/an"
+            ],
+            [
+              "4. Confidentialité",
+              "Respecter le secret des infos ; ne pas les utiliser à profit personnel",
+              "Information client = propriété client ; survit à la fin de mission"
+            ],
+            [
+              "5. Comportement professionnel",
+              "Respecter lois et règlements ; éviter tout discrédit de la profession",
+              "Pas de marketing trompeur, pas de dénigrement de confrères"
+            ]
+          ]
+        },
+        "warning": "Violation = sanction disciplinaire ASR + EXPERTsuisse + potentiellement pénale (CP 320 secret de fonction, CP 162 secret commercial)."
+      },
+      {
+        "id": "menaces",
+        "titre": "5 menaces à l'indépendance (+ sauvegardes)",
+        "icon": "⚠️",
+        "color": "#dc2626",
+        "intro": "Code IESBA 120.6. Mnémonique : SARFI (Self-interest, Advocacy, self-Review, Familiarity, Intimidation).",
+        "table": {
+          "headers": [
+            "Menace",
+            "Description",
+            "Exemple",
+            "Sauvegarde type"
+          ],
+          "rows": [
+            [
+              "1. Intérêt personnel (Self-interest)",
+              "Bénéfice financier/autre influençant le jugement",
+              "Honoraires significatifs d'un client unique",
+              "Monitoring honoraires, diversification, rotation"
+            ],
+            [
+              "2. Auto-révision (Self-review)",
+              "Évaluer ses propres travaux antérieurs",
+              "Avoir aidé à préparer les EF qu'on audite",
+              "Séparation des équipes Advisory/Audit"
+            ],
+            [
+              "3. Défense (Advocacy)",
+              "Promouvoir la position du client",
+              "Représenter le client dans un litige",
+              "Refuser le rôle d'avocat, séparer les rôles"
+            ],
+            [
+              "4. Familiarité (Familiarity)",
+              "Liens trop proches avec l'entité/personnes",
+              "15 ans sur le même mandat sans rotation",
+              "Rotation du partner, changement d'équipe"
+            ],
+            [
+              "5. Intimidation (Intimidation)",
+              "Pression du client ou de tiers",
+              "Menace de remplacement si opinion défavorable",
+              "Escalade au Audit Quality leader, support cabinet"
+            ]
+          ]
+        },
+        "liste": [
+          "Démarche IESBA en 3 étapes : 1) Identifier la menace → 2) Évaluer sa significativité → 3) Appliquer des sauvegardes",
+          "Si aucune sauvegarde n'est suffisante → DÉCLINER ou RÉSILIER la mission"
+        ]
+      },
+      {
+        "id": "dimensions",
+        "titre": "Indépendance : esprit + apparence",
+        "icon": "👁️",
+        "color": "#a855f7",
+        "intro": "IESBA Section 400 — 2 dimensions cumulatives.",
+        "table": {
+          "headers": [
+            "Dimension",
+            "Définition"
+          ],
+          "rows": [
+            [
+              "Independence of mind (d'esprit)",
+              "Disposition mentale permettant un jugement professionnel non compromis"
+            ],
+            [
+              "Independence in appearance (apparente)",
+              "Éviter les situations qu'un tiers raisonnable jugerait compromettantes"
+            ]
+          ]
+        },
+        "warning": "Les DEUX sont obligatoires. Une situation peut être objectivement neutre mais APPARAÎTRE compromettante = problème. L'indépendance se teste au niveau du cabinet ET du réseau (EY Global)."
+      },
+      {
+        "id": "co728",
+        "titre": "Incompatibilités suisses (CO 728)",
+        "icon": "🇨🇭",
+        "color": "#16a34a",
+        "intro": "CO 728 al.2 — incompatibilités absolues en contrôle ordinaire.",
+        "liste": [
+          "Lien direct avec l'entité : organe, employé, ancien organe des 2 dernières années",
+          "Participation directe dans le capital ou créance/dette significative",
+          "Relations étroites avec organes/employés influents (parents, conjoint)",
+          "Coopération à la tenue des comptes ou prestation compromettant l'indépendance",
+          "Acceptation d'un mandat subordonnant l'indépendance économique",
+          "Honoraires d'un seul mandant dépassant le taux limite (LSR)"
+        ],
+        "warning": "Contrôle RESTREINT (CO 730b) : indépendance ALLÉGÉE — la tenue de la comptabilité et le conseil fiscal sont possibles (interdits en contrôle ordinaire)."
+      },
+      {
+        "id": "rotation",
+        "titre": "Rotation & cooling-off",
+        "icon": "🔄",
+        "color": "#f59e0b",
+        "intro": "IESBA + CO 730a pour les entités d'intérêt public (EIP). Mnémonique : 7-5-3.",
+        "table": {
+          "headers": [
+            "Position",
+            "Rotation",
+            "Cooling-off"
+          ],
+          "rows": [
+            [
+              "Lead engagement partner (EIP)",
+              "7 ans",
+              "5 ans"
+            ],
+            [
+              "EQR partner (EIP)",
+              "7 ans",
+              "3 ans"
+            ],
+            [
+              "Autres key audit partners",
+              "7 ans",
+              "2 ans"
+            ],
+            [
+              "Non EIP",
+              "Pas d'obligation de rotation",
+              "—"
+            ]
+          ]
+        },
+        "warning": "Rotation = changement du PARTNER signataire, PAS du cabinet (le cabinet peut rester). Règle absolue pour les EIP : aucune sauvegarde ne compense un dépassement."
+      },
+      {
+        "id": "honoraires",
+        "titre": "Honoraires (NAS fees)",
+        "icon": "💵",
+        "color": "#06b6d4",
+        "intro": "IESBA R410 — plafonds pour les services non-audit (NAS). Mnémonique : 15-30-70.",
+        "table": {
+          "headers": [
+            "Niveau honoraires",
+            "Risque / Action"
+          ],
+          "rows": [
+            [
+              "< 15 %",
+              "Faible risque, pas de menace particulière"
+            ],
+            [
+              "15-30 %",
+              "Sauvegardes nécessaires (revue qualité indépendante)"
+            ],
+            [
+              "> 30 % (EIP)",
+              "Disclosed à la gouvernance + sauvegardes renforcées"
+            ],
+            [
+              "> 70 % cumulé sur 3 ans (EIP)",
+              "Indépendance INCOMPATIBLE (R410.18)"
+            ]
+          ]
+        },
+        "warning": "Les honoraires se testent au niveau du cabinet ET du réseau mondial (EY Global), pas seulement EY Suisse."
+      },
+      {
+        "id": "noclar",
+        "titre": "NOCLAR — devoir de signalement",
+        "icon": "🚨",
+        "color": "#ec4899",
+        "intro": "Non-Compliance with Laws And Regulations. Régime éthique IESBA (Section 360), introduit juillet 2017, transposé EXPERTsuisse 2018.",
+        "liste": [
+          "Innovation majeure : DÉROGATION au secret professionnel pour signaler des non-conformités graves",
+          "Champ : fraude, corruption, blanchiment, risques santé/sécurité publiques, lois environnementales graves, évasion fiscale agressive",
+          "Démarche en 4 étapes : 1) Comprendre la nature/impact → 2) Discuter avec direction + gouvernance → 3) Évaluer la réaction → 4) Reporting externe si réaction insuffisante",
+          "Bases légales suisses : Art. 22 LSR (signalement ASR), Art. 9 LBA (MROS), CP 305ter (vigilance), CO 728c (avis aux organes)",
+          "Seuil de gravité (substantial harm) : les non-conformités MINEURES = communication interne uniquement"
+        ],
+        "warning": "Chaque étape doit être DOCUMENTÉE dans le dossier d'audit (discussions, réactions, consultations Ethics Partner, décision finale)."
+      },
+      {
+        "id": "pieges",
+        "titre": "TOP pièges examen — Éthique",
+        "icon": "🎯",
+        "color": "#fbbf24",
+        "intro": "Les erreurs les plus fréquentes sur ce thème.",
+        "liste": [
+          "Confondre indépendance d'esprit et apparente — les DEUX sont obligatoires",
+          "Penser que la rotation = changement de cabinet — non, c'est le PARTNER (7 ans + cooling-off)",
+          "Croire que NOCLAR = signaler TOUT — non, il y a un seuil de gravité (substantial harm)",
+          "Présumer que la confidentialité est absolue — non, plusieurs dérogations (LSR 22, LBA 9, NOCLAR, ordre du juge)",
+          "Oublier que l'indépendance se teste au niveau du RÉSEAU mondial (EY Global), pas que local",
+          "Penser qu'une menace peut toujours être gérée par des sauvegardes — la rotation EIP est ABSOLUE",
+          "Confondre contrôle ordinaire (indépendance stricte) et restreint (allégée, CO 730b)"
+        ]
+      }
+    ]
   }
 }

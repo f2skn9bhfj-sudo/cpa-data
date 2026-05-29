@@ -9,6 +9,7 @@ const AUDIT_TABS = [
     { id: 'cas',          label: 'Cas pratiques', icon: '📝', desc: 'Études de cas examen EXPERTsuisse — énoncé + solution pas-à-pas' },
     { id: 'arbres',       label: 'Arbres décision', icon: '🌳', desc: 'Logigrammes interactifs : opinion, going concern, leasing, révision, consolidation' },
     { id: 'procedures',   label: 'Procédures',    icon: '✅', desc: 'Matrice assertions × procédures par cycle (terrain)' },
+    { id: 'independance', label: 'Indépendance',  icon: '⚖️', desc: 'Éthique IESBA, 5 menaces, rotation, honoraires, NOCLAR' },
     { id: 'canvas',       label: 'Canvas Perso',  icon: '🏢', desc: 'Tes propres engagements d\'audit' },
     { id: 'mission',      label: 'Mission Lab',   icon: '🎬', desc: 'Mission immersive end-to-end chez EY' },
     { id: 'seuils',       label: 'Seuils & Exos', icon: '🎯', desc: 'Comprendre tous les seuils + exercices pas-à-pas' },
@@ -157,9 +158,85 @@ function _renderAuditSubContent(subTab) {
         case 'cas':         _renderAuditCas(host);        break;
         case 'arbres':      _renderAuditArbres(host);     break;
         case 'procedures':  _renderAuditProcedures(host); break;
+        case 'independance': _renderAuditBlocs(host, 'independance'); break;
         case 'quiz':        _renderAuditQuiz(host);       break;
         default:            _renderAuditNas(host);
     }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// RENDERER GÉNÉRIQUE "BLOCS" — réutilisé par Indépendance, Fraude, Going concern, Actualités
+// Chaque bloc : {id, titre, icon, color, intro, table?, liste?, warning?, example?}
+// ─────────────────────────────────────────────────────────────────
+function _renderAuditBlocs(host, dataKey) {
+    const d = _auditData[dataKey] || {};
+    const blocs = d.blocs || [];
+
+    host.innerHTML = `
+        <div class="ref-section-title">${d._icon || '📄'} ${escapeHtml(d._label || '')}</div>
+        <p style="color:#94a3b8;font-size:13px;line-height:1.6;margin-bottom:18px">
+            ${escapeHtml(d._description || '')}
+        </p>
+        <div>${blocs.map((b, idx) => _renderBloc(idx, b)).join('')}</div>
+    `;
+}
+
+function _renderBloc(idx, b) {
+    const color = b.color || AUDIT_ACCENT;
+    const id = `bloc-${idx}`;
+    let inner = '';
+    if (b.intro) inner += `<div style="font-size:13px;color:#cbd5e1;line-height:1.7;margin-bottom:12px">${_auditCrossRef(b.intro)}</div>`;
+    if (b.table) inner += _renderBlocTable(b.table, color);
+    if (b.liste && b.liste.length) {
+        inner += `<ul style="margin:10px 0 0 0;padding-left:20px;color:#cbd5e1;font-size:13px;line-height:1.8">
+            ${b.liste.map(li => `<li>${_auditCrossRef(li)}</li>`).join('')}</ul>`;
+    }
+    if (b.example) {
+        inner += `<div style="margin-top:12px;padding:11px 14px;background:#0a1a0f;border-left:3px solid #16a34a;border-radius:5px">
+            <div style="font-size:11px;font-weight:700;color:#4ade80;margin-bottom:5px">📌 EXEMPLE</div>
+            <div style="font-size:12px;color:#bbf7d0;line-height:1.6;white-space:pre-wrap">${_auditCrossRef(b.example)}</div></div>`;
+    }
+    if (b.warning) {
+        inner += `<div style="margin-top:12px;padding:11px 14px;background:#1e1b0a;border-left:3px solid #fbbf24;border-radius:5px">
+            <div style="font-size:11px;font-weight:700;color:#fbbf24;margin-bottom:5px">⚠️ À RETENIR</div>
+            <div style="font-size:12px;color:#fde68a;line-height:1.6">${_auditCrossRef(b.warning)}</div></div>`;
+    }
+    return `
+        <div class="card" style="margin-bottom:14px;border-left:3px solid ${color}">
+            <div onclick="_toggleBloc('${id}')"
+                 style="padding:13px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+                        transition:background 0.15s" onmouseover="this.style.background='#1e293b'" onmouseout="this.style.background=''">
+                <span style="font-size:15px;font-weight:800;color:${color}">${b.icon || ''} ${escapeHtml(b.titre)}</span>
+                <span id="${id}-arrow" style="color:${color};font-size:14px">▾</span>
+            </div>
+            <div id="${id}" style="display:block;padding:0 18px 18px 18px">${inner}</div>
+        </div>`;
+}
+
+function _renderBlocTable(t, color) {
+    return `
+        <div style="overflow-x:auto;margin:8px 0">
+            <table style="width:100%;border-collapse:collapse;font-size:12px">
+                <thead>
+                    <tr>${(t.headers || []).map(h => `<th style="text-align:left;padding:8px 10px;background:${color}22;color:${color};font-weight:700;border-bottom:2px solid ${color};white-space:nowrap">${escapeHtml(h)}</th>`).join('')}</tr>
+                </thead>
+                <tbody>
+                    ${(t.rows || []).map((row, ri) => `
+                        <tr style="background:${ri % 2 ? '#0d1424' : '#0a0f1c'}">
+                            ${row.map((cell, ci) => `<td style="padding:8px 10px;color:${ci === 0 ? '#e2e8f0' : '#cbd5e1'};font-weight:${ci === 0 ? '600' : '400'};line-height:1.5;border-bottom:1px solid #1e293b;vertical-align:top">${_auditCrossRef(cell)}</td>`).join('')}
+                        </tr>`).join('')}
+                </tbody>
+            </table>
+        </div>`;
+}
+
+function _toggleBloc(id) {
+    const el = document.getElementById(id);
+    const arrow = document.getElementById(id + '-arrow');
+    if (!el) return;
+    const show = el.style.display === 'none';
+    el.style.display = show ? 'block' : 'none';
+    if (arrow) arrow.textContent = show ? '▾' : '▸';
 }
 
 // ─────────────────────────────────────────────────────────────────
