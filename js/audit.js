@@ -11,6 +11,7 @@ const AUDIT_TABS = [
     { id: 'procedures',   label: 'Procédures',    icon: '✅', desc: 'Matrice assertions × procédures par cycle (terrain)' },
     { id: 'independance', label: 'Indépendance',  icon: '⚖️', desc: 'Éthique IESBA, 5 menaces, rotation, honoraires, NOCLAR' },
     { id: 'modeles',      label: 'Modèles',       icon: '📄', desc: 'Templates : lettres, rapports (UQAD), paragraphes, avis au juge' },
+    { id: 'examens',      label: 'Examens blancs', icon: '⏱️', desc: 'Mocks chronométrés avec score + correction' },
     { id: 'canvas',       label: 'Canvas Perso',  icon: '🏢', desc: 'Tes propres engagements d\'audit' },
     { id: 'mission',      label: 'Mission Lab',   icon: '🎬', desc: 'Mission immersive end-to-end chez EY' },
     { id: 'seuils',       label: 'Seuils & Exos', icon: '🎯', desc: 'Comprendre tous les seuils + exercices pas-à-pas' },
@@ -161,9 +162,188 @@ function _renderAuditSubContent(subTab) {
         case 'procedures':  _renderAuditProcedures(host); break;
         case 'independance': _renderAuditBlocs(host, 'independance'); break;
         case 'modeles':     _renderAuditModeles(host);    break;
+        case 'examens':     _renderAuditExamens(host);    break;
         case 'quiz':        _renderAuditQuiz(host);       break;
         default:            _renderAuditNas(host);
     }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// EXAMENS BLANCS — Mock chronométré avec score + correction
+// ─────────────────────────────────────────────────────────────────
+let _examState = null;   // {examId, answers:{}, remaining, timerId, submitted}
+
+function _renderAuditExamens(host) {
+    // Nettoyer un timer éventuel si on revient à la liste
+    if (_examState && _examState.timerId) { clearInterval(_examState.timerId); _examState.timerId = null; }
+    _examState = null;
+
+    const ex = _auditData.examens_blancs || {};
+    const exams = ex.exams || [];
+
+    host.innerHTML = `
+        <div class="ref-section-title">${ex._icon || '⏱️'} ${escapeHtml(ex._label || 'Examens blancs')}</div>
+        <p style="color:#94a3b8;font-size:13px;line-height:1.6;margin-bottom:18px">
+            ${escapeHtml(ex._description || '')}
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px">
+            ${exams.map(e => `
+                <div style="padding:18px;border-radius:10px;background:#0d1424;border:1px solid #1e293b;border-left:4px solid ${AUDIT_ACCENT}">
+                    <div style="font-size:28px;margin-bottom:8px">⏱️</div>
+                    <div style="font-size:15px;font-weight:800;color:${AUDIT_LIGHT};line-height:1.4;margin-bottom:8px">${escapeHtml(e.titre)}</div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;font-size:11px">
+                        <span style="background:#1e1b4b;color:#a78bfa;padding:2px 9px;border-radius:10px">📝 ${e.questions.length} QCM</span>
+                        <span style="background:#1e1b4b;color:#a78bfa;padding:2px 9px;border-radius:10px">⏱️ ${e.duree_min} min</span>
+                    </div>
+                    <button onclick="_startExam('${e.id}')"
+                            style="width:100%;padding:11px;border-radius:7px;cursor:pointer;background:${AUDIT_ACCENT};
+                                   border:none;color:#fff;font-size:13px;font-weight:700">🚀 Démarrer l'examen</button>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+function _startExam(examId) {
+    const exams = (_auditData.examens_blancs || {}).exams || [];
+    const exam = exams.find(e => e.id === examId);
+    if (!exam) return;
+    _examState = { examId, answers: {}, remaining: exam.duree_min * 60, timerId: null, submitted: false };
+    _examState.timerId = setInterval(_examTick, 1000);
+    _renderExamRunner(exam);
+}
+
+function _examTick() {
+    if (!_examState || _examState.submitted) return;
+    _examState.remaining--;
+    const el = document.getElementById('examTimer');
+    if (el) {
+        const m = Math.floor(_examState.remaining / 60);
+        const s = _examState.remaining % 60;
+        el.textContent = `${m}:${String(s).padStart(2, '0')}`;
+        if (_examState.remaining <= 60) el.style.color = '#dc2626';
+    }
+    if (_examState.remaining <= 0) { _submitExam(true); }
+}
+
+function _examPick(qi, oi) {
+    if (!_examState || _examState.submitted) return;
+    _examState.answers[qi] = oi;
+    // Mettre à jour visuellement les boutons de cette question
+    const exams = (_auditData.examens_blancs || {}).exams || [];
+    const exam = exams.find(e => e.id === _examState.examId);
+    document.querySelectorAll(`[data-exq="${qi}"]`).forEach(btn => {
+        const isSel = parseInt(btn.dataset.exo) === oi;
+        btn.style.background = isSel ? AUDIT_ACCENT : '#1e293b';
+        btn.style.borderColor = isSel ? AUDIT_ACCENT : '#334155';
+        btn.style.color = isSel ? '#fff' : '#e2e8f0';
+    });
+    // Compteur de réponses
+    const cnt = document.getElementById('examAnsweredCount');
+    if (cnt && exam) cnt.textContent = `${Object.keys(_examState.answers).length}/${exam.questions.length} répondues`;
+}
+
+function _renderExamRunner(exam) {
+    const host = document.getElementById('auditContent');
+    if (!host) return;
+    const m = Math.floor(_examState.remaining / 60);
+    const s = _examState.remaining % 60;
+
+    host.innerHTML = `
+        <div style="position:sticky;top:0;z-index:10;background:#0a0f1c;padding:12px 14px;border-radius:10px;
+                    border:1px solid ${AUDIT_ACCENT};margin-bottom:18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+            <div style="font-size:14px;font-weight:800;color:${AUDIT_LIGHT}">${escapeHtml(exam.titre)}</div>
+            <div style="display:flex;gap:14px;align-items:center">
+                <span id="examAnsweredCount" style="font-size:12px;color:#94a3b8">0/${exam.questions.length} répondues</span>
+                <span style="font-size:18px;font-weight:800;color:#4ade80;font-variant-numeric:tabular-nums">⏱️ <span id="examTimer">${m}:${String(s).padStart(2,'0')}</span></span>
+            </div>
+        </div>
+        <div>
+            ${exam.questions.map((q, qi) => `
+                <div style="margin-bottom:16px;padding:14px 16px;background:#0d1424;border-radius:8px;border:1px solid #1e293b">
+                    <div style="font-size:13px;font-weight:700;color:#e2e8f0;margin-bottom:12px;line-height:1.5">
+                        <span style="color:${AUDIT_ACCENT}">Q${qi+1}.</span> ${escapeHtml(q.q)}
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:8px">
+                        ${q.options.map((o, oi) => `
+                            <button data-exq="${qi}" data-exo="${oi}" onclick="_examPick(${qi}, ${oi})"
+                                    style="text-align:left;padding:10px 14px;border-radius:7px;cursor:pointer;
+                                           background:#1e293b;border:1px solid #334155;color:#e2e8f0;font-size:13px;
+                                           transition:all 0.12s">
+                                ${String.fromCharCode(65+oi)}. ${escapeHtml(o)}
+                            </button>`).join('')}
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+        <div style="display:flex;gap:10px;margin-top:8px">
+            <button onclick="_submitExam(false)"
+                    style="flex:1;padding:13px;border-radius:8px;cursor:pointer;background:linear-gradient(135deg,#16a34a,#15803d);
+                           border:none;color:#fff;font-size:14px;font-weight:800">✓ Terminer & voir le score</button>
+            <button onclick="_renderAuditExamens(document.getElementById('auditContent'))"
+                    style="padding:13px 18px;border-radius:8px;cursor:pointer;background:#1e293b;border:1px solid #334155;
+                           color:#94a3b8;font-size:13px;font-weight:600">Abandonner</button>
+        </div>
+    `;
+}
+
+function _submitExam(timedOut) {
+    if (!_examState) return;
+    _examState.submitted = true;
+    if (_examState.timerId) { clearInterval(_examState.timerId); _examState.timerId = null; }
+
+    const exams = (_auditData.examens_blancs || {}).exams || [];
+    const exam = exams.find(e => e.id === _examState.examId);
+    if (!exam) return;
+
+    let score = 0;
+    exam.questions.forEach((q, qi) => { if (_examState.answers[qi] === q.correct) score++; });
+    const total = exam.questions.length;
+    const pct = Math.round(score / total * 100);
+    const scoreColor = pct >= 80 ? '#16a34a' : (pct >= 60 ? '#f59e0b' : '#dc2626');
+    const verdict = pct >= 80 ? '🎉 Excellent !' : (pct >= 60 ? '👍 Correct, continue' : '📚 À retravailler');
+
+    const host = document.getElementById('auditContent');
+    if (!host) return;
+
+    host.innerHTML = `
+        ${timedOut ? `<div style="margin-bottom:14px;padding:10px 14px;background:#3f1612;border-left:3px solid #dc2626;border-radius:6px;color:#fca5a5;font-size:13px">⏱️ Temps écoulé — examen soumis automatiquement.</div>` : ''}
+        <div style="text-align:center;padding:24px;border-radius:12px;background:#0d1424;border:2px solid ${scoreColor};margin-bottom:20px">
+            <div style="font-size:42px;font-weight:900;color:${scoreColor}">${score}/${total}</div>
+            <div style="font-size:18px;font-weight:700;color:${scoreColor};margin:4px 0">${pct}% — ${verdict}</div>
+        </div>
+        <div style="font-size:13px;font-weight:700;color:${AUDIT_ACCENT};margin-bottom:12px">📋 CORRECTION DÉTAILLÉE</div>
+        ${exam.questions.map((q, qi) => {
+            const userAns = _examState.answers[qi];
+            const isCorrect = userAns === q.correct;
+            const answered = userAns !== undefined;
+            return `
+                <div style="margin-bottom:14px;padding:14px 16px;background:#0d1424;border-radius:8px;
+                            border-left:3px solid ${isCorrect ? '#16a34a' : '#dc2626'}">
+                    <div style="font-size:13px;font-weight:700;color:#e2e8f0;margin-bottom:10px;line-height:1.5">
+                        ${isCorrect ? '✅' : '❌'} <span style="color:${AUDIT_ACCENT}">Q${qi+1}.</span> ${escapeHtml(q.q)}
+                    </div>
+                    ${q.options.map((o, oi) => {
+                        let bg = '#0a0f1c', bd = '#1e293b', cl = '#94a3b8', tag = '';
+                        if (oi === q.correct) { bg = '#0a1a0f'; bd = '#16a34a'; cl = '#bbf7d0'; tag = ' ✓ Bonne réponse'; }
+                        else if (oi === userAns) { bg = '#3f1612'; bd = '#dc2626'; cl = '#fca5a5'; tag = ' ✗ Ta réponse'; }
+                        return `<div style="padding:7px 12px;margin-bottom:5px;background:${bg};border:1px solid ${bd};border-radius:5px;font-size:12px;color:${cl}">
+                                    ${String.fromCharCode(65+oi)}. ${escapeHtml(o)}<span style="font-weight:700">${tag}</span></div>`;
+                    }).join('')}
+                    ${!answered ? `<div style="font-size:11px;color:#f59e0b;margin:6px 0">⚠️ Non répondue</div>` : ''}
+                    <div style="margin-top:8px;padding:9px 12px;background:#0a0f1c;border-left:3px solid #3b82f6;border-radius:5px;font-size:12px;color:#cbd5e1;line-height:1.6">
+                        💡 ${_auditCrossRef(q.explication)}
+                    </div>
+                </div>`;
+        }).join('')}
+        <div style="display:flex;gap:10px;margin-top:8px">
+            <button onclick="_startExam('${exam.id}')"
+                    style="flex:1;padding:12px;border-radius:8px;cursor:pointer;background:${AUDIT_ACCENT};border:none;color:#fff;font-size:13px;font-weight:700">🔄 Refaire cet examen</button>
+            <button onclick="_renderAuditExamens(document.getElementById('auditContent'))"
+                    style="padding:12px 18px;border-radius:8px;cursor:pointer;background:#1e293b;border:1px solid #334155;color:#94a3b8;font-size:13px;font-weight:600">← Tous les examens</button>
+        </div>
+    `;
+    host.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // ─────────────────────────────────────────────────────────────────

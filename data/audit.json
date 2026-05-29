@@ -10296,5 +10296,290 @@
         ]
       }
     ]
+  },
+  "examens_blancs": {
+    "_label": "Examens blancs",
+    "_icon": "⏱️",
+    "_description": "Mocks chronométrés façon examen. Réponds aux QCM dans le temps imparti, puis obtiens ton score + la correction détaillée de chaque question. Refais-les jusqu'à 100%.",
+    "exams": [
+      {
+        "id": "mock1",
+        "titre": "Mock 1 — Fondamentaux de l'audit",
+        "duree_min": 15,
+        "questions": [
+          {
+            "q": "Quel niveau d'assurance fournit un audit (contrôle ordinaire) ?",
+            "options": [
+              "Assurance absolue",
+              "Assurance raisonnable",
+              "Assurance limitée",
+              "Aucune assurance"
+            ],
+            "correct": 1,
+            "explication": "Un audit fournit une assurance RAISONNABLE (élevée mais pas absolue). L'assurance limitée correspond au contrôle restreint (review)."
+          },
+          {
+            "q": "Formule du risque d'audit ?",
+            "options": [
+              "RI + RC + RND",
+              "RI × RC × RND",
+              "RI − RC × RND",
+              "RI × RC / RND"
+            ],
+            "correct": 1,
+            "explication": "Risque d'audit = Risque Inhérent × Risque de Contrôle × Risque de Non-Détection. Le RND est le seul que l'auditeur contrôle directement."
+          },
+          {
+            "q": "Seuils du contrôle ordinaire (CO 727) ?",
+            "options": [
+              "10M / 20M / 50 EPT",
+              "20M / 40M / 250 EPT",
+              "5M / 10M / 50 EPT",
+              "20M / 40M / 200 EPT"
+            ],
+            "correct": 1,
+            "explication": "Total bilan 20M / CA 40M / 250 EPT (2 critères sur 3 dépassés pendant 2 exercices consécutifs)."
+          },
+          {
+            "q": "Quelle norme traite de la matérialité ?",
+            "options": [
+              "ISA 315",
+              "ISA 320",
+              "ISA 330",
+              "ISA 200"
+            ],
+            "correct": 1,
+            "explication": "ISA 320 — Caractère significatif. ISA 315 = évaluation des risques, ISA 330 = réponses aux risques."
+          },
+          {
+            "q": "Performance materiality typique (% de l'overall) ?",
+            "options": [
+              "10-25%",
+              "50-75%",
+              "90-100%",
+              "5%"
+            ],
+            "correct": 1,
+            "explication": "La matérialité de performance est un buffer de 50-75% de l'overall pour couvrir le cumul d'anomalies non détectées."
+          },
+          {
+            "q": "L'opting-out est possible si :",
+            "options": [
+              "< 10 EPT + unanimité actionnaires",
+              "< 250 EPT",
+              "société non cotée",
+              "< 50 EPT + majorité"
+            ],
+            "correct": 0,
+            "explication": "Opting-out (CO 727a al.2) = renonciation totale : ≤ 10 EPT ET accord unanime de TOUS les actionnaires."
+          },
+          {
+            "q": "Combien de rapports en contrôle ordinaire ?",
+            "options": [
+              "1 (à l'AG)",
+              "2 (AG + CA)",
+              "3",
+              "Aucun"
+            ],
+            "correct": 1,
+            "explication": "Contrôle ordinaire = 2 rapports : à l'AG (CO 728b, court/public) + au CA (CO 728a, détaillé/confidentiel). Le restreint n'en a qu'un."
+          },
+          {
+            "q": "La présomption de fraude sur le revenu provient de :",
+            "options": [
+              "ISA 240 §26",
+              "ISA 315",
+              "ISA 500",
+              "ISA 330 §21"
+            ],
+            "correct": 0,
+            "explication": "ISA 240 §26 : risque de fraude présumé sur la reconnaissance du revenu (à réfuter par écrit). §32 = management override."
+          },
+          {
+            "q": "Délai de constitution du dossier final (wrap-up) ?",
+            "options": [
+              "30 jours",
+              "60 jours",
+              "90 jours",
+              "6 mois"
+            ],
+            "correct": 1,
+            "explication": "ISA 230 : dossier final constitué dans les 60 jours suivant la date du rapport. Conservation 10 ans en Suisse."
+          },
+          {
+            "q": "L'EQR (revue qualité) est obligatoire pour :",
+            "options": [
+              "Toutes les missions",
+              "Les EIP/cotées + missions à risque élevé",
+              "Le contrôle restreint",
+              "Jamais"
+            ],
+            "correct": 1,
+            "explication": "ISA 220 R2022 / ISQM 2 : EQR obligatoire pour EIP, sociétés cotées et missions à risque élevé. Cooling-off 2 ans."
+          },
+          {
+            "q": "Quelle méthode de valorisation des stocks est INTERDITE en RPC/IAS 2 ?",
+            "options": [
+              "FIFO",
+              "Coût moyen pondéré",
+              "LIFO",
+              "Coût standard"
+            ],
+            "correct": 2,
+            "explication": "LIFO est interdit en RPC 17 et IAS 2 (autorisé seulement en CO pur). FIFO et CMP sont permis."
+          },
+          {
+            "q": "La rotation du lead partner (EIP) est de :",
+            "options": [
+              "5 ans",
+              "7 ans",
+              "10 ans",
+              "Pas de rotation"
+            ],
+            "correct": 1,
+            "explication": "Rotation tous les 7 ans + cooling-off de 5 ans (lead partner EIP). C'est le PARTNER qui tourne, pas le cabinet."
+          }
+        ]
+      },
+      {
+        "id": "mock2",
+        "titre": "Mock 2 — Opinion, going concern & éthique",
+        "duree_min": 15,
+        "questions": [
+          {
+            "q": "Anomalie significative ET généralisée (pervasive) → quelle opinion ?",
+            "options": [
+              "Qualified (réserve)",
+              "Adverse (défavorable)",
+              "Disclaimer",
+              "Clean"
+            ],
+            "correct": 1,
+            "explication": "Anomalie pervasive = Adverse. Anomalie isolée = Qualified. Pour une limitation pervasive = Disclaimer."
+          },
+          {
+            "q": "Limitation de l'étendue significative ET généralisée → ?",
+            "options": [
+              "Qualified",
+              "Adverse",
+              "Disclaimer (impossibilité)",
+              "Clean + EOM"
+            ],
+            "correct": 2,
+            "explication": "Limitation pervasive = Disclaimer (impossibilité d'exprimer une opinion). Limitation isolée = Qualified."
+          },
+          {
+            "q": "Going concern : incertitude significative + disclosure ADÉQUATE → ?",
+            "options": [
+              "Qualified",
+              "Adverse",
+              "Clean + paragraphe Material Uncertainty",
+              "Disclaimer"
+            ],
+            "correct": 2,
+            "explication": "PIÈGE CLASSIQUE : opinion CLEAN (non modifiée) + paragraphe 'Incertitude significative liée à la continuité'. Pas qualified !"
+          },
+          {
+            "q": "Les KAM (ISA 701) sont obligatoires pour :",
+            "options": [
+              "Toutes les entités",
+              "Les EIP / sociétés cotées",
+              "Le contrôle restreint",
+              "Les PME"
+            ],
+            "correct": 1,
+            "explication": "KAM = Key Audit Matters, obligatoires pour les EIP/cotées. Optionnels (recommandés) pour les autres."
+          },
+          {
+            "q": "Un EOM (paragraphe d'observation) :",
+            "options": [
+              "Modifie l'opinion en qualified",
+              "Ne modifie PAS l'opinion",
+              "Remplace l'opinion",
+              "Transforme en adverse"
+            ],
+            "correct": 1,
+            "explication": "EOM (ISA 706) attire l'attention sur une question présentée dans les EF SANS modifier l'opinion."
+          },
+          {
+            "q": "Surendettement (CO 725b) = ?",
+            "options": [
+              "FP < ½ capital + réserves",
+              "FP négatifs (2 bilans)",
+              "Pertes 3 ans",
+              "Insolvabilité 12 mois"
+            ],
+            "correct": 1,
+            "explication": "CO 725b = surendettement = fonds propres NÉGATIFS, confirmé par 2 bilans (exploitation + liquidation). 725a = perte de capital."
+          },
+          {
+            "q": "Si le CA n'agit pas face au surendettement, l'auditeur :",
+            "options": [
+              "N'a aucune obligation",
+              "Doit aviser le juge lui-même",
+              "Démissionne",
+              "Attend l'AG"
+            ],
+            "correct": 1,
+            "explication": "CO 725b al.4 in fine : si le CA reste inactif, l'organe de révision DOIT aviser le juge lui-même. Spécificité suisse."
+          },
+          {
+            "q": "Mnémonique des 5 menaces IESBA ?",
+            "options": [
+              "IOCCP",
+              "SARFI",
+              "POR",
+              "CDQA"
+            ],
+            "correct": 1,
+            "explication": "SARFI : Self-interest, Advocacy, self-Review, Familiarity, Intimidation. IOCCP = 5 principes ; POR = triangle fraude."
+          },
+          {
+            "q": "Honoraires NAS > 70% cumulé sur 3 ans (EIP) → ?",
+            "options": [
+              "Sauvegardes suffisent",
+              "Indépendance incompatible",
+              "Disclosure seulement",
+              "Aucun problème"
+            ],
+            "correct": 1,
+            "explication": "IESBA R410.18 : > 70% cumulé sur 3 ans pour une EIP = indépendance INCOMPATIBLE. Aucune sauvegarde ne suffit."
+          },
+          {
+            "q": "NOCLAR signifie :",
+            "options": [
+              "Norme contrôle qualité",
+              "Non-Compliance with Laws And Regulations",
+              "Nouvelle obligation comptable",
+              "Norme audit groupe"
+            ],
+            "correct": 1,
+            "explication": "NOCLAR = Non-Compliance with Laws And Regulations (IESBA Section 360, 2017). Dérogation au secret pour signaler les non-conformités graves."
+          },
+          {
+            "q": "Période d'évaluation du going concern (ISA 570) ?",
+            "options": [
+              "12 mois depuis la clôture",
+              "12 mois depuis la date du rapport",
+              "6 mois",
+              "24 mois"
+            ],
+            "correct": 1,
+            "explication": "ISA 570 : minimum 12 mois depuis la DATE DU RAPPORT (pas la clôture). Important si clôture déc. mais rapport en mai."
+          },
+          {
+            "q": "Le triangle de la fraude (Cressey) comprend :",
+            "options": [
+              "Pression, Opportunité, Rationalisation",
+              "Risque, Contrôle, Détection",
+              "Intégrité, Objectivité, Compétence",
+              "Existence, Valorisation, Cut-off"
+            ],
+            "correct": 0,
+            "explication": "Triangle de Cressey = Pression + Opportunité + Rationalisation (POR). Les 3 conditions de la fraude."
+          }
+        ]
+      }
+    ]
   }
 }
