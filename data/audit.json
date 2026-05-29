@@ -11065,5 +11065,245 @@
         ]
       }
     ]
+  },
+  "goingconcern": {
+    "_label": "Going concern & CO 725",
+    "_icon": "📉",
+    "_description": "La continuité d'exploitation (ISA 570 R2024) et le surendettement suisse (CO 725/725a/725b, réforme 2023). Matrice des 4 scénarios d'opinion + obligations CA et auditeur (avis au juge — spécificité suisse).",
+    "blocs": [
+      {
+        "id": "principe",
+        "titre": "Hypothèse de continuité — principe",
+        "icon": "🔄",
+        "color": "#3b82f6",
+        "intro": "Le going concern est le FONDEMENT de la comptabilité standard : les EF sont préparés en supposant que l'entité poursuivra son activité dans un futur prévisible.",
+        "table": {
+          "headers": [
+            "Si going concern adoptée",
+            "Si going concern abandonnée (liquidation)"
+          ],
+          "rows": [
+            [
+              "Actifs à valeur d'usage",
+              "Actifs à valeur de réalisation (souvent inférieure)"
+            ],
+            [
+              "Amortissements sur durée d'utilité",
+              "Provisions de cessation (licenciements, contrats)"
+            ],
+            [
+              "Dettes classées CT/LT par échéance",
+              "Reclassement dette LT en CT"
+            ],
+            [
+              "Provisions sur cycle normal",
+              "Disclosure des conditions de cessation"
+            ]
+          ]
+        },
+        "warning": "Suisse (CO 958a al.2) : si la continuité est compromise, les comptes doivent être établis à la valeur d'aliénation (liquidation). RPC 41 / IAS 1.25-26 : exigences similaires."
+      },
+      {
+        "id": "demarche",
+        "titre": "ISA 570 (Revised 2024) — démarche en 3 étapes",
+        "icon": "🔍",
+        "color": "#0891b2",
+        "intro": "ISA 570 révisée 2024 (effective 15.12.2026). Période d'évaluation : minimum 12 mois depuis la DATE DU RAPPORT (pas la clôture).",
+        "table": {
+          "headers": [
+            "Étape",
+            "Contenu"
+          ],
+          "rows": [
+            [
+              "1. Évaluer l'analyse de la direction",
+              "Demander la documentation going concern ; évaluer la période (≥12 mois) et la qualité (budgets, projections, sensibilités). Si la direction n'a pas fait l'analyse → la demander."
+            ],
+            [
+              "2. Tester les hypothèses clés",
+              "Croissance/marges, refinancement (confirmations banques, covenants), trésorerie (projections vs réalisé post-clôture), crédibilité des actions de la direction."
+            ],
+            [
+              "3. Conclure et documenter",
+              "Pas de doute → clean. Incertitude significative → test disclosure (4 scénarios). GC inappropriée → adverse."
+            ]
+          ]
+        },
+        "warning": "R2024 renforce le scepticisme et la documentation. Période = 12 mois depuis la date du rapport (important si clôture déc. mais rapport en mai → couverture jusqu'à mai N+1)."
+      },
+      {
+        "id": "indicateurs",
+        "titre": "Indicateurs de risque (ISA 570.A3)",
+        "icon": "🚩",
+        "color": "#f59e0b",
+        "intro": "Liste non exhaustive, 3 catégories.",
+        "table": {
+          "headers": [
+            "Catégorie",
+            "Indicateurs"
+          ],
+          "rows": [
+            [
+              "Financiers",
+              "Pertes répétées, fonds propres négatifs, ratios de liquidité dégradés, refinancement difficile, dette > capacité de remboursement, arriérés de dividendes"
+            ],
+            [
+              "Opérationnels",
+              "Perte de clients/fournisseurs clés, départ de dirigeants, conflits sociaux, pénuries d'inputs critiques, technologie obsolète, perte de permis/licence"
+            ],
+            [
+              "Externes",
+              "Réglementation défavorable, marché en crise structurelle, litiges majeurs, catastrophe naturelle, pandémie, sanctions économiques"
+            ]
+          ]
+        },
+        "warning": "Indicateurs atténuants à considérer : lignes de crédit confirmées non utilisées, soutien actionnaire (lettre de support/postposition), capacité de céder des actifs, plan de restructuration crédible."
+      },
+      {
+        "id": "scenarios",
+        "titre": "4 scénarios d'opinion (matrice ISA 570)",
+        "icon": "🎯",
+        "color": "#7c3aed",
+        "intro": "LA matrice fondamentale. Mnémonique : CDQA.",
+        "table": {
+          "headers": [
+            "#",
+            "Situation",
+            "Disclosure direction",
+            "Conséquence rapport"
+          ],
+          "rows": [
+            [
+              "1",
+              "Pas de doute sur le going concern",
+              "Standard",
+              "Opinion CLEAN (ISA 700 standard)"
+            ],
+            [
+              "2",
+              "Incertitude significative identifiée",
+              "ADÉQUATE",
+              "Opinion CLEAN + paragraphe « Material Uncertainty Related to Going Concern »"
+            ],
+            [
+              "3",
+              "Incertitude significative identifiée",
+              "INADÉQUATE/absente",
+              "Opinion MODIFIÉE : Qualified si isolée, Adverse si pervasive"
+            ],
+            [
+              "4",
+              "Going concern INAPPROPRIÉE (EF en valeurs d'exploitation)",
+              "N/A — base erronée",
+              "Opinion ADVERSE systématique"
+            ]
+          ]
+        },
+        "warning": "PIÈGE MAJEUR : le scénario 2 (incertitude + disclosure adéquate) NE déclenche PAS d'opinion modifiée. C'est une opinion CLEAN avec un paragraphe spécial. Erreur classique : croire que toute incertitude = qualified."
+      },
+      {
+        "id": "co725",
+        "titre": "Surendettement suisse — CO 725 (réforme 2023)",
+        "icon": "🇨🇭",
+        "color": "#dc2626",
+        "intro": "Réforme du droit de la SA (1er janvier 2023) : les anciens art. 725/725a restructurés en 3 articles. Mnémonique : ILS.",
+        "table": {
+          "headers": [
+            "Article",
+            "Situation",
+            "Seuil"
+          ],
+          "rows": [
+            [
+              "CO 725",
+              "Risque d'Insolvabilité",
+              "Test prospectif : capacité à honorer les obligations sur 12 mois"
+            ],
+            [
+              "CO 725a",
+              "Perte de capital (Liberté)",
+              "Fonds propres < ½ (capital + réserves légales non disponibles)"
+            ],
+            [
+              "CO 725b",
+              "Surendettement",
+              "Fonds propres NÉGATIFS — passifs > actifs (valeur exploitation OU liquidation)"
+            ]
+          ]
+        },
+        "warning": "CO 725a (perte de capital) ≠ CO 725b (surendettement). 725a = FP positifs mais < seuil ; 725b = FP NÉGATIFS. Conséquences très différentes."
+      },
+      {
+        "id": "obligations",
+        "titre": "Obligations CA & auditeur (CO 725b)",
+        "icon": "⚖️",
+        "color": "#16a34a",
+        "intro": "En cas de soupçon fondé de surendettement, cascade d'obligations.",
+        "liste": [
+          "Le CA établit 2 bilans intermédiaires : à valeur d'exploitation ET à valeur de liquidation",
+          "Ces bilans sont vérifiés par l'organe de révision agréé",
+          "Si les 2 bilans confirment le surendettement → le CA doit AVISER LE JUGE (art. 725b al.3)",
+          "SAUF si : postpositions de créances suffisantes (al.4 ch.1) OU probabilité d'assainissement ≤ 90 jours (al.4 ch.2)",
+          "Si le CA reste INACTIF → l'organe de révision DOIT aviser le juge lui-même (al.4 in fine)"
+        ],
+        "warning": "Spécificité suisse unique : l'auditeur a une obligation POSITIVE d'aviser le juge si le CA ne réagit pas. Responsabilité civile (CO 755, 5 ans, solidaire) + pénale possible (CP 251)."
+      },
+      {
+        "id": "postposition",
+        "titre": "Postposition vs assainissement",
+        "icon": "🛟",
+        "color": "#06b6d4",
+        "intro": "Les 2 voies pour écarter l'avis au juge.",
+        "table": {
+          "headers": [
+            "Mesure",
+            "Condition de validité",
+            "Effet"
+          ],
+          "rows": [
+            [
+              "Postposition de créances",
+              "Acte SIGNÉ, montant suffisant (couvre le surendettement), rang explicite",
+              "Avis au juge non requis"
+            ],
+            [
+              "Plan d'assainissement",
+              "Crédible, exécutable ≤ 90 jours",
+              "Avis suspendu, suivi requis"
+            ],
+            [
+              "Aucune mesure / insuffisante",
+              "—",
+              "Auditeur DOIT aviser le juge"
+            ]
+          ]
+        },
+        "warning": "Une promesse VERBALE ou une lettre de confort informelle ne suffisent PAS. La postposition doit être juridiquement valable (signée, notariée, montant suffisant)."
+      },
+      {
+        "id": "cas",
+        "titre": "Cas type — Tau SA (Genève)",
+        "icon": "📌",
+        "color": "#a855f7",
+        "intro": "Application concrète de la cascade CO 725b.",
+        "example": "Clôture 2025 : fonds propres -2,1 MCHF (capital 1 MCHF, déficit cumulé 3,1 MCHF). L'auditeur EY demande le bilan à valeur de liquidation : -3,5 MCHF. Le CA tente d'obtenir une postposition de la holding-mère pour 4 MCHF. L'auditeur attend 60 jours. La postposition est signée et notariée → avis au juge NON requis. Rapport AG : opinion clean + EOM Material Uncertainty (le going concern dépend de la pérennité du soutien actionnaire).",
+        "warning": "Le rapport AG (CO 728b) reflète l'incertitude (Material Uncertainty), le rapport CA (CO 728a) détaille la situation, et l'avis au juge (s'il avait eu lieu) serait une démarche séparée non publique."
+      },
+      {
+        "id": "pieges",
+        "titre": "TOP pièges examen — Going concern",
+        "icon": "🎯",
+        "color": "#fbbf24",
+        "intro": "Les erreurs les plus fréquentes.",
+        "liste": [
+          "Confondre incertitude significative et opinion modifiée — scénario 2 = CLEAN + paragraphe Material Uncertainty",
+          "Confondre CO 725a (perte capital, FP positifs) et CO 725b (surendettement, FP négatifs)",
+          "Penser que going concern = 12 mois depuis la clôture — non, depuis la DATE DU RAPPORT",
+          "Croire qu'une postposition verbale suffit — elle doit être juridiquement VALABLE (signée)",
+          "Penser que l'avis au juge vient toujours du CA — si le CA refuse, l'AUDITEUR doit aviser",
+          "Oublier le bilan à valeur de liquidation — CO 725b exige les DEUX bilans"
+        ]
+      }
+    ]
   }
 }
