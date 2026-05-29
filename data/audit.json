@@ -10581,5 +10581,212 @@
         ]
       }
     ]
+  },
+  "timeline": {
+    "_label": "Timeline de mission",
+    "_icon": "🗓️",
+    "_description": "La frise complète d'une mission d'audit, de l'acceptation au reporting. Pour chaque phase : objectif, activités, livrables, normes ISA et délais clés. Vision EY end-to-end.",
+    "phases": [
+      {
+        "id": "p1",
+        "nom": "1. Acceptation / Continuation",
+        "icon": "🤝",
+        "color": "#3b82f6",
+        "periode": "Avant la mission",
+        "objectif": "Décider d'accepter (nouveau client) ou de poursuivre (client récurrent) la mission, et convenir des termes.",
+        "activites": [
+          "Évaluation de l'intégrité du client (background check)",
+          "Évaluation des menaces à l'indépendance (IESBA) + sauvegardes",
+          "Vérification des compétences et ressources disponibles",
+          "Contact avec l'auditeur précédent (si changement, avec accord client)",
+          "Signature de la lettre de mission"
+        ],
+        "livrables": [
+          "Lettre de mission signée",
+          "Documentation acceptation/continuation"
+        ],
+        "normes": [
+          "ISA 210",
+          "ISA 220",
+          "IESBA Code"
+        ],
+        "delais": [
+          "Avant tout début de travaux"
+        ]
+      },
+      {
+        "id": "p2",
+        "nom": "2. Planification & stratégie",
+        "icon": "🗺️",
+        "color": "#a855f7",
+        "periode": "T-3 à T-2 mois",
+        "objectif": "Comprendre l'entité, évaluer les risques, fixer la matérialité et concevoir la stratégie d'audit.",
+        "activites": [
+          "Compréhension de l'entité, son environnement et son SCI (ISA 315 R2019)",
+          "Identification et évaluation des risques (spectre du risque inhérent)",
+          "Détermination de la matérialité (overall + performance + CTT)",
+          "Identification des significant risks + risque de fraude (ISA 240)",
+          "Élaboration de la stratégie générale + plan d'audit détaillé",
+          "Discussion d'équipe (brainstorming fraude)"
+        ],
+        "livrables": [
+          "Stratégie d'audit",
+          "Plan d'audit",
+          "Mémo des risques",
+          "Calcul de matérialité"
+        ],
+        "normes": [
+          "ISA 300",
+          "ISA 315",
+          "ISA 320",
+          "ISA 240"
+        ],
+        "delais": [
+          "Avant les tests substantifs significatifs"
+        ]
+      },
+      {
+        "id": "p3",
+        "nom": "3. Visite intermédiaire (interim)",
+        "icon": "🔍",
+        "color": "#0891b2",
+        "periode": "T-2 à T-1 mois",
+        "objectif": "Tester les contrôles internes et réaliser une partie des procédures avant la clôture.",
+        "activites": [
+          "Tests des contrôles (operating effectiveness) si l'auditeur s'appuie dessus (ISA 330)",
+          "Walkthroughs des processus clés (ventes, achats, paie, stocks)",
+          "Tests ITGC / ITAC (lien module IT)",
+          "Revue analytique préliminaire",
+          "Identification précoce des déficiences SCI"
+        ],
+        "livrables": [
+          "Conclusions sur les contrôles",
+          "Liste préliminaire de déficiences"
+        ],
+        "normes": [
+          "ISA 330",
+          "ISA 315",
+          "ISA 265"
+        ],
+        "delais": [
+          "Avant la clôture annuelle"
+        ]
+      },
+      {
+        "id": "p4",
+        "nom": "4. Visite finale (year-end)",
+        "icon": "📊",
+        "color": "#16a34a",
+        "periode": "T+1 à T+3 mois",
+        "objectif": "Réaliser les procédures de substance sur les EF finalisés et obtenir les éléments probants.",
+        "activites": [
+          "Procédures de substance par cycle (tests de détails + analytiques)",
+          "Assistance à l'inventaire physique des stocks (ISA 501)",
+          "Confirmations externes (banques, clients, avocats — ISA 505)",
+          "Tests des écritures de journal (JE testing — ISA 240.32)",
+          "Audit des estimations comptables (ISA 540)",
+          "Revue des événements postérieurs (ISA 560)",
+          "Évaluation du going concern (ISA 570)"
+        ],
+        "livrables": [
+          "Papiers de travail par cycle",
+          "Tableau des anomalies (passed adjustments)"
+        ],
+        "normes": [
+          "ISA 330",
+          "ISA 500",
+          "ISA 501",
+          "ISA 505",
+          "ISA 540",
+          "ISA 570"
+        ],
+        "delais": [
+          "Après la clôture, avant l'AG"
+        ]
+      },
+      {
+        "id": "p5",
+        "nom": "5. Conclusion & formation de l'opinion",
+        "icon": "🎯",
+        "color": "#f59e0b",
+        "periode": "Avant signature",
+        "objectif": "Évaluer les anomalies, conclure et déterminer le type d'opinion.",
+        "activites": [
+          "Évaluation des anomalies non corrigées vs matérialité (ISA 450)",
+          "Revue analytique finale (overall review)",
+          "Obtention de la lettre de représentation (LoR — ISA 580)",
+          "Revue de qualité (EQR) si EIP/cotée (ISA 220/ISQM 2)",
+          "Détermination de l'opinion (UQAD) + KAM si cotée",
+          "Communication à la gouvernance (ISA 260)"
+        ],
+        "livrables": [
+          "Mémo de conclusion",
+          "LoR signée",
+          "Revue EQR documentée"
+        ],
+        "normes": [
+          "ISA 450",
+          "ISA 580",
+          "ISA 700",
+          "ISA 701",
+          "ISA 705",
+          "ISA 260"
+        ],
+        "delais": [
+          "Date du rapport = obtention éléments probants suffisants"
+        ]
+      },
+      {
+        "id": "p6",
+        "nom": "6. Reporting",
+        "icon": "📋",
+        "color": "#7c3aed",
+        "periode": "Date du rapport",
+        "objectif": "Émettre les rapports d'audit et communiquer les conclusions.",
+        "activites": [
+          "Rapport à l'AG (CO 728b — court, public)",
+          "Rapport détaillé au CA (CO 728a — long-form, confidentiel)",
+          "Management letter (déficiences SCI — ISA 265)",
+          "Recommandation sur l'approbation des comptes",
+          "Vérification de l'emploi du bénéfice (CO 728a)"
+        ],
+        "livrables": [
+          "Rapport AG",
+          "Rapport CA",
+          "Management letter"
+        ],
+        "normes": [
+          "ISA 700",
+          "CO 728a",
+          "CO 728b"
+        ],
+        "delais": [
+          "Avant l'AG (dans les 6 mois de la clôture — CO 699)"
+        ]
+      },
+      {
+        "id": "p7",
+        "nom": "7. Wrap-up & archivage",
+        "icon": "🗄️",
+        "color": "#dc2626",
+        "periode": "T+60 jours max",
+        "objectif": "Finaliser et archiver le dossier d'audit.",
+        "activites": [
+          "Constitution du dossier final (assembly)",
+          "Vérification de la complétude de la documentation (ISA 230)",
+          "Archivage sécurisé"
+        ],
+        "livrables": [
+          "Dossier d'audit finalisé et archivé"
+        ],
+        "normes": [
+          "ISA 230"
+        ],
+        "delais": [
+          "Dossier final : 60 jours après la date du rapport",
+          "Conservation : 10 ans (Suisse — LSR/CO)"
+        ]
+      }
+    ]
   }
 }

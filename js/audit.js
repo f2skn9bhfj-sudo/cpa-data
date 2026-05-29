@@ -12,6 +12,7 @@ const AUDIT_TABS = [
     { id: 'independance', label: 'Indépendance',  icon: '⚖️', desc: 'Éthique IESBA, 5 menaces, rotation, honoraires, NOCLAR' },
     { id: 'modeles',      label: 'Modèles',       icon: '📄', desc: 'Templates : lettres, rapports (UQAD), paragraphes, avis au juge' },
     { id: 'examens',      label: 'Examens blancs', icon: '⏱️', desc: 'Mocks chronométrés avec score + correction' },
+    { id: 'timeline',     label: 'Timeline',      icon: '🗓️', desc: 'Frise de mission : acceptation → reporting + délais clés' },
     { id: 'canvas',       label: 'Canvas Perso',  icon: '🏢', desc: 'Tes propres engagements d\'audit' },
     { id: 'mission',      label: 'Mission Lab',   icon: '🎬', desc: 'Mission immersive end-to-end chez EY' },
     { id: 'seuils',       label: 'Seuils & Exos', icon: '🎯', desc: 'Comprendre tous les seuils + exercices pas-à-pas' },
@@ -163,9 +164,72 @@ function _renderAuditSubContent(subTab) {
         case 'independance': _renderAuditBlocs(host, 'independance'); break;
         case 'modeles':     _renderAuditModeles(host);    break;
         case 'examens':     _renderAuditExamens(host);    break;
+        case 'timeline':    _renderAuditTimeline(host);   break;
         case 'quiz':        _renderAuditQuiz(host);       break;
         default:            _renderAuditNas(host);
     }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// TIMELINE DE MISSION — Frise verticale des phases d'audit
+// ─────────────────────────────────────────────────────────────────
+function _renderAuditTimeline(host) {
+    const tl = _auditData.timeline || {};
+    const phases = tl.phases || [];
+
+    host.innerHTML = `
+        <div class="ref-section-title">${tl._icon || '🗓️'} ${escapeHtml(tl._label || 'Timeline')}</div>
+        <p style="color:#94a3b8;font-size:13px;line-height:1.6;margin-bottom:24px">
+            ${escapeHtml(tl._description || '')}
+        </p>
+        <div style="position:relative;padding-left:8px">
+            ${phases.map((p, idx) => _renderTimelinePhase(idx, p, idx === phases.length - 1)).join('')}
+        </div>
+    `;
+}
+
+function _renderTimelinePhase(idx, p, isLast) {
+    const color = p.color || AUDIT_ACCENT;
+    const id = `tl-${idx}`;
+    return `
+        <div style="position:relative;padding-left:42px;padding-bottom:${isLast ? '0' : '24px'}">
+            ${!isLast ? `<div style="position:absolute;left:15px;top:34px;bottom:0;width:2px;background:linear-gradient(${color}, #1e293b)"></div>` : ''}
+            <div style="position:absolute;left:0;top:2px;width:32px;height:32px;border-radius:50%;background:${color};
+                        display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 0 0 4px #0a0f1c">
+                ${p.icon || '•'}
+            </div>
+            <div class="card" style="border-left:3px solid ${color}">
+                <div onclick="_toggleBloc('${id}')"
+                     style="padding:12px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;
+                            transition:background 0.15s" onmouseover="this.style.background='#1e293b'" onmouseout="this.style.background=''">
+                    <div style="flex:1;min-width:0">
+                        <div style="font-size:14px;font-weight:800;color:${AUDIT_LIGHT}">${escapeHtml(p.nom)}</div>
+                        <div style="font-size:11px;color:${color};font-weight:600;margin-top:2px">${escapeHtml(p.periode || '')}</div>
+                    </div>
+                    <span id="${id}-arrow" style="color:${color};font-size:14px">▸</span>
+                </div>
+                <div id="${id}" style="display:none;padding:0 16px 16px 16px">
+                    <div style="font-size:13px;color:#cbd5e1;line-height:1.6;margin-bottom:12px;font-style:italic">${_auditCrossRef(p.objectif || '')}</div>
+                    ${_tlSection('🔧 Activités', p.activites, color, '#cbd5e1')}
+                    ${_tlSection('📦 Livrables', p.livrables, '#16a34a', '#bbf7d0')}
+                    ${(p.normes || []).length ? `<div style="margin-bottom:10px"><span style="font-size:11px;font-weight:700;color:${color}">📐 Normes : </span>${p.normes.map(n => `<span style="font-size:11px;background:#1e293b;color:#94a3b8;padding:2px 8px;border-radius:5px;margin-right:4px">${escapeHtml(n)}</span>`).join('')}</div>` : ''}
+                    ${(p.delais || []).length ? `<div style="padding:9px 12px;background:#1e1b0a;border-left:3px solid #fbbf24;border-radius:5px">
+                        <span style="font-size:11px;font-weight:700;color:#fbbf24">⏱️ Délais : </span>
+                        <span style="font-size:12px;color:#fde68a">${p.delais.map(d => escapeHtml(d)).join(' · ')}</span></div>` : ''}
+                </div>
+            </div>
+        </div>`;
+}
+
+function _tlSection(title, items, color, textColor) {
+    if (!items || !items.length) return '';
+    return `
+        <div style="margin-bottom:10px">
+            <div style="font-size:11px;font-weight:700;color:${color};margin-bottom:5px">${title}</div>
+            <ul style="margin:0;padding-left:18px;color:${textColor};font-size:12px;line-height:1.7">
+                ${items.map(i => `<li>${_auditCrossRef(i)}</li>`).join('')}
+            </ul>
+        </div>`;
 }
 
 // ─────────────────────────────────────────────────────────────────
