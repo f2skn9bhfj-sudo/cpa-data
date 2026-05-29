@@ -10788,5 +10788,282 @@
         ]
       }
     ]
+  },
+  "fraude": {
+    "_label": "Fraude & NOCLAR",
+    "_icon": "🚨",
+    "_description": "Tout sur la fraude (ISA 240) et le signalement (NOCLAR / ISA 250) : triangle de la fraude, présomptions, JE testing, red flags, procédures et obligations de reporting. Sujet à fort enjeu de responsabilité.",
+    "blocs": [
+      {
+        "id": "def",
+        "titre": "Fraude vs erreur — définitions",
+        "icon": "📖",
+        "color": "#3b82f6",
+        "intro": "ISA 240.11 distingue la fraude (acte INTENTIONNEL) de l'erreur (non intentionnelle).",
+        "table": {
+          "headers": [
+            "Critère",
+            "Fraude",
+            "Erreur"
+          ],
+          "rows": [
+            [
+              "Intention",
+              "Intentionnelle (volontaire)",
+              "Non intentionnelle"
+            ],
+            [
+              "Critère décisif",
+              "L'INTENTION de tromper",
+              "Absence d'intention"
+            ],
+            [
+              "Réponse auditeur",
+              "Scepticisme renforcé + JE testing + escalade",
+              "Correction + impact matérialité"
+            ],
+            [
+              "Exemple",
+              "Revenus fictifs, sous-provisionnement délibéré",
+              "Erreur de calcul, mauvaise application d'une norme"
+            ]
+          ]
+        },
+        "warning": "L'auditeur ne juge PAS pénalement (« fraude » au sens légal) — il évalue le risque d'anomalie résultant de fraude et son impact sur les EF."
+      },
+      {
+        "id": "types",
+        "titre": "2 types de fraude",
+        "icon": "🎭",
+        "color": "#dc2626",
+        "intro": "ISA 240 — deux catégories selon l'auteur et le mécanisme.",
+        "table": {
+          "headers": [
+            "Type",
+            "Auteur typique",
+            "Mécanisme"
+          ],
+          "rows": [
+            [
+              "Information financière frauduleuse",
+              "Direction (management)",
+              "Manipulation des EF : revenus fictifs, sous-provisionnement, surévaluation d'actifs, lissage de résultat"
+            ],
+            [
+              "Détournement d'actifs",
+              "Employés",
+              "Vols, fausses factures, paie fictive, détournement de trésorerie"
+            ]
+          ]
+        },
+        "warning": "L'information financière frauduleuse est généralement plus significative (montants élevés, implique la direction) mais plus difficile à détecter (contournement des contrôles)."
+      },
+      {
+        "id": "triangle",
+        "titre": "Triangle de la fraude (Cressey 1953)",
+        "icon": "🔺",
+        "color": "#f59e0b",
+        "intro": "Les 3 conditions réunies = fraude probable. Mnémonique : POR.",
+        "table": {
+          "headers": [
+            "Sommet",
+            "Description",
+            "Exemples"
+          ],
+          "rows": [
+            [
+              "Pression (incentive)",
+              "Besoin/motivation financière",
+              "Objectif de bonus, dettes personnelles, addictions, pression du marché/actionnaires"
+            ],
+            [
+              "Opportunité",
+              "Possibilité de commettre l'acte",
+              "Faille du SCI, absence de ségrégation des tâches, management override"
+            ],
+            [
+              "Rationalisation",
+              "Justification morale de l'acte",
+              "« Je rembourserai », « tout le monde le fait », « je le mérite »"
+            ]
+          ]
+        },
+        "warning": "L'auditeur agit surtout sur l'OPPORTUNITÉ (tester les contrôles, JE testing) car la pression et la rationalisation sont hors de son contrôle."
+      },
+      {
+        "id": "presomptions",
+        "titre": "Présomptions ISA 240",
+        "icon": "⚖️",
+        "color": "#a855f7",
+        "intro": "Deux risques de fraude que l'auditeur doit TOUJOURS considérer.",
+        "table": {
+          "headers": [
+            "Présomption",
+            "Article",
+            "Action"
+          ],
+          "rows": [
+            [
+              "Reconnaissance du revenu",
+              "ISA 240 §26",
+              "Risque de fraude PRÉSUMÉ dans toute mission. À réfuter PAR ÉCRIT si jugé non pertinent (rare)."
+            ],
+            [
+              "Management override of controls",
+              "ISA 240 §32",
+              "Risque inhérent à TOUTES les missions. JE testing OBLIGATOIRE + revue des estimations pour biais + transactions inhabituelles."
+            ]
+          ]
+        },
+        "warning": "Ces deux risques ne peuvent jamais être ignorés. La présomption revenu peut être réfutée (par écrit) ; le management override JAMAIS."
+      },
+      {
+        "id": "je",
+        "titre": "JE testing (tests des écritures de journal)",
+        "icon": "🔬",
+        "color": "#0891b2",
+        "intro": "ISA 240.32 — obligatoire pour répondre au risque de management override. Méthodologie :",
+        "liste": [
+          "1. Obtenir TOUTES les écritures manuelles de la période + écritures de fin de période",
+          "2. Filtrer les caractéristiques de risque (voir red flags ci-dessous)",
+          "3. Sélectionner un échantillon ciblé + tester les pièces justificatives",
+          "4. Documenter les résultats + escalade si anomalies"
+        ],
+        "table": {
+          "headers": [
+            "Red flag (filtre)",
+            "Pourquoi suspect"
+          ],
+          "rows": [
+            [
+              "Utilisateurs atypiques (CFO, contrôleurs)",
+              "La direction contourne les contrôles"
+            ],
+            [
+              "Comptes inhabituels",
+              "Manipulation cachée"
+            ],
+            [
+              "Montants ronds (multiples de 1000/10000)",
+              "Estimation manuelle, pas une transaction réelle"
+            ],
+            [
+              "Écritures de nuit / weekend / jours fériés",
+              "Hors processus normal"
+            ],
+            [
+              "Contrepasses récurrentes",
+              "Manipulation de fin de période"
+            ],
+            [
+              "Libellés génériques ou vides (« ajustement »)",
+              "Absence de justification claire"
+            ],
+            [
+              "Montants juste sous un seuil",
+              "Évitement de détection/validation"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "procedures",
+        "titre": "Procédures requises (ISA 240.16-26)",
+        "icon": "🔧",
+        "color": "#16a34a",
+        "intro": "L'ensemble des procédures obligatoires face au risque de fraude.",
+        "liste": [
+          "Discussion d'équipe (engagement team discussion / brainstorming) sur la vulnérabilité à la fraude",
+          "Demandes spécifiques à la direction ET à la gouvernance (perception du risque, fraudes connues)",
+          "Tests des écritures de journal (JE testing)",
+          "Revue des estimations comptables pour détecter un biais de la direction (ISA 540)",
+          "Évaluation de la justification économique (business rationale) des transactions inhabituelles",
+          "Intégration d'un élément d'imprévisibilité (unpredictability) dans les procédures"
+        ],
+        "warning": "Si fraude suspectée → reporting immédiat à la gouvernance + réévaluation du scepticisme sur TOUTE la mission + considérer impact opinion."
+      },
+      {
+        "id": "noclar",
+        "titre": "NOCLAR — procédure de signalement",
+        "icon": "🚨",
+        "color": "#ec4899",
+        "intro": "Non-Compliance with Laws And Regulations (IESBA Section 360, 2017). Dérogation au secret professionnel pour signaler des non-conformités graves.",
+        "table": {
+          "headers": [
+            "Étape",
+            "Action"
+          ],
+          "rows": [
+            [
+              "1. Comprendre",
+              "Nature et impact de la non-conformité (montant, gravité, substantial harm)"
+            ],
+            [
+              "2. Discuter",
+              "Avec la direction ET la gouvernance (TCWG)"
+            ],
+            [
+              "3. Évaluer la réaction",
+              "L'entité corrige-t-elle ? Réaction suffisante ?"
+            ],
+            [
+              "4a. Si corrige",
+              "Suivi + documentation, pas de reporting externe"
+            ],
+            [
+              "4b. Si refuse / insuffisant",
+              "Reporting externe : ASR (LSR 22), FINMA, MROS (LBA 9), autorité fiscale"
+            ]
+          ]
+        },
+        "warning": "NOCLAR a un SEUIL de gravité (substantial harm). Les non-conformités mineures = communication interne uniquement. Chaque étape doit être documentée (consultation Ethics Partner EY)."
+      },
+      {
+        "id": "isa250",
+        "titre": "ISA 250 — lois & règlements (direct vs indirect)",
+        "icon": "📜",
+        "color": "#06b6d4",
+        "intro": "Distinction selon l'effet sur les EF.",
+        "table": {
+          "headers": [
+            "Type",
+            "Définition",
+            "Exemples",
+            "Démarche"
+          ],
+          "rows": [
+            [
+              "Effet DIRECT",
+              "Lois affectant directement les montants/disclosures des EF",
+              "Fiscal (LIFD, LTVA), droit des sociétés (CO), comptabilité",
+              "Audit direct des transactions/soldes"
+            ],
+            [
+              "Effet INDIRECT",
+              "Lois fondamentales pour l'activité mais sans effet direct EF",
+              "Concurrence (LCart), environnement, RGPD/LPD, droit du travail",
+              "Vigilance + procédures limitées"
+            ]
+          ]
+        },
+        "warning": "Frontière mouvante : une pollution environnementale (indirect) devient directe si un litige probable et chiffrable impose une provision (IAS 37 / RPC 23)."
+      },
+      {
+        "id": "pieges",
+        "titre": "TOP pièges examen — Fraude",
+        "icon": "🎯",
+        "color": "#fbbf24",
+        "intro": "Les erreurs les plus fréquentes.",
+        "liste": [
+          "Confondre fraude (intentionnelle) et erreur (non intentionnelle) — l'INTENTION est le critère",
+          "Oublier que le JE testing est OBLIGATOIRE (management override, ISA 240.32)",
+          "Croire que la présomption revenu ne se réfute jamais — elle PEUT (par écrit), le management override JAMAIS",
+          "Penser que NOCLAR oblige à tout signaler — il y a un seuil (substantial harm)",
+          "Communiquer la fraude au fraudeur potentiel (CFO) au lieu de la GOUVERNANCE",
+          "Oublier que l'auditeur ne juge pas pénalement — il évalue l'impact sur les EF",
+          "Confondre effet direct (audit direct) et indirect (vigilance) d'ISA 250"
+        ]
+      }
+    ]
   }
 }

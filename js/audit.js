@@ -13,6 +13,7 @@ const AUDIT_TABS = [
     { id: 'modeles',      label: 'Modèles',       icon: '📄', desc: 'Templates : lettres, rapports (UQAD), paragraphes, avis au juge' },
     { id: 'examens',      label: 'Examens blancs', icon: '⏱️', desc: 'Mocks chronométrés avec score + correction' },
     { id: 'timeline',     label: 'Timeline',      icon: '🗓️', desc: 'Frise de mission : acceptation → reporting + délais clés' },
+    { id: 'fraude',       label: 'Fraude & NOCLAR', icon: '🚨', desc: 'Triangle de la fraude, JE testing, red flags, signalement NOCLAR' },
     { id: 'canvas',       label: 'Canvas Perso',  icon: '🏢', desc: 'Tes propres engagements d\'audit' },
     { id: 'mission',      label: 'Mission Lab',   icon: '🎬', desc: 'Mission immersive end-to-end chez EY' },
     { id: 'seuils',       label: 'Seuils & Exos', icon: '🎯', desc: 'Comprendre tous les seuils + exercices pas-à-pas' },
@@ -165,6 +166,7 @@ function _renderAuditSubContent(subTab) {
         case 'modeles':     _renderAuditModeles(host);    break;
         case 'examens':     _renderAuditExamens(host);    break;
         case 'timeline':    _renderAuditTimeline(host);   break;
+        case 'fraude':      _renderAuditBlocs(host, 'fraude'); break;
         case 'quiz':        _renderAuditQuiz(host);       break;
         default:            _renderAuditNas(host);
     }
