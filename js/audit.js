@@ -7,6 +7,7 @@
 const AUDIT_TABS = [
     { id: 'cours',        label: 'Cours MSA',     icon: '📚', desc: 'Base de cours — contrôle ordinaire (MSA) + restreint (NCR)' },
     { id: 'cas',          label: 'Cas pratiques', icon: '📝', desc: 'Études de cas examen EXPERTsuisse — énoncé + solution pas-à-pas' },
+    { id: 'arbres',       label: 'Arbres décision', icon: '🌳', desc: 'Logigrammes interactifs : opinion, going concern, leasing, révision, consolidation' },
     { id: 'canvas',       label: 'Canvas Perso',  icon: '🏢', desc: 'Tes propres engagements d\'audit' },
     { id: 'mission',      label: 'Mission Lab',   icon: '🎬', desc: 'Mission immersive end-to-end chez EY' },
     { id: 'seuils',       label: 'Seuils & Exos', icon: '🎯', desc: 'Comprendre tous les seuils + exercices pas-à-pas' },
@@ -153,9 +154,153 @@ function _renderAuditSubContent(subTab) {
         case 'lexique':     _renderAuditLexique(host);    break;
         case 'annuaire':    _renderAuditAnnuaire(host);   break;
         case 'cas':         _renderAuditCas(host);        break;
+        case 'arbres':      _renderAuditArbres(host);     break;
         case 'quiz':        _renderAuditQuiz(host);       break;
         default:            _renderAuditNas(host);
     }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// ARBRES DE DÉCISION — Logigrammes interactifs
+// ─────────────────────────────────────────────────────────────────
+let _arbreActive = null;   // tree id en cours
+let _arbreNode = null;     // node id courant
+let _arbrePath = [];       // historique [{nodeId, question, answer}]
+
+function _renderAuditArbres(host) {
+    const ar = _auditData.arbres || {};
+    const trees = ar.trees || [];
+
+    if (_arbreActive) {
+        const tree = trees.find(t => t.id === _arbreActive);
+        if (tree) { _renderArbreRunner(host, tree); return; }
+    }
+
+    host.innerHTML = `
+        <div class="ref-section-title">${ar._icon || '🌳'} ${escapeHtml(ar._label || 'Arbres de décision')}</div>
+        <p style="color:#94a3b8;font-size:13px;line-height:1.6;margin-bottom:18px">
+            ${escapeHtml(ar._description || '')}
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px">
+            ${trees.map(t => `
+                <div onclick="_startArbre('${t.id}')"
+                     style="cursor:pointer;padding:18px;border-radius:10px;background:#0d1424;
+                            border:1px solid #1e293b;border-left:4px solid ${t.color || AUDIT_ACCENT};
+                            transition:all 0.15s"
+                     onmouseover="this.style.background='#141d33';this.style.transform='translateY(-2px)'"
+                     onmouseout="this.style.background='#0d1424';this.style.transform=''">
+                    <div style="font-size:30px;margin-bottom:8px">${t.icon || '🌳'}</div>
+                    <div style="font-size:14px;font-weight:700;color:${AUDIT_LIGHT};line-height:1.4;margin-bottom:6px">${escapeHtml(t.titre)}</div>
+                    <div style="font-size:12px;color:#94a3b8;line-height:1.5">${escapeHtml(t.intro || '')}</div>
+                    <div style="margin-top:10px;font-size:12px;font-weight:700;color:${t.color || AUDIT_ACCENT}">Démarrer →</div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+function _startArbre(treeId) {
+    const trees = (_auditData.arbres || {}).trees || [];
+    const tree = trees.find(t => t.id === treeId);
+    if (!tree) return;
+    _arbreActive = treeId;
+    _arbreNode = tree.start;
+    _arbrePath = [];
+    const host = document.getElementById('auditContent');
+    if (host) _renderArbreRunner(host, tree);
+}
+
+function _arbreAnswer(nextId, answerLabel) {
+    const trees = (_auditData.arbres || {}).trees || [];
+    const tree = trees.find(t => t.id === _arbreActive);
+    if (!tree) return;
+    const cur = tree.nodes[_arbreNode];
+    _arbrePath.push({ question: cur.text, answer: answerLabel });
+    _arbreNode = nextId;
+    const host = document.getElementById('auditContent');
+    if (host) _renderArbreRunner(host, tree);
+}
+
+function _arbreReset() {
+    const trees = (_auditData.arbres || {}).trees || [];
+    const tree = trees.find(t => t.id === _arbreActive);
+    if (!tree) return;
+    _arbreNode = tree.start;
+    _arbrePath = [];
+    const host = document.getElementById('auditContent');
+    if (host) _renderArbreRunner(host, tree);
+}
+
+function _arbreBack() {
+    _arbreActive = null;
+    _arbreNode = null;
+    _arbrePath = [];
+    const host = document.getElementById('auditContent');
+    if (host) _renderAuditArbres(host);
+}
+
+function _renderArbreRunner(host, tree) {
+    const color = tree.color || AUDIT_ACCENT;
+    const node = tree.nodes[_arbreNode];
+
+    const breadcrumb = _arbrePath.length ? `
+        <div style="margin-bottom:16px;padding:12px 14px;background:#0a0f1c;border-radius:8px;border:1px solid #1e293b">
+            <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:8px">📍 TON PARCOURS</div>
+            ${_arbrePath.map((p, i) => `
+                <div style="font-size:12px;color:#94a3b8;line-height:1.6;margin-bottom:4px">
+                    <span style="color:${color}">${i+1}.</span> ${escapeHtml(p.question.length > 90 ? p.question.slice(0,90)+'…' : p.question)}
+                    <span style="color:#4ade80;font-weight:600"> → ${escapeHtml(p.answer)}</span>
+                </div>
+            `).join('')}
+        </div>` : '';
+
+    let body;
+    if (node.type === 'question') {
+        body = `
+            <div style="padding:20px;border-radius:10px;background:#0d1424;border:1px solid #1e293b;border-left:4px solid ${color}">
+                <div style="font-size:11px;font-weight:700;color:${color};margin-bottom:10px">❓ QUESTION ${_arbrePath.length + 1}</div>
+                <div style="font-size:15px;font-weight:600;color:${AUDIT_LIGHT};line-height:1.6;margin-bottom:18px">${escapeHtml(node.text)}</div>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                    ${node.options.map(o => `
+                        <button onclick="_arbreAnswer('${o.next}', ${JSON.stringify(o.label).replace(/"/g,'&quot;')})"
+                                style="text-align:left;padding:13px 16px;border-radius:8px;cursor:pointer;
+                                       background:#1e293b;border:1px solid #334155;color:#e2e8f0;font-size:13px;font-weight:600;
+                                       transition:all 0.15s"
+                                onmouseover="this.style.background='${color}';this.style.borderColor='${color}';this.style.color='#fff'"
+                                onmouseout="this.style.background='#1e293b';this.style.borderColor='#334155';this.style.color='#e2e8f0'">
+                            ${escapeHtml(o.label)}
+                        </button>
+                    `).join('')}
+                </div>
+            </div>`;
+    } else {
+        const variant = node.variant || 'success';
+        const vcolor = variant === 'danger' ? '#dc2626' : (variant === 'warning' ? '#f59e0b' : '#16a34a');
+        const vbg = variant === 'danger' ? '#3f1612' : (variant === 'warning' ? '#1e1b0a' : '#0a1a0f');
+        const vicon = variant === 'danger' ? '🔴' : (variant === 'warning' ? '🟠' : '🟢');
+        body = `
+            <div style="padding:22px;border-radius:10px;background:${vbg};border:2px solid ${vcolor}">
+                <div style="font-size:11px;font-weight:700;color:${vcolor};margin-bottom:8px">${vicon} RÉSULTAT</div>
+                <div style="font-size:18px;font-weight:800;color:${vcolor};line-height:1.3;margin-bottom:14px">${escapeHtml(node.text)}</div>
+                <div style="font-size:13px;color:#e2e8f0;line-height:1.7;white-space:pre-wrap">${_auditCrossRef(node.detail || '')}</div>
+                <button onclick="_arbreReset()"
+                        style="margin-top:18px;padding:10px 18px;border-radius:7px;cursor:pointer;
+                               background:${color};border:none;color:#fff;font-size:13px;font-weight:700">
+                    🔄 Recommencer cet arbre
+                </button>
+            </div>`;
+    }
+
+    host.innerHTML = `
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <button onclick="_arbreBack()"
+                    style="padding:7px 14px;border-radius:7px;cursor:pointer;background:#1e293b;border:1px solid #334155;
+                           color:#94a3b8;font-size:12px;font-weight:600">← Tous les arbres</button>
+            <div style="font-size:16px;font-weight:800;color:${color}">${tree.icon || '🌳'} ${escapeHtml(tree.titre)}</div>
+        </div>
+        ${breadcrumb}
+        ${body}
+    `;
 }
 
 // ─────────────────────────────────────────────────────────────────

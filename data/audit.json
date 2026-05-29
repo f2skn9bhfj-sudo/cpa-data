@@ -9146,5 +9146,414 @@
         ]
       }
     ]
+  },
+  "arbres": {
+    "_label": "Arbres de décision",
+    "_icon": "🌳",
+    "_description": "Logigrammes interactifs : réponds aux questions, l'arbre te guide vers la bonne décision. Idéal pour ancrer la logique des décisions d'audit les plus piégeuses.",
+    "trees": [
+      {
+        "id": "opinion",
+        "titre": "Quel type d'opinion d'audit ? (UQAD)",
+        "icon": "📋",
+        "color": "#7c3aed",
+        "intro": "Détermine le type d'opinion : non modifiée, avec réserve, défavorable ou impossibilité d'exprimer (ISA 700/705).",
+        "start": "q1",
+        "nodes": {
+          "q1": {
+            "type": "question",
+            "text": "Avez-vous obtenu des éléments probants suffisants et appropriés ? (pas de limitation de l'étendue)",
+            "options": [
+              {
+                "label": "Oui — pas de limitation",
+                "next": "q2"
+              },
+              {
+                "label": "Non — limitation de l'étendue",
+                "next": "q_lim"
+              }
+            ]
+          },
+          "q2": {
+            "type": "question",
+            "text": "Les états financiers comportent-ils des anomalies significatives ?",
+            "options": [
+              {
+                "label": "Non — EF conformes",
+                "next": "r_clean"
+              },
+              {
+                "label": "Oui — anomalie significative",
+                "next": "q_anom"
+              }
+            ]
+          },
+          "q_anom": {
+            "type": "question",
+            "text": "L'anomalie est-elle GÉNÉRALISÉE (pervasive) ? (touche plusieurs postes / part substantielle / fondamentale à la compréhension)",
+            "options": [
+              {
+                "label": "Non — isolée à un poste",
+                "next": "r_qualified_a"
+              },
+              {
+                "label": "Oui — généralisée",
+                "next": "r_adverse"
+              }
+            ]
+          },
+          "q_lim": {
+            "type": "question",
+            "text": "La limitation est-elle GÉNÉRALISÉE (pervasive) ? (impossible de se forger une opinion globale)",
+            "options": [
+              {
+                "label": "Non — limitée à un poste",
+                "next": "r_qualified_l"
+              },
+              {
+                "label": "Oui — généralisée",
+                "next": "r_disclaimer"
+              }
+            ]
+          },
+          "r_clean": {
+            "type": "result",
+            "variant": "success",
+            "text": "OPINION NON MODIFIÉE (Clean)",
+            "detail": "« À notre avis, les comptes annuels présentent une image fidèle... et sont conformes à la loi suisse et aux statuts. »\n\nC'est l'opinion standard ISA 700. Possibilité d'ajouter un paragraphe EOM (ISA 706) ou Material Uncertainty (going concern) sans modifier l'opinion."
+          },
+          "r_qualified_a": {
+            "type": "result",
+            "variant": "warning",
+            "text": "OPINION AVEC RÉSERVE (Qualified — anomalie)",
+            "detail": "« À notre avis, À L'EXCEPTION des effets de la question décrite dans la section 'Fondement de l'opinion avec réserve', les comptes annuels présentent une image fidèle... »\n\nAnomalie significative MAIS isolée (pas pervasive). Section 'Fondement de l'opinion avec réserve' décrivant la raison + impact chiffré."
+          },
+          "r_qualified_l": {
+            "type": "result",
+            "variant": "warning",
+            "text": "OPINION AVEC RÉSERVE (Qualified — limitation)",
+            "detail": "« À notre avis, à l'exception des incidences ÉVENTUELLES de la question décrite..., les comptes annuels présentent une image fidèle... »\n\nLimitation significative MAIS isolée. On ne peut pas se prononcer sur un poste, mais le reste est fiable."
+          },
+          "r_adverse": {
+            "type": "result",
+            "variant": "danger",
+            "text": "OPINION DÉFAVORABLE (Adverse)",
+            "detail": "« À notre avis, en raison de l'importance de la question décrite..., les comptes annuels NE présentent PAS une image fidèle... »\n\nAnomalie significative ET généralisée : les EF dans leur ensemble sont trompeurs."
+          },
+          "r_disclaimer": {
+            "type": "result",
+            "variant": "danger",
+            "text": "IMPOSSIBILITÉ D'EXPRIMER UNE OPINION (Disclaimer)",
+            "detail": "« Nous N'EXPRIMONS PAS d'opinion sur les comptes annuels. En raison de l'importance de la question..., nous n'avons pas pu obtenir d'éléments probants suffisants... »\n\nLimitation significative ET généralisée : impossible de se forger une opinion."
+          }
+        }
+      },
+      {
+        "id": "goingconcern",
+        "titre": "Going concern — quel impact sur le rapport ? (ISA 570)",
+        "icon": "🔄",
+        "color": "#0891b2",
+        "intro": "4 scénarios de continuité d'exploitation et leur incidence sur l'opinion (ISA 570 R2024).",
+        "start": "q1",
+        "nodes": {
+          "q1": {
+            "type": "question",
+            "text": "Existe-t-il un doute important sur la continuité d'exploitation (going concern) ?",
+            "options": [
+              {
+                "label": "Non — aucun doute",
+                "next": "r_clean"
+              },
+              {
+                "label": "Oui — incertitude identifiée",
+                "next": "q2"
+              }
+            ]
+          },
+          "q2": {
+            "type": "question",
+            "text": "L'utilisation de l'hypothèse de continuité est-elle APPROPRIÉE (l'entité peut raisonnablement continuer) ?",
+            "options": [
+              {
+                "label": "Oui — continuité appropriée mais incertaine",
+                "next": "q3"
+              },
+              {
+                "label": "Non — continuité inappropriée",
+                "next": "r_adverse"
+              }
+            ]
+          },
+          "q3": {
+            "type": "question",
+            "text": "La direction a-t-elle fourni une information ADÉQUATE en annexe sur l'incertitude significative ?",
+            "options": [
+              {
+                "label": "Oui — disclosure adéquate",
+                "next": "r_eom"
+              },
+              {
+                "label": "Non — disclosure inadéquate/absente",
+                "next": "r_modif"
+              }
+            ]
+          },
+          "r_clean": {
+            "type": "result",
+            "variant": "success",
+            "text": "OPINION CLEAN — rapport standard",
+            "detail": "Aucun doute sur la continuité. Rapport ISA 700 standard, sans paragraphe particulier."
+          },
+          "r_eom": {
+            "type": "result",
+            "variant": "warning",
+            "text": "OPINION CLEAN + paragraphe « Incertitude significative liée à la continuité »",
+            "detail": "⚠️ PIÈGE CLASSIQUE : c'est une opinion NON MODIFIÉE (clean) + un paragraphe dédié 'Material Uncertainty Related to Going Concern'.\n\n« Nous attirons l'attention sur la note X... ces conditions indiquent l'existence d'une incertitude significative susceptible de jeter un doute important sur la capacité de la société à poursuivre son exploitation. Notre opinion n'est pas modifiée. »\n\nPosition : avant les KAM."
+          },
+          "r_modif": {
+            "type": "result",
+            "variant": "danger",
+            "text": "OPINION MODIFIÉE (Qualified ou Adverse)",
+            "detail": "Disclosure inadéquate de l'incertitude = anomalie significative.\n• Qualified si isolée\n• Adverse si l'omission déforme fondamentalement les EF (ISA 705)."
+          },
+          "r_adverse": {
+            "type": "result",
+            "variant": "danger",
+            "text": "OPINION DÉFAVORABLE (Adverse)",
+            "detail": "Si l'entité prépare les EF en valeurs d'exploitation alors que la continuité est INAPPROPRIÉE (cessation probable), la base comptable est erronée → opinion adverse systématique. Les EF devraient être en valeurs de liquidation (CO 958a)."
+          }
+        }
+      },
+      {
+        "id": "leasing",
+        "titre": "Leasing : financier ou d'exploitation ? (RPC 13)",
+        "icon": "🚛",
+        "color": "#16a34a",
+        "intro": "Classification du leasing chez le preneur selon RPC 13 (substance over form).",
+        "start": "q1",
+        "nodes": {
+          "q1": {
+            "type": "question",
+            "text": "La valeur actuelle des paiements ≈ valeur de marché du bien à l'inception ?",
+            "options": [
+              {
+                "label": "Oui",
+                "next": "r_fin"
+              },
+              {
+                "label": "Non",
+                "next": "q2"
+              }
+            ]
+          },
+          "q2": {
+            "type": "question",
+            "text": "La durée du leasing ≈ la durée de vie économique du bien (≥ ~75-80%) ?",
+            "options": [
+              {
+                "label": "Oui",
+                "next": "r_fin"
+              },
+              {
+                "label": "Non",
+                "next": "q3"
+              }
+            ]
+          },
+          "q3": {
+            "type": "question",
+            "text": "La propriété est-elle transférée au preneur à l'échéance ?",
+            "options": [
+              {
+                "label": "Oui",
+                "next": "r_fin"
+              },
+              {
+                "label": "Non",
+                "next": "q4"
+              }
+            ]
+          },
+          "q4": {
+            "type": "question",
+            "text": "Existe-t-il une option d'achat à un prix significativement < valeur de marché estimée à la fin ?",
+            "options": [
+              {
+                "label": "Oui",
+                "next": "r_fin"
+              },
+              {
+                "label": "Non — aucun critère rempli",
+                "next": "r_expl"
+              }
+            ]
+          },
+          "r_fin": {
+            "type": "result",
+            "variant": "warning",
+            "text": "LEASING FINANCIER (au bilan)",
+            "detail": "Au moins 1 des 4 critères rempli (critères ALTERNATIFS) → leasing financier.\n\n• ACTIF : min(valeur de marché nette ; VA des paiements)\n• PASSIF : VA des paiements (taux du contrat)\n• P&L : amortissement + intérêts (pas la redevance)\n• TFT : intérêts → exploitation ; remboursement → financement\n\n⚠️ Différence IFRS 16 : tous les leasings ≥ 12 mois sont au bilan (distinction supprimée pour le preneur)."
+          },
+          "r_expl": {
+            "type": "result",
+            "variant": "success",
+            "text": "LEASING D'EXPLOITATION (hors bilan)",
+            "detail": "Aucun critère rempli → leasing d'exploitation.\n\n• Bilan : RIEN (ni actif, ni dette)\n• P&L : 100% de la redevance en charges\n• TFT : redevances → exploitation\n• Annexe : engagements résiduels + échéancier (RPC 5 / RPC 13/11)"
+          }
+        }
+      },
+      {
+        "id": "revision",
+        "titre": "Quel régime de révision ? (CO 727)",
+        "icon": "⚖️",
+        "color": "#dc2626",
+        "intro": "Détermine si l'entité est soumise au contrôle ordinaire, restreint ou à l'opting-out.",
+        "start": "q1",
+        "nodes": {
+          "q1": {
+            "type": "question",
+            "text": "La société est-elle cotée, ou doit-elle établir des comptes consolidés, ou est-ce une grande entreprise (2/3 seuils : bilan 20M / CA 40M / 250 EPT sur 2 ans) ?",
+            "options": [
+              {
+                "label": "Oui — au moins un critère",
+                "next": "r_ord"
+              },
+              {
+                "label": "Non",
+                "next": "q2"
+              }
+            ]
+          },
+          "q2": {
+            "type": "question",
+            "text": "L'entité a-t-elle ≤ 10 employés EPT (moyenne annuelle) ET l'accord UNANIME de tous les actionnaires ?",
+            "options": [
+              {
+                "label": "Oui — les deux conditions",
+                "next": "r_optout"
+              },
+              {
+                "label": "Non",
+                "next": "r_restr"
+              }
+            ]
+          },
+          "r_ord": {
+            "type": "result",
+            "variant": "danger",
+            "text": "CONTRÔLE ORDINAIRE (CO 727)",
+            "detail": "Audit complet selon les NA-CH / ISA. Assurance RAISONNABLE.\n• 2 rapports : à l'AG (CO 728b, public, court) + au CA (CO 728a, détaillé, confidentiel)\n• Vérification existence du SCI (CO 728a al.1 ch.3)\n• Indépendance stricte + rotation 7 ans (EIP)"
+          },
+          "r_restr": {
+            "type": "result",
+            "variant": "warning",
+            "text": "CONTRÔLE RESTREINT (CO 729)",
+            "detail": "Examen limité (review) selon la NCR. Assurance LIMITÉE (formulation négative).\n• 1 seul rapport à l'AG (CO 729b)\n• Procédures : demandes + analyse + vérifications appropriées\n• Pas de tests de contrôle ni JE testing\n• Indépendance allégée (CO 730b — conseil/tenue compta possibles)"
+          },
+          "r_optout": {
+            "type": "result",
+            "variant": "success",
+            "text": "OPTING-OUT (CO 727a al.2)",
+            "detail": "AUCUNE révision (renonciation totale).\n• Conditions cumulatives : ≤ 10 EPT + unanimité des actionnaires\n• Mention « opting-out » au registre du commerce\n• L'entité peut toujours choisir un opting-in volontaire (ex : crédibilité bancaire)"
+          }
+        }
+      },
+      {
+        "id": "conso",
+        "titre": "Quelle méthode de consolidation ? (IFRS 10/11, IAS 28)",
+        "icon": "🏢",
+        "color": "#0d9488",
+        "intro": "Détermine la méthode selon le niveau d'influence/contrôle (full, equity, joint).",
+        "start": "q1",
+        "nodes": {
+          "q1": {
+            "type": "question",
+            "text": "L'investisseur a-t-il le CONTRÔLE ? (pouvoir + exposition aux rendements variables + capacité d'influencer les rendements — IFRS 10)",
+            "options": [
+              {
+                "label": "Oui — contrôle",
+                "next": "r_full"
+              },
+              {
+                "label": "Non",
+                "next": "q2"
+              }
+            ]
+          },
+          "q2": {
+            "type": "question",
+            "text": "Y a-t-il un CONTRÔLE CONJOINT (joint control, partenariat à parts égales) ?",
+            "options": [
+              {
+                "label": "Oui — contrôle conjoint",
+                "next": "q3"
+              },
+              {
+                "label": "Non",
+                "next": "q4"
+              }
+            ]
+          },
+          "q3": {
+            "type": "question",
+            "text": "Les parties ont-elles des droits sur les ACTIFS NETS (entité structurée) ou des droits directs sur les actifs/passifs ?",
+            "options": [
+              {
+                "label": "Droits sur actifs nets → Joint Venture",
+                "next": "r_jv"
+              },
+              {
+                "label": "Droits directs actifs/passifs → Joint Operation",
+                "next": "r_jo"
+              }
+            ]
+          },
+          "q4": {
+            "type": "question",
+            "text": "Y a-t-il une INFLUENCE NOTABLE ? (typiquement 20-50% des droits de vote — IAS 28)",
+            "options": [
+              {
+                "label": "Oui — influence notable",
+                "next": "r_equity"
+              },
+              {
+                "label": "Non — < 20%, pas d'influence",
+                "next": "r_ifrs9"
+              }
+            ]
+          },
+          "r_full": {
+            "type": "result",
+            "variant": "danger",
+            "text": "INTÉGRATION GLOBALE (Full consolidation — IFRS 10)",
+            "detail": "Tous les actifs/passifs/produits/charges intégrés à 100%.\n• Intérêts minoritaires (NCI) présentés séparément en capitaux propres\n• Éliminations intragroupe (ventes, créances/dettes, profits sur stocks)\n• Goodwill (IFRS 3, non amorti + test annuel ; RPC 30 amorti 5-20 ans)"
+          },
+          "r_jv": {
+            "type": "result",
+            "variant": "warning",
+            "text": "MISE EN ÉQUIVALENCE (Joint Venture — IFRS 11 → IAS 28)",
+            "detail": "Droits sur les actifs nets → equity method.\n• Valeur initiale au coût + quote-part résultat - dividendes\n• Une seule ligne au bilan (« participations mises en équivalence »)\n⚠️ RPC autorise aussi l'intégration proportionnelle pour les JV (option)."
+          },
+          "r_jo": {
+            "type": "result",
+            "variant": "warning",
+            "text": "INTÉGRATION PROPORTIONNELLE (Joint Operation — IFRS 11)",
+            "detail": "Droits directs sur actifs/passifs → chaque partie comptabilise SA quote-part d'actifs, passifs, produits et charges. Pas d'entité séparée significative."
+          },
+          "r_equity": {
+            "type": "result",
+            "variant": "warning",
+            "text": "MISE EN ÉQUIVALENCE (Associate — IAS 28)",
+            "detail": "Influence notable (20-50%) → equity method.\n• Coût initial + quote-part résultat + quote-part OCI - dividendes\n• Test de dépréciation si indicateurs (IAS 36)"
+          },
+          "r_ifrs9": {
+            "type": "result",
+            "variant": "success",
+            "text": "INSTRUMENT FINANCIER (IFRS 9 / RPC 27)",
+            "detail": "< 20%, pas d'influence notable → simple investissement financier.\n• Classé en AC / FVOCI / FVTPL selon le business model + test SPPI (IFRS 9)\n• Pas de consolidation"
+          }
+        }
+      }
+    ]
   }
 }
