@@ -15,6 +15,7 @@ const AUDIT_TABS = [
     { id: 'timeline',     label: 'Timeline',      icon: '🗓️', desc: 'Frise de mission : acceptation → reporting + délais clés' },
     { id: 'fraude',       label: 'Fraude & NOCLAR', icon: '🚨', desc: 'Triangle de la fraude, JE testing, red flags, signalement NOCLAR' },
     { id: 'goingconcern', label: 'Going concern', icon: '📉', desc: 'ISA 570 + surendettement CO 725 + matrice 4 scénarios' },
+    { id: 'actualites',   label: 'Actualités',    icon: '🆕', desc: 'Réformes : ISA révisées, ISQM, droit SA 2023, Pillar 2, CSRD' },
     { id: 'canvas',       label: 'Canvas Perso',  icon: '🏢', desc: 'Tes propres engagements d\'audit' },
     { id: 'mission',      label: 'Mission Lab',   icon: '🎬', desc: 'Mission immersive end-to-end chez EY' },
     { id: 'seuils',       label: 'Seuils & Exos', icon: '🎯', desc: 'Comprendre tous les seuils + exercices pas-à-pas' },
@@ -169,6 +170,7 @@ function _renderAuditSubContent(subTab) {
         case 'timeline':    _renderAuditTimeline(host);   break;
         case 'fraude':      _renderAuditBlocs(host, 'fraude'); break;
         case 'goingconcern': _renderAuditBlocs(host, 'goingconcern'); break;
+        case 'actualites':  _renderAuditBlocs(host, 'actualites'); break;
         case 'quiz':        _renderAuditQuiz(host);       break;
         default:            _renderAuditNas(host);
     }

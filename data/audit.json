@@ -11305,5 +11305,229 @@
         ]
       }
     ]
+  },
+  "actualites": {
+    "_label": "Actualités & réformes",
+    "_icon": "🆕",
+    "_description": "Toutes les évolutions récentes à connaître pour l'examen et la pratique : révisions ISA, ISQM, droit SA 2023, fiscalité (Pillar 2, RFFA), durabilité (CSRD, ISSB). Les examinateurs adorent les nouveautés.",
+    "blocs": [
+      {
+        "id": "isa315",
+        "titre": "ISA 315 (Revised 2019) — Évaluation des risques",
+        "icon": "🔍",
+        "color": "#dc2626",
+        "intro": "Effective : exercices ouverts dès le 15.12.2021. Révision majeure de la norme pivot.",
+        "liste": [
+          "Approche par SPECTRE (spectrum) du risque inhérent — fin de l'approche binaire",
+          "Considérations IT renforcées (paragraphes dédiés A165-A185, ITGC)",
+          "Test de recul (stand-back) obligatoire sur la cohérence globale",
+          "Documentation renforcée (facteurs, jugements, réfutations)",
+          "Significant risk = partie haute du spectre du risque inhérent"
+        ],
+        "warning": "C'est LA révision la plus testée. Mémoriser : spectrum + IT + stand-back."
+      },
+      {
+        "id": "isa540",
+        "titre": "ISA 540 (Revised 2019) — Estimations comptables",
+        "icon": "📐",
+        "color": "#ea580c",
+        "intro": "Effective : exercices ouverts dès le 15.12.2019. Norme bien plus exigeante.",
+        "liste": [
+          "Évaluation du risque inhérent via 3 facteurs : complexité, subjectivité, incertitude d'estimation",
+          "Test selon 3 dimensions : MÉTHODE, HYPOTHÈSES, DONNÉES (MHD)",
+          "Détection du biais de la direction (management bias)",
+          "Test de recul (stand-back) sur le caractère raisonnable global",
+          "Scepticisme renforcé (lien fort avec IAS 36, IFRS 9 ECL, IAS 19)"
+        ]
+      },
+      {
+        "id": "isa600",
+        "titre": "ISA 600 (Revised 2022) — Audits de groupes",
+        "icon": "🏢",
+        "color": "#f59e0b",
+        "intro": "Effective : exercices ouverts dès le 15.12.2023.",
+        "liste": [
+          "Approche fondée sur les risques (risk-based)",
+          "SUPPRESSION du terme « significant component »",
+          "Responsabilité renforcée du group engagement partner",
+          "Communication accrue avec les component auditors (diriger, superviser, réviser)"
+        ],
+        "warning": "Ne plus parler de « significant component » — c'est désormais une approche risk-based."
+      },
+      {
+        "id": "isa220",
+        "titre": "ISA 220 (Revised 2022) — Qualité de la mission",
+        "icon": "✅",
+        "color": "#16a34a",
+        "intro": "Effective : exercices ouverts dès le 15.12.2022. Articulé avec ISQM 1.",
+        "liste": [
+          "Approche risk-based (≠ check-list)",
+          "Responsabilité globale de l'associé responsable (engagement partner)",
+          "EQR (revue qualité) structuré pour les EIP",
+          "Coordination avec le système qualité du cabinet (ISQM 1)"
+        ]
+      },
+      {
+        "id": "isqm",
+        "titre": "ISQM 1 & 2 (2022) — Gestion de la qualité",
+        "icon": "🎖️",
+        "color": "#0891b2",
+        "intro": "Effective : systèmes opérationnels dès le 15.12.2022. Remplace ISQC 1.",
+        "table": {
+          "headers": [
+            "Norme",
+            "Niveau",
+            "Apport"
+          ],
+          "rows": [
+            [
+              "ISQM 1",
+              "Cabinet",
+              "Système de gestion qualité (SoQM) risk-based, 8 composantes, revue annuelle"
+            ],
+            [
+              "ISQM 2",
+              "Mission",
+              "EQR : éligibilité, indépendance (cooling-off 2 ans), revue avant signature"
+            ]
+          ]
+        },
+        "warning": "ISQM = approche risk-based (≠ ISQC 1 check-list). Équivalent suisse : NCQ 1. ISQM 1 = cabinet, ISA 220 = mission."
+      },
+      {
+        "id": "isa570",
+        "titre": "ISA 570 (Revised 2024) — Going concern",
+        "icon": "📉",
+        "color": "#7c3aed",
+        "intro": "Effective : phasé dès le 15.12.2026.",
+        "liste": [
+          "Scepticisme et documentation renforcés",
+          "Période d'évaluation : ≥ 12 mois depuis la date du rapport (incite à considérer au-delà)",
+          "Format du paragraphe « Material Uncertainty Related to Going Concern »",
+          "4 scénarios d'opinion (clean / EOM / modifiée / adverse)"
+        ],
+        "warning": "Pas encore en vigueur (2026). Pour les exercices antérieurs, ISA 570 (2009) reste applicable."
+      },
+      {
+        "id": "isalce",
+        "titre": "ISA for LCE (2023) — Entités moins complexes",
+        "icon": "🆕",
+        "color": "#ec4899",
+        "intro": "Nouvelle norme STANDALONE. Effective : exercices ouverts dès le 15.12.2025.",
+        "liste": [
+          "Référentiel d'audit autonome (≠ allègement des ISA)",
+          "Audit COMPLET donnant une assurance raisonnable (même niveau que les ISA)",
+          "Documentation et procédures proportionnées aux LCE",
+          "Critères d'éligibilité qualitatifs (exclut EIP et groupes complexes)"
+        ],
+        "warning": "ISA for LCE = audit complet simplifié (assurance RAISONNABLE) ≠ contrôle restreint suisse (assurance LIMITÉE). Adoption CH en cours d'évaluation."
+      },
+      {
+        "id": "droitsa2023",
+        "titre": "Droit de la SA — Réforme 2023 (CO)",
+        "icon": "🇨🇭",
+        "color": "#dc2626",
+        "intro": "Entrée en vigueur : 1er janvier 2023. Modernisation profonde du droit des sociétés.",
+        "liste": [
+          "Capital-actions en DEVISE ÉTRANGÈRE (USD, EUR, GBP, JPY)",
+          "Marge de fluctuation du capital (capital band, art. 653s)",
+          "Dividendes INTERMÉDIAIRES (art. 675a)",
+          "AG VIRTUELLE et décisions circulaires facilitées (art. 701d)",
+          "Restructuration des art. 725-725c (insolvabilité / perte de capital / surendettement)",
+          "Quota de genre dans les grandes cotées (30% CA, 20% direction)",
+          "Say-on-Pay contraignant pour les rémunérations (cotées)"
+        ],
+        "warning": "Pour l'audit : la restructuration CO 725-725c est CRITIQUE (going concern, avis au juge). Mentionner systématiquement la réforme 2023 si la question porte sur la SA."
+      },
+      {
+        "id": "pillar2",
+        "titre": "OCDE Pillar 2 — Impôt minimum 15%",
+        "icon": "🌐",
+        "color": "#06b6d4",
+        "intro": "Entrée en vigueur Suisse : 1er janvier 2024. Top-up tax pour les grands groupes.",
+        "table": {
+          "headers": [
+            "Élément",
+            "Détail"
+          ],
+          "rows": [
+            [
+              "Champ",
+              "Groupes multinationaux > EUR 750M de CA"
+            ],
+            [
+              "Taux minimum",
+              "15% (Effective Tax Rate)"
+            ],
+            [
+              "Mécanismes",
+              "QDMTT (état source) → IIR (résidence UPE) → UTPR (back-up)"
+            ],
+            [
+              "Impact audit",
+              "Audit du calcul de l'ETR + provisions top-up tax (estimations ISA 540)"
+            ]
+          ]
+        },
+        "warning": "Pillar 2 = top-up tax SI l'ETR effectif < 15%. Si déjà > 15% localement, pas d'impact. Mnémonique mécanismes : QIU."
+      },
+      {
+        "id": "durabilite",
+        "titre": "Durabilité — CSRD, ESRS, ISSB",
+        "icon": "🌱",
+        "color": "#16a34a",
+        "intro": "La vague du reporting durabilité et de son assurance (ISAE 3000/3410).",
+        "table": {
+          "headers": [
+            "Référentiel",
+            "Émetteur",
+            "Application"
+          ],
+          "rows": [
+            [
+              "CSRD",
+              "UE",
+              "Reporting durabilité obligatoire (phasé 2024-2027), double matérialité"
+            ],
+            [
+              "ESRS",
+              "EFRAG",
+              "12 normes européennes (sous CSRD)"
+            ],
+            [
+              "IFRS S1/S2",
+              "ISSB",
+              "Standards mondiaux (S1 général, S2 climat), depuis 2024"
+            ],
+            [
+              "TCFD",
+              "FSB",
+              "4 piliers : Governance, Strategy, Risk, Metrics (GSRM)"
+            ],
+            [
+              "OR 964a-c",
+              "Suisse",
+              "Reporting non-financier obligatoire (≥500 EPT), depuis 2023"
+            ]
+          ]
+        },
+        "warning": "CSRD = double matérialité (impact entreprise + impact société/env) ≠ ISSB = single matérialité. L'assurance durabilité (limited puis reasonable) devient un marché clé pour EY."
+      },
+      {
+        "id": "rffa",
+        "titre": "RFFA — Réforme fiscale 2020",
+        "icon": "💰",
+        "color": "#a855f7",
+        "intro": "Réforme fiscale et financement de l'AVS, en vigueur depuis le 1er janvier 2020.",
+        "liste": [
+          "ABOLITION des statuts spéciaux (holding, société mixte, société de domicile)",
+          "Patent box : déduction jusqu'à 90% des revenus de brevets (cantonal)",
+          "Déduction R&D supplémentaire jusqu'à 50% (cantonal)",
+          "Step-up : réévaluation des actifs à la fin du statut spécial",
+          "Baisse des taux d'imposition ordinaires (cantons)"
+        ],
+        "warning": "Les statuts holding/mixte n'existent PLUS depuis 2020. Erreur classique : les citer encore."
+      }
+    ]
   }
 }
