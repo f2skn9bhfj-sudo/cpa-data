@@ -10,6 +10,7 @@ const AUDIT_TABS = [
     { id: 'arbres',       label: 'Arbres décision', icon: '🌳', desc: 'Logigrammes interactifs : opinion, going concern, leasing, révision, consolidation' },
     { id: 'procedures',   label: 'Procédures',    icon: '✅', desc: 'Matrice assertions × procédures par cycle (terrain)' },
     { id: 'independance', label: 'Indépendance',  icon: '⚖️', desc: 'Éthique IESBA, 5 menaces, rotation, honoraires, NOCLAR' },
+    { id: 'modeles',      label: 'Modèles',       icon: '📄', desc: 'Templates : lettres, rapports (UQAD), paragraphes, avis au juge' },
     { id: 'canvas',       label: 'Canvas Perso',  icon: '🏢', desc: 'Tes propres engagements d\'audit' },
     { id: 'mission',      label: 'Mission Lab',   icon: '🎬', desc: 'Mission immersive end-to-end chez EY' },
     { id: 'seuils',       label: 'Seuils & Exos', icon: '🎯', desc: 'Comprendre tous les seuils + exercices pas-à-pas' },
@@ -159,9 +160,106 @@ function _renderAuditSubContent(subTab) {
         case 'arbres':      _renderAuditArbres(host);     break;
         case 'procedures':  _renderAuditProcedures(host); break;
         case 'independance': _renderAuditBlocs(host, 'independance'); break;
+        case 'modeles':     _renderAuditModeles(host);    break;
         case 'quiz':        _renderAuditQuiz(host);       break;
         default:            _renderAuditNas(host);
     }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// MODÈLES & WORDING — Templates avec copie presse-papier
+// ─────────────────────────────────────────────────────────────────
+let _modActiveCat = null;
+// Stockage des contenus pour la copie (évite les soucis d'échappement inline)
+const _modContents = {};
+
+function _renderAuditModeles(host) {
+    const m = _auditData.modeles || {};
+    const cats = m.categories || [];
+    if (!_modActiveCat && cats.length) _modActiveCat = cats[0].id;
+
+    // Indexer tous les contenus
+    cats.forEach(c => (c.templates || []).forEach(t => { _modContents[t.id] = t.contenu; }));
+
+    host.innerHTML = `
+        <div class="ref-section-title">${m._icon || '📄'} ${escapeHtml(m._label || 'Modèles')}</div>
+        <p style="color:#94a3b8;font-size:13px;line-height:1.6;margin-bottom:14px">
+            ${escapeHtml(m._description || '')}
+        </p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+            ${cats.map(c => `
+                <button onclick="_setModCat('${c.id}')"
+                        style="padding:8px 13px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:600;
+                               background:${_modActiveCat === c.id ? (c.color || AUDIT_ACCENT) : '#1e293b'};
+                               color:${_modActiveCat === c.id ? '#fff' : '#94a3b8'};
+                               border:1px solid ${_modActiveCat === c.id ? (c.color || AUDIT_ACCENT) : '#334155'}">
+                    ${escapeHtml(c.label)}
+                </button>`).join('')}
+        </div>
+        <div id="modContent">${_renderModCat(cats.find(c => c.id === _modActiveCat))}</div>
+    `;
+}
+
+function _renderModCat(cat) {
+    if (!cat) return '';
+    const color = cat.color || AUDIT_ACCENT;
+    return (cat.templates || []).map((t, idx) => {
+        const id = `mod-${cat.id}-${idx}`;
+        return `
+            <div class="card" style="margin-bottom:14px;border-left:3px solid ${color}">
+                <div style="padding:13px 18px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+                    <div onclick="_toggleMod('${id}')" style="flex:1;cursor:pointer">
+                        <div style="font-size:14px;font-weight:800;color:${AUDIT_LIGHT}">${escapeHtml(t.titre)}</div>
+                        ${t.contexte ? `<div style="font-size:12px;color:#94a3b8;margin-top:4px;line-height:1.5">${escapeHtml(t.contexte)}</div>` : ''}
+                    </div>
+                    <button onclick="_copyMod('${t.id}', this)"
+                            style="flex-shrink:0;padding:7px 12px;border-radius:6px;cursor:pointer;background:${color};
+                                   border:none;color:#fff;font-size:12px;font-weight:700;white-space:nowrap">📋 Copier</button>
+                </div>
+                <div id="${id}" style="display:none;padding:0 18px 18px 18px">
+                    <pre style="margin:0;padding:14px 16px;background:#0a0f1c;border-radius:8px;border:1px solid #1e293b;
+                                color:#cbd5e1;font-size:12px;line-height:1.7;white-space:pre-wrap;font-family:'Segoe UI',system-ui,sans-serif;
+                                max-height:none;overflow:visible">${escapeHtml(t.contenu)}</pre>
+                </div>
+            </div>`;
+    }).join('');
+}
+
+function _setModCat(catId) {
+    _modActiveCat = catId;
+    const host = document.getElementById('auditContent');
+    if (host) _renderAuditModeles(host);
+}
+
+function _toggleMod(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+
+function _copyMod(tplId, btn) {
+    const txt = _modContents[tplId] || '';
+    const done = () => {
+        const old = btn.textContent;
+        btn.textContent = '✓ Copié !';
+        setTimeout(() => { btn.textContent = old; }, 1500);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(done).catch(() => _copyFallback(txt, done));
+    } else {
+        _copyFallback(txt, done);
+    }
+}
+
+function _copyFallback(txt, done) {
+    try {
+        const ta = document.createElement('textarea');
+        ta.value = txt; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        done();
+    } catch (_) {}
 }
 
 // ─────────────────────────────────────────────────────────────────

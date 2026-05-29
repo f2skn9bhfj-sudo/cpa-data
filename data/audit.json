@@ -10189,5 +10189,112 @@
         ]
       }
     ]
+  },
+  "modeles": {
+    "_label": "Modèles & wording",
+    "_icon": "📄",
+    "_description": "Templates prêts à l'emploi : lettres, rapports d'audit (toutes opinions), paragraphes types, avis au juge. Clique « 📋 Copier » pour réutiliser. Les [crochets] sont à remplacer.",
+    "categories": [
+      {
+        "id": "lettres",
+        "label": "✉️ Lettres",
+        "color": "#3b82f6",
+        "templates": [
+          {
+            "id": "engagement",
+            "titre": "Lettre de mission (ISA 210)",
+            "contexte": "Contrat écrit définissant les termes de l'audit, signé avant le début des travaux.",
+            "contenu": "Mesdames, Messieurs,\n\nNous vous remercions de nous avoir confié l'audit des comptes annuels de [Société SA] pour l'exercice clos le [31 décembre 20XX]. La présente lettre confirme les termes de notre mission.\n\nOBJECTIF ET ÉTENDUE\nNous réaliserons notre audit conformément aux Normes d'audit suisses (NA-CH). Notre objectif est d'exprimer une opinion sur la conformité des comptes annuels à la loi suisse et aux statuts.\n\nRESPONSABILITÉS DE L'ORGANE DE RÉVISION\nNotre responsabilité est d'exprimer une opinion sur les comptes annuels sur la base de notre audit. Un audit donne une assurance raisonnable (non absolue).\n\nRESPONSABILITÉS DU CONSEIL D'ADMINISTRATION\nL'établissement des comptes annuels conformes à la loi et aux statuts, ainsi que la conception du système de contrôle interne, relèvent de la responsabilité du conseil d'administration. Le CA s'engage à nous donner accès à toutes les informations pertinentes.\n\nRAPPORT\nNous remettrons un rapport à l'assemblée générale (art. 728b CO) et un rapport détaillé au conseil d'administration (art. 728a CO).\n\nHONORAIRES\n[Préciser les honoraires et modalités.]\n\nNous vous prions de nous retourner un exemplaire signé de la présente.\n\nVeuillez agréer, Mesdames, Messieurs, nos salutations distinguées.\n\n[Cabinet], [Lieu], [Date]\n[Réviseur responsable agréé ASR]"
+          },
+          {
+            "id": "lor",
+            "titre": "Lettre de représentation (LoR — ISA 580)",
+            "contexte": "Déclaration écrite de la direction, obtenue avant la signature du rapport.",
+            "contenu": "À l'attention de [Cabinet d'audit]\n[Date proche de celle du rapport]\n\nDéclaration de la direction relative à l'audit des comptes annuels de l'exercice clos le [31 décembre 20XX].\n\nNous confirmons, à notre meilleure connaissance et en toute bonne foi, les éléments suivants :\n\n1. Nous assumons la responsabilité de l'établissement des comptes annuels donnant une image fidèle, conformément à [référentiel] et aux dispositions légales.\n\n2. Nous vous avons donné accès à l'ensemble des informations et de la documentation pertinentes, ainsi qu'un accès illimité aux personnes au sein de l'entité.\n\n3. Toutes les transactions ont été enregistrées et reflétées dans les comptes annuels.\n\n4. Nous vous avons communiqué les résultats de notre évaluation du risque de fraude, ainsi que toute fraude avérée ou suspectée.\n\n5. Nous vous avons divulgué tous les cas de non-conformité avérés ou possibles aux textes légaux et réglementaires.\n\n6. Toutes les parties liées et les transactions avec celles-ci ont été correctement comptabilisées et présentées.\n\n7. Les événements postérieurs à la clôture nécessitant un ajustement ou une mention ont été traités.\n\n8. Les anomalies non corrigées sont, individuellement et globalement, sans incidence significative sur les comptes annuels (liste en annexe).\n\nLe Conseil d'administration / La Direction\n[Signature(s)]"
+          }
+        ]
+      },
+      {
+        "id": "rapports",
+        "label": "📋 Rapports d'audit (opinions)",
+        "color": "#7c3aed",
+        "templates": [
+          {
+            "id": "clean",
+            "titre": "Opinion NON MODIFIÉE (clean — CO 728b / ISA 700)",
+            "contexte": "Rapport standard à l'AG quand les comptes sont conformes.",
+            "contenu": "RAPPORT DE L'ORGANE DE RÉVISION À L'ASSEMBLÉE GÉNÉRALE DE [SOCIÉTÉ SA]\n\nOpinion d'audit\nEn notre qualité d'organe de révision, nous avons effectué l'audit des comptes annuels de [Société SA] (bilan, compte de résultat et annexe) pour l'exercice arrêté au [31 décembre 20XX].\n\nÀ notre avis, les comptes annuels donnent une image fidèle du patrimoine, de la situation financière et des résultats, en conformité avec [référentiel], et sont conformes à la loi suisse et aux statuts.\n\nBases de l'opinion d'audit\nNous avons effectué notre audit conformément à la loi suisse et aux Normes d'audit suisses (NA-CH). Notre indépendance respecte les exigences légales et nous ne sommes pas dans une situation d'incompatibilité.\n\nResponsabilité du Conseil d'administration\n[...]\n\nResponsabilité de l'organe de révision\n[...]\n\nSur la base de notre audit, nous recommandons d'approuver les comptes annuels qui vous sont soumis.\n\n[Cabinet] — [Lieu], [Date]\n[Réviseur responsable agréé ASR] — [Numéro d'agrément]"
+          },
+          {
+            "id": "qualified",
+            "titre": "Opinion AVEC RÉSERVE (qualified — ISA 705)",
+            "contexte": "Anomalie significative MAIS isolée (pas généralisée).",
+            "contenu": "Opinion d'audit avec réserve\n\nÀ notre avis, À L'EXCEPTION des effets de la question décrite dans la section « Fondement de l'opinion avec réserve », les comptes annuels donnent une image fidèle... et sont conformes à la loi suisse et aux statuts.\n\nFondement de l'opinion avec réserve\n[Décrire l'anomalie. Exemple :] Les stocks sont comptabilisés à CHF [montant] sans tenir compte d'une dépréciation nécessaire de CHF [montant] pour obsolescence (RPC 17). En conséquence, les stocks et le résultat avant impôts sont surévalués de CHF [montant], et les fonds propres de CHF [montant net d'impôt].\n\nNous avons effectué notre audit conformément aux NA-CH. [...]"
+          },
+          {
+            "id": "adverse",
+            "titre": "Opinion DÉFAVORABLE (adverse — ISA 705)",
+            "contexte": "Anomalie significative ET généralisée (pervasive).",
+            "contenu": "Opinion d'audit défavorable\n\nÀ notre avis, en raison de l'importance de la question décrite dans la section « Fondement de l'opinion défavorable », les comptes annuels NE donnent PAS une image fidèle du patrimoine, de la situation financière et des résultats, et NE sont PAS conformes à [référentiel] / la loi suisse et aux statuts.\n\nFondement de l'opinion défavorable\n[Décrire l'anomalie généralisée et son effet sur l'ensemble des EF.]\n\nEn conséquence, nous recommandons de NE PAS approuver les comptes annuels."
+          },
+          {
+            "id": "disclaimer",
+            "titre": "IMPOSSIBILITÉ D'EXPRIMER UNE OPINION (disclaimer — ISA 705)",
+            "contexte": "Limitation de l'étendue significative ET généralisée.",
+            "contenu": "Impossibilité d'exprimer une opinion\n\nNous avons été chargés d'effectuer l'audit des comptes annuels de [Société SA]. Nous N'EXPRIMONS PAS d'opinion sur ces comptes annuels. En raison de l'importance de la question décrite dans la section « Fondement de l'impossibilité d'exprimer une opinion », nous n'avons pas été en mesure d'obtenir des éléments probants suffisants et appropriés pour fonder une opinion d'audit.\n\nFondement de l'impossibilité d'exprimer une opinion\n[Décrire la limitation généralisée. Exemple : impossibilité d'assister à l'inventaire physique des stocks représentant 35% du total bilan, sans procédures alternatives possibles.]"
+          }
+        ]
+      },
+      {
+        "id": "paragraphes",
+        "label": "📝 Paragraphes spéciaux",
+        "color": "#0891b2",
+        "templates": [
+          {
+            "id": "material_uncertainty",
+            "titre": "Incertitude significative — Going concern (ISA 570)",
+            "contexte": "Opinion CLEAN + ce paragraphe (incertitude + disclosure adéquate).",
+            "contenu": "Incertitude significative liée à la continuité d'exploitation\n\nNous attirons l'attention sur la note [X] de l'annexe, qui indique que [décrire les conditions : pertes récurrentes, fonds propres négatifs, perte d'un client majeur, etc.]. Ces conditions, ainsi que les autres questions exposées dans la note [X], indiquent l'existence d'une incertitude significative susceptible de jeter un doute important sur la capacité de la société à poursuivre son exploitation.\n\nNotre opinion n'est pas modifiée au regard de cette question.\n\n[Position dans le rapport : après le fondement de l'opinion, avant les KAM.]"
+          },
+          {
+            "id": "eom",
+            "titre": "Paragraphe d'observation (EOM — ISA 706)",
+            "contexte": "Attire l'attention sur une question présentée, sans modifier l'opinion.",
+            "contenu": "Observation\n\nNous attirons l'attention sur la note [X] de l'annexe, qui décrit [la question, ex : un litige important, un changement de méthode comptable, un événement exceptionnel].\n\nNotre opinion n'est pas modifiée au regard de cette question."
+          },
+          {
+            "id": "kam",
+            "titre": "Question clé de l'audit (KAM — ISA 701)",
+            "contexte": "Pour les EIP/cotées. Structure : la question + pourquoi + comment traité.",
+            "contenu": "Questions clés de l'audit\n\nLes questions clés de l'audit sont les questions qui, selon notre jugement professionnel, ont été les plus importantes pour notre audit des comptes annuels de la période courante. Ces questions ont été traitées dans le cadre de notre audit et lors de la formation de notre opinion ; nous n'exprimons pas d'opinion distincte sur ces questions.\n\n[Titre de la KAM, ex : Évaluation du goodwill]\n\nDescription : [Pourquoi cette question est une KAM — risque, jugement, estimation significative.]\n\nNotre réponse d'audit : [Comment l'audit a traité la question — procédures mises en œuvre, recours à un expert, tests d'hypothèses.]"
+          }
+        ]
+      },
+      {
+        "id": "suisse",
+        "label": "🇨🇭 Spécifique suisse",
+        "color": "#dc2626",
+        "templates": [
+          {
+            "id": "restreint",
+            "titre": "Rapport — Contrôle restreint (CO 729b)",
+            "contexte": "1 seul rapport, assurance limitée, formulation NÉGATIVE.",
+            "contenu": "RAPPORT DE L'ORGANE DE RÉVISION SUR LE CONTRÔLE RESTREINT À L'ASSEMBLÉE GÉNÉRALE DE [SOCIÉTÉ SA]\n\nEn notre qualité d'organe de révision, nous avons effectué le contrôle restreint des comptes annuels (bilan, compte de résultat et annexe) de [Société SA] pour l'exercice arrêté au [31 décembre 20XX].\n\nLa responsabilité de l'établissement des comptes annuels incombe au conseil d'administration, alors que notre mission consiste à contrôler ces comptes. Nous attestons que nous remplissons les exigences légales d'agrément et d'indépendance.\n\nNotre contrôle a été effectué selon la Norme suisse relative au contrôle restreint (NCR). Cette norme requiert de planifier et de réaliser le contrôle de manière telle que des anomalies significatives dans les comptes annuels puissent être constatées. Un contrôle restreint englobe principalement des auditions, des opérations de contrôle analytiques ainsi que des vérifications détaillées appropriées des documents disponibles dans l'entreprise contrôlée. En revanche, des vérifications des flux d'exploitation et du système de contrôle interne ainsi que des auditions et d'autres opérations de contrôle destinées à détecter des fraudes ne font pas partie de ce contrôle.\n\nLors de notre contrôle, nous n'avons pas rencontré d'élément nous permettant de conclure que les comptes annuels ainsi que la proposition concernant l'emploi du bénéfice ne sont pas conformes à la loi et aux statuts.\n\n[Cabinet] — [Lieu], [Date]\n[Réviseur agréé] — [Numéro d'agrément ASR]"
+          },
+          {
+            "id": "avis_juge",
+            "titre": "Avis au juge — surendettement (CO 725b al.4)",
+            "contexte": "Si le CA n'agit pas malgré un surendettement avéré.",
+            "contenu": "Au Tribunal de [siège social] — Juge du surendettement\n\nObjet : Avis de surendettement de [Société SA] (art. 725b al. 4 CO)\n\nMonsieur le Juge,\n\nEn notre qualité d'organe de révision agréé de [Société SA], et conformément à l'article 725b al. 4 CO, nous portons à votre connaissance la situation de surendettement de la société.\n\nLes bilans intermédiaires établis par le conseil d'administration, à valeur d'exploitation et à valeur de liquidation, font tous deux apparaître un surendettement (fonds propres négatifs de CHF [montant]). Malgré notre communication formelle au conseil d'administration en date du [date], aucune mesure d'assainissement suffisante (postposition de créances valable ou apport de fonds) n'a été prise dans le délai imparti.\n\nNous joignons à la présente les bilans intermédiaires vérifiés, nos constatations et nos échanges avec le conseil d'administration.\n\nVeuillez agréer, Monsieur le Juge, l'expression de notre considération distinguée.\n\n[Cabinet] — [Réviseur responsable agréé ASR]"
+          },
+          {
+            "id": "management_letter",
+            "titre": "Management letter — extrait (rapport au CA)",
+            "contexte": "Recommandations détaillées au CA (CO 728a / ISA 265).",
+            "contenu": "RAPPORT DÉTAILLÉ AU CONSEIL D'ADMINISTRATION (extrait — Déficiences du SCI)\n\n1. RÉSUMÉ EXÉCUTIF\nNotre audit n'a pas révélé d'anomalie significative dans les comptes annuels. Nous avons toutefois identifié les déficiences de contrôle interne suivantes, classées par niveau de gravité.\n\n2. DÉFICIENCE SIGNIFICATIVE — Ségrégation des tâches (paie)\nConstat : la même personne saisit, valide et exécute les paiements de salaires.\nRisque : paiements non autorisés / fictifs.\nRecommandation : instaurer un principe de double signature et séparer la saisie de la validation.\n\n3. DÉFICIENCE — Rapprochement bancaire\nConstat : les rapprochements bancaires ne sont pas effectués mensuellement.\nRecommandation : formaliser un rapprochement mensuel revu par un responsable.\n\n[Classer chaque point : déficience / déficience significative / faiblesse matérielle.]"
+          }
+        ]
+      }
+    ]
   }
 }
