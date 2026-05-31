@@ -14704,66 +14704,66 @@
       ]
     },
     "520": {
-      "duree": "8 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Procédures analytiques : analyser les relations plausibles pour détecter l'inattendu. 3 moments : planification, substance, finale (obligatoire). Substance = attente précise + seuil + données fiables.",
+      "duree": "13 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 520 = procédures analytiques. Comme procédures de substance (attente précise + seuil + données fiables + investigation des écarts) et OBLIGATOIRES en revue finale (overall review).",
       "stats": [
         {
+          "value": "§5",
+          "label": "Substance",
+          "sub": "4 conditions"
+        },
+        {
+          "value": "§6",
+          "label": "Revue finale",
+          "sub": "OBLIGATOIRE"
+        },
+        {
+          "value": "§7",
+          "label": "Investiguer",
+          "sub": "écarts"
+        },
+        {
           "value": "3 moments",
-          "label": "Planif/substance/finale",
+          "label": "Planif/subst/finale",
           "sub": ""
-        },
-        {
-          "value": "Finale",
-          "label": "Obligatoire",
-          "sub": "overall review"
-        },
-        {
-          "value": "Attente",
-          "label": "Précise",
-          "sub": "+ seuil d'écart"
-        },
-        {
-          "value": "NAS 520",
-          "label": "Norme",
-          "sub": "= ISA 520"
         }
       ],
-      "intro": "Les procédures analytiques comparent des données pour détecter l'inattendu.",
+      "intro": "Les procédures analytiques évaluent l'information financière par l'étude des relations plausibles entre données. ISA 520 les régit comme procédures de substance et comme revue finale. Cours § par §.",
       "sections": [
         {
-          "titre": "Le principe",
-          "body": "Analyser les relations plausibles entre données financières et non financières (ratios, tendances, N/N-1, vs budget, vs secteur). Un écart inattendu peut révéler une anomalie.",
+          "titre": "Champ, objectif & définition (§1-4)",
+          "body": "ISA 520 traite de l'utilisation des **procédures analytiques** comme procédures de substance, et de celles réalisées à la fin de l'audit. **Définition** : évaluations de l'information financière par l'analyse des relations plausibles entre données financières ET non financières, incluant l'investigation des fluctuations/relations incohérentes avec d'autres informations ou s'écartant des valeurs attendues.",
           "callouts": [
             {
               "type": "info",
-              "label": "Exemple",
-              "text": "CA +20% mais masse salariale -10% = écart à investiguer."
+              "label": "3 usages",
+              "text": "Planification (ISA 315, risques) ; substance (ISA 520 §5) ; revue finale (ISA 520 §6)."
             }
           ]
         },
         {
-          "titre": "Analytiques de substance",
-          "body": "",
+          "titre": "Procédures analytiques de substance (§5)",
+          "body": "Pour les utiliser comme **procédures de substance** (seules ou avec des tests de détails), l'auditeur :\n• détermine leur adéquation pour des assertions données\n• évalue la **fiabilité des données** (source, comparabilité, nature, contrôles sur leur production)\n• développe une **attente** suffisamment précise pour identifier une anomalie significative\n• détermine le **montant d'écart acceptable** sans investigation supplémentaire.",
           "schema": {
             "type": "flow",
-            "title": "Analytique de substance",
+            "title": "Procédure analytique de substance (§5)",
             "steps": [
               {
-                "t": "Développer une attente précise",
-                "d": ""
+                "t": "Adéquation",
+                "d": "pour quelles assertions ?"
               },
               {
-                "t": "Définir un seuil d'écart acceptable",
-                "d": ""
+                "t": "Fiabilité des données",
+                "d": "source + contrôles"
               },
               {
-                "t": "Investiguer les écarts au-delà du seuil",
-                "d": ""
+                "t": "Attente précise",
+                "d": "développer une prévision"
               },
               {
-                "t": "Évaluer la fiabilité des données",
-                "d": ""
+                "t": "Seuil d'écart",
+                "d": "montant acceptable sans investigation"
               }
             ]
           },
@@ -14771,111 +14771,188 @@
             {
               "type": "key",
               "label": "Rigueur",
-              "text": "Valable seulement si l'attente est précise et la donnée fiable. Sinon, ça ne prouve rien."
+              "text": "Une analytique de substance ne vaut que si l'attente est PRÉCISE et la donnée FIABLE. Sinon, elle n'apporte aucun élément probant."
             }
           ]
         },
         {
-          "titre": "Analytiques finales",
-          "body": "En fin d'audit, **obligatoires** : vérifier que les EF dans leur ensemble sont cohérents avec la compréhension de l'entité.",
-          "callouts": []
+          "titre": "Procédures analytiques finales (§6)",
+          "body": "À la fin de l'audit, l'auditeur conçoit et met en œuvre des **procédures analytiques** (overall review) qui l'aident à former une **conclusion d'ensemble** : les EF sont-ils cohérents avec sa compréhension de l'entité ? Cette revue finale est **obligatoire**.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Obligatoire",
+              "text": "La revue analytique finale n'est pas optionnelle : elle peut révéler un risque non détecté avant la signature."
+            }
+          ]
+        },
+        {
+          "titre": "Investigation des écarts & articulation (§7)",
+          "body": "Si les procédures révèlent des **fluctuations/relations incohérentes** avec d'autres informations ou s'écartant des attentes de manière significative, l'auditeur investigue en : (a) s'enquérant auprès de la direction et corroborant ses réponses, et (b) mettant en œuvre d'autres procédures si nécessaire.\n\n**Articulation** : ISA 315 (analytiques de planification), ISA 330 (substance), ISA 240 (les analytiques peuvent révéler une fraude).",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Corroborer",
+              "text": "Les réponses de la direction aux écarts doivent être CORROBORÉES, pas acceptées sur parole."
+            }
+          ]
         }
       ],
       "quiz": [
         {
           "q": "Les analytiques finales sont-elles obligatoires ?",
-          "a": "Oui (overall review en fin d'audit)."
+          "a": "Oui (§6) — revue d'ensemble (overall review) avant la conclusion."
         },
         {
-          "q": "Condition d'une analytique de substance valable ?",
-          "a": "Attente suffisamment précise + données fiables."
+          "q": "Conditions d'une analytique de substance valable ?",
+          "a": "Adéquation + données fiables + attente précise + seuil d'écart défini."
+        },
+        {
+          "q": "Que faire d'un écart significatif ?",
+          "a": "S'enquérir auprès de la direction ET corroborer + autres procédures."
+        },
+        {
+          "q": "Quels sont les 3 moments des analytiques ?",
+          "a": "Planification (risques), substance, revue finale."
         }
       ],
       "synthese": [
-        "Analyser les relations plausibles",
-        "Substance : attente précise + seuil + données fiables",
-        "Finales (overall review) obligatoires"
+        "3 usages : planification, substance, revue finale",
+        "Substance : adéquation + données fiables + attente précise + seuil",
+        "Revue finale (overall review) OBLIGATOIRE",
+        "Écarts → enquête + corroboration"
       ],
       "pieges": [
         "Attente trop vague (sans valeur probante)",
-        "Oublier les analytiques finales",
-        "Ne pas vérifier la fiabilité des données"
+        "Oublier la revue analytique finale",
+        "Accepter les explications de la direction sans corroborer",
+        "Utiliser des données non fiables"
       ]
     },
     "530": {
-      "duree": "8 min",
-      "niveau": "Intermédiaire",
-      "tldr": "On sonde (≠ 100%). Statistique (MUS) vs non statistique. Toujours analyser la CAUSE d'une anomalie (isolée vs systématique) et extrapoler à la population.",
+      "duree": "14 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISA 530 = sondages. Concevoir l'échantillon (représentatif), statistique (MUS) ou non, le sélectionner, traiter les anomalies/déviations (analyser la CAUSE), extrapoler à la population, conclure. Risque d'échantillonnage et de non-échantillonnage.",
       "stats": [
         {
           "value": "MUS",
           "label": "Statistique",
-          "sub": "pondéré par montants"
+          "sub": "pondéré montants"
         },
         {
-          "value": "Cause",
-          "label": "À analyser",
-          "sub": "isolée/systématique"
+          "value": "§6-7",
+          "label": "Sélection",
+          "sub": "représentative"
         },
         {
-          "value": "Extrapoler",
-          "label": "À la population",
-          "sub": "substance"
+          "value": "§12-14",
+          "label": "Extrapoler",
+          "sub": "+ cause"
         },
         {
-          "value": "2 types",
-          "label": "Attribute/Variable",
-          "sub": "contrôles/substance"
+          "value": "2 risques",
+          "label": "Échant./non-échant.",
+          "sub": ""
         }
       ],
-      "intro": "On ne teste pas 100% : on sonde. ISA 530 régit l'échantillonnage. Le MSA décrit le Monetary Unit Sampling.",
+      "intro": "On ne teste pas 100% des éléments : on sonde. ISA 530 régit la conception de l'échantillon, sa sélection, et l'évaluation des résultats. Le MSA décrit le Monetary Unit Sampling. Cours § par §.",
       "sections": [
         {
-          "titre": "Statistique vs non statistique",
-          "body": "• **Statistique** : sélection aléatoire + évaluation probabiliste (MUS — pondéré par les montants)\n• **Non statistique** : sélection par jugement. Dans les 2 cas, échantillon représentatif.",
+          "titre": "Champ, objectif & définitions (§1-5)",
+          "body": "ISA 530 s'applique quand l'auditeur décide de recourir aux **sondages**.\n\n**Définitions** : sondage (application de procédures à moins de 100% des éléments d'une population, chacun ayant une chance d'être sélectionné) ; population ; **risque d'échantillonnage** (la conclusion sur l'échantillon diffère de celle sur la population entière) ; **risque de non-échantillonnage** (erreur due à d'autres facteurs : mauvaise procédure, mauvaise interprétation) ; anomalie/déviation **anormale** ; unité d'échantillonnage ; sondage **statistique** vs **non statistique**.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "2 risques",
+              "text": "Échantillonnage = lié au fait de ne pas tout tester (réductible par la taille). Non-échantillonnage = erreurs humaines/méthodologiques (réductible par la qualité)."
+            }
+          ]
+        },
+        {
+          "titre": "Conception de l'échantillon (§6-7)",
+          "body": "L'auditeur considère l'**objectif** de la procédure et les caractéristiques de la **population**. Il détermine une **taille d'échantillon** suffisante pour ramener le risque d'échantillonnage à un niveau acceptable, et sélectionne les éléments de sorte que chacun ait une **chance** d'être sélectionné (représentativité).",
+          "callouts": []
+        },
+        {
+          "titre": "Méthodes de sélection (§8)",
+          "body": "• Sélection **aléatoire** (générateur de nombres)\n• Sélection **systématique** (intervalle constant)\n• **Monetary Unit Sampling (MUS)** : sélection pondérée par les montants (les gros postes ont plus de chances) — fréquent pour les tests de substance\n• Sélection **par blocs** (à éviter en général) ou **au hasard** (haphazard, non statistique).",
           "callouts": [
             {
               "type": "comp",
               "label": "Attribute vs Variable",
-              "text": "Attribute sampling = tests des contrôles (taux de déviation). Variable/MUS = substance (montants)."
+              "text": "Attribute sampling = tests des contrôles (taux de déviation). Variable / MUS = procédures de substance (montants)."
             }
           ]
         },
         {
-          "titre": "Risque d'échantillonnage",
-          "body": "Risque que la conclusion sur l'échantillon diffère de celle sur la population. Réduit en augmentant la taille.",
-          "callouts": []
-        },
-        {
-          "titre": "Analyser + extrapoler",
-          "body": "Toute anomalie : analyser nature + **cause**. Pour la substance, extrapoler à la population. Évaluer si le sondage fournit une base raisonnable.",
+          "titre": "Réalisation, anomalies & cause (§9-13)",
+          "body": "L'auditeur exécute les procédures sur chaque élément sélectionné. Si une procédure n'est pas applicable à un élément → traiter comme une déviation/anomalie. Toute **anomalie/déviation** détectée est **analysée** quant à sa nature et sa **cause**, et son effet possible. Dans de très rares cas, une anomalie peut être qualifiée d'**anormale** (isolée, non représentative) si l'auditeur en a une **certitude élevée**.",
           "callouts": [
             {
               "type": "key",
               "label": "Cause",
-              "text": "Isolée ou systématique ? Une erreur systématique change tout."
+              "text": "Toujours déterminer la CAUSE : isolée ou systématique ? Une erreur systématique remet en cause toute la population."
+            }
+          ]
+        },
+        {
+          "titre": "Extrapolation & évaluation (§14-15)",
+          "body": "Pour les **tests de substance**, l'auditeur **extrapole** les anomalies de l'échantillon à la population entière. Pour les **tests des contrôles**, aucune extrapolation explicite du taux n'est requise (le taux de déviation de l'échantillon est l'estimation directe). Enfin, l'auditeur évalue les résultats du sondage et si l'utilisation des sondages a fourni une **base raisonnable** de conclusion — sinon, procédures supplémentaires.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "NA-CH 530. Le MSA décrit le MUS pour les tests de substance sur les soldes (créances, stocks, immobilisations)."
             }
           ]
         }
       ],
+      "mnemo": {
+        "code": "C-A-E",
+        "items": [
+          {
+            "l": "C",
+            "t": "Concevoir (taille, représentativité)"
+          },
+          {
+            "l": "A",
+            "t": "Analyser anomalies (cause)"
+          },
+          {
+            "l": "E",
+            "t": "Extrapoler à la population"
+          }
+        ],
+        "phrase": "Les 3 temps du sondage"
+      },
       "quiz": [
         {
           "q": "Que faire de toute anomalie détectée dans un échantillon ?",
-          "a": "Analyser sa CAUSE (isolée vs systématique) et l'extrapoler à la population."
+          "a": "Analyser sa nature et sa CAUSE (isolée vs systématique), puis l'extrapoler."
         },
         {
           "q": "MUS sert pour quel type de test ?",
-          "a": "Procédures de substance (variable sampling, pondéré par les montants)."
+          "a": "Procédures de substance (variable, pondéré par les montants)."
+        },
+        {
+          "q": "Différence risque d'échantillonnage / non-échantillonnage ?",
+          "a": "Échantillonnage = ne pas tout tester (taille). Non-échantillonnage = erreurs humaines/méthodologiques."
+        },
+        {
+          "q": "Faut-il extrapoler pour les tests des contrôles ?",
+          "a": "Non explicitement : le taux de déviation de l'échantillon est l'estimation directe. L'extrapolation concerne la substance."
         }
       ],
       "synthese": [
-        "Statistique (MUS) vs non statistique",
-        "Attribute (contrôles) vs Variable/MUS (substance)",
-        "Analyser la cause + extrapoler"
+        "Statistique (MUS, aléatoire) vs non statistique",
+        "Risque d'échantillonnage (taille) + non-échantillonnage (qualité)",
+        "Analyser la CAUSE de toute anomalie",
+        "Extrapoler à la population (substance) ; base raisonnable"
       ],
       "pieges": [
         "Ne pas analyser la cause d'une anomalie",
-        "Oublier d'extrapoler",
+        "Qualifier trop vite une anomalie d'« anormale »",
+        "Oublier d'extrapoler (substance)",
         "Échantillon non représentatif"
       ]
     },
@@ -15127,9 +15204,9 @@
       ]
     },
     "550": {
-      "duree": "8 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Parties liées = vecteur de fraude et de transactions hors marché. Vigilance sur les parties liées NON divulguées. Présentation conforme à RPC 15 / IAS 24.",
+      "duree": "13 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 550 = parties liées. Risque accru de fraude et de transactions hors marché. Comprendre les relations/transactions, rester vigilant aux parties liées NON divulguées, évaluer les transactions hors cours normal, et la présentation (RPC 15 / IAS 24).",
       "stats": [
         {
           "value": "Fraude",
@@ -15137,76 +15214,102 @@
           "sub": "hors marché"
         },
         {
-          "value": "Non divulguées",
+          "value": "§13-17",
+          "label": "Réponses",
+          "sub": "aux risques"
+        },
+        {
+          "value": "Non divulg.",
           "label": "Vigilance",
-          "sub": "les vrais risques"
+          "sub": "§15"
         },
         {
-          "value": "RPC 15",
-          "label": "Présentation",
-          "sub": "/ IAS 24"
-        },
-        {
-          "value": "Hors normal",
-          "label": "Transactions",
-          "sub": "à évaluer"
+          "value": "§23",
+          "label": "Déclarations",
+          "sub": "écrites"
         }
       ],
-      "intro": "Les parties liées sont un vecteur classique de fraude et de transactions hors marché.",
+      "intro": "Les parties liées (groupe, dirigeants, proches) sont un vecteur classique de fraude et d'opacité. ISA 550 organise leur audit. Cours § par §.",
       "sections": [
         {
-          "titre": "Le risque",
-          "body": "Les transactions avec parties liées peuvent masquer une fraude, se faire hors marché, ou impliquer des structures opaques (échappent aux mécanismes de marché).",
+          "titre": "Champ, objectif & définitions (§1-10)",
+          "body": "ISA 550 traite des obligations de l'auditeur concernant les **relations et transactions avec des parties liées**.\n\n**Objectifs (§9)** : comprendre suffisamment les relations/transactions pour reconnaître les facteurs de risque de fraude qui en découlent et conclure si les EF donnent une image fidèle (ou ne sont pas trompeurs) à leur égard. **Définitions** : partie liée, transaction aux conditions normales de marché (arm's length).",
           "callouts": [
             {
               "type": "warn",
-              "label": "Vigilance",
-              "text": "Rester attentif aux parties liées NON divulguées par la direction — c'est là que se cachent les vrais risques."
+              "label": "Risque inhérent",
+              "text": "Les transactions avec parties liées peuvent : masquer une fraude, se faire hors marché, ou impliquer des structures complexes/opaques — elles échappent aux mécanismes de marché."
             }
           ]
         },
         {
-          "titre": "Procédures",
-          "body": "Comprendre les relations et transactions (demandes, contrats, PV), rester vigilant tout l'audit, évaluer les transactions hors du cours normal.",
+          "titre": "Procédures d'évaluation des risques (§11-14)",
+          "body": "L'équipe discute (brainstorming, lien ISA 240) de la susceptibilité des EF à une fraude/anomalie via les parties liées. L'auditeur s'enquiert auprès de la direction de l'**identité** des parties liées, de la nature des relations, et des **contrôles** de l'entité sur l'identification/comptabilisation/disclosure des transactions avec parties liées. Il reste **alerte** aux parties liées non identifiées en examinant les enregistrements/documents (contrats, confirmations, PV).",
           "callouts": []
         },
         {
-          "titre": "Présentation",
-          "body": "Évaluer la comptabilisation et la présentation (RPC 15 / IAS 24).",
+          "titre": "Vigilance aux parties liées non divulguées (§15-16)",
+          "body": "Si l'auditeur identifie des **transactions importantes hors du cours normal** des affaires, ou des **parties liées non préalablement divulguées** par la direction, il : détermine si elles indiquent des risques non identifiés, réévalue, et reste sceptique sur l'exhaustivité des informations de la direction.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Le vrai risque",
+              "text": "Ce sont les parties liées NON divulguées qui cachent les vrais problèmes. La vigilance de l'auditeur est essentielle."
+            }
+          ]
+        },
+        {
+          "titre": "Réponses aux risques (§17-20)",
+          "body": "Pour les risques importants liés aux parties liées (dont transactions hors cours normal), l'auditeur : inspecte les **contrats/accords** sous-jacents (réalité, conditions, business rationale, comptabilisation appropriée), et obtient des éléments sur l'autorisation/approbation de ces transactions par la gouvernance. Si la direction affirme que des transactions ont été conclues **aux conditions de marché**, l'auditeur obtient des éléments probants sur cette affirmation.",
           "callouts": [
             {
               "type": "legal",
               "label": "RPC 15",
-              "text": "La mention « aux conditions du marché » seule ne suffit PAS — le lecteur doit pouvoir juger lui-même."
+              "text": "La seule mention « aux conditions du marché » NE suffit PAS (RPC 15) : le lecteur des comptes doit pouvoir juger lui-même."
             }
           ]
+        },
+        {
+          "titre": "Présentation, déclarations & articulation (§23-25)",
+          "body": "L'auditeur évalue si les relations/transactions avec parties liées sont **présentées et communiquées** conformément au référentiel (image fidèle). Il obtient des **déclarations écrites** (ISA 580) sur l'exhaustivité de l'information fournie et le caractère approprié de la comptabilisation/présentation. \n\n**Articulation** : ISA 240 (fraude), ISA 315 (risques), RPC 15 / IAS 24 (présentation).",
+          "callouts": []
         }
       ],
       "quiz": [
         {
           "q": "Quel est le principal risque des parties liées ?",
-          "a": "Fraude + transactions hors marché ; surtout les parties liées non divulguées."
+          "a": "Fraude + transactions hors marché + opacité ; surtout les parties liées non divulguées."
         },
         {
-          "q": "« Aux conditions du marché » suffit-il (RPC 15) ?",
-          "a": "Non — il faut donner au lecteur de quoi juger lui-même."
+          "q": "« Aux conditions du marché » suffit-il ?",
+          "a": "Non — l'auditeur doit obtenir des éléments probants sur cette affirmation (et RPC 15 exige que le lecteur puisse juger)."
+        },
+        {
+          "q": "Que faire si on découvre une partie liée non divulguée ?",
+          "a": "Réévaluer les risques, rester sceptique sur l'exhaustivité des infos de la direction."
+        },
+        {
+          "q": "Que confirme la déclaration écrite ?",
+          "a": "L'exhaustivité de l'information + le caractère approprié de la comptabilisation/présentation."
         }
       ],
       "synthese": [
-        "Parties liées = risque de fraude + hors marché",
-        "Vigilance sur les non divulguées",
-        "Présentation conforme RPC 15 / IAS 24"
+        "Parties liées = risque de fraude + hors marché + opacité",
+        "Vigilance sur les parties liées NON divulguées",
+        "Inspecter contrats + business rationale + approbation",
+        "Présentation conforme (RPC 15 / IAS 24) + déclarations écrites"
       ],
       "pieges": [
         "Se fier à la liste de la direction sans vigilance",
         "Accepter « conditions du marché » sans éléments",
-        "Négliger les transactions hors cours normal"
+        "Négliger les transactions hors cours normal",
+        "Oublier l'autorisation par la gouvernance"
       ]
     },
     "560": {
-      "duree": "8 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Événements entre clôture et rapport. 3 périodes. Ajustable (condition à la clôture) → ajuster ; non ajustable (nouvel événement) → disclosure. La date du rapport est la frontière.",
+      "duree": "13 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 560 = événements postérieurs. 3 périodes (avant le rapport : procédures actives ; entre rapport et publication ; après publication). Ajustable (condition à la clôture → ajuster) vs non ajustable (nouvel événement → disclosure).",
       "stats": [
         {
           "value": "3",
@@ -15214,52 +15317,74 @@
           "sub": "avant/entre/après"
         },
         {
-          "value": "Ajustable",
-          "label": "→ ajuster",
-          "sub": "condition clôture"
+          "value": "§6-9",
+          "label": "Avant le rapport",
+          "sub": "procédures actives"
         },
         {
-          "value": "Non ajust.",
-          "label": "→ disclosure",
-          "sub": "nouvel événement"
+          "value": "§10-13",
+          "label": "Entre rapport-pub.",
+          "sub": ""
         },
         {
-          "value": "Date rapport",
-          "label": "Frontière",
-          "sub": "éléments suffisants"
+          "value": "§14-17",
+          "label": "Après publication",
+          "sub": ""
         }
       ],
-      "intro": "Entre la clôture et la publication, des événements peuvent survenir. ISA 560 définit la responsabilité de l'auditeur (lien IAS 10 / RPC 6).",
+      "intro": "Entre la clôture et la publication des EF, des événements peuvent survenir. ISA 560 définit la responsabilité de l'auditeur sur ces événements postérieurs, en lien avec IAS 10 / RPC 6. Cours § par §.",
       "sections": [
         {
-          "titre": "Trois périodes",
-          "body": "",
+          "titre": "Champ, objectif & définitions (§1-5)",
+          "body": "ISA 560 traite des obligations relatives aux **événements postérieurs**.\n\n**Définitions** : événements postérieurs (entre la date des EF et la date du rapport, ET faits découverts après la date du rapport) ; **date des EF** (clôture) ; **date du rapport** ; **date de publication** des EF. Le référentiel (IAS 10 / RPC 6) distingue : événements **donnant lieu à ajustement** (adjusting) et **ne donnant pas lieu à ajustement** (non-adjusting).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "La frontière",
+              "text": "La date du rapport = moment où l'auditeur a obtenu les éléments probants suffisants. Elle sépare les 3 périodes de responsabilité."
+            }
+          ]
+        },
+        {
+          "titre": "Période 1 — avant la date du rapport (§6-9)",
+          "body": "L'auditeur met en œuvre des **procédures ACTIVES** pour identifier les événements nécessitant un ajustement/une mention : comprendre les procédures de la direction, lire les **PV** postérieurs (CA, AG, comités), lire les derniers **états financiers intermédiaires**, s'enquérir auprès de la direction (et des avocats), couvrant la période jusqu'à une date aussi proche que possible de celle du rapport. Il obtient une **déclaration écrite** couvrant ces événements.",
           "schema": {
             "type": "flow",
             "title": "Les 3 périodes (ISA 560)",
             "steps": [
               {
                 "t": "Avant la date du rapport",
-                "d": "procédures ACTIVES obligatoires"
+                "d": "procédures ACTIVES obligatoires (§6-9)"
               },
               {
                 "t": "Entre rapport et publication",
-                "d": "pas d'obligation active, réagir si info reçue"
+                "d": "pas d'obligation active ; réagir si fait porté à connaissance (§10-13)"
               },
               {
                 "t": "Après publication",
-                "d": "pas d'obligation, agir si fait matériel découvert"
+                "d": "pas d'obligation ; agir si fait matériel découvert (§14-17)"
               }
             ]
           }
         },
         {
-          "titre": "Procédures actives (période 1)",
-          "body": "Lecture des PV postérieurs, demandes à la direction, examen des derniers états intermédiaires, recherche d'événements (litiges, faillites de clients, sinistres).",
+          "titre": "Période 2 — entre rapport et publication (§10-13)",
+          "body": "L'auditeur n'a **aucune obligation** de procédures actives. MAIS si un fait est porté à sa connaissance qui, connu à la date du rapport, l'aurait amené à modifier celui-ci → il en discute avec la direction, détermine si les EF doivent être amendés, et le cas échéant, met en œuvre les procédures nécessaires et émet un **nouveau rapport** (daté plus tard).",
           "callouts": []
         },
         {
-          "titre": "Ajustable vs non ajustable",
+          "titre": "Période 3 — après la publication (§14-17)",
+          "body": "Aucune obligation de procédures actives. MAIS si un fait matériel est découvert qui aurait modifié le rapport : discuter avec la direction, déterminer si les EF doivent être révisés. Si oui → procédures sur la révision + nouveau rapport (avec EOM/Other Matter expliquant la raison). Si la direction refuse de réviser des EF déjà diffusés → l'auditeur prend des mesures pour empêcher de s'y fier (action selon la loi).",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Cas grave",
+              "text": "Le refus de réviser des EF erronés déjà publiés peut conduire l'auditeur à des actions exceptionnelles (notification, conseil juridique)."
+            }
+          ]
+        },
+        {
+          "titre": "Ajustable vs non ajustable & articulation",
           "body": "",
           "compare": {
             "title": "IAS 10 / RPC 6",
@@ -15272,36 +15397,53 @@
               [
                 "Ajustable",
                 "Confirme une condition existant à la clôture",
-                "AJUSTER les EF (ex. faillite client dont la créance existait au 31.12)"
+                "AJUSTER les EF (ex. faillite d'un client dont la créance existait au 31.12)"
               ],
               [
                 "Non ajustable",
                 "Nouvel événement post-clôture",
-                "DISCLOSURE si significatif (ex. incendie en janvier)"
+                "DISCLOSURE si significatif (ex. incendie d'une usine en janvier, acquisition décidée après clôture)"
               ]
             ]
-          }
+          },
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Lien",
+              "text": "ISA 560 ↔ ISA 700 (date du rapport), IAS 10 / RPC 6 (traitement comptable), ISA 570 (un événement post-clôture peut affecter le going concern)."
+            }
+          ]
         }
       ],
       "quiz": [
         {
           "q": "Que marque la date du rapport ?",
-          "a": "Le moment où l'auditeur a obtenu les éléments probants suffisants ; frontière des 3 périodes."
+          "a": "L'obtention des éléments probants suffisants ; elle sépare les 3 périodes."
+        },
+        {
+          "q": "Période avant le rapport : quelle obligation ?",
+          "a": "Procédures ACTIVES obligatoires (PV, états intermédiaires, demandes)."
         },
         {
           "q": "Événement ajustable = ?",
           "a": "Confirme une condition existant à la clôture → ajuster les EF."
+        },
+        {
+          "q": "Direction refuse de réviser des EF publiés et erronés → ?",
+          "a": "L'auditeur prend des mesures pour empêcher de s'y fier (action selon la loi)."
         }
       ],
       "synthese": [
-        "3 périodes : avant rapport / entre / après",
+        "3 périodes : avant rapport / entre / après publication",
         "Avant le rapport : procédures actives obligatoires",
-        "Ajustable → ajuster ; non ajustable → disclosure"
+        "Ajustable (condition à la clôture) → ajuster ; non ajustable → disclosure",
+        "Après publication : agir si fait matériel découvert"
       ],
       "pieges": [
         "Confondre ajustable et non ajustable",
         "Oublier les procédures actives avant le rapport",
-        "Ne pas réagir à un fait matériel après publication"
+        "Ne pas réagir à un fait découvert entre rapport et publication",
+        "Oublier qu'un événement peut affecter le going concern (ISA 570)"
       ]
     },
     "570": {
@@ -15537,14 +15679,19 @@
       ]
     },
     "580": {
-      "duree": "7 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Déclarations écrites de la direction (LoR) obtenues proche de la date du rapport. Complètent mais ne REMPLACENT PAS les autres éléments probants. Refus de signer → doute → disclaimer possible.",
+      "duree": "11 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 580 = déclarations écrites (LoR). Obtenues de la direction proche de la date du rapport. Confirment les responsabilités + l'exhaustivité de l'information. Complètent mais ne REMPLACENT pas les autres éléments. Refus/incohérence → impact opinion (jusqu'au disclaimer).",
       "stats": [
         {
           "value": "LoR",
-          "label": "Lettre repr.",
+          "label": "Lettre représent.",
           "sub": "proche du rapport"
+        },
+        {
+          "value": "§10-11",
+          "label": "Responsabilités",
+          "sub": "+ exhaustivité"
         },
         {
           "value": "Complète",
@@ -15552,44 +15699,61 @@
           "sub": "les preuves"
         },
         {
-          "value": "Refus",
-          "label": "→ disclaimer",
-          "sub": "possible"
-        },
-        {
-          "value": "NAS 580",
-          "label": "Norme",
-          "sub": "= ISA 580"
+          "value": "§19-20",
+          "label": "Refus → disclaimer",
+          "sub": ""
         }
       ],
-      "intro": "Avant de signer, l'auditeur obtient des déclarations écrites de la direction (lettre de représentation).",
+      "intro": "Avant de signer, l'auditeur obtient des déclarations écrites de la direction (lettre de représentation). ISA 580 en définit le rôle, le contenu et les limites. Cours § par §.",
       "sections": [
         {
-          "titre": "Rôle de la LoR",
-          "body": "La direction confirme par écrit qu'elle a rempli ses responsabilités et fourni toute l'information. Contenu : responsabilité EF + SCI, exhaustivité des transactions, divulgation des fraudes/litiges/parties liées, anomalies non corrigées non significatives.",
+          "titre": "Champ, objectif & définition (§1-6)",
+          "body": "ISA 580 traite des **déclarations écrites** obtenues de la direction (et le cas échéant de la gouvernance) en tant qu'éléments probants. **Définition** : déclaration écrite = document signé par la direction fourni à l'auditeur pour confirmer certaines questions ou étayer d'autres éléments probants. **Ce n'est PAS** un élément probant sur l'exactitude des questions elles-mêmes — c'est un complément.",
           "callouts": [
             {
               "type": "info",
-              "label": "Date",
-              "text": "Obtenue à une date proche de celle du rapport."
+              "label": "Nature",
+              "text": "La LoR est un élément probant nécessaire mais limité : elle confirme, elle ne prouve pas à elle seule."
             }
           ]
         },
         {
-          "titre": "Ce qu'elle ne fait pas",
-          "body": "La LoR complète mais ne REMPLACE JAMAIS les autres éléments probants.",
+          "titre": "Déclarations sur les responsabilités (§10-12)",
+          "body": "L'auditeur demande à la direction de confirmer par écrit qu'elle a **rempli ses responsabilités** : (a) établissement des EF conformément au référentiel (image fidèle), (b) information complète fournie à l'auditeur, (c) toutes les transactions enregistrées et reflétées dans les EF.",
+          "callouts": []
+        },
+        {
+          "titre": "Autres déclarations requises par d'autres ISA",
+          "body": "D'autres normes exigent des déclarations spécifiques : fraude (ISA 240 — responsabilité + divulgation), non-conformité (ISA 250), litiges (ISA 501), parties liées (ISA 550), anomalies non corrigées (ISA 450), estimations (ISA 540), événements postérieurs (ISA 560), going concern (ISA 570).",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Check-list",
+              "text": "La LoR rassemble TOUTES les déclarations requises par les différentes ISA applicables à la mission."
+            }
+          ]
+        },
+        {
+          "titre": "Date, forme & destinataire (§13-14)",
+          "body": "La date des déclarations écrites est **aussi proche que possible** de la date du rapport (mais pas après), et couvre tous les EF/périodes du rapport. Forme : une **lettre de représentation** adressée à l'auditeur, signée par le **niveau approprié** (direction générale / CFO).",
           "callouts": [
             {
               "type": "key",
-              "label": "Limite",
-              "text": "Si une déclaration est la seule preuve sur un sujet important, c'est insuffisant."
+              "label": "Date",
+              "text": "La LoR est obtenue AVANT la date du rapport (pas après) et la plus proche possible."
             }
           ]
         },
         {
-          "titre": "Refus ou incohérence",
-          "body": "Refus de fournir la LoR ou déclarations incohérentes → doute sur l'intégrité de la direction → impact possible jusqu'au **disclaimer**.",
-          "callouts": []
+          "titre": "Doutes & refus (§16-20)",
+          "body": "• **§16-18** : si l'auditeur a des **doutes** sur la compétence/l'intégrité/l'honnêteté de la direction, ou si les déclarations sont **incohérentes** avec d'autres éléments → résoudre, et reconsidérer la fiabilité des éléments probants.\n• **§19-20** : si la direction **ne fournit pas** les déclarations requises sur ses responsabilités, ou si l'auditeur conclut qu'elles ne sont pas fiables → cela jette un doute fondamental → **impossibilité d'exprimer une opinion (disclaimer)**.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Refus = disclaimer",
+              "text": "Le refus de fournir les déclarations de base sur les responsabilités remet en cause la possibilité même d'auditer → disclaimer."
+            }
+          ]
         }
       ],
       "quiz": [
@@ -15598,19 +15762,29 @@
           "a": "Non — elle complète, elle ne prouve pas à elle seule."
         },
         {
-          "q": "Conséquence d'un refus de signer la LoR ?",
-          "a": "Doute sur l'intégrité → impact possible jusqu'au disclaimer."
+          "q": "Quand obtenir la LoR ?",
+          "a": "À une date aussi proche que possible de celle du rapport, jamais après."
+        },
+        {
+          "q": "Conséquence d'un refus de fournir les déclarations sur les responsabilités ?",
+          "a": "Impossibilité d'exprimer une opinion (disclaimer)."
+        },
+        {
+          "q": "Que faire si la LoR est incohérente avec d'autres éléments ?",
+          "a": "Résoudre l'incohérence et reconsidérer la fiabilité des éléments probants."
         }
       ],
       "synthese": [
-        "LoR = déclarations écrites, proche du rapport",
-        "Complète mais ne remplace pas les preuves",
-        "Refus → disclaimer possible"
+        "LoR = déclarations écrites, proche du rapport, niveau approprié",
+        "Confirme responsabilités + exhaustivité + déclarations spécifiques (autres ISA)",
+        "Complète mais ne REMPLACE PAS les autres éléments",
+        "Refus / non fiable → disclaimer"
       ],
       "pieges": [
         "Considérer la LoR comme un substitut aux procédures",
-        "L'obtenir trop tôt",
-        "Ignorer une incohérence"
+        "L'obtenir trop tôt ou après la date du rapport",
+        "Ignorer une incohérence avec d'autres éléments",
+        "Oublier les déclarations spécifiques requises par d'autres ISA"
       ]
     },
     "600": {
@@ -15795,70 +15969,88 @@
       ]
     },
     "610": {
-      "duree": "8 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Utiliser les travaux de l'audit interne sans diluer sa responsabilité. Évaluer 3 critères (objectivité+compétence+approche systématique). L'auditeur externe garde l'ENTIÈRE responsabilité.",
+      "duree": "11 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 610 (Revised 2013) = utilisation des travaux des auditeurs internes. Évaluer objectivité + compétence + approche systématique. Utilisation des travaux OU assistance directe. La responsabilité de l'opinion reste ENTIÈRE.",
       "stats": [
         {
           "value": "3 critères",
           "label": "Évaluation",
-          "sub": "OCA"
+          "sub": "objectivité/compét./système"
+        },
+        {
+          "value": "§15-25",
+          "label": "Utilisation travaux",
+          "sub": ""
+        },
+        {
+          "value": "§26-35",
+          "label": "Assistance directe",
+          "sub": "si permise"
         },
         {
           "value": "100%",
           "label": "Responsabilité",
-          "sub": "externe"
-        },
-        {
-          "value": "2 modes",
-          "label": "Travaux/assistance",
-          "sub": ""
-        },
-        {
-          "value": "R2013",
-          "label": "Révision",
-          "sub": ""
+          "sub": "auditeur externe"
         }
       ],
-      "intro": "Beaucoup d'entreprises ont un audit interne. ISA 610 dit comment l'auditeur externe peut l'utiliser.",
+      "intro": "Beaucoup d'entreprises disposent d'une fonction d'audit interne. ISA 610 (révisée 2013) définit comment l'auditeur externe peut utiliser ses travaux sans diluer sa responsabilité. Cours § par §.",
       "sections": [
         {
-          "titre": "Évaluer la fonction",
-          "body": "Avant d'utiliser : **objectivité** (rattachement, indépendance), **compétence** (qualifications), **approche systématique et rigoureuse**.",
-          "callouts": [
-            {
-              "type": "key",
-              "label": "3 critères",
-              "text": "Objectivité + Compétence + Approche systématique. Si l'un manque, on ne peut pas s'appuyer."
-            }
-          ]
-        },
-        {
-          "titre": "Utilisation vs assistance directe",
-          "body": "• **Utilisation des travaux** déjà réalisés\n• **Assistance directe** : auditeurs internes sous direction/supervision/revue de l'externe (interdite dans certaines juridictions).",
+          "titre": "Champ, objectif & définitions (§1-14)",
+          "body": "ISA 610 traite des obligations de l'auditeur externe s'il utilise les travaux de la **fonction d'audit interne**. \n\n**Objectifs** : déterminer si/dans quelle mesure utiliser le travail de la fonction d'audit interne, et — si permis — recourir à des auditeurs internes pour une **assistance directe**. **Définition** : fonction d'audit interne = activité d'évaluation établie/fournie en tant que service à l'entité (gouvernance, contrôle, gestion des risques).",
           "callouts": []
         },
         {
-          "titre": "Responsabilité entière",
-          "body": "L'auditeur externe reste SEUL responsable de l'opinion. Plus le risque/jugement est élevé, moins il s'appuie sur l'audit interne.",
+          "titre": "Évaluer la fonction d'audit interne (§15)",
+          "body": "Avant d'utiliser ses travaux, l'auditeur évalue :",
+          "schema": {
+            "type": "flow",
+            "title": "Les 3 critères d'évaluation (§15)",
+            "steps": [
+              {
+                "t": "Objectivité",
+                "d": "statut/rattachement, politiques préservant l'objectivité, absence de conflits"
+              },
+              {
+                "t": "Compétence",
+                "d": "qualifications, formation, ressources de la fonction"
+              },
+              {
+                "t": "Approche systématique et rigoureuse",
+                "d": "méthodologie, planification, documentation, contrôle qualité"
+              }
+            ]
+          },
+          "callouts": [
+            {
+              "type": "key",
+              "label": "3 critères cumulatifs",
+              "text": "Si l'un manque (ex. l'audit interne rapporte à la personne qu'il contrôle), on NE PEUT PAS utiliser ses travaux."
+            }
+          ]
+        },
+        {
+          "titre": "Déterminer l'étendue d'utilisation (§16-20)",
+          "body": "L'auditeur détermine les domaines et l'ampleur d'utilisation des travaux de l'audit interne en fonction du **jugement** et du **risque** : plus le jugement requis ou le risque d'anomalie est élevé, MOINS l'auditeur peut s'appuyer sur l'audit interne. Il planifie pour que sa propre implication reste suffisante (l'opinion reste la sienne).",
+          "callouts": []
+        },
+        {
+          "titre": "Utilisation des travaux (§21-25)",
+          "body": "Avant d'utiliser des travaux spécifiques, l'auditeur évalue si : la planification/exécution/supervision/documentation étaient appropriées, les éléments probants obtenus suffisants, les conclusions appropriées et cohérentes avec les rapports. Il **ré-exécute** une partie des travaux pour les valider.",
+          "callouts": []
+        },
+        {
+          "titre": "Assistance directe (§26-35) & responsabilité",
+          "body": "L'**assistance directe** = utiliser des auditeurs internes pour exécuter des procédures **sous la direction, la supervision et la revue** de l'auditeur externe. Elle est **interdite dans certaines juridictions**. Si permise : évaluer l'objectivité/compétence, ne pas l'utiliser pour des travaux à jugement significatif/risque élevé, obtenir un accord écrit. **La responsabilité de l'opinion reste ENTIÈREMENT celle de l'auditeur externe.**",
           "callouts": [
             {
               "type": "warn",
-              "label": "Limite",
-              "text": "On ne délègue JAMAIS les jugements significatifs ni la responsabilité de l'opinion."
+              "label": "Limite absolue",
+              "text": "On ne délègue JAMAIS les jugements significatifs ni la responsabilité de l'opinion à l'audit interne."
             }
           ]
         }
-      ],
-      "synthese": [
-        "Évaluer objectivité + compétence + approche systématique",
-        "Utilisation des travaux OU assistance directe",
-        "Responsabilité de l'opinion reste entière"
-      ],
-      "pieges": [
-        "Déléguer des jugements significatifs",
-        "Utiliser sans évaluer objectivité/compétence",
-        "Croire que la responsabilité se partage"
       ],
       "mnemo": {
         "code": "OCA",
@@ -15876,74 +16068,153 @@
             "t": "Approche systématique"
           }
         ],
-        "phrase": "Les 3 critères d'évaluation de l'audit interne"
-      }
-    },
-    "620": {
-      "duree": "7 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Recours à un expert de l'AUDITEUR (≠ expert de la direction) pour des domaines spécialisés (évaluation, actuariat, juridique). Évaluer compétence+capacités+objectivité. Ne pas référer dans le rapport.",
-      "stats": [
+        "phrase": "Les 3 critères d'évaluation de l'audit interne (§15)"
+      },
+      "quiz": [
         {
-          "value": "Expert",
-          "label": "de l'auditeur",
-          "sub": "≠ direction"
+          "q": "Quels sont les 3 critères pour pouvoir utiliser l'audit interne ?",
+          "a": "Objectivité + Compétence + Approche systématique et rigoureuse."
         },
         {
-          "value": "3 critères",
-          "label": "Compét.+Capac.+Objec.",
-          "sub": ""
+          "q": "Plus le jugement/risque est élevé, peut-on s'appuyer davantage sur l'audit interne ?",
+          "a": "Non — moins on peut s'y appuyer."
         },
         {
-          "value": "Pas réf.",
-          "label": "dans le rapport",
-          "sub": "sauf loi"
+          "q": "Qu'est-ce que l'assistance directe ?",
+          "a": "Utiliser des auditeurs internes sous direction/supervision/revue de l'auditeur externe (interdite dans certaines juridictions)."
         },
         {
-          "value": "NAS 620",
-          "label": "Norme",
-          "sub": ""
-        }
-      ],
-      "intro": "Certains sujets dépassent l'expertise comptable. ISA 620 encadre le recours à un expert désigné par l'auditeur.",
-      "sections": [
-        {
-          "titre": "Quand recourir",
-          "body": "Domaines spécialisés : évaluation immobilière, actuariat (LPP), juste valeur complexe, expertise juridique/environnementale.",
-          "callouts": [
-            {
-              "type": "info",
-              "label": "Distinction",
-              "text": "Expert de l'AUDITEUR (il le mandate) ≠ expert de la DIRECTION."
-            }
-          ]
-        },
-        {
-          "titre": "Évaluer l'expert",
-          "body": "**Compétence + capacités + objectivité**, comprendre son domaine, convenir de l'étendue, évaluer ses conclusions comme éléments probants.",
-          "callouts": [
-            {
-              "type": "key",
-              "label": "3 critères",
-              "text": "Compétence + Capacités + Objectivité."
-            }
-          ]
-        },
-        {
-          "titre": "Référence dans le rapport",
-          "body": "Ne PAS référer à l'expert (sauf si la loi l'exige) : cela pourrait suggérer un partage de responsabilité.",
-          "callouts": []
+          "q": "La responsabilité de l'opinion peut-elle être partagée ?",
+          "a": "Non — elle reste ENTIÈREMENT celle de l'auditeur externe."
         }
       ],
       "synthese": [
-        "Recours pour domaines spécialisés",
-        "Expert de l'auditeur ≠ de la direction",
-        "Évaluer compétence+capacités+objectivité ; ne pas référer"
+        "Évaluer : objectivité + compétence + approche systématique",
+        "Étendue d'utilisation inversement liée au jugement/risque",
+        "Ré-exécuter une partie des travaux utilisés",
+        "Assistance directe encadrée (parfois interdite) ; responsabilité entière"
+      ],
+      "pieges": [
+        "Déléguer des jugements significatifs",
+        "Utiliser sans évaluer objectivité/compétence",
+        "Croire que la responsabilité se partage",
+        "Oublier que l'assistance directe est interdite dans certaines juridictions"
+      ]
+    },
+    "620": {
+      "duree": "10 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 620 = utilisation des travaux d'un expert DÉSIGNÉ PAR L'AUDITEUR (≠ expert de la direction). Évaluer compétence + capacités + objectivité, convenir de l'étendue, évaluer le caractère adéquat des travaux. Ne pas référer à l'expert dans le rapport (sauf loi).",
+      "stats": [
+        {
+          "value": "3 critères",
+          "label": "Compét.+Capac.+Object.",
+          "sub": ""
+        },
+        {
+          "value": "§7-8",
+          "label": "Évaluer l'expert",
+          "sub": ""
+        },
+        {
+          "value": "§11",
+          "label": "Adéquation travaux",
+          "sub": ""
+        },
+        {
+          "value": "§14-15",
+          "label": "Pas de référence",
+          "sub": "sauf loi"
+        }
+      ],
+      "intro": "Certains sujets dépassent l'expertise comptable/d'audit (évaluation, actuariat, ingénierie, droit). ISA 620 encadre le recours à un expert désigné par l'auditeur. Cours § par §.",
+      "sections": [
+        {
+          "titre": "Champ, objectif & définitions (§1-6)",
+          "body": "ISA 620 traite de l'utilisation des travaux d'une personne/organisation possédant une expertise dans un domaine **autre que la comptabilité ou l'audit**, lorsque ces travaux sont utilisés pour obtenir des éléments probants. **Définition** : **expert de l'auditeur** (auditor's expert) — interne (membre du cabinet/réseau) ou externe — à distinguer de l'**expert de la direction** (ISA 500 §8).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Distinction",
+              "text": "Expert de l'AUDITEUR (mandaté par l'auditeur pour SES besoins) ≠ expert de la DIRECTION (utilisé par l'entité). ISA 620 vise le premier."
+            }
+          ]
+        },
+        {
+          "titre": "Déterminer le besoin & évaluer l'expert (§7-9)",
+          "body": "L'auditeur détermine s'il a besoin d'un expert (domaine spécialisé : juste valeur complexe, évaluation immobilière, calculs actuariels LPP, expertise juridique/environnementale). Il évalue la **compétence, les capacités et l'objectivité** de l'expert. Pour un expert **externe**, l'évaluation de l'objectivité inclut les intérêts/relations pouvant créer une menace.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Interne vs externe",
+              "text": "Un expert interne au cabinet relève aussi des règles d'indépendance/qualité (ISQM 1). L'objectivité d'un expert externe doit être examinée selon ses liens avec l'entité."
+            }
+          ]
+        },
+        {
+          "titre": "Comprendre le domaine & convenir des travaux (§9-10)",
+          "body": "L'auditeur acquiert une compréhension **suffisante** du domaine d'expertise pour pouvoir : déterminer la nature/l'étendue des travaux de l'expert, et **évaluer le caractère adéquat** de ces travaux. Il convient par écrit (le cas échéant) de : la nature/l'objectif/l'étendue des travaux, les rôles respectifs, la communication, et la confidentialité.",
+          "callouts": []
+        },
+        {
+          "titre": "Évaluer les travaux & référence dans le rapport (§11-15)",
+          "body": "L'auditeur évalue le caractère **adéquat** des travaux : pertinence/caractère raisonnable des conclusions, des hypothèses/méthodes utilisées, et des données sources. Si inadéquat → travaux supplémentaires ou autre expert. **§14-15** : l'auditeur **ne réfère PAS** à l'expert dans son rapport (opinion non modifiée), SAUF si la loi l'exige — et dans ce cas, en précisant que cela ne réduit pas sa responsabilité.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Pas de partage",
+              "text": "Référer à l'expert pourrait suggérer un partage de responsabilité. L'opinion reste entièrement celle de l'auditeur."
+            }
+          ]
+        }
+      ],
+      "mnemo": {
+        "code": "CCO",
+        "items": [
+          {
+            "l": "C",
+            "t": "Compétence"
+          },
+          {
+            "l": "C",
+            "t": "Capacités"
+          },
+          {
+            "l": "O",
+            "t": "Objectivité"
+          }
+        ],
+        "phrase": "Les 3 critères d'évaluation de l'expert (§9)"
+      },
+      "quiz": [
+        {
+          "q": "Expert de l'auditeur vs expert de la direction ?",
+          "a": "Expert de l'auditeur (mandaté par l'auditeur, ISA 620) ≠ expert de la direction (utilisé par l'entité, ISA 500 §8)."
+        },
+        {
+          "q": "Quels 3 critères pour évaluer l'expert ?",
+          "a": "Compétence + Capacités + Objectivité."
+        },
+        {
+          "q": "Peut-on référer à l'expert dans le rapport ?",
+          "a": "Non, sauf si la loi l'exige (et sans réduire la responsabilité de l'auditeur)."
+        },
+        {
+          "q": "Que faire si les travaux de l'expert sont inadéquats ?",
+          "a": "Travaux supplémentaires ou recourir à un autre expert."
+        }
+      ],
+      "synthese": [
+        "Expert de l'auditeur ≠ expert de la direction",
+        "Évaluer compétence + capacités + objectivité",
+        "Comprendre le domaine + convenir de l'étendue",
+        "Évaluer l'adéquation ; ne pas référer dans le rapport (sauf loi)"
       ],
       "pieges": [
         "Confondre expert de l'auditeur et de la direction",
+        "Ne pas évaluer l'objectivité (surtout externe)",
         "Référer à l'expert dans le rapport",
-        "Ne pas évaluer l'objectivité"
+        "Utiliser les travaux sans comprendre le domaine"
       ]
     },
     "700": {
