@@ -13339,323 +13339,705 @@
       ]
     },
     "500": {
-      "intro": "ISA 500 est le **cœur technique** de l'audit : qu'est-ce qu'un bon élément probant et comment l'obtenir. Toutes les autres normes de la série 500 en découlent.",
+      "duree": "10 min",
+      "niveau": "Fondamental",
+      "tldr": "Cœur technique : un bon élément probant est **suffisant** (quantité) ET **approprié** (pertinence + fiabilité). 7 procédures. Hiérarchie : externe>interne, écrit>oral, direct>indirect.",
+      "stats": [
+        {
+          "value": "7",
+          "label": "Procédures",
+          "sub": "inspection→demande"
+        },
+        {
+          "value": "2 qualités",
+          "label": "Suffisant+Approprié",
+          "sub": ""
+        },
+        {
+          "value": "Externe",
+          "label": "+ fiable",
+          "sub": "que interne"
+        },
+        {
+          "value": "NAS 500",
+          "label": "Norme",
+          "sub": "= ISA 500"
+        }
+      ],
+      "intro": "ISA 500 est le cœur technique de l'audit : qu'est-ce qu'un bon élément probant et comment l'obtenir. Le MSA (III.4) le décline par poste.",
       "sections": [
         {
-          "titre": "1. Suffisance et caractère approprié",
-          "body": "Deux qualités indissociables :\n• **Suffisance** = la QUANTITÉ d'éléments probants\n• **Caractère approprié** = la QUALITÉ = pertinence (l'élément teste bien l'assertion visée) + fiabilité (la source est crédible).\n\nPlus le risque est élevé, plus il faut d'éléments (suffisance) ET de meilleure qualité (approprié).",
+          "titre": "Suffisance et caractère approprié",
+          "body": "• **Suffisance** = la QUANTITÉ d'éléments\n• **Caractère approprié** = la QUALITÉ = pertinence (teste la bonne assertion) + fiabilité (source crédible).\nPlus le risque est élevé, plus il faut d'éléments ET de meilleure qualité.",
           "callouts": [
             {
               "type": "key",
               "label": "Le binôme",
-              "text": "Suffisant (quantité) + Approprié (qualité = pertinence + fiabilité). Les deux sont nécessaires."
+              "text": "Suffisant (quantité) + Approprié (qualité = pertinence + fiabilité)."
             }
           ]
         },
         {
-          "titre": "2. Hiérarchie de fiabilité",
-          "body": "La fiabilité augmente quand l'élément est :\n• d'origine **externe** (> interne)\n• obtenu **directement** par l'auditeur (> indirectement)\n• sous forme **écrite/documentaire** (> orale)\n• **original** (> copie/scan).\n\nUn contrôle interne efficace renforce aussi la fiabilité des éléments internes.",
-          "callouts": [
-            {
-              "type": "info",
-              "label": "Règle",
-              "text": "Externe > interne ; écrit > oral ; direct > indirect ; original > copie."
-            }
-          ]
+          "titre": "Hiérarchie de fiabilité",
+          "body": "",
+          "schema": {
+            "type": "pyramid",
+            "title": "Fiabilité croissante des éléments probants",
+            "levels": [
+              {
+                "t": "Oral / interne / copie",
+                "d": "le moins fiable"
+              },
+              {
+                "t": "Écrit interne (contrôle efficace)",
+                "d": ""
+              },
+              {
+                "t": "Externe obtenu indirectement",
+                "d": ""
+              },
+              {
+                "t": "Externe obtenu DIRECTEMENT par l'auditeur",
+                "d": "le plus fiable"
+              }
+            ]
+          }
         },
         {
-          "titre": "3. Les 7 procédures d'audit",
-          "body": "Pour obtenir des éléments probants : **inspection** (documents/actifs), **observation**, **confirmation externe**, **recalcul**, **ré-exécution** (refaire un contrôle), **procédures analytiques**, **demandes d'informations** (inquiry).\n\nLes demandes seules ne suffisent jamais : elles doivent être corroborées.",
+          "titre": "Les 7 procédures",
+          "body": "Inspection (documents/actifs), observation, confirmation externe, recalcul, ré-exécution, procédures analytiques, demandes d'informations.",
           "callouts": [
             {
               "type": "warn",
               "label": "Attention",
-              "text": "Une demande d'information (inquiry) n'est JAMAIS un élément probant suffisant à elle seule — il faut corroborer."
+              "text": "Une demande d'information (inquiry) n'est JAMAIS suffisante à elle seule — il faut corroborer."
             }
           ]
         }
       ],
+      "mnemo": {
+        "code": "7 PROC",
+        "items": [
+          {
+            "l": "I",
+            "t": "Inspection"
+          },
+          {
+            "l": "O",
+            "t": "Observation"
+          },
+          {
+            "l": "C",
+            "t": "Confirmation"
+          },
+          {
+            "l": "R",
+            "t": "Recalcul + Ré-exécution"
+          },
+          {
+            "l": "A",
+            "t": "Analytique"
+          },
+          {
+            "l": "D",
+            "t": "Demande (inquiry)"
+          }
+        ],
+        "phrase": "Les 7 procédures pour obtenir des éléments probants"
+      },
+      "quiz": [
+        {
+          "q": "Caractère approprié = ?",
+          "a": "Pertinence + fiabilité (la qualité de l'élément probant)."
+        },
+        {
+          "q": "Une demande d'information suffit-elle seule ?",
+          "a": "Non, elle doit toujours être corroborée."
+        },
+        {
+          "q": "Quel élément est le plus fiable ?",
+          "a": "Externe, écrit, obtenu directement par l'auditeur, original."
+        }
+      ],
       "synthese": [
-        "Suffisant (quantité) + Approprié (pertinence + fiabilité)",
-        "Fiabilité : externe>interne, écrit>oral, direct>indirect, original>copie",
-        "7 procédures : inspection, observation, confirmation, recalcul, ré-exécution, analytique, demande",
-        "Les demandes seules ne suffisent pas (corroborer)"
+        "Suffisant (quantité) + Approprié (pertinence+fiabilité)",
+        "Hiérarchie : externe>interne, écrit>oral, direct>indirect, original>copie",
+        "7 procédures ; les demandes seules ne suffisent pas"
       ],
       "pieges": [
-        "Se fier aux seules déclarations de la direction sans corroboration",
-        "Confondre suffisance (quantité) et caractère approprié (qualité)",
-        "Surestimer la fiabilité d'un document interne non contrôlé"
+        "Se fier aux seules déclarations sans corroboration",
+        "Confondre suffisance et caractère approprié",
+        "Surestimer un document interne non contrôlé"
       ]
     },
     "501": {
-      "intro": "ISA 501 cible trois domaines qui demandent des procédures spécifiques : les **stocks**, les **litiges** et l'**information sectorielle**.",
+      "duree": "7 min",
+      "niveau": "Intermédiaire",
+      "tldr": "3 domaines spécifiques : **stocks** (assistance à l'inventaire obligatoire si significatif), **litiges** (lettre à l'avocat), information sectorielle.",
+      "stats": [
+        {
+          "value": "3",
+          "label": "Domaines",
+          "sub": "stocks/litiges/segments"
+        },
+        {
+          "value": "Inventaire",
+          "label": "Assistance",
+          "sub": "obligatoire si signif."
+        },
+        {
+          "value": "Avocat",
+          "label": "Litiges",
+          "sub": "lettre de confirmation"
+        },
+        {
+          "value": "2 sens",
+          "label": "Comptages tests",
+          "sub": "floor↔sheet"
+        }
+      ],
+      "intro": "ISA 501 cible trois domaines nécessitant des procédures dédiées.",
       "sections": [
         {
-          "titre": "1. Stocks — assistance à l'inventaire",
-          "body": "Si les stocks sont significatifs, l'auditeur **assiste à l'inventaire physique** : il observe le comptage, évalue les procédures, et effectue des **comptages tests** (test counts) dans les deux sens (du stock vers la feuille et de la feuille vers le stock).",
+          "titre": "Stocks — assistance à l'inventaire",
+          "body": "Si les stocks sont significatifs, l'auditeur assiste à l'inventaire physique : observe le comptage, évalue les procédures, et effectue des **comptages tests** dans les deux sens (du stock vers la feuille, de la feuille vers le stock).",
           "callouts": [
             {
               "type": "key",
               "label": "Obligatoire",
-              "text": "Stocks significatifs → assistance physique OBLIGATOIRE (existence + état). Si impossible → procédures alternatives ou limitation."
+              "text": "Stocks significatifs → assistance physique obligatoire (existence + état). Si impossible → procédures alternatives ou limitation."
             }
           ]
         },
         {
-          "titre": "2. Litiges et contentieux",
-          "body": "L'auditeur identifie les litiges et contentieux (demandes à la direction, lecture des PV, revue des honoraires d'avocats) et obtient, si nécessaire, une **lettre de l'avocat** de l'entité confirmant l'évaluation des risques.",
+          "titre": "Litiges et contentieux",
+          "body": "Identifier (demandes, PV, honoraires d'avocats) et obtenir une **lettre de l'avocat** confirmant l'évaluation des risques.",
           "callouts": [
             {
               "type": "example",
               "label": "Exemple",
-              "text": "Pour un procès en cours, la lettre de l'avocat aide à évaluer la probabilité de perte et le montant → provision (RPC 23) ou passif éventuel."
+              "text": "Pour un procès, la lettre de l'avocat aide à décider provision (RPC 23) vs passif éventuel."
             }
           ]
         },
         {
-          "titre": "3. Information sectorielle",
-          "body": "Quand le référentiel l'exige, l'auditeur obtient des éléments probants sur la présentation et la divulgation de l'information sectorielle (segments).",
+          "titre": "Information sectorielle",
+          "body": "Si le référentiel l'exige, obtenir des éléments sur la présentation des segments.",
           "callouts": []
         }
       ],
+      "quiz": [
+        {
+          "q": "Quand l'assistance à l'inventaire est-elle obligatoire ?",
+          "a": "Quand les stocks sont significatifs."
+        },
+        {
+          "q": "Comment faire les comptages tests ?",
+          "a": "Dans les DEUX sens (floor-to-sheet et sheet-to-floor)."
+        }
+      ],
       "synthese": [
-        "Stocks significatifs → assistance à l'inventaire physique obligatoire",
-        "Comptages tests dans les deux sens (floor-to-sheet, sheet-to-floor)",
-        "Litiges → lettre à l'avocat de l'entité",
-        "Information sectorielle si exigée par le référentiel"
+        "Stocks significatifs → assistance inventaire (2 sens)",
+        "Litiges → lettre à l'avocat",
+        "Information sectorielle si exigée"
       ],
       "pieges": [
         "Ne pas assister à l'inventaire de stocks significatifs",
-        "Oublier la lettre de l'avocat pour les litiges",
-        "Faire les comptages tests dans un seul sens"
+        "Oublier la lettre de l'avocat",
+        "Comptages tests dans un seul sens"
       ]
     },
     "505": {
-      "intro": "La **confirmation externe** est l'une des procédures les plus fiables : obtenir une réponse écrite directe d'un tiers (banque, client, fournisseur, avocat). ISA 505 en encadre la mise en œuvre.",
-      "sections": [
+      "duree": "8 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Confirmation externe = preuve très fiable. Positive (réponse toujours) > négative (réponse si désaccord). L'auditeur garde le CONTRÔLE de l'envoi. Non-réponses → procédures alternatives.",
+      "stats": [
         {
-          "titre": "1. Positive vs négative",
-          "body": "• **Demande positive** : le tiers doit répondre dans tous les cas (qu'il soit d'accord ou non) → plus fiable\n• **Demande négative** : le tiers ne répond QUE s'il est en désaccord → moins fiable (l'absence de réponse est ambiguë).",
-          "callouts": [
-            {
-              "type": "key",
-              "label": "Choix",
-              "text": "La confirmation positive est privilégiée pour les soldes importants ou les zones à risque. La négative seulement pour de nombreux petits soldes à faible risque."
-            }
-          ]
+          "value": "Positive",
+          "label": "+ fiable",
+          "sub": "que négative"
         },
         {
-          "titre": "2. Garder le contrôle du processus",
-          "body": "L'auditeur **contrôle** tout le processus : sélection des tiers, préparation, envoi, et réception directe (jamais via le client). Cela évite l'interception ou la falsification des réponses.",
+          "value": "Contrôle",
+          "label": "de l'auditeur",
+          "sub": "envoi+réception"
+        },
+        {
+          "value": "Banques",
+          "label": "Systématique",
+          "sub": "existence tréso"
+        },
+        {
+          "value": "Alt.",
+          "label": "Non-réponses",
+          "sub": "procédures alternatives"
+        }
+      ],
+      "intro": "La confirmation externe est l'une des procédures les plus fiables : réponse écrite directe d'un tiers.",
+      "sections": [
+        {
+          "titre": "Positive vs négative",
+          "body": "",
+          "compare": {
+            "title": "Demande positive vs négative",
+            "headers": [
+              "",
+              "Positive",
+              "Négative"
+            ],
+            "rows": [
+              [
+                "Réponse",
+                "Toujours (accord ou non)",
+                "Seulement si désaccord"
+              ],
+              [
+                "Fiabilité",
+                "Élevée",
+                "Faible (absence ambiguë)"
+              ],
+              [
+                "Usage",
+                "Soldes importants / risque",
+                "Nombreux petits soldes faible risque"
+              ]
+            ]
+          }
+        },
+        {
+          "titre": "Garder le contrôle",
+          "body": "L'auditeur contrôle tout : sélection, préparation, envoi, réception directe (jamais via le client).",
           "callouts": [
             {
               "type": "warn",
               "label": "Risque",
-              "text": "Si le client intercepte ou prépare les réponses, la fiabilité s'effondre. L'auditeur doit garder la main de bout en bout."
+              "text": "Si le client intercepte/prépare les réponses, la fiabilité s'effondre."
             }
           ]
         },
         {
-          "titre": "3. Non-réponses et exceptions",
-          "body": "Pour les **non-réponses** (demandes positives), l'auditeur met en œuvre des **procédures alternatives** (ex. examen des encaissements postérieurs, des factures et bons de livraison). Les **exceptions** (écarts) sont investiguées pour en comprendre la cause.",
+          "titre": "Non-réponses et exceptions",
+          "body": "Non-réponses (positives) → procédures alternatives (encaissements postérieurs, factures, bons de livraison). Exceptions → investiguer la cause.",
           "callouts": []
         }
       ],
+      "quiz": [
+        {
+          "q": "Confirmation positive ou négative, laquelle est plus fiable ?",
+          "a": "Positive (réponse dans tous les cas)."
+        },
+        {
+          "q": "Qui contrôle l'envoi des confirmations ?",
+          "a": "L'auditeur, de bout en bout (jamais le client)."
+        }
+      ],
       "synthese": [
-        "Positive (réponse toujours) > négative (réponse si désaccord)",
-        "L'auditeur garde le CONTRÔLE de l'envoi et de la réception",
-        "Non-réponses → procédures alternatives",
-        "Exceptions → investiguer la cause"
+        "Positive (toujours) > négative (si désaccord)",
+        "L'auditeur garde le contrôle de l'envoi/réception",
+        "Non-réponses → procédures alternatives"
       ],
       "pieges": [
-        "Laisser le client gérer l'envoi/réception des confirmations",
-        "Se fier aux confirmations négatives pour des zones à risque",
-        "Ignorer les non-réponses sans procédures alternatives"
+        "Laisser le client gérer les confirmations",
+        "Se fier aux négatives pour des zones à risque",
+        "Ignorer les non-réponses"
       ]
     },
     "510": {
-      "intro": "Lors d'un **premier audit** (nouveau client ou changement d'auditeur), les soldes d'ouverture n'ont pas été audités par soi. ISA 510 dit comment les valider.",
+      "duree": "7 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Premier audit : valider les **soldes d'ouverture** (le bilan d'ouverture N = clôture N-1). Vérifier report, cohérence des méthodes, dossier de l'auditeur précédent. Erreur → impact opinion.",
+      "stats": [
+        {
+          "value": "1er audit",
+          "label": "Champ",
+          "sub": "nouveau/changement"
+        },
+        {
+          "value": "Soldes",
+          "label": "d'ouverture",
+          "sub": "= clôture N-1"
+        },
+        {
+          "value": "Précédent",
+          "label": "Auditeur",
+          "sub": "consulter (accord)"
+        },
+        {
+          "value": "Méthodes",
+          "label": "Cohérence",
+          "sub": "à vérifier"
+        }
+      ],
+      "intro": "Lors d'un premier audit, les soldes d'ouverture n'ont pas été audités par soi.",
       "sections": [
         {
-          "titre": "1. Le risque des soldes d'ouverture",
-          "body": "Une erreur dans les soldes d'ouverture affecte le résultat de l'exercice courant. L'auditeur doit obtenir des éléments probants sur le fait que les soldes d'ouverture ne comportent pas d'anomalies significatives.",
+          "titre": "Le risque",
+          "body": "Une erreur dans les soldes d'ouverture affecte le résultat de l'exercice courant. Le bilan d'ouverture N = le bilan de clôture N-1.",
           "callouts": [
             {
               "type": "info",
               "label": "Pourquoi",
-              "text": "Le bilan d'ouverture N = le bilan de clôture N-1. S'il est faux, le résultat N est faussé."
+              "text": "S'il est faux, le résultat N est faussé."
             }
           ]
         },
         {
-          "titre": "2. Procédures",
-          "body": "L'auditeur :\n• Vérifie que les soldes de clôture N-1 ont été correctement reportés\n• Évalue la cohérence des méthodes comptables\n• Consulte le dossier de l'**auditeur précédent** (avec accord du client)\n• Effectue des procédures spécifiques (ex. recouvrement des créances N-1).",
+          "titre": "Procédures",
+          "body": "Vérifier le report des soldes N-1, la cohérence des méthodes, consulter le dossier de l'**auditeur précédent** (avec accord), effectuer des procédures spécifiques (recouvrement créances N-1).",
           "callouts": [
             {
               "type": "tip",
               "label": "Reprise de mandat",
-              "text": "Le contact avec l'auditeur précédent est une étape clé d'une reprise de mandat propre."
+              "text": "Le contact avec l'auditeur précédent est une étape clé."
             }
           ]
         },
         {
-          "titre": "3. Impact sur l'opinion",
-          "body": "Si l'auditeur ne peut pas obtenir d'éléments suffisants sur les soldes d'ouverture, ou s'ils comportent une anomalie non corrigée affectant l'exercice → **opinion modifiée** (qualified).",
+          "titre": "Impact opinion",
+          "body": "Si éléments insuffisants ou anomalie non corrigée affectant l'exercice → opinion modifiée (qualified).",
           "callouts": []
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Pourquoi valider les soldes d'ouverture ?",
+          "a": "Le bilan d'ouverture N = clôture N-1 ; une erreur fausse le résultat N."
+        },
+        {
+          "q": "Qui consulter en reprise de mandat ?",
+          "a": "L'auditeur précédent (avec accord du client)."
         }
       ],
       "synthese": [
         "Premier audit → valider les soldes d'ouverture",
-        "Vérifier report, cohérence des méthodes, dossier auditeur précédent",
-        "Soldes d'ouverture erronés → impact sur l'opinion"
+        "Report + cohérence des méthodes + dossier précédent",
+        "Soldes erronés → impact opinion"
       ],
       "pieges": [
-        "Présumer que les soldes d'ouverture sont corrects sans procédures",
-        "Oublier de contacter l'auditeur précédent (avec accord)",
-        "Négliger la cohérence des méthodes comptables"
+        "Présumer les soldes d'ouverture corrects",
+        "Oublier de contacter l'auditeur précédent",
+        "Négliger la cohérence des méthodes"
       ]
     },
     "520": {
-      "intro": "Les **procédures analytiques** comparent des données pour détecter l'inattendu. ISA 520 les régit comme procédures de substance et en revue finale.",
+      "duree": "8 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Procédures analytiques : analyser les relations plausibles pour détecter l'inattendu. 3 moments : planification, substance, finale (obligatoire). Substance = attente précise + seuil + données fiables.",
+      "stats": [
+        {
+          "value": "3 moments",
+          "label": "Planif/substance/finale",
+          "sub": ""
+        },
+        {
+          "value": "Finale",
+          "label": "Obligatoire",
+          "sub": "overall review"
+        },
+        {
+          "value": "Attente",
+          "label": "Précise",
+          "sub": "+ seuil d'écart"
+        },
+        {
+          "value": "NAS 520",
+          "label": "Norme",
+          "sub": "= ISA 520"
+        }
+      ],
+      "intro": "Les procédures analytiques comparent des données pour détecter l'inattendu.",
       "sections": [
         {
-          "titre": "1. Le principe",
-          "body": "Analyser les **relations plausibles** entre données financières et non financières (ratios, tendances, comparaisons N/N-1, vs budget, vs secteur). Un écart inattendu peut révéler une anomalie.",
+          "titre": "Le principe",
+          "body": "Analyser les relations plausibles entre données financières et non financières (ratios, tendances, N/N-1, vs budget, vs secteur). Un écart inattendu peut révéler une anomalie.",
           "callouts": [
             {
               "type": "info",
-              "label": "Exemple de relation",
-              "text": "Si le CA augmente de 20% mais la masse salariale baisse, c'est un écart à investiguer."
+              "label": "Exemple",
+              "text": "CA +20% mais masse salariale -10% = écart à investiguer."
             }
           ]
         },
         {
-          "titre": "2. Analytiques de substance",
-          "body": "Pour les utiliser comme procédure de substance, l'auditeur :\n• développe une **attente** suffisamment précise\n• définit un **seuil d'écart acceptable**\n• **investigue** les écarts au-delà du seuil\n• évalue la **fiabilité** des données utilisées.",
+          "titre": "Analytiques de substance",
+          "body": "",
+          "schema": {
+            "type": "flow",
+            "title": "Analytique de substance",
+            "steps": [
+              {
+                "t": "Développer une attente précise",
+                "d": ""
+              },
+              {
+                "t": "Définir un seuil d'écart acceptable",
+                "d": ""
+              },
+              {
+                "t": "Investiguer les écarts au-delà du seuil",
+                "d": ""
+              },
+              {
+                "t": "Évaluer la fiabilité des données",
+                "d": ""
+              }
+            ]
+          },
           "callouts": [
             {
               "type": "key",
               "label": "Rigueur",
-              "text": "Une analytique de substance n'est valable que si l'attente est précise et la donnée fiable. Sinon, elle ne prouve rien."
+              "text": "Valable seulement si l'attente est précise et la donnée fiable. Sinon, ça ne prouve rien."
             }
           ]
         },
         {
-          "titre": "3. Analytiques finales",
-          "body": "À la fin de l'audit, des **procédures analytiques finales** (overall review) sont **obligatoires** : elles vérifient que les EF dans leur ensemble sont cohérents avec la compréhension de l'entité.",
+          "titre": "Analytiques finales",
+          "body": "En fin d'audit, **obligatoires** : vérifier que les EF dans leur ensemble sont cohérents avec la compréhension de l'entité.",
           "callouts": []
         }
       ],
+      "quiz": [
+        {
+          "q": "Les analytiques finales sont-elles obligatoires ?",
+          "a": "Oui (overall review en fin d'audit)."
+        },
+        {
+          "q": "Condition d'une analytique de substance valable ?",
+          "a": "Attente suffisamment précise + données fiables."
+        }
+      ],
       "synthese": [
-        "Analyser les relations plausibles (ratios, tendances, vs N-1/budget/secteur)",
-        "Substance : attente précise + seuil + investigation + données fiables",
-        "Analytiques finales (overall review) OBLIGATOIRES",
-        "3 moments : planification, substance, conclusion"
+        "Analyser les relations plausibles",
+        "Substance : attente précise + seuil + données fiables",
+        "Finales (overall review) obligatoires"
       ],
       "pieges": [
-        "Utiliser une attente trop vague (analytique sans valeur probante)",
-        "Oublier les analytiques finales obligatoires",
-        "Ne pas vérifier la fiabilité des données analysées"
+        "Attente trop vague (sans valeur probante)",
+        "Oublier les analytiques finales",
+        "Ne pas vérifier la fiabilité des données"
       ]
     },
     "530": {
-      "intro": "On ne teste pas 100% des transactions : on **sonde**. ISA 530 régit l'échantillonnage — comment sélectionner, tester et extrapoler.",
-      "sections": [
+      "duree": "8 min",
+      "niveau": "Intermédiaire",
+      "tldr": "On sonde (≠ 100%). Statistique (MUS) vs non statistique. Toujours analyser la CAUSE d'une anomalie (isolée vs systématique) et extrapoler à la population.",
+      "stats": [
         {
-          "titre": "1. Statistique vs non statistique",
-          "body": "• **Échantillonnage statistique** : sélection aléatoire + évaluation probabiliste (ex. MUS — Monetary Unit Sampling)\n• **Non statistique** : sélection par jugement.\n\nDans les deux cas, l'échantillon doit être **représentatif** de la population.",
-          "callouts": [
-            {
-              "type": "info",
-              "label": "MUS",
-              "text": "Le Monetary Unit Sampling pondère la sélection par les montants : les gros postes ont plus de chances d'être sélectionnés."
-            }
-          ]
+          "value": "MUS",
+          "label": "Statistique",
+          "sub": "pondéré par montants"
         },
         {
-          "titre": "2. Risque d'échantillonnage",
-          "body": "Le **risque d'échantillonnage** = le risque que la conclusion sur l'échantillon diffère de la conclusion sur la population entière. On le réduit en augmentant la taille de l'échantillon.",
+          "value": "Cause",
+          "label": "À analyser",
+          "sub": "isolée/systématique"
+        },
+        {
+          "value": "Extrapoler",
+          "label": "À la population",
+          "sub": "substance"
+        },
+        {
+          "value": "2 types",
+          "label": "Attribute/Variable",
+          "sub": "contrôles/substance"
+        }
+      ],
+      "intro": "On ne teste pas 100% : on sonde. ISA 530 régit l'échantillonnage. Le MSA décrit le Monetary Unit Sampling.",
+      "sections": [
+        {
+          "titre": "Statistique vs non statistique",
+          "body": "• **Statistique** : sélection aléatoire + évaluation probabiliste (MUS — pondéré par les montants)\n• **Non statistique** : sélection par jugement. Dans les 2 cas, échantillon représentatif.",
           "callouts": [
             {
               "type": "comp",
               "label": "Attribute vs Variable",
-              "text": "Attribute sampling = tests des contrôles (taux de déviation). Variable/MUS = procédures de substance (montants)."
+              "text": "Attribute sampling = tests des contrôles (taux de déviation). Variable/MUS = substance (montants)."
             }
           ]
         },
         {
-          "titre": "3. Analyser et extrapoler",
-          "body": "Toute anomalie/déviation détectée doit être **analysée** (nature + cause). Pour les procédures de substance, on **extrapole** l'anomalie à la population. On évalue ensuite si le sondage fournit une base raisonnable de conclusion.",
+          "titre": "Risque d'échantillonnage",
+          "body": "Risque que la conclusion sur l'échantillon diffère de celle sur la population. Réduit en augmentant la taille.",
+          "callouts": []
+        },
+        {
+          "titre": "Analyser + extrapoler",
+          "body": "Toute anomalie : analyser nature + **cause**. Pour la substance, extrapoler à la population. Évaluer si le sondage fournit une base raisonnable.",
           "callouts": [
             {
               "type": "key",
               "label": "Cause",
-              "text": "Toujours comprendre la CAUSE d'une anomalie : isolée ou systématique ? Une erreur systématique change tout."
+              "text": "Isolée ou systématique ? Une erreur systématique change tout."
             }
           ]
         }
       ],
+      "quiz": [
+        {
+          "q": "Que faire de toute anomalie détectée dans un échantillon ?",
+          "a": "Analyser sa CAUSE (isolée vs systématique) et l'extrapoler à la population."
+        },
+        {
+          "q": "MUS sert pour quel type de test ?",
+          "a": "Procédures de substance (variable sampling, pondéré par les montants)."
+        }
+      ],
       "synthese": [
-        "Statistique (MUS, aléatoire) vs non statistique (jugement)",
-        "Échantillon représentatif ; risque d'échantillonnage ↓ avec la taille",
+        "Statistique (MUS) vs non statistique",
         "Attribute (contrôles) vs Variable/MUS (substance)",
-        "Analyser la cause + extrapoler les anomalies"
+        "Analyser la cause + extrapoler"
       ],
       "pieges": [
-        "Ne pas analyser la cause d'une anomalie (isolée vs systématique)",
-        "Oublier d'extrapoler l'anomalie à la population",
-        "Échantillon non représentatif de la population"
+        "Ne pas analyser la cause d'une anomalie",
+        "Oublier d'extrapoler",
+        "Échantillon non représentatif"
       ]
     },
     "540": {
-      "intro": "Les **estimations comptables** (dépréciations, provisions, juste valeur) sont subjectives et risquées. ISA 540 (révisée 2018) impose une approche bien plus rigoureuse.",
+      "duree": "12 min",
+      "niveau": "Avancé",
+      "tldr": "Estimations comptables (dépréciations, provisions, juste valeur) = subjectives et risquées. R2018 : tester 3 dimensions (**Méthode + Hypothèses + Données = MHD**) + stand-back + détection du biais de la direction.",
+      "stats": [
+        {
+          "value": "R2018",
+          "label": "Révision",
+          "sub": "effective 2019"
+        },
+        {
+          "value": "MHD",
+          "label": "3 dimensions",
+          "sub": "méthode/hyp./données"
+        },
+        {
+          "value": "3 facteurs",
+          "label": "Risque inhérent",
+          "sub": "complexité/subj./incert."
+        },
+        {
+          "value": "Biais",
+          "label": "Management bias",
+          "sub": "à détecter"
+        }
+      ],
+      "intro": "Les estimations comptables sont subjectives et risquées. ISA 540 (révisée 2018) impose une approche bien plus rigoureuse. Lien fort avec IAS 36, IFRS 9 (ECL), IAS 19.",
       "sections": [
         {
-          "titre": "1. Pourquoi c'est risqué",
-          "body": "Les estimations comportent une **incertitude d'estimation** inhérente. Elles sont un terrain privilégié de **biais de la direction** (lissage de résultat, gestion des attentes). Exemples : goodwill (IAS 36), ECL (IFRS 9), provisions (IAS 37), retraites (IAS 19).",
+          "titre": "Pourquoi c'est risqué",
+          "body": "Incertitude d'estimation inhérente + terrain de **biais de la direction** (lissage, gestion des attentes). Exemples : goodwill (IAS 36), ECL (IFRS 9), provisions (IAS 37), retraites (IAS 19).",
           "callouts": [
             {
               "type": "info",
               "label": "R2018",
-              "text": "La révision 2018 répond aux scandales liés aux estimations agressives. Norme bien plus exigeante."
+              "text": "Répond aux scandales liés aux estimations agressives."
             }
           ]
         },
         {
-          "titre": "2. Les 3 facteurs de risque inhérent",
-          "body": "L'auditeur évalue le risque via trois facteurs : la **complexité** (du modèle/calcul), la **subjectivité** (des hypothèses), et l'**incertitude d'estimation** (plage de résultats possibles).",
-          "callouts": []
+          "titre": "Les 3 facteurs de risque inhérent",
+          "body": "",
+          "schema": {
+            "type": "flow",
+            "title": "Évaluer le risque inhérent d'une estimation",
+            "steps": [
+              {
+                "t": "Complexité",
+                "d": "du modèle / du calcul"
+              },
+              {
+                "t": "Subjectivité",
+                "d": "des hypothèses"
+              },
+              {
+                "t": "Incertitude d'estimation",
+                "d": "plage de résultats possibles"
+              }
+            ]
+          }
         },
         {
-          "titre": "3. Tester les 3 dimensions + stand-back",
-          "body": "On teste l'estimation selon trois dimensions : la **MÉTHODE** (le modèle est-il approprié ?), les **HYPOTHÈSES** (réalistes ? cohérentes avec les budgets ?), et les **DONNÉES** (fiables ? pertinentes ?). Puis un **test de recul (stand-back)** sur le caractère raisonnable global, en restant attentif aux indices de **biais**.",
+          "titre": "Tester les 3 dimensions + stand-back",
+          "body": "Tester l'estimation selon : la **MÉTHODE** (modèle approprié ?), les **HYPOTHÈSES** (réalistes, cohérentes avec les budgets ?), les **DONNÉES** (fiables, pertinentes ?). Puis un **stand-back** sur le caractère raisonnable global, attentif au biais.",
           "callouts": [
             {
               "type": "key",
               "label": "MHD",
-              "text": "Méthode + Hypothèses + Données = les 3 dimensions à tester systématiquement (R2018)."
+              "text": "Méthode + Hypothèses + Données = les 3 dimensions à tester systématiquement."
             }
           ]
         }
       ],
+      "mnemo": {
+        "code": "MHD",
+        "items": [
+          {
+            "l": "M",
+            "t": "Méthode (le modèle)"
+          },
+          {
+            "l": "H",
+            "t": "Hypothèses (assumptions)"
+          },
+          {
+            "l": "D",
+            "t": "Données (data)"
+          }
+        ],
+        "phrase": "Les 3 dimensions à tester (ISA 540 R2018)"
+      },
+      "quiz": [
+        {
+          "q": "Quelles sont les 3 dimensions d'une estimation à tester ?",
+          "a": "Méthode + Hypothèses + Données (MHD)."
+        },
+        {
+          "q": "Quel risque spécifique guetter sur les estimations ?",
+          "a": "Le biais de la direction (management bias)."
+        }
+      ],
       "synthese": [
-        "Estimations = incertitude + risque de biais de la direction",
-        "3 facteurs de risque : complexité, subjectivité, incertitude d'estimation",
-        "Tester 3 dimensions : Méthode + Hypothèses + Données (MHD)",
-        "Stand-back + détection du management bias"
+        "Estimations = incertitude + risque de biais",
+        "3 facteurs : complexité, subjectivité, incertitude",
+        "Tester MHD (Méthode+Hypothèses+Données) + stand-back"
       ],
       "pieges": [
-        "Accepter l'estimation de la direction sans tester les 3 dimensions",
-        "Ne pas détecter le biais de la direction (lissage)",
-        "Oublier le test de recul (stand-back)"
+        "Accepter l'estimation sans tester les 3 dimensions",
+        "Ne pas détecter le biais de la direction",
+        "Oublier le stand-back"
       ]
     },
     "550": {
-      "intro": "Les **parties liées** (sociétés du groupe, dirigeants, proches) sont un vecteur classique de fraude et de transactions hors marché. ISA 550 organise leur audit.",
+      "duree": "8 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Parties liées = vecteur de fraude et de transactions hors marché. Vigilance sur les parties liées NON divulguées. Présentation conforme à RPC 15 / IAS 24.",
+      "stats": [
+        {
+          "value": "Fraude",
+          "label": "Risque accru",
+          "sub": "hors marché"
+        },
+        {
+          "value": "Non divulguées",
+          "label": "Vigilance",
+          "sub": "les vrais risques"
+        },
+        {
+          "value": "RPC 15",
+          "label": "Présentation",
+          "sub": "/ IAS 24"
+        },
+        {
+          "value": "Hors normal",
+          "label": "Transactions",
+          "sub": "à évaluer"
+        }
+      ],
+      "intro": "Les parties liées sont un vecteur classique de fraude et de transactions hors marché.",
       "sections": [
         {
-          "titre": "1. Le risque des parties liées",
-          "body": "Les transactions avec parties liées peuvent : masquer une fraude, se faire à des conditions hors marché, ou impliquer des structures opaques. Le risque est accru car ces transactions échappent aux mécanismes de marché.",
+          "titre": "Le risque",
+          "body": "Les transactions avec parties liées peuvent masquer une fraude, se faire hors marché, ou impliquer des structures opaques (échappent aux mécanismes de marché).",
           "callouts": [
             {
               "type": "warn",
@@ -13665,74 +14047,142 @@
           ]
         },
         {
-          "titre": "2. Procédures",
-          "body": "L'auditeur comprend les relations et transactions avec parties liées (demandes, revue des contrats, des PV), reste vigilant pendant tout l'audit, et évalue les transactions **hors du cours normal** des affaires.",
+          "titre": "Procédures",
+          "body": "Comprendre les relations et transactions (demandes, contrats, PV), rester vigilant tout l'audit, évaluer les transactions hors du cours normal.",
           "callouts": []
         },
         {
-          "titre": "3. Comptabilisation et présentation",
-          "body": "L'auditeur évalue la comptabilisation et la **présentation** (disclosures) des transactions avec parties liées, conformément au référentiel (RPC 15 / IAS 24).",
+          "titre": "Présentation",
+          "body": "Évaluer la comptabilisation et la présentation (RPC 15 / IAS 24).",
           "callouts": [
             {
               "type": "legal",
-              "label": "Suisse",
-              "text": "RPC 15 : la mention « aux conditions du marché » seule ne suffit PAS — le lecteur doit pouvoir juger lui-même."
+              "label": "RPC 15",
+              "text": "La mention « aux conditions du marché » seule ne suffit PAS — le lecteur doit pouvoir juger lui-même."
             }
           ]
         }
       ],
+      "quiz": [
+        {
+          "q": "Quel est le principal risque des parties liées ?",
+          "a": "Fraude + transactions hors marché ; surtout les parties liées non divulguées."
+        },
+        {
+          "q": "« Aux conditions du marché » suffit-il (RPC 15) ?",
+          "a": "Non — il faut donner au lecteur de quoi juger lui-même."
+        }
+      ],
       "synthese": [
-        "Parties liées = risque de fraude + transactions hors marché",
-        "Vigilance sur les parties liées NON divulguées",
-        "Évaluer les transactions hors du cours normal",
-        "Présentation conforme à RPC 15 / IAS 24"
+        "Parties liées = risque de fraude + hors marché",
+        "Vigilance sur les non divulguées",
+        "Présentation conforme RPC 15 / IAS 24"
       ],
       "pieges": [
-        "Se fier à la liste de parties liées fournie par la direction sans vigilance",
-        "Accepter « aux conditions du marché » sans éléments (RPC 15)",
+        "Se fier à la liste de la direction sans vigilance",
+        "Accepter « conditions du marché » sans éléments",
         "Négliger les transactions hors cours normal"
       ]
     },
     "560": {
-      "intro": "Entre la clôture et la publication, des événements peuvent survenir. ISA 560 définit la responsabilité de l'auditeur sur ces **événements postérieurs**.",
-      "sections": [
+      "duree": "8 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Événements entre clôture et rapport. 3 périodes. Ajustable (condition à la clôture) → ajuster ; non ajustable (nouvel événement) → disclosure. La date du rapport est la frontière.",
+      "stats": [
         {
-          "titre": "1. Trois périodes",
-          "body": "• **Avant la date du rapport** : procédures actives obligatoires\n• **Entre la date du rapport et la publication des EF** : pas d'obligation active, mais réagir si un fait est porté à la connaissance\n• **Après la publication** : pas d'obligation, mais agir si un fait matériel est découvert.",
-          "callouts": [
-            {
-              "type": "key",
-              "label": "Date du rapport",
-              "text": "La date du rapport = moment où l'auditeur a obtenu les éléments probants suffisants. Elle marque la frontière des périodes."
-            }
-          ]
+          "value": "3",
+          "label": "Périodes",
+          "sub": "avant/entre/après"
         },
         {
-          "titre": "2. Procédures actives (période 1)",
+          "value": "Ajustable",
+          "label": "→ ajuster",
+          "sub": "condition clôture"
+        },
+        {
+          "value": "Non ajust.",
+          "label": "→ disclosure",
+          "sub": "nouvel événement"
+        },
+        {
+          "value": "Date rapport",
+          "label": "Frontière",
+          "sub": "éléments suffisants"
+        }
+      ],
+      "intro": "Entre la clôture et la publication, des événements peuvent survenir. ISA 560 définit la responsabilité de l'auditeur (lien IAS 10 / RPC 6).",
+      "sections": [
+        {
+          "titre": "Trois périodes",
+          "body": "",
+          "schema": {
+            "type": "flow",
+            "title": "Les 3 périodes (ISA 560)",
+            "steps": [
+              {
+                "t": "Avant la date du rapport",
+                "d": "procédures ACTIVES obligatoires"
+              },
+              {
+                "t": "Entre rapport et publication",
+                "d": "pas d'obligation active, réagir si info reçue"
+              },
+              {
+                "t": "Après publication",
+                "d": "pas d'obligation, agir si fait matériel découvert"
+              }
+            ]
+          }
+        },
+        {
+          "titre": "Procédures actives (période 1)",
           "body": "Lecture des PV postérieurs, demandes à la direction, examen des derniers états intermédiaires, recherche d'événements (litiges, faillites de clients, sinistres).",
           "callouts": []
         },
         {
-          "titre": "3. Ajustable vs non ajustable",
-          "body": "• **Ajustable** : l'événement confirme une condition existant à la clôture → **ajuster** les EF (ex. faillite d'un client dont la créance existait au 31.12)\n• **Non ajustable** : nouvel événement → **disclosure** si significatif (ex. incendie d'une usine en janvier).",
-          "callouts": [
-            {
-              "type": "comp",
-              "label": "IAS 10",
-              "text": "Ajustable = condition à la clôture → ajuster. Non ajustable = nouvel événement → mentionner. Même logique qu'IAS 10 / RPC 6."
-            }
-          ]
+          "titre": "Ajustable vs non ajustable",
+          "body": "",
+          "compare": {
+            "title": "IAS 10 / RPC 6",
+            "headers": [
+              "Type",
+              "Définition",
+              "Traitement"
+            ],
+            "rows": [
+              [
+                "Ajustable",
+                "Confirme une condition existant à la clôture",
+                "AJUSTER les EF (ex. faillite client dont la créance existait au 31.12)"
+              ],
+              [
+                "Non ajustable",
+                "Nouvel événement post-clôture",
+                "DISCLOSURE si significatif (ex. incendie en janvier)"
+              ]
+            ]
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Que marque la date du rapport ?",
+          "a": "Le moment où l'auditeur a obtenu les éléments probants suffisants ; frontière des 3 périodes."
+        },
+        {
+          "q": "Événement ajustable = ?",
+          "a": "Confirme une condition existant à la clôture → ajuster les EF."
         }
       ],
       "synthese": [
-        "3 périodes : avant rapport / entre rapport-publication / après publication",
+        "3 périodes : avant rapport / entre / après",
         "Avant le rapport : procédures actives obligatoires",
-        "Ajustable (condition à la clôture) → ajuster ; non ajustable → disclosure"
+        "Ajustable → ajuster ; non ajustable → disclosure"
       ],
       "pieges": [
-        "Confondre événement ajustable et non ajustable",
-        "Oublier les procédures actives avant la date du rapport",
-        "Ne pas réagir à un fait matériel découvert après publication"
+        "Confondre ajustable et non ajustable",
+        "Oublier les procédures actives avant le rapport",
+        "Ne pas réagir à un fait matériel après publication"
       ]
     },
     "570": {
@@ -13907,46 +14357,80 @@
       ]
     },
     "580": {
-      "intro": "Avant de signer, l'auditeur obtient de la direction des **déclarations écrites** (lettre de représentation / LoR). ISA 580 en définit le rôle et les limites.",
+      "duree": "7 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Déclarations écrites de la direction (LoR) obtenues proche de la date du rapport. Complètent mais ne REMPLACENT PAS les autres éléments probants. Refus de signer → doute → disclaimer possible.",
+      "stats": [
+        {
+          "value": "LoR",
+          "label": "Lettre repr.",
+          "sub": "proche du rapport"
+        },
+        {
+          "value": "Complète",
+          "label": "≠ remplace",
+          "sub": "les preuves"
+        },
+        {
+          "value": "Refus",
+          "label": "→ disclaimer",
+          "sub": "possible"
+        },
+        {
+          "value": "NAS 580",
+          "label": "Norme",
+          "sub": "= ISA 580"
+        }
+      ],
+      "intro": "Avant de signer, l'auditeur obtient des déclarations écrites de la direction (lettre de représentation).",
       "sections": [
         {
-          "titre": "1. Rôle de la LoR",
-          "body": "La **lettre de représentation** est un élément probant par lequel la direction confirme par écrit qu'elle a rempli ses responsabilités et fourni toutes les informations. Elle est obtenue à une date proche de celle du rapport.",
+          "titre": "Rôle de la LoR",
+          "body": "La direction confirme par écrit qu'elle a rempli ses responsabilités et fourni toute l'information. Contenu : responsabilité EF + SCI, exhaustivité des transactions, divulgation des fraudes/litiges/parties liées, anomalies non corrigées non significatives.",
           "callouts": [
             {
               "type": "info",
-              "label": "Contenu",
-              "text": "Responsabilité des EF + SCI, exhaustivité des transactions, divulgation des fraudes/litiges/parties liées, anomalies non corrigées non significatives."
+              "label": "Date",
+              "text": "Obtenue à une date proche de celle du rapport."
             }
           ]
         },
         {
-          "titre": "2. Ce qu'elle ne fait pas",
-          "body": "La LoR **complète** mais ne **remplace JAMAIS** les autres éléments probants. Si une déclaration est la seule preuve disponible sur un sujet important, c'est insuffisant.",
+          "titre": "Ce qu'elle ne fait pas",
+          "body": "La LoR complète mais ne REMPLACE JAMAIS les autres éléments probants.",
           "callouts": [
             {
               "type": "key",
               "label": "Limite",
-              "text": "La LoR n'est pas un substitut aux procédures d'audit. Elle confirme, elle ne prouve pas à elle seule."
+              "text": "Si une déclaration est la seule preuve sur un sujet important, c'est insuffisant."
             }
           ]
         },
         {
-          "titre": "3. Refus ou incohérence",
-          "body": "Si la direction **refuse** de fournir la LoR, ou si les déclarations sont incohérentes avec d'autres éléments probants, cela jette un doute sur l'intégrité de la direction → impact possible jusqu'au **disclaimer** (impossibilité d'exprimer une opinion).",
+          "titre": "Refus ou incohérence",
+          "body": "Refus de fournir la LoR ou déclarations incohérentes → doute sur l'intégrité de la direction → impact possible jusqu'au **disclaimer**.",
           "callouts": []
         }
       ],
+      "quiz": [
+        {
+          "q": "La LoR remplace-t-elle les autres éléments probants ?",
+          "a": "Non — elle complète, elle ne prouve pas à elle seule."
+        },
+        {
+          "q": "Conséquence d'un refus de signer la LoR ?",
+          "a": "Doute sur l'intégrité → impact possible jusqu'au disclaimer."
+        }
+      ],
       "synthese": [
-        "LoR = déclarations écrites de la direction, proche de la date du rapport",
-        "Confirme responsabilités + exhaustivité + divulgations",
-        "Complète mais ne REMPLACE PAS les autres éléments probants",
-        "Refus de signer = doute sur l'intégrité → disclaimer possible"
+        "LoR = déclarations écrites, proche du rapport",
+        "Complète mais ne remplace pas les preuves",
+        "Refus → disclaimer possible"
       ],
       "pieges": [
-        "Considérer la LoR comme un substitut aux procédures d'audit",
-        "Obtenir la LoR trop tôt (doit être proche de la date du rapport)",
-        "Ignorer une incohérence entre la LoR et d'autres éléments"
+        "Considérer la LoR comme un substitut aux procédures",
+        "L'obtenir trop tôt",
+        "Ignorer une incohérence"
       ]
     },
     "600": {
