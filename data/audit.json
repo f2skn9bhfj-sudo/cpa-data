@@ -16456,9 +16456,9 @@
       ]
     },
     "701": {
-      "duree": "9 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Pour les cotées : communiquer les **KAM** (questions clés de l'audit). Sélectionnées parmi celles communiquées à la gouvernance. Décrire : question + pourquoi + comment traitée. KAM ≠ opinion modifiée.",
+      "duree": "14 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISA 701 = communication des Key Audit Matters (KAM). Obligatoire pour les EIP/cotées. Sélection en entonnoir (questions communiquées à la gouvernance → attention significative → KAM). Décrire : question + pourquoi + comment traitée. Les KAM ne modifient PAS l'opinion.",
       "stats": [
         {
           "value": "EIP",
@@ -16466,78 +16466,120 @@
           "sub": "cotées"
         },
         {
+          "value": "§9-10",
+          "label": "Sélection",
+          "sub": "entonnoir"
+        },
+        {
           "value": "2-5",
           "label": "KAM typiques",
-          "sub": "par rapport"
+          "sub": ""
         },
         {
           "value": "≠ réserve",
-          "label": "KAM",
-          "sub": "pas une modif"
-        },
-        {
-          "value": "R2015",
-          "label": "Nouvelle",
-          "sub": "effective 2016"
+          "label": "N'altère pas",
+          "sub": "l'opinion"
         }
       ],
-      "intro": "Pour les sociétés cotées, le rapport va au-delà de l'opinion binaire : il communique les Key Audit Matters.",
+      "intro": "ISA 701 (nouvelle 2015, effective 2016) répond à la demande de transparence des investisseurs : le rapport communique les questions qui ont le plus mobilisé l'auditeur. Cours § par §.",
       "sections": [
         {
-          "titre": "Que sont les KAM",
-          "body": "Les questions les **plus importantes** de l'audit (jugement professionnel), sélectionnées parmi celles communiquées à la gouvernance.",
+          "titre": "Champ, objectif & définition (§1-8)",
+          "body": "ISA 701 traite de la responsabilité de communiquer les **Key Audit Matters (KAM)** dans le rapport. **Champ** : obligatoire pour l'audit des EF d'entités cotées (EIP), ou lorsque l'auditeur décide/est requis de communiquer des KAM. **Définition (§8)** : les KAM sont les questions qui, selon le **jugement professionnel** de l'auditeur, ont été les **plus importantes** dans l'audit de la période ; elles sont sélectionnées parmi les questions communiquées à la gouvernance.",
           "callouts": [
             {
               "type": "info",
-              "label": "Pour qui",
-              "text": "Obligatoires EIP/cotées ; optionnels (recommandés) pour les autres."
+              "label": "But",
+              "text": "Accroître la valeur communicationnelle du rapport en donnant une transparence sur les zones de jugement les plus significatives."
             }
           ]
         },
         {
-          "titre": "Sélection et description",
+          "titre": "La sélection en entonnoir (§9-10)",
           "body": "",
           "schema": {
             "type": "flow",
-            "title": "Construire un KAM",
+            "title": "Du général au KAM (§9-10)",
             "steps": [
               {
-                "t": "Sélectionner",
-                "d": "significant risks, jugements/estimations, événements majeurs"
+                "t": "Questions communiquées à la gouvernance",
+                "d": "point de départ (ISA 260)"
               },
               {
-                "t": "Décrire la question",
-                "d": "pourquoi elle est clé"
+                "t": "Questions ayant requis une attention significative",
+                "d": "filtrer : risques importants, jugements/estimations à forte incertitude, effet d'événements/transactions majeurs"
               },
               {
-                "t": "Décrire la réponse d'audit",
-                "d": "comment l'audit l'a traitée"
+                "t": "KAM",
+                "d": "les questions LES PLUS importantes → communiquées dans le rapport"
               }
             ]
-          }
-        },
-        {
-          "titre": "Position et nature",
-          "body": "Après le fondement de l'opinion (après Material Uncertainty s'il existe).",
+          },
           "callouts": [
             {
               "type": "key",
-              "label": "KAM ≠ réserve",
-              "text": "Les KAM ne modifient PAS l'opinion. Une opinion clean peut comporter des KAM."
+              "label": "Entonnoir",
+              "text": "KAM = sous-ensemble des questions communiquées à la gouvernance → ayant requis une attention significative → les plus importantes."
             }
           ]
+        },
+        {
+          "titre": "Description de chaque KAM (§11-13)",
+          "body": "Pour chaque KAM, le rapport : décrit **pourquoi** la question a été considérée comme l'une des plus importantes (et donc comme un KAM), et **comment** elle a été traitée dans l'audit. Il renvoie aux **informations** correspondantes des EF le cas échéant. La description ne doit pas constituer une opinion distincte ni de l'information originale sur l'entité (qui relèverait de la direction).",
+          "callouts": []
+        },
+        {
+          "titre": "Positionnement & cas particuliers (§14-16)",
+          "body": "La section **« Questions clés de l'audit »** est placée **après** le fondement de l'opinion (et après la section Material Uncertainty going concern le cas échéant). Une question entraînant une **opinion modifiée** (ISA 705) ou une **incertitude significative** (ISA 570) est, par nature, un KAM mais elle n'est PAS répétée dans la section KAM — on y renvoie. Si l'auditeur conclut qu'il n'y a **aucun KAM** à communiquer, il l'indique.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "KAM vs opinion modifiée",
+              "text": "Un KAM ne modifie pas l'opinion. Une opinion qualified peut coexister avec des KAM (sur d'autres sujets). Le sujet de la réserve n'est pas un KAM répété mais renvoyé."
+            }
+          ]
+        },
+        {
+          "titre": "Communication & articulation (§17-18)",
+          "body": "L'auditeur **communique à la gouvernance** les KAM qu'il prévoit de communiquer (ou le fait qu'il n'y en a aucun). **Documentation** : les questions ayant requis une attention significative et la justification de la décision (KAM ou non). \n\n**Articulation** : ISA 700 (rapport), ISA 705/570 (renvois), ISA 260 (source des questions), ISA 230 (documentation).",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "NA-CH 701. Obligatoire pour les sociétés cotées SIX. Exemples fréquents : revenue recognition, goodwill impairment, provisions, valorisations niveau 3."
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Pour quelles entités les KAM sont-ils obligatoires ?",
+          "a": "Les entités d'intérêt public / cotées (EIP)."
+        },
+        {
+          "q": "D'où sont sélectionnés les KAM ?",
+          "a": "Parmi les questions communiquées à la gouvernance (entonnoir → attention significative → les plus importantes)."
+        },
+        {
+          "q": "Que décrit-on pour chaque KAM ?",
+          "a": "Pourquoi c'est un KAM + comment l'audit l'a traité."
+        },
+        {
+          "q": "Un KAM modifie-t-il l'opinion ?",
+          "a": "Non — il informe sans altérer l'opinion."
         }
       ],
       "synthese": [
         "KAM = questions les plus importantes (EIP/cotées)",
-        "Sélection : significant risks, jugements, événements",
-        "Décrire : question + pourquoi + comment",
-        "KAM ≠ opinion modifiée"
+        "Sélection en entonnoir (gouvernance → attention significative → KAM)",
+        "Décrire : pourquoi + comment traité + renvoi aux EF",
+        "Placés après le fondement ; ne modifient pas l'opinion"
       ],
       "pieges": [
         "Croire que les KAM modifient l'opinion",
-        "Mettre des KAM par obligation pour une non-cotée",
-        "Décrire sans expliquer comment l'audit a traité"
+        "Répéter le sujet d'une réserve dans la section KAM (on y renvoie)",
+        "Décrire sans expliquer comment l'audit a traité",
+        "Inclure de l'information originale sur l'entité"
       ]
     },
     "705": {
@@ -16754,9 +16796,9 @@
       ]
     },
     "706": {
-      "duree": "7 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Attirer l'attention SANS modifier l'opinion. EOM = question DANS les EF ; Other Matter = question HORS des EF. Going concern a son propre paragraphe dédié (≠ EOM ordinaire).",
+      "duree": "11 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 706 = paragraphes d'observation (EOM) et sur d'autres points (Other Matter). EOM = attire l'attention sur une question PRÉSENTÉE dans les EF ; Other Matter = question NON présentée mais pertinente. Aucun ne modifie l'opinion.",
       "stats": [
         {
           "value": "2 types",
@@ -16769,79 +16811,96 @@
           "sub": ""
         },
         {
-          "value": "DANS/HORS",
-          "label": "EF",
-          "sub": "EOM/Other"
+          "value": "DANS",
+          "label": "EOM",
+          "sub": "les EF"
         },
         {
-          "value": "R2015",
-          "label": "Révision",
-          "sub": ""
+          "value": "HORS",
+          "label": "Other Matter",
+          "sub": "des EF"
         }
       ],
-      "intro": "Parfois l'auditeur veut attirer l'attention sans modifier son opinion. ISA 706 régit EOM et Other Matter.",
+      "intro": "Parfois l'auditeur veut attirer l'attention sur un point sans modifier son opinion. ISA 706 (révisée 2015) régit les paragraphes d'observation (EOM) et sur d'autres points (Other Matter). Cours § par §.",
       "sections": [
         {
-          "titre": "Emphasis of Matter (EOM)",
-          "body": "Attire l'attention sur une question **présentée** dans les EF, fondamentale à la compréhension (litige provisionné et décrit, changement de méthode).",
+          "titre": "Champ, objectif & définitions (§1-5)",
+          "body": "ISA 706 traite des communications supplémentaires dans le rapport lorsque l'auditeur juge nécessaire d'**attirer l'attention** des utilisateurs. **Définitions** : \n• **Emphasis of Matter (EOM)** : paragraphe qui se réfère à une question **présentée ou divulguée** dans les EF, d'une importance telle qu'elle est fondamentale à la compréhension des utilisateurs.\n• **Other Matter** : paragraphe qui se réfère à une question **autre** que celles présentées/divulguées dans les EF, pertinente pour la compréhension de l'audit, des responsabilités ou du rapport.",
           "callouts": [
             {
               "type": "key",
-              "label": "Sans modifier",
-              "text": "L'EOM ne MODIFIE PAS l'opinion : « regardez ce point déjà dans les EF »."
+              "label": "DANS vs HORS",
+              "text": "EOM = question DANS les EF. Other Matter = question HORS des EF."
             }
           ]
         },
         {
-          "titre": "Other Matter",
-          "body": "Communique une question **non présentée** dans les EF mais pertinente pour l'audit (ex. comptes N-1 audités par un autre auditeur).",
-          "compare": {
-            "title": "EOM vs Other Matter",
-            "headers": [
-              "",
-              "EOM",
-              "Other Matter"
-            ],
-            "rows": [
-              [
-                "Question",
-                "DANS les EF",
-                "HORS des EF"
-              ],
-              [
-                "Effet opinion",
-                "Aucun",
-                "Aucun"
-              ]
-            ]
-          }
+          "titre": "Paragraphe d'observation — EOM (§8-9)",
+          "body": "L'auditeur inclut un EOM si : (a) la question est **présentée/divulguée** correctement dans les EF, et (b) il juge nécessaire d'y attirer l'attention. Le paragraphe : a un intitulé « Observation » (ou similaire), renvoie clairement à la question et à sa localisation dans les EF, et **indique que l'opinion n'est pas modifiée** à son égard. Exemples : incertitude majeure de litige correctement provisionnée et décrite, application anticipée d'une nouvelle norme, catastrophe affectant la situation.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Condition",
+              "text": "L'EOM n'est possible QUE si la question est déjà bien présentée dans les EF. Sinon, c'est une question d'opinion modifiée (705), pas un EOM."
+            }
+          ]
         },
         {
-          "titre": "EOM vs going concern",
-          "body": "L'incertitude significative going concern a son **propre paragraphe dédié** (ISA 570), ce n'est pas un EOM ordinaire.",
+          "titre": "Paragraphe sur d'autres points — Other Matter (§10-11)",
+          "body": "L'auditeur inclut un **Other Matter** pour communiquer une question non présentée dans les EF, si la loi le permet et si c'est pertinent pour comprendre l'audit/les responsabilités/le rapport. Exemples : EF de la période précédente audités par un **autre auditeur** (lien ISA 710), restriction d'utilisation du rapport, impossibilité de retirer un rapport.",
           "callouts": []
+        },
+        {
+          "titre": "Relations avec going concern, KAM & communication (§A1-A16, §12)",
+          "body": "• L'incertitude significative going concern a son **propre paragraphe dédié** (ISA 570), ce n'est PAS un EOM ordinaire.\n• Pour les EIP avec KAM (ISA 701) : un EOM/Other Matter ne se substitue PAS à un KAM.\n• L'auditeur **communique** à la gouvernance s'il prévoit d'inclure un EOM/Other Matter.\n\n**Articulation** : ISA 700 (rapport), ISA 705 (≠ — 706 ne modifie pas l'opinion), ISA 570 (paragraphe dédié), ISA 710/720.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "705 vs 706",
+              "text": "ISA 705 MODIFIE l'opinion (Q/A/D). ISA 706 (EOM/Other Matter) attire l'attention SANS la modifier. Erreur d'examen fréquente."
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "EOM vs Other Matter ?",
+          "a": "EOM = question DANS les EF (présentée). Other Matter = question HORS des EF."
+        },
+        {
+          "q": "Un EOM modifie-t-il l'opinion ?",
+          "a": "Non — il attire l'attention, l'opinion n'est pas modifiée."
+        },
+        {
+          "q": "Condition pour un EOM ?",
+          "a": "La question doit être correctement présentée/divulguée dans les EF."
+        },
+        {
+          "q": "L'incertitude going concern est-elle un EOM ?",
+          "a": "Non — c'est un paragraphe dédié (ISA 570), pas un EOM ordinaire."
         }
       ],
       "synthese": [
-        "EOM = question DANS les EF",
-        "Other Matter = question HORS des EF",
-        "Aucun ne modifie l'opinion",
-        "Going concern = paragraphe dédié"
+        "EOM = question DANS les EF (fondamentale) ; Other Matter = HORS des EF",
+        "Aucun ne modifie l'opinion (≠ 705)",
+        "EOM seulement si la question est bien présentée",
+        "Going concern = paragraphe dédié ; ne remplace pas un KAM"
       ],
       "pieges": [
         "Croire qu'un EOM modifie l'opinion",
         "Confondre EOM (dans EF) et Other Matter (hors EF)",
-        "Utiliser un EOM pour le going concern"
+        "Utiliser un EOM pour le going concern",
+        "Utiliser un EOM au lieu d'une opinion modifiée (705)"
       ]
     },
     "710": {
-      "duree": "6 min",
-      "niveau": "Fondamental",
-      "tldr": "Informations comparatives. Chiffres correspondants (opinion sur N) vs EF comparatifs (opinion sur chaque période). Modèle suisse = chiffres correspondants.",
+      "duree": "10 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 710 = informations comparatives. 2 approches : chiffres correspondants (opinion sur N seulement) vs EF comparatifs (opinion sur chaque période). Modèle suisse = chiffres correspondants. Lien avec ISA 510 (premier audit).",
       "stats": [
         {
           "value": "2 approches",
-          "label": "Correspondants/Comparatifs",
+          "label": "Corresp./Comparatifs",
           "sub": ""
         },
         {
@@ -16850,122 +16909,184 @@
           "sub": "opinion sur N"
         },
         {
-          "value": "Lien 510",
-          "label": "Soldes ouverture",
-          "sub": "1er audit"
+          "value": "§7-9",
+          "label": "Procédures",
+          "sub": ""
         },
         {
-          "value": "NAS 710",
-          "label": "Norme",
+          "value": "§10-19",
+          "label": "Incidence rapport",
           "sub": ""
         }
       ],
-      "intro": "Les EF présentent toujours des chiffres comparatifs. ISA 710 définit la responsabilité de l'auditeur.",
+      "intro": "Les EF présentent des chiffres de la période précédente. ISA 710 définit la responsabilité de l'auditeur sur ces informations comparatives. Cours § par §.",
       "sections": [
         {
-          "titre": "Deux approches",
-          "body": "• **Chiffres correspondants** : N-1 partie intégrante des EF de N ; opinion sur l'exercice COURANT\n• **EF comparatifs** : opinion sur CHAQUE période.",
+          "titre": "Champ, objectif & définitions (§1-6)",
+          "body": "ISA 710 traite des obligations relatives aux **informations comparatives**. **Deux approches** selon le référentiel/la juridiction :\n• **Chiffres correspondants** (corresponding figures) : les montants/disclosures de N-1 font partie intégrante des EF de N et se lisent en relation avec ceux de N ; l'**opinion porte sur la période courante uniquement**.\n• **États financiers comparatifs** : les montants/disclosures de N-1 sont présentés pour comparaison comme des EF à part entière ; l'**opinion porte sur chaque période** présentée.",
           "callouts": [
             {
               "type": "legal",
               "label": "Suisse",
-              "text": "Modèle usuel = chiffres correspondants : l'opinion porte sur l'exercice courant."
+              "text": "Le modèle usuel suisse = chiffres correspondants : l'opinion de l'organe de révision porte sur l'exercice courant."
             }
           ]
         },
         {
-          "titre": "Procédures",
-          "body": "Vérifier conformité au référentiel + cohérence avec N-1 ; attention aux retraitements/reclassements.",
+          "titre": "Procédures (§7-9)",
+          "body": "L'auditeur détermine si les informations comparatives sont présentées conformément au référentiel et : si elles **concordent** avec les montants/disclosures de la période précédente (ou ont été correctement retraitées), et si les **méthodes comptables** sont cohérentes (changements correctement traités). Il reste alerte aux anomalies dans les comparatifs détectées durant l'audit courant.",
           "callouts": []
         },
         {
-          "titre": "Premier audit",
-          "body": "Si N-1 audité par un autre auditeur ou non audité → paragraphe Other Matter + lien soldes d'ouverture (ISA 510).",
+          "titre": "Incidence sur le rapport — chiffres correspondants (§10-13)",
+          "body": "• Si l'opinion N-1 était **modifiée** et que la question demeure non résolue → modifier l'opinion sur les chiffres correspondants de N (renvoi).\n• Si l'auditeur identifie une **anomalie** dans les chiffres correspondants non audités/non corrigés → opinion modifiée.\n• Si les EF N-1 ont été audités par un **autre auditeur** ou **non audités** → l'indiquer dans un paragraphe **Other Matter** (ISA 706) — sans diminuer la responsabilité de l'auditeur courant.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Lien ISA 510",
+              "text": "En premier audit, les soldes d'ouverture (ISA 510) et les chiffres correspondants se traitent ensemble."
+            }
+          ]
+        },
+        {
+          "titre": "États financiers comparatifs (§15-19) & articulation",
+          "body": "Quand l'opinion porte sur chaque période (EF comparatifs), l'auditeur émet une opinion sur les périodes présentées qu'il a auditées. Si une opinion antérieure diffère de l'opinion actuelle sur les mêmes EF (nouvelle information), il peut le mentionner dans un Other Matter.\n\n**Articulation** : ISA 510 (soldes d'ouverture/premier audit), ISA 705 (opinion modifiée), ISA 706 (Other Matter), ISA 700 (rapport).",
           "callouts": []
         }
       ],
+      "quiz": [
+        {
+          "q": "Chiffres correspondants vs EF comparatifs ?",
+          "a": "Correspondants = opinion sur N seulement. Comparatifs = opinion sur chaque période."
+        },
+        {
+          "q": "Quel modèle est usuel en Suisse ?",
+          "a": "Chiffres correspondants (opinion sur l'exercice courant)."
+        },
+        {
+          "q": "EF N-1 audités par un autre auditeur → ?",
+          "a": "L'indiquer dans un paragraphe Other Matter (ISA 706)."
+        },
+        {
+          "q": "Que vérifier sur les comparatifs ?",
+          "a": "Conformité, concordance avec N-1 (ou retraitement), cohérence des méthodes."
+        }
+      ],
       "synthese": [
-        "Correspondants (opinion N) vs comparatifs (chaque période)",
+        "Correspondants (opinion sur N) vs comparatifs (chaque période)",
         "Suisse : chiffres correspondants",
-        "Lien ISA 510 en premier audit"
+        "Vérifier conformité + concordance + cohérence des méthodes",
+        "EF N-1 autre auditeur/non audités → Other Matter ; lien ISA 510"
       ],
       "pieges": [
         "Confondre correspondants et comparatifs",
         "Négliger retraitements/reclassements",
-        "Oublier le lien avec ISA 510"
+        "Oublier le lien avec ISA 510 en premier audit",
+        "Oublier d'indiquer que N-1 a été audité par un autre auditeur"
       ]
     },
     "720": {
-      "duree": "7 min",
-      "niveau": "Fondamental",
-      "tldr": "Le rapport annuel contient plus que les EF (rapport de gestion). L'auditeur LIT les autres informations et signale les incohérences MATÉRIELLES — sans exprimer d'opinion dessus.",
+      "duree": "11 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 720 (Revised 2015) = autres informations (rapport annuel hors EF audités). L'auditeur LIT et identifie les incohérences significatives avec les EF/sa connaissance — sans exprimer d'opinion. Section dédiée dans le rapport.",
       "stats": [
         {
           "value": "Pas d'opinion",
           "label": "Autres infos",
-          "sub": "juste lecture"
+          "sub": "lecture seule"
         },
         {
-          "value": "Incohér.",
-          "label": "À détecter",
-          "sub": "vs EF"
+          "value": "§14-16",
+          "label": "Lire+considérer",
+          "sub": "incohérences"
+        },
+        {
+          "value": "§18",
+          "label": "Section dédiée",
+          "sub": "rapport"
         },
         {
           "value": "CO 961c",
           "label": "Rapport gestion",
           "sub": "= autre info"
-        },
-        {
-          "value": "R2015",
-          "label": "Révision",
-          "sub": ""
         }
       ],
-      "intro": "Le rapport annuel contient bien plus que les EF audités. ISA 720 définit la responsabilité sur ces autres informations.",
+      "intro": "Le rapport annuel contient bien plus que les EF audités : rapport de gestion, message du CEO, indicateurs. ISA 720 (révisée 2015) définit la responsabilité de l'auditeur sur ces autres informations. Cours § par §.",
       "sections": [
         {
-          "titre": "Les « autres informations »",
-          "body": "Informations du rapport annuel autres que les EF audités : rapport de gestion, faits marquants, message du CEO, indicateurs RSE.",
+          "titre": "Champ, objectif & définitions (§1-12)",
+          "body": "ISA 720 traite des obligations relatives aux **autres informations** — informations financières et non financières incluses dans le **rapport annuel** de l'entité, autres que les EF audités et le rapport d'audit.\n\n**Objectifs (§11)** : considérer s'il existe une **incohérence significative** entre les autres informations et (a) les EF, ou (b) la connaissance acquise par l'auditeur ; réagir de manière appropriée ; et rapporter conformément à la norme.",
           "callouts": [
             {
               "type": "info",
               "label": "Suisse",
-              "text": "Le rapport de gestion (CO 961c) est une « autre information »."
+              "text": "Le rapport de gestion (CO 961c, obligatoire pour le contrôle ordinaire) est une « autre information » au sens d'ISA 720."
             }
           ]
         },
         {
-          "titre": "Responsabilité",
-          "body": "L'auditeur **LIT** les autres informations et identifie les **incohérences significatives** avec les EF ou sa connaissance. Il n'exprime PAS d'opinion dessus.",
+          "titre": "Lire et considérer (§14-15)",
+          "body": "L'auditeur **lit** les autres informations et considère s'il existe une **incohérence significative** avec les EF (montants/présentation) ou avec sa connaissance acquise durant l'audit. Il reste aussi alerte à des indications que les autres informations sont **matériellement erronées** sans lien avec les EF.",
           "callouts": [
             {
               "type": "key",
               "label": "Pas d'opinion",
-              "text": "L'auditeur ne certifie pas le rapport de gestion. Il vérifie l'absence d'incohérence matérielle."
+              "text": "L'auditeur n'audite pas et n'exprime PAS d'opinion sur les autres informations. Il vérifie l'absence d'incohérence/erreur matérielle."
             }
           ]
         },
         {
-          "titre": "En cas d'incohérence",
-          "body": "Demander correction ; si refus → mentionner dans la section dédiée « Autres informations » du rapport.",
+          "titre": "Réagir aux incohérences (§16-17)",
+          "body": "Si une incohérence significative (ou une autre information matériellement erronée) est identifiée : l'auditeur en discute avec la direction et **demande la correction**. Si la direction **refuse** : déterminer l'effet sur le rapport et communiquer à la gouvernance. Si c'est les EF qui sont erronés → traiter selon ISA 450/705.",
           "callouts": []
+        },
+        {
+          "titre": "Rapport & articulation (§18-24)",
+          "body": "Le rapport d'audit comporte une section distincte **« Autres informations »** décrivant : la responsabilité de la direction, le fait que l'opinion d'audit ne couvre PAS ces informations, et la responsabilité de l'auditeur (lire, signaler les incohérences). Si une incohérence non corrigée subsiste → la décrire.\n\n**Articulation** : ISA 700 (rapport), ISA 706 (Other Matter), ISA 450/705 (si l'erreur est dans les EF).",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "NA-CH 720. L'auditeur lit le rapport de gestion et signale les incohérences matérielles avec les comptes audités."
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "L'auditeur certifie-t-il le rapport de gestion ?",
+          "a": "Non — il le LIT et signale les incohérences matérielles, sans exprimer d'opinion."
+        },
+        {
+          "q": "Que sont les « autres informations » ?",
+          "a": "Le rapport annuel hors EF audités et rapport d'audit (rapport de gestion, message CEO, indicateurs)."
+        },
+        {
+          "q": "Que faire d'une incohérence significative non corrigée ?",
+          "a": "La décrire dans la section « Autres informations » du rapport + communiquer à la gouvernance."
+        },
+        {
+          "q": "Si l'erreur est dans les EF (pas les autres infos) ?",
+          "a": "Traiter selon ISA 450 / 705 (impact opinion)."
         }
       ],
       "synthese": [
-        "Autres infos = rapport annuel hors EF audités",
-        "L'auditeur LIT, cherche incohérences (pas d'opinion)",
-        "Section dédiée + mention si incohérence non corrigée"
+        "Autres informations = rapport annuel hors EF audités",
+        "L'auditeur LIT et cherche les incohérences (pas d'opinion)",
+        "Incohérence → discuter, corriger, sinon mentionner",
+        "Section dédiée « Autres informations » dans le rapport"
       ],
       "pieges": [
         "Croire que l'auditeur certifie le rapport de gestion",
         "Ne pas lire les autres informations",
-        "Ignorer une incohérence matérielle"
+        "Ignorer une incohérence matérielle",
+        "Confondre erreur dans les EF (705) et dans les autres infos (720)"
       ]
     },
     "800": {
-      "duree": "7 min",
-      "niveau": "Avancé",
-      "tldr": "Audit d'EF établis selon un référentiel à usage PARTICULIER (fiscal, cash, contractuel, réglementaire). Évaluer l'acceptabilité + adapter le rapport + restriction d'utilisation.",
+      "duree": "11 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISA 800 (Revised 2015) = audit d'EF établis selon un référentiel à USAGE PARTICULIER (fiscal, cash, contractuel, réglementaire). Évaluer l'acceptabilité, adapter le rapport, paragraphe de restriction d'utilisation.",
       "stats": [
         {
           "value": "Particulier",
@@ -16973,65 +17094,97 @@
           "sub": "fiscal/cash/contrat"
         },
         {
-          "value": "Restriction",
-          "label": "d'utilisation",
-          "sub": "fréquente"
+          "value": "§8",
+          "label": "Acceptabilité",
+          "sub": "à évaluer"
         },
         {
-          "value": "Utilisateurs",
-          "label": "Visés",
-          "sub": "spécifiques"
+          "value": "§14",
+          "label": "Restriction",
+          "sub": "d'utilisation/diffusion"
         },
         {
-          "value": "R2015",
-          "label": "Révision",
-          "sub": ""
+          "value": "§A",
+          "label": "+ ISA 100-700",
+          "sub": "applicables"
         }
       ],
-      "intro": "Tous les EF ne suivent pas un référentiel « image fidèle » général. ISA 800 traite les référentiels à usage particulier.",
+      "intro": "Tous les EF ne suivent pas un référentiel « image fidèle » général. ISA 800 (révisée 2015) traite l'audit d'EF établis selon un référentiel à usage particulier. Cours § par §.",
       "sections": [
         {
-          "titre": "Référentiel à usage particulier",
-          "body": "Conçu pour des utilisateurs spécifiques : base fiscale, base de trésorerie (cash), exigences d'une convention de prêt, exigences réglementaires.",
+          "titre": "Champ, objectif & définitions (§1-7)",
+          "body": "ISA 800 traite des considérations particulières pour l'audit d'EF complets établis selon un **référentiel à usage particulier** (special purpose framework). Les ISA 100-700 s'appliquent, ISA 800 ajoute les spécificités.\n\n**Définition** : référentiel à usage particulier = référentiel conçu pour répondre aux besoins d'information financière d'**utilisateurs spécifiques** (ex. base fiscale, base de trésorerie / cash basis, dispositions d'un contrat de prêt, base réglementaire).",
           "callouts": [
             {
               "type": "example",
-              "label": "Exemple",
-              "text": "Comptes établis sur base fiscale pour l'administration, ou selon les clauses d'un contrat bancaire."
+              "label": "Exemples",
+              "text": "Comptes établis sur base fiscale pour l'administration ; comptes selon les clauses d'une convention bancaire ; comptes cash basis."
             }
           ]
         },
         {
-          "titre": "Acceptation et rapport",
-          "body": "Évaluer l'acceptabilité du référentiel pour les utilisateurs visés ; adapter le rapport (description + utilisateurs) ; souvent un **paragraphe de restriction d'utilisation**.",
+          "titre": "Acceptation & planification (§8)",
+          "body": "Lors de l'acceptation, l'auditeur acquiert une compréhension : du **but** des EF, des **utilisateurs visés**, et des démarches de la direction pour déterminer que le référentiel est **acceptable** dans les circonstances. Lors de la planification/exécution, il évalue si l'application du référentiel exige des explications particulières (ISA 315).",
+          "callouts": []
+        },
+        {
+          "titre": "Forme de l'opinion & rapport (§11-14)",
+          "body": "Le rapport :\n• **décrit le référentiel** à usage particulier ou renvoie à la note des EF qui le décrit\n• alerte les lecteurs que les EF peuvent ne pas convenir à d'autres fins\n• inclut, le cas échéant, un **paragraphe sur d'autres points** restreignant l'**utilisation et/ou la diffusion** du rapport aux utilisateurs visés (Other Matter).",
           "callouts": [
             {
               "type": "key",
               "label": "Restriction",
-              "text": "Usage souvent restreint aux utilisateurs visés (banque, administration fiscale)."
+              "text": "Souvent : « Notre rapport est destiné uniquement à [utilisateurs visés] et ne devrait pas être utilisé par d'autres parties. »"
+            }
+          ]
+        },
+        {
+          "titre": "Articulation",
+          "body": "ISA 800 ↔ ISA 700 (forme du rapport), ISA 705/706 (modifications, restriction), ISA 805 (élément isolé), ISA 810 (EF résumés). Distinguer : ISA 800 = EF COMPLETS selon référentiel particulier ; ISA 805 = état/élément ISOLÉ.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "800 vs 805",
+              "text": "800 = EF complets selon un référentiel particulier. 805 = un seul état (bilan) ou un élément (stocks)."
             }
           ]
         }
       ],
+      "quiz": [
+        {
+          "q": "Qu'est-ce qu'un référentiel à usage particulier ?",
+          "a": "Un référentiel conçu pour des utilisateurs spécifiques (fiscal, cash, contractuel, réglementaire)."
+        },
+        {
+          "q": "Que doit contenir le rapport ?",
+          "a": "Description du référentiel + alerte que les EF peuvent ne pas convenir à d'autres fins + souvent restriction d'utilisation."
+        },
+        {
+          "q": "800 vs 805 ?",
+          "a": "800 = EF complets selon référentiel particulier. 805 = état/élément isolé."
+        }
+      ],
       "synthese": [
-        "Référentiel particulier : fiscal, cash, contractuel, réglementaire",
-        "Évaluer l'acceptabilité + adapter le rapport",
-        "Paragraphe de restriction d'utilisation fréquent"
+        "EF complets selon référentiel particulier (fiscal, cash, contractuel)",
+        "Évaluer l'acceptabilité + comprendre le but/les utilisateurs",
+        "Rapport : décrire le référentiel + alerte + restriction d'utilisation",
+        "Les ISA 100-700 s'appliquent + spécificités 800"
       ],
       "pieges": [
-        "Auditer un référentiel particulier comme un général",
+        "Auditer un référentiel particulier comme un référentiel général",
         "Oublier la restriction d'utilisation",
-        "Ne pas décrire référentiel + utilisateurs"
+        "Ne pas décrire le référentiel / les utilisateurs",
+        "Confondre 800 (EF complets) et 805 (élément isolé)"
       ]
     },
     "805": {
-      "duree": "7 min",
-      "niveau": "Avancé",
-      "tldr": "Audit d'UN état isolé (bilan seul) ou d'UN élément (stocks, créances). Matérialité fixée au niveau de l'ÉLÉMENT, pas des EF complets.",
+      "duree": "10 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISA 805 (Revised 2015) = audit d'un état financier ISOLÉ (bilan seul) ou d'un ÉLÉMENT spécifique (créances, stocks). Matérialité fixée au niveau de l'élément. Cohérence avec l'opinion sur les EF complets si les deux sont audités.",
       "stats": [
         {
-          "value": "1 état",
-          "label": "ou 1 élément",
+          "value": "1 état/élément",
+          "label": "Objet",
           "sub": "isolé"
         },
         {
@@ -17040,56 +17193,88 @@
           "sub": "≠ EF complets"
         },
         {
-          "value": "Ciblé",
-          "label": "Audit",
-          "sub": "sur demande"
+          "value": "§7",
+          "label": "Acceptabilité",
+          "sub": "+ adéquation"
         },
         {
-          "value": "R2015",
-          "label": "Révision",
+          "value": "§10-11",
+          "label": "Opinion séparée",
           "sub": ""
         }
       ],
-      "intro": "On peut auditer un seul état ou un élément spécifique. ISA 805 encadre ces missions ciblées.",
+      "intro": "On peut auditer un seul état ou un élément spécifique des EF. ISA 805 (révisée 2015) encadre ces missions ciblées. Cours § par §.",
       "sections": [
         {
-          "titre": "Objet",
-          "body": "Audit d'un **état isolé** (bilan seul, tableau de flux seul) ou d'un **élément/compte/poste** (créances, stocks, une ligne de CA).",
+          "titre": "Champ, objectif & définitions (§1-6)",
+          "body": "ISA 805 traite des considérations particulières pour l'audit d'un **état financier isolé** (single financial statement) ou d'un **élément, compte ou poste spécifique** d'un état financier. Les ISA 100-700 s'appliquent, ISA 805 ajoute les spécificités. **Exemples** : audit du seul bilan, du seul tableau de flux ; audit du poste « créances », « stocks », ou d'une ligne de chiffre d'affaires.",
           "callouts": [
             {
               "type": "example",
               "label": "Exemple",
-              "text": "Auditer le seul poste « stocks » pour une exigence contractuelle ou un litige."
+              "text": "Auditer uniquement le poste « stocks » pour répondre à une exigence contractuelle, un litige, ou une demande d'un tiers."
             }
           ]
         },
         {
-          "titre": "Matérialité au niveau de l'élément",
-          "body": "La matérialité se fixe au niveau de l'élément audité, souvent bien plus basse.",
+          "titre": "Acceptation & matérialité (§7-9)",
+          "body": "L'auditeur évalue si l'application du référentiel à l'élément/l'état isolé donnera une présentation appropriée, et si le rapport sera adéquat. Il détermine une **matérialité** au niveau de l'**état/élément** audité (et non des EF complets) — souvent bien plus basse. Il planifie/exécute les procédures pertinentes pour cet objet et ses interactions.",
           "callouts": [
             {
               "type": "key",
-              "label": "Spécificité",
-              "text": "Matérialité sur l'ÉLÉMENT, pas sur des EF complets."
+              "label": "Matérialité",
+              "text": "Fixée sur l'ÉLÉMENT (ex. les stocks), pas sur les EF complets. Conséquence : seuil souvent beaucoup plus bas."
+            }
+          ]
+        },
+        {
+          "titre": "Opinion & cohérence avec les EF complets (§10-11)",
+          "body": "L'auditeur exprime une opinion adaptée à l'objet. Si l'auditeur audite **aussi** les EF complets de l'entité et que ceux-ci ont reçu une opinion **modifiée** (ou comportent un EOM/incertitude), il évalue l'effet sur l'audit de l'élément isolé. Une opinion **non modifiée** sur un élément isolé peut accompagner une opinion **modifiée** sur les EF complets — mais elle est présentée de façon à ne pas suggérer le contraire (rapport séparé ou présentation distincte).",
+          "callouts": []
+        },
+        {
+          "titre": "Articulation",
+          "body": "ISA 805 ↔ ISA 700 (rapport), ISA 705/706, ISA 800 (référentiel particulier). Distinguer 805 (objet isolé) de 800 (EF complets selon référentiel particulier).",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "805 vs 800",
+              "text": "805 = un état/élément ISOLÉ. 800 = des EF COMPLETS selon un référentiel particulier."
             }
           ]
         }
       ],
+      "quiz": [
+        {
+          "q": "Que peut-on auditer sous ISA 805 ?",
+          "a": "Un état financier isolé (bilan seul) ou un élément/compte/poste spécifique (stocks, créances)."
+        },
+        {
+          "q": "À quel niveau fixe-t-on la matérialité ?",
+          "a": "Au niveau de l'état/élément audité (pas des EF complets)."
+        },
+        {
+          "q": "805 vs 800 ?",
+          "a": "805 = élément/état isolé. 800 = EF complets selon référentiel particulier."
+        }
+      ],
       "synthese": [
-        "Audit d'un état isolé ou d'un élément",
-        "Matérialité au niveau de l'élément",
-        "Cohérence avec l'opinion sur les EF complets si applicable"
+        "Audit d'un état isolé ou d'un élément spécifique",
+        "Matérialité au niveau de l'élément (souvent plus basse)",
+        "Cohérence avec l'opinion sur les EF complets si les deux sont audités",
+        "Les ISA 100-700 s'appliquent + spécificités 805"
       ],
       "pieges": [
-        "Appliquer la matérialité des EF complets",
-        "Oublier les interactions de l'élément",
-        "Confondre ISA 805 (élément) et 800 (référentiel)"
+        "Appliquer la matérialité des EF complets à un élément isolé",
+        "Oublier les interactions de l'élément avec le reste",
+        "Confondre 805 (élément) et 800 (référentiel particulier)",
+        "Présenter une opinion non modifiée sur l'élément en contradiction trompeuse avec une opinion modifiée sur les EF"
       ]
     },
     "810": {
-      "duree": "6 min",
-      "niveau": "Avancé",
-      "tldr": "Rapport sur des EF RÉSUMÉS dérivés d'EF déjà audités. L'opinion porte sur la COHÉRENCE avec les EF complets, pas une nouvelle opinion d'audit.",
+      "duree": "9 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISA 810 (Revised 2015) = rapport sur des EF RÉSUMÉS dérivés d'EF complets DÉJÀ AUDITÉS. L'opinion porte sur la COHÉRENCE des EF résumés avec les EF complets (selon les critères), pas une nouvelle opinion d'audit.",
       "stats": [
         {
           "value": "Résumés",
@@ -17102,50 +17287,82 @@
           "sub": "≠ nouvelle"
         },
         {
-          "value": "Critères",
-          "label": "de préparation",
-          "sub": "à évaluer"
+          "value": "§8",
+          "label": "Critères",
+          "sub": "de préparation"
         },
         {
-          "value": "R2015",
-          "label": "Révision",
+          "value": "§9-15",
+          "label": "Forme opinion",
           "sub": ""
         }
       ],
-      "intro": "Les utilisateurs veulent parfois une version condensée. ISA 810 régit les rapports sur EF résumés.",
+      "intro": "Les utilisateurs souhaitent parfois une version condensée des comptes. ISA 810 (révisée 2015) régit les missions de rapport sur des EF résumés. Cours § par §.",
       "sections": [
         {
-          "titre": "EF résumés dérivés d'audités",
-          "body": "Les EF résumés sont dérivés d'EF complets **déjà audités**. Vue condensée pour utilisateurs.",
+          "titre": "Champ, objectif & définitions (§1-6)",
+          "body": "ISA 810 traite des obligations de l'auditeur lorsqu'il fait rapport sur des **états financiers résumés** (summary FS) dérivés d'EF complets qu'il a **audités** selon les ISA. **Définition** : EF résumés = information financière historique dérivée d'EF, qui contient moins de détails tout en représentant fidèlement, de manière cohérente, les EF complets.",
           "callouts": [
             {
               "type": "key",
-              "label": "Prérequis",
-              "text": "On ne résume pas des comptes non audités."
+              "label": "Prérequis absolu",
+              "text": "Les EF résumés doivent dériver d'EF complets DÉJÀ AUDITÉS. On ne résume pas des comptes non audités."
             }
           ]
         },
         {
-          "titre": "Nature de l'opinion",
-          "body": "L'opinion porte sur la **cohérence** des EF résumés avec les EF complets (et les critères de préparation), PAS une nouvelle opinion d'audit complète.",
+          "titre": "Acceptation & critères (§5-8)",
+          "body": "L'auditeur n'accepte la mission que si : il a été engagé pour auditer les EF **complets**, et les **critères** appliqués par la direction pour préparer les EF résumés sont **acceptables**. Il obtient l'accord de la direction qu'elle reconnaît sa responsabilité quant aux EF résumés et aux critères, et qu'elle mettra à disposition les EF audités.",
+          "callouts": []
+        },
+        {
+          "titre": "Procédures & forme de l'opinion (§9-15)",
+          "body": "L'auditeur évalue si les EF résumés sont **cohérents**, dans tous leurs aspects significatifs, avec les EF complets (et conformes aux critères appliqués). L'opinion exprime que les EF résumés sont **cohérents** avec les EF audités (et non une nouvelle opinion d'audit). Le rapport identifie les EF complets audités et la date de leur rapport, décrit les critères, et indique le type d'opinion émise sur les EF complets.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "Cohérence ≠ image fidèle",
+              "text": "L'opinion sur les EF résumés porte sur la COHÉRENCE avec les EF complets, pas sur l'image fidèle (déjà couverte par l'audit des EF complets)."
+            }
+          ]
+        },
+        {
+          "titre": "Cas particuliers & articulation",
+          "body": "Si l'opinion sur les EF complets était **modifiée**, le rapport sur les EF résumés le mentionne. Si les EF résumés ne sont pas cohérents ou si les critères sont inacceptables → opinion **défavorable** sur les EF résumés. \n\n**Articulation** : ISA 700 (audit des EF complets), ISA 705 (modifications), ISA 800/805.",
           "callouts": []
         }
       ],
+      "quiz": [
+        {
+          "q": "Prérequis pour des EF résumés ?",
+          "a": "Ils doivent dériver d'EF complets DÉJÀ audités selon les ISA."
+        },
+        {
+          "q": "Sur quoi porte l'opinion sur les EF résumés ?",
+          "a": "Sur la COHÉRENCE avec les EF complets (pas une nouvelle opinion d'audit)."
+        },
+        {
+          "q": "Que mentionne le rapport ?",
+          "a": "L'identification des EF complets audités, la date et le type d'opinion émise sur eux + les critères."
+        }
+      ],
       "synthese": [
-        "EF résumés = dérivés d'EF complets audités",
-        "Opinion sur la COHÉRENCE (pas nouvelle opinion)",
-        "Évaluer les critères de préparation"
+        "EF résumés = dérivés d'EF complets DÉJÀ audités",
+        "Opinion sur la COHÉRENCE (≠ nouvelle opinion d'audit)",
+        "Évaluer l'acceptabilité des critères de préparation",
+        "Mentionner l'opinion émise sur les EF complets"
       ],
       "pieges": [
         "Résumer des comptes non audités",
-        "Émettre une nouvelle opinion complète",
-        "Oublier de référencer les EF complets"
+        "Émettre une nouvelle opinion d'audit complète",
+        "Oublier de référencer les EF complets et leur opinion",
+        "Oublier de mentionner une opinion modifiée sur les EF complets"
       ]
     },
     "LCE": {
-      "duree": "9 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Nouvelle norme STANDALONE (2023) pour entités moins complexes (PME). Audit COMPLET, assurance RAISONNABLE (≠ contrôle restreint qui est limité). Exclut EIP, cotées, groupes complexes.",
+      "duree": "12 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA for LCE (2023) = norme STANDALONE pour les entités moins complexes. Audit COMPLET, assurance RAISONNABLE (≠ contrôle restreint qui est limité). Critères d'éligibilité qualitatifs ; exclut EIP, cotées, groupes complexes. Effective 15.12.2025.",
       "stats": [
         {
           "value": "2023",
@@ -17160,54 +17377,79 @@
         {
           "value": "Raisonnable",
           "label": "Assurance",
-          "sub": "même niveau ISA"
+          "sub": "= ISA complètes"
         },
         {
-          "value": "PME",
-          "label": "Cible",
-          "sub": "moins complexes"
+          "value": "Exclut",
+          "label": "EIP/cotées",
+          "sub": "groupes complexes"
         }
       ],
-      "intro": "Les PME n'ont pas besoin de la lourdeur des ISA complètes. La nouvelle ISA for LCE offre un référentiel autonome et proportionné.",
+      "intro": "Les PME n'ont pas besoin de la lourdeur des ISA complètes. La nouvelle norme ISA for LCE (publiée 2023, effective dès le 15.12.2025) offre un référentiel d'audit autonome et proportionné pour les entités moins complexes. Cours § par §.",
       "sections": [
         {
           "titre": "Une norme STANDALONE",
-          "body": "Référentiel **autonome** (pas un allègement des ISA) : tout le processus d'audit dans un document unique, conçu pour les entités moins complexes (LCE).",
+          "body": "L'**ISA for LCE** (International Standard on Auditing for Audits of Financial Statements of Less Complex Entities) est une norme **autonome** : ce n'est PAS un allègement ou un sous-ensemble des ISA, mais un **référentiel complet et indépendant**, conçu spécifiquement pour les entités moins complexes (LCE). Tout le processus d'audit est couvert dans un document unique.",
           "callouts": [
             {
               "type": "key",
               "label": "Standalone",
-              "text": "Pas besoin de jongler avec les 36 ISA."
+              "text": "Pas besoin de jongler avec les 36 ISA : un seul document autonome couvrant l'intégralité de l'audit."
             }
           ]
         },
         {
           "titre": "Même niveau d'assurance",
-          "body": "Donne une **assurance raisonnable** — MÊME niveau que les ISA. La simplification porte sur la documentation et les procédures.",
+          "body": "Un audit selon ISA for LCE donne une **assurance raisonnable** — le **MÊME niveau** qu'un audit selon les ISA complètes. La simplification porte sur la **documentation et les procédures** (proportionnées), PAS sur le niveau d'assurance ni sur les objectifs.",
+          "compare": {
+            "title": "ISA for LCE vs Contrôle restreint suisse",
+            "headers": [
+              "",
+              "ISA for LCE",
+              "Contrôle restreint (CO 729b)"
+            ],
+            "rows": [
+              [
+                "Type",
+                "Audit COMPLET",
+                "Examen limité (review)"
+              ],
+              [
+                "Assurance",
+                "RAISONNABLE",
+                "LIMITÉE"
+              ],
+              [
+                "Formulation",
+                "Positive (image fidèle)",
+                "Négative (rien n'a attiré...)"
+              ]
+            ]
+          },
           "callouts": [
             {
-              "type": "comp",
-              "label": "LCE vs contrôle restreint",
-              "text": "ISA for LCE = audit COMPLET simplifié (assurance RAISONNABLE). Contrôle restreint suisse = assurance LIMITÉE. Ne pas confondre !"
+              "type": "warn",
+              "label": "Ne pas confondre",
+              "text": "ISA for LCE = audit complet simplifié (assurance RAISONNABLE). Le contrôle restreint suisse = assurance LIMITÉE. Deux choses différentes."
             }
           ]
         },
         {
-          "titre": "Éligibilité",
-          "body": "Critères qualitatifs liés à la complexité. EXCLUT EIP, cotées, groupes complexes. Effective 15.12.2025. Adoption CH en évaluation par EXPERTsuisse.",
+          "titre": "Critères d'éligibilité (qualitatifs)",
+          "body": "L'utilisation d'ISA for LCE repose sur des **critères qualitatifs** de complexité. La norme **EXCLUT** explicitement : les entités d'**intérêt public (EIP)**, les entités **cotées**, et les **groupes complexes** (au-delà de certaines limites). Les autorités/juridictions peuvent préciser/restreindre l'éligibilité.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "Adoption suisse en cours d'évaluation par EXPERTsuisse. Pertinent pour de nombreuses PME soumises au contrôle ordinaire mais peu complexes."
+            }
+          ]
+        },
+        {
+          "titre": "Architecture & articulation",
+          "body": "La norme couvre, de manière proportionnée : acceptation, éthique/indépendance, planification, évaluation des risques, réponses, éléments probants, conclusion et rapport. **Articulation** : conçue pour offrir une alternative aux ISA pour les LCE ; complète le paysage (ISA complètes pour les entités complexes/EIP, ISA for LCE pour les moins complexes, contrôle restreint suisse pour l'assurance limitée).",
           "callouts": []
         }
-      ],
-      "synthese": [
-        "ISA for LCE = norme STANDALONE",
-        "Assurance RAISONNABLE (= ISA complètes)",
-        "Exclut EIP, cotées, groupes complexes",
-        "Effective 2025"
-      ],
-      "pieges": [
-        "Confondre LCE (raisonnable) et contrôle restreint (limité)",
-        "Croire que c'est un allègement des ISA",
-        "Appliquer à une EIP"
       ],
       "mnemo": {
         "code": "LCE",
@@ -17226,7 +17468,37 @@
           }
         ],
         "phrase": "Norme autonome pour entités moins complexes"
-      }
+      },
+      "quiz": [
+        {
+          "q": "ISA for LCE est-elle un allègement des ISA ?",
+          "a": "Non — c'est une norme STANDALONE (autonome), pas un sous-ensemble."
+        },
+        {
+          "q": "Quel niveau d'assurance ?",
+          "a": "RAISONNABLE — le même que les ISA complètes (audit complet)."
+        },
+        {
+          "q": "ISA for LCE vs contrôle restreint suisse ?",
+          "a": "ISA for LCE = audit complet (raisonnable). Contrôle restreint = review (limité)."
+        },
+        {
+          "q": "Quelles entités sont EXCLUES ?",
+          "a": "Les EIP, les cotées et les groupes complexes."
+        }
+      ],
+      "synthese": [
+        "Norme STANDALONE (≠ allègement des ISA)",
+        "Audit complet, assurance RAISONNABLE",
+        "Critères qualitatifs ; exclut EIP, cotées, groupes complexes",
+        "Effective 15.12.2025 ; adoption CH en évaluation"
+      ],
+      "pieges": [
+        "Confondre LCE (raisonnable) et contrôle restreint (limité)",
+        "Croire que c'est un allègement des ISA",
+        "Appliquer à une EIP/cotée (exclues)",
+        "Penser que l'assurance est réduite (non : raisonnable)"
+      ]
     },
     "2400": {
       "duree": "8 min",
