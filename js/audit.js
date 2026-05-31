@@ -1804,8 +1804,22 @@ function _renderNasGroup(c) {
         </div>`;
 }
 
+// Extrait la clé de cours (annuaire_cours) depuis un code NAS :
+// "NAS / ISA 200" -> "200", "ISRE 2400" -> "2400", "ISQM 1" -> "ISQM1", "LCE" -> "LCE"
+function _nasCoursKey(code) {
+    if (!code) return null;
+    const up = code.toUpperCase();
+    let m;
+    if (/ISQM/.test(up)) { m = up.match(/ISQM\s*(\d)/); return m ? 'ISQM' + m[1] : null; }
+    if (/\bLCE\b/.test(up)) return 'LCE';
+    m = up.match(/(\d{3,4})/);
+    return m ? m[1] : null;
+}
+
 function _renderNasItem(catId, idx, n, accent) {
     const id = `nas-${catId}-${idx}`;
+    const coursKey = _nasCoursKey(n.code);
+    const hasCours = coursKey && _annuaireCoursExists(coursKey);
     const searchHay = [n.code, n.title, n.summary, (n.key_points || []).join(' '), n.swiss_specifics || '']
         .filter(Boolean).join(' ').toLowerCase();
     return `
@@ -1828,6 +1842,15 @@ function _renderNasItem(catId, idx, n, accent) {
                 <span id="${id}-arrow" style="color:${accent};font-size:14px">▸</span>
             </div>
             <div id="${id}" style="display:none;padding:0 18px 16px 18px;background:#0a0f1c">
+                ${hasCours ? `
+                    <button onclick="event.stopPropagation();_openAnnuaireCours('${coursKey}')"
+                            style="width:100%;margin:12px 0 8px 0;background:linear-gradient(135deg,#7c3aed,#4c1d95);
+                                   border:none;color:#fff;padding:13px 16px;border-radius:9px;cursor:pointer;
+                                   font-size:14px;font-weight:800;box-shadow:0 3px 12px rgba(124,58,237,0.45);
+                                   display:flex;align-items:center;justify-content:center;gap:10px">
+                        📖 Voir le COURS complet § par § (exhaustif)
+                        <span style="font-size:11px;font-weight:600;opacity:0.85">→ ouvre l'Annuaire</span>
+                    </button>` : ''}
                 ${n.summary ? `<div style="margin:10px 0 14px 0;color:#cbd5e1;font-size:13px;line-height:1.6;
                                 font-style:italic;border-left:2px solid ${accent};padding-left:12px">
                                 ${_auditCrossRef(n.summary)}
