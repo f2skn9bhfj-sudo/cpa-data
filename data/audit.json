@@ -11532,75 +11532,191 @@
   },
   "annuaire_cours": {
     "200": {
-      "intro": "ISA 200 est la **norme-cadre** de tout l'audit : elle pose les fondations sur lesquelles reposent les 35 autres ISA. Comprendre ISA 200, c'est comprendre la philosophie même de l'audit — pourquoi on audite, jusqu'où va la responsabilité de l'auditeur, et quels sont les concepts qui irriguent toute la mission.",
+      "duree": "12 min",
+      "niveau": "Fondamental",
+      "tldr": "L'audit donne une **assurance raisonnable** (pas absolue) que les comptes ne comportent pas d'anomalie significative. Tout repose sur 4 concepts : risque d'audit (RI×RC×RND), caractère significatif, **scepticisme** et **jugement** professionnels.",
+      "stats": [
+        {
+          "value": "RI×RC×RND",
+          "label": "Risque d'audit",
+          "sub": "modèle multiplicatif"
+        },
+        {
+          "value": "Raisonnable",
+          "label": "Niveau d'assurance",
+          "sub": "élevé, pas absolu"
+        },
+        {
+          "value": "NAS 200",
+          "label": "Norme suisse",
+          "sub": "= ISA 200"
+        },
+        {
+          "value": "2",
+          "label": "Objectifs globaux",
+          "sub": "assurance + rapport"
+        }
+      ],
+      "intro": "ISA 200 est la **norme-cadre** de tout l'audit : elle pose les fondations sur lesquelles reposent les 35 autres ISA. Le MSA (Tome Contrôle ordinaire) en fait son chapitre I.1 « Tour d'horizon » et III.1 « Objectif et objet ». Comprendre ISA 200, c'est comprendre la philosophie de l'audit : pourquoi on audite, jusqu'où va la responsabilité, et quels concepts irriguent toute la mission.",
       "sections": [
         {
-          "titre": "1. Pourquoi auditer ? L'objectif global",
-          "body": "L'objectif d'un audit est de **renforcer le degré de confiance** des utilisateurs présumés dans les états financiers (EF). L'auditeur exprime une opinion sur le fait que les EF sont, dans tous leurs aspects significatifs, établis conformément à un référentiel comptable applicable (CO, Swiss GAAP RPC, IFRS).\n\nDeux objectifs globaux (ISA 200.11) :\n• Obtenir une **assurance raisonnable** que les EF, pris dans leur ensemble, ne comportent pas d'anomalies significatives (par fraude ou erreur)\n• **Émettre un rapport** sur les EF et communiquer selon les ISA.",
+          "titre": "Pourquoi auditer ? L'objectif global",
+          "body": "L'objectif d'un audit est de **renforcer le degré de confiance** des utilisateurs présumés dans les états financiers (EF). L'auditeur exprime une **opinion** sur le fait que les EF sont, dans tous leurs aspects significatifs, établis conformément au référentiel applicable (CO, Swiss GAAP RPC, IFRS).\n\nDeux objectifs globaux (ISA 200.11) :\n• Obtenir une **assurance raisonnable** que les EF, pris dans leur ensemble, ne comportent pas d'anomalies significatives (fraude ou erreur)\n• **Émettre un rapport** et communiquer selon les ISA.",
           "callouts": [
             {
               "type": "key",
               "label": "À retenir",
-              "text": "L'audit ne garantit pas l'absence TOTALE d'erreur. Il fournit une assurance RAISONNABLE (élevée, mais pas absolue). C'est un concept fondamental que beaucoup oublient."
+              "text": "L'audit ne garantit PAS l'absence totale d'erreur. Il fournit une assurance RAISONNABLE — élevée, mais pas absolue."
             }
           ]
         },
         {
-          "titre": "2. L'assurance raisonnable et le risque d'audit",
-          "body": "L'assurance raisonnable est un niveau d'assurance **élevé mais non absolu**. Pourquoi pas absolu ? À cause des **limites inhérentes** de l'audit :\n• On travaille par **sondages** (on ne teste pas 100% des transactions)\n• Le jugement comporte une part de subjectivité\n• La fraude peut être dissimulée (collusion, faux documents)\n• La plupart des éléments probants sont **persuasifs** plutôt que **concluants**.\n\nLe **risque d'audit** est le risque que l'auditeur exprime une opinion inappropriée alors que les EF comportent une anomalie significative.",
+          "titre": "Assurance limitée vs raisonnable",
+          "body": "Le MSA (I.1.1.3) distingue clairement les deux niveaux d'assurance du système suisse :",
+          "schema": {
+            "type": "pyramid",
+            "title": "Niveaux d'assurance (du plus faible au plus élevé)",
+            "levels": [
+              {
+                "t": "Aucune assurance",
+                "d": "Compilation, procédures convenues (ISRS)"
+              },
+              {
+                "t": "Assurance limitée",
+                "d": "Contrôle restreint / review (NCR, ISRE 2400) — formulation négative"
+              },
+              {
+                "t": "Assurance raisonnable",
+                "d": "Contrôle ordinaire / audit (NAS, ISA) — formulation positive"
+              }
+            ]
+          },
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "Suisse",
+              "text": "Contrôle ordinaire = assurance raisonnable. Contrôle restreint = assurance limitée. C'est la dualité suisse fondamentale (CO 727 vs 729)."
+            }
+          ]
+        },
+        {
+          "titre": "Le risque d'audit",
+          "body": "Le **risque d'audit** est le risque que l'auditeur exprime une opinion inappropriée alors que les EF comportent une anomalie significative. Il se décompose en trois facteurs :",
+          "schema": {
+            "type": "flow",
+            "title": "Décomposition du risque d'audit",
+            "steps": [
+              {
+                "t": "Risque inhérent (RI)",
+                "d": "Susceptibilité d'une assertion à comporter une anomalie, AVANT contrôles. Évalué sur un spectre (ISA 315 R2019)."
+              },
+              {
+                "t": "Risque de contrôle (RC)",
+                "d": "Risque qu'une anomalie ne soit pas prévenue/détectée par le contrôle interne."
+              },
+              {
+                "t": "Risque de non-détection (RND)",
+                "d": "Risque que les procédures de l'auditeur ne détectent pas l'anomalie. SEUL facteur piloté par l'auditeur."
+              }
+            ]
+          },
           "callouts": [
             {
               "type": "info",
-              "label": "Formule clé",
-              "text": "Risque d'audit = Risque Inhérent (RI) × Risque de Contrôle (RC) × Risque de Non-Détection (RND). Seul le RND est sous le contrôle direct de l'auditeur : il l'ajuste en modifiant la nature, le calendrier et l'étendue de ses procédures."
+              "label": "Le levier de l'auditeur",
+              "text": "Risque d'audit = RI × RC × RND. L'auditeur ajuste le RND (nature, calendrier, étendue des procédures) pour ramener le risque d'audit à un niveau acceptablement faible."
             }
           ]
         },
         {
-          "titre": "3. Scepticisme professionnel",
-          "body": "Le **scepticisme professionnel** est une attitude mentale faite d'esprit interrogateur, d'attention aux conditions pouvant indiquer une anomalie, et d'**évaluation critique** des éléments probants.\n\nConcrètement : ne pas accepter une explication de la direction sur parole, chercher des éléments corroborants, être attentif aux incohérences, rester vigilant face aux documents qui semblent trop parfaits.",
+          "titre": "Scepticisme professionnel",
+          "body": "Le **scepticisme professionnel** est une attitude faite d'esprit interrogateur, d'attention aux conditions pouvant indiquer une anomalie, et d'**évaluation critique** des éléments probants.\n\nConcrètement : ne pas accepter une explication de la direction sur parole, chercher des éléments corroborants, être attentif aux incohérences et aux documents « trop parfaits ».",
           "callouts": [
             {
               "type": "tip",
               "label": "Mindset EY",
-              "text": "Le scepticisme n'est pas de la méfiance ni de la paranoïa : c'est un équilibre professionnel entre confiance et vérification. « Trust, but verify »."
+              "text": "Le scepticisme n'est ni méfiance ni paranoïa : c'est un équilibre professionnel. « Trust, but verify »."
             }
           ]
         },
         {
-          "titre": "4. Jugement professionnel",
-          "body": "Le **jugement professionnel** est l'application des connaissances, de l'expérience et de la formation pertinentes pour prendre des décisions éclairées tout au long de la mission.\n\nIl intervient partout : choix du benchmark de matérialité, identification des risques importants, évaluation du caractère suffisant des éléments probants, détermination du type d'opinion. Le jugement doit être **documenté** (ISA 230) pour être défendable.",
-          "callouts": [
-            {
-              "type": "comp",
-              "label": "Jugement vs Scepticisme",
-              "text": "Le jugement = DÉCIDER (choisir, évaluer). Le scepticisme = QUESTIONNER (douter, vérifier). Les deux sont complémentaires et indispensables."
-            }
-          ]
+          "titre": "Jugement professionnel",
+          "body": "Le **jugement professionnel** est l'application des connaissances, de l'expérience et de la formation pour prendre des décisions éclairées : choix du benchmark de matérialité, identification des risques importants, suffisance des éléments probants, type d'opinion. Il doit être **documenté** (ISA 230) pour être défendable.",
+          "compare": {
+            "title": "Jugement vs Scepticisme",
+            "headers": [
+              "",
+              "Jugement",
+              "Scepticisme"
+            ],
+            "rows": [
+              [
+                "Verbe",
+                "DÉCIDER",
+                "QUESTIONNER"
+              ],
+              [
+                "Nature",
+                "Choisir, évaluer, conclure",
+                "Douter, vérifier, corroborer"
+              ],
+              [
+                "Quand",
+                "À chaque décision",
+                "Tout au long de la mission"
+              ]
+            ]
+          }
+        }
+      ],
+      "mnemo": {
+        "code": "RI-RC-RND",
+        "items": [
+          {
+            "l": "RI",
+            "t": "Risque Inhérent (avant contrôles)"
+          },
+          {
+            "l": "RC",
+            "t": "Risque de Contrôle (le SCI échoue)"
+          },
+          {
+            "l": "RND",
+            "t": "Risque de Non-Détection (l'auditeur seul le pilote)"
+          }
+        ],
+        "phrase": "Risque d'audit = RI × RC × RND"
+      },
+      "quiz": [
+        {
+          "q": "Quel niveau d'assurance donne un audit ?",
+          "a": "Assurance RAISONNABLE (élevée mais pas absolue)."
         },
         {
-          "titre": "5. Conditions d'application des ISA",
-          "body": "Pour conduire un audit selon les ISA, l'auditeur doit :\n• Respecter **toutes les ISA pertinentes** à la mission\n• Comprendre l'intégralité du texte d'une ISA, y compris ses modalités d'application\n• Respecter les **règles d'éthique** (indépendance comprise — Code IESBA)\n• Ne déclarer la conformité aux ISA que si **toutes** les exigences ont été respectées.",
-          "callouts": [
-            {
-              "type": "legal",
-              "label": "Suisse",
-              "text": "En Suisse, les ISA sont transposées en Normes d'audit suisses (NA-CH). Le contrôle ordinaire (CO 727-728) s'effectue selon les NA-CH ; le contrôle restreint selon la NCR (assurance limitée)."
-            }
-          ]
+          "q": "Quel facteur du risque d'audit l'auditeur contrôle-t-il directement ?",
+          "a": "Le risque de non-détection (RND), via la nature/calendrier/étendue des procédures."
+        },
+        {
+          "q": "Scepticisme = méfiance ?",
+          "a": "Non : attitude professionnelle neutre et interrogative, équilibre entre confiance et vérification."
+        },
+        {
+          "q": "Pourquoi l'assurance n'est-elle pas absolue ?",
+          "a": "Limites inhérentes : sondages, jugement, fraude dissimulée, éléments probants persuasifs."
         }
       ],
       "synthese": [
-        "Objectif de l'audit : renforcer la confiance des utilisateurs dans les EF via une opinion",
-        "Assurance RAISONNABLE (élevée, pas absolue) à cause des limites inhérentes",
+        "Objectif : renforcer la confiance des utilisateurs via une opinion",
+        "Assurance RAISONNABLE (≠ absolue) à cause des limites inhérentes",
         "Risque d'audit = RI × RC × RND ; seul le RND est piloté par l'auditeur",
-        "Scepticisme (questionner) + jugement (décider) = l'ADN de l'auditeur",
-        "Conformité aux ISA = respect de TOUTES les exigences pertinentes"
+        "Scepticisme (questionner) + jugement (décider) = ADN de l'auditeur",
+        "Contrôle ordinaire = raisonnable ; restreint = limité (dualité suisse)"
       ],
       "pieges": [
-        "Croire que l'audit garantit l'absence absolue d'erreur (c'est une assurance RAISONNABLE)",
-        "Oublier que la fraude par collusion/faux documents peut échapper à un audit bien conduit",
-        "Confondre scepticisme (attitude neutre interrogative) et méfiance (parti pris négatif)"
+        "Croire que l'audit garantit l'absence absolue d'erreur",
+        "Confondre assurance raisonnable (ordinaire) et limitée (restreint)",
+        "Confondre scepticisme (neutre) et méfiance (parti pris négatif)",
+        "Oublier que la fraude par collusion peut échapper à un audit bien mené"
       ]
     },
     "210": {
@@ -12043,52 +12159,181 @@
       ]
     },
     "320": {
-      "intro": "Tout n'est pas auditable au franc près. La **matérialité** définit le seuil au-delà duquel une anomalie pourrait influencer les décisions des utilisateurs. ISA 320 structure ce concept central qui guide toute la mission.",
+      "duree": "11 min",
+      "niveau": "Intermédiaire",
+      "tldr": "La **matérialité** définit le seuil au-delà duquel une anomalie pourrait influencer les décisions des utilisateurs. 3 niveaux : globale (overall), de performance (50-75%), seuil de non-intervention (~5%). Le MSA détaille les benchmarks et la révision en cours de mission.",
+      "stats": [
+        {
+          "value": "5-10%",
+          "label": "Overall / résultat net",
+          "sub": "société rentable"
+        },
+        {
+          "value": "0,5-1%",
+          "label": "Overall / CA",
+          "sub": "croissance/pertes"
+        },
+        {
+          "value": "50-75%",
+          "label": "Performance materiality",
+          "sub": "% de l'overall"
+        },
+        {
+          "value": "~5%",
+          "label": "Seuil non-intervention",
+          "sub": "trivial threshold"
+        }
+      ],
+      "intro": "On ne peut pas auditer au franc près. La **matérialité** (caractère significatif, NAS 320) guide toute la mission. Le MSA (III.3.5) en fait un pilier de la planification : « la détermination du caractère significatif est un élément important de l'audit des états financiers ». Une anomalie est significative si, isolée ou cumulée, elle peut **influencer les décisions économiques** des utilisateurs.",
       "sections": [
         {
-          "titre": "1. Les trois niveaux de matérialité",
-          "body": "• **Matérialité globale** (overall) : seuil pour les EF dans leur ensemble\n• **Matérialité de performance** (performance) : seuil inférieur, buffer pour le cumul d'anomalies non détectées\n• **Seuil de remontée** (clearly trivial threshold, CTT) : en dessous, on n'accumule pas les anomalies.",
+          "titre": "Les seuils du concept (terminologie MSA)",
+          "body": "Le MSA distingue précisément quatre seuils (tableau 14 du manuel) :",
+          "schema": {
+            "type": "flow",
+            "title": "Les 4 seuils de signification (MSA / NAS 320-450)",
+            "steps": [
+              {
+                "t": "Seuil de signification global (overall materiality)",
+                "d": "Pour les EF pris dans leur ensemble. OBLIGATOIRE. NAS 320 §10."
+              },
+              {
+                "t": "Seuil spécifique (specific materiality)",
+                "d": "Pour certains flux/soldes/informations sensibles. Optionnel. NAS 320 §10."
+              },
+              {
+                "t": "Seuil de planification / pour la réalisation (performance materiality)",
+                "d": "Buffer pour le cumul d'anomalies non détectées. OBLIGATOIRE. NAS 320 §11."
+              },
+              {
+                "t": "Seuil de non-intervention (trivial)",
+                "d": "En deçà, on n'accumule pas. NAS 450 §A2. Non obligatoire mais usuel."
+              }
+            ]
+          },
           "callouts": [
             {
-              "type": "info",
-              "label": "Ordre de grandeur",
-              "text": "Overall > Performance (50-75% de l'overall) > CTT (~5% de l'overall)."
+              "type": "legal",
+              "label": "MSA",
+              "text": "Les deux seuils OBLIGATOIRES (fond gris foncé dans le tableau 14 du MSA) : seuil global + seuil pour la réalisation des travaux (performance)."
             }
           ]
         },
         {
-          "titre": "2. Choix du benchmark",
-          "body": "La matérialité globale = un **pourcentage** appliqué à un **benchmark** :\n• Société rentable mature → résultat net avant impôts (5-10%)\n• Société en croissance/pertes ponctuelles → chiffre d'affaires (0,5-1%)\n• Société en pertes structurelles → total actif ou fonds propres (1-2%).",
+          "titre": "Choix du benchmark",
+          "body": "La matérialité globale = un **pourcentage** appliqué à un **benchmark** choisi selon la nature de l'entité et les attentes des utilisateurs :",
+          "compare": {
+            "title": "Benchmarks usuels (pratique EY / MSA)",
+            "headers": [
+              "Profil d'entité",
+              "Benchmark",
+              "% indicatif"
+            ],
+            "rows": [
+              [
+                "Société rentable mature",
+                "Résultat net avant impôts",
+                "5-10%"
+              ],
+              [
+                "Croissance / pertes ponctuelles",
+                "Chiffre d'affaires",
+                "0,5-1%"
+              ],
+              [
+                "Pertes structurelles",
+                "Total actif ou fonds propres",
+                "1-2%"
+              ],
+              [
+                "Fonds / investment company",
+                "Actif net (NAV)",
+                "0,5-1%"
+              ]
+            ]
+          },
           "callouts": [
             {
               "type": "key",
               "label": "Toujours justifier",
-              "text": "Le choix du benchmark doit être JUSTIFIÉ selon la nature de l'entité et les attentes des utilisateurs. C'est un jugement, pas un automatisme."
+              "text": "Le benchmark se JUSTIFIE selon l'entité et les utilisateurs. C'est un jugement professionnel, jamais un automatisme."
             }
           ]
         },
         {
-          "titre": "3. Révision de la matérialité",
-          "body": "La matérialité n'est pas figée : on la **révise** si de nouvelles informations apparaissent (acquisition, événement non récurrent, résultat réel très différent de l'estimé > 10%). Une révision à la baisse peut imposer des procédures supplémentaires.",
+          "titre": "Performance materiality & seuil de non-intervention",
+          "body": "La **matérialité de performance** est fixée à un niveau INFÉRIEUR à l'overall (50-75%) pour réduire à un niveau acceptable la probabilité que le cumul des anomalies non corrigées + non détectées dépasse l'overall.\n\nLe **seuil de non-intervention** (~5% de l'overall) filtre les anomalies trop petites pour être accumulées (NAS 450).",
           "callouts": [
             {
               "type": "tip",
               "label": "Facteurs de risque",
-              "text": "En présence de facteurs de risque (nouveau CFO, migration ERP, croissance forte), on retient une matérialité plus basse + une performance materiality à 50-65%."
+              "text": "Plus il y a de facteurs de risque (nouveau CFO, migration ERP, croissance forte, antécédents d'anomalies), plus la performance materiality descend (vers 50%)."
+            }
+          ]
+        },
+        {
+          "titre": "Révision en cours de mission",
+          "body": "La matérialité n'est PAS figée. L'auditeur la **révise** si de nouvelles informations apparaissent : acquisition, événement non récurrent, ou résultat réel très différent de l'estimé (écart > 10%). Une révision à la baisse peut imposer des procédures supplémentaires.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Attention",
+              "text": "Si le benchmark réel diffère significativement de l'estimé en planification, réviser la matérialité ET reconsidérer l'étendue des procédures déjà réalisées."
             }
           ]
         }
       ],
+      "mnemo": {
+        "code": "G-P-S-T",
+        "items": [
+          {
+            "l": "G",
+            "t": "Global (overall) — obligatoire"
+          },
+          {
+            "l": "P",
+            "t": "Performance — obligatoire (50-75%)"
+          },
+          {
+            "l": "S",
+            "t": "Spécifique — optionnel (comptes sensibles)"
+          },
+          {
+            "l": "T",
+            "t": "Trivial — seuil de non-intervention (~5%)"
+          }
+        ],
+        "phrase": "2 obligatoires (Global + Performance), 2 optionnels (Spécifique + Trivial)"
+      },
+      "quiz": [
+        {
+          "q": "Quels sont les 2 seuils OBLIGATOIRES selon le MSA ?",
+          "a": "Le seuil global (overall) et le seuil pour la réalisation des travaux (performance materiality)."
+        },
+        {
+          "q": "Benchmark pour une société rentable ?",
+          "a": "Résultat net avant impôts (5-10%)."
+        },
+        {
+          "q": "À quoi sert la performance materiality ?",
+          "a": "Buffer (50-75% de l'overall) pour le cumul d'anomalies non corrigées + non détectées."
+        },
+        {
+          "q": "Quand réviser la matérialité ?",
+          "a": "Si nouvelles infos (acquisition, événement non récurrent) ou écart > 10% entre benchmark réel et estimé."
+        }
+      ],
       "synthese": [
-        "3 niveaux : overall > performance (50-75%) > CTT (~5%)",
-        "Benchmark selon l'entité : résultat (rentable), CA (croissance), actif (pertes)",
-        "Toujours justifier le benchmark",
-        "Réviser la matérialité si nouvelles infos"
+        "4 seuils : global + performance (obligatoires) ; spécifique + trivial (optionnels)",
+        "Benchmark : résultat net (rentable), CA (croissance), actif (pertes)",
+        "Performance = 50-75% de l'overall ; trivial ≈ 5%",
+        "Toujours justifier le benchmark ; réviser si nouvelles infos"
       ],
       "pieges": [
-        "Confondre overall et performance materiality",
+        "Confondre seuil global et seuil de performance",
         "Donner une matérialité sans justifier le benchmark",
-        "Oublier de réviser la matérialité en cours de mission"
+        "Oublier de réviser la matérialité en cours de mission",
+        "Négliger la matérialité QUALITATIVE (ISA 450)"
       ]
     },
     "330": {
@@ -12868,46 +13113,208 @@
       ]
     },
     "700": {
-      "intro": "Le rapport d'audit est le **produit final** : l'opinion, communiquée clairement. ISA 700 (révisée 2015) en standardise la structure, avec l'opinion désormais EN PREMIER.",
-      "sections": [
+      "duree": "12 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Le rapport d'audit est le produit final. Depuis 2016 : **opinion EN PREMIER** + indépendance explicite. 4 types d'opinion (UQAD). En Suisse : 2 rapports (AG court CO 728b + CA détaillé CO 728a) avec numéros d'agrément ASR.",
+      "stats": [
         {
-          "titre": "1. Former l'opinion",
-          "body": "L'auditeur conclut s'il a obtenu une **assurance raisonnable** que les EF ne comportent pas d'anomalies significatives. Il évalue : conformité au référentiel, caractère approprié des méthodes, caractère raisonnable des estimations, et présentation d'ensemble.",
-          "callouts": []
+          "value": "4",
+          "label": "Types d'opinion",
+          "sub": "UQAD"
         },
         {
-          "titre": "2. Structure du rapport (depuis 2016)",
-          "body": "Ordre standardisé :\n• Titre + destinataire\n• **OPINION** (en premier !)\n• **Fondement de l'opinion** (avec mention explicite de l'indépendance)\n• Material Uncertainty going concern (si applicable)\n• **KAM** (pour les EIP)\n• Responsabilités (direction + auditeur)\n• Signature, lieu, date.",
+          "value": "2016",
+          "label": "Opinion en premier",
+          "sub": "depuis ISA 700 R"
+        },
+        {
+          "value": "2",
+          "label": "Rapports suisses",
+          "sub": "AG (728b) + CA (728a)"
+        },
+        {
+          "value": "6 mois",
+          "label": "Délai AG",
+          "sub": "après clôture (CO 699)"
+        }
+      ],
+      "intro": "Le rapport d'audit communique l'opinion — l'aboutissement de toute la mission. ISA 700 (révisée 2015, effective 2016) a profondément restructuré le rapport pour le rendre plus informatif. Le MSA (III.8 « Rapport ») détaille les modèles suisses (rapport AG et rapport détaillé au CA).",
+      "sections": [
+        {
+          "titre": "Former l'opinion",
+          "body": "L'auditeur conclut s'il a obtenu une **assurance raisonnable** que les EF ne comportent pas d'anomalies significatives. Il évalue : la conformité au référentiel, le caractère approprié des méthodes comptables, le caractère raisonnable des estimations, et la présentation d'ensemble (y compris les informations à fournir).",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Base",
+              "text": "L'opinion se forme sur la base des éléments probants accumulés (ISA 500) et de l'évaluation des anomalies (ISA 450)."
+            }
+          ]
+        },
+        {
+          "titre": "Structure du rapport (depuis 2016)",
+          "body": "L'ordre a été standardisé pour mettre l'opinion en avant :",
+          "schema": {
+            "type": "flow",
+            "title": "Architecture du rapport ISA 700",
+            "steps": [
+              {
+                "t": "Titre + Destinataire",
+                "d": "« Rapport de l'organe de révision indépendant » à l'AG."
+              },
+              {
+                "t": "OPINION (en premier !)",
+                "d": "Le cœur, placé en tête depuis 2016 pour la visibilité."
+              },
+              {
+                "t": "Fondement de l'opinion",
+                "d": "Référence aux NAS + mention EXPLICITE de l'indépendance."
+              },
+              {
+                "t": "Material Uncertainty Going Concern",
+                "d": "Si applicable (ISA 570) — avant les KAM."
+              },
+              {
+                "t": "Key Audit Matters (KAM)",
+                "d": "Pour les EIP / cotées (ISA 701)."
+              },
+              {
+                "t": "Responsabilités",
+                "d": "Direction (TCWG) + auditeur."
+              },
+              {
+                "t": "Signature, lieu, date",
+                "d": "Lead partner + EQR (EIP) + numéros d'agrément ASR."
+              }
+            ]
+          }
+        },
+        {
+          "titre": "Les 4 types d'opinion (UQAD)",
+          "body": "Selon la présence d'anomalie/limitation et son caractère généralisé :",
+          "schema": {
+            "type": "matrix",
+            "title": "Matrice des opinions",
+            "xlabels": [
+              "Significative isolée",
+              "Significative pervasive"
+            ],
+            "ylabels": [
+              "Anomalie",
+              "Limitation"
+            ],
+            "cells": [
+              [
+                {
+                  "t": "Qualified",
+                  "v": "warn"
+                },
+                {
+                  "t": "Adverse",
+                  "v": "danger"
+                }
+              ],
+              [
+                {
+                  "t": "Qualified",
+                  "v": "warn"
+                },
+                {
+                  "t": "Disclaimer",
+                  "v": "danger"
+                }
+              ]
+            ]
+          },
           "callouts": [
             {
               "type": "key",
-              "label": "2016",
-              "text": "Depuis 2016 : opinion EN PREMIER (visibilité) + indépendance explicite dans le fondement."
+              "label": "UQAD",
+              "text": "Unmodified (clean) / Qualified (« except for ») / Adverse (« ne donnent pas une image fidèle ») / Disclaimer (« nous n'exprimons pas d'opinion »)."
             }
           ]
         },
         {
-          "titre": "3. Spécificités suisses",
-          "body": "En Suisse, le rapport AG (CO 728b) ajoute la recommandation d'approbation et le constat sur le SCI. Double signature (lead partner + EQR pour les EIP) avec les numéros d'agrément ASR.",
-          "callouts": [
-            {
-              "type": "legal",
-              "label": "UQAD",
-              "text": "4 types d'opinion : Unmodified (clean), Qualified, Adverse, Disclaimer."
-            }
-          ]
+          "titre": "Spécificités suisses (MSA III.8)",
+          "body": "Le contrôle ordinaire suisse émet **deux rapports** :\n• **Rapport à l'AG** (CO 728b) : court, public, avec la recommandation d'approbation et le constat sur le SCI\n• **Rapport détaillé au CA** (CO 728a) : confidentiel, détaillé (management letter).\n\nDouble signature (lead partner + EQR pour les EIP) avec les **numéros d'agrément ASR**.",
+          "compare": {
+            "title": "Rapport AG vs Rapport CA",
+            "headers": [
+              "Aspect",
+              "Rapport AG (728b)",
+              "Rapport CA (728a)"
+            ],
+            "rows": [
+              [
+                "Audience",
+                "Actionnaires (public)",
+                "Conseil d'administration (interne)"
+              ],
+              [
+                "Format",
+                "Court (ISA 700)",
+                "Détaillé / long-form"
+              ],
+              [
+                "Contenu",
+                "Opinion + recommandation + SCI",
+                "Déficiences, recommandations, constats"
+              ]
+            ]
+          }
+        }
+      ],
+      "mnemo": {
+        "code": "UQAD",
+        "items": [
+          {
+            "l": "U",
+            "t": "Unmodified (clean)"
+          },
+          {
+            "l": "Q",
+            "t": "Qualified (avec réserve)"
+          },
+          {
+            "l": "A",
+            "t": "Adverse (défavorable)"
+          },
+          {
+            "l": "D",
+            "t": "Disclaimer (impossibilité)"
+          }
+        ],
+        "phrase": "Anomalie pervasive → Adverse ; Limitation pervasive → Disclaimer"
+      },
+      "quiz": [
+        {
+          "q": "Où est placée l'opinion depuis 2016 ?",
+          "a": "EN PREMIER (au début du rapport), pour la visibilité."
+        },
+        {
+          "q": "Combien de rapports en contrôle ordinaire suisse ?",
+          "a": "2 : rapport AG (CO 728b, court/public) + rapport CA (CO 728a, détaillé/confidentiel)."
+        },
+        {
+          "q": "Que doit mentionner explicitement le fondement de l'opinion ?",
+          "a": "L'indépendance de l'organe de révision."
+        },
+        {
+          "q": "Quels numéros figurent sous la signature en Suisse ?",
+          "a": "Les numéros d'agrément ASR du réviseur responsable et du cabinet."
         }
       ],
       "synthese": [
-        "Opinion EN PREMIER depuis 2016 + indépendance explicite",
-        "Structure : titre, destinataire, opinion, fondement, MU going concern, KAM, responsabilités, signature",
-        "Suisse : recommandation AG + constat SCI + numéros ASR",
-        "4 opinions : UQAD"
+        "Opinion EN PREMIER + indépendance explicite (depuis 2016)",
+        "4 opinions : UQAD",
+        "Suisse : 2 rapports (AG 728b + CA 728a) + numéros ASR",
+        "Délai : AG dans les 6 mois de la clôture (CO 699)"
       ],
       "pieges": [
         "Placer l'opinion à la fin (ancien format pré-2016)",
         "Oublier la mention explicite d'indépendance",
-        "Oublier les numéros d'agrément ASR (Suisse)"
+        "Oublier les numéros d'agrément ASR (Suisse)",
+        "Confondre rapport AG (public) et rapport CA (confidentiel)"
       ]
     },
     "701": {

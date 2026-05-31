@@ -1075,6 +1075,20 @@ function _findAnnuaireStd(num) {
     return { std: null, serie: null };
 }
 
+let _coursScrollFn = null;
+function _attachCoursProgress() {
+    if (_coursScrollFn) window.removeEventListener('scroll', _coursScrollFn, true);
+    _coursScrollFn = function () {
+        const bar = document.getElementById('coursProgressBar');
+        if (!bar) { window.removeEventListener('scroll', _coursScrollFn, true); _coursScrollFn = null; return; }
+        const h = document.documentElement;
+        const max = (h.scrollHeight - h.clientHeight) || 1;
+        const pct = Math.min(100, Math.max(0, (h.scrollTop / max) * 100));
+        bar.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', _coursScrollFn, true);
+}
+
 function _openAnnuaireCours(num) {
     const cours = (_auditData.annuaire_cours || {})[num];
     const { std, serie } = _findAnnuaireStd(num);
@@ -1083,59 +1097,86 @@ function _openAnnuaireCours(num) {
     const host = document.getElementById('auditContent');
     if (!host) return;
 
+    // Estimation du temps de lecture
+    let chars = (cours.intro || '').length;
+    (cours.sections || []).forEach(s => { chars += (s.body || '').length; (s.callouts || []).forEach(c => chars += (c.text || '').length); });
+    const duree = cours.duree || (Math.max(4, Math.round(chars / 900)) + ' min');
+    const niveau = cours.niveau || (serie ? '' : '');
+
     host.innerHTML = `
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap">
-            <button onclick="_renderAuditAnnuaire(document.getElementById('auditContent'))"
-                    style="padding:8px 14px;border-radius:7px;cursor:pointer;background:#1e293b;border:1px solid #334155;
-                           color:#94a3b8;font-size:12px;font-weight:600">← Annuaire</button>
-            <button onclick="_downloadCoursPdf('${num}')"
-                    style="padding:8px 14px;border-radius:7px;cursor:pointer;background:${color};border:none;
-                           color:#fff;font-size:12px;font-weight:700">📥 Télécharger en PDF</button>
-        </div>
-
-        <div style="padding:18px 20px;border-radius:12px;background:linear-gradient(135deg, ${color}22, transparent);border-left:5px solid ${color};margin-bottom:18px">
-            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">
-                <span style="background:${color};color:#fff;font-size:13px;font-weight:800;padding:4px 11px;border-radius:6px">${escapeHtml(std.code)}</span>
-                <span style="font-size:11px;color:#a78bfa;background:#1e1b4b;padding:3px 9px;border-radius:10px">📚 Cours complet</span>
+        <div style="position:sticky;top:0;z-index:20;background:#0a0f1c;margin:-4px -4px 14px -4px;padding:8px 4px 0 4px">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px">
+                <button onclick="_renderAuditAnnuaire(document.getElementById('auditContent'))"
+                        style="padding:7px 13px;border-radius:7px;cursor:pointer;background:#1e293b;border:1px solid #334155;color:#94a3b8;font-size:12px;font-weight:600">← Annuaire</button>
+                <button onclick="_downloadCoursPdf('${num}')"
+                        style="padding:7px 13px;border-radius:7px;cursor:pointer;background:${color};border:none;color:#fff;font-size:12px;font-weight:700">📥 PDF</button>
+                <span style="margin-left:auto;font-size:11px;color:#64748b">⏱️ ${escapeHtml(duree)} de lecture</span>
             </div>
-            <div style="font-size:19px;font-weight:800;color:${AUDIT_LIGHT};line-height:1.3">${escapeHtml(std.title_fr)}</div>
-            <div style="font-size:12px;color:#7dd3fc;font-style:italic;margin-top:4px">🇬🇧 ${escapeHtml(std.title_en || '')}</div>
+            <div style="height:4px;background:#1e293b;border-radius:3px;overflow:hidden">
+                <div id="coursProgressBar" style="height:100%;width:0%;background:linear-gradient(90deg, ${color}, #c084fc);transition:width 0.1s"></div>
+            </div>
         </div>
 
-        <div style="font-size:14px;color:#cbd5e1;line-height:1.7;margin-bottom:20px;padding:14px 16px;background:#0a0f1c;border-radius:8px;border-left:3px solid #3b82f6">
+        <div style="padding:22px 22px;border-radius:14px;background:linear-gradient(135deg, ${color}33, ${color}0a 60%, transparent);border:1px solid ${color}55;margin-bottom:18px;position:relative;overflow:hidden">
+            <div style="position:absolute;right:-10px;top:-18px;font-size:90px;opacity:0.08;font-weight:900;color:${color}">${escapeHtml((std.num||'').replace('ISQM','Q'))}</div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px;position:relative">
+                <span style="background:${color};color:#fff;font-size:14px;font-weight:800;padding:5px 13px;border-radius:7px;box-shadow:0 2px 8px ${color}66">${escapeHtml(std.code)}</span>
+                <span style="font-size:11px;color:#a78bfa;background:#1e1b4b;padding:4px 10px;border-radius:10px">📚 Cours complet</span>
+                ${std.status ? `<span style="font-size:11px;color:#7dd3fc;background:#0c2230;padding:4px 10px;border-radius:10px">${escapeHtml(std.status)}</span>` : ''}
+                ${niveau ? `<span style="font-size:11px;color:#fca5a5;background:#2a1414;padding:4px 10px;border-radius:10px">${escapeHtml(niveau)}</span>` : ''}
+            </div>
+            <div style="font-size:21px;font-weight:900;color:#fff;line-height:1.25;position:relative">${escapeHtml(std.title_fr)}</div>
+            <div style="font-size:12px;color:#7dd3fc;font-style:italic;margin-top:5px;position:relative">🇬🇧 ${escapeHtml(std.title_en || '')}</div>
+        </div>
+
+        ${cours.tldr ? `
+            <div style="margin-bottom:18px;padding:14px 16px;background:linear-gradient(135deg,#0c1f17,#0a0f1c);border-radius:10px;border:1px solid #16a34a55">
+                <div style="font-size:11px;font-weight:800;color:#4ade80;margin-bottom:6px;letter-spacing:0.05em">⚡ EN 30 SECONDES</div>
+                <div style="font-size:13.5px;color:#d1fae5;line-height:1.65">${_auditCrossRef(cours.tldr)}</div>
+            </div>` : ''}
+
+        ${_renderCoursStats(cours.stats, color)}
+
+        <div style="font-size:14px;color:#cbd5e1;line-height:1.75;margin-bottom:22px;padding:15px 17px;background:#0a0f1c;border-radius:10px;border-left:4px solid #3b82f6">
             ${_auditCrossRef(cours.intro || '')}
         </div>
 
-        ${(cours.sections || []).map(s => _renderCoursSection(s, color)).join('')}
+        ${(cours.sections || []).map((s, i) => _renderCoursSection(s, color, i + 1)).join('')}
+
+        ${cours.mnemo ? `<div style="margin:18px 0">${_renderCoursMnemo(cours.mnemo, color)}</div>` : ''}
+        ${cours.schema ? `<div style="margin:18px 0">${_renderCoursSchema(cours.schema, color)}</div>` : ''}
+
+        ${_renderCoursQuiz(cours.quiz, num, color)}
 
         ${(cours.synthese || []).length ? `
-            <div style="margin-top:18px;padding:16px 18px;background:#0a1a0f;border-radius:10px;border-left:4px solid #16a34a">
+            <div style="margin-top:18px;padding:16px 18px;background:#0a1a0f;border-radius:12px;border:1px solid #16a34a44;border-left:4px solid #16a34a">
                 <div style="font-size:13px;font-weight:800;color:#4ade80;margin-bottom:10px">🎯 SYNTHÈSE — points clés</div>
-                <ul style="margin:0;padding-left:20px;color:#bbf7d0;font-size:13px;line-height:1.8">
+                <ul style="margin:0;padding-left:20px;color:#bbf7d0;font-size:13px;line-height:1.9">
                     ${cours.synthese.map(p => `<li>${_auditCrossRef(p)}</li>`).join('')}
                 </ul>
             </div>` : ''}
 
         ${(cours.pieges || []).length ? `
-            <div style="margin-top:14px;padding:16px 18px;background:#1e1b0a;border-radius:10px;border-left:4px solid #fbbf24">
+            <div style="margin-top:14px;padding:16px 18px;background:#1e1b0a;border-radius:12px;border:1px solid #fbbf2444;border-left:4px solid #fbbf24">
                 <div style="font-size:13px;font-weight:800;color:#fbbf24;margin-bottom:10px">⚠️ PIÈGES EXAMEN</div>
-                <ul style="margin:0;padding-left:20px;color:#fde68a;font-size:13px;line-height:1.8">
+                <ul style="margin:0;padding-left:20px;color:#fde68a;font-size:13px;line-height:1.9">
                     ${cours.pieges.map(p => `<li>${_auditCrossRef(p)}</li>`).join('')}
                 </ul>
             </div>` : ''}
 
-        <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+        <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap">
             <button onclick="_downloadCoursPdf('${num}')"
-                    style="padding:12px 20px;border-radius:8px;cursor:pointer;background:linear-gradient(135deg, ${color}, #4c1d95);border:none;color:#fff;font-size:14px;font-weight:800">
+                    style="padding:13px 22px;border-radius:9px;cursor:pointer;background:linear-gradient(135deg, ${color}, #4c1d95);border:none;color:#fff;font-size:14px;font-weight:800;box-shadow:0 3px 12px ${color}55">
                 📥 Télécharger ce cours en PDF
             </button>
             <button onclick="_renderAuditAnnuaire(document.getElementById('auditContent'))"
-                    style="padding:12px 18px;border-radius:8px;cursor:pointer;background:#1e293b;border:1px solid #334155;color:#94a3b8;font-size:13px;font-weight:600">
+                    style="padding:13px 18px;border-radius:9px;cursor:pointer;background:#1e293b;border:1px solid #334155;color:#94a3b8;font-size:13px;font-weight:600">
                 ← Retour à l'annuaire
             </button>
         </div>
     `;
     host.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    _attachCoursProgress();
 }
 
 const _COURS_CALLOUT = {
@@ -1148,7 +1189,127 @@ const _COURS_CALLOUT = {
     comp:    {bg:'#140a1f', bd:'#9333ea', col:'#c084fc', icon:'🔀', lbl:'COMPARAISON'}
 };
 
-function _renderCoursSection(s, color) {
+// Chiffres clés — cartes de stats
+function _renderCoursStats(stats, color) {
+    if (!stats || !stats.length) return '';
+    return `
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:20px">
+            ${stats.map(s => `
+                <div style="padding:14px 12px;border-radius:10px;background:#0d1424;border:1px solid #1e293b;text-align:center;position:relative;overflow:hidden">
+                    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:${color}"></div>
+                    <div style="font-size:22px;font-weight:900;color:${color};line-height:1.1">${escapeHtml(s.value)}</div>
+                    <div style="font-size:11.5px;font-weight:700;color:#e2e8f0;margin-top:4px">${escapeHtml(s.label)}</div>
+                    ${s.sub ? `<div style="font-size:10px;color:#64748b;margin-top:2px;line-height:1.3">${escapeHtml(s.sub)}</div>` : ''}
+                </div>`).join('')}
+        </div>`;
+}
+
+// Mnémo décomposée lettre par lettre
+function _renderCoursMnemo(m, color) {
+    if (!m) return '';
+    return `
+        <div style="padding:16px 18px;border-radius:12px;background:linear-gradient(135deg,#1a1206,#0a0f1c);border:1px solid #f59e0b55">
+            <div style="font-size:11px;font-weight:800;color:#fbbf24;margin-bottom:10px;letter-spacing:0.05em">🧠 MOYEN MNÉMOTECHNIQUE${m.code ? ` — « ${escapeHtml(m.code)} »` : ''}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+                ${(m.items || []).map(it => `
+                    <div style="display:flex;align-items:center;gap:8px;background:#1e1b0a;border:1px solid #f59e0b33;border-radius:8px;padding:7px 11px">
+                        <span style="font-size:18px;font-weight:900;color:#fbbf24;min-width:18px;text-align:center">${escapeHtml(it.l)}</span>
+                        <span style="font-size:12.5px;color:#fde68a">${escapeHtml(it.t)}</span>
+                    </div>`).join('')}
+            </div>
+            ${m.phrase ? `<div style="margin-top:10px;font-size:12px;color:#fcd34d;font-style:italic">💬 ${escapeHtml(m.phrase)}</div>` : ''}
+        </div>`;
+}
+
+// Schémas visuels : flow / pyramid / matrix
+function _renderCoursSchema(sch, color) {
+    if (!sch) return '';
+    const title = sch.title ? `<div style="font-size:11px;font-weight:800;color:${color};margin-bottom:12px;letter-spacing:0.04em">📊 ${escapeHtml(sch.title)}</div>` : '';
+    let body = '';
+    if (sch.type === 'flow') {
+        body = `<div style="display:flex;flex-direction:column;gap:0">
+            ${(sch.steps || []).map((st, i, arr) => `
+                <div style="display:flex;gap:12px;align-items:flex-start">
+                    <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+                        <div style="width:30px;height:30px;border-radius:50%;background:${color};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px">${i + 1}</div>
+                        ${i < arr.length - 1 ? `<div style="width:2px;height:28px;background:${color}66"></div>` : ''}
+                    </div>
+                    <div style="padding-bottom:${i < arr.length - 1 ? '14px' : '0'};flex:1">
+                        <div style="font-size:13px;font-weight:700;color:#e2e8f0">${escapeHtml(st.t)}</div>
+                        ${st.d ? `<div style="font-size:12px;color:#94a3b8;line-height:1.5;margin-top:2px">${_auditCrossRef(st.d)}</div>` : ''}
+                    </div>
+                </div>`).join('')}
+        </div>`;
+    } else if (sch.type === 'pyramid') {
+        const lv = sch.levels || [];
+        body = `<div style="display:flex;flex-direction:column;gap:6px;align-items:center">
+            ${lv.map((l, i) => {
+                const w = 55 + (i / Math.max(1, lv.length - 1)) * 45;
+                return `<div style="width:${w}%;min-width:160px;padding:10px 14px;border-radius:8px;background:linear-gradient(135deg,${color},${color}99);text-align:center">
+                    <div style="font-size:13px;font-weight:800;color:#fff">${escapeHtml(l.t)}</div>
+                    ${l.d ? `<div style="font-size:11px;color:#f1f5f9;margin-top:2px">${escapeHtml(l.d)}</div>` : ''}
+                </div>`;
+            }).join('')}
+        </div>`;
+    } else if (sch.type === 'matrix') {
+        const cells = sch.cells || [];
+        body = `<div style="overflow-x:auto"><table style="width:100%;border-collapse:separate;border-spacing:6px">
+            <tr><td></td>${(sch.xlabels || []).map(x => `<td style="text-align:center;font-size:11px;font-weight:800;color:${color};padding:4px">${escapeHtml(x)}</td>`).join('')}</tr>
+            ${cells.map((row, ri) => `<tr>
+                <td style="font-size:11px;font-weight:800;color:${color};padding:4px;white-space:nowrap;vertical-align:middle">${escapeHtml((sch.ylabels || [])[ri] || '')}</td>
+                ${row.map(c => {
+                    const vc = c.v === 'danger' ? '#dc2626' : (c.v === 'warn' ? '#f59e0b' : (c.v === 'ok' ? '#16a34a' : '#475569'));
+                    return `<td style="background:${vc}22;border:1px solid ${vc};border-radius:8px;padding:10px;text-align:center;font-size:12px;font-weight:700;color:${vc === '#475569' ? '#cbd5e1' : vc}">${escapeHtml(c.t)}</td>`;
+                }).join('')}
+            </tr>`).join('')}
+        </table></div>`;
+    }
+    return `<div style="padding:16px 18px;border-radius:12px;background:#0d1424;border:1px solid #1e293b">${title}${body}</div>`;
+}
+
+// Tableau comparatif stylé
+function _renderCoursCompare(cmp, color) {
+    if (!cmp) return '';
+    return `
+        <div style="margin:12px 0;padding:14px 16px;border-radius:10px;background:#0d1424;border:1px solid #1e293b">
+            ${cmp.title ? `<div style="font-size:11px;font-weight:800;color:${color};margin-bottom:10px">🔀 ${escapeHtml(cmp.title)}</div>` : ''}
+            <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px">
+                <thead><tr>${(cmp.headers || []).map((h, i) => `<th style="text-align:left;padding:8px 10px;background:${color}22;color:${color};font-weight:800;border-bottom:2px solid ${color};white-space:nowrap">${escapeHtml(h)}</th>`).join('')}</tr></thead>
+                <tbody>${(cmp.rows || []).map((r, ri) => `<tr style="background:${ri % 2 ? '#0d1424' : '#0a0f1c'}">${r.map((c, ci) => `<td style="padding:8px 10px;color:${ci === 0 ? '#e2e8f0' : '#cbd5e1'};font-weight:${ci === 0 ? '700' : '400'};line-height:1.5;border-bottom:1px solid #1e293b;vertical-align:top">${_auditCrossRef(c)}</td>`).join('')}</tr>`).join('')}</tbody>
+            </table></div>
+        </div>`;
+}
+
+// Auto-test — cartes question/réponse à retourner
+function _renderCoursQuiz(quiz, num, color) {
+    if (!quiz || !quiz.length) return '';
+    return `
+        <div style="margin-top:18px;padding:16px 18px;border-radius:12px;background:linear-gradient(135deg,#160b1f,#0a0f1c);border:1px solid #9333ea55">
+            <div style="font-size:13px;font-weight:800;color:#c084fc;margin-bottom:12px">🎮 TESTE-TOI — clique pour révéler la réponse</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px">
+                ${quiz.map((q, i) => {
+                    const qid = `quiz-${num}-${i}`;
+                    return `<div onclick="_flipQuiz('${qid}')" style="cursor:pointer;padding:13px 14px;border-radius:10px;background:#1a1226;border:1px solid #9333ea44;min-height:60px;transition:all 0.15s"
+                                 onmouseover="this.style.borderColor='#c084fc'" onmouseout="this.style.borderColor='#9333ea44'">
+                        <div style="font-size:12.5px;font-weight:700;color:#e9d5ff;line-height:1.5">❓ ${escapeHtml(q.q)}</div>
+                        <div id="${qid}" style="display:none;margin-top:9px;padding-top:9px;border-top:1px dashed #9333ea66;font-size:12.5px;color:#4ade80;line-height:1.55">✅ ${_auditCrossRef(q.a)}</div>
+                        <div id="${qid}-hint" style="margin-top:8px;font-size:10.5px;color:#7c3aed;font-style:italic">👆 cliquer pour la réponse</div>
+                    </div>`;
+                }).join('')}
+            </div>
+        </div>`;
+}
+
+function _flipQuiz(qid) {
+    const a = document.getElementById(qid);
+    const hint = document.getElementById(qid + '-hint');
+    if (!a) return;
+    const show = a.style.display === 'none';
+    a.style.display = show ? 'block' : 'none';
+    if (hint) hint.style.display = show ? 'none' : 'block';
+}
+
+function _renderCoursSection(s, color, idx) {
     const callouts = (s.callouts || []).map(c => {
         const cfg = _COURS_CALLOUT[c.type] || _COURS_CALLOUT.info;
         return `
@@ -1157,12 +1318,16 @@ function _renderCoursSection(s, color) {
                 <div style="font-size:12.5px;color:#e2e8f0;line-height:1.6;white-space:pre-wrap">${_auditCrossRef(c.text || '')}</div>
             </div>`;
     }).join('');
+    const num = idx ? `<span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;background:${color};color:#fff;font-size:13px;font-weight:800;margin-right:9px;flex-shrink:0">${idx}</span>` : '';
     return `
-        <div style="margin-bottom:18px">
-            <div style="font-size:15px;font-weight:800;color:${color};margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid #1e293b">
-                ${escapeHtml(s.titre || '')}
+        <div style="margin-bottom:20px">
+            <div style="display:flex;align-items:center;font-size:15.5px;font-weight:800;color:#fff;margin-bottom:10px;padding-bottom:7px;border-bottom:2px solid ${color}44">
+                ${num}<span>${escapeHtml(s.titre || '')}</span>
             </div>
-            <div style="font-size:13px;color:#cbd5e1;line-height:1.75;white-space:pre-wrap">${_auditCrossRef(s.body || '')}</div>
+            <div style="font-size:13px;color:#cbd5e1;line-height:1.8;white-space:pre-wrap">${_auditCrossRef(s.body || '')}</div>
+            ${s.schema ? `<div style="margin:12px 0">${_renderCoursSchema(s.schema, color)}</div>` : ''}
+            ${s.compare ? _renderCoursCompare(s.compare, color) : ''}
+            ${s.mnemo ? `<div style="margin:12px 0">${_renderCoursMnemo(s.mnemo, color)}</div>` : ''}
             ${callouts}
         </div>`;
 }
@@ -1188,9 +1353,30 @@ function _downloadCoursPdf(num) {
 
     const today = new Date().toLocaleDateString('fr-CH', { year:'numeric', month:'long', day:'numeric' });
 
+    // Tableau (compare) en HTML print
+    const comparePdf = (cmp) => {
+        if (!cmp) return '';
+        return `<table style="width:100%;border-collapse:collapse;margin:3mm 0;font-size:9.5pt">
+            <thead><tr>${(cmp.headers||[]).map(h=>`<th style="text-align:left;padding:2mm 3mm;background:#eff6ff;border:1px solid #cbd5e1;font-weight:700">${esc(h)}</th>`).join('')}</tr></thead>
+            <tbody>${(cmp.rows||[]).map(r=>`<tr>${r.map(c=>`<td style="padding:2mm 3mm;border:1px solid #e2e8f0;vertical-align:top">${mdLite(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+    };
+    // Schéma en liste pour le PDF
+    const schemaPdf = (sch) => {
+        if (!sch) return '';
+        let inner = '';
+        if (sch.type === 'flow') inner = `<ol>${(sch.steps||[]).map(s=>`<li><strong>${esc(s.t)}</strong>${s.d?' — '+mdLite(s.d):''}</li>`).join('')}</ol>`;
+        else if (sch.type === 'pyramid') inner = `<ul>${(sch.levels||[]).map(l=>`<li><strong>${esc(l.t)}</strong>${l.d?' — '+esc(l.d):''}</li>`).join('')}</ul>`;
+        else if (sch.type === 'matrix') inner = (sch.cells||[]).map((row,ri)=>`<div><strong>${esc((sch.ylabels||[])[ri]||'')}</strong> : ${row.map((c,ci)=>`${esc((sch.xlabels||[])[ci]||'')}=${esc(c.t)}`).join(' | ')}</div>`).join('');
+        return `<div class="pdf-callout pdf-callout--info"><div class="pdf-callout-label">${esc(sch.title||'Schéma')}</div><div class="pdf-callout-body">${inner}</div></div>`;
+    };
+    const mnemoPdf = (m) => {
+        if (!m) return '';
+        return `<div class="pdf-callout pdf-callout--key"><div class="pdf-callout-label">Mnémotechnique${m.code?' — '+esc(m.code):''}</div><div class="pdf-callout-body"><ul>${(m.items||[]).map(it=>`<li><strong>${esc(it.l)}</strong> : ${esc(it.t)}</li>`).join('')}</ul>${m.phrase?'<em>'+esc(m.phrase)+'</em>':''}</div></div>`;
+    };
+
     let html = `
         <section class="pdf-cover">
-            <div class="pdf-cover-top">Swiss CPA · Annuaire ISA</div>
+            <div class="pdf-cover-top">Swiss CPA · Annuaire ISA · Source : MSA Contrôle ordinaire (EXPERTsuisse)</div>
             <div class="pdf-cover-title">${esc(std.code)}</div>
             <div class="pdf-cover-sub">${esc(std.title_fr)}</div>
             <div class="pdf-cover-date">${esc(today)}</div>
@@ -1202,16 +1388,25 @@ function _downloadCoursPdf(num) {
                     <span class="pdf-cours-cat">${esc(std.title_en || '')}</span>
                 </div>
                 <div class="pdf-cours-title">${esc(std.title_fr)}</div>
+                ${cours.tldr ? `<div class="pdf-cours-summary">⚡ ${mdLite(cours.tldr)}</div>` : ''}
                 <div class="pdf-cours-summary">${mdLite(cours.intro)}</div>
             </div>
     `;
-    (cours.sections || []).forEach(s => {
+    if ((cours.stats || []).length) {
+        html += `<div class="pdf-callout pdf-callout--info"><div class="pdf-callout-label">Chiffres clés</div><div class="pdf-callout-body"><ul>${cours.stats.map(s=>`<li><strong>${esc(s.value)}</strong> — ${esc(s.label)}${s.sub?' ('+esc(s.sub)+')':''}</li>`).join('')}</ul></div></div>`;
+    }
+    (cours.sections || []).forEach((s, i) => {
         html += `<div class="pdf-section">
-            <div class="pdf-section-title">${esc(s.titre)}</div>
+            <div class="pdf-section-title">${i+1}. ${esc(s.titre)}</div>
             <div class="pdf-section-body">${mdLite(s.body)}</div>
+            ${schemaPdf(s.schema)}
+            ${comparePdf(s.compare)}
+            ${mnemoPdf(s.mnemo)}
             ${(s.callouts || []).map(calloutPdf).join('')}
         </div>`;
     });
+    if (cours.mnemo) html += mnemoPdf(cours.mnemo);
+    if (cours.schema) html += schemaPdf(cours.schema);
     if ((cours.synthese || []).length) {
         html += `<div class="pdf-callout pdf-callout--example">
             <div class="pdf-callout-label">Synthèse — points clés</div>
@@ -1221,6 +1416,11 @@ function _downloadCoursPdf(num) {
         html += `<div class="pdf-callout pdf-callout--warn">
             <div class="pdf-callout-label">Pièges examen</div>
             <div class="pdf-callout-body"><ul>${cours.pieges.map(p => `<li>${mdLite(p)}</li>`).join('')}</ul></div></div>`;
+    }
+    if ((cours.quiz || []).length) {
+        html += `<div class="pdf-callout pdf-callout--comp">
+            <div class="pdf-callout-label">Teste-toi (Q/R)</div>
+            <div class="pdf-callout-body">${cours.quiz.map(q=>`<p><strong>Q : ${esc(q.q)}</strong><br>R : ${mdLite(q.a)}</p>`).join('')}</div></div>`;
     }
     html += `</section>`;
 
