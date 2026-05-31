@@ -413,7 +413,7 @@ function _submitExam(timedOut) {
                     style="padding:12px 18px;border-radius:8px;cursor:pointer;background:#1e293b;border:1px solid #334155;color:#94a3b8;font-size:13px;font-weight:600">← Tous les examens</button>
         </div>
     `;
-    host.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    _scrollAuditTop();
 }
 
 // ─────────────────────────────────────────────────────────────────
@@ -1075,15 +1075,47 @@ function _findAnnuaireStd(num) {
     return { std: null, serie: null };
 }
 
+// Amène le contenu audit en haut de l'écran de façon FIABLE (mobile webview + desktop).
+// Instantané, jamais "smooth" : le scrollIntoView smooth laissait l'utilisateur bloqué
+// en bas du contenu sur mobile. On vise le haut de #auditContent (pas le haut de page,
+// car le header du module + la barre de sous-onglets repoussent le cours hors écran),
+// en soustrayant la hauteur d'un éventuel header global sticky (#tabBar) pour ne pas
+// masquer la barre d'outils du cours dessous.
+function _scrollAuditTop() {
+    var host = document.getElementById('auditContent');
+    var se = document.scrollingElement || document.documentElement;
+    // Offset = hauteur d'un header global sticky/fixed (ex: #tabBar)
+    var offset = 0;
+    var tb = document.getElementById('tabBar');
+    if (tb) {
+        try {
+            var pos = getComputedStyle(tb).position;
+            if (pos === 'sticky' || pos === 'fixed') offset = tb.offsetHeight || 0;
+        } catch (e) {}
+    }
+    var doIt = function () {
+        var cur = window.scrollY || (se && se.scrollTop) || document.body.scrollTop || 0;
+        // Position absolue du host (invariante au scroll) - offset header - petite marge
+        var y = host ? Math.max(0, Math.round(host.getBoundingClientRect().top + cur - offset - 4)) : 0;
+        try { window.scrollTo(0, y); } catch (e) {}
+        if (se) se.scrollTop = y;
+        if (document.body) document.body.scrollTop = y;
+    };
+    doIt();
+    // Re-essai après le reflow : certains webviews mobiles défèrent le layout après innerHTML
+    if (typeof requestAnimationFrame === 'function') requestAnimationFrame(doIt);
+}
+
 let _coursScrollFn = null;
 function _attachCoursProgress() {
     if (_coursScrollFn) window.removeEventListener('scroll', _coursScrollFn, true);
     _coursScrollFn = function () {
         const bar = document.getElementById('coursProgressBar');
         if (!bar) { window.removeEventListener('scroll', _coursScrollFn, true); _coursScrollFn = null; return; }
-        const h = document.documentElement;
-        const max = (h.scrollHeight - h.clientHeight) || 1;
-        const pct = Math.min(100, Math.max(0, (h.scrollTop / max) * 100));
+        const se = document.scrollingElement || document.documentElement;
+        const top = window.scrollY || se.scrollTop || document.body.scrollTop || 0;
+        const max = (se.scrollHeight - se.clientHeight) || 1;
+        const pct = Math.min(100, Math.max(0, (top / max) * 100));
         bar.style.width = pct + '%';
     };
     window.addEventListener('scroll', _coursScrollFn, true);
@@ -1175,7 +1207,7 @@ function _openAnnuaireCours(num) {
             </button>
         </div>
     `;
-    host.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    _scrollAuditTop();
     _attachCoursProgress();
 }
 
@@ -1693,8 +1725,14 @@ function _toggleLexiqueGroup(groupId) {
 
 // Safe helper — use crossref addCrossRefs if available, fallback to escapeHtml.
 function _auditCrossRef(text) {
-    if (typeof window.addCrossRefs === 'function') return window.addCrossRefs(text || '');
-    return escapeHtml(text || '');
+    // addCrossRefs échappe le HTML puis insère les liens entre normes ;
+    // escapeHtml en repli. Dans les deux cas, les ** restent littéraux.
+    let html = (typeof window.addCrossRefs === 'function')
+        ? window.addCrossRefs(text || '')
+        : escapeHtml(text || '');
+    // Markdown léger : **gras** → <strong> (cohérent avec _formatLine et l'export PDF)
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    return html;
 }
 
 // ── Sub-renderers (Vague 1 : placeholders informatifs) ──
