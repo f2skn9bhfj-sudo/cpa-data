@@ -11932,6 +11932,1198 @@
         "Confondre déficience simple (direction) et significative (gouvernance, écrit)",
         "Oublier le caractère « en temps utile » pour les déficiences graves"
       ]
+    },
+    "300": {
+      "intro": "Un bon audit se gagne à la planification. ISA 300 organise la **stratégie générale** et le **plan d'audit détaillé** — la feuille de route qui rend la mission efficace et ciblée sur les vrais risques.",
+      "sections": [
+        {
+          "titre": "1. Activités préliminaires",
+          "body": "Avant de planifier, l'auditeur réalise les activités préliminaires :\n• Acceptation/continuation de la mission (ISA 220)\n• Évaluation de la conformité aux règles d'éthique et d'indépendance\n• Compréhension des termes de la mission (lettre de mission, ISA 210).",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Pourquoi",
+              "text": "Ces étapes garantissent qu'on a le droit et les moyens d'auditer ce client avant d'investir dans la planification détaillée."
+            }
+          ]
+        },
+        {
+          "titre": "2. Stratégie générale vs plan d'audit",
+          "body": "Deux niveaux :\n• **Stratégie générale** (haut niveau) : périmètre, calendrier, orientation, allocation des ressources, seuils de matérialité\n• **Plan d'audit** (détaillé) : nature, calendrier et étendue des procédures d'évaluation des risques + des procédures d'audit complémentaires.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "Stratégie vs Plan",
+              "text": "Stratégie = la vision d'ensemble (où, quand, qui, combien). Plan = le détail des procédures à exécuter. La stratégie cadre le plan."
+            }
+          ]
+        },
+        {
+          "titre": "3. Un processus continu",
+          "body": "La planification n'est PAS un événement ponctuel : c'est un processus **itératif et continu** qui démarre dès la fin de l'audit précédent et se poursuit jusqu'à la clôture de la mission courante. La stratégie et le plan sont mis à jour si de nouveaux éléments apparaissent.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "À retenir",
+              "text": "On documente la stratégie, le plan, et tout changement significatif en cours de mission (ISA 300.12)."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Activités préliminaires (acceptation, éthique, lettre de mission) avant la planification",
+        "Stratégie générale (haut niveau) cadre le plan d'audit (détaillé)",
+        "Planification = processus continu, pas un événement ponctuel",
+        "Documenter stratégie + plan + changements"
+      ],
+      "pieges": [
+        "Confondre stratégie (vision) et plan (détail des procédures)",
+        "Traiter la planification comme une étape figée du début",
+        "Oublier les activités préliminaires (acceptation, éthique)"
+      ]
+    },
+    "315": {
+      "intro": "ISA 315 (révisée 2019) est la **norme pivot** : tout l'audit dépend de la qualité de l'évaluation des risques. Comprendre l'entité, son contrôle interne, et identifier où se cachent les anomalies significatives. La révision 2019 a transformé l'approche.",
+      "sections": [
+        {
+          "titre": "1. Comprendre l'entité et son environnement",
+          "body": "L'auditeur doit comprendre :\n• L'entité, son secteur, son modèle d'affaires, sa stratégie\n• Le référentiel comptable applicable\n• Le **système d'information** et le **contrôle interne** (cadre COSO : environnement de contrôle, évaluation des risques par l'entité, activités de contrôle, information/communication, pilotage).",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "COSO 2013",
+              "text": "Le cadre COSO structure le SCI en 5 composantes. L'auditeur l'utilise pour comprendre et évaluer le contrôle interne du client."
+            }
+          ]
+        },
+        {
+          "titre": "2. L'innovation 2019 : le spectre du risque inhérent",
+          "body": "Avant 2019 : approche binaire (risque significatif ou non). Depuis 2019 : le risque inhérent se positionne sur un **SPECTRE** (spectrum), selon deux facteurs — la **probabilité** d'anomalie et son **ampleur** potentielle.\n\nLes **risques importants** (significant risks) se situent dans la partie haute du spectre.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Spectrum",
+              "text": "Le risque inhérent n'est plus oui/non mais un continuum. Plus on monte dans le spectre, plus la réponse d'audit doit être robuste."
+            }
+          ]
+        },
+        {
+          "titre": "3. Considérations IT et stand-back",
+          "body": "La révision 2019 renforce deux points :\n• **Considérations IT** : évaluer les contrôles généraux informatiques (ITGC), surtout dans les environnements complexes (ERP, cloud)\n• **Test de recul (stand-back)** : reculer pour vérifier que l'évaluation des risques dans son ensemble est cohérente avec la compréhension de l'entité.",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Stand-back",
+              "text": "Après avoir tout évalué, on prend du recul : « Mon évaluation globale est-elle cohérente ? N'ai-je pas sous-estimé un domaine matériel ? »"
+            }
+          ]
+        },
+        {
+          "titre": "4. Documentation renforcée",
+          "body": "Il faut documenter : les éléments clés de la compréhension de l'entité, les sources d'information, l'évaluation des contrôles, les risques identifiés et leur justification, et la **réfutation** éventuelle de la présomption de risque de fraude sur le revenu.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "NA-CH 315. En contrôle ordinaire, l'évaluation du SCI alimente aussi la vérification de l'existence du SCI (CO 728a al.1 ch.3)."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Comprendre entité + environnement + SCI (cadre COSO 5 composantes)",
+        "R2019 : spectre (spectrum) du risque inhérent (≠ binaire)",
+        "Significant risk = partie haute du spectre",
+        "IT considerations renforcées + test de recul (stand-back) + documentation"
+      ],
+      "pieges": [
+        "Approche binaire au lieu du spectre (R2019)",
+        "Négliger les contrôles généraux IT (ITGC)",
+        "Oublier le test de recul (stand-back) sur la cohérence globale"
+      ]
+    },
+    "320": {
+      "intro": "Tout n'est pas auditable au franc près. La **matérialité** définit le seuil au-delà duquel une anomalie pourrait influencer les décisions des utilisateurs. ISA 320 structure ce concept central qui guide toute la mission.",
+      "sections": [
+        {
+          "titre": "1. Les trois niveaux de matérialité",
+          "body": "• **Matérialité globale** (overall) : seuil pour les EF dans leur ensemble\n• **Matérialité de performance** (performance) : seuil inférieur, buffer pour le cumul d'anomalies non détectées\n• **Seuil de remontée** (clearly trivial threshold, CTT) : en dessous, on n'accumule pas les anomalies.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Ordre de grandeur",
+              "text": "Overall > Performance (50-75% de l'overall) > CTT (~5% de l'overall)."
+            }
+          ]
+        },
+        {
+          "titre": "2. Choix du benchmark",
+          "body": "La matérialité globale = un **pourcentage** appliqué à un **benchmark** :\n• Société rentable mature → résultat net avant impôts (5-10%)\n• Société en croissance/pertes ponctuelles → chiffre d'affaires (0,5-1%)\n• Société en pertes structurelles → total actif ou fonds propres (1-2%).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Toujours justifier",
+              "text": "Le choix du benchmark doit être JUSTIFIÉ selon la nature de l'entité et les attentes des utilisateurs. C'est un jugement, pas un automatisme."
+            }
+          ]
+        },
+        {
+          "titre": "3. Révision de la matérialité",
+          "body": "La matérialité n'est pas figée : on la **révise** si de nouvelles informations apparaissent (acquisition, événement non récurrent, résultat réel très différent de l'estimé > 10%). Une révision à la baisse peut imposer des procédures supplémentaires.",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Facteurs de risque",
+              "text": "En présence de facteurs de risque (nouveau CFO, migration ERP, croissance forte), on retient une matérialité plus basse + une performance materiality à 50-65%."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "3 niveaux : overall > performance (50-75%) > CTT (~5%)",
+        "Benchmark selon l'entité : résultat (rentable), CA (croissance), actif (pertes)",
+        "Toujours justifier le benchmark",
+        "Réviser la matérialité si nouvelles infos"
+      ],
+      "pieges": [
+        "Confondre overall et performance materiality",
+        "Donner une matérialité sans justifier le benchmark",
+        "Oublier de réviser la matérialité en cours de mission"
+      ]
+    },
+    "330": {
+      "intro": "Une fois les risques évalués (ISA 315), il faut **y répondre**. ISA 330 conçoit les réponses : réponses globales + procédures d'audit complémentaires (tests des contrôles et procédures de substance). C'est le cœur opérationnel de l'audit.",
+      "sections": [
+        {
+          "titre": "1. Réponses globales",
+          "body": "Face aux risques au niveau des EF, l'auditeur déploie des **réponses globales** : renforcement du scepticisme, affectation de personnel plus expérimenté, supervision accrue, et introduction d'un élément d'**imprévisibilité** dans les procédures.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Imprévisibilité",
+              "text": "Varier les procédures d'une année à l'autre empêche le client de « préparer » uniquement les zones habituellement testées."
+            }
+          ]
+        },
+        {
+          "titre": "2. Tests des contrôles vs procédures de substance",
+          "body": "• **Tests des contrôles** (TOC) : si l'auditeur compte s'appuyer sur l'efficacité des contrôles pour réduire les tests de substance\n• **Procédures de substance** : tests de détails + procédures analytiques de substance, qui détectent directement les anomalies.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "TOC vs Substance",
+              "text": "TOC = tester si le contrôle fonctionne (operating effectiveness). Substance = tester directement le solde/la transaction."
+            }
+          ]
+        },
+        {
+          "titre": "3. Les deux obligations absolues",
+          "body": "Deux règles incontournables :\n• **§18** : des procédures de substance pour CHAQUE catégorie de transactions, solde et information significatifs\n• **§21** : des procédures de substance pour CHAQUE **risque important** (significant risk), même si les contrôles sont jugés efficaces.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "§21 absolu",
+              "text": "Pour un significant risk, on ne peut JAMAIS se contenter des tests de contrôles : des procédures de substance sont TOUJOURS requises."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Réponses globales : scepticisme, ressources, supervision, imprévisibilité",
+        "TOC (efficacité des contrôles) vs procédures de substance (détection directe)",
+        "§18 : substance pour chaque catégorie significative",
+        "§21 : substance OBLIGATOIRE pour chaque significant risk"
+      ],
+      "pieges": [
+        "Se reposer uniquement sur les TOC pour un significant risk (interdit §21)",
+        "Oublier les réponses globales (scepticisme, imprévisibilité)",
+        "Tester les contrôles sans intention de s'y appuyer (perte de temps)"
+      ]
+    },
+    "402": {
+      "intro": "De plus en plus d'entreprises externalisent (paie, IT, cloud). ISA 402 traite l'audit d'une entité qui fait appel à une **société de services**, et comment s'appuyer sur les rapports SOC (ISAE 3402).",
+      "sections": [
+        {
+          "titre": "1. Comprendre les services externalisés",
+          "body": "L'auditeur comprend la nature et l'importance des services externalisés pour le SCI de l'entité utilisatrice. Exemples : paie, hébergement IT/cloud, gestion d'actifs, comptabilité.\n\nPlus le service est intégré au reporting financier, plus l'auditeur doit obtenir d'assurance sur les contrôles de la société de services.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Enjeu",
+              "text": "Les contrôles clés peuvent se trouver CHEZ le prestataire, hors de portée directe de l'auditeur de l'entité."
+            }
+          ]
+        },
+        {
+          "titre": "2. Méthode inclusive vs carve-out",
+          "body": "• **Méthode inclusive** : l'auditeur teste directement les contrôles chez le prestataire\n• **Méthode carve-out** : l'auditeur s'appuie sur un **rapport SOC 1** (ISAE 3402) émis par l'auditeur du prestataire (service auditor).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Type 1 vs Type 2",
+              "text": "SOC 1 Type 1 = description + conception des contrôles à une date. Type 2 = Type 1 + EFFICACITÉ OPÉRATIONNELLE sur une période (6-12 mois). Seul le Type 2 permet de s'appuyer sur l'efficacité."
+            }
+          ]
+        },
+        {
+          "titre": "3. Les CUEC",
+          "body": "Un rapport SOC mentionne souvent des **CUEC** (Complementary User Entity Controls) : des contrôles que l'entité UTILISATRICE doit mettre en place pour que les contrôles du prestataire soient efficaces. L'auditeur vérifie que ces CUEC existent chez son client.",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Lien M9",
+              "text": "Sujet très lié à l'audit IT et au cloud (IaaS/PaaS/SaaS) — voir le module IT & analyse de données."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Comprendre les services externalisés et leur impact sur le SCI",
+        "Méthode inclusive (tests directs) OU carve-out (rapport SOC 1)",
+        "SOC 1 Type 2 = efficacité sur période = exploitable",
+        "Vérifier les CUEC (contrôles à la charge de l'utilisateur)"
+      ],
+      "pieges": [
+        "Se fier à un SOC Type 1 pour conclure sur l'efficacité (il faut Type 2)",
+        "Oublier de vérifier les CUEC chez le client",
+        "Penser que l'externalisation déresponsabilise l'auditeur"
+      ]
+    },
+    "450": {
+      "intro": "À mesure que l'audit progresse, on accumule des anomalies. ISA 450 dit comment les **évaluer** : les cumuler, demander leur correction, et juger de l'impact des anomalies non corrigées sur l'opinion.",
+      "sections": [
+        {
+          "titre": "1. Accumuler les anomalies",
+          "body": "L'auditeur **accumule** toutes les anomalies identifiées au cours de l'audit, sauf celles clairement insignifiantes (sous le CTT). Il distingue les anomalies **factuelles** (certaines), **de jugement** (estimations) et **extrapolées** (projetées depuis un échantillon).",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "CTT",
+              "text": "Le seuil de remontée (clearly trivial threshold) filtre les anomalies trop petites pour mériter d'être accumulées (~5% de l'overall)."
+            }
+          ]
+        },
+        {
+          "titre": "2. Communiquer et demander correction",
+          "body": "L'auditeur communique les anomalies à la direction en temps utile et demande leur **correction**. Si la direction refuse de corriger, l'auditeur comprend ses raisons et en tient compte dans l'évaluation finale.",
+          "callouts": [
+            {
+              "type": "example",
+              "label": "Passed adjustments",
+              "text": "Les anomalies non corrigées (passed adjustments) sont consignées dans un tableau comparé à la matérialité de performance."
+            }
+          ]
+        },
+        {
+          "titre": "3. Évaluer l'effet sur l'opinion + matérialité qualitative",
+          "body": "L'auditeur évalue l'effet des anomalies non corrigées, **individuellement ET cumulées**, par rapport à la matérialité. Au-delà → opinion modifiée.\n\nCrucial : la **matérialité qualitative** — une anomalie quantitativement faible peut être significative (inversion d'un résultat en perte, franchissement d'un covenant, indice de fraude, transaction avec partie liée).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Qualitatif",
+              "text": "Ne jamais évaluer la matérialité uniquement en montant. Le contexte (fraude, covenant, tendance) peut rendre significative une petite anomalie."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Accumuler les anomalies (sauf < CTT) : factuelles, de jugement, extrapolées",
+        "Communiquer + demander correction (passed adjustments)",
+        "Évaluer l'effet individuel ET cumulé vs matérialité",
+        "Matérialité QUALITATIVE : une petite anomalie peut être significative"
+      ],
+      "pieges": [
+        "Évaluer la matérialité uniquement en montant (oublier le qualitatif)",
+        "Ne pas accumuler les petites anomalies au-dessus du CTT",
+        "Oublier la déclaration écrite sur les anomalies non corrigées (ISA 580)"
+      ]
+    },
+    "500": {
+      "intro": "ISA 500 est le **cœur technique** de l'audit : qu'est-ce qu'un bon élément probant et comment l'obtenir. Toutes les autres normes de la série 500 en découlent.",
+      "sections": [
+        {
+          "titre": "1. Suffisance et caractère approprié",
+          "body": "Deux qualités indissociables :\n• **Suffisance** = la QUANTITÉ d'éléments probants\n• **Caractère approprié** = la QUALITÉ = pertinence (l'élément teste bien l'assertion visée) + fiabilité (la source est crédible).\n\nPlus le risque est élevé, plus il faut d'éléments (suffisance) ET de meilleure qualité (approprié).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Le binôme",
+              "text": "Suffisant (quantité) + Approprié (qualité = pertinence + fiabilité). Les deux sont nécessaires."
+            }
+          ]
+        },
+        {
+          "titre": "2. Hiérarchie de fiabilité",
+          "body": "La fiabilité augmente quand l'élément est :\n• d'origine **externe** (> interne)\n• obtenu **directement** par l'auditeur (> indirectement)\n• sous forme **écrite/documentaire** (> orale)\n• **original** (> copie/scan).\n\nUn contrôle interne efficace renforce aussi la fiabilité des éléments internes.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Règle",
+              "text": "Externe > interne ; écrit > oral ; direct > indirect ; original > copie."
+            }
+          ]
+        },
+        {
+          "titre": "3. Les 7 procédures d'audit",
+          "body": "Pour obtenir des éléments probants : **inspection** (documents/actifs), **observation**, **confirmation externe**, **recalcul**, **ré-exécution** (refaire un contrôle), **procédures analytiques**, **demandes d'informations** (inquiry).\n\nLes demandes seules ne suffisent jamais : elles doivent être corroborées.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Attention",
+              "text": "Une demande d'information (inquiry) n'est JAMAIS un élément probant suffisant à elle seule — il faut corroborer."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Suffisant (quantité) + Approprié (pertinence + fiabilité)",
+        "Fiabilité : externe>interne, écrit>oral, direct>indirect, original>copie",
+        "7 procédures : inspection, observation, confirmation, recalcul, ré-exécution, analytique, demande",
+        "Les demandes seules ne suffisent pas (corroborer)"
+      ],
+      "pieges": [
+        "Se fier aux seules déclarations de la direction sans corroboration",
+        "Confondre suffisance (quantité) et caractère approprié (qualité)",
+        "Surestimer la fiabilité d'un document interne non contrôlé"
+      ]
+    },
+    "501": {
+      "intro": "ISA 501 cible trois domaines qui demandent des procédures spécifiques : les **stocks**, les **litiges** et l'**information sectorielle**.",
+      "sections": [
+        {
+          "titre": "1. Stocks — assistance à l'inventaire",
+          "body": "Si les stocks sont significatifs, l'auditeur **assiste à l'inventaire physique** : il observe le comptage, évalue les procédures, et effectue des **comptages tests** (test counts) dans les deux sens (du stock vers la feuille et de la feuille vers le stock).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Obligatoire",
+              "text": "Stocks significatifs → assistance physique OBLIGATOIRE (existence + état). Si impossible → procédures alternatives ou limitation."
+            }
+          ]
+        },
+        {
+          "titre": "2. Litiges et contentieux",
+          "body": "L'auditeur identifie les litiges et contentieux (demandes à la direction, lecture des PV, revue des honoraires d'avocats) et obtient, si nécessaire, une **lettre de l'avocat** de l'entité confirmant l'évaluation des risques.",
+          "callouts": [
+            {
+              "type": "example",
+              "label": "Exemple",
+              "text": "Pour un procès en cours, la lettre de l'avocat aide à évaluer la probabilité de perte et le montant → provision (RPC 23) ou passif éventuel."
+            }
+          ]
+        },
+        {
+          "titre": "3. Information sectorielle",
+          "body": "Quand le référentiel l'exige, l'auditeur obtient des éléments probants sur la présentation et la divulgation de l'information sectorielle (segments).",
+          "callouts": []
+        }
+      ],
+      "synthese": [
+        "Stocks significatifs → assistance à l'inventaire physique obligatoire",
+        "Comptages tests dans les deux sens (floor-to-sheet, sheet-to-floor)",
+        "Litiges → lettre à l'avocat de l'entité",
+        "Information sectorielle si exigée par le référentiel"
+      ],
+      "pieges": [
+        "Ne pas assister à l'inventaire de stocks significatifs",
+        "Oublier la lettre de l'avocat pour les litiges",
+        "Faire les comptages tests dans un seul sens"
+      ]
+    },
+    "505": {
+      "intro": "La **confirmation externe** est l'une des procédures les plus fiables : obtenir une réponse écrite directe d'un tiers (banque, client, fournisseur, avocat). ISA 505 en encadre la mise en œuvre.",
+      "sections": [
+        {
+          "titre": "1. Positive vs négative",
+          "body": "• **Demande positive** : le tiers doit répondre dans tous les cas (qu'il soit d'accord ou non) → plus fiable\n• **Demande négative** : le tiers ne répond QUE s'il est en désaccord → moins fiable (l'absence de réponse est ambiguë).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Choix",
+              "text": "La confirmation positive est privilégiée pour les soldes importants ou les zones à risque. La négative seulement pour de nombreux petits soldes à faible risque."
+            }
+          ]
+        },
+        {
+          "titre": "2. Garder le contrôle du processus",
+          "body": "L'auditeur **contrôle** tout le processus : sélection des tiers, préparation, envoi, et réception directe (jamais via le client). Cela évite l'interception ou la falsification des réponses.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Risque",
+              "text": "Si le client intercepte ou prépare les réponses, la fiabilité s'effondre. L'auditeur doit garder la main de bout en bout."
+            }
+          ]
+        },
+        {
+          "titre": "3. Non-réponses et exceptions",
+          "body": "Pour les **non-réponses** (demandes positives), l'auditeur met en œuvre des **procédures alternatives** (ex. examen des encaissements postérieurs, des factures et bons de livraison). Les **exceptions** (écarts) sont investiguées pour en comprendre la cause.",
+          "callouts": []
+        }
+      ],
+      "synthese": [
+        "Positive (réponse toujours) > négative (réponse si désaccord)",
+        "L'auditeur garde le CONTRÔLE de l'envoi et de la réception",
+        "Non-réponses → procédures alternatives",
+        "Exceptions → investiguer la cause"
+      ],
+      "pieges": [
+        "Laisser le client gérer l'envoi/réception des confirmations",
+        "Se fier aux confirmations négatives pour des zones à risque",
+        "Ignorer les non-réponses sans procédures alternatives"
+      ]
+    },
+    "510": {
+      "intro": "Lors d'un **premier audit** (nouveau client ou changement d'auditeur), les soldes d'ouverture n'ont pas été audités par soi. ISA 510 dit comment les valider.",
+      "sections": [
+        {
+          "titre": "1. Le risque des soldes d'ouverture",
+          "body": "Une erreur dans les soldes d'ouverture affecte le résultat de l'exercice courant. L'auditeur doit obtenir des éléments probants sur le fait que les soldes d'ouverture ne comportent pas d'anomalies significatives.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Pourquoi",
+              "text": "Le bilan d'ouverture N = le bilan de clôture N-1. S'il est faux, le résultat N est faussé."
+            }
+          ]
+        },
+        {
+          "titre": "2. Procédures",
+          "body": "L'auditeur :\n• Vérifie que les soldes de clôture N-1 ont été correctement reportés\n• Évalue la cohérence des méthodes comptables\n• Consulte le dossier de l'**auditeur précédent** (avec accord du client)\n• Effectue des procédures spécifiques (ex. recouvrement des créances N-1).",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Reprise de mandat",
+              "text": "Le contact avec l'auditeur précédent est une étape clé d'une reprise de mandat propre."
+            }
+          ]
+        },
+        {
+          "titre": "3. Impact sur l'opinion",
+          "body": "Si l'auditeur ne peut pas obtenir d'éléments suffisants sur les soldes d'ouverture, ou s'ils comportent une anomalie non corrigée affectant l'exercice → **opinion modifiée** (qualified).",
+          "callouts": []
+        }
+      ],
+      "synthese": [
+        "Premier audit → valider les soldes d'ouverture",
+        "Vérifier report, cohérence des méthodes, dossier auditeur précédent",
+        "Soldes d'ouverture erronés → impact sur l'opinion"
+      ],
+      "pieges": [
+        "Présumer que les soldes d'ouverture sont corrects sans procédures",
+        "Oublier de contacter l'auditeur précédent (avec accord)",
+        "Négliger la cohérence des méthodes comptables"
+      ]
+    },
+    "520": {
+      "intro": "Les **procédures analytiques** comparent des données pour détecter l'inattendu. ISA 520 les régit comme procédures de substance et en revue finale.",
+      "sections": [
+        {
+          "titre": "1. Le principe",
+          "body": "Analyser les **relations plausibles** entre données financières et non financières (ratios, tendances, comparaisons N/N-1, vs budget, vs secteur). Un écart inattendu peut révéler une anomalie.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Exemple de relation",
+              "text": "Si le CA augmente de 20% mais la masse salariale baisse, c'est un écart à investiguer."
+            }
+          ]
+        },
+        {
+          "titre": "2. Analytiques de substance",
+          "body": "Pour les utiliser comme procédure de substance, l'auditeur :\n• développe une **attente** suffisamment précise\n• définit un **seuil d'écart acceptable**\n• **investigue** les écarts au-delà du seuil\n• évalue la **fiabilité** des données utilisées.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Rigueur",
+              "text": "Une analytique de substance n'est valable que si l'attente est précise et la donnée fiable. Sinon, elle ne prouve rien."
+            }
+          ]
+        },
+        {
+          "titre": "3. Analytiques finales",
+          "body": "À la fin de l'audit, des **procédures analytiques finales** (overall review) sont **obligatoires** : elles vérifient que les EF dans leur ensemble sont cohérents avec la compréhension de l'entité.",
+          "callouts": []
+        }
+      ],
+      "synthese": [
+        "Analyser les relations plausibles (ratios, tendances, vs N-1/budget/secteur)",
+        "Substance : attente précise + seuil + investigation + données fiables",
+        "Analytiques finales (overall review) OBLIGATOIRES",
+        "3 moments : planification, substance, conclusion"
+      ],
+      "pieges": [
+        "Utiliser une attente trop vague (analytique sans valeur probante)",
+        "Oublier les analytiques finales obligatoires",
+        "Ne pas vérifier la fiabilité des données analysées"
+      ]
+    },
+    "530": {
+      "intro": "On ne teste pas 100% des transactions : on **sonde**. ISA 530 régit l'échantillonnage — comment sélectionner, tester et extrapoler.",
+      "sections": [
+        {
+          "titre": "1. Statistique vs non statistique",
+          "body": "• **Échantillonnage statistique** : sélection aléatoire + évaluation probabiliste (ex. MUS — Monetary Unit Sampling)\n• **Non statistique** : sélection par jugement.\n\nDans les deux cas, l'échantillon doit être **représentatif** de la population.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "MUS",
+              "text": "Le Monetary Unit Sampling pondère la sélection par les montants : les gros postes ont plus de chances d'être sélectionnés."
+            }
+          ]
+        },
+        {
+          "titre": "2. Risque d'échantillonnage",
+          "body": "Le **risque d'échantillonnage** = le risque que la conclusion sur l'échantillon diffère de la conclusion sur la population entière. On le réduit en augmentant la taille de l'échantillon.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "Attribute vs Variable",
+              "text": "Attribute sampling = tests des contrôles (taux de déviation). Variable/MUS = procédures de substance (montants)."
+            }
+          ]
+        },
+        {
+          "titre": "3. Analyser et extrapoler",
+          "body": "Toute anomalie/déviation détectée doit être **analysée** (nature + cause). Pour les procédures de substance, on **extrapole** l'anomalie à la population. On évalue ensuite si le sondage fournit une base raisonnable de conclusion.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Cause",
+              "text": "Toujours comprendre la CAUSE d'une anomalie : isolée ou systématique ? Une erreur systématique change tout."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Statistique (MUS, aléatoire) vs non statistique (jugement)",
+        "Échantillon représentatif ; risque d'échantillonnage ↓ avec la taille",
+        "Attribute (contrôles) vs Variable/MUS (substance)",
+        "Analyser la cause + extrapoler les anomalies"
+      ],
+      "pieges": [
+        "Ne pas analyser la cause d'une anomalie (isolée vs systématique)",
+        "Oublier d'extrapoler l'anomalie à la population",
+        "Échantillon non représentatif de la population"
+      ]
+    },
+    "540": {
+      "intro": "Les **estimations comptables** (dépréciations, provisions, juste valeur) sont subjectives et risquées. ISA 540 (révisée 2018) impose une approche bien plus rigoureuse.",
+      "sections": [
+        {
+          "titre": "1. Pourquoi c'est risqué",
+          "body": "Les estimations comportent une **incertitude d'estimation** inhérente. Elles sont un terrain privilégié de **biais de la direction** (lissage de résultat, gestion des attentes). Exemples : goodwill (IAS 36), ECL (IFRS 9), provisions (IAS 37), retraites (IAS 19).",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "R2018",
+              "text": "La révision 2018 répond aux scandales liés aux estimations agressives. Norme bien plus exigeante."
+            }
+          ]
+        },
+        {
+          "titre": "2. Les 3 facteurs de risque inhérent",
+          "body": "L'auditeur évalue le risque via trois facteurs : la **complexité** (du modèle/calcul), la **subjectivité** (des hypothèses), et l'**incertitude d'estimation** (plage de résultats possibles).",
+          "callouts": []
+        },
+        {
+          "titre": "3. Tester les 3 dimensions + stand-back",
+          "body": "On teste l'estimation selon trois dimensions : la **MÉTHODE** (le modèle est-il approprié ?), les **HYPOTHÈSES** (réalistes ? cohérentes avec les budgets ?), et les **DONNÉES** (fiables ? pertinentes ?). Puis un **test de recul (stand-back)** sur le caractère raisonnable global, en restant attentif aux indices de **biais**.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "MHD",
+              "text": "Méthode + Hypothèses + Données = les 3 dimensions à tester systématiquement (R2018)."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Estimations = incertitude + risque de biais de la direction",
+        "3 facteurs de risque : complexité, subjectivité, incertitude d'estimation",
+        "Tester 3 dimensions : Méthode + Hypothèses + Données (MHD)",
+        "Stand-back + détection du management bias"
+      ],
+      "pieges": [
+        "Accepter l'estimation de la direction sans tester les 3 dimensions",
+        "Ne pas détecter le biais de la direction (lissage)",
+        "Oublier le test de recul (stand-back)"
+      ]
+    },
+    "550": {
+      "intro": "Les **parties liées** (sociétés du groupe, dirigeants, proches) sont un vecteur classique de fraude et de transactions hors marché. ISA 550 organise leur audit.",
+      "sections": [
+        {
+          "titre": "1. Le risque des parties liées",
+          "body": "Les transactions avec parties liées peuvent : masquer une fraude, se faire à des conditions hors marché, ou impliquer des structures opaques. Le risque est accru car ces transactions échappent aux mécanismes de marché.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Vigilance",
+              "text": "Rester attentif aux parties liées NON divulguées par la direction — c'est là que se cachent les vrais risques."
+            }
+          ]
+        },
+        {
+          "titre": "2. Procédures",
+          "body": "L'auditeur comprend les relations et transactions avec parties liées (demandes, revue des contrats, des PV), reste vigilant pendant tout l'audit, et évalue les transactions **hors du cours normal** des affaires.",
+          "callouts": []
+        },
+        {
+          "titre": "3. Comptabilisation et présentation",
+          "body": "L'auditeur évalue la comptabilisation et la **présentation** (disclosures) des transactions avec parties liées, conformément au référentiel (RPC 15 / IAS 24).",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "RPC 15 : la mention « aux conditions du marché » seule ne suffit PAS — le lecteur doit pouvoir juger lui-même."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Parties liées = risque de fraude + transactions hors marché",
+        "Vigilance sur les parties liées NON divulguées",
+        "Évaluer les transactions hors du cours normal",
+        "Présentation conforme à RPC 15 / IAS 24"
+      ],
+      "pieges": [
+        "Se fier à la liste de parties liées fournie par la direction sans vigilance",
+        "Accepter « aux conditions du marché » sans éléments (RPC 15)",
+        "Négliger les transactions hors cours normal"
+      ]
+    },
+    "560": {
+      "intro": "Entre la clôture et la publication, des événements peuvent survenir. ISA 560 définit la responsabilité de l'auditeur sur ces **événements postérieurs**.",
+      "sections": [
+        {
+          "titre": "1. Trois périodes",
+          "body": "• **Avant la date du rapport** : procédures actives obligatoires\n• **Entre la date du rapport et la publication des EF** : pas d'obligation active, mais réagir si un fait est porté à la connaissance\n• **Après la publication** : pas d'obligation, mais agir si un fait matériel est découvert.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Date du rapport",
+              "text": "La date du rapport = moment où l'auditeur a obtenu les éléments probants suffisants. Elle marque la frontière des périodes."
+            }
+          ]
+        },
+        {
+          "titre": "2. Procédures actives (période 1)",
+          "body": "Lecture des PV postérieurs, demandes à la direction, examen des derniers états intermédiaires, recherche d'événements (litiges, faillites de clients, sinistres).",
+          "callouts": []
+        },
+        {
+          "titre": "3. Ajustable vs non ajustable",
+          "body": "• **Ajustable** : l'événement confirme une condition existant à la clôture → **ajuster** les EF (ex. faillite d'un client dont la créance existait au 31.12)\n• **Non ajustable** : nouvel événement → **disclosure** si significatif (ex. incendie d'une usine en janvier).",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "IAS 10",
+              "text": "Ajustable = condition à la clôture → ajuster. Non ajustable = nouvel événement → mentionner. Même logique qu'IAS 10 / RPC 6."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "3 périodes : avant rapport / entre rapport-publication / après publication",
+        "Avant le rapport : procédures actives obligatoires",
+        "Ajustable (condition à la clôture) → ajuster ; non ajustable → disclosure"
+      ],
+      "pieges": [
+        "Confondre événement ajustable et non ajustable",
+        "Oublier les procédures actives avant la date du rapport",
+        "Ne pas réagir à un fait matériel découvert après publication"
+      ]
+    },
+    "570": {
+      "intro": "La **continuité d'exploitation** (going concern) conditionne toute la comptabilité. ISA 570 (révisée 2024) structure l'évaluation et son impact sur le rapport — un sujet à très fort enjeu, surtout en Suisse (CO 725).",
+      "sections": [
+        {
+          "titre": "1. L'hypothèse de continuité",
+          "body": "Les EF sont préparés en supposant que l'entité poursuivra son activité dans un futur prévisible. Si cette hypothèse n'est plus valable, les EF doivent passer en **valeurs de liquidation** (CO 958a en Suisse).",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Période",
+              "text": "Évaluation sur ≥ 12 mois depuis la DATE DU RAPPORT (pas la clôture)."
+            }
+          ]
+        },
+        {
+          "titre": "2. Démarche en 3 étapes",
+          "body": "• Évaluer l'analyse de continuité de la direction (documentée, ≥ 12 mois, de qualité)\n• Tester les hypothèses clés (refinancement, trésorerie, covenants, actions de la direction)\n• Conclure et identifier toute **incertitude significative**.",
+          "callouts": []
+        },
+        {
+          "titre": "3. Les 4 scénarios d'opinion",
+          "body": "• Pas de doute → **clean**\n• Incertitude + disclosure ADÉQUATE → **clean + paragraphe « Material Uncertainty »**\n• Incertitude + disclosure INADÉQUATE → opinion modifiée (qualified/adverse)\n• Continuité INAPPROPRIÉE (EF en valeurs d'exploitation à tort) → **adverse**.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "PIÈGE",
+              "text": "Incertitude + disclosure adéquate = opinion CLEAN avec paragraphe spécial, PAS qualified ! Erreur classique."
+            }
+          ]
+        },
+        {
+          "titre": "4. Lien suisse CO 725",
+          "body": "En Suisse, le going concern croise le droit de la SA : perte de capital (CO 725a), surendettement (CO 725b). Si le CA n'agit pas face au surendettement, l'auditeur DOIT aviser le juge (CO 725b al.4).",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Spécificité suisse",
+              "text": "L'obligation d'aviser le juge en cas de surendettement et d'inaction du CA est unique au monde."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Going concern = ≥ 12 mois depuis la DATE DU RAPPORT",
+        "Démarche : évaluer analyse direction → tester hypothèses → conclure",
+        "4 scénarios (CDQA) ; incertitude + disclosure adéquate = CLEAN + paragraphe",
+        "Lien CO 725 : avis au juge si surendettement + CA inactif"
+      ],
+      "pieges": [
+        "Croire qu'incertitude significative = opinion qualified (c'est clean + paragraphe)",
+        "Calculer les 12 mois depuis la clôture au lieu de la date du rapport",
+        "Oublier l'obligation suisse d'aviser le juge (CO 725b)"
+      ]
+    },
+    "580": {
+      "intro": "Avant de signer, l'auditeur obtient de la direction des **déclarations écrites** (lettre de représentation / LoR). ISA 580 en définit le rôle et les limites.",
+      "sections": [
+        {
+          "titre": "1. Rôle de la LoR",
+          "body": "La **lettre de représentation** est un élément probant par lequel la direction confirme par écrit qu'elle a rempli ses responsabilités et fourni toutes les informations. Elle est obtenue à une date proche de celle du rapport.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Contenu",
+              "text": "Responsabilité des EF + SCI, exhaustivité des transactions, divulgation des fraudes/litiges/parties liées, anomalies non corrigées non significatives."
+            }
+          ]
+        },
+        {
+          "titre": "2. Ce qu'elle ne fait pas",
+          "body": "La LoR **complète** mais ne **remplace JAMAIS** les autres éléments probants. Si une déclaration est la seule preuve disponible sur un sujet important, c'est insuffisant.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Limite",
+              "text": "La LoR n'est pas un substitut aux procédures d'audit. Elle confirme, elle ne prouve pas à elle seule."
+            }
+          ]
+        },
+        {
+          "titre": "3. Refus ou incohérence",
+          "body": "Si la direction **refuse** de fournir la LoR, ou si les déclarations sont incohérentes avec d'autres éléments probants, cela jette un doute sur l'intégrité de la direction → impact possible jusqu'au **disclaimer** (impossibilité d'exprimer une opinion).",
+          "callouts": []
+        }
+      ],
+      "synthese": [
+        "LoR = déclarations écrites de la direction, proche de la date du rapport",
+        "Confirme responsabilités + exhaustivité + divulgations",
+        "Complète mais ne REMPLACE PAS les autres éléments probants",
+        "Refus de signer = doute sur l'intégrité → disclaimer possible"
+      ],
+      "pieges": [
+        "Considérer la LoR comme un substitut aux procédures d'audit",
+        "Obtenir la LoR trop tôt (doit être proche de la date du rapport)",
+        "Ignorer une incohérence entre la LoR et d'autres éléments"
+      ]
+    },
+    "600": {
+      "intro": "Auditer un **groupe** = coordonner plusieurs auditeurs sur plusieurs entités. ISA 600 (révisée 2022) organise cette complexité avec une approche fondée sur les risques.",
+      "sections": [
+        {
+          "titre": "1. Équipe du groupe et component auditors",
+          "body": "L'**équipe du groupe** (group engagement team) dirige l'audit consolidé. Les **component auditors** auditent les composants (filiales). L'équipe du groupe garde la responsabilité GLOBALE de l'opinion du groupe.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Responsabilité",
+              "text": "Le group engagement partner reste SEUL responsable de l'opinion sur les comptes consolidés, même si des composants sont audités par d'autres."
+            }
+          ]
+        },
+        {
+          "titre": "2. L'approche risk-based (R2022)",
+          "body": "La révision 2022 **abandonne** le terme « significant component » au profit d'une approche fondée sur les **risques** : on identifie où se situent les risques d'anomalies significatives dans le groupe, et on calibre les travaux en conséquence.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Changement",
+              "text": "Ne plus raisonner en composants significatifs/non significatifs, mais en termes de risques au niveau du groupe."
+            }
+          ]
+        },
+        {
+          "titre": "3. Travailler avec les component auditors",
+          "body": "L'équipe du groupe : évalue la **compétence et l'indépendance** des component auditors, leur communique des **instructions de groupe** (matérialité du composant, risques, calendrier), et **dirige, supervise et révise** leurs travaux.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "Matérialité",
+              "text": "Component materiality < group materiality, pour éviter que des anomalies non détectées s'agrègent au-dessus de la matérialité du groupe."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Group engagement team dirige ; component auditors auditent les composants",
+        "Le group partner garde l'ENTIÈRE responsabilité de l'opinion",
+        "R2022 : approche risk-based (fin du « significant component »)",
+        "Évaluer/diriger les component auditors ; component materiality < group"
+      ],
+      "pieges": [
+        "Penser que la responsabilité se partage avec les component auditors",
+        "Raisonner encore en « significant component » (supprimé R2022)",
+        "Fixer la component materiality = group materiality"
+      ]
+    },
+    "610": {
+      "intro": "Beaucoup d'entreprises ont une fonction d'**audit interne**. ISA 610 dit comment l'auditeur externe peut utiliser ses travaux — sans jamais diluer sa propre responsabilité.",
+      "sections": [
+        {
+          "titre": "1. Évaluer la fonction d'audit interne",
+          "body": "Avant d'utiliser ses travaux, l'auditeur externe évalue : l'**objectivité** de la fonction (rattachement, indépendance), sa **compétence** (qualifications), et son **approche systématique et rigoureuse**.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "3 critères",
+              "text": "Objectivité + Compétence + Approche systématique. Si l'un manque, on ne peut pas s'appuyer sur l'audit interne."
+            }
+          ]
+        },
+        {
+          "titre": "2. Utilisation des travaux vs assistance directe",
+          "body": "• **Utilisation des travaux** : s'appuyer sur des travaux déjà réalisés par l'audit interne\n• **Assistance directe** : utiliser des auditeurs internes sous la direction/supervision/revue de l'auditeur externe (interdite dans certaines juridictions).",
+          "callouts": []
+        },
+        {
+          "titre": "3. La responsabilité reste entière",
+          "body": "L'auditeur externe reste **SEUL responsable** de l'opinion. Plus le risque/jugement est élevé, moins il peut s'appuyer sur l'audit interne. Les décisions de jugement significatives ne se délèguent pas.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Limite",
+              "text": "On ne peut JAMAIS déléguer à l'audit interne les jugements significatifs ni la responsabilité de l'opinion."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Évaluer : objectivité + compétence + approche systématique",
+        "Utilisation des travaux OU assistance directe",
+        "L'auditeur externe garde l'ENTIÈRE responsabilité de l'opinion",
+        "Moins on s'appuie quand le risque/jugement est élevé"
+      ],
+      "pieges": [
+        "Déléguer des jugements significatifs à l'audit interne",
+        "Utiliser l'audit interne sans évaluer son objectivité/compétence",
+        "Croire que la responsabilité se partage"
+      ]
+    },
+    "620": {
+      "intro": "Certains sujets dépassent l'expertise comptable (évaluations, actuariat, ingénierie). ISA 620 encadre le recours à un **expert désigné par l'auditeur**.",
+      "sections": [
+        {
+          "titre": "1. Quand recourir à un expert",
+          "body": "Pour des domaines spécialisés : évaluation immobilière, calculs actuariels (LPP), estimation de juste valeur complexe, expertise juridique, environnementale. L'expert apporte une compétence que l'équipe n'a pas.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Expert de l'auditeur",
+              "text": "À distinguer de l'expert de la DIRECTION : ici c'est l'auditeur qui mandate l'expert pour ses propres besoins."
+            }
+          ]
+        },
+        {
+          "titre": "2. Évaluer l'expert et ses travaux",
+          "body": "L'auditeur évalue la **compétence, les capacités et l'objectivité** de l'expert, comprend son domaine, convient de l'étendue de ses travaux, et évalue le caractère adéquat de ses conclusions comme éléments probants.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "3 critères",
+              "text": "Compétence + Capacités + Objectivité. Plus l'expert est interne/lié, plus son objectivité doit être examinée."
+            }
+          ]
+        },
+        {
+          "titre": "3. Référence dans le rapport",
+          "body": "L'auditeur ne **référence pas** l'expert dans son rapport (sauf si la loi l'exige), car cela pourrait être perçu comme un partage de responsabilité. L'opinion reste celle de l'auditeur.",
+          "callouts": []
+        }
+      ],
+      "synthese": [
+        "Recours pour domaines spécialisés (évaluation, actuariat, juridique)",
+        "Expert de l'auditeur ≠ expert de la direction",
+        "Évaluer : compétence + capacités + objectivité",
+        "Ne pas référer à l'expert dans le rapport (sauf loi)"
+      ],
+      "pieges": [
+        "Confondre expert de l'auditeur et expert de la direction",
+        "Référencer l'expert dans le rapport (partage de responsabilité)",
+        "Ne pas évaluer l'objectivité de l'expert"
+      ]
+    },
+    "700": {
+      "intro": "Le rapport d'audit est le **produit final** : l'opinion, communiquée clairement. ISA 700 (révisée 2015) en standardise la structure, avec l'opinion désormais EN PREMIER.",
+      "sections": [
+        {
+          "titre": "1. Former l'opinion",
+          "body": "L'auditeur conclut s'il a obtenu une **assurance raisonnable** que les EF ne comportent pas d'anomalies significatives. Il évalue : conformité au référentiel, caractère approprié des méthodes, caractère raisonnable des estimations, et présentation d'ensemble.",
+          "callouts": []
+        },
+        {
+          "titre": "2. Structure du rapport (depuis 2016)",
+          "body": "Ordre standardisé :\n• Titre + destinataire\n• **OPINION** (en premier !)\n• **Fondement de l'opinion** (avec mention explicite de l'indépendance)\n• Material Uncertainty going concern (si applicable)\n• **KAM** (pour les EIP)\n• Responsabilités (direction + auditeur)\n• Signature, lieu, date.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "2016",
+              "text": "Depuis 2016 : opinion EN PREMIER (visibilité) + indépendance explicite dans le fondement."
+            }
+          ]
+        },
+        {
+          "titre": "3. Spécificités suisses",
+          "body": "En Suisse, le rapport AG (CO 728b) ajoute la recommandation d'approbation et le constat sur le SCI. Double signature (lead partner + EQR pour les EIP) avec les numéros d'agrément ASR.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "UQAD",
+              "text": "4 types d'opinion : Unmodified (clean), Qualified, Adverse, Disclaimer."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Opinion EN PREMIER depuis 2016 + indépendance explicite",
+        "Structure : titre, destinataire, opinion, fondement, MU going concern, KAM, responsabilités, signature",
+        "Suisse : recommandation AG + constat SCI + numéros ASR",
+        "4 opinions : UQAD"
+      ],
+      "pieges": [
+        "Placer l'opinion à la fin (ancien format pré-2016)",
+        "Oublier la mention explicite d'indépendance",
+        "Oublier les numéros d'agrément ASR (Suisse)"
+      ]
+    },
+    "701": {
+      "intro": "Pour les sociétés cotées, le rapport va au-delà de l'opinion binaire : il communique les **questions clés de l'audit (KAM)**. ISA 701 (nouvelle 2015) répond à la demande de transparence des investisseurs.",
+      "sections": [
+        {
+          "titre": "1. Que sont les KAM",
+          "body": "Les **Key Audit Matters** sont les questions qui, selon le jugement professionnel de l'auditeur, ont été les **plus importantes** dans l'audit de la période. Elles sont sélectionnées parmi celles communiquées à la gouvernance.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Obligatoire pour qui",
+              "text": "KAM obligatoires pour les EIP / sociétés cotées. Optionnels (recommandés) pour les autres entités."
+            }
+          ]
+        },
+        {
+          "titre": "2. Comment les sélectionner",
+          "body": "Critères : zones à **risque important** (significant risks), zones de **jugement/estimation significatifs**, effet d'**événements ou transactions majeurs**. Typiquement 2-5 KAM par rapport.",
+          "callouts": []
+        },
+        {
+          "titre": "3. Comment les décrire",
+          "body": "Pour chaque KAM : décrire la **question** + **pourquoi** elle a été considérée comme clé + **comment** l'audit l'a traitée. Position dans le rapport : après le fondement de l'opinion (après le paragraphe Material Uncertainty s'il existe).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "KAM ≠ réserve",
+              "text": "Les KAM ne modifient PAS l'opinion. Une opinion peut être clean ET comporter des KAM. Ce n'est pas une réserve."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "KAM = questions les plus importantes de l'audit (EIP/cotées)",
+        "Critères : significant risks, jugements/estimations, événements majeurs",
+        "Décrire : question + pourquoi + comment traitée",
+        "KAM ≠ opinion modifiée"
+      ],
+      "pieges": [
+        "Croire que les KAM modifient l'opinion",
+        "Mettre des KAM pour une entité non cotée par obligation (c'est optionnel)",
+        "Décrire la question sans expliquer comment l'audit l'a traitée"
+      ]
+    },
+    "705": {
+      "intro": "Quand les EF ne sont pas conformes ou que l'auditeur ne peut pas conclure, il **modifie son opinion**. ISA 705 (révisée 2015) définit les 3 types d'opinion modifiée et la logique de choix.",
+      "sections": [
+        {
+          "titre": "1. Deux causes de modification",
+          "body": "• **Anomalie significative** : les EF comportent une erreur/non-conformité matérielle\n• **Limitation de l'étendue** : l'auditeur n'a pas pu obtenir d'éléments probants suffisants.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Distinction clé",
+              "text": "Anomalie = problème dans les EF. Limitation = problème pour l'auditeur d'obtenir des preuves."
+            }
+          ]
+        },
+        {
+          "titre": "2. La matrice de décision",
+          "body": "Croiser la cause avec le caractère **généralisé (pervasive)** :\n• Anomalie isolée → **Qualified**\n• Anomalie pervasive → **Adverse**\n• Limitation isolée → **Qualified**\n• Limitation pervasive → **Disclaimer**.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Matrice",
+              "text": "Anomalie pervasive = Adverse. Limitation pervasive = Disclaimer. Isolé (anomalie OU limitation) = Qualified."
+            }
+          ]
+        },
+        {
+          "titre": "3. Pervasive = MSF",
+          "body": "Une question est **généralisée (pervasive)** si elle : touche de **Multiples** postes, OU représente une part **Substantielle** des EF, OU concerne une disclosure **Fondamentale** à la compréhension.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "Wording",
+              "text": "Qualified = « à l'exception de ». Adverse = « ne donnent pas une image fidèle ». Disclaimer = « nous n'exprimons pas d'opinion »."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "2 causes : anomalie significative OU limitation de l'étendue",
+        "Matrice : anomalie pervasive→Adverse ; limitation pervasive→Disclaimer ; isolé→Qualified",
+        "Pervasive = MSF (Multiples / Substantielle / Fondamentale)",
+        "Section « Fondement de l'opinion modifiée »"
+      ],
+      "pieges": [
+        "Confondre les 4 cases de la matrice (anomalie/limitation × isolé/pervasive)",
+        "Confondre disclaimer (limitation) et adverse (anomalie)",
+        "Mal apprécier le caractère pervasive (MSF)"
+      ]
+    },
+    "706": {
+      "intro": "Parfois l'auditeur veut **attirer l'attention** sur un point, sans modifier son opinion. ISA 706 (révisée 2015) régit les paragraphes d'observation (EOM) et sur d'autres points (Other Matter).",
+      "sections": [
+        {
+          "titre": "1. Emphasis of Matter (EOM)",
+          "body": "Un paragraphe **EOM** attire l'attention sur une question **présentée** dans les EF, fondamentale à la compréhension des utilisateurs (ex. un litige important correctement provisionné et décrit, un changement de méthode).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Sans modifier",
+              "text": "L'EOM ne MODIFIE PAS l'opinion. Il dit : « regardez ce point déjà dans les EF »."
+            }
+          ]
+        },
+        {
+          "titre": "2. Other Matter",
+          "body": "Un paragraphe **Other Matter** communique une question **non présentée** dans les EF, mais pertinente pour comprendre l'audit, les responsabilités ou le rapport (ex. comptes de l'exercice précédent audités par un autre auditeur).",
+          "callouts": []
+        },
+        {
+          "titre": "3. EOM vs going concern",
+          "body": "Attention : l'incertitude significative sur le going concern a son **propre paragraphe dédié** (« Material Uncertainty Related to Going Concern », ISA 570) — ce n'est pas un EOM ordinaire.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "EOM vs Other Matter",
+              "text": "EOM = question DANS les EF. Other Matter = question HORS des EF. Aucun ne modifie l'opinion."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "EOM = attire l'attention sur une question DANS les EF",
+        "Other Matter = question HORS des EF (pertinente pour l'audit)",
+        "Ni l'un ni l'autre ne modifient l'opinion",
+        "Going concern = paragraphe dédié (≠ EOM ordinaire)"
+      ],
+      "pieges": [
+        "Croire qu'un EOM modifie l'opinion",
+        "Confondre EOM (dans les EF) et Other Matter (hors EF)",
+        "Utiliser un EOM ordinaire pour le going concern (paragraphe dédié)"
+      ]
+    },
+    "710": {
+      "intro": "Les EF présentent toujours des **chiffres comparatifs**. ISA 710 définit la responsabilité de l'auditeur sur ces informations de l'exercice précédent.",
+      "sections": [
+        {
+          "titre": "1. Deux approches",
+          "body": "• **Chiffres correspondants** (corresponding figures) : les chiffres N-1 font partie intégrante des EF de N ; l'opinion porte sur l'exercice **courant** uniquement\n• **États financiers comparatifs** : l'opinion porte sur **chaque** période présentée.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "Le modèle suisse usuel = chiffres correspondants : l'opinion porte sur l'exercice courant."
+            }
+          ]
+        },
+        {
+          "titre": "2. Procédures",
+          "body": "L'auditeur vérifie que les comparatifs sont conformes au référentiel et cohérents avec les montants de l'exercice précédent. Il reste attentif aux retraitements et reclassements.",
+          "callouts": []
+        },
+        {
+          "titre": "3. Premier audit",
+          "body": "Si l'exercice précédent a été audité par un **autre auditeur** ou n'a pas été audité, l'auditeur peut l'indiquer dans un paragraphe Other Matter (ISA 706) et relie cela aux soldes d'ouverture (ISA 510).",
+          "callouts": []
+        }
+      ],
+      "synthese": [
+        "Chiffres correspondants (opinion sur N) vs EF comparatifs (opinion sur chaque période)",
+        "Suisse : modèle chiffres correspondants",
+        "Vérifier conformité + cohérence des comparatifs",
+        "Lien avec soldes d'ouverture (ISA 510) en premier audit"
+      ],
+      "pieges": [
+        "Confondre chiffres correspondants et EF comparatifs",
+        "Négliger les retraitements/reclassements des comparatifs",
+        "Oublier le lien avec ISA 510 en premier audit"
+      ]
+    },
+    "720": {
+      "intro": "Le rapport annuel contient bien plus que les EF audités (rapport de gestion, message du CEO). ISA 720 (révisée 2015) définit la responsabilité de l'auditeur sur ces **autres informations**.",
+      "sections": [
+        {
+          "titre": "1. Les « autres informations »",
+          "body": "Ce sont les informations financières ET non financières incluses dans le rapport annuel, **autres** que les EF audités et le rapport d'audit : rapport de gestion, faits marquants, indicateurs RSE, message de la direction.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Suisse",
+              "text": "Le rapport de gestion (CO 961c) est une « autre information » au sens d'ISA 720."
+            }
+          ]
+        },
+        {
+          "titre": "2. Responsabilité de l'auditeur",
+          "body": "L'auditeur **lit** les autres informations et identifie les **incohérences significatives** avec les EF ou avec sa propre connaissance acquise pendant l'audit. Il n'**exprime pas d'opinion** sur ces informations.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Pas d'opinion",
+              "text": "L'auditeur ne certifie pas les autres informations. Il vérifie juste l'absence d'incohérence matérielle."
+            }
+          ]
+        },
+        {
+          "titre": "3. En cas d'incohérence",
+          "body": "Si une incohérence significative existe : demander la correction à la direction. Si elle refuse → mentionner l'incohérence non corrigée dans une section dédiée « Autres informations » du rapport d'audit.",
+          "callouts": []
+        }
+      ],
+      "synthese": [
+        "Autres informations = rapport annuel hors EF audités (rapport de gestion...)",
+        "L'auditeur LIT et cherche les incohérences (pas d'opinion)",
+        "Section dédiée « Autres informations » dans le rapport",
+        "Incohérence non corrigée → la mentionner"
+      ],
+      "pieges": [
+        "Croire que l'auditeur certifie le rapport de gestion",
+        "Ne pas lire les autres informations du rapport annuel",
+        "Ignorer une incohérence matérielle avec les EF"
+      ]
     }
   }
 }
