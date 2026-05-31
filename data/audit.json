@@ -11532,8 +11532,8 @@
   },
   "annuaire_cours": {
     "200": {
-      "duree": "12 min",
-      "niveau": "Fondamental",
+      "duree": "20 min",
+      "niveau": "Fondamental · Cours exhaustif",
       "tldr": "L'audit donne une **assurance raisonnable** (pas absolue) que les comptes ne comportent pas d'anomalie significative. Tout repose sur 4 concepts : risque d'audit (RI×RC×RND), caractère significatif, **scepticisme** et **jugement** professionnels.",
       "stats": [
         {
@@ -11667,6 +11667,28 @@
               ]
             ]
           }
+        },
+        {
+          "titre": "Définitions clés & responsabilités (§13)",
+          "body": "**Définitions essentielles (§13)** : référentiel comptable applicable ; éléments probants ; risque d'audit ; risque de non-détection ; jugement professionnel ; scepticisme professionnel ; assurance raisonnable ; anomalie.\n\n**Responsabilités** : la direction (et la gouvernance) est responsable de l'établissement des EF et du SCI ; l'auditeur est responsable de l'opinion. L'audit ne décharge PAS la direction de ses responsabilités.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Prémisse",
+              "text": "L'audit repose sur la « prémisse » que la direction reconnaît ses responsabilités — lien ISA 210."
+            }
+          ]
+        },
+        {
+          "titre": "Exigences générales (§14-24)",
+          "body": "ISA 200 pose des exigences transversales :\n• **§14** Respecter les règles d'éthique (dont indépendance — Code IESBA)\n• **§15** Exercer le **scepticisme professionnel** tout au long\n• **§16** Exercer le **jugement professionnel**\n• **§17** Obtenir des éléments probants suffisants et appropriés pour réduire le risque d'audit à un niveau acceptablement faible\n• **§18-24** Se conformer à **toutes les ISA pertinentes**, comprendre l'intégralité du texte (objectifs, exigences, modalités d'application), et n'affirmer la conformité que si toutes les exigences sont respectées.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Conformité",
+              "text": "Déclarer un audit « conforme aux ISA » suppose le respect de TOUTES les exigences pertinentes à la mission."
+            }
+          ]
         }
       ],
       "mnemo": {
@@ -11716,7 +11738,8 @@
         "Croire que l'audit garantit l'absence absolue d'erreur",
         "Confondre assurance raisonnable (ordinaire) et limitée (restreint)",
         "Confondre scepticisme (neutre) et méfiance (parti pris négatif)",
-        "Oublier que la fraude par collusion peut échapper à un audit bien mené"
+        "Oublier que la fraude par collusion peut échapper à un audit bien mené",
+        "Affirmer la conformité aux ISA sans respecter toutes les exigences pertinentes"
       ]
     },
     "210": {
@@ -13433,8 +13456,8 @@
       ]
     },
     "320": {
-      "duree": "11 min",
-      "niveau": "Intermédiaire",
+      "duree": "16 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
       "tldr": "La **matérialité** définit le seuil au-delà duquel une anomalie pourrait influencer les décisions des utilisateurs. 3 niveaux : globale (overall), de performance (50-75%), seuil de non-intervention (~5%). Le MSA détaille les benchmarks et la révision en cours de mission.",
       "stats": [
         {
@@ -13553,6 +13576,28 @@
               "type": "warn",
               "label": "Attention",
               "text": "Si le benchmark réel diffère significativement de l'estimé en planification, réviser la matérialité ET reconsidérer l'étendue des procédures déjà réalisées."
+            }
+          ]
+        },
+        {
+          "titre": "Définitions & objectif (§2-8)",
+          "body": "**Caractère significatif** : les anomalies (y c. omissions) sont significatives si, individuellement ou cumulées, on peut raisonnablement s'attendre à ce qu'elles influencent les décisions économiques des utilisateurs prises sur la base des EF.\n\n**Objectif (§8)** : appliquer le concept de caractère significatif de manière appropriée lors de la planification ET de la réalisation de l'audit. Le seuil global ne découle PAS du risque d'audit — il reflète le « regard extérieur » de l'utilisateur.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Regard extérieur",
+              "text": "Le seuil global se fixe selon ce qui influencerait les décisions des UTILISATEURS, pas selon le risque d'audit."
+            }
+          ]
+        },
+        {
+          "titre": "Détermination & révision (§10-14)",
+          "body": "• **§10** Déterminer le seuil global lors de l'établissement de la stratégie ; le cas échéant, des **seuils spécifiques** pour certains flux/soldes/disclosures (sensibilité particulière).\n• **§11** Déterminer le seuil de **performance** (pour réaliser les travaux).\n• **§12-13** **Réviser** ces seuils si l'auditeur prend connaissance d'informations qui l'auraient amené à les fixer différemment.\n• **§14 — Documentation** : seuil global, seuils spécifiques, seuil de performance, et toute révision.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Documenter",
+              "text": "Les 4 seuils + leurs révisions doivent être documentés (§14)."
             }
           ]
         }
@@ -17501,14 +17546,19 @@
       ]
     },
     "2400": {
-      "duree": "8 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Examen limité (review) = assurance LIMITÉE (formulation négative). Procédures : demandes + analytiques. Base du contrôle restreint suisse (NCR, CO 729b).",
+      "duree": "14 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISRE 2400 (Revised) = mission d'examen limité (review) d'EF historiques. Assurance LIMITÉE (conclusion négative). Procédures : demandes + analytiques. Base internationale du contrôle restreint suisse (NCR, CO 729b).",
       "stats": [
         {
           "value": "Limitée",
           "label": "Assurance",
-          "sub": "négative"
+          "sub": "conclusion négative"
+        },
+        {
+          "value": "Demandes+",
+          "label": "Analytiques",
+          "sub": "procédures clés"
         },
         {
           "value": "NCR",
@@ -17516,61 +17566,92 @@
           "sub": "CO 729b"
         },
         {
-          "value": "Demandes",
-          "label": "+ analytiques",
-          "sub": "procédures"
-        },
-        {
           "value": "R2012",
-          "label": "Révision",
-          "sub": ""
+          "label": "Révisée",
+          "sub": "effective 2013"
         }
       ],
-      "intro": "Toutes les missions ne sont pas des audits. L'examen limité fournit une assurance plus modérée. Base du contrôle restreint suisse.",
+      "intro": "Toutes les missions ne sont pas des audits. L'examen limité (review) fournit une assurance modérée à moindre coût. ISRE 2400 (révisée 2012) le régit — c'est la base internationale du contrôle restreint suisse. Cours § par §.",
       "sections": [
         {
-          "titre": "Assurance limitée",
-          "body": "Formulation **négative** : « rien n'a attiré notre attention nous laissant penser que les EF ne sont pas conformes ».",
+          "titre": "Champ, objectif & assurance limitée (§1-15)",
+          "body": "ISRE 2400 traite des missions d'**examen limité** d'EF historiques réalisées par un praticien qui n'est PAS l'auditeur de l'entité. **Objectif** : obtenir une **assurance limitée** (principalement par demandes et procédures analytiques) permettant d'exprimer une conclusion sous forme **négative** : « sur la base de notre examen limité, **rien n'a attiré notre attention** nous laissant penser que les EF ne sont pas établis, dans tous leurs aspects significatifs, conformément au référentiel ».",
           "callouts": [
             {
               "type": "key",
-              "label": "Négatif",
-              "text": "Audit = positive (« image fidèle »). Review = négative (« rien n'a attiré notre attention »)."
+              "label": "Conclusion négative",
+              "text": "Audit = assurance raisonnable (positive, « image fidèle »). Review = assurance limitée (négative, « rien n'a attiré notre attention »)."
             }
           ]
         },
         {
-          "titre": "Procédures",
-          "body": "Principalement **demandes d'informations** + **procédures analytiques**. Pas de tests des contrôles ni de vérifications étendues.",
+          "titre": "Acceptation, éthique & indépendance (§16-29)",
+          "body": "Le praticien respecte les **règles d'éthique** pertinentes, dont l'**indépendance**, et applique un **contrôle qualité** au niveau de la mission. Il n'accepte que si les préconditions sont réunies (référentiel acceptable, reconnaissance des responsabilités par la direction) et convient des termes par écrit (lettre de mission).",
           "callouts": []
         },
         {
-          "titre": "Lien contrôle restreint",
-          "body": "ISRE 2400 = base internationale du contrôle restreint suisse (NCR, CO 729b) : 1 seul rapport, assurance limitée.",
+          "titre": "Procédures : demandes & analytiques (§45-57)",
+          "body": "Le praticien acquiert une compréhension de l'entité et conçoit/met en œuvre des procédures principalement par **demandes d'informations** et **procédures analytiques** portant sur tous les éléments significatifs des EF. Il NE met PAS en œuvre les procédures étendues d'un audit (pas de tests des contrôles systématiques, pas de confirmations systématiques) sauf si des éléments le rendent nécessaire.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Étendue réduite",
+              "text": "Le review est moins étendu qu'un audit : d'où une assurance LIMITÉE et non raisonnable."
+            }
+          ]
+        },
+        {
+          "titre": "Éléments supplémentaires & conclusion (§55-86)",
+          "body": "Si le praticien prend connaissance d'éléments laissant penser que les EF pourraient comporter une anomalie significative, il met en œuvre des **procédures supplémentaires**. Il évalue les éléments obtenus et forme sa conclusion. Types de conclusion : **non modifiée** (négative standard), **modifiée avec réserve** (« except for »), **défavorable**, ou **impossibilité de conclure**.",
+          "callouts": []
+        },
+        {
+          "titre": "Le contrôle restreint suisse & articulation",
+          "body": "ISRE 2400 est la base internationale du **contrôle restreint** suisse, régi par la **NCR** (Norme suisse relative au contrôle restreint) et le **CO 729-731a** : 1 seul rapport à l'AG (CO 729b), assurance limitée, formulation négative, procédures = demandes + analyse + vérifications appropriées. Indépendance allégée (CO 730b — tenue de comptabilité/conseil possibles).\n\n**Articulation** : ISRE 2410 (interim), ISA 200 (cadre conceptuel de l'assurance), ISQM 1 (qualité).",
           "callouts": [
             {
               "type": "legal",
               "label": "Suisse",
-              "text": "Contrôle restreint = NCR ≈ ISRE 2400, pour les PME sous les seuils du contrôle ordinaire."
+              "text": "Contrôle restreint = NCR ≈ ISRE 2400. Pour les PME sous les seuils du contrôle ordinaire (CO 727)."
             }
           ]
         }
       ],
+      "quiz": [
+        {
+          "q": "Quel niveau d'assurance fournit un review ?",
+          "a": "Assurance LIMITÉE (conclusion négative)."
+        },
+        {
+          "q": "Quelles sont les procédures principales ?",
+          "a": "Demandes d'informations + procédures analytiques."
+        },
+        {
+          "q": "À quoi correspond ISRE 2400 en Suisse ?",
+          "a": "Au contrôle restreint (NCR / CO 729b)."
+        },
+        {
+          "q": "Que faire si un élément suggère une anomalie significative ?",
+          "a": "Mettre en œuvre des procédures supplémentaires."
+        }
+      ],
       "synthese": [
-        "Review = assurance limitée (négative)",
-        "Demandes + analytiques (pas de TOC)",
-        "Base du contrôle restreint (NCR / CO 729b)"
+        "Review = assurance LIMITÉE (conclusion négative)",
+        "Procédures : demandes + analytiques (étendue réduite)",
+        "Base du contrôle restreint suisse (NCR / CO 729b)",
+        "Conclusion : non modifiée / réserve / défavorable / impossibilité"
       ],
       "pieges": [
         "Confondre review (limité) et audit (raisonnable)",
-        "Formulation positive pour un review",
-        "Tests de contrôles complets en review"
+        "Formuler une conclusion positive pour un review",
+        "Faire des procédures d'audit complètes en review",
+        "Oublier que l'indépendance est allégée en contrôle restreint (CO 730b)"
       ]
     },
     "2410": {
-      "duree": "6 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Examen limité des comptes INTERMÉDIAIRES (semestriels) des cotées, par l'auditeur annuel. Assurance limitée.",
+      "duree": "10 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISRE 2410 = examen limité d'informations financières INTERMÉDIAIRES réalisé par l'AUDITEUR de l'entité. Assurance limitée (négative), demandes + analytiques, s'appuie sur la connaissance acquise lors de l'audit annuel.",
       "stats": [
         {
           "value": "Interim",
@@ -17578,9 +17659,9 @@
           "sub": "semestriels"
         },
         {
-          "value": "Cotées",
-          "label": "Cible",
-          "sub": "SIX"
+          "value": "Auditeur",
+          "label": "de l'entité",
+          "sub": "≠ ISRE 2400"
         },
         {
           "value": "Limitée",
@@ -17588,66 +17669,91 @@
           "sub": "négative"
         },
         {
-          "value": "Annuel",
-          "label": "Auditeur",
-          "sub": "connaît l'entité"
+          "value": "Cotées",
+          "label": "Pertinence",
+          "sub": "SIX"
         }
       ],
-      "intro": "Pour les comptes intermédiaires des cotées, l'auditeur réalise un examen limité spécifique.",
+      "intro": "Pour les comptes intermédiaires (semestriels) des sociétés cotées, l'auditeur réalise un examen limité spécifique. ISRE 2410 le régit. Cours § par §.",
       "sections": [
         {
-          "titre": "Objet",
-          "body": "Examen limité des informations financières intermédiaires (semestrielles/trimestrielles) par l'**auditeur annuel** de l'entité.",
+          "titre": "Champ & objectif (§1-7)",
+          "body": "ISRE 2410 traite de l'examen limité d'**informations financières intermédiaires** réalisé par l'**auditeur indépendant de l'entité** (différence avec ISRE 2400 où le praticien n'est pas l'auditeur). **Objectif** : permettre à l'auditeur d'exprimer une conclusion d'assurance **limitée** sur les informations intermédiaires.",
           "callouts": [
             {
               "type": "info",
-              "label": "Cotées",
-              "text": "Pertinent pour les sociétés cotées SIX (comptes semestriels)."
+              "label": "Spécificité",
+              "text": "C'est l'auditeur ANNUEL qui fait l'examen intermédiaire : il connaît déjà l'entité et son SCI."
             }
           ]
         },
         {
-          "titre": "Assurance limitée",
-          "body": "Comme ISRE 2400 : assurance limitée, formulation négative, demandes + analytiques. S'appuie sur la connaissance acquise à l'audit annuel.",
+          "titre": "Procédures (§7-22)",
+          "body": "L'auditeur : comprend l'entité et son environnement (en s'appuyant sur l'audit annuel), met en œuvre des **demandes** (auprès des responsables financiers/comptables), des **procédures analytiques**, et d'autres procédures de review. Il lit les PV, considère les événements postérieurs et le going concern à l'échelle intermédiaire.",
+          "callouts": []
+        },
+        {
+          "titre": "Conclusion & rapport (§43-63)",
+          "body": "Conclusion sous forme **négative** (« rien n'a attiré notre attention… »). Si une anomalie significative est identifiée et non corrigée → conclusion **modifiée** (réserve ou défavorable). Le rapport peut comporter un paragraphe sur le going concern ou d'autres incertitudes.",
+          "callouts": []
+        },
+        {
+          "titre": "Articulation",
+          "body": "ISRE 2410 ↔ ISRE 2400 (review, mais ici par l'auditeur annuel), IAS 34 / RPC 31 (information intermédiaire des cotées), ISA 560 (événements postérieurs), ISA 570 (going concern).",
           "callouts": [
             {
-              "type": "comp",
-              "label": "Lien",
-              "text": "ISRE 2410 ≈ ISRE 2400 appliqué aux comptes intermédiaires. Lien RPC 31 / IAS 34."
+              "type": "legal",
+              "label": "Suisse",
+              "text": "Pertinent pour les sociétés cotées SIX qui publient des comptes semestriels (RPC 31 / IAS 34)."
             }
           ]
         }
       ],
+      "quiz": [
+        {
+          "q": "Qui réalise l'examen ISRE 2410 ?",
+          "a": "L'auditeur ANNUEL de l'entité (différence avec ISRE 2400)."
+        },
+        {
+          "q": "Quel niveau d'assurance ?",
+          "a": "Limitée (conclusion négative)."
+        },
+        {
+          "q": "Sur quoi s'appuie l'auditeur ?",
+          "a": "Sa connaissance de l'entité acquise lors de l'audit annuel."
+        }
+      ],
       "synthese": [
-        "Examen limité des comptes intermédiaires (cotées)",
-        "Par l'auditeur annuel",
-        "S'appuie sur la connaissance de l'entité"
+        "Examen limité des comptes intermédiaires (semestriels) des cotées",
+        "Réalisé par l'auditeur ANNUEL",
+        "Assurance limitée (négative) ; demandes + analytiques",
+        "Lien RPC 31 / IAS 34"
       ],
       "pieges": [
-        "Confondre examen intermédiaire et audit annuel",
-        "Oublier le lien RPC 31 / IAS 34",
-        "Examen par un auditeur sans connaissance de l'entité"
+        "Confondre examen intermédiaire et audit annuel complet",
+        "Oublier que c'est l'auditeur annuel qui le réalise",
+        "Formuler une conclusion positive"
       ]
     },
     "3000": {
-      "duree": "9 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Cadre GÉNÉRAL des missions d'assurance non-EF (RSE, contrôles, conformité, durabilité). Raisonnable OU limitée. 5 éléments (TROCK). Base des rapports ESG (CSRD, ISSB).",
+      "duree": "15 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISAE 3000 (Revised) = cadre GÉNÉRAL des missions d'assurance autres que l'audit/review d'EF historiques (RSE, contrôles, conformité, durabilité). Raisonnable OU limitée. 5 éléments (relation tripartite, objet, critères, éléments probants, rapport).",
       "stats": [
         {
           "value": "Général",
-          "label": "Toute mission",
-          "sub": "d'assurance non-EF"
+          "label": "Assurance non-EF",
+          "sub": ""
         },
         {
           "value": "R ou L",
-          "label": "Assurance",
+          "label": "2 niveaux",
           "sub": "raisonnable/limitée"
         },
         {
           "value": "5",
           "label": "Éléments",
-          "sub": "TROCK"
+          "sub": "d'une mission"
         },
         {
           "value": "ESG",
@@ -17655,151 +17761,207 @@
           "sub": "CSRD/ISSB"
         }
       ],
-      "intro": "Au-delà de l'audit des EF, un vaste monde de missions d'assurance. ISAE 3000 en est le cadre général.",
+      "intro": "Au-delà de l'audit des EF, un vaste monde de missions d'assurance (RSE, contrôles internes, conformité, durabilité). ISAE 3000 (révisée 2013) en est le cadre général. Cours § par §.",
       "sections": [
         {
-          "titre": "Le cadre général",
-          "body": "S'applique aux missions d'assurance **autres** que l'audit/review d'informations financières historiques : RSE/ESG, contrôles internes, conformité, durabilité.",
+          "titre": "Champ, objectif & types (§1-12)",
+          "body": "ISAE 3000 s'applique aux **missions d'assurance autres** que l'audit ou l'examen limité d'informations financières historiques. La mission peut viser une **assurance raisonnable** (conclusion positive) ou **limitée** (conclusion négative). Elle peut être une mission d'**attestation** (un tiers évalue l'objet) ou **directe** (le praticien mesure/évalue lui-même l'objet).",
           "callouts": [
             {
-              "type": "info",
-              "label": "Polyvalent",
-              "text": "La norme « couteau suisse » : tout sujet mesurable selon des critères."
+              "type": "comp",
+              "label": "Attestation vs directe",
+              "text": "Attestation : la partie responsable mesure l'objet, le praticien conclut dessus. Directe : le praticien mesure lui-même."
             }
           ]
         },
         {
-          "titre": "Niveau d'assurance",
-          "body": "Raisonnable (positive) OU limitée (négative), selon les besoins.",
-          "callouts": []
-        },
-        {
-          "titre": "Les 5 éléments",
+          "titre": "Les 5 éléments d'une mission d'assurance",
           "body": "",
           "schema": {
             "type": "flow",
-            "title": "5 éléments d'une mission d'assurance",
+            "title": "5 éléments (cadre conceptuel de l'assurance)",
             "steps": [
               {
-                "t": "Three-party",
-                "d": "praticien + partie responsable + utilisateurs"
+                "t": "Relation tripartite",
+                "d": "praticien + partie responsable + utilisateurs visés"
               },
               {
                 "t": "Objet (subject matter)",
-                "d": ""
+                "d": "l'information/l'état évalué (ex. émissions, contrôles, conformité)"
               },
               {
                 "t": "Critères",
-                "d": "référentiel d'évaluation"
+                "d": "référentiel d'évaluation (GHG Protocol, COSO, ESRS...)"
               },
               {
                 "t": "Éléments probants",
-                "d": "suffisants"
+                "d": "suffisants et appropriés"
               },
               {
-                "t": "Rapport écrit",
-                "d": "conclusion"
+                "t": "Rapport d'assurance écrit",
+                "d": "conclusion (positive ou négative)"
               }
             ]
           }
+        },
+        {
+          "titre": "Acceptation, critères & éthique (§20-36)",
+          "body": "Le praticien n'accepte que si : les rôles sont appropriés, l'objet est mesurable, les **critères** sont **appropriés et disponibles** aux utilisateurs, et il a les compétences. Il respecte les règles d'éthique (indépendance) et applique un **contrôle qualité** (ISQM 1).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Critères",
+              "text": "Les critères doivent être pertinents, complets, fiables, neutres, compréhensibles — ET accessibles aux utilisateurs visés."
+            }
+          ]
+        },
+        {
+          "titre": "Procédures, preuves & conclusion (§40-69)",
+          "body": "Le praticien évalue les risques (à un niveau approprié au type d'assurance), conçoit des procédures pour obtenir des éléments probants, et forme une conclusion. **Assurance raisonnable** : effort de type audit (réduire le risque à un niveau faible → conclusion positive). **Assurance limitée** : effort moindre (principalement demandes + analytiques → conclusion négative).",
+          "callouts": []
+        },
+        {
+          "titre": "Applications & articulation",
+          "body": "ISAE 3000 est le **socle** de nombreuses missions : reporting **durabilité/ESG** (lien CSRD, ESRS, ISSB), assurance sur les **contrôles internes** (SOX-like), **conformité** réglementaire. Normes filles : **ISAE 3402** (SOC 1), **ISAE 3410** (GES), ISAE 3420 (prévisions).\n\n**Articulation** : ISA 200 (concepts d'assurance), ISQM 1 (qualité), ISAE 3402/3410.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Croissance",
+              "text": "Avec la CSRD européenne et les normes ISSB (durabilité), l'assurance ISAE 3000 devient un marché stratégique pour EY et les Big 4."
+            }
+          ]
         }
-      ],
-      "synthese": [
-        "Cadre général des missions d'assurance non-EF",
-        "Raisonnable (positive) ou limitée (négative)",
-        "5 éléments (TROCK)",
-        "Base des rapports ESG/durabilité"
-      ],
-      "pieges": [
-        "Croire qu'ISAE 3000 ne sert qu'à un type de mission",
-        "Oublier de préciser le niveau d'assurance",
-        "Critères non appropriés/disponibles"
       ],
       "mnemo": {
         "code": "TROCK",
         "items": [
           {
             "l": "T",
-            "t": "Three-party"
+            "t": "Three-party (relation tripartite)"
           },
           {
             "l": "R",
-            "t": "Responsible party report"
+            "t": "Responsible party / report"
           },
           {
             "l": "O",
-            "t": "Outcome (objet)"
+            "t": "Outcome (objet / subject matter)"
           },
           {
             "l": "C",
-            "t": "Criteria"
+            "t": "Criteria (critères)"
           },
           {
             "l": "K",
-            "t": "Knowledge (éléments probants)"
+            "t": "Knowledge (éléments probants suffisants)"
           }
         ],
         "phrase": "Les 5 éléments d'une mission d'assurance"
-      }
+      },
+      "quiz": [
+        {
+          "q": "ISAE 3000 couvre quel type de missions ?",
+          "a": "Les missions d'assurance autres que l'audit/review d'EF historiques (RSE, contrôles, conformité, durabilité)."
+        },
+        {
+          "q": "Quels niveaux d'assurance ?",
+          "a": "Raisonnable (conclusion positive) OU limitée (conclusion négative)."
+        },
+        {
+          "q": "Quels sont les 5 éléments ?",
+          "a": "Relation tripartite + objet + critères + éléments probants + rapport (TROCK)."
+        },
+        {
+          "q": "Attestation vs directe ?",
+          "a": "Attestation : un tiers mesure l'objet. Directe : le praticien mesure lui-même."
+        }
+      ],
+      "synthese": [
+        "Cadre général de l'assurance non-EF (RSE, contrôles, conformité, durabilité)",
+        "Raisonnable (positive) ou limitée (négative)",
+        "5 éléments (TROCK) ; critères appropriés ET disponibles",
+        "Socle des rapports ESG (CSRD/ISSB) + normes filles 3402/3410"
+      ],
+      "pieges": [
+        "Croire qu'ISAE 3000 ne sert qu'à un type de mission",
+        "Oublier de préciser le niveau d'assurance",
+        "Critères non appropriés/non disponibles aux utilisateurs",
+        "Confondre attestation et mission directe"
+      ]
     },
     "3402": {
-      "duree": "8 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Rapports SOC 1 sur les contrôles d'une société de services (pendant d'ISA 402). Type 1 (conception à une date) vs Type 2 (efficacité sur période). Type 2 = exploitable.",
+      "duree": "12 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISAE 3402 = rapports d'assurance sur les contrôles d'une société de services (SOC 1), destinés aux auditeurs des entités utilisatrices (pendant d'ISA 402). Type 1 (conception) vs Type 2 (efficacité sur période). CUEC.",
       "stats": [
         {
           "value": "SOC 1",
-          "label": "Rapport",
-          "sub": "financial reporting"
+          "label": "financial reporting",
+          "sub": ""
         },
         {
-          "value": "Type 2",
-          "label": "Efficacité",
-          "sub": "6-12 mois"
+          "value": "Type 1/2",
+          "label": "Conception/Efficacité",
+          "sub": ""
         },
         {
           "value": "ISA 402",
-          "label": "Lien",
-          "sub": "entité utilisatrice"
+          "label": "Pendant",
+          "sub": "côté utilisateur"
         },
         {
-          "value": "R2010",
-          "label": "Émise",
+          "value": "Raisonnable",
+          "label": "Assurance",
           "sub": ""
         }
       ],
-      "intro": "Quand une société de services audite ses contrôles pour ses clients, elle produit un rapport SOC 1. ISAE 3402 le régit.",
+      "intro": "Quand une société de services veut donner confiance à ses clients (et à leurs auditeurs) sur ses contrôles, elle fait émettre un rapport SOC 1. ISAE 3402 le régit — c'est le pendant « offreur » d'ISA 402. Cours § par §.",
       "sections": [
         {
-          "titre": "Rapports SOC 1",
-          "body": "Rapports d'assurance sur les contrôles d'une société de services, destinés aux auditeurs des entités utilisatrices (lien ISA 402).",
-          "callouts": []
+          "titre": "Champ, objectif & définitions (§1-9)",
+          "body": "ISAE 3402 traite des missions d'assurance d'un praticien (le **service auditor**) pour émettre un rapport sur les **contrôles d'une société de services** susceptibles d'affecter le **reporting financier** des entités utilisatrices (SOC 1). **Définitions** : société de services, entité utilisatrice, rapport **type 1** (description + conception à une date), rapport **type 2** (+ efficacité opérationnelle sur une période), **CUEC** (Complementary User Entity Controls).",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "SOC 1 vs SOC 2",
+              "text": "SOC 1 (ISAE 3402) = contrôles affectant le reporting FINANCIER. SOC 2 (Trust Services Criteria) = sécurité/disponibilité/intégrité/confidentialité/vie privée."
+            }
+          ]
         },
         {
-          "titre": "Type 1 vs Type 2",
+          "titre": "Type 1 vs Type 2 (§9, §13-19)",
           "body": "",
-          "compare": {
-            "title": "SOC 1 Type 1 vs Type 2",
-            "headers": [
-              "",
+          "schema": {
+            "type": "matrix",
+            "title": "Rapports SOC 1",
+            "xlabels": [
               "Type 1",
               "Type 2"
             ],
-            "rows": [
+            "ylabels": [
+              "Conception",
+              "Efficacité"
+            ],
+            "cells": [
               [
-                "Couvre",
-                "Description + conception",
-                "Type 1 + efficacité opérationnelle"
+                {
+                  "t": "Oui (à une date)",
+                  "v": "warn"
+                },
+                {
+                  "t": "Oui",
+                  "v": "ok"
+                }
               ],
               [
-                "Période",
-                "Une date",
-                "6-12 mois"
-              ],
-              [
-                "Exploitable efficacité",
-                "Non",
-                "OUI"
+                {
+                  "t": "Non",
+                  "v": "danger"
+                },
+                {
+                  "t": "Oui (6-12 mois)",
+                  "v": "ok"
+                }
               ]
             ]
           },
@@ -17807,26 +17969,62 @@
             {
               "type": "key",
               "label": "Type 2",
-              "text": "Seul le Type 2 permet de s'appuyer sur l'EFFICACITÉ des contrôles."
+              "text": "Seul le type 2 (conception + efficacité opérationnelle sur une période) permet à l'auditeur de l'entité utilisatrice de s'appuyer sur l'EFFICACITÉ des contrôles."
+            }
+          ]
+        },
+        {
+          "titre": "Assertion de la direction & travaux (§10-30)",
+          "body": "La direction de la société de services fournit une **assertion** (description du système, conception/efficacité des contrôles). Le service auditor obtient des éléments probants sur le caractère fidèle de la description, l'adéquation de la conception, et (type 2) l'efficacité opérationnelle des contrôles testés. Il évalue les **CUEC** mentionnés.",
+          "callouts": []
+        },
+        {
+          "titre": "Rapport & articulation (§37-53)",
+          "body": "Le rapport d'assurance comprend : l'assertion de la direction + l'**opinion** du service auditor + la description des contrôles testés et (type 2) les résultats des tests + les CUEC. \n\n**Articulation** : ISA 402 (côté entité utilisatrice : comment l'auditeur de l'entité s'appuie sur le SOC 1), ISAE 3000 (cadre général), module IT (cloud).",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Lien",
+              "text": "ISAE 3402 (offreur) ↔ ISA 402 (utilisateur). L'auditeur de l'entité utilise le SOC 1 type 2 pour réduire ses tests de substance."
             }
           ]
         }
       ],
+      "quiz": [
+        {
+          "q": "Quel type SOC permet de s'appuyer sur l'efficacité ?",
+          "a": "SOC 1 Type 2 (conception + efficacité sur période)."
+        },
+        {
+          "q": "SOC 1 vs SOC 2 ?",
+          "a": "SOC 1 = reporting financier (ISAE 3402). SOC 2 = trust services criteria (sécurité, etc.)."
+        },
+        {
+          "q": "Qui fournit l'assertion dans un SOC 1 ?",
+          "a": "La direction de la société de services."
+        },
+        {
+          "q": "Quel est le pendant côté utilisateur ?",
+          "a": "ISA 402."
+        }
+      ],
       "synthese": [
-        "SOC 1 = contrôles d'une société de services",
-        "Type 1 (conception) vs Type 2 (efficacité)",
-        "Type 2 exploitable ; lien ISA 402"
+        "SOC 1 = contrôles d'une société de services (reporting financier)",
+        "Type 1 (conception) vs Type 2 (efficacité sur période)",
+        "Type 2 exploitable par l'auditeur utilisateur (ISA 402)",
+        "Évaluer les CUEC ; ≠ SOC 2 (sécurité)"
       ],
       "pieges": [
-        "Se fier à un Type 1 pour l'efficacité",
+        "Se fier à un type 1 pour l'efficacité",
         "Confondre SOC 1 (financier) et SOC 2 (sécurité)",
-        "Oublier les CUEC"
+        "Oublier les CUEC",
+        "Confondre ISAE 3402 (offreur) et ISA 402 (utilisateur)"
       ]
     },
     "3410": {
-      "duree": "7 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Assurance sur les émissions de GES (Scope 1/2/3). Raisonnable ou limitée. En forte croissance avec la CSRD et ISSB S2.",
+      "duree": "11 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISAE 3410 = missions d'assurance sur les déclarations de gaz à effet de serre (GES). Raisonnable ou limitée. Scope 1 (directes) / 2 (énergie achetée) / 3 (chaîne de valeur). En forte croissance avec CSRD et ISSB S2.",
       "stats": [
         {
           "value": "GES",
@@ -17834,8 +18032,8 @@
           "sub": "Scope 1/2/3"
         },
         {
-          "value": "3 scopes",
-          "label": "directes/énergie/chaîne",
+          "value": "R ou L",
+          "label": "Assurance",
           "sub": ""
         },
         {
@@ -17849,59 +18047,71 @@
           "sub": "ISSB S2"
         }
       ],
-      "intro": "Avec la transition climatique, l'assurance sur les émissions GES devient stratégique. ISAE 3410 la régit.",
+      "intro": "Avec la transition climatique, l'assurance sur les émissions de gaz à effet de serre devient stratégique. ISAE 3410 la régit — sous-norme d'ISAE 3000 spécialisée. Cours § par §.",
       "sections": [
         {
-          "titre": "Vérification des déclarations GES",
-          "body": "Assurance (raisonnable ou limitée) sur les déclarations d'émissions de gaz à effet de serre.",
-          "callouts": []
+          "titre": "Champ, objectif & définitions (§1-15)",
+          "body": "ISAE 3410 traite des missions d'assurance sur une **déclaration de gaz à effet de serre** (GHG statement) d'une entité. Le praticien exprime une assurance **raisonnable** ou **limitée**. **Définitions** : émissions, déclaration GES, quantification, incertitude de quantification.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Sous-norme",
+              "text": "ISAE 3410 spécialise ISAE 3000 pour le sujet GES."
+            }
+          ]
         },
         {
-          "titre": "Les 3 scopes",
+          "titre": "Les 3 scopes d'émissions",
           "body": "",
           "schema": {
             "type": "flow",
-            "title": "Les 3 scopes GES",
+            "title": "Les 3 scopes (GHG Protocol)",
             "steps": [
               {
                 "t": "Scope 1",
-                "d": "émissions directes (combustion sur site)"
+                "d": "émissions DIRECTES (combustion sur site, véhicules de l'entité)"
               },
               {
                 "t": "Scope 2",
-                "d": "indirectes liées à l'énergie achetée (électricité)"
+                "d": "émissions indirectes liées à l'ÉNERGIE achetée (électricité, chaleur)"
               },
               {
                 "t": "Scope 3",
-                "d": "chaîne de valeur (souvent le plus important, le plus dur à mesurer)"
+                "d": "autres émissions indirectes de la CHAÎNE DE VALEUR (fournisseurs, transport, usage des produits) — souvent les plus importantes et les plus difficiles à mesurer"
               }
             ]
           },
           "callouts": [
             {
+              "type": "key",
+              "label": "Scope 3",
+              "text": "Le Scope 3 est généralement le plus volumineux ET le plus difficile à quantifier (données externes, estimations)."
+            }
+          ]
+        },
+        {
+          "titre": "Procédures & quantification (§23-49)",
+          "body": "Le praticien comprend les méthodes de **quantification** (facteurs d'émission, données d'activité), évalue les **risques** d'anomalie significative dans la déclaration GES, et conçoit des procédures (recalculs, tests des données, analytiques, comparaisons). Il évalue l'**incertitude de quantification** et son traitement.",
+          "callouts": []
+        },
+        {
+          "titre": "Référentiels, rapport & articulation (§63-77)",
+          "body": "Référentiels de quantification : **GHG Protocol**, **ISO 14064-1**, ou un référentiel sectoriel/réglementaire. Le rapport exprime la conclusion (positive si raisonnable, négative si limitée) et décrit les critères. \n\n**Articulation** : ISAE 3000 (cadre général), CSRD/ESRS (Europe), **IFRS S2** (climat, ISSB), TCFD.",
+          "callouts": [
+            {
               "type": "legal",
-              "label": "Référentiels",
-              "text": "GHG Protocol, ISO 14064-1. Lien CSRD, ISSB S2, TCFD."
+              "label": "Cadre durabilité",
+              "text": "ISAE 3410 s'inscrit dans la vague CSRD (Europe) + ISSB S2 (climat). L'assurance climat (limited puis reasonable) devient incontournable."
             }
           ]
         }
-      ],
-      "synthese": [
-        "Assurance sur les émissions GES",
-        "Scope 1 (direct) / 2 (énergie) / 3 (chaîne de valeur)",
-        "GHG Protocol, ISO 14064 ; lien CSRD/ISSB"
-      ],
-      "pieges": [
-        "Confondre les 3 scopes",
-        "Sous-estimer le Scope 3",
-        "Oublier d'évaluer les incertitudes de mesure"
       ],
       "mnemo": {
         "code": "1-2-3",
         "items": [
           {
             "l": "1",
-            "t": "Direct (combustion site)"
+            "t": "Directes (combustion site)"
           },
           {
             "l": "2",
@@ -17913,12 +18123,42 @@
           }
         ],
         "phrase": "Les 3 scopes d'émissions GES"
-      }
+      },
+      "quiz": [
+        {
+          "q": "Que sont les 3 scopes ?",
+          "a": "Scope 1 (directes), Scope 2 (énergie achetée), Scope 3 (chaîne de valeur)."
+        },
+        {
+          "q": "Quel scope est le plus difficile à mesurer ?",
+          "a": "Le Scope 3 (chaîne de valeur, données externes)."
+        },
+        {
+          "q": "Quels référentiels de quantification ?",
+          "a": "GHG Protocol, ISO 14064-1, ou référentiel sectoriel."
+        },
+        {
+          "q": "Dans quel cadre s'inscrit ISAE 3410 ?",
+          "a": "CSRD (Europe) + ISSB S2 (climat) + TCFD."
+        }
+      ],
+      "synthese": [
+        "Assurance sur les émissions GES (raisonnable ou limitée)",
+        "Scope 1 (directes) / 2 (énergie) / 3 (chaîne de valeur)",
+        "Évaluer la quantification + l'incertitude",
+        "Référentiels GHG Protocol/ISO 14064 ; cadre CSRD/ISSB"
+      ],
+      "pieges": [
+        "Confondre les 3 scopes",
+        "Sous-estimer le Scope 3",
+        "Oublier d'évaluer l'incertitude de quantification",
+        "Ignorer le cadre CSRD/ISSB"
+      ]
     },
     "4400": {
-      "duree": "7 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Procédures convenues (AUP) = AUCUNE assurance. Constatations factuelles uniquement, procédures convenues à l'avance, usage RESTREINT. Usages : due diligence, covenants.",
+      "duree": "10 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISRS 4400 (Revised) = procédures convenues (AUP). AUCUNE assurance : le praticien exécute des procédures convenues à l'avance et rapporte des constatations FACTUELLES. Usage restreint aux parties convenant. Pas d'opinion ni de conclusion.",
       "stats": [
         {
           "value": "Aucune",
@@ -17937,50 +18177,86 @@
         },
         {
           "value": "R2020",
-          "label": "Révision",
-          "sub": ""
+          "label": "Révisée",
+          "sub": "effective 2022"
         }
       ],
-      "intro": "Parfois le client veut juste des constatations factuelles, sans opinion. ISRS 4400 régit les procédures convenues.",
+      "intro": "Parfois le client veut des constatations factuelles précises, sans opinion. ISRS 4400 (révisée 2020) régit les missions de procédures convenues (Agreed-Upon Procedures). Cours § par §.",
       "sections": [
         {
-          "titre": "Aucune assurance",
-          "body": "Les procédures convenues ne fournissent AUCUNE assurance : l'auditeur exécute des procédures **convenues à l'avance** et rapporte des **constatations factuelles**, sans opinion.",
+          "titre": "Champ, objectif & nature (§1-9)",
+          "body": "ISRS 4400 traite des missions de **procédures convenues** (AUP) : le praticien exécute des procédures **convenues à l'avance** avec la partie engageante (et les utilisateurs visés) et rapporte des **constatations factuelles** (findings). \n\n**AUCUNE assurance** n'est exprimée : pas d'opinion, pas de conclusion. Les utilisateurs tirent eux-mêmes leurs conclusions des constatations.",
           "callouts": [
             {
               "type": "key",
               "label": "Pas d'opinion",
-              "text": "Les utilisateurs tirent leurs propres conclusions."
+              "text": "Le rapport AUP liste les procédures et ce qui a été constaté — point. C'est aux utilisateurs d'interpréter."
             }
           ]
         },
         {
-          "titre": "Convenir + usage restreint",
-          "body": "Procédures convenues entre praticien, client et utilisateurs visés. Rapport **réservé** aux parties convenant.",
+          "titre": "Acceptation & indépendance (§13-23)",
+          "body": "Le praticien s'assure que les procédures sont **appropriées** au but de la mission, convient des termes par écrit (procédures précises, but, utilisateurs visés). L'**indépendance** n'est pas toujours requise par la norme, MAIS si elle ne l'est pas, le rapport doit le **mentionner** (et si elle est requise par d'autres règles, s'y conformer).",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Indépendance",
+              "text": "Pas systématiquement requise pour une AUP, mais à divulguer dans le rapport si absente."
+            }
+          ]
+        },
+        {
+          "titre": "Exécution & rapport (§24-35)",
+          "body": "Le praticien exécute exactement les procédures convenues et documente. Le **rapport de constatations factuelles** comporte : la description des procédures, les constatations correspondantes, une mention claire qu'il ne s'agit PAS d'un audit/review (donc aucune assurance), et une **restriction d'utilisation** aux parties ayant convenu des procédures.",
           "callouts": [
             {
               "type": "example",
-              "label": "Exemple",
-              "text": "Due diligence M&A, vérification d'un covenant bancaire, contrôle de chiffres pour un tiers."
+              "label": "Exemples",
+              "text": "Due diligence M&A, vérification du respect d'un covenant bancaire, contrôle de chiffres spécifiques exigé par un bailleur de fonds/un régulateur."
             }
           ]
+        },
+        {
+          "titre": "Articulation",
+          "body": "ISRS 4400 ↔ ISRS 4410 (compilation — autre service sans assurance), ISAE 3000 (assurance — à l'inverse). Bien distinguer : AUP = procédures + findings (aucune assurance) ; compilation = préparer les EF (aucune assurance) ; review = assurance limitée ; audit = assurance raisonnable.",
+          "callouts": []
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Quelle assurance fournit une AUP ?",
+          "a": "AUCUNE — constatations factuelles uniquement."
+        },
+        {
+          "q": "À qui le rapport AUP est-il destiné ?",
+          "a": "Aux parties ayant convenu des procédures (usage restreint)."
+        },
+        {
+          "q": "L'indépendance est-elle requise ?",
+          "a": "Pas systématiquement ; si absente, le mentionner dans le rapport."
+        },
+        {
+          "q": "Exemples d'AUP ?",
+          "a": "Due diligence M&A, vérification de covenant, contrôle de chiffres pour un tiers."
         }
       ],
       "synthese": [
         "AUP = AUCUNE assurance, constatations factuelles",
-        "Procédures convenues à l'avance",
-        "Usage restreint aux parties convenant"
+        "Procédures convenues à l'avance entre les parties",
+        "Usage restreint ; indépendance à mentionner si absente",
+        "≠ compilation, review, audit"
       ],
       "pieges": [
         "Croire qu'une AUP fournit une assurance",
+        "Ajouter une opinion/conclusion",
         "Diffuser au-delà des parties convenant",
-        "Ajouter une opinion à une AUP"
+        "Oublier de mentionner l'absence d'indépendance le cas échéant"
       ]
     },
     "4410": {
-      "duree": "6 min",
-      "niveau": "Fondamental",
-      "tldr": "Compilation = préparer les EF sans assurance. Le praticien met en forme, ne vérifie pas. Mention « compilé » obligatoire. Usage : PME non soumises à révision.",
+      "duree": "9 min",
+      "niveau": "Fondamental · Cours exhaustif",
+      "tldr": "ISRS 4410 (Revised) = mission de compilation. AUCUNE assurance : le praticien aide à PRÉPARER/présenter des informations financières à partir des données de la direction. Mention « compilé » obligatoire. Usage : PME non soumises à révision.",
       "stats": [
         {
           "value": "Aucune",
@@ -17999,64 +18275,81 @@
         },
         {
           "value": "R2011",
-          "label": "Révision",
-          "sub": ""
+          "label": "Révisée",
+          "sub": "effective 2013"
         }
       ],
-      "intro": "Quand le praticien prépare les comptes sans les auditer, c'est une compilation. ISRS 4410 la régit.",
+      "intro": "Quand le praticien prépare/met en forme les comptes sans les auditer, c'est une compilation. ISRS 4410 (révisée 2011) la régit. Cours § par §.",
       "sections": [
         {
-          "titre": "Aucune assurance",
-          "body": "Aider la direction à préparer/présenter des informations financières, **sans aucune assurance**. Le praticien met en forme, ne vérifie pas.",
+          "titre": "Champ, objectif & nature (§1-12)",
+          "body": "ISRS 4410 traite des missions de **compilation** : le praticien applique son **expertise comptable** pour aider la direction à **préparer et présenter** des informations financières conformément à un référentiel, **sans fournir aucune assurance**. \n\nLe praticien met en forme/compile, il ne **vérifie pas** et ne **corrobore pas** les données fournies par la direction.",
           "callouts": [
             {
               "type": "key",
               "label": "Préparer ≠ auditer",
-              "text": "Mention « compilé » obligatoire."
+              "text": "En compilation : le praticien PRÉPARE les EF à partir des données du client. Aucune assurance. Mention « compilé » obligatoire."
             }
           ]
         },
         {
-          "titre": "Usage",
-          "body": "Souvent pour les comptes de PME non soumises à révision, ou comptes de gestion.",
-          "compare": {
-            "title": "3 niveaux",
-            "headers": [
-              "Mission",
-              "Assurance"
-            ],
-            "rows": [
-              [
-                "Audit",
-                "Raisonnable"
-              ],
-              [
-                "Review",
-                "Limitée"
-              ],
-              [
-                "AUP / Compilation",
-                "Aucune"
-              ]
-            ]
-          }
+          "titre": "Acceptation, éthique & exécution (§21-33)",
+          "body": "Le praticien respecte les règles d'éthique (mais l'**indépendance n'est généralement pas requise** pour une compilation). Il convient des termes par écrit, compile les informations selon le référentiel, et — s'il prend conscience que des données sont **incomplètes/inexactes/insatisfaisantes** — demande des corrections à la direction. Si la direction refuse et que c'est trompeur → se retirer.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Indépendance",
+              "text": "Généralement pas requise en compilation (≠ audit/review)."
+            }
+          ]
+        },
+        {
+          "titre": "Rapport & articulation (§34-41)",
+          "body": "Le **rapport de compilation** indique clairement : qu'il s'agit d'une compilation, qu'aucune assurance (audit ni review) n'est exprimée, que la direction est responsable des informations financières et du référentiel. \n\n**Articulation** : ISRS 4400 (AUP — autre service sans assurance), ISRE 2400 (review — assurance limitée). Distinguer les 4 niveaux : audit (raisonnable) > review (limitée) > AUP/compilation (aucune).",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "Souvent utilisée pour les comptes de PME non soumises à révision (opting-out CO 727a al.2) ou pour des comptes de gestion."
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Quelle assurance fournit une compilation ?",
+          "a": "AUCUNE — le praticien prépare les EF, il ne les audite pas."
+        },
+        {
+          "q": "Quelle mention est obligatoire ?",
+          "a": "« Compilé » (et l'absence d'assurance)."
+        },
+        {
+          "q": "Compilation vs AUP ?",
+          "a": "Compilation = préparer les EF. AUP = exécuter des procédures convenues. Les deux : aucune assurance."
+        },
+        {
+          "q": "Usage typique ?",
+          "a": "Comptes de PME non soumises à révision (opting-out)."
         }
       ],
       "synthese": [
-        "Compilation = préparer sans assurance",
-        "Mention « compilé » obligatoire",
-        "Usage : PME non soumises à révision"
+        "Compilation = préparer/présenter les EF sans assurance",
+        "Le praticien met en forme, ne vérifie pas",
+        "Mention « compilé » + absence d'assurance obligatoires",
+        "≠ AUP (procédures) ; usage PME non révisées"
       ],
       "pieges": [
         "Croire qu'une compilation fournit une assurance",
-        "Confondre compilation (préparer) et AUP (procédures)",
-        "Oublier la mention « compilé »"
+        "Confondre compilation (préparer) et AUP (procédures convenues)",
+        "Oublier la mention « compilé »",
+        "Ne pas se retirer si les données sont trompeuses et non corrigées"
       ]
     },
     "ISQM1": {
-      "duree": "9 min",
-      "niveau": "Avancé",
-      "tldr": "Système de gestion de la qualité au niveau CABINET (remplace ISQC 1). Approche risk-based, 8 composantes, évaluation annuelle. NCQ 1 en Suisse. ISQM 1 = cabinet ; ISA 220 = mission.",
+      "duree": "15 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISQM 1 (2020, remplace ISQC 1) = système de gestion de la qualité au niveau du CABINET. Approche risk-based (objectifs qualité → risques → réponses), 8 composantes, évaluation annuelle du SoQM. NCQ 1 en Suisse. Effective 15.12.2022.",
       "stats": [
         {
           "value": "Cabinet",
@@ -18074,57 +18367,172 @@
           "sub": "≠ ISQC check-list"
         },
         {
-          "value": "2022",
-          "label": "Effective",
-          "sub": "15.12"
+          "value": "Annuelle",
+          "label": "Évaluation",
+          "sub": "du système"
         }
       ],
-      "intro": "La qualité d'un cabinet se gère au niveau de l'organisation. ISQM 1 impose un système de gestion de la qualité fondé sur les risques.",
+      "intro": "La qualité d'un cabinet d'audit se gère au niveau de l'organisation entière. ISQM 1 (2020, remplace ISQC 1) impose un Système de gestion de la qualité fondé sur les risques. Cours § par §.",
       "sections": [
         {
-          "titre": "Un SoQM risk-based",
-          "body": "Le cabinet conçoit/met en œuvre un **System of Quality Management**. Approche **fondée sur les risques** (≠ check-list ISQC 1) : objectifs qualité → risques → réponses.",
+          "titre": "Champ, objectif & approche (§1-15)",
+          "body": "ISQM 1 traite des obligations du **cabinet** de concevoir, mettre en œuvre et faire fonctionner un **Système de gestion de la qualité (SoQM)** pour les audits/reviews/autres missions d'assurance et services connexes.\n\n**Objectif** : que le cabinet gère la qualité de manière à fournir une assurance raisonnable que les missions sont réalisées conformément aux normes et que les rapports sont appropriés. **Approche RISK-BASED** : fixer des objectifs qualité → identifier/évaluer les **risques qualité** → concevoir des **réponses**.",
           "callouts": [
             {
               "type": "key",
               "label": "Risk-based",
-              "text": "Le cabinet identifie ses risques qualité et y répond."
+              "text": "ISQM 1 (2020) abandonne la check-list uniforme d'ISQC 1 : chaque cabinet identifie SES risques qualité et y répond."
             }
           ]
         },
         {
-          "titre": "Les 8 composantes",
-          "body": "1) Évaluation des risques qualité, 2) Gouvernance/leadership, 3) Éthique/indépendance, 4) Acceptation/maintien, 5) Réalisation, 6) Ressources, 7) Information/communication, 8) Surveillance/remédiation.",
+          "titre": "Le processus d'évaluation des risques qualité (§23-26)",
+          "body": "Le cabinet : établit des **objectifs qualité** (quality objectives), identifie/évalue les **risques qualité** qui menacent leur atteinte (en tenant compte de la nature/complexité du cabinet et de ses missions), et conçoit/met en œuvre des **réponses** proportionnées.",
           "callouts": []
         },
         {
-          "titre": "Revue annuelle",
-          "body": "La direction du cabinet évalue annuellement le SoQM. Surveillance continue + remédiation.",
+          "titre": "Les 8 composantes du SoQM (§28-46)",
+          "body": "",
+          "schema": {
+            "type": "flow",
+            "title": "Les 8 composantes ISQM 1",
+            "steps": [
+              {
+                "t": "1. Processus d'évaluation des risques qualité",
+                "d": "le moteur du système"
+              },
+              {
+                "t": "2. Gouvernance et leadership",
+                "d": "ton donné par la direction, responsabilité"
+              },
+              {
+                "t": "3. Règles d'éthique et indépendance",
+                "d": "conformité IESBA"
+              },
+              {
+                "t": "4. Acceptation et maintien des missions",
+                "d": "sélection des clients/missions"
+              },
+              {
+                "t": "5. Réalisation des missions",
+                "d": "direction, supervision, revue, consultations"
+              },
+              {
+                "t": "6. Ressources",
+                "d": "humaines, technologiques, intellectuelles"
+              },
+              {
+                "t": "7. Information et communication",
+                "d": "interne et externe"
+              },
+              {
+                "t": "8. Surveillance et remédiation",
+                "d": "monitoring + actions correctives"
+              }
+            ]
+          }
+        },
+        {
+          "titre": "Surveillance, remédiation & évaluation annuelle (§47-54)",
+          "body": "Le cabinet conçoit un processus de **surveillance** (monitoring) du SoQM (incl. inspections de missions achevées), identifie les **déficiences**, en évalue la gravité/cause, et engage des **actions correctives** (remédiation). La personne responsable du système **évalue le SoQM au moins annuellement** et conclut sur son efficacité (l'une de 3 conclusions possibles).",
           "callouts": [
             {
-              "type": "legal",
-              "label": "Suisse",
-              "text": "NCQ 1. Effectif 15.12.2022. ISQM 1 = CABINET ; ISA 220 = MISSION."
+              "type": "key",
+              "label": "Évaluation annuelle",
+              "text": "Conclusion annuelle obligatoire sur l'efficacité du système (le SoQM atteint-il son objectif ?)."
+            }
+          ]
+        },
+        {
+          "titre": "Suisse & articulation",
+          "body": "L'équivalent suisse est la **NCQ 1** (Norme suisse de contrôle qualité 1). Effective **15.12.2022**.\n\n**Articulation** : ISQM 1 = niveau **CABINET** ; **ISA 220** = niveau **MISSION** (application) ; **ISQM 2** = revue de qualité de la mission (EQR). Les trois s'articulent.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "ISQM 1 vs ISA 220",
+              "text": "ISQM 1 = système du cabinet (8 composantes). ISA 220 = application sur la mission. Erreur d'examen fréquente."
             }
           ]
         }
       ],
+      "mnemo": {
+        "code": "8 comp.",
+        "items": [
+          {
+            "l": "R",
+            "t": "Risques qualité (processus)"
+          },
+          {
+            "l": "G",
+            "t": "Gouvernance/leadership"
+          },
+          {
+            "l": "É",
+            "t": "Éthique/indépendance"
+          },
+          {
+            "l": "A",
+            "t": "Acceptation/maintien"
+          },
+          {
+            "l": "R",
+            "t": "Réalisation"
+          },
+          {
+            "l": "R",
+            "t": "Ressources"
+          },
+          {
+            "l": "I",
+            "t": "Information/communication"
+          },
+          {
+            "l": "S",
+            "t": "Surveillance/remédiation"
+          }
+        ],
+        "phrase": "Les 8 composantes du SoQM (ISQM 1)"
+      },
+      "quiz": [
+        {
+          "q": "ISQM 1 remplace quelle norme ?",
+          "a": "ISQC 1 (passage d'une check-list à une approche risk-based)."
+        },
+        {
+          "q": "À quel niveau s'applique ISQM 1 ?",
+          "a": "Au niveau du CABINET (système de gestion de la qualité)."
+        },
+        {
+          "q": "Combien de composantes ?",
+          "a": "8 (risques, gouvernance, éthique, acceptation, réalisation, ressources, information, surveillance)."
+        },
+        {
+          "q": "À quelle fréquence évaluer le SoQM ?",
+          "a": "Au moins annuellement (conclusion sur son efficacité)."
+        },
+        {
+          "q": "ISQM 1 vs ISA 220 ?",
+          "a": "ISQM 1 = cabinet ; ISA 220 = mission."
+        }
+      ],
       "synthese": [
-        "SoQM au niveau cabinet, risk-based",
+        "SoQM au niveau cabinet, approche risk-based (≠ ISQC 1)",
+        "Processus : objectifs qualité → risques → réponses",
         "8 composantes",
-        "Évaluation annuelle + remédiation",
-        "NCQ 1 en Suisse"
+        "Surveillance + remédiation + évaluation annuelle",
+        "NCQ 1 en Suisse ; effective 15.12.2022"
       ],
       "pieges": [
         "Confondre ISQM 1 (cabinet) et ISA 220 (mission)",
-        "Logique check-list (c'est risk-based)",
-        "Oublier l'évaluation annuelle"
+        "Appliquer une logique check-list (c'est risk-based)",
+        "Oublier l'évaluation annuelle obligatoire",
+        "Négliger la remédiation des déficiences"
       ]
     },
     "ISQM2": {
-      "duree": "7 min",
-      "niveau": "Avancé",
-      "tldr": "Revue de qualité de la mission (EQR). Réviseur indépendant de l'équipe, compétence+autorité+temps, cooling-off 2 ans, revue achevée AVANT la date du rapport.",
+      "duree": "11 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISQM 2 = revue de qualité de la mission (EQR). Critères d'éligibilité (compétence, autorité, temps), indépendance (cooling-off 2 ans), responsabilités de l'EQR, et revue ACHEVÉE avant la date du rapport. Obligatoire pour EIP/cotées.",
       "stats": [
         {
           "value": "EQR",
@@ -18144,49 +18552,80 @@
         {
           "value": "EIP",
           "label": "Obligatoire",
-          "sub": "+ risque élevé"
+          "sub": "+ désignées"
         }
       ],
-      "intro": "Certaines missions exigent un regard indépendant avant la signature : l'Engagement Quality Review.",
+      "intro": "Certaines missions exigent un regard objectif indépendant avant la signature : la revue de qualité de la mission (Engagement Quality Review). ISQM 2 (2020) en définit les règles. Cours § par §.",
       "sections": [
         {
-          "titre": "L'EQR",
-          "body": "Réviseur **indépendant de l'équipe** qui revoit objectivement les jugements significatifs et la formation de l'opinion. Obligatoire : EIP, cotées, missions à risque élevé.",
-          "callouts": []
+          "titre": "Champ, objectif & nomination (§1-15)",
+          "body": "ISQM 2 traite de la **nomination** et de l'**éligibilité** du **réviseur qualité de la mission (EQR)** et de ses **responsabilités**. Le cabinet (via ISQM 1) détermine les missions soumises à EQR : **EIP/cotées**, et toute mission où le cabinet le juge approprié (risque élevé). L'EQR est nommé par le cabinet.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Qui décide ?",
+              "text": "Le cabinet (ISQM 1) détermine quelles missions requièrent une EQR ; ISQM 2 encadre la revue elle-même."
+            }
+          ]
         },
         {
-          "titre": "Éligibilité et indépendance",
-          "body": "Compétence + autorité + temps suffisants. Indépendant de l'équipe, **cooling-off 2 ans** s'il a été l'associé responsable du même client.",
+          "titre": "Éligibilité & indépendance de l'EQR (§18-21)",
+          "body": "L'EQR doit avoir : la **compétence et les capacités** (dont temps suffisant et autorité), le respect des **règles d'éthique**, et l'**objectivité/indépendance** vis-à-vis de l'équipe. **Cooling-off** : une personne ayant été l'**associé responsable** d'une mission ne peut en devenir l'EQR avant **2 ans**.",
           "callouts": [
             {
               "type": "key",
-              "label": "Cooling-off",
-              "text": "2 ans pour un ancien associé responsable avant de devenir EQR sur le même client."
+              "label": "Cooling-off 2 ans",
+              "text": "Un ancien associé responsable doit attendre 2 ans avant de devenir EQR du même client — pour préserver l'objectivité."
             }
           ]
         },
         {
-          "titre": "Revue avant signature",
-          "body": "La revue doit être **achevée AVANT la date du rapport**. Le rapport ne peut pas être daté tant que l'EQR n'a pas fini.",
+          "titre": "Responsabilités de l'EQR (§22-26)",
+          "body": "L'EQR effectue une **évaluation objective** des jugements significatifs de l'équipe et des conclusions. Il : lit les informations clés, discute avec l'associé responsable, revoit les EF et le rapport projeté, et revoit la documentation sur les jugements significatifs (dont l'indépendance, les consultations, les questions difficiles).",
+          "callouts": []
+        },
+        {
+          "titre": "Achèvement avant la date du rapport & articulation (§24-26)",
+          "body": "La revue de l'EQR doit être **ACHEVÉE avant la date du rapport** d'audit : le rapport ne peut être daté tant que l'EQR n'a pas terminé. L'EQR documente sa revue.\n\n**Articulation** : ISQM 1 (le système qui désigne les missions à EQR), ISA 220 (l'associé responsable coopère avec l'EQR et ne date pas le rapport avant la fin de la revue).",
           "callouts": [
             {
               "type": "warn",
-              "label": "Attention",
-              "text": "Dater le rapport avant la fin de la revue EQR = faute."
+              "label": "Règle absolue",
+              "text": "Dater le rapport avant la fin de la revue EQR = manquement grave."
             }
           ]
         }
       ],
+      "quiz": [
+        {
+          "q": "Pour quelles missions une EQR est-elle requise ?",
+          "a": "EIP/cotées + missions désignées par le cabinet (risque élevé)."
+        },
+        {
+          "q": "Quel cooling-off pour un ancien associé responsable devenant EQR ?",
+          "a": "2 ans."
+        },
+        {
+          "q": "Quand la revue EQR doit-elle être achevée ?",
+          "a": "AVANT la date du rapport (le rapport ne peut être daté avant)."
+        },
+        {
+          "q": "ISQM 2 vs ISQM 1 ?",
+          "a": "ISQM 2 = revue de la mission (EQR) ; ISQM 1 = système qualité du cabinet."
+        }
+      ],
       "synthese": [
-        "EQR = réviseur indépendant de l'équipe",
-        "Obligatoire : EIP, cotées, risque élevé",
-        "Compétence+autorité+temps ; cooling-off 2 ans",
-        "Revue achevée AVANT le rapport"
+        "EQR = réviseur qualité indépendant de l'équipe",
+        "Éligibilité : compétence + autorité + temps + objectivité",
+        "Cooling-off 2 ans (ex-associé responsable)",
+        "Revue ACHEVÉE avant la date du rapport",
+        "Obligatoire EIP/cotées ; désignation via ISQM 1"
       ],
       "pieges": [
         "Dater le rapport avant la fin de la revue EQR",
-        "Désigner un EQR sans cooling-off",
-        "Confondre EQR (ISQM 2) et SoQM (ISQM 1)"
+        "Désigner un EQR sans cooling-off de 2 ans",
+        "Confondre ISQM 2 (EQR) et ISQM 1 (système cabinet)",
+        "EQR sans temps/autorité suffisants"
       ]
     }
   }
