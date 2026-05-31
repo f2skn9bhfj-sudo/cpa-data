@@ -1052,7 +1052,7 @@ function _renderAnnuaireStandard(serieId, idx, std, color) {
                         <button onclick="event.stopPropagation();_downloadCoursPdf('${std.num}')"
                                 style="padding:11px 18px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:700;
                                        background:#1e293b;border:1px solid ${color};color:${color}">
-                            📥 Ouvrir en PDF (nouvel onglet)
+                            📥 Télécharger en PDF
                         </button>
                     </div>` : ''}
             </div>
@@ -1141,7 +1141,7 @@ function _openAnnuaireCours(num) {
                 <button onclick="_renderAuditAnnuaire(document.getElementById('auditContent'))"
                         style="padding:7px 13px;border-radius:7px;cursor:pointer;background:#1e293b;border:1px solid #334155;color:#94a3b8;font-size:12px;font-weight:600">← Annuaire</button>
                 <button onclick="_downloadCoursPdf('${num}')"
-                        style="padding:7px 13px;border-radius:7px;cursor:pointer;background:${color};border:none;color:#fff;font-size:12px;font-weight:700">📥 PDF (nouvel onglet)</button>
+                        style="padding:7px 13px;border-radius:7px;cursor:pointer;background:${color};border:none;color:#fff;font-size:12px;font-weight:700">📥 Télécharger en PDF</button>
                 <span style="margin-left:auto;font-size:11px;color:#64748b">⏱️ ${escapeHtml(duree)} de lecture</span>
             </div>
             <div style="height:4px;background:#1e293b;border-radius:3px;overflow:hidden">
@@ -1199,7 +1199,7 @@ function _openAnnuaireCours(num) {
         <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap">
             <button onclick="_downloadCoursPdf('${num}')"
                     style="padding:13px 22px;border-radius:9px;cursor:pointer;background:linear-gradient(135deg, ${color}, #4c1d95);border:none;color:#fff;font-size:14px;font-weight:800;box-shadow:0 3px 12px ${color}55">
-                📥 Ouvrir ce cours en PDF (nouvel onglet)
+                📥 Télécharger ce cours en PDF
             </button>
             <button onclick="_renderAuditAnnuaire(document.getElementById('auditContent'))"
                     style="padding:13px 18px;border-radius:9px;cursor:pointer;background:#1e293b;border:1px solid #334155;color:#94a3b8;font-size:13px;font-weight:600">
@@ -1488,33 +1488,68 @@ ${body}
 </div></body></html>`;
 }
 
-// Ouvre le cours dans un NOUVEL ONGLET (page autonome, prête pour lecture + impression/PDF)
+// Petit toast de confirmation (fixe, bas de l'écran, auto-disparition)
+function _auditToast(msg, ms) {
+    let t = document.getElementById('auditToast');
+    if (!t) {
+        t = document.createElement('div');
+        t.id = 'auditToast';
+        t.style.cssText = 'position:fixed;left:50%;bottom:26px;transform:translateX(-50%);z-index:9999;' +
+            'background:#0f172a;border:1px solid #334155;color:#e2e8f0;padding:12px 18px;border-radius:10px;' +
+            'font-size:13.5px;font-weight:600;box-shadow:0 6px 24px rgba(0,0,0,0.5);max-width:90vw;text-align:center;' +
+            'transition:opacity 0.25s';
+        document.body.appendChild(t);
+    }
+    t.textContent = msg;
+    t.style.opacity = '1';
+    clearTimeout(t._hideTimer);
+    t._hideTimer = setTimeout(() => { t.style.opacity = '0'; }, ms || 4200);
+}
+
+// Exporte le cours en PDF DANS LE DOSSIER TÉLÉCHARGEMENTS (pas de nouvel onglet).
+// App bureau (pywebview) → génération PDF native. Web/mobile → repli : téléchargement
+// du cours autonome (HTML, imprimable en PDF).
 function _downloadCoursPdf(num) {
     const cours = (_auditData.annuaire_cours || {})[num];
     const { std, serie } = _findAnnuaireStd(num);
     if (!cours || !std) return;
 
-    // Ouvrir l'onglet IMMÉDIATEMENT (sur le clic) pour éviter le blocage des pop-ups
-    const w = window.open('', '_blank');
-    const html = _coursStandaloneHtml(std, serie, cours);
-    if (w && w.document) {
-        w.document.open();
-        w.document.write(html);
-        w.document.close();
-        try { w.focus(); } catch (_) {}
-    } else {
-        // Pop-up bloquée : proposer un téléchargement de la page HTML, ou fallback impression
+    const api = window.pywebview && window.pywebview.api;
+    if (api && typeof api.export_cours_pdf === 'function') {
+        _auditToast('⏳ Génération du PDF…', 8000);
         try {
-            const blob = new Blob([html], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url; a.target = '_blank';
-            a.rel = 'noopener';
-            a.click();
-            setTimeout(() => URL.revokeObjectURL(url), 4000);
-        } catch (_) {
-            alert("Autorise les pop-ups pour ouvrir le cours dans un nouvel onglet.");
-        }
+            Promise.resolve(api.export_cours_pdf(num)).then((res) => {
+                if (res && res.ok) {
+                    _auditToast('✅ PDF enregistré dans Téléchargements : ' + (res.filename || 'cours.pdf'));
+                } else {
+                    // stub web ou erreur → repli navigateur
+                    _coursPdfFallback(std, serie, cours, num, res && res.error);
+                }
+            }).catch(() => _coursPdfFallback(std, serie, cours, num));
+            return;
+        } catch (_) { /* repli ci-dessous */ }
+    }
+    _coursPdfFallback(std, serie, cours, num);
+}
+
+// Repli sans backend : télécharge le cours autonome (HTML) dans les Téléchargements.
+function _coursPdfFallback(std, serie, cours, num, errMsg) {
+    try {
+        const html = _coursStandaloneHtml(std, serie, cours);
+        const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const safe = ((std.code || ('ISA ' + num)) + ' ' + (std.title_fr || ''))
+            .replace(/[\\/:*?"<>|]+/g, ' ').replace(/\s+/g, '_').slice(0, 80);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Cours_' + safe + '.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 4000);
+        _auditToast('✅ Cours téléchargé — ouvre-le puis Imprimer → « Enregistrer en PDF »');
+    } catch (_) {
+        _auditToast('⚠️ Export impossible' + (errMsg ? ' : ' + errMsg : ''));
     }
 }
 
