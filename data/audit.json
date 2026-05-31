@@ -12948,14 +12948,24 @@
       ]
     },
     "315": {
-      "duree": "13 min",
-      "niveau": "Avancé",
-      "tldr": "Norme PIVOT : comprendre l'entité + son SCI (cadre COSO) pour identifier où se cachent les anomalies. Révision 2019 : risque inhérent sur un **SPECTRE** (≠ binaire) + considérations IT + test de recul (stand-back).",
+      "duree": "38 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISA 315 (Revised 2019) = norme PIVOT. L'auditeur comprend l'entité + les 5 composantes du SCI, puis identifie/évalue les risques d'anomalies significatives au niveau des EF et des assertions. Innovation majeure : facteurs de risque inhérent + SPECTRE du risque inhérent + scalabilité + ITGC + stand-back.",
       "stats": [
         {
           "value": "R2019",
           "label": "Révision majeure",
-          "sub": "effective 2021"
+          "sub": "effective 15.12.2021"
+        },
+        {
+          "value": "5",
+          "label": "Composantes SCI",
+          "sub": "cadre COSO"
+        },
+        {
+          "value": "5",
+          "label": "Facteurs RI",
+          "sub": "subj/compl/incert/chgt/biais"
         },
         {
           "value": "Spectre",
@@ -12963,136 +12973,308 @@
           "sub": "≠ binaire"
         },
         {
-          "value": "5",
-          "label": "Composantes COSO",
-          "sub": "cadre du SCI"
+          "value": "§28-37",
+          "label": "Identification/éval.",
+          "sub": "le cœur"
         },
         {
           "value": "Stand-back",
-          "label": "Test de recul",
+          "label": "§36",
           "sub": "cohérence globale"
         }
       ],
-      "intro": "ISA 315 (révisée 2019) est la **norme pivot** : tout l'audit dépend de la qualité de l'évaluation des risques. Le MSA (III.3) en fait le cœur de la planification. La révision 2019 a transformé l'approche : du binaire au spectre.",
+      "intro": "ISA 315 (Revised 2019) est la norme la plus structurante de tout l'audit : la qualité de l'évaluation des risques détermine la pertinence de toutes les procédures qui suivent (ISA 330). Le MSA (chapitre III.3, le plus long) en fait le cœur de la planification. La révision 2019 (en vigueur pour les exercices ouverts dès le 15.12.2021) a profondément modernisé l'approche : introduction des facteurs de risque inhérent, du spectre du risque inhérent, du principe de scalabilité (proportionnalité), du renforcement des considérations IT (ITGC) et du test de recul (stand-back). Ce cours couvre la norme § par §.",
       "sections": [
         {
-          "titre": "Comprendre l'entité et son SCI",
-          "body": "L'auditeur comprend : l'entité, son secteur, son modèle d'affaires ; le référentiel applicable ; le système d'information ; et le **contrôle interne** via le cadre COSO.",
+          "titre": "Champ, date d'entrée en vigueur & objectif",
+          "body": "ISA 315 traite de la responsabilité de l'auditeur d'**identifier et d'évaluer** les risques d'anomalies significatives (RAS), que celles-ci proviennent de fraude ou d'erreur, au niveau des **états financiers** et au niveau des **assertions**, par la compréhension de l'entité, de son environnement et de son système de contrôle interne.\n\n**Objectif (§11)** : fournir une base pour la conception et la mise en œuvre des réponses aux RAS évalués (ISA 330).\n**Date** : exercices ouverts à compter du 15.12.2021 (R2019).",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Pivot",
+              "text": "ISA 315 (identifier les risques) + ISA 330 (y répondre) forment le moteur de l'audit basé sur les risques."
+            }
+          ]
+        },
+        {
+          "titre": "Définitions clés (§12)",
+          "body": "",
+          "compare": {
+            "title": "Définitions ISA 315 (R2019)",
+            "headers": [
+              "Terme",
+              "Définition"
+            ],
+            "rows": [
+              [
+                "Assertions",
+                "Déclarations de la direction, explicites ou non, incorporées dans les EF, que l'auditeur utilise pour considérer les types d'anomalies possibles"
+              ],
+              [
+                "Facteurs de risque inhérent",
+                "Caractéristiques d'événements/conditions qui affectent la susceptibilité d'une assertion à comporter une anomalie, avant contrôles : subjectivité, complexité, incertitude, changement, propension au biais/à la fraude"
+              ],
+              [
+                "Risque important (significant risk)",
+                "RAS identifié et évalué dont le risque inhérent est proche du haut du SPECTRE du risque inhérent"
+              ],
+              [
+                "Contrôles pertinents pour l'audit",
+                "Contrôles que l'auditeur juge approprié de comprendre pour l'audit"
+              ],
+              [
+                "Système de contrôle interne",
+                "Les 5 composantes (environnement, processus d'éval. des risques de l'entité, processus de pilotage du SCI, système d'information/communication, activités de contrôle)"
+              ]
+            ]
+          }
+        },
+        {
+          "titre": "Procédures d'évaluation des risques & scalabilité (§13-18)",
+          "body": "L'auditeur met en œuvre des **procédures d'évaluation des risques** : demandes d'informations (direction, fonctions concernées, audit interne, gouvernance), procédures **analytiques**, **observation** et **inspection**.\n\n**Scalabilité (nouveauté R2019)** : la nature et l'étendue de ces procédures sont **proportionnées** à la nature et à la complexité de l'entité. Une PME simple n'exige pas la même profondeur qu'un groupe coté.\n\n**Discussion d'équipe (§17-18)** : l'équipe discute de la susceptibilité des EF aux anomalies (fraude + erreur) et de l'application du référentiel.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Scalabilité",
+              "text": "La R2019 insiste : l'effort d'évaluation des risques s'adapte à la taille/complexité de l'entité (proportionnalité). Ni sur-audit d'une PME, ni sous-audit d'un groupe."
+            }
+          ]
+        },
+        {
+          "titre": "Comprendre l'entité, l'environnement & le référentiel (§19)",
+          "body": "L'auditeur acquiert une compréhension de :\n• les **facteurs externes** (secteur, réglementation, environnement économique)\n• la **nature de l'entité** (activités, structure de propriété et de gouvernance, modèle d'affaires, financements)\n• les **objectifs/stratégies** et risques d'affaires associés\n• les **mesures de performance** (internes et externes) qui pourraient créer une pression\n• le **référentiel comptable** applicable et les politiques comptables de l'entité (et la cohérence avec le secteur).",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Mesures de performance",
+              "text": "Les indicateurs de performance (bonus liés au CA, covenants) sont à repérer : ils créent des pressions = facteurs de risque de fraude (lien ISA 240)."
+            }
+          ]
+        },
+        {
+          "titre": "Le système de contrôle interne — vue d'ensemble (§21)",
+          "body": "L'auditeur comprend le SCI à travers ses **5 composantes** (cadre COSO). Pour chacune, il évalue si elle est conçue de manière appropriée et mise en place (design & implementation). Il identifie les **contrôles pertinents pour l'audit**.",
           "schema": {
             "type": "pyramid",
-            "title": "Les 5 composantes du SCI (COSO 2013)",
+            "title": "Les 5 composantes du SCI (COSO / ISA 315 R2019)",
             "levels": [
               {
-                "t": "Pilotage (monitoring)",
-                "d": ""
-              },
-              {
-                "t": "Information & communication",
-                "d": ""
+                "t": "Pilotage du SCI (monitoring)",
+                "d": "l'entité surveille et corrige son SCI"
               },
               {
                 "t": "Activités de contrôle",
-                "d": ""
+                "d": "contrôles pertinents, dont ITGC"
               },
               {
-                "t": "Évaluation des risques",
-                "d": ""
+                "t": "Système d'information & communication",
+                "d": "flux d'information financière"
+              },
+              {
+                "t": "Processus d'évaluation des risques de l'entité",
+                "d": "comment l'entité identifie ses risques"
               },
               {
                 "t": "Environnement de contrôle",
-                "d": "le socle (tone at the top)"
+                "d": "socle : intégrité, valeurs, ton donné par la direction"
               }
             ]
           }
         },
         {
-          "titre": "L'innovation 2019 : le spectre du risque inhérent",
-          "body": "Avant 2019 : approche binaire (risque significatif ou non). Depuis 2019 : le risque inhérent se positionne sur un **SPECTRE**, selon la **probabilité** d'anomalie et son **ampleur** potentielle. Les **risques importants** se situent dans la partie haute du spectre.",
+          "titre": "Composante 1 — Environnement de contrôle (§21a)",
+          "body": "Le **socle** du SCI. L'auditeur évalue : si la direction crée une culture d'honnêteté et de comportement éthique (« tone at the top »), si l'environnement fournit une base appropriée aux autres composantes, et l'implication de la gouvernance dans la surveillance.",
           "callouts": [
             {
-              "type": "key",
-              "label": "Spectrum",
-              "text": "Le risque inhérent n'est plus oui/non mais un continuum. Plus on monte dans le spectre, plus la réponse d'audit doit être robuste."
+              "type": "warn",
+              "label": "Faiblesse fondamentale",
+              "text": "Un environnement de contrôle déficient (direction dominante, absence d'éthique) contamine TOUTES les autres composantes — il augmente le risque d'override."
             }
           ]
         },
         {
-          "titre": "Considérations IT + stand-back",
-          "body": "La R2019 renforce deux points :\n• **Considérations IT** : évaluer les contrôles généraux informatiques (ITGC), surtout en environnement complexe (ERP, cloud)\n• **Test de recul (stand-back)** : reculer pour vérifier que l'évaluation des risques dans son ensemble est cohérente avec la compréhension de l'entité.",
+          "titre": "Composantes 2 & 3 — Évaluation des risques & pilotage (§22-24)",
+          "body": "• **Processus d'évaluation des risques de l'entité (§22)** : comment l'entité identifie ses propres risques d'affaires pertinents pour le reporting financier, en estime l'importance et y répond. Si l'auditeur identifie un risque non détecté par l'entité → évaluer s'il s'agit d'une déficience du SCI.\n• **Processus de pilotage du SCI (§24)** : comment l'entité surveille l'efficacité de son SCI dans le temps et engage des actions correctives (y compris la fonction d'audit interne).",
+          "callouts": []
+        },
+        {
+          "titre": "Composante 4 — Système d'information & communication (§25)",
+          "body": "L'auditeur comprend le système d'information pertinent pour le reporting financier : comment les transactions sont initiées, enregistrées, traitées, corrigées, reportées dans le grand livre et les EF. Il comprend aussi comment l'entité communique les rôles et responsabilités en matière de reporting financier.",
           "callouts": [
             {
               "type": "tip",
-              "label": "Stand-back",
-              "text": "« Mon évaluation globale est-elle cohérente ? N'ai-je pas sous-estimé un domaine matériel ? »"
+              "label": "Walkthrough",
+              "text": "En pratique : le walkthrough (suivi end-to-end d'une transaction, du début au reporting) est l'outil clé pour comprendre cette composante."
             }
           ]
         },
         {
-          "titre": "Identifier les significant risks",
-          "body": "Critères déclenchant un risque important : fraude (présomptions ISA 240), subjectivité/estimation complexe, transactions inhabituelles, parties liées, complexité du référentiel (IFRS 15/9/16, IAS 36/19), changements rapides du secteur.",
+          "titre": "Composante 5 — Activités de contrôle & ITGC (§26)",
+          "body": "L'auditeur identifie les **contrôles** qui répondent aux risques au niveau des assertions, y compris ceux liés aux **risques importants** et aux risques pour lesquels les procédures de substance seules ne suffisent pas. Renforcement R2019 : il identifie les **contrôles généraux informatiques (ITGC)** sur les applications pertinentes, et évalue les **risques découlant de l'IT**.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Nouveauté R2019",
+              "text": "Les considérations IT sont renforcées : identifier les applications pertinentes, les ITGC (accès, change management, opérations) et les risques IT. Crucial en environnement ERP/cloud (lien ISA 402 & module IT)."
+            }
+          ]
+        },
+        {
+          "titre": "Identifier les risques (§28)",
+          "body": "À partir de la compréhension acquise, l'auditeur identifie les RAS au niveau des EF et au niveau des assertions, pour les flux de transactions, soldes de comptes et informations à fournir. Il détermine les **contrôles pertinents** et évalue leur design & implémentation.",
+          "callouts": []
+        },
+        {
+          "titre": "Évaluer le risque INHÉRENT : facteurs + SPECTRE (§29-31)",
+          "body": "L'auditeur évalue séparément le **risque inhérent** et le **risque de contrôle**.\n\nPour le risque inhérent, il considère les **facteurs de risque inhérent** et la **probabilité + ampleur** d'une anomalie, puis positionne le risque sur un **SPECTRE** (du plus faible au plus élevé). Plus on est haut sur le spectre, plus la réponse doit être robuste.",
+          "schema": {
+            "type": "flow",
+            "title": "Les 5 facteurs de risque inhérent (R2019)",
+            "steps": [
+              {
+                "t": "Subjectivité",
+                "d": "jugement important dans la mesure (estimations)"
+              },
+              {
+                "t": "Complexité",
+                "d": "du calcul, du référentiel, des transactions"
+              },
+              {
+                "t": "Incertitude",
+                "d": "liée à des événements futurs / estimation"
+              },
+              {
+                "t": "Changement",
+                "d": "évolution du secteur, de l'entité, du référentiel"
+              },
+              {
+                "t": "Propension au biais / à la fraude",
+                "d": "management bias, manipulation"
+              }
+            ]
+          },
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Le spectre",
+              "text": "Innovation centrale R2019 : le risque inhérent n'est plus binaire (significatif/non) mais un CONTINUUM. Les facteurs ci-dessus déterminent la position."
+            }
+          ]
+        },
+        {
+          "titre": "Risques importants & substance seule insuffisante (§32-33)",
+          "body": "• **§32 — Risque important (significant risk)** : RAS dont le risque inhérent est positionné **proche du haut du spectre**. Inclut notamment les risques de fraude (présomptions ISA 240).\n• **§33 — Procédures de substance seules insuffisantes** : pour certains risques (ex. processus hautement automatisé, gros volumes), les procédures de substance seules ne fournissent pas d'éléments suffisants → l'auditeur DOIT tester les contrôles.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Conséquence ISA 330",
+              "text": "Pour un significant risk : procédures de substance OBLIGATOIRES (ISA 330 §21). Pour §33 : tests des contrôles obligatoires."
+            }
+          ]
+        },
+        {
+          "titre": "Risque de contrôle, évaluation des éléments & stand-back (§34-36)",
+          "body": "• **§34 — Risque de contrôle** : si l'auditeur prévoit de s'appuyer sur les contrôles, il évalue leur design et planifie d'en tester l'efficacité (ISA 330). Sinon, le risque de contrôle est évalué au maximum.\n• **§35** : évaluer si les éléments probants issus des procédures d'évaluation des risques fournissent une base appropriée.\n• **§36 — Stand-back** : l'auditeur évalue, par un **test de recul**, si les états financiers comportent des classes de transactions/soldes/informations matériels qui n'ont PAS été identifiés comme comportant un RAS — vérification de cohérence et d'exhaustivité.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Stand-back (§36)",
+              "text": "Nouveauté R2019 : reculer pour vérifier qu'aucun poste matériel n'a été oublié dans l'évaluation des risques. « N'ai-je rien sous-estimé ? »"
+            }
+          ]
+        },
+        {
+          "titre": "Révision de l'évaluation & documentation (§37-38)",
+          "body": "• **§37** : si des éléments probants obtenus ultérieurement contredisent l'évaluation initiale, l'auditeur **révise** son évaluation et adapte ses réponses (ISA 330).\n• **§38 — Documentation** : la discussion d'équipe, les éléments clés de la compréhension de chaque composante, les sources d'information, les RAS identifiés/évalués (au niveau EF et assertions), les risques importants, et les risques §33.",
+          "callouts": []
+        },
+        {
+          "titre": "Spécificités suisses & articulation",
+          "body": "En contrôle ordinaire (NA-CH 315), l'évaluation du SCI alimente directement la **vérification de l'existence du système de contrôle interne** (CO 728a al.1 ch.3) — l'organe de révision doit confirmer qu'un SCI existe (constat d'existence, pas opinion sur l'efficacité).\n\n**Articulation** : ISA 315 → ISA 330 (réponses) ; ISA 240 (spécialise pour la fraude) ; ISA 320 (matérialité) ; ISA 540 (estimations = subjectivité/complexité élevées) ; ISA 402 (sociétés de services).",
           "callouts": [
             {
               "type": "legal",
-              "label": "Suisse",
-              "text": "NA-CH 315. En contrôle ordinaire, l'évaluation du SCI alimente la vérification de l'existence du SCI (CO 728a al.1 ch.3)."
+              "label": "CO 728a",
+              "text": "Le constat d'existence du SCI est une obligation suisse propre au contrôle ordinaire, nourrie par la compréhension ISA 315."
             }
           ]
         }
       ],
       "mnemo": {
-        "code": "COSO",
+        "code": "S-C-I-C-B",
         "items": [
           {
-            "l": "E",
-            "t": "Environnement de contrôle"
-          },
-          {
-            "l": "R",
-            "t": "Risk assessment (entité)"
+            "l": "S",
+            "t": "Subjectivité"
           },
           {
             "l": "C",
-            "t": "Contrôle (activités)"
+            "t": "Complexité"
           },
           {
             "l": "I",
-            "t": "Information & communication"
+            "t": "Incertitude"
           },
           {
-            "l": "M",
-            "t": "Monitoring (pilotage)"
+            "l": "C",
+            "t": "Changement"
+          },
+          {
+            "l": "B",
+            "t": "Biais / fraude"
           }
         ],
-        "phrase": "Les 5 composantes du cadre COSO 2013"
+        "phrase": "Les 5 facteurs de risque inhérent (R2019)"
       },
       "quiz": [
         {
-          "q": "Quelle est l'innovation de la révision 2019 ?",
-          "a": "Le risque inhérent évalué sur un SPECTRE (continuum) au lieu d'une approche binaire."
+          "q": "Quelle est l'innovation centrale de la R2019 ?",
+          "a": "Le risque inhérent évalué sur un SPECTRE (continuum) via les facteurs de risque inhérent, au lieu d'une approche binaire."
         },
         {
-          "q": "Combien de composantes dans le cadre COSO ?",
-          "a": "5 (environnement, évaluation des risques, activités de contrôle, information/communication, pilotage)."
+          "q": "Cite les 5 facteurs de risque inhérent.",
+          "a": "Subjectivité, Complexité, Incertitude, Changement, Propension au biais/à la fraude."
         },
         {
-          "q": "Qu'est-ce que le test de recul (stand-back) ?",
-          "a": "Reculer pour vérifier que l'évaluation globale des risques est cohérente avec la compréhension de l'entité."
+          "q": "Qu'est-ce qu'un significant risk selon §32 ?",
+          "a": "Un RAS dont le risque inhérent est proche du HAUT du spectre."
         },
         {
-          "q": "Où se situe un significant risk sur le spectre ?",
-          "a": "Dans la partie HAUTE du spectre du risque inhérent."
+          "q": "Que vérifie le stand-back (§36) ?",
+          "a": "Qu'aucun poste matériel des EF n'a été oublié dans l'identification des risques (cohérence/exhaustivité)."
+        },
+        {
+          "q": "Que sont les 5 composantes du SCI ?",
+          "a": "Environnement de contrôle, processus d'évaluation des risques de l'entité, pilotage du SCI, système d'information/communication, activités de contrôle."
+        },
+        {
+          "q": "Qu'impose §33 ?",
+          "a": "Quand les procédures de substance seules ne suffisent pas (ex. processus automatisé, gros volumes) → tester les contrôles est obligatoire."
+        },
+        {
+          "q": "Quel lien suisse avec ISA 315 ?",
+          "a": "La compréhension du SCI nourrit le constat d'existence du SCI (CO 728a al.1 ch.3) en contrôle ordinaire."
+        },
+        {
+          "q": "Qu'est-ce que la scalabilité (R2019) ?",
+          "a": "La proportionnalité des procédures d'évaluation des risques à la taille/complexité de l'entité."
         }
       ],
       "synthese": [
-        "Comprendre entité + SCI (cadre COSO, 5 composantes)",
-        "R2019 : spectre du risque inhérent (≠ binaire)",
-        "Significant risk = partie haute du spectre",
-        "IT considerations + test de recul (stand-back) + documentation renforcée"
+        "ISA 315 = identifier/évaluer les RAS (EF + assertions) ; pivot avec ISA 330",
+        "Comprendre : entité + environnement + référentiel + 5 composantes du SCI",
+        "R2019 : 5 facteurs de risque inhérent + SPECTRE + scalabilité + ITGC renforcés + stand-back",
+        "Significant risk = haut du spectre ; §33 = substance seule insuffisante → tester les contrôles",
+        "Risque inhérent et risque de contrôle évalués SÉPARÉMENT",
+        "Suisse : nourrit le constat d'existence du SCI (CO 728a)"
       ],
       "pieges": [
         "Approche binaire au lieu du spectre (R2019)",
-        "Négliger les contrôles généraux IT (ITGC)",
-        "Oublier le test de recul (stand-back)"
+        "Oublier les 5 facteurs de risque inhérent",
+        "Négliger les ITGC et les risques IT",
+        "Oublier le stand-back (§36) sur l'exhaustivité",
+        "Ne pas évaluer séparément risque inhérent et risque de contrôle",
+        "Confondre constat d'existence du SCI (CO 728a) et opinion sur son efficacité"
       ]
     },
     "320": {
@@ -13274,14 +13456,19 @@
       ]
     },
     "330": {
-      "duree": "10 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Une fois les risques évalués (ISA 315), on y RÉPOND. Réponses globales + procédures complémentaires (tests des contrôles + procédures de substance). Règle absolue §21 : des procédures de substance pour CHAQUE significant risk.",
+      "duree": "24 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISA 330 = comment RÉPONDRE aux risques évalués (ISA 315). Réponses globales + procédures d'audit complémentaires (tests des contrôles + procédures de substance). Règles absolues : substance pour chaque catégorie significative (§18) et pour chaque significant risk (§21).",
       "stats": [
+        {
+          "value": "2",
+          "label": "Niveaux de réponse",
+          "sub": "global + assertions"
+        },
         {
           "value": "§18",
           "label": "Substance / catégorie",
-          "sub": "significative"
+          "sub": "obligatoire"
         },
         {
           "value": "§21",
@@ -13289,112 +13476,188 @@
           "sub": "ABSOLU"
         },
         {
-          "value": "2",
-          "label": "Types de procédures",
-          "sub": "TOC + substance"
+          "value": "§8",
+          "label": "TOC périodes",
+          "sub": "+ rotation"
         },
         {
-          "value": "TDR",
-          "label": "Procédures substance",
-          "sub": "détails + analytique"
+          "value": "§A53",
+          "label": "Cut-off, accruals",
+          "sub": "substance fin période"
         }
       ],
-      "intro": "ISA 330 est le cœur opérationnel de l'audit : concevoir et mettre en œuvre les réponses aux risques évalués. Le MSA (III.4 « Exécution ») détaille les tests de procédures et les contrôles de substance par poste.",
+      "intro": "ISA 330 est le pendant opérationnel d'ISA 315 : une fois les risques identifiés et évalués, l'auditeur conçoit et met en œuvre des **réponses appropriées**. C'est le moment où l'audit « s'exécute ». Le MSA (chapitre III.4 « Exécution ») décline ces réponses par poste/cycle. Ce cours couvre la norme § par §.",
       "sections": [
         {
-          "titre": "Réponses globales",
-          "body": "Face aux risques au niveau des EF : renforcement du **scepticisme**, affectation de personnel plus expérimenté, supervision accrue, et **imprévisibilité** (varier les procédures d'une année à l'autre).",
+          "titre": "Champ & objectif",
+          "body": "ISA 330 traite de la responsabilité de l'auditeur de concevoir et mettre en œuvre des réponses aux RAS évalués selon ISA 315.\n\n**Objectif (§3)** : obtenir des éléments probants suffisants et appropriés concernant les RAS évalués, par la conception et la mise en œuvre de réponses appropriées.",
           "callouts": [
             {
               "type": "info",
-              "label": "Imprévisibilité",
-              "text": "Empêche le client de « préparer » uniquement les zones habituellement testées."
+              "label": "Lien direct",
+              "text": "La qualité des réponses (330) dépend de la qualité de l'évaluation (315). Mauvaise évaluation = mauvaises réponses."
             }
           ]
         },
         {
-          "titre": "TOC vs procédures de substance",
-          "body": "Deux familles de procédures complémentaires :",
+          "titre": "Réponses globales (§5)",
+          "body": "Face aux RAS au niveau des **états financiers**, l'auditeur conçoit des réponses globales :\n• souligner à l'équipe la nécessité du **scepticisme professionnel**\n• affecter du personnel plus **expérimenté** ou des **spécialistes** (IT, évaluation)\n• renforcer la **supervision**\n• intégrer un élément d'**imprévisibilité** dans le choix des procédures\n• modifications générales de la nature/calendrier/étendue des procédures.",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Imprévisibilité",
+              "text": "Tester des éléments à faible montant, varier le timing/les lieux, changer les procédures d'une année à l'autre : déjoue l'anticipation par un fraudeur."
+            }
+          ]
+        },
+        {
+          "titre": "Procédures d'audit complémentaires (§6-7)",
+          "body": "Au niveau des **assertions**, l'auditeur conçoit des procédures dont la nature, le calendrier et l'étendue reposent sur les risques évalués. Deux familles :\n• **Tests des contrôles** (operating effectiveness)\n• **Procédures de substance** (tests de détails + procédures analytiques de substance).\n\nPlus le risque évalué est élevé, plus les éléments probants doivent être **persuasifs**.",
           "compare": {
-            "title": "Tests des contrôles vs Substance",
+            "title": "Les deux familles de procédures",
             "headers": [
-              "Aspect",
-              "Tests des contrôles (TOC)",
+              "",
+              "Tests des contrôles",
               "Procédures de substance"
             ],
             "rows": [
               [
-                "Objectif",
+                "But",
                 "Tester l'efficacité opérationnelle du contrôle",
-                "Détecter directement l'anomalie"
+                "Détecter directement les anomalies au niveau des assertions"
               ],
               [
-                "Quand utiliser",
-                "Si on compte s'appuyer sur les contrôles",
-                "Toujours (au moins partiellement)"
+                "Quand obligatoire",
+                "Si on s'appuie sur les contrôles OU si substance seule insuffisante (ISA 315 §33)",
+                "Toujours, pour chaque catégorie significative (§18)"
               ],
               [
-                "Types",
-                "Attribute sampling",
-                "Tests de détails + analytique (TDR)"
+                "Techniques",
+                "Demande+observation+inspection+ré-exécution",
+                "Tests de détails + analytique de substance"
               ]
             ]
           }
         },
         {
-          "titre": "Les 2 obligations absolues",
-          "body": "• **§18** : des procédures de substance pour CHAQUE catégorie de transactions, solde et information significatifs\n• **§21** : des procédures de substance pour CHAQUE **risque important**, même si les contrôles sont jugés efficaces.",
+          "titre": "Tests des contrôles (§8-17)",
+          "body": "L'auditeur teste les contrôles quand : (a) il s'attend à ce qu'ils fonctionnent efficacement (intention de s'appuyer), ou (b) les procédures de substance seules ne suffisent pas (ISA 315 §33).\n\n• **Nature & étendue** : plus on s'appuie, plus on teste.\n• **Calendrier (§11-12)** : si testé en cours d'année (interim), obtenir des éléments sur la **période résiduelle**.\n• **Utilisation de preuves d'audits antérieurs (§13-15)** : possible, mais **re-tester au moins tous les 3 ans** ; et **chaque année** pour les contrôles atténuant un **risque important**.",
           "callouts": [
             {
               "type": "key",
-              "label": "§21 absolu",
-              "text": "Pour un significant risk, on ne peut JAMAIS se contenter des TOC : des procédures de substance sont TOUJOURS requises."
+              "label": "Rotation des contrôles",
+              "text": "Preuves d'audits antérieurs réutilisables : re-test obligatoire au moins tous les 3 ans. MAIS un contrôle couvrant un significant risk se re-teste CHAQUE année."
+            }
+          ]
+        },
+        {
+          "titre": "Procédures de substance (§18-23)",
+          "body": "**§18 — Règle d'or** : indépendamment des risques évalués, l'auditeur conçoit et met en œuvre des **procédures de substance pour CHAQUE catégorie de transactions, solde de comptes et information à fournir SIGNIFICATIF**.\n\nProcédures de substance liées au processus de clôture (§20) : rapprocher les EF avec la comptabilité sous-jacente, examiner les écritures d'ajustement matérielles.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "§18 absolu",
+              "text": "On ne peut JAMAIS conclure sur une catégorie significative par les seuls tests de contrôles. Des procédures de substance sont toujours requises."
+            }
+          ]
+        },
+        {
+          "titre": "Substance pour les risques importants (§21)",
+          "body": "**§21 — Règle absolue** : lorsqu'un RAS au niveau des assertions est un **risque important (significant risk)**, l'auditeur met en œuvre des **procédures de substance qui répondent spécifiquement à ce risque**. Si la réponse consiste uniquement en procédures de substance, elle inclut des **tests de détails**.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Le piège classique",
+              "text": "Pour un significant risk, les tests de contrôles seuls ne suffisent JAMAIS. Procédures de substance spécifiques obligatoires, incluant des tests de détails."
+            }
+          ]
+        },
+        {
+          "titre": "Calendrier des procédures de substance (§22-23)",
+          "body": "Si les procédures de substance sont réalisées à une date **intermédiaire**, l'auditeur couvre la **période résiduelle** par : (a) des procédures de substance combinées à des tests de contrôles, ou (b) des procédures de substance supplémentaires, suffisantes pour étendre les conclusions de la date intermédiaire à la clôture.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Interim → clôture",
+              "text": "Tester en interim fait gagner du temps, mais oblige à « combler » la période entre l'interim et la clôture (roll-forward)."
+            }
+          ]
+        },
+        {
+          "titre": "Caractère adéquat de la présentation & suffisance (§24-27)",
+          "body": "• **§24** : mettre en œuvre des procédures pour évaluer si la **présentation d'ensemble** des EF est conforme au référentiel.\n• **§25-27** : évaluer si les éléments probants obtenus sont **suffisants et appropriés**. Si l'auditeur n'a pas obtenu d'éléments suffisants sur une assertion matérielle → en obtenir davantage ; si impossible → opinion modifiée (ISA 705).",
+          "callouts": []
+        },
+        {
+          "titre": "Documentation (§28-30) & articulation",
+          "body": "Documenter : les réponses globales aux RAS au niveau des EF, la nature/le calendrier/l'étendue des procédures complémentaires, leur lien avec les risques évalués au niveau des assertions, et les résultats. Si l'auditeur s'appuie sur des contrôles testés lors d'audits antérieurs → documenter les conclusions.\n\n**Articulation** : ISA 315 (risques) → ISA 330 (réponses) → ISA 500 (éléments probants) → ISA 450 (évaluation des anomalies) → ISA 700 (opinion).",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "NA-CH 330. En contrôle ordinaire, les contrôles de substance par cycle (trésorerie, créances, stocks, immo, dettes, provisions, FP, résultat) sont détaillés dans le MSA III.4."
             }
           ]
         }
       ],
       "mnemo": {
-        "code": "TDR",
+        "code": "NTE",
         "items": [
           {
+            "l": "N",
+            "t": "Nature des procédures"
+          },
+          {
             "l": "T",
-            "t": "Tests de détails (substance)"
+            "t": "Timing (calendrier)"
           },
           {
-            "l": "D",
-            "t": "Data analytics"
-          },
-          {
-            "l": "R",
-            "t": "Revue analytique de substance"
+            "l": "E",
+            "t": "Étendue (extent)"
           }
         ],
-        "phrase": "Les formes de procédures de substance"
+        "phrase": "Les 3 dimensions à adapter aux risques évalués"
       },
       "quiz": [
         {
-          "q": "Peut-on se contenter des tests de contrôles pour un significant risk ?",
-          "a": "Non — §21 impose TOUJOURS des procédures de substance pour un risque important."
+          "q": "Que dit la règle §18 ?",
+          "a": "Des procédures de substance pour CHAQUE catégorie de transactions/soldes/informations significatif, quelle que soit l'évaluation des risques."
         },
         {
-          "q": "Quand teste-t-on les contrôles (TOC) ?",
-          "a": "Quand on compte s'appuyer sur leur efficacité pour réduire les tests de substance."
+          "q": "Que dit la règle §21 ?",
+          "a": "Pour un significant risk : procédures de substance spécifiques obligatoires, incluant des tests de détails si réponse uniquement substantive."
         },
         {
-          "q": "Cite une réponse globale.",
-          "a": "Scepticisme renforcé, personnel expérimenté, supervision accrue, imprévisibilité."
+          "q": "Tous les combien re-tester un contrôle (preuves antérieures) ?",
+          "a": "Au moins tous les 3 ans ; mais CHAQUE année pour un contrôle couvrant un risque important."
+        },
+        {
+          "q": "Cite 3 réponses globales.",
+          "a": "Scepticisme renforcé, personnel expérimenté/spécialistes, supervision accrue, imprévisibilité."
+        },
+        {
+          "q": "Que faire si on teste en interim ?",
+          "a": "Couvrir la période résiduelle (interim → clôture) par roll-forward (substance + contrôles ou substance supplémentaire)."
+        },
+        {
+          "q": "Que faire si éléments probants insuffisants sur une assertion matérielle ?",
+          "a": "En obtenir davantage ; si impossible → opinion modifiée (ISA 705)."
         }
       ],
       "synthese": [
-        "Réponses globales : scepticisme, ressources, supervision, imprévisibilité",
+        "Réponses globales (EF) + procédures complémentaires (assertions)",
         "TOC (efficacité) vs substance (détection directe)",
-        "§18 : substance pour chaque catégorie significative",
-        "§21 : substance OBLIGATOIRE pour chaque significant risk"
+        "§18 : substance pour chaque catégorie significative (absolu)",
+        "§21 : substance spécifique + tests de détails pour chaque significant risk (absolu)",
+        "Preuves de contrôles antérieurs : re-test ≤ 3 ans ; chaque année si significant risk",
+        "Interim → roll-forward pour couvrir la période résiduelle"
       ],
       "pieges": [
         "Se reposer uniquement sur les TOC pour un significant risk (interdit §21)",
-        "Oublier les réponses globales",
-        "Tester les contrôles sans intention de s'y appuyer"
+        "Oublier la substance obligatoire pour chaque catégorie significative (§18)",
+        "Réutiliser des preuves de contrôles > 3 ans sans re-test",
+        "Oublier de couvrir la période résiduelle après un test en interim",
+        "Tester des contrôles sans intention de s'y appuyer (perte de temps)"
       ]
     },
     "402": {
