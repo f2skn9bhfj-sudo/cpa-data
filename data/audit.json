@@ -13846,14 +13846,14 @@
       ]
     },
     "500": {
-      "duree": "10 min",
-      "niveau": "Fondamental",
-      "tldr": "Cœur technique : un bon élément probant est **suffisant** (quantité) ET **approprié** (pertinence + fiabilité). 7 procédures. Hiérarchie : externe>interne, écrit>oral, direct>indirect.",
+      "duree": "22 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISA 500 définit ce qu'est un bon élément probant (suffisant + approprié = pertinence + fiabilité), les 7 procédures, et les exigences sur l'utilisation des travaux d'un expert de la direction, la sélection d'éléments et les incohérences.",
       "stats": [
         {
           "value": "7",
           "label": "Procédures",
-          "sub": "inspection→demande"
+          "sub": "d'obtention"
         },
         {
           "value": "2 qualités",
@@ -13861,69 +13861,177 @@
           "sub": ""
         },
         {
-          "value": "Externe",
-          "label": "+ fiable",
-          "sub": "que interne"
+          "value": "§9",
+          "label": "Pertinence+fiabilité",
+          "sub": "de l'information"
         },
         {
-          "value": "NAS 500",
-          "label": "Norme",
-          "sub": "= ISA 500"
+          "value": "§8",
+          "label": "Expert direction",
+          "sub": "évaluer"
+        },
+        {
+          "value": "§10",
+          "label": "Sélection",
+          "sub": "des éléments"
         }
       ],
-      "intro": "ISA 500 est le cœur technique de l'audit : qu'est-ce qu'un bon élément probant et comment l'obtenir. Le MSA (III.4) le décline par poste.",
+      "intro": "ISA 500 est le socle technique de toutes les procédures d'audit : qu'est-ce qu'un élément probant, comment juger sa qualité, comment l'obtenir. Toutes les normes 501-580 en sont des applications. Le MSA décline ces principes par poste. Cours § par §.",
       "sections": [
         {
-          "titre": "Suffisance et caractère approprié",
-          "body": "• **Suffisance** = la QUANTITÉ d'éléments\n• **Caractère approprié** = la QUALITÉ = pertinence (teste la bonne assertion) + fiabilité (source crédible).\nPlus le risque est élevé, plus il faut d'éléments ET de meilleure qualité.",
+          "titre": "Champ & objectif (§1-4)",
+          "body": "ISA 500 explique ce qui constitue un élément probant et traite de la responsabilité de l'auditeur de concevoir/mettre en œuvre des procédures pour obtenir des éléments **suffisants et appropriés**.\n\n**Objectif (§4)** : obtenir des éléments probants suffisants et appropriés pour pouvoir tirer des conclusions raisonnables fondant l'opinion.",
           "callouts": [
             {
-              "type": "key",
-              "label": "Le binôme",
-              "text": "Suffisant (quantité) + Approprié (qualité = pertinence + fiabilité)."
+              "type": "info",
+              "label": "Transversal",
+              "text": "ISA 500 s'applique à TOUS les éléments probants obtenus pendant l'audit."
             }
           ]
         },
         {
-          "titre": "Hiérarchie de fiabilité",
+          "titre": "Définitions (§5)",
           "body": "",
+          "compare": {
+            "title": "Définitions ISA 500",
+            "headers": [
+              "Terme",
+              "Définition"
+            ],
+            "rows": [
+              [
+                "Éléments probants",
+                "Informations utilisées par l'auditeur pour aboutir aux conclusions fondant l'opinion (informations comptables + autres)"
+              ],
+              [
+                "Caractère approprié",
+                "Mesure de la QUALITÉ : pertinence + fiabilité"
+              ],
+              [
+                "Suffisance",
+                "Mesure de la QUANTITÉ ; dépend du risque évalué et de la qualité des éléments"
+              ],
+              [
+                "Expert de la direction",
+                "Personne/organisation experte dans un domaine autre que la compta/l'audit, dont les travaux sont utilisés par l'entité"
+              ]
+            ]
+          }
+        },
+        {
+          "titre": "Suffisance & caractère approprié (§6)",
+          "body": "L'auditeur conçoit et met en œuvre des procédures appropriées aux circonstances pour obtenir des éléments **suffisants** (quantité) et **appropriés** (qualité). Les deux sont interdépendants : plus la qualité est élevée, moins la quantité requise est grande (mais une grande quantité ne compense pas une mauvaise qualité).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Interdépendance",
+              "text": "Qualité ↑ → quantité requise ↓. MAIS la quantité ne rachète jamais une qualité insuffisante."
+            }
+          ]
+        },
+        {
+          "titre": "Hiérarchie de fiabilité (§A31)",
+          "body": "La fiabilité dépend de la source et de la nature :",
           "schema": {
             "type": "pyramid",
-            "title": "Fiabilité croissante des éléments probants",
+            "title": "Fiabilité croissante",
             "levels": [
               {
                 "t": "Oral / interne / copie",
                 "d": "le moins fiable"
               },
               {
-                "t": "Écrit interne (contrôle efficace)",
+                "t": "Interne écrit (contrôle efficace)",
                 "d": ""
               },
               {
-                "t": "Externe obtenu indirectement",
+                "t": "Externe indirect",
                 "d": ""
               },
               {
-                "t": "Externe obtenu DIRECTEMENT par l'auditeur",
+                "t": "Externe direct, écrit, original",
                 "d": "le plus fiable"
               }
             ]
-          }
+          },
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Règles",
+              "text": "Externe > interne ; obtenu directement > indirectement ; écrit > oral ; original > copie. Un SCI efficace renforce la fiabilité des éléments internes."
+            }
+          ]
         },
         {
-          "titre": "Les 7 procédures",
-          "body": "Inspection (documents/actifs), observation, confirmation externe, recalcul, ré-exécution, procédures analytiques, demandes d'informations.",
+          "titre": "Pertinence & fiabilité de l'information utilisée (§7-9)",
+          "body": "• **§7** : l'auditeur considère la pertinence et la fiabilité des informations servant d'éléments probants.\n• **§8 — Expert de la direction** : si l'entité a utilisé un expert (actuaire, évaluateur), l'auditeur évalue sa **compétence, ses capacités et son objectivité**, comprend ses travaux, et en évalue le caractère approprié comme élément probant.\n• **§9** : quand l'auditeur utilise des informations produites par l'entité, il évalue si elles sont suffisamment fiables (exactitude, exhaustivité, précision).",
           "callouts": [
             {
               "type": "warn",
-              "label": "Attention",
-              "text": "Une demande d'information (inquiry) n'est JAMAIS suffisante à elle seule — il faut corroborer."
+              "label": "Expert de la DIRECTION ≠ de l'auditeur",
+              "text": "§8 vise l'expert mandaté par l'ENTITÉ. L'expert de l'AUDITEUR relève d'ISA 620. Ne pas confondre."
+            }
+          ]
+        },
+        {
+          "titre": "Les 7 procédures d'audit (§A14-A25)",
+          "body": "",
+          "schema": {
+            "type": "flow",
+            "title": "Les 7 procédures pour obtenir des éléments probants",
+            "steps": [
+              {
+                "t": "Inspection",
+                "d": "examiner documents/enregistrements ou actifs physiques"
+              },
+              {
+                "t": "Observation",
+                "d": "regarder un processus/une procédure exécutée par autrui"
+              },
+              {
+                "t": "Confirmation externe",
+                "d": "réponse écrite directe d'un tiers (ISA 505)"
+              },
+              {
+                "t": "Recalcul",
+                "d": "vérifier l'exactitude arithmétique"
+              },
+              {
+                "t": "Ré-exécution",
+                "d": "exécuter soi-même un contrôle de l'entité"
+              },
+              {
+                "t": "Procédures analytiques",
+                "d": "évaluer les relations plausibles (ISA 520)"
+              },
+              {
+                "t": "Demandes d'informations (inquiry)",
+                "d": "rechercher des infos auprès de personnes informées"
+              }
+            ]
+          },
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Inquiry seule ≠ suffisante",
+              "text": "Une demande d'information (inquiry) ne constitue JAMAIS à elle seule un élément probant suffisant — elle doit être corroborée par d'autres procédures."
+            }
+          ]
+        },
+        {
+          "titre": "Sélection des éléments à tester (§10) & incohérences (§11)",
+          "body": "• **§10** : pour concevoir tests de détails et tests des contrôles, l'auditeur détermine des moyens de sélection efficaces (tout tester, sélectionner des éléments spécifiques, ou sondages — ISA 530).\n• **§11** : si des éléments probants issus d'une source sont **incohérents** avec ceux d'une autre, ou si l'auditeur doute de la fiabilité d'une information, il détermine les procédures supplémentaires nécessaires et considère l'incidence sur d'autres aspects de l'audit.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "NA-CH 500. Le MSA décline ces principes par cycle (trésorerie, créances, stocks, etc.) dans III.4."
             }
           ]
         }
       ],
       "mnemo": {
-        "code": "7 PROC",
+        "code": "IOCRRAD",
         "items": [
           {
             "l": "I",
@@ -13939,7 +14047,11 @@
           },
           {
             "l": "R",
-            "t": "Recalcul + Ré-exécution"
+            "t": "Recalcul"
+          },
+          {
+            "l": "R",
+            "t": "Ré-exécution"
           },
           {
             "l": "A",
@@ -13950,31 +14062,42 @@
             "t": "Demande (inquiry)"
           }
         ],
-        "phrase": "Les 7 procédures pour obtenir des éléments probants"
+        "phrase": "Les 7 procédures d'obtention des éléments probants"
       },
       "quiz": [
         {
           "q": "Caractère approprié = ?",
-          "a": "Pertinence + fiabilité (la qualité de l'élément probant)."
+          "a": "Qualité = pertinence + fiabilité."
         },
         {
-          "q": "Une demande d'information suffit-elle seule ?",
-          "a": "Non, elle doit toujours être corroborée."
+          "q": "Une demande d'information (inquiry) suffit-elle seule ?",
+          "a": "Non, jamais — elle doit être corroborée."
         },
         {
-          "q": "Quel élément est le plus fiable ?",
-          "a": "Externe, écrit, obtenu directement par l'auditeur, original."
+          "q": "L'expert visé au §8 est celui de qui ?",
+          "a": "De la DIRECTION (l'entité). L'expert de l'auditeur relève d'ISA 620."
+        },
+        {
+          "q": "Que faire en cas d'incohérence entre éléments probants (§11) ?",
+          "a": "Mettre en œuvre des procédures supplémentaires et évaluer l'incidence sur l'audit."
+        },
+        {
+          "q": "Élément le plus fiable ?",
+          "a": "Externe, obtenu directement, écrit, original."
         }
       ],
       "synthese": [
-        "Suffisant (quantité) + Approprié (pertinence+fiabilité)",
-        "Hiérarchie : externe>interne, écrit>oral, direct>indirect, original>copie",
-        "7 procédures ; les demandes seules ne suffisent pas"
+        "Suffisant (quantité) + Approprié (pertinence + fiabilité)",
+        "Hiérarchie : externe>interne, direct>indirect, écrit>oral, original>copie",
+        "7 procédures (IOCRRAD) ; inquiry seule insuffisante",
+        "§8 expert de la direction : compétence+capacités+objectivité",
+        "§11 incohérences → procédures supplémentaires"
       ],
       "pieges": [
         "Se fier aux seules déclarations sans corroboration",
-        "Confondre suffisance et caractère approprié",
-        "Surestimer un document interne non contrôlé"
+        "Confondre expert de la direction (§8) et de l'auditeur (ISA 620)",
+        "Croire que la quantité compense la mauvaise qualité",
+        "Ignorer une incohérence entre sources d'éléments probants"
       ]
     },
     "501": {
@@ -14403,74 +14526,189 @@
       ]
     },
     "540": {
-      "duree": "12 min",
-      "niveau": "Avancé",
-      "tldr": "Estimations comptables (dépréciations, provisions, juste valeur) = subjectives et risquées. R2018 : tester 3 dimensions (**Méthode + Hypothèses + Données = MHD**) + stand-back + détection du biais de la direction.",
+      "duree": "30 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISA 540 (Revised 2018) = audit des estimations comptables (et incertitude d'estimation). Évaluer le risque inhérent via complexité/subjectivité/incertitude, puis tester selon 3 approches (méthode+hypothèses+données / résultat de la direction / propre estimation de l'auditeur), détecter le biais, et faire un stand-back.",
       "stats": [
         {
           "value": "R2018",
           "label": "Révision",
-          "sub": "effective 2019"
-        },
-        {
-          "value": "MHD",
-          "label": "3 dimensions",
-          "sub": "méthode/hyp./données"
+          "sub": "effective 15.12.2019"
         },
         {
           "value": "3 facteurs",
           "label": "Risque inhérent",
-          "sub": "complexité/subj./incert."
+          "sub": "compl/subj/incert"
+        },
+        {
+          "value": "3 approches",
+          "label": "de réponse",
+          "sub": "§18"
         },
         {
           "value": "Biais",
           "label": "Management bias",
           "sub": "à détecter"
+        },
+        {
+          "value": "Stand-back",
+          "label": "§33",
+          "sub": "raisonnable global"
         }
       ],
-      "intro": "Les estimations comptables sont subjectives et risquées. ISA 540 (révisée 2018) impose une approche bien plus rigoureuse. Lien fort avec IAS 36, IFRS 9 (ECL), IAS 19.",
+      "intro": "Les estimations comptables (dépréciations, provisions, juste valeur, ECL IFRS 9, retraites IAS 19) sont le terrain le plus subjectif et le plus risqué des EF. ISA 540 (révisée 2018, en vigueur dès le 15.12.2019) a fortement durci les exigences après les scandales liés aux estimations agressives. Cours § par §.",
       "sections": [
         {
-          "titre": "Pourquoi c'est risqué",
-          "body": "Incertitude d'estimation inhérente + terrain de **biais de la direction** (lissage, gestion des attentes). Exemples : goodwill (IAS 36), ECL (IFRS 9), provisions (IAS 37), retraites (IAS 19).",
+          "titre": "Champ, date & objectif",
+          "body": "ISA 540 traite des obligations de l'auditeur relatives aux **estimations comptables** et aux informations à fournir y afférentes. **Date** : exercices ouverts dès le 15.12.2019 (R2018).\n\n**Objectif (§11)** : obtenir des éléments probants suffisants et appropriés permettant de conclure si les estimations et leurs informations à fournir sont **raisonnables** dans le contexte du référentiel, ou **erronées**.",
           "callouts": [
             {
               "type": "info",
-              "label": "R2018",
-              "text": "Répond aux scandales liés aux estimations agressives."
+              "label": "Pourquoi durcie",
+              "text": "R2018 répond à la complexité croissante (ECL IFRS 9, juste valeur niveau 3) et au risque de manipulation des estimations."
             }
           ]
         },
         {
-          "titre": "Les 3 facteurs de risque inhérent",
+          "titre": "Définitions (§12)",
           "body": "",
+          "compare": {
+            "title": "Définitions ISA 540",
+            "headers": [
+              "Terme",
+              "Définition"
+            ],
+            "rows": [
+              [
+                "Estimation comptable",
+                "Montant monétaire dont la mesure est soumise à une incertitude d'estimation"
+              ],
+              [
+                "Incertitude d'estimation",
+                "Susceptibilité à un manque inhérent de précision dans la mesure"
+              ],
+              [
+                "Biais de la direction",
+                "Manque de neutralité de la direction dans la préparation de l'information"
+              ],
+              [
+                "Résultat (outcome)",
+                "Le montant monétaire réel qui résulte du dénouement des transactions/événements sous-jacents"
+              ]
+            ]
+          }
+        },
+        {
+          "titre": "Procédures d'évaluation des risques (§13)",
+          "body": "L'auditeur comprend : le cadre réglementaire/référentiel applicable aux estimations, comment la direction identifie les estimations nécessaires, et **comment la direction élabore les estimations** (méthode, hypothèses, données, contrôles, recours à un expert). Il effectue une **revue rétrospective** du résultat des estimations de l'exercice précédent (pour détecter un biais).",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Revue rétrospective",
+              "text": "Comparer les estimations N-1 au résultat réel révèle la tendance de la direction à sur/sous-estimer = indice de biais (lien ISA 240 management override)."
+            }
+          ]
+        },
+        {
+          "titre": "Évaluer le risque inhérent : 3 facteurs (§16)",
+          "body": "L'auditeur évalue le **degré** d'incertitude d'estimation et comment les **facteurs de risque inhérent** affectent la susceptibilité à l'anomalie :",
           "schema": {
             "type": "flow",
-            "title": "Évaluer le risque inhérent d'une estimation",
+            "title": "Évaluation du risque inhérent d'une estimation",
             "steps": [
               {
                 "t": "Complexité",
-                "d": "du modèle / du calcul"
+                "d": "du modèle, du calcul, des données"
               },
               {
                 "t": "Subjectivité",
-                "d": "des hypothèses"
+                "d": "jugement de la direction dans les choix"
               },
               {
                 "t": "Incertitude d'estimation",
                 "d": "plage de résultats possibles"
               }
             ]
-          }
+          },
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Positionnement",
+              "text": "Comme ISA 315 R2019, le risque inhérent d'une estimation se positionne sur le spectre selon ces facteurs."
+            }
+          ]
         },
         {
-          "titre": "Tester les 3 dimensions + stand-back",
-          "body": "Tester l'estimation selon : la **MÉTHODE** (modèle approprié ?), les **HYPOTHÈSES** (réalistes, cohérentes avec les budgets ?), les **DONNÉES** (fiables, pertinentes ?). Puis un **stand-back** sur le caractère raisonnable global, attentif au biais.",
+          "titre": "Les 3 approches de réponse (§18)",
+          "body": "Selon les motifs du risque évalué, l'auditeur choisit une (ou combine plusieurs) des 3 approches :",
+          "compare": {
+            "title": "Les 3 approches (§18-20)",
+            "headers": [
+              "Approche",
+              "Quand",
+              "Ce que fait l'auditeur"
+            ],
+            "rows": [
+              [
+                "(a) Tester comment la direction a fait l'estimation",
+                "La méthode/les contrôles sont fiables",
+                "Tester MÉTHODE + HYPOTHÈSES + DONNÉES + contrôles"
+              ],
+              [
+                "(b) Tester les éléments/événements jusqu'à la date du rapport",
+                "Des éléments postérieurs éclairent l'estimation",
+                "Utiliser les événements survenus après clôture (ISA 560)"
+              ],
+              [
+                "(c) Développer une estimation/fourchette propre",
+                "Pour challenger l'estimation de la direction",
+                "Comparer l'estimation de l'auditeur à celle de la direction"
+              ]
+            ]
+          },
           "callouts": [
             {
               "type": "key",
               "label": "MHD",
-              "text": "Méthode + Hypothèses + Données = les 3 dimensions à tester systématiquement."
+              "text": "Approche (a) = tester les 3 dimensions : Méthode + Hypothèses + Données."
+            }
+          ]
+        },
+        {
+          "titre": "Tester méthode, hypothèses, données (§22-25)",
+          "body": "En approche (a), l'auditeur évalue :\n• **Méthode** : appropriée au référentiel, calculs corrects, intégrité du modèle\n• **Hypothèses** : raisonnables, cohérentes entre elles et avec d'autres hypothèses utilisées dans les EF, fondées sur des données pertinentes\n• **Données** : pertinentes et fiables, correctement comprises/utilisées.\nIl évalue aussi les **contrôles** de la direction sur l'élaboration des estimations.",
+          "callouts": []
+        },
+        {
+          "titre": "Incertitude d'estimation & informations à fournir (§26-31)",
+          "body": "L'auditeur évalue si la direction a traité de manière appropriée l'**incertitude d'estimation** (sélection d'un point dans une fourchette, fourchette retenue). Si l'incertitude ne peut être réduite à un niveau acceptable et que la direction n'en informe pas suffisamment dans l'annexe → considérer l'impact sur l'opinion. Les **informations à fournir** (disclosures) sur les estimations doivent être évaluées (§31).",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Disclosures",
+              "text": "Une estimation très incertaine peut être acceptable SI l'annexe la décrit fidèlement. Une mauvaise disclosure peut entraîner une opinion modifiée."
+            }
+          ]
+        },
+        {
+          "titre": "Indices de biais & stand-back (§32-33)",
+          "body": "• **§32 — Biais de la direction** : l'auditeur évalue si les jugements et décisions, même individuellement raisonnables, révèlent un **biais cumulé** (ex. toutes les estimations tirent dans le même sens favorable).\n• **§33 — Stand-back** : l'auditeur évalue, sur la base des procédures, si les estimations et leurs disclosures sont **raisonnables** ou **erronées**, en tenant compte de tous les éléments probants (corroborants ou contradictoires).",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Biais cumulé",
+              "text": "Des estimations chacune « dans la fourchette » mais TOUTES du côté favorable = signal de biais (et potentiellement de fraude, ISA 240)."
+            }
+          ]
+        },
+        {
+          "titre": "Déclarations écrites, communication & documentation (§37-39)",
+          "body": "L'auditeur obtient des **déclarations écrites** (ISA 580) sur le caractère raisonnable des méthodes/hypothèses/données. Il **communique** à la gouvernance (ISA 260) les aspects significatifs. Il **documente** les éléments clés de sa compréhension, l'évaluation du risque inhérent, le lien entre procédures et risques, sa réponse en cas d'estimation non raisonnable, et les indices de biais.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Liens",
+              "text": "ISA 540 ↔ IAS 36 (impairment), IFRS 9 (ECL), IAS 37 (provisions), IAS 19 (retraites), IFRS 13 (juste valeur). Souvent recours à un expert (ISA 620)."
             }
           ]
         }
@@ -14480,7 +14718,7 @@
         "items": [
           {
             "l": "M",
-            "t": "Méthode (le modèle)"
+            "t": "Méthode (modèle)"
           },
           {
             "l": "H",
@@ -14491,27 +14729,47 @@
             "t": "Données (data)"
           }
         ],
-        "phrase": "Les 3 dimensions à tester (ISA 540 R2018)"
+        "phrase": "Les 3 dimensions à tester (approche a, §22-25)"
       },
       "quiz": [
         {
-          "q": "Quelles sont les 3 dimensions d'une estimation à tester ?",
-          "a": "Méthode + Hypothèses + Données (MHD)."
+          "q": "Quels sont les 3 facteurs du risque inhérent d'une estimation ?",
+          "a": "Complexité, subjectivité, incertitude d'estimation."
         },
         {
-          "q": "Quel risque spécifique guetter sur les estimations ?",
-          "a": "Le biais de la direction (management bias)."
+          "q": "Quelles sont les 3 approches de réponse (§18) ?",
+          "a": "(a) tester comment la direction a fait, (b) utiliser les événements jusqu'à la date du rapport, (c) développer une estimation/fourchette propre."
+        },
+        {
+          "q": "Que teste l'approche (a) ?",
+          "a": "Méthode + Hypothèses + Données (MHD) + contrôles de la direction."
+        },
+        {
+          "q": "Pourquoi faire une revue rétrospective ?",
+          "a": "Comparer les estimations N-1 au résultat réel pour détecter un biais de la direction."
+        },
+        {
+          "q": "Des estimations toutes « dans la fourchette » mais du même côté favorable, signe de quoi ?",
+          "a": "De biais cumulé de la direction (potentiellement fraude — lien ISA 240)."
+        },
+        {
+          "q": "Une estimation très incertaine peut-elle être acceptable ?",
+          "a": "Oui, si l'annexe (disclosures) la décrit fidèlement. Sinon, opinion modifiée possible."
         }
       ],
       "synthese": [
-        "Estimations = incertitude + risque de biais",
-        "3 facteurs : complexité, subjectivité, incertitude",
-        "Tester MHD (Méthode+Hypothèses+Données) + stand-back"
+        "Estimations = subjectivité + incertitude + risque de biais",
+        "Risque inhérent via complexité/subjectivité/incertitude (spectre)",
+        "3 approches (§18) ; approche (a) = MHD (Méthode+Hypothèses+Données)",
+        "Revue rétrospective + détection du biais cumulé + stand-back (§33)",
+        "Évaluer les disclosures sur l'incertitude d'estimation"
       ],
       "pieges": [
         "Accepter l'estimation sans tester les 3 dimensions",
-        "Ne pas détecter le biais de la direction",
-        "Oublier le stand-back"
+        "Ne pas faire la revue rétrospective",
+        "Manquer le biais CUMULÉ (estimations toutes du même côté)",
+        "Oublier le stand-back (§33)",
+        "Négliger les disclosures sur l'incertitude"
       ]
     },
     "550": {
@@ -14693,9 +14951,9 @@
       ]
     },
     "570": {
-      "duree": "13 min",
-      "niveau": "Avancé",
-      "tldr": "La continuité d'exploitation conditionne toute la comptabilité. ISA 570 (R2024) : évaluation sur ≥12 mois depuis la DATE DU RAPPORT. **4 scénarios d'opinion**. En Suisse : lien critique avec CO 725 (surendettement, avis au juge).",
+      "duree": "26 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISA 570 (Revised 2024) = continuité d'exploitation. Évaluer sur ≥12 mois depuis la date du rapport l'hypothèse de continuité de la direction, identifier toute incertitude significative, et conclure via la matrice à 4 scénarios. Lien critique avec CO 725 (surendettement, avis au juge).",
       "stats": [
         {
           "value": "12 mois",
@@ -14705,12 +14963,17 @@
         {
           "value": "R2024",
           "label": "Révision",
-          "sub": "effective 2026"
+          "sub": "phasée 15.12.2026"
         },
         {
           "value": "4",
-          "label": "Scénarios d'opinion",
+          "label": "Scénarios",
           "sub": "CDQA"
+        },
+        {
+          "value": "§16",
+          "label": "Material Uncertainty",
+          "sub": "paragraphe dédié"
         },
         {
           "value": "CO 725b",
@@ -14718,44 +14981,74 @@
           "sub": "avis au juge"
         }
       ],
-      "intro": "La continuité d'exploitation (going concern) est le fondement de la comptabilité standard. ISA 570 (révisée 2024) structure l'évaluation et son impact sur le rapport. Le MSA y consacre une section critique (lien avec CO 725 — perte de capital et surendettement), spécificité suisse à fort enjeu de responsabilité.",
+      "intro": "La continuité d'exploitation (going concern) est l'hypothèse fondamentale de la comptabilité : sans elle, les EF passent en valeurs de liquidation. ISA 570 (révisée 2024, phasée dès le 15.12.2026) structure l'évaluation et son impact sur le rapport. En Suisse, c'est un sujet à très fort enjeu de responsabilité (CO 725 — perte de capital et surendettement, avis au juge). Cours § par §.",
       "sections": [
         {
-          "titre": "L'hypothèse de continuité",
-          "body": "Les EF sont préparés en supposant que l'entité poursuivra son activité dans un futur prévisible. Sinon → **valeurs de liquidation** (CO 958a en Suisse). Période d'évaluation : ≥ 12 mois depuis la **date du rapport** (pas la clôture).",
+          "titre": "Champ, hypothèse & objectif",
+          "body": "L'**hypothèse de continuité** : les EF sont établis en supposant que l'entité poursuivra son activité dans un avenir prévisible. Si elle est inappropriée, les EF sont établis sur une autre base (valeurs de liquidation — CO 958a en Suisse).\n\n**Objectifs (§9)** : obtenir des éléments suffisants sur le caractère approprié de l'hypothèse retenue par la direction ; conclure sur l'existence d'une **incertitude significative** ; et déterminer l'incidence sur le rapport.",
           "callouts": [
             {
-              "type": "warn",
-              "label": "Piège fréquent",
-              "text": "Les 12 mois se comptent depuis la DATE DU RAPPORT, pas la clôture. Si clôture déc. et rapport en mai → couverture jusqu'à mai N+1."
+              "type": "info",
+              "label": "Responsabilités",
+              "text": "La direction ÉVALUE la continuité (et établit les EF en conséquence) ; l'auditeur ÉVALUE cette appréciation."
             }
           ]
         },
         {
-          "titre": "Démarche en 3 étapes",
-          "body": "",
-          "schema": {
-            "type": "flow",
-            "title": "Démarche ISA 570",
-            "steps": [
-              {
-                "t": "Évaluer l'analyse de la direction",
-                "d": "Documentée ? ≥12 mois ? Qualité (budgets, projections de trésorerie, plans de financement) ?"
-              },
-              {
-                "t": "Tester les hypothèses clés",
-                "d": "Refinancement (confirmations banques, covenants), trésorerie (vs réalisé post-clôture), actions de la direction crédibles ?"
-              },
-              {
-                "t": "Conclure",
-                "d": "Pas de doute / incertitude significative / continuité inappropriée"
-              }
+          "titre": "Période d'évaluation (§13)",
+          "body": "L'évaluation couvre une période d'**au moins 12 mois à compter de la date du rapport** (et non de la date de clôture). La R2024 incite à considérer au-delà si des signaux clairs existent.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Piège classique",
+              "text": "Les 12 mois se comptent depuis la DATE DU RAPPORT. Si clôture déc. et rapport en mai → couverture jusqu'à mai N+1."
+            }
+          ]
+        },
+        {
+          "titre": "Procédures d'évaluation des risques (§10-11)",
+          "body": "L'auditeur détermine si des événements/conditions jettent un doute important sur la continuité. Il considère l'évaluation faite par la direction. **§11** : il reste vigilant tout au long de l'audit aux éléments contraires à la continuité.",
+          "compare": {
+            "title": "Indicateurs de risque (§A3)",
+            "headers": [
+              "Catégorie",
+              "Exemples"
+            ],
+            "rows": [
+              [
+                "Financiers",
+                "Pertes répétées, FP négatifs, ratios de liquidité dégradés, refinancement difficile, arriérés de dividendes"
+              ],
+              [
+                "Opérationnels",
+                "Perte de clients/fournisseurs clés, départ de dirigeants, conflits sociaux, perte de licence"
+              ],
+              [
+                "Externes",
+                "Réglementation défavorable, marché en crise, litige majeur, catastrophe, sanctions"
+              ]
             ]
           }
         },
         {
-          "titre": "Les 4 scénarios d'opinion",
-          "body": "LA matrice fondamentale (mnémo CDQA) :",
+          "titre": "Évaluer l'appréciation de la direction (§12-14)",
+          "body": "L'auditeur évalue l'**analyse de la direction** : période couverte (≥12 mois ?), qualité (budgets, projections de trésorerie, plans de financement, sensibilités). Si la direction n'a pas encore fait l'analyse → lui demander de la faire. Il considère si des informations supplémentaires sont disponibles, et les **plans d'action** futurs de la direction (sont-ils réalistes et exécutables ?).",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Tester les hypothèses",
+              "text": "Refinancement (confirmations bancaires, covenants), trésorerie (projections vs réalisé post-clôture, ISA 560), crédibilité des mesures de la direction."
+            }
+          ]
+        },
+        {
+          "titre": "Conclusions & incertitude significative (§17-20)",
+          "body": "L'auditeur conclut si, à son avis, une **incertitude significative** existe (événements/conditions qui, individuellement ou collectivement, jettent un doute important sur la continuité). Si oui, il évalue si les EF :\n• décrivent adéquatement ces événements/conditions et les plans de la direction\n• indiquent clairement qu'il existe une incertitude significative.",
+          "callouts": []
+        },
+        {
+          "titre": "Les 4 scénarios d'opinion (§18-24)",
+          "body": "La matrice fondamentale (mnémo CDQA) :",
           "schema": {
             "type": "matrix",
             "title": "Going concern → opinion",
@@ -14770,11 +15063,11 @@
             "cells": [
               [
                 {
-                  "t": "CLEAN + paragraphe",
+                  "t": "CLEAN + § Material Uncertainty",
                   "v": "warn"
                 },
                 {
-                  "t": "Modifiée (Q/A)",
+                  "t": "Qualified / Adverse",
                   "v": "danger"
                 }
               ],
@@ -14794,18 +15087,34 @@
             {
               "type": "key",
               "label": "PIÈGE MAJEUR",
-              "text": "Incertitude significative + disclosure ADÉQUATE = opinion CLEAN + paragraphe « Material Uncertainty », PAS qualified ! Erreur classique d'examen."
+              "text": "Incertitude significative + disclosure ADÉQUATE = opinion CLEAN + section « Incertitude significative liée à la continuité d'exploitation » (§22). PAS qualified ! Erreur d'examen la plus fréquente."
             }
           ]
         },
         {
-          "titre": "Lien suisse — CO 725",
-          "body": "En Suisse, le going concern croise le droit de la SA :\n• **CO 725a** : perte de capital (FP < ½ capital + réserves)\n• **CO 725b** : surendettement (FP négatifs, 2 bilans : exploitation + liquidation)\n\nSi le CA n'agit pas face au surendettement, l'organe de révision DOIT **aviser le juge** (CO 725b al.4).",
+          "titre": "Hypothèse inappropriée & refus de la direction (§21, §25)",
+          "body": "• **§21** : si l'hypothèse de continuité est **inappropriée** (cessation probable) mais que les EF sont établis sur base de continuité → **opinion défavorable (adverse)**.\n• **§25** : si la direction refuse de faire/étendre son évaluation à la demande de l'auditeur → considérer l'incidence sur le rapport (limitation possible).",
+          "callouts": []
+        },
+        {
+          "titre": "Le paragraphe « Material Uncertainty » (§22)",
+          "body": "Quand l'incertitude est significative ET correctement décrite, l'auditeur ajoute une section distincte intitulée **« Incertitude significative liée à la continuité d'exploitation »** : il attire l'attention sur la note de l'annexe, et précise que **son opinion n'est pas modifiée** au regard de cette question. Position : après le fondement de l'opinion, **avant les KAM**.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "≠ EOM",
+              "text": "Ce n'est PAS un paragraphe d'observation ordinaire (ISA 706) : c'est une section dédiée à intitulé imposé."
+            }
+          ]
+        },
+        {
+          "titre": "Spécificités suisses — CO 725",
+          "body": "Le going concern croise le droit de la SA (réforme 2023) :\n• **CO 725** : risque d'insolvabilité (test prospectif 12 mois)\n• **CO 725a** : perte de capital (FP < ½ capital + réserves légales) → bilan intermédiaire audité + AG\n• **CO 725b** : surendettement (FP négatifs, 2 bilans : exploitation + liquidation) → avis au juge SAUF postpositions suffisantes ou assainissement ≤ 90 jours.\n\nSi le CA reste inactif face au surendettement, **l'organe de révision DOIT aviser le juge** (CO 725b al.4) — spécificité suisse unique.",
           "callouts": [
             {
               "type": "legal",
-              "label": "Spécificité suisse unique",
-              "text": "L'obligation de l'auditeur d'aviser le juge en cas de surendettement et d'inaction du CA n'existe nulle part ailleurs."
+              "label": "Responsabilité directe",
+              "text": "L'obligation positive de l'auditeur d'aviser le juge (CO 725b) n'existe nulle part ailleurs. Responsabilité civile (CO 755, 5 ans) + pénale possible."
             }
           ]
         }
@@ -14819,7 +15128,7 @@
           },
           {
             "l": "D",
-            "t": "Disclosure adéquate → clean + paragraphe"
+            "t": "Disclosure adéquate → clean + § Material Uncertainty"
           },
           {
             "l": "Q",
@@ -14834,33 +15143,43 @@
       },
       "quiz": [
         {
-          "q": "Incertitude significative + disclosure adéquate = quelle opinion ?",
-          "a": "Opinion CLEAN + paragraphe « Material Uncertainty » (PAS qualified)."
+          "q": "Sur quelle période évalue-t-on le going concern ?",
+          "a": "≥ 12 mois depuis la DATE DU RAPPORT (pas la clôture)."
         },
         {
-          "q": "Sur quelle période s'évalue le going concern ?",
-          "a": "≥ 12 mois depuis la DATE DU RAPPORT (pas la clôture)."
+          "q": "Incertitude significative + disclosure adéquate → quelle opinion ?",
+          "a": "Opinion CLEAN + section « Incertitude significative liée à la continuité » (PAS qualified)."
+        },
+        {
+          "q": "Hypothèse de continuité inappropriée mais EF en valeurs d'exploitation → ?",
+          "a": "Opinion défavorable (adverse)."
+        },
+        {
+          "q": "Où se place le paragraphe Material Uncertainty ?",
+          "a": "Après le fondement de l'opinion, avant les KAM."
+        },
+        {
+          "q": "Différence CO 725a / 725b ?",
+          "a": "725a = perte de capital (FP < ½ cap+réserves). 725b = surendettement (FP négatifs, 2 bilans)."
         },
         {
           "q": "Que doit faire l'auditeur si le CA n'agit pas face au surendettement ?",
           "a": "Aviser le juge lui-même (CO 725b al.4) — spécificité suisse."
-        },
-        {
-          "q": "Différence CO 725a et CO 725b ?",
-          "a": "725a = perte de capital (FP < ½ cap+réserves). 725b = surendettement (FP négatifs)."
         }
       ],
       "synthese": [
-        "Going concern = ≥ 12 mois depuis la DATE DU RAPPORT",
-        "Démarche : évaluer analyse direction → tester hypothèses → conclure",
-        "4 scénarios (CDQA) ; incertitude + disclosure adéquate = CLEAN + paragraphe",
-        "Lien CO 725 : avis au juge si surendettement + CA inactif"
+        "Going concern = hypothèse fondamentale ; sinon valeurs de liquidation",
+        "Période ≥ 12 mois depuis la DATE DU RAPPORT",
+        "4 scénarios (CDQA) ; incertitude + disclosure adéquate = CLEAN + § dédié",
+        "§ « Material Uncertainty » : opinion non modifiée, avant les KAM",
+        "Suisse CO 725 : 725a perte capital / 725b surendettement → avis au juge"
       ],
       "pieges": [
-        "Croire qu'incertitude significative = qualified (c'est clean + paragraphe)",
-        "Compter les 12 mois depuis la clôture au lieu de la date du rapport",
+        "Croire qu'incertitude significative = qualified (c'est clean + § dédié)",
+        "Compter les 12 mois depuis la clôture",
+        "Confondre CO 725a et 725b",
         "Oublier l'obligation suisse d'aviser le juge (CO 725b)",
-        "Confondre CO 725a (perte capital) et CO 725b (surendettement)"
+        "Confondre le § Material Uncertainty et un EOM ordinaire"
       ]
     },
     "580": {
