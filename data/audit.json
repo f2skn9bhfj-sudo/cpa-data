@@ -14434,138 +14434,270 @@
       ]
     },
     "600": {
-      "intro": "Auditer un **groupe** = coordonner plusieurs auditeurs sur plusieurs entités. ISA 600 (révisée 2022) organise cette complexité avec une approche fondée sur les risques.",
+      "duree": "11 min",
+      "niveau": "Avancé",
+      "tldr": "Auditer un GROUPE = coordonner plusieurs auditeurs. R2022 : approche risk-based (fin du « significant component »). Le group partner garde l'ENTIÈRE responsabilité de l'opinion.",
+      "stats": [
+        {
+          "value": "R2022",
+          "label": "Révision",
+          "sub": "effective 2023"
+        },
+        {
+          "value": "Risk-based",
+          "label": "Approche",
+          "sub": "fin du « significant »"
+        },
+        {
+          "value": "100%",
+          "label": "Responsabilité",
+          "sub": "group partner"
+        },
+        {
+          "value": "< group",
+          "label": "Component mat.",
+          "sub": "éviter agrégation"
+        }
+      ],
+      "intro": "Auditer les EF d'un groupe implique des component auditors sur les filiales. ISA 600 (révisée 2022) organise cette complexité. Le MSA y consacre toute la Partie IV.",
       "sections": [
         {
-          "titre": "1. Équipe du groupe et component auditors",
-          "body": "L'**équipe du groupe** (group engagement team) dirige l'audit consolidé. Les **component auditors** auditent les composants (filiales). L'équipe du groupe garde la responsabilité GLOBALE de l'opinion du groupe.",
+          "titre": "Équipe du groupe et component auditors",
+          "body": "L'**équipe du groupe** dirige l'audit consolidé ; les **component auditors** auditent les filiales. Le group partner garde la responsabilité GLOBALE.",
           "callouts": [
             {
               "type": "key",
               "label": "Responsabilité",
-              "text": "Le group engagement partner reste SEUL responsable de l'opinion sur les comptes consolidés, même si des composants sont audités par d'autres."
+              "text": "Le group engagement partner reste SEUL responsable de l'opinion sur les comptes consolidés."
             }
           ]
         },
         {
-          "titre": "2. L'approche risk-based (R2022)",
-          "body": "La révision 2022 **abandonne** le terme « significant component » au profit d'une approche fondée sur les **risques** : on identifie où se situent les risques d'anomalies significatives dans le groupe, et on calibre les travaux en conséquence.",
+          "titre": "L'approche risk-based (R2022)",
+          "body": "La R2022 ABANDONNE le terme « significant component » au profit d'une approche fondée sur les **risques** : où sont les risques d'anomalies dans le groupe ?",
           "callouts": [
             {
               "type": "info",
               "label": "Changement",
-              "text": "Ne plus raisonner en composants significatifs/non significatifs, mais en termes de risques au niveau du groupe."
+              "text": "Raisonner en risques au niveau du groupe, pas en composants significatifs/non significatifs."
             }
           ]
         },
         {
-          "titre": "3. Travailler avec les component auditors",
-          "body": "L'équipe du groupe : évalue la **compétence et l'indépendance** des component auditors, leur communique des **instructions de groupe** (matérialité du composant, risques, calendrier), et **dirige, supervise et révise** leurs travaux.",
-          "callouts": [
-            {
-              "type": "comp",
-              "label": "Matérialité",
-              "text": "Component materiality < group materiality, pour éviter que des anomalies non détectées s'agrègent au-dessus de la matérialité du groupe."
-            }
-          ]
+          "titre": "Travailler avec les component auditors",
+          "body": "Évaluer compétence + indépendance, communiquer les instructions de groupe (matérialité du composant, risques), diriger/superviser/réviser.",
+          "compare": {
+            "title": "Matérialités",
+            "headers": [
+              "",
+              "Group materiality",
+              "Component materiality"
+            ],
+            "rows": [
+              [
+                "Niveau",
+                "EF consolidés",
+                "INFÉRIEUR"
+              ],
+              [
+                "But",
+                "Opinion groupe",
+                "Éviter l'agrégation d'anomalies"
+              ]
+            ]
+          }
         }
       ],
       "synthese": [
-        "Group engagement team dirige ; component auditors auditent les composants",
-        "Le group partner garde l'ENTIÈRE responsabilité de l'opinion",
-        "R2022 : approche risk-based (fin du « significant component »)",
-        "Évaluer/diriger les component auditors ; component materiality < group"
+        "Group team dirige ; component auditors auditent",
+        "Group partner = entière responsabilité de l'opinion",
+        "R2022 : risk-based (fin du significant component)",
+        "Component materiality < group"
       ],
       "pieges": [
-        "Penser que la responsabilité se partage avec les component auditors",
-        "Raisonner encore en « significant component » (supprimé R2022)",
-        "Fixer la component materiality = group materiality"
+        "Croire que la responsabilité se partage",
+        "Raisonner encore en significant component",
+        "Component materiality = group materiality"
+      ],
+      "mnemo": {
+        "code": "DSR",
+        "items": [
+          {
+            "l": "D",
+            "t": "Diriger les component auditors"
+          },
+          {
+            "l": "S",
+            "t": "Superviser"
+          },
+          {
+            "l": "R",
+            "t": "Réviser leurs travaux"
+          }
+        ],
+        "phrase": "Le rôle de l'équipe du groupe (R2022)"
+      },
+      "quiz": [
+        {
+          "q": "Que change la R2022 ?",
+          "a": "Approche risk-based ; suppression du « significant component »."
+        },
+        {
+          "q": "Qui est responsable de l'opinion du groupe ?",
+          "a": "Le group engagement partner, seul et entièrement."
+        }
       ]
     },
     "610": {
-      "intro": "Beaucoup d'entreprises ont une fonction d'**audit interne**. ISA 610 dit comment l'auditeur externe peut utiliser ses travaux — sans jamais diluer sa propre responsabilité.",
+      "duree": "8 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Utiliser les travaux de l'audit interne sans diluer sa responsabilité. Évaluer 3 critères (objectivité+compétence+approche systématique). L'auditeur externe garde l'ENTIÈRE responsabilité.",
+      "stats": [
+        {
+          "value": "3 critères",
+          "label": "Évaluation",
+          "sub": "OCA"
+        },
+        {
+          "value": "100%",
+          "label": "Responsabilité",
+          "sub": "externe"
+        },
+        {
+          "value": "2 modes",
+          "label": "Travaux/assistance",
+          "sub": ""
+        },
+        {
+          "value": "R2013",
+          "label": "Révision",
+          "sub": ""
+        }
+      ],
+      "intro": "Beaucoup d'entreprises ont un audit interne. ISA 610 dit comment l'auditeur externe peut l'utiliser.",
       "sections": [
         {
-          "titre": "1. Évaluer la fonction d'audit interne",
-          "body": "Avant d'utiliser ses travaux, l'auditeur externe évalue : l'**objectivité** de la fonction (rattachement, indépendance), sa **compétence** (qualifications), et son **approche systématique et rigoureuse**.",
+          "titre": "Évaluer la fonction",
+          "body": "Avant d'utiliser : **objectivité** (rattachement, indépendance), **compétence** (qualifications), **approche systématique et rigoureuse**.",
           "callouts": [
             {
               "type": "key",
               "label": "3 critères",
-              "text": "Objectivité + Compétence + Approche systématique. Si l'un manque, on ne peut pas s'appuyer sur l'audit interne."
+              "text": "Objectivité + Compétence + Approche systématique. Si l'un manque, on ne peut pas s'appuyer."
             }
           ]
         },
         {
-          "titre": "2. Utilisation des travaux vs assistance directe",
-          "body": "• **Utilisation des travaux** : s'appuyer sur des travaux déjà réalisés par l'audit interne\n• **Assistance directe** : utiliser des auditeurs internes sous la direction/supervision/revue de l'auditeur externe (interdite dans certaines juridictions).",
+          "titre": "Utilisation vs assistance directe",
+          "body": "• **Utilisation des travaux** déjà réalisés\n• **Assistance directe** : auditeurs internes sous direction/supervision/revue de l'externe (interdite dans certaines juridictions).",
           "callouts": []
         },
         {
-          "titre": "3. La responsabilité reste entière",
-          "body": "L'auditeur externe reste **SEUL responsable** de l'opinion. Plus le risque/jugement est élevé, moins il peut s'appuyer sur l'audit interne. Les décisions de jugement significatives ne se délèguent pas.",
+          "titre": "Responsabilité entière",
+          "body": "L'auditeur externe reste SEUL responsable de l'opinion. Plus le risque/jugement est élevé, moins il s'appuie sur l'audit interne.",
           "callouts": [
             {
               "type": "warn",
               "label": "Limite",
-              "text": "On ne peut JAMAIS déléguer à l'audit interne les jugements significatifs ni la responsabilité de l'opinion."
+              "text": "On ne délègue JAMAIS les jugements significatifs ni la responsabilité de l'opinion."
             }
           ]
         }
       ],
       "synthese": [
-        "Évaluer : objectivité + compétence + approche systématique",
+        "Évaluer objectivité + compétence + approche systématique",
         "Utilisation des travaux OU assistance directe",
-        "L'auditeur externe garde l'ENTIÈRE responsabilité de l'opinion",
-        "Moins on s'appuie quand le risque/jugement est élevé"
+        "Responsabilité de l'opinion reste entière"
       ],
       "pieges": [
-        "Déléguer des jugements significatifs à l'audit interne",
-        "Utiliser l'audit interne sans évaluer son objectivité/compétence",
+        "Déléguer des jugements significatifs",
+        "Utiliser sans évaluer objectivité/compétence",
         "Croire que la responsabilité se partage"
-      ]
+      ],
+      "mnemo": {
+        "code": "OCA",
+        "items": [
+          {
+            "l": "O",
+            "t": "Objectivité"
+          },
+          {
+            "l": "C",
+            "t": "Compétence"
+          },
+          {
+            "l": "A",
+            "t": "Approche systématique"
+          }
+        ],
+        "phrase": "Les 3 critères d'évaluation de l'audit interne"
+      }
     },
     "620": {
-      "intro": "Certains sujets dépassent l'expertise comptable (évaluations, actuariat, ingénierie). ISA 620 encadre le recours à un **expert désigné par l'auditeur**.",
+      "duree": "7 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Recours à un expert de l'AUDITEUR (≠ expert de la direction) pour des domaines spécialisés (évaluation, actuariat, juridique). Évaluer compétence+capacités+objectivité. Ne pas référer dans le rapport.",
+      "stats": [
+        {
+          "value": "Expert",
+          "label": "de l'auditeur",
+          "sub": "≠ direction"
+        },
+        {
+          "value": "3 critères",
+          "label": "Compét.+Capac.+Objec.",
+          "sub": ""
+        },
+        {
+          "value": "Pas réf.",
+          "label": "dans le rapport",
+          "sub": "sauf loi"
+        },
+        {
+          "value": "NAS 620",
+          "label": "Norme",
+          "sub": ""
+        }
+      ],
+      "intro": "Certains sujets dépassent l'expertise comptable. ISA 620 encadre le recours à un expert désigné par l'auditeur.",
       "sections": [
         {
-          "titre": "1. Quand recourir à un expert",
-          "body": "Pour des domaines spécialisés : évaluation immobilière, calculs actuariels (LPP), estimation de juste valeur complexe, expertise juridique, environnementale. L'expert apporte une compétence que l'équipe n'a pas.",
+          "titre": "Quand recourir",
+          "body": "Domaines spécialisés : évaluation immobilière, actuariat (LPP), juste valeur complexe, expertise juridique/environnementale.",
           "callouts": [
             {
               "type": "info",
-              "label": "Expert de l'auditeur",
-              "text": "À distinguer de l'expert de la DIRECTION : ici c'est l'auditeur qui mandate l'expert pour ses propres besoins."
+              "label": "Distinction",
+              "text": "Expert de l'AUDITEUR (il le mandate) ≠ expert de la DIRECTION."
             }
           ]
         },
         {
-          "titre": "2. Évaluer l'expert et ses travaux",
-          "body": "L'auditeur évalue la **compétence, les capacités et l'objectivité** de l'expert, comprend son domaine, convient de l'étendue de ses travaux, et évalue le caractère adéquat de ses conclusions comme éléments probants.",
+          "titre": "Évaluer l'expert",
+          "body": "**Compétence + capacités + objectivité**, comprendre son domaine, convenir de l'étendue, évaluer ses conclusions comme éléments probants.",
           "callouts": [
             {
               "type": "key",
               "label": "3 critères",
-              "text": "Compétence + Capacités + Objectivité. Plus l'expert est interne/lié, plus son objectivité doit être examinée."
+              "text": "Compétence + Capacités + Objectivité."
             }
           ]
         },
         {
-          "titre": "3. Référence dans le rapport",
-          "body": "L'auditeur ne **référence pas** l'expert dans son rapport (sauf si la loi l'exige), car cela pourrait être perçu comme un partage de responsabilité. L'opinion reste celle de l'auditeur.",
+          "titre": "Référence dans le rapport",
+          "body": "Ne PAS référer à l'expert (sauf si la loi l'exige) : cela pourrait suggérer un partage de responsabilité.",
           "callouts": []
         }
       ],
       "synthese": [
-        "Recours pour domaines spécialisés (évaluation, actuariat, juridique)",
-        "Expert de l'auditeur ≠ expert de la direction",
-        "Évaluer : compétence + capacités + objectivité",
-        "Ne pas référer à l'expert dans le rapport (sauf loi)"
+        "Recours pour domaines spécialisés",
+        "Expert de l'auditeur ≠ de la direction",
+        "Évaluer compétence+capacités+objectivité ; ne pas référer"
       ],
       "pieges": [
-        "Confondre expert de l'auditeur et expert de la direction",
-        "Référencer l'expert dans le rapport (partage de responsabilité)",
-        "Ne pas évaluer l'objectivité de l'expert"
+        "Confondre expert de l'auditeur et de la direction",
+        "Référer à l'expert dans le rapport",
+        "Ne pas évaluer l'objectivité"
       ]
     },
     "700": {
@@ -14774,46 +14906,88 @@
       ]
     },
     "701": {
-      "intro": "Pour les sociétés cotées, le rapport va au-delà de l'opinion binaire : il communique les **questions clés de l'audit (KAM)**. ISA 701 (nouvelle 2015) répond à la demande de transparence des investisseurs.",
+      "duree": "9 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Pour les cotées : communiquer les **KAM** (questions clés de l'audit). Sélectionnées parmi celles communiquées à la gouvernance. Décrire : question + pourquoi + comment traitée. KAM ≠ opinion modifiée.",
+      "stats": [
+        {
+          "value": "EIP",
+          "label": "Obligatoire",
+          "sub": "cotées"
+        },
+        {
+          "value": "2-5",
+          "label": "KAM typiques",
+          "sub": "par rapport"
+        },
+        {
+          "value": "≠ réserve",
+          "label": "KAM",
+          "sub": "pas une modif"
+        },
+        {
+          "value": "R2015",
+          "label": "Nouvelle",
+          "sub": "effective 2016"
+        }
+      ],
+      "intro": "Pour les sociétés cotées, le rapport va au-delà de l'opinion binaire : il communique les Key Audit Matters.",
       "sections": [
         {
-          "titre": "1. Que sont les KAM",
-          "body": "Les **Key Audit Matters** sont les questions qui, selon le jugement professionnel de l'auditeur, ont été les **plus importantes** dans l'audit de la période. Elles sont sélectionnées parmi celles communiquées à la gouvernance.",
+          "titre": "Que sont les KAM",
+          "body": "Les questions les **plus importantes** de l'audit (jugement professionnel), sélectionnées parmi celles communiquées à la gouvernance.",
           "callouts": [
             {
               "type": "info",
-              "label": "Obligatoire pour qui",
-              "text": "KAM obligatoires pour les EIP / sociétés cotées. Optionnels (recommandés) pour les autres entités."
+              "label": "Pour qui",
+              "text": "Obligatoires EIP/cotées ; optionnels (recommandés) pour les autres."
             }
           ]
         },
         {
-          "titre": "2. Comment les sélectionner",
-          "body": "Critères : zones à **risque important** (significant risks), zones de **jugement/estimation significatifs**, effet d'**événements ou transactions majeurs**. Typiquement 2-5 KAM par rapport.",
-          "callouts": []
+          "titre": "Sélection et description",
+          "body": "",
+          "schema": {
+            "type": "flow",
+            "title": "Construire un KAM",
+            "steps": [
+              {
+                "t": "Sélectionner",
+                "d": "significant risks, jugements/estimations, événements majeurs"
+              },
+              {
+                "t": "Décrire la question",
+                "d": "pourquoi elle est clé"
+              },
+              {
+                "t": "Décrire la réponse d'audit",
+                "d": "comment l'audit l'a traitée"
+              }
+            ]
+          }
         },
         {
-          "titre": "3. Comment les décrire",
-          "body": "Pour chaque KAM : décrire la **question** + **pourquoi** elle a été considérée comme clé + **comment** l'audit l'a traitée. Position dans le rapport : après le fondement de l'opinion (après le paragraphe Material Uncertainty s'il existe).",
+          "titre": "Position et nature",
+          "body": "Après le fondement de l'opinion (après Material Uncertainty s'il existe).",
           "callouts": [
             {
               "type": "key",
               "label": "KAM ≠ réserve",
-              "text": "Les KAM ne modifient PAS l'opinion. Une opinion peut être clean ET comporter des KAM. Ce n'est pas une réserve."
+              "text": "Les KAM ne modifient PAS l'opinion. Une opinion clean peut comporter des KAM."
             }
           ]
         }
       ],
       "synthese": [
-        "KAM = questions les plus importantes de l'audit (EIP/cotées)",
-        "Critères : significant risks, jugements/estimations, événements majeurs",
-        "Décrire : question + pourquoi + comment traitée",
+        "KAM = questions les plus importantes (EIP/cotées)",
+        "Sélection : significant risks, jugements, événements",
+        "Décrire : question + pourquoi + comment",
         "KAM ≠ opinion modifiée"
       ],
       "pieges": [
         "Croire que les KAM modifient l'opinion",
-        "Mettre des KAM pour une entité non cotée par obligation (c'est optionnel)",
-        "Décrire la question sans expliquer comment l'audit l'a traitée"
+        "Mettre des KAM par obligation pour une non-cotée",
+        "Décrire sans expliquer comment l'audit a traité"
       ]
     },
     "705": {
@@ -14993,268 +15167,436 @@
       ]
     },
     "706": {
-      "intro": "Parfois l'auditeur veut **attirer l'attention** sur un point, sans modifier son opinion. ISA 706 (révisée 2015) régit les paragraphes d'observation (EOM) et sur d'autres points (Other Matter).",
+      "duree": "7 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Attirer l'attention SANS modifier l'opinion. EOM = question DANS les EF ; Other Matter = question HORS des EF. Going concern a son propre paragraphe dédié (≠ EOM ordinaire).",
+      "stats": [
+        {
+          "value": "2 types",
+          "label": "EOM / Other Matter",
+          "sub": ""
+        },
+        {
+          "value": "Sans modif",
+          "label": "l'opinion",
+          "sub": ""
+        },
+        {
+          "value": "DANS/HORS",
+          "label": "EF",
+          "sub": "EOM/Other"
+        },
+        {
+          "value": "R2015",
+          "label": "Révision",
+          "sub": ""
+        }
+      ],
+      "intro": "Parfois l'auditeur veut attirer l'attention sans modifier son opinion. ISA 706 régit EOM et Other Matter.",
       "sections": [
         {
-          "titre": "1. Emphasis of Matter (EOM)",
-          "body": "Un paragraphe **EOM** attire l'attention sur une question **présentée** dans les EF, fondamentale à la compréhension des utilisateurs (ex. un litige important correctement provisionné et décrit, un changement de méthode).",
+          "titre": "Emphasis of Matter (EOM)",
+          "body": "Attire l'attention sur une question **présentée** dans les EF, fondamentale à la compréhension (litige provisionné et décrit, changement de méthode).",
           "callouts": [
             {
               "type": "key",
               "label": "Sans modifier",
-              "text": "L'EOM ne MODIFIE PAS l'opinion. Il dit : « regardez ce point déjà dans les EF »."
+              "text": "L'EOM ne MODIFIE PAS l'opinion : « regardez ce point déjà dans les EF »."
             }
           ]
         },
         {
-          "titre": "2. Other Matter",
-          "body": "Un paragraphe **Other Matter** communique une question **non présentée** dans les EF, mais pertinente pour comprendre l'audit, les responsabilités ou le rapport (ex. comptes de l'exercice précédent audités par un autre auditeur).",
+          "titre": "Other Matter",
+          "body": "Communique une question **non présentée** dans les EF mais pertinente pour l'audit (ex. comptes N-1 audités par un autre auditeur).",
+          "compare": {
+            "title": "EOM vs Other Matter",
+            "headers": [
+              "",
+              "EOM",
+              "Other Matter"
+            ],
+            "rows": [
+              [
+                "Question",
+                "DANS les EF",
+                "HORS des EF"
+              ],
+              [
+                "Effet opinion",
+                "Aucun",
+                "Aucun"
+              ]
+            ]
+          }
+        },
+        {
+          "titre": "EOM vs going concern",
+          "body": "L'incertitude significative going concern a son **propre paragraphe dédié** (ISA 570), ce n'est pas un EOM ordinaire.",
           "callouts": []
-        },
-        {
-          "titre": "3. EOM vs going concern",
-          "body": "Attention : l'incertitude significative sur le going concern a son **propre paragraphe dédié** (« Material Uncertainty Related to Going Concern », ISA 570) — ce n'est pas un EOM ordinaire.",
-          "callouts": [
-            {
-              "type": "comp",
-              "label": "EOM vs Other Matter",
-              "text": "EOM = question DANS les EF. Other Matter = question HORS des EF. Aucun ne modifie l'opinion."
-            }
-          ]
         }
       ],
       "synthese": [
-        "EOM = attire l'attention sur une question DANS les EF",
-        "Other Matter = question HORS des EF (pertinente pour l'audit)",
-        "Ni l'un ni l'autre ne modifient l'opinion",
-        "Going concern = paragraphe dédié (≠ EOM ordinaire)"
+        "EOM = question DANS les EF",
+        "Other Matter = question HORS des EF",
+        "Aucun ne modifie l'opinion",
+        "Going concern = paragraphe dédié"
       ],
       "pieges": [
         "Croire qu'un EOM modifie l'opinion",
-        "Confondre EOM (dans les EF) et Other Matter (hors EF)",
-        "Utiliser un EOM ordinaire pour le going concern (paragraphe dédié)"
+        "Confondre EOM (dans EF) et Other Matter (hors EF)",
+        "Utiliser un EOM pour le going concern"
       ]
     },
     "710": {
-      "intro": "Les EF présentent toujours des **chiffres comparatifs**. ISA 710 définit la responsabilité de l'auditeur sur ces informations de l'exercice précédent.",
+      "duree": "6 min",
+      "niveau": "Fondamental",
+      "tldr": "Informations comparatives. Chiffres correspondants (opinion sur N) vs EF comparatifs (opinion sur chaque période). Modèle suisse = chiffres correspondants.",
+      "stats": [
+        {
+          "value": "2 approches",
+          "label": "Correspondants/Comparatifs",
+          "sub": ""
+        },
+        {
+          "value": "Suisse",
+          "label": "Correspondants",
+          "sub": "opinion sur N"
+        },
+        {
+          "value": "Lien 510",
+          "label": "Soldes ouverture",
+          "sub": "1er audit"
+        },
+        {
+          "value": "NAS 710",
+          "label": "Norme",
+          "sub": ""
+        }
+      ],
+      "intro": "Les EF présentent toujours des chiffres comparatifs. ISA 710 définit la responsabilité de l'auditeur.",
       "sections": [
         {
-          "titre": "1. Deux approches",
-          "body": "• **Chiffres correspondants** (corresponding figures) : les chiffres N-1 font partie intégrante des EF de N ; l'opinion porte sur l'exercice **courant** uniquement\n• **États financiers comparatifs** : l'opinion porte sur **chaque** période présentée.",
+          "titre": "Deux approches",
+          "body": "• **Chiffres correspondants** : N-1 partie intégrante des EF de N ; opinion sur l'exercice COURANT\n• **EF comparatifs** : opinion sur CHAQUE période.",
           "callouts": [
             {
               "type": "legal",
               "label": "Suisse",
-              "text": "Le modèle suisse usuel = chiffres correspondants : l'opinion porte sur l'exercice courant."
+              "text": "Modèle usuel = chiffres correspondants : l'opinion porte sur l'exercice courant."
             }
           ]
         },
         {
-          "titre": "2. Procédures",
-          "body": "L'auditeur vérifie que les comparatifs sont conformes au référentiel et cohérents avec les montants de l'exercice précédent. Il reste attentif aux retraitements et reclassements.",
+          "titre": "Procédures",
+          "body": "Vérifier conformité au référentiel + cohérence avec N-1 ; attention aux retraitements/reclassements.",
           "callouts": []
         },
         {
-          "titre": "3. Premier audit",
-          "body": "Si l'exercice précédent a été audité par un **autre auditeur** ou n'a pas été audité, l'auditeur peut l'indiquer dans un paragraphe Other Matter (ISA 706) et relie cela aux soldes d'ouverture (ISA 510).",
+          "titre": "Premier audit",
+          "body": "Si N-1 audité par un autre auditeur ou non audité → paragraphe Other Matter + lien soldes d'ouverture (ISA 510).",
           "callouts": []
         }
       ],
       "synthese": [
-        "Chiffres correspondants (opinion sur N) vs EF comparatifs (opinion sur chaque période)",
-        "Suisse : modèle chiffres correspondants",
-        "Vérifier conformité + cohérence des comparatifs",
-        "Lien avec soldes d'ouverture (ISA 510) en premier audit"
+        "Correspondants (opinion N) vs comparatifs (chaque période)",
+        "Suisse : chiffres correspondants",
+        "Lien ISA 510 en premier audit"
       ],
       "pieges": [
-        "Confondre chiffres correspondants et EF comparatifs",
-        "Négliger les retraitements/reclassements des comparatifs",
-        "Oublier le lien avec ISA 510 en premier audit"
+        "Confondre correspondants et comparatifs",
+        "Négliger retraitements/reclassements",
+        "Oublier le lien avec ISA 510"
       ]
     },
     "720": {
-      "intro": "Le rapport annuel contient bien plus que les EF audités (rapport de gestion, message du CEO). ISA 720 (révisée 2015) définit la responsabilité de l'auditeur sur ces **autres informations**.",
+      "duree": "7 min",
+      "niveau": "Fondamental",
+      "tldr": "Le rapport annuel contient plus que les EF (rapport de gestion). L'auditeur LIT les autres informations et signale les incohérences MATÉRIELLES — sans exprimer d'opinion dessus.",
+      "stats": [
+        {
+          "value": "Pas d'opinion",
+          "label": "Autres infos",
+          "sub": "juste lecture"
+        },
+        {
+          "value": "Incohér.",
+          "label": "À détecter",
+          "sub": "vs EF"
+        },
+        {
+          "value": "CO 961c",
+          "label": "Rapport gestion",
+          "sub": "= autre info"
+        },
+        {
+          "value": "R2015",
+          "label": "Révision",
+          "sub": ""
+        }
+      ],
+      "intro": "Le rapport annuel contient bien plus que les EF audités. ISA 720 définit la responsabilité sur ces autres informations.",
       "sections": [
         {
-          "titre": "1. Les « autres informations »",
-          "body": "Ce sont les informations financières ET non financières incluses dans le rapport annuel, **autres** que les EF audités et le rapport d'audit : rapport de gestion, faits marquants, indicateurs RSE, message de la direction.",
+          "titre": "Les « autres informations »",
+          "body": "Informations du rapport annuel autres que les EF audités : rapport de gestion, faits marquants, message du CEO, indicateurs RSE.",
           "callouts": [
             {
               "type": "info",
               "label": "Suisse",
-              "text": "Le rapport de gestion (CO 961c) est une « autre information » au sens d'ISA 720."
+              "text": "Le rapport de gestion (CO 961c) est une « autre information »."
             }
           ]
         },
         {
-          "titre": "2. Responsabilité de l'auditeur",
-          "body": "L'auditeur **lit** les autres informations et identifie les **incohérences significatives** avec les EF ou avec sa propre connaissance acquise pendant l'audit. Il n'**exprime pas d'opinion** sur ces informations.",
+          "titre": "Responsabilité",
+          "body": "L'auditeur **LIT** les autres informations et identifie les **incohérences significatives** avec les EF ou sa connaissance. Il n'exprime PAS d'opinion dessus.",
           "callouts": [
             {
               "type": "key",
               "label": "Pas d'opinion",
-              "text": "L'auditeur ne certifie pas les autres informations. Il vérifie juste l'absence d'incohérence matérielle."
+              "text": "L'auditeur ne certifie pas le rapport de gestion. Il vérifie l'absence d'incohérence matérielle."
             }
           ]
         },
         {
-          "titre": "3. En cas d'incohérence",
-          "body": "Si une incohérence significative existe : demander la correction à la direction. Si elle refuse → mentionner l'incohérence non corrigée dans une section dédiée « Autres informations » du rapport d'audit.",
+          "titre": "En cas d'incohérence",
+          "body": "Demander correction ; si refus → mentionner dans la section dédiée « Autres informations » du rapport.",
           "callouts": []
         }
       ],
       "synthese": [
-        "Autres informations = rapport annuel hors EF audités (rapport de gestion...)",
-        "L'auditeur LIT et cherche les incohérences (pas d'opinion)",
-        "Section dédiée « Autres informations » dans le rapport",
-        "Incohérence non corrigée → la mentionner"
+        "Autres infos = rapport annuel hors EF audités",
+        "L'auditeur LIT, cherche incohérences (pas d'opinion)",
+        "Section dédiée + mention si incohérence non corrigée"
       ],
       "pieges": [
         "Croire que l'auditeur certifie le rapport de gestion",
-        "Ne pas lire les autres informations du rapport annuel",
-        "Ignorer une incohérence matérielle avec les EF"
+        "Ne pas lire les autres informations",
+        "Ignorer une incohérence matérielle"
       ]
     },
     "800": {
-      "intro": "Tous les EF ne suivent pas un référentiel « image fidèle » général. ISA 800 (révisée 2015) traite l'audit d'EF établis selon un **référentiel à usage particulier**.",
+      "duree": "7 min",
+      "niveau": "Avancé",
+      "tldr": "Audit d'EF établis selon un référentiel à usage PARTICULIER (fiscal, cash, contractuel, réglementaire). Évaluer l'acceptabilité + adapter le rapport + restriction d'utilisation.",
+      "stats": [
+        {
+          "value": "Particulier",
+          "label": "Référentiel",
+          "sub": "fiscal/cash/contrat"
+        },
+        {
+          "value": "Restriction",
+          "label": "d'utilisation",
+          "sub": "fréquente"
+        },
+        {
+          "value": "Utilisateurs",
+          "label": "Visés",
+          "sub": "spécifiques"
+        },
+        {
+          "value": "R2015",
+          "label": "Révision",
+          "sub": ""
+        }
+      ],
+      "intro": "Tous les EF ne suivent pas un référentiel « image fidèle » général. ISA 800 traite les référentiels à usage particulier.",
       "sections": [
         {
-          "titre": "1. Qu'est-ce qu'un référentiel à usage particulier",
-          "body": "Un référentiel conçu pour répondre aux besoins d'utilisateurs **spécifiques** : base fiscale, base de trésorerie (cash basis), exigences d'une convention de prêt, exigences réglementaires.",
+          "titre": "Référentiel à usage particulier",
+          "body": "Conçu pour des utilisateurs spécifiques : base fiscale, base de trésorerie (cash), exigences d'une convention de prêt, exigences réglementaires.",
           "callouts": [
             {
-              "type": "info",
+              "type": "example",
               "label": "Exemple",
-              "text": "Des comptes établis sur la base fiscale pour l'administration, ou selon les clauses d'un contrat bancaire."
+              "text": "Comptes établis sur base fiscale pour l'administration, ou selon les clauses d'un contrat bancaire."
             }
           ]
         },
         {
-          "titre": "2. Acceptation et adaptation",
-          "body": "L'auditeur évalue l'**acceptabilité** du référentiel pour les utilisateurs visés et adapte le rapport : description du référentiel, identification des utilisateurs, et souvent un **paragraphe de restriction d'utilisation/distribution**.",
-          "callouts": []
-        },
-        {
-          "titre": "3. Application des ISA",
-          "body": "Toutes les ISA pertinentes s'appliquent. L'auditeur reste vigilant sur les spécificités du référentiel particulier dans la conception des procédures.",
+          "titre": "Acceptation et rapport",
+          "body": "Évaluer l'acceptabilité du référentiel pour les utilisateurs visés ; adapter le rapport (description + utilisateurs) ; souvent un **paragraphe de restriction d'utilisation**.",
           "callouts": [
             {
               "type": "key",
               "label": "Restriction",
-              "text": "Souvent, le rapport restreint son usage aux utilisateurs visés (ex. la banque, l'administration fiscale)."
+              "text": "Usage souvent restreint aux utilisateurs visés (banque, administration fiscale)."
             }
           ]
         }
       ],
       "synthese": [
-        "Référentiel à usage particulier : fiscal, cash, contractuel, réglementaire",
+        "Référentiel particulier : fiscal, cash, contractuel, réglementaire",
         "Évaluer l'acceptabilité + adapter le rapport",
-        "Paragraphe de restriction d'utilisation fréquent",
-        "Toutes les ISA pertinentes s'appliquent"
+        "Paragraphe de restriction d'utilisation fréquent"
       ],
       "pieges": [
-        "Auditer un référentiel particulier comme un référentiel général",
+        "Auditer un référentiel particulier comme un général",
         "Oublier la restriction d'utilisation",
-        "Ne pas décrire le référentiel et les utilisateurs visés"
+        "Ne pas décrire référentiel + utilisateurs"
       ]
     },
     "805": {
-      "intro": "On peut auditer un **seul état** ou un **élément spécifique** des EF. ISA 805 (révisée 2015) encadre ces missions ciblées.",
+      "duree": "7 min",
+      "niveau": "Avancé",
+      "tldr": "Audit d'UN état isolé (bilan seul) ou d'UN élément (stocks, créances). Matérialité fixée au niveau de l'ÉLÉMENT, pas des EF complets.",
+      "stats": [
+        {
+          "value": "1 état",
+          "label": "ou 1 élément",
+          "sub": "isolé"
+        },
+        {
+          "value": "Élément",
+          "label": "Matérialité",
+          "sub": "≠ EF complets"
+        },
+        {
+          "value": "Ciblé",
+          "label": "Audit",
+          "sub": "sur demande"
+        },
+        {
+          "value": "R2015",
+          "label": "Révision",
+          "sub": ""
+        }
+      ],
+      "intro": "On peut auditer un seul état ou un élément spécifique. ISA 805 encadre ces missions ciblées.",
       "sections": [
         {
-          "titre": "1. Objet de la mission",
-          "body": "Audit d'un **état financier isolé** (ex. le seul bilan, le seul tableau de flux) ou d'un **élément/compte/poste spécifique** (ex. les créances, les stocks, une ligne de chiffre d'affaires).",
+          "titre": "Objet",
+          "body": "Audit d'un **état isolé** (bilan seul, tableau de flux seul) ou d'un **élément/compte/poste** (créances, stocks, une ligne de CA).",
           "callouts": [
             {
-              "type": "info",
+              "type": "example",
               "label": "Exemple",
-              "text": "Auditer uniquement le poste « stocks » pour répondre à une exigence contractuelle ou un litige."
+              "text": "Auditer le seul poste « stocks » pour une exigence contractuelle ou un litige."
             }
           ]
         },
         {
-          "titre": "2. Matérialité au niveau de l'élément",
-          "body": "La **matérialité** se fixe au niveau de l'élément audité, pas des EF complets. Les procédures se concentrent sur cet élément et ses interactions.",
+          "titre": "Matérialité au niveau de l'élément",
+          "body": "La matérialité se fixe au niveau de l'élément audité, souvent bien plus basse.",
           "callouts": [
             {
               "type": "key",
               "label": "Spécificité",
-              "text": "Matérialité fixée sur l'ÉLÉMENT (ex. les stocks), souvent bien plus basse que pour des EF complets."
+              "text": "Matérialité sur l'ÉLÉMENT, pas sur des EF complets."
             }
           ]
-        },
-        {
-          "titre": "3. Rapport adapté",
-          "body": "Le rapport est adapté à l'objet de l'audit. Si l'auditeur audite aussi les EF complets, il évalue la cohérence entre les deux opinions.",
-          "callouts": []
         }
       ],
       "synthese": [
-        "Audit d'un état isolé (bilan seul) ou d'un élément (stocks, créances)",
-        "Matérialité fixée au niveau de l'ÉLÉMENT audité",
-        "Rapport adapté à l'objet",
+        "Audit d'un état isolé ou d'un élément",
+        "Matérialité au niveau de l'élément",
         "Cohérence avec l'opinion sur les EF complets si applicable"
       ],
       "pieges": [
-        "Appliquer la matérialité des EF complets à un élément isolé",
-        "Oublier les interactions de l'élément avec le reste des EF",
-        "Confondre ISA 805 (élément isolé) et ISA 800 (référentiel particulier)"
+        "Appliquer la matérialité des EF complets",
+        "Oublier les interactions de l'élément",
+        "Confondre ISA 805 (élément) et 800 (référentiel)"
       ]
     },
     "810": {
-      "intro": "Les utilisateurs veulent parfois une version condensée. ISA 810 (révisée 2015) régit les missions de rapport sur des **états financiers résumés**.",
+      "duree": "6 min",
+      "niveau": "Avancé",
+      "tldr": "Rapport sur des EF RÉSUMÉS dérivés d'EF déjà audités. L'opinion porte sur la COHÉRENCE avec les EF complets, pas une nouvelle opinion d'audit.",
+      "stats": [
+        {
+          "value": "Résumés",
+          "label": "dérivés",
+          "sub": "d'EF audités"
+        },
+        {
+          "value": "Cohérence",
+          "label": "Opinion sur",
+          "sub": "≠ nouvelle"
+        },
+        {
+          "value": "Critères",
+          "label": "de préparation",
+          "sub": "à évaluer"
+        },
+        {
+          "value": "R2015",
+          "label": "Révision",
+          "sub": ""
+        }
+      ],
+      "intro": "Les utilisateurs veulent parfois une version condensée. ISA 810 régit les rapports sur EF résumés.",
       "sections": [
         {
-          "titre": "1. EF résumés dérivés d'EF audités",
-          "body": "Les **états financiers résumés** (summary FS) sont dérivés d'EF complets **déjà audités**. Ils offrent une vue condensée aux utilisateurs qui n'ont pas besoin du détail complet.",
+          "titre": "EF résumés dérivés d'audités",
+          "body": "Les EF résumés sont dérivés d'EF complets **déjà audités**. Vue condensée pour utilisateurs.",
           "callouts": [
             {
               "type": "key",
               "label": "Prérequis",
-              "text": "Les EF résumés doivent dériver d'EF complets AUDITÉS. On ne résume pas des comptes non audités."
+              "text": "On ne résume pas des comptes non audités."
             }
           ]
         },
         {
-          "titre": "2. Nature de l'opinion",
-          "body": "L'opinion porte sur la **cohérence** des EF résumés avec les EF complets audités (et avec les critères de préparation), PAS une nouvelle opinion d'audit complète.",
-          "callouts": []
-        },
-        {
-          "titre": "3. Critères de préparation",
-          "body": "L'auditeur évalue les critères appliqués pour préparer les EF résumés et leur cohérence avec les EF audités.",
+          "titre": "Nature de l'opinion",
+          "body": "L'opinion porte sur la **cohérence** des EF résumés avec les EF complets (et les critères de préparation), PAS une nouvelle opinion d'audit complète.",
           "callouts": []
         }
       ],
       "synthese": [
-        "EF résumés = dérivés d'EF complets DÉJÀ audités",
-        "L'opinion porte sur la COHÉRENCE avec les EF complets",
-        "Pas une nouvelle opinion d'audit complète",
+        "EF résumés = dérivés d'EF complets audités",
+        "Opinion sur la COHÉRENCE (pas nouvelle opinion)",
         "Évaluer les critères de préparation"
       ],
       "pieges": [
         "Résumer des comptes non audités",
-        "Émettre une nouvelle opinion d'audit complète (c'est une opinion de cohérence)",
-        "Oublier de référencer les EF complets audités"
+        "Émettre une nouvelle opinion complète",
+        "Oublier de référencer les EF complets"
       ]
     },
     "LCE": {
-      "intro": "Les PME n'ont pas besoin de la lourdeur des ISA complètes. La nouvelle **norme ISA for LCE** (2023) offre un référentiel autonome et proportionné pour les **entités moins complexes**.",
+      "duree": "9 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Nouvelle norme STANDALONE (2023) pour entités moins complexes (PME). Audit COMPLET, assurance RAISONNABLE (≠ contrôle restreint qui est limité). Exclut EIP, cotées, groupes complexes.",
+      "stats": [
+        {
+          "value": "2023",
+          "label": "Nouvelle",
+          "sub": "effective 2025"
+        },
+        {
+          "value": "Standalone",
+          "label": "Autonome",
+          "sub": "≠ allègement ISA"
+        },
+        {
+          "value": "Raisonnable",
+          "label": "Assurance",
+          "sub": "même niveau ISA"
+        },
+        {
+          "value": "PME",
+          "label": "Cible",
+          "sub": "moins complexes"
+        }
+      ],
+      "intro": "Les PME n'ont pas besoin de la lourdeur des ISA complètes. La nouvelle ISA for LCE offre un référentiel autonome et proportionné.",
       "sections": [
         {
-          "titre": "1. Une norme STANDALONE",
-          "body": "ISA for LCE est une norme **autonome** (standalone) : ce n'est PAS un allègement des ISA, mais un référentiel complet et indépendant, conçu spécifiquement pour les entités moins complexes (LCE).",
+          "titre": "Une norme STANDALONE",
+          "body": "Référentiel **autonome** (pas un allègement des ISA) : tout le processus d'audit dans un document unique, conçu pour les entités moins complexes (LCE).",
           "callouts": [
             {
               "type": "key",
               "label": "Standalone",
-              "text": "Tout le processus d'audit dans un document unique, autonome. Pas besoin de jongler avec les 36 ISA."
+              "text": "Pas besoin de jongler avec les 36 ISA."
             }
           ]
         },
         {
-          "titre": "2. Même niveau d'assurance",
-          "body": "L'audit selon ISA for LCE donne une **assurance raisonnable** — le MÊME niveau que les ISA complètes. La simplification porte sur la documentation et les procédures, pas sur le niveau d'assurance.",
+          "titre": "Même niveau d'assurance",
+          "body": "Donne une **assurance raisonnable** — MÊME niveau que les ISA. La simplification porte sur la documentation et les procédures.",
           "callouts": [
             {
               "type": "comp",
@@ -15264,412 +15606,728 @@
           ]
         },
         {
-          "titre": "3. Critères d'éligibilité",
-          "body": "Critères **qualitatifs** liés à la complexité. **Exclut** explicitement : les entités d'intérêt public (EIP), les entités cotées, et les groupes complexes. Effective : exercices ouverts dès le 15.12.2025.",
-          "callouts": [
-            {
-              "type": "legal",
-              "label": "Suisse",
-              "text": "Adoption suisse en cours d'évaluation par EXPERTsuisse. Pertinent pour de nombreuses PME."
-            }
-          ]
+          "titre": "Éligibilité",
+          "body": "Critères qualitatifs liés à la complexité. EXCLUT EIP, cotées, groupes complexes. Effective 15.12.2025. Adoption CH en évaluation par EXPERTsuisse.",
+          "callouts": []
         }
       ],
       "synthese": [
-        "ISA for LCE = norme STANDALONE (≠ allègement des ISA)",
-        "Assurance RAISONNABLE (même niveau que les ISA complètes)",
-        "Critères qualitatifs ; exclut EIP, cotées, groupes complexes",
-        "Effective 15.12.2025"
+        "ISA for LCE = norme STANDALONE",
+        "Assurance RAISONNABLE (= ISA complètes)",
+        "Exclut EIP, cotées, groupes complexes",
+        "Effective 2025"
       ],
       "pieges": [
-        "Confondre ISA for LCE (audit complet, assurance raisonnable) et contrôle restreint (limité)",
-        "Croire que c'est un simple allègement des ISA (c'est autonome)",
-        "Appliquer ISA for LCE à une EIP (exclue)"
-      ]
+        "Confondre LCE (raisonnable) et contrôle restreint (limité)",
+        "Croire que c'est un allègement des ISA",
+        "Appliquer à une EIP"
+      ],
+      "mnemo": {
+        "code": "LCE",
+        "items": [
+          {
+            "l": "L",
+            "t": "Less"
+          },
+          {
+            "l": "C",
+            "t": "Complex"
+          },
+          {
+            "l": "E",
+            "t": "Entities"
+          }
+        ],
+        "phrase": "Norme autonome pour entités moins complexes"
+      }
     },
     "2400": {
-      "intro": "Toutes les missions ne sont pas des audits. L'**examen limité** (review) fournit une assurance plus modérée. ISRE 2400 (révisée 2012) le régit — c'est la base du contrôle restreint suisse.",
+      "duree": "8 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Examen limité (review) = assurance LIMITÉE (formulation négative). Procédures : demandes + analytiques. Base du contrôle restreint suisse (NCR, CO 729b).",
+      "stats": [
+        {
+          "value": "Limitée",
+          "label": "Assurance",
+          "sub": "négative"
+        },
+        {
+          "value": "NCR",
+          "label": "Base CH",
+          "sub": "CO 729b"
+        },
+        {
+          "value": "Demandes",
+          "label": "+ analytiques",
+          "sub": "procédures"
+        },
+        {
+          "value": "R2012",
+          "label": "Révision",
+          "sub": ""
+        }
+      ],
+      "intro": "Toutes les missions ne sont pas des audits. L'examen limité fournit une assurance plus modérée. Base du contrôle restreint suisse.",
       "sections": [
         {
-          "titre": "1. Assurance limitée",
-          "body": "L'examen limité fournit une **assurance limitée** (modérée), exprimée sous forme **négative** : « rien n'a attiré notre attention nous laissant penser que les EF ne sont pas conformes ».",
+          "titre": "Assurance limitée",
+          "body": "Formulation **négative** : « rien n'a attiré notre attention nous laissant penser que les EF ne sont pas conformes ».",
           "callouts": [
             {
               "type": "key",
               "label": "Négatif",
-              "text": "Audit = assurance raisonnable (formulation positive « image fidèle »). Review = assurance limitée (formulation négative « rien n'a attiré notre attention »)."
+              "text": "Audit = positive (« image fidèle »). Review = négative (« rien n'a attiré notre attention »)."
             }
           ]
         },
         {
-          "titre": "2. Procédures principales",
-          "body": "Principalement des **demandes d'informations** + **procédures analytiques**. Pas de tests des contrôles ni de vérifications étendues comme dans un audit.",
+          "titre": "Procédures",
+          "body": "Principalement **demandes d'informations** + **procédures analytiques**. Pas de tests des contrôles ni de vérifications étendues.",
           "callouts": []
         },
         {
-          "titre": "3. Lien avec le contrôle restreint suisse",
-          "body": "ISRE 2400 est la base internationale du **contrôle restreint** suisse (NCR, CO 729b) : 1 seul rapport, assurance limitée, formulation négative.",
+          "titre": "Lien contrôle restreint",
+          "body": "ISRE 2400 = base internationale du contrôle restreint suisse (NCR, CO 729b) : 1 seul rapport, assurance limitée.",
           "callouts": [
             {
               "type": "legal",
               "label": "Suisse",
-              "text": "Contrôle restreint = NCR ≈ ISRE 2400. Pour les PME sous les seuils du contrôle ordinaire."
+              "text": "Contrôle restreint = NCR ≈ ISRE 2400, pour les PME sous les seuils du contrôle ordinaire."
             }
           ]
         }
       ],
       "synthese": [
-        "Examen limité = assurance LIMITÉE (formulation négative)",
-        "Procédures : demandes + analytiques (pas de tests de contrôles)",
-        "Base du contrôle restreint suisse (NCR / CO 729b)"
+        "Review = assurance limitée (négative)",
+        "Demandes + analytiques (pas de TOC)",
+        "Base du contrôle restreint (NCR / CO 729b)"
       ],
       "pieges": [
         "Confondre review (limité) et audit (raisonnable)",
-        "Utiliser une formulation positive pour un examen limité",
-        "Faire des tests de contrôles complets en review"
+        "Formulation positive pour un review",
+        "Tests de contrôles complets en review"
       ]
     },
     "2410": {
-      "intro": "Pour les comptes **intermédiaires** des sociétés cotées, l'auditeur réalise un examen limité spécifique. ISRE 2410 le régit.",
+      "duree": "6 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Examen limité des comptes INTERMÉDIAIRES (semestriels) des cotées, par l'auditeur annuel. Assurance limitée.",
+      "stats": [
+        {
+          "value": "Interim",
+          "label": "Comptes",
+          "sub": "semestriels"
+        },
+        {
+          "value": "Cotées",
+          "label": "Cible",
+          "sub": "SIX"
+        },
+        {
+          "value": "Limitée",
+          "label": "Assurance",
+          "sub": "négative"
+        },
+        {
+          "value": "Annuel",
+          "label": "Auditeur",
+          "sub": "connaît l'entité"
+        }
+      ],
+      "intro": "Pour les comptes intermédiaires des cotées, l'auditeur réalise un examen limité spécifique.",
       "sections": [
         {
-          "titre": "1. Objet",
-          "body": "Examen limité des **informations financières intermédiaires** (semestrielles/trimestrielles) réalisé par l'**auditeur annuel** de l'entité.",
+          "titre": "Objet",
+          "body": "Examen limité des informations financières intermédiaires (semestrielles/trimestrielles) par l'**auditeur annuel** de l'entité.",
           "callouts": [
             {
               "type": "info",
               "label": "Cotées",
-              "text": "Pertinent pour les sociétés cotées SIX qui publient des comptes semestriels."
+              "text": "Pertinent pour les sociétés cotées SIX (comptes semestriels)."
             }
           ]
         },
         {
-          "titre": "2. Assurance limitée",
-          "body": "Comme ISRE 2400 : assurance limitée, formulation négative, procédures de demandes + analytiques, adaptées au contexte intermédiaire.",
-          "callouts": []
-        },
-        {
-          "titre": "3. Appui sur la connaissance annuelle",
-          "body": "L'auditeur s'appuie sur sa **connaissance de l'entité** acquise lors de l'audit annuel, ce qui rend l'examen intermédiaire efficace.",
+          "titre": "Assurance limitée",
+          "body": "Comme ISRE 2400 : assurance limitée, formulation négative, demandes + analytiques. S'appuie sur la connaissance acquise à l'audit annuel.",
           "callouts": [
             {
               "type": "comp",
               "label": "Lien",
-              "text": "ISRE 2410 ≈ ISRE 2400 appliqué aux comptes intermédiaires, par l'auditeur annuel. Lien RPC 31 / IAS 34."
+              "text": "ISRE 2410 ≈ ISRE 2400 appliqué aux comptes intermédiaires. Lien RPC 31 / IAS 34."
             }
           ]
         }
       ],
       "synthese": [
-        "Examen limité des comptes intermédiaires (semestriels) des cotées",
-        "Assurance limitée, par l'auditeur annuel",
-        "S'appuie sur la connaissance de l'entité acquise à l'audit annuel"
+        "Examen limité des comptes intermédiaires (cotées)",
+        "Par l'auditeur annuel",
+        "S'appuie sur la connaissance de l'entité"
       ],
       "pieges": [
-        "Confondre examen intermédiaire et audit annuel complet",
-        "Oublier le lien avec RPC 31 / IAS 34",
-        "Faire l'examen intermédiaire par un auditeur sans connaissance de l'entité"
+        "Confondre examen intermédiaire et audit annuel",
+        "Oublier le lien RPC 31 / IAS 34",
+        "Examen par un auditeur sans connaissance de l'entité"
       ]
     },
     "3000": {
-      "intro": "Au-delà de l'audit des EF, il existe un vaste monde de **missions d'assurance** (RSE, contrôles, conformité, durabilité). ISAE 3000 (révisée 2013) en est le cadre général.",
+      "duree": "9 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Cadre GÉNÉRAL des missions d'assurance non-EF (RSE, contrôles, conformité, durabilité). Raisonnable OU limitée. 5 éléments (TROCK). Base des rapports ESG (CSRD, ISSB).",
+      "stats": [
+        {
+          "value": "Général",
+          "label": "Toute mission",
+          "sub": "d'assurance non-EF"
+        },
+        {
+          "value": "R ou L",
+          "label": "Assurance",
+          "sub": "raisonnable/limitée"
+        },
+        {
+          "value": "5",
+          "label": "Éléments",
+          "sub": "TROCK"
+        },
+        {
+          "value": "ESG",
+          "label": "Base",
+          "sub": "CSRD/ISSB"
+        }
+      ],
+      "intro": "Au-delà de l'audit des EF, un vaste monde de missions d'assurance. ISAE 3000 en est le cadre général.",
       "sections": [
         {
-          "titre": "1. Le cadre général de l'assurance",
-          "body": "ISAE 3000 s'applique aux missions d'assurance **autres** que l'audit/review d'informations financières historiques : RSE/ESG, contrôles internes, conformité réglementaire, durabilité.",
+          "titre": "Le cadre général",
+          "body": "S'applique aux missions d'assurance **autres** que l'audit/review d'informations financières historiques : RSE/ESG, contrôles internes, conformité, durabilité.",
           "callouts": [
             {
               "type": "info",
               "label": "Polyvalent",
-              "text": "C'est la norme « couteau suisse » de l'assurance : tout sujet mesurable selon des critères."
+              "text": "La norme « couteau suisse » : tout sujet mesurable selon des critères."
             }
           ]
         },
         {
-          "titre": "2. Raisonnable ou limitée",
-          "body": "La mission peut viser une **assurance raisonnable** (formulation positive) OU **limitée** (formulation négative), selon les besoins des utilisateurs et l'étendue convenue.",
+          "titre": "Niveau d'assurance",
+          "body": "Raisonnable (positive) OU limitée (négative), selon les besoins.",
           "callouts": []
         },
         {
-          "titre": "3. Les 5 éléments",
-          "body": "Toute mission d'assurance comporte 5 éléments : relation **tripartite** (praticien, partie responsable, utilisateurs), un **objet** (subject matter), des **critères**, des **éléments probants** suffisants, et un **rapport écrit**.",
-          "callouts": [
-            {
-              "type": "key",
-              "label": "TROCK",
-              "text": "Three-party + Responsible party + Outcome (objet) + Criteria + Knowledge (éléments probants suffisants)."
-            }
-          ]
+          "titre": "Les 5 éléments",
+          "body": "",
+          "schema": {
+            "type": "flow",
+            "title": "5 éléments d'une mission d'assurance",
+            "steps": [
+              {
+                "t": "Three-party",
+                "d": "praticien + partie responsable + utilisateurs"
+              },
+              {
+                "t": "Objet (subject matter)",
+                "d": ""
+              },
+              {
+                "t": "Critères",
+                "d": "référentiel d'évaluation"
+              },
+              {
+                "t": "Éléments probants",
+                "d": "suffisants"
+              },
+              {
+                "t": "Rapport écrit",
+                "d": "conclusion"
+              }
+            ]
+          }
         }
       ],
       "synthese": [
-        "Cadre général des missions d'assurance non-EF (RSE, contrôles, conformité)",
-        "Assurance raisonnable (positive) OU limitée (négative)",
-        "5 éléments : relation tripartite + objet + critères + éléments probants + rapport",
-        "Base des rapports ESG/durabilité (CSRD, ISSB)"
+        "Cadre général des missions d'assurance non-EF",
+        "Raisonnable (positive) ou limitée (négative)",
+        "5 éléments (TROCK)",
+        "Base des rapports ESG/durabilité"
       ],
       "pieges": [
-        "Croire qu'ISAE 3000 ne sert qu'à un seul type de mission",
-        "Oublier de préciser le niveau d'assurance (raisonnable vs limitée)",
-        "Critères non appropriés ou non disponibles aux utilisateurs"
-      ]
+        "Croire qu'ISAE 3000 ne sert qu'à un type de mission",
+        "Oublier de préciser le niveau d'assurance",
+        "Critères non appropriés/disponibles"
+      ],
+      "mnemo": {
+        "code": "TROCK",
+        "items": [
+          {
+            "l": "T",
+            "t": "Three-party"
+          },
+          {
+            "l": "R",
+            "t": "Responsible party report"
+          },
+          {
+            "l": "O",
+            "t": "Outcome (objet)"
+          },
+          {
+            "l": "C",
+            "t": "Criteria"
+          },
+          {
+            "l": "K",
+            "t": "Knowledge (éléments probants)"
+          }
+        ],
+        "phrase": "Les 5 éléments d'une mission d'assurance"
+      }
     },
     "3402": {
-      "intro": "Quand une société de services audite ses propres contrôles pour ses clients, elle produit un **rapport SOC 1**. ISAE 3402 le régit — c'est le pendant d'ISA 402.",
-      "sections": [
+      "duree": "8 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Rapports SOC 1 sur les contrôles d'une société de services (pendant d'ISA 402). Type 1 (conception à une date) vs Type 2 (efficacité sur période). Type 2 = exploitable.",
+      "stats": [
         {
-          "titre": "1. Rapports SOC 1",
-          "body": "ISAE 3402 encadre les **rapports d'assurance sur les contrôles d'une société de services** (SOC 1), destinés aux auditeurs des entités utilisatrices (lien ISA 402).",
-          "callouts": [
-            {
-              "type": "info",
-              "label": "Qui l'utilise",
-              "text": "L'auditeur de l'entité utilisatrice s'appuie sur le SOC 1 pour évaluer les contrôles externalisés."
-            }
-          ]
+          "value": "SOC 1",
+          "label": "Rapport",
+          "sub": "financial reporting"
         },
         {
-          "titre": "2. Type 1 vs Type 2",
-          "body": "• **Type 1** : description + conception des contrôles à une **date** donnée\n• **Type 2** : Type 1 + **efficacité opérationnelle** sur une **période** (6-12 mois).",
+          "value": "Type 2",
+          "label": "Efficacité",
+          "sub": "6-12 mois"
+        },
+        {
+          "value": "ISA 402",
+          "label": "Lien",
+          "sub": "entité utilisatrice"
+        },
+        {
+          "value": "R2010",
+          "label": "Émise",
+          "sub": ""
+        }
+      ],
+      "intro": "Quand une société de services audite ses contrôles pour ses clients, elle produit un rapport SOC 1. ISAE 3402 le régit.",
+      "sections": [
+        {
+          "titre": "Rapports SOC 1",
+          "body": "Rapports d'assurance sur les contrôles d'une société de services, destinés aux auditeurs des entités utilisatrices (lien ISA 402).",
+          "callouts": []
+        },
+        {
+          "titre": "Type 1 vs Type 2",
+          "body": "",
+          "compare": {
+            "title": "SOC 1 Type 1 vs Type 2",
+            "headers": [
+              "",
+              "Type 1",
+              "Type 2"
+            ],
+            "rows": [
+              [
+                "Couvre",
+                "Description + conception",
+                "Type 1 + efficacité opérationnelle"
+              ],
+              [
+                "Période",
+                "Une date",
+                "6-12 mois"
+              ],
+              [
+                "Exploitable efficacité",
+                "Non",
+                "OUI"
+              ]
+            ]
+          },
           "callouts": [
             {
               "type": "key",
               "label": "Type 2",
-              "text": "Seul le Type 2 permet de s'appuyer sur l'EFFICACITÉ des contrôles. Le Type 1 ne couvre que la conception."
+              "text": "Seul le Type 2 permet de s'appuyer sur l'EFFICACITÉ des contrôles."
             }
           ]
-        },
-        {
-          "titre": "3. Contenu",
-          "body": "Le rapport comprend l'**assertion de la direction** de la société de services + l'**opinion** de l'auditeur du prestataire + la description des contrôles testés et des résultats.",
-          "callouts": []
         }
       ],
       "synthese": [
-        "SOC 1 = rapport sur les contrôles d'une société de services (ISAE 3402)",
-        "Type 1 (conception à une date) vs Type 2 (efficacité sur période)",
-        "Type 2 = exploitable pour s'appuyer sur l'efficacité",
-        "Lien direct avec ISA 402"
+        "SOC 1 = contrôles d'une société de services",
+        "Type 1 (conception) vs Type 2 (efficacité)",
+        "Type 2 exploitable ; lien ISA 402"
       ],
       "pieges": [
-        "Se fier à un SOC Type 1 pour conclure sur l'efficacité",
-        "Confondre SOC 1 (financial reporting) et SOC 2 (sécurité)",
-        "Oublier les CUEC mentionnés dans le rapport"
+        "Se fier à un Type 1 pour l'efficacité",
+        "Confondre SOC 1 (financier) et SOC 2 (sécurité)",
+        "Oublier les CUEC"
       ]
     },
     "3410": {
-      "intro": "Avec la transition climatique, l'assurance sur les **émissions de gaz à effet de serre** devient stratégique. ISAE 3410 la régit.",
+      "duree": "7 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Assurance sur les émissions de GES (Scope 1/2/3). Raisonnable ou limitée. En forte croissance avec la CSRD et ISSB S2.",
+      "stats": [
+        {
+          "value": "GES",
+          "label": "Émissions",
+          "sub": "Scope 1/2/3"
+        },
+        {
+          "value": "3 scopes",
+          "label": "directes/énergie/chaîne",
+          "sub": ""
+        },
+        {
+          "value": "GHG Proto.",
+          "label": "Référentiel",
+          "sub": "ISO 14064"
+        },
+        {
+          "value": "CSRD",
+          "label": "Croissance",
+          "sub": "ISSB S2"
+        }
+      ],
+      "intro": "Avec la transition climatique, l'assurance sur les émissions GES devient stratégique. ISAE 3410 la régit.",
       "sections": [
         {
-          "titre": "1. Vérification des déclarations GES",
-          "body": "ISAE 3410 encadre l'assurance sur les **déclarations d'émissions de gaz à effet de serre** (GES). Assurance raisonnable ou limitée.",
-          "callouts": [
-            {
-              "type": "info",
-              "label": "Croissance",
-              "text": "Sujet en forte croissance avec la CSRD européenne et les normes ISSB (S2 climat)."
-            }
-          ]
-        },
-        {
-          "titre": "2. Les 3 scopes",
-          "body": "• **Scope 1** : émissions directes (combustion sur site)\n• **Scope 2** : émissions indirectes liées à l'énergie achetée (électricité)\n• **Scope 3** : autres émissions indirectes de la chaîne de valeur (souvent les plus importantes et les plus difficiles à mesurer).",
-          "callouts": [
-            {
-              "type": "key",
-              "label": "Scopes",
-              "text": "Scope 1 (direct) / Scope 2 (énergie achetée) / Scope 3 (chaîne de valeur)."
-            }
-          ]
-        },
-        {
-          "titre": "3. Référentiels",
-          "body": "Référentiels de quantification : GHG Protocol, ISO 14064-1. L'auditeur évalue les méthodes de mesure et les incertitudes.",
+          "titre": "Vérification des déclarations GES",
+          "body": "Assurance (raisonnable ou limitée) sur les déclarations d'émissions de gaz à effet de serre.",
           "callouts": []
+        },
+        {
+          "titre": "Les 3 scopes",
+          "body": "",
+          "schema": {
+            "type": "flow",
+            "title": "Les 3 scopes GES",
+            "steps": [
+              {
+                "t": "Scope 1",
+                "d": "émissions directes (combustion sur site)"
+              },
+              {
+                "t": "Scope 2",
+                "d": "indirectes liées à l'énergie achetée (électricité)"
+              },
+              {
+                "t": "Scope 3",
+                "d": "chaîne de valeur (souvent le plus important, le plus dur à mesurer)"
+              }
+            ]
+          },
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Référentiels",
+              "text": "GHG Protocol, ISO 14064-1. Lien CSRD, ISSB S2, TCFD."
+            }
+          ]
         }
       ],
       "synthese": [
-        "Assurance sur les émissions GES (raisonnable ou limitée)",
-        "Scope 1 (direct) / Scope 2 (énergie achetée) / Scope 3 (chaîne de valeur)",
-        "Référentiels : GHG Protocol, ISO 14064-1",
-        "Lien CSRD, ISSB S2, TCFD"
+        "Assurance sur les émissions GES",
+        "Scope 1 (direct) / 2 (énergie) / 3 (chaîne de valeur)",
+        "GHG Protocol, ISO 14064 ; lien CSRD/ISSB"
       ],
       "pieges": [
         "Confondre les 3 scopes",
-        "Sous-estimer le Scope 3 (le plus difficile à mesurer)",
+        "Sous-estimer le Scope 3",
         "Oublier d'évaluer les incertitudes de mesure"
-      ]
+      ],
+      "mnemo": {
+        "code": "1-2-3",
+        "items": [
+          {
+            "l": "1",
+            "t": "Direct (combustion site)"
+          },
+          {
+            "l": "2",
+            "t": "Énergie achetée"
+          },
+          {
+            "l": "3",
+            "t": "Chaîne de valeur"
+          }
+        ],
+        "phrase": "Les 3 scopes d'émissions GES"
+      }
     },
     "4400": {
-      "intro": "Parfois le client veut juste des **constatations factuelles**, sans opinion. ISRS 4400 (révisée 2020) régit les **procédures convenues** (AUP).",
+      "duree": "7 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Procédures convenues (AUP) = AUCUNE assurance. Constatations factuelles uniquement, procédures convenues à l'avance, usage RESTREINT. Usages : due diligence, covenants.",
+      "stats": [
+        {
+          "value": "Aucune",
+          "label": "Assurance",
+          "sub": "factuel"
+        },
+        {
+          "value": "Convenues",
+          "label": "Procédures",
+          "sub": "à l'avance"
+        },
+        {
+          "value": "Restreint",
+          "label": "Usage",
+          "sub": "parties convenant"
+        },
+        {
+          "value": "R2020",
+          "label": "Révision",
+          "sub": ""
+        }
+      ],
+      "intro": "Parfois le client veut juste des constatations factuelles, sans opinion. ISRS 4400 régit les procédures convenues.",
       "sections": [
         {
-          "titre": "1. Aucune assurance",
-          "body": "Les **procédures convenues** (Agreed-Upon Procedures) ne fournissent **AUCUNE assurance**. L'auditeur exécute des procédures **convenues à l'avance** et rapporte des **constatations factuelles**, sans opinion ni conclusion.",
+          "titre": "Aucune assurance",
+          "body": "Les procédures convenues ne fournissent AUCUNE assurance : l'auditeur exécute des procédures **convenues à l'avance** et rapporte des **constatations factuelles**, sans opinion.",
           "callouts": [
             {
               "type": "key",
               "label": "Pas d'opinion",
-              "text": "AUP = constatations factuelles uniquement. Pas d'opinion, pas de conclusion. Les utilisateurs tirent leurs propres conclusions."
+              "text": "Les utilisateurs tirent leurs propres conclusions."
             }
           ]
         },
         {
-          "titre": "2. Convenir des procédures",
-          "body": "Les procédures sont **convenues** entre le praticien, le client et les utilisateurs visés. Le rapport liste précisément les procédures effectuées et ce qui a été constaté.",
+          "titre": "Convenir + usage restreint",
+          "body": "Procédures convenues entre praticien, client et utilisateurs visés. Rapport **réservé** aux parties convenant.",
           "callouts": [
             {
               "type": "example",
               "label": "Exemple",
-              "text": "Due diligence M&A, vérification du respect d'un covenant bancaire, contrôle de chiffres spécifiques pour un tiers."
+              "text": "Due diligence M&A, vérification d'un covenant bancaire, contrôle de chiffres pour un tiers."
             }
           ]
-        },
-        {
-          "titre": "3. Usage restreint",
-          "body": "Le rapport AUP est **réservé** aux parties qui ont convenu des procédures (usage restreint), car elles seules peuvent interpréter les constatations.",
-          "callouts": []
         }
       ],
       "synthese": [
-        "AUP = AUCUNE assurance, constatations factuelles uniquement",
-        "Procédures convenues à l'avance entre les parties",
-        "Usage RESTREINT aux parties convenant",
-        "Usages : due diligence, covenants, contrôles ciblés"
+        "AUP = AUCUNE assurance, constatations factuelles",
+        "Procédures convenues à l'avance",
+        "Usage restreint aux parties convenant"
       ],
       "pieges": [
         "Croire qu'une AUP fournit une assurance",
-        "Diffuser un rapport AUP au-delà des parties convenant",
-        "Ajouter une opinion/conclusion à une AUP"
+        "Diffuser au-delà des parties convenant",
+        "Ajouter une opinion à une AUP"
       ]
     },
     "4410": {
-      "intro": "Quand le praticien **prépare** les comptes sans les auditer, c'est une mission de **compilation**. ISRS 4410 (révisée 2011) la régit.",
+      "duree": "6 min",
+      "niveau": "Fondamental",
+      "tldr": "Compilation = préparer les EF sans assurance. Le praticien met en forme, ne vérifie pas. Mention « compilé » obligatoire. Usage : PME non soumises à révision.",
+      "stats": [
+        {
+          "value": "Aucune",
+          "label": "Assurance",
+          "sub": "préparation"
+        },
+        {
+          "value": "« Compilé »",
+          "label": "Mention",
+          "sub": "obligatoire"
+        },
+        {
+          "value": "PME",
+          "label": "Usage",
+          "sub": "non révisées"
+        },
+        {
+          "value": "R2011",
+          "label": "Révision",
+          "sub": ""
+        }
+      ],
+      "intro": "Quand le praticien prépare les comptes sans les auditer, c'est une compilation. ISRS 4410 la régit.",
       "sections": [
         {
-          "titre": "1. Aucune assurance",
-          "body": "La **compilation** consiste à aider la direction à préparer et présenter des informations financières, **sans fournir aucune assurance**. Le praticien met en forme, il ne vérifie pas.",
+          "titre": "Aucune assurance",
+          "body": "Aider la direction à préparer/présenter des informations financières, **sans aucune assurance**. Le praticien met en forme, ne vérifie pas.",
           "callouts": [
             {
               "type": "key",
               "label": "Préparer ≠ auditer",
-              "text": "En compilation, le praticien PRÉPARE les EF à partir des données du client. Il ne les audite pas. Mention « compilé » obligatoire."
+              "text": "Mention « compilé » obligatoire."
             }
           ]
         },
         {
-          "titre": "2. Compétence comptable",
-          "body": "Le praticien applique son expertise comptable pour compiler les informations selon le référentiel applicable, mais ne valide ni ne corrobore les données fournies.",
-          "callouts": []
-        },
-        {
-          "titre": "3. Usage",
-          "body": "Souvent utilisée pour les comptes de **PME** non soumises à révision, ou pour des comptes de gestion. Le rapport mentionne clairement l'absence d'assurance.",
-          "callouts": [
-            {
-              "type": "comp",
-              "label": "Compilation vs AUP",
-              "text": "Compilation = préparer les EF (pas d'assurance). AUP = exécuter des procédures convenues (pas d'assurance). Review = assurance limitée."
-            }
-          ]
+          "titre": "Usage",
+          "body": "Souvent pour les comptes de PME non soumises à révision, ou comptes de gestion.",
+          "compare": {
+            "title": "3 niveaux",
+            "headers": [
+              "Mission",
+              "Assurance"
+            ],
+            "rows": [
+              [
+                "Audit",
+                "Raisonnable"
+              ],
+              [
+                "Review",
+                "Limitée"
+              ],
+              [
+                "AUP / Compilation",
+                "Aucune"
+              ]
+            ]
+          }
         }
       ],
       "synthese": [
-        "Compilation = préparer les EF sans assurance",
-        "Le praticien met en forme, ne vérifie pas",
+        "Compilation = préparer sans assurance",
         "Mention « compilé » obligatoire",
         "Usage : PME non soumises à révision"
       ],
       "pieges": [
         "Croire qu'une compilation fournit une assurance",
-        "Confondre compilation (préparer) et AUP (procédures convenues)",
+        "Confondre compilation (préparer) et AUP (procédures)",
         "Oublier la mention « compilé »"
       ]
     },
     "ISQM1": {
-      "intro": "La qualité d'un cabinet d'audit se gère au niveau de l'**organisation**. ISQM 1 (2020, remplace ISQC 1) impose un système de gestion de la qualité fondé sur les risques.",
+      "duree": "9 min",
+      "niveau": "Avancé",
+      "tldr": "Système de gestion de la qualité au niveau CABINET (remplace ISQC 1). Approche risk-based, 8 composantes, évaluation annuelle. NCQ 1 en Suisse. ISQM 1 = cabinet ; ISA 220 = mission.",
+      "stats": [
+        {
+          "value": "Cabinet",
+          "label": "Niveau",
+          "sub": "SoQM"
+        },
+        {
+          "value": "8",
+          "label": "Composantes",
+          "sub": ""
+        },
+        {
+          "value": "Risk-based",
+          "label": "Approche",
+          "sub": "≠ ISQC check-list"
+        },
+        {
+          "value": "2022",
+          "label": "Effective",
+          "sub": "15.12"
+        }
+      ],
+      "intro": "La qualité d'un cabinet se gère au niveau de l'organisation. ISQM 1 impose un système de gestion de la qualité fondé sur les risques.",
       "sections": [
         {
-          "titre": "1. Un système de gestion de la qualité (SoQM)",
-          "body": "Le cabinet conçoit, met en œuvre et fait fonctionner un **System of Quality Management** (SoQM). Approche **fondée sur les risques** (≠ ancienne check-list ISQC 1) : objectifs qualité → risques → réponses.",
+          "titre": "Un SoQM risk-based",
+          "body": "Le cabinet conçoit/met en œuvre un **System of Quality Management**. Approche **fondée sur les risques** (≠ check-list ISQC 1) : objectifs qualité → risques → réponses.",
           "callouts": [
             {
               "type": "key",
               "label": "Risk-based",
-              "text": "ISQM 1 = approche par les risques. Le cabinet identifie ses risques qualité et y répond, plutôt que de cocher une liste uniforme."
+              "text": "Le cabinet identifie ses risques qualité et y répond."
             }
           ]
         },
         {
-          "titre": "2. Les 8 composantes",
-          "body": "1) Processus d'évaluation des risques qualité, 2) Gouvernance et leadership, 3) Éthique et indépendance, 4) Acceptation et maintien des missions, 5) Réalisation des missions, 6) Ressources, 7) Information et communication, 8) Surveillance et remédiation.",
+          "titre": "Les 8 composantes",
+          "body": "1) Évaluation des risques qualité, 2) Gouvernance/leadership, 3) Éthique/indépendance, 4) Acceptation/maintien, 5) Réalisation, 6) Ressources, 7) Information/communication, 8) Surveillance/remédiation.",
           "callouts": []
         },
         {
-          "titre": "3. Revue annuelle",
-          "body": "La direction du cabinet **évalue annuellement** le SoQM et conclut sur son efficacité. Surveillance continue + actions correctives (remédiation).",
+          "titre": "Revue annuelle",
+          "body": "La direction du cabinet évalue annuellement le SoQM. Surveillance continue + remédiation.",
           "callouts": [
             {
               "type": "legal",
               "label": "Suisse",
-              "text": "Équivalent suisse : NCQ 1. Effectif depuis le 15.12.2022. ISQM 1 = niveau CABINET ; ISA 220 = niveau MISSION."
+              "text": "NCQ 1. Effectif 15.12.2022. ISQM 1 = CABINET ; ISA 220 = MISSION."
             }
           ]
         }
       ],
       "synthese": [
-        "SoQM au niveau CABINET, approche risk-based (≠ ISQC 1 check-list)",
-        "8 composantes (risques, gouvernance, éthique, acceptation, réalisation, ressources, info, surveillance)",
-        "Évaluation annuelle du système + remédiation",
-        "NCQ 1 en Suisse ; effectif 15.12.2022"
+        "SoQM au niveau cabinet, risk-based",
+        "8 composantes",
+        "Évaluation annuelle + remédiation",
+        "NCQ 1 en Suisse"
       ],
       "pieges": [
         "Confondre ISQM 1 (cabinet) et ISA 220 (mission)",
-        "Appliquer une logique check-list (c'est risk-based)",
-        "Oublier l'évaluation annuelle du SoQM"
+        "Logique check-list (c'est risk-based)",
+        "Oublier l'évaluation annuelle"
       ]
     },
     "ISQM2": {
-      "intro": "Certaines missions exigent un regard indépendant avant la signature : la **revue de qualité (EQR)**. ISQM 2 (2020) en définit les règles.",
-      "sections": [
+      "duree": "7 min",
+      "niveau": "Avancé",
+      "tldr": "Revue de qualité de la mission (EQR). Réviseur indépendant de l'équipe, compétence+autorité+temps, cooling-off 2 ans, revue achevée AVANT la date du rapport.",
+      "stats": [
         {
-          "titre": "1. L'Engagement Quality Reviewer",
-          "body": "L'**EQR** (Engagement Quality Reviewer) est un réviseur **indépendant de l'équipe** de mission, qui effectue une revue objective des jugements significatifs et de la formation de l'opinion.",
-          "callouts": [
-            {
-              "type": "info",
-              "label": "Pour qui",
-              "text": "EQR obligatoire pour les EIP, les sociétés cotées, et les missions à risque élevé."
-            }
-          ]
+          "value": "EQR",
+          "label": "Réviseur qualité",
+          "sub": "indépendant"
         },
         {
-          "titre": "2. Éligibilité et indépendance",
-          "body": "L'EQR doit avoir la **compétence**, l'**autorité** et le **temps** suffisants. Il doit être **indépendant** de l'équipe, avec un **cooling-off de 2 ans** s'il a été l'associé responsable du même client.",
+          "value": "2 ans",
+          "label": "Cooling-off",
+          "sub": "ex-lead partner"
+        },
+        {
+          "value": "Avant",
+          "label": "le rapport",
+          "sub": "revue achevée"
+        },
+        {
+          "value": "EIP",
+          "label": "Obligatoire",
+          "sub": "+ risque élevé"
+        }
+      ],
+      "intro": "Certaines missions exigent un regard indépendant avant la signature : l'Engagement Quality Review.",
+      "sections": [
+        {
+          "titre": "L'EQR",
+          "body": "Réviseur **indépendant de l'équipe** qui revoit objectivement les jugements significatifs et la formation de l'opinion. Obligatoire : EIP, cotées, missions à risque élevé.",
+          "callouts": []
+        },
+        {
+          "titre": "Éligibilité et indépendance",
+          "body": "Compétence + autorité + temps suffisants. Indépendant de l'équipe, **cooling-off 2 ans** s'il a été l'associé responsable du même client.",
           "callouts": [
             {
               "type": "key",
               "label": "Cooling-off",
-              "text": "2 ans de cooling-off pour un ancien associé responsable avant de devenir EQR sur le même client."
+              "text": "2 ans pour un ancien associé responsable avant de devenir EQR sur le même client."
             }
           ]
         },
         {
-          "titre": "3. Revue avant signature",
-          "body": "La revue de l'EQR doit être **achevée AVANT la date du rapport**. Le rapport ne peut pas être daté tant que l'EQR n'a pas terminé sa revue.",
-          "callouts": []
+          "titre": "Revue avant signature",
+          "body": "La revue doit être **achevée AVANT la date du rapport**. Le rapport ne peut pas être daté tant que l'EQR n'a pas fini.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Attention",
+              "text": "Dater le rapport avant la fin de la revue EQR = faute."
+            }
+          ]
         }
       ],
       "synthese": [
         "EQR = réviseur indépendant de l'équipe",
-        "Obligatoire : EIP, cotées, missions à risque élevé",
-        "Compétence + autorité + temps ; cooling-off 2 ans",
-        "Revue achevée AVANT la date du rapport"
+        "Obligatoire : EIP, cotées, risque élevé",
+        "Compétence+autorité+temps ; cooling-off 2 ans",
+        "Revue achevée AVANT le rapport"
       ],
       "pieges": [
         "Dater le rapport avant la fin de la revue EQR",
-        "Désigner un EQR sans respecter le cooling-off de 2 ans",
-        "Confondre EQR (mission, ISQM 2) et SoQM (cabinet, ISQM 1)"
+        "Désigner un EQR sans cooling-off",
+        "Confondre EQR (ISQM 2) et SoQM (ISQM 1)"
       ]
     }
   }
