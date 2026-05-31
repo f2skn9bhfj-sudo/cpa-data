@@ -11529,5 +11529,409 @@
         "warning": "Les statuts holding/mixte n'existent PLUS depuis 2020. Erreur classique : les citer encore."
       }
     ]
+  },
+  "annuaire_cours": {
+    "200": {
+      "intro": "ISA 200 est la **norme-cadre** de tout l'audit : elle pose les fondations sur lesquelles reposent les 35 autres ISA. Comprendre ISA 200, c'est comprendre la philosophie même de l'audit — pourquoi on audite, jusqu'où va la responsabilité de l'auditeur, et quels sont les concepts qui irriguent toute la mission.",
+      "sections": [
+        {
+          "titre": "1. Pourquoi auditer ? L'objectif global",
+          "body": "L'objectif d'un audit est de **renforcer le degré de confiance** des utilisateurs présumés dans les états financiers (EF). L'auditeur exprime une opinion sur le fait que les EF sont, dans tous leurs aspects significatifs, établis conformément à un référentiel comptable applicable (CO, Swiss GAAP RPC, IFRS).\n\nDeux objectifs globaux (ISA 200.11) :\n• Obtenir une **assurance raisonnable** que les EF, pris dans leur ensemble, ne comportent pas d'anomalies significatives (par fraude ou erreur)\n• **Émettre un rapport** sur les EF et communiquer selon les ISA.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "À retenir",
+              "text": "L'audit ne garantit pas l'absence TOTALE d'erreur. Il fournit une assurance RAISONNABLE (élevée, mais pas absolue). C'est un concept fondamental que beaucoup oublient."
+            }
+          ]
+        },
+        {
+          "titre": "2. L'assurance raisonnable et le risque d'audit",
+          "body": "L'assurance raisonnable est un niveau d'assurance **élevé mais non absolu**. Pourquoi pas absolu ? À cause des **limites inhérentes** de l'audit :\n• On travaille par **sondages** (on ne teste pas 100% des transactions)\n• Le jugement comporte une part de subjectivité\n• La fraude peut être dissimulée (collusion, faux documents)\n• La plupart des éléments probants sont **persuasifs** plutôt que **concluants**.\n\nLe **risque d'audit** est le risque que l'auditeur exprime une opinion inappropriée alors que les EF comportent une anomalie significative.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Formule clé",
+              "text": "Risque d'audit = Risque Inhérent (RI) × Risque de Contrôle (RC) × Risque de Non-Détection (RND). Seul le RND est sous le contrôle direct de l'auditeur : il l'ajuste en modifiant la nature, le calendrier et l'étendue de ses procédures."
+            }
+          ]
+        },
+        {
+          "titre": "3. Scepticisme professionnel",
+          "body": "Le **scepticisme professionnel** est une attitude mentale faite d'esprit interrogateur, d'attention aux conditions pouvant indiquer une anomalie, et d'**évaluation critique** des éléments probants.\n\nConcrètement : ne pas accepter une explication de la direction sur parole, chercher des éléments corroborants, être attentif aux incohérences, rester vigilant face aux documents qui semblent trop parfaits.",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Mindset EY",
+              "text": "Le scepticisme n'est pas de la méfiance ni de la paranoïa : c'est un équilibre professionnel entre confiance et vérification. « Trust, but verify »."
+            }
+          ]
+        },
+        {
+          "titre": "4. Jugement professionnel",
+          "body": "Le **jugement professionnel** est l'application des connaissances, de l'expérience et de la formation pertinentes pour prendre des décisions éclairées tout au long de la mission.\n\nIl intervient partout : choix du benchmark de matérialité, identification des risques importants, évaluation du caractère suffisant des éléments probants, détermination du type d'opinion. Le jugement doit être **documenté** (ISA 230) pour être défendable.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "Jugement vs Scepticisme",
+              "text": "Le jugement = DÉCIDER (choisir, évaluer). Le scepticisme = QUESTIONNER (douter, vérifier). Les deux sont complémentaires et indispensables."
+            }
+          ]
+        },
+        {
+          "titre": "5. Conditions d'application des ISA",
+          "body": "Pour conduire un audit selon les ISA, l'auditeur doit :\n• Respecter **toutes les ISA pertinentes** à la mission\n• Comprendre l'intégralité du texte d'une ISA, y compris ses modalités d'application\n• Respecter les **règles d'éthique** (indépendance comprise — Code IESBA)\n• Ne déclarer la conformité aux ISA que si **toutes** les exigences ont été respectées.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "En Suisse, les ISA sont transposées en Normes d'audit suisses (NA-CH). Le contrôle ordinaire (CO 727-728) s'effectue selon les NA-CH ; le contrôle restreint selon la NCR (assurance limitée)."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Objectif de l'audit : renforcer la confiance des utilisateurs dans les EF via une opinion",
+        "Assurance RAISONNABLE (élevée, pas absolue) à cause des limites inhérentes",
+        "Risque d'audit = RI × RC × RND ; seul le RND est piloté par l'auditeur",
+        "Scepticisme (questionner) + jugement (décider) = l'ADN de l'auditeur",
+        "Conformité aux ISA = respect de TOUTES les exigences pertinentes"
+      ],
+      "pieges": [
+        "Croire que l'audit garantit l'absence absolue d'erreur (c'est une assurance RAISONNABLE)",
+        "Oublier que la fraude par collusion/faux documents peut échapper à un audit bien conduit",
+        "Confondre scepticisme (attitude neutre interrogative) et méfiance (parti pris négatif)"
+      ]
+    },
+    "210": {
+      "intro": "Avant de poser le moindre acte d'audit, il faut un **accord clair** sur ce qu'on va faire. ISA 210 encadre l'acceptation de la mission et la formalisation des termes dans la **lettre de mission** — le contrat de base entre l'auditeur et le client.",
+      "sections": [
+        {
+          "titre": "1. Les préconditions à l'audit",
+          "body": "L'auditeur ne peut accepter une mission que si deux **préconditions** sont réunies :\n• Le **référentiel comptable** retenu pour les EF est acceptable (CO, RPC, IFRS...)\n• La direction reconnaît et comprend sa **responsabilité** (la « prémisse » de l'audit) :\n  – établir les EF donnant une image fidèle\n  – concevoir le contrôle interne nécessaire\n  – donner à l'auditeur l'accès à toute l'information et aux personnes.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "La « prémisse »",
+              "text": "La prémisse = la direction reconnaît ses responsabilités (EF + SCI + accès). Sans cette reconnaissance, l'audit ne peut pas être réalisé valablement."
+            }
+          ]
+        },
+        {
+          "titre": "2. La lettre de mission (engagement letter)",
+          "body": "Les termes convenus sont consignés dans une **lettre de mission écrite**, signée avant le début des travaux. Contenu minimum (ISA 210.10) :\n• Objectif et étendue de l'audit\n• Responsabilités de l'auditeur\n• Responsabilités de la direction\n• Identification du référentiel comptable\n• Forme et contenu attendus des rapports.",
+          "callouts": [
+            {
+              "type": "example",
+              "label": "Exemple",
+              "text": "Une lettre de mission typique chez EY Suisse précise aussi les honoraires, le calendrier, l'équipe, le recours éventuel à des experts, et la confidentialité."
+            }
+          ]
+        },
+        {
+          "titre": "3. Audits récurrents et changements de termes",
+          "body": "Pour les **audits récurrents**, l'auditeur évalue chaque année s'il faut réviser les termes ou rappeler les termes existants au client. Une nouvelle lettre n'est pas toujours nécessaire, mais on la met à jour si : changement de direction, modification significative de l'activité, évolution du référentiel ou des exigences légales.\n\nL'auditeur n'accepte un **changement de termes** (ex. passer d'un audit à un examen limité) que s'il existe une justification raisonnable.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Attention",
+              "text": "Un changement de mission demandé pour ÉVITER une opinion modifiée (ex. le client veut un examen limité car il craint une réserve) n'est PAS une justification raisonnable. Refuser."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "2 préconditions : référentiel acceptable + reconnaissance des responsabilités par la direction (prémisse)",
+        "Lettre de mission écrite et signée AVANT le début des travaux",
+        "Contenu : objectif/étendue, responsabilités (auditeur + direction), référentiel, forme du rapport",
+        "Audits récurrents : réévaluer les termes chaque année"
+      ],
+      "pieges": [
+        "Commencer les travaux sans lettre de mission signée",
+        "Accepter un changement de mission visant à éviter une opinion modifiée",
+        "Oublier que la « prémisse » conditionne la possibilité même de l'audit"
+      ]
+    },
+    "220": {
+      "intro": "La qualité d'un audit ne se décrète pas, elle se **gère**. ISA 220 (révisée 2022) définit comment l'associé responsable pilote la qualité **au niveau de la mission**, en s'appuyant sur le système qualité du cabinet (ISQM 1). Révision majeure : passage d'une logique de check-list à une approche **fondée sur les risques**.",
+      "sections": [
+        {
+          "titre": "1. La responsabilité de l'associé responsable",
+          "body": "L'**engagement partner** (associé responsable) porte la **responsabilité globale** de la gestion et de l'atteinte de la qualité sur la mission. Il doit créer un environnement qui valorise la qualité et faire preuve de leadership.\n\nIl s'assure que l'équipe a les **compétences, le temps et les ressources** nécessaires, et que les consultations sur les sujets complexes ont lieu.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Nouveauté R2022",
+              "text": "Approche RISK-BASED : l'associé identifie les risques pour la qualité de SA mission et y répond (≠ ancienne check-list uniforme)."
+            }
+          ]
+        },
+        {
+          "titre": "2. La revue de qualité de la mission (EQR)",
+          "body": "Pour certaines missions, une **revue de qualité indépendante** (Engagement Quality Review) est obligatoire :\n• Entités d'intérêt public (EIP) et sociétés cotées\n• Missions à risque élevé.\n\nL'EQR est réalisée par un **réviseur qualifié, indépendant de l'équipe**, qui revoit les jugements significatifs et la formation de l'opinion **avant la signature** du rapport.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Cooling-off",
+              "text": "Un ancien associé responsable doit respecter un délai de 2 ans (cooling-off) avant de devenir EQR sur le même client (ISQM 2)."
+            }
+          ]
+        },
+        {
+          "titre": "3. Articulation avec ISQM 1 (niveau cabinet)",
+          "body": "ISA 220 (mission) s'appuie sur **ISQM 1** (cabinet). Le cabinet conçoit un système de gestion de la qualité (politiques de recrutement, formation, éthique, acceptation, méthodologie) ; l'associé l'**applique et l'adapte** à sa mission.\n\nSi l'associé identifie une déficience du système du cabinet affectant sa mission, il prend des mesures correctrices spécifiques.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "ISQM 1 vs ISA 220",
+              "text": "ISQM 1 = niveau CABINET (système global, 8 composantes). ISA 220 = niveau MISSION (application sur l'engagement). Ne pas les confondre à l'examen."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "L'associé responsable porte la responsabilité GLOBALE de la qualité de la mission",
+        "Approche risk-based depuis R2022 (≠ check-list)",
+        "EQR obligatoire : EIP, cotées, missions à risque élevé (cooling-off 2 ans)",
+        "ISA 220 (mission) s'appuie sur ISQM 1 (cabinet)"
+      ],
+      "pieges": [
+        "Confondre ISQM 1 (cabinet) et ISA 220 (mission)",
+        "Penser que l'EQR est obligatoire pour toutes les missions (non : EIP + risque élevé)",
+        "Oublier le cooling-off de 2 ans pour l'EQR"
+      ]
+    },
+    "230": {
+      "intro": "« Ce qui n'est pas documenté n'a pas été fait. » ISA 230 régit la **documentation d'audit** — les papiers de travail qui prouvent que le travail a été réalisé, fondent l'opinion et démontrent la conformité aux ISA. C'est la mémoire et la défense de l'auditeur.",
+      "sections": [
+        {
+          "titre": "1. Objectif et rôle de la documentation",
+          "body": "La documentation sert trois buts :\n• Fournir une **trace** suffisante et appropriée des travaux (base de l'opinion)\n• Démontrer la **conformité aux ISA** et aux exigences légales\n• Faciliter la planification, la supervision, la revue et les contrôles qualité.\n\nElle est aussi la **première ligne de défense** en cas de litige ou de contrôle de l'ASR.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Le test clé",
+              "text": "La documentation doit permettre à un AUDITEUR EXPÉRIMENTÉ N'AYANT AUCUN LIEN avec la mission de comprendre : la nature/calendrier/étendue des procédures, les résultats, et les conclusions importantes."
+            }
+          ]
+        },
+        {
+          "titre": "2. Contenu et forme",
+          "body": "On consigne notamment :\n• Les caractéristiques des éléments testés (références, échantillons)\n• Qui a réalisé le travail et quand, qui l'a revu et quand\n• Les questions importantes, les jugements professionnels et leur résolution\n• Les discussions sur des points significatifs (avec qui, quand).\n\nLa documentation peut être papier ou électronique (le plus courant : outils EY GAM).",
+          "callouts": [
+            {
+              "type": "example",
+              "label": "Exemple",
+              "text": "Pour un test de créances : la lettre de confirmation, la sélection de l'échantillon, les réponses reçues, le traitement des non-réponses, et la conclusion sur l'assertion d'existence."
+            }
+          ]
+        },
+        {
+          "titre": "3. Délais et conservation",
+          "body": "Deux délais clés :\n• **Constitution du dossier final** (assembly) : dans les **60 jours** suivant la date du rapport\n• **Conservation** : minimum 5 ans (ISA) — **10 ans en Suisse** (CO 958f / LSR).\n\nAprès la constitution du dossier final, toute modification doit être tracée (quoi, quand, par qui, pourquoi). On ne supprime jamais — on ajoute.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Piège suisse",
+              "text": "Conservation = 10 ANS en Suisse (≠ 5 ans ISA). Constitution du dossier = 60 jours. Ne pas confondre ces deux délais."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Documentation = trace des travaux + preuve de conformité + défense",
+        "Test : un auditeur expérimenté sans lien antérieur doit comprendre les travaux",
+        "Consigner : qui/quand/quoi, jugements, questions importantes",
+        "Dossier final : 60 jours ; conservation : 10 ans (Suisse)"
+      ],
+      "pieges": [
+        "Confondre le délai de constitution (60 jours) et la conservation (10 ans CH)",
+        "Modifier le dossier après coup sans tracer la modification",
+        "Documentation insuffisante : si ce n'est pas écrit, c'est réputé non fait"
+      ]
+    },
+    "240": {
+      "intro": "La fraude est l'ennemi numéro un de la fiabilité des comptes. ISA 240 définit la responsabilité de l'auditeur face aux anomalies résultant de **fraude** — un acte intentionnel, par opposition à l'erreur. C'est une norme à très fort enjeu de responsabilité.",
+      "sections": [
+        {
+          "titre": "1. Fraude vs erreur, et les deux types de fraude",
+          "body": "La **fraude** est un acte **intentionnel** de tromperie ; l'**erreur** est non intentionnelle. Le critère décisif est l'**intention**.\n\nDeux types de fraude :\n• **Information financière frauduleuse** (par la direction) : revenus fictifs, sous-provisionnement, surévaluation d'actifs\n• **Détournement d'actifs** (par des employés) : vols, fausses factures, paie fictive.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Triangle de la fraude (Cressey)",
+              "text": "Pression (besoin) + Opportunité (faille de contrôle) + Rationalisation (justification morale) = POR. Les 3 conditions réunies → fraude probable."
+            }
+          ]
+        },
+        {
+          "titre": "2. Les deux présomptions de risque",
+          "body": "ISA 240 impose deux risques de fraude à toujours considérer :\n• **§26 — Reconnaissance du revenu** : risque de fraude **présumé** dans toute mission (à réfuter par écrit si jugé non pertinent, ce qui est rare)\n• **§32 — Contournement des contrôles par la direction** (management override) : risque inhérent à TOUTES les missions, **jamais réfutable**.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Conséquence pratique",
+              "text": "Le management override impose des TESTS DES ÉCRITURES DE JOURNAL (JE testing) OBLIGATOIRES sur chaque mission, plus la revue des estimations pour biais et l'analyse des transactions inhabituelles."
+            }
+          ]
+        },
+        {
+          "titre": "3. JE testing — la procédure phare",
+          "body": "Le test des écritures de journal cible les écritures à risque :\n• Utilisateurs atypiques (CFO, contrôleurs)\n• Montants ronds, écritures de nuit/weekend\n• Libellés génériques (« ajustement »), absence de pièce\n• Contrepasses récurrentes, montants juste sous un seuil.\n\nOn sélectionne ces écritures, on demande les pièces justificatives, et on escalade en cas d'anomalie.",
+          "callouts": [
+            {
+              "type": "example",
+              "label": "Cas typique",
+              "text": "Plusieurs écritures manuelles le 31 décembre à 23h par le CFO, augmentant le revenu, sans pièce justificative, alors que son bonus dépend d'un objectif de CA tout juste manqué → tous les signaux du triangle POR sont réunis."
+            }
+          ]
+        },
+        {
+          "titre": "4. Réponses et communication",
+          "body": "Procédures obligatoires : discussion d'équipe (brainstorming), demandes à la direction ET à la gouvernance, JE testing, revue des estimations, évaluation de la justification économique des transactions inhabituelles.\n\nEn cas de fraude suspectée : communication **immédiate à la gouvernance** (pas au fraudeur présumé), réévaluation du scepticisme sur toute la mission, impact possible sur l'opinion, et considération du NOCLAR / avis aux organes.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "Liens : CO 728c (avis aux organes), LBA art. 9 (communication MROS pour blanchiment), NOCLAR (IESBA 360), LSR 22 (signalement ASR)."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Fraude = intentionnelle ; erreur = non intentionnelle (l'intention est le critère)",
+        "Triangle POR : Pression + Opportunité + Rationalisation",
+        "2 présomptions : revenu (§26, réfutable par écrit) + management override (§32, jamais)",
+        "JE testing obligatoire ; communication à la GOUVERNANCE en cas de fraude"
+      ],
+      "pieges": [
+        "Confondre fraude (intention) et erreur (pas d'intention)",
+        "Oublier que le JE testing est obligatoire (management override)",
+        "Communiquer la fraude au fraudeur présumé au lieu de la gouvernance"
+      ]
+    },
+    "250": {
+      "intro": "Les entreprises évoluent dans un maquis de lois et règlements. ISA 250 (révisée 2017) définit comment l'auditeur prend en compte le **non-respect des textes légaux** susceptible d'avoir une incidence sur les états financiers.",
+      "sections": [
+        {
+          "titre": "1. Effet direct vs effet indirect",
+          "body": "ISA 250 distingue deux catégories de lois :\n• **Effet DIRECT** sur les EF : lois fiscales (LIFD, LTVA), droit des sociétés (CO), normes comptables → l'auditeur effectue un **audit direct** des montants concernés\n• **Effet INDIRECT** : lois fondamentales pour l'activité mais sans effet comptable direct (environnement, concurrence, RGPD/LPD, droit du travail) → l'auditeur exerce une **vigilance** + procédures limitées.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "La distinction clé",
+              "text": "Direct = audit direct ; indirect = vigilance. Mais la frontière bouge : une pollution (indirect) devient directe si un litige probable et chiffrable impose une provision (IAS 37 / RPC 23)."
+            }
+          ]
+        },
+        {
+          "titre": "2. Procédures de l'auditeur",
+          "body": "L'auditeur :\n• Comprend le cadre légal applicable à l'entité et son secteur\n• Effectue des demandes à la direction sur la conformité\n• Inspecte la correspondance avec les autorités (régulateurs, fisc, justice)\n• Lit les PV des organes (CA, AG, comités)\n• Obtient des représentations écrites confirmant que toutes les non-conformités ont été divulguées.",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Sur le terrain",
+              "text": "La lecture des PV du conseil et la revue de la correspondance avec les autorités sont souvent les premières sources d'indices de non-conformité."
+            }
+          ]
+        },
+        {
+          "titre": "3. Que faire en cas de non-conformité ?",
+          "body": "Si une non-conformité est identifiée :\n• Comprendre sa nature et son impact financier\n• Évaluer la matérialité (y compris qualitative)\n• Discuter avec la direction et la gouvernance (ISA 260)\n• Considérer l'impact sur l'opinion (ISA 705) si non corrigée\n• Évaluer un **reporting externe** (NOCLAR).",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "NOCLAR",
+              "text": "Le régime NOCLAR (IESBA 360) permet de déroger au secret professionnel pour signaler des non-conformités GRAVES aux autorités (ASR, FINMA, MROS), sous conditions."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Effet direct (fiscal, CO, comptable) → audit direct ; effet indirect (environnement, concurrence) → vigilance",
+        "Procédures : compréhension, demandes, correspondance autorités, PV, représentations écrites",
+        "Non-conformité → comprendre, évaluer matérialité, discuter, impact opinion, NOCLAR"
+      ],
+      "pieges": [
+        "Confondre effet direct (audit direct) et indirect (vigilance)",
+        "Oublier que la frontière bouge (litige environnemental chiffrable = devient direct)",
+        "Négliger la matérialité qualitative d'une non-conformité"
+      ]
+    },
+    "260": {
+      "intro": "L'audit n'est pas une boîte noire : l'auditeur doit **communiquer** avec ceux qui gouvernent l'entité. ISA 260 (révisée 2015) structure cette communication bidirectionnelle avec les responsables de la gouvernance (TCWG).",
+      "sections": [
+        {
+          "titre": "1. Qui sont les TCWG et que leur communique-t-on ?",
+          "body": "Les **TCWG** (Those Charged With Governance) = le conseil d'administration et/ou le comité d'audit. L'auditeur leur communique :\n• Ses **responsabilités** dans l'audit\n• L'**étendue et le calendrier** planifiés de l'audit\n• Les **constatations significatives** (jugements, difficultés rencontrées, déficiences)\n• Pour les EIP : sa **déclaration d'indépendance**.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Bidirectionnel",
+              "text": "La communication n'est pas à sens unique : l'auditeur écoute aussi la gouvernance (perception des risques, fraudes connues, litiges). C'est un dialogue."
+            }
+          ]
+        },
+        {
+          "titre": "2. Forme et calendrier",
+          "body": "La communication doit être **en temps utile** (pas seulement à la fin) et adaptée : orale ou écrite selon l'importance. Les questions significatives sont confirmées **par écrit**.\n\nEn Suisse, en contrôle ordinaire, cette communication se matérialise notamment dans le **rapport détaillé au CA** (CO 728a) et le management letter.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "ISA 260 vs ISA 265",
+              "text": "ISA 260 = communication générale avec la gouvernance. ISA 265 = communication spécifique des DÉFICIENCES du contrôle interne. ISA 265 est un sous-ensemble ciblé."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "TCWG = conseil d'administration / comité d'audit",
+        "Communiquer : responsabilités, étendue/calendrier, constatations significatives, indépendance (EIP)",
+        "Communication bidirectionnelle, en temps utile, écrite si significative"
+      ],
+      "pieges": [
+        "Communiquer seulement à la fin (doit être en temps utile)",
+        "Confondre ISA 260 (général) et ISA 265 (déficiences SCI)",
+        "Oublier la déclaration d'indépendance pour les EIP"
+      ]
+    },
+    "265": {
+      "intro": "Pendant l'audit, on découvre souvent des faiblesses dans le contrôle interne du client. ISA 265 dit comment et à qui les communiquer — et surtout comment distinguer une simple déficience d'une déficience **significative**.",
+      "sections": [
+        {
+          "titre": "1. Déficience vs déficience significative",
+          "body": "Une **déficience** du contrôle interne existe quand un contrôle est conçu/mis en œuvre de façon à ne pas prévenir ou détecter des anomalies en temps voulu, ou quand un contrôle nécessaire est absent.\n\nUne **déficience significative** est une déficience (ou combinaison) suffisamment importante pour mériter l'attention de la gouvernance. C'est un **jugement professionnel** (montant potentiel, probabilité, sensibilité du domaine).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Le seuil",
+              "text": "Déficience simple → communication à la direction (niveau approprié). Déficience SIGNIFICATIVE → communication ÉCRITE obligatoire à la gouvernance."
+            }
+          ]
+        },
+        {
+          "titre": "2. Modalités de communication",
+          "body": "• Déficiences **significatives** → par **écrit**, à la gouvernance, en temps utile\n• Autres déficiences → à la direction, au niveau approprié.\n\nLa communication écrite décrit la déficience, son effet potentiel, et un contexte suffisant pour que la gouvernance comprenne. En pratique, ces déficiences alimentent le **management letter**.",
+          "callouts": [
+            {
+              "type": "example",
+              "label": "Exemple",
+              "text": "Absence de ségrégation des tâches sur la paie (la même personne saisit, valide et paie) = déficience significative → communication écrite + recommandation de double signature."
+            }
+          ]
+        }
+      ],
+      "synthese": [
+        "Déficience = contrôle absent ou inefficace",
+        "Déficience SIGNIFICATIVE = mérite l'attention de la gouvernance (jugement)",
+        "Significative → communication ÉCRITE obligatoire ; autres → direction",
+        "Alimente le management letter (rapport au CA)"
+      ],
+      "pieges": [
+        "Ne pas communiquer par écrit une déficience significative",
+        "Confondre déficience simple (direction) et significative (gouvernance, écrit)",
+        "Oublier le caractère « en temps utile » pour les déficiences graves"
+      ]
+    }
   }
 }

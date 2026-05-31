@@ -1041,8 +1041,201 @@ function _renderAnnuaireStandard(serieId, idx, std, color) {
                         <div style="font-size:12px;font-weight:700;color:#fbbf24;margin-bottom:5px">💡 Astuce examen</div>
                         <div style="font-size:12px;color:#fde68a;line-height:1.6">${_auditCrossRef(std.exam_tip)}</div>
                     </div>` : ''}
+                ${_annuaireCoursExists(std.num) ? `
+                    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+                        <button onclick="event.stopPropagation();_openAnnuaireCours('${std.num}')"
+                                style="padding:11px 18px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:800;
+                                       background:linear-gradient(135deg, ${color}, #4c1d95);border:none;color:#fff;
+                                       box-shadow:0 2px 8px rgba(0,0,0,0.3)">
+                            📖 Voir le cours complet
+                        </button>
+                        <button onclick="event.stopPropagation();_downloadCoursPdf('${std.num}')"
+                                style="padding:11px 18px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:700;
+                                       background:#1e293b;border:1px solid ${color};color:${color}">
+                            📥 Télécharger en PDF
+                        </button>
+                    </div>` : ''}
             </div>
         </div>`;
+}
+
+// ── Cours de l'Annuaire : existence, ouverture, PDF ──
+function _annuaireCoursExists(num) {
+    const courses = _auditData.annuaire_cours || {};
+    return !!courses[num];
+}
+
+function _findAnnuaireStd(num) {
+    const series = (_auditData.annuaire || {}).series || [];
+    for (const sr of series) {
+        for (const std of (sr.standards || [])) {
+            if (std.num === num) return { std, serie: sr };
+        }
+    }
+    return { std: null, serie: null };
+}
+
+function _openAnnuaireCours(num) {
+    const cours = (_auditData.annuaire_cours || {})[num];
+    const { std, serie } = _findAnnuaireStd(num);
+    if (!cours || !std) return;
+    const color = (serie && serie.color) || AUDIT_ACCENT;
+    const host = document.getElementById('auditContent');
+    if (!host) return;
+
+    host.innerHTML = `
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap">
+            <button onclick="_renderAuditAnnuaire(document.getElementById('auditContent'))"
+                    style="padding:8px 14px;border-radius:7px;cursor:pointer;background:#1e293b;border:1px solid #334155;
+                           color:#94a3b8;font-size:12px;font-weight:600">← Annuaire</button>
+            <button onclick="_downloadCoursPdf('${num}')"
+                    style="padding:8px 14px;border-radius:7px;cursor:pointer;background:${color};border:none;
+                           color:#fff;font-size:12px;font-weight:700">📥 Télécharger en PDF</button>
+        </div>
+
+        <div style="padding:18px 20px;border-radius:12px;background:linear-gradient(135deg, ${color}22, transparent);border-left:5px solid ${color};margin-bottom:18px">
+            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+                <span style="background:${color};color:#fff;font-size:13px;font-weight:800;padding:4px 11px;border-radius:6px">${escapeHtml(std.code)}</span>
+                <span style="font-size:11px;color:#a78bfa;background:#1e1b4b;padding:3px 9px;border-radius:10px">📚 Cours complet</span>
+            </div>
+            <div style="font-size:19px;font-weight:800;color:${AUDIT_LIGHT};line-height:1.3">${escapeHtml(std.title_fr)}</div>
+            <div style="font-size:12px;color:#7dd3fc;font-style:italic;margin-top:4px">🇬🇧 ${escapeHtml(std.title_en || '')}</div>
+        </div>
+
+        <div style="font-size:14px;color:#cbd5e1;line-height:1.7;margin-bottom:20px;padding:14px 16px;background:#0a0f1c;border-radius:8px;border-left:3px solid #3b82f6">
+            ${_auditCrossRef(cours.intro || '')}
+        </div>
+
+        ${(cours.sections || []).map(s => _renderCoursSection(s, color)).join('')}
+
+        ${(cours.synthese || []).length ? `
+            <div style="margin-top:18px;padding:16px 18px;background:#0a1a0f;border-radius:10px;border-left:4px solid #16a34a">
+                <div style="font-size:13px;font-weight:800;color:#4ade80;margin-bottom:10px">🎯 SYNTHÈSE — points clés</div>
+                <ul style="margin:0;padding-left:20px;color:#bbf7d0;font-size:13px;line-height:1.8">
+                    ${cours.synthese.map(p => `<li>${_auditCrossRef(p)}</li>`).join('')}
+                </ul>
+            </div>` : ''}
+
+        ${(cours.pieges || []).length ? `
+            <div style="margin-top:14px;padding:16px 18px;background:#1e1b0a;border-radius:10px;border-left:4px solid #fbbf24">
+                <div style="font-size:13px;font-weight:800;color:#fbbf24;margin-bottom:10px">⚠️ PIÈGES EXAMEN</div>
+                <ul style="margin:0;padding-left:20px;color:#fde68a;font-size:13px;line-height:1.8">
+                    ${cours.pieges.map(p => `<li>${_auditCrossRef(p)}</li>`).join('')}
+                </ul>
+            </div>` : ''}
+
+        <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+            <button onclick="_downloadCoursPdf('${num}')"
+                    style="padding:12px 20px;border-radius:8px;cursor:pointer;background:linear-gradient(135deg, ${color}, #4c1d95);border:none;color:#fff;font-size:14px;font-weight:800">
+                📥 Télécharger ce cours en PDF
+            </button>
+            <button onclick="_renderAuditAnnuaire(document.getElementById('auditContent'))"
+                    style="padding:12px 18px;border-radius:8px;cursor:pointer;background:#1e293b;border:1px solid #334155;color:#94a3b8;font-size:13px;font-weight:600">
+                ← Retour à l'annuaire
+            </button>
+        </div>
+    `;
+    host.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+const _COURS_CALLOUT = {
+    info:    {bg:'#0a0f1c', bd:'#3b82f6', col:'#60a5fa', icon:'ℹ️',  lbl:'INFO'},
+    key:     {bg:'#1e1b0a', bd:'#d97706', col:'#fbbf24', icon:'🔑', lbl:'À RETENIR'},
+    warn:    {bg:'#3f1612', bd:'#dc2626', col:'#fca5a5', icon:'⚠️', lbl:'ATTENTION'},
+    example: {bg:'#0a1a0f', bd:'#16a34a', col:'#4ade80', icon:'📌', lbl:'EXEMPLE'},
+    tip:     {bg:'#06141a', bd:'#0891b2', col:'#22d3ee', icon:'💡', lbl:'ASTUCE'},
+    legal:   {bg:'#0f1419', bd:'#64748b', col:'#cbd5e1', icon:'⚖️', lbl:'CADRE LÉGAL'},
+    comp:    {bg:'#140a1f', bd:'#9333ea', col:'#c084fc', icon:'🔀', lbl:'COMPARAISON'}
+};
+
+function _renderCoursSection(s, color) {
+    const callouts = (s.callouts || []).map(c => {
+        const cfg = _COURS_CALLOUT[c.type] || _COURS_CALLOUT.info;
+        return `
+            <div style="margin:10px 0;padding:11px 14px;background:${cfg.bg};border-left:3px solid ${cfg.bd};border-radius:6px">
+                <div style="font-size:11px;font-weight:800;color:${cfg.col};margin-bottom:4px;letter-spacing:0.04em">${cfg.icon} ${escapeHtml(c.label || cfg.lbl)}</div>
+                <div style="font-size:12.5px;color:#e2e8f0;line-height:1.6;white-space:pre-wrap">${_auditCrossRef(c.text || '')}</div>
+            </div>`;
+    }).join('');
+    return `
+        <div style="margin-bottom:18px">
+            <div style="font-size:15px;font-weight:800;color:${color};margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid #1e293b">
+                ${escapeHtml(s.titre || '')}
+            </div>
+            <div style="font-size:13px;color:#cbd5e1;line-height:1.75;white-space:pre-wrap">${_auditCrossRef(s.body || '')}</div>
+            ${callouts}
+        </div>`;
+}
+
+// ── Export PDF d'un cours via window.print() (réutilise le mécanisme existant) ──
+function _downloadCoursPdf(num) {
+    const cours = (_auditData.annuaire_cours || {})[num];
+    const { std } = _findAnnuaireStd(num);
+    if (!cours || !std) return;
+    const container = document.getElementById('pdfPrintContainer');
+    if (!container) { window.print(); return; }
+
+    const esc = (typeof escapeHtml === 'function') ? escapeHtml : (x => x);
+    const mdLite = (t) => esc(t || '').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+
+    const calloutPdf = (c) => {
+        const map = {info:'info', key:'key', warn:'warn', example:'example', tip:'tip', legal:'legal', comp:'comp'};
+        const cls = map[c.type] || 'info';
+        return `<div class="pdf-callout pdf-callout--${cls}">
+            <div class="pdf-callout-label">${esc(c.label || c.type)}</div>
+            <div class="pdf-callout-body">${mdLite(c.text)}</div></div>`;
+    };
+
+    const today = new Date().toLocaleDateString('fr-CH', { year:'numeric', month:'long', day:'numeric' });
+
+    let html = `
+        <section class="pdf-cover">
+            <div class="pdf-cover-top">Swiss CPA · Annuaire ISA</div>
+            <div class="pdf-cover-title">${esc(std.code)}</div>
+            <div class="pdf-cover-sub">${esc(std.title_fr)}</div>
+            <div class="pdf-cover-date">${esc(today)}</div>
+        </section>
+        <section class="pdf-cours">
+            <div class="pdf-cours-head">
+                <div class="pdf-cours-meta">
+                    <span class="pdf-cours-mod">${esc(std.code)}</span>
+                    <span class="pdf-cours-cat">${esc(std.title_en || '')}</span>
+                </div>
+                <div class="pdf-cours-title">${esc(std.title_fr)}</div>
+                <div class="pdf-cours-summary">${mdLite(cours.intro)}</div>
+            </div>
+    `;
+    (cours.sections || []).forEach(s => {
+        html += `<div class="pdf-section">
+            <div class="pdf-section-title">${esc(s.titre)}</div>
+            <div class="pdf-section-body">${mdLite(s.body)}</div>
+            ${(s.callouts || []).map(calloutPdf).join('')}
+        </div>`;
+    });
+    if ((cours.synthese || []).length) {
+        html += `<div class="pdf-callout pdf-callout--example">
+            <div class="pdf-callout-label">Synthèse — points clés</div>
+            <div class="pdf-callout-body"><ul>${cours.synthese.map(p => `<li>${mdLite(p)}</li>`).join('')}</ul></div></div>`;
+    }
+    if ((cours.pieges || []).length) {
+        html += `<div class="pdf-callout pdf-callout--warn">
+            <div class="pdf-callout-label">Pièges examen</div>
+            <div class="pdf-callout-body"><ul>${cours.pieges.map(p => `<li>${mdLite(p)}</li>`).join('')}</ul></div></div>`;
+    }
+    html += `</section>`;
+
+    container.innerHTML = html;
+    document.body.classList.add('printing-mode');
+    setTimeout(() => {
+        window.print();
+        const cleanup = () => {
+            document.body.classList.remove('printing-mode');
+            container.innerHTML = '';
+            window.removeEventListener('afterprint', cleanup);
+        };
+        window.addEventListener('afterprint', cleanup);
+        setTimeout(() => { if (document.body.classList.contains('printing-mode')) cleanup(); }, 60000);
+    }, 200);
 }
 
 function _setAnnuaireSerie(serieId) {
