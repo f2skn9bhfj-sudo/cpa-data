@@ -11867,63 +11867,229 @@
       ]
     },
     "240": {
-      "intro": "La fraude est l'ennemi numéro un de la fiabilité des comptes. ISA 240 définit la responsabilité de l'auditeur face aux anomalies résultant de **fraude** — un acte intentionnel, par opposition à l'erreur. C'est une norme à très fort enjeu de responsabilité.",
+      "duree": "14 min",
+      "niveau": "Avancé",
+      "tldr": "La fraude est un acte **intentionnel** (≠ erreur). Le **triangle POR** (Pression-Opportunité-Rationalisation) explique son apparition. 2 présomptions ISA 240 : revenu (§26) + management override (§32) → **JE testing OBLIGATOIRE**. Le MSA décrit le Journal Entry Testing en détail.",
+      "stats": [
+        {
+          "value": "POR",
+          "label": "Triangle de fraude",
+          "sub": "Cressey 1953"
+        },
+        {
+          "value": "§26 + §32",
+          "label": "2 présomptions",
+          "sub": "revenu + override"
+        },
+        {
+          "value": "100%",
+          "label": "JE testing",
+          "sub": "obligatoire (override)"
+        },
+        {
+          "value": "2 types",
+          "label": "de fraude",
+          "sub": "reporting + détournement"
+        }
+      ],
+      "intro": "La fraude est l'ennemi n°1 de la fiabilité des comptes. ISA 240 définit la responsabilité de l'auditeur face aux anomalies résultant de fraude. Le MSA y consacre des développements approfondis, notamment sur le **Journal Entry Testing** (test des écritures de journal), réponse phare au risque de contournement des contrôles par la direction.",
       "sections": [
         {
-          "titre": "1. Fraude vs erreur, et les deux types de fraude",
-          "body": "La **fraude** est un acte **intentionnel** de tromperie ; l'**erreur** est non intentionnelle. Le critère décisif est l'**intention**.\n\nDeux types de fraude :\n• **Information financière frauduleuse** (par la direction) : revenus fictifs, sous-provisionnement, surévaluation d'actifs\n• **Détournement d'actifs** (par des employés) : vols, fausses factures, paie fictive.",
+          "titre": "Fraude vs erreur + 2 types",
+          "body": "La **fraude** est un acte INTENTIONNEL de tromperie ; l'**erreur** est non intentionnelle. Le critère décisif est l'**intention**.",
+          "compare": {
+            "title": "Les 2 types de fraude",
+            "headers": [
+              "Type",
+              "Auteur typique",
+              "Mécanisme"
+            ],
+            "rows": [
+              [
+                "Information financière frauduleuse",
+                "Direction",
+                "Revenus fictifs, sous-provisionnement, surévaluation d'actifs, lissage"
+              ],
+              [
+                "Détournement d'actifs",
+                "Employés",
+                "Vols, fausses factures, paie fictive, détournement de trésorerie"
+              ]
+            ]
+          },
           "callouts": [
             {
               "type": "info",
-              "label": "Triangle de la fraude (Cressey)",
-              "text": "Pression (besoin) + Opportunité (faille de contrôle) + Rationalisation (justification morale) = POR. Les 3 conditions réunies → fraude probable."
+              "label": "Distinction",
+              "text": "L'auditeur n'établit pas la fraude au sens PÉNAL — il évalue le risque d'anomalie résultant de fraude et son impact sur les EF."
             }
           ]
         },
         {
-          "titre": "2. Les deux présomptions de risque",
-          "body": "ISA 240 impose deux risques de fraude à toujours considérer :\n• **§26 — Reconnaissance du revenu** : risque de fraude **présumé** dans toute mission (à réfuter par écrit si jugé non pertinent, ce qui est rare)\n• **§32 — Contournement des contrôles par la direction** (management override) : risque inhérent à TOUTES les missions, **jamais réfutable**.",
+          "titre": "Le triangle de la fraude (Cressey)",
+          "body": "Les 3 conditions réunies rendent la fraude probable :",
+          "schema": {
+            "type": "flow",
+            "title": "Triangle de la fraude — POR",
+            "steps": [
+              {
+                "t": "Pression (incentive)",
+                "d": "Objectif de bonus, dette personnelle, addiction, pression du marché"
+              },
+              {
+                "t": "Opportunité",
+                "d": "Faille du SCI, absence de ségrégation des tâches, management override"
+              },
+              {
+                "t": "Rationalisation",
+                "d": "« Je rembourserai », « tout le monde le fait », « je le mérite »"
+              }
+            ]
+          },
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Levier auditeur",
+              "text": "L'auditeur agit surtout sur l'OPPORTUNITÉ (tester les contrôles, JE testing). La pression et la rationalisation lui échappent."
+            }
+          ]
+        },
+        {
+          "titre": "Les 2 présomptions ISA 240",
+          "body": "Deux risques de fraude à TOUJOURS considérer :\n• **§26 — Reconnaissance du revenu** : risque de fraude présumé dans toute mission (réfutable PAR ÉCRIT si non pertinent, rare)\n• **§32 — Management override of controls** : risque inhérent à TOUTES les missions, JAMAIS réfutable.",
           "callouts": [
             {
               "type": "key",
-              "label": "Conséquence pratique",
-              "text": "Le management override impose des TESTS DES ÉCRITURES DE JOURNAL (JE testing) OBLIGATOIRES sur chaque mission, plus la revue des estimations pour biais et l'analyse des transactions inhabituelles."
+              "label": "Conséquence",
+              "text": "Le management override impose le JE testing OBLIGATOIRE + revue des estimations pour biais + analyse des transactions inhabituelles, sur CHAQUE mission."
             }
           ]
         },
         {
-          "titre": "3. JE testing — la procédure phare",
-          "body": "Le test des écritures de journal cible les écritures à risque :\n• Utilisateurs atypiques (CFO, contrôleurs)\n• Montants ronds, écritures de nuit/weekend\n• Libellés génériques (« ajustement »), absence de pièce\n• Contrepasses récurrentes, montants juste sous un seuil.\n\nOn sélectionne ces écritures, on demande les pièces justificatives, et on escalade en cas d'anomalie.",
+          "titre": "JE testing — la procédure phare (MSA)",
+          "body": "Le test des écritures de journal cible les écritures à risque. Le MSA décrit la méthodologie d'analyse informatisée de larges volumes :",
+          "schema": {
+            "type": "flow",
+            "title": "Méthodologie JE testing",
+            "steps": [
+              {
+                "t": "Obtenir toutes les écritures",
+                "d": "Manuelles + automatiques + écritures de fin de période"
+              },
+              {
+                "t": "Filtrer les caractéristiques de risque",
+                "d": "Voir red flags ci-dessous"
+              },
+              {
+                "t": "Sélectionner + tester",
+                "d": "Demander les pièces justificatives des écritures suspectes"
+              },
+              {
+                "t": "Documenter + escalader",
+                "d": "Toute anomalie remonte à la gouvernance"
+              }
+            ]
+          },
+          "compare": {
+            "title": "Red flags des écritures suspectes",
+            "headers": [
+              "Critère",
+              "Pourquoi suspect"
+            ],
+            "rows": [
+              [
+                "Utilisateurs atypiques (CFO, contrôleurs)",
+                "Contournement des contrôles"
+              ],
+              [
+                "Montants ronds",
+                "Estimation manuelle, pas une transaction réelle"
+              ],
+              [
+                "Écritures nuit / weekend / fériés",
+                "Hors processus normal"
+              ],
+              [
+                "Libellés génériques (« ajustement »), sans pièce",
+                "Absence de justification"
+              ],
+              [
+                "Contrepasses récurrentes",
+                "Manipulation de fin de période"
+              ],
+              [
+                "Montants juste sous un seuil",
+                "Évitement de validation"
+              ]
+            ]
+          },
           "callouts": [
             {
               "type": "example",
-              "label": "Cas typique",
-              "text": "Plusieurs écritures manuelles le 31 décembre à 23h par le CFO, augmentant le revenu, sans pièce justificative, alors que son bonus dépend d'un objectif de CA tout juste manqué → tous les signaux du triangle POR sont réunis."
+              "label": "Cas type",
+              "text": "Écritures manuelles le 31.12 à 23h par le CFO, augmentant le revenu, sans pièce, alors que son bonus dépend d'un objectif de CA tout juste manqué → triangle POR complet."
             }
           ]
         },
         {
-          "titre": "4. Réponses et communication",
-          "body": "Procédures obligatoires : discussion d'équipe (brainstorming), demandes à la direction ET à la gouvernance, JE testing, revue des estimations, évaluation de la justification économique des transactions inhabituelles.\n\nEn cas de fraude suspectée : communication **immédiate à la gouvernance** (pas au fraudeur présumé), réévaluation du scepticisme sur toute la mission, impact possible sur l'opinion, et considération du NOCLAR / avis aux organes.",
+          "titre": "Réponses & communication",
+          "body": "Procédures obligatoires : brainstorming d'équipe, demandes à la direction ET à la gouvernance, JE testing, revue des estimations, évaluation de la justification économique des transactions inhabituelles.\n\nEn cas de fraude suspectée : communication **immédiate à la gouvernance** (PAS au fraudeur présumé), réévaluation du scepticisme sur toute la mission, impact possible sur l'opinion.",
           "callouts": [
             {
               "type": "legal",
               "label": "Suisse",
-              "text": "Liens : CO 728c (avis aux organes), LBA art. 9 (communication MROS pour blanchiment), NOCLAR (IESBA 360), LSR 22 (signalement ASR)."
+              "text": "Liens : CO 728c (avis aux organes), LBA art. 9 (MROS pour blanchiment), NOCLAR (IESBA 360), LSR 22 (signalement ASR)."
             }
           ]
         }
       ],
+      "mnemo": {
+        "code": "POR",
+        "items": [
+          {
+            "l": "P",
+            "t": "Pression"
+          },
+          {
+            "l": "O",
+            "t": "Opportunité"
+          },
+          {
+            "l": "R",
+            "t": "Rationalisation"
+          }
+        ],
+        "phrase": "Les 3 sommets du triangle de la fraude (Cressey)"
+      },
+      "quiz": [
+        {
+          "q": "Quel est le critère qui distingue fraude et erreur ?",
+          "a": "L'INTENTION (fraude = intentionnelle, erreur = non intentionnelle)."
+        },
+        {
+          "q": "Quelles sont les 2 présomptions ISA 240 ?",
+          "a": "§26 reconnaissance du revenu (réfutable par écrit) + §32 management override (jamais réfutable)."
+        },
+        {
+          "q": "Quelle procédure est obligatoire face au management override ?",
+          "a": "Le JE testing (test des écritures de journal)."
+        },
+        {
+          "q": "À qui communiquer une fraude suspectée ?",
+          "a": "À la GOUVERNANCE (jamais au fraudeur présumé)."
+        }
+      ],
       "synthese": [
-        "Fraude = intentionnelle ; erreur = non intentionnelle (l'intention est le critère)",
+        "Fraude = intentionnelle ; erreur = non intentionnelle",
         "Triangle POR : Pression + Opportunité + Rationalisation",
-        "2 présomptions : revenu (§26, réfutable par écrit) + management override (§32, jamais)",
-        "JE testing obligatoire ; communication à la GOUVERNANCE en cas de fraude"
+        "2 présomptions : revenu (§26, réfutable) + management override (§32, jamais)",
+        "JE testing obligatoire ; communication à la gouvernance"
       ],
       "pieges": [
-        "Confondre fraude (intention) et erreur (pas d'intention)",
+        "Confondre fraude (intention) et erreur",
         "Oublier que le JE testing est obligatoire (management override)",
-        "Communiquer la fraude au fraudeur présumé au lieu de la gouvernance"
+        "Communiquer la fraude au fraudeur présumé",
+        "Croire que la présomption revenu n'est jamais réfutable (elle l'est, par écrit)"
       ]
     },
     "250": {
@@ -12099,22 +12265,66 @@
       ]
     },
     "315": {
-      "intro": "ISA 315 (révisée 2019) est la **norme pivot** : tout l'audit dépend de la qualité de l'évaluation des risques. Comprendre l'entité, son contrôle interne, et identifier où se cachent les anomalies significatives. La révision 2019 a transformé l'approche.",
-      "sections": [
+      "duree": "13 min",
+      "niveau": "Avancé",
+      "tldr": "Norme PIVOT : comprendre l'entité + son SCI (cadre COSO) pour identifier où se cachent les anomalies. Révision 2019 : risque inhérent sur un **SPECTRE** (≠ binaire) + considérations IT + test de recul (stand-back).",
+      "stats": [
         {
-          "titre": "1. Comprendre l'entité et son environnement",
-          "body": "L'auditeur doit comprendre :\n• L'entité, son secteur, son modèle d'affaires, sa stratégie\n• Le référentiel comptable applicable\n• Le **système d'information** et le **contrôle interne** (cadre COSO : environnement de contrôle, évaluation des risques par l'entité, activités de contrôle, information/communication, pilotage).",
-          "callouts": [
-            {
-              "type": "info",
-              "label": "COSO 2013",
-              "text": "Le cadre COSO structure le SCI en 5 composantes. L'auditeur l'utilise pour comprendre et évaluer le contrôle interne du client."
-            }
-          ]
+          "value": "R2019",
+          "label": "Révision majeure",
+          "sub": "effective 2021"
         },
         {
-          "titre": "2. L'innovation 2019 : le spectre du risque inhérent",
-          "body": "Avant 2019 : approche binaire (risque significatif ou non). Depuis 2019 : le risque inhérent se positionne sur un **SPECTRE** (spectrum), selon deux facteurs — la **probabilité** d'anomalie et son **ampleur** potentielle.\n\nLes **risques importants** (significant risks) se situent dans la partie haute du spectre.",
+          "value": "Spectre",
+          "label": "Risque inhérent",
+          "sub": "≠ binaire"
+        },
+        {
+          "value": "5",
+          "label": "Composantes COSO",
+          "sub": "cadre du SCI"
+        },
+        {
+          "value": "Stand-back",
+          "label": "Test de recul",
+          "sub": "cohérence globale"
+        }
+      ],
+      "intro": "ISA 315 (révisée 2019) est la **norme pivot** : tout l'audit dépend de la qualité de l'évaluation des risques. Le MSA (III.3) en fait le cœur de la planification. La révision 2019 a transformé l'approche : du binaire au spectre.",
+      "sections": [
+        {
+          "titre": "Comprendre l'entité et son SCI",
+          "body": "L'auditeur comprend : l'entité, son secteur, son modèle d'affaires ; le référentiel applicable ; le système d'information ; et le **contrôle interne** via le cadre COSO.",
+          "schema": {
+            "type": "pyramid",
+            "title": "Les 5 composantes du SCI (COSO 2013)",
+            "levels": [
+              {
+                "t": "Pilotage (monitoring)",
+                "d": ""
+              },
+              {
+                "t": "Information & communication",
+                "d": ""
+              },
+              {
+                "t": "Activités de contrôle",
+                "d": ""
+              },
+              {
+                "t": "Évaluation des risques",
+                "d": ""
+              },
+              {
+                "t": "Environnement de contrôle",
+                "d": "le socle (tone at the top)"
+              }
+            ]
+          }
+        },
+        {
+          "titre": "L'innovation 2019 : le spectre du risque inhérent",
+          "body": "Avant 2019 : approche binaire (risque significatif ou non). Depuis 2019 : le risque inhérent se positionne sur un **SPECTRE**, selon la **probabilité** d'anomalie et son **ampleur** potentielle. Les **risques importants** se situent dans la partie haute du spectre.",
           "callouts": [
             {
               "type": "key",
@@ -12124,38 +12334,82 @@
           ]
         },
         {
-          "titre": "3. Considérations IT et stand-back",
-          "body": "La révision 2019 renforce deux points :\n• **Considérations IT** : évaluer les contrôles généraux informatiques (ITGC), surtout dans les environnements complexes (ERP, cloud)\n• **Test de recul (stand-back)** : reculer pour vérifier que l'évaluation des risques dans son ensemble est cohérente avec la compréhension de l'entité.",
+          "titre": "Considérations IT + stand-back",
+          "body": "La R2019 renforce deux points :\n• **Considérations IT** : évaluer les contrôles généraux informatiques (ITGC), surtout en environnement complexe (ERP, cloud)\n• **Test de recul (stand-back)** : reculer pour vérifier que l'évaluation des risques dans son ensemble est cohérente avec la compréhension de l'entité.",
           "callouts": [
             {
               "type": "tip",
               "label": "Stand-back",
-              "text": "Après avoir tout évalué, on prend du recul : « Mon évaluation globale est-elle cohérente ? N'ai-je pas sous-estimé un domaine matériel ? »"
+              "text": "« Mon évaluation globale est-elle cohérente ? N'ai-je pas sous-estimé un domaine matériel ? »"
             }
           ]
         },
         {
-          "titre": "4. Documentation renforcée",
-          "body": "Il faut documenter : les éléments clés de la compréhension de l'entité, les sources d'information, l'évaluation des contrôles, les risques identifiés et leur justification, et la **réfutation** éventuelle de la présomption de risque de fraude sur le revenu.",
+          "titre": "Identifier les significant risks",
+          "body": "Critères déclenchant un risque important : fraude (présomptions ISA 240), subjectivité/estimation complexe, transactions inhabituelles, parties liées, complexité du référentiel (IFRS 15/9/16, IAS 36/19), changements rapides du secteur.",
           "callouts": [
             {
               "type": "legal",
               "label": "Suisse",
-              "text": "NA-CH 315. En contrôle ordinaire, l'évaluation du SCI alimente aussi la vérification de l'existence du SCI (CO 728a al.1 ch.3)."
+              "text": "NA-CH 315. En contrôle ordinaire, l'évaluation du SCI alimente la vérification de l'existence du SCI (CO 728a al.1 ch.3)."
             }
           ]
         }
       ],
+      "mnemo": {
+        "code": "COSO",
+        "items": [
+          {
+            "l": "E",
+            "t": "Environnement de contrôle"
+          },
+          {
+            "l": "R",
+            "t": "Risk assessment (entité)"
+          },
+          {
+            "l": "C",
+            "t": "Contrôle (activités)"
+          },
+          {
+            "l": "I",
+            "t": "Information & communication"
+          },
+          {
+            "l": "M",
+            "t": "Monitoring (pilotage)"
+          }
+        ],
+        "phrase": "Les 5 composantes du cadre COSO 2013"
+      },
+      "quiz": [
+        {
+          "q": "Quelle est l'innovation de la révision 2019 ?",
+          "a": "Le risque inhérent évalué sur un SPECTRE (continuum) au lieu d'une approche binaire."
+        },
+        {
+          "q": "Combien de composantes dans le cadre COSO ?",
+          "a": "5 (environnement, évaluation des risques, activités de contrôle, information/communication, pilotage)."
+        },
+        {
+          "q": "Qu'est-ce que le test de recul (stand-back) ?",
+          "a": "Reculer pour vérifier que l'évaluation globale des risques est cohérente avec la compréhension de l'entité."
+        },
+        {
+          "q": "Où se situe un significant risk sur le spectre ?",
+          "a": "Dans la partie HAUTE du spectre du risque inhérent."
+        }
+      ],
       "synthese": [
-        "Comprendre entité + environnement + SCI (cadre COSO 5 composantes)",
-        "R2019 : spectre (spectrum) du risque inhérent (≠ binaire)",
+        "Comprendre entité + SCI (cadre COSO, 5 composantes)",
+        "R2019 : spectre du risque inhérent (≠ binaire)",
         "Significant risk = partie haute du spectre",
-        "IT considerations renforcées + test de recul (stand-back) + documentation"
+        "IT considerations + test de recul (stand-back) + documentation renforcée"
       ],
       "pieges": [
         "Approche binaire au lieu du spectre (R2019)",
         "Négliger les contrôles généraux IT (ITGC)",
-        "Oublier le test de recul (stand-back) sur la cohérence globale"
+        "Oublier le test de recul (stand-back)"
       ]
     },
     "320": {
@@ -12337,52 +12591,127 @@
       ]
     },
     "330": {
-      "intro": "Une fois les risques évalués (ISA 315), il faut **y répondre**. ISA 330 conçoit les réponses : réponses globales + procédures d'audit complémentaires (tests des contrôles et procédures de substance). C'est le cœur opérationnel de l'audit.",
+      "duree": "10 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Une fois les risques évalués (ISA 315), on y RÉPOND. Réponses globales + procédures complémentaires (tests des contrôles + procédures de substance). Règle absolue §21 : des procédures de substance pour CHAQUE significant risk.",
+      "stats": [
+        {
+          "value": "§18",
+          "label": "Substance / catégorie",
+          "sub": "significative"
+        },
+        {
+          "value": "§21",
+          "label": "Substance / significant risk",
+          "sub": "ABSOLU"
+        },
+        {
+          "value": "2",
+          "label": "Types de procédures",
+          "sub": "TOC + substance"
+        },
+        {
+          "value": "TDR",
+          "label": "Procédures substance",
+          "sub": "détails + analytique"
+        }
+      ],
+      "intro": "ISA 330 est le cœur opérationnel de l'audit : concevoir et mettre en œuvre les réponses aux risques évalués. Le MSA (III.4 « Exécution ») détaille les tests de procédures et les contrôles de substance par poste.",
       "sections": [
         {
-          "titre": "1. Réponses globales",
-          "body": "Face aux risques au niveau des EF, l'auditeur déploie des **réponses globales** : renforcement du scepticisme, affectation de personnel plus expérimenté, supervision accrue, et introduction d'un élément d'**imprévisibilité** dans les procédures.",
+          "titre": "Réponses globales",
+          "body": "Face aux risques au niveau des EF : renforcement du **scepticisme**, affectation de personnel plus expérimenté, supervision accrue, et **imprévisibilité** (varier les procédures d'une année à l'autre).",
           "callouts": [
             {
               "type": "info",
               "label": "Imprévisibilité",
-              "text": "Varier les procédures d'une année à l'autre empêche le client de « préparer » uniquement les zones habituellement testées."
+              "text": "Empêche le client de « préparer » uniquement les zones habituellement testées."
             }
           ]
         },
         {
-          "titre": "2. Tests des contrôles vs procédures de substance",
-          "body": "• **Tests des contrôles** (TOC) : si l'auditeur compte s'appuyer sur l'efficacité des contrôles pour réduire les tests de substance\n• **Procédures de substance** : tests de détails + procédures analytiques de substance, qui détectent directement les anomalies.",
-          "callouts": [
-            {
-              "type": "comp",
-              "label": "TOC vs Substance",
-              "text": "TOC = tester si le contrôle fonctionne (operating effectiveness). Substance = tester directement le solde/la transaction."
-            }
-          ]
+          "titre": "TOC vs procédures de substance",
+          "body": "Deux familles de procédures complémentaires :",
+          "compare": {
+            "title": "Tests des contrôles vs Substance",
+            "headers": [
+              "Aspect",
+              "Tests des contrôles (TOC)",
+              "Procédures de substance"
+            ],
+            "rows": [
+              [
+                "Objectif",
+                "Tester l'efficacité opérationnelle du contrôle",
+                "Détecter directement l'anomalie"
+              ],
+              [
+                "Quand utiliser",
+                "Si on compte s'appuyer sur les contrôles",
+                "Toujours (au moins partiellement)"
+              ],
+              [
+                "Types",
+                "Attribute sampling",
+                "Tests de détails + analytique (TDR)"
+              ]
+            ]
+          }
         },
         {
-          "titre": "3. Les deux obligations absolues",
-          "body": "Deux règles incontournables :\n• **§18** : des procédures de substance pour CHAQUE catégorie de transactions, solde et information significatifs\n• **§21** : des procédures de substance pour CHAQUE **risque important** (significant risk), même si les contrôles sont jugés efficaces.",
+          "titre": "Les 2 obligations absolues",
+          "body": "• **§18** : des procédures de substance pour CHAQUE catégorie de transactions, solde et information significatifs\n• **§21** : des procédures de substance pour CHAQUE **risque important**, même si les contrôles sont jugés efficaces.",
           "callouts": [
             {
               "type": "key",
               "label": "§21 absolu",
-              "text": "Pour un significant risk, on ne peut JAMAIS se contenter des tests de contrôles : des procédures de substance sont TOUJOURS requises."
+              "text": "Pour un significant risk, on ne peut JAMAIS se contenter des TOC : des procédures de substance sont TOUJOURS requises."
             }
           ]
         }
       ],
+      "mnemo": {
+        "code": "TDR",
+        "items": [
+          {
+            "l": "T",
+            "t": "Tests de détails (substance)"
+          },
+          {
+            "l": "D",
+            "t": "Data analytics"
+          },
+          {
+            "l": "R",
+            "t": "Revue analytique de substance"
+          }
+        ],
+        "phrase": "Les formes de procédures de substance"
+      },
+      "quiz": [
+        {
+          "q": "Peut-on se contenter des tests de contrôles pour un significant risk ?",
+          "a": "Non — §21 impose TOUJOURS des procédures de substance pour un risque important."
+        },
+        {
+          "q": "Quand teste-t-on les contrôles (TOC) ?",
+          "a": "Quand on compte s'appuyer sur leur efficacité pour réduire les tests de substance."
+        },
+        {
+          "q": "Cite une réponse globale.",
+          "a": "Scepticisme renforcé, personnel expérimenté, supervision accrue, imprévisibilité."
+        }
+      ],
       "synthese": [
         "Réponses globales : scepticisme, ressources, supervision, imprévisibilité",
-        "TOC (efficacité des contrôles) vs procédures de substance (détection directe)",
+        "TOC (efficacité) vs substance (détection directe)",
         "§18 : substance pour chaque catégorie significative",
         "§21 : substance OBLIGATOIRE pour chaque significant risk"
       ],
       "pieges": [
         "Se reposer uniquement sur les TOC pour un significant risk (interdit §21)",
-        "Oublier les réponses globales (scepticisme, imprévisibilité)",
-        "Tester les contrôles sans intention de s'y appuyer (perte de temps)"
+        "Oublier les réponses globales",
+        "Tester les contrôles sans intention de s'y appuyer"
       ]
     },
     "402": {
@@ -12881,45 +13210,161 @@
       ]
     },
     "570": {
-      "intro": "La **continuité d'exploitation** (going concern) conditionne toute la comptabilité. ISA 570 (révisée 2024) structure l'évaluation et son impact sur le rapport — un sujet à très fort enjeu, surtout en Suisse (CO 725).",
+      "duree": "13 min",
+      "niveau": "Avancé",
+      "tldr": "La continuité d'exploitation conditionne toute la comptabilité. ISA 570 (R2024) : évaluation sur ≥12 mois depuis la DATE DU RAPPORT. **4 scénarios d'opinion**. En Suisse : lien critique avec CO 725 (surendettement, avis au juge).",
+      "stats": [
+        {
+          "value": "12 mois",
+          "label": "Période min.",
+          "sub": "depuis le RAPPORT"
+        },
+        {
+          "value": "R2024",
+          "label": "Révision",
+          "sub": "effective 2026"
+        },
+        {
+          "value": "4",
+          "label": "Scénarios d'opinion",
+          "sub": "CDQA"
+        },
+        {
+          "value": "CO 725b",
+          "label": "Surendettement",
+          "sub": "avis au juge"
+        }
+      ],
+      "intro": "La continuité d'exploitation (going concern) est le fondement de la comptabilité standard. ISA 570 (révisée 2024) structure l'évaluation et son impact sur le rapport. Le MSA y consacre une section critique (lien avec CO 725 — perte de capital et surendettement), spécificité suisse à fort enjeu de responsabilité.",
       "sections": [
         {
-          "titre": "1. L'hypothèse de continuité",
-          "body": "Les EF sont préparés en supposant que l'entité poursuivra son activité dans un futur prévisible. Si cette hypothèse n'est plus valable, les EF doivent passer en **valeurs de liquidation** (CO 958a en Suisse).",
+          "titre": "L'hypothèse de continuité",
+          "body": "Les EF sont préparés en supposant que l'entité poursuivra son activité dans un futur prévisible. Sinon → **valeurs de liquidation** (CO 958a en Suisse). Période d'évaluation : ≥ 12 mois depuis la **date du rapport** (pas la clôture).",
           "callouts": [
             {
-              "type": "info",
-              "label": "Période",
-              "text": "Évaluation sur ≥ 12 mois depuis la DATE DU RAPPORT (pas la clôture)."
+              "type": "warn",
+              "label": "Piège fréquent",
+              "text": "Les 12 mois se comptent depuis la DATE DU RAPPORT, pas la clôture. Si clôture déc. et rapport en mai → couverture jusqu'à mai N+1."
             }
           ]
         },
         {
-          "titre": "2. Démarche en 3 étapes",
-          "body": "• Évaluer l'analyse de continuité de la direction (documentée, ≥ 12 mois, de qualité)\n• Tester les hypothèses clés (refinancement, trésorerie, covenants, actions de la direction)\n• Conclure et identifier toute **incertitude significative**.",
-          "callouts": []
+          "titre": "Démarche en 3 étapes",
+          "body": "",
+          "schema": {
+            "type": "flow",
+            "title": "Démarche ISA 570",
+            "steps": [
+              {
+                "t": "Évaluer l'analyse de la direction",
+                "d": "Documentée ? ≥12 mois ? Qualité (budgets, projections de trésorerie, plans de financement) ?"
+              },
+              {
+                "t": "Tester les hypothèses clés",
+                "d": "Refinancement (confirmations banques, covenants), trésorerie (vs réalisé post-clôture), actions de la direction crédibles ?"
+              },
+              {
+                "t": "Conclure",
+                "d": "Pas de doute / incertitude significative / continuité inappropriée"
+              }
+            ]
+          }
         },
         {
-          "titre": "3. Les 4 scénarios d'opinion",
-          "body": "• Pas de doute → **clean**\n• Incertitude + disclosure ADÉQUATE → **clean + paragraphe « Material Uncertainty »**\n• Incertitude + disclosure INADÉQUATE → opinion modifiée (qualified/adverse)\n• Continuité INAPPROPRIÉE (EF en valeurs d'exploitation à tort) → **adverse**.",
+          "titre": "Les 4 scénarios d'opinion",
+          "body": "LA matrice fondamentale (mnémo CDQA) :",
+          "schema": {
+            "type": "matrix",
+            "title": "Going concern → opinion",
+            "xlabels": [
+              "Disclosure adéquate",
+              "Disclosure inadéquate"
+            ],
+            "ylabels": [
+              "Incertitude signif.",
+              "GC inappropriée"
+            ],
+            "cells": [
+              [
+                {
+                  "t": "CLEAN + paragraphe",
+                  "v": "warn"
+                },
+                {
+                  "t": "Modifiée (Q/A)",
+                  "v": "danger"
+                }
+              ],
+              [
+                {
+                  "t": "Adverse",
+                  "v": "danger"
+                },
+                {
+                  "t": "Adverse",
+                  "v": "danger"
+                }
+              ]
+            ]
+          },
           "callouts": [
             {
               "type": "key",
-              "label": "PIÈGE",
-              "text": "Incertitude + disclosure adéquate = opinion CLEAN avec paragraphe spécial, PAS qualified ! Erreur classique."
+              "label": "PIÈGE MAJEUR",
+              "text": "Incertitude significative + disclosure ADÉQUATE = opinion CLEAN + paragraphe « Material Uncertainty », PAS qualified ! Erreur classique d'examen."
             }
           ]
         },
         {
-          "titre": "4. Lien suisse CO 725",
-          "body": "En Suisse, le going concern croise le droit de la SA : perte de capital (CO 725a), surendettement (CO 725b). Si le CA n'agit pas face au surendettement, l'auditeur DOIT aviser le juge (CO 725b al.4).",
+          "titre": "Lien suisse — CO 725",
+          "body": "En Suisse, le going concern croise le droit de la SA :\n• **CO 725a** : perte de capital (FP < ½ capital + réserves)\n• **CO 725b** : surendettement (FP négatifs, 2 bilans : exploitation + liquidation)\n\nSi le CA n'agit pas face au surendettement, l'organe de révision DOIT **aviser le juge** (CO 725b al.4).",
           "callouts": [
             {
               "type": "legal",
-              "label": "Spécificité suisse",
-              "text": "L'obligation d'aviser le juge en cas de surendettement et d'inaction du CA est unique au monde."
+              "label": "Spécificité suisse unique",
+              "text": "L'obligation de l'auditeur d'aviser le juge en cas de surendettement et d'inaction du CA n'existe nulle part ailleurs."
             }
           ]
+        }
+      ],
+      "mnemo": {
+        "code": "CDQA",
+        "items": [
+          {
+            "l": "C",
+            "t": "Clean (pas de doute)"
+          },
+          {
+            "l": "D",
+            "t": "Disclosure adéquate → clean + paragraphe"
+          },
+          {
+            "l": "Q",
+            "t": "Qualified/adverse (disclosure inadéquate)"
+          },
+          {
+            "l": "A",
+            "t": "Adverse systématique (GC inappropriée)"
+          }
+        ],
+        "phrase": "Les 4 scénarios d'opinion going concern"
+      },
+      "quiz": [
+        {
+          "q": "Incertitude significative + disclosure adéquate = quelle opinion ?",
+          "a": "Opinion CLEAN + paragraphe « Material Uncertainty » (PAS qualified)."
+        },
+        {
+          "q": "Sur quelle période s'évalue le going concern ?",
+          "a": "≥ 12 mois depuis la DATE DU RAPPORT (pas la clôture)."
+        },
+        {
+          "q": "Que doit faire l'auditeur si le CA n'agit pas face au surendettement ?",
+          "a": "Aviser le juge lui-même (CO 725b al.4) — spécificité suisse."
+        },
+        {
+          "q": "Différence CO 725a et CO 725b ?",
+          "a": "725a = perte de capital (FP < ½ cap+réserves). 725b = surendettement (FP négatifs)."
         }
       ],
       "synthese": [
@@ -12929,9 +13374,10 @@
         "Lien CO 725 : avis au juge si surendettement + CA inactif"
       ],
       "pieges": [
-        "Croire qu'incertitude significative = opinion qualified (c'est clean + paragraphe)",
-        "Calculer les 12 mois depuis la clôture au lieu de la date du rapport",
-        "Oublier l'obligation suisse d'aviser le juge (CO 725b)"
+        "Croire qu'incertitude significative = qualified (c'est clean + paragraphe)",
+        "Compter les 12 mois depuis la clôture au lieu de la date du rapport",
+        "Oublier l'obligation suisse d'aviser le juge (CO 725b)",
+        "Confondre CO 725a (perte capital) et CO 725b (surendettement)"
       ]
     },
     "580": {
@@ -13361,40 +13807,167 @@
       ]
     },
     "705": {
-      "intro": "Quand les EF ne sont pas conformes ou que l'auditeur ne peut pas conclure, il **modifie son opinion**. ISA 705 (révisée 2015) définit les 3 types d'opinion modifiée et la logique de choix.",
+      "duree": "11 min",
+      "niveau": "Intermédiaire",
+      "tldr": "Quand les EF ne sont pas conformes (anomalie) ou que l'auditeur ne peut pas conclure (limitation), il MODIFIE son opinion. La matrice : anomalie pervasive→Adverse ; limitation pervasive→Disclaimer ; isolé→Qualified.",
+      "stats": [
+        {
+          "value": "3",
+          "label": "Opinions modifiées",
+          "sub": "Q / A / D"
+        },
+        {
+          "value": "2",
+          "label": "Causes",
+          "sub": "anomalie / limitation"
+        },
+        {
+          "value": "MSF",
+          "label": "Critères pervasive",
+          "sub": "Multiple/Subst./Fond."
+        },
+        {
+          "value": "« except for »",
+          "label": "Qualified",
+          "sub": "formulation"
+        }
+      ],
+      "intro": "Quand l'opinion ne peut pas être « clean », ISA 705 (révisée 2015) définit les 3 types d'opinion modifiée et la logique de choix. Le MSA (III.8) fournit les modèles de rapport correspondants.",
       "sections": [
         {
-          "titre": "1. Deux causes de modification",
+          "titre": "Deux causes de modification",
           "body": "• **Anomalie significative** : les EF comportent une erreur/non-conformité matérielle\n• **Limitation de l'étendue** : l'auditeur n'a pas pu obtenir d'éléments probants suffisants.",
           "callouts": [
             {
               "type": "info",
-              "label": "Distinction clé",
-              "text": "Anomalie = problème dans les EF. Limitation = problème pour l'auditeur d'obtenir des preuves."
+              "label": "Distinction",
+              "text": "Anomalie = problème DANS les EF. Limitation = problème pour l'auditeur d'obtenir des preuves."
             }
           ]
         },
         {
-          "titre": "2. La matrice de décision",
-          "body": "Croiser la cause avec le caractère **généralisé (pervasive)** :\n• Anomalie isolée → **Qualified**\n• Anomalie pervasive → **Adverse**\n• Limitation isolée → **Qualified**\n• Limitation pervasive → **Disclaimer**.",
+          "titre": "La matrice de décision",
+          "body": "Croiser la cause avec le caractère généralisé (pervasive) :",
+          "schema": {
+            "type": "matrix",
+            "title": "Matrice des opinions modifiées",
+            "xlabels": [
+              "Significative isolée",
+              "Significative pervasive"
+            ],
+            "ylabels": [
+              "Anomalie",
+              "Limitation"
+            ],
+            "cells": [
+              [
+                {
+                  "t": "Qualified",
+                  "v": "warn"
+                },
+                {
+                  "t": "Adverse",
+                  "v": "danger"
+                }
+              ],
+              [
+                {
+                  "t": "Qualified",
+                  "v": "warn"
+                },
+                {
+                  "t": "Disclaimer",
+                  "v": "danger"
+                }
+              ]
+            ]
+          },
           "callouts": [
             {
               "type": "key",
-              "label": "Matrice",
+              "label": "Règle",
               "text": "Anomalie pervasive = Adverse. Limitation pervasive = Disclaimer. Isolé (anomalie OU limitation) = Qualified."
             }
           ]
         },
         {
-          "titre": "3. Pervasive = MSF",
-          "body": "Une question est **généralisée (pervasive)** si elle : touche de **Multiples** postes, OU représente une part **Substantielle** des EF, OU concerne une disclosure **Fondamentale** à la compréhension.",
-          "callouts": [
-            {
-              "type": "comp",
-              "label": "Wording",
-              "text": "Qualified = « à l'exception de ». Adverse = « ne donnent pas une image fidèle ». Disclaimer = « nous n'exprimons pas d'opinion »."
-            }
-          ]
+          "titre": "Pervasive = MSF",
+          "body": "Une question est **généralisée (pervasive)** si elle :",
+          "schema": {
+            "type": "flow",
+            "title": "Critères du caractère pervasive (ISA 705.5)",
+            "steps": [
+              {
+                "t": "Multiples postes",
+                "d": "touche plusieurs éléments des EF"
+              },
+              {
+                "t": "Substantielle",
+                "d": "représente une part substantielle des EF"
+              },
+              {
+                "t": "Fondamentale",
+                "d": "disclosure fondamentale à la compréhension des utilisateurs"
+              }
+            ]
+          },
+          "compare": {
+            "title": "Formulations des opinions",
+            "headers": [
+              "Opinion",
+              "Formulation clé"
+            ],
+            "rows": [
+              [
+                "Qualified",
+                "« à l'exception de » (except for)"
+              ],
+              [
+                "Adverse",
+                "« ne donnent pas une image fidèle »"
+              ],
+              [
+                "Disclaimer",
+                "« nous n'exprimons pas d'opinion »"
+              ]
+            ]
+          }
+        }
+      ],
+      "mnemo": {
+        "code": "MSF",
+        "items": [
+          {
+            "l": "M",
+            "t": "Multiples postes touchés"
+          },
+          {
+            "l": "S",
+            "t": "Substantielle part des EF"
+          },
+          {
+            "l": "F",
+            "t": "Fondamentale à la compréhension"
+          }
+        ],
+        "phrase": "Les 3 critères du caractère pervasive (généralisé)"
+      },
+      "quiz": [
+        {
+          "q": "Anomalie significative ET pervasive → quelle opinion ?",
+          "a": "Adverse (défavorable)."
+        },
+        {
+          "q": "Limitation significative ET pervasive → quelle opinion ?",
+          "a": "Disclaimer (impossibilité d'exprimer une opinion)."
+        },
+        {
+          "q": "Anomalie significative mais isolée → ?",
+          "a": "Qualified (avec réserve, « except for »)."
+        },
+        {
+          "q": "Que signifie pervasive (MSF) ?",
+          "a": "Multiples postes / Substantielle part des EF / Fondamentale à la compréhension."
         }
       ],
       "synthese": [
@@ -13404,7 +13977,7 @@
         "Section « Fondement de l'opinion modifiée »"
       ],
       "pieges": [
-        "Confondre les 4 cases de la matrice (anomalie/limitation × isolé/pervasive)",
+        "Confondre les 4 cases de la matrice",
         "Confondre disclaimer (limitation) et adverse (anomalie)",
         "Mal apprécier le caractère pervasive (MSF)"
       ]
