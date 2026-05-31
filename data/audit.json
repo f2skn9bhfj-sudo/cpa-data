@@ -15260,14 +15260,14 @@
       ]
     },
     "600": {
-      "duree": "11 min",
-      "niveau": "Avancé",
-      "tldr": "Auditer un GROUPE = coordonner plusieurs auditeurs. R2022 : approche risk-based (fin du « significant component »). Le group partner garde l'ENTIÈRE responsabilité de l'opinion.",
+      "duree": "30 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISA 600 (Revised 2022) = audits de groupes. L'équipe de mission du groupe dirige un audit basé sur les risques au niveau des EF consolidés, en impliquant des auditeurs de composants. Suppression du « significant component » ; responsabilité renforcée du group partner ; scepticisme et communication accrus.",
       "stats": [
         {
           "value": "R2022",
           "label": "Révision",
-          "sub": "effective 2023"
+          "sub": "effective 15.12.2023"
         },
         {
           "value": "Risk-based",
@@ -15280,70 +15280,105 @@
           "sub": "group partner"
         },
         {
-          "value": "< group",
+          "value": "< groupe",
           "label": "Component mat.",
-          "sub": "éviter agrégation"
+          "sub": "agrégation"
+        },
+        {
+          "value": "2 sens",
+          "label": "Communication",
+          "sub": "groupe ↔ composants"
         }
       ],
-      "intro": "Auditer les EF d'un groupe implique des component auditors sur les filiales. ISA 600 (révisée 2022) organise cette complexité. Le MSA y consacre toute la Partie IV.",
+      "intro": "Auditer un groupe = obtenir une assurance raisonnable sur des EF **consolidés** alors que les composants (filiales, divisions) peuvent être audités par d'autres équipes/cabinets. ISA 600 (révisée 2022, en vigueur dès le 15.12.2023) organise cette complexité avec une approche fondée sur les risques. Le MSA y consacre toute la Partie IV. Cours § par §.",
       "sections": [
         {
-          "titre": "Équipe du groupe et component auditors",
-          "body": "L'**équipe du groupe** dirige l'audit consolidé ; les **component auditors** auditent les filiales. Le group partner garde la responsabilité GLOBALE.",
+          "titre": "Champ, date & objectif",
+          "body": "ISA 600 traite des considérations particulières applicables aux audits d'**états financiers de groupe**, y compris lorsque des **auditeurs de composants** (component auditors) sont impliqués.\n\n**Objectifs (§18)** : déterminer s'il convient d'agir comme auditeur du groupe ; communiquer clairement avec les auditeurs de composants ; obtenir des éléments suffisants sur les composants et le processus de consolidation pour exprimer l'opinion sur les EF de groupe.\n**Date** : exercices ouverts dès le 15.12.2023 (R2022).",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Périmètre",
+              "text": "Un « composant » = entité, unité d'affaires, fonction, ou activité dont l'information financière est incluse dans les EF de groupe."
+            }
+          ]
+        },
+        {
+          "titre": "La nouveauté R2022 : approche risk-based",
+          "body": "La révision 2022 **abandonne** la dichotomie « significant / non-significant component » au profit d'une approche **entièrement fondée sur les risques** : l'équipe du groupe identifie et évalue les **risques d'anomalies significatives des EF de groupe** (ISA 315/330 appliqués au niveau du groupe), puis conçoit des réponses — quelle que soit la structure en composants.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Changement de paradigme",
+              "text": "On ne classe plus les composants par taille ; on raisonne en RISQUES au niveau des EF consolidés. Les travaux sur les composants découlent de ces risques."
+            }
+          ]
+        },
+        {
+          "titre": "Acceptation & équipe du groupe (§19-25)",
+          "body": "L'**associé responsable du groupe** détermine s'il est possible d'obtenir des éléments suffisants (accès à l'information, aux composants, aux auditeurs de composants). Si l'accès est restreint au point d'empêcher l'opinion → possible impossibilité d'exprimer une opinion. L'équipe du groupe possède une compréhension suffisante de la structure du groupe, de ses composants et de leur environnement.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Accès",
+              "text": "Si le group partner ne peut pas obtenir l'accès nécessaire (ex. un composant à l'étranger inaccessible) → limitation de l'étendue pouvant aller jusqu'au disclaimer."
+            }
+          ]
+        },
+        {
+          "titre": "Compréhension & évaluation des risques au niveau du groupe (§26-30)",
+          "body": "L'équipe du groupe applique ISA 315 au niveau consolidé : compréhension de l'entité-groupe, du SCI à l'échelle du groupe (y compris les contrôles de **consolidation**), et identification des RAS des EF de groupe. Elle détermine où ces risques se situent (quels composants, quelles assertions).",
+          "callouts": []
+        },
+        {
+          "titre": "Matérialité du groupe & des composants (§35)",
+          "body": "L'équipe fixe :\n• la **matérialité du groupe** (sur les EF consolidés) + matérialité de performance du groupe\n• la **matérialité des composants** (component materiality), **inférieure** à celle du groupe, pour réduire à un niveau acceptable la probabilité que le cumul des anomalies non détectées des composants dépasse la matérialité du groupe\n• un **seuil** au-dessus duquel les anomalies des composants sont communiquées à l'équipe du groupe.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Pourquoi inférieure",
+              "text": "Si chaque composant était audité à la matérialité du groupe, les anomalies pourraient s'AGRÉGER au-dessus du seuil consolidé. D'où une matérialité composant plus basse."
+            }
+          ]
+        },
+        {
+          "titre": "Réponses & travail sur les composants (§31-40)",
+          "body": "Selon les risques, l'équipe détermine la **nature des travaux** sur l'information financière des composants : audit complet (à la matérialité composant), audit de soldes/assertions spécifiques, procédures spécifiques, ou procédures analytiques au niveau du groupe pour les composants à faible risque. Elle implique les auditeurs de composants en les **dirigeant, supervisant et révisant**.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "Échelle des travaux",
+              "text": "Du plus au moins approfondi : audit complet → audit ciblé (soldes/assertions) → procédures spécifiques → procédures analytiques groupe."
+            }
+          ]
+        },
+        {
+          "titre": "Travailler avec les auditeurs de composants (§26, §41)",
+          "body": "L'équipe du groupe évalue la **compétence et les capacités** des auditeurs de composants (y compris leur indépendance et leur compréhension des règles d'éthique). Elle communique des **instructions de groupe** claires (matérialité, risques identifiés, calendrier, format de reporting, travaux attendus) et évalue la pertinence de leurs conclusions et de leur communication.",
           "callouts": [
             {
               "type": "key",
               "label": "Responsabilité",
-              "text": "Le group engagement partner reste SEUL responsable de l'opinion sur les comptes consolidés."
+              "text": "Le group engagement partner reste SEUL responsable de l'opinion sur les EF de groupe. Les component auditors exécutent, ils ne partagent pas la responsabilité."
             }
           ]
         },
         {
-          "titre": "L'approche risk-based (R2022)",
-          "body": "La R2022 ABANDONNE le terme « significant component » au profit d'une approche fondée sur les **risques** : où sont les risques d'anomalies dans le groupe ?",
+          "titre": "Processus de consolidation & événements postérieurs (§40)",
+          "body": "L'équipe du groupe audite le **processus de consolidation** : éliminations intragroupe (ventes, créances/dettes, profits sur stocks, dividendes), ajustements de consolidation, conversion des comptes en devises (IAS 21 / RPC), homogénéisation des méthodes comptables. Elle traite les événements postérieurs au niveau du groupe (ISA 560).",
+          "callouts": []
+        },
+        {
+          "titre": "Communication, documentation & Suisse (§44-49)",
+          "body": "Communication avec la direction et la gouvernance du groupe (déficiences, fraudes, étendue des travaux). **Documentation** : la nature des travaux sur les composants, l'évaluation des auditeurs de composants, les communications. \n\n**Suisse** : le MSA Partie IV détaille les conditions de l'audit de groupe, les directives de consolidation, et la fin de l'audit. Lien CO 963 (obligation de consolidation) et RPC 30 / IFRS 10.",
           "callouts": [
             {
-              "type": "info",
-              "label": "Changement",
-              "text": "Raisonner en risques au niveau du groupe, pas en composants significatifs/non significatifs."
+              "type": "legal",
+              "label": "Suisse",
+              "text": "NA-CH 600. L'audit de groupe suppose des comptes consolidés obligatoires (CO 963, seuils 20/40/250). Référentiels de consolidation : RPC 30 ou IFRS 10/11 + IAS 28."
             }
           ]
-        },
-        {
-          "titre": "Travailler avec les component auditors",
-          "body": "Évaluer compétence + indépendance, communiquer les instructions de groupe (matérialité du composant, risques), diriger/superviser/réviser.",
-          "compare": {
-            "title": "Matérialités",
-            "headers": [
-              "",
-              "Group materiality",
-              "Component materiality"
-            ],
-            "rows": [
-              [
-                "Niveau",
-                "EF consolidés",
-                "INFÉRIEUR"
-              ],
-              [
-                "But",
-                "Opinion groupe",
-                "Éviter l'agrégation d'anomalies"
-              ]
-            ]
-          }
         }
-      ],
-      "synthese": [
-        "Group team dirige ; component auditors auditent",
-        "Group partner = entière responsabilité de l'opinion",
-        "R2022 : risk-based (fin du significant component)",
-        "Component materiality < group"
-      ],
-      "pieges": [
-        "Croire que la responsabilité se partage",
-        "Raisonner encore en significant component",
-        "Component materiality = group materiality"
       ],
       "mnemo": {
         "code": "DSR",
@@ -15366,12 +15401,43 @@
       "quiz": [
         {
           "q": "Que change la R2022 ?",
-          "a": "Approche risk-based ; suppression du « significant component »."
+          "a": "Approche entièrement risk-based ; suppression du « significant component »."
         },
         {
           "q": "Qui est responsable de l'opinion du groupe ?",
           "a": "Le group engagement partner, seul et entièrement."
+        },
+        {
+          "q": "Pourquoi la component materiality est-elle inférieure à celle du groupe ?",
+          "a": "Pour éviter que le cumul des anomalies non détectées des composants ne dépasse la matérialité du groupe (agrégation)."
+        },
+        {
+          "q": "Que doit faire l'équipe du groupe avec les composants ?",
+          "a": "Diriger, superviser et réviser leurs travaux (DSR)."
+        },
+        {
+          "q": "Que se passe-t-il si l'accès à un composant est impossible ?",
+          "a": "Limitation de l'étendue pouvant aller jusqu'à l'impossibilité d'exprimer une opinion (disclaimer)."
+        },
+        {
+          "q": "Quel processus spécifique au groupe faut-il auditer ?",
+          "a": "Le processus de consolidation (éliminations intragroupe, ajustements, conversion devises, homogénéisation)."
         }
+      ],
+      "synthese": [
+        "R2022 : approche risk-based au niveau des EF de groupe (fin du significant component)",
+        "Group partner = entière responsabilité de l'opinion",
+        "Component materiality < group materiality (agrégation)",
+        "Évaluer + diriger/superviser/réviser les component auditors",
+        "Auditer le processus de consolidation",
+        "Suisse : CO 963 + RPC 30 / IFRS 10"
+      ],
+      "pieges": [
+        "Croire que la responsabilité se partage avec les component auditors",
+        "Raisonner encore en significant component (supprimé R2022)",
+        "Component materiality = group materiality",
+        "Oublier d'auditer les éliminations intragroupe",
+        "Accepter sans vérifier l'accès aux composants"
       ]
     },
     "610": {
@@ -15527,136 +15593,136 @@
       ]
     },
     "700": {
-      "duree": "12 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Le rapport d'audit est le produit final. Depuis 2016 : **opinion EN PREMIER** + indépendance explicite. 4 types d'opinion (UQAD). En Suisse : 2 rapports (AG court CO 728b + CA détaillé CO 728a) avec numéros d'agrément ASR.",
+      "duree": "24 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 700 (Revised 2015) = former l'opinion et établir le rapport. Opinion EN PREMIER + indépendance explicite. Structure standardisée. En Suisse : 2 rapports (AG CO 728b + CA CO 728a) + numéros d'agrément ASR + recommandation d'approbation.",
       "stats": [
         {
-          "value": "4",
-          "label": "Types d'opinion",
-          "sub": "UQAD"
+          "value": "R2015",
+          "label": "Révision",
+          "sub": "effective 2016"
         },
         {
-          "value": "2016",
-          "label": "Opinion en premier",
-          "sub": "depuis ISA 700 R"
+          "value": "Opinion 1ère",
+          "label": "Structure",
+          "sub": "depuis 2016"
         },
         {
           "value": "2",
-          "label": "Rapports suisses",
-          "sub": "AG (728b) + CA (728a)"
+          "label": "Rapports CH",
+          "sub": "AG 728b + CA 728a"
+        },
+        {
+          "value": "§10-15",
+          "label": "Former l'opinion",
+          "sub": ""
         },
         {
           "value": "6 mois",
           "label": "Délai AG",
-          "sub": "après clôture (CO 699)"
+          "sub": "CO 699"
         }
       ],
-      "intro": "Le rapport d'audit communique l'opinion — l'aboutissement de toute la mission. ISA 700 (révisée 2015, effective 2016) a profondément restructuré le rapport pour le rendre plus informatif. Le MSA (III.8 « Rapport ») détaille les modèles suisses (rapport AG et rapport détaillé au CA).",
+      "intro": "Le rapport d'audit est le livrable final : l'opinion communiquée clairement. ISA 700 (révisée 2015, en vigueur dès le 15.12.2016) a restructuré le rapport pour le rendre plus informatif (opinion en tête, indépendance explicite, KAM pour les cotées). Le MSA (III.8) fournit les modèles suisses. Cours § par §.",
       "sections": [
         {
-          "titre": "Former l'opinion",
-          "body": "L'auditeur conclut s'il a obtenu une **assurance raisonnable** que les EF ne comportent pas d'anomalies significatives. Il évalue : la conformité au référentiel, le caractère approprié des méthodes comptables, le caractère raisonnable des estimations, et la présentation d'ensemble (y compris les informations à fournir).",
+          "titre": "Champ & objectif",
+          "body": "ISA 700 traite de la responsabilité de l'auditeur de **former une opinion** sur les EF et de la **forme/contenu** du rapport émis à l'issue d'un audit.\n\n**Objectifs (§6)** : former une opinion fondée sur l'évaluation des conclusions tirées des éléments probants ; exprimer clairement cette opinion dans un rapport écrit.",
+          "callouts": []
+        },
+        {
+          "titre": "Former l'opinion (§10-15)",
+          "body": "L'auditeur conclut s'il a obtenu une **assurance raisonnable** que les EF, pris dans leur ensemble, ne comportent pas d'anomalies significatives. Il évalue notamment :\n• si les EF sont préparés, dans tous leurs aspects significatifs, conformément au référentiel\n• le caractère approprié des **méthodes comptables** et leur communication\n• le caractère raisonnable des **estimations**\n• la pertinence/fiabilité/comparabilité des informations\n• les informations à fournir (adéquates ?) et la **présentation d'ensemble** (fair presentation).",
           "callouts": [
             {
               "type": "info",
-              "label": "Base",
-              "text": "L'opinion se forme sur la base des éléments probants accumulés (ISA 500) et de l'évaluation des anomalies (ISA 450)."
+              "label": "Anomalies non corrigées",
+              "text": "Lien ISA 450 : l'effet des anomalies non corrigées, individuelles et cumulées, conditionne le type d'opinion."
             }
           ]
         },
         {
-          "titre": "Structure du rapport (depuis 2016)",
-          "body": "L'ordre a été standardisé pour mettre l'opinion en avant :",
+          "titre": "Opinion non modifiée (§16-19)",
+          "body": "Si l'auditeur conclut que les EF donnent une **image fidèle** (fair presentation framework) / sont préparés conformément (compliance framework) → **opinion non modifiée (clean)**. Formulation type : « les comptes annuels donnent une image fidèle… et sont conformes à la loi suisse et aux statuts ».",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "2 types de référentiel",
+              "text": "Fair presentation framework (image fidèle, ex. RPC/IFRS) vs compliance framework (simple conformité). La formulation de l'opinion diffère."
+            }
+          ]
+        },
+        {
+          "titre": "Structure du rapport (§20-52) — depuis 2016",
+          "body": "Ordre standardisé :",
           "schema": {
             "type": "flow",
             "title": "Architecture du rapport ISA 700",
             "steps": [
               {
-                "t": "Titre + Destinataire",
-                "d": "« Rapport de l'organe de révision indépendant » à l'AG."
+                "t": "Titre",
+                "d": "« Rapport de l'organe de révision indépendant »"
               },
               {
-                "t": "OPINION (en premier !)",
-                "d": "Le cœur, placé en tête depuis 2016 pour la visibilité."
+                "t": "Destinataire",
+                "d": "l'assemblée générale"
+              },
+              {
+                "t": "OPINION",
+                "d": "EN PREMIER (§23-27)"
               },
               {
                 "t": "Fondement de l'opinion",
-                "d": "Référence aux NAS + mention EXPLICITE de l'indépendance."
+                "d": "NAS + indépendance EXPLICITE (§28)"
               },
               {
-                "t": "Material Uncertainty Going Concern",
-                "d": "Si applicable (ISA 570) — avant les KAM."
+                "t": "Incertitude going concern",
+                "d": "si applicable (ISA 570)"
               },
               {
-                "t": "Key Audit Matters (KAM)",
-                "d": "Pour les EIP / cotées (ISA 701)."
+                "t": "KAM",
+                "d": "EIP/cotées (ISA 701)"
               },
               {
-                "t": "Responsabilités",
-                "d": "Direction (TCWG) + auditeur."
+                "t": "Responsabilités direction (§33-34)",
+                "d": "+ going concern"
               },
               {
-                "t": "Signature, lieu, date",
-                "d": "Lead partner + EQR (EIP) + numéros d'agrément ASR."
+                "t": "Responsabilités auditeur (§37-40)",
+                "d": "peut renvoyer en annexe"
+              },
+              {
+                "t": "Autres obligations légales",
+                "d": "recommandation AG, SCI (Suisse)"
+              },
+              {
+                "t": "Signature, lieu, date (§46-49)",
+                "d": "+ numéros ASR"
               }
-            ]
-          }
-        },
-        {
-          "titre": "Les 4 types d'opinion (UQAD)",
-          "body": "Selon la présence d'anomalie/limitation et son caractère généralisé :",
-          "schema": {
-            "type": "matrix",
-            "title": "Matrice des opinions",
-            "xlabels": [
-              "Significative isolée",
-              "Significative pervasive"
-            ],
-            "ylabels": [
-              "Anomalie",
-              "Limitation"
-            ],
-            "cells": [
-              [
-                {
-                  "t": "Qualified",
-                  "v": "warn"
-                },
-                {
-                  "t": "Adverse",
-                  "v": "danger"
-                }
-              ],
-              [
-                {
-                  "t": "Qualified",
-                  "v": "warn"
-                },
-                {
-                  "t": "Disclaimer",
-                  "v": "danger"
-                }
-              ]
             ]
           },
           "callouts": [
             {
               "type": "key",
-              "label": "UQAD",
-              "text": "Unmodified (clean) / Qualified (« except for ») / Adverse (« ne donnent pas une image fidèle ») / Disclaimer (« nous n'exprimons pas d'opinion »)."
+              "label": "2016",
+              "text": "Depuis 2016 : opinion EN PREMIER (visibilité) + mention EXPLICITE de l'indépendance dans le fondement."
             }
           ]
         },
         {
-          "titre": "Spécificités suisses (MSA III.8)",
-          "body": "Le contrôle ordinaire suisse émet **deux rapports** :\n• **Rapport à l'AG** (CO 728b) : court, public, avec la recommandation d'approbation et le constat sur le SCI\n• **Rapport détaillé au CA** (CO 728a) : confidentiel, détaillé (management letter).\n\nDouble signature (lead partner + EQR pour les EIP) avec les **numéros d'agrément ASR**.",
+          "titre": "Responsabilités décrites dans le rapport (§33-40)",
+          "body": "Le rapport décrit :\n• les **responsabilités de la direction/gouvernance** : établissement des EF donnant une image fidèle, SCI, évaluation de la continuité d'exploitation\n• les **responsabilités de l'auditeur** : obtenir une assurance raisonnable, exercer le jugement et le scepticisme, identifier/évaluer les risques, conclure sur le going concern, etc. (cette section peut être placée en annexe ou renvoyée à un site d'autorité).",
+          "callouts": []
+        },
+        {
+          "titre": "Spécificités suisses — 2 rapports (MSA III.8)",
+          "body": "Le contrôle ordinaire émet **deux rapports** :",
           "compare": {
             "title": "Rapport AG vs Rapport CA",
             "headers": [
               "Aspect",
-              "Rapport AG (728b)",
-              "Rapport CA (728a)"
+              "Rapport AG (CO 728b)",
+              "Rapport détaillé CA (CO 728a)"
             ],
             "rows": [
               [
@@ -15670,12 +15736,35 @@
                 "Détaillé / long-form"
               ],
               [
-                "Contenu",
-                "Opinion + recommandation + SCI",
-                "Déficiences, recommandations, constats"
+                "Contenu spécifique",
+                "Opinion + recommandation d'approbation + constat existence SCI (728a al.1 ch.3) + proposition emploi du bénéfice",
+                "Déficiences SCI, recommandations, constats détaillés (management letter)"
+              ],
+              [
+                "Signature",
+                "Lead partner (+ EQR si EIP) + n° agrément ASR",
+                "idem"
               ]
             ]
-          }
+          },
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Recommandation",
+              "text": "Le rapport AG suisse ajoute une recommandation d'approuver/rejeter les comptes et la proposition d'emploi du bénéfice — spécificité non présente dans le modèle ISA pur."
+            }
+          ]
+        },
+        {
+          "titre": "Articulation & documentation",
+          "body": "ISA 700 s'articule avec : ISA 701 (KAM), ISA 705 (opinions modifiées), ISA 706 (EOM/Other Matter), ISA 570 (going concern), ISA 720 (autres informations), ISA 260 (communication). La date du rapport ne peut précéder l'obtention d'éléments suffisants + l'approbation des EF par les organes compétents.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Date du rapport",
+              "text": "Pas avant : approbation des EF par le CA + obtention de la lettre de représentation + achèvement des travaux (dont EQR si EIP)."
+            }
+          ]
         }
       ],
       "mnemo": {
@@ -15687,48 +15776,58 @@
           },
           {
             "l": "Q",
-            "t": "Qualified (avec réserve)"
+            "t": "Qualified"
           },
           {
             "l": "A",
-            "t": "Adverse (défavorable)"
+            "t": "Adverse"
           },
           {
             "l": "D",
-            "t": "Disclaimer (impossibilité)"
+            "t": "Disclaimer"
           }
         ],
-        "phrase": "Anomalie pervasive → Adverse ; Limitation pervasive → Disclaimer"
+        "phrase": "Les 4 types d'opinion (détaillés dans ISA 705)"
       },
       "quiz": [
         {
           "q": "Où est placée l'opinion depuis 2016 ?",
-          "a": "EN PREMIER (au début du rapport), pour la visibilité."
-        },
-        {
-          "q": "Combien de rapports en contrôle ordinaire suisse ?",
-          "a": "2 : rapport AG (CO 728b, court/public) + rapport CA (CO 728a, détaillé/confidentiel)."
+          "a": "EN PREMIER, en tête du rapport."
         },
         {
           "q": "Que doit mentionner explicitement le fondement de l'opinion ?",
           "a": "L'indépendance de l'organe de révision."
         },
         {
-          "q": "Quels numéros figurent sous la signature en Suisse ?",
-          "a": "Les numéros d'agrément ASR du réviseur responsable et du cabinet."
+          "q": "Combien de rapports en contrôle ordinaire suisse, et lesquels ?",
+          "a": "2 : rapport AG (CO 728b, court/public) + rapport détaillé au CA (CO 728a, confidentiel)."
+        },
+        {
+          "q": "Qu'ajoute le rapport AG suisse au modèle ISA pur ?",
+          "a": "La recommandation d'approbation des comptes + le constat d'existence du SCI + la proposition d'emploi du bénéfice."
+        },
+        {
+          "q": "La date du rapport peut-elle précéder l'approbation des EF par le CA ?",
+          "a": "Non — elle suppose l'approbation des EF + LoR + achèvement des travaux."
+        },
+        {
+          "q": "Différence fair presentation / compliance framework ?",
+          "a": "Image fidèle (RPC/IFRS) vs simple conformité ; la formulation de l'opinion diffère."
         }
       ],
       "synthese": [
+        "Former l'opinion : assurance raisonnable + méthodes + estimations + présentation",
         "Opinion EN PREMIER + indépendance explicite (depuis 2016)",
-        "4 opinions : UQAD",
-        "Suisse : 2 rapports (AG 728b + CA 728a) + numéros ASR",
-        "Délai : AG dans les 6 mois de la clôture (CO 699)"
+        "Structure standardisée (titre→opinion→fondement→GC→KAM→responsabilités→signature)",
+        "Suisse : 2 rapports (AG 728b + CA 728a) + recommandation + n° ASR",
+        "Date du rapport ≥ approbation EF + LoR"
       ],
       "pieges": [
-        "Placer l'opinion à la fin (ancien format pré-2016)",
+        "Placer l'opinion à la fin (format pré-2016)",
         "Oublier la mention explicite d'indépendance",
-        "Oublier les numéros d'agrément ASR (Suisse)",
-        "Confondre rapport AG (public) et rapport CA (confidentiel)"
+        "Oublier les numéros d'agrément ASR",
+        "Confondre rapport AG (public) et rapport CA (confidentiel)",
+        "Dater le rapport avant l'approbation des EF"
       ]
     },
     "701": {
@@ -15817,9 +15916,9 @@
       ]
     },
     "705": {
-      "duree": "11 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Quand les EF ne sont pas conformes (anomalie) ou que l'auditeur ne peut pas conclure (limitation), il MODIFIE son opinion. La matrice : anomalie pervasive→Adverse ; limitation pervasive→Disclaimer ; isolé→Qualified.",
+      "duree": "22 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 705 (Revised 2015) = modifications de l'opinion. 2 causes (anomalie / limitation) × caractère généralisé (pervasive) → matrice : Qualified, Adverse, Disclaimer. Section « Fondement de l'opinion modifiée » obligatoire + description de l'effet.",
       "stats": [
         {
           "value": "3",
@@ -15833,37 +15932,53 @@
         },
         {
           "value": "MSF",
-          "label": "Critères pervasive",
-          "sub": "Multiple/Subst./Fond."
+          "label": "Pervasive",
+          "sub": "Mult./Subst./Fond."
         },
         {
-          "value": "« except for »",
-          "label": "Qualified",
-          "sub": "formulation"
+          "value": "§16-20",
+          "label": "Fondement",
+          "sub": "+ description effet"
+        },
+        {
+          "value": "§30",
+          "label": "Communication",
+          "sub": "gouvernance"
         }
       ],
-      "intro": "Quand l'opinion ne peut pas être « clean », ISA 705 (révisée 2015) définit les 3 types d'opinion modifiée et la logique de choix. Le MSA (III.8) fournit les modèles de rapport correspondants.",
+      "intro": "Quand l'opinion ne peut pas être « clean », ISA 705 (révisée 2015) définit les **3 types d'opinion modifiée** et la logique de choix, ainsi que la forme du rapport correspondant. C'est l'une des matières d'examen les plus testées. Cours § par §.",
       "sections": [
         {
-          "titre": "Deux causes de modification",
-          "body": "• **Anomalie significative** : les EF comportent une erreur/non-conformité matérielle\n• **Limitation de l'étendue** : l'auditeur n'a pas pu obtenir d'éléments probants suffisants.",
+          "titre": "Champ, objectif & définitions (§1-5)",
+          "body": "ISA 705 traite de la responsabilité de l'auditeur d'émettre un rapport approprié lorsqu'il conclut à la nécessité de **modifier** son opinion.\n\n**Définitions clés :**\n• **Caractère généralisé (pervasive)** : effets qui, selon le jugement de l'auditeur, (a) ne se limitent pas à des éléments spécifiques des EF, (b) ou, s'ils s'y limitent, représentent une proportion substantielle des EF, (c) ou, pour les informations à fournir, sont fondamentaux pour la compréhension des utilisateurs.",
           "callouts": [
             {
-              "type": "info",
-              "label": "Distinction",
-              "text": "Anomalie = problème DANS les EF. Limitation = problème pour l'auditeur d'obtenir des preuves."
+              "type": "key",
+              "label": "Pervasive = MSF",
+              "text": "Multiples éléments / proportion Substantielle / Fondamental à la compréhension. C'est le critère qui distingue Qualified d'Adverse/Disclaimer."
             }
           ]
         },
         {
-          "titre": "La matrice de décision",
-          "body": "Croiser la cause avec le caractère généralisé (pervasive) :",
+          "titre": "Les 2 causes de modification (§6)",
+          "body": "L'auditeur modifie son opinion quand :\n• **(a) Anomalie significative** : il conclut, sur la base des éléments probants, que les EF pris dans leur ensemble comportent une anomalie significative\n• **(b) Limitation de l'étendue** : il n'a pas pu obtenir d'éléments probants suffisants et appropriés pour conclure que les EF ne comportent pas d'anomalie significative.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Distinction",
+              "text": "Anomalie = problème DANS les EF (on sait qu'il y a une erreur). Limitation = problème pour l'AUDITEUR (il ne peut pas savoir)."
+            }
+          ]
+        },
+        {
+          "titre": "La matrice de décision (§7-10)",
+          "body": "Croiser la **cause** avec le caractère **généralisé** :",
           "schema": {
             "type": "matrix",
-            "title": "Matrice des opinions modifiées",
+            "title": "Matrice des opinions modifiées (ISA 705)",
             "xlabels": [
-              "Significative isolée",
-              "Significative pervasive"
+              "Significatif mais isolé",
+              "Significatif ET généralisé"
             ],
             "ylabels": [
               "Anomalie",
@@ -15895,53 +16010,59 @@
           "callouts": [
             {
               "type": "key",
-              "label": "Règle",
-              "text": "Anomalie pervasive = Adverse. Limitation pervasive = Disclaimer. Isolé (anomalie OU limitation) = Qualified."
+              "label": "La règle",
+              "text": "Anomalie généralisée → Adverse. Limitation généralisée → Disclaimer. Tout cas ISOLÉ (anomalie OU limitation) → Qualified."
             }
           ]
         },
         {
-          "titre": "Pervasive = MSF",
-          "body": "Une question est **généralisée (pervasive)** si elle :",
-          "schema": {
-            "type": "flow",
-            "title": "Critères du caractère pervasive (ISA 705.5)",
-            "steps": [
-              {
-                "t": "Multiples postes",
-                "d": "touche plusieurs éléments des EF"
-              },
-              {
-                "t": "Substantielle",
-                "d": "représente une part substantielle des EF"
-              },
-              {
-                "t": "Fondamentale",
-                "d": "disclosure fondamentale à la compréhension des utilisateurs"
-              }
-            ]
-          },
-          "compare": {
-            "title": "Formulations des opinions",
-            "headers": [
-              "Opinion",
-              "Formulation clé"
-            ],
-            "rows": [
-              [
-                "Qualified",
-                "« à l'exception de » (except for)"
-              ],
-              [
-                "Adverse",
-                "« ne donnent pas une image fidèle »"
-              ],
-              [
-                "Disclaimer",
-                "« nous n'exprimons pas d'opinion »"
-              ]
-            ]
-          }
+          "titre": "Opinion avec réserve — Qualified (§7)",
+          "body": "Formulation : « **À l'exception de**… ». Utilisée quand :\n• une anomalie significative est isolée (pas généralisée), OU\n• l'auditeur ne peut obtenir d'éléments suffisants, mais conclut que les effets POSSIBLES sur les EF sont significatifs sans être généralisés.\n\nExemple : stocks surévalués de 600k (matérialité 250k) mais isolés à ce poste → qualified.",
+          "callouts": []
+        },
+        {
+          "titre": "Opinion défavorable — Adverse (§8)",
+          "body": "Formulation : « les comptes annuels **NE donnent PAS** une image fidèle… ». Utilisée quand une anomalie significative est aussi **généralisée** (pervasive) : elle déforme fondamentalement les EF dans leur ensemble.\n\nExemple : non-consolidation de filiales matérielles, ou base comptable erronée affectant l'ensemble.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Recommandation",
+              "text": "En Suisse, une opinion adverse s'accompagne d'une recommandation de NE PAS approuver les comptes."
+            }
+          ]
+        },
+        {
+          "titre": "Impossibilité d'exprimer une opinion — Disclaimer (§9-10)",
+          "body": "Formulation : « nous **N'exprimons PAS d'opinion** ». Utilisée quand l'auditeur ne peut obtenir d'éléments suffisants ET que les effets possibles sont **généralisés** — il ne peut tout simplement pas se forger une opinion. Également si, dans de très rares cas, de multiples incertitudes se cumulent.\n\nExemple : impossibilité d'assister à l'inventaire de stocks = 35% du bilan, sans procédure alternative possible.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Disclaimer ≠ Adverse",
+              "text": "Disclaimer = je NE PEUX PAS savoir (limitation). Adverse = je SAIS que c'est faux (anomalie). Ne jamais confondre."
+            }
+          ]
+        },
+        {
+          "titre": "Forme du rapport modifié (§16-29)",
+          "body": "Le rapport modifié comporte :\n• une **section « Fondement de l'opinion [avec réserve/défavorable/impossibilité] »** placée juste après l'opinion, décrivant la raison + (si possible) la **quantification** de l'effet financier\n• l'**opinion modifiée** correspondante avec la formulation appropriée\n• pour un disclaimer : adaptation de la section « Responsabilités de l'auditeur » (l'auditeur ne dit pas avoir obtenu des éléments suffisants).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Quantifier",
+              "text": "Quand c'est possible, le fondement chiffre l'effet (ex. « les stocks et le résultat sont surévalués de 600k, les fonds propres de [600k net d'impôt] »)."
+            }
+          ]
+        },
+        {
+          "titre": "Communication & articulation (§30)",
+          "body": "L'auditeur **communique à la gouvernance** les circonstances ayant conduit à la modification et la formulation envisagée.\n\n**Articulation** : ISA 700 (rapport), ISA 706 (EOM — ne modifie PAS l'opinion, ≠ 705), ISA 570 (going concern → peut conduire à 705), ISA 450 (anomalies non corrigées).",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "705 vs 706",
+              "text": "ISA 705 = MODIFIE l'opinion (Q/A/D). ISA 706 (EOM/Other Matter) = attire l'attention SANS modifier l'opinion. Ne pas confondre."
+            }
+          ]
         }
       ],
       "mnemo": {
@@ -15949,47 +16070,62 @@
         "items": [
           {
             "l": "M",
-            "t": "Multiples postes touchés"
+            "t": "Multiples éléments touchés"
           },
           {
             "l": "S",
-            "t": "Substantielle part des EF"
+            "t": "Substantielle proportion des EF"
           },
           {
             "l": "F",
-            "t": "Fondamentale à la compréhension"
+            "t": "Fondamental à la compréhension"
           }
         ],
-        "phrase": "Les 3 critères du caractère pervasive (généralisé)"
+        "phrase": "Les 3 critères du caractère généralisé (pervasive)"
       },
       "quiz": [
         {
-          "q": "Anomalie significative ET pervasive → quelle opinion ?",
+          "q": "Anomalie significative ET généralisée → quelle opinion ?",
           "a": "Adverse (défavorable)."
         },
         {
-          "q": "Limitation significative ET pervasive → quelle opinion ?",
+          "q": "Limitation significative ET généralisée → quelle opinion ?",
           "a": "Disclaimer (impossibilité d'exprimer une opinion)."
         },
         {
-          "q": "Anomalie significative mais isolée → ?",
-          "a": "Qualified (avec réserve, « except for »)."
+          "q": "Anomalie OU limitation isolée → ?",
+          "a": "Qualified (« à l'exception de »)."
         },
         {
           "q": "Que signifie pervasive (MSF) ?",
-          "a": "Multiples postes / Substantielle part des EF / Fondamentale à la compréhension."
+          "a": "Multiples éléments / proportion Substantielle / Fondamental à la compréhension."
+        },
+        {
+          "q": "Disclaimer vs Adverse ?",
+          "a": "Disclaimer = limitation (je ne peux pas savoir). Adverse = anomalie (je sais que c'est faux)."
+        },
+        {
+          "q": "Que contient la section « Fondement de l'opinion modifiée » ?",
+          "a": "La raison de la modification + la quantification de l'effet financier si possible."
+        },
+        {
+          "q": "705 vs 706 ?",
+          "a": "705 modifie l'opinion ; 706 (EOM) attire l'attention sans la modifier."
         }
       ],
       "synthese": [
         "2 causes : anomalie significative OU limitation de l'étendue",
         "Matrice : anomalie pervasive→Adverse ; limitation pervasive→Disclaimer ; isolé→Qualified",
-        "Pervasive = MSF (Multiples / Substantielle / Fondamentale)",
-        "Section « Fondement de l'opinion modifiée »"
+        "Pervasive = MSF (Multiples/Substantielle/Fondamental)",
+        "Section « Fondement de l'opinion modifiée » + quantification",
+        "Communication à la gouvernance ; 705 modifie (≠ 706 EOM)"
       ],
       "pieges": [
         "Confondre les 4 cases de la matrice",
         "Confondre disclaimer (limitation) et adverse (anomalie)",
-        "Mal apprécier le caractère pervasive (MSF)"
+        "Mal apprécier le caractère pervasive (MSF)",
+        "Confondre ISA 705 (modifie) et ISA 706 (EOM, ne modifie pas)",
+        "Oublier de quantifier l'effet dans le fondement"
       ]
     },
     "706": {
