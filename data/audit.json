@@ -12076,180 +12076,400 @@
       ]
     },
     "240": {
-      "duree": "14 min",
-      "niveau": "Avancé",
-      "tldr": "La fraude est un acte **intentionnel** (≠ erreur). Le **triangle POR** (Pression-Opportunité-Rationalisation) explique son apparition. 2 présomptions ISA 240 : revenu (§26) + management override (§32) → **JE testing OBLIGATOIRE**. Le MSA décrit le Journal Entry Testing en détail.",
+      "duree": "35 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISA 240 régit la responsabilité de l'auditeur face à la **fraude** (acte intentionnel ≠ erreur). Structure : objectifs → scepticisme renforcé → discussion d'équipe → procédures d'évaluation des risques → 2 présomptions (revenu §26 + management override §32) → réponses (dont JE testing obligatoire) → évaluation → communications → documentation. Référence MSA + à jour.",
       "stats": [
         {
+          "value": "§11-47",
+          "label": "Exigences",
+          "sub": "le cœur normatif"
+        },
+        {
           "value": "POR",
-          "label": "Triangle de fraude",
+          "label": "Triangle fraude",
           "sub": "Cressey 1953"
         },
         {
-          "value": "§26 + §32",
-          "label": "2 présomptions",
-          "sub": "revenu + override"
+          "value": "2",
+          "label": "Présomptions",
+          "sub": "revenu §26 + override §32"
         },
         {
-          "value": "100%",
-          "label": "JE testing",
-          "sub": "obligatoire (override)"
+          "value": "3 étapes",
+          "label": "JET (MSA)",
+          "sub": "enquête→sélection→test"
         },
         {
           "value": "2 types",
           "label": "de fraude",
-          "sub": "reporting + détournement"
+          "sub": "reporting / détournement"
+        },
+        {
+          "value": "Gouvernance",
+          "label": "Communication",
+          "sub": "jamais au fraudeur"
         }
       ],
-      "intro": "La fraude est l'ennemi n°1 de la fiabilité des comptes. ISA 240 définit la responsabilité de l'auditeur face aux anomalies résultant de fraude. Le MSA y consacre des développements approfondis, notamment sur le **Journal Entry Testing** (test des écritures de journal), réponse phare au risque de contournement des contrôles par la direction.",
+      "intro": "ISA 240 (« Les obligations de l'auditeur en matière de fraude lors d'un audit d'états financiers ») est l'une des normes les plus exigeantes du référentiel. Elle ne demande pas à l'auditeur de DÉTECTER toute fraude (impossible), mais d'identifier et d'évaluer les **risques d'anomalies significatives résultant de fraudes**, d'y répondre de façon appropriée, et de réagir. Ce cours couvre la norme **paragraphe par paragraphe**, complétée par les développements pratiques du MSA (Tome Contrôle ordinaire, EXPERTsuisse) — notamment le Journal Entry Testing — et mise à jour des évolutions post-2016.",
       "sections": [
         {
-          "titre": "Fraude vs erreur + 2 types",
-          "body": "La **fraude** est un acte INTENTIONNEL de tromperie ; l'**erreur** est non intentionnelle. Le critère décisif est l'**intention**.",
+          "titre": "Champ d'application & architecture de la norme",
+          "body": "ISA 240 s'applique à **tout audit** d'états financiers et traite spécifiquement des anomalies résultant de **fraude**. Elle développe la manière d'appliquer ISA 315 (évaluation des risques) et ISA 330 (réponses) aux risques de fraude.\n\n**Architecture :**\n• §1-10 : Introduction — caractéristiques de la fraude, responsabilités, objectifs, définitions\n• §11-47 : Exigences (le cœur)\n• Annexe 1 : Facteurs de risque de fraude\n• Annexe 2 : Exemples de procédures possibles\n• Annexe 3 : Circonstances indiquant une fraude possible.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Position dans le référentiel",
+              "text": "ISA 240 ne remplace pas ISA 315/330 : elle les SPÉCIALISE pour le risque de fraude. À lire en triangle avec elles."
+            }
+          ]
+        },
+        {
+          "titre": "Définitions clés (§11)",
+          "body": "La norme définit précisément :",
           "compare": {
-            "title": "Les 2 types de fraude",
+            "title": "Définitions ISA 240.11",
+            "headers": [
+              "Terme",
+              "Définition"
+            ],
+            "rows": [
+              [
+                "Fraude",
+                "Acte INTENTIONNEL commis par une ou plusieurs personnes (direction, gouvernance, employés, tiers) impliquant des manœuvres dolosives pour obtenir un avantage indu ou illégal"
+              ],
+              [
+                "Facteurs de risque de fraude",
+                "Événements/conditions indiquant une incitation/pression à commettre une fraude, ou offrant une opportunité de la commettre"
+              ],
+              [
+                "Erreur",
+                "Anomalie NON intentionnelle (par opposition à la fraude)"
+              ]
+            ]
+          },
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Le critère décisif",
+              "text": "L'INTENTION distingue la fraude de l'erreur. L'auditeur ne tranche pas juridiquement la « fraude » — il évalue le risque d'anomalie qui en résulte."
+            }
+          ]
+        },
+        {
+          "titre": "Les 2 types de fraude",
+          "body": "La norme distingue deux catégories selon l'auteur et la finalité :",
+          "compare": {
+            "title": "Information financière frauduleuse vs détournement",
             "headers": [
               "Type",
               "Auteur typique",
-              "Mécanisme"
+              "Mécanismes"
             ],
             "rows": [
               [
                 "Information financière frauduleuse",
-                "Direction",
-                "Revenus fictifs, sous-provisionnement, surévaluation d'actifs, lissage"
+                "Direction (override des contrôles)",
+                "Revenus fictifs/anticipés, sous-provisionnement, surévaluation d'actifs, manipulation d'estimations, lissage de résultat, dissimulation de dettes"
               ],
               [
                 "Détournement d'actifs",
-                "Employés",
-                "Vols, fausses factures, paie fictive, détournement de trésorerie"
+                "Employés (montants souvent plus faibles)",
+                "Vols de trésorerie/stocks, fausses factures fournisseurs, paie fictive, usage privé d'actifs, kickbacks"
               ]
             ]
           },
           "callouts": [
             {
               "type": "info",
-              "label": "Distinction",
-              "text": "L'auditeur n'établit pas la fraude au sens PÉNAL — il évalue le risque d'anomalie résultant de fraude et son impact sur les EF."
+              "label": "Asymétrie",
+              "text": "L'information financière frauduleuse est généralement plus MATÉRIELLE (implique la direction, gros montants) mais plus difficile à détecter (contournement des contrôles). Le détournement est plus fréquent mais souvent moins matériel."
             }
           ]
         },
         {
           "titre": "Le triangle de la fraude (Cressey)",
-          "body": "Les 3 conditions réunies rendent la fraude probable :",
+          "body": "Les facteurs de risque de fraude se lisent à travers les 3 conditions du triangle. Les trois réunies rendent la fraude probable :",
           "schema": {
             "type": "flow",
             "title": "Triangle de la fraude — POR",
             "steps": [
               {
-                "t": "Pression (incentive)",
-                "d": "Objectif de bonus, dette personnelle, addiction, pression du marché"
+                "t": "Pression / Incitation",
+                "d": "Objectifs financiers (bonus, covenants, attentes du marché), difficultés personnelles (dettes, addictions), pression de la direction sur les employés"
               },
               {
                 "t": "Opportunité",
-                "d": "Faille du SCI, absence de ségrégation des tâches, management override"
+                "d": "Faille du SCI, absence de ségrégation des tâches, postes de confiance, transactions complexes, possibilité de management override"
               },
               {
-                "t": "Rationalisation",
-                "d": "« Je rembourserai », « tout le monde le fait », « je le mérite »"
+                "t": "Rationalisation / Attitude",
+                "d": "Justification morale : « je rembourserai », « l'entreprise me doit bien ça », « tout le monde le fait »"
               }
             ]
           },
           "callouts": [
             {
               "type": "tip",
-              "label": "Levier auditeur",
-              "text": "L'auditeur agit surtout sur l'OPPORTUNITÉ (tester les contrôles, JE testing). La pression et la rationalisation lui échappent."
+              "label": "Levier de l'auditeur",
+              "text": "L'auditeur agit surtout sur l'OPPORTUNITÉ (tester les contrôles, JET). La pression et la rationalisation lui échappent largement — d'où l'importance de la culture/du ton donné par la direction."
             }
           ]
         },
         {
-          "titre": "Les 2 présomptions ISA 240",
-          "body": "Deux risques de fraude à TOUJOURS considérer :\n• **§26 — Reconnaissance du revenu** : risque de fraude présumé dans toute mission (réfutable PAR ÉCRIT si non pertinent, rare)\n• **§32 — Management override of controls** : risque inhérent à TOUTES les missions, JAMAIS réfutable.",
+          "titre": "Responsabilités : qui répond de quoi ? (§4-8)",
+          "body": "**Responsabilité PREMIÈRE de prévention/détection** = la direction ET les responsables de la gouvernance (TCWG). Ils mettent en place une culture d'honnêteté, un SCI efficace, et une surveillance.\n\n**Responsabilité de l'auditeur** = obtenir une assurance raisonnable que les EF ne comportent pas d'anomalies significatives résultant de fraude. MAIS : limites inhérentes (la fraude est souvent dissimulée par collusion, faux documents, override) → risque de non-détection plus élevé pour la fraude que pour l'erreur, surtout fraude de la direction.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Limite inhérente",
+              "text": "Un audit conçu et exécuté correctement peut ne PAS détecter une fraude, surtout si elle implique la direction, la collusion ou des faux documents sophistiqués. L'assurance reste raisonnable, pas absolue."
+            }
+          ]
+        },
+        {
+          "titre": "Objectifs de l'auditeur (§10)",
+          "body": "Trois objectifs formels :\n1. **Identifier et évaluer** les risques d'anomalies significatives résultant de fraude\n2. **Obtenir des éléments probants** suffisants et appropriés sur ces risques, par la conception et la mise en œuvre de réponses appropriées\n3. **Réagir de manière appropriée** aux fraudes ou aux suspicions de fraude identifiées durant l'audit.",
           "callouts": [
             {
               "type": "key",
-              "label": "Conséquence",
-              "text": "Le management override impose le JE testing OBLIGATOIRE + revue des estimations pour biais + analyse des transactions inhabituelles, sur CHAQUE mission."
+              "label": "Formulation exacte",
+              "text": "« Identifier-évaluer / répondre-obtenir / réagir » : ce triptyque structure toute la norme."
             }
           ]
         },
         {
-          "titre": "JE testing — la procédure phare (MSA)",
-          "body": "Le test des écritures de journal cible les écritures à risque. Le MSA décrit la méthodologie d'analyse informatisée de larges volumes :",
+          "titre": "Scepticisme professionnel renforcé (§12-14)",
+          "body": "L'auditeur maintient un scepticisme professionnel **tout au long** de l'audit, en reconnaissant la **possibilité d'une fraude**, NONOBSTANT son expérience passée de l'honnêteté et de l'intégrité de la direction.\n\n• §13 : si des conditions amènent à penser qu'un document n'est pas authentique ou a été modifié → investiguer plus avant\n• §14 : si les réponses aux demandes sont incohérentes → investiguer.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Nonobstant l'expérience",
+              "text": "Même avec un client de longue date jugé honnête, l'auditeur ne baisse PAS la garde. Le scepticisme ne se « gagne » pas avec l'ancienneté de la relation."
+            }
+          ]
+        },
+        {
+          "titre": "Discussion d'équipe — brainstorming (§15)",
+          "body": "L'équipe de mission tient une **discussion** (brainstorming) sur la susceptibilité des EF à comporter des anomalies significatives résultant de fraude. Elle implique l'associé responsable et met l'accent sur :\n• comment et où les EF pourraient être vulnérables à la fraude\n• comment la direction pourrait perpétrer et dissimuler une information financière frauduleuse\n• comment des actifs pourraient être détournés\n• la mise de côté de toute conviction que la direction est honnête.",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "En pratique EY",
+              "text": "Le brainstorming fraude est documenté (qui, quand, conclusions) et nourrit l'évaluation des risques. C'est un moment clé de la planification."
+            }
+          ]
+        },
+        {
+          "titre": "Procédures d'évaluation des risques (§16-24)",
+          "body": "Pour identifier les risques de fraude, l'auditeur met en œuvre :",
           "schema": {
             "type": "flow",
-            "title": "Méthodologie JE testing",
+            "title": "Procédures d'évaluation des risques de fraude",
             "steps": [
               {
-                "t": "Obtenir toutes les écritures",
-                "d": "Manuelles + automatiques + écritures de fin de période"
+                "t": "Demandes à la direction (§17-18)",
+                "d": "Évaluation par la direction du risque de fraude, processus d'identification/réponse, communication aux employés et à la gouvernance, fraudes connues/suspectées"
               },
               {
-                "t": "Filtrer les caractéristiques de risque",
-                "d": "Voir red flags ci-dessous"
+                "t": "Demandes à l'audit interne (§19)",
+                "d": "Connaissance de fraudes réelles/suspectées, perception du risque"
               },
               {
-                "t": "Sélectionner + tester",
-                "d": "Demander les pièces justificatives des écritures suspectes"
+                "t": "Demandes à la gouvernance (§20-21)",
+                "d": "Surveillance exercée par la gouvernance ; connaissance de fraudes"
               },
               {
-                "t": "Documenter + escalader",
-                "d": "Toute anomalie remonte à la gouvernance"
+                "t": "Relations inhabituelles (§22)",
+                "d": "Procédures analytiques révélant des relations inattendues (ex. revenu vs trésorerie)"
+              },
+              {
+                "t": "Autres informations (§23)",
+                "d": "Évaluer si d'autres infos obtenues indiquent un risque de fraude"
+              },
+              {
+                "t": "Facteurs de risque (§24)",
+                "d": "Évaluer si les facteurs de risque (Annexe 1) sont présents"
               }
             ]
-          },
+          }
+        },
+        {
+          "titre": "Identification & évaluation : la présomption revenu (§25-27)",
+          "body": "L'auditeur identifie et évalue les risques de fraude au niveau des EF et des assertions, et les traite comme des **risques importants** (significant risks).\n\n**§26 — Présomption sur la reconnaissance du revenu :** l'auditeur présume qu'il existe des risques de fraude sur la **reconnaissance du revenu**. Il détermine quels types de revenu/transactions/assertions sont concernés.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Réfutation §27",
+              "text": "Si l'auditeur conclut que la présomption de risque de fraude sur le revenu n'est PAS applicable, il doit DOCUMENTER les raisons de cette réfutation. C'est rare et doit être solidement justifié."
+            }
+          ]
+        },
+        {
+          "titre": "Réponses aux risques évalués (§28-30)",
+          "body": "**Réponses globales (§29) :** affecter du personnel expérimenté/spécialisé, renforcer la supervision, évaluer le choix des méthodes comptables (biais possible), introduire un élément d'**imprévisibilité** dans le choix de la nature/du calendrier/de l'étendue des procédures.\n\n**Réponses au niveau des assertions (§30) :** adapter nature, calendrier et étendue des procédures aux risques de fraude identifiés.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Imprévisibilité",
+              "text": "Varier les procédures, tester des éléments non testés habituellement, modifier le timing/lieu : empêche le fraudeur d'anticiper."
+            }
+          ]
+        },
+        {
+          "titre": "Management override of controls (§31-33) — risque universel",
+          "body": "La direction est dans une **position unique** pour contourner les contrôles (management override). C'est un risque présent dans TOUTES les entités. Réponses OBLIGATOIRES quelle que soit l'évaluation du risque :\n• **(a) Tester les écritures de journal** et autres ajustements (JET — voir section suivante)\n• **(b) Revoir les estimations comptables** pour détecter un biais (revue rétrospective des estimations de l'exercice précédent)\n• **(c) Évaluer la justification économique** (business rationale) des transactions inhabituelles significatives.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Non négociable",
+              "text": "Ces 3 procédures (JET + estimations/biais + transactions inhabituelles) sont OBLIGATOIRES sur chaque mission, indépendamment du niveau de risque évalué (§32-33)."
+            }
+          ]
+        },
+        {
+          "titre": "Journal Entry Testing (JET) — méthodologie MSA détaillée",
+          "body": "Le MSA détaille le JET en **3 étapes** (Journal Entry Testing) :\n(a) **s'enquérir** auprès des personnes du processus comptable de circonstances inappropriées/inhabituelles dans l'enregistrement des écritures\n(b) **sélectionner** les écritures et ajustements (notamment de fin de période)\n(c) **considérer** la nécessité de tester aussi les écritures hors fin de période.\n\nPlus la part d'**écritures manuelles** est importante, plus le risque de fraude est élevé → l'auditeur augmente l'étendue des contrôles de substance.",
           "compare": {
-            "title": "Red flags des écritures suspectes",
+            "title": "Caractéristiques d'écritures à risque accru (MSA)",
             "headers": [
-              "Critère",
+              "Caractéristique",
               "Pourquoi suspect"
             ],
             "rows": [
               [
-                "Utilisateurs atypiques (CFO, contrôleurs)",
-                "Contournement des contrôles"
+                "Comptes sans lien, atypiques ou rarement utilisés",
+                "Manipulation cachée"
               ],
               [
-                "Montants ronds",
-                "Estimation manuelle, pas une transaction réelle"
+                "Initiées par des personnes non censées en enregistrer",
+                "Contournement des rôles"
               ],
               [
-                "Écritures nuit / weekend / fériés",
-                "Hors processus normal"
+                "Comptabilisées en fin de période / post-clôture",
+                "Manipulation du résultat de période"
               ],
               [
-                "Libellés génériques (« ajustement »), sans pièce",
+                "Peu ou pas d'explication / description",
                 "Absence de justification"
               ],
               [
-                "Contrepasses récurrentes",
-                "Manipulation de fin de période"
+                "Passées pendant l'établissement des EF",
+                "Ajustement de dernière minute"
               ],
               [
-                "Montants juste sous un seuil",
-                "Évitement de validation"
+                "Enregistrées le week-end / jour férié",
+                "Hors processus normal"
+              ],
+              [
+                "Chiffres ronds ou se terminant par les mêmes chiffres",
+                "Estimation manuelle, pas une transaction réelle"
+              ],
+              [
+                "Se reproduisant régulièrement ou irrégulièrement",
+                "Schéma de manipulation"
               ]
             ]
           },
           "callouts": [
             {
               "type": "example",
-              "label": "Cas type",
-              "text": "Écritures manuelles le 31.12 à 23h par le CFO, augmentant le revenu, sans pièce, alors que son bonus dépend d'un objectif de CA tout juste manqué → triangle POR complet."
+              "label": "Cas concret",
+              "text": "Écritures manuelles passées le 31.12 à 23h par le CFO, augmentant le revenu, sans pièce justificative, dans un compte rarement utilisé, alors que son bonus dépend d'un objectif de CA tout juste manqué → toutes les caractéristiques MSA + triangle POR complet → fraude hautement probable."
             }
           ]
         },
         {
-          "titre": "Réponses & communication",
-          "body": "Procédures obligatoires : brainstorming d'équipe, demandes à la direction ET à la gouvernance, JE testing, revue des estimations, évaluation de la justification économique des transactions inhabituelles.\n\nEn cas de fraude suspectée : communication **immédiate à la gouvernance** (PAS au fraudeur présumé), réévaluation du scepticisme sur toute la mission, impact possible sur l'opinion.",
+          "titre": "Évaluation des éléments probants (§34-37)",
+          "body": "En fin de mission, l'auditeur évalue si les procédures analytiques confirment ou non un risque de fraude non détecté (§34). Si une anomalie peut résulter d'une fraude (§35-37), il :\n• réévalue l'évaluation des risques et l'incidence sur la nature/le calendrier/l'étendue des procédures\n• considère les implications sur l'intégrité de la direction et la fiabilité des déclarations/éléments probants\n• si la fraude implique la direction → réévalue tout avec un scepticisme accru.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Effet domino",
+              "text": "Une fraude détectée à un endroit oblige à RÉÉVALUER toute la mission : si la direction a menti une fois, ses autres déclarations et la fiabilité globale sont remises en question."
+            }
+          ]
+        },
+        {
+          "titre": "Impossibilité de poursuivre & déclarations écrites (§38-39)",
+          "body": "**§38 :** si, à cause d'une fraude/suspicion, l'auditeur rencontre des circonstances exceptionnelles qui remettent en cause sa capacité à poursuivre, il détermine ses responsabilités professionnelles/légales, envisage de se retirer de la mission, et communique aux personnes appropriées.\n\n**§39 :** l'auditeur obtient des **déclarations écrites** (LoR, lien ISA 580) confirmant que la direction reconnaît sa responsabilité de prévention/détection, a divulgué son évaluation du risque de fraude, et a communiqué toute fraude connue/suspectée.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Retrait",
+              "text": "Le retrait de la mission est une option grave mais réelle quand la fraude compromet la relation de confiance ou la faisabilité de l'audit."
+            }
+          ]
+        },
+        {
+          "titre": "Communications (§40-43)",
+          "body": "• **À la direction** : si l'auditeur identifie une fraude ou des éléments indiquant une fraude possible → communiquer **en temps utile** au niveau approprié (au moins un niveau au-dessus des personnes impliquées)\n• **À la gouvernance (TCWG)** : toute fraude impliquant la direction, des employés ayant un rôle important dans le SCI, ou toute fraude entraînant une anomalie significative\n• **Aux autorités** : déterminer s'il existe une obligation de reporting externe (dérogation au secret professionnel selon la loi).",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Jamais au fraudeur",
+              "text": "On communique à un niveau hiérarchique AU-DESSUS des personnes impliquées, et à la gouvernance — jamais à la personne soupçonnée."
+            }
+          ]
+        },
+        {
+          "titre": "Documentation (§44-47)",
+          "body": "Documenter (lien ISA 230) : la discussion d'équipe (brainstorming), les risques de fraude identifiés et évalués, les réponses globales et au niveau des assertions, les résultats du JET et des procédures sur le management override, les communications relatives à la fraude, et — le cas échéant — les raisons de la **réfutation** de la présomption sur le revenu.",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Défendabilité",
+              "text": "Une documentation rigoureuse de l'approche fraude est essentielle en cas de litige ou de contrôle ASR : elle démontre que l'auditeur a fait diligence même si une fraude n'a pas été détectée."
+            }
+          ]
+        },
+        {
+          "titre": "Spécificités suisses",
+          "body": "En Suisse, le traitement de la fraude s'articule avec plusieurs dispositifs :\n• **CO 728c** : avis aux organes (le réviseur informe le CA, voire l'AG, en cas d'infractions graves)\n• **CO 725b** : si la fraude a conduit à un surendettement, obligations spécifiques (avis au juge)\n• **LBA art. 9** : communication au MROS en cas de soupçon de blanchiment\n• **NOCLAR** (IESBA Section 360, transposé EXPERTsuisse) : dérogation au secret professionnel pour signaler les non-conformités graves\n• **LSR art. 22** : signalement à l'ASR des infractions graves au droit de la révision.",
           "callouts": [
             {
               "type": "legal",
-              "label": "Suisse",
-              "text": "Liens : CO 728c (avis aux organes), LBA art. 9 (MROS pour blanchiment), NOCLAR (IESBA 360), LSR 22 (signalement ASR)."
+              "label": "Articulation",
+              "text": "La fraude (ISA 240) croise le droit pénal (CP 251 faux dans les titres, CP 158 gestion déloyale), le droit de la SA (CO 728c/725b) et l'éthique (NOCLAR). L'auditeur doit naviguer ces régimes ensemble."
             }
           ]
+        },
+        {
+          "titre": "Articulation avec les autres normes",
+          "body": "ISA 240 ne vit pas seule :",
+          "compare": {
+            "title": "Normes liées",
+            "headers": [
+              "Norme",
+              "Lien"
+            ],
+            "rows": [
+              [
+                "ISA 315",
+                "Cadre d'évaluation des risques — ISA 240 le spécialise pour la fraude"
+              ],
+              [
+                "ISA 330",
+                "Réponses aux risques — ISA 240 ajoute les réponses au management override"
+              ],
+              [
+                "ISA 250",
+                "Non-respect des lois (NOCLAR) — souvent déclenché par une fraude"
+              ],
+              [
+                "ISA 260/265",
+                "Communication à la gouvernance des fraudes et déficiences"
+              ],
+              [
+                "ISA 540",
+                "Estimations — terrain de biais/fraude (revue rétrospective)"
+              ],
+              [
+                "ISA 580",
+                "Déclarations écrites sur la fraude"
+              ]
+            ]
+          }
         }
       ],
       "mnemo": {
@@ -12257,7 +12477,7 @@
         "items": [
           {
             "l": "P",
-            "t": "Pression"
+            "t": "Pression / Incitation"
           },
           {
             "l": "O",
@@ -12265,40 +12485,64 @@
           },
           {
             "l": "R",
-            "t": "Rationalisation"
+            "t": "Rationalisation / Attitude"
           }
         ],
-        "phrase": "Les 3 sommets du triangle de la fraude (Cressey)"
+        "phrase": "Triangle de Cressey — les 3 conditions de la fraude"
       },
       "quiz": [
         {
-          "q": "Quel est le critère qui distingue fraude et erreur ?",
-          "a": "L'INTENTION (fraude = intentionnelle, erreur = non intentionnelle)."
+          "q": "Quelle est la responsabilité PREMIÈRE de prévention/détection de la fraude ?",
+          "a": "La direction ET les responsables de la gouvernance (pas l'auditeur)."
         },
         {
-          "q": "Quelles sont les 2 présomptions ISA 240 ?",
-          "a": "§26 reconnaissance du revenu (réfutable par écrit) + §32 management override (jamais réfutable)."
+          "q": "Quelles sont les 3 procédures OBLIGATOIRES face au management override (§32-33) ?",
+          "a": "JE testing + revue des estimations pour biais (rétrospective) + évaluation de la justification économique des transactions inhabituelles."
         },
         {
-          "q": "Quelle procédure est obligatoire face au management override ?",
-          "a": "Le JE testing (test des écritures de journal)."
+          "q": "Que faut-il faire si on réfute la présomption de risque de fraude sur le revenu ?",
+          "a": "DOCUMENTER les raisons de la réfutation (§27) — rare et solidement justifié."
         },
         {
-          "q": "À qui communiquer une fraude suspectée ?",
-          "a": "À la GOUVERNANCE (jamais au fraudeur présumé)."
+          "q": "Quelles sont les 3 étapes du JET selon le MSA ?",
+          "a": "(a) s'enquérir des circonstances inhabituelles, (b) sélectionner les écritures (fin de période), (c) considérer aussi les écritures hors fin de période."
+        },
+        {
+          "q": "À qui communiquer une fraude impliquant un employé ?",
+          "a": "À un niveau hiérarchique AU-DESSUS de la personne impliquée ; à la gouvernance si rôle important dans le SCI ou anomalie significative."
+        },
+        {
+          "q": "Le scepticisme baisse-t-il avec un client de longue date jugé honnête ?",
+          "a": "Non — il se maintient NONOBSTANT l'expérience passée de l'honnêteté de la direction (§12)."
+        },
+        {
+          "q": "Pourquoi l'information financière frauduleuse est-elle plus dangereuse que le détournement ?",
+          "a": "Elle implique la direction (override), porte sur de gros montants et est plus difficile à détecter."
+        },
+        {
+          "q": "Quels dispositifs suisses s'articulent avec ISA 240 ?",
+          "a": "CO 728c (avis aux organes), CO 725b (surendettement), LBA 9 (MROS), NOCLAR, LSR 22 (ASR)."
         }
       ],
       "synthese": [
-        "Fraude = intentionnelle ; erreur = non intentionnelle",
+        "Fraude = acte INTENTIONNEL (≠ erreur) ; 2 types : info financière frauduleuse (direction) + détournement (employés)",
         "Triangle POR : Pression + Opportunité + Rationalisation",
-        "2 présomptions : revenu (§26, réfutable) + management override (§32, jamais)",
-        "JE testing obligatoire ; communication à la gouvernance"
+        "Objectifs §10 : identifier/évaluer → répondre/obtenir → réagir",
+        "Scepticisme renforcé NONOBSTANT l'expérience ; brainstorming d'équipe obligatoire",
+        "2 présomptions : revenu (§26, réfutable + documenter) + management override (§32, jamais)",
+        "Management override : 3 procédures obligatoires (JET + estimations/biais + transactions inhabituelles)",
+        "JET (MSA) : 3 étapes + caractéristiques d'écritures à risque (manuelles, fin de période, comptes atypiques, week-end, chiffres ronds...)",
+        "Communication à la gouvernance (jamais au fraudeur) + reporting externe possible (NOCLAR, LBA, LSR)",
+        "Documentation rigoureuse = défendabilité"
       ],
       "pieges": [
-        "Confondre fraude (intention) et erreur",
-        "Oublier que le JE testing est obligatoire (management override)",
-        "Communiquer la fraude au fraudeur présumé",
-        "Croire que la présomption revenu n'est jamais réfutable (elle l'est, par écrit)"
+        "Confondre fraude (intention) et erreur (pas d'intention)",
+        "Croire que l'auditeur doit DÉTECTER toute fraude (il évalue/répond aux risques)",
+        "Baisser le scepticisme avec un client de longue date",
+        "Oublier que le JET et les 3 procédures management override sont OBLIGATOIRES (pas conditionnels au risque)",
+        "Réfuter la présomption revenu sans documenter",
+        "Communiquer la fraude à la personne soupçonnée au lieu de la gouvernance",
+        "Ne pas réévaluer toute la mission après détection d'une fraude (effet domino)"
       ]
     },
     "250": {
