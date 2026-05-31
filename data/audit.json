@@ -11720,9 +11720,9 @@
       ]
     },
     "210": {
-      "duree": "8 min",
-      "niveau": "Fondamental",
-      "tldr": "Avant tout audit : 2 préconditions (référentiel acceptable + reconnaissance des responsabilités = la « prémisse ») et une **lettre de mission écrite** signée avant le début des travaux.",
+      "duree": "16 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 210 = accord sur les termes de la mission. 2 préconditions (référentiel acceptable + prémisse), lettre de mission écrite, modifications & audits récurrents, facteurs limitant l'acceptation.",
       "stats": [
         {
           "value": "2",
@@ -11730,74 +11730,76 @@
           "sub": "référentiel + prémisse"
         },
         {
-          "value": "Écrite",
+          "value": "§9",
           "label": "Lettre de mission",
-          "sub": "avant les travaux"
+          "sub": "écrite"
         },
         {
-          "value": "NAS 210",
-          "label": "Norme suisse",
-          "sub": "= ISA 210"
+          "value": "§14",
+          "label": "Référentiel imposé",
+          "sub": "par la loi"
         },
         {
-          "value": "Annuel",
-          "label": "Réévaluation",
-          "sub": "audits récurrents"
+          "value": "§16",
+          "label": "Changement",
+          "sub": "justification requise"
         }
       ],
-      "intro": "Avant de poser le moindre acte d'audit, il faut un accord clair. ISA 210 encadre l'acceptation et la formalisation des termes dans la lettre de mission. Le MSA (I.2.9.4) la nomme « confirmation de mandat (lettre de mission d'audit) ».",
+      "intro": "Avant tout audit, ISA 210 exige un accord clair entre l'auditeur et le client sur les bases de la mission. En Suisse, cela prend la forme de la « confirmation de mandat / lettre de mission » (MSA I.2.9.4). Cours § par §.",
       "sections": [
         {
-          "titre": "Les préconditions à l'audit",
-          "body": "L'auditeur n'accepte que si :\n• le **référentiel comptable** est acceptable (CO, RPC, IFRS)\n• la direction reconnaît sa **responsabilité** (la « prémisse ») : établir les EF, concevoir le SCI, donner l'accès à l'information.",
+          "titre": "Champ & objectif (§1-4)",
+          "body": "ISA 210 traite des responsabilités de l'auditeur lors de l'**accord sur les termes** d'une mission d'audit avec la direction (et, le cas échéant, la gouvernance).\n\n**Objectif (§3)** : n'accepter/poursuivre une mission que lorsque les bases sur lesquelles elle sera réalisée ont été convenues, en (a) établissant l'existence des préconditions et (b) confirmant une compréhension commune des termes.",
+          "callouts": []
+        },
+        {
+          "titre": "Les préconditions à l'audit (§6)",
+          "body": "Deux préconditions cumulatives :\n• le **référentiel comptable** appliqué pour établir les EF est **acceptable**\n• la direction reconnaît et comprend sa **responsabilité** (la « prémisse ») : (a) établir les EF conformément au référentiel, (b) concevoir le contrôle interne nécessaire, (c) donner à l'auditeur l'accès à toute l'information et aux personnes.",
           "callouts": [
             {
               "type": "key",
               "label": "La prémisse",
-              "text": "Sans reconnaissance par la direction de ses responsabilités (EF + SCI + accès), l'audit ne peut pas être réalisé valablement."
+              "text": "Sans reconnaissance par la direction de ses 3 responsabilités (EF + SCI + accès), l'audit ne peut être réalisé : l'auditeur ne doit pas accepter (§8)."
             }
           ]
         },
         {
-          "titre": "La lettre de mission",
-          "body": "Contenu minimum (ISA 210.10) :",
-          "schema": {
-            "type": "flow",
-            "title": "Contenu de la lettre de mission",
-            "steps": [
-              {
-                "t": "Objectif et étendue",
-                "d": "de l'audit"
-              },
-              {
-                "t": "Responsabilités de l'auditeur",
-                "d": ""
-              },
-              {
-                "t": "Responsabilités de la direction",
-                "d": "établir EF + SCI + accès"
-              },
-              {
-                "t": "Référentiel comptable",
-                "d": "CO / RPC / IFRS"
-              },
-              {
-                "t": "Forme du rapport",
-                "d": "attendu"
-              }
-            ]
-          }
-        },
-        {
-          "titre": "Audits récurrents & changement de termes",
-          "body": "Réévaluer chaque année s'il faut réviser les termes. N'accepter un changement de mission que s'il existe une justification raisonnable.",
+          "titre": "Limitation de l'étendue avant acceptation (§7)",
+          "body": "Si la direction impose une **limitation de l'étendue** telle que l'auditeur pense qu'elle conduira à une impossibilité d'exprimer une opinion → l'auditeur **n'accepte pas** la mission (sauf si la loi l'y oblige).",
           "callouts": [
             {
               "type": "warn",
-              "label": "Attention",
-              "text": "Un changement demandé pour ÉVITER une opinion modifiée n'est PAS une justification raisonnable. Refuser."
+              "label": "Refuser",
+              "text": "Une limitation imposée d'emblée et rédhibitoire = motif de refus de la mission."
             }
           ]
+        },
+        {
+          "titre": "La lettre de mission (§9-12)",
+          "body": "Les termes convenus sont consignés dans une **lettre de mission** (ou autre forme écrite), incluant au minimum :\n• l'objectif et l'étendue de l'audit\n• les responsabilités de l'auditeur\n• les responsabilités de la direction\n• l'identification du référentiel comptable\n• une référence à la forme/au contenu attendus des rapports et une mention que des circonstances peuvent les modifier.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "En pratique EY",
+              "text": "La lettre ajoute honoraires, calendrier, équipe, recours aux experts, confidentialité, et est signée AVANT le début des travaux."
+            }
+          ]
+        },
+        {
+          "titre": "Audits récurrents & changement de termes (§13-17)",
+          "body": "• **§13** : pour les audits **récurrents**, évaluer si les circonstances exigent de réviser les termes et s'il faut rappeler les termes existants.\n• **§14-15** : si le référentiel est **imposé par la loi/règlement** et acceptable, l'auditeur s'y conforme ; sinon, traiter les divergences.\n• **§16-17** : n'accepter un **changement** de mission (ex. audit → examen limité) que s'il existe une **justification raisonnable**.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Justification raisonnable",
+              "text": "Un changement demandé pour ÉVITER une opinion modifiée n'est PAS raisonnable → refuser le changement."
+            }
+          ]
+        },
+        {
+          "titre": "Articulation",
+          "body": "ISA 210 ↔ ISA 220 (acceptation/continuation, qualité), ISA 300 (la lettre de mission est une activité préliminaire de planification), ISA 580 (déclarations écrites confirment les responsabilités de la prémisse). En Suisse, lien CO 728 (indépendance) et CO 730 (agrément).",
+          "callouts": []
         }
       ],
       "mnemo": {
@@ -11813,114 +11815,129 @@
           },
           {
             "l": "A",
-            "t": "Accord sur la lettre de mission"
+            "t": "Accord écrit (lettre de mission)"
           }
         ],
-        "phrase": "Les conditions préalables avant d'accepter"
+        "phrase": "Les conditions avant d'accepter une mission"
       },
       "quiz": [
         {
-          "q": "Qu'est-ce que la « prémisse » ?",
-          "a": "La reconnaissance par la direction de ses responsabilités (EF, SCI, accès à l'information)."
+          "q": "Quelles sont les 2 préconditions ?",
+          "a": "Référentiel acceptable + reconnaissance par la direction de ses responsabilités (prémisse)."
         },
         {
-          "q": "Quand signer la lettre de mission ?",
-          "a": "AVANT le début des travaux."
+          "q": "Que comprend la prémisse ?",
+          "a": "Responsabilité d'établir les EF, de concevoir le SCI, et de donner l'accès à l'information/aux personnes."
         },
         {
-          "q": "Peut-on accepter un changement de mission pour éviter une réserve ?",
-          "a": "Non — ce n'est pas une justification raisonnable."
+          "q": "Quand refuser un changement de mission ?",
+          "a": "Quand il vise à éviter une opinion modifiée (pas de justification raisonnable)."
+        },
+        {
+          "q": "Que faire si une limitation rédhibitoire est imposée avant acceptation ?",
+          "a": "Ne pas accepter la mission (§7), sauf obligation légale."
         }
       ],
       "synthese": [
         "2 préconditions : référentiel acceptable + prémisse",
-        "Lettre de mission écrite et signée AVANT les travaux",
-        "Réévaluer les termes chaque année (audits récurrents)"
+        "Lettre de mission écrite (objectif, responsabilités, référentiel, rapport)",
+        "Audits récurrents : réévaluer les termes",
+        "Changement de mission : justification raisonnable requise"
       ],
       "pieges": [
-        "Commencer sans lettre de mission signée",
-        "Accepter un changement visant à éviter une opinion modifiée",
+        "Commencer sans lettre signée",
+        "Accepter un changement pour éviter une réserve",
+        "Accepter malgré une limitation rédhibitoire imposée",
         "Oublier la prémisse"
       ]
     },
     "220": {
-      "duree": "9 min",
-      "niveau": "Intermédiaire",
-      "tldr": "La qualité se GÈRE au niveau de la mission (révisée 2022, approche risk-based). L'associé responsable porte la responsabilité globale ; l'**EQR** est obligatoire pour les EIP. S'appuie sur ISQM 1 (cabinet).",
+      "duree": "18 min",
+      "niveau": "Avancé · Cours exhaustif",
+      "tldr": "ISA 220 (Revised 2022) = gestion de la qualité AU NIVEAU DE LA MISSION, approche fondée sur les risques, s'appuyant sur ISQM 1 (cabinet). Responsabilité globale de l'associé responsable ; EQR pour les EIP ; documentation.",
       "stats": [
         {
           "value": "R2022",
           "label": "Révision",
-          "sub": "effective 2022"
+          "sub": "effective 15.12.2022"
+        },
+        {
+          "value": "Risk-based",
+          "label": "Approche",
+          "sub": "≠ check-list"
         },
         {
           "value": "EQR",
-          "label": "Revue qualité",
-          "sub": "EIP + risque élevé"
+          "label": "EIP+risque élevé",
+          "sub": "ISQM 2"
         },
         {
-          "value": "2 ans",
-          "label": "Cooling-off EQR",
-          "sub": "ex-lead partner"
-        },
-        {
-          "value": "8",
-          "label": "Composantes ISQM 1",
-          "sub": "niveau cabinet"
+          "value": "§13-35",
+          "label": "Exigences",
+          "sub": ""
         }
       ],
-      "intro": "La qualité d'un audit ne se décrète pas, elle se gère. ISA 220 (révisée 2022) définit comment l'associé responsable pilote la qualité au niveau de la mission, en s'appuyant sur le système qualité du cabinet (ISQM 1 / NCQ 1).",
+      "intro": "La qualité d'un audit se gère activement. ISA 220 (révisée 2022) définit comment l'associé responsable pilote la qualité de SA mission, en s'appuyant sur le système qualité du cabinet (ISQM 1 / NCQ 1). Cours § par §.",
       "sections": [
         {
-          "titre": "Responsabilité de l'associé responsable",
-          "body": "L'**engagement partner** porte la responsabilité GLOBALE de la qualité. Il crée un environnement valorisant la qualité, assure compétences/temps/ressources, et organise les consultations sur sujets complexes.",
-          "callouts": [
-            {
-              "type": "key",
-              "label": "R2022",
-              "text": "Approche RISK-BASED : l'associé identifie les risques pour la qualité de SA mission et y répond (≠ ancienne check-list)."
-            }
-          ]
-        },
-        {
-          "titre": "La revue de qualité (EQR)",
-          "body": "Obligatoire pour : EIP, sociétés cotées, missions à risque élevé. Réalisée par un réviseur qualifié, INDÉPENDANT de l'équipe, qui revoit les jugements significatifs et la formation de l'opinion AVANT la signature.",
+          "titre": "Champ, date & objectif",
+          "body": "ISA 220 traite des responsabilités spécifiques de l'auditeur concernant la **gestion de la qualité au niveau de la mission** et le rôle de l'associé responsable.\n\n**Objectif (§11)** : gérer la qualité au niveau de la mission de manière à fournir une assurance raisonnable que (a) l'auditeur s'est conformé aux normes et exigences légales, et (b) le rapport émis est approprié.\n**Date** : exercices ouverts dès le 15.12.2022 (R2022).",
           "callouts": [
             {
               "type": "info",
-              "label": "Cooling-off",
-              "text": "2 ans avant qu'un ancien associé responsable puisse devenir EQR sur le même client (ISQM 2)."
+              "label": "Triangle qualité",
+              "text": "ISQM 1 (cabinet) → ISA 220 (mission) → ISQM 2 (revue EQR). Les trois s'articulent."
             }
           ]
         },
         {
-          "titre": "Articulation avec ISQM 1",
-          "body": "ISA 220 (mission) s'appuie sur ISQM 1 (cabinet). Le cabinet conçoit le système ; l'associé l'applique et l'adapte à sa mission.",
-          "compare": {
-            "title": "ISQM 1 vs ISA 220",
-            "headers": [
-              "",
-              "ISQM 1",
-              "ISA 220"
-            ],
-            "rows": [
-              [
-                "Niveau",
-                "CABINET",
-                "MISSION"
-              ],
-              [
-                "Objet",
-                "Système global (8 composantes)",
-                "Application sur l'engagement"
-              ],
-              [
-                "Effectif",
-                "15.12.2022",
-                "15.12.2022"
-              ]
-            ]
-          }
+          "titre": "Responsabilité & leadership de l'associé responsable (§13-16)",
+          "body": "L'**associé responsable** (engagement partner) assume la **responsabilité globale** de la gestion et de l'atteinte de la qualité, et reste suffisamment impliqué tout au long de la mission. Il crée un environnement qui met l'accent sur la qualité, le comportement éthique et le scepticisme professionnel.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Risk-based",
+              "text": "R2022 : approche fondée sur les risques. L'associé adapte les procédures de gestion de la qualité aux risques propres à SA mission (≠ check-list uniforme)."
+            }
+          ]
+        },
+        {
+          "titre": "Éthique & indépendance (§17-21)",
+          "body": "L'associé détermine que les règles d'éthique pertinentes, **dont l'indépendance**, ont été respectées par l'équipe (et le cabinet/réseau). Il reste attentif tout au long de la mission aux indices de non-conformité et y répond.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "Lien CO 728/729b (indépendance), IESBA, rotation 7 ans / cooling-off pour les EIP."
+            }
+          ]
+        },
+        {
+          "titre": "Acceptation, ressources & réalisation (§22-30)",
+          "body": "• **Acceptation/continuation** : l'associé détermine qu'elle a été faite conformément aux politiques du cabinet (ISQM 1).\n• **Ressources** : suffisantes et appropriées (humaines, technologiques, intellectuelles) ; affectation de personnes compétentes et de temps suffisant.\n• **Réalisation** : direction, supervision et revue des travaux ; consultations sur les sujets difficiles/litigieux ; traitement des divergences d'opinion.",
+          "callouts": []
+        },
+        {
+          "titre": "La revue de qualité de la mission — EQR (§31-34)",
+          "body": "Pour les missions où une **revue de qualité (EQR)** est requise (EIP, cotées, et toute mission désignée par le cabinet selon ISQM 2), l'associé :\n• détermine qu'un EQR a été nommé\n• coopère avec l'EQR et l'informe des questions significatives\n• ne **date pas le rapport** tant que la revue de l'EQR n'est pas achevée.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "EQR",
+              "text": "Indépendant de l'équipe, cooling-off 2 ans (ex-associé responsable), revue ACHEVÉE avant la date du rapport (ISQM 2)."
+            }
+          ]
+        },
+        {
+          "titre": "Prise en compte du SoQM, jugement final & documentation (§35-39)",
+          "body": "L'associé considère si le **système qualité du cabinet** (ISQM 1) est pertinent et applicable à la mission ; si une déficience du système affecte sa mission, il prend des mesures. **Avant de dater le rapport**, il conclut que des éléments probants suffisants et appropriés ont été obtenus. **Documentation** : conformité éthique/indépendance, conclusions sur l'acceptation, nature/étendue/conclusions des consultations, et la revue EQR le cas échéant.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "ISQM 1 vs ISA 220",
+              "text": "ISQM 1 = système au niveau du CABINET (8 composantes). ISA 220 = APPLICATION sur la mission. Ne pas confondre à l'examen."
+            }
+          ]
         }
       ],
       "mnemo": {
@@ -11928,7 +11945,7 @@
         "items": [
           {
             "l": "7",
-            "t": "Rotation lead partner (PIE)"
+            "t": "Rotation lead partner PIE"
           },
           {
             "l": "5",
@@ -11939,16 +11956,20 @@
             "t": "Cooling-off EQR"
           }
         ],
-        "phrase": "Rotation et cooling-off (rappel IESBA)"
+        "phrase": "Rotation & cooling-off (rappel IESBA)"
       },
       "quiz": [
         {
-          "q": "Qui porte la responsabilité de la qualité de la mission ?",
+          "q": "Qui porte la responsabilité globale de la qualité de la mission ?",
           "a": "L'associé responsable (engagement partner)."
         },
         {
-          "q": "Pour quelles missions l'EQR est-il obligatoire ?",
-          "a": "EIP, sociétés cotées, missions à risque élevé."
+          "q": "Quelle est l'approche de la R2022 ?",
+          "a": "Fondée sur les risques (risk-based), adaptée à la mission (≠ check-list)."
+        },
+        {
+          "q": "Peut-on dater le rapport avant la fin de la revue EQR ?",
+          "a": "Non — le rapport n'est pas daté tant que l'EQR n'a pas achevé sa revue."
         },
         {
           "q": "ISQM 1 vs ISA 220 ?",
@@ -11957,79 +11978,91 @@
       ],
       "synthese": [
         "Responsabilité globale de l'associé (risk-based, R2022)",
-        "EQR obligatoire : EIP, cotées, risque élevé (cooling-off 2 ans)",
-        "ISA 220 (mission) s'appuie sur ISQM 1 (cabinet)"
+        "Éthique/indépendance vérifiées tout au long",
+        "EQR pour EIP/cotées : revue achevée avant la date du rapport",
+        "S'appuie sur ISQM 1 (cabinet) ; documentation"
       ],
       "pieges": [
         "Confondre ISQM 1 (cabinet) et ISA 220 (mission)",
-        "Penser que l'EQR est obligatoire partout",
-        "Oublier le cooling-off de 2 ans"
+        "Dater le rapport avant la fin de l'EQR",
+        "Penser que l'EQR est requis partout",
+        "Oublier le cooling-off de 2 ans de l'EQR"
       ]
     },
     "230": {
-      "duree": "8 min",
-      "niveau": "Fondamental",
-      "tldr": "« Ce qui n'est pas documenté n'a pas été fait. » La documentation prouve les travaux, fonde l'opinion, démontre la conformité. Test clé : un auditeur expérimenté SANS lien doit comprendre. Dossier final : 60 jours ; conservation : 10 ans (Suisse).",
+      "duree": "14 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 230 = documentation d'audit. Test clé : un auditeur expérimenté sans lien antérieur doit comprendre. Forme/contenu, dossier final 60 jours, conservation 10 ans (Suisse), modifications post-finales tracées.",
       "stats": [
         {
-          "value": "60 jours",
+          "value": "60 j",
           "label": "Dossier final",
-          "sub": "après le rapport"
+          "sub": "après rapport"
         },
         {
           "value": "10 ans",
-          "label": "Conservation (CH)",
+          "label": "Conservation CH",
           "sub": "≠ 5 ans ISA"
         },
         {
-          "value": "NAS 230",
-          "label": "Norme suisse",
-          "sub": "= ISA 230"
+          "value": "§8",
+          "label": "Test clé",
+          "sub": "auditeur expérimenté"
         },
         {
-          "value": "3",
-          "label": "Buts",
-          "sub": "trace + conformité + revue"
+          "value": "§13",
+          "label": "Modif. post-finale",
+          "sub": "tracer"
         }
       ],
-      "intro": "La documentation d'audit (papiers de travail) est la mémoire et la défense de l'auditeur. Le MSA (III.4.7) la traite comme un livrable central de l'exécution.",
+      "intro": "« Ce qui n'est pas documenté n'a pas été fait. » ISA 230 régit les papiers de travail : preuve des travaux, base de l'opinion, démonstration de conformité, défense en cas de litige/contrôle ASR. Cours § par §.",
       "sections": [
         {
-          "titre": "Objectif et rôle",
-          "body": "Trois buts : fournir une **trace** des travaux (base de l'opinion), démontrer la **conformité aux ISA**, et faciliter planification/supervision/revue. C'est aussi la 1re ligne de défense en cas de litige ou de contrôle ASR.",
+          "titre": "Champ, objectif & nature (§1-6)",
+          "body": "ISA 230 traite de la responsabilité de l'auditeur d'**établir la documentation** d'un audit.\n\n**Objectif (§5)** : préparer une documentation qui fournit (a) une trace suffisante et appropriée des travaux fondant le rapport, et (b) une preuve que l'audit a été planifié et réalisé conformément aux ISA et exigences légales.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Rôles",
+              "text": "Trace des travaux + base de l'opinion + conformité + facilite planification/supervision/revue + base des contrôles qualité (internes et ASR)."
+            }
+          ]
+        },
+        {
+          "titre": "Le test de l'auditeur expérimenté (§8)",
+          "body": "La documentation doit être suffisante pour qu'un **auditeur expérimenté n'ayant aucun lien antérieur** avec la mission comprenne :\n• la nature, le calendrier et l'étendue des procédures réalisées\n• les résultats et les éléments probants obtenus\n• les questions importantes, les conclusions et les jugements professionnels significatifs.",
           "callouts": [
             {
               "type": "key",
-              "label": "Le test clé",
-              "text": "La documentation doit permettre à un AUDITEUR EXPÉRIMENTÉ N'AYANT AUCUN LIEN avec la mission de comprendre nature/calendrier/étendue des procédures, résultats et conclusions."
+              "label": "Le standard",
+              "text": "« Auditeur expérimenté sans lien antérieur ». C'est LE critère de suffisance de la documentation."
             }
           ]
         },
         {
-          "titre": "Contenu et forme",
-          "body": "Consigner : caractéristiques des éléments testés, qui a fait/revu et quand, questions importantes, jugements et leur résolution, discussions significatives. Papier ou électronique (outils EY GAM).",
-          "callouts": [
-            {
-              "type": "example",
-              "label": "Exemple",
-              "text": "Pour un test de créances : la confirmation, l'échantillon, les réponses, le traitement des non-réponses, la conclusion sur l'assertion d'existence."
-            }
-          ]
+          "titre": "Contenu : qui, quand, quoi (§9)",
+          "body": "Consigner notamment : les **caractéristiques** des éléments testés (références, sélections), **qui** a réalisé les travaux et **quand**, **qui** les a revus et **quand**. Pour les questions importantes : les discussions (avec qui, quand) et leur résolution.",
+          "callouts": []
         },
         {
-          "titre": "Délais et conservation",
-          "body": "",
+          "titre": "Écarts & jugements significatifs (§10-12)",
+          "body": "• **§10** : si l'auditeur s'écarte d'une exigence pertinente, documenter comment les procédures alternatives atteignent l'objectif, et les raisons.\n• **§11** : documenter les discussions des questions importantes avec la direction/gouvernance.\n• **§12** : si des informations sont incohérentes avec la conclusion finale sur une question importante, documenter comment l'incohérence a été traitée.",
+          "callouts": []
+        },
+        {
+          "titre": "Constitution & modifications du dossier final (§14-16)",
+          "body": "• **Constitution (assembly)** : réunir le dossier final **dans les 60 jours** suivant la date du rapport (délai administratif, fixé par ISQM 1 ; max recommandé 60 jours).\n• **Après constitution** : ne RIEN supprimer/jeter avant la fin de la durée de conservation ; toute modification ultérieure → tracer **quand, par qui, pourquoi**.",
           "schema": {
             "type": "flow",
             "title": "Cycle documentaire",
             "steps": [
               {
                 "t": "Date du rapport",
-                "d": "obtention des éléments probants suffisants"
+                "d": "éléments probants suffisants obtenus"
               },
               {
-                "t": "Constitution du dossier final",
-                "d": "dans les 60 jours (assembly)"
+                "t": "Constitution dossier final",
+                "d": "≤ 60 jours (assembly)"
               },
               {
                 "t": "Conservation",
@@ -12037,7 +12070,7 @@
               },
               {
                 "t": "Modification post-finale",
-                "d": "tracer quoi/quand/qui/pourquoi (jamais supprimer)"
+                "d": "tracer quoi/quand/qui/pourquoi — jamais supprimer"
               }
             ]
           },
@@ -12045,15 +12078,26 @@
             {
               "type": "warn",
               "label": "Piège suisse",
-              "text": "Conservation = 10 ANS (≠ 5 ans ISA). Constitution = 60 jours. Ne pas confondre."
+              "text": "Conservation = 10 ANS (≠ 5 ans ISA). Constitution = 60 jours. Deux délais distincts à ne pas confondre."
+            }
+          ]
+        },
+        {
+          "titre": "Articulation",
+          "body": "ISA 230 ↔ ISA 220 (qualité, revue), ISQM 1 (politiques de constitution/conservation), toutes les normes (chacune ajoute des exigences de documentation spécifiques : 240 brainstorming, 315 risques, 330 réponses, 540 estimations…).",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "Art. 730c CO + LSR : conservation 10 ans. La documentation est la première pièce examinée par l'ASR en cas de contrôle."
             }
           ]
         }
       ],
       "quiz": [
         {
-          "q": "Quel est le test clé de la documentation ?",
-          "a": "Un auditeur expérimenté SANS lien antérieur doit comprendre les travaux."
+          "q": "Quel est le test de suffisance de la documentation (§8) ?",
+          "a": "Un auditeur expérimenté sans lien antérieur doit comprendre nature/calendrier/étendue, résultats, et conclusions/jugements."
         },
         {
           "q": "Délai de constitution du dossier final ?",
@@ -12062,17 +12106,23 @@
         {
           "q": "Durée de conservation en Suisse ?",
           "a": "10 ans (≠ 5 ans ISA)."
+        },
+        {
+          "q": "Que faire d'une modification du dossier après sa constitution ?",
+          "a": "La tracer (quand, par qui, pourquoi) ; ne jamais supprimer."
         }
       ],
       "synthese": [
         "Documentation = trace + conformité + défense",
-        "Test : auditeur expérimenté sans lien antérieur comprend",
-        "Dossier final 60 jours ; conservation 10 ans (Suisse)"
+        "Test : auditeur expérimenté sans lien antérieur",
+        "Consigner qui/quand/quoi + jugements + écarts",
+        "Dossier final 60 jours ; conservation 10 ans (Suisse) ; modifs tracées"
       ],
       "pieges": [
         "Confondre 60 jours (constitution) et 10 ans (conservation)",
         "Modifier le dossier sans tracer",
-        "Documentation insuffisante = réputé non fait"
+        "Documentation insuffisante = réputé non fait",
+        "Supprimer des papiers de travail"
       ]
     },
     "240": {
@@ -12546,53 +12596,56 @@
       ]
     },
     "250": {
-      "duree": "8 min",
-      "niveau": "Intermédiaire",
-      "tldr": "L'auditeur prend en compte le non-respect des lois. Distinction clé : effet **DIRECT** sur les EF (fiscal, CO → audit direct) vs effet **INDIRECT** (environnement, RGPD → vigilance). Lien NOCLAR pour les non-conformités graves.",
+      "duree": "15 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 250 (Revised 2017) = prise en compte des textes légaux. Distinction effet DIRECT (audit direct) vs INDIRECT (vigilance). Procédures, réaction en cas de non-conformité, communication & reporting (NOCLAR, LSR 22, LBA 9).",
       "stats": [
-        {
-          "value": "2 effets",
-          "label": "Direct / Indirect",
-          "sub": "sur les EF"
-        },
         {
           "value": "R2017",
           "label": "Révision",
           "sub": "effective 2017"
         },
         {
-          "value": "NOCLAR",
-          "label": "Signalement",
-          "sub": "IESBA 360"
+          "value": "2 effets",
+          "label": "Direct / Indirect",
+          "sub": "sur les EF"
         },
         {
-          "value": "LSR 22",
-          "label": "Suisse",
-          "sub": "signalement ASR"
+          "value": "§13-18",
+          "label": "Procédures",
+          "sub": ""
+        },
+        {
+          "value": "NOCLAR",
+          "label": "Reporting",
+          "sub": "IESBA 360"
         }
       ],
-      "intro": "Les entreprises évoluent dans un maquis de lois. ISA 250 (révisée 2017) définit comment l'auditeur prend en compte le non-respect des textes susceptible d'affecter les EF.",
+      "intro": "Les entreprises évoluent dans un cadre légal dense. ISA 250 (révisée 2017) définit comment l'auditeur prend en compte le non-respect des textes légaux susceptible d'affecter les EF, et comment réagir. Cours § par §.",
       "sections": [
         {
-          "titre": "Effet direct vs indirect",
-          "body": "",
+          "titre": "Champ, objectif & catégories (§1-10)",
+          "body": "ISA 250 traite de la responsabilité de l'auditeur de prendre en compte les textes légaux et réglementaires. Deux catégories :",
           "compare": {
-            "title": "Direct vs Indirect",
+            "title": "Effet direct vs indirect",
             "headers": [
               "Type",
+              "Effet sur les EF",
               "Exemples",
-              "Démarche auditeur"
+              "Démarche"
             ],
             "rows": [
               [
-                "Effet DIRECT",
-                "Fiscal (LIFD, LTVA), CO, comptabilité",
-                "Audit direct des montants/disclosures"
+                "DIRECT",
+                "Détermine les montants/disclosures",
+                "Fiscal (LIFD, LTVA), droit des sociétés (CO), comptabilité (CO 957ss)",
+                "AUDIT DIRECT des transactions/soldes"
               ],
               [
-                "Effet INDIRECT",
-                "Environnement, concurrence, RGPD/LPD, travail",
-                "Vigilance + procédures limitées"
+                "INDIRECT",
+                "Fondamental pour l'activité, sans effet comptable direct",
+                "Environnement, concurrence (LCart), RGPD/LPD, droit du travail",
+                "VIGILANCE + procédures limitées"
               ]
             ]
           },
@@ -12600,31 +12653,47 @@
             {
               "type": "key",
               "label": "Frontière mouvante",
-              "text": "Une pollution (indirect) devient directe si un litige probable et chiffrable impose une provision (IAS 37 / RPC 23)."
+              "text": "Une non-conformité indirecte (ex. pollution) devient DIRECTE si un litige probable et chiffrable impose une provision (IAS 37 / RPC 23)."
             }
           ]
         },
         {
-          "titre": "Procédures",
-          "body": "Comprendre le cadre légal ; demandes à la direction ; inspection de la correspondance avec les autorités ; lecture des PV ; représentations écrites confirmant la divulgation de toutes les non-conformités.",
+          "titre": "Procédures de l'auditeur (§13-18)",
+          "body": "• **Effet direct** : obtenir des éléments suffisants sur la conformité.\n• **Effet indirect** : procédures pour identifier les non-conformités pouvant avoir un effet matériel : demandes à la direction/gouvernance sur la conformité, inspection de la **correspondance** avec les autorités (régulateurs, fisc, justice).\n• Rester **alerte** tout au long de l'audit aux indices de non-conformité.\n• Obtenir des **déclarations écrites** (ISA 580) confirmant que toutes les non-conformités connues ont été divulguées.",
           "callouts": [
             {
               "type": "tip",
-              "label": "Sur le terrain",
-              "text": "Les PV du conseil et la correspondance avec les autorités sont les premières sources d'indices."
+              "label": "Sources d'indices",
+              "text": "Lecture des PV des organes + correspondance avec les autorités = premières sources de détection."
             }
           ]
         },
         {
-          "titre": "En cas de non-conformité",
-          "body": "Comprendre nature + impact ; évaluer matérialité (incl. qualitative) ; discuter avec direction et gouvernance ; considérer l'impact opinion (ISA 705) ; évaluer un reporting externe (NOCLAR).",
+          "titre": "Procédures en cas de non-conformité identifiée (§19-22)",
+          "body": "L'auditeur : comprend la **nature** de l'acte et les circonstances ; obtient des informations complémentaires pour évaluer l'effet possible sur les EF (amendes, litiges, provisions, disclosures) ; discute avec la direction/gouvernance ; et si l'information est insuffisante, considère l'impact sur l'opinion (limitation possible).",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Doute sur l'implication de la direction",
+              "text": "Si la non-conformité semble intentionnelle et matérielle, ou implique la direction → scepticisme renforcé + envisager de consulter un conseil juridique."
+            }
+          ]
+        },
+        {
+          "titre": "Communication & reporting (§23-29)",
+          "body": "• **Gouvernance** : communiquer les non-conformités identifiées (sauf si interdites par la loi), à moins qu'elles soient manifestement insignifiantes.\n• **Autorités** : déterminer s'il existe une obligation de **reporting externe** (dérogation au secret professionnel selon la loi).\n• Si la non-conformité a un effet matériel non corrigé/non reflété → **opinion modifiée** (ISA 705).",
           "callouts": [
             {
               "type": "legal",
-              "label": "NOCLAR",
-              "text": "IESBA Section 360 : dérogation au secret professionnel pour signaler les non-conformités GRAVES (ASR, FINMA, MROS), sous conditions."
+              "label": "Suisse / NOCLAR",
+              "text": "NOCLAR (IESBA 360) : dérogation au secret pour signaler les non-conformités GRAVES. Bases suisses : LSR art. 22 (ASR), LBA art. 9 (MROS), CO 728c (avis aux organes)."
             }
           ]
+        },
+        {
+          "titre": "Documentation & articulation (§29-30)",
+          "body": "Documenter les non-conformités identifiées, les discussions et les conclusions. **Articulation** : ISA 240 (la non-conformité peut être une fraude), ISA 260/265 (communication), ISA 705 (impact opinion), IESBA 360 (NOCLAR).",
+          "callouts": []
         }
       ],
       "mnemo": {
@@ -12644,28 +12713,38 @@
       "quiz": [
         {
           "q": "Différence effet direct / indirect ?",
-          "a": "Direct = affecte directement les EF (audit direct). Indirect = vigilance + procédures limitées."
+          "a": "Direct = affecte directement les montants/disclosures (audit direct). Indirect = vigilance + procédures limitées."
+        },
+        {
+          "q": "Cite 2 sources d'indices de non-conformité.",
+          "a": "Lecture des PV des organes + correspondance avec les autorités."
         },
         {
           "q": "Qu'est-ce que NOCLAR ?",
-          "a": "Régime IESBA permettant de signaler les non-conformités graves en dérogeant au secret professionnel."
+          "a": "Régime IESBA (360) permettant de déroger au secret professionnel pour signaler les non-conformités graves."
+        },
+        {
+          "q": "Quand l'opinion est-elle modifiée ?",
+          "a": "Si une non-conformité a un effet matériel non corrigé/non reflété dans les EF."
         }
       ],
       "synthese": [
         "Effet direct (fiscal, CO) → audit direct ; indirect → vigilance",
-        "Procédures : compréhension, demandes, correspondance, PV, représentations",
-        "Non-conformité → impact opinion + NOCLAR possible"
+        "Procédures : demandes, correspondance autorités, PV, représentations écrites",
+        "Non-conformité → comprendre, évaluer, discuter, impact opinion, reporting",
+        "NOCLAR / LSR 22 / LBA 9 pour le signalement externe"
       ],
       "pieges": [
         "Confondre effet direct et indirect",
         "Oublier que la frontière bouge (litige chiffrable)",
-        "Négliger la matérialité qualitative"
+        "Négliger la matérialité qualitative d'une non-conformité",
+        "Oublier les obligations suisses de signalement"
       ]
     },
     "260": {
-      "duree": "7 min",
-      "niveau": "Fondamental",
-      "tldr": "L'auditeur communique avec les responsables de la gouvernance (TCWG = CA/comité d'audit) : responsabilités, étendue, constatations significatives, indépendance (EIP). Communication bidirectionnelle, en temps utile.",
+      "duree": "13 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 260 (Revised 2015) = communication avec la gouvernance (TCWG). Quoi communiquer (responsabilités, étendue/calendrier, constatations significatives, indépendance EIP), forme et calendrier, communication bidirectionnelle.",
       "stats": [
         {
           "value": "TCWG",
@@ -12673,84 +12752,97 @@
           "sub": "CA / comité audit"
         },
         {
+          "value": "4",
+          "label": "Sujets clés",
+          "sub": "resp./étendue/constat./indép."
+        },
+        {
           "value": "Bidirec.",
           "label": "Communication",
           "sub": "dialogue"
         },
         {
-          "value": "R2015",
-          "label": "Révision",
-          "sub": "effective 2016"
-        },
-        {
-          "value": "CO 728a",
-          "label": "Suisse",
-          "sub": "rapport au CA"
+          "value": "§16",
+          "label": "Indépendance",
+          "sub": "EIP"
         }
       ],
-      "intro": "L'audit n'est pas une boîte noire. ISA 260 structure la communication avec la gouvernance. En Suisse, elle se matérialise dans le rapport détaillé au CA (CO 728a).",
+      "intro": "L'audit n'est pas une boîte noire : l'auditeur communique avec ceux qui gouvernent l'entité. ISA 260 (révisée 2015) structure ce dialogue. En Suisse, il se matérialise notamment dans le rapport détaillé au CA (CO 728a). Cours § par §.",
       "sections": [
         {
-          "titre": "Qui et quoi",
-          "body": "**TCWG** = CA et/ou comité d'audit. On communique : responsabilités de l'auditeur, étendue et calendrier planifiés, constatations significatives (jugements, difficultés, déficiences), et pour les EIP la déclaration d'indépendance.",
+          "titre": "Champ, objectif & définitions (§1-10)",
+          "body": "ISA 260 traite de la responsabilité de l'auditeur de **communiquer** avec les responsables de la gouvernance (TCWG).\n\n**Objectifs (§9)** : communiquer clairement les responsabilités de l'auditeur et une vue d'ensemble de l'étendue/du calendrier ; obtenir des informations pertinentes ; communiquer en temps utile les constatations significatives ; promouvoir une communication bidirectionnelle efficace.\n**TCWG** = personne(s)/organe(s) responsable(s) de la surveillance de l'orientation stratégique et des obligations de reddition de comptes (CA, comité d'audit).",
+          "callouts": []
+        },
+        {
+          "titre": "Ce qui est communiqué (§14-17)",
+          "body": "• **Responsabilités de l'auditeur** (former une opinion ; le fait que l'audit ne décharge pas la direction de ses responsabilités)\n• **Étendue et calendrier** planifiés de l'audit\n• **Constatations significatives** : opinions sur les méthodes comptables/estimations/disclosures, difficultés importantes rencontrées, questions discutées avec la direction, et autres sujets significatifs\n• Pour les **EIP** : déclaration d'indépendance + sauvegardes appliquées.",
           "callouts": [
             {
               "type": "key",
-              "label": "Bidirectionnel",
-              "text": "L'auditeur écoute aussi : perception des risques, fraudes connues, litiges. C'est un dialogue, pas un monologue."
+              "label": "EIP",
+              "text": "Pour les entités d'intérêt public : communication formelle sur l'indépendance (relations, menaces, sauvegardes)."
             }
           ]
         },
         {
-          "titre": "Forme et calendrier",
-          "body": "En temps utile (pas seulement à la fin), orale ou écrite selon l'importance. Questions significatives confirmées par écrit.",
-          "compare": {
-            "title": "ISA 260 vs ISA 265",
-            "headers": [
-              "",
-              "ISA 260",
-              "ISA 265"
-            ],
-            "rows": [
-              [
-                "Objet",
-                "Communication générale",
-                "Déficiences du SCI"
-              ],
-              [
-                "Portée",
-                "Large",
-                "Ciblée (sous-ensemble)"
-              ]
-            ]
-          }
+          "titre": "Processus, forme & calendrier (§18-22)",
+          "body": "• La communication peut être **orale ou écrite** ; les constatations significatives sont communiquées **par écrit** lorsque l'oral ne suffit pas.\n• En **temps utile** (pas seulement à la fin).\n• Communication **bidirectionnelle** : l'auditeur évalue aussi si la communication a été adéquate dans les deux sens.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Bidirectionnel",
+              "text": "L'auditeur écoute aussi la gouvernance (perception des risques, fraudes connues, litiges) : c'est un dialogue."
+            }
+          ]
+        },
+        {
+          "titre": "Documentation & articulation (§23)",
+          "body": "Documenter les questions communiquées oralement (quand, à qui) et conserver une copie des communications écrites. **Articulation** : ISA 265 (déficiences du SCI = sous-ensemble ciblé), ISA 240/250 (fraude, non-conformité à communiquer), ISA 450 (anomalies non corrigées), ISA 700/701 (rapport, KAM). En Suisse : rapport détaillé au CA (CO 728a).",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "260 vs 265",
+              "text": "ISA 260 = communication GÉNÉRALE avec la gouvernance. ISA 265 = communication SPÉCIFIQUE des déficiences du SCI."
+            }
+          ]
         }
       ],
       "quiz": [
         {
           "q": "Qui sont les TCWG ?",
-          "a": "Les responsables de la gouvernance : conseil d'administration / comité d'audit."
+          "a": "Les responsables de la gouvernance : CA / comité d'audit."
+        },
+        {
+          "q": "Quels 4 sujets clés communiquer ?",
+          "a": "Responsabilités de l'auditeur, étendue/calendrier, constatations significatives, indépendance (EIP)."
         },
         {
           "q": "La communication est-elle à sens unique ?",
-          "a": "Non, elle est bidirectionnelle (dialogue)."
+          "a": "Non, bidirectionnelle (dialogue)."
+        },
+        {
+          "q": "260 vs 265 ?",
+          "a": "260 = communication générale ; 265 = déficiences du SCI."
         }
       ],
       "synthese": [
         "TCWG = CA / comité d'audit",
-        "Communiquer : responsabilités, étendue, constatations, indépendance (EIP)",
-        "Bidirectionnel, en temps utile, écrit si significatif"
+        "Communiquer : responsabilités, étendue/calendrier, constatations, indépendance (EIP)",
+        "Orale ou écrite, en temps utile, bidirectionnelle",
+        "Suisse : rapport détaillé au CA (CO 728a)"
       ],
       "pieges": [
         "Communiquer seulement à la fin",
-        "Confondre ISA 260 (général) et ISA 265 (déficiences)",
-        "Oublier la déclaration d'indépendance (EIP)"
+        "Confondre 260 (général) et 265 (déficiences)",
+        "Oublier la déclaration d'indépendance (EIP)",
+        "Négliger le caractère bidirectionnel"
       ]
     },
     "265": {
-      "duree": "7 min",
-      "niveau": "Fondamental",
-      "tldr": "Communiquer les déficiences du contrôle interne. Distinction clé : déficience SIMPLE (→ direction) vs déficience SIGNIFICATIVE (→ communication ÉCRITE à la gouvernance). Alimente le management letter.",
+      "duree": "12 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 265 = communiquer les déficiences du contrôle interne. Distinction déficience / déficience significative ; communication écrite à la gouvernance pour les significatives ; contenu de la communication. Alimente le management letter.",
       "stats": [
         {
           "value": "2 niveaux",
@@ -12758,26 +12850,37 @@
           "sub": "simple / significative"
         },
         {
-          "value": "Écrite",
-          "label": "Si significative",
-          "sub": "obligatoire"
+          "value": "§9",
+          "label": "Écrite à la gouvernance",
+          "sub": "si significative"
+        },
+        {
+          "value": "§10",
+          "label": "Contenu",
+          "sub": "description+effets"
         },
         {
           "value": "Mgmt letter",
           "label": "Support CH",
-          "sub": "rapport au CA"
-        },
-        {
-          "value": "Jugement",
-          "label": "Caractère significatif",
-          "sub": "professionnel"
+          "sub": "CO 728a"
         }
       ],
-      "intro": "Pendant l'audit, on découvre des faiblesses du SCI. ISA 265 dit comment et à qui les communiquer.",
+      "intro": "Pendant l'audit, on identifie des faiblesses du SCI. ISA 265 dit comment et à qui les communiquer, et surtout comment distinguer une déficience simple d'une déficience significative. Cours § par §.",
       "sections": [
         {
-          "titre": "Déficience vs déficience significative",
-          "body": "Une **déficience** = contrôle absent ou inefficace. Une **déficience significative** = suffisamment importante pour mériter l'attention de la gouvernance (jugement : montant potentiel, probabilité, sensibilité).",
+          "titre": "Champ, objectif & définitions (§1-6)",
+          "body": "ISA 265 traite de la responsabilité de l'auditeur de communiquer de manière appropriée les déficiences du contrôle interne identifiées durant l'audit.\n\n**Déficience du contrôle interne** : (a) un contrôle conçu/mis en œuvre de telle sorte qu'il ne prévient/détecte pas les anomalies en temps voulu, OU (b) l'absence d'un contrôle nécessaire.\n**Déficience SIGNIFICATIVE** : déficience (ou combinaison) suffisamment importante pour mériter l'attention des responsables de la gouvernance.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Jugement",
+              "text": "Le caractère significatif est un JUGEMENT : montant potentiel, probabilité, sensibilité du domaine, importance des contrôles concernés."
+            }
+          ]
+        },
+        {
+          "titre": "Déterminer si une déficience est significative (§8)",
+          "body": "L'auditeur détermine si les déficiences identifiées constituent, individuellement ou combinées, des **déficiences significatives**. Indicateurs : risque de fraude, sensibilité des opérations, importance des montants exposés, volume d'activité, interactions avec d'autres déficiences.",
           "schema": {
             "type": "matrix",
             "title": "Niveau → communication",
@@ -12814,36 +12917,57 @@
           }
         },
         {
-          "titre": "Modalités",
-          "body": "Déficiences significatives → par ÉCRIT, à la gouvernance, en temps utile. Autres → à la direction. Ces déficiences alimentent le **management letter**.",
+          "titre": "Communication (§9-10)",
+          "body": "• **§9** : communiquer **par écrit** les déficiences **significatives** à la gouvernance, **en temps utile**.\n• Communiquer aussi à la **direction** (niveau approprié) les déficiences significatives non déjà communiquées par d'autres, et les autres déficiences jugées d'intérêt.\n• **§10 — Contenu** : une **description** des déficiences + leurs **effets potentiels** + des informations suffisantes pour que la gouvernance comprenne le contexte (et le fait que l'objectif de l'audit était l'opinion sur les EF, pas l'efficacité du SCI).",
           "callouts": [
             {
               "type": "example",
               "label": "Exemple",
-              "text": "Absence de ségrégation des tâches sur la paie (saisie+validation+paiement par la même personne) = déficience significative → écrit + recommandation de double signature."
+              "text": "Absence de ségrégation des tâches sur la paie (saisie + validation + paiement par la même personne) = déficience significative → communication écrite + recommandation de double signature."
+            }
+          ]
+        },
+        {
+          "titre": "Articulation & Suisse",
+          "body": "ISA 265 ↔ ISA 315 (identification des déficiences lors de la compréhension du SCI), ISA 260 (communication générale), ISA 330 (tests des contrôles révélant des déficiences). En Suisse, ces déficiences alimentent le **management letter** / rapport détaillé au CA (CO 728a). À distinguer du **constat d'existence du SCI** (CO 728a al.1 ch.3) qui est une obligation distincte.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "Le constat d'existence du SCI (CO 728a) ≠ opinion sur l'efficacité. Les déficiences (ISA 265) sont communiquées dans le rapport au CA."
             }
           ]
         }
       ],
       "quiz": [
         {
-          "q": "Une déficience significative se communique comment ?",
+          "q": "Qu'est-ce qu'une déficience du contrôle interne ?",
+          "a": "Un contrôle qui ne prévient/détecte pas les anomalies en temps voulu, ou l'absence d'un contrôle nécessaire."
+        },
+        {
+          "q": "Comment communiquer une déficience SIGNIFICATIVE ?",
           "a": "Par ÉCRIT, à la gouvernance, en temps utile."
         },
         {
+          "q": "Que contient la communication (§10) ?",
+          "a": "Description des déficiences + effets potentiels + contexte suffisant."
+        },
+        {
           "q": "Où aboutissent ces déficiences en Suisse ?",
-          "a": "Dans le management letter (rapport détaillé au CA, CO 728a)."
+          "a": "Dans le management letter / rapport détaillé au CA (CO 728a)."
         }
       ],
       "synthese": [
         "Déficience = contrôle absent/inefficace",
-        "Significative = attention de la gouvernance (écrit obligatoire)",
-        "Alimente le management letter"
+        "Significative = mérite l'attention de la gouvernance (jugement)",
+        "Significative → communication ÉCRITE obligatoire ; autres → direction",
+        "Contenu : description + effets ; alimente le management letter"
       ],
       "pieges": [
         "Ne pas communiquer par écrit une déficience significative",
         "Confondre simple (direction) et significative (gouvernance)",
-        "Oublier le « en temps utile »"
+        "Oublier le « en temps utile »",
+        "Confondre communication des déficiences (265) et constat d'existence du SCI (CO 728a)"
       ]
     },
     "300": {
