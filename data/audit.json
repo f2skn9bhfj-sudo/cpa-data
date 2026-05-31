@@ -12971,9 +12971,9 @@
       ]
     },
     "300": {
-      "duree": "8 min",
-      "niveau": "Fondamental",
-      "tldr": "Un bon audit se gagne à la planification. Stratégie générale (haut niveau) + plan d'audit (détaillé). Processus CONTINU, pas un événement ponctuel.",
+      "duree": "15 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 300 = planification. Activités préliminaires → stratégie générale (haut niveau) → plan d'audit détaillé. Processus continu et itératif. Documentation obligatoire (§12). Considérations spécifiques aux premiers audits.",
       "stats": [
         {
           "value": "2 niveaux",
@@ -12981,94 +12981,125 @@
           "sub": ""
         },
         {
+          "value": "§7-8",
+          "label": "Stratégie/Plan",
+          "sub": "exigences"
+        },
+        {
+          "value": "§12",
+          "label": "Documentation",
+          "sub": "obligatoire"
+        },
+        {
           "value": "Continu",
           "label": "Processus",
           "sub": "≠ ponctuel"
-        },
-        {
-          "value": "NAS 300",
-          "label": "Norme suisse",
-          "sub": "= ISA 300"
-        },
-        {
-          "value": "III.3",
-          "label": "Chapitre MSA",
-          "sub": "planification"
         }
       ],
-      "intro": "ISA 300 organise la planification. Le MSA y consacre tout le chapitre III.3 (la plus longue section du processus d'audit).",
+      "intro": "Un audit efficace se gagne à la planification. ISA 300 organise la stratégie générale et le plan détaillé. Le MSA y consacre tout le chapitre III.3 (le plus long du processus). Cours § par §.",
       "sections": [
         {
-          "titre": "Activités préliminaires",
-          "body": "Acceptation/continuation (ISA 220), éthique et indépendance, compréhension des termes (lettre de mission). Ces étapes garantissent qu'on a le droit et les moyens d'auditer.",
+          "titre": "Champ, objectif & rôle (§1-4)",
+          "body": "ISA 300 traite de la responsabilité de l'auditeur de **planifier** un audit. Une planification adéquate aide à : porter l'attention sur les domaines importants, identifier/résoudre les problèmes à temps, organiser/gérer la mission efficacement, sélectionner une équipe compétente, et faciliter direction/supervision/revue.\n\n**Objectif (§4)** : planifier l'audit pour qu'il soit réalisé de manière efficace.",
+          "callouts": []
+        },
+        {
+          "titre": "Activités préliminaires (§6)",
+          "body": "Au début de la mission, l'auditeur :\n• exécute les procédures d'**acceptation/continuation** (ISA 220)\n• évalue la conformité aux **règles d'éthique** dont l'indépendance\n• établit la compréhension des **termes de la mission** (ISA 210, lettre de mission).",
           "callouts": [
             {
               "type": "info",
-              "label": "Avant tout",
-              "text": "Ces préliminaires précèdent la planification détaillée."
+              "label": "But",
+              "text": "Garantir qu'on a le droit et les moyens d'auditer ce client avant d'investir dans la planification détaillée."
             }
           ]
         },
         {
-          "titre": "Stratégie vs plan",
-          "body": "",
-          "compare": {
-            "title": "Stratégie vs Plan",
-            "headers": [
-              "",
-              "Stratégie générale",
-              "Plan d'audit"
-            ],
-            "rows": [
-              [
-                "Niveau",
-                "Haut niveau",
-                "Détaillé"
-              ],
-              [
-                "Contenu",
-                "Périmètre, calendrier, ressources, matérialité",
-                "Nature/calendrier/étendue des procédures"
-              ],
-              [
-                "Rôle",
-                "Cadre le plan",
-                "Exécution"
-              ]
-            ]
-          }
+          "titre": "Stratégie générale d'audit (§7-8)",
+          "body": "L'auditeur établit une **stratégie générale** qui définit l'étendue, le calendrier et l'orientation de l'audit, et guide l'élaboration du plan. Il considère : les caractéristiques de la mission (référentiel, périmètre), les objectifs de reporting (calendrier, communications), les facteurs significatifs (matérialité, zones de risque élevé), les résultats des activités préliminaires, et la nature/l'étendue des ressources nécessaires.",
+          "callouts": [
+            {
+              "type": "comp",
+              "label": "Stratégie vs Plan",
+              "text": "Stratégie = vision d'ensemble (où, quand, qui, combien). Plan = détail des procédures."
+            }
+          ]
         },
         {
-          "titre": "Un processus continu",
-          "body": "La planification est itérative : elle démarre dès la fin de l'audit précédent et se poursuit jusqu'à la clôture. Stratégie et plan sont mis à jour si nécessaire. Documenter stratégie + plan + changements (ISA 300.12).",
+          "titre": "Le plan d'audit (§9)",
+          "body": "L'auditeur développe un **plan d'audit** comprenant : la nature/le calendrier/l'étendue des **procédures d'évaluation des risques** (ISA 315), des **procédures d'audit complémentaires** au niveau des assertions (ISA 330), et des autres procédures planifiées requises par les ISA.",
+          "callouts": []
+        },
+        {
+          "titre": "Mises à jour & direction/supervision (§10-11)",
+          "body": "• **§10** : la stratégie et le plan sont **mis à jour** autant que nécessaire pendant l'audit (processus itératif).\n• **§11** : l'auditeur planifie la nature/le calendrier/l'étendue de la **direction et de la supervision** de l'équipe et de la **revue** de ses travaux, selon les risques évalués, la taille/complexité, et la compétence de l'équipe.",
           "callouts": [
             {
               "type": "key",
-              "label": "À retenir",
-              "text": "Planification = processus continu, pas une étape figée du début."
+              "label": "Continu",
+              "text": "La planification n'est pas un événement figé du début : elle se poursuit et s'adapte jusqu'à la clôture."
+            }
+          ]
+        },
+        {
+          "titre": "Documentation & premiers audits (§12-13)",
+          "body": "• **§12 — Documentation** : la stratégie générale, le plan d'audit, et les **changements significatifs** apportés en cours de mission (+ leurs raisons).\n• **§13 — Premiers audits** : activités supplémentaires (acceptation, contacts avec l'auditeur précédent, soldes d'ouverture — ISA 510).",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "NA-CH 300. La planification documentée précède les tests substantifs significatifs."
             }
           ]
         }
       ],
+      "mnemo": {
+        "code": "A-S-P",
+        "items": [
+          {
+            "l": "A",
+            "t": "Activités préliminaires"
+          },
+          {
+            "l": "S",
+            "t": "Stratégie générale"
+          },
+          {
+            "l": "P",
+            "t": "Plan d'audit détaillé"
+          }
+        ],
+        "phrase": "Les 3 temps de la planification"
+      },
       "quiz": [
         {
           "q": "Différence stratégie / plan ?",
           "a": "Stratégie = vision d'ensemble (haut niveau). Plan = détail des procédures."
         },
         {
-          "q": "La planification est-elle un événement ponctuel ?",
-          "a": "Non, c'est un processus continu et itératif."
+          "q": "Que comprennent les activités préliminaires ?",
+          "a": "Acceptation/continuation (ISA 220), éthique/indépendance, termes de mission (ISA 210)."
+        },
+        {
+          "q": "La planification est-elle figée ?",
+          "a": "Non — processus continu, mis à jour pendant l'audit."
+        },
+        {
+          "q": "Que documenter (§12) ?",
+          "a": "La stratégie, le plan, et les changements significatifs + leurs raisons."
         }
       ],
       "synthese": [
-        "Activités préliminaires avant la planification",
-        "Stratégie (vision) cadre le plan (détail)",
-        "Processus continu ; documenter stratégie + plan + changements"
+        "Activités préliminaires → stratégie → plan",
+        "Stratégie (vision) cadre le plan (détail des procédures)",
+        "Processus continu et itératif",
+        "Documenter stratégie + plan + changements (§12)"
       ],
       "pieges": [
         "Confondre stratégie et plan",
         "Traiter la planification comme figée",
-        "Oublier les activités préliminaires"
+        "Oublier les activités préliminaires",
+        "Oublier les considérations premiers audits (ISA 510)"
       ]
     },
     "315": {
@@ -13785,19 +13816,19 @@
       ]
     },
     "402": {
-      "duree": "9 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Externalisation (paie, IT, cloud) : comprendre les services et s'appuyer sur les rapports **SOC 1** (ISAE 3402). Type 2 = efficacité sur période = exploitable. Vérifier les CUEC chez le client.",
+      "duree": "16 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 402 = audit d'une entité utilisant une société de services. Comprendre les services + s'appuyer sur les rapports SOC 1 (ISAE 3402). Type 1 (conception) vs Type 2 (efficacité). Vérifier les CUEC. Lien fort avec l'audit IT/cloud.",
       "stats": [
         {
           "value": "SOC 1",
-          "label": "Rapport clé",
-          "sub": "ISAE 3402"
+          "label": "ISAE 3402",
+          "sub": "financial reporting"
         },
         {
           "value": "Type 2",
           "label": "Efficacité",
-          "sub": "sur période"
+          "sub": "6-12 mois"
         },
         {
           "value": "CUEC",
@@ -13805,144 +13836,271 @@
           "sub": "complémentaires"
         },
         {
-          "value": "2 méthodes",
-          "label": "Inclusive/Carve-out",
+          "value": "§9-17",
+          "label": "Exigences",
           "sub": ""
         }
       ],
-      "intro": "De plus en plus d'entreprises externalisent. ISA 402 traite l'audit d'une entité utilisant une société de services. Sujet très lié à l'audit IT et au cloud.",
+      "intro": "L'externalisation (paie, IT, cloud, gestion d'actifs) déplace des contrôles clés HORS de l'entité auditée. ISA 402 dit comment l'auditeur de l'entité utilisatrice obtient l'assurance nécessaire, notamment via les rapports SOC. Cours § par §.",
       "sections": [
         {
-          "titre": "Comprendre les services externalisés",
-          "body": "Comprendre la nature et l'importance des services pour le SCI de l'entité (paie, hébergement IT/cloud, gestion d'actifs). Plus le service touche le reporting financier, plus il faut d'assurance sur les contrôles du prestataire.",
+          "titre": "Champ, objectif & définitions (§1-8)",
+          "body": "ISA 402 traite des obligations de l'auditeur de l'**entité utilisatrice** (user entity) qui recourt à une ou plusieurs **sociétés de services** (service organisations).\n\n**Objectifs (§7)** : comprendre la nature/l'importance des services et leur effet sur le SCI de l'entité, suffisamment pour identifier/évaluer les RAS ; et concevoir/mettre en œuvre des réponses appropriées.\n**Définitions** : société de services, auditeur de la société de services (service auditor), rapport type 1 / type 2, CUEC.",
           "callouts": [
             {
               "type": "info",
-              "label": "Enjeu",
-              "text": "Les contrôles clés peuvent être CHEZ le prestataire, hors de portée directe de l'auditeur."
+              "label": "Pourquoi",
+              "text": "Les contrôles pertinents pour les EF de l'entité peuvent résider CHEZ le prestataire, hors de portée directe de l'auditeur."
             }
           ]
         },
         {
-          "titre": "Méthodes + Type 1/2",
-          "body": "• **Inclusive** : tester directement chez le prestataire\n• **Carve-out** : s'appuyer sur un rapport SOC 1 du service auditor.",
+          "titre": "Comprendre les services & leur effet sur le SCI (§9-10)",
+          "body": "L'auditeur comprend : la nature des services et leur importance pour l'entité (y compris l'effet sur le SCI), la nature/matérialité des transactions traitées, le degré d'interaction, et la nature de la relation (contrat, CUEC). Plus le service touche le reporting financier, plus l'assurance requise sur ses contrôles est élevée.",
+          "callouts": []
+        },
+        {
+          "titre": "Obtenir l'assurance : 2 méthodes (§12-14)",
+          "body": "Si l'auditeur ne peut obtenir une compréhension suffisante depuis l'entité utilisatrice :",
           "compare": {
-            "title": "SOC 1 — Type 1 vs Type 2",
+            "title": "Méthodes pour obtenir l'assurance",
             "headers": [
-              "",
-              "Type 1",
-              "Type 2"
+              "Méthode",
+              "Comment"
             ],
             "rows": [
               [
-                "Couvre",
-                "Description + conception",
-                "Type 1 + efficacité opérationnelle"
+                "Inclusive",
+                "Tester directement les contrôles chez la société de services (visite, tests)"
               ],
               [
-                "Période",
-                "Une date",
-                "6-12 mois"
-              ],
-              [
-                "Exploitable pour l'efficacité",
-                "Non",
-                "OUI"
+                "Carve-out (rapport SOC)",
+                "S'appuyer sur un rapport type 1 ou type 2 émis par le service auditor (ISAE 3402)"
               ]
             ]
           }
         },
         {
-          "titre": "Les CUEC",
-          "body": "Un SOC mentionne des **CUEC** (Complementary User Entity Controls) : contrôles que l'entité UTILISATRICE doit mettre en place pour que ceux du prestataire soient efficaces. L'auditeur vérifie leur existence chez son client.",
+          "titre": "Type 1 vs Type 2 (§13-15)",
+          "body": "",
+          "schema": {
+            "type": "matrix",
+            "title": "Rapports SOC 1",
+            "xlabels": [
+              "Type 1",
+              "Type 2"
+            ],
+            "ylabels": [
+              "Conception",
+              "Efficacité"
+            ],
+            "cells": [
+              [
+                {
+                  "t": "Oui (à une date)",
+                  "v": "warn"
+                },
+                {
+                  "t": "Oui",
+                  "v": "ok"
+                }
+              ],
+              [
+                {
+                  "t": "Non",
+                  "v": "danger"
+                },
+                {
+                  "t": "Oui (sur période)",
+                  "v": "ok"
+                }
+              ]
+            ]
+          },
           "callouts": [
             {
-              "type": "tip",
-              "label": "Lien M9",
-              "text": "Sujet lié au cloud (IaaS/PaaS/SaaS) — voir module IT & analyse de données."
+              "type": "key",
+              "label": "Pour s'appuyer sur l'efficacité",
+              "text": "Seul le rapport TYPE 2 (conception + efficacité opérationnelle sur 6-12 mois) permet de réduire les tests de substance grâce aux contrôles. Le Type 1 ne couvre que la conception à une date."
+            }
+          ]
+        },
+        {
+          "titre": "Les CUEC (§9, §15)",
+          "body": "Un rapport SOC mentionne souvent des **CUEC** (Complementary User Entity Controls) : des contrôles que l'**entité utilisatrice** doit elle-même mettre en place pour que les contrôles du prestataire soient efficaces. L'auditeur identifie les CUEC pertinents et vérifie qu'ils existent et fonctionnent chez son client.",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Ne pas oublier",
+              "text": "Un excellent SOC du prestataire ne suffit pas si les CUEC ne sont pas en place chez le client."
+            }
+          ]
+        },
+        {
+          "titre": "Fraude, non-conformité, communication & rapport (§16-22)",
+          "body": "L'auditeur s'enquiert auprès de l'entité de toute **fraude, non-conformité ou anomalie** relative aux activités de la société de services. Il n'est pas autorisé à **référer aux travaux du service auditor** dans son rapport d'audit (sauf si la loi l'exige) — l'opinion reste indivise.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Lien",
+              "text": "ISA 402 ↔ ISAE 3402 (côté prestataire) ↔ ISA 315/330. Très pertinent avec le cloud (IaaS/PaaS/SaaS) — module IT."
             }
           ]
         }
       ],
+      "mnemo": {
+        "code": "T2 + CUEC",
+        "items": [
+          {
+            "l": "T2",
+            "t": "Type 2 = efficacité exploitable"
+          },
+          {
+            "l": "C",
+            "t": "CUEC à vérifier chez le client"
+          }
+        ],
+        "phrase": "Les 2 réflexes ISA 402"
+      },
       "quiz": [
         {
-          "q": "Quel type de SOC permet de s'appuyer sur l'efficacité des contrôles ?",
-          "a": "SOC 1 Type 2 (design + operating effectiveness sur période)."
+          "q": "Quel type de rapport SOC permet de s'appuyer sur l'efficacité ?",
+          "a": "SOC 1 Type 2 (conception + efficacité sur période)."
         },
         {
           "q": "Que sont les CUEC ?",
-          "a": "Les contrôles à la charge de l'entité UTILISATRICE pour que ceux du prestataire fonctionnent."
+          "a": "Les contrôles complémentaires à la charge de l'entité UTILISATRICE pour que ceux du prestataire fonctionnent."
+        },
+        {
+          "q": "Méthode inclusive vs carve-out ?",
+          "a": "Inclusive = tester directement chez le prestataire. Carve-out = s'appuyer sur un rapport SOC."
+        },
+        {
+          "q": "Peut-on référer au service auditor dans le rapport ?",
+          "a": "Non (sauf obligation légale) — l'opinion reste indivise."
         }
       ],
       "synthese": [
-        "Comprendre les services externalisés et leur impact sur le SCI",
+        "Comprendre les services + leur effet sur le SCI",
         "Inclusive (tests directs) ou carve-out (SOC 1)",
-        "SOC 1 Type 2 = exploitable ; vérifier les CUEC"
+        "SOC 1 Type 2 = efficacité exploitable ; Type 1 = conception seule",
+        "Vérifier les CUEC chez le client",
+        "Pas de référence au service auditor dans le rapport"
       ],
       "pieges": [
-        "Se fier à un SOC Type 1 pour l'efficacité",
+        "Se fier à un Type 1 pour l'efficacité",
         "Oublier de vérifier les CUEC",
-        "Croire que l'externalisation déresponsabilise l'auditeur"
+        "Confondre SOC 1 (financier) et SOC 2 (sécurité)",
+        "Référer au service auditor dans le rapport"
       ]
     },
     "450": {
-      "duree": "9 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Évaluer les anomalies : les accumuler (sauf < seuil de non-intervention), demander correction, juger l'effet des non-corrigées. Crucial : la matérialité QUALITATIVE (une petite anomalie peut être significative).",
+      "duree": "15 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 450 = évaluation des anomalies relevées. Accumuler (sauf < seuil de non-intervention), communiquer/demander correction, réévaluer la matérialité, évaluer l'effet des anomalies NON corrigées (individuel + cumulé + qualitatif), obtenir une déclaration écrite.",
       "stats": [
         {
-          "value": "Cumul",
-          "label": "Anomalies",
-          "sub": "individuel + cumulé"
+          "value": "§5",
+          "label": "Accumuler",
+          "sub": "sauf trivial"
         },
         {
-          "value": "3 types",
-          "label": "d'anomalies",
-          "sub": "factuelle/jugement/extrap."
+          "value": "§8",
+          "label": "Réviser matérialité",
+          "sub": "si besoin"
+        },
+        {
+          "value": "§11",
+          "label": "Effet non corrigées",
+          "sub": "indiv.+cumulé"
         },
         {
           "value": "Qualitatif",
           "label": "Matérialité",
-          "sub": "≠ que le montant"
-        },
-        {
-          "value": "NAS 450",
-          "label": "Norme suisse",
-          "sub": "= ISA 450"
+          "sub": "≠ que montant"
         }
       ],
-      "intro": "À mesure que l'audit progresse, on accumule des anomalies. ISA 450 dit comment les évaluer et juger leur impact sur l'opinion.",
+      "intro": "Au fil de l'audit, les anomalies s'accumulent. ISA 450 dit comment les évaluer et juger leur impact sur l'opinion. C'est le pont entre l'exécution (ISA 330/500) et la formation de l'opinion (ISA 700/705). Cours § par §.",
       "sections": [
         {
-          "titre": "Accumuler",
-          "body": "Accumuler toutes les anomalies (sauf clairement insignifiantes < seuil de non-intervention). Distinguer : **factuelles** (certaines), **de jugement** (estimations), **extrapolées** (projetées depuis un échantillon).",
+          "titre": "Champ, objectif & définitions (§1-4)",
+          "body": "ISA 450 traite de la responsabilité de l'auditeur d'**évaluer l'incidence** des anomalies relevées sur l'audit et des anomalies **non corrigées** (le cas échéant) sur les EF.\n\n**Définitions** : anomalie (écart entre montant/classement/présentation/disclosure rapporté et ce qui est requis par le référentiel) ; anomalie non corrigée (relevée et non corrigée).",
+          "callouts": []
+        },
+        {
+          "titre": "Accumulation des anomalies (§5-6)",
+          "body": "L'auditeur **accumule** les anomalies identifiées, sauf celles **clairement insignifiantes** (sous le seuil de non-intervention). Il distingue :\n• **factuelles** (certaines, sans doute)\n• **de jugement** (différences sur des estimations/choix comptables jugés déraisonnables)\n• **extrapolées** (projection des anomalies d'un échantillon — ISA 530).",
           "callouts": [
             {
               "type": "info",
-              "label": "Passed adjustments",
-              "text": "Les anomalies non corrigées sont consignées dans un tableau comparé à la performance materiality."
+              "label": "Seuil de non-intervention",
+              "text": "Filtre les anomalies trop petites pour mériter accumulation (~5% de l'overall, NAS 450 A2)."
             }
           ]
         },
         {
-          "titre": "Communiquer + corriger",
-          "body": "Communiquer en temps utile, demander la correction. Si refus, comprendre les raisons et en tenir compte.",
+          "titre": "Réévaluation en cours d'audit (§7-9)",
+          "body": "• **§7** : l'auditeur détermine si la **stratégie/le plan** doivent être révisés si la nature des anomalies indique l'existence d'autres anomalies qui, cumulées, pourraient être significatives.\n• **§8** : si les anomalies approchent la matérialité, il y a un risque accru d'anomalies non détectées > matérialité → étendre les procédures.\n• **§9** : communiquer en temps utile les anomalies et **demander leur correction**.",
           "callouts": [
             {
-              "type": "tip",
-              "label": "Lien ISA 580",
-              "text": "Obtenir une déclaration écrite confirmant que les anomalies non corrigées sont, isolées et cumulées, non significatives."
+              "type": "warn",
+              "label": "Signal",
+              "text": "Une anomalie peut révéler une faiblesse systématique : ne pas la traiter isolément, mais se demander « combien y en a-t-il d'autres ? »"
             }
           ]
         },
         {
-          "titre": "Effet sur l'opinion + qualitatif",
-          "body": "Évaluer l'effet des non-corrigées, individuellement ET cumulées, vs matérialité. Au-delà → opinion modifiée.",
+          "titre": "Évaluer l'effet des anomalies non corrigées (§10-11)",
+          "body": "Avant d'évaluer l'effet, l'auditeur réévalue la matérialité (ISA 320) pour confirmer qu'elle reste appropriée. Puis il détermine si les anomalies non corrigées sont significatives, **individuellement OU cumulées**, en tenant compte :\n• de leur **ampleur** par rapport aux catégories/soldes/disclosures concernés\n• de l'effet sur les **EF dans leur ensemble**.",
           "callouts": [
             {
               "type": "key",
-              "label": "Matérialité qualitative",
-              "text": "Une anomalie quantitativement faible peut être SIGNIFICATIVE : inversion d'un résultat en perte, franchissement d'un covenant, indice de fraude, transaction avec partie liée."
+              "label": "Individuel + cumulé",
+              "text": "Une anomalie sous la matérialité individuellement peut, CUMULÉE avec d'autres, la dépasser. Toujours raisonner sur le total."
+            }
+          ]
+        },
+        {
+          "titre": "La matérialité qualitative (§A16-A23)",
+          "body": "Au-delà du montant, des **circonstances qualitatives** peuvent rendre significative une anomalie de faible montant :",
+          "schema": {
+            "type": "flow",
+            "title": "Facteurs qualitatifs de matérialité",
+            "steps": [
+              {
+                "t": "Inversion de tendance",
+                "d": "transforme une perte en profit, ou inverse une évolution"
+              },
+              {
+                "t": "Covenant / réglementaire",
+                "d": "affecte le respect d'un covenant bancaire ou d'une exigence légale"
+              },
+              {
+                "t": "Rémunération",
+                "d": "affecte la rémunération de la direction (bonus)"
+              },
+              {
+                "t": "Fraude / partie liée",
+                "d": "masque une fraude ou concerne une transaction avec partie liée"
+              }
+            ]
+          },
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Ne jamais juger qu'en CHF",
+              "text": "Le contexte (covenant, fraude, tendance) peut rendre significative une petite anomalie."
+            }
+          ]
+        },
+        {
+          "titre": "Déclaration écrite, communication & documentation (§12-15)",
+          "body": "• **§14** : obtenir une **déclaration écrite** (ISA 580) de la direction confirmant que les anomalies non corrigées sont, isolées et cumulées, **non significatives** (liste annexée).\n• Communiquer à la gouvernance les anomalies non corrigées et leur effet (ISA 260).\n• **§15 — Documentation** : le seuil de non-intervention, les anomalies accumulées + leur correction, et la conclusion sur le caractère significatif des non corrigées.",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Pont",
+              "text": "ISA 450 → ISA 700/705 : l'effet des anomalies non corrigées détermine si l'opinion est clean ou modifiée."
             }
           ]
         }
@@ -13950,22 +14108,32 @@
       "quiz": [
         {
           "q": "Qu'est-ce que la matérialité qualitative ?",
-          "a": "Une anomalie petite en montant mais significative par son contexte (covenant, fraude, inversion de résultat, partie liée)."
+          "a": "Une anomalie faible en montant rendue significative par son contexte (covenant, fraude, inversion de tendance, partie liée, rémunération)."
         },
         {
           "q": "Comment évaluer les anomalies non corrigées ?",
-          "a": "Individuellement ET cumulées, par rapport à la matérialité."
+          "a": "Individuellement ET cumulées, vs la matérialité (réévaluée)."
+        },
+        {
+          "q": "Quels 3 types d'anomalies distingue-t-on ?",
+          "a": "Factuelles, de jugement, extrapolées."
+        },
+        {
+          "q": "Que confirme la déclaration écrite (§14) ?",
+          "a": "Que les anomalies non corrigées sont, isolées et cumulées, non significatives."
         }
       ],
       "synthese": [
         "Accumuler (sauf < seuil non-intervention) : factuelles/jugement/extrapolées",
-        "Communiquer + demander correction (passed adjustments)",
-        "Évaluer individuel ET cumulé vs matérialité",
-        "Matérialité QUALITATIVE essentielle"
+        "Communiquer + demander correction ; réviser la matérialité",
+        "Effet des non corrigées : individuel ET cumulé",
+        "Matérialité QUALITATIVE essentielle",
+        "Déclaration écrite + documentation ; pont vers ISA 700/705"
       ],
       "pieges": [
         "Évaluer la matérialité uniquement en montant",
         "Ne pas accumuler les anomalies > seuil",
+        "Oublier le cumul (chacune sous le seuil mais total au-dessus)",
         "Oublier la déclaration écrite (ISA 580)"
       ]
     },
@@ -14225,9 +14393,9 @@
       ]
     },
     "501": {
-      "duree": "7 min",
-      "niveau": "Intermédiaire",
-      "tldr": "3 domaines spécifiques : **stocks** (assistance à l'inventaire obligatoire si significatif), **litiges** (lettre à l'avocat), information sectorielle.",
+      "duree": "12 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 501 = éléments probants pour 3 domaines spécifiques : stocks (assistance à l'inventaire), litiges et contentieux (lettre à l'avocat), information sectorielle.",
       "stats": [
         {
           "value": "3",
@@ -14235,76 +14403,102 @@
           "sub": "stocks/litiges/segments"
         },
         {
-          "value": "Inventaire",
-          "label": "Assistance",
-          "sub": "obligatoire si signif."
+          "value": "§4-8",
+          "label": "Stocks",
+          "sub": "inventaire physique"
         },
         {
-          "value": "Avocat",
+          "value": "§9-12",
           "label": "Litiges",
-          "sub": "lettre de confirmation"
+          "sub": "lettre avocat"
         },
         {
-          "value": "2 sens",
-          "label": "Comptages tests",
-          "sub": "floor↔sheet"
+          "value": "§13",
+          "label": "Segments",
+          "sub": "présentation"
         }
       ],
-      "intro": "ISA 501 cible trois domaines nécessitant des procédures dédiées.",
+      "intro": "ISA 501 complète ISA 500 pour trois domaines qui exigent des procédures dédiées. Le MSA décline notamment l'assistance à l'inventaire physique. Cours § par §.",
       "sections": [
         {
-          "titre": "Stocks — assistance à l'inventaire",
-          "body": "Si les stocks sont significatifs, l'auditeur assiste à l'inventaire physique : observe le comptage, évalue les procédures, et effectue des **comptages tests** dans les deux sens (du stock vers la feuille, de la feuille vers le stock).",
+          "titre": "Champ & objectif (§1-3)",
+          "body": "ISA 501 traite des considérations spécifiques pour obtenir des éléments probants suffisants et appropriés concernant : l'**existence et l'état des stocks**, l'**exhaustivité des litiges et contentieux**, et la **présentation de l'information sectorielle**.",
+          "callouts": []
+        },
+        {
+          "titre": "Stocks — assistance à l'inventaire (§4-8)",
+          "body": "Si les stocks sont **significatifs**, l'auditeur obtient des éléments sur leur existence/état en :\n• **assistant à l'inventaire physique** (sauf impraticable) : évaluer les instructions/procédures de comptage, observer, inspecter, effectuer des **comptages tests**\n• rapprochant le comptage avec la comptabilité.\nSi l'inventaire a lieu à une **autre date** que la clôture → procédures sur les mouvements intermédiaires. Si l'auditeur **ne peut assister** → procédures alternatives ; si impossible → limitation (ISA 705).",
           "callouts": [
             {
               "type": "key",
-              "label": "Obligatoire",
-              "text": "Stocks significatifs → assistance physique obligatoire (existence + état). Si impossible → procédures alternatives ou limitation."
+              "label": "Comptages tests",
+              "text": "Dans les DEUX sens : du stock physique vers la feuille (existence) ET de la feuille vers le stock physique (exhaustivité)."
             }
           ]
         },
         {
-          "titre": "Litiges et contentieux",
-          "body": "Identifier (demandes, PV, honoraires d'avocats) et obtenir une **lettre de l'avocat** confirmant l'évaluation des risques.",
+          "titre": "Stocks chez des tiers (§8)",
+          "body": "Pour les stocks détenus/contrôlés par un **tiers** (entrepôt, consignation), l'auditeur obtient une **confirmation** directe du tiers sur les quantités/état, et/ou réalise une inspection ou d'autres procédures appropriées.",
+          "callouts": []
+        },
+        {
+          "titre": "Litiges et contentieux (§9-12)",
+          "body": "L'auditeur conçoit des procédures pour identifier les litiges/contentieux pouvant créer un RAS : demandes à la direction (et au juriste interne), examen des **PV** et de la correspondance avec les **avocats**, examen des comptes d'honoraires juridiques. Si un risque d'anomalie significative existe, ou si nécessaire, il **communique directement avec l'avocat externe** de l'entité (lettre de demande).",
           "callouts": [
             {
-              "type": "example",
-              "label": "Exemple",
-              "text": "Pour un procès, la lettre de l'avocat aide à décider provision (RPC 23) vs passif éventuel."
+              "type": "warn",
+              "label": "Refus / restriction",
+              "text": "Si la direction refuse l'accès à l'avocat ou si l'avocat refuse de répondre, et qu'aucune procédure alternative n'apporte d'éléments suffisants → limitation de l'étendue (ISA 705)."
             }
           ]
         },
         {
-          "titre": "Information sectorielle",
-          "body": "Si le référentiel l'exige, obtenir des éléments sur la présentation des segments.",
-          "callouts": []
+          "titre": "Information sectorielle & articulation (§13)",
+          "body": "Quand le référentiel exige des informations sectorielles, l'auditeur obtient des éléments sur leur présentation/communication : compréhension des méthodes de la direction, tests d'application de ces méthodes, procédures analytiques.\n\n**Articulation** : ISA 500 (cadre des éléments probants), ISA 505 (confirmations), ISA 540 (provisions pour litiges = estimations), RPC 17 / IAS 2 (stocks), RPC 23 / IAS 37 (provisions litiges).",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Lien provisions",
+              "text": "Le résultat des litiges nourrit l'évaluation des provisions (RPC 23 / IAS 37) et des passifs éventuels."
+            }
+          ]
         }
       ],
       "quiz": [
         {
-          "q": "Quand l'assistance à l'inventaire est-elle obligatoire ?",
-          "a": "Quand les stocks sont significatifs."
+          "q": "Quand l'assistance à l'inventaire est-elle requise ?",
+          "a": "Quand les stocks sont significatifs (sauf impraticable → procédures alternatives)."
         },
         {
-          "q": "Comment faire les comptages tests ?",
-          "a": "Dans les DEUX sens (floor-to-sheet et sheet-to-floor)."
+          "q": "Dans quel(s) sens faire les comptages tests ?",
+          "a": "Les deux : stock→feuille (existence) et feuille→stock (exhaustivité)."
+        },
+        {
+          "q": "Comment traiter les litiges et contentieux ?",
+          "a": "Demandes, PV, correspondance avocats, et lettre directe à l'avocat externe si nécessaire."
+        },
+        {
+          "q": "Stocks détenus par un tiers ?",
+          "a": "Confirmation directe du tiers + éventuelle inspection."
         }
       ],
       "synthese": [
-        "Stocks significatifs → assistance inventaire (2 sens)",
-        "Litiges → lettre à l'avocat",
-        "Information sectorielle si exigée"
+        "3 domaines : stocks, litiges/contentieux, information sectorielle",
+        "Stocks significatifs → assistance inventaire (comptages 2 sens) + rapprochement",
+        "Stocks chez tiers → confirmation",
+        "Litiges → demandes + PV + lettre avocat ; refus = limitation"
       ],
       "pieges": [
         "Ne pas assister à l'inventaire de stocks significatifs",
-        "Oublier la lettre de l'avocat",
-        "Comptages tests dans un seul sens"
+        "Comptages tests dans un seul sens",
+        "Oublier la lettre à l'avocat pour les litiges",
+        "Oublier les stocks chez des tiers"
       ]
     },
     "505": {
-      "duree": "8 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Confirmation externe = preuve très fiable. Positive (réponse toujours) > négative (réponse si désaccord). L'auditeur garde le CONTRÔLE de l'envoi. Non-réponses → procédures alternatives.",
+      "duree": "13 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 505 = confirmations externes. Positive (réponse toujours) vs négative (si désaccord). L'auditeur garde le CONTRÔLE total du processus. Gérer les non-réponses (procédures alternatives), les refus de la direction et les exceptions.",
       "stats": [
         {
           "value": "Positive",
@@ -14314,65 +14508,69 @@
         {
           "value": "Contrôle",
           "label": "de l'auditeur",
-          "sub": "envoi+réception"
+          "sub": "§7"
         },
         {
-          "value": "Banques",
-          "label": "Systématique",
-          "sub": "existence tréso"
-        },
-        {
-          "value": "Alt.",
+          "value": "§10-11",
           "label": "Non-réponses",
-          "sub": "procédures alternatives"
+          "sub": "alternatives"
+        },
+        {
+          "value": "§8-9",
+          "label": "Refus direction",
+          "sub": "évaluer"
         }
       ],
-      "intro": "La confirmation externe est l'une des procédures les plus fiables : réponse écrite directe d'un tiers.",
+      "intro": "La confirmation externe est l'un des éléments probants les plus fiables (source externe, écrite, directe). ISA 505 en encadre la mise en œuvre. Cours § par §.",
       "sections": [
         {
-          "titre": "Positive vs négative",
-          "body": "",
-          "compare": {
-            "title": "Demande positive vs négative",
-            "headers": [
-              "",
-              "Positive",
-              "Négative"
-            ],
-            "rows": [
-              [
-                "Réponse",
-                "Toujours (accord ou non)",
-                "Seulement si désaccord"
-              ],
-              [
-                "Fiabilité",
-                "Élevée",
-                "Faible (absence ambiguë)"
-              ],
-              [
-                "Usage",
-                "Soldes importants / risque",
-                "Nombreux petits soldes faible risque"
-              ]
-            ]
-          }
-        },
-        {
-          "titre": "Garder le contrôle",
-          "body": "L'auditeur contrôle tout : sélection, préparation, envoi, réception directe (jamais via le client).",
+          "titre": "Champ, objectif & définitions (§1-6)",
+          "body": "ISA 505 traite de l'utilisation des **procédures de confirmation externe** pour obtenir des éléments probants.\n\n**Définitions** : confirmation externe (élément obtenu en réponse écrite directe d'un tiers), demande **positive** (le tiers répond dans tous les cas), demande **négative** (le tiers répond uniquement en cas de désaccord), **non-réponse**, **exception** (écart entre l'information confirmée et celle enregistrée).",
           "callouts": [
             {
-              "type": "warn",
-              "label": "Risque",
-              "text": "Si le client intercepte/prépare les réponses, la fiabilité s'effondre."
+              "type": "key",
+              "label": "Positive vs négative",
+              "text": "Positive = réponse toujours (fiable). Négative = réponse seulement si désaccord (peu fiable car l'absence de réponse est ambiguë)."
             }
           ]
         },
         {
-          "titre": "Non-réponses et exceptions",
-          "body": "Non-réponses (positives) → procédures alternatives (encaissements postérieurs, factures, bons de livraison). Exceptions → investiguer la cause.",
+          "titre": "Contrôle du processus par l'auditeur (§7)",
+          "body": "L'auditeur **garde le contrôle** des demandes de confirmation, ce qui inclut :\n• déterminer l'information à confirmer\n• sélectionner le tiers approprié\n• concevoir les demandes (adresse correcte, retour direct à l'auditeur)\n• **envoyer** les demandes (et les relances).",
+          "callouts": [
+            {
+              "type": "warn",
+              "label": "Jamais via le client",
+              "text": "Si le client intercepte/prépare les demandes ou les réponses, la fiabilité s'effondre. L'auditeur garde la main de bout en bout."
+            }
+          ]
+        },
+        {
+          "titre": "Refus de la direction (§8-9)",
+          "body": "Si la direction **refuse** d'autoriser l'auditeur à envoyer une demande de confirmation, l'auditeur :\n• s'enquiert des raisons et cherche des éléments sur leur validité/caractère raisonnable\n• évalue les implications sur l'évaluation des risques (dont risque de fraude) et sur la nature/l'étendue des autres procédures\n• met en œuvre des **procédures alternatives**.\nSi le refus est déraisonnable, ou si les alternatives n'apportent pas d'éléments suffisants → communiquer à la gouvernance + considérer l'impact sur l'opinion.",
           "callouts": []
+        },
+        {
+          "titre": "Fiabilité des réponses & exceptions (§10-11)",
+          "body": "L'auditeur évalue la **fiabilité** des réponses (doutes sur l'authenticité, réponse reçue indirectement, par voie électronique non sécurisée → procédures complémentaires). \n• **Non-réponses** (demandes positives) → mettre en œuvre des **procédures alternatives** (ex. examen des encaissements postérieurs, des factures, des bons de livraison).\n• **Exceptions** → investiguer pour déterminer si elles révèlent des anomalies.",
+          "callouts": [
+            {
+              "type": "info",
+              "label": "Non-réponse ≠ rien",
+              "text": "Une non-réponse à une demande positive doit être comblée par des procédures alternatives. On ne conclut jamais « pas de réponse = OK »."
+            }
+          ]
+        },
+        {
+          "titre": "Confirmations négatives & articulation (§15-16)",
+          "body": "Les **confirmations négatives** ne fournissent qu'un élément probant **moins persuasif** : ne les utiliser comme seule procédure de substance que si TOUTES les conditions sont réunies (risque faible, contrôles efficaces, population de nombreux petits soldes homogènes, faible taux d'exception attendu, pas de raison de penser que les destinataires ignoreront).\n\n**Articulation** : ISA 500 (cadre), ISA 330 (réponses aux risques), ISA 240 (la confirmation aide à détecter la fraude).",
+          "callouts": [
+            {
+              "type": "legal",
+              "label": "Suisse",
+              "text": "Confirmations bancaires systématiques (existence de la trésorerie) ; confirmations clients/fournisseurs/avocats selon les risques."
+            }
+          ]
         }
       ],
       "quiz": [
@@ -14381,25 +14579,36 @@
           "a": "Positive (réponse dans tous les cas)."
         },
         {
-          "q": "Qui contrôle l'envoi des confirmations ?",
-          "a": "L'auditeur, de bout en bout (jamais le client)."
+          "q": "Qui contrôle le processus de confirmation ?",
+          "a": "L'auditeur, de bout en bout (sélection, conception, envoi, réception)."
+        },
+        {
+          "q": "Que faire d'une non-réponse à une demande positive ?",
+          "a": "Mettre en œuvre des procédures alternatives (encaissements postérieurs, factures...)."
+        },
+        {
+          "q": "Que faire si la direction refuse une confirmation ?",
+          "a": "Évaluer les raisons + implications + procédures alternatives ; si refus déraisonnable → gouvernance + impact opinion."
         }
       ],
       "synthese": [
         "Positive (toujours) > négative (si désaccord)",
-        "L'auditeur garde le contrôle de l'envoi/réception",
-        "Non-réponses → procédures alternatives"
+        "L'auditeur garde le contrôle total (envoi + réception directe)",
+        "Refus de la direction → raisons + alternatives + impact possible",
+        "Non-réponses → procédures alternatives ; exceptions → investiguer",
+        "Négatives = seule procédure seulement si toutes conditions réunies"
       ],
       "pieges": [
         "Laisser le client gérer les confirmations",
         "Se fier aux négatives pour des zones à risque",
-        "Ignorer les non-réponses"
+        "Conclure « non-réponse = OK »",
+        "Ne pas investiguer les exceptions"
       ]
     },
     "510": {
-      "duree": "7 min",
-      "niveau": "Intermédiaire",
-      "tldr": "Premier audit : valider les **soldes d'ouverture** (le bilan d'ouverture N = clôture N-1). Vérifier report, cohérence des méthodes, dossier de l'auditeur précédent. Erreur → impact opinion.",
+      "duree": "11 min",
+      "niveau": "Intermédiaire · Cours exhaustif",
+      "tldr": "ISA 510 = premiers audits, soldes d'ouverture. Vérifier que les soldes d'ouverture ne contiennent pas d'anomalies affectant l'exercice + cohérence des méthodes. Consulter l'auditeur précédent. Soldes erronés → impact opinion.",
       "stats": [
         {
           "value": "1er audit",
@@ -14407,70 +14616,91 @@
           "sub": "nouveau/changement"
         },
         {
-          "value": "Soldes",
-          "label": "d'ouverture",
-          "sub": "= clôture N-1"
+          "value": "§6",
+          "label": "Procédures",
+          "sub": "soldes ouverture"
         },
         {
-          "value": "Précédent",
-          "label": "Auditeur",
-          "sub": "consulter (accord)"
-        },
-        {
-          "value": "Méthodes",
+          "value": "§7",
           "label": "Cohérence",
-          "sub": "à vérifier"
+          "sub": "des méthodes"
+        },
+        {
+          "value": "§10-13",
+          "label": "Impact opinion",
+          "sub": ""
         }
       ],
-      "intro": "Lors d'un premier audit, les soldes d'ouverture n'ont pas été audités par soi.",
+      "intro": "Lors d'un premier audit, les soldes d'ouverture (= soldes de clôture N-1) n'ont pas été audités par soi. ISA 510 dit comment les valider. Crucial lors d'une reprise de mandat. Cours § par §.",
       "sections": [
         {
-          "titre": "Le risque",
-          "body": "Une erreur dans les soldes d'ouverture affecte le résultat de l'exercice courant. Le bilan d'ouverture N = le bilan de clôture N-1.",
+          "titre": "Champ, objectif & définitions (§1-5)",
+          "body": "ISA 510 traite, lors d'un **premier audit**, des soldes d'ouverture.\n\n**Définitions** : premier audit (les EF de la période précédente n'ont pas été audités, OU l'ont été par un **auditeur précédent**) ; soldes d'ouverture (soldes en début de période, fondés sur les soldes de clôture de la période précédente).\n**Objectif (§3)** : obtenir des éléments suffisants pour que les soldes d'ouverture ne comportent pas d'anomalies affectant les EF de la période, et que les méthodes comptables appropriées sont appliquées de façon cohérente.",
           "callouts": [
             {
               "type": "info",
               "label": "Pourquoi",
-              "text": "S'il est faux, le résultat N est faussé."
+              "text": "Le bilan d'ouverture N = le bilan de clôture N-1. S'il est faux, le résultat de l'exercice N est faussé."
             }
           ]
         },
         {
-          "titre": "Procédures",
-          "body": "Vérifier le report des soldes N-1, la cohérence des méthodes, consulter le dossier de l'**auditeur précédent** (avec accord), effectuer des procédures spécifiques (recouvrement créances N-1).",
+          "titre": "Procédures sur les soldes d'ouverture (§5-6)",
+          "body": "L'auditeur :\n• lit les EF les plus récents et le rapport de l'**auditeur précédent** (le cas échéant) pour y trouver des informations sur les soldes d'ouverture\n• détermine si les soldes de clôture N-1 ont été correctement **reportés** (ou retraités le cas échéant)\n• détermine si les soldes d'ouverture reflètent l'application de **méthodes comptables appropriées**\n• met en œuvre une ou plusieurs : revue du dossier de l'auditeur précédent, évaluation des procédures de la période courante apportant des éléments sur les soldes d'ouverture, ou procédures spécifiques.",
           "callouts": [
             {
               "type": "tip",
-              "label": "Reprise de mandat",
-              "text": "Le contact avec l'auditeur précédent est une étape clé."
+              "label": "Auditeur précédent",
+              "text": "Avec l'accord du client, consulter le dossier de l'auditeur précédent est souvent la voie la plus efficace."
             }
           ]
         },
         {
-          "titre": "Impact opinion",
-          "body": "Si éléments insuffisants ou anomalie non corrigée affectant l'exercice → opinion modifiée (qualified).",
+          "titre": "Cohérence des méthodes comptables (§7-9)",
+          "body": "L'auditeur obtient des éléments montrant que les **méthodes comptables** des soldes d'ouverture ont été **appliquées de façon cohérente** dans les EF de la période courante, et que les **changements** de méthodes sont correctement comptabilisés, présentés et communiqués (référentiel). Il vérifie aussi la cohérence avec d'éventuelles modifications du référentiel.",
           "callouts": []
+        },
+        {
+          "titre": "Incidence sur l'opinion (§10-13)",
+          "body": "• **§10** : si l'auditeur ne peut obtenir d'éléments suffisants sur les soldes d'ouverture → **opinion avec réserve / impossibilité** (selon le caractère pervasive).\n• **§11** : si les soldes d'ouverture comportent une anomalie affectant la période courante non correctement traitée → **opinion avec réserve / défavorable**.\n• **§12-13** : si l'opinion N-1 de l'auditeur précédent était modifiée et reste pertinente → en tenir compte dans l'opinion de la période courante.",
+          "callouts": [
+            {
+              "type": "key",
+              "label": "Lien",
+              "text": "ISA 510 ↔ ISA 705 (impact opinion), ISA 710 (chiffres comparatifs), ISA 300 (premiers audits)."
+            }
+          ]
         }
       ],
       "quiz": [
         {
           "q": "Pourquoi valider les soldes d'ouverture ?",
-          "a": "Le bilan d'ouverture N = clôture N-1 ; une erreur fausse le résultat N."
+          "a": "Le bilan d'ouverture N = clôture N-1 ; une erreur fausse le résultat de la période N."
         },
         {
-          "q": "Qui consulter en reprise de mandat ?",
-          "a": "L'auditeur précédent (avec accord du client)."
+          "q": "Quelle est souvent la voie la plus efficace ?",
+          "a": "Consulter le dossier de l'auditeur précédent (avec accord du client)."
+        },
+        {
+          "q": "Que vérifier en plus des montants ?",
+          "a": "La cohérence des méthodes comptables et le traitement correct des changements."
+        },
+        {
+          "q": "Soldes d'ouverture impossibles à valider → ?",
+          "a": "Opinion avec réserve ou impossibilité d'exprimer une opinion (selon pervasive)."
         }
       ],
       "synthese": [
-        "Premier audit → valider les soldes d'ouverture",
-        "Report + cohérence des méthodes + dossier précédent",
-        "Soldes erronés → impact opinion"
+        "Premier audit → valider les soldes d'ouverture (= clôture N-1)",
+        "Vérifier report + méthodes cohérentes + changements",
+        "Consulter l'auditeur précédent (avec accord)",
+        "Soldes erronés/non vérifiables → impact opinion (705)"
       ],
       "pieges": [
         "Présumer les soldes d'ouverture corrects",
         "Oublier de contacter l'auditeur précédent",
-        "Négliger la cohérence des méthodes"
+        "Négliger la cohérence des méthodes",
+        "Oublier l'impact d'une opinion N-1 modifiée encore pertinente"
       ]
     },
     "520": {
