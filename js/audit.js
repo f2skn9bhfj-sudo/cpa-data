@@ -1052,7 +1052,7 @@ function _renderAnnuaireStandard(serieId, idx, std, color) {
                         <button onclick="event.stopPropagation();_downloadCoursPdf('${std.num}')"
                                 style="padding:11px 18px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:700;
                                        background:#1e293b;border:1px solid ${color};color:${color}">
-                            📥 Télécharger en PDF
+                            📥 Ouvrir en PDF (nouvel onglet)
                         </button>
                     </div>` : ''}
             </div>
@@ -1109,7 +1109,7 @@ function _openAnnuaireCours(num) {
                 <button onclick="_renderAuditAnnuaire(document.getElementById('auditContent'))"
                         style="padding:7px 13px;border-radius:7px;cursor:pointer;background:#1e293b;border:1px solid #334155;color:#94a3b8;font-size:12px;font-weight:600">← Annuaire</button>
                 <button onclick="_downloadCoursPdf('${num}')"
-                        style="padding:7px 13px;border-radius:7px;cursor:pointer;background:${color};border:none;color:#fff;font-size:12px;font-weight:700">📥 PDF</button>
+                        style="padding:7px 13px;border-radius:7px;cursor:pointer;background:${color};border:none;color:#fff;font-size:12px;font-weight:700">📥 PDF (nouvel onglet)</button>
                 <span style="margin-left:auto;font-size:11px;color:#64748b">⏱️ ${escapeHtml(duree)} de lecture</span>
             </div>
             <div style="height:4px;background:#1e293b;border-radius:3px;overflow:hidden">
@@ -1167,7 +1167,7 @@ function _openAnnuaireCours(num) {
         <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap">
             <button onclick="_downloadCoursPdf('${num}')"
                     style="padding:13px 22px;border-radius:9px;cursor:pointer;background:linear-gradient(135deg, ${color}, #4c1d95);border:none;color:#fff;font-size:14px;font-weight:800;box-shadow:0 3px 12px ${color}55">
-                📥 Télécharger ce cours en PDF
+                📥 Ouvrir ce cours en PDF (nouvel onglet)
             </button>
             <button onclick="_renderAuditAnnuaire(document.getElementById('auditContent'))"
                     style="padding:13px 18px;border-radius:9px;cursor:pointer;background:#1e293b;border:1px solid #334155;color:#94a3b8;font-size:13px;font-weight:600">
@@ -1333,109 +1333,157 @@ function _renderCoursSection(s, color, idx) {
 }
 
 // ── Export PDF d'un cours via window.print() (réutilise le mécanisme existant) ──
-function _downloadCoursPdf(num) {
-    const cours = (_auditData.annuaire_cours || {})[num];
-    const { std } = _findAnnuaireStd(num);
-    if (!cours || !std) return;
-    const container = document.getElementById('pdfPrintContainer');
-    if (!container) { window.print(); return; }
-
-    const esc = (typeof escapeHtml === 'function') ? escapeHtml : (x => x);
-    const mdLite = (t) => esc(t || '').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
-
-    const calloutPdf = (c) => {
-        const map = {info:'info', key:'key', warn:'warn', example:'example', tip:'tip', legal:'legal', comp:'comp'};
-        const cls = map[c.type] || 'info';
-        return `<div class="pdf-callout pdf-callout--${cls}">
-            <div class="pdf-callout-label">${esc(c.label || c.type)}</div>
-            <div class="pdf-callout-body">${mdLite(c.text)}</div></div>`;
-    };
-
+// Construit un document HTML autonome (thème clair, prêt pour lecture + impression/PDF)
+function _coursStandaloneHtml(std, serie, cours) {
+    const esc = (typeof escapeHtml === 'function') ? escapeHtml : (x => String(x == null ? '' : x));
+    const md = (t) => esc(t || '').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+    const accent = (serie && serie.color) || '#7c3aed';
     const today = new Date().toLocaleDateString('fr-CH', { year:'numeric', month:'long', day:'numeric' });
 
-    // Tableau (compare) en HTML print
-    const comparePdf = (cmp) => {
-        if (!cmp) return '';
-        return `<table style="width:100%;border-collapse:collapse;margin:3mm 0;font-size:9.5pt">
-            <thead><tr>${(cmp.headers||[]).map(h=>`<th style="text-align:left;padding:2mm 3mm;background:#eff6ff;border:1px solid #cbd5e1;font-weight:700">${esc(h)}</th>`).join('')}</tr></thead>
-            <tbody>${(cmp.rows||[]).map(r=>`<tr>${r.map(c=>`<td style="padding:2mm 3mm;border:1px solid #e2e8f0;vertical-align:top">${mdLite(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+    const CALL = {
+        info:{bg:'#eff6ff',bd:'#2563eb',col:'#1d4ed8',ic:'ℹ️',lb:'INFO'},
+        key:{bg:'#fffbeb',bd:'#d97706',col:'#b45309',ic:'🔑',lb:'À RETENIR'},
+        warn:{bg:'#fef2f2',bd:'#dc2626',col:'#b91c1c',ic:'⚠️',lb:'ATTENTION'},
+        example:{bg:'#f0fdf4',bd:'#16a34a',col:'#15803d',ic:'📌',lb:'EXEMPLE'},
+        tip:{bg:'#ecfeff',bd:'#0891b2',col:'#0e7490',ic:'💡',lb:'ASTUCE'},
+        legal:{bg:'#f1f5f9',bd:'#475569',col:'#1e293b',ic:'⚖️',lb:'CADRE LÉGAL'},
+        comp:{bg:'#faf5ff',bd:'#9333ea',col:'#7e22ce',ic:'🔀',lb:'COMPARAISON'}
     };
-    // Schéma en liste pour le PDF
-    const schemaPdf = (sch) => {
+    const callout = (c) => {
+        const cf = CALL[c.type] || CALL.info;
+        return `<div class="callout" style="background:${cf.bg};border-left:4px solid ${cf.bd}">
+            <div class="callout-lbl" style="color:${cf.col}">${cf.ic} ${esc(c.label || cf.lb)}</div>
+            <div>${md(c.text)}</div></div>`;
+    };
+    const compare = (cmp) => {
+        if (!cmp) return '';
+        return `${cmp.title ? `<div class="blk-t">🔀 ${esc(cmp.title)}</div>` : ''}<table><thead><tr>${(cmp.headers||[]).map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${(cmp.rows||[]).map(r=>`<tr>${r.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+    };
+    const schema = (sch) => {
         if (!sch) return '';
         let inner = '';
-        if (sch.type === 'flow') inner = `<ol>${(sch.steps||[]).map(s=>`<li><strong>${esc(s.t)}</strong>${s.d?' — '+mdLite(s.d):''}</li>`).join('')}</ol>`;
-        else if (sch.type === 'pyramid') inner = `<ul>${(sch.levels||[]).map(l=>`<li><strong>${esc(l.t)}</strong>${l.d?' — '+esc(l.d):''}</li>`).join('')}</ul>`;
-        else if (sch.type === 'matrix') inner = (sch.cells||[]).map((row,ri)=>`<div><strong>${esc((sch.ylabels||[])[ri]||'')}</strong> : ${row.map((c,ci)=>`${esc((sch.xlabels||[])[ci]||'')}=${esc(c.t)}`).join(' | ')}</div>`).join('');
-        return `<div class="pdf-callout pdf-callout--info"><div class="pdf-callout-label">${esc(sch.title||'Schéma')}</div><div class="pdf-callout-body">${inner}</div></div>`;
+        if (sch.type === 'flow') inner = `<ol class="flow">${(sch.steps||[]).map(s=>`<li><strong>${esc(s.t)}</strong>${s.d?'<br><span class="muted">'+md(s.d)+'</span>':''}</li>`).join('')}</ol>`;
+        else if (sch.type === 'pyramid') inner = `<ul class="pyr">${(sch.levels||[]).map(l=>`<li><strong>${esc(l.t)}</strong>${l.d?' — <span class="muted">'+esc(l.d)+'</span>':''}</li>`).join('')}</ul>`;
+        else if (sch.type === 'matrix') {
+            inner = `<table class="mtx"><tr><td></td>${(sch.xlabels||[]).map(x=>`<th>${esc(x)}</th>`).join('')}</tr>${(sch.cells||[]).map((row,ri)=>`<tr><th>${esc((sch.ylabels||[])[ri]||'')}</th>${row.map(c=>{const vc=c.v==='danger'?'#dc2626':(c.v==='warn'?'#d97706':(c.v==='ok'?'#16a34a':'#64748b'));return `<td style="background:${vc}18;border:1px solid ${vc};color:${vc};font-weight:700;text-align:center">${esc(c.t)}</td>`;}).join('')}</tr>`).join('')}</table>`;
+        }
+        return `<div class="schema"><div class="blk-t" style="color:${accent}">📊 ${esc(sch.title||'Schéma')}</div>${inner}</div>`;
     };
-    const mnemoPdf = (m) => {
+    const mnemo = (m) => {
         if (!m) return '';
-        return `<div class="pdf-callout pdf-callout--key"><div class="pdf-callout-label">Mnémotechnique${m.code?' — '+esc(m.code):''}</div><div class="pdf-callout-body"><ul>${(m.items||[]).map(it=>`<li><strong>${esc(it.l)}</strong> : ${esc(it.t)}</li>`).join('')}</ul>${m.phrase?'<em>'+esc(m.phrase)+'</em>':''}</div></div>`;
+        return `<div class="mnemo"><div class="blk-t" style="color:#b45309">🧠 MNÉMOTECHNIQUE${m.code?' — « '+esc(m.code)+' »':''}</div><div class="mnemo-items">${(m.items||[]).map(it=>`<span class="mnemo-chip"><b>${esc(it.l)}</b> ${esc(it.t)}</span>`).join('')}</div>${m.phrase?`<div class="muted" style="margin-top:8px;font-style:italic">💬 ${esc(m.phrase)}</div>`:''}</div>`;
     };
 
-    let html = `
-        <section class="pdf-cover">
-            <div class="pdf-cover-top">Swiss CPA · Annuaire ISA · Source : MSA Contrôle ordinaire (EXPERTsuisse)</div>
-            <div class="pdf-cover-title">${esc(std.code)}</div>
-            <div class="pdf-cover-sub">${esc(std.title_fr)}</div>
-            <div class="pdf-cover-date">${esc(today)}</div>
-        </section>
-        <section class="pdf-cours">
-            <div class="pdf-cours-head">
-                <div class="pdf-cours-meta">
-                    <span class="pdf-cours-mod">${esc(std.code)}</span>
-                    <span class="pdf-cours-cat">${esc(std.title_en || '')}</span>
-                </div>
-                <div class="pdf-cours-title">${esc(std.title_fr)}</div>
-                ${cours.tldr ? `<div class="pdf-cours-summary">⚡ ${mdLite(cours.tldr)}</div>` : ''}
-                <div class="pdf-cours-summary">${mdLite(cours.intro)}</div>
-            </div>
-    `;
-    if ((cours.stats || []).length) {
-        html += `<div class="pdf-callout pdf-callout--info"><div class="pdf-callout-label">Chiffres clés</div><div class="pdf-callout-body"><ul>${cours.stats.map(s=>`<li><strong>${esc(s.value)}</strong> — ${esc(s.label)}${s.sub?' ('+esc(s.sub)+')':''}</li>`).join('')}</ul></div></div>`;
-    }
-    (cours.sections || []).forEach((s, i) => {
-        html += `<div class="pdf-section">
-            <div class="pdf-section-title">${i+1}. ${esc(s.titre)}</div>
-            <div class="pdf-section-body">${mdLite(s.body)}</div>
-            ${schemaPdf(s.schema)}
-            ${comparePdf(s.compare)}
-            ${mnemoPdf(s.mnemo)}
-            ${(s.callouts || []).map(calloutPdf).join('')}
-        </div>`;
+    let body = '';
+    if (cours.tldr) body += `<div class="tldr"><div class="blk-t" style="color:#15803d">⚡ EN 30 SECONDES</div>${md(cours.tldr)}</div>`;
+    if ((cours.stats||[]).length) body += `<div class="stats">${cours.stats.map(s=>`<div class="stat"><div class="stat-v" style="color:${accent}">${esc(s.value)}</div><div class="stat-l">${esc(s.label)}</div>${s.sub?`<div class="muted stat-s">${esc(s.sub)}</div>`:''}</div>`).join('')}</div>`;
+    body += `<div class="intro">${md(cours.intro)}</div>`;
+    (cours.sections||[]).forEach((s,i)=>{
+        body += `<div class="sec"><div class="sec-t"><span class="sec-n" style="background:${accent}">${i+1}</span>${esc(s.titre)}</div><div class="sec-b">${md(s.body)}</div>${schema(s.schema)}${compare(s.compare)}${mnemo(s.mnemo)}${(s.callouts||[]).map(callout).join('')}</div>`;
     });
-    if (cours.mnemo) html += mnemoPdf(cours.mnemo);
-    if (cours.schema) html += schemaPdf(cours.schema);
-    if ((cours.synthese || []).length) {
-        html += `<div class="pdf-callout pdf-callout--example">
-            <div class="pdf-callout-label">Synthèse — points clés</div>
-            <div class="pdf-callout-body"><ul>${cours.synthese.map(p => `<li>${mdLite(p)}</li>`).join('')}</ul></div></div>`;
-    }
-    if ((cours.pieges || []).length) {
-        html += `<div class="pdf-callout pdf-callout--warn">
-            <div class="pdf-callout-label">Pièges examen</div>
-            <div class="pdf-callout-body"><ul>${cours.pieges.map(p => `<li>${mdLite(p)}</li>`).join('')}</ul></div></div>`;
-    }
-    if ((cours.quiz || []).length) {
-        html += `<div class="pdf-callout pdf-callout--comp">
-            <div class="pdf-callout-label">Teste-toi (Q/R)</div>
-            <div class="pdf-callout-body">${cours.quiz.map(q=>`<p><strong>Q : ${esc(q.q)}</strong><br>R : ${mdLite(q.a)}</p>`).join('')}</div></div>`;
-    }
-    html += `</section>`;
+    if (cours.mnemo) body += mnemo(cours.mnemo);
+    if (cours.schema) body += schema(cours.schema);
+    if ((cours.quiz||[]).length) body += `<div class="quiz"><div class="blk-t" style="color:#7e22ce">🎮 TESTE-TOI</div>${cours.quiz.map(q=>`<div class="qa"><div class="q">❓ ${esc(q.q)}</div><div class="a">✅ ${md(q.a)}</div></div>`).join('')}</div>`;
+    if ((cours.synthese||[]).length) body += `<div class="box box-syn"><div class="blk-t" style="color:#15803d">🎯 SYNTHÈSE — points clés</div><ul>${cours.synthese.map(p=>`<li>${md(p)}</li>`).join('')}</ul></div>`;
+    if ((cours.pieges||[]).length) body += `<div class="box box-pie"><div class="blk-t" style="color:#b45309">⚠️ PIÈGES EXAMEN</div><ul>${cours.pieges.map(p=>`<li>${md(p)}</li>`).join('')}</ul></div>`;
 
-    container.innerHTML = html;
-    document.body.classList.add('printing-mode');
-    setTimeout(() => {
-        window.print();
-        const cleanup = () => {
-            document.body.classList.remove('printing-mode');
-            container.innerHTML = '';
-            window.removeEventListener('afterprint', cleanup);
-        };
-        window.addEventListener('afterprint', cleanup);
-        setTimeout(() => { if (document.body.classList.contains('printing-mode')) cleanup(); }, 60000);
-    }, 200);
+    return `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(std.code)} — ${esc(std.title_fr)}</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;color:#1e293b;background:#f1f5f9;line-height:1.65}
+.bar{position:sticky;top:0;z-index:10;background:#0f172a;color:#fff;padding:10px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bar .ttl{font-size:13px;font-weight:700;opacity:.85}
+.bar button{margin-left:auto;background:${accent};color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:14px;font-weight:800;cursor:pointer}
+.wrap{max-width:820px;margin:0 auto;padding:26px 22px 60px}
+.hero{background:linear-gradient(135deg,${accent},${accent}cc);color:#fff;border-radius:14px;padding:26px;margin-bottom:22px}
+.hero .code{display:inline-block;background:rgba(255,255,255,.22);padding:5px 13px;border-radius:7px;font-weight:800;font-size:14px;margin-bottom:10px}
+.hero h1{margin:0;font-size:25px;line-height:1.2}
+.hero .en{margin-top:6px;font-size:13px;font-style:italic;opacity:.9}
+.hero .src{margin-top:10px;font-size:11px;opacity:.8}
+.tldr{background:#ecfdf5;border:1px solid #6ee7b7;border-radius:10px;padding:14px 16px;margin-bottom:18px;font-size:14px}
+.blk-t{font-size:12px;font-weight:800;letter-spacing:.04em;margin-bottom:8px;text-transform:uppercase}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:20px}
+.stat{background:#fff;border:1px solid #e2e8f0;border-top:3px solid ${accent};border-radius:10px;padding:13px;text-align:center}
+.stat-v{font-size:21px;font-weight:900;line-height:1.1}
+.stat-l{font-size:12px;font-weight:700;margin-top:4px}
+.stat-s{font-size:10.5px;margin-top:2px}
+.muted{color:#64748b}
+.intro{background:#fff;border-left:4px solid #2563eb;border-radius:8px;padding:15px 17px;margin-bottom:22px;font-size:14.5px}
+.sec{background:#fff;border:1px solid #e8edf3;border-radius:12px;padding:18px 20px;margin-bottom:16px}
+.sec-t{display:flex;align-items:center;font-size:17px;font-weight:800;color:#0f172a;margin-bottom:11px;padding-bottom:8px;border-bottom:2px solid ${accent}33}
+.sec-n{color:#fff;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;margin-right:10px;flex-shrink:0}
+.sec-b{font-size:14px}
+.callout{border-radius:8px;padding:11px 14px;margin:11px 0}
+.callout-lbl{font-size:11.5px;font-weight:800;margin-bottom:4px;text-transform:uppercase}
+.schema,.mnemo{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;margin:12px 0}
+.flow{margin:0;padding-left:20px} .flow li{margin-bottom:9px}
+.pyr{margin:0;padding-left:20px} .pyr li{margin-bottom:6px}
+.mnemo{background:#fffbeb;border-color:#fcd34d}
+.mnemo-items{display:flex;flex-wrap:wrap;gap:7px}
+.mnemo-chip{background:#fff;border:1px solid #fcd34d;border-radius:8px;padding:6px 11px;font-size:13px}
+.mnemo-chip b{color:#b45309;font-size:16px;margin-right:5px}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+th{background:${accent}18;color:${accent};text-align:left;padding:8px 10px;border-bottom:2px solid ${accent};font-weight:800}
+td{padding:8px 10px;border-bottom:1px solid #e8edf3;vertical-align:top}
+.mtx th{background:transparent;border:none;color:${accent};text-align:center}
+.quiz{background:#faf5ff;border:1px solid #e9d5ff;border-radius:12px;padding:16px 18px;margin:18px 0}
+.qa{background:#fff;border:1px solid #e9d5ff;border-radius:9px;padding:12px 14px;margin-bottom:9px}
+.qa .q{font-weight:700;color:#6b21a8}
+.qa .a{margin-top:7px;padding-top:7px;border-top:1px dashed #d8b4fe;color:#15803d}
+.box{border-radius:12px;padding:16px 18px;margin-top:16px}
+.box ul{margin:0;padding-left:20px} .box li{margin-bottom:6px}
+.box-syn{background:#f0fdf4;border:1px solid #86efac}
+.box-pie{background:#fffbeb;border:1px solid #fcd34d}
+.foot{margin-top:30px;text-align:center;font-size:11px;color:#94a3b8}
+@media print{
+  .bar{display:none}
+  body{background:#fff}
+  .wrap{max-width:none;padding:0}
+  .sec,.box,.quiz,.schema,.mnemo,.callout,.stat,.intro,.tldr{break-inside:avoid}
+  @page{size:A4;margin:16mm 14mm}
+}
+</style></head><body>
+<div class="bar"><span class="ttl">Swiss CPA · ${esc(std.code)}</span>
+<button onclick="window.print()">🖨️ Imprimer / Enregistrer en PDF</button></div>
+<div class="wrap">
+<div class="hero"><span class="code">${esc(std.code)} · Cours complet</span>
+<h1>${esc(std.title_fr)}</h1><div class="en">🇬🇧 ${esc(std.title_en||'')}</div>
+<div class="src">Source : MSA Contrôle ordinaire (EXPERTsuisse) · à jour · ${esc(today)}</div></div>
+${body}
+<div class="foot">Swiss CPA — Annuaire ISA · ${esc(std.code)} · Généré le ${esc(today)}</div>
+</div></body></html>`;
+}
+
+// Ouvre le cours dans un NOUVEL ONGLET (page autonome, prête pour lecture + impression/PDF)
+function _downloadCoursPdf(num) {
+    const cours = (_auditData.annuaire_cours || {})[num];
+    const { std, serie } = _findAnnuaireStd(num);
+    if (!cours || !std) return;
+
+    // Ouvrir l'onglet IMMÉDIATEMENT (sur le clic) pour éviter le blocage des pop-ups
+    const w = window.open('', '_blank');
+    const html = _coursStandaloneHtml(std, serie, cours);
+    if (w && w.document) {
+        w.document.open();
+        w.document.write(html);
+        w.document.close();
+        try { w.focus(); } catch (_) {}
+    } else {
+        // Pop-up bloquée : proposer un téléchargement de la page HTML, ou fallback impression
+        try {
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.target = '_blank';
+            a.rel = 'noopener';
+            a.click();
+            setTimeout(() => URL.revokeObjectURL(url), 4000);
+        } catch (_) {
+            alert("Autorise les pop-ups pour ouvrir le cours dans un nouvel onglet.");
+        }
+    }
 }
 
 function _setAnnuaireSerie(serieId) {
