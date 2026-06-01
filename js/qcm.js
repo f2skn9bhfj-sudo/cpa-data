@@ -353,8 +353,10 @@ function _qcmRenderSetup() {
                 <div class="qcm-chips" id="qcmTypes"></div>
             </div>
             <div class="qcm-filter-group">
-                <div class="qcm-filter-lbl">Normes</div>
-                <div class="qcm-chips qcm-chips-scroll" id="qcmNorms"></div>
+                <div class="qcm-filter-lbl">Normes / thèmes <span class="qcm-filter-hint">— cherche une norme précise (ex. « 240 », « fraude », « TVA », « RPC 10 »)</span></div>
+                <input type="text" id="qcmNormSearch" class="qcm-norm-search" placeholder="🔎 Rechercher une norme ou un thème…" autocomplete="off" oninput="_qcmRenderNorms()">
+                <div class="qcm-norm-picker" id="qcmNorms"></div>
+                <div class="qcm-norm-selected" id="qcmNormSelected"></div>
             </div>
         </div>
 
@@ -459,22 +461,8 @@ function _qcmRenderChips() {
         typeEl.querySelectorAll('[data-kind]').forEach(b => b.addEventListener('click', _qcmChipClick));
     }
 
-    // Normes
-    const normEl = document.getElementById('qcmNorms');
-    if (normEl) {
-        const normCounts = {};
-        qcm.catalog.forEach(q => {
-            normCounts[q.norm_code] = (normCounts[q.norm_code] || 0) + 1;
-        });
-        const norms = Object.keys(normCounts).sort();
-        normEl.innerHTML = norms.map(n => {
-            const active = qcm.filters.norms.has(n);
-            return `<button class="qcm-chip ${active ? 'active' : ''}" data-kind="norm" data-val="${escapeAttr(n)}">
-                ${escapeHtml(n)} <span class="qcm-chip-count">${normCounts[n]}</span>
-            </button>`;
-        }).join('');
-        normEl.querySelectorAll('[data-kind]').forEach(b => b.addEventListener('click', _qcmChipClick));
-    }
+    // Normes — sélecteur cherchable groupé par module (voir _qcmRenderNorms)
+    _qcmRenderNorms();
 
     // Counts
     const cntEl = document.getElementById('qcmCounts');
@@ -529,6 +517,95 @@ function _qcmRenderChips() {
 }
 
 
+// Index des normes du catalogue : {code: {code, count, title, module, module_name}}
+function _qcmNormIndex() {
+    if (qcm._normIndex && qcm._normIndexLen === (qcm.catalog || []).length) return qcm._normIndex;
+    const idx = {};
+    (qcm.catalog || []).forEach(q => {
+        const code = q.norm_code || '—';
+        if (!idx[code]) idx[code] = { code, count: 0, title: '', module: q.module || '', module_name: q.module_name || q.module || '' };
+        idx[code].count++;
+        if (!idx[code].title) idx[code].title = (q.norm_title || q.lesson_title || '').trim();
+    });
+    qcm._normIndex = idx;
+    qcm._normIndexLen = (qcm.catalog || []).length;
+    return idx;
+}
+
+// "L10 — Échantillonnage (ISA 530)" -> "Échantillonnage (ISA 530)"
+function _qcmCleanTitle(t) {
+    return (t || '').replace(/^L\d+\s*[—–-]\s*/, '').trim();
+}
+
+// Sélecteur de normes : recherche live + regroupement par module + titres
+function _qcmRenderNorms() {
+    const host = document.getElementById('qcmNorms');
+    if (!host) return;
+    const idx = _qcmNormIndex();
+    const searchEl = document.getElementById('qcmNormSearch');
+    const query = (searchEl ? searchEl.value : '').toLowerCase().trim();
+    const modFilter = qcm.filters.modules;
+
+    const groups = {};
+    Object.values(idx).forEach(n => {
+        if (modFilter.size && !modFilter.has(n.module)) return;     // respecte le filtre Modules
+        const hay = (n.code + ' ' + n.title + ' ' + n.module_name).toLowerCase();
+        if (query && !hay.includes(query)) return;
+        (groups[n.module] = groups[n.module] || []).push(n);
+    });
+
+    const modOrder = (qcm.summary || []).map(s => s.module);
+    const mods = Object.keys(groups).sort((a, b) => {
+        const ia = modOrder.indexOf(a), ib = modOrder.indexOf(b);
+        return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+    });
+
+    if (!mods.length) {
+        host.innerHTML = `<div class="qcm-norm-empty">Aucune norme ne correspond${query ? ` à « ${escapeHtml(query)} »` : ''}.</div>`;
+    } else {
+        const prevScroll = host.scrollTop;
+        host.innerHTML = mods.map(m => {
+            const c = (typeof getModuleColor === 'function') ? getModuleColor(m) : '#64748b';
+            const mn = groups[m][0].module_name || m;
+            const items = groups[m]
+                .sort((a, b) => a.code.localeCompare(b.code, 'fr', { numeric: true }))
+                .map(n => {
+                    const active = qcm.filters.norms.has(n.code);
+                    const ttl = _qcmCleanTitle(n.title);
+                    return `<button class="qcm-norm-item ${active ? 'active' : ''}" data-kind="norm" data-val="${escapeAttr(n.code)}"
+                        style="${active ? `border-color:${c};background:${c}1f` : ''}" title="${escapeAttr(ttl)}">
+                        <span class="qcm-norm-code" style="color:${c}">${escapeHtml(n.code)}</span>
+                        ${ttl ? `<span class="qcm-norm-title">${escapeHtml(ttl)}</span>` : ''}
+                        <span class="qcm-norm-count">${n.count}</span>
+                    </button>`;
+                }).join('');
+            return `<div class="qcm-norm-group">
+                <div class="qcm-norm-group-hd"><span class="qcm-norm-dot" style="background:${c}"></span>${escapeHtml(m)} · ${escapeHtml(mn)} <span class="qcm-norm-group-n">${groups[m].length}</span></div>
+                <div class="qcm-norm-group-items">${items}</div>
+            </div>`;
+        }).join('');
+        host.querySelectorAll('[data-kind]').forEach(b => b.addEventListener('click', _qcmChipClick));
+        host.scrollTop = prevScroll;
+    }
+
+    const selEl = document.getElementById('qcmNormSelected');
+    if (selEl) {
+        const sel = [...qcm.filters.norms];
+        selEl.innerHTML = sel.length
+            ? `<span class="qcm-norm-sel-lbl">${sel.length} sélectionnée(s) :</span> `
+              + sel.map(s => `<span class="qcm-norm-sel-chip">${escapeHtml(s)}</span>`).join('')
+              + ` <button class="qcm-norm-sel-clear" onclick="_qcmClearNorms()">✕ vider</button>`
+            : '';
+    }
+}
+
+function _qcmClearNorms() {
+    qcm.filters.norms.clear();
+    _qcmRenderNorms();
+    _qcmUpdateFilterCount();
+    _qcmSaveState();
+}
+
 function _qcmChipClick(e) {
     const b = e.currentTarget;
     const kind = b.dataset.kind;
@@ -557,7 +634,8 @@ function _qcmChipClick(e) {
         if (val === 'shuffle') qcm.shuffleOptions = !qcm.shuffleOptions;
     }
 
-    _qcmRenderChips();
+    if (kind === 'norm') _qcmRenderNorms();   // re-render ciblé : garde la recherche et le scroll
+    else _qcmRenderChips();
     _qcmUpdateFilterCount();
     _qcmSaveState();
 }
@@ -1559,6 +1637,43 @@ function _qcmInjectStyles() {
     .qcm-chip.active { background: #1e3a8a; color: #dbeafe; border-color: #3b82f6; }
     .qcm-chip-count { opacity: .7; font-size: 10px; margin-left: 4px; }
     .qcm-chip-clear { background: transparent; opacity: .6; }
+
+    /* ── Sélecteur de normes : recherche + groupes ── */
+    .qcm-filter-hint { text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--text-muted); }
+    .qcm-norm-search {
+        width: 100%; box-sizing: border-box; margin-bottom: 10px;
+        background: var(--bg-tertiary); border: 1px solid var(--border);
+        color: var(--text-primary); padding: 9px 12px; border-radius: 8px; font-size: 13px;
+    }
+    .qcm-norm-search:focus { outline: none; border-color: #3b82f6; }
+    .qcm-norm-search::placeholder { color: var(--text-muted); }
+    .qcm-norm-picker { max-height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding-right: 4px; }
+    .qcm-norm-group-hd {
+        font-size: 11px; font-weight: 700; color: var(--text-secondary);
+        text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px;
+        display: flex; align-items: center; gap: 6px;
+        position: sticky; top: 0; background: var(--bg-secondary); padding: 3px 0; z-index: 1;
+    }
+    .qcm-norm-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .qcm-norm-group-n { background: var(--bg-tertiary); color: var(--text-muted); font-size: 10px; padding: 1px 6px; border-radius: 8px; font-weight: 600; }
+    .qcm-norm-group-items { display: flex; flex-wrap: wrap; gap: 6px; }
+    .qcm-norm-item {
+        display: inline-flex; align-items: center; gap: 7px; max-width: 100%;
+        background: var(--bg-tertiary); border: 1px solid var(--border);
+        color: var(--text-primary); padding: 6px 10px; border-radius: 7px;
+        font-size: 12px; cursor: pointer; transition: all .1s;
+    }
+    .qcm-norm-item:hover { border-color: #3b82f6; transform: translateY(-1px); }
+    .qcm-norm-item.active { font-weight: 600; }
+    .qcm-norm-code { font-weight: 800; white-space: nowrap; }
+    .qcm-norm-title { color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px; }
+    .qcm-norm-count { background: rgba(148,163,184,.18); color: var(--text-muted); font-size: 10px; padding: 1px 6px; border-radius: 8px; flex-shrink: 0; }
+    .qcm-norm-empty { color: var(--text-muted); font-size: 13px; padding: 12px 4px; font-style: italic; }
+    .qcm-norm-selected { margin-top: 10px; font-size: 12px; color: var(--text-muted); display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+    .qcm-norm-sel-lbl { font-weight: 600; color: var(--text-secondary); }
+    .qcm-norm-sel-chip { background: #1e3a8a; color: #dbeafe; padding: 2px 8px; border-radius: 6px; font-weight: 600; }
+    .qcm-norm-sel-clear { background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 2px 8px; border-radius: 6px; cursor: pointer; font-size: 11px; }
+    .qcm-norm-sel-clear:hover { border-color: #ef4444; color: #ef4444; }
 
     /* ── Action row ── */
     .qcm-action-row {
