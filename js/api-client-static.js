@@ -644,6 +644,45 @@
                 }
             }
 
+            // 4) Audit ISA : audit.json → annuaire_cours[num].mcq (module virtuel "AUDIT")
+            try {
+                const audit = await api.get_audit_data();
+                const ac = (audit && audit.annuaire_cours) || {};
+                const stdByNum = {};
+                const series = (audit && audit.annuaire && audit.annuaire.series) || [];
+                for (const sr of series) {
+                    for (const std of (sr.standards || [])) {
+                        if (std && std.num != null) stdByNum[String(std.num)] = std;
+                    }
+                }
+                for (const num of Object.keys(ac)) {
+                    const mcqs = (ac[num] && ac[num].mcq) || [];
+                    if (!mcqs.length) continue;
+                    const std = stdByNum[String(num)] || {};
+                    const code = std.code || ('ISA ' + num);
+                    const title = std.title_fr || '';
+                    let idx = 0;
+                    for (const q of mcqs) {
+                        const qid = q.id || `AUDIT_${num}_q${idx}`;
+                        if (seenIds.has(qid)) { idx++; continue; }
+                        seenIds.add(qid);
+                        const diff = ['easy', 'medium', 'hard'].includes(q.difficulty)
+                            ? q.difficulty : inferDiff('mcq', q.question, q.explanation, q.difficulty);
+                        items.push({
+                            id: qid, module: 'AUDIT', module_name: 'Normes ISA (Annuaire)',
+                            norm_code: code, norm_title: title,
+                            lesson_id: 'isa_' + num, lesson_title: code + ' — ' + title,
+                            section_id: null,
+                            type: 'mcq', question: q.question || '',
+                            options: q.options || null, answer: q.answer,
+                            explanation: q.explanation || '', difficulty: diff,
+                        });
+                        addSummary('AUDIT', 'mcq', diff, 'Normes ISA (Annuaire)');
+                        idx++;
+                    }
+                }
+            } catch (e) { /* audit.json absent → on ignore */ }
+
             items.sort((a, b) => {
                 if (a.module !== b.module) return a.module.localeCompare(b.module);
                 if ((a.norm_code || '') !== (b.norm_code || '')) return (a.norm_code || '').localeCompare(b.norm_code || '');
