@@ -1,6 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════
    Module ORAL — préparation de l'examen oral (diplôme fédéral
-   d'expert-comptable, règlement 2026). 7 thèmes principaux.
+   d'expert-comptable, règlement 2026).
+   Navigation : Accueil (7 thèmes) → Thème (cours + angle oral) → Cours.
    ═══════════════════════════════════════════════════════════════ */
 
 let _oralData = null;
@@ -14,16 +15,15 @@ function _oralStars() {
 function _oralSaveStars(set) {
     try { localStorage.setItem(ORAL_STAR_KEY, JSON.stringify([...set])); } catch (_) {}
 }
-
 function _oralEsc(s) {
     const d = document.createElement('div');
     d.textContent = (s == null) ? '' : String(s);
     return d.innerHTML;
 }
-// Markdown léger : **gras**
 function _oralMd(t) {
     return _oralEsc(t).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 }
+function _oralHost() { return document.getElementById('mainContent'); }
 
 const _ORAL_CALLOUT = {
     key:     { bg: '#1e1b0a', bd: '#d97706', col: '#fbbf24', icon: '🔑', lbl: 'À RETENIR' },
@@ -35,12 +35,12 @@ const _ORAL_CALLOUT = {
 };
 
 async function renderOral(host) {
+    host = host || _oralHost();
     if (!host) return;
     if (!_oralData) {
         host.innerHTML = '<div style="padding:60px;text-align:center;color:#94a3b8">Chargement du module Oral…</div>';
-        try {
-            _oralData = await pywebview.api.get_oral_data();
-        } catch (e) {
+        try { _oralData = await pywebview.api.get_oral_data(); }
+        catch (e) {
             try { _oralData = await window.pywebview.api.get_oral_data(); }
             catch (_) { _oralData = { themes: [] }; }
         }
@@ -48,16 +48,21 @@ async function renderOral(host) {
     _oralRenderHome(host);
 }
 
+function _oralThemeFlash(t) {
+    return (t.courses || []).reduce((n, c) => n + (c.flashcards || []).length, 0);
+}
+function _oralFindTheme(id) { return ((_oralData || {}).themes || []).find(t => t.id === id); }
+function _oralFindCourse(t, cid) { return (t.courses || []).find(c => c.id === cid); }
+
+/* ── Accueil : 7 thèmes ── */
 function _oralRenderHome(host) {
     const d = _oralData || {};
     const themes = d.themes || [];
     const stars = _oralStars();
     const intro = d.intro || {};
-
     host.innerHTML = `
         <div class="page-title">🎤 Examen oral — thèmes principaux</div>
         <div class="page-subtitle">Diplôme fédéral d'expert-comptable · règlement 2026</div>
-
         <div class="oral-banner">
             <div class="oral-banner-row">
                 <span class="oral-pill">⏱️ ${_oralEsc(intro.duree || '70 min')}</span>
@@ -66,28 +71,22 @@ function _oralRenderHome(host) {
             <div class="oral-banner-fmt">${_oralEsc(intro.format || '')}</div>
             <div class="oral-banner-hint">⭐ Marque tes <b>2 thèmes principaux</b> choisis pour la discussion technique — ils seront mis en avant.</div>
         </div>
-
         <div class="oral-grid">
-            ${themes.map(t => _oralCard(t, stars.has(t.id))).join('')}
-        </div>
-    `;
+            ${themes.map(t => _oralThemeCard(t, stars.has(t.id))).join('')}
+        </div>`;
 }
 
-function _oralCard(t, starred) {
+function _oralThemeCard(t, starred) {
     const c = t.color || '#7c3aed';
     return `
-        <div class="oral-card ${starred ? 'oral-card-on' : ''}" style="--oc:${c}" onclick="_oralOpenCourse('${t.id}')">
+        <div class="oral-card ${starred ? 'oral-card-on' : ''}" style="--oc:${c}" onclick="_oralOpenTheme('${t.id}')">
             <button class="oral-star ${starred ? 'on' : ''}" title="Marquer comme thème principal"
                     onclick="event.stopPropagation();_oralToggleStar('${t.id}')">${starred ? '⭐' : '☆'}</button>
             <div class="oral-card-icon" style="background:${c}22;border:1px solid ${c}55">${t.icon || '📚'}</div>
             <div class="oral-card-num">Thème ${t.num}</div>
             <div class="oral-card-title">${_oralEsc(t.title)}</div>
             <div class="oral-card-tag">${_oralEsc(t.tagline || '')}</div>
-            <div class="oral-card-meta">
-                <span>${(t.sections || []).length} sections</span>
-                <span>·</span>
-                <span>${(t.flashcards || []).length} flashcards</span>
-            </div>
+            <div class="oral-card-meta"><span>${(t.courses || []).length} cours</span><span>·</span><span>${_oralThemeFlash(t)} flashcards</span></div>
             ${starred ? '<div class="oral-card-badge">★ Thème principal</div>' : ''}
         </div>`;
 }
@@ -96,89 +95,96 @@ function _oralToggleStar(id) {
     const stars = _oralStars();
     if (stars.has(id)) stars.delete(id); else stars.add(id);
     _oralSaveStars(stars);
-    const host = document.getElementById('mainContent');
-    if (host) _oralRenderHome(host);
+    const host = _oralHost();
+    // Re-render the current view to reflect the star
+    if (host && host.querySelector('.oral-theme-view') && host.querySelector('.oral-theme-view').dataset.tid === id) _oralOpenTheme(id);
+    else if (host) _oralRenderHome(host);
 }
 
-function _oralFindTheme(id) {
-    return ((_oralData || {}).themes || []).find(t => t.id === id);
-}
-
-function _oralOpenCourse(id, mode) {
+/* ── Vue thème : aperçu + angle oral + cours ── */
+function _oralOpenTheme(id) {
     const t = _oralFindTheme(id);
-    const host = document.getElementById('mainContent');
+    const host = _oralHost();
     if (!t || !host) return;
-    _oralRevealAll = false;
     const c = t.color || '#7c3aed';
-
-    if (mode === 'revision') {
-        host.innerHTML = _oralRevisionView(t, c);
-        window.scrollTo(0, 0);
-        return;
-    }
-
+    const stars = _oralStars();
+    const starred = stars.has(t.id);
     host.innerHTML = `
-        <div class="oral-cours" style="--oc:${c}">
+        <div class="oral-cours oral-theme-view" data-tid="${t.id}" style="--oc:${c}">
             <div class="oral-cours-bar">
-                <button class="oral-btn" onclick="renderOral(document.getElementById('mainContent'))">← Tous les thèmes</button>
-                <button class="oral-btn oral-btn-rev" onclick="_oralOpenCourse('${t.id}','revision')">🎴 Mode révision (flashcards)</button>
+                <button class="oral-btn" onclick="renderOral()">← Tous les thèmes</button>
+                <button class="oral-btn oral-btn-rev" onclick="_oralRevision('${t.id}',null)">🎴 Réviser tout le thème (${_oralThemeFlash(t)})</button>
+                <button class="oral-btn ${starred ? 'oral-btn-star' : ''}" onclick="_oralToggleStar('${t.id}')">${starred ? '⭐ Thème principal' : '☆ Marquer principal'}</button>
             </div>
-
             <div class="oral-hero" style="background:linear-gradient(135deg,${c}33,${c}0a 60%,transparent);border:1px solid ${c}55">
                 <div class="oral-hero-icon">${t.icon || '📚'}</div>
                 <div>
-                    <div class="oral-hero-num">Thème ${t.num} · examen oral</div>
+                    <div class="oral-hero-num">Thème ${t.num} · examen oral${starred ? ' · ⭐ principal' : ''}</div>
                     <div class="oral-hero-title">${_oralEsc(t.title)}</div>
                     <div class="oral-hero-tag">${_oralEsc(t.tagline || '')}</div>
                 </div>
             </div>
-
-            ${(t.objectifs || []).length ? `
-                <div class="oral-block oral-objectifs">
-                    <div class="oral-block-hd">🎯 Objectifs d'apprentissage</div>
-                    <ul>${t.objectifs.map(o => `<li>${_oralMd(o)}</li>`).join('')}</ul>
-                </div>` : ''}
-
-            ${(t.sections || []).map((s, i) => _oralSection(s, c, i + 1)).join('')}
-
-            ${(t.bases || []).length ? `
-                <div class="oral-block">
-                    <div class="oral-block-hd" style="color:#cbd5e1">⚖️ Bases normatives clés</div>
-                    <div class="oral-bases">
-                        ${t.bases.map(b => `<div class="oral-base"><span class="oral-base-ref" style="color:${c}">${_oralEsc(b.ref)}</span><span class="oral-base-detail">${_oralMd(b.detail)}</span></div>`).join('')}
-                    </div>
-                </div>` : ''}
-
-            ${(t.exemples || []).length ? `
-                <div class="oral-block">
-                    <div class="oral-block-hd" style="color:#4ade80">🧮 Exemples chiffrés / cas pratiques</div>
-                    ${t.exemples.map(_oralExemple).join('')}
-                </div>` : ''}
-
-            ${(t.pieges || []).length ? `
-                <div class="oral-block oral-pieges">
-                    <div class="oral-block-hd" style="color:#fbbf24">⚠️ Pièges fréquents</div>
-                    <ul>${t.pieges.map(p => `<li>${_oralMd(p)}</li>`).join('')}</ul>
-                </div>` : ''}
-
+            ${t.apercu ? `<div class="oral-block"><div class="oral-block-hd" style="color:${c}">📖 Aperçu du thème</div><div class="oral-apercu">${_oralMd(t.apercu)}</div></div>` : ''}
             ${_oralAngleOral(t.angle_oral, c)}
-
             <div class="oral-block">
-                <div class="oral-block-hd" style="color:#c084fc">🎴 Flashcards type oral <span class="oral-rev-link" onclick="_oralOpenCourse('${t.id}','revision')">→ mode révision</span></div>
-                ${_oralFlashList(t.flashcards, t.id, false)}
+                <div class="oral-block-hd" style="color:${c}">📚 Cours du thème (${(t.courses || []).length})</div>
+                <div class="oral-course-grid">
+                    ${(t.courses || []).map((co, i) => _oralCourseCard(t, co, i + 1)).join('')}
+                </div>
             </div>
-
-            ${(t.liens || []).length ? `
-                <div class="oral-block oral-liens">
-                    <div class="oral-block-hd" style="color:#38bdf8">🔗 Liens interdisciplinaires</div>
-                    ${t.liens.map(l => `<div class="oral-lien"><span class="oral-lien-th">${_oralEsc(l.theme)}</span> ${_oralMd(l.lien)}</div>`).join('')}
-                </div>` : ''}
-
-            <div class="oral-cours-bar" style="margin-top:18px">
-                <button class="oral-btn" onclick="renderOral(document.getElementById('mainContent'))">← Tous les thèmes</button>
+            <div class="oral-cours-bar" style="margin-top:6px">
+                <button class="oral-btn" onclick="renderOral()">← Tous les thèmes</button>
             </div>
-        </div>
-    `;
+        </div>`;
+    window.scrollTo(0, 0);
+}
+
+function _oralCourseCard(t, co, n) {
+    const c = t.color || '#7c3aed';
+    return `
+        <div class="oral-course-card" style="--oc:${c}" onclick="_oralOpenCourse('${t.id}','${co.id}')">
+            <div class="oral-course-n" style="background:${c}">${n}</div>
+            <div class="oral-course-body">
+                <div class="oral-course-title">${_oralEsc(co.title)}</div>
+                <div class="oral-course-tag">${_oralEsc(co.tagline || '')}</div>
+                <div class="oral-course-meta">${(co.sections || []).length} sections · ${(co.flashcards || []).length} flashcards · ${(co.exemples || []).length} cas</div>
+            </div>
+            <div class="oral-course-go">›</div>
+        </div>`;
+}
+
+/* ── Vue cours ── */
+function _oralOpenCourse(tid, cid) {
+    const t = _oralFindTheme(tid);
+    if (!t) return;
+    const co = _oralFindCourse(t, cid);
+    const host = _oralHost();
+    if (!co || !host) return;
+    _oralRevealAll = false;
+    const c = t.color || '#7c3aed';
+    host.innerHTML = `
+        <div class="oral-cours" style="--oc:${c}">
+            <div class="oral-cours-bar">
+                <button class="oral-btn" onclick="_oralOpenTheme('${t.id}')">← ${_oralEsc(t.title).slice(0, 34)}</button>
+                <button class="oral-btn oral-btn-rev" onclick="_oralRevision('${t.id}','${co.id}')">🎴 Réviser ce cours</button>
+            </div>
+            <div class="oral-hero" style="background:linear-gradient(135deg,${c}33,${c}0a 60%,transparent);border:1px solid ${c}55">
+                <div class="oral-hero-icon">${t.icon || '📚'}</div>
+                <div>
+                    <div class="oral-hero-num">Thème ${t.num} · ${_oralEsc(t.title)}</div>
+                    <div class="oral-hero-title">${_oralEsc(co.title)}</div>
+                    <div class="oral-hero-tag">${_oralEsc(co.tagline || '')}</div>
+                </div>
+            </div>
+            ${(co.objectifs || []).length ? `<div class="oral-block oral-objectifs"><div class="oral-block-hd">🎯 Objectifs</div><ul>${co.objectifs.map(o => `<li>${_oralMd(o)}</li>`).join('')}</ul></div>` : ''}
+            ${(co.sections || []).map((s, i) => _oralSection(s, c, i + 1)).join('')}
+            ${(co.bases || []).length ? `<div class="oral-block"><div class="oral-block-hd" style="color:#cbd5e1">⚖️ Bases normatives clés</div><div class="oral-bases">${co.bases.map(b => `<div class="oral-base"><span class="oral-base-ref" style="color:${c}">${_oralEsc(b.ref)}</span><span class="oral-base-detail">${_oralMd(b.detail)}</span></div>`).join('')}</div></div>` : ''}
+            ${(co.exemples || []).length ? `<div class="oral-block"><div class="oral-block-hd" style="color:#4ade80">🧮 Exemples chiffrés / cas pratiques</div>${co.exemples.map(_oralExemple).join('')}</div>` : ''}
+            ${(co.pieges || []).length ? `<div class="oral-block oral-pieges"><div class="oral-block-hd" style="color:#fbbf24">⚠️ Pièges fréquents</div><ul>${co.pieges.map(p => `<li>${_oralMd(p)}</li>`).join('')}</ul></div>` : ''}
+            <div class="oral-block"><div class="oral-block-hd" style="color:#c084fc">🎴 Flashcards <span class="oral-rev-link" onclick="_oralRevision('${t.id}','${co.id}')">→ mode révision</span></div>${_oralFlashList(co.flashcards, co.id, false)}</div>
+            ${(co.liens || []).length ? `<div class="oral-block oral-liens"><div class="oral-block-hd" style="color:#38bdf8">🔗 Liens interdisciplinaires</div>${co.liens.map(l => `<div class="oral-lien"><span class="oral-lien-th">${_oralEsc(l.theme)}</span> ${_oralMd(l.lien)}</div>`).join('')}</div>` : ''}
+            <div class="oral-cours-bar" style="margin-top:18px"><button class="oral-btn" onclick="_oralOpenTheme('${t.id}')">← Retour au thème</button></div>
+        </div>`;
     window.scrollTo(0, 0);
 }
 
@@ -187,18 +193,14 @@ function _oralSection(s, c, idx) {
         const cfg = _ORAL_CALLOUT[co.type] || _ORAL_CALLOUT.info;
         return `<div class="oral-callout" style="background:${cfg.bg};border-left:3px solid ${cfg.bd}">
             <div class="oral-callout-hd" style="color:${cfg.col}">${cfg.icon} ${_oralEsc(co.label || cfg.lbl)}</div>
-            <div class="oral-callout-tx">${_oralMd(co.text || '')}</div>
-        </div>`;
+            <div class="oral-callout-tx">${_oralMd(co.text || '')}</div></div>`;
     }).join('');
-    return `
-        <div class="oral-section">
-            <div class="oral-section-hd"><span class="oral-section-n" style="background:${c}">${idx}</span>${_oralEsc(s.titre || '')}</div>
-            ${s.body ? `<div class="oral-section-body">${_oralMd(s.body)}</div>` : ''}
-            ${s.compare ? _oralCompare(s.compare, c) : ''}
-            ${callouts}
-        </div>`;
+    return `<div class="oral-section">
+        <div class="oral-section-hd"><span class="oral-section-n" style="background:${c}">${idx}</span>${_oralEsc(s.titre || '')}</div>
+        ${s.body ? `<div class="oral-section-body">${_oralMd(s.body)}</div>` : ''}
+        ${s.compare ? _oralCompare(s.compare, c) : ''}
+        ${callouts}</div>`;
 }
-
 function _oralCompare(cmp, c) {
     if (!cmp) return '';
     return `<div class="oral-compare">
@@ -206,46 +208,33 @@ function _oralCompare(cmp, c) {
         <div style="overflow-x:auto"><table class="oral-table">
             <thead><tr>${(cmp.headers || []).map(h => `<th style="color:${c};border-bottom:2px solid ${c}">${_oralEsc(h)}</th>`).join('')}</tr></thead>
             <tbody>${(cmp.rows || []).map(r => `<tr>${r.map((cell, ci) => `<td class="${ci === 0 ? 'oral-td-key' : ''}">${_oralMd(cell)}</td>`).join('')}</tr>`).join('')}</tbody>
-        </table></div>
-    </div>`;
+        </table></div></div>`;
 }
-
 function _oralExemple(ex) {
     return `<div class="oral-exemple">
         <div class="oral-exemple-hd">📌 ${_oralEsc(ex.titre || 'Cas')}</div>
         ${ex.enonce ? `<div class="oral-exemple-en"><b>Énoncé :</b> ${_oralMd(ex.enonce)}</div>` : ''}
-        ${ex.resolution ? `<div class="oral-exemple-res"><b>Résolution :</b> ${_oralMd(ex.resolution)}</div>` : ''}
+        ${ex.resolution ? `<div class="oral-exemple-res"><b>Résolution :</b> ${_oralMd(ex.resolution)}</div>` : ''}</div>`;
+}
+function _oralAngleOral(a, c) {
+    if (!a) return '';
+    return `<div class="oral-block oral-angle" style="border:1px solid ${c}55;background:linear-gradient(135deg,${c}14,#0a0f1c)">
+        <div class="oral-block-hd" style="color:${c}">🎙️ Angle oral — structurer, prendre position, recommander</div>
+        ${a.intro ? `<div class="oral-angle-intro">${_oralMd(a.intro)}</div>` : ''}
+        <div class="oral-angle-cols">
+            ${(a.structure || []).length ? `<div class="oral-angle-col"><div class="oral-angle-lbl">🧭 Trame d'une réponse (≈ 7,5 min)</div><ol>${a.structure.map(x => `<li>${_oralMd(x)}</li>`).join('')}</ol></div>` : ''}
+            ${(a.recommandations || []).length ? `<div class="oral-angle-col"><div class="oral-angle-lbl">✅ Recommandations à formuler</div><ul>${a.recommandations.map(x => `<li>${_oralMd(x)}</li>`).join('')}</ul></div>` : ''}
+        </div>
+        ${(a.phrases || []).length ? `<div class="oral-angle-phrases"><div class="oral-angle-lbl">💬 Formulations prêtes à l'emploi (prise de position)</div>${a.phrases.map(p => `<div class="oral-phrase">« ${_oralMd(p)} »</div>`).join('')}</div>` : ''}
     </div>`;
 }
 
-function _oralAngleOral(a, c) {
-    if (!a) return '';
-    return `
-        <div class="oral-block oral-angle" style="border:1px solid ${c}55;background:linear-gradient(135deg,${c}14,#0a0f1c)">
-            <div class="oral-block-hd" style="color:${c}">🎙️ Angle oral — structurer, prendre position, recommander</div>
-            ${a.intro ? `<div class="oral-angle-intro">${_oralMd(a.intro)}</div>` : ''}
-            <div class="oral-angle-cols">
-                ${(a.structure || []).length ? `<div class="oral-angle-col">
-                    <div class="oral-angle-lbl">🧭 Trame d'une réponse (≈ 7,5 min)</div>
-                    <ol>${a.structure.map(x => `<li>${_oralMd(x)}</li>`).join('')}</ol>
-                </div>` : ''}
-                ${(a.recommandations || []).length ? `<div class="oral-angle-col">
-                    <div class="oral-angle-lbl">✅ Recommandations à formuler</div>
-                    <ul>${a.recommandations.map(x => `<li>${_oralMd(x)}</li>`).join('')}</ul>
-                </div>` : ''}
-            </div>
-            ${(a.phrases || []).length ? `<div class="oral-angle-phrases">
-                <div class="oral-angle-lbl">💬 Formulations prêtes à l'emploi (prise de position)</div>
-                ${a.phrases.map(p => `<div class="oral-phrase">« ${_oralMd(p)} »</div>`).join('')}
-            </div>` : ''}
-        </div>`;
-}
-
-function _oralFlashList(cards, tid, big) {
+/* ── Flashcards ── */
+function _oralFlashList(cards, key, big) {
     if (!cards || !cards.length) return '';
     return `<div class="oral-flash-grid ${big ? 'big' : ''}">
         ${cards.map((q, i) => {
-            const fid = `oral-fc-${tid}-${i}`;
+            const fid = `oral-fc-${key}-${i}`;
             return `<div class="oral-flash" onclick="_oralFlip('${fid}')">
                 <div class="oral-flash-q">❓ ${_oralMd(q.q)}</div>
                 <div class="oral-flash-a" id="${fid}" style="display:${_oralRevealAll ? 'block' : 'none'}">✅ ${_oralMd(q.a)}</div>
@@ -254,49 +243,68 @@ function _oralFlashList(cards, tid, big) {
         }).join('')}
     </div>`;
 }
-
 function _oralFlip(fid) {
-    const a = document.getElementById(fid);
-    const h = document.getElementById(fid + '-h');
+    const a = document.getElementById(fid), h = document.getElementById(fid + '-h');
     if (!a) return;
     const show = a.style.display === 'none';
     a.style.display = show ? 'block' : 'none';
     if (h) h.style.display = show ? 'none' : 'block';
 }
 
-function _oralRevisionView(t, c) {
-    return `
+/* ── Mode révision (thème entier ou un cours) ── */
+function _oralRevision(tid, cid) {
+    const t = _oralFindTheme(tid);
+    const host = _oralHost();
+    if (!t || !host) return;
+    const c = t.color || '#7c3aed';
+    let cards, label, backFn;
+    if (cid) {
+        const co = _oralFindCourse(t, cid);
+        cards = (co.flashcards || []).map(f => ({ ...f, src: '' }));
+        label = co.title;
+        backFn = `_oralOpenCourse('${t.id}','${cid}')`;
+    } else {
+        cards = [];
+        (t.courses || []).forEach(co => (co.flashcards || []).forEach(f => cards.push({ ...f, src: co.title })));
+        label = 'Tout le thème — ' + t.title;
+        backFn = `_oralOpenTheme('${t.id}')`;
+    }
+    host.innerHTML = `
         <div class="oral-cours" style="--oc:${c}">
             <div class="oral-cours-bar">
-                <button class="oral-btn" onclick="_oralOpenCourse('${t.id}')">← Cours complet</button>
-                <button class="oral-btn" onclick="renderOral(document.getElementById('mainContent'))">Tous les thèmes</button>
-                <button class="oral-btn oral-btn-rev" onclick="_oralRevealToggle('${t.id}')" id="oralRevealBtn">
-                    ${_oralRevealAll ? '🙈 Tout masquer' : '👁️ Tout révéler'}
-                </button>
+                <button class="oral-btn" onclick="${backFn}">← Retour</button>
+                <button class="oral-btn" onclick="renderOral()">Tous les thèmes</button>
+                <button class="oral-btn oral-btn-rev" onclick="_oralRevealToggle('${tid}','${cid || ''}')" id="oralRevealBtn">${_oralRevealAll ? '🙈 Tout masquer' : '👁️ Tout révéler'}</button>
             </div>
             <div class="oral-hero" style="background:linear-gradient(135deg,${c}33,${c}0a 60%,transparent);border:1px solid ${c}55">
-                <div class="oral-hero-icon">${t.icon || '📚'}</div>
+                <div class="oral-hero-icon">🎴</div>
                 <div>
-                    <div class="oral-hero-num">🎴 Mode révision · ${(t.flashcards || []).length} flashcards</div>
-                    <div class="oral-hero-title">${_oralEsc(t.title)}</div>
+                    <div class="oral-hero-num">Mode révision · ${cards.length} flashcards</div>
+                    <div class="oral-hero-title">${_oralEsc(label)}</div>
                     <div class="oral-hero-tag">Clique une carte pour révéler la réponse modèle</div>
                 </div>
             </div>
-            ${_oralFlashList(t.flashcards, t.id, true)}
-            <div class="oral-cours-bar" style="margin-top:18px">
-                <button class="oral-btn" onclick="_oralOpenCourse('${t.id}')">← Cours complet</button>
+            <div class="oral-flash-grid big">
+                ${cards.map((q, i) => {
+                    const fid = `oral-rv-${i}`;
+                    return `<div class="oral-flash" onclick="_oralFlip('${fid}')">
+                        ${q.src ? `<div class="oral-flash-src">${_oralEsc(q.src)}</div>` : ''}
+                        <div class="oral-flash-q">❓ ${_oralMd(q.q)}</div>
+                        <div class="oral-flash-a" id="${fid}" style="display:${_oralRevealAll ? 'block' : 'none'}">✅ ${_oralMd(q.a)}</div>
+                        <div class="oral-flash-hint" id="${fid}-h" style="display:${_oralRevealAll ? 'none' : 'block'}">👆 cliquer</div>
+                    </div>`;
+                }).join('')}
             </div>
+            <div class="oral-cours-bar" style="margin-top:18px"><button class="oral-btn" onclick="${backFn}">← Retour</button></div>
         </div>`;
+    window.scrollTo(0, 0);
 }
-
-function _oralRevealToggle(id) {
+function _oralRevealToggle(tid, cid) {
     _oralRevealAll = !_oralRevealAll;
-    const t = _oralFindTheme(id);
-    const host = document.getElementById('mainContent');
-    if (t && host) host.innerHTML = _oralRevisionView(t, t.color || '#7c3aed');
+    _oralRevision(tid, cid || null);
 }
 
-// ── Styles (injectés une fois) ──
+/* ── Styles ── */
 (function _oralInjectCss() {
     if (document.getElementById('oral-styles')) return;
     const st = document.createElement('style');
@@ -328,17 +336,28 @@ function _oralRevealToggle(id) {
     .oral-btn { background:#1e293b; border:1px solid #334155; color:#cbd5e1; padding:9px 15px; border-radius:8px; cursor:pointer; font-size:13px; font-weight:600; }
     .oral-btn:hover { border-color:var(--oc); color:#fff; }
     .oral-btn-rev { background:linear-gradient(135deg,#3c1d6e,#553c9a); border-color:#7c3aed; color:#e9d5ff; font-weight:700; }
+    .oral-btn-star { background:#3a2c0a; border-color:#fbbf24; color:#fde68a; }
     .oral-hero { display:flex; gap:16px; align-items:center; padding:22px; border-radius:14px; margin-bottom:18px; }
     .oral-hero-icon { font-size:48px; flex-shrink:0; }
-    .oral-hero-num { font-size:11px; font-weight:800; color:var(--oc); text-transform:uppercase; letter-spacing:0.06em; }
+    .oral-hero-num { font-size:11px; font-weight:800; color:var(--oc); text-transform:uppercase; letter-spacing:0.05em; }
     .oral-hero-title { font-size:22px; font-weight:900; color:#fff; line-height:1.2; margin:4px 0; }
     .oral-hero-tag { font-size:13px; color:#cbd5e1; }
     .oral-block { background:#0a0f1c; border:1px solid #16203a; border-radius:12px; padding:16px 18px; margin-bottom:16px; }
     .oral-block-hd { font-size:14px; font-weight:800; margin-bottom:12px; }
+    .oral-apercu { font-size:13.5px; color:#cbd5e1; line-height:1.8; white-space:pre-wrap; }
     .oral-objectifs ul, .oral-pieges ul { margin:0; padding-left:20px; line-height:1.9; }
     .oral-objectifs li { color:#d1fae5; font-size:13.5px; }
     .oral-pieges { background:#1a1206; border-color:#fbbf2433; }
     .oral-pieges li { color:#fde68a; font-size:13.5px; }
+    .oral-course-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:12px; }
+    .oral-course-card { display:flex; align-items:center; gap:12px; background:#0d1424; border:1px solid #1e293b; border-radius:11px; padding:13px 14px; cursor:pointer; transition:all .13s; }
+    .oral-course-card:hover { border-color:var(--oc); transform:translateY(-2px); background:#0f1830; }
+    .oral-course-n { width:30px; height:30px; border-radius:8px; color:#fff; font-size:14px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .oral-course-body { flex:1; min-width:0; }
+    .oral-course-title { font-size:14px; font-weight:800; color:#f1f5f9; line-height:1.3; }
+    .oral-course-tag { font-size:12px; color:#94a3b8; line-height:1.45; margin:2px 0 5px; }
+    .oral-course-meta { font-size:10.5px; color:#64748b; }
+    .oral-course-go { font-size:24px; color:var(--oc); font-weight:400; flex-shrink:0; }
     .oral-section { margin-bottom:18px; }
     .oral-section-hd { display:flex; align-items:center; gap:10px; font-size:16px; font-weight:800; color:#fff; margin-bottom:10px; padding-bottom:7px; border-bottom:2px solid var(--oc); }
     .oral-section-n { width:26px; height:26px; border-radius:7px; color:#fff; font-size:14px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; }
@@ -360,7 +379,6 @@ function _oralRevealToggle(id) {
     .oral-exemple-hd { font-size:13.5px; font-weight:800; color:#4ade80; margin-bottom:6px; }
     .oral-exemple-en { font-size:13px; color:#cbd5e1; line-height:1.7; margin-bottom:6px; }
     .oral-exemple-res { font-size:13px; color:#bbf7d0; line-height:1.7; }
-    .oral-angle { }
     .oral-angle-intro { font-size:13.5px; color:#e2e8f0; line-height:1.7; margin-bottom:12px; }
     .oral-angle-cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
     .oral-angle-col { background:#0a0f1c; border-radius:10px; padding:12px 14px; }
@@ -373,6 +391,7 @@ function _oralRevealToggle(id) {
     .oral-flash-grid.big { grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); }
     .oral-flash { background:#160b1f; border:1px solid #9333ea44; border-radius:10px; padding:13px 15px; cursor:pointer; transition:border-color .15s; }
     .oral-flash:hover { border-color:#c084fc; }
+    .oral-flash-src { font-size:10px; font-weight:700; color:#a78bfa; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:5px; }
     .oral-flash-q { font-size:13px; font-weight:700; color:#e9d5ff; line-height:1.55; }
     .oral-flash-a { font-size:13px; color:#86efac; line-height:1.65; margin-top:9px; padding-top:9px; border-top:1px dashed #9333ea55; }
     .oral-flash-hint { font-size:10.5px; color:#7c3aed; font-style:italic; margin-top:8px; }
