@@ -55,9 +55,13 @@ function _oralFindTheme(id) { return ((_oralData || {}).themes || []).find(t => 
 function _oralFindCourse(t, cid) { return (t.courses || []).find(c => c.id === cid); }
 
 /* ── Accueil : 7 thèmes ── */
+function _oralThemeLabel(t) { return t.general ? 'Révision générale' : ('Thème ' + t.num); }
+
 function _oralRenderHome(host) {
     const d = _oralData || {};
-    const themes = d.themes || [];
+    const allThemes = d.themes || [];
+    const themes = allThemes.filter(t => !t.general);
+    const revgen = allThemes.find(t => t.general);
     const stars = _oralStars();
     const intro = d.intro || {};
     host.innerHTML = `
@@ -91,20 +95,24 @@ function _oralRenderHome(host) {
                 <div class="oral-course-go">›</div>
             </div>` : ''}
         </div>` : ''}
-        <div class="oral-section-title">🎯 Thèmes principaux — discussion technique</div>
+        <div class="oral-section-title">🎯 Thèmes principaux — discussion technique <span class="oral-st-note">(2 de tes thèmes testés sur les 4 domaines)</span></div>
         <div class="oral-grid">
             ${themes.map(t => _oralThemeCard(t, stars.has(t.id))).join('')}
-        </div>`;
+        </div>
+        ${revgen ? `
+        <div class="oral-section-title">📋 Révision générale <span class="oral-st-note">(les 2 autres domaines de la discussion technique)</span></div>
+        <div class="oral-grid">${_oralThemeCard(revgen, false)}</div>` : ''}`;
 }
 
 function _oralThemeCard(t, starred) {
     const c = t.color || '#7c3aed';
+    const gen = !!t.general;
     return `
         <div class="oral-card ${starred ? 'oral-card-on' : ''}" style="--oc:${c}" onclick="_oralOpenTheme('${t.id}')">
-            <button class="oral-star ${starred ? 'on' : ''}" title="Marquer comme thème principal"
-                    onclick="event.stopPropagation();_oralToggleStar('${t.id}')">${starred ? '⭐' : '☆'}</button>
+            ${gen ? '' : `<button class="oral-star ${starred ? 'on' : ''}" title="Marquer comme thème principal"
+                    onclick="event.stopPropagation();_oralToggleStar('${t.id}')">${starred ? '⭐' : '☆'}</button>`}
             <div class="oral-card-icon" style="background:${c}22;border:1px solid ${c}55">${t.icon || '📚'}</div>
-            <div class="oral-card-num">Thème ${t.num}</div>
+            <div class="oral-card-num">${gen ? 'Révision générale' : 'Thème ' + t.num}</div>
             <div class="oral-card-title">${_oralEsc(t.title)}</div>
             <div class="oral-card-tag">${_oralEsc(t.tagline || '')}</div>
             <div class="oral-card-meta"><span>${(t.courses || []).length} cours</span><span>·</span><span>${_oralThemeFlash(t)} flashcards</span></div>
@@ -228,6 +236,12 @@ function _oralDeroulementView() {
                     <div class="oral-hero-tag">70 min · 50 % de la note · 3 épreuves</div></div>
             </div>
             ${der.intro ? `<div class="oral-block"><div class="oral-apercu">${_oralMd(der.intro)}</div></div>` : ''}
+            ${ex.reperes ? `<div class="oral-block">
+                <div class="oral-block-hd" style="color:#7dd3fc">🧭 Repères clés</div>
+                ${ex.reperes.note_themes ? `<div class="oral-callout" style="background:#0a0f1c;border-left:3px solid #3b82f6"><div class="oral-callout-tx">${_oralMd(ex.reperes.note_themes)}</div></div>` : ''}
+                ${ex.reperes.langue ? `<div class="oral-callout" style="background:#06141a;border-left:3px solid #0891b2"><div class="oral-callout-hd" style="color:#22d3ee">🗣️ Langue</div><div class="oral-callout-tx">${_oralMd(ex.reperes.langue)}</div></div>` : ''}
+                ${(ex.reperes.domaines || []).length ? `<div class="oral-compare-hd" style="color:#7dd3fc;margin-top:12px">Domaines de compétence évalués (réf. Directives)</div><div style="overflow-x:auto"><table class="oral-table"><thead><tr><th>Épreuve</th><th>Poids</th><th>Domaines</th><th>Focus</th></tr></thead><tbody>${ex.reperes.domaines.map(r => `<tr><td class="oral-td-key">${_oralEsc(r.epreuve)}</td><td>${_oralEsc(r.poids || '')}</td><td style="font-weight:700;color:#7dd3fc">${_oralEsc(r.domaines || '')}</td><td>${_oralMd(r.focus || '')}</td></tr>`).join('')}</tbody></table></div>` : ''}
+            </div>` : ''}
             ${(der.parts || []).map((p, i) => _oralExamPart(p, colors[i % 3])).join('')}
             ${(pres.structure || []).length ? _oralPresentationBlock(pres) : ''}
             ${(der.logistique || []).length ? `<div class="oral-block"><div class="oral-block-hd" style="color:#cbd5e1">🧳 Logistique le jour J</div><ul class="oral-ul">${der.logistique.map(x => `<li>${_oralMd(x)}</li>`).join('')}</ul></div>` : ''}
@@ -305,12 +319,12 @@ function _oralOpenTheme(id) {
             <div class="oral-cours-bar">
                 <button class="oral-btn" onclick="renderOral()">← Tous les thèmes</button>
                 <button class="oral-btn oral-btn-rev" onclick="_oralRevision('${t.id}',null)">🎴 Réviser tout le thème (${_oralThemeFlash(t)})</button>
-                <button class="oral-btn ${starred ? 'oral-btn-star' : ''}" onclick="_oralToggleStar('${t.id}')">${starred ? '⭐ Thème principal' : '☆ Marquer principal'}</button>
+                ${t.general ? '' : `<button class="oral-btn ${starred ? 'oral-btn-star' : ''}" onclick="_oralToggleStar('${t.id}')">${starred ? '⭐ Thème principal' : '☆ Marquer principal'}</button>`}
             </div>
             <div class="oral-hero" style="background:linear-gradient(135deg,${c}33,${c}0a 60%,transparent);border:1px solid ${c}55">
                 <div class="oral-hero-icon">${t.icon || '📚'}</div>
                 <div>
-                    <div class="oral-hero-num">Thème ${t.num} · examen oral${starred ? ' · ⭐ principal' : ''}</div>
+                    <div class="oral-hero-num">${_oralThemeLabel(t)} · examen oral${starred ? ' · ⭐ principal' : ''}</div>
                     <div class="oral-hero-title">${_oralEsc(t.title)}</div>
                     <div class="oral-hero-tag">${_oralEsc(t.tagline || '')}</div>
                 </div>
@@ -374,7 +388,7 @@ function _oralOpenCourse(tid, cid) {
             <div class="oral-hero" style="background:linear-gradient(135deg,${c}33,${c}0a 60%,transparent);border:1px solid ${c}55">
                 <div class="oral-hero-icon">${t.icon || '📚'}</div>
                 <div>
-                    <div class="oral-hero-num">Thème ${t.num} · ${_oralEsc(t.title)}</div>
+                    <div class="oral-hero-num">${_oralThemeLabel(t)} · ${_oralEsc(t.title)}</div>
                     <div class="oral-hero-title">${_oralEsc(co.title)}</div>
                     <div class="oral-hero-tag">${_oralEsc(co.tagline || '')}</div>
                 </div>
@@ -534,6 +548,7 @@ function _oralRevealToggle(tid, cid) {
     .oral-card-badge { margin-top:10px; display:inline-block; font-size:10.5px; font-weight:800; color:#fde68a; background:#3a2c0a; border:1px solid #fbbf2455; padding:2px 9px; border-radius:10px; }
     .oral-card.oral-card-on { border-color:#fbbf2466; box-shadow:0 0 0 1px #fbbf2433 inset; }
     .oral-section-title { font-size:13px; font-weight:800; color:#94a3b8; text-transform:uppercase; letter-spacing:0.06em; margin:22px 0 12px; }
+    .oral-st-note { font-size:11px; font-weight:500; color:#64748b; text-transform:none; letter-spacing:0; }
     .oral-exam-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin-bottom:6px; }
     .oral-block-sub { font-size:12px; color:#94a3b8; margin:-6px 0 12px; line-height:1.5; }
     .oral-scn { background:#0d1424; border:1px solid #1e293b; border-radius:11px; padding:14px 16px; margin-bottom:12px; }
