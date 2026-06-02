@@ -8370,5 +8370,614 @@
         }
       ]
     }
-  ]
+  ],
+  "examen": {
+    "deroulement": {
+      "intro": "L'oral dure 70 minutes et compte pour 50 % de la note finale, à égalité avec l'étude de cas écrite : c'est donc la moitié du diplôme qui se joue ici, en face à face, sans filet et sans possibilité de revenir en arrière. Il s'enchaîne en trois parties distinctes mais notées globalement par le même collège d'experts : la Présentation du comportement (≈ 10 min, 1/5, domaine G), la Discussion technique (≈ 30 min, 2/5, domaines D et E) et la Discussion d'experts (≈ 30 min, 2/5, domaines A, B, C, F et G). La logique d'ensemble change à chaque partie : on attend d'abord de toi de la réflexion sur ta propre pratique et ton attitude, puis une maîtrise technique méthodique et axée stratégie, enfin une posture d'expert-conseil qui prend position et formule des recommandations applicables devant une partie prenante jouée par un examinateur. Tu ne récites pas un savoir : tu démontres un jugement professionnel d'expert-comptable / réviseur agréé. La préparation décisive ne se joue pas le jour J mais dans ta capacité à structurer une pensée à voix haute, à assumer une position et à parler la langue technique du métier (audit, révision, conseil, fiscalité, comptabilité) avec assurance et clarté.",
+      "parts": [
+        {
+          "nom": "Présentation (comportement)",
+          "duree": "≈10 min (questions incluses)",
+          "poids": "1/5",
+          "domaine": "G",
+          "description": "En salle de préparation tu tires AU HASARD un comportement/une attitude dans l'annexe 3 des Directives (p. ex. scepticisme professionnel, intégrité, esprit critique, sens des responsabilités, communication, gestion du conflit, leadership). Tu disposes de 15 minutes et de fiches pour préparer un exposé de 3 à 5 minutes, SANS AUCUN SUPPORT (ni notes lues, ni slides), construit en trois parties de durée à peu près égale : (1) une situation concrète de ton travail quotidien et ton rôle ; (2) la situation complexe que ce comportement soulève, déclinée en opportunités ET risques ; (3) la décision prise et ses motifs. L'exposé est suivi de questions des experts qui creusent ton raisonnement, ton autocritique et ta capacité à généraliser.",
+          "criteres": [
+            "Réflexion approfondie ET autocritique : tu montres que tu as pesé tes choix, vu tes propres limites et tiré une leçon, pas seulement raconté une réussite",
+            "Identification COMPLÈTE des situations complexes : opportunités et risques tous deux explicités, pas un seul des deux versants",
+            "Présentation convaincante : récit structuré, fil conducteur clair, capacité à embarquer l'auditoire",
+            "Langage technique correct : vocabulaire d'expert-comptable / réviseur employé à bon escient (indépendance, scepticisme, seuil de signification, etc.)",
+            "Gestion du temps : tenir les 3-5 min et les trois parties équilibrées, sans déborder ni bâcler",
+            "Attitude assurée : posture, regard, voix qui posent l'autorité du futur expert",
+            "Locution claire : débit, articulation, absence de tics verbaux"
+          ],
+          "conseils": [
+            "Choisis IMMÉDIATEMENT une situation vécue, vérifiable et que tu maîtrises à fond (une révision, une mission de conseil, un désaccord avec un client ou un associé) : on te questionnera dessus, donc évite l'exemple inventé ou flou",
+            "Écris sur ta fiche seulement un squelette de mots-clés (3 parties × 3-4 repères), jamais des phrases rédigées : l'exposé doit être parlé, pas lu, et le sans-support t'oblige à mémoriser un fil, pas un texte",
+            "Minute tes trois parties : vise ~1 min 15 chacune, et garde une marge pour la conclusion ; entraîne-toi à sentir le temps sans montre puisque les appareils sont dans l'enveloppe",
+            "Nomme explicitement le comportement tiré et fais-en le fil rouge : reviens-y à chaque partie (« le scepticisme m'a conduit à... ») pour que les experts cochent leurs critères sans effort",
+            "Pour la partie 2, formule toujours opportunités ET risques en deux temps distincts (« l'opportunité était..., le risque était... ») : c'est le critère d'évaluation le plus souvent raté",
+            "Termine la partie 3 par une décision claire ET ses motifs, puis une micro-leçon autocritique (« avec le recul, je referais X mais j'anticiperais Y ») qui prouve la réflexion sur soi attendue",
+            "Anticipe 4-5 questions probables (« qu'auriez-vous fait autrement ? », « comment auriez-vous géré le refus du client ? », « ce comportement entre-t-il parfois en conflit avec un autre ? ») et prépare des réponses-amorces",
+            "Soigne l'entrée en matière : une première phrase posée et assurée fixe l'impression d'autorité ; pose les pieds, respire, regarde les deux examinateurs avant de parler"
+          ],
+          "pieges": [
+            "Raconter une simple anecdote de réussite sans autocritique : le critère d'autoréflexion tombe à zéro et l'exposé paraît complaisant",
+            "Ne traiter que les opportunités (ou que les risques) de la situation complexe, alors que les deux versants sont exigés",
+            "Lire ou réciter un texte mémorisé mot à mot : le sans-support se voit immédiatement et casse la conviction ; le regard décroche, la voix devient monocorde",
+            "Déséquilibrer le temps (5 minutes sur la mise en contexte, 20 secondes sur la décision) ou dépasser franchement les 5 minutes",
+            "Choisir un comportement ou une situation qu'on ne maîtrise pas et se faire piéger aux questions de relance",
+            "Confondre le comportement tiré avec un autre (présenter de l'« intégrité » alors qu'on a tiré l'« esprit critique ») : on te note sur le comportement attribué, pas sur celui que tu préfères"
+          ]
+        },
+        {
+          "nom": "Discussion technique",
+          "duree": "≈30 min",
+          "poids": "2/5",
+          "domaine": "D et E",
+          "description": "Échange technique d'environ 30 minutes portant sur les domaines D et E, découpé en 4 blocs de 7,5 minutes : 2 thèmes principaux que tu as choisis parmi 7 proposés, plus 2 thèmes tirés de la révision générale (donc non préparés à l'avance). Les experts attendent des connaissances approfondies, méthodiques et orientées stratégie, une langue technique précise et une compétence interdisciplinaire : tu dois relier les sujets entre eux et au contexte de l'entreprise, pas réciter des définitions isolées. Le rythme est soutenu (7,5 min par thème), il faut donc aller vite à l'essentiel tout en montrant la profondeur.",
+          "criteres": [
+            "Connaissances approfondies : maîtrise des normes et mécanismes, pas seulement des intitulés",
+            "Approche méthodique : raisonnement structuré, démarche reproductible (problème → cadre normatif → application → conclusion)",
+            "Orientation stratégie : capacité à dépasser la technique pour montrer l'enjeu pour l'entreprise / la mission",
+            "Langage technique : terminologie exacte (CO, Swiss GAAP RPC, IFRS, NAS/normes d'audit, fiscalité) employée correctement",
+            "Compétence interdisciplinaire : ponts entre comptabilité, audit, fiscalité, droit et finance"
+          ],
+          "conseils": [
+            "Choisis tes 2 thèmes principaux là où tu es le plus solide ET le plus à l'aise pour relier à d'autres domaines : ils donnent le ton de toute la discussion, choisis-les stratégiquement et pas par évitement",
+            "Pour chaque thème principal, prépare une mini-architecture (cadre normatif applicable → points de jugement → pièges fréquents → impact stratégique) que tu peux dérouler en ~7 minutes sans te perdre",
+            "Structure chaque réponse : annonce ton plan en une phrase (« je vois trois angles »), traite-les, conclus ; cela répond directement au critère 'méthodique'",
+            "Ancre systématiquement la technique dans une conséquence concrète (impact sur les comptes, sur l'opinion d'audit, sur la charge fiscale, sur la décision du dirigeant) pour cocher l'orientation stratégie",
+            "Cite la source normative précise quand tu la connais (article du CO, RPC concernée, IAS/IFRS, norme d'audit) : la précision technique fait la différence à ce niveau",
+            "Fais des ponts interdisciplinaires explicites (« comptablement c'est X, mais fiscalement cela déclenche Y, et côté audit cela change mon appréciation du risque ») : c'est un critère noté à part",
+            "Pour les 2 thèmes de révision générale non préparés, applique une trame de secours universelle : reformuler la question, poser le cadre, raisonner à voix haute, conclure — mieux vaut une démarche structurée qu'un blanc",
+            "Garde un œil sur le rythme : à 7,5 min par bloc, n'épuise pas tout sur le premier point ; donne l'essentiel puis laisse l'expert relancer"
+          ],
+          "pieges": [
+            "Réciter des définitions ou des listes par cœur sans les appliquer ni les relier : l'examinateur cherche du raisonnement, pas un manuel",
+            "Rester purement technique et oublier l'angle stratégique / l'impact entreprise, qui est explicitement noté",
+            "Choisir ses 2 thèmes principaux par confort superficiel et se retrouver à court de profondeur dès la première relance",
+            "Se figer sur un thème de révision générale non anticipé au lieu de dérouler une démarche structurée à voix haute",
+            "Mélanger ou confondre les cadres normatifs (appliquer une règle IFRS là où le CO ou les Swiss GAAP RPC s'imposent) : erreur de fond très pénalisante",
+            "Monopoliser la parole sur un seul point et ne pas couvrir les 4 blocs, ou au contraire bâcler par survol sans aucune profondeur"
+          ]
+        },
+        {
+          "nom": "Discussion d'experts",
+          "duree": "≈30 min",
+          "poids": "2/5",
+          "domaine": "A, B, C, F et G",
+          "description": "Jeu de rôle d'environ 30 minutes couvrant les domaines A, B, C, F et G : tu incarnes l'expert-comptable et un examinateur joue une partie prenante interne ou externe (dirigeant, membre du conseil, banquier, actionnaire, autorité fiscale, client). Tu dois prendre position, formuler des recommandations applicables et tirer des conclusions, avec une communication adaptée au destinataire et un esprit entrepreneurial. Ce n'est plus un examen de connaissances pures mais une simulation de mandat : on évalue ta posture de conseil, ta capacité à argumenter et à décider sous contrainte, et la qualité concrète (applicable) de tes propositions.",
+          "criteres": [
+            "Connaissances mobilisées à bon escient au service de la décision",
+            "Langage technique maîtrisé mais traduit pour l'interlocuteur",
+            "Mise en relation de faits complexes : synthétiser plusieurs éléments en une lecture cohérente",
+            "Argumentation et justification : chaque position est étayée par un motif solide",
+            "Réponses structurées : la pensée est lisible, hiérarchisée",
+            "Communication adaptée au destinataire : registre et niveau de détail ajustés à la partie prenante jouée",
+            "Esprit entrepreneurial : sens des affaires, prise en compte des contraintes économiques et du risque",
+            "Propositions applicables : recommandations concrètes, réalistes, actionnables",
+            "Capacité de réflexion : tu raisonnes en direct, tu adaptes ta position aux objections"
+          ],
+          "conseils": [
+            "Identifie d'emblée QUI est ton interlocuteur et ce qu'il veut : un dirigeant attend de l'aide à la décision, un banquier de la fiabilité, le fisc de la conformité ; calibre ton registre et ton niveau de détail en conséquence (critère 'communication adaptée')",
+            "PRENDS POSITION clairement : énonce ta recommandation d'abord, puis justifie (logique SCQA / 'réponse d'abord'), au lieu de noyer ton avis dans des considérations ; l'indécision est sanctionnée",
+            "Rends chaque recommandation APPLICABLE : nomme l'action, le responsable, l'échéance ou la condition (« je recommande de provisionner X au bouclement, sous réserve de confirmation de Y par le service juridique »)",
+            "Mets en relation les faits : commence par une synthèse en une phrase (« trois éléments se combinent ici : ... »), cela démontre la capacité de lecture transversale qui est notée",
+            "Montre l'esprit entrepreneurial : intègre la dimension économique, le coût/bénéfice, le risque d'affaires et la pérennité du client, pas seulement la conformité comptable",
+            "Gère l'objection avec assurance : reformule (« si je vous comprends, votre préoccupation est... »), reconnais le point valable, puis tiens ou ajuste ta position en l'argumentant — sans céder par simple pression",
+            "Garde la posture de conseil indépendant : reste courtois et adapté au destinataire, mais ne sacrifie pas l'indépendance, l'éthique ou la norme pour faire plaisir à la partie prenante",
+            "Structure chaque intervention (constat → analyse → recommandation → étape suivante) : des réponses structurées sont explicitement notées"
+          ],
+          "pieges": [
+            "Rester descriptif et ne jamais prendre position ni recommander : c'est exactement ce que l'exercice cherche à éviter",
+            "Donner des recommandations vagues ou théoriques, non applicables (« il faudrait être prudent ») au lieu d'actions concrètes",
+            "Parler à la partie prenante comme à un examinateur technique : jargon non traduit, niveau de détail inadapté au destinataire",
+            "Céder à l'interlocuteur sous la pression de l'objection et abandonner l'indépendance ou la position fondée, ou à l'inverse s'arc-bouter sans écouter un argument valable",
+            "Oublier la dimension entrepreneuriale / économique et raisonner uniquement en conformité comptable",
+            "Répondre point par point sans synthèse ni hiérarchie, donnant l'impression de subir le dialogue plutôt que de le mener en conseiller"
+          ]
+        }
+      ],
+      "logistique": [
+        "Arrive en avance : un retard peut entraîner l'exclusion de l'examen ; repère l'adresse, le bâtiment et la salle la veille si possible",
+        "Téléphone et montre connectée éteints et placés dans l'enveloppe prévue : tu passeras l'oral SANS aucun appareil, donc entraîne-toi à gérer le temps sans montre",
+        "Remets ton ordinateur au surveillant comme demandé ; n'emporte en salle de préparation que ce qui est autorisé (fiches fournies)",
+        "Présente une pièce d'identité valable : prépare-la à l'avance pour ne pas t'agiter au dernier moment",
+        "En salle de préparation (15 min pour la Présentation), utilise uniquement les fiches remises et n'écris qu'un squelette de mots-clés, puisque l'exposé se fait sans support",
+        "Prévois une tenue professionnelle sobre et un peu d'eau : l'oral est long (70 min) et l'attitude assurée se joue aussi dans la présentation de soi"
+      ],
+      "conseils_generaux": [
+        "Gestion du temps : intériorise les durées (3-5 min pour la Présentation, 7,5 min par bloc technique) ; sans montre, répète à blanc jusqu'à 'sentir' le rythme, et ne consomme jamais tout ton temps sur le premier point d'une réponse",
+        "Structure tes réponses avec une trame visible : STAR (Situation, Tâche, Action, Résultat) pour les récits de comportement, SCQA / 'réponse d'abord' (Situation, Complication, Question, Réponse) pour le conseil — annonce ton plan, déroule, conclus",
+        "Prends toujours position : à ce niveau, l'indécision est une faute ; énonce ta recommandation ou ton appréciation clairement, puis justifie-la par des motifs techniques solides",
+        "Voix et posture : débit posé, articulation nette, volume suffisant, pieds ancrés, mains calmes, regard partagé entre les deux experts ; respire avant de répondre plutôt que de combler le silence par des 'euh'",
+        "Gérer le trou de mémoire : ne paniques pas et ne te tais pas longtemps ; reformule la question à voix haute pour gagner du temps, reviens au cadre normatif général, raisonne par principes — une démarche structurée vaut mieux qu'un blanc, et dire 'je vérifierais ce point' est plus professionnel qu'inventer",
+        "Parle la langue technique du métier avec précision (CO, Swiss GAAP RPC, IFRS, normes d'audit, fiscalité, indépendance, scepticisme, seuil de signification) : la terminologie exacte est notée dans les trois parties",
+        "Raisonne à voix haute et de façon interdisciplinaire : montre les ponts entre comptabilité, audit, fiscalité, droit et stratégie plutôt que des connaissances en silos",
+        "Adapte ta communication au destinataire surtout en Discussion d'experts : traduis le technique pour un dirigeant ou un banquier, reste précis pour un pair, ajuste le niveau de détail",
+        "Garde une posture d'autorité tranquille : assume tes positions, accueille les objections sans te braquer, corrige-toi si un argument valable est avancé — la capacité de réflexion en direct est valorisée",
+        "Reste fidèle à l'éthique et à l'indépendance du réviseur : ne sacrifie jamais une exigence normative ou déontologique pour faire plaisir à un interlocuteur, même sous pression dans le jeu de rôle"
+      ]
+    },
+    "presentation": {
+      "intro": "La Présentation du comportement (≈ 10 min, 1/5 de la note, domaine G) se joue en deux temps : 15 minutes de préparation en salle après avoir tiré AU HASARD un comportement dans l'annexe 3, puis un exposé de 3 à 5 minutes SANS AUCUN SUPPORT suivi de questions. Réussir ne dépend pas d'un récit héroïque mais d'une réflexion approfondie et autocritique sur une vraie situation de ton travail d'expert-comptable, structurée en trois parties équilibrées, où le comportement attribué sert de fil rouge et où opportunités comme risques sont nommés. La note se gagne sur la profondeur du raisonnement, l'équilibre du temps et une attitude assurée, pas sur la quantité d'informations.",
+      "structure": [
+        {
+          "titre": "1. Situation concrète & ton rôle",
+          "detail": "≈ 1 min – 1 min 15. Plante une situation réelle, précise et vérifiable tirée de ton quotidien (une révision, une clôture délicate, une mission de conseil, un désaccord client) et dis clairement quel était TON rôle et ta responsabilité. Sois concret (secteur, enjeu, parties en présence) mais bref : c'est le décor, pas l'histoire entière. Nomme dès ici le comportement tiré pour ouvrir le fil rouge."
+        },
+        {
+          "titre": "2. Situation complexe (opportunités & risques)",
+          "detail": "≈ 1 min – 1 min 30. Cœur de l'exposé : montre en quoi ce comportement t'a placé dans une situation complexe, en explicitant SÉPARÉMENT les opportunités (ce que la bonne attitude permettait de gagner : qualité, confiance, conformité, valeur pour le client) ET les risques (conflit, perte de mandat, exposition, pression sur l'indépendance). Traiter les deux versants est le critère le plus souvent manqué : verbalise-les en deux temps distincts."
+        },
+        {
+          "titre": "3. Décision & motifs",
+          "detail": "≈ 1 min – 1 min 15. Annonce la décision que tu as prise et, surtout, POURQUOI (les motifs : norme, éthique, intérêt du client, indépendance). Termine par une touche autocritique — la leçon tirée, ce que tu referais ou ajusterais — qui démontre la réflexion approfondie et autocritique exigée. C'est la chute : qu'elle soit nette et assumée."
+        }
+      ],
+      "methode": [
+        "Minutes 0-2 : décode le comportement tiré (définis-le pour toi en une phrase) et balaie mentalement 2-3 situations vécues qui l'illustrent ; choisis la plus concrète et la plus maîtrisable aux questions",
+        "Minutes 2-6 : pose le squelette en 3 cases (Situation/rôle – Complexité opportunités&risques – Décision/motifs) avec 3-4 mots-clés par case, jamais de phrases rédigées",
+        "Minutes 6-9 : muscle la partie 2 en listant explicitement opportunités d'un côté, risques de l'autre (au moins deux de chaque), puisque c'est le critère le plus discriminant",
+        "Minutes 9-11 : formule la décision et 2-3 motifs solides, puis une phrase d'autocritique / leçon apprise pour la chute",
+        "Minutes 11-13 : anticipe 4-5 questions probables (« qu'auriez-vous fait autrement ? », « ce comportement a-t-il créé un conflit ? », « comment l'avez-vous arbitré ? ») et note une amorce de réponse pour chacune",
+        "Minutes 13-15 : répète mentalement le fil à voix basse en minutant grossièrement les trois parties, vérifie que le comportement tiré apparaît dans chacune, et ancre ta phrase d'ouverture pour démarrer assuré"
+      ],
+      "conseils": [
+        "Fais du comportement attribué le fil rouge : reviens-y explicitement dans chacune des trois parties pour que les experts cochent leurs critères sans effort",
+        "Parle, ne lis pas : mémorise un fil de mots-clés, pas un texte ; le sans-support récompense le récit vivant et pénalise la récitation",
+        "Équilibre le temps : vise des parties à peu près égales (~1 à 1 min 30 chacune) et garde une chute nette plutôt que de t'éterniser sur le décor",
+        "Soigne l'autocritique : une vraie leçon apprise (« avec le recul, je referais X mais j'anticiperais Y ») fait basculer la note sur le critère de réflexion approfondie",
+        "Emploie le vocabulaire d'expert-comptable / réviseur (indépendance, scepticisme, intérêt public, seuil de signification, déontologie) à bon escient pour le critère 'langage technique'",
+        "Pose l'attitude assurée dès la première phrase : respire, regarde les deux examinateurs, parle posément ; l'autorité tranquille est explicitement évaluée",
+        "Prépare la phase de questions comme partie intégrante de l'exercice : tes meilleures réflexions autocritiques peuvent y être gardées en réserve pour rebondir"
+      ],
+      "pieges": [
+        "Présenter une réussite lisse sans aucune autocritique : le critère central de réflexion sur soi s'effondre",
+        "N'exposer qu'un seul versant de la complexité (opportunités seules ou risques seuls) alors que les deux sont exigés",
+        "Lire/réciter mot à mot ou consulter une fiche pendant l'exposé qui doit être sans support : la conviction et le contact visuel s'effondrent",
+        "Déséquilibrer le temps (long décor, décision expédiée) ou dépasser nettement les 5 minutes",
+        "Choisir une situation peu maîtrisée ou inventée et se faire désarçonner aux questions de relance",
+        "Traiter un autre comportement que celui tiré au hasard, parce qu'on a une 'meilleure' histoire en réserve : on note le comportement attribué"
+      ]
+    },
+    "comportements": [
+      {
+        "nom": "Persévérance / résilience",
+        "definition": "Capacité à poursuivre un objectif malgré les obstacles, les revers et la fatigue, et à rebondir après une difficulté sans perdre en qualité ni en engagement.",
+        "contexte": "Dans le métier de réviseur, la persévérance se manifeste lorsqu'un poste comptable refuse de se réconcilier à quelques jours du bouclement, lorsqu'un client tarde à livrer les justificatifs d'une provision litigieuse, ou lorsqu'une mission de due diligence se prolonge bien au-delà du budget temps. La résilience joue après une saison de bouclements éprouvante, après un rapport contesté par la direction, ou quand une piste d'audit s'avère sans issue et qu'il faut repartir d'une autre approche sans se décourager.",
+        "situation_modele": "Lors de l'audit d'un groupe industriel, l'écart de consolidation intercompagnies ne se résorbait pas : 240 000 CHF d'écritures réciproques ne se compensaient pas entre la filiale suisse et la filiale allemande, à dix jours de la remise du rapport. Mon rôle de chef de mission m'obligeait à trancher entre signaler une limitation d'étendue ou continuer à creuser. Opportunité : isoler une erreur de coupure de période susceptible de fausser le résultat consolidé et de renforcer la confiance du client. Risque : engloutir des heures non budgétées et retarder l'ensemble de l'équipe. J'ai décidé de prolonger l'analyse de deux jours en ciblant les flux par devise et par date de comptabilisation ; nous avons identifié une facture intragroupe enregistrée à deux taux de change différents. La correction a permis d'émettre une opinion sans réserve dans les délais.",
+        "conseils": [
+          "Raconter un revers RÉEL puis montrer la remontée : le jury évalue la capacité à rebondir, pas une réussite linéaire sans accroc.",
+          "Quantifier l'effort (jours supplémentaires, nombre de pistes testées) pour rendre la persévérance tangible et crédible.",
+          "Distinguer persévérance et acharnement : expliquer le critère qui vous a fait décider de continuer plutôt que de vous arrêter (matérialité, risque, valeur ajoutée).",
+          "Terminer sur l'apprentissage tiré et le mécanisme mis en place pour mieux résister la fois suivante (résilience = se renforcer)."
+        ],
+        "pieges": [
+          "Confondre persévérance et entêtement : s'obstiner sur un point non matériel au mépris de la gestion du temps déssert le propos.",
+          "Choisir une anecdote sans véritable obstacle : sans difficulté réelle, le comportement n'est pas démontré.",
+          "Oublier la dimension émotionnelle de la résilience (pression, fatigue) et ne parler que de technique."
+        ],
+        "phrases": [
+          "Face à cet écart qui résistait, j'ai préféré reformuler mon approche plutôt que d'abandonner, en me fixant un seuil clair pour décider quand m'arrêter.",
+          "Ce revers m'a appris à anticiper ce type de risque ; j'ai depuis intégré un contrôle de coupure systématique en début de mission.",
+          "J'ai tenu le cap malgré la pression du calendrier, parce que l'enjeu de fiabilité du résultat consolidé le justifiait."
+        ]
+      },
+      {
+        "nom": "Résistance (au stress et à la pression)",
+        "definition": "Aptitude à conserver sa lucidité, la qualité de son jugement et un comportement maîtrisé dans des situations de forte pression, d'urgence ou de tension relationnelle.",
+        "contexte": "Le réviseur subit une pression intense en période de bouclement (plusieurs mandats en parallèle, délais légaux de dépôt), lors d'entretiens tendus avec une direction qui conteste un ajustement, face à un comité d'audit exigeant, ou quand un événement postérieur à la clôture remet en cause des conclusions presque finalisées. La pression peut aussi être déontologique : refuser une opinion favorable malgré l'insistance d'un client important.",
+        "situation_modele": "À trois jours de l'assemblée générale d'une société cotée, la direction a découvert un litige fiscal non provisionné de 1,1 million CHF, susceptible de modifier l'opinion d'audit. En tant que responsable du mandat, je devais réévaluer la provision et la communication, sous la pression conjuguée du temps, du CFO inquiet pour le cours de l'action, et de mon associé signataire. Opportunité : sécuriser la fiabilité des comptes et protéger la responsabilité du cabinet. Risque : céder à l'urgence et sous-évaluer le risque fiscal, ou au contraire bloquer l'AG. J'ai structuré la réponse : obtention d'une note du conseil fiscal, estimation d'une fourchette, comptabilisation d'une provision prudente et information ciblée au comité d'audit. L'AG s'est tenue avec des comptes corrigés et une opinion sans réserve.",
+        "conseils": [
+          "Montrer la MÉTHODE qui vous a permis de rester maître de vous : prioriser, séquencer, s'appuyer sur des faits plutôt que sur l'émotion ambiante.",
+          "Décrire un signal de stress et la façon dont vous l'avez canalisé (respiration, pause structurée, recentrage sur les normes) : cela rend la maîtrise crédible.",
+          "Mettre en avant le maintien de la qualité du jugement SOUS pression, et non la seule capacité à 'tenir'.",
+          "Valoriser la communication calme avec les parties prenantes anxieuses comme un levier de désescalade."
+        ],
+        "pieges": [
+          "Se présenter comme insensible au stress ('ça ne m'atteint jamais') : peu crédible et perçu comme un manque de lucidité.",
+          "Décrire une situation où le stress vous a fait commettre une erreur sans montrer la correction : l'exemple se retourne contre vous.",
+          "Confondre résistance au stress et précipitation : aller vite n'est pas résister, c'est parfois subir."
+        ],
+        "phrases": [
+          "Sous cette pression, je me suis appuyé sur les faits et sur la norme pour garder un jugement froid plutôt que de réagir à chaud.",
+          "J'ai d'abord séquencé les urgences : ce qui était bloquant pour l'AG, puis le reste, pour éviter de tout traiter dans la panique.",
+          "Garder mon calme face à un CFO inquiet m'a permis de désamorcer la tension et d'obtenir l'information dont j'avais besoin."
+        ]
+      },
+      {
+        "nom": "Précision / diligence",
+        "definition": "Souci constant de l'exactitude, du détail et de la conformité, en accomplissant chaque tâche avec rigueur, méthode et conscience professionnelle.",
+        "contexte": "La diligence est le cœur du métier de réviseur : exactitude des réconciliations, traçabilité de chaque conclusion dans le dossier de travail, respect scrupuleux des normes d'audit (NAS / ISA) et des seuils de matérialité, vérification des calculs d'impôts différés, contrôle des annexes aux comptes. Un chiffre faux, une référence normative inexacte ou une feuille de travail mal documentée peuvent invalider une conclusion ou exposer le cabinet en cas de contrôle de l'autorité de surveillance (ASR).",
+        "situation_modele": "En revue qualité d'un dossier d'audit d'une PME, j'ai relevé que le test de dépréciation d'un goodwill de 3,2 millions CHF reposait sur un taux d'actualisation saisi à 8 % dans le modèle alors que la documentation justifiait 9,5 %. Mon rôle de réviseur responsable m'imposait de vérifier l'impact. Opportunité : éviter une surévaluation d'actif et une opinion erronée. Risque : remettre en cause des conclusions déjà validées par l'équipe et rouvrir le dossier en fin de mission. J'ai recalculé : au taux correct, une dépréciation de 280 000 CHF devenait nécessaire. J'ai exigé la correction et l'ajout d'une note de revue documentant le contrôle de cohérence des paramètres du modèle.",
+        "conseils": [
+          "Donner un exemple où un DÉTAIL a changé la conclusion : la diligence se prouve par son impact, pas par l'affirmation d'être rigoureux.",
+          "Mentionner vos mécanismes de contrôle (revue croisée, checklist, recalcul indépendant) pour montrer une rigueur systématique et non ponctuelle.",
+          "Relier la précision à la responsabilité légale et à la confiance du public : le réviseur certifie, il ne suppose pas.",
+          "Soigner votre propre langage à l'oral (chiffres exacts, références normatives correctes) : la forme de votre exposé doit refléter la diligence dont vous parlez."
+        ],
+        "pieges": [
+          "Présenter la précision comme du perfectionnisme paralysant, sans articulation avec la matérialité : la rigueur doit rester proportionnée à l'enjeu.",
+          "Citer une norme ou un chiffre approximatif pendant l'exposé : cela contredit frontalement le comportement présenté.",
+          "Rester abstrait ('je suis quelqu'un de rigoureux') sans illustration concrète."
+        ],
+        "phrases": [
+          "Ce détail apparemment mineur, le taux d'actualisation, modifiait la conclusion d'audit : c'est pourquoi je le recoupe systématiquement.",
+          "Je documente chaque conclusion de façon qu'un tiers puisse refaire mon raisonnement à partir du dossier seul.",
+          "Ma rigueur reste calibrée sur la matérialité : je concentre l'effort là où une erreur aurait un impact significatif."
+        ]
+      },
+      {
+        "nom": "Capacité à communiquer",
+        "definition": "Aptitude à transmettre une information claire, structurée et adaptée à l'interlocuteur, à écouter activement et à faire passer un message technique de façon compréhensible et convaincante.",
+        "contexte": "Le réviseur communique en permanence : restituer des constats d'audit à un comité d'audit, vulgariser une norme comptable pour un dirigeant non financier, rédiger une lettre de recommandations (management letter) actionnable, annoncer un ajustement défavorable sans braquer le client, ou expliquer à un collaborateur junior pourquoi une feuille de travail est insuffisante. La qualité de la communication conditionne l'acceptation des conclusions et la relation de confiance.",
+        "situation_modele": "À l'issue d'un audit, je devais annoncer à un dirigeant fondateur, peu familier des IFRS, que sa méthode de reconnaissance du chiffre d'affaires sur des contrats pluriannuels devait changer sous IFRS 15, avec un effet de report de 600 000 CHF de produits sur l'exercice suivant. Mon rôle : faire accepter l'ajustement sans rompre la relation. Opportunité : renforcer ma crédibilité de conseil et fiabiliser les comptes. Risque : un message trop technique générant incompréhension et résistance. J'ai préparé une explication en trois temps (le principe économique, l'impact chiffré, l'effet nul sur la trésorerie), avec un schéma simple. Le dirigeant a compris et validé la correction.",
+        "conseils": [
+          "Montrer que vous ADAPTEZ le message au destinataire (dirigeant, comité d'audit, junior) : c'est le critère central de la compétence de communication.",
+          "Illustrer la structuration de votre propos (message clé d'abord, puis preuves) plutôt que de dérouler du jargon.",
+          "Valoriser l'écoute active : reformuler la préoccupation du client avant d'asséner la conclusion désamorce les résistances.",
+          "Profiter de l'exposé lui-même comme démonstration vivante : un oral clair, structuré et bien rythmé prouve la compétence dont vous parlez."
+        ],
+        "pieges": [
+          "Confondre communiquer et tout dire : noyer l'interlocuteur sous les détails techniques est l'inverse d'une bonne communication.",
+          "Oublier la dimension d'écoute et ne parler que d'émission de messages.",
+          "Donner un exemple où le message est passé 'parce qu'il fallait bien', sans effort d'adaptation : le comportement n'est alors pas démontré."
+        ],
+        "phrases": [
+          "J'ai commencé par le message clé, puis je l'ai étayé, plutôt que de noyer le dirigeant sous la norme.",
+          "Avant d'expliquer l'ajustement, j'ai reformulé sa préoccupation sur la trésorerie pour montrer que je l'avais entendue.",
+          "J'ai traduit IFRS 15 en termes économiques concrets, parce que mon interlocuteur n'était pas comptable."
+        ]
+      },
+      {
+        "nom": "Prise de conscience des coûts",
+        "definition": "Sensibilité à l'efficience économique : utiliser le temps, les ressources et le budget de manière responsable, en cherchant le meilleur rapport entre l'effort engagé et la valeur produite.",
+        "contexte": "Le réviseur gère un budget d'heures par mandat et doit délivrer une assurance suffisante sans surconsommer : calibrer l'étendue des tests sur le risque réel, recourir à l'échantillonnage plutôt qu'à l'exhaustivité, mutualiser des contrôles entre entités d'un groupe, ou automatiser des rapprochements répétitifs. La conscience des coûts vaut aussi côté conseil : recommander au client une solution proportionnée à sa taille plutôt qu'un dispositif disproportionné.",
+        "situation_modele": "Sur un mandat récurrent dont le budget temps dérivait chaque année, j'ai constaté que l'équipe testait manuellement 100 % des écritures de paie alors que le risque résiduel était faible et le contrôle interne fiable. Mon rôle de chef de mission : restaurer la rentabilité sans dégrader la qualité. Opportunité : économiser une trentaine d'heures et réaffecter l'équipe à des zones plus risquées. Risque : réduire les tests au point d'affaiblir l'assurance. J'ai introduit une analyse de données sur l'intégralité de la population paie pour cibler les seules anomalies, remplaçant le test exhaustif. La couverture d'audit a augmenté tout en réduisant le coût.",
+        "conseils": [
+          "Montrer que vous reliez l'effort au RISQUE : dépenser là où ça compte, économiser là où le risque est faible, c'est l'essence de la conscience des coûts.",
+          "Donner un chiffre d'économie ou de gain d'efficience pour rendre le propos concret et entrepreneurial.",
+          "Insister sur le fait que réduire le coût n'a pas dégradé la qualité (voire l'a améliorée) : c'est ce qui distingue l'efficience de la négligence.",
+          "Évoquer l'automatisation ou la mutualisation comme leviers modernes, valorisés par le règlement (esprit entrepreneurial)."
+        ],
+        "pieges": [
+          "Donner l'impression de rogner sur la qualité d'audit pour économiser : inacceptable au regard de la responsabilité du réviseur.",
+          "Réduire la conscience des coûts à 'aller plus vite' sans réflexion sur le risque.",
+          "Oublier l'angle valeur pour le client (solution proportionnée) et ne parler que du budget interne du cabinet."
+        ],
+        "phrases": [
+          "J'ai déplacé l'effort des zones à faible risque vers les zones sensibles : c'est là que chaque heure crée de la valeur.",
+          "En automatisant ce contrôle, j'ai économisé une trentaine d'heures tout en augmentant la couverture d'audit.",
+          "Je raisonne en rapport coût-assurance : l'objectif n'est pas de tout tester, mais de tester juste."
+        ]
+      },
+      {
+        "nom": "Orientation vers les clients / orientation vers les solutions",
+        "definition": "Volonté de comprendre les besoins réels du client et de lui apporter des réponses concrètes et applicables, en restant dans le cadre de l'indépendance et de la déontologie, plutôt que de se limiter à constater des problèmes.",
+        "contexte": "Au-delà de certifier, le réviseur apporte de la valeur : transformer un constat de faiblesse de contrôle interne en recommandation actionnable, accompagner une PME dans le choix d'un référentiel comptable (Swiss GAAP RPC plutôt qu'IFRS si plus proportionné), anticiper les difficultés de bouclement du client, ou orienter vers une solution fiscale licite. L'orientation client doit toujours composer avec l'exigence d'indépendance : conseiller sans s'auto-réviser.",
+        "situation_modele": "Lors d'un audit, j'ai constaté que le client, une PME en croissance, peinait à boucler dans les délais faute de processus de cut-off structuré, ce qui générait chaque année des ajustements tardifs. Mon rôle : signaler la faiblesse sans m'arrêter au constat. Opportunité : fidéliser le client et fluidifier les bouclements futurs. Risque : franchir la ligne de l'indépendance en concevant moi-même le contrôle que j'auditerais ensuite. J'ai formulé dans la management letter une recommandation de procédure de coupure (responsabilités, calendrier, points de contrôle), en laissant le client la mettre en œuvre, et j'ai validé le principe avec mon associé sous l'angle de l'indépendance.",
+        "conseils": [
+          "Montrer que vous passez du CONSTAT à la SOLUTION applicable : le règlement valorise explicitement les 'propositions applicables'.",
+          "Toujours intégrer la limite déontologique (indépendance) : un réviseur orienté solution qui s'auto-révise se disqualifie.",
+          "Démontrer l'écoute du besoin réel du client, pas du besoin supposé : reformuler son enjeu avant de proposer.",
+          "Présenter la solution comme proportionnée à la taille et aux moyens du client (esprit entrepreneurial)."
+        ],
+        "pieges": [
+          "Glisser vers la complaisance : 'orientation client' ne signifie pas dire oui au client au détriment de l'indépendance ou de la qualité.",
+          "Rester au stade du diagnostic sans proposer d'issue concrète.",
+          "Proposer une solution surdimensionnée, déconnectée des moyens réels d'une PME."
+        ],
+        "phrases": [
+          "Je ne me suis pas arrêté au constat : j'ai proposé une procédure concrète, applicable dès le prochain exercice.",
+          "J'ai veillé à recommander sans concevoir le contrôle moi-même, pour préserver mon indépendance.",
+          "Avant de proposer, j'ai reformulé l'enjeu du client pour répondre à son vrai besoin et non à un besoin théorique."
+        ]
+      },
+      {
+        "nom": "Volonté d'apprendre / d'actualiser constamment ses connaissances",
+        "definition": "Engagement actif à se former en continu, à suivre l'évolution des normes et de la réglementation, et à maintenir son expertise à jour dans un environnement en mutation permanente.",
+        "contexte": "Le cadre du réviseur évolue sans cesse : nouvelles normes d'audit, révisions des Swiss GAAP RPC, évolutions IFRS, modifications du droit comptable du Code des obligations, réforme de la fiscalité (TVA, impôt anticipé, OCDE/pilier 2), exigences de l'ASR et formation continue obligatoire. Rester compétent suppose une veille structurée et la capacité à traduire rapidement une nouveauté normative en impact concret sur les mandats.",
+        "situation_modele": "À l'annonce de l'entrée en vigueur de l'imposition minimale (pilier 2 OCDE) en Suisse, j'ai anticipé son effet sur plusieurs mandats de groupes internationaux que j'auditais. Mon rôle : ne pas être pris au dépourvu au bouclement suivant. Opportunité : sécuriser le traitement des impôts différés et conseiller en amont. Risque : appliquer une norme mal maîtrisée et produire une analyse erronée. Je me suis formé (séminaire EXPERTsuisse, lecture des dispositions transitoires), puis j'ai bâti une note interne et un arbre de décision pour l'équipe. Au bouclement, nous avons traité correctement l'impôt complémentaire et alerté les clients concernés avant qu'ils ne le découvrent.",
+        "conseils": [
+          "Donner un exemple CONCRET d'apprentissage récent suivi d'une APPLICATION sur un mandat : la volonté d'apprendre se prouve par l'usage, pas par le nombre d'heures de formation.",
+          "Montrer une veille structurée (sources, séminaires, partage interne) plutôt qu'un apprentissage subi et désordonné.",
+          "Relier l'apprentissage à la valeur créée : anticiper pour le client, sécuriser une conclusion, former l'équipe.",
+          "Mentionner la transmission du savoir (note, formation des juniors) : apprendre pour soi et pour le collectif."
+        ],
+        "pieges": [
+          "Réduire l'apprentissage à la formation continue obligatoire subie : montrer une démarche proactive, pas une contrainte.",
+          "Citer une formation sans en montrer l'application pratique : l'exemple sonne creux.",
+          "Choisir un sujet daté ou anecdotique : préférer une évolution normative récente et significative pour le métier."
+        ],
+        "phrases": [
+          "Dès l'annonce de la réforme, je me suis formé pour pouvoir l'appliquer correctement avant qu'elle n'impacte mes mandats.",
+          "Ma veille est structurée : je convertis chaque évolution normative en note pratique pour l'équipe.",
+          "Apprendre ne me sert que si j'en tire une application concrète : ici, anticiper le traitement de l'impôt complémentaire."
+        ]
+      },
+      {
+        "nom": "Vérifier, évaluer et améliorer sa capacité d'apprentissage / ses propres actions",
+        "definition": "Capacité d'autocritique et de réflexion sur sa propre pratique : prendre du recul sur ses méthodes et ses décisions, identifier ses erreurs et ses marges de progrès, puis ajuster sa façon de travailler.",
+        "contexte": "Le réviseur progresse en se remettant en question : revue post-mission (lessons learned), prise en compte des observations d'une revue qualité interne ou d'un contrôle de l'ASR, analyse d'un ajustement qu'il avait initialement manqué, ou réexamen d'un jugement professionnel à la lumière d'un événement ultérieur. Cette autoévaluation est précisément ce que le jury de l'oral cherche : une réflexion 'approfondie et autocritique'.",
+        "situation_modele": "Après une mission, une revue qualité interne a relevé que ma documentation du jugement sur une provision pour litige restait insuffisamment étayée, bien que ma conclusion fût correcte. Mon rôle : recevoir la critique et en tirer parti plutôt que de la justifier. Opportunité : améliorer durablement la qualité de mes dossiers et réduire le risque en cas de contrôle ASR. Risque : me braquer et reproduire la lacune. J'ai analysé la cause (je raisonnais juste mais ne traçais pas assez mon cheminement), puis j'ai conçu une trame de documentation des jugements significatifs que j'applique désormais systématiquement et que j'ai partagée avec l'équipe.",
+        "conseils": [
+          "Assumer une VRAIE faiblesse passée et montrer le correctif mis en place : l'autocritique sincère est le critère explicite de cette partie de l'oral.",
+          "Décrire votre dispositif d'amélioration continue (debriefs, lessons learned, intégration des feedbacks) pour montrer une démarche, pas un cas isolé.",
+          "Distinguer l'analyse de la CAUSE de la simple correction du symptôme : améliorer durablement suppose de comprendre pourquoi l'erreur s'est produite.",
+          "Garder une posture assurée : reconnaître une erreur avec recul est une force, pas un aveu de faiblesse."
+        ],
+        "pieges": [
+          "Présenter une fausse faiblesse ('je suis trop perfectionniste') : le jury attend une autocritique authentique et la repère immédiatement.",
+          "Reconnaître l'erreur sans montrer le mécanisme d'amélioration : l'autoévaluation reste alors stérile.",
+          "Se dévaloriser excessivement : l'objectif est de montrer un apprentissage maîtrisé, pas un manque de confiance."
+        ],
+        "phrases": [
+          "Cette revue qualité m'a été utile : j'ai analysé pourquoi je documentais mal mes jugements, puis j'ai changé ma méthode.",
+          "Après chaque mission, je fais un bref bilan de ce qui a bien et mal fonctionné pour ajuster ma pratique.",
+          "Reconnaître cette lacune ne m'a pas affaibli ; elle m'a permis de fiabiliser durablement mes dossiers."
+        ]
+      },
+      {
+        "nom": "Ouverture d'esprit face à la nouveauté",
+        "definition": "Disposition à accueillir favorablement les idées nouvelles, les changements et les approches différentes, à remettre en question ses habitudes et à s'adapter aux évolutions de l'environnement professionnel.",
+        "contexte": "Le réviseur est confronté à de nombreuses nouveautés : outils d'audit assisté par les données (data analytics, IA), nouvelles méthodologies d'audit, digitalisation des processus du client, modèles d'affaires inédits (économie de plateforme, crypto-actifs, abonnements SaaS) dont le traitement comptable n'est pas standardisé. L'ouverture d'esprit consiste à explorer ces nouveautés au lieu de les rejeter par confort, tout en gardant l'esprit critique.",
+        "situation_modele": "Mon équipe auditait essentiellement par échantillonnage manuel lorsque le cabinet a introduit un outil d'analyse de données permettant de tester l'intégralité des populations d'écritures. Plusieurs collègues étaient réticents. Mon rôle de chef de mission : décider d'adopter ou non l'outil sur un mandat à fort volume. Opportunité : couverture exhaustive, détection d'anomalies invisibles à l'échantillon. Risque : courbe d'apprentissage, faux positifs, perte de temps initiale. J'ai choisi de piloter l'outil sur les journaux d'achats, en gardant un regard critique sur ses résultats. Il a révélé des doublons de fournisseurs qu'un échantillon n'aurait pas captés ; j'ai ensuite étendu la méthode à d'autres cycles.",
+        "conseils": [
+          "Montrer que vous avez ESSAYÉ une nouveauté concrète (outil, méthode) et ce qu'elle a apporté : l'ouverture se prouve par l'expérimentation.",
+          "Conserver l'esprit critique : être ouvert n'est pas être naïf ; expliquez comment vous avez validé la nouveauté avant de l'adopter.",
+          "Évoquer la gestion de la résistance autour de vous (collègues, client) pour montrer un rôle d'entraînement vers le changement.",
+          "Relier la nouveauté à un bénéfice concret pour la qualité ou l'efficience d'audit."
+        ],
+        "pieges": [
+          "Confondre ouverture et adoption sans discernement : embrasser toute nouveauté sans esprit critique inquiète le jury (le réviseur doit rester sceptique).",
+          "Présenter une nouveauté triviale : préférer un vrai changement de méthode ou d'outil ayant eu un impact.",
+          "Se poser en simple suiveur : montrer que vous avez activement testé et porté le changement, pas seulement subi."
+        ],
+        "phrases": [
+          "J'ai préféré tester cet outil sur un cycle plutôt que de le rejeter par habitude, tout en gardant un regard critique sur ses résultats.",
+          "Cette nouveauté a révélé des anomalies qu'un échantillon classique n'aurait jamais détectées.",
+          "Être ouvert au changement, pour moi, c'est expérimenter de façon maîtrisée, pas adhérer aveuglément."
+        ]
+      },
+      {
+        "nom": "Compétences organisationnelles",
+        "definition": "Capacité à planifier, prioriser et coordonner efficacement le travail, les ressources et les délais, afin d'atteindre les objectifs dans le respect des contraintes de temps et de qualité.",
+        "contexte": "L'organisation est vitale pour le réviseur : planifier une campagne d'audit sur plusieurs mandats simultanés en haute saison, répartir les tâches au sein de l'équipe selon les compétences, séquencer les phases (intérim, bouclement, revue, rapport), coordonner avec le client la mise à disposition des documents, et tenir les délais légaux de dépôt. Une mauvaise organisation se traduit par des dépassements de budget, des retards de rapport et du stress évitable pour l'équipe.",
+        "situation_modele": "En haute saison, je pilotais trois bouclements dont les délais légaux se chevauchaient sur la même quinzaine, avec une équipe de quatre personnes. Mon rôle de chef de mission : tout livrer dans les temps sans épuiser l'équipe. Opportunité : démontrer la fiabilité du cabinet sur des délais serrés. Risque : goulots d'étranglement, surcharge, qualité dégradée. J'ai construit un plan de charge détaillé (jalons par mandat, dépendances aux livrables clients), réparti les cycles selon les forces de chacun, négocié avec les clients un calendrier échelonné de remise des pièces, et instauré un point quotidien de quinze minutes. Les trois rapports ont été émis dans les délais.",
+        "conseils": [
+          "Décrire un OUTIL ou une MÉTHODE de planification concrète (plan de charge, jalons, points d'avancement) : l'organisation se démontre par le dispositif, pas par l'intention.",
+          "Mettre en avant la priorisation : montrer comment vous arbitrez entre tâches concurrentes selon l'urgence et la dépendance.",
+          "Valoriser la coordination des autres (équipe, client) : organiser, ce n'est pas seulement gérer son propre temps.",
+          "Relier l'organisation au résultat : délais tenus, budget respecté, équipe préservée."
+        ],
+        "pieges": [
+          "Décrire un planning théorique sans gestion des imprévus : l'organisation se juge à la capacité à absorber les aléas (retard du client, absence).",
+          "Confondre organisation et activité : être occupé n'est pas être organisé ; montrez la priorisation.",
+          "Oublier la dimension humaine (charge de l'équipe) et ne parler que de tâches et de dates."
+        ],
+        "phrases": [
+          "J'ai bâti un plan de charge avec des jalons par mandat et leurs dépendances, pour anticiper les goulots plutôt que les subir.",
+          "J'ai priorisé selon l'urgence et les dépendances aux livrables du client, pas selon ce qui était le plus simple à traiter.",
+          "Le point quotidien de quinze minutes nous a permis de détecter les blocages tôt et de tenir les trois délais."
+        ]
+      },
+      {
+        "nom": "Sens du devoir",
+        "definition": "Disposition à honorer pleinement ses engagements professionnels, à respecter les délais, les mandats et les obligations déontologiques, même lorsque c'est exigeant ou ingrat. C'est la fiabilité érigée en valeur : ce qui est promis est livré, ce qui est dû est fait.",
+        "contexte": "Chez l'expert-comptable, le sens du devoir se manifeste quand on boucle un dossier de révision dans les délais légaux (assemblée générale dans les 6 mois de la clôture, art. 699a CO), quand on respecte les obligations de documentation (ISA 230) sans bâcler malgré la pression du planning, quand on assume une tâche fastidieuse mais indispensable (rapprochement intégral, circularisation complète des débiteurs) plutôt que de l'escamoter. C'est aussi tenir ses engagements envers le client (rappels, échéances fiscales, remises de comptes) et envers l'équipe.",
+        "situation_modele": "En pleine haute saison (closing de plusieurs mandats en janvier-mars), un client important me transmet ses justificatifs avec dix jours de retard, alors que l'assemblée générale est déjà convoquée. Opportunité : repousser ma revue, traiter d'abord les dossiers plus simples et invoquer le retard du client pour me dédouaner. Risque : un rapport d'audit remis hors délai, une AG reportée, et surtout des contrôles écourtés qui compromettraient la qualité de l'opinion. Ma décision : réorganiser mon planning, communiquer immédiatement au client le caractère critique de l'échéance, mobiliser une ressource supplémentaire et faire des heures pour boucler l'audit dans les règles. Je tiens l'engagement de délai sans sacrifier l'étendue des travaux — le devoir, c'est livrer à temps ET bien.",
+        "conseils": [
+          "Ancrez le devoir dans un délai ou une obligation concrète et chiffrée (échéance AG, délai fiscal, exigence légale) : cela rend la contrainte tangible pour le jury.",
+          "Montrez que vous avez agi malgré une difficulté (retard d'un tiers, surcharge, tâche ingrate) — le sens du devoir ne se prouve que sous tension.",
+          "Distinguez devoir et zèle : vous n'en faites pas plus que nécessaire, vous faites exactement ce qui est exigé, intégralement et à temps.",
+          "Reliez-le à la confiance : un réviseur qui tient ses délais protège la crédibilité de l'attestation et la réputation du cabinet.",
+          "Terminez sur la décision d'avoir tenu l'engagement plutôt que de chercher une excuse — c'est le cœur du comportement."
+        ],
+        "pieges": [
+          "Le confondre avec le perfectionnisme ou le surinvestissement : le sens du devoir, c'est tenir l'engagement dû, pas s'épuiser sur des détails inutiles.",
+          "Présenter une situation sans enjeu réel (aucun délai, aucun obstacle) : le devoir paraît alors gratuit et non convaincant.",
+          "Rejeter toute la responsabilité sur les autres (le client en retard, l'équipe défaillante) au lieu de montrer comment VOUS avez honoré votre part.",
+          "Le réduire à de l'obéissance passive : le devoir professionnel inclut aussi le devoir déontologique, parfois contre l'intérêt immédiat du client."
+        ],
+        "phrases": [
+          "Pour moi, le sens du devoir, c'est que ce qui est promis au client et exigé par la loi soit livré dans les délais, sans rogner sur la qualité — même quand cela m'oblige à réorganiser tout mon planning.",
+          "J'aurais pu invoquer le retard du client pour me dédouaner ; j'ai préféré tenir l'échéance de l'assemblée générale, parce qu'un rapport remis à temps fait partie de mes obligations, pas de mes options.",
+          "Mon devoir n'était pas seulement de finir, mais de finir intégralement : j'ai donc maintenu l'étendue complète de mes travaux malgré la pression du calendrier."
+        ]
+      },
+      {
+        "nom": "Penser et agir de manière analytique et associative",
+        "definition": "Capacité à décomposer une situation complexe en ses composantes (analyse) tout en reliant des informations issues de domaines différents pour en faire émerger un sens global (pensée associative). C'est passer du détail au tableau d'ensemble, et faire des ponts entre comptabilité, fiscalité, droit, opérations et stratégie.",
+        "contexte": "L'expert-comptable mobilise cette double pensée en permanence : une procédure analytique de révision (ISA 520) où l'on rapproche l'évolution de la marge brute, des effectifs et du chiffre d'affaires pour détecter une incohérence ; le diagnostic d'une anomalie où l'on relie un poste comptable inhabituel à un événement opérationnel (perte d'un gros client, changement de système) et à ses effets fiscaux ; une mission de conseil où l'on connecte la structure de financement, la fiscalité des dividendes et le droit des sociétés pour recommander une réorganisation. Analyser, c'est décortiquer un poste ; associer, c'est comprendre pourquoi il bouge en le reliant au reste.",
+        "situation_modele": "Lors d'une révision, l'analyse de ratios (ISA 520) révèle une marge brute en hausse de 8 points alors que le secteur recule et que les effectifs de production ont baissé. Opportunité : conclure rapidement à une bonne performance et passer au poste suivant. Risque : une incohérence non expliquée peut masquer une surévaluation des stocks ou un décalage de charges. Au lieu d'isoler le chiffre, je l'associe à d'autres signaux : la rotation des stocks ralentit, un changement d'ERP a eu lieu en cours d'année, et la trésorerie ne suit pas la rentabilité affichée. En reliant ces éléments, je formule l'hypothèse d'un problème de valorisation des en-cours lié à la migration informatique. Ma décision : étendre les tests de détail sur la valorisation des stocks et demander la réconciliation de l'ancien et du nouveau système. L'analyse seule voyait un bon chiffre ; l'association a révélé le vrai sujet.",
+        "conseils": [
+          "Construisez votre récit en deux temps visibles : d'abord je décompose (les chiffres, les postes), ensuite je relie (à un événement, à un autre domaine) — le jury doit entendre les deux mouvements.",
+          "Citez une procédure analytique concrète (ISA 520, analyse de ratios, comparaison N/N-1, budget vs réel) pour ancrer la dimension technique.",
+          "Faites au moins un pont interdisciplinaire explicite (comptable → fiscal, opérationnel → financier) : c'est la marque de la pensée associative.",
+          "Montrez que l'association a changé votre conclusion ou votre plan d'action — sinon elle reste décorative.",
+          "Restez structuré : analytique ne veut pas dire confus ; énoncez votre hypothèse clairement avant de la tester."
+        ],
+        "pieges": [
+          "Rester purement descriptif (énumérer des chiffres) sans jamais les relier entre eux — c'est de l'analyse sans association.",
+          "Faire des rapprochements gratuits, non étayés, qui ressemblent à des intuitions hasardeuses plutôt qu'à un raisonnement.",
+          "Se perdre dans le détail au point de ne plus dégager de vue d'ensemble : le jury attend une synthèse, pas un inventaire.",
+          "Oublier la conséquence opérationnelle : une belle analyse qui ne débouche sur aucune décision d'audit n'a pas de valeur."
+        ],
+        "phrases": [
+          "Je ne me contente pas de constater qu'un poste varie : je le relie à un événement opérationnel et à ses effets fiscaux pour comprendre POURQUOI il varie — c'est là que l'anomalie apparaît.",
+          "Mon procédé analytique m'a donné un signal ; c'est en l'associant à la rotation des stocks et au changement de système que j'ai identifié le vrai risque.",
+          "Penser de façon associative, pour moi, c'est faire dialoguer la comptabilité, les opérations et la fiscalité au lieu de les traiter en silos."
+        ]
+      },
+      {
+        "nom": "Souci de qualité",
+        "definition": "Exigence constante de produire un travail exact, complet, documenté et conforme aux normes, et de viser le bon niveau de fiabilité plutôt que l'à-peu-près. Pour le réviseur, la qualité n'est pas un luxe : elle conditionne la valeur de l'opinion et la protection du public.",
+        "contexte": "Le souci de qualité s'incarne dans la maîtrise du dossier de travail (documentation suffisante et appropriée, ISA 230), dans le respect du système de gestion de la qualité du cabinet (ISQM 1 : revue, calibration, contrôle qualité de la mission), dans la revue indépendante (EQR) des dossiers à risque, dans la relecture systématique des états financiers et des annexes, et dans le fait de ne pas signer une opinion tant que les éléments probants ne sont pas suffisants. C'est aussi calibrer l'effort au risque : ni sous-audit (risque non couvert), ni sur-audit (gaspillage).",
+        "situation_modele": "Juste avant l'émission du rapport, ma revue finale du dossier révèle que la confirmation bancaire d'un compte significatif détenu à l'étranger n'a jamais été reçue : seule figure une copie d'extrait fournie par le client. Opportunité : considérer l'extrait client comme suffisant, boucler et tenir le délai. Risque : un élément probant interne, non corroboré par une source externe indépendante, ne couvre pas le risque d'altération — la qualité et donc la fiabilité de l'opinion sont en jeu. Ma décision : refuser de signer en l'état, relancer la banque pour obtenir la confirmation directe (élément probant externe, plus fiable selon ISA 500), et documenter la démarche. Quitte à décaler de quelques jours, je ne sacrifie pas le niveau de preuve exigé. La qualité prime sur la commodité du calendrier.",
+        "conseils": [
+          "Reliez la qualité à une norme précise (ISA 230 documentation, ISA 500 caractère suffisant et approprié, ISQM 1 / EQR) : cela transforme un mot creux en exigence technique.",
+          "Donnez un exemple où vous avez refusé l'à-peu-près (preuve insuffisante, contrôle non testé) — la qualité se prouve par un arbitrage, pas par une intention.",
+          "Montrez que vous calibrez l'effort au risque : la qualité, ce n'est pas tout vérifier à l'excès, c'est obtenir le bon niveau d'assurance là où il faut.",
+          "Évoquez la dimension collective : revue par un pair, contrôle qualité de la mission — la qualité d'un cabinet est un système, pas un héroïsme individuel.",
+          "Concluez sur l'enjeu : une opinion d'audit ne vaut que par la qualité des travaux qui la fondent et la confiance du public qu'elle engage."
+        ],
+        "pieges": [
+          "Confondre souci de qualité et perfectionnisme : vérifier dix fois un poste non significatif n'est pas de la qualité, c'est un défaut de calibrage.",
+          "Présenter la qualité comme une simple bonne intention sans montrer un arbitrage concret où elle vous a coûté quelque chose (temps, confort, relation client).",
+          "Oublier la traçabilité : un travail de qualité non documenté est, pour un réviseur, un travail non fait (ISA 230).",
+          "Opposer qualité et délai de manière caricaturale ; montrez plutôt que vous tenez les deux en réorganisant, pas en bâclant."
+        ],
+        "phrases": [
+          "Pour moi, la qualité n'est pas un supplément d'âme : tant que mes éléments probants ne sont pas suffisants et appropriés, je ne signe pas — c'est ce qui donne sa valeur à l'opinion.",
+          "J'ai préféré relancer la banque pour une confirmation externe plutôt que de me contenter d'un extrait fourni par le client : la source indépendante est plus fiable, et la qualité l'exige.",
+          "La qualité, je la calibre sur le risque : je concentre l'effort là où l'enjeu est réel, et je documente tout pour que le travail soit traçable."
+        ]
+      },
+      {
+        "nom": "Scepticisme (esprit critique professionnel)",
+        "definition": "Attitude faite de remise en question permanente, de vigilance face aux indices d'anomalies (y compris de fraude) et d'évaluation critique des éléments probants, sans se contenter d'explications de complaisance. C'est l'opposé de la confiance naïve : ni soupçon systématique, ni crédulité — un doute méthodique.",
+        "contexte": "Le scepticisme professionnel est une exigence fondatrice du réviseur : les ISA 200 et 240 imposent de planifier et conduire l'audit avec un esprit critique, en restant alerte aux conditions pouvant indiquer une anomalie significative due à la fraude ou à l'erreur. Concrètement : ne pas accepter une réponse de la direction sans corroboration externe, recouper les déclarations avec des éléments probants indépendants (ISA 500), questionner les estimations comptables et les hypothèses managériales (provisions, dépréciations, goodwill), être attentif aux écritures inhabituelles en fin de période, et maintenir ce doute même quand le client est connu et de bonne foi de longue date.",
+        "situation_modele": "Lors de la revue des dépréciations, la direction justifie l'absence de provision sur une créance importante échue depuis plus de 180 jours par un simple « le client va payer, c'est un partenaire de longue date ». Opportunité : accepter cette explication orale, gagner du temps et préserver une relation cordiale. Risque : prendre une affirmation de la direction pour un élément probant, c'est le défaut typique de scepticisme — la créance peut être irrécouvrable et l'actif surévalué. Ma décision : ne pas me satisfaire de la parole, mais corroborer par des sources indépendantes — historique de paiement réel, encaissements postérieurs à la clôture, situation financière du débiteur, éventuelle confirmation. Faute de preuve probante du recouvrement, je maintiens la nécessité d'une dépréciation et je documente l'écart d'appréciation. Je reste courtois, mais je traite la déclaration comme une hypothèse à vérifier, pas comme un fait.",
+        "conseils": [
+          "Citez explicitement les ISA 200 et 240 : le scepticisme est la pierre angulaire normative du métier, le jury attend cet ancrage technique.",
+          "Illustrez par une estimation comptable subjective (provision, dépréciation, goodwill, valorisation) : c'est là que le scepticisme se joue vraiment.",
+          "Montrez le réflexe clé : une déclaration de la direction n'est pas un élément probant tant qu'elle n'est pas corroborée par une source indépendante (ISA 500).",
+          "Cadrez le bon dosage : scepticisme n'est ni accusation ni paranoïa, c'est un doute méthodique qui se résout par la preuve — ni hostile, ni naïf.",
+          "Soulignez que le scepticisme survit à la familiarité : un client de longue date n'affaiblit jamais l'exigence de corroboration (lien avec l'indépendance)."
+        ],
+        "pieges": [
+          "Confondre scepticisme et défiance agressive envers le client : l'esprit critique professionnel reste courtois et factuel, il ne présume pas la malhonnêteté.",
+          "Accepter une explication orale de la direction comme une preuve — c'est précisément le manque de scepticisme que les normes sanctionnent.",
+          "Le réduire à de la méfiance instinctive sans méthode : le vrai scepticisme se traduit par des procédures (corroboration, recoupement, événements postérieurs), pas par un sentiment.",
+          "Oublier le risque de fraude (ISA 240) : le scepticisme n'est pas que vérifier l'erreur, c'est aussi rester alerte aux indices de manipulation et d'override des contrôles par la direction."
+        ],
+        "phrases": [
+          "Le scepticisme professionnel, au sens des ISA 200 et 240, c'est traiter une déclaration de la direction comme une hypothèse à corroborer, jamais comme un élément probant en soi.",
+          "« Le client va payer » n'est pas une preuve : j'ai cherché les encaissements postérieurs et la solvabilité réelle du débiteur avant de me prononcer sur la dépréciation.",
+          "Mon doute n'est ni hostile ni naïf : c'est un doute méthodique qui se résout par la preuve indépendante — et il ne faiblit pas parce que le client est connu de longue date."
+        ]
+      },
+      {
+        "nom": "Force de persuasion",
+        "definition": "Capacité à faire adhérer un interlocuteur à une position justifiée, par une argumentation structurée, étayée et adaptée au destinataire, plutôt que par l'autorité ou l'insistance. Persuader, c'est convaincre par la solidité du raisonnement, tout en restant intègre sur le fond.",
+        "contexte": "L'expert-comptable persuade chaque fois qu'il défend une correction d'écriture face à un directeur financier réticent, qu'il explique au conseil d'administration pourquoi une provision est nécessaire, qu'il recommande une restructuration au chef d'entreprise, ou qu'il fait accepter au comité d'audit des recommandations sur le contrôle interne (ISA 265). La force de persuasion suppose d'ajuster le discours : chiffré et normatif avec un DAF, stratégique et synthétique avec un dirigeant, axé risques et gouvernance avec un administrateur. Elle a une limite déontologique stricte : on persuade sur le bien-fondé, jamais au prix de l'indépendance ou de la vérité comptable.",
+        "situation_modele": "Au terme d'une révision, je conclus qu'une provision pour litige significative s'impose, ce qui dégrade le résultat affiché. Le directeur financier s'y oppose fermement, craignant l'effet sur les covenants bancaires. Opportunité : céder pour préserver la relation, ou au contraire imposer brutalement ma position en invoquant mon autorité de réviseur. Risque : un bras de fer stérile, une relation rompue, ou pire, un compromis sur la fidélité des comptes. Ma décision : persuader plutôt qu'imposer. Je prépare un argumentaire reliant l'avis de l'avocat sur la probabilité du litige, les critères de comptabilisation d'une provision et la jurisprudence du poste, puis je présente au DAF les conséquences d'une non-comptabilisation (réserve dans le rapport, risque de crédibilité auprès de la banque). En montrant que la transparence protège mieux ses covenants à long terme qu'un résultat embelli découvert plus tard, j'obtiens son adhésion. J'ai convaincu par les faits, sans rien céder sur le fond.",
+        "conseils": [
+          "Montrez une structure d'argumentation (fait → règle → conséquence → recommandation), pas une simple insistance : la persuasion se voit dans l'ossature du raisonnement.",
+          "Adaptez explicitement le registre au destinataire (DAF, dirigeant, comité d'audit) : nommer cette adaptation prouve l'intelligence relationnelle attendue à l'oral.",
+          "Appuyez-vous sur des éléments objectifs (avis d'expert, norme, chiffres, jurisprudence du dossier) — on persuade un professionnel par la preuve, pas par le charisme.",
+          "Posez la limite déontologique : vous persuadez sur le bien-fondé, et la persuasion s'arrête là où commencerait une atteinte à l'indépendance ou à la vérité.",
+          "Terminez sur l'adhésion obtenue (ou le maintien argumenté de votre position en cas de désaccord) : c'est le résultat qui prouve la force de persuasion."
+        ],
+        "pieges": [
+          "Confondre persuasion et rapport de force : imposer par l'autorité de réviseur n'est pas convaincre, et révèle une faiblesse d'argumentation.",
+          "Glisser vers la complaisance pour « faire passer » son message : persuader ne doit jamais devenir négocier la vérité comptable ou son indépendance.",
+          "Servir le même discours à tous : un argumentaire non adapté au destinataire perd l'essentiel de sa force.",
+          "Manquer de preuves : une conviction affirmée sans étai (norme, chiffre, avis) ne persuade pas un interlocuteur averti."
+        ],
+        "phrases": [
+          "Je ne cherche pas à imposer ma position par mon statut de réviseur, mais à la rendre indiscutable par les faits : l'avis de l'avocat, le critère de comptabilisation et la conséquence d'une non-provision.",
+          "Avec un directeur financier, j'argumente chiffré et normatif ; avec un dirigeant, je vais à la conséquence stratégique : adapter le discours au destinataire fait la moitié de la persuasion.",
+          "Ma force de persuasion s'arrête là où commencerait une concession sur la vérité des comptes ou sur mon indépendance : je convaincs sur le bien-fondé, jamais contre lui."
+        ]
+      },
+      {
+        "nom": "Indépendance, objectivité, impartialité",
+        "definition": "Aptitude à former et exprimer un jugement libre de toute influence, intérêt ou pression, et à traiter les faits sans parti pris. L'indépendance est à la fois une réalité (en esprit) et une apparence (être perçu comme indépendant) ; objectivité et impartialité en sont les fondements de jugement.",
+        "contexte": "C'est le socle juridique et déontologique de la révision suisse. L'art. 728 CO (organe de révision ordinaire) et l'art. 729 CO (révision restreinte), complétés par la LSR et la surveillance de l'ASR, énumèrent les incompatibilités : pas de participation au capital ou de relation d'affaires étroite avec l'audité, interdiction de l'auto-révision (réviser des comptes ou des prestations que l'on a soi-même établis), pas de lien personnel proche, plafonnement de la dépendance économique à un seul client, rotation de l'auditeur responsable. Les menaces classiques (auto-révision, intérêt personnel, familiarité, intimidation, représentation) appellent des sauvegardes ou le refus du mandat. L'indépendance se protège aussi dans l'apparence : éviter ce qui ferait douter un tiers raisonnable.",
+        "situation_modele": "Un client d'audit récurrent me propose une mission lucrative et flatteuse : concevoir et paramétrer son nouveau système de comptabilité, dont je devrai ensuite réviser les états financiers produits. Opportunité : un honoraire significatif et un renforcement de la relation. Risque : une menace d'auto-révision caractérisée — je ne peux pas auditer en toute objectivité un système que j'aurais moi-même conçu — incompatible avec l'art. 728 CO et susceptible d'une sanction de l'ASR ; et même perçue de l'extérieur, l'indépendance en apparence serait ruinée. Ma décision : décliner la conception du système pour préserver le mandat d'audit, ou, si la mission de conseil est jugée prioritaire, renoncer au mandat de révision — les deux ne peuvent coexister. Je documente l'analyse des menaces et la sauvegarde retenue. Je protège mon indépendance en réalité ET en apparence, même au prix d'un honoraire perdu.",
+        "conseils": [
+          "Citez les bases légales suisses (art. 728 / 729 CO, LSR, surveillance ASR) : sur ce comportement, l'ancrage juridique précis fait toute la différence pour le jury.",
+          "Distinguez indépendance en esprit et en apparence : montrer que vous protégez aussi la perception d'un tiers raisonnable prouve une compréhension fine.",
+          "Raisonnez par menaces et sauvegardes (auto-révision, intérêt personnel, familiarité, intimidation, représentation) : c'est la grille d'analyse attendue d'un réviseur agréé.",
+          "Montrez un arbitrage coûteux (refuser un honoraire, renoncer à un mandat) : l'indépendance ne se prouve que lorsqu'elle vous coûte quelque chose.",
+          "Reliez-la au scepticisme et à l'objectivité : un jugement indépendant suppose aussi de ne pas se laisser fléchir par une relation de longue date."
+        ],
+        "pieges": [
+          "Réduire l'indépendance à l'absence de participation au capital, en oubliant l'auto-révision et la familiarité, qui sont les menaces les plus fréquentes en pratique.",
+          "Négliger l'apparence : se croire intègre suffit rarement ; ce qui ferait douter un tiers raisonnable compromet déjà l'indépendance.",
+          "Présenter une situation où aucun intérêt réel n'était en jeu : l'indépendance non testée par une tentation ne convainc pas.",
+          "Confondre indépendance et froideur relationnelle : on peut être cordial et indépendant ; l'enjeu est le jugement, pas la distance humaine."
+        ],
+        "phrases": [
+          "Concevoir un système puis réviser les comptes qu'il produit, c'est de l'auto-révision : l'art. 728 CO me l'interdit, et l'ASR le sanctionnerait — j'ai donc renoncé à l'une des deux missions.",
+          "Mon indépendance doit tenir en esprit ET en apparence : je me demande toujours ce qu'en penserait un tiers raisonnable bien informé.",
+          "J'analyse chaque situation en termes de menaces et de sauvegardes ; quand aucune sauvegarde ne suffit, je décline — même si cela me coûte un honoraire."
+        ]
+      },
+      {
+        "nom": "Esprit et comportement entrepreneuriaux",
+        "definition": "Capacité à raisonner comme un acteur économique : comprendre le modèle d'affaires et les enjeux du client, saisir les opportunités, anticiper les risques, et formuler des propositions applicables qui créent de la valeur, tout en restant dans les limites du rôle et de la déontologie. C'est dépasser le pur contrôle pour apporter une vision utile à la décision.",
+        "contexte": "Au-delà de l'attestation, l'expert-comptable apporte une valeur entrepreneuriale : conseiller une PME sur le choix de sa forme juridique, sa structure de financement ou son optimisation fiscale ; détecter dans un audit un risque de continuité d'exploitation (going concern) et alerter avant la crise ; identifier une opportunité d'amélioration du contrôle interne ou du besoin en fonds de roulement ; accompagner une transmission d'entreprise ou une levée de fonds. L'esprit entrepreneurial s'exprime aussi dans la gestion du cabinet (efficience des missions, développement de la relation client). La discussion d'experts de l'oral attend justement des recommandations applicables et un raisonnement orienté valeur, communiqué au bon niveau.",
+        "situation_modele": "En menant la révision d'une PME industrielle en croissance, je constate que sa trésorerie est durablement tendue alors que le carnet de commandes explose : le besoin en fonds de roulement augmente plus vite que le financement disponible. Opportunité : me limiter à mon mandat de réviseur, constater et signer. Risque pour le client : une croissance non financée peut conduire à une crise de liquidité, voire à un problème de continuité (going concern). Adoptant une posture entrepreneuriale, je relie le constat d'audit aux enjeux business : délais clients trop longs, stocks pléthoriques, absence de ligne de crédit adaptée. Ma décision : au-delà de l'opinion d'audit, signaler le risque au dirigeant et proposer des pistes applicables — renégocier les délais de paiement, mettre en place un financement du poste clients (factoring), dimensionner une ligne de crédit d'exploitation — tout en restant dans mon rôle de conseil et sans empiéter sur ma future indépendance d'auditeur. J'apporte une valeur qui dépasse le contrôle, au service de la pérennité du client.",
+        "conseils": [
+          "Montrez que vous reliez un constat technique (un poste, un ratio) à un enjeu économique réel pour le client (liquidité, marge, financement) : c'est la signature de l'esprit entrepreneurial.",
+          "Proposez des recommandations APPLICABLES et concrètes (factoring, renégociation de délais, ligne de crédit), pas des généralités : la discussion d'experts évalue précisément cela.",
+          "Pensez opportunités ET risques : l'entrepreneur saisit une occasion mais anticipe aussi le danger (going concern, surchauffe de croissance).",
+          "Adaptez la communication au dirigeant (vision, conséquence, action) plutôt qu'un jargon comptable : convaincre un décideur est un acte entrepreneurial.",
+          "Posez la limite : l'esprit d'entreprise ne doit pas empiéter sur l'indépendance (ne pas devenir le décideur que vous auditerez) ni sur la déontologie."
+        ],
+        "pieges": [
+          "Confondre esprit entrepreneurial et prise de risque déontologique : proposer de la valeur ne justifie jamais de franchir la ligne de l'indépendance ou de la légalité.",
+          "Rester dans la posture du pur contrôleur qui constate sans rien apporter : le jury attend une valeur ajoutée, pas seulement un verdict.",
+          "Formuler des recommandations vagues et non applicables (« il faudrait améliorer la trésorerie ») sans levier concret ni faisabilité.",
+          "Se substituer à la direction en prenant la décision à sa place : l'expert éclaire et recommande, le dirigeant décide."
+        ],
+        "phrases": [
+          "Au-delà de signer l'opinion, j'ai relié la tension de trésorerie aux délais clients et aux stocks pour proposer au dirigeant des leviers concrets : factoring, renégociation des délais, ligne de crédit dimensionnée.",
+          "Penser en entrepreneur, c'est voir derrière le ratio l'enjeu de pérennité du client — ici, le risque qu'une croissance non financée tourne à la crise de liquidité.",
+          "J'apporte de la valeur sans sortir de mon rôle : je recommande des solutions applicables, mais c'est le dirigeant qui décide, et je préserve mon indépendance d'auditeur."
+        ]
+      },
+      {
+        "nom": "Capacité de jugement et de discernement",
+        "definition": "Aptitude à apprécier une situation avec mesure, à pondérer des éléments contradictoires et à prendre une décision proportionnée et justifiée dans l'incertitude. Pour le réviseur, c'est l'exercice du jugement professionnel : appliquer normes, expérience et bon sens pour trancher ce qui est significatif, suffisant et approprié.",
+        "contexte": "Le jugement professionnel est consubstantiel à la révision (ISA 200) : fixer le seuil de signification (matérialité) et décider si une anomalie est significative ; évaluer si les éléments probants réunis sont suffisants et appropriés (ISA 500) ; apprécier le caractère raisonnable d'une estimation comptable (ISA 540, provisions, dépréciations, justes valeurs) ; juger des hypothèses de continuité d'exploitation ; choisir la nature, le calendrier et l'étendue des procédures en réponse aux risques évalués. Le discernement, c'est aussi distinguer l'essentiel de l'accessoire, ne pas surréagir à un détail ni minimiser un vrai problème, et adapter la réponse au contexte propre du client.",
+        "situation_modele": "À la clôture, je découvre une anomalie comptable dont le montant est juste inférieur à mon seuil de signification, mais qui résulte d'un contournement délibéré d'un contrôle par un responsable. Opportunité : appliquer mécaniquement la matérialité quantitative et passer outre, l'écart étant « immatériel ». Risque : un jugement purement arithmétique ignorerait la dimension qualitative — une anomalie de faible montant mais révélatrice d'une intention frauduleuse change la nature du risque (ISA 240) et peut signaler d'autres irrégularités. Faisant preuve de discernement, je pondère le quantitatif (montant faible) et le qualitatif (nature intentionnelle, défaillance de contrôle, signal possible). Ma décision : ne pas classer l'écart comme négligeable, étendre mes investigations sur les contrôles concernés, et communiquer la déficience à la gouvernance (ISA 265). Le bon chiffre ne dispense pas du bon jugement : ici, le sens de l'anomalie compte plus que sa taille.",
+        "conseils": [
+          "Ancrez le jugement dans une notion technique mesurable (seuil de signification, caractère suffisant et approprié, ISA 200/500/540) : le discernement professionnel n'est pas du flair, c'est un raisonnement cadré.",
+          "Montrez que vous pondérez des éléments contradictoires (quantitatif vs qualitatif, coût vs assurance) avant de trancher : le jury veut voir la balance, pas seulement la conclusion.",
+          "Illustrez la proportionnalité : ni surréaction à un détail, ni minimisation d'un vrai problème — le discernement, c'est la juste mesure.",
+          "Assumez la décision et ses motifs : un bon jugement se reconnaît à une conclusion claire et justifiée dans l'incertitude, pas à une hésitation.",
+          "Reliez jugement et scepticisme : juger qu'un écart est qualitativement significatif (intention, fraude) montre les deux comportements à la fois."
+        ],
+        "pieges": [
+          "Réduire le jugement à un calcul mécanique (appliquer la matérialité chiffrée sans tenir compte de la dimension qualitative d'une anomalie).",
+          "Confondre discernement et indécision : pondérer ne veut pas dire ne jamais trancher ; le jury attend une décision motivée.",
+          "Surréagir à un détail non significatif ou, à l'inverse, banaliser un signal qualitatif fort (intention, contournement de contrôle) : les deux trahissent un défaut de mesure.",
+          "Présenter une décision sans en exposer les critères : un jugement non justifié paraît arbitraire."
+        ],
+        "phrases": [
+          "Le jugement professionnel, ce n'est pas appliquer la matérialité comme une formule : un écart de faible montant mais d'origine frauduleuse devient significatif par sa nature, pas par sa taille.",
+          "Avant de trancher, je pèse le quantitatif et le qualitatif, le coût de l'investigation et le niveau d'assurance requis — puis j'assume une décision motivée.",
+          "Le discernement, pour moi, c'est la juste mesure : ne pas dramatiser un détail, mais ne jamais banaliser un signal qui change la nature du risque."
+        ]
+      },
+      {
+        "nom": "Sens des responsabilités",
+        "definition": "Disposition à assumer pleinement les conséquences de ses actes professionnels et de son opinion, à rendre des comptes, et à reconnaître ses erreurs plutôt qu'à les masquer. Pour le réviseur, c'est porter la responsabilité de l'opinion d'audit — une responsabilité qui ne se délègue pas et engage devant le public.",
+        "contexte": "La responsabilité du réviseur a une portée juridique forte en droit suisse : l'art. 755 CO institue la responsabilité civile de l'organe de révision envers la société, les actionnaires et les créanciers pour le dommage causé par un manquement fautif à ses devoirs ; s'y ajoutent la surveillance de l'ASR (LSR) et, le cas échéant, une responsabilité pénale. Au quotidien : assumer son opinion et la documentation qui la fonde (ISA 230), endosser ses décisions de jugement, déclencher une communication à la gouvernance ou un signalement quand la loi l'exige, ne pas se défausser sur l'équipe ou le client, et reconnaître/corriger une erreur détectée après coup. La responsabilité est aussi indélégable : recourir à un expert (ISA 620) ou à un outil n'en transfère jamais la charge.",
+        "situation_modele": "Après l'émission de mon rapport, je réalise qu'une procédure clé a été insuffisamment couverte par l'équipe et qu'un poste significatif n'a pas été audité avec l'étendue requise. Opportunité : ne rien dire, l'opinion étant déjà émise et le risque de détection externe faible. Risque : laisser subsister une opinion potentiellement non fondée m'expose, en tant que réviseur responsable, à une responsabilité civile (art. 755 CO) et à la surveillance de l'ASR, et trahit le public qui se fie à mon attestation. Assumant ma responsabilité, je ne me défausse pas sur le collaborateur : l'opinion est la mienne. Ma décision : évaluer sans délai l'incidence de la lacune, mettre en œuvre les procédures complémentaires nécessaires, déterminer si l'opinion reste soutenable et, le cas échéant, prendre les mesures qui s'imposent (information de la gouvernance, démarche corrective). Je documente la situation et la réponse. Porter une opinion, c'est en assumer les conséquences jusqu'au bout — y compris en reconnaissant une faille.",
+        "conseils": [
+          "Citez la base juridique suisse (art. 755 CO, responsabilité civile de l'organe de révision ; surveillance ASR / LSR) : sur ce comportement, le poids légal de la responsabilité du réviseur est l'argument fort.",
+          "Insistez sur l'indélégabilité : l'opinion et son jugement restent vôtres, même en cas de recours à un expert (ISA 620) ou à un outil — ne jamais se défausser sur l'équipe.",
+          "Montrez un cas où vous assumez une difficulté ou une erreur (lacune, correction post-rapport) : la responsabilité se prouve dans l'inconfort, pas dans le confort.",
+          "Reliez la responsabilité au public : l'attestation engage la confiance des actionnaires et des créanciers, pas seulement la relation avec le client.",
+          "Concluez sur l'action assumée et documentée : rendre des comptes, corriger, communiquer — la responsabilité est active, pas une simple posture morale."
+        ],
+        "pieges": [
+          "Se défausser sur le collaborateur, le client ou l'outil : l'opinion d'audit est personnelle et indélégable, c'est l'erreur cardinale sur ce comportement.",
+          "Confondre responsabilité et culpabilité paralysante : assumer, c'est agir et corriger, pas s'excuser sans rien faire.",
+          "Oublier la portée juridique (art. 755 CO, ASR) et présenter la responsabilité comme une simple valeur morale abstraite.",
+          "Masquer ou minimiser une erreur détectée après coup : la dissimulation aggrave la responsabilité au lieu de la limiter."
+        ],
+        "phrases": [
+          "L'opinion d'audit est la mienne : je ne me défausse pas sur le collaborateur qui a exécuté la procédure, car la responsabilité, au sens de l'art. 755 CO, ne se délègue pas.",
+          "Découvrir une lacune après l'émission du rapport, c'est précisément le moment où la responsabilité se prouve : j'évalue l'incidence, je complète les travaux et je prends les mesures qui s'imposent.",
+          "Mon attestation engage la confiance des actionnaires et des créanciers, pas seulement le client : c'est pourquoi j'en assume les conséquences jusqu'au bout, erreur comprise."
+        ]
+      }
+    ]
+  }
 }
