@@ -86,6 +86,8 @@ const TAB_LABELS = {
     audit: '🔍 Audit',
     english: '🇬🇧 Anglais',
     podcasts: '🎧 Podcasts',
+    hec: '🎓 HEC',
+    oral: '🎤 Oral',
     flashcards: 'Flashcards' // legacy redirect
 };
 
@@ -158,6 +160,10 @@ function navigate(tab, subTab) {
         case 'hec':
             if (typeof _renderHEC === 'function') _renderHEC(main);
             else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module HEC en cours de chargement...</p>';
+            break;
+        case 'oral':
+            if (typeof renderOral === 'function') renderOral(main);
+            else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module Oral en cours de chargement...</p>';
             break;
         default: main.innerHTML = '<p>Page inconnue.</p>';
     }
