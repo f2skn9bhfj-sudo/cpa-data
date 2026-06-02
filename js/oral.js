@@ -84,6 +84,12 @@ function _oralRenderHome(host) {
                 <div><div class="oral-exam-t">Présentation : les 19 comportements</div><div class="oral-exam-d">Pour chaque comportement tiré au sort : situation-type, conseils, pièges, formulations</div></div>
                 <div class="oral-course-go">›</div>
             </div>
+            ${(d.examen.scenarios_transversaux || []).length ? `
+            <div class="oral-exam-card" onclick="_oralOpenExamen('transversal')">
+                <div class="oral-exam-ic">🔗</div>
+                <div><div class="oral-exam-t">Mises en situation transversales</div><div class="oral-exam-d">${d.examen.scenarios_transversaux.length} scénarios « discussion d'experts » qui croisent plusieurs thèmes (compétence interdisciplinaire)</div></div>
+                <div class="oral-course-go">›</div>
+            </div>` : ''}
         </div>` : ''}
         <div class="oral-section-title">🎯 Thèmes principaux — discussion technique</div>
         <div class="oral-grid">
@@ -119,7 +125,61 @@ function _oralToggleStar(id) {
 /* ── Module Examen : déroulement & comportements ── */
 function _oralOpenExamen(which) {
     if (which === 'comportements') _oralComportementsView();
+    else if (which === 'transversal') _oralTransversalView();
     else _oralDeroulementView();
+}
+
+// Révélation (réponse modèle d'un scénario / résolution d'un cas)
+function _oralReveal(id) {
+    const el = document.getElementById(id);
+    const btn = document.getElementById(id + '-btn');
+    if (!el) return;
+    const show = el.style.display === 'none';
+    el.style.display = show ? 'block' : 'none';
+    if (btn) btn.textContent = show ? '▴ Masquer' : (btn.dataset.lbl || 'Voir la réponse modèle ▾');
+}
+
+function _oralScenarioCard(s, id) {
+    return `<div class="oral-scn">
+        <div class="oral-scn-role">🎙️ ${_oralEsc(s.role || 'Partie prenante')}</div>
+        ${s.contexte ? `<div class="oral-scn-ctx">${_oralMd(s.contexte)}</div>` : ''}
+        ${s.question ? `<div class="oral-scn-q">❓ ${_oralMd(s.question)}</div>` : ''}
+        <button class="oral-reveal-btn" data-lbl="Voir la réponse modèle ▾" id="${id}-btn" onclick="_oralReveal('${id}')">Voir la réponse modèle ▾</button>
+        <div class="oral-scn-ans" id="${id}" style="display:none">
+            <div class="oral-scn-ans-tx">${_oralMd(s.reponse_modele || '')}</div>
+            ${(s.points_cles || []).length ? `<div class="oral-scn-sub"><div class="oral-angle-lbl" style="color:#4ade80">✅ Points clés à mentionner</div><ul class="oral-ul">${s.points_cles.map(x => `<li>${_oralMd(x)}</li>`).join('')}</ul></div>` : ''}
+            ${(s.pieges || []).length ? `<div class="oral-scn-sub oral-pieges" style="margin-top:8px"><div class="oral-angle-lbl" style="color:#fbbf24">⚠️ À éviter</div><ul class="oral-ul">${s.pieges.map(x => `<li>${_oralMd(x)}</li>`).join('')}</ul></div>` : ''}
+        </div>
+    </div>`;
+}
+
+function _oralCasCard(c, id) {
+    return `<div class="oral-cas">
+        <div class="oral-cas-hd">${c.niveau ? `<span class="oral-cas-niv">${_oralEsc(c.niveau)}</span>` : ''}${_oralEsc(c.titre || 'Cas')}</div>
+        ${c.enonce ? `<div class="oral-cas-en">${_oralMd(c.enonce)}</div>` : ''}
+        <button class="oral-reveal-btn" data-lbl="Voir la résolution ▾" id="${id}-btn" onclick="_oralReveal('${id}')">Voir la résolution ▾</button>
+        <div class="oral-cas-res" id="${id}" style="display:none">${_oralMd(c.resolution || '')}</div>
+    </div>`;
+}
+
+function _oralTransversalView() {
+    const scn = ((_oralData || {}).examen || {}).scenarios_transversaux || [];
+    const host = _oralHost();
+    if (!host) return;
+    const c = '#0891b2';
+    host.innerHTML = `
+        <div class="oral-cours" style="--oc:${c}">
+            <div class="oral-cours-bar"><button class="oral-btn" onclick="renderOral()">← Tous les thèmes</button></div>
+            <div class="oral-hero" style="background:linear-gradient(135deg,${c}33,${c}0a 60%,transparent);border:1px solid ${c}55">
+                <div class="oral-hero-icon">🔗</div>
+                <div><div class="oral-hero-num">Discussion d'experts · compétence interdisciplinaire</div>
+                    <div class="oral-hero-title">Mises en situation transversales</div>
+                    <div class="oral-hero-tag">Des scénarios qui croisent plusieurs thèmes. Prépare ta réponse, puis révèle le modèle.</div></div>
+            </div>
+            ${scn.map((s, i) => _oralScenarioCard(s, `tr-${i}`)).join('')}
+            <div class="oral-cours-bar" style="margin-top:18px"><button class="oral-btn" onclick="renderOral()">← Tous les thèmes</button></div>
+        </div>`;
+    window.scrollTo(0, 0);
 }
 
 function _oralExamPart(p, c) {
@@ -263,6 +323,18 @@ function _oralOpenTheme(id) {
                     ${(t.courses || []).map((co, i) => _oralCourseCard(t, co, i + 1)).join('')}
                 </div>
             </div>
+            ${(t.scenarios || []).length ? `
+            <div class="oral-block">
+                <div class="oral-block-hd" style="color:#c084fc">🎭 Mises en situation — discussion d'experts (${t.scenarios.length})</div>
+                <div class="oral-block-sub">Tu joues l'expert-comptable face à une partie prenante. Prépare ta réponse à voix haute, puis révèle le modèle (position → analyse → recommandations → conclusion).</div>
+                ${t.scenarios.map((s, i) => _oralScenarioCard(s, `scn-${t.id}-${i}`)).join('')}
+            </div>` : ''}
+            ${(t.cas_examen || []).length ? `
+            <div class="oral-block">
+                <div class="oral-block-hd" style="color:#4ade80">🧮 Cas chiffrés d'examen (${t.cas_examen.length})</div>
+                <div class="oral-block-sub">Pose-toi le calcul, puis vérifie la résolution.</div>
+                ${t.cas_examen.map((cx, i) => _oralCasCard(cx, `cas-${t.id}-${i}`)).join('')}
+            </div>` : ''}
             <div class="oral-cours-bar" style="margin-top:6px">
                 <button class="oral-btn" onclick="renderOral()">← Tous les thèmes</button>
             </div>
@@ -462,7 +534,22 @@ function _oralRevealToggle(tid, cid) {
     .oral-card-badge { margin-top:10px; display:inline-block; font-size:10.5px; font-weight:800; color:#fde68a; background:#3a2c0a; border:1px solid #fbbf2455; padding:2px 9px; border-radius:10px; }
     .oral-card.oral-card-on { border-color:#fbbf2466; box-shadow:0 0 0 1px #fbbf2433 inset; }
     .oral-section-title { font-size:13px; font-weight:800; color:#94a3b8; text-transform:uppercase; letter-spacing:0.06em; margin:22px 0 12px; }
-    .oral-exam-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:6px; }
+    .oral-exam-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin-bottom:6px; }
+    .oral-block-sub { font-size:12px; color:#94a3b8; margin:-6px 0 12px; line-height:1.5; }
+    .oral-scn { background:#0d1424; border:1px solid #1e293b; border-radius:11px; padding:14px 16px; margin-bottom:12px; }
+    .oral-scn-role { font-size:12.5px; font-weight:800; color:#a78bfa; margin-bottom:6px; }
+    .oral-scn-ctx { font-size:13px; color:#cbd5e1; line-height:1.7; margin-bottom:8px; }
+    .oral-scn-q { font-size:13.5px; font-weight:700; color:#f1f5f9; line-height:1.6; background:#160b1f; border-left:3px solid #9333ea; border-radius:6px; padding:8px 12px; margin-bottom:10px; }
+    .oral-reveal-btn { background:linear-gradient(135deg,#3c1d6e,#553c9a); border:1px solid #7c3aed; color:#e9d5ff; padding:8px 16px; border-radius:8px; cursor:pointer; font-size:12.5px; font-weight:700; }
+    .oral-reveal-btn:hover { background:#553c9a; }
+    .oral-scn-ans { margin-top:12px; padding:12px 14px; background:#0a0f1c; border:1px solid #16203a; border-radius:9px; }
+    .oral-scn-ans-tx { font-size:13px; color:#e2e8f0; line-height:1.75; white-space:pre-wrap; }
+    .oral-scn-sub { margin-top:10px; }
+    .oral-cas { background:#0a1a0f; border:1px solid #16a34a2e; border-radius:11px; padding:14px 16px; margin-bottom:12px; }
+    .oral-cas-hd { font-size:14px; font-weight:800; color:#86efac; margin-bottom:8px; }
+    .oral-cas-niv { font-size:12px; margin-right:8px; }
+    .oral-cas-en { font-size:13px; color:#cbd5e1; line-height:1.7; margin-bottom:10px; white-space:pre-wrap; }
+    .oral-cas-res { margin-top:12px; padding:12px 14px; background:#0a0f1c; border:1px solid #16a34a33; border-radius:9px; font-size:13px; color:#d1fae5; line-height:1.75; white-space:pre-wrap; }
     .oral-exam-card { display:flex; align-items:center; gap:14px; background:linear-gradient(135deg,#1a0f2e,#0d1424); border:1px solid #7c3aed44; border-radius:13px; padding:16px 18px; cursor:pointer; transition:all .14s; }
     .oral-exam-card:hover { border-color:#9333ea; transform:translateY(-2px); box-shadow:0 6px 20px rgba(124,58,237,.25); }
     .oral-exam-card > div:nth-child(2) { flex:1; }
