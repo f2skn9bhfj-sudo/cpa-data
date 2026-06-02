@@ -7,6 +7,30 @@
 let _oralData = null;
 let _oralRevealAll = false;
 const ORAL_STAR_KEY = 'swisscpa_oral_principaux';
+const ORAL_REVOIR_KEY = 'swisscpa_oral_revoir';
+
+// ── Simulateur : état + chrono ──
+let _oralSimMode = 'technique';   // technique | comportement | scenario
+let _oralSimScope = 'principaux'; // principaux | tout | <id thème>
+let _oralSimCurrent = null;
+let _oralTimerInt = null;
+
+function _oralStopTimer() { if (_oralTimerInt) { clearInterval(_oralTimerInt); _oralTimerInt = null; } }
+function _oralStartTimer(seconds, elId) {
+    _oralStopTimer();
+    let t = seconds;
+    const tick = () => {
+        const el = document.getElementById(elId);
+        if (!el) { _oralStopTimer(); return; }   // vue changée
+        const m = Math.floor(Math.max(0, t) / 60), s = ((Math.max(0, t) % 60));
+        el.textContent = t > 0 ? `⏱️ ${m}:${String(s).padStart(2, '0')}` : '⏱️ Temps écoulé — conclus !';
+        el.style.color = (t <= 0) ? '#ef4444' : (t <= 30 ? '#ef4444' : (t <= 60 ? '#f59e0b' : '#22d3ee'));
+        if (t <= 0) { _oralStopTimer(); return; }
+        t--;
+    };
+    tick();
+    _oralTimerInt = setInterval(tick, 1000);
+}
 
 function _oralStars() {
     try { return new Set(JSON.parse(localStorage.getItem(ORAL_STAR_KEY) || '[]')); }
@@ -78,6 +102,11 @@ function _oralRenderHome(host) {
         ${d.examen ? `
         <div class="oral-section-title">📋 Préparation à l'examen</div>
         <div class="oral-exam-row">
+            <div class="oral-exam-card oral-exam-card-sim" onclick="_oralOpenExamen('simulateur')">
+                <div class="oral-exam-ic">🎲</div>
+                <div><div class="oral-exam-t">Simulateur d'oral <span class="oral-sim-badge">entraînement</span></div><div class="oral-exam-d">Tirage au sort + chrono → réponds à voix haute, puis compare au modèle (et fais-toi noter par l'IA)</div></div>
+                <div class="oral-course-go">›</div>
+            </div>
             <div class="oral-exam-card" onclick="_oralOpenExamen('deroulement')">
                 <div class="oral-exam-ic">📋</div>
                 <div><div class="oral-exam-t">Déroulement & conseils</div><div class="oral-exam-d">Les 3 épreuves (70 min, 50 %), critères, conseils & pièges + méthode de la Présentation</div></div>
@@ -134,6 +163,7 @@ function _oralToggleStar(id) {
 function _oralOpenExamen(which) {
     if (which === 'comportements') _oralComportementsView();
     else if (which === 'transversal') _oralTransversalView();
+    else if (which === 'simulateur') _oralSimView();
     else _oralDeroulementView();
 }
 
@@ -188,6 +218,118 @@ function _oralTransversalView() {
             <div class="oral-cours-bar" style="margin-top:18px"><button class="oral-btn" onclick="renderOral()">← Tous les thèmes</button></div>
         </div>`;
     window.scrollTo(0, 0);
+}
+
+/* ── Simulateur d'oral ── */
+function _oralFlashPool(scope) {
+    const d = _oralData || {}; const stars = _oralStars(); const pool = [];
+    (d.themes || []).forEach(t => {
+        if (scope === 'principaux' && !stars.has(t.id)) return;
+        if (scope === 'revgen' && !t.general) return;
+        if (scope !== 'principaux' && scope !== 'tout' && scope !== 'revgen' && t.id !== scope) return;
+        (t.courses || []).forEach(co => (co.flashcards || []).forEach(f => pool.push({ type: 'flash', q: f.q, a: f.a, theme: t.title, course: co.title })));
+    });
+    return pool;
+}
+function _oralScenarioPool() {
+    const d = _oralData || {}; const pool = [];
+    (d.themes || []).forEach(t => (t.scenarios || []).forEach(s => pool.push(Object.assign({ type: 'scenario', theme: t.title }, s))));
+    (((d.examen || {}).scenarios_transversaux) || []).forEach(s => pool.push(Object.assign({ type: 'scenario', theme: 'Transversal' }, s)));
+    return pool;
+}
+function _oralCompPool() {
+    return (((_oralData || {}).examen || {}).comportements || []).map(c => Object.assign({ type: 'comportement' }, c));
+}
+
+function _oralSimView() {
+    const host = _oralHost(); if (!host) return;
+    const modes = [{ k: 'technique', l: '🧠 Question technique', d: '7,5 min' }, { k: 'comportement', l: '🎭 Comportement', d: '15 min' }, { k: 'scenario', l: '💬 Scénario d\'experts', d: '7,5 min' }];
+    const scopes = [{ k: 'principaux', l: '⭐ Mes 2 principaux' }, { k: 'revgen', l: '📋 Révision générale' }, { k: 'tout', l: 'Tout' }];
+    host.innerHTML = `
+        <div class="oral-cours" style="--oc:#9333ea">
+            <div class="oral-cours-bar"><button class="oral-btn" onclick="_oralStopTimer();renderOral()">← Tous les thèmes</button></div>
+            <div class="oral-hero" style="background:linear-gradient(135deg,#9333ea33,#9333ea0a 60%,transparent);border:1px solid #9333ea55">
+                <div class="oral-hero-icon">🎲</div>
+                <div><div class="oral-hero-num">Entraînement en conditions réelles</div>
+                    <div class="oral-hero-title">Simulateur d'oral</div>
+                    <div class="oral-hero-tag">Tire au sort, lance le chrono, réponds <b>à voix haute</b>, puis compare au modèle.</div></div>
+            </div>
+            <div class="oral-block">
+                <div class="oral-sim-modes">${modes.map(m => `<button class="oral-sim-mode ${_oralSimMode === m.k ? 'on' : ''}" onclick="_oralSimSetMode('${m.k}')">${m.l} <span class="oral-sim-mode-d">${m.d}</span></button>`).join('')}</div>
+                <div class="oral-sim-scopes" style="display:${_oralSimMode === 'technique' ? 'flex' : 'none'}">${scopes.map(s => `<button class="oral-sim-scope ${_oralSimScope === s.k ? 'on' : ''}" onclick="_oralSimSetScope('${s.k}')">${s.l}</button>`).join('')}</div>
+                <div id="oralSimItem"></div>
+            </div>
+        </div>`;
+    _oralSimDraw();
+    window.scrollTo(0, 0);
+}
+function _oralSimSetMode(m) { _oralSimMode = m; _oralSimView(); }
+function _oralSimSetScope(s) { _oralSimScope = s; _oralSimView(); }
+function _oralRenderSimItem(html) { const el = document.getElementById('oralSimItem'); if (el) el.innerHTML = html; }
+
+function _oralSimDraw() {
+    let pool, dur;
+    if (_oralSimMode === 'comportement') { pool = _oralCompPool(); dur = 900; }
+    else if (_oralSimMode === 'scenario') { pool = _oralScenarioPool(); dur = 450; }
+    else { pool = _oralFlashPool(_oralSimScope); dur = 450; }
+    if (!pool.length) {
+        _oralSimCurrent = null; _oralStopTimer();
+        _oralRenderSimItem(`<div class="oral-sim-empty">Aucune question dans cette sélection. ${(_oralSimMode === 'technique' && _oralSimScope === 'principaux') ? 'Marque d\'abord tes 2 thèmes principaux ⭐ sur l\'accueil.' : ''}</div>`);
+        return;
+    }
+    _oralSimCurrent = pool[Math.floor(Math.random() * pool.length)];
+    _oralRenderSimItem(_oralSimItemHtml(_oralSimCurrent));
+    _oralStartTimer(dur, 'oralSimTimer');
+}
+
+function _oralSimItemHtml(cur) {
+    let head = '', modele = '';
+    if (cur.type === 'flash') {
+        head = `<div class="oral-sim-src">${_oralEsc(cur.theme)} · ${_oralEsc(cur.course)}</div><div class="oral-sim-q">${_oralMd(cur.q)}</div>`;
+        modele = `<div class="oral-scn-ans-tx">✅ ${_oralMd(cur.a)}</div>`;
+    } else if (cur.type === 'scenario') {
+        head = `<div class="oral-sim-src">${_oralEsc(cur.theme)} · 🎙️ ${_oralEsc(cur.role || '')}</div>${cur.contexte ? `<div class="oral-scn-ctx">${_oralMd(cur.contexte)}</div>` : ''}<div class="oral-sim-q">❓ ${_oralMd(cur.question || '')}</div>`;
+        modele = `<div class="oral-scn-ans-tx">${_oralMd(cur.reponse_modele || '')}</div>` + ((cur.points_cles || []).length ? `<div class="oral-scn-sub"><div class="oral-angle-lbl" style="color:#4ade80">✅ Points clés</div><ul class="oral-ul">${cur.points_cles.map(x => `<li>${_oralMd(x)}</li>`).join('')}</ul></div>` : '');
+    } else {
+        head = `<div class="oral-sim-src">Présentation · comportement tiré au sort</div><div class="oral-sim-q">🎭 ${_oralEsc(cur.nom)}</div><div class="oral-scn-ctx">Prépare une <b>présentation (3-5 min)</b> à partir d'une <b>situation de ton travail quotidien</b> où ce comportement joue un rôle : (1) situation & ton rôle · (2) complexité (opportunités/risques) · (3) décision & motifs.</div>`;
+        modele = `<div class="oral-scn-ans-tx"><b>Définition.</b> ${_oralMd(cur.definition || '')}</div><div class="oral-scn-sub"><div class="oral-angle-lbl">🎬 Situation-type</div><div class="oral-scn-ans-tx">${_oralMd(cur.situation_modele || '')}</div></div>` + ((cur.conseils || []).length ? `<div class="oral-scn-sub"><div class="oral-angle-lbl" style="color:#4ade80">✅ Conseils</div><ul class="oral-ul">${cur.conseils.map(x => `<li>${_oralMd(x)}</li>`).join('')}</ul></div>` : '');
+    }
+    return `
+        <div class="oral-sim-card">
+            <div class="oral-sim-timer" id="oralSimTimer">⏱️</div>
+            ${head}
+            <textarea id="oralSimAnswer" class="oral-sim-answer" placeholder="(Optionnel) Tape les points de ta réponse pour te faire évaluer par l'IA — mais surtout, réponds À VOIX HAUTE."></textarea>
+            <div class="oral-sim-actions">
+                <button class="oral-btn oral-btn-rev" data-lbl="👁️ Voir le modèle ▾" id="oralSimModele-btn" onclick="_oralReveal('oralSimModele')">👁️ Voir le modèle ▾</button>
+                <button class="oral-btn" onclick="_oralSimEval()">🤖 Évalue ma réponse</button>
+                <button class="oral-btn" onclick="_oralSimDraw()">🎲 Suivante</button>
+            </div>
+            <div class="oral-sim-eval" id="oralSimEval"></div>
+            <div class="oral-scn-ans" id="oralSimModele" style="display:none">${modele}</div>
+        </div>`;
+}
+
+async function _oralSimEval() {
+    const ta = document.getElementById('oralSimAnswer');
+    const out = document.getElementById('oralSimEval');
+    if (!ta || !out) return;
+    const ans = (ta.value || '').trim();
+    if (!ans) { out.innerHTML = '<span style="color:#94a3b8">✍️ Écris d\'abord les points de ta réponse ci-dessus, puis je la fais évaluer.</span>'; return; }
+    const cur = _oralSimCurrent || {};
+    const q = cur.q || cur.question || cur.nom || '';
+    const modele = cur.a || cur.reponse_modele || cur.situation_modele || '';
+    out.innerHTML = '<span style="color:#94a3b8">🤖 Évaluation en cours…</span>';
+    const prompt = `Tu es examinateur/examinatrice à l'examen oral du diplôme fédéral suisse d'expert-comptable. Évalue la réponse du candidat à la question ci-dessous selon les critères officiels : connaissances techniques approfondies et axées stratégie, langage technique exact (articles/normes), structure, argumentation et justification, recommandations applicables, communication.\n\nQUESTION POSÉE :\n${q}\n\nÉLÉMENTS DE RÉPONSE ATTENDUS (référence) :\n${modele}\n\nRÉPONSE DU CANDIDAT :\n${ans}\n\nRends en français, concis : une **note sur 10**, 2-3 **points forts**, 2-3 **points à améliorer**, et **ce qui manquait** par rapport à la référence. Exigeant mais constructif.`;
+    try {
+        const api = window.pywebview && window.pywebview.api;
+        let res = null;
+        if (api && typeof api.chat_explain === 'function') res = await api.chat_explain([{ role: 'user', content: prompt }]);
+        if (res && res.reply) out.innerHTML = _oralMd(res.reply).replace(/\n/g, '<br>');
+        else if (res && res.error) out.innerHTML = '<span style="color:#fca5a5">⚠️ ' + _oralEsc(res.error) + '</span>';
+        else out.innerHTML = '<span style="color:#94a3b8">🤖 L\'examinateur IA est disponible dans l\'app bureau (clé Groq configurée). En attendant, clique « Voir le modèle » et compare honnêtement ta réponse.</span>';
+    } catch (e) {
+        out.innerHTML = '<span style="color:#94a3b8">IA indisponible ici. Clique « Voir le modèle » et compare ta réponse.</span>';
+    }
 }
 
 function _oralExamPart(p, c) {
@@ -565,6 +707,25 @@ function _oralRevealToggle(tid, cid) {
     .oral-cas-niv { font-size:12px; margin-right:8px; }
     .oral-cas-en { font-size:13px; color:#cbd5e1; line-height:1.7; margin-bottom:10px; white-space:pre-wrap; }
     .oral-cas-res { margin-top:12px; padding:12px 14px; background:#0a0f1c; border:1px solid #16a34a33; border-radius:9px; font-size:13px; color:#d1fae5; line-height:1.75; white-space:pre-wrap; }
+    .oral-exam-card-sim { background:linear-gradient(135deg,#2a1245,#3c1d6e); border-color:#a855f7; }
+    .oral-sim-badge { font-size:9.5px; font-weight:800; color:#1a0f2e; background:#c084fc; padding:1px 7px; border-radius:8px; margin-left:6px; vertical-align:middle; text-transform:uppercase; }
+    .oral-sim-modes { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+    .oral-sim-mode { background:#0d1424; border:1px solid #334155; color:#cbd5e1; padding:9px 14px; border-radius:9px; cursor:pointer; font-size:13px; font-weight:700; }
+    .oral-sim-mode.on { background:#3c1d6e; border-color:#9333ea; color:#e9d5ff; }
+    .oral-sim-mode-d { font-size:10.5px; font-weight:500; color:#94a3b8; }
+    .oral-sim-scopes { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+    .oral-sim-scope { background:#0a0f1c; border:1px solid #334155; color:#94a3b8; padding:6px 12px; border-radius:18px; cursor:pointer; font-size:12px; font-weight:600; }
+    .oral-sim-scope.on { background:#1e1b4b; border-color:#a855f7; color:#e9d5ff; }
+    .oral-sim-card { background:#0d1424; border:1px solid #1e293b; border-radius:12px; padding:16px 18px; }
+    .oral-sim-timer { float:right; font-size:19px; font-weight:800; color:#22d3ee; background:#0a0f1c; border:1px solid #1e293b; border-radius:10px; padding:5px 12px; margin:-2px 0 6px 10px; }
+    .oral-sim-src { font-size:11px; font-weight:700; color:#a78bfa; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px; }
+    .oral-sim-q { font-size:16px; font-weight:800; color:#f1f5f9; line-height:1.5; margin-bottom:10px; }
+    .oral-sim-answer { width:100%; box-sizing:border-box; min-height:90px; background:#0a0f1c; border:1px solid #334155; color:#e2e8f0; border-radius:9px; padding:10px 12px; font-size:13px; line-height:1.6; resize:vertical; margin:8px 0; font-family:inherit; }
+    .oral-sim-answer:focus { outline:none; border-color:#9333ea; }
+    .oral-sim-actions { display:flex; gap:8px; flex-wrap:wrap; }
+    .oral-sim-eval { margin-top:12px; font-size:13px; color:#e2e8f0; line-height:1.7; }
+    .oral-sim-eval:not(:empty) { background:#06141a; border:1px solid #0891b255; border-left:3px solid #0891b2; border-radius:9px; padding:12px 14px; }
+    .oral-sim-empty { color:#94a3b8; font-size:13.5px; padding:14px; font-style:italic; }
     .oral-exam-card { display:flex; align-items:center; gap:14px; background:linear-gradient(135deg,#1a0f2e,#0d1424); border:1px solid #7c3aed44; border-radius:13px; padding:16px 18px; cursor:pointer; transition:all .14s; }
     .oral-exam-card:hover { border-color:#9333ea; transform:translateY(-2px); box-shadow:0 6px 20px rgba(124,58,237,.25); }
     .oral-exam-card > div:nth-child(2) { flex:1; }
