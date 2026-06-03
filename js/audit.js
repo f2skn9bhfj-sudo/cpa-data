@@ -1049,10 +1049,16 @@ function _renderAnnuaireStandard(serieId, idx, std, color) {
                                        box-shadow:0 2px 8px rgba(0,0,0,0.3)">
                             📖 Voir le cours complet
                         </button>
+                        <button onclick="event.stopPropagation();_openFicheRevision('${std.num}')"
+                                style="padding:11px 18px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:800;
+                                       background:linear-gradient(135deg,#0ea5e9,#0369a1);border:none;color:#fff;
+                                       box-shadow:0 2px 8px rgba(0,0,0,0.3)">
+                            📋 Fiche de révision
+                        </button>
                         <button onclick="event.stopPropagation();_downloadCoursPdf('${std.num}')"
                                 style="padding:11px 18px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:700;
                                        background:#1e293b;border:1px solid ${color};color:${color}">
-                            📥 Télécharger en PDF
+                            📥 Cours en PDF
                         </button>
                     </div>` : ''}
             </div>
@@ -1140,8 +1146,10 @@ function _openAnnuaireCours(num) {
             <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px">
                 <button onclick="_renderAuditAnnuaire(document.getElementById('auditContent'))"
                         style="padding:7px 13px;border-radius:7px;cursor:pointer;background:#1e293b;border:1px solid #334155;color:#94a3b8;font-size:12px;font-weight:600">← Annuaire</button>
+                <button onclick="_openFicheRevision('${num}')"
+                        style="padding:7px 13px;border-radius:7px;cursor:pointer;background:#0ea5e9;border:none;color:#fff;font-size:12px;font-weight:700">📋 Fiche de révision</button>
                 <button onclick="_downloadCoursPdf('${num}')"
-                        style="padding:7px 13px;border-radius:7px;cursor:pointer;background:${color};border:none;color:#fff;font-size:12px;font-weight:700">📥 Télécharger en PDF</button>
+                        style="padding:7px 13px;border-radius:7px;cursor:pointer;background:${color};border:none;color:#fff;font-size:12px;font-weight:700">📥 Cours en PDF</button>
                 <span style="margin-left:auto;font-size:11px;color:#64748b">⏱️ ${escapeHtml(duree)} de lecture</span>
             </div>
             <div style="height:4px;background:#1e293b;border-radius:3px;overflow:hidden">
@@ -1553,6 +1561,121 @@ function _coursPdfFallback(std, serie, cours, num, errMsg) {
     }
 }
 
+// ─── Fiche de révision (condensé d'un cours ISA) ───────────────────
+function _openFicheRevision(num) {
+    const cours = (_auditData.annuaire_cours || {})[num];
+    const { std, serie } = _findAnnuaireStd(num);
+    if (!cours || !std) return;
+    const blocks = cours.fiche_revision || [];
+    if (!blocks.length) { _openAnnuaireCours(num); return; }
+    const color = (serie && serie.color) || AUDIT_ACCENT;
+    const host = document.getElementById('auditContent');
+    if (!host) return;
+    const hbtn = (oc, bg, txt) => `<button onclick="${oc}" style="padding:7px 13px;border-radius:7px;cursor:pointer;border:none;color:#fff;font-size:12px;font-weight:700;background:${bg}">${txt}</button>`;
+    host.innerHTML = `
+        <div style="position:sticky;top:0;z-index:20;background:#0a0f1c;margin:-4px -4px 14px -4px;padding:8px 4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+            <button onclick="_renderAuditAnnuaire(document.getElementById('auditContent'))"
+                    style="padding:7px 13px;border-radius:7px;cursor:pointer;background:#1e293b;border:1px solid #334155;color:#94a3b8;font-size:12px;font-weight:600">← Annuaire</button>
+            ${hbtn(`_openAnnuaireCours('${num}')`, '#1e293b', '📖 Cours complet')}
+            ${hbtn(`_downloadFichePdf('${num}')`, color, '📥 Télécharger la fiche en PDF')}
+        </div>
+
+        <div style="padding:18px 20px;border-radius:14px;background:linear-gradient(135deg, ${color}33, ${color}0a 60%, transparent);border:1px solid ${color}55;margin-bottom:16px;position:relative;overflow:hidden">
+            <div style="position:absolute;right:-10px;top:-18px;font-size:90px;opacity:0.07;font-weight:900;color:${color}">${escapeHtml((std.num || '').replace('ISQM', 'Q'))}</div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;position:relative">
+                <span style="background:${color};color:#fff;font-size:14px;font-weight:800;padding:5px 13px;border-radius:7px">${escapeHtml(std.code)}</span>
+                <span style="font-size:11px;color:#7dd3fc;background:#0c2230;padding:4px 10px;border-radius:10px">📋 Fiche de révision</span>
+                ${cours.duree ? `<span style="font-size:11px;color:#94a3b8">⏱️ révision express</span>` : ''}
+            </div>
+            <div style="font-size:19px;font-weight:900;color:#fff;line-height:1.25;position:relative">${escapeHtml(std.title_fr)}</div>
+        </div>
+
+        ${blocks.map(b => `
+            <div style="margin-bottom:13px;padding:13px 16px;background:#0a0f1c;border-radius:11px;border:1px solid ${color}33;border-left:4px solid ${color}">
+                <div style="font-size:14px;font-weight:800;color:#fff;margin-bottom:9px">${escapeHtml(b.title || '')}</div>
+                <div class="fiche-rev-body" style="font-size:13px;color:#cbd5e1;line-height:1.7">${formatAnswer(b.body || '')}</div>
+            </div>`).join('')}
+
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+            <button onclick="_downloadFichePdf('${num}')"
+                    style="padding:13px 22px;border-radius:9px;cursor:pointer;background:linear-gradient(135deg, ${color}, #0369a1);border:none;color:#fff;font-size:14px;font-weight:800;box-shadow:0 3px 12px ${color}55">
+                📥 Télécharger la fiche en PDF
+            </button>
+            <button onclick="_openAnnuaireCours('${num}')"
+                    style="padding:13px 18px;border-radius:9px;cursor:pointer;background:#1e293b;border:1px solid #334155;color:#94a3b8;font-size:13px;font-weight:600">
+                📖 Voir le cours complet
+            </button>
+        </div>
+    `;
+    _scrollAuditTop();
+}
+
+function _downloadFichePdf(num) {
+    const cours = (_auditData.annuaire_cours || {})[num];
+    const { std, serie } = _findAnnuaireStd(num);
+    if (!cours || !std) return;
+    const api = window.pywebview && window.pywebview.api;
+    if (api && typeof api.export_fiche_pdf === 'function') {
+        _auditToast('⏳ Génération du PDF…', 8000);
+        try {
+            Promise.resolve(api.export_fiche_pdf(num)).then((res) => {
+                if (res && res.ok) {
+                    _auditToast('✅ Fiche enregistrée dans Téléchargements : ' + (res.filename || 'fiche.pdf'));
+                } else {
+                    _fichePdfFallback(std, serie, cours, num, res && res.error);
+                }
+            }).catch(() => _fichePdfFallback(std, serie, cours, num));
+            return;
+        } catch (_) { /* repli ci-dessous */ }
+    }
+    _fichePdfFallback(std, serie, cours, num);
+}
+
+function _fichePdfFallback(std, serie, cours, num, errMsg) {
+    try {
+        const html = _ficheStandaloneHtml(std, serie, cours);
+        const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const safe = (std.code || ('ISA ' + num)).replace(/[\\/:*?"<>|]+/g, ' ').replace(/\s+/g, '_').slice(0, 80);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Fiche_' + safe + '.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 4000);
+        _auditToast('✅ Fiche téléchargée — ouvre-la puis Imprimer → « Enregistrer en PDF »');
+    } catch (_) {
+        _auditToast('⚠️ Export impossible' + (errMsg ? ' : ' + errMsg : ''));
+    }
+}
+
+function _ficheStandaloneHtml(std, serie, cours) {
+    const color = (serie && serie.color) || '#7c3aed';
+    const blocks = cours.fiche_revision || [];
+    const body = blocks.map(b =>
+        `<section><h2>${escapeHtml(b.title || '')}</h2><div>${formatAnswer(b.body || '')}</div></section>`
+    ).join('');
+    return `<!doctype html><html lang="fr"><head><meta charset="utf-8">`
+        + `<title>Fiche ${escapeHtml(std.code || '')}</title><style>`
+        + `body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:820px;margin:24px auto;padding:0 18px;color:#1a202c;line-height:1.6}`
+        + `h1{font-size:22px;border-bottom:3px solid ${color};padding-bottom:6px;margin-bottom:4px}`
+        + `h2{font-size:15px;background:#f1f5f9;border-left:4px solid ${color};padding:6px 10px;margin:18px 0 6px}`
+        + `table{border-collapse:collapse;width:100%;margin:8px 0;font-size:12.5px}`
+        + `th,td{border:1px solid #cbd5e1;padding:5px 8px;text-align:left;vertical-align:top}th{background:#f1f5f9}`
+        + `blockquote{border-left:3px solid ${color};margin:8px 0;padding:4px 12px;color:#475569;background:#f8fafc}`
+        + `ul{margin:4px 0 8px 18px;padding:0}@media print{body{margin:0}}`
+        + `</style></head><body>`
+        + `<h1>${escapeHtml(std.code || '')} — ${escapeHtml(std.title_fr || '')}</h1>`
+        + `<p style="color:#64748b;font-size:13px;margin-top:0">Fiche de révision${cours.niveau ? ' · ' + escapeHtml(_stripEmojiSafe(cours.niveau)) : ''}</p>`
+        + body + `</body></html>`;
+}
+
+function _stripEmojiSafe(s) {
+    try { return (s || '').replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, '').trim(); }
+    catch (_) { return s || ''; }
+}
+
 function _setAnnuaireSerie(serieId) {
     _annuaireFilterSerie = serieId;
     const host = document.getElementById('auditContent');
@@ -1885,6 +2008,14 @@ function _renderNasItem(catId, idx, n, accent) {
                                    display:flex;align-items:center;justify-content:center;gap:10px">
                         📖 Voir le COURS complet § par § (exhaustif)
                         <span style="font-size:11px;font-weight:600;opacity:0.85">→ ouvre l'Annuaire</span>
+                    </button>
+                    <button onclick="event.stopPropagation();_openFicheRevision('${coursKey}')"
+                            style="width:100%;margin:0 0 10px 0;background:linear-gradient(135deg,#0ea5e9,#0369a1);
+                                   border:none;color:#fff;padding:11px 16px;border-radius:9px;cursor:pointer;
+                                   font-size:13px;font-weight:800;box-shadow:0 3px 12px rgba(14,165,233,0.4);
+                                   display:flex;align-items:center;justify-content:center;gap:10px">
+                        📋 Fiche de révision
+                        <span style="font-size:11px;font-weight:600;opacity:0.85">→ condensé + PDF</span>
                     </button>` : ''}
                 ${n.summary ? `<div style="margin:10px 0 14px 0;color:#cbd5e1;font-size:13px;line-height:1.6;
                                 font-style:italic;border-left:2px solid ${accent};padding-left:12px">
