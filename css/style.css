@@ -385,19 +385,19 @@ body.light-mode .tab.active {
 
 /* Boutons primary : ombre douce + hover lift */
 body.light-mode .btn-primary {
-    background: linear-gradient(180deg, #2563eb, #1d4ed8);
-    border: 1px solid #1e40af;
+    background: linear-gradient(180deg, #4f46e5, #4338ca);
+    border: 1px solid #3730a3;
     color: #ffffff;
-    box-shadow: 0 1px 2px rgba(37, 99, 235, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    box-shadow: 0 1px 2px rgba(79, 70, 229, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 body.light-mode .btn-primary:hover {
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.16);
     transform: translateY(-1px);
     filter: none;
 }
 body.light-mode .btn-primary:active {
     transform: translateY(0);
-    box-shadow: 0 1px 2px rgba(37, 99, 235, 0.16), inset 0 1px 2px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 2px rgba(79, 70, 229, 0.18), inset 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
 /* Boutons outline : plus contrastés en light */
@@ -687,18 +687,18 @@ body {
 
 body.light-mode {
     /* Remappage complet des variables — tout composant utilisant var(--x) s'adapte */
-    --bg-primary:     #fafaf7;         /* crème chaud, pas bleu froid */
-    --bg-secondary:   #ffffff;         /* surface carte */
-    --bg-tertiary:    #f4f4f0;         /* hover doux */
-    --border:         rgba(15, 23, 42, 0.07);
-    --border-light:   rgba(15, 23, 42, 0.11);
-    --text-primary:   #111827;
-    --text-secondary: #374151;
-    --text-muted:     #6b7280;
-    --text-bright:    #0b1220;
-    --accent-blue:    #2563eb;
-    --accent-hover:   #1d4ed8;
-    --focus-ring:     #2563eb;
+    --bg-primary:     #f4f5fb;         /* slate très clair, légère teinte indigo (artefact) */
+    --bg-secondary:   #ffffff;         /* surface carte — blanc */
+    --bg-tertiary:    #eef0f8;         /* hover doux, froid */
+    --border:         rgba(30, 41, 59, 0.08);
+    --border-light:   rgba(30, 41, 59, 0.12);
+    --text-primary:   #1e293b;         /* slate-800 */
+    --text-secondary: #475569;         /* slate-600 */
+    --text-muted:     #64748b;         /* slate-500 */
+    --text-bright:    #0f172a;         /* slate-900 */
+    --accent-blue:    #4f46e5;         /* indigo-600 (primaire artefact) */
+    --accent-hover:   #4338ca;         /* indigo-700 */
+    --focus-ring:     #6366f1;         /* indigo-500 */
 
     /* Catégories — versions douces pour fond clair */
     --cat-rpc-bg:     #eff6ff; --cat-rpc-accent:   #2563eb; --cat-rpc-border:   #bfdbfe; --cat-rpc-light:   #f0f9ff;
@@ -716,8 +716,8 @@ body.light-mode {
     --shadow-pop: 0 12px 32px rgba(15, 23, 42, 0.10), 0 2px 8px rgba(15, 23, 42, 0.05);
 
     background:
-        radial-gradient(1200px 600px at 50% -100px, rgba(37, 99, 235, 0.06), transparent 60%),
-        linear-gradient(180deg, #fafaf7 0%, #f2f3ee 100%) !important;
+        radial-gradient(1200px 600px at 50% -120px, rgba(99, 102, 241, 0.07), transparent 60%),
+        linear-gradient(180deg, #f6f7fc 0%, #eef0f8 100%) !important;
     background-attachment: fixed !important;
     color: var(--text-secondary) !important;
     font-feature-settings: "cv11", "ss01"; /* ligatures douces si police les supporte */

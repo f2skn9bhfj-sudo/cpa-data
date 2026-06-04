@@ -17,6 +17,10 @@ async function renderDashboard(container) {
     const mods = modules || [];
     const ls = lessonsStats || { total: 0, done: 0, in_progress: 0, by_module: {} };
     const normsList = (norms && norms.norms) ? norms.norms : [];
+    // Normalise les clés de stats (API desktop ≠ build web statique) → évite les "undefined"
+    s.total_flashcards = s.total_flashcards ?? s.flashcards_total ?? 0;
+    s.total_quizzes = s.total_quizzes ?? s.qcms_total ?? 0;
+    s.avg_score = s.avg_score ?? s.avg_quiz_score ?? 0;
 
     const totalLessons = ls.total;
     const doneLessons = ls.done;
@@ -116,7 +120,7 @@ async function renderDashboard(container) {
         { category: 'Audit / ISA', total: 52, reviewed: 0, avg_pct: 0 },
         { category: 'Fiscalité', total: 43, reviewed: 0, avg_pct: 0 },
     ];
-    const cats = s.categories.length ? s.categories : defaultCats;
+    const cats = (s.categories && s.categories.length) ? s.categories : defaultCats;
 
     for (const cat of cats) {
         const cm = catMap[cat.category] || { icon: '📄', gradient: 'linear-gradient(135deg, #334155, #475569)' };

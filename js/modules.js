@@ -133,10 +133,12 @@ function modToggleTheme() {
     modRenderPills();
 }
 
-// Restore theme on load
+// Restore theme on load — CLAIR par défaut (artefact). Le mode sombre reste
+// disponible via le toggle (sauvegardé sous 'dark').
 (function() {
     const saved = localStorage.getItem('swisscpa_theme');
-    if (saved === 'light') document.body.classList.add('light-mode');
+    if (saved === 'dark') document.body.classList.remove('light-mode');
+    else document.body.classList.add('light-mode');
 })();
 
 function modAbbrev(name) {
