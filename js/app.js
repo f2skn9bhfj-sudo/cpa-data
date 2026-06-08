@@ -89,6 +89,7 @@ const TAB_LABELS = {
     hec: '🎓 HEC',
     oral: '🎤 Oral',
     conso: '📊 Conso',
+    ifrs: '🌐 IFRS',
     flashcards: 'Flashcards' // legacy redirect
 };
 
@@ -169,6 +170,10 @@ function navigate(tab, subTab) {
         case 'conso':
             if (typeof renderConso === 'function') renderConso(main);
             else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module Conso en cours de chargement...</p>';
+            break;
+        case 'ifrs':
+            if (typeof renderIfrs === 'function') renderIfrs(main);
+            else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module IFRS en cours de chargement...</p>';
             break;
         default: main.innerHTML = '<p>Page inconnue.</p>';
     }

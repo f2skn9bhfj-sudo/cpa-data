@@ -784,6 +784,7 @@
 
         async get_audit_data() { return await _loadJson('audit.json') || {}; },
         async get_oral_data() { return await _loadJson('oral.json') || {}; },
+        async get_ifrs_data() { return await _loadJson('ifrs.json') || {}; },
         async get_audit_seuils() { return await _loadJson('audit_seuils.json') || { categories: [] }; },
         async get_audit_section(section) {
             const d = await api.get_audit_data();
