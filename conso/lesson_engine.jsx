@@ -231,6 +231,211 @@ function LMnemo({ code, items = [], phrase }) {
   );
 }
 
+/* ===================== Schémas / graphiques ===================== */
+const DHEX = {
+  slate: "#94a3b8", gray: "#9ca3af", indigo: "#6366f1", violet: "#8b5cf6", blue: "#3b82f6",
+  cyan: "#06b6d4", teal: "#14b8a6", emerald: "#10b981", green: "#22c55e", amber: "#f59e0b",
+  orange: "#f97316", rose: "#f43f5e", red: "#ef4444",
+};
+const dhex = (c) => DHEX[c] || DHEX.indigo;
+
+function DCaption({ text }) {
+  if (!text) return null;
+  return <div className="text-xs text-slate-400 mt-2 text-center italic"><MdInline text={text} /></div>;
+}
+
+/* Spectre 0→100 % avec bandes colorées + légende — LE visuel contrôle/influence */
+function DSpectrum({ title, bands = [], caption }) {
+  const ticks = Array.from(new Set([0, 100, ...bands.flatMap((b) => [b.from, b.to])])).sort((a, b) => a - b);
+  return (
+    <div className="my-4">
+      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
+      <div className="flex h-10 rounded-xl overflow-hidden shadow-inner">
+        {bands.map((b, i) => (
+          <div key={i} style={{ width: `${b.to - b.from}%`, background: dhex(b.color) }}
+            className="h-full flex items-center justify-center text-[10px] font-bold text-white text-center px-1 leading-tight">
+            {b.short || ""}
+          </div>
+        ))}
+      </div>
+      <div className="relative h-4 mt-1">
+        {ticks.map((p) => (
+          <span key={p} style={{ left: `${p}%` }} className="absolute -translate-x-1/2 text-[10px] font-medium text-slate-400">{p}%</span>
+        ))}
+      </div>
+      <div className="grid sm:grid-cols-3 gap-2 mt-2">
+        {bands.map((b, i) => (
+          <div key={i} className="flex items-start gap-2 text-xs">
+            <span className="w-3 h-3 rounded mt-0.5 shrink-0" style={{ background: dhex(b.color) }}></span>
+            <span className="text-slate-600 leading-snug"><MdInline text={b.label} /></span>
+          </div>
+        ))}
+      </div>
+      <DCaption text={caption} />
+    </div>
+  );
+}
+
+/* Cascade (goodwill bridge) : + / − / = avec barres proportionnelles */
+function DWaterfall({ title, items = [], caption }) {
+  const max = Math.max(1, ...items.map((i) => Math.abs(i.value || 0)));
+  const col = { add: "#6366f1", sub: "#f43f5e", total: "#10b981" };
+  const sign = { add: "+", sub: "−", total: "=" };
+  return (
+    <div className="my-4">
+      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
+      <div className="space-y-1.5">
+        {items.map((it, i) => (
+          <div key={i} className="flex items-center gap-2">
+            <div className="w-36 sm:w-44 text-xs text-slate-600 text-right shrink-0 leading-snug"><MdInline text={it.label} /></div>
+            <div className="flex-1 h-7 bg-slate-50 rounded-md overflow-hidden">
+              <div style={{ width: `${(Math.abs(it.value) / max) * 100}%`, background: col[it.kind] || col.add }}
+                className={`h-full ${it.kind === "total" ? "rounded-md" : ""}`}></div>
+            </div>
+            <div className={`w-20 text-sm font-bold text-right shrink-0 tabular-nums ${it.kind === "total" ? "text-emerald-700" : it.kind === "sub" ? "text-rose-600" : "text-indigo-700"}`}>
+              {sign[it.kind] || ""}{fmt(Math.abs(it.value))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <DCaption text={caption} />
+    </div>
+  );
+}
+
+/* Structure de groupe (mère → filiale %, + minoritaires) en SVG */
+function DGroup({ parent = {}, pct = 100, child = {}, nci, method, caption }) {
+  const minor = nci != null ? nci : (100 - pct);
+  const pcol = dhex(parent.color || "indigo");
+  const ccol = dhex(child.color || "slate");
+  return (
+    <div className="my-4">
+      <svg viewBox="0 0 440 220" className="w-full max-w-md mx-auto">
+        <rect x="160" y="8" width="120" height="48" rx="10" fill={pcol} />
+        <text x="220" y="30" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="700">{parent.label || "Société mère"}</text>
+        <text x="220" y="46" textAnchor="middle" fill="#e0e7ff" fontSize="10">{parent.sub || "Consolidante"}</text>
+        <line x1="220" y1="56" x2="220" y2="150" stroke="#cbd5e1" strokeWidth="2" />
+        <rect x="186" y="92" width="68" height="22" rx="6" fill="#fff" stroke={pcol} />
+        <text x="220" y="107" textAnchor="middle" fill={pcol} fontSize="12" fontWeight="800">{pct} %</text>
+        <rect x="160" y="150" width="120" height="56" rx="10" fill={ccol} />
+        <text x="220" y="173" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="700">{child.label || "Filiale"}</text>
+        <text x="220" y="190" textAnchor="middle" fill="#e2e8f0" fontSize="9.5">{method || child.sub || ""}</text>
+        {minor > 0 && (<>
+          <rect x="312" y="150" width="118" height="56" rx="10" fill="#fffbeb" stroke="#fcd34d" strokeDasharray="4" />
+          <text x="371" y="173" textAnchor="middle" fill="#92400e" fontSize="11" fontWeight="700">Minoritaires</text>
+          <text x="371" y="190" textAnchor="middle" fill="#b45309" fontSize="12" fontWeight="800">{minor} %</text>
+          <line x1="312" y1="178" x2="280" y2="178" stroke="#fbbf24" strokeWidth="2" strokeDasharray="4" />
+        </>)}
+      </svg>
+      <DCaption text={caption} />
+    </div>
+  );
+}
+
+/* Colonnes IFRS / RPC / CO (ou n colonnes) — comparatif visuel */
+function DColumns({ cols = [], caption }) {
+  return (
+    <div className="my-4">
+      <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(${Math.min(cols.length, 3)}, minmax(0,1fr))` }}>
+        {cols.map((c, i) => {
+          const a = lacc(c.color);
+          return (
+            <div key={i} className={`rounded-xl border ${a.ring} overflow-hidden`}>
+              <div className={`${a.bar} text-white text-sm font-bold px-3 py-2 text-center`}>{c.title}</div>
+              <ul className={`${a.soft} p-3 space-y-1.5`}>
+                {(c.items || []).map((it, j) => (
+                  <li key={j} className="text-xs text-slate-700 flex gap-1.5 leading-snug"><span className={`${a.text} font-bold`}>›</span><span><MdInline text={it} /></span></li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
+      <DCaption text={caption} />
+    </div>
+  );
+}
+
+/* Flux d'étapes : boîtes + flèches */
+function DFlow({ title, steps = [], accent = "indigo", caption }) {
+  const a = lacc(accent);
+  return (
+    <div className="my-4">
+      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
+      <div className="flex items-stretch gap-1 overflow-x-auto pb-1">
+        {steps.map((s, i) => (
+          <React.Fragment key={i}>
+            <div className={`shrink-0 rounded-xl border ${a.ring} ${a.soft} p-3 w-40`}>
+              <div className={`text-xs font-bold ${a.text} mb-0.5`}>{i + 1}. <MdInline text={s.label} /></div>
+              {s.sub && <div className="text-[11px] text-slate-500 leading-snug"><MdInline text={s.sub} /></div>}
+            </div>
+            {i < steps.length - 1 && <div className="flex items-center text-slate-300 shrink-0"><ArrowRight size={18} /></div>}
+          </React.Fragment>
+        ))}
+      </div>
+      <DCaption text={caption} />
+    </div>
+  );
+}
+
+/* Pyramide (niveaux décroissants) */
+function DPyramid({ title, levels = [], accent = "indigo", caption }) {
+  const base = dhex(accent);
+  return (
+    <div className="my-4">
+      {title && <div className="text-sm font-semibold text-slate-700 mb-2 text-center">{title}</div>}
+      <div className="flex flex-col items-center gap-1">
+        {levels.map((l, i) => {
+          const w = 100 - i * (55 / Math.max(levels.length - 1, 1));
+          return (
+            <div key={i} style={{ width: `${w}%`, background: base, opacity: 1 - i * 0.13 }}
+              className="rounded-lg text-white text-center px-3 py-2 shadow-sm">
+              <div className="text-xs font-bold"><MdInline text={l.t} /></div>
+              {l.d && <div className="text-[10px] opacity-90 leading-snug"><MdInline text={l.d} /></div>}
+            </div>
+          );
+        })}
+      </div>
+      <DCaption text={caption} />
+    </div>
+  );
+}
+
+/* Répartition (barre %) — ex. groupe vs minoritaires */
+function DSplit({ title, parts = [], caption }) {
+  const tot = parts.reduce((s, p) => s + (p.value || 0), 0) || 1;
+  return (
+    <div className="my-4">
+      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
+      <div className="flex h-10 rounded-lg overflow-hidden">
+        {parts.map((p, i) => (
+          <div key={i} style={{ width: `${(p.value / tot) * 100}%`, background: dhex(p.color) }}
+            className="flex items-center justify-center text-white text-xs font-bold">{p.value}%</div>
+        ))}
+      </div>
+      <div className="flex flex-wrap gap-3 mt-2 text-xs">
+        {parts.map((p, i) => (
+          <span key={i} className="flex items-center gap-1.5 text-slate-600"><span className="w-3 h-3 rounded" style={{ background: dhex(p.color) }}></span><MdInline text={p.label} /></span>
+        ))}
+      </div>
+      <DCaption text={caption} />
+    </div>
+  );
+}
+
+function LDiagram({ b }) {
+  switch (b.kind) {
+    case "spectrum": return <DSpectrum title={b.title} bands={b.bands} caption={b.caption} />;
+    case "waterfall": return <DWaterfall title={b.title} items={b.items} caption={b.caption} />;
+    case "group": return <DGroup parent={b.parent} pct={b.pct} child={b.child} nci={b.nci} method={b.method} caption={b.caption} />;
+    case "columns": return <DColumns cols={b.cols} caption={b.caption} />;
+    case "flow": return <DFlow title={b.title} steps={b.steps} accent={b.accent} caption={b.caption} />;
+    case "pyramid": return <DPyramid title={b.title} levels={b.levels} accent={b.accent} caption={b.caption} />;
+    case "split": return <DSplit title={b.title} parts={b.parts} caption={b.caption} />;
+    default: return null;
+  }
+}
+
 function LessonBlock({ b }) {
   if (!b || !b.type) return null;
   switch (b.type) {
@@ -245,6 +450,7 @@ function LessonBlock({ b }) {
     case "example": return <LExample title={b.title} statement={b.statement} solution={b.solution} />;
     case "quiz": return <LQuiz title={b.title} questions={b.questions} />;
     case "mnemo": return <LMnemo code={b.code} items={b.items} phrase={b.phrase} />;
+    case "diagram": return <LDiagram b={b} />;
     default: return null;
   }
 }

@@ -36,6 +36,72 @@
        "tone": "key",
        "title": "La phrase à graver",
        "text": "**Image fidèle vs réserves latentes** = le clivage fondateur.\n\n- **Swiss GAAP RPC / IFRS** : on **interdit** les réserves latentes ⇒ image fidèle.\n- **CO** : on **autorise** les réserves latentes ⇒ prudence, protection du créancier, lissage du résultat.\n\nUn même bilan peut donc afficher un patrimoine **très différent** selon qu'il est établi au CO (potentiellement sous-évalué) ou en RPC (réalité économique)."
+      },
+      {
+       "type": "diagram",
+       "kind": "spectrum",
+       "title": "Axe d'exigence : du plus simple au plus lourd",
+       "bands": [
+        {
+         "from": 0,
+         "to": 33,
+         "color": "amber",
+         "short": "CO",
+         "label": "**CO** — prudence, **réserves latentes autorisées** ; socle légal minimal"
+        },
+        {
+         "from": 33,
+         "to": 66,
+         "color": "emerald",
+         "short": "RPC",
+         "label": "**Swiss GAAP RPC** — **image fidèle** pragmatique ; « IFRS light suisse »"
+        },
+        {
+         "from": 66,
+         "to": 100,
+         "color": "indigo",
+         "short": "IFRS",
+         "label": "**IFRS** — image fidèle très poussée ; normes + annexes massives"
+        }
+       ],
+       "caption": "Les RPC se logent ENTRE le CO et IFRS : plus exigeantes que le CO (image fidèle), plus simples qu'IFRS."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "CO",
+         "color": "amber",
+         "items": [
+          "**Réserves latentes AUTORISÉES**",
+          "Prudence, protection du créancier",
+          "Sous-évaluation d'actifs / surévaluation de passifs",
+          "Patrimoine potentiellement sous-évalué"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC",
+         "color": "emerald",
+         "items": [
+          "**Image fidèle** (*true & fair view*)",
+          "Réserves latentes **INTERDITES**",
+          "Réalité économique, prudence raisonnable",
+          "« IFRS light suisse »"
+         ]
+        },
+        {
+         "title": "IFRS",
+         "color": "indigo",
+         "items": [
+          "**Image fidèle** très détaillée",
+          "Réserves latentes **INTERDITES**",
+          "Recours à la **juste valeur**",
+          "Investisseur mondial"
+         ]
+        }
+       ],
+       "caption": "Le clivage fondateur : le CO autorise les réserves latentes ; RPC et IFRS les interdisent au nom de l'image fidèle."
       }
      ]
     },
@@ -167,6 +233,35 @@
        "tone": "tip",
        "title": "Où se loge RPC 30 ?",
        "text": "**RPC 30 (comptes consolidés)** fait partie du **référentiel complet** : c'est la norme qui régit le **périmètre de consolidation**, la **méthode** (intégration globale dès le contrôle, mise en équivalence pour les sociétés associées), le **goodwill** (amorti sur ≤ 5 ans, max **20 ans** si justifié, **OU** imputé aux capitaux propres) et les **NCI**. Une PME au niveau *core* sans filiales ne la mobilise pas ; un **groupe** au complet, oui."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "RPC fondamentales (core)",
+         "color": "teal",
+         "items": [
+          "Cible : **PME** sous les seuils RPC 1",
+          "Noyau **réduit** de recommandations",
+          "Bilan, compte de résultat, annexe de base",
+          "**RPC 30 (conso) non exigée** à ce niveau",
+          "Effort proportionné à la taille"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC complet",
+         "color": "indigo",
+         "items": [
+          "Cible : **grandes entités, groupes, cotées**",
+          "**Toutes** les normes (cadre + spécialisées)",
+          "Tableau de financement, dérivés, impôts différés…",
+          "**RPC 30** si groupe · **RPC 31** si cotée",
+          "Image fidèle complète, comparabilité"
+         ]
+        }
+       ],
+       "caption": "Architecture modulaire à 2 niveaux, chapeautée par le cadre conceptuel : noyau PME vs référentiel complet."
       }
      ]
     },
@@ -282,6 +377,53 @@
        "tone": "info",
        "title": "Et les seuils de l'art. 963a (conso) ?",
        "text": "Troisième jeu à distinguer ! L'exemption de **consolidation** (CO art. 963a) reprend les **mêmes chiffres que la révision ordinaire** : **bilan 20 mio / CA 40 mio / 250 EPT**. Donc : **20 / 40 / 250** sert **à la fois** pour la révision ordinaire (art. 727) **et** pour la dispense de comptes de groupe (art. 963a) ; **10 / 20 / 50** est propre aux **RPC** (bascule core → complet)."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "Seuils RPC 1 (core → complet)",
+         "color": "emerald",
+         "items": [
+          "Total du bilan : **10 mio**",
+          "Chiffre d'affaires : **20 mio**",
+          "Effectif : **50 EPT**",
+          "Déclenchement : 2 critères / 2 ans",
+          "Effet : passage au **RPC complet**"
+         ]
+        },
+        {
+         "title": "Seuils CO 20 / 40 / 250",
+         "color": "amber",
+         "items": [
+          "Total du bilan : **20 mio**",
+          "Chiffre d'affaires : **40 mio**",
+          "Effectif : **250 EPT**",
+          "Déclenchement : 2 critères / 2 ans",
+          "Effet : **révision ordinaire** (art. 727) **&** exemption de conso (art. 963a)"
+         ]
+        }
+       ],
+       "caption": "LE piège : 10/20/50 (RPC) = exactement la MOITIÉ du bilan et du CA des seuils CO 20/40/250 (et 1/5 sur l'effectif)."
+      },
+      {
+       "type": "diagram",
+       "kind": "split",
+       "title": "« RPC = moitié du CO » — illustration sur le bilan",
+       "parts": [
+        {
+         "label": "Seuil RPC 1 — bilan 10 mio",
+         "value": 50,
+         "color": "emerald"
+        },
+        {
+         "label": "Marge jusqu'au seuil CO — bilan 20 mio",
+         "value": 50,
+         "color": "amber"
+        }
+       ],
+       "caption": "Le seuil de bascule RPC (10 mio) occupe pile la moitié du chemin vers le seuil CO (20 mio) — même logique pour le CA (20 vs 40)."
       }
      ]
     },
@@ -339,6 +481,27 @@
        "tone": "key",
        "title": "Le bon réflexe de positionnement",
        "text": "À l'examen, sache resituer une règle : **« Plus exigeant que le CO (image fidèle, conso, annexe), plus simple qu'IFRS (moins de normes, annexes allégées, options pragmatiques). »** Cette phrase, bien placée, rapporte des points et montre que tu **maîtrises le paysage** réglementaire suisse."
+      },
+      {
+       "type": "diagram",
+       "kind": "pyramid",
+       "title": "Positionnement : du moins exigeant au plus exigeant",
+       "levels": [
+        {
+         "t": "CO (art. 957 ss)",
+         "d": "Le plus simple : prudence, **réserves latentes autorisées**, socle légal minimal, annexe minimale (art. 959c)."
+        },
+        {
+         "t": "Swiss GAAP RPC",
+         "d": "Niveau intermédiaire : **image fidèle** pragmatique, conso (RPC 30), annexe allégée — « IFRS light suisse »."
+        },
+        {
+         "t": "IFRS",
+         "d": "Le plus exigeant : image fidèle **très poussée**, milliers de pages, annexes massives, juste valeur, IAS 36."
+        }
+       ],
+       "accent": "indigo",
+       "caption": "Axe d'exigence croissant CO → RPC → IFRS : sache resituer toute règle sur cette échelle."
       }
      ]
     },
@@ -670,6 +833,64 @@
        "tone": "info",
        "title": "Deux niveaux d'application RPC",
        "text": "- **RPC fondamentales (Kern-FER / socle)** : pour les PME. Cadre + RPC 1 à 6 (env.). Jeu d'états **réduit** (pas de tableau de financement obligatoire).\n- **Swiss GAAP RPC entiers (complet)** : on ajoute les modules thématiques (consolidation, impôts différés, instruments, etc.). Jeu d'états **complet** avec **tableau de financement** et **tableau de variation des capitaux propres**.\n\nUn **groupe** qui consolide (RPC 30) applique nécessairement le référentiel **complet**."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "Les 5 états d'un jeu Swiss GAAP RPC complet",
+       "steps": [
+        {
+         "label": "① Bilan",
+         "sub": "Actif circulant / immobilisé · fonds étrangers / propres (liquidité ⇣)"
+        },
+        {
+         "label": "② Compte de résultat",
+         "sub": "Par nature ou par fonction → résultat de l'exercice"
+        },
+        {
+         "label": "③ Tableau de financement",
+         "sub": "RPC 4 — flux de trésorerie en 3 catégories (E·I·F)"
+        },
+        {
+         "label": "④ Annexe",
+         "sub": "RPC 6 — principes, méthodes, détails, engagements, parties liées"
+        },
+        {
+         "label": "⑤ Variation des CP",
+         "sub": "RPC 24 — capital, agio, réserves, actions propres en déduction"
+        }
+       ],
+       "accent": "teal",
+       "caption": "Mnémo **BC-TAV** : Bilan · Compte de résultat · Tableau de financement · Annexe · Variation des CP. Le **socle (Kern-FER)** s'arrête aux 3 premiers (sans ③ ni ⑤)."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "RPC fondamentales (Kern-FER / socle)",
+         "color": "amber",
+         "items": [
+          "Pour les **PME**",
+          "Cadre conceptuel + RPC 1 à 6",
+          "Jeu **réduit** : bilan · résultat · annexe",
+          "**Pas** de tableau de financement obligatoire",
+          "**Pas** de tableau de variation des CP"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC entiers (complet)",
+         "color": "teal",
+         "items": [
+          "PME, groupes, entités cherchant la comparabilité",
+          "Socle **+** modules (conso, impôts différés, instruments…)",
+          "Jeu **complet : 5 états**",
+          "**Tableau de financement** obligatoire (RPC 4)",
+          "**Variation des CP** obligatoire (RPC 24)"
+         ]
+        }
+       ],
+       "caption": "Un **groupe** qui consolide (RPC 30) applique nécessairement le référentiel **complet** — donc les 5 états."
       }
      ]
     },
@@ -901,6 +1122,67 @@
        "tone": "warn",
        "title": "Pièges de classement fréquents",
        "text": "- **Intérêts versés / reçus** et **dividendes reçus** : classement à préciser et **constant** d'un exercice à l'autre (souvent en exploitation ; les **dividendes versés** vont en **financement**).\n- **Acquisition d'une filiale** : le prix payé **net de la trésorerie acquise** est un flux d'**investissement** — pas d'exploitation.\n- Une **augmentation de capital par incorporation de réserves** ou une **conversion de dette en capital** sont des opérations **sans flux de trésorerie** : à mentionner hors tableau (ou en annexe), pas dans les trois catégories.\n- Les **amortissements ne sont PAS un flux** : en méthode indirecte on les **rajoute** au résultat, c'est tout."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "Tableau de financement RPC 4 — les 3 catégories (mnémo E-I-F)",
+       "steps": [
+        {
+         "label": "Flux d'EXPLOITATION",
+         "sub": "Activité courante : encaissements clients − fournisseurs / personnel / impôts (méthode directe ou indirecte)"
+        },
+        {
+         "label": "Flux d'INVESTISSEMENT",
+         "sub": "Outil de production : ± immobilisations corporelles / incorporelles / financières, participations"
+        },
+        {
+         "label": "Flux de FINANCEMENT",
+         "sub": "Structure de financement : ± emprunts, + augmentation de capital, − dividendes, − actions propres"
+        },
+        {
+         "label": "= VARIATION des liquidités",
+         "sub": "Somme E+I+F = Δ trésorerie (fonds ≤ 90 j) ; à réconcilier avec les soldes de liquidités au bilan"
+        }
+       ],
+       "accent": "teal",
+       "caption": "Logique d'**IAS 7**. Toujours dans l'ordre **E → I → F**, dont la somme explique la variation nette des liquidités de l'exercice."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "Méthode DIRECTE",
+         "color": "cyan",
+         "items": [
+          "Part des **encaissements / décaissements bruts**",
+          "Flux de trésorerie réels, poste par poste",
+          "Très **intuitive** (vrais flux)",
+          "Plus **rare** (données détaillées requises)"
+         ]
+        },
+        {
+         "title": "Méthode INDIRECTE",
+         "color": "indigo",
+         "items": [
+          "Part du **résultat** de la période",
+          "**+** charges sans cash (amortissements, provisions)",
+          "**±** variation du BFR (créances, stocks, dettes)",
+          "Montre le **lien résultat ⇆ cash** · **très majoritaire**"
+         ]
+        },
+        {
+         "title": "Investissement & financement",
+         "color": "slate",
+         "items": [
+          "**Toujours** présentés en **méthode directe**",
+          "Le choix direct / indirect ne concerne que l'**exploitation**",
+          "Mouvements bruts d'immobilisations, d'emprunts, de capital"
+         ]
+        }
+       ],
+       "caption": "Le choix **direct vs indirect** ne porte que sur le **flux d'exploitation** ; investissement et financement sont toujours en flux directs."
       }
      ]
     },
@@ -1099,6 +1381,39 @@
          "**+70**"
         ]
        ]
+      },
+      {
+       "type": "diagram",
+       "kind": "waterfall",
+       "title": "Helvetia SA — variation nette des liquidités (RPC 4)",
+       "items": [
+        {
+         "label": "Liquidités ouverture",
+         "value": 600,
+         "kind": "add"
+        },
+        {
+         "label": "Flux d'exploitation",
+         "value": 920,
+         "kind": "add"
+        },
+        {
+         "label": "Flux d'investissement",
+         "value": 1340,
+         "kind": "sub"
+        },
+        {
+         "label": "Flux de financement",
+         "value": 490,
+         "kind": "add"
+        },
+        {
+         "label": "= Liquidités clôture",
+         "value": 670,
+         "kind": "total"
+        }
+       ],
+       "caption": "600 + 920 − 1 340 + 490 = **670**. La variation nette = **+920 − 1 340 + 490 = +70** ; ouverture 600 + 70 = clôture **670**. ✔️ La conversion dette → capital (300) est **non monétaire** : hors tableau."
       }
      ]
     },
@@ -1182,6 +1497,46 @@
         "**Disclosures** : IFRS **>** RPC **>** CO en volume — toujours.",
         "**Socle commun** : les **trois** acceptent le résultat **par nature ou par fonction** et la **liquidité décroissante** au bilan."
        ]
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "IFRS",
+         "color": "indigo",
+         "items": [
+          "**Image fidèle** (*fair presentation*, IAS 1)",
+          "5 états dont **résultat & OCI** et flux de trésorerie",
+          "Flux de trésorerie **obligatoires** (IAS 7)",
+          "Réserves latentes **interdites**",
+          "Annexe **très étendue** (disclosures par norme)"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC",
+         "color": "teal",
+         "items": [
+          "**Image fidèle** (*true and fair view*)",
+          "5 états en complet (bilan · résultat · **flux** · annexe · **CP**)",
+          "Flux de trésorerie **obligatoires en complet** (RPC 4)",
+          "Réserves latentes **interdites**",
+          "Annexe étendue mais **proportionnée** (RPC 6)"
+         ]
+        },
+        {
+         "title": "CO (Code des obligations)",
+         "color": "amber",
+         "items": [
+          "Comptes **conformes à la loi** · **prudence** dominante",
+          "3 états : bilan · résultat · **annexe** (art. 958)",
+          "Flux **non requis** (sauf grandes entreprises, art. 961)",
+          "Réserves latentes **autorisées** (optimisation fiscale)",
+          "Annexe **minimale** (art. 959c)"
+         ]
+        }
+       ],
+       "caption": "Lignes de fracture : **réserves latentes** autorisées au CO mais interdites en RPC/IFRS, et **tableau de financement + variation des CP** obligatoires en RPC complet/IFRS mais absents du CO ordinaire."
       }
      ]
     },
@@ -1407,6 +1762,40 @@
        "tone": "info",
        "title": "Pourquoi ce positionnement « du milieu » ?",
        "text": "Les RPC s'adressent surtout à des **PME, ONG, caisses de pension, associations et groupes non cotés** qui veulent une comptabilité **crédible et lisible** sans la **lourdeur** des IFRS. D'où un compromis : **fiabilité** (coût) **+ pertinence** (valeur actuelle ciblée) **− complexité** (pas de juste valeur généralisée, pas de modèle de réévaluation systématique)."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "CO",
+         "color": "amber",
+         "items": [
+          "Objectif : **prudence** / protection des créanciers",
+          "**Coût d'acquisition au maximum** (art. 960a)",
+          "**Réserves latentes** arbitraires **tolérées**"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC",
+         "color": "emerald",
+         "items": [
+          "Objectif : **image fidèle** (*true and fair view*)",
+          "Coût, **mais sans réserves latentes** arbitraires",
+          "**Valeur actuelle ciblée** : titres cotés, immeubles de placement"
+         ]
+        },
+        {
+         "title": "IFRS",
+         "color": "indigo",
+         "items": [
+          "Objectif : image fidèle / **pertinence**",
+          "**Juste valeur largement étendue**",
+          "**Modèle de réévaluation** (IAS 16) admis"
+         ]
+        }
+       ],
+       "caption": "Le positionnement « du milieu » de la RPC : ni la sur-prudence du CO, ni la juste valeur généralisée des IFRS."
       }
      ]
     },
@@ -1736,6 +2125,31 @@
          "credit": 40
         }
        ]
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "Le test de dépréciation RPC, pas à pas",
+       "steps": [
+        {
+         "label": "① Indice de perte",
+         "sub": "Sources externes (marché, technologie, taux) ou internes (obsolescence, sous-performance). Pas d'indice ⇒ pas de test."
+        },
+        {
+         "label": "② Valeur recouvrable",
+         "sub": "= **max** ( valeur d'utilité ; valeur de cession nette )"
+        },
+        {
+         "label": "③ Comparer à la VC",
+         "sub": "Valeur comptable **>** valeur recouvrable ?"
+        },
+        {
+         "label": "④ Dépréciation",
+         "sub": "Charge = VC − valeur recouvrable (reprise possible, plafonnée au coût amorti)."
+        }
+       ],
+       "accent": "emerald",
+       "caption": "Logique très proche d'IAS 36 : acter la perte de valeur réelle, sans s'en servir pour cacher de la valeur."
       }
      ]
     },
@@ -1799,6 +2213,52 @@
        "tone": "key",
        "title": "Lecture de l'exemple",
        "text": "Deux contrastes structurants apparaissent : (1) **la valeur actuelle des titres cotés** crée un **gain non réalisé** en RPC, **interdit** au CO ; (2) **l'abattement forfaitaire de stock** du CO est une **réserve latente** que la RPC **refuse**. Résultat : un bilan RPC **plus proche de la valeur réelle**, des fonds propres **plus élevés**, un résultat **moins lissé**."
+      },
+      {
+       "type": "diagram",
+       "kind": "waterfall",
+       "title": "Pont des actifs CO → RPC (NovaTech, CHF k)",
+       "items": [
+        {
+         "label": "Total actifs CO",
+         "value": 290,
+         "kind": "total"
+        },
+        {
+         "label": "+ Réserve latente stock",
+         "value": 50,
+         "kind": "add"
+        },
+        {
+         "label": "+ Réserve latente titres",
+         "value": 30,
+         "kind": "add"
+        },
+        {
+         "label": "= Total actifs RPC",
+         "value": 370,
+         "kind": "total"
+        }
+       ],
+       "caption": "L'image fidèle RPC fait remonter les 80 de valeur cachée par les réserves latentes du CO → fonds propres RPC +80."
+      },
+      {
+       "type": "diagram",
+       "kind": "split",
+       "title": "Composition des réserves latentes CO supprimées (CHF k)",
+       "parts": [
+        {
+         "label": "Stock (abattement 1/3)",
+         "value": 50,
+         "color": "amber"
+        },
+        {
+         "label": "Titres cotés (coût vs cours)",
+         "value": 30,
+         "color": "indigo"
+        }
+       ],
+       "caption": "Les 80 d'écart de fonds propres se décomposent en 50 (stock sous-évalué) + 30 (plus-value latente sur titres). La machine n'apporte aucun écart."
       }
      ]
     },
@@ -1896,6 +2356,40 @@
        "tone": "info",
        "title": "Comment se repérer en une phrase",
        "text": "**CO = je cache de la valeur (prudence)** · **RPC = je montre la valeur réelle sans matelas (image fidèle, valeur actuelle ciblée)** · **IFRS = je vais le plus loin dans la juste valeur (réévaluation étendue)**. Place toujours la RPC **entre** les deux."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "CO",
+         "color": "amber",
+         "items": [
+          "**Réserves latentes** : permises (art. 960a al. 4)",
+          "**Valeur actuelle** : plafond du coût ; cours admis pour titres cotés (960b) mais souvent coût",
+          "**Réévaluation au-dessus du coût** : exceptionnelle (art. 670, découvert)"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC",
+         "color": "emerald",
+         "items": [
+          "**Réserves latentes** : interdites (sous-éval. volontaire proscrite)",
+          "**Valeur actuelle ciblée** : titres cotés (cours), immeubles de placement (marché)",
+          "**Réévaluation** : limitée à ces postes, variations **au résultat**"
+         ]
+        },
+        {
+         "title": "IFRS",
+         "color": "indigo",
+         "items": [
+          "**Réserves latentes** : interdites (image fidèle)",
+          "**Juste valeur généralisée** (IFRS 9, IAS 40)",
+          "**Modèle de réévaluation** IAS 16 (OCI) admis"
+         ]
+        }
+       ],
+       "caption": "Les 3 contrastes qui rapportent des points : réserves latentes, étendue de la valeur actuelle, et réévaluation au-dessus du coût."
       }
      ]
     },
@@ -2144,6 +2638,20 @@
        "tone": "info",
        "title": "Le décor légal : pourquoi consolider ?",
        "text": "Le **Code des obligations** impose des **comptes de groupe** dès qu'une société **contrôle** une ou plusieurs entreprises (**CO art. 963**). Une **dispense** existe pour les petits groupes (**CO art. 963a**, seuils de taille), mais **jamais** pour les sociétés **cotées**, celles qui émettent des emprunts, ni les **grandes** structures. Lorsque la consolidation est requise, elle doit suivre un **référentiel reconnu** (*anerkannter Standard*) — et **Swiss GAAP RPC** (donc RPC 30) **en est un**, au même titre qu'IFRS ou US GAAP. RPC 30 fournit donc le **\"comment\"** que le CO ne détaille pas."
+      },
+      {
+       "type": "diagram",
+       "kind": "group",
+       "parent": {
+        "label": "Société mère M"
+       },
+       "pct": 80,
+       "child": {
+        "label": "Filiale F"
+       },
+       "nci": 20,
+       "method": "Intégration globale (contrôle)",
+       "caption": "Le **contrôle** (> 50 %) déclenche l'**intégration globale** : on cumule **100 %** de F, on élimine la participation, on isole les **NCI** (ici 20 %, dans les fonds propres)."
       }
      ]
     },
@@ -2232,6 +2740,60 @@
        "tone": "tip",
        "title": "Substance plutôt que pourcentage",
        "text": "Les seuils **> 50 %** et **20–50 %** sont des **présomptions**, pas des automatismes. Ce qui compte, c'est le **pouvoir réel** : on peut **contrôler avec moins de 50 %** (contrôle de fait via un pacte d'actionnaires, une majorité au conseil, un actionnariat dispersé) ou n'avoir **aucune influence** malgré 25 % (droits purement protectifs). **Raisonne en substance économique**, exactement comme IFRS 10 le demande pour le contrôle."
+      },
+      {
+       "type": "diagram",
+       "kind": "spectrum",
+       "title": "Le degré d'influence commande la méthode (RPC 30)",
+       "bands": [
+        {
+         "from": 0,
+         "to": 20,
+         "color": "slate",
+         "short": "Placement",
+         "label": "**< 20 %** — simple placement, **pas de consolidation** (titre à sa valeur)"
+        },
+        {
+         "from": 20,
+         "to": 50,
+         "color": "emerald",
+         "short": "MEE",
+         "label": "**20–50 %** — influence notable → **mise en équivalence** (une ligne)"
+        },
+        {
+         "from": 50,
+         "to": 100,
+         "color": "rose",
+         "short": "Contrôle",
+         "label": "**> 50 %** — contrôle → **intégration globale** (100 % ligne à ligne, NCI isolés)"
+        }
+       ],
+       "caption": "Et au milieu, à part : le **contrôle conjoint** (coentreprise) → **intégration proportionnelle OU MEE**, au choix en RPC 30. Les seuils sont des **présomptions** : raisonne en **substance** (contrôle de fait possible sous 50 %)."
+      },
+      {
+       "type": "diagram",
+       "kind": "pyramid",
+       "title": "Du lien le plus fort au plus faible",
+       "levels": [
+        {
+         "t": "Contrôle (> 50 %)",
+         "d": "Intégration globale — 100 % des actifs/passifs, NCI isolés"
+        },
+        {
+         "t": "Contrôle conjoint",
+         "d": "Intégration proportionnelle (quote-part) OU mise en équivalence"
+        },
+        {
+         "t": "Influence notable (20–50 %)",
+         "d": "Mise en équivalence — une seule ligne « participation »"
+        },
+        {
+         "t": "Simple placement (< 20 %)",
+         "d": "Pas de consolidation — titre à sa valeur"
+        }
+       ],
+       "accent": "rose",
+       "caption": "Qualifier d'abord le **lien**, puis **en déduire** la méthode — le réflexe d'examen RPC 30."
       }
      ]
     },
@@ -2288,6 +2850,66 @@
        "tone": "info",
        "title": "Pourquoi cette liberté \"fonds propres\" ?",
        "text": "Historiquement, beaucoup de groupes suisses jugeaient le goodwill **incertain** et préféraient **l'effacer immédiatement** des fonds propres (prudence patrimoniale) plutôt que de porter à l'actif une valeur fragile. RPC 30 a **maintenu** cette possibilité, **à condition** d'en montrer l'effet théorique en **annexe** pour préserver la **comparabilité** : le lecteur peut ainsi reconstituer ce qu'aurait donné une activation. C'est tout l'objet du *shadow accounting* du goodwill."
+      },
+      {
+       "type": "diagram",
+       "kind": "waterfall",
+       "title": "Pont du goodwill (exemple Helvetia → Léman, 80 %)",
+       "items": [
+        {
+         "label": "Prix d'acquisition",
+         "value": 1000,
+         "kind": "add"
+        },
+        {
+         "label": "− Quote-part actif net réévalué (80 % × 1 000)",
+         "value": 800,
+         "kind": "sub"
+        },
+        {
+         "label": "= Goodwill",
+         "value": 200,
+         "kind": "total"
+        }
+       ],
+       "caption": "**Goodwill = prix − actif net identifiable réévalué acquis** = 1 000 − 800 = **200**. Calculé sur la **part du groupe** (80 %) en RPC 30. Si négatif ⇒ **badwill** (réexamen, traitement prudent)."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "Swiss GAAP RPC 30",
+         "color": "rose",
+         "items": [
+          "**AU CHOIX** des deux traitements",
+          "① **Activé + amorti** : durée d'utilité, en règle **5 ans**, **max 20 ans**",
+          "② **OU imputé aux fonds propres** dès l'acquisition (+ **annexe** : effet théorique)",
+          "Test de dépréciation si indice (option ①)"
+         ]
+        },
+        {
+         "title": "IFRS 3 / IAS 36",
+         "color": "indigo",
+         "items": [
+          "**JAMAIS amorti**",
+          "Reste à l'**actif**",
+          "**Test de dépréciation annuel** (IAS 36)",
+          "Imputation aux fonds propres **interdite**"
+         ]
+        },
+        {
+         "title": "CO (art. 963 ss)",
+         "color": "amber",
+         "items": [
+          "Pas de méthode détaillée prescrite",
+          "Renvoi au **référentiel reconnu** choisi",
+          "(RPC 30 ou IFRS)",
+          "Prudence patrimoniale dominante"
+         ]
+        }
+       ],
+       "caption": "**LA spécificité suisse** du goodwill : *amorti ≤ 20 ans OU imputé aux FP* (RPC) **vs** *non amorti, test annuel* (IFRS) — l'un des contrastes **les plus testés** à l'examen."
       }
      ]
     },
@@ -2413,6 +3035,39 @@
        "tone": "warn",
        "title": "Ne pas oublier les résultats internes \"dormants\"",
        "text": "Les **créances/dettes** et **produits/charges** réciproques sont les éliminations **évidentes**. Les plus oubliées sont les **résultats internes non réalisés** logés dans un **actif encore détenu** par le groupe : marge sur **stock** invendu, plus-value sur une **immobilisation** cédée d'une filiale à une autre. Tant que l'actif n'est **pas sorti** vers un **tiers**, ce profit **n'existe pas** pour le groupe et doit être **neutralisé**."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "La consolidation par intégration globale, pas à pas",
+       "steps": [
+        {
+         "label": "① Délimiter le périmètre",
+         "sub": "Qualifier le lien : contrôle / conjoint / influence notable"
+        },
+        {
+         "label": "② Homogénéiser",
+         "sub": "Méthodes uniformes, date commune, conversion des filiales étrangères"
+        },
+        {
+         "label": "③ Cumuler ligne à ligne",
+         "sub": "100 % des actifs/passifs/charges/produits (quote-part si proportionnelle)"
+        },
+        {
+         "label": "④ Éliminer la participation",
+         "sub": "Contre l'actif net réévalué → dégager le goodwill"
+        },
+        {
+         "label": "⑤ Isoler les NCI",
+         "sub": "Quote-part minoritaire d'actif net & de résultat (dans les FP)"
+        },
+        {
+         "label": "⑥ Éliminer l'intragroupe",
+         "sub": "Créances/dettes, résultats internes (stocks/immos), dividendes"
+        }
+       ],
+       "accent": "rose",
+       "caption": "Mnémo **PAGNEC** : Périmètre · Acquisition · Goodwill · NCI · Éliminations · Conversion."
       }
      ]
     },
@@ -2533,6 +3188,51 @@
          "**Effet théorique d'une activation (shadow accounting)**"
         ]
        ]
+      },
+      {
+       "type": "diagram",
+       "kind": "split",
+       "title": "Répartition de l'actif net réévalué de Léman (1 000)",
+       "parts": [
+        {
+         "label": "Part du groupe Helvetia (80 %)",
+         "value": 80,
+         "color": "rose"
+        },
+        {
+         "label": "Intérêts minoritaires NCI (20 %)",
+         "value": 20,
+         "color": "amber"
+        }
+       ],
+       "caption": "Quote-part groupe = **800**, NCI = **200** (20 % × 1 000), présentés **dans les fonds propres** consolidés. La participation payée (1 000) = part groupe 800 **+ goodwill 200**. ✔️"
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "Option ① Activation + amort. (5 ans)",
+         "color": "rose",
+         "items": [
+          "Goodwill à l'actif (1er janv.) : **200**",
+          "Amortissement année 1 : **−40** au résultat",
+          "Goodwill net fin année 1 : **160**",
+          "Réduction cumulée des FP : **40**"
+         ]
+        },
+        {
+         "title": "Option ② Imputation aux fonds propres",
+         "color": "violet",
+         "items": [
+          "Goodwill à l'actif : **0** (jamais activé)",
+          "Charge au résultat : **0** (+40 vs option ①)",
+          "FP réduits de **200** dès l'acquisition",
+          "Annexe : **effet théorique** (shadow accounting)"
+         ]
+        }
+       ],
+       "caption": "Même goodwill de 200, deux profils : l'option ② **épargne le résultat** (+40) mais **réduit les FP immédiatement** de 200. Sur 5 ans, les deux **convergent** (200 de réduction cumulée)."
       }
      ]
     },
@@ -2636,6 +3336,43 @@
        "tone": "info",
        "title": "Articulation CO ↔ RPC 30 ↔ IFRS en une phrase",
        "text": "**CO** dit *\"tu DOIS consolider (sauf petits groupes) et selon un référentiel reconnu\"* · **RPC 30** fournit *\"le COMMENT à la suisse, avec liberté sur le goodwill et les coentreprises\"* · **IFRS 10/3/11/IAS 28** fournit *\"le COMMENT international, avec règle UNIQUE (goodwill non amorti, MEE seule pour les JV)\"*. Le CO est le **déclencheur** ; RPC 30 et IFRS sont deux **modes d'emploi** concurrents reconnus."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "Swiss GAAP RPC 30",
+         "color": "rose",
+         "items": [
+          "Goodwill **amorti ≤ 20 ans OU imputé aux FP** (+ annexe)",
+          "Contrôle conjoint : **proportionnelle OU MEE**",
+          "Conso par le **contrôle**, méthode de l'acquisition",
+          "NCI en FP (goodwill sur part du groupe)"
+         ]
+        },
+        {
+         "title": "IFRS 10/3/11/IAS 28",
+         "color": "indigo",
+         "items": [
+          "Goodwill **non amorti**, test annuel (IAS 36)",
+          "Contrôle conjoint : **MEE UNIQUEMENT** (IFRS 11)",
+          "Contrôle = pouvoir + rendements variables (IFRS 10)",
+          "NCI en CP : **option JV** (goodwill complet)"
+         ]
+        },
+        {
+         "title": "CO (art. 963 ss)",
+         "color": "amber",
+         "items": [
+          "**Déclencheur** : obligation si contrôle (art. 963)",
+          "**Dispense** de taille (art. 963a, seuils 20/40/250)",
+          "Jamais pour cotées / grandes structures",
+          "Renvoi à un **référentiel reconnu** (RPC ou IFRS)"
+         ]
+        }
+       ],
+       "caption": "Le **CO** est le **déclencheur** ; **RPC 30** et **IFRS** sont deux **modes d'emploi** reconnus. Les 2 lignes qui rapportent : **goodwill** et **intégration proportionnelle**."
       }
      ]
     },
@@ -2949,6 +3686,68 @@
         "**Remise en état / démantèlement** : obligation de dépollution ou de démantèlement liée à une installation existante.",
         "**Contrats déficitaires** (*onerous contracts*) : coûts inévitables du contrat **supérieurs** aux avantages attendus."
        ]
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "Arbre de décision — faut-il provisionner ?",
+       "steps": [
+        {
+         "label": "Obligation actuelle ?",
+         "sub": "Juridique OU de fait, née d'un événement PASSÉ"
+        },
+        {
+         "label": "Sortie de ressources probable ?",
+         "sub": "Plus probable qu'improbable (≠ simplement possible)"
+        },
+        {
+         "label": "Estimation fiable ?",
+         "sub": "Montant chiffrable (fourchette / espérance / meilleure estimation)"
+        },
+        {
+         "label": "→ PROVISION comptabilisée",
+         "sub": "Passif au bilan + charge au résultat. Un seul NON ⇒ passif éventuel (annexe), pas d'écriture"
+        }
+       ],
+       "accent": "emerald",
+       "caption": "Les 3 critères de RPC 23 sont cumulatifs : il faut OUI aux trois pour comptabiliser. Un seul NON renvoie en passif éventuel (mention en annexe)."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "Provision (RPC 23)",
+         "color": "emerald",
+         "items": [
+          "Obligation juridique OU de fait (événement passé)",
+          "Sortie PROBABLE de ressources",
+          "Montant/échéance incertains mais ESTIMABLES",
+          "→ Passif au bilan + charge au résultat"
+         ]
+        },
+        {
+         "title": "Passif éventuel",
+         "color": "amber",
+         "items": [
+          "Obligation seulement POSSIBLE (événement futur)",
+          "Sortie possible, pas probable",
+          "Souvent non estimable de façon fiable",
+          "→ Mention en ANNEXE, aucune écriture"
+         ]
+        },
+        {
+         "title": "Charge à payer",
+         "color": "indigo",
+         "items": [
+          "Obligation certaine / quasi certaine",
+          "Sortie quasi certaine",
+          "Montant et échéance BIEN connus",
+          "→ Dettes (régularisations), pas « provision »"
+         ]
+        }
+       ],
+       "caption": "Deux axes séparent les trois notions : le degré d'incertitude (probable / possible / certain) et la précision de l'estimation."
       }
      ]
     },
@@ -3009,6 +3808,31 @@
        "tone": "info",
        "title": "Provision ≠ amortissement ≠ correction de valeur",
        "text": "Ne confondez pas une **provision** (passif : obligation envers un **tiers**) avec une **correction de valeur d'actif** (dépréciation d'un stock, d'une créance, d'une immobilisation — qui **réduit un actif**, ne crée pas de dette). Le **provisioning** d'une créance douteuse est en réalité une **dépréciation d'actif**, pas une provision au sens de RPC 23, même si le langage courant mélange les deux."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "Cycle de vie d'une provision",
+       "steps": [
+        {
+         "label": "Constitution",
+         "sub": "Dr Charge / Cr Provision — on crée la dette"
+        },
+        {
+         "label": "Réexamen à chaque clôture",
+         "sub": "Ajustement à la hausse ou à la baisse"
+        },
+        {
+         "label": "Utilisation",
+         "sub": "Dr Provision / Cr Trésorerie — l'obligation se réalise (n'affecte pas le résultat)"
+        },
+        {
+         "label": "Reprise si sans objet",
+         "sub": "Dr Provision / Cr Produit — l'obligation disparaît"
+        }
+       ],
+       "accent": "indigo",
+       "caption": "Charge à la constitution, produit à la reprise ; entre les deux, l'utilisation consomme la provision sans toucher le résultat."
       }
      ]
     },
@@ -3147,6 +3971,33 @@
        "tone": "info",
        "title": "RPC vs IFRS (IAS 12) — même esprit, version simplifiée",
        "text": "La RPC reprend la **logique bilancielle** d'**IAS 12** (différences temporelles, passifs obligatoires, actifs si recouvrables, reports de pertes). Les IFRS sont toutefois **plus détaillés** : règles précises sur les exceptions (comptabilisation initiale, *outside basis differences* sur participations), l'absence d'actualisation des impôts différés, la présentation. À l'examen, retenez : **RPC = IAS 12 allégé**, **CO = en principe rien d'impôt différé**."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "Impôt différé PASSIF",
+         "color": "rose",
+         "items": [
+          "Différence temporelle IMPOSABLE",
+          "Actif : VC comptable > valeur fiscale",
+          "Impôt PLUS ÉLEVÉ plus tard",
+          "TOUJOURS obligatoire"
+         ]
+        },
+        {
+         "title": "Impôt différé ACTIF",
+         "color": "emerald",
+         "items": [
+          "Différence temporelle DÉDUCTIBLE",
+          "Provision non encore déductible / report de pertes",
+          "Impôt PLUS FAIBLE plus tard",
+          "Seulement si recouvrement PROBABLE"
+         ]
+        }
+       ],
+       "caption": "Asymétrie de prudence : le passif d'impôt différé est toujours comptabilisé ; l'actif seulement si des bénéfices futurs rendent sa récupération probable."
       }
      ]
     },
@@ -3183,6 +4034,34 @@
        "tone": "key",
        "title": "Lecture de l'exemple",
        "text": "L'impôt différé ne **crée pas** d'impôt en plus : il **replace** dans le bon exercice la charge fiscale liée à une différence **temporaire**. Ici, l'amortissement fiscal accéléré **avance** une économie d'impôt → la RPC reconnaît la **dette d'impôt future** (passif 12,5) pour ne pas **surévaluer** le résultat de l'année 1. Le **CO**, lui, laisse cet effet dans les **réserves latentes** et n'affiche **rien** de différé."
+      },
+      {
+       "type": "diagram",
+       "kind": "waterfall",
+       "title": "HelvaMec — de la différence temporelle à l'impôt différé",
+       "items": [
+        {
+         "label": "Valeur comptable RPC",
+         "value": 350,
+         "kind": "add"
+        },
+        {
+         "label": "− Valeur fiscale",
+         "value": 300,
+         "kind": "sub"
+        },
+        {
+         "label": "= Différence temporelle (imposable)",
+         "value": 50,
+         "kind": "total"
+        },
+        {
+         "label": "× Taux d'impôt 25 %",
+         "value": 12.5,
+         "kind": "total"
+        }
+       ],
+       "caption": "VC RPC 350 − valeur fiscale 300 = différence temporelle imposable de 50 ; × 25 % = impôt différé PASSIF de 12,5 (obligatoire en RPC)."
       }
      ]
     },
@@ -3330,6 +4209,43 @@
        "tone": "info",
        "title": "Comment se repérer en une phrase",
        "text": "**CO = je provisionne large, j'ignore l'impôt différé, je laisse les dérivés hors-bilan (prudence + réserves latentes)** · **RPC = je provisionne juste, je montre l'impôt différé, je mets les dérivés au bilan à la valeur de marché (image fidèle)** · **IFRS = je vais le plus loin : IAS 37 / IAS 12 complet / IFRS 9 avec ECL et couverture détaillée.** Placez toujours la RPC **entre** les deux."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "CO",
+         "color": "amber",
+         "items": [
+          "Provisions de réserve / lissage TOLÉRÉES (réserves latentes)",
+          "Impôts différés : EN PRINCIPE AUCUN (impôt courant)",
+          "Dérivés souvent HORS-BILAN (engagement conditionnel)",
+          "Logique : prudence, protection des créanciers"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC",
+         "color": "emerald",
+         "items": [
+          "Provision JUSTE : 3 critères, pas de lissage",
+          "Impôts différés BILANCIELS (RPC 11), version allégée",
+          "Dérivés au BILAN à la valeur de marché (RPC 27)",
+          "Logique : image fidèle, réalité économique"
+         ]
+        },
+        {
+         "title": "IFRS",
+         "color": "indigo",
+         "items": [
+          "IAS 37 : provisions, lissage interdit",
+          "IAS 12 : impôts différés bilanciels complets",
+          "IFRS 9 : juste valeur + ECL + couverture détaillée",
+          "Logique : image fidèle, modèles prospectifs"
+         ]
+        }
+       ],
+       "caption": "Placez toujours la RPC ENTRE les deux : plus complète que le CO (qui ignore l'impôt différé et tolère les réserves latentes), plus pragmatique que les IFRS (ECL, couverture détaillée)."
       }
      ]
     },
@@ -3576,6 +4492,35 @@
        "tone": "info",
        "title": "Pourquoi trois référentiels coexistent en Suisse",
        "text": "Le **CO** est la **loi** (titre 32, art. 957 ss) : un **socle obligatoire** pour toutes les entités, qui sert aussi de **base fiscale** (le bénéfice imposable part du résultat statutaire CO). Les **Swiss GAAP RPC** et les **IFRS** sont des **référentiels reconnus** (CO art. 962/962a) qui **s'ajoutent** pour donner une image fidèle aux cotées, grandes coopératives et fondations en contrôle ordinaire. Une cotée suisse publie donc souvent **deux jeux de comptes** : statutaires (CO, base de l'impôt et du dividende) **et** consolidés (RPC ou IFRS, image fidèle pour le marché)."
+      },
+      {
+       "type": "diagram",
+       "kind": "spectrum",
+       "title": "L'axe unique : prudence → juste valeur",
+       "bands": [
+        {
+         "from": 0,
+         "to": 33,
+         "color": "amber",
+         "short": "CO",
+         "label": "**CO** — prudence, **coût max**, réserves latentes permises (créancier + fisc)"
+        },
+        {
+         "from": 33,
+         "to": 66,
+         "color": "emerald",
+         "short": "RPC",
+         "label": "**Swiss GAAP RPC** — image fidèle pragmatique, **valeur actuelle ciblée** (« IFRS light »)"
+        },
+        {
+         "from": 66,
+         "to": 100,
+         "color": "indigo",
+         "short": "IFRS",
+         "label": "**IFRS** — image fidèle + **juste valeur étendue**, décision investisseur"
+        }
+       ],
+       "caption": "Un seul curseur d'exigence et de juste valeur croissantes. Place toujours la RPC AU MILIEU : c'est la grille de lecture capstone."
       }
      ]
     },
@@ -3645,6 +4590,43 @@
        "tone": "warn",
        "title": "Piège de comparaison : « image fidèle » n'est pas synonyme de « juste valeur »",
        "text": "RPC **et** IFRS visent l'**image fidèle**, mais cela **ne veut pas dire** « tout à la juste valeur ». La RPC atteint l'image fidèle **principalement par le coût** (en supprimant simplement les réserves latentes), avec la valeur actuelle **seulement** sur quelques postes. Confondre « image fidèle » et « juste valeur généralisée » est l'erreur conceptuelle n°1 sur ce continuum."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "CO",
+         "color": "amber",
+         "items": [
+          "Prudence & protection du **créancier**",
+          "Destinataire : créancier + **fisc** (déterminance)",
+          "Réserves latentes **permises** (art. 960a al. 4)",
+          "Prudence **asymétrique** : pertes anticipées, profits différés"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC",
+         "color": "emerald",
+         "items": [
+          "**Image fidèle** pragmatique (*true & fair*)",
+          "Destinataire : lecteur suisse (associés, banques)",
+          "Réserves latentes **interdites**",
+          "Prudence **raisonnable**, sans matelas caché"
+         ]
+        },
+        {
+         "title": "IFRS",
+         "color": "indigo",
+         "items": [
+          "Image fidèle + **décision utile** à l'investisseur",
+          "Destinataire : **investisseur** sur les marchés",
+          "Réserves latentes **interdites**",
+          "**Neutralité** ; penche vers la pertinence (juste valeur)"
+         ]
+        }
+       ],
+       "caption": "Tout part du DESTINATAIRE privilégié : c'est lui qui détermine la logique d'évaluation. Attention : « image fidèle » (RPC + IFRS) ≠ « juste valeur généralisée » (IFRS seule)."
       }
      ]
     },
@@ -3708,6 +4690,31 @@
        "tone": "info",
        "title": "Une cotée a souvent DEUX jeux de comptes",
        "text": "Le référentiel reconnu (RPC/IFRS) **ne remplace pas** le CO : il **s'ajoute**. Une société cotée tient ses **comptes statutaires au CO** (base du **dividende** distribuable et de l'**impôt**) **et** publie des **comptes consolidés** en RPC ou IFRS (image fidèle pour le marché). Ne jamais dire « la cotée abandonne le CO » : elle l'applique **en parallèle**."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "Quel référentiel pour quel profil d'entreprise ?",
+       "steps": [
+        {
+         "label": "PME non cotée",
+         "sub": "sous les seuils, sans demande qualifiée → **CO seul** (socle légal)"
+        },
+        {
+         "label": "Société moyenne / groupe non coté",
+         "sub": "veut de la crédibilité → **Swiss GAAP RPC** (souvent)"
+        },
+        {
+         "label": "Cotée SIX / grande coopérative / fondation",
+         "sub": "référentiel reconnu exigé → **RPC ou IFRS** (au choix)"
+        },
+        {
+         "label": "Multinationale / grand groupe",
+         "sub": "comparabilité mondiale, marchés étrangers → **IFRS**"
+        }
+       ],
+       "accent": "violet",
+       "caption": "Raisonnement en 2 temps : (1) un référentiel reconnu est-il EXIGÉ (statut/demande, CO art. 962) ? (2) si oui, lequel ? Le CO subsiste toujours en parallèle (base impôt + dividende)."
       }
      ]
     },
@@ -3787,6 +4794,43 @@
        "tone": "info",
        "title": "Le CO consolide, mais délègue le « comment »",
        "text": "Le **CO art. 963** **impose** des comptes de groupe au contrôle, et **963a** en **dispense** les petits groupes (20/40/250) — mais le CO **ne décrit pas** la mécanique technique (méthodes, goodwill). En pratique, un groupe qui consolide le fait **selon un référentiel reconnu** (RPC ou IFRS). Le CO fixe donc **l'obligation et les dispenses** ; RPC/IFRS fixent **la technique**."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "CO",
+         "color": "amber",
+         "items": [
+          "**Art. 963** : oblig. de comptes de groupe au contrôle",
+          "**Art. 963a** : dispense petits groupes **20/40/250** + sous-groupes",
+          "Renvoie le **« comment »** à un référentiel reconnu",
+          "Goodwill : pas de standard détaillé"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC 30",
+         "color": "emerald",
+         "items": [
+          "**Globale** (contrôle) + intérêts minoritaires",
+          "**Proportionnelle AUTORISÉE** (contrôle conjoint) ou MEE",
+          "**MEE** (influence notable / associées)",
+          "Goodwill : **amorti ≤ 5 ans (max 20)** OU imputé aux FP"
+         ]
+        },
+        {
+         "title": "IFRS 10/3/11/IAS 28",
+         "color": "indigo",
+         "items": [
+          "**Globale** (IFRS 10) + NCI ; méthode d'acquisition (IFRS 3)",
+          "**Proportionnelle INTERDITE** → MEE imposée (IFRS 11)",
+          "**MEE** associées ET coentreprises (IAS 28)",
+          "Goodwill : **non amorti** + test annuel (IAS 36)"
+         ]
+        }
+       ],
+       "caption": "Déclencheur partout = le CONTRÔLE. LE piège conso : l'intégration proportionnelle survit en RPC mais a DISPARU en IFRS (fin d'IAS 31). Ne jamais la proposer en réponse IFRS."
       }
      ]
     },
@@ -3850,6 +4894,43 @@
        "tone": "warn",
        "title": "Piège : « le goodwill s'amortit en IFRS »",
        "text": "**Faux.** Depuis 2004, le goodwill **ne s'amortit pas** en IFRS : il subit un **test de dépréciation annuel** (IAS 36). À l'inverse, en **RPC**, il **s'amortit** (≤ 5 ans, max 20) **ou** est **imputé aux fonds propres**. Et la **dépréciation du goodwill ne se reprend jamais** (ni IFRS, ni RPC). Mélanger amortissement IFRS / reprise est une faute fréquente."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "CO",
+         "color": "amber",
+         "items": [
+          "Pas de standard de conso détaillé",
+          "En pratique **amorti** (prudence)",
+          "Pas d'option fonds propres",
+          "Dépréciation si valeur durablement inférieure"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC",
+         "color": "emerald",
+         "items": [
+          "Goodwill = prix − JV actifs nets identifiables",
+          "**Amorti ≤ 5 ans** (max **20** si justifié)…",
+          "…**OU** imputé **directement aux fonds propres**",
+          "Si imputé FP : effet « comme si » activé/amorti en **annexe**"
+         ]
+        },
+        {
+         "title": "IFRS",
+         "color": "indigo",
+         "items": [
+          "**IFRS 3** : goodwill à la JV des actifs/passifs",
+          "**Non amorti** : pas de charge récurrente",
+          "Toujours porté à l'**actif** (pas d'option FP)",
+          "**IAS 36** : test annuel ; **reprise INTERDITE**"
+         ]
+        }
+       ],
+       "caption": "La divergence-vitrine. Contraste clé : IFRS ne charge PAS le résultat sans dépréciation, alors que RPC charge régulièrement (option amortissement) — ou a sorti le goodwill des FP. Piège classique : « le goodwill s'amortit en IFRS » = FAUX (depuis 2004)."
       }
      ]
     },
@@ -3918,6 +4999,43 @@
        "tone": "warn",
        "title": "Piège : le stock ne se réévalue jamais au-dessus du coût",
        "text": "Même en RPC et en IFRS, un **stock** reste **plafonné au plus faible du coût et de la VNR** (IAS 2 / *lower of cost or market*). La logique « valeur actuelle » ne vaut **que** pour les **titres cotés** et **immeubles de placement** (RPC), ou selon la norme applicable (IFRS). Ne jamais inscrire un stock au-dessus de son coût, quel que soit le référentiel."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "CO",
+         "color": "amber",
+         "items": [
+          "Règle : **coût d'acquisition au maximum** (art. 960a)",
+          "Titres cotés : cours **autorisé** (art. 960b), sinon coût",
+          "Immeuble de placement : **coût amorti** (pas de JV)",
+          "Gains non réalisés **interdits** → réserves latentes"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC",
+         "color": "emerald",
+         "items": [
+          "Coût + **valeurs actuelles ciblées**",
+          "Titres cotés : **cours de bourse** (variations au résultat)",
+          "Immeuble de placement : **valeur de marché** possible",
+          "Pas de modèle de réévaluation généralisé"
+         ]
+        },
+        {
+         "title": "IFRS",
+         "color": "indigo",
+         "items": [
+          "Coût **ou** réévaluation / juste valeur selon la norme",
+          "Titres : **juste valeur** (IFRS 9 — FVPL ou **FVOCI**)",
+          "Immeuble de placement : **JV** ou coût (IAS 40)",
+          "Corporelles : modèle de réévaluation **IAS 16 → OCI**"
+         ]
+        }
+       ],
+       "caption": "La juste valeur est le THERMOMÈTRE du continuum : du plafond du coût (CO) → valeur actuelle ciblée (RPC) → juste valeur étendue (IFRS). Question-réflexe : où passe la variation — RÉSULTAT ou OCI ? Et : un STOCK n'est jamais au-dessus du coût (plafond VNR), nulle part."
       }
      ]
     },
@@ -4023,6 +5141,43 @@
        "tone": "warn",
        "title": "Piège : IFRS 16 efface la distinction côté preneur, pas RPC",
        "text": "**IFRS 16** supprime, **côté preneur**, la distinction entre leasing financier et d'exploitation : **presque tout** entre au bilan (droit d'utilisation + dette de loyer). La **RPC**, elle, **conserve** la distinction et n'inscrit au bilan que le **leasing financier**. Le **CO** laisse, lui, le leasing largement **hors bilan**. Ne pas transposer IFRS 16 à une réponse RPC ou CO."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "CO",
+         "color": "amber",
+         "items": [
+          "Impôts différés : notion **rare**, non systématique",
+          "Leasing : largement **hors bilan** (mention annexe)",
+          "Instruments financiers : **prudence** (coût, provisions)",
+          "Logique : **forme juridique**"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC",
+         "color": "emerald",
+         "items": [
+          "Impôts différés : approche **bilancielle**",
+          "Leasing : **financier au bilan** (RPC 13)",
+          "Instruments financiers : recommandation dédiée",
+          "Dépréciation sur pertes **avérées/probables**"
+         ]
+        },
+        {
+         "title": "IFRS",
+         "color": "indigo",
+         "items": [
+          "Impôts différés : **IAS 12** bilanciel complet",
+          "Leasing : **tout au bilan** côté preneur (**IFRS 16**)",
+          "Instruments financiers : **IFRS 9** (coût amorti / FVOCI / FVPL)",
+          "Dépréciation : pertes de crédit **attendues (ECL)**"
+         ]
+        }
+       ],
+       "caption": "Fil conducteur : plus on monte vers IFRS, plus on INSCRIT AU BILAN ce que le CO laisse hors bilan. Trajectoire du leasing : hors bilan (CO) → financier au bilan (RPC) → presque tout au bilan (IFRS 16). Retiens la trajectoire, pas seulement les cases."
       }
      ]
     },
@@ -4292,6 +5447,27 @@
        "tone": "tip",
        "title": "Le réflexe « curseur »",
        "text": "Devant toute question comparative, imagine un **curseur** glissant de la **prudence** (CO) vers la **juste valeur** (IFRS). Demande-toi : *où se place ce thème pour chaque référentiel ?* La réponse tombe presque toujours en **plaçant la RPC entre les deux** — c'est l'automatisme capstone à entraîner."
+      },
+      {
+       "type": "diagram",
+       "kind": "pyramid",
+       "title": "Du moins au plus exigeant (juste valeur croissante)",
+       "levels": [
+        {
+         "t": "IFRS — juste valeur étendue",
+         "d": "Sommet : réévaluation (IAS 16/40, IFRS 9), goodwill non amorti, tout au bilan (IFRS 16), annexe massive — pour l'investisseur mondial"
+        },
+        {
+         "t": "Swiss GAAP RPC — image fidèle pragmatique",
+         "d": "Milieu : coût + valeur actuelle ciblée, goodwill amorti ou imputé FP, proportionnelle autorisée — « IFRS light suisse »"
+        },
+        {
+         "t": "CO — prudence & coût",
+         "d": "Socle : coût max, réserves latentes permises, leasing hors bilan, annexe minimale — pour le créancier (et base fiscale)"
+        }
+       ],
+       "accent": "violet",
+       "caption": "Mnémo PRIME : Prudence (CO) → Image fidèle au Milieu (RPC) → Extension de la juste valeur (IFRS). Un seul axe d'exigence, du socle légal au sommet international."
       }
      ]
     },

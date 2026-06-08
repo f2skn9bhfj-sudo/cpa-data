@@ -41,6 +41,35 @@
        "tone": "warn",
        "title": "Piège d'examen majeur",
        "text": "Ne **jamais** confondre **comptes individuels (IAS 27)** et **comptes consolidés (IFRS 10)**. Écrire « obligation de consolider selon IAS 27 » dans une copie = **erreur de référentiel**."
+      },
+      {
+       "type": "diagram",
+       "kind": "spectrum",
+       "title": "Quelle méthode selon la nature du lien ? (comptes individuels, IAS 27.10)",
+       "bands": [
+        {
+         "from": 0,
+         "to": 20,
+         "color": "slate",
+         "short": "Coût / IFRS 9",
+         "label": "**< 20 %** — simple placement : **coût** ou **IFRS 9 (JV)**"
+        },
+        {
+         "from": 20,
+         "to": 50,
+         "color": "emerald",
+         "short": "Associée",
+         "label": "**20–50 %** — influence notable (associée, IAS 28) : **coût**, **IFRS 9** ou **MEE**"
+        },
+        {
+         "from": 50,
+         "to": 100,
+         "color": "indigo",
+         "short": "Filiale",
+         "label": "**> 50 %** — contrôle (filiale, IFRS 10) : en INDIVIDUEL toujours **coût / IFRS 9 / MEE** — la consolidation, elle, relève d'IFRS 10"
+        }
+       ],
+       "caption": "Le degré d'influence qualifie la participation, mais dans les comptes INDIVIDUELS les 3 mêmes options (coût, IFRS 9, MEE) restent ouvertes — une seule ligne à l'actif, jamais de consolidation."
       }
      ]
     },
@@ -100,6 +129,71 @@
        "tone": "tip",
        "title": "Précision terminologique (IAS 27.6)",
        "text": "Les **états financiers individuels** sont ceux **présentés EN PLUS** des états consolidés (ou des états où les participations sont mises en équivalence selon IAS 28).\n\n**Ne sont PAS** des états individuels au sens d'IAS 27 : les états d'une entité **sans aucune** filiale/associée/coentreprise (ce sont simplement ses états financiers). De même, les **états consolidés** ne sont **pas** des états individuels."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "title": "L'éclatement de l'ancienne IAS 27 (paquet 2011, applicable 2013)",
+       "cols": [
+        {
+         "title": "Comptes de GROUPE",
+         "color": "indigo",
+         "items": [
+          "Contrôle & consolidation → **IFRS 10**",
+          "Contrôle conjoint / partenariats → **IFRS 11**",
+          "Informations sur les intérêts → **IFRS 12**",
+          "Acquisition & goodwill → **IFRS 3**"
+         ]
+        },
+        {
+         "title": "Comptes INDIVIDUELS",
+         "color": "blue",
+         "items": [
+          "Participations en une seule ligne → **IAS 27 (2011)**",
+          "Coût / IFRS 9 / MEE (IAS 27.10)",
+          "*← C'est ce cours*"
+         ]
+        },
+        {
+         "title": "MEE en consolidé",
+         "color": "emerald",
+         "items": [
+          "Associées & coentreprises → **IAS 28**",
+          "Mise en équivalence ligne à ligne",
+          "Renvoi depuis IAS 27.10 pour l'option MEE"
+         ]
+        }
+       ],
+       "caption": "Avant 2011, une seule IAS 27 couvrait consolidé ET individuel. Depuis, l'individuel est tout ce qui reste dans IAS 27."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "Des comptes consolidés sont-ils exigés ? (et quel est le rôle d'IAS 27 ?)",
+       "steps": [
+        {
+         "label": "L'entité a-t-elle le contrôle ?",
+         "sub": "IFRS 10 — pouvoir + exposition aux rendements"
+        },
+        {
+         "label": "Si NON",
+         "sub": "Pas de consolidation : associée (IAS 28) ou simple placement (IFRS 9)"
+        },
+        {
+         "label": "Si OUI → consolidation requise",
+         "sub": "IFRS 10, sauf dispense (sous-mère 100 % couverte par une mère ultime IFRS) ou entité d'investissement (JV par résultat)"
+        },
+        {
+         "label": "Des comptes INDIVIDUELS en plus ?",
+         "sub": "Non imposés par IAS 27 — seulement si choix ou obligation légale locale (p. ex. CO)"
+        },
+        {
+         "label": "Alors IAS 27 dit COMMENT",
+         "sub": "Participations au coût / IFRS 9 / MEE, en une seule ligne"
+        }
+       ],
+       "accent": "blue",
+       "caption": "IAS 27 ne déclenche JAMAIS l'obligation de consolider (IFRS 10) ni celle de produire des comptes individuels : elle régit uniquement leur contenu lorsqu'ils existent (IAS 27.2-3)."
       }
      ]
     },
@@ -157,6 +251,34 @@
        "tone": "tip",
        "title": "Entité d'investissement (Investment entity) — IFRS 10.27, renvoi IAS 27.11B",
        "text": "Entité qui (i) obtient des fonds pour fournir des services de gestion d'investissement, (ii) s'engage à valoriser/sortir ses placements et (iii) en mesure la performance à la **juste valeur**.\n\n**Particularité** : elle **NE consolide PAS** ses filiales mais les évalue à la **juste valeur par résultat (FVTPL)** selon IFRS 9 — y compris, en règle générale, dans ses **états individuels** (IAS 27.11B)."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "title": "États INDIVIDUELS (IAS 27) vs États CONSOLIDÉS (IFRS 10)",
+       "cols": [
+        {
+         "title": "Individuels (IAS 27)",
+         "color": "blue",
+         "items": [
+          "Participation **en une seule ligne** à l'actif",
+          "Coût / IFRS 9 / MEE (IAS 27.10)",
+          "**Ni goodwill, ni NCI, ni élimination** intragroupe",
+          "Présentés EN PLUS du consolidé (IAS 27.6)"
+         ]
+        },
+        {
+         "title": "Consolidés (IFRS 10)",
+         "color": "violet",
+         "items": [
+          "Intégration globale **actif par actif, passif par passif**",
+          "Entité économique unique",
+          "**Goodwill (IFRS 3)** + **NCI** + éliminations",
+          "Hors champ d'IAS 27"
+         ]
+        }
+       ],
+       "caption": "La frontière à ne jamais franchir dans une copie : « consolider selon IAS 27 » = erreur de référentiel."
       }
      ]
     },
@@ -237,6 +359,31 @@
        "tone": "tip",
        "title": "Entité d'investissement — IAS 27.11B / .11C",
        "text": "Une **entité d'investissement** qui, selon IFRS 10, évalue ses filiales à la **JV par résultat** applique **le même traitement dans ses états individuels**. Mais si une filiale **fournit des services liés à l'investissement** (non détenue à des fins purement de placement), elle est **consolidée** (IFRS 10) et, en individuel, portée au coût / IFRS 9 / mise en équivalence."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "Traitement du dividende selon la méthode (IAS 27.12)",
+       "steps": [
+        {
+         "label": "Méthode retenue ?",
+         "sub": "Coût / IFRS 9 — ou — Mise en équivalence"
+        },
+        {
+         "label": "Coût ou IFRS 9",
+         "sub": "Dividende = PRODUIT en résultat dès que le droit à percevoir est établi"
+        },
+        {
+         "label": "Mise en équivalence",
+         "sub": "Dividende = RÉDUIT la valeur comptable de la participation (pas de produit)"
+        },
+        {
+         "label": "Réflexe IAS 36",
+         "sub": "Dividende > résultat global, ou VC > actif net détenu → indice de dépréciation"
+        }
+       ],
+       "accent": "amber",
+       "caption": "L'inversion coût/MEE est l'erreur la plus fréquente à l'examen : coût/IFRS 9 → résultat ; MEE → moins la participation."
       }
      ]
     },
@@ -395,6 +542,43 @@
          "**+240**"
         ]
        ]
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "title": "M détient 80 % de F : un fait, trois bilans individuels (au 31.12.N)",
+       "cols": [
+        {
+         "title": "Coût",
+         "color": "slate",
+         "items": [
+          "Participation : **1 000** (inchangée)",
+          "Dividende 80 → **+ résultat**",
+          "Impact résultat N : **+80**"
+         ]
+        },
+        {
+         "title": "IFRS 9 (FVTPL)",
+         "color": "indigo",
+         "items": [
+          "Participation à la JV : **1 150**",
+          "Profit de JV +150 → résultat",
+          "Dividende 80 → **+ résultat**",
+          "Impact résultat N : **+230**"
+         ]
+        },
+        {
+         "title": "Mise en équivalence",
+         "color": "emerald",
+         "items": [
+          "1 000 + QP 240 − div. 80 = **1 160**",
+          "QP de résultat 80 %×300 = +240",
+          "Dividende 80 → **− participation**",
+          "Impact résultat N : **+240**"
+         ]
+        }
+       ],
+       "caption": "Même opération économique, trois valeurs au bilan (1 000 / 1 150 / 1 160) et trois résultats (+80 / +230 / +240) — d'où l'information à fournir sur la méthode (IAS 27.16-17). Aucun goodwill ni NCI : ils n'existent que dans le consolidé."
       }
      ]
     },
@@ -695,6 +879,35 @@
        "tone": "key",
        "title": "Une seule ligne au bilan",
        "text": "La MEE produit **une ligne unique** « Participations mises en équivalence » à l'actif. On ne consolide **pas** ligne à ligne les actifs/passifs de l'associée (≠ intégration globale d'IFRS 10). Toujours conclure une réponse d'examen sur les **trois impacts** : **bilan** (la ligne MEE), **résultat** (quote-part + dépréciation), **OCI/capitaux propres** (quote-part d'OCI)."
+      },
+      {
+       "type": "diagram",
+       "kind": "spectrum",
+       "title": "Du % de détention à la méthode",
+       "bands": [
+        {
+         "from": 0,
+         "to": 20,
+         "color": "slate",
+         "short": "IFRS 9",
+         "label": "**< 20 %** — pas d'influence notable → **juste valeur (IFRS 9)**"
+        },
+        {
+         "from": 20,
+         "to": 50,
+         "color": "teal",
+         "short": "MEE",
+         "label": "**20–50 %** — influence notable présumée → **mise en équivalence (IAS 28)**"
+        },
+        {
+         "from": 50,
+         "to": 100,
+         "color": "indigo",
+         "short": "Contrôle",
+         "label": "**> 50 %** — contrôle → **intégration globale (IFRS 10)**"
+        }
+       ],
+       "caption": "Le cœur d'IAS 28 = la zone **20–50 %** (influence notable → MEE). Présomption **réfutable** dans les deux sens : on peut avoir l'influence sous 20 % (siège au CA) et ne pas l'avoir au-dessus."
       }
      ]
     },
@@ -820,6 +1033,44 @@
       {
        "type": "intro",
        "text": "**Mise en équivalence (*equity method*)** — méthode où la participation est **initialement comptabilisée au coût**, puis **ajustée** pour refléter la **quote-part de l'investisseur dans l'actif net** de l'entité détenue **après** l'acquisition ; le **résultat** de l'investisseur intègre sa **quote-part de résultat** de l'entité détenue."
+      },
+      {
+       "type": "diagram",
+       "kind": "pyramid",
+       "title": "Les degrés de pouvoir sur une entité détenue",
+       "levels": [
+        {
+         "t": "Contrôle (IFRS 10)",
+         "d": "Pouvoir de diriger les activités pertinentes → intégration **globale**."
+        },
+        {
+         "t": "Contrôle conjoint (IFRS 11)",
+         "d": "Partage contractuel, décisions à l'unanimité → **JV : MEE** ; **JO : compta directe**."
+        },
+        {
+         "t": "Influence notable (IAS 28)",
+         "d": "Participer aux décisions sans diriger (≥ 20 % présumé) → **MEE**."
+        },
+        {
+         "t": "Simple intérêt (IFRS 9)",
+         "d": "Aucun pouvoir de participation → **juste valeur** (FVPL / FVOCI)."
+        }
+       ],
+       "accent": "teal",
+       "caption": "IAS 28 occupe l'étage intermédiaire : **plus** qu'un simple intérêt patrimonial, **moins** qu'un contrôle. C'est le pendant « influence / contrôle conjoint » de la trilogie du périmètre."
+      },
+      {
+       "type": "diagram",
+       "kind": "group",
+       "parent": {
+        "label": "Investisseur M"
+       },
+       "pct": 30,
+       "child": {
+        "label": "Associée A"
+       },
+       "method": "Mise en équivalence (IAS 28)",
+       "caption": "M détient **30 %** de A et exerce une **influence notable** : A n'est **pas** consolidée ligne à ligne. Une **seule ligne** « Participations mises en équivalence » apparaît à l'actif de M."
       }
      ]
     },
@@ -864,6 +1115,35 @@
        "tone": "warn",
        "title": "Arrêt sur pertes — le plancher à 0",
        "text": "Lorsque les **pertes** absorbent l'**intérêt net** (VC + créances à long terme assimilées à la participation), la MEE **s'arrête** (VC plancher à **0**). Les pertes au-delà ne sont **pas** comptabilisées, **sauf** obligation **légale ou implicite** ou paiements effectués pour le compte de l'entité. On **suit** les pertes **non comptabilisées** pour les imputer aux **bénéfices futurs** avant de réaugmenter la VC."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "Le cycle de vie d'une participation MEE",
+       "steps": [
+        {
+         "label": "1 · Au coût",
+         "sub": "Comptabilisation initiale à la date d'obtention de l'influence notable."
+        },
+        {
+         "label": "2 · Goodwill implicite",
+         "sub": "Coût − QP de JV des actifs nets : noyé dans la VC, non amorti."
+        },
+        {
+         "label": "3 · Dérouler la JV",
+         "sub": "Amortir / décomptabiliser les plus-values de JV à l'acquisition."
+        },
+        {
+         "label": "4 · Ajuster",
+         "sub": "+ QP résultat · ± QP OCI · − dividendes · − dépréciation."
+        },
+        {
+         "label": "5 · Changement de statut",
+         "sub": "Perte d'influence → réévaluation à la JV ; devenir filiale → IFRS 3."
+        }
+       ],
+       "accent": "teal",
+       "caption": "De l'entrée au coût jusqu'à la sortie : à chaque clôture, la valeur comptable « roule » avec la quote-part d'actif net post-acquisition."
       }
      ]
     },
@@ -1051,6 +1331,90 @@
          "**470**"
         ]
        ]
+      },
+      {
+       "type": "diagram",
+       "kind": "waterfall",
+       "title": "Pont du goodwill implicite à l'acquisition",
+       "items": [
+        {
+         "label": "Coût payé",
+         "value": 400,
+         "kind": "add"
+        },
+        {
+         "label": "− QP actif net id. (30 % × 1 200)",
+         "value": 360,
+         "kind": "sub"
+        },
+        {
+         "label": "= Goodwill implicite",
+         "value": 40,
+         "kind": "total"
+        }
+       ],
+       "caption": "JV des actifs nets de A = 1 000 + 200 (terrain) = **1 200** ; QP de M = 30 % × 1 200 = **360**. Coût 400 − 360 = **goodwill implicite 40**, inclus dans la VC et **non amorti**."
+      },
+      {
+       "type": "diagram",
+       "kind": "waterfall",
+       "title": "Roulement de la valeur comptable (exercice N)",
+       "items": [
+        {
+         "label": "Coût initial (01.01.N)",
+         "value": 400,
+         "kind": "add"
+        },
+        {
+         "label": "+ QP résultat (30 % × 300)",
+         "value": 90,
+         "kind": "add"
+        },
+        {
+         "label": "+ QP OCI (30 % × 100)",
+         "value": 30,
+         "kind": "add"
+        },
+        {
+         "label": "− Dividendes (30 % × 80)",
+         "value": 24,
+         "kind": "sub"
+        },
+        {
+         "label": "− Dépréciation (496 − 470)",
+         "value": 26,
+         "kind": "sub"
+        },
+        {
+         "label": "= VC finale au bilan",
+         "value": 470,
+         "kind": "total"
+        }
+       ],
+       "caption": "Coût + quote-part de résultat + OCI − dividendes − dépréciation. VC avant test = **496** ; valeur recouvrable **470** → dépréciation **26** → **VC finale 470**. Le terrain n'étant pas amortissable, aucun déroulé de plus-value n'est imputé."
+      },
+      {
+       "type": "diagram",
+       "kind": "split",
+       "title": "Les trois impacts sur les états financiers de M (exercice N)",
+       "parts": [
+        {
+         "label": "Bilan — ligne MEE : 470",
+         "value": 470,
+         "color": "teal"
+        },
+        {
+         "label": "Résultat — net : +64",
+         "value": 64,
+         "color": "emerald"
+        },
+        {
+         "label": "OCI — QP : +30",
+         "value": 30,
+         "color": "violet"
+        }
+       ],
+       "caption": "Toujours conclure sur les **trois impacts** : **bilan** (VC 470) · **résultat** (QP +90 − dépréciation 26 = **+64**) · **OCI** (QP +30). Le goodwill implicite (40) reste noyé dans la VC."
       }
      ]
     },
@@ -1367,6 +1731,20 @@
        "tone": "info",
        "title": "IFRS 3 ne travaille jamais seule",
        "text": "- **IFRS 10** dit *quand* il y a **contrôle** (le déclencheur).\n- **IFRS 3** dit *comment* comptabiliser l'opération **à la date d'acquisition** (PPA, goodwill, NCI).\n- **IFRS 13** fournit la mécanique de la **juste valeur**.\n- **IAS 36** régit ensuite le **suivi du goodwill** (dépréciation, pas d'amortissement)."
+      },
+      {
+       "type": "diagram",
+       "kind": "group",
+       "parent": {
+        "label": "Acquéreur M"
+       },
+       "pct": 80,
+       "child": {
+        "label": "Cible F"
+       },
+       "nci": 20,
+       "method": "Méthode de l'acquisition (IFRS 3)",
+       "caption": "M obtient le **contrôle** de F (IFRS 10) ⇒ IFRS 3 s'applique. La part non détenue par M = **NCI** (20 %)."
       }
      ]
     },
@@ -1592,6 +1970,31 @@
        "tone": "tip",
        "title": "Période d'évaluation (≤ 12 mois)",
        "text": "Corrections **rétrospectives** des valeurs provisoires (en contrepartie du **goodwill**), **sans** passer par le résultat courant. Au-delà de 12 mois ⇒ **erreur (IAS 8)** ou changement d'estimation selon le cas."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "La méthode de l'acquisition en 4 étapes",
+       "steps": [
+        {
+         "label": "① Acquéreur",
+         "sub": "Qui obtient le contrôle (IFRS 10)"
+        },
+        {
+         "label": "② Date d'acquisition",
+         "sub": "Prise de contrôle — JV figées"
+        },
+        {
+         "label": "③ JV actifs / passifs / NCI",
+         "sub": "Réévaluation IFRS 13, incorporels isolés"
+        },
+        {
+         "label": "④ Goodwill résiduel",
+         "sub": "Ou bargain purchase si négatif"
+        }
+       ],
+       "accent": "violet",
+       "caption": "Mnémo **IDÉE-G** : Identifier → Date → Évaluer → Goodwill. IFRS 3 ne traite que la **date d'acquisition** ; la conso récurrente relève d'IFRS 10."
       }
      ]
     },
@@ -1644,6 +2047,86 @@
          "—"
         ]
        ]
+      },
+      {
+       "type": "diagram",
+       "kind": "waterfall",
+       "title": "Pont du goodwill — Méthode 1 : NCI à la JV (goodwill COMPLET)",
+       "items": [
+        {
+         "label": "Contrepartie",
+         "value": 1000,
+         "kind": "add"
+        },
+        {
+         "label": "+ NCI (JV)",
+         "value": 230,
+         "kind": "add"
+        },
+        {
+         "label": "+ JV part antérieure",
+         "value": 0,
+         "kind": "add"
+        },
+        {
+         "label": "− Actif net identifiable",
+         "value": 900,
+         "kind": "sub"
+        },
+        {
+         "label": "= Goodwill complet",
+         "value": 330,
+         "kind": "total"
+        }
+       ],
+       "caption": "1 000 + 230 + 0 − 900 = **330**. Le goodwill complet inclut la quote-part des **minoritaires**."
+      },
+      {
+       "type": "diagram",
+       "kind": "waterfall",
+       "title": "Pont du goodwill — Méthode 2 : NCI en quote-part (goodwill PARTIEL)",
+       "items": [
+        {
+         "label": "Contrepartie",
+         "value": 1000,
+         "kind": "add"
+        },
+        {
+         "label": "+ NCI (20 % × 900)",
+         "value": 180,
+         "kind": "add"
+        },
+        {
+         "label": "+ JV part antérieure",
+         "value": 0,
+         "kind": "add"
+        },
+        {
+         "label": "− Actif net identifiable",
+         "value": 900,
+         "kind": "sub"
+        },
+        {
+         "label": "= Goodwill partiel",
+         "value": 280,
+         "kind": "total"
+        }
+       ],
+       "caption": "1 000 + 180 + 0 − 900 = **280**. Écart avec le complet : **330 − 280 = 50** = goodwill des minoritaires (et **230 − 180 = 50** côté NCI). ✔️"
+      },
+      {
+       "type": "diagram",
+       "kind": "group",
+       "parent": {
+        "label": "M paie 1 000"
+       },
+       "pct": 80,
+       "child": {
+        "label": "F — actif net id. 900"
+       },
+       "nci": 20,
+       "method": "Intégration globale (IFRS 10)",
+       "caption": "M acquiert **80 %** de F pour **1 000** ; NCI **20 %**. Actif net identifiable réévalué = **900**, NCI à la JV = **230**."
       }
      ]
     },
@@ -1725,6 +2208,43 @@
         "**Juste valeur** : PPA à la JV **obligatoire** en IFRS/RPC **vs** consolidation au **coût** sans réévaluation au CO.",
         "**NCI** : **option JV / goodwill complet** propre à **IFRS 3** — **absente** du référentiel suisse."
        ]
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "IFRS 3",
+         "color": "indigo",
+         "items": [
+          "Goodwill **non amorti**",
+          "Test de dépréciation **annuel** (IAS 36)",
+          "PPA à la JV obligatoire",
+          "NCI : option JV / quote-part"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC 30",
+         "color": "emerald",
+         "items": [
+          "Goodwill **amorti** ≤ 5 ans (max **20 ans**)",
+          "**OU** imputé aux fonds propres",
+          "PPA à la JV de l'actif net",
+          "NCI en quote-part"
+         ]
+        },
+        {
+         "title": "CO (art. 963–963b)",
+         "color": "amber",
+         "items": [
+          "Goodwill généralement **amorti** (prudence)",
+          "Pas de standard détaillé",
+          "Conso au **coût**, sans réévaluation JV",
+          "Pas d'option NCI codifiée"
+         ]
+        }
+       ],
+       "caption": "**LE** contraste central : goodwill *non amorti* (IFRS) **vs** *amorti ≤ 20 ans ou imputé aux FP* (RPC) **vs** *amorti / prudence* (CO)."
       }
      ]
     },
@@ -2071,6 +2591,60 @@
        "tone": "warn",
        "title": "Principal vs AGENT — pouvoir n'est pas contrôle",
        "text": "Un *fund manager* / *asset manager* peut détenir le **pouvoir de décision** sans **contrôler** s'il agit en **agent** : rémunération **de marché** et proportionnée, **kick-out rights** détenus par un seul tiers exerçables sans motif, **faible exposition** aux rendements via d'autres intérêts. Consolider un fonds géré « pour le compte d'autrui » est une erreur classique. Seul un **principal** (qui exerce le pouvoir pour son **propre** compte) consolide (IFRS 10.17-18 / B58-B72)."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "Le test du contrôle — 3 éléments cumulatifs (IFRS 10.7)",
+       "steps": [
+        {
+         "label": "① Pouvoir",
+         "sub": "Droits existants de diriger les activités pertinentes (10.10) — substantiels, non protecteurs"
+        },
+        {
+         "label": "② Rendements variables",
+         "sub": "Exposition à des rendements qui varient : + ou − (10.15-16)"
+        },
+        {
+         "label": "③ Lien",
+         "sub": "Capacité d'utiliser le pouvoir pour influer sur ces rendements → principal, pas agent (10.17-18)"
+        },
+        {
+         "label": "= CONTRÔLE",
+         "sub": "(a) ET (b) ET (c) → intégration globale. Un seul manque → pas de contrôle"
+        }
+       ],
+       "accent": "indigo",
+       "caption": "Un ET logique : si un seul élément est nul, pas de contrôle, donc pas d'intégration globale."
+      },
+      {
+       "type": "diagram",
+       "kind": "spectrum",
+       "title": "Le seuil du contrôle — au-delà du simple « > 50 % »",
+       "bands": [
+        {
+         "from": 0,
+         "to": 20,
+         "color": "slate",
+         "short": "Aucune",
+         "label": "**< 20 %** — en principe pas d'influence notable (IFRS 9, juste valeur)"
+        },
+        {
+         "from": 20,
+         "to": 50,
+         "color": "emerald",
+         "short": "MEE",
+         "label": "**20–50 %** — influence notable présumée → mise en équivalence (IAS 28)"
+        },
+        {
+         "from": 50,
+         "to": 100,
+         "color": "indigo",
+         "short": "Contrôle",
+         "label": "**> 50 %** — majorité des voix → contrôle présumé → intégration globale"
+        }
+       ],
+       "caption": "Repère utile mais trompeur : le contrôle de FAIT permet de consolider avec < 50 % (ex. 45 % face à un flottant atomisé, IFRS 10.B41-B46), et une majorité SANS pouvoir effectif ne donne pas le contrôle. Le test des 3 éléments prime toujours sur le seuil."
       }
      ]
     },
@@ -2191,6 +2765,39 @@
        "tone": "warn",
        "title": "NCI DÉFICITAIRE — on attribue quand même",
        "text": "Le résultat global est attribué à la mère **ET** aux NCI **même si le solde de la NCI devient négatif** (IFRS 10.B94). On ne « plafonne » **plus** la NCI à zéro — **changement vs l'ancien IAS 27**. Attribuer le résultat aux NCI « seulement si positif » est une faute."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "Les 6 étapes de l'intégration globale (IFRS 10.B86-B96)",
+       "steps": [
+        {
+         "label": "A · Uniformiser",
+         "sub": "Méthodes comptables uniformes + même date de clôture (écart ≤ 3 mois)"
+        },
+        {
+         "label": "B · Agréger & éliminer la participation",
+         "sub": "Participation de la mère ↔ quote-part de CP de la filiale ; résiduel = goodwill (IFRS 3)"
+        },
+        {
+         "label": "C · Éliminer l'intragroupe",
+         "sub": "Soldes, transactions et résultats internes non réalisés — à 100 %"
+        },
+        {
+         "label": "D · Attribuer à la NCI",
+         "sub": "Résultat & OCI partagés mère / NCI — même si la NCI devient déficitaire (B94)"
+        },
+        {
+         "label": "E · Variation SANS perte de contrôle",
+         "sub": "Transaction de capitaux propres : aucun goodwill, aucun P&L (10.23)"
+        },
+        {
+         "label": "F · Perte de contrôle",
+         "sub": "Décomptabiliser + JV de la part conservée + résultat de cession en P&L (10.25)"
+        }
+       ],
+       "accent": "indigo",
+       "caption": "Du retraitement préalable à la sortie du périmètre : la suite de vie d'une filiale consolidée."
       }
      ]
     },
@@ -2243,6 +2850,38 @@
          "**224**"
         ]
        ]
+      },
+      {
+       "type": "diagram",
+       "kind": "group",
+       "parent": {
+        "label": "Mère M"
+       },
+       "pct": 80,
+       "child": {
+        "label": "Filiale F"
+       },
+       "nci": 20,
+       "method": "Intégration globale",
+       "caption": "M acquiert 80 % de F pour 1 000 (JV actif net 900). Intégration globale : 100 % des actifs/passifs de F + goodwill 280 ; la part des minoritaires (20 %) est isolée en NCI, présentée distinctement en capitaux propres."
+      },
+      {
+       "type": "diagram",
+       "kind": "split",
+       "title": "Répartition du résultat net consolidé N (1 020)",
+       "parts": [
+        {
+         "label": "Propriétaires de la mère (976)",
+         "value": 976,
+         "color": "indigo"
+        },
+        {
+         "label": "NCI / minoritaires (44)",
+         "value": 44,
+         "color": "amber"
+        }
+       ],
+       "caption": "Résultat net consolidé 1 020 = part du groupe 976 (800 + 80 % × 220) + part NCI 44 (20 % × 220), après élimination du profit interne upstream de 30 sur le résultat de F (IFRS 10.22)."
       }
      ]
     },
@@ -2682,6 +3321,35 @@
        "tone": "warn",
        "title": "Contrôle conjoint ≠ contrôle d'un majoritaire",
        "text": "Le contrôle conjoint exige le **consentement UNANIME** sur les activités pertinentes : **aucune partie seule** ne peut décider, chacune dispose d'un **veto de fait**. Si une partie peut trancher à la **majorité simple**, il n'y a **pas** de contrôle conjoint → on tombe sous **IFRS 10** (contrôle) ou **IAS 28** (influence notable), **pas** IFRS 11."
+      },
+      {
+       "type": "diagram",
+       "kind": "spectrum",
+       "title": "La place d'IFRS 11 sur l'axe du pouvoir",
+       "bands": [
+        {
+         "from": 0,
+         "to": 33,
+         "color": "slate",
+         "short": "Influence",
+         "label": "**Influence notable (IAS 28)** — participer sans diriger → **MEE**"
+        },
+        {
+         "from": 33,
+         "to": 66,
+         "color": "amber",
+         "short": "Conjoint",
+         "label": "**Contrôle conjoint (IFRS 11)** — partage contractuel, **consentement UNANIME** → *joint operation* (compta directe) **ou** *joint venture* (MEE)"
+        },
+        {
+         "from": 66,
+         "to": 100,
+         "color": "indigo",
+         "short": "Exclusif",
+         "label": "**Contrôle exclusif (IFRS 10)** — un majoritaire dirige seul → **intégration globale**"
+        }
+       ],
+       "caption": "IFRS 11 occupe l'étage du **milieu** : ni un simple détenteur d'influence (IAS 28), ni un majoritaire qui tranche seul (IFRS 10). Le marqueur **unique** = le **consentement unanime** sur les activités pertinentes (chacun dispose d'un **veto de fait**)."
       }
      ]
     },
@@ -2764,6 +3432,31 @@
        "tone": "info",
        "title": "Ce qu'IFRS 11 N'aborde PAS (aiguillages)",
        "text": "- la **mécanique de la MEE** (dépréciation, pertes, éliminations) → **IAS 28** (IFRS 11 ne fait qu'**aiguiller** la JV vers IAS 28) ;\n- les **informations à fournir** sur les partenariats → **IFRS 12** ;\n- la comptabilisation dans les **comptes individuels (séparés)** → **IAS 27** (coût, IFRS 9, ou MEE — option), **sauf** la quote-part d'une *joint operation*, comptabilisée **identiquement** dans les comptes individuels **et** consolidés."
+      },
+      {
+       "type": "diagram",
+       "kind": "pyramid",
+       "title": "Les degrés de pouvoir — du contrôle exclusif au simple intérêt",
+       "levels": [
+        {
+         "t": "Contrôle exclusif (IFRS 10)",
+         "d": "Une partie dirige seule les activités pertinentes → intégration **globale** (filiale)."
+        },
+        {
+         "t": "Contrôle conjoint (IFRS 11)",
+         "d": "Partage **contractuel**, décisions à l'**unanimité** → *joint operation* : compta **directe** ; *joint venture* : **MEE**."
+        },
+        {
+         "t": "Influence notable (IAS 28)",
+         "d": "Participer aux décisions sans diriger (≥ 20 % présumé) → **MEE**."
+        },
+        {
+         "t": "Simple intérêt (IFRS 9)",
+         "d": "Aucun pouvoir de participation → **juste valeur** (FVPL / FVOCI)."
+        }
+       ],
+       "accent": "amber",
+       "caption": "IFRS 11 est le **deuxième étage** de la trilogie du périmètre : **plus** qu'une influence notable, **moins** qu'un contrôle exclusif. C'est le seul niveau qui se **dédouble** ensuite en deux comptabilisations opposées selon les droits/obligations."
       }
      ]
     },
@@ -2840,6 +3533,35 @@
        "tone": "info",
        "title": "La quote-part ligne à ligne n'est PAS une intégration proportionnelle",
        "text": "La comptabilisation directe d'une *joint operation* repose sur des **droits/obligations directs** définis par le **contrat** — qui peuvent **différer** du % de détention (ex. 50 % du capital mais 60 % des coûts assumés). On reprend les **droits réels**, ligne à ligne. Ce **n'est pas** une intégration proportionnelle d'un actif net (technique réservée, sous IFRS, à... **personne** — elle est supprimée)."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "La cascade de classification SFTA — on s'arrête dès « joint operation »",
+       "steps": [
+        {
+         "label": "S · Structure",
+         "sub": "Véhicule distinct ? **Non → joint operation (point final).** Oui → poursuivre (condition nécessaire, non suffisante d'une JV)."
+        },
+        {
+         "label": "F · Forme juridique",
+         "sub": "Responsabilité limitée (SA/SARL) → **présume joint venture** ; structure transparente (partnership) → indice joint operation."
+        },
+        {
+         "label": "T · Termes contractuels",
+         "sub": "Peuvent **RENVERSER** la forme : droits sur actifs, garanties des dettes, partage direct produits/charges → joint operation."
+        },
+        {
+         "label": "A · Autres faits & circonstances",
+         "sub": "**Piège n°1** : dépendance économique (achat de toute la production, financement par les achats) → joint operation, malgré le véhicule."
+        },
+        {
+         "label": "= Type → méthode",
+         "sub": "Droits sur actifs/passifs → ***joint operation*** (ligne à ligne) · droits sur l'actif net → ***joint venture*** (MEE)."
+        }
+       ],
+       "accent": "amber",
+       "caption": "Séquence en cascade : dès qu'un facteur conduit à *joint operation*, on **s'arrête**. Les facteurs **T** et **A** peuvent **réfuter** la présomption issue de la forme juridique (**F**)."
       }
      ]
     },
@@ -2943,6 +3665,37 @@
        "tone": "info",
        "title": "Le reste de la mécanique MEE relève d'IAS 28",
        "text": "Quote-part d'**OCI**, **déroulé** des plus-values de JV, **dépréciation IAS 36** sur la VC totale, **arrêt** de la MEE en cas de pertes (plancher 0), **éliminations** amont/aval à hauteur de la quote-part : IFRS 11 **aiguille** vers **IAS 28**, qui en détaille les modalités."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "Activité conjointe (joint operation)",
+         "color": "indigo",
+         "items": [
+          "**Droits sur les actifs + obligations sur les passifs**",
+          "Comptabilisation **directe**, **ligne à ligne**",
+          "Actifs, passifs, produits, charges (quote-part / droits réels)",
+          "**Identique** comptes individuels ET consolidés",
+          "**Pas** de compte « participation » · **pas** de MEE",
+          "Profit sur apport/vente reconnu **seulement** à hauteur des autres parties"
+         ]
+        },
+        {
+         "title": "Coentreprise (joint venture)",
+         "color": "emerald",
+         "items": [
+          "**Droits sur l'actif NET** seulement",
+          "**Mise en équivalence (IAS 28)**",
+          "**Une seule ligne** « Participation dans une coentreprise »",
+          "VC = coût + QP résultat ± QP OCI − dividendes − dépréciation",
+          "**Intégration proportionnelle INTERDITE** (fin d'IAS 31)",
+          "Goodwill **noyé** dans la VC, **non amorti** (test IAS 36 global)"
+         ]
+        }
+       ],
+       "caption": "La comptabilisation **découle mécaniquement** de la classification : la *joint operation* **éclate tout** ligne à ligne ; la *joint venture* **condense tout** en une ligne nette (MEE)."
       }
      ]
     },
@@ -2987,6 +3740,37 @@
        "tone": "tip",
        "title": "Le réflexe chiffré qui rapporte les points",
        "text": "Sur une question chiffrée, **conclure systématiquement sur les trois effets** de la classification : **total de bilan**, **CA / charges affichés** et **endettement** — en **soulignant** que le **résultat net reste identique** entre *joint operation* et *joint venture*, mais que bilan, CA et dettes **diffèrent fortement**."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "Joint operation (50 %, ligne à ligne)",
+         "color": "indigo",
+         "items": [
+          "Quote-part **actifs** : 50 % × 900 = **+450**",
+          "Quote-part **passifs / dettes** : 50 % × 300 = **+150**",
+          "Quote-part **CA** : 50 % × 1 000 = **+500**",
+          "Quote-part **charges** : 50 % × 800 = **−400**",
+          "**Résultat net : +100**",
+          "→ Total de bilan **gonflé**, dettes et CA **remontés**"
+         ]
+        },
+        {
+         "title": "Joint venture (50 %, MEE)",
+         "color": "emerald",
+         "items": [
+          "**Une ligne** « Participation MEE » : 200 + 100 = **300**",
+          "Dettes de P remontées : **0**",
+          "CA de P inclus : **0**",
+          "QP de résultat (une ligne au CR) : **+100**",
+          "**Résultat net : +100** *(identique)*",
+          "→ Bilan, CA et dettes **comprimés** en une ligne nette"
+         ]
+        }
+       ],
+       "caption": "**Même 50 %, même résultat net (+100)** — mais la *joint operation* affiche **+450** de bilan, **+150** de dettes et **+500** de CA, là où la MEE n'affiche **qu'une ligne nette de 300**. C'est exactement la lecture des **ratios** (endettement, marge, rotation) qu'IFRS 11 a voulu **discipliner**."
       }
      ]
     },
@@ -3058,6 +3842,46 @@
        "tone": "key",
        "title": "LA divergence à retenir absolument",
        "text": "Pour les **coentreprises**, **IFRS 11 INTERDIT** l'intégration proportionnelle (**MEE imposée**), tandis que **RPC 30 l'AUTORISE encore**. Un même groupe à 50 % d'une JV affichera donc, sous **IFRS**, une **ligne nette unique** (MEE), mais pourra remonter sous **RPC** **50 % de chaque actif, passif, produit et charge** (intégration proportionnelle) → des **ratios d'endettement et de CA très différents**. Le **CO** ne tranche **aucune** méthode : il **impose la consolidation** (art. 963) et **renvoie au référentiel reconnu** retenu (art. 963b)."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "IFRS 11",
+         "color": "indigo",
+         "items": [
+          "**Deux types** : *joint operation* vs *joint venture*",
+          "Coentreprise → **MEE obligatoire (IAS 28)**",
+          "**Intégration proportionnelle INTERDITE**",
+          "Classement par **substance** (droits/obligations)",
+          "*Disclosures* → **IFRS 12**"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC 30",
+         "color": "emerald",
+         "items": [
+          "Notion de **coentreprise** (sans dichotomie systématique)",
+          "**Intégration proportionnelle AUTORISÉE** ou MEE",
+          "Accent sur la **direction conjointe** (plus souple)",
+          "Goodwill **amortissable** ou imputable aux fonds propres",
+          "Annexe RPC (moins détaillée)"
+         ]
+        },
+        {
+         "title": "CO art. 963-963b",
+         "color": "amber",
+         "items": [
+          "**Aucune** méthode imposée",
+          "Renvoi au **référentiel reconnu** (art. 963b)",
+          "**Consolidation obligatoire** (art. 963)",
+          "**Exemptions** de seuils (art. 963a)",
+          "Annexe légale"
+         ]
+        }
+       ],
+       "caption": "**LA divergence à retenir** : pour les coentreprises, **IFRS 11 INTERDIT** l'intégration proportionnelle (MEE imposée) là où **RPC 30 l'AUTORISE encore** → ratios d'endettement et de CA **très différents**. Le **CO** ne tranche aucune méthode : il **impose** la consolidation et **renvoie** au référentiel reconnu."
       }
      ]
     },
@@ -3319,6 +4143,65 @@
        "tone": "info",
        "title": "Place dans la trilogie du périmètre",
        "text": "IFRS 12 est la **couche « information »** de la famille consolidation : **IFRS 10/11 + IAS 28** régissent le **classement et la mesure**, **IFRS 12** régit **l'annexe**. Un placement sans contrôle ni influence (IFRS 9) relève, lui, des *disclosures* d'**IFRS 7**, pas d'IFRS 12."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "L'objectif unique d'IFRS 12 (IFRS 12.1)",
+       "steps": [
+        {
+         "label": "① NATURE",
+         "sub": "Quelle est la nature des intérêts détenus dans d'autres entités ?"
+        },
+        {
+         "label": "② RISQUES",
+         "sub": "Quels risques sont associés à ces intérêts ?"
+        },
+        {
+         "label": "③ EFFETS",
+         "sub": "Quels effets sur la situation financière, la performance et les flux de trésorerie ?"
+        },
+        {
+         "label": "= toute disclosure",
+         "sub": "Chaque information exigée sert l'un de ces trois axes : la grille de lecture de la norme"
+        }
+       ],
+       "accent": "emerald",
+       "caption": "Mnémo **NRE** : Nature — Risques — Effets. IFRS 12 **informe** sur ce que produisent IFRS 10/11, IAS 28 et IFRS 3 ; elle ne **mesure** rien."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "Filiales & partenariats",
+         "color": "indigo",
+         "items": [
+          "**Filiales** (IFRS 10) — contrôle",
+          "**Joint operations** (IFRS 11)",
+          "**Joint ventures** (IFRS 11 → IAS 28)"
+         ]
+        },
+        {
+         "title": "Associées",
+         "color": "teal",
+         "items": [
+          "**Entreprises associées** (IAS 28)",
+          "Influence notable",
+          "Mise en équivalence (MEE)"
+         ]
+        },
+        {
+         "title": "Structurées non conso.",
+         "color": "amber",
+         "items": [
+          "**Entités structurées NON consolidées**",
+          "Ex-« hors bilan » (titrisation, garanties)",
+          "**Risque de perte maximal** — l'apport phare"
+         ]
+        }
+       ],
+       "caption": "Les **4 catégories d'intérêts** couvertes par l'annexe unique d'IFRS 12 : filiales, partenariats, associées et **entités structurées non consolidées** — le grand apport de la norme."
       }
      ]
     },
@@ -3425,6 +4308,35 @@
        "tone": "info",
        "title": "Ce qu'IFRS 12 NE régit PAS (hors champ — IFRS 12.6)",
        "text": "- la **reconnaissance** et l'**évaluation** des intérêts (IFRS 10/11, IAS 28, IFRS 9) ;\n- les **régimes d'avantages du personnel** (IAS 19) ;\n- les **états séparés** d'une entité (IAS 27) — **SAUF** intérêts dans des entités structurées non consolidées, ou entité d'investissement ne présentant que des états séparés ;\n- un intérêt **sans** contrôle / contrôle conjoint / influence notable → **IFRS 9 + IFRS 7** ;\n- les **regroupements d'entreprises** (la transaction d'acquisition) → **IFRS 3**."
+      },
+      {
+       "type": "diagram",
+       "kind": "pyramid",
+       "title": "Les 5 sections de la norme (architecture des disclosures)",
+       "levels": [
+        {
+         "t": "1 · Jugements & hypothèses importants",
+         "d": "Comment a-t-on conclu au contrôle / contrôle conjoint / influence notable / type de partenariat / statut d'entité d'investissement"
+        },
+        {
+         "t": "2 · Intérêts dans des FILIALES",
+         "d": "Composition du groupe, NCI importantes, restrictions, entités structurées consolidées, variations de %"
+        },
+        {
+         "t": "3 · PARTENARIATS & ASSOCIÉES",
+         "d": "Infos financières résumées, JV si cotée, engagements & risques"
+        },
+        {
+         "t": "4 · Entités structurées NON consolidées",
+         "d": "Nature, ampleur, risque de perte maximal, soutien financier"
+        },
+        {
+         "t": "5 · ENTITÉS D'INVESTISSEMENT",
+         "d": "Statut, motifs, filiales non consolidées, soutien, restrictions"
+        }
+       ],
+       "accent": "emerald",
+       "caption": "Cinq blocs de disclosures, tous au service du triptyque **NATURE — RISQUES — EFFETS**."
       }
      ]
     },
@@ -3493,6 +4405,31 @@
        "tone": "key",
        "title": "Le réflexe « seuil franchi à rebours »",
        "text": "Dès qu'un **seuil est franchi à rebours** — consolider **sous 50 %**, **ne pas** consolider **au-dessus de 50 %**, MEE **sous 20 %**, JO malgré un véhicule distinct — le candidat doit **mentionner l'obligation de justifier le jugement** au titre d'IFRS 12. Ces *disclosures* rendent **auditables** les conclusions des normes de mesure."
+      },
+      {
+       "type": "diagram",
+       "kind": "flow",
+       "title": "Le réflexe « seuil franchi à rebours » → divulguer le jugement",
+       "steps": [
+        {
+         "label": "Contrôle < 50 %",
+         "sub": "Consolider sous 50 % (contrôle de fait, droits de vote potentiels) → justifier POURQUOI on consolide"
+        },
+        {
+         "label": "Pas de contrôle > 50 %",
+         "sub": "Ne PAS consolider au-dessus de 50 % (agent, droits protecteurs) → justifier POURQUOI on ne consolide pas"
+        },
+        {
+         "label": "Influence notable < 20 %",
+         "sub": "MEE sous le seuil (siège au conseil) → réfuter la présomption IAS 28"
+        },
+        {
+         "label": "JO via véhicule distinct",
+         "sub": "Joint operation malgré une structure à resp. limitée → justifier que ce n'est pas une JV"
+        }
+       ],
+       "accent": "indigo",
+       "caption": "Dès qu'une conclusion est **contre-intuitive**, IFRS 12.7-9 impose de **divulguer le raisonnement** : ces disclosures rendent **auditables** les conclusions des normes de mesure."
       }
      ]
     },
@@ -3623,6 +4560,52 @@
        "tone": "warn",
        "title": "Avant éliminations, pas après",
        "text": "Les infos financières résumées des **NCI importantes** se présentent en principe **avant éliminations** intragroupes (vision de l'entité détenue), ajustées aux méthodes du groupe. Livrer un chiffre déjà **retraité de l'intragroupe** est une erreur classique."
+      },
+      {
+       "type": "diagram",
+       "kind": "split",
+       "title": "Filiale F — actif net 1 000 : poids du groupe vs minoritaires",
+       "parts": [
+        {
+         "label": "Groupe M (70 %)",
+         "value": 70,
+         "color": "indigo"
+        },
+        {
+         "label": "NCI / minoritaires (30 %)",
+         "value": 30,
+         "color": "amber"
+        }
+       ],
+       "caption": "M détient **70 %** de F, NCI **30 %**. NCI cumulés au bilan = 30 % × actif net 1 000 = **300**. IFRS 12 rend **lisible le poids des minoritaires** : résultat attribué **90**, OCI **12**, résultat global **102**, dividendes NCI **18**."
+      },
+      {
+       "type": "diagram",
+       "kind": "waterfall",
+       "title": "Réconciliation des NCI cumulés (preuve du chiffre du bilan)",
+       "items": [
+        {
+         "label": "NCI à l'ouverture (30 % × 760)",
+         "value": 228,
+         "kind": "add"
+        },
+        {
+         "label": "+ Résultat global attribué aux NCI",
+         "value": 102,
+         "kind": "add"
+        },
+        {
+         "label": "− Dividendes versés aux NCI",
+         "value": 18,
+         "kind": "sub"
+        },
+        {
+         "label": "= NCI cumulés à la clôture (≈)",
+         "value": 312,
+         "kind": "total"
+        }
+       ],
+       "caption": "Mécanique pédagogique : **ouverture + résultat global attribué − dividendes NCI**. 228 + 102 − 18 ≈ **312** (le petit écart avec les 300 du bilan vient des hypothèses de distribution ; à l'examen, c'est la **mécanique** qui compte)."
       }
      ]
     },
@@ -3790,6 +4773,46 @@
        "tone": "key",
        "title": "LA divergence à retenir",
        "text": "**IFRS 12 est de loin la plus exigeante** : transparence des **jugements**, **NCI détaillées**, **infos financières résumées** par entité importante, et surtout exposition des **entités structurées non consolidées** (**risque de perte maximal**). **RPC 30** se limite pour l'essentiel à la **liste des sociétés consolidées** (siège, % de détention, méthode) ; le **CO art. 963b** ne pose que le **principe** d'une annexe consolidée et **renvoie à la norme reconnue** choisie. Citer cet écart **dès qu'une question oppose les référentiels sur l'INFORMATION** (et non la mesure)."
+      },
+      {
+       "type": "diagram",
+       "kind": "columns",
+       "cols": [
+        {
+         "title": "IFRS 12",
+         "color": "indigo",
+         "items": [
+          "**Jugements importants** à divulguer (contrôle, influence…)",
+          "**NCI détaillées** : résultat, cumuls, dividendes, infos résumées",
+          "**Infos financières résumées** par JV/associée importante",
+          "**Entités structurées non consolidées** : risque de perte maximal",
+          "**Entité d'investissement** : disclosures spécifiques"
+         ]
+        },
+        {
+         "title": "Swiss GAAP RPC 30",
+         "color": "emerald",
+         "items": [
+          "Jugements **non exigés** de façon comparable",
+          "**Liste des sociétés consolidées** (siège, %, méthode)",
+          "Infos résumées bien plus **succinctes**",
+          "Entités structurées : **pas d'équivalent**",
+          "Entité d'investissement : **notion inexistante**"
+         ]
+        },
+        {
+         "title": "CO art. 963–963b",
+         "color": "amber",
+         "items": [
+          "Jugements **non exigés**",
+          "**Liste** des entités (nom, siège, part de capital)",
+          "Infos résumées **non exigées**",
+          "Entités structurées : **pas d'équivalent**",
+          "Pose le **principe** d'une annexe + renvoie au référentiel reconnu"
+         ]
+        }
+       ],
+       "caption": "**LA** divergence : IFRS 12 exige **BEAUCOUP PLUS** que RPC 30 et le CO art. 963b. Même groupe → annexe IFRS très volumineuse vs quelques lignes côté suisse. À citer dès qu'une question oppose les référentiels sur l'**INFORMATION** (et non la mesure)."
       }
      ]
     },
