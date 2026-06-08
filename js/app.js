@@ -88,6 +88,7 @@ const TAB_LABELS = {
     podcasts: '🎧 Podcasts',
     hec: '🎓 HEC',
     oral: '🎤 Oral',
+    conso: '📊 Conso',
     flashcards: 'Flashcards' // legacy redirect
 };
 
@@ -122,7 +123,7 @@ function navigate(tab, subTab) {
     main.setAttribute('aria-busy', 'true');
     main.innerHTML = '<div class="text-center" style="padding:60px"><div class="page-title">Chargement...</div></div>';
     // Full-width pages remove the 1400px cap
-    const fullWidthTabs = ['modules', 'fs'];
+    const fullWidthTabs = ['modules', 'fs', 'conso'];
     const widthClass = fullWidthTabs.includes(tab) ? ' full-width' : '';
     main.className = 'main-content fade-in' + widthClass;
     void main.offsetWidth;
@@ -164,6 +165,10 @@ function navigate(tab, subTab) {
         case 'oral':
             if (typeof renderOral === 'function') renderOral(main);
             else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module Oral en cours de chargement...</p>';
+            break;
+        case 'conso':
+            if (typeof renderConso === 'function') renderConso(main);
+            else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module Conso en cours de chargement...</p>';
             break;
         default: main.innerHTML = '<p>Page inconnue.</p>';
     }
