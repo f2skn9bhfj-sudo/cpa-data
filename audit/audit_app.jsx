@@ -758,8 +758,10 @@ function AuditBook({ book, onBack }) {
         <div key={pi} className="mb-4">
           <div className="text-sm font-bold text-slate-800 mb-2">{p.titre} <span className="text-slate-400 font-normal">({(p.fiches || []).filter(x => x.fiche).length})</span></div>
           <div className="space-y-1.5">{(p.fiches || []).map((f, fi) => {
+            if (f.header) return <div key={fi} className="text-[12px] font-bold text-violet-600 pt-2 pb-0.5" style={{ paddingLeft: ((f.depth || 1) - 1) * 12 }}>{f.titre}</div>;
             const avail = !!f.fiche;
-            return <button key={fi} disabled={!avail} onClick={() => { if (avail) { setChap({ pi, fi }); try { window.scrollTo(0, 0); } catch (e) {} } }} className={`w-full text-left rounded-xl border p-3 flex items-center gap-3 transition-all ${avail ? "bg-white border-slate-200 hover:border-violet-300 hover:shadow-sm cursor-pointer" : "bg-slate-50 border-slate-100 opacity-60 cursor-default"}`}><span>📖</span><span className="flex-1 text-sm font-medium text-slate-800">{f.titre}</span>{avail ? <ArrowRight size={15} className="text-slate-300" /> : <span className="text-[10px] text-slate-400">à venir</span>}</button>;
+            const indent = (f.depth || 0) > 1 ? (f.depth - 1) * 12 : 0;
+            return <button key={fi} disabled={!avail} onClick={() => { if (avail) { setChap({ pi, fi }); try { window.scrollTo(0, 0); } catch (e) {} } }} style={{ marginLeft: indent }} className={`w-full text-left rounded-xl border p-3 flex items-center gap-3 transition-all ${avail ? "bg-white border-slate-200 hover:border-violet-300 hover:shadow-sm cursor-pointer" : "bg-slate-50 border-slate-100 opacity-60 cursor-default"}`}><span>📖</span><span className="flex-1 text-sm font-medium text-slate-800">{f.titre}</span>{avail ? <ArrowRight size={15} className="text-slate-300" /> : <span className="text-[10px] text-slate-400">à venir</span>}</button>;
           })}</div>
         </div>
       ))}
