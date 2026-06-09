@@ -127,7 +127,7 @@ function navigate(tab, subTab) {
     main.setAttribute('aria-busy', 'true');
     main.innerHTML = '<div class="text-center" style="padding:60px"><div class="page-title">Chargement...</div></div>';
     // Full-width pages remove the 1400px cap
-    const fullWidthTabs = ['modules', 'fs', 'conso'];
+    const fullWidthTabs = ['modules', 'fs', 'conso', 'oral'];
     const widthClass = fullWidthTabs.includes(tab) ? ' full-width' : '';
     main.className = 'main-content fade-in' + widthClass;
     void main.offsetWidth;
