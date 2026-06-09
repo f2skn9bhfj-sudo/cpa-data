@@ -31,8 +31,11 @@ function _auditSrc() {
     return 'audit/index.html?v=' + (v || Date.now());
 }
 
+let _auditContainer = null;
+
 function renderAudit(container) {
     if (!container) return;
+    _auditContainer = container;
     container.innerHTML = `
         <iframe id="auditFrame"
                 src="${_auditSrc()}"
@@ -45,4 +48,45 @@ function renderAudit(container) {
     setTimeout(_auditFit, 300);
     window.removeEventListener('resize', _auditFit);
     window.addEventListener('resize', _auditFit);
+}
+
+/* ── Pont vers les modules natifs Audit (Canvas / Mission / Seuils) ──
+   L'app React (iframe) poste un message ; on remplace l'iframe par le
+   module natif rendu dans la page parente (accès backend api()). ── */
+const _AUDIT_NATIVE = {
+    canvas:  { fn: 'renderCanvas',      label: 'Canvas Perso' },
+    mission: { fn: 'renderMission',     label: 'Mission Lab' },
+    seuils:  { fn: 'renderAuditSeuils', label: 'Seuils & Exercices' },
+};
+function _auditOpenNative(module) {
+    const c = _auditContainer;
+    const spec = _AUDIT_NATIVE[module];
+    if (!c || !spec) return;
+    window.removeEventListener('resize', _auditFit);
+    c.innerHTML = `
+        <div style="margin-bottom:14px">
+            <button id="auditNativeBack"
+                    style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #e2e8f0;
+                           color:#475569;padding:8px 14px;border-radius:9px;cursor:pointer;font-size:13px;font-weight:600">
+                ← Retour à l'Audit
+            </button>
+        </div>
+        <div id="auditNativeHost" class="audit-module"></div>`;
+    const back = document.getElementById('auditNativeBack');
+    if (back) back.addEventListener('click', () => renderAudit(c));
+    const host = document.getElementById('auditNativeHost');
+    const fn = window[spec.fn];
+    if (typeof fn === 'function') {
+        try { Promise.resolve(fn(host)).catch((e) => { host.innerHTML = `<div style="padding:30px;color:#dc2626;font-size:13px">Erreur ${spec.label} : ${e && e.message || e}</div>`; }); }
+        catch (e) { host.innerHTML = `<div style="padding:30px;color:#dc2626;font-size:13px">Erreur ${spec.label} : ${e && e.message || e}</div>`; }
+    } else {
+        host.innerHTML = `<div style="padding:30px;color:#64748b;font-size:13px">Module « ${spec.label} » indisponible (script non chargé).</div>`;
+    }
+}
+if (!window._auditNativeBridge) {
+    window._auditNativeBridge = true;
+    window.addEventListener('message', function (e) {
+        const d = e && e.data;
+        if (d && d.type === 'openAuditNative' && d.module) _auditOpenNative(d.module);
+    });
 }

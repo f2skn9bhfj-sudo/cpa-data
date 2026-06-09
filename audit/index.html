@@ -789,6 +789,13 @@ function pywebApi() {
   const tryGet = (w) => { try { return (w && w.pywebview && w.pywebview.api) || null; } catch (e) { return null; } };
   return tryGet(window) || tryGet(window.parent) || tryGet(window.top) || null;
 }
+/* Ouvre un module natif (Canvas / Mission / Seuils) via la fenêtre parente */
+function openAuditNative(module) {
+  try {
+    const parent = (window.parent && window.parent !== window) ? window.parent : window;
+    parent.postMessage({ type: "openAuditNative", module: module }, "*");
+  } catch (e) {}
+}
 function auditToast(msg, kind) {
   let el = document.getElementById("audit-toast");
   if (!el) { el = document.createElement("div"); el.id = "audit-toast"; document.body.appendChild(el); }
@@ -1795,6 +1802,16 @@ function AuditHome({ data, book, onSection, onBook }) {
           <ArrowRight size={20} className="text-violet-400 shrink-0" />
         </button>
       )}
+      <div className="grid sm:grid-cols-3 gap-2.5">
+        {[{ m: "seuils", ic: "🎯", t: "Seuils & Exercices", d: "Tous les seuils (ordinaire/restreint, matérialité) + exercices pas-à-pas." },
+          { m: "canvas", ic: "🏢", t: "Canvas Perso", d: "Crée et gère tes propres engagements d'audit (desktop)." },
+          { m: "mission", ic: "🎬", t: "Mission Lab", d: "Mission immersive end-to-end chez EY (desktop)." }].map((n) => (
+          <button key={n.m} onClick={() => openAuditNative(n.m)} className="text-left bg-white border border-slate-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-1.5">
+            <div className="flex items-center gap-2"><span className="text-xl">{n.ic}</span><span className="font-bold text-sm text-violet-700">{n.t}</span></div>
+            <div className="text-xs text-slate-500 leading-snug">{n.d}</div>
+          </button>
+        ))}
+      </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
         {keys.map((k) => { const s = data[k]; return (
           <button key={k} onClick={() => onSection(k)} className="text-left bg-white border border-slate-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-1.5">
