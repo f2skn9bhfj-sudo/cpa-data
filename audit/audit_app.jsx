@@ -24,6 +24,8 @@ function mdToHtml(md) {
       continue;
     }
     const t = ln.trim();
+    const hd = t.match(/^(#{1,4})\s+(.+)$/);
+    if (hd) { const lvl = Math.min(hd[1].length + 2, 6); h += "<h" + lvl + ">" + mdInlineHtml(hd[2]) + "</h" + lvl + ">"; i++; continue; }
     if (/^[-•]\s+/.test(t)) { const items = []; while (i < lines.length && /^[-•]\s+/.test(lines[i].trim())) { items.push(lines[i].trim().replace(/^[-•]\s+/, "")); i++; } h += "<ul>" + items.map((x) => "<li>" + mdInlineHtml(x) + "</li>").join("") + "</ul>"; continue; }
     if (/^>\s?/.test(t)) { h += "<blockquote>" + mdInlineHtml(t.replace(/^>\s?/, "")) + "</blockquote>"; i++; continue; }
     if (t) h += "<p>" + mdInlineHtml(t) + "</p>";
@@ -72,6 +74,39 @@ function openPrint(title, inner) {
     + '</style></head><body>' + inner + '</body></html>');
   w.document.close();
   setTimeout(function () { try { w.focus(); w.print(); } catch (e) {} }, 500);
+}
+/* Accès au bridge pywebview (depuis l'iframe → window, parent, top) */
+function pywebApi() {
+  const tryGet = (w) => { try { return (w && w.pywebview && w.pywebview.api) || null; } catch (e) { return null; } };
+  return tryGet(window) || tryGet(window.parent) || tryGet(window.top) || null;
+}
+function auditToast(msg, kind) {
+  let el = document.getElementById("audit-toast");
+  if (!el) { el = document.createElement("div"); el.id = "audit-toast"; document.body.appendChild(el); }
+  const bg = kind === "err" ? "#dc2626" : kind === "info" ? "#475569" : "#7c3aed";
+  el.textContent = msg;
+  el.style.cssText = "position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:99999;padding:10px 18px;border-radius:10px;font:600 13px/1.3 system-ui,sans-serif;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:80vw;text-align:center;opacity:1;transition:opacity .4s;background:" + bg;
+  clearTimeout(auditToast._t);
+  auditToast._t = setTimeout(() => { el.style.opacity = "0"; }, kind === "info" ? 8000 : 3200);
+}
+/* Téléchargement PDF : desktop → Python (vrai PDF dans Téléchargements) ; navigateur → impression */
+function downloadAuditPdf(std, course, isFiche) {
+  const num = std && std.num != null ? String(std.num) : null;
+  const api = pywebApi();
+  const method = isFiche ? "export_fiche_pdf" : "export_cours_pdf";
+  const fallback = () => openPrint(std.code + (isFiche ? " — Fiche de révision" : ""), isFiche ? ficheInnerHtml(std, course) : courseInnerHtml(std, course));
+  if (api && num && typeof api[method] === "function") {
+    auditToast("⏳ Génération du PDF…", "info");
+    try {
+      Promise.resolve(api[method](num)).then((res) => {
+        if (res && res.ok) auditToast("✓ PDF enregistré : " + (res.filename || "dossier Téléchargements"), "ok");
+        else if (res && res.cancelled) auditToast("Export annulé.", "info");
+        else auditToast("⚠️ " + ((res && res.error) || "Échec de l'export PDF") + " — impression navigateur…", "err"), fallback();
+      }).catch(() => fallback());
+    } catch (e) { fallback(); }
+  } else {
+    fallback();
+  }
 }
 
 /* Schéma audit (pyramid / flow / matrix) → composant graphique / tableau */
@@ -438,11 +473,253 @@ function AuditExams({ section, onBack }) {
     </div>
   );
 }
+/* ═══ Cadre légal : sections → sous-sections (accordéon) ═══ */
+function CadreSub({ ss }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-slate-100 last:border-0">
+      <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between gap-2 px-4 py-2.5 text-left hover:bg-slate-50"><span className="text-sm font-semibold text-slate-700">{ss.title}</span><ChevronDown size={15} className={`text-violet-400 shrink-0 transition-transform ${open ? "rotate-180" : ""}`} /></button>
+      {open && <div className="px-4 pb-3.5 pt-0.5">{ss.content && <div className="text-sm text-slate-600 leading-relaxed mb-2"><MdBlock text={ss.content} /></div>}{(ss.key_points || []).length > 0 && <LKeypoints title="🔑 Points clés" items={ss.key_points} accent="violet" />}</div>}
+    </div>
+  );
+}
+function AuditCadre({ section, onBack }) {
+  return (
+    <div>
+      <ABack onBack={onBack} /><SectionHero section={section} fallbackIcon="⚖️" />
+      {(section.sections || []).map((s, i) => (
+        <div key={i} className="mb-3 rounded-2xl border border-slate-200 bg-white overflow-hidden">
+          <div className="px-4 py-3 border-b border-slate-100 bg-slate-50/60"><div className="font-bold text-sm text-slate-800">📜 {s.title}</div>{s.intro && <div className="text-xs text-slate-500 mt-1 leading-relaxed"><MdInline text={s.intro} /></div>}</div>
+          <div>{(s.subsections || []).map((ss, j) => <CadreSub key={j} ss={ss} />)}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ═══ Comparatifs IFRS / RPC / CO (table + recherche) ═══ */
+function AuditComparatifs({ section, onBack }) {
+  const themes = section.themes || [];
+  const [q, setQ] = useState("");
+  const f = q.trim().toLowerCase();
+  const shown = f ? themes.filter(t => (t.title + " " + (t.nas_ref || "") + " " + (t.rows || []).map(r => r.aspect + " " + r.ifrs + " " + r.rpc + " " + r.co).join(" ")).toLowerCase().includes(f)) : themes;
+  return (
+    <div>
+      <ABack onBack={onBack} /><SectionHero section={section} fallbackIcon="📊" />
+      <div className="relative mb-4"><Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" /><input value={q} onChange={e => setQ(e.target.value)} placeholder="Rechercher un thème ou mot-clé…" className="w-full pl-9 pr-3 py-2 rounded-lg border border-slate-300 text-sm focus:border-violet-500 outline-none" /></div>
+      {shown.map((t, i) => (
+        <div key={i} className="mb-5">
+          <div className="flex items-center justify-between gap-2 mb-2"><div className="font-bold text-sm text-slate-800">📊 {t.title}</div>{t.nas_ref && <span className="text-[11px] text-violet-600 bg-violet-50 px-2.5 py-0.5 rounded-full"><MdInline text={t.nas_ref} /></span>}</div>
+          <div className="overflow-x-auto rounded-xl border border-slate-200"><table className="w-full text-xs"><thead><tr className="bg-slate-50"><th className="text-left px-3 py-2 font-semibold text-slate-600 w-1/5">Aspect</th><th className="text-left px-3 py-2 font-semibold text-emerald-600">IFRS / IAS</th><th className="text-left px-3 py-2 font-semibold text-blue-600">Swiss GAAP RPC</th><th className="text-left px-3 py-2 font-semibold text-amber-600">CO</th></tr></thead><tbody>{(t.rows || []).map((r, j) => <tr key={j} className="border-t border-slate-100 align-top"><td className="px-3 py-2 font-medium text-slate-700">{r.aspect}</td><td className="px-3 py-2 text-slate-600"><MdInline text={r.ifrs} /></td><td className="px-3 py-2 text-slate-600"><MdInline text={r.rpc} /></td><td className="px-3 py-2 text-slate-600"><MdInline text={r.co} /></td></tr>)}</tbody></table></div>
+        </div>
+      ))}
+      {shown.length === 0 && <div className="text-sm text-slate-400 text-center py-6">Aucun résultat.</div>}
+    </div>
+  );
+}
+
+/* ═══ Cycles d'audit (sélecteur + 5 catégories) ═══ */
+function CycBlock({ icon, title, items, color }) {
+  if (!items || !items.length) return null;
+  return <div className="mb-3"><div className="text-xs font-bold mb-1.5" style={{ color }}>{icon} {title} <span className="text-slate-400 font-medium">({items.length})</span></div><ul className="space-y-1">{items.map((it, i) => <li key={i} className="text-sm text-slate-600 flex gap-2"><span className="text-slate-300 shrink-0">•</span><span><MdInline text={it} /></span></li>)}</ul></div>;
+}
+function AuditCycles({ section, onBack }) {
+  const items = section.items || [];
+  const [sel, setSel] = useState(0);
+  const c = items[sel] || {};
+  return (
+    <div>
+      <ABack onBack={onBack} /><SectionHero section={section} fallbackIcon="🔄" />
+      <div className="flex flex-wrap gap-2 mb-4">{items.map((it, i) => <button key={i} onClick={() => setSel(i)} className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${i === sel ? "bg-violet-600 text-white border-violet-600" : "bg-white text-slate-600 border-slate-200 hover:border-violet-300"}`}>{it.icon || "🔄"} {it.title}</button>)}</div>
+      <div className="rounded-2xl border border-slate-200 bg-white p-5">
+        <div className="text-lg font-extrabold text-slate-800 mb-3">{c.icon || "🔄"} {c.title}</div>
+        <div className="grid sm:grid-cols-2 gap-x-6">
+          <div><CycBlock icon="⚠️" title="Risques typiques (NAS 315)" items={c.risks} color="#ef4444" /><CycBlock icon="🎯" title="Assertions concernées" items={c.assertions} color="#3b82f6" /></div>
+          <div><CycBlock icon="🛡️" title="Contrôles clés du SCI" items={c.controls} color="#10b981" /><CycBlock icon="🔬" title="Tests substantifs (TOD)" items={c.tests_substantive} color="#8b5cf6" /></div>
+        </div>
+        {(c.ey_tips || []).length > 0 && <div className="mt-2 pt-3 border-t border-slate-100"><CycBlock icon="💡" title="Tips terrain EY" items={c.ey_tips} color="#d97706" /></div>}
+      </div>
+    </div>
+  );
+}
+
+/* ═══ Terrain EY (phases + soft skills) ═══ */
+function TerrainCheck({ items }) {
+  const [ck, setCk] = useState({});
+  return <div className="mb-2"><div className="text-xs font-bold text-violet-600 mb-1">✅ Checklist</div>{items.map((it, i) => <label key={i} className="flex items-start gap-2 text-sm text-slate-600 py-0.5 cursor-pointer"><input type="checkbox" checked={!!ck[i]} onChange={e => setCk({ ...ck, [i]: e.target.checked })} className="mt-1 shrink-0" /><span className={ck[i] ? "line-through text-slate-400" : ""}><MdInline text={it} /></span></label>)}</div>;
+}
+function AuditTerrain({ section, onBack }) {
+  const phases = section.phases || [];
+  const soft = section.soft_skills || {};
+  const softLabels = { client_communication: "💬 Communication client", time_management: "⏱️ Gestion du temps", review_notes_handling: "📝 Review notes", common_mistakes: "🚫 Erreurs fréquentes" };
+  return (
+    <div>
+      <ABack onBack={onBack} /><SectionHero section={section} fallbackIcon="🛠️" />
+      {phases.map((p, i) => (
+        <ACollapse key={i} title={`${p.icon || "📌"} ${p.title}`} accent="violet" defaultOpen={i === 0}>
+          {p.objective && <div className="text-sm text-slate-600 italic mb-2 border-l-2 border-violet-200 pl-3"><MdInline text={p.objective} /></div>}
+          {(p.checklist || []).length > 0 && <TerrainCheck items={p.checklist} />}
+          {(p.deliverables || []).length > 0 && <LKeypoints title="📦 Livrables (workpapers)" items={p.deliverables} accent="emerald" />}
+          {(p.tools || []).length > 0 && <LKeypoints title="🔧 Outils EY" items={p.tools} accent="blue" />}
+        </ACollapse>
+      ))}
+      {Object.keys(soft).length > 0 && <ACollapse title="🤝 Soft skills du junior" accent="amber">{Object.entries(soft).map(([k, v]) => (Array.isArray(v) && v.length) ? <div key={k} className="mb-2"><div className="text-xs font-bold text-slate-700 mb-1">{softLabels[k] || k}</div><ul className="space-y-1">{v.map((x, j) => <li key={j} className="text-sm text-slate-600 flex gap-2"><span className="text-slate-300 shrink-0">•</span><span><MdInline text={x} /></span></li>)}</ul></div> : null)}</ACollapse>}
+    </div>
+  );
+}
+
+/* ═══ Procédures par assertion (légende + cycle → lignes) ═══ */
+function AuditProcedures({ section, onBack }) {
+  const ass = section.assertions_ref || [];
+  const cycles = section.cycles || [];
+  const [sel, setSel] = useState(0);
+  const c = cycles[sel] || {};
+  return (
+    <div>
+      <ABack onBack={onBack} /><SectionHero section={section} fallbackIcon="✅" />
+      {ass.length > 0 && <div className="rounded-xl border border-slate-200 bg-white p-3 mb-4"><div className="text-xs font-bold text-slate-700 mb-2">Assertions (ISA 315)</div><div className="flex flex-wrap gap-2">{ass.map((a, i) => <span key={i} className="text-[11px] px-2 py-1 rounded-lg" style={{ background: (a.color || "#7c3aed") + "18", color: a.color || "#7c3aed" }} title={a.def}><strong>{a.code}</strong> — {a.nom}</span>)}</div></div>}
+      <div className="flex flex-wrap gap-2 mb-4">{cycles.map((cy, i) => <button key={i} onClick={() => setSel(i)} className={`px-3 py-1.5 rounded-lg text-xs font-semibold border ${i === sel ? "text-white border-transparent" : "bg-white text-slate-600 border-slate-200 hover:border-violet-300"}`} style={i === sel ? { background: cy.color || "#7c3aed" } : {}}>{cy.icon || "📁"} {cy.nom}</button>)}</div>
+      <div className="rounded-2xl border border-slate-200 bg-white p-5">
+        <div className="text-lg font-extrabold text-slate-800 mb-2">{c.icon || "📁"} {c.nom}</div>
+        {(c.risques || []).length > 0 && <div className="mb-3"><div className="text-xs font-bold text-rose-600 mb-1">⚠️ Risques typiques</div><div className="flex flex-wrap gap-1.5">{c.risques.map((r, i) => <span key={i} className="text-[11px] bg-rose-50 text-rose-700 px-2 py-0.5 rounded">{r}</span>)}</div></div>}
+        <div className="space-y-2">{(c.lignes || []).map((l, i) => <div key={i} className="rounded-xl border border-slate-200 p-3"><div className="flex items-center gap-2 mb-1"><span className="text-[11px] font-bold text-white px-2 py-0.5 rounded shrink-0" style={{ background: c.color || "#7c3aed" }}>{l.assertion}</span><span className="text-sm font-semibold text-slate-800">{l.risque}</span></div><ul className="mt-1.5 space-y-1">{(l.procedures || []).map((p, j) => <li key={j} className="text-sm text-slate-600 flex gap-2"><span className="text-emerald-500 shrink-0">▸</span><span><MdInline text={p} /></span></li>)}</ul></div>)}</div>
+      </div>
+    </div>
+  );
+}
+
+/* ═══ Cas pratiques (liste → détail avec solutions révélables) ═══ */
+function CasQ({ q }) {
+  const [show, setShow] = useState(false);
+  return <div className="mb-2 rounded-xl border border-slate-200 bg-white p-3"><div className="text-sm font-semibold text-slate-800 mb-1.5"><MdInline text={q.q} /></div><button onClick={() => setShow(!show)} className="text-xs px-2.5 py-1 rounded-md border border-violet-200 text-violet-700 bg-violet-50 hover:bg-violet-100">{show ? "Masquer la solution" : "Voir la solution"}</button>{show && <div className="mt-2 text-sm text-slate-600 leading-relaxed border-l-2 border-emerald-300 pl-3"><MdBlock text={q.solution} /></div>}</div>;
+}
+function CasDetail({ cas, onBack }) {
+  return (
+    <div>
+      <ABack onBack={onBack} label="Tous les cas" />
+      <div className="rounded-2xl border border-violet-200 bg-violet-50/50 p-5 mb-4"><h2 className="text-lg font-bold text-slate-800">📝 {cas.titre}</h2><div className="flex flex-wrap gap-2 mt-1 text-[11px] text-slate-500">{cas.niveau && <span>{cas.niveau}</span>}{cas.duree && <span>⏱️ {cas.duree}</span>}</div>{(cas.themes || []).length > 0 && <div className="flex flex-wrap gap-1 mt-2">{cas.themes.map((t, i) => <span key={i} className="text-[10px] bg-white text-violet-600 px-1.5 py-0.5 rounded border border-violet-200">{t}</span>)}</div>}</div>
+      {cas.contexte && <ACollapse title="📋 Contexte" accent="blue" defaultOpen={true}><MdBlock text={cas.contexte} className="text-sm text-slate-700" /></ACollapse>}
+      <ACollapse title={`❓ Questions (${(cas.questions || []).length})`} accent="violet" defaultOpen={true}>{(cas.questions || []).map((q, i) => <CasQ key={i} q={q} />)}</ACollapse>
+      {(cas.points_cles || []).length > 0 && <LKeypoints title="✅ Points clés à retenir" items={cas.points_cles} accent="emerald" />}
+    </div>
+  );
+}
+function AuditCas({ section, onBack }) {
+  const cas = section.cas || [];
+  const [sel, setSel] = useState(null);
+  if (sel != null && cas[sel]) return <CasDetail cas={cas[sel]} onBack={() => setSel(null)} />;
+  return (
+    <div>
+      <ABack onBack={onBack} /><SectionHero section={section} fallbackIcon="📝" />
+      <div className="grid sm:grid-cols-2 gap-2">{cas.map((c, i) => <button key={i} onClick={() => setSel(i)} className="text-left rounded-xl border border-slate-200 bg-white p-4 hover:shadow-md hover:-translate-y-0.5 transition-all"><div className="font-semibold text-sm text-slate-800">📝 {c.titre}</div><div className="flex flex-wrap gap-2 mt-1 text-[11px] text-slate-400">{c.niveau && <span className="bg-slate-100 px-2 py-0.5 rounded">{c.niveau}</span>}{c.duree && <span>⏱️ {c.duree}</span>}<span>{(c.questions || []).length} questions</span></div>{(c.themes || []).length > 0 && <div className="flex flex-wrap gap-1 mt-1.5">{c.themes.map((t, j) => <span key={j} className="text-[10px] bg-violet-50 text-violet-600 px-1.5 py-0.5 rounded">{t}</span>)}</div>}</button>)}</div>
+    </div>
+  );
+}
+
+/* ═══ Lexique trilingue (catégories + recherche) ═══ */
+function lexTerm(it) { return it.acronym || it.terme || it.expression || it.sigle || it.fr || it.mot || it.term || Object.values(it)[0]; }
+function LexRow({ it }) {
+  const term = lexTerm(it);
+  const fr = it.fr && it.fr !== term ? it.fr : null;
+  const ctx = it.context || it.def || it.sens || it.explication || it.definition;
+  return <div className="rounded-xl border border-slate-200 bg-white p-3"><div className="text-sm font-bold text-violet-700">{term}{fr && <span className="font-normal text-slate-700"> — {fr}</span>}</div><div className="flex flex-wrap gap-x-3 gap-y-0.5 mt-0.5 text-[12px]">{it.en && <span className="text-slate-500">🇬🇧 {it.en}</span>}{it.de && <span className="text-slate-400">🇩🇪 {it.de}</span>}</div>{ctx && <div className="text-xs text-slate-500 mt-1 leading-relaxed">{ctx}</div>}</div>;
+}
+function AuditLexique({ section, onBack }) {
+  const cats = section.categories || [];
+  const [q, setQ] = useState("");
+  const f = q.trim().toLowerCase();
+  return (
+    <div>
+      <ABack onBack={onBack} /><SectionHero section={section} fallbackIcon="📖" />
+      <div className="relative mb-4"><Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" /><input value={q} onChange={e => setQ(e.target.value)} placeholder="Rechercher un terme, sigle, traduction…" className="w-full pl-9 pr-3 py-2 rounded-lg border border-slate-300 text-sm focus:border-violet-500 outline-none" /></div>
+      {cats.map((cat, ci) => {
+        const items = (cat.items || []).filter(it => !f || JSON.stringify(it).toLowerCase().includes(f));
+        if (!items.length) return null;
+        return <div key={ci} className="mb-4"><div className="flex items-center gap-2 mb-2"><span className="w-2.5 h-2.5 rounded-full" style={{ background: cat.color || "#7c3aed" }}></span><h3 className="text-sm font-bold text-slate-800">{cat.label}</h3><span className="text-[11px] text-slate-400">({items.length})</span></div><div className="space-y-1.5">{items.map((it, i) => <LexRow key={i} it={it} />)}</div></div>;
+      })}
+    </div>
+  );
+}
+
+/* ═══ Modèles & wording (templates copiables) ═══ */
+function ModeleCard({ t }) {
+  const [open, setOpen] = useState(false);
+  const body = t.contenu || t.wording || t.texte || "";
+  return <div className="rounded-xl border border-slate-200 bg-white overflow-hidden"><button onClick={() => setOpen(!open)} className="w-full text-left px-3.5 py-2.5 hover:bg-slate-50 flex items-center justify-between gap-2"><span><span className="block text-sm font-semibold text-slate-800">📄 {t.titre || t.title}</span>{t.contexte && <span className="text-xs text-slate-400">{t.contexte}</span>}</span><ChevronDown size={15} className={`text-slate-400 shrink-0 transition-transform ${open ? "rotate-180" : ""}`} /></button>{open && <div className="px-3.5 pb-3.5"><div className="bg-slate-50 rounded p-3 text-sm text-slate-700 whitespace-pre-line leading-relaxed" style={{ fontFamily: "Georgia, serif" }}>{body}</div><CopyBtn text={body} label="📋 Copier le modèle" /></div>}</div>;
+}
+function AuditModeles({ section, onBack }) {
+  const cats = section.categories || [];
+  return (
+    <div>
+      <ABack onBack={onBack} /><SectionHero section={section} fallbackIcon="📄" />
+      {cats.map((cat, ci) => <div key={ci} className="mb-4"><div className="flex items-center gap-2 mb-2"><span className="w-2.5 h-2.5 rounded-full" style={{ background: cat.color || "#7c3aed" }}></span><h3 className="text-sm font-bold text-slate-800">{cat.label}</h3></div><div className="space-y-2">{(cat.templates || []).map((t, i) => <ModeleCard key={i} t={t} />)}</div></div>)}
+    </div>
+  );
+}
+
+/* ═══ Timeline de mission (frise verticale) ═══ */
+function MiniList({ icon, title, items, color }) {
+  return <div className="mb-1"><div className="text-xs font-bold mb-1" style={{ color }}>{icon} {title}</div><ul className="space-y-0.5">{items.map((it, i) => <li key={i} className="text-[13px] text-slate-600 flex gap-1.5"><span className="text-slate-300 shrink-0">•</span><span><MdInline text={it} /></span></li>)}</ul></div>;
+}
+function AuditTimeline({ section, onBack }) {
+  const phases = section.phases || [];
+  return (
+    <div>
+      <ABack onBack={onBack} /><SectionHero section={section} fallbackIcon="🗓️" />
+      <div className="relative pl-6">
+        <div className="absolute left-2 top-1 bottom-1 w-0.5 bg-violet-200"></div>
+        {phases.map((p, i) => (
+          <div key={i} className="relative mb-4">
+            <div className="absolute -left-[18px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-white" style={{ background: p.color || "#7c3aed" }}></div>
+            <div className="rounded-xl border border-slate-200 bg-white p-4">
+              <div className="flex items-center justify-between gap-2"><div className="font-bold text-sm text-slate-800">{p.icon || "📌"} {p.nom}</div>{p.periode && <span className="text-[11px] text-violet-600 bg-violet-50 px-2 py-0.5 rounded-full">{p.periode}</span>}</div>
+              {p.objectif && <div className="text-sm text-slate-600 italic mt-1 mb-2"><MdInline text={p.objectif} /></div>}
+              <div className="grid sm:grid-cols-2 gap-x-4">{(p.activites || []).length > 0 && <MiniList icon="⚙️" title="Activités" items={p.activites} color="#3b82f6" />}{(p.livrables || []).length > 0 && <MiniList icon="📦" title="Livrables" items={p.livrables} color="#10b981" />}</div>
+              <div className="flex flex-wrap gap-2 mt-2 text-[11px]">{(p.normes || []).map((n, j) => <span key={j} className="bg-slate-100 text-slate-600 px-2 py-0.5 rounded"><MdInline text={n} /></span>)}{p.delais && <span className="text-amber-700 font-medium">⏰ {p.delais}</span>}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ═══ Blocs (fraude, indépendance, going concern, actualités) ═══ */
+function AuditBlocs({ section, onBack, fallbackIcon }) {
+  const blocs = section.blocs || [];
+  return (
+    <div>
+      <ABack onBack={onBack} /><SectionHero section={section} fallbackIcon={fallbackIcon || "📋"} />
+      {blocs.map((b, i) => (
+        <ACollapse key={i} title={`${b.icon || "▸"} ${b.titre}`} accent="violet" defaultOpen={i < 2}>
+          {b.intro && <MdBlock text={b.intro} className="text-sm text-slate-700 mb-2" />}
+          {b.table && Array.isArray(b.table.headers) && <LTable headers={b.table.headers} rows={b.table.rows} />}
+          {(b.liste || []).length > 0 && <ul className="space-y-1 my-2">{b.liste.map((x, j) => <li key={j} className="text-sm text-slate-600 flex gap-2"><span className="text-violet-400 shrink-0">▸</span><span><MdInline text={x} /></span></li>)}</ul>}
+          {b.warning && <LCallout tone="warn" title="À retenir" text={b.warning} />}
+        </ACollapse>
+      ))}
+    </div>
+  );
+}
+
 function AuditSection({ skey, section, onBack }) {
   if (skey === "outils") return <AuditOutils section={section} onBack={onBack} />;
   if (skey === "arbres") return <AuditArbres section={section} onBack={onBack} />;
   if (skey === "quiz") return <AuditQuizHub section={section} onBack={onBack} />;
   if (skey === "examens_blancs") return <AuditExams section={section} onBack={onBack} />;
+  if (skey === "cadre_legal") return <AuditCadre section={section} onBack={onBack} />;
+  if (skey === "comparatifs") return <AuditComparatifs section={section} onBack={onBack} />;
+  if (skey === "cycles") return <AuditCycles section={section} onBack={onBack} />;
+  if (skey === "terrain") return <AuditTerrain section={section} onBack={onBack} />;
+  if (skey === "procedures_assertions") return <AuditProcedures section={section} onBack={onBack} />;
+  if (skey === "cas_pratiques") return <AuditCas section={section} onBack={onBack} />;
+  if (skey === "lexique") return <AuditLexique section={section} onBack={onBack} />;
+  if (skey === "modeles") return <AuditModeles section={section} onBack={onBack} />;
+  if (skey === "timeline") return <AuditTimeline section={section} onBack={onBack} />;
+  if (skey === "fraude") return <AuditBlocs section={section} onBack={onBack} fallbackIcon="🚨" />;
+  if (skey === "independance") return <AuditBlocs section={section} onBack={onBack} fallbackIcon="⚖️" />;
+  if (skey === "goingconcern") return <AuditBlocs section={section} onBack={onBack} fallbackIcon="📉" />;
+  if (skey === "actualites") return <AuditBlocs section={section} onBack={onBack} fallbackIcon="🆕" />;
   return <AuditGeneric section={section} onBack={onBack} />;
 }
 
@@ -508,11 +785,17 @@ function ACollapse({ title, accent = "violet", defaultOpen = false, children }) 
 function AuditFiche({ course }) {
   const blocks = course.fiche_revision || [];
   if (!blocks.length) return <div className="text-sm text-slate-400 p-6 text-center">Pas de fiche de révision pour cette norme.</div>;
-  return <div>{blocks.map((b, i) => (
-    <ACollapse key={i} title={b.title} accent="violet" defaultOpen={i < 3}>
-      <div className="fiche-html text-sm text-slate-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: mdToHtml(b.body || "") }} />
-    </ACollapse>
-  ))}</div>;
+  return (
+    <div className="space-y-3">
+      <div className="text-[11px] text-slate-400 -mt-1 mb-1">Fiche condensée pour réviser vite — {blocks.length} blocs. Le bouton « 📥 Télécharger en PDF » en haut exporte cette fiche.</div>
+      {blocks.map((b, i) => (
+        <div key={i} className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+          <div className="px-4 py-2.5 bg-gradient-to-r from-violet-50 to-fuchsia-50 border-b border-violet-100"><span className="font-bold text-sm text-violet-800">{b.title}</span></div>
+          <div className="fiche-html text-sm text-slate-700 leading-relaxed px-4 py-3" dangerouslySetInnerHTML={{ __html: mdToHtml(b.body || "") }} />
+        </div>
+      ))}
+    </div>
+  );
 }
 
 function AuditCourse({ std, course, onBack }) {
@@ -526,7 +809,7 @@ function AuditCourse({ std, course, onBack }) {
         <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mr-1"><ArrowLeft size={15} /> Retour</button>
         <button onClick={() => setMode("cours")} className={tabCls(mode === "cours")}>📖 Cours complet</button>
         {hasFiche && <button onClick={() => setMode("fiche")} className={tabCls(mode === "fiche")}>📋 Fiche de révision</button>}
-        <button onClick={() => openPrint(std.code + (mode === "fiche" ? " — Fiche" : ""), mode === "fiche" ? ficheInnerHtml(std, course) : courseInnerHtml(std, course))}
+        <button onClick={() => downloadAuditPdf(std, course, mode === "fiche")}
           className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-violet-600 text-white hover:bg-violet-700">📥 Télécharger en PDF</button>
       </div>
       <div className="rounded-2xl border p-5 mb-4" style={{ borderColor: color + "55", background: color + "12" }}>
