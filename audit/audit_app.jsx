@@ -702,6 +702,71 @@ function AuditBlocs({ section, onBack, fallbackIcon }) {
   );
 }
 
+/* ═══ Base de cours — livre MSA / NCR (volume → sommaire → chapitre) ═══ */
+function BookQA({ qa }) {
+  const [show, setShow] = useState(false);
+  return <div className="mb-2 rounded-xl border border-slate-200 bg-white p-3"><div className="text-sm font-semibold text-slate-800 mb-1.5"><MdInline text={qa.q} /></div><button onClick={() => setShow(!show)} className="text-xs px-2.5 py-1 rounded-md border border-violet-200 text-violet-700 bg-violet-50 hover:bg-violet-100">{show ? "Masquer la réponse" : "Voir la réponse"}</button>{show && <div className="mt-2 text-sm text-slate-600 leading-relaxed border-l-2 border-emerald-300 pl-3"><MdBlock text={qa.a} /></div>}</div>;
+}
+function BookChapter({ item, partieTitle, onBack, onPrev, onNext, position }) {
+  const f = item.fiche || {};
+  return (
+    <div>
+      <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
+        <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600"><ArrowLeft size={15} /> Sommaire</button>
+        <div className="flex items-center gap-2">{position && <span className="text-[11px] text-slate-400">{position}</span>}{onPrev && <button onClick={onPrev} className="text-xs px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50">← Précédent</button>}{onNext && <button onClick={onNext} className="text-xs px-3 py-1.5 rounded-lg bg-violet-600 text-white font-semibold">Suivant →</button>}</div>
+      </div>
+      <div className="rounded-2xl border border-violet-200 bg-violet-50/40 p-5 mb-4">
+        {partieTitle && <div className="text-[11px] text-violet-500 font-semibold mb-1">{partieTitle}</div>}
+        <h2 className="text-xl font-bold text-slate-800">{f.title || item.titre}</h2>
+        <div className="flex flex-wrap gap-2 mt-1 text-[11px] text-slate-500">{f.niveau && <span className="bg-white px-2 py-0.5 rounded border border-slate-200">{f.niveau}</span>}{f.normes && <span>📏 <MdInline text={f.normes} /></span>}</div>
+        {f.summary && <div className="mt-2 text-sm text-slate-700"><MdBlock text={f.summary} /></div>}
+      </div>
+      {f.bases_legales && <div className="mb-3"><LCallout tone="info" title="⚖️ Bases légales" text={f.bases_legales} /></div>}
+      {(f.sections || []).map((s, i) => (
+        <ACollapse key={i} title={s.title} accent="violet" defaultOpen={i < 2}>
+          {s.content && <MdBlock text={s.content} className="text-sm text-slate-700" />}
+          {s.key_point && <div className="mt-2"><LCallout tone="key" title="🔑 Point clé" text={s.key_point} /></div>}
+        </ACollapse>
+      ))}
+      {f.mnemonics && <div className="my-3"><LCallout tone="tip" title="🧠 Mnémo" text={f.mnemonics} /></div>}
+      {(f.auto_test || []).length > 0 && <ACollapse title={`🧪 Auto-test (${f.auto_test.length})`}>{f.auto_test.map((qa, i) => <BookQA key={i} qa={qa} />)}</ACollapse>}
+      {(f.sources || []).length > 0 && <ACollapse title="📚 Sources"><ul className="space-y-1">{f.sources.map((s, i) => <li key={i} className="text-xs text-slate-500 flex gap-2"><span className="shrink-0">•</span><span><MdInline text={s} /></span></li>)}</ul></ACollapse>}
+      <div className="flex justify-between mt-4">{onPrev ? <button onClick={onPrev} className="text-sm px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50">← Précédent</button> : <span />}{onNext && <button onClick={onNext} className="text-sm px-4 py-2 rounded-lg bg-violet-600 text-white font-semibold">Chapitre suivant →</button>}</div>
+    </div>
+  );
+}
+function AuditBook({ book, onBack }) {
+  const vols = [["controle_ordinaire", "📘"], ["controle_restreint", "📗"]].filter(([k]) => book && book[k]);
+  const [vol, setVol] = useState(vols.length ? vols[0][0] : null);
+  const [chap, setChap] = useState(null);
+  const V = (book && book[vol]) || {};
+  const flat = [];
+  (V.parties || []).forEach((p, pi) => (p.fiches || []).forEach((f, fi) => { if (f.fiche) flat.push({ pi, fi, f, partie: p.titre }); }));
+  if (chap) {
+    const partie = (V.parties || [])[chap.pi] || {};
+    const item = (partie.fiches || [])[chap.fi] || {};
+    const idx = flat.findIndex((x) => x.pi === chap.pi && x.fi === chap.fi);
+    const go = (d) => { const n = flat[idx + d]; if (n) { setChap({ pi: n.pi, fi: n.fi }); try { window.scrollTo(0, 0); } catch (e) {} } };
+    return <BookChapter item={item} partieTitle={partie.titre} onBack={() => setChap(null)} onPrev={idx > 0 ? () => go(-1) : null} onNext={idx >= 0 && idx < flat.length - 1 ? () => go(1) : null} position={idx >= 0 ? `${idx + 1} / ${flat.length}` : ""} />;
+  }
+  return (
+    <div>
+      <ABack onBack={onBack} />
+      <div className="rounded-2xl border border-violet-200 bg-violet-50/50 p-5 mb-4"><div className="flex items-center gap-2"><span className="text-2xl">📚</span><h2 className="text-xl font-bold text-slate-800">Base de cours — Manuel suisse d'audit</h2></div><p className="text-sm text-slate-600 mt-1">Le cours complet, chapitre par chapitre : MSA (contrôle ordinaire) et NCR (contrôle restreint).</p></div>
+      <div className="flex flex-wrap gap-2 mb-4">{vols.map(([k, ic]) => <button key={k} onClick={() => { setVol(k); setChap(null); }} className={`px-3.5 py-2 rounded-lg text-sm font-semibold border transition-colors ${vol === k ? "bg-violet-600 text-white border-violet-600" : "bg-white text-slate-600 border-slate-200 hover:border-violet-300"}`}>{ic} {book[k].titre}</button>)}</div>
+      {(V.parties || []).map((p, pi) => (
+        <div key={pi} className="mb-4">
+          <div className="text-sm font-bold text-slate-800 mb-2">{p.titre} <span className="text-slate-400 font-normal">({(p.fiches || []).filter(x => x.fiche).length})</span></div>
+          <div className="space-y-1.5">{(p.fiches || []).map((f, fi) => {
+            const avail = !!f.fiche;
+            return <button key={fi} disabled={!avail} onClick={() => { if (avail) { setChap({ pi, fi }); try { window.scrollTo(0, 0); } catch (e) {} } }} className={`w-full text-left rounded-xl border p-3 flex items-center gap-3 transition-all ${avail ? "bg-white border-slate-200 hover:border-violet-300 hover:shadow-sm cursor-pointer" : "bg-slate-50 border-slate-100 opacity-60 cursor-default"}`}><span>📖</span><span className="flex-1 text-sm font-medium text-slate-800">{f.titre}</span>{avail ? <ArrowRight size={15} className="text-slate-300" /> : <span className="text-[10px] text-slate-400">à venir</span>}</button>;
+          })}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function AuditSection({ skey, section, onBack }) {
   if (skey === "outils") return <AuditOutils section={section} onBack={onBack} />;
   if (skey === "arbres") return <AuditArbres section={section} onBack={onBack} />;
@@ -1001,15 +1066,24 @@ function AuditGeneric({ section, onBack }) {
 
 /* ── Accueil Audit (hub) ── */
 const AUDIT_ORDER = ["annuaire", "nas", "cadre_legal", "cycles", "procedures_assertions", "quiz", "cas_pratiques", "examens_blancs", "arbres", "comparatifs", "lexique", "outils", "modeles", "terrain", "independance", "fraude", "goingconcern", "timeline", "actualites"];
-function AuditHome({ data, onSection }) {
+function AuditHome({ data, book, onSection, onBook }) {
   const keys = AUDIT_ORDER.filter((k) => data[k]);
   Object.keys(data).forEach((k) => { if (k[0] !== "_" && k !== "annuaire_cours" && AUDIT_ORDER.indexOf(k) < 0) keys.push(k); });
+  const hasBook = book && (book.controle_ordinaire || book.controle_restreint);
+  const bookChapters = hasBook ? ["controle_ordinaire", "controle_restreint"].reduce((a, vk) => a + (((book[vk] || {}).parties || []).reduce((b, p) => b + (p.fiches || []).filter(f => f.fiche).length, 0)), 0) : 0;
   return (
     <div className="space-y-5">
       <div className="rounded-2xl bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white p-5 shadow">
         <h2 className="text-xl font-bold">Module Audit — NAS / ISA</h2>
         <p className="text-sm text-violet-100 mt-1">Les 47 normes ISA en cours complets, le cadre légal suisse, les cycles, les QCM et tous les outils du réviseur.</p>
       </div>
+      {hasBook && (
+        <button onClick={onBook} className="w-full text-left rounded-2xl border-2 border-violet-200 bg-gradient-to-r from-violet-50 to-fuchsia-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
+          <span className="text-4xl">📚</span>
+          <span className="flex-1"><span className="block font-bold text-base text-violet-800">Base de cours — Manuel suisse d'audit</span><span className="block text-sm text-slate-600 mt-0.5">Le cours complet chapitre par chapitre : MSA (contrôle ordinaire) + NCR (contrôle restreint).</span><span className="block text-xs text-violet-500 mt-1 font-medium">{bookChapters} chapitres · format livre</span></span>
+          <ArrowRight size={20} className="text-violet-400 shrink-0" />
+        </button>
+      )}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
         {keys.map((k) => { const s = data[k]; return (
           <button key={k} onClick={() => onSection(k)} className="text-left bg-white border border-slate-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-1.5">
@@ -1042,6 +1116,7 @@ function AuditApp() {
   if (loadErr) return <div className="min-h-screen bg-slate-100 flex items-center justify-center p-8 text-center text-rose-600 text-sm">{loadErr}</div>;
   if (!data) return <div className="min-h-screen bg-slate-100 flex items-center justify-center p-8 text-center text-slate-400 text-sm">Chargement du module Audit…</div>;
   const cours = data.annuaire_cours || {};
+  const book = (typeof window !== "undefined" && window.__AUDIT_BOOK__) || {};
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900">
       <header className="bg-gradient-to-r from-slate-900 to-violet-900 text-white">
@@ -1051,7 +1126,8 @@ function AuditApp() {
         </div>
       </header>
       <main className="max-w-5xl mx-auto px-4 py-6">
-        {view.k === "home" && <AuditHome data={data} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
+        {view.k === "home" && <AuditHome data={data} book={book} onBook={() => go({ k: "book" })} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
+        {view.k === "book" && <AuditBook book={book} onBack={() => go({ k: "home" })} />}
         {view.k === "annuaire" && (
           <div>
             <button onClick={() => go({ k: "home" })} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
