@@ -345,7 +345,7 @@ const PROCESS8 = [
 ];
 
 /* ===================== reference sections ===================== */
-function Overview({ goWizard }) {
+function Overview({ goWizard, onGo, lessons, onOpenLesson }) {
   const [pct, setPct] = useState(60);
   const [conjoint, setConjoint] = useState(false);
   let res;
@@ -362,6 +362,12 @@ function Overview({ goWizard }) {
   ];
   return (
     <div className="space-y-6">
+      {onGo && <ConsoHome onGo={onGo} lessons={lessons} onOpenLesson={onOpenLesson} />}
+      <div className="flex items-center gap-2 pt-2">
+        <Compass size={18} className="text-indigo-600" />
+        <h3 className="text-base font-bold text-slate-800">Le décideur de méthode</h3>
+        <span className="text-xs text-slate-400">— bouge le curseur pour trouver la bonne méthode</span>
+      </div>
       <Card title="Le principe" icon={<Info size={18} className="text-indigo-600" />} accent="indigo">
         <p className="text-sm text-slate-600 leading-relaxed">Consolider, c'est présenter un groupe de sociétés <strong>comme une seule entité économique</strong>. La <strong>méthode</strong> dépend du <strong>degré de contrôle</strong> de la mère sur chaque participation.</p>
       </Card>
@@ -2387,6 +2393,15 @@ export default function App() {
   const last = path ? STEPS[path].length - 1 : 0;
 
   const LESSONS = (typeof window !== "undefined" && window.__CONSO_LESSONS__) || { ifrs: { lessons: [] }, swissgaap: { lessons: [] } };
+  const [ifrsOpen, setIfrsOpen] = useState(null);
+  const [sgOpen, setSgOpen] = useState(null);
+  const consoGoLesson = (code) => {
+    const inIfrs = ((LESSONS.ifrs && LESSONS.ifrs.lessons) || []).some((l) => l.code === code);
+    if (inIfrs) { setSection("ifrs"); setIfrsOpen(code); }
+    else { setSection("swissgaap"); setSgOpen(code); }
+    try { window.scrollTo(0, 0); } catch (e) {}
+  };
+  if (typeof window !== "undefined") window.__consoGoToLesson = consoGoLesson;
   const sections = [
     { id: "overview", label: "Vue d'ensemble", icon: <Network size={16} /> },
     { id: "cours", label: "Cours complet", icon: <GraduationCap size={16} /> },
@@ -3102,10 +3117,10 @@ export default function App() {
       )}
 
       <main className="max-w-5xl mx-auto px-4 py-6">
-        {section === "overview" && <Overview goWizard={(p) => { setSection("wizard"); if (p) { setPath(p); setStep(0); } }} />}
+        {section === "overview" && <Overview goWizard={(p) => { setSection("wizard"); if (p) { setPath(p); setStep(0); } }} onGo={setSection} lessons={LESSONS} onOpenLesson={consoGoLesson} />}
         {section === "cours" && <CoursTab />}
-        {section === "ifrs" && <LessonHub pack={LESSONS.ifrs} domain="IFRS" accent="cyan" />}
-        {section === "swissgaap" && <LessonHub pack={LESSONS.swissgaap} domain="Swiss GAAP" accent="rose" />}
+        {section === "ifrs" && <LessonHub pack={LESSONS.ifrs} domain="IFRS" accent="cyan" open={ifrsOpen} onOpen={setIfrsOpen} />}
+        {section === "swissgaap" && <LessonHub pack={LESSONS.swissgaap} domain="Swiss GAAP" accent="rose" open={sgOpen} onOpen={setSgOpen} />}
         {section === "chain" && <ChainTab />}
         {section === "multi" && <MultiTab />}
         {section === "perimetrebuilder" && <PerimetreBuilder />}

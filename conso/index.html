@@ -384,7 +384,7 @@ const PROCESS8 = [
 ];
 
 /* ===================== reference sections ===================== */
-function Overview({ goWizard }) {
+function Overview({ goWizard, onGo, lessons, onOpenLesson }) {
   const [pct, setPct] = useState(60);
   const [conjoint, setConjoint] = useState(false);
   let res;
@@ -401,6 +401,12 @@ function Overview({ goWizard }) {
   ];
   return (
     <div className="space-y-6">
+      {onGo && <ConsoHome onGo={onGo} lessons={lessons} onOpenLesson={onOpenLesson} />}
+      <div className="flex items-center gap-2 pt-2">
+        <Compass size={18} className="text-indigo-600" />
+        <h3 className="text-base font-bold text-slate-800">Le décideur de méthode</h3>
+        <span className="text-xs text-slate-400">— bouge le curseur pour trouver la bonne méthode</span>
+      </div>
       <Card title="Le principe" icon={<Info size={18} className="text-indigo-600" />} accent="indigo">
         <p className="text-sm text-slate-600 leading-relaxed">Consolider, c'est présenter un groupe de sociétés <strong>comme une seule entité économique</strong>. La <strong>méthode</strong> dépend du <strong>degré de contrôle</strong> de la mère sur chaque participation.</p>
       </Card>
@@ -2426,6 +2432,15 @@ export default function App() {
   const last = path ? STEPS[path].length - 1 : 0;
 
   const LESSONS = (typeof window !== "undefined" && window.__CONSO_LESSONS__) || { ifrs: { lessons: [] }, swissgaap: { lessons: [] } };
+  const [ifrsOpen, setIfrsOpen] = useState(null);
+  const [sgOpen, setSgOpen] = useState(null);
+  const consoGoLesson = (code) => {
+    const inIfrs = ((LESSONS.ifrs && LESSONS.ifrs.lessons) || []).some((l) => l.code === code);
+    if (inIfrs) { setSection("ifrs"); setIfrsOpen(code); }
+    else { setSection("swissgaap"); setSgOpen(code); }
+    try { window.scrollTo(0, 0); } catch (e) {}
+  };
+  if (typeof window !== "undefined") window.__consoGoToLesson = consoGoLesson;
   const sections = [
     { id: "overview", label: "Vue d'ensemble", icon: <Network size={16} /> },
     { id: "cours", label: "Cours complet", icon: <GraduationCap size={16} /> },
@@ -3141,10 +3156,10 @@ export default function App() {
       )}
 
       <main className="max-w-5xl mx-auto px-4 py-6">
-        {section === "overview" && <Overview goWizard={(p) => { setSection("wizard"); if (p) { setPath(p); setStep(0); } }} />}
+        {section === "overview" && <Overview goWizard={(p) => { setSection("wizard"); if (p) { setPath(p); setStep(0); } }} onGo={setSection} lessons={LESSONS} onOpenLesson={consoGoLesson} />}
         {section === "cours" && <CoursTab />}
-        {section === "ifrs" && <LessonHub pack={LESSONS.ifrs} domain="IFRS" accent="cyan" />}
-        {section === "swissgaap" && <LessonHub pack={LESSONS.swissgaap} domain="Swiss GAAP" accent="rose" />}
+        {section === "ifrs" && <LessonHub pack={LESSONS.ifrs} domain="IFRS" accent="cyan" open={ifrsOpen} onOpen={setIfrsOpen} />}
+        {section === "swissgaap" && <LessonHub pack={LESSONS.swissgaap} domain="Swiss GAAP" accent="rose" open={sgOpen} onOpen={setSgOpen} />}
         {section === "chain" && <ChainTab />}
         {section === "multi" && <MultiTab />}
         {section === "perimetrebuilder" && <PerimetreBuilder />}
@@ -3199,13 +3214,29 @@ export default function App() {
    Interactif : quiz cliquables + score, exemples à corrigé masqué,
    sections repliables. ========================================================= */
 
+/* Renvois cliquables : un code de norme dans le texte → ouvre la leçon. */
+const NORM_CODE_RE = /(IAS 27|IAS 28|IFRS 10|IFRS 11|IFRS 12|IFRS 3|RPC 30)(?![\d/])/g;
+function NormLinks({ text, kb }) {
+  const segs = String(text).split(NORM_CODE_RE);
+  return segs.map((s, j) => {
+    if (/^(IAS 27|IAS 28|IFRS 10|IFRS 11|IFRS 12|IFRS 3|RPC 30)$/.test(s)) {
+      return (
+        <span key={kb + "_" + j} role="link" tabIndex={0}
+          onClick={(e) => { e.stopPropagation(); if (typeof window !== "undefined" && window.__consoGoToLesson) window.__consoGoToLesson(s); }}
+          className="text-indigo-600 font-semibold cursor-pointer underline decoration-dotted decoration-indigo-300 underline-offset-2 hover:text-indigo-800">{s}</span>
+      );
+    }
+    return <React.Fragment key={kb + "_" + j}>{s}</React.Fragment>;
+  });
+}
+
 function MdInline({ text }) {
   if (text == null) return null;
   const parts = String(text).split(/(\*\*[^*]+\*\*|`[^`]+`)/g);
   return parts.map((p, i) => {
-    if (/^\*\*[\s\S]+\*\*$/.test(p)) return <strong key={i} className="font-semibold text-slate-800">{p.slice(2, -2)}</strong>;
+    if (/^\*\*[\s\S]+\*\*$/.test(p)) return <strong key={i} className="font-semibold text-slate-800"><NormLinks text={p.slice(2, -2)} kb={i} /></strong>;
     if (/^`[\s\S]+`$/.test(p)) return <code key={i} className="px-1 py-0.5 rounded bg-slate-100 text-indigo-700 text-[0.85em]">{p.slice(1, -1)}</code>;
-    return <React.Fragment key={i}>{p}</React.Fragment>;
+    return <NormLinks key={i} text={p} kb={i} />;
   });
 }
 
@@ -3686,8 +3717,8 @@ function LessonView({ lesson, accent = "indigo", onBack }) {
   );
 }
 
-function LessonHub({ pack = {}, domain = "", accent = "indigo" }) {
-  const [open, setOpen] = useState(null);
+function LessonHub({ pack = {}, domain = "", accent = "indigo", open = null, onOpen }) {
+  const setOpen = onOpen || (() => {});
   const lessons = pack.lessons || [];
   if (!lessons.length) return <div className="text-sm text-slate-500 p-8 text-center">Contenu {domain} en préparation…</div>;
   if (open != null) {
@@ -3719,6 +3750,112 @@ function LessonHub({ pack = {}, domain = "", accent = "indigo" }) {
           );
         })}
       </div>
+    </div>
+  );
+}
+
+/* ===================== Recherche globale dans les cours ===================== */
+function LessonSearch({ lessons = {}, onOpen }) {
+  const [q, setQ] = useState("");
+  const all = [
+    ...(((lessons.ifrs || {}).lessons) || []).map((l) => ({ ...l, domain: "IFRS" })),
+    ...(((lessons.swissgaap || {}).lessons) || []).map((l) => ({ ...l, domain: "Swiss GAAP" })),
+  ];
+  const query = q.trim().toLowerCase();
+  let results = [];
+  if (query.length >= 2) {
+    all.forEach((l) => {
+      const secHits = (l.sections || []).filter((s) => {
+        const txt = (s.title || "") + " " + JSON.stringify(s.blocks || "");
+        return txt.toLowerCase().includes(query);
+      }).map((s) => s.title);
+      const titleHit = ((l.code || "") + " " + (l.title || "") + " " + (l.tagline || "")).toLowerCase().includes(query);
+      if (titleHit || secHits.length) results.push({ l, secHits: secHits.slice(0, 3) });
+    });
+  }
+  return (
+    <div>
+      <div className="relative">
+        <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+        <input value={q} onChange={(e) => setQ(e.target.value)}
+          placeholder="Rechercher dans les cours IFRS & Swiss GAAP (goodwill, NCI, mise en équivalence…)"
+          className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none" />
+        {q && <button onClick={() => setQ("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-sm">✕</button>}
+      </div>
+      {query.length >= 2 && (
+        <div className="mt-2 rounded-xl border border-slate-200 bg-white divide-y divide-slate-100 max-h-80 overflow-auto shadow-sm">
+          {results.length === 0 && <div className="p-3 text-sm text-slate-400">Aucun résultat pour « {q} ».</div>}
+          {results.map(({ l, secHits }) => (
+            <button key={l.domain + l.code} onClick={() => onOpen && onOpen(l.code)} className="w-full text-left p-3 hover:bg-slate-50 flex items-start gap-2.5">
+              <span className="text-lg shrink-0">{l.icon}</span>
+              <div className="min-w-0">
+                <div className="text-sm font-semibold text-slate-800">{l.code} — {l.title}</div>
+                {secHits.length > 0 && <div className="text-xs text-slate-500 truncate">↳ {secHits.join(" · ")}</div>}
+                <div className="text-[10px] uppercase tracking-wide text-slate-400 mt-0.5">{l.domain}</div>
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ===================== Accueil Conso (hub par catégories) ===================== */
+function ConsoHome({ onGo, lessons, onOpenLesson }) {
+  const groups = [
+    { t: "📚 Apprendre", color: "indigo", items: [
+      { id: "cours", label: "Cours complet de consolidation", sub: "Théorie A→Z, 14 chapitres" },
+      { id: "ifrs", label: "Normes IFRS", sub: "IAS 27/28 · IFRS 3/10/11/12 — interactif" },
+      { id: "swissgaap", label: "Swiss GAAP RPC", sub: "Cadre · RPC 30 · évaluation… — interactif" },
+      { id: "chain", label: "Contrôle vs intérêt", sub: "Chaînes de participation" },
+      { id: "wizard", label: "Assistant pas à pas", sub: "Dérouler une consolidation guidée" },
+    ] },
+    { t: "🧮 Calculer & outils", color: "emerald", items: [
+      { id: "goodwill", label: "Calculateur Goodwill" },
+      { id: "feuille", label: "Feuille de conso" },
+      { id: "resultat", label: "Résultat consolidé" },
+      { id: "conversion", label: "Conversion devises" },
+      { id: "perimetrebuilder", label: "Mon périmètre" },
+      { id: "multi", label: "Groupe multi-sociétés" },
+      { id: "process", label: "Process (8 étapes)" },
+    ] },
+    { t: "📖 Approfondir", color: "violet", items: [
+      { id: "glossary", label: "Glossaire" },
+      { id: "compare", label: "IFRS vs Swiss GAAP" },
+      { id: "perimetre", label: "Vie du périmètre" },
+      { id: "impairment", label: "Dépréciation (IAS 36)" },
+      { id: "casparticuliers", label: "Cas particuliers" },
+    ] },
+    { t: "🎯 S'entraîner", color: "rose", items: [
+      { id: "quiz", label: "Quiz consolidation" },
+    ] },
+  ];
+  return (
+    <div className="space-y-5 mb-2">
+      <div className="rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white p-5 shadow">
+        <h2 className="text-xl font-bold">Consolidation · IFRS · Swiss GAAP</h2>
+        <p className="text-sm text-indigo-100 mt-1">Théorie, calculs, écritures, normes interactives et entraînement — tout pour l'examen, au même endroit.</p>
+      </div>
+      <LessonSearch lessons={lessons} onOpen={onOpenLesson} />
+      {groups.map((g) => (
+        <div key={g.t}>
+          <div className="text-sm font-bold text-slate-700 mb-2">{g.t}</div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+            {g.items.map((it) => {
+              const a = lacc(g.color);
+              return (
+                <button key={it.id} onClick={() => onGo(it.id)}
+                  className="text-left bg-white border border-slate-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col">
+                  <div className="font-semibold text-sm text-slate-800">{it.label}</div>
+                  {it.sub && <div className="text-xs text-slate-500 mt-0.5 leading-snug">{it.sub}</div>}
+                  <span className={`text-xs font-semibold ${a.text} flex items-center gap-1 mt-1.5`}>Ouvrir <ArrowRight size={12} /></span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
