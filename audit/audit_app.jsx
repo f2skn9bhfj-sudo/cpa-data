@@ -947,19 +947,22 @@ function AuditAnnuaire({ annuaire, cours, onOpen }) {
         <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher une norme ISA (fraude, échantillonnage, opinion, NCI…)" className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none" />
       </div>
       {query.length >= 2 ? (
-        <div className="space-y-1.5">
-          <div className="text-xs text-slate-400 mb-1">{results.length} résultat(s)</div>
-          {results.map((st) => <StdRow key={st.num} st={st} onOpen={onOpen} hasCourse={!!cours[st.num]} />)}
+        <div>
+          <div className="text-xs text-slate-400 mb-1.5">{results.length} résultat(s)</div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {results.map((st) => <StdRow key={st.num} st={st} onOpen={onOpen} hasCourse={!!cours[st.num]} />)}
+          </div>
         </div>
       ) : (
         series.map((s) => (
           <div key={s.id} className="mb-5">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-2.5 h-2.5 rounded-full" style={{ background: s.color || "#7c3aed" }}></span>
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: s.color || "#7c3aed" }}></span>
               <h3 className="text-sm font-bold text-slate-800">{s.label} <span className="text-slate-400 font-normal">({s.range})</span></h3>
+              <span className="text-[11px] text-slate-400 ml-auto">{(s.standards || []).length} normes</span>
             </div>
             {s.intro && <p className="text-xs text-slate-500 mb-2 leading-relaxed"><MdInline text={s.intro} /></p>}
-            <div className="grid sm:grid-cols-2 gap-1.5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
               {(s.standards || []).map((st) => <StdRow key={st.num} st={{ ...st, color: s.color }} onOpen={onOpen} hasCourse={!!cours[st.num]} />)}
             </div>
           </div>
@@ -971,11 +974,12 @@ function AuditAnnuaire({ annuaire, cours, onOpen }) {
 function StdRow({ st, onOpen, hasCourse }) {
   return (
     <button onClick={() => hasCourse && onOpen(st)} disabled={!hasCourse}
-      className={`text-left rounded-xl border p-3 transition-all flex items-start gap-2.5 ${hasCourse ? "bg-white border-slate-200 hover:shadow-md hover:-translate-y-0.5 cursor-pointer" : "bg-slate-50 border-slate-100 opacity-60"}`}>
-      <span className="text-white text-[11px] font-bold px-2 py-0.5 rounded shrink-0 mt-0.5" style={{ background: st.color || "#7c3aed" }}>{st.code}</span>
-      <span className="min-w-0">
-        <span className="block text-sm font-medium text-slate-800 leading-snug">{st.title_fr}</span>
-        {st.status && <span className="text-[10px] text-slate-400">{st.status}</span>}
+      title={hasCourse ? "Ouvrir le cours complet" : "Cours à venir"}
+      className={`text-left rounded-lg border p-2.5 transition-all flex items-start gap-2 ${hasCourse ? "bg-white border-slate-200 hover:shadow-md hover:border-violet-300 hover:-translate-y-0.5 cursor-pointer" : "bg-slate-50 border-slate-100 opacity-60 cursor-default"}`}>
+      <span className="text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0 mt-0.5 leading-tight" style={{ background: st.color || "#7c3aed" }}>{st.code}</span>
+      <span className="min-w-0 flex-1">
+        <span className="block text-[13px] font-medium text-slate-800 leading-tight">{st.title_fr}</span>
+        <span className="flex items-center gap-1.5 mt-0.5">{st.status && <span className="text-[10px] text-slate-400">{st.status}</span>}{hasCourse && <span className="text-[10px] text-emerald-600 font-medium">· cours ✓</span>}</span>
       </span>
     </button>
   );
