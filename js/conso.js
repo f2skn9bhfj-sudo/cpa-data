@@ -26,11 +26,24 @@ function _consoFit() {
     frame.style.height = h + 'px';
 }
 
+// URL de l'iframe avec cache-busting : reprend le ?v=<build> de conso.js
+// (posé par build_mobile) → un refresh normal récupère la nouvelle version.
+// En mode bureau (pas de ?v), on bust par horodatage (fichier local, peu coûteux).
+function _consoSrc() {
+    let v = '';
+    try {
+        const s = document.querySelector('script[src*="js/conso.js"]');
+        const m = s && (s.getAttribute('src') || '').match(/[?&]v=([^&]+)/);
+        if (m) v = m[1];
+    } catch (_) {}
+    return 'conso/index.html?v=' + (v || Date.now());
+}
+
 function renderConso(container) {
     if (!container) return;
     container.innerHTML = `
         <iframe id="consoFrame"
-                src="conso/index.html"
+                src="${_consoSrc()}"
                 title="Consolidation — Outil pédagogique (IFRS / Swiss GAAP RPC)"
                 style="display:block;width:100%;height:70vh;border:0;border-radius:10px;background:#f8fafc;box-shadow:0 1px 3px rgba(15,23,42,0.06)"
                 referrerpolicy="no-referrer"></iframe>`;
