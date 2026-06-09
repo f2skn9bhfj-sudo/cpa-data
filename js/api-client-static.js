@@ -882,6 +882,10 @@
             return await api.get_norms_ifrs_rpc();
         },
 
+        // get_norms = progression SM-2 par norme (base desktop). Pas de DB en
+        // web → tableau vide (les onglets dégradent proprement, plus d'erreur console).
+        async get_norms() { return []; },
+
         async get_norm_detail(norm_code) {
             const data = await _loadJson('norms_ifrs_rpc.json');
             if (!data) return null;
