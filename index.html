@@ -10,9 +10,9 @@
         Migration progressive : chaque écran refait en Tailwind remplace
         ses règles dans style.css (Phase 4b).
     -->
-    <link rel="stylesheet" href="css/style.css?v=1781015959">
-    <link rel="stylesheet" href="css/pdf_export.css?v=1781015959">
-    <link rel="stylesheet" href="css/audit_cours.css?v=1781015959">
+    <link rel="stylesheet" href="css/style.css?v=1781016528">
+    <link rel="stylesheet" href="css/pdf_export.css?v=1781016528">
+    <link rel="stylesheet" href="css/audit_cours.css?v=1781016528">
 </head>
 <body>
     <!-- ARIA live region for page changes (assertive nav announcements) -->
@@ -21,29 +21,38 @@
     <!-- Tab Bar -->
     <nav class="tab-bar" id="tabBar" role="navigation" aria-label="Navigation principale">
         <span class="logo" aria-hidden="true">Swiss CPA</span>
-        <button class="tab active" data-tab="dashboard" onclick="navigate('dashboard')" aria-current="page" aria-label="Accueil">Accueil</button>
-        <button class="tab" data-tab="modules" onclick="navigate('modules')" aria-label="Modules">Modules</button>
-        <button class="tab trainer-tab" data-tab="trainer" onclick="navigate('trainer')" aria-label="Entraînement" style="background:linear-gradient(135deg,#064e3b,#065f46);color:#6ee7b7;border:1px solid #10b981;font-weight:700"><span aria-hidden="true">🎯 </span>Entraînement</button>
-        <button class="tab qcm-tab" data-tab="qcm" onclick="navigate('qcm')" aria-label="Module QCM" style="background:linear-gradient(135deg,#1e3a5f,#1e40af);color:#93c5fd;border:1px solid #3b82f6;font-weight:700"><span aria-hidden="true">❓ </span>QCM</button>
-        <button class="tab" data-tab="fcdb" onclick="navigate('fcdb')" aria-label="Base flashcards">🃏 BDD Flashcards</button>
-        <button class="tab" data-tab="compare" onclick="navigate('compare')" aria-label="Comparaisons">Comparaisons</button>
-        <button class="tab" data-tab="progress" onclick="navigate('progress')" aria-label="Statistiques">Stats</button>
-        <button class="tab" data-tab="fs" onclick="navigate('fs')" aria-label="États financiers">États Financiers</button>
-        <button class="tab" data-tab="references" onclick="navigate('references')" aria-label="Références">Références</button>
-        <button class="tab" data-tab="audit" onclick="navigate('audit')" aria-label="Module Audit" style="background:linear-gradient(135deg,#3c1d6e,#553c9a);color:#e9d8fd;border:1px solid #805ad5;font-weight:700"><span aria-hidden="true">🔍 </span>Audit</button>
-        <button class="tab" data-tab="podcasts" onclick="navigate('podcasts')" aria-label="Podcasts" style="background:linear-gradient(135deg,#1e3a5f,#312e81);color:#a5b4fc;border:1px solid #6366f1;font-weight:700"><span aria-hidden="true">🎧 </span>Podcasts</button>
-        <button class="tab english-tab" data-tab="english" onclick="navigate('english')" aria-label="Module Anglais" style="background:linear-gradient(135deg,#7c2d12,#9a3412);color:#fed7aa;border:1px solid #ea580c;font-weight:700"><span aria-hidden="true">🇬🇧 </span>Anglais</button>
-        <button class="tab" data-tab="hec" onclick="navigate('hec')" aria-label="Cours HEC" style="background:linear-gradient(135deg,#5A1020,#8B1A2E);color:#fecaca;border:1px solid #8B1A2E;font-weight:700"><span aria-hidden="true">🎓 </span>HEC</button>
-        <button class="tab" data-tab="oral" onclick="navigate('oral')" aria-label="Examen oral" style="background:linear-gradient(135deg,#1a0f2e,#3c1d6e);color:#e9d5ff;border:1px solid #7c3aed;font-weight:700"><span aria-hidden="true">🎤 </span>Oral</button>
-        <button class="tab" data-tab="conso" onclick="navigate('conso')" aria-label="Consolidation, IFRS et Swiss GAAP" style="background:linear-gradient(135deg,#312e81,#4f46e5);color:#e0e7ff;border:1px solid #4f46e5;font-weight:700"><span aria-hidden="true">📊 </span>Conso</button>
-        <div class="search-box" role="search">
-            <label for="globalSearch" class="sr-only">Rechercher dans toute l'application</label>
-            <input type="text" id="globalSearch" placeholder="Rechercher..." oninput="handleSearch(this.value)" onfocus="showSearchResults()" aria-describedby="searchHint" autocomplete="off" />
-            <span id="searchHint" class="sr-only">Ctrl+K pour activer · Échap pour fermer</span>
-            <div class="search-results" id="searchResults" role="listbox" aria-label="Résultats de recherche"></div>
+        <div class="nav-menu" id="navMenu">
+            <div class="nav-scroll" id="navScroll">
+                <button class="tab active" data-tab="dashboard" onclick="navigate('dashboard')" aria-current="page" aria-label="Accueil"><span class="tab-emoji" aria-hidden="true">🏠</span>Accueil</button>
+                <button class="tab" data-tab="modules" onclick="navigate('modules')" aria-label="Modules"><span class="tab-emoji" aria-hidden="true">📚</span>Modules</button>
+                <button class="tab" data-tab="trainer" onclick="navigate('trainer')" aria-label="Entraînement"><span class="tab-emoji" aria-hidden="true">🎯</span>Entraînement</button>
+                <button class="tab" data-tab="qcm" onclick="navigate('qcm')" aria-label="Module QCM"><span class="tab-emoji" aria-hidden="true">❓</span>QCM</button>
+                <button class="tab" data-tab="fcdb" onclick="navigate('fcdb')" aria-label="Base de flashcards"><span class="tab-emoji" aria-hidden="true">🃏</span>Flashcards</button>
+                <button class="tab" data-tab="compare" onclick="navigate('compare')" aria-label="Comparaisons"><span class="tab-emoji" aria-hidden="true">⚖️</span>Comparaisons</button>
+                <button class="tab" data-tab="progress" onclick="navigate('progress')" aria-label="Statistiques"><span class="tab-emoji" aria-hidden="true">📈</span>Stats</button>
+                <button class="tab" data-tab="fs" onclick="navigate('fs')" aria-label="États financiers"><span class="tab-emoji" aria-hidden="true">📑</span>États financiers</button>
+                <button class="tab" data-tab="references" onclick="navigate('references')" aria-label="Références"><span class="tab-emoji" aria-hidden="true">📖</span>Références</button>
+                <button class="tab" data-tab="audit" onclick="navigate('audit')" aria-label="Module Audit"><span class="tab-emoji" aria-hidden="true">🔍</span>Audit</button>
+                <button class="tab" data-tab="podcasts" onclick="navigate('podcasts')" aria-label="Podcasts"><span class="tab-emoji" aria-hidden="true">🎧</span>Podcasts</button>
+                <button class="tab" data-tab="english" onclick="navigate('english')" aria-label="Module Anglais"><span class="tab-emoji" aria-hidden="true">🇬🇧</span>Anglais</button>
+                <button class="tab" data-tab="hec" onclick="navigate('hec')" aria-label="Cours HEC"><span class="tab-emoji" aria-hidden="true">🎓</span>HEC</button>
+                <button class="tab" data-tab="oral" onclick="navigate('oral')" aria-label="Examen oral"><span class="tab-emoji" aria-hidden="true">🎤</span>Oral</button>
+                <button class="tab" data-tab="conso" onclick="navigate('conso')" aria-label="Consolidation, IFRS et Swiss GAAP"><span class="tab-emoji" aria-hidden="true">📊</span>Conso</button>
+            </div>
+            <div class="nav-right">
+                <div class="search-box" role="search">
+                    <label for="globalSearch" class="sr-only">Rechercher dans toute l'application</label>
+                    <input type="text" id="globalSearch" placeholder="Rechercher..." oninput="handleSearch(this.value)" onfocus="showSearchResults()" aria-describedby="searchHint" autocomplete="off" />
+                    <span id="searchHint" class="sr-only">Ctrl+K pour activer · Échap pour fermer</span>
+                    <div class="search-results" id="searchResults" role="listbox" aria-label="Résultats de recherche"></div>
+                </div>
+                <button class="theme-toggle" id="pdfExportBtn" onclick="pdfExportOpen()" aria-label="Exporter des cours en PDF" title="Exporter des cours en PDF"><span aria-hidden="true">📄</span></button>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Basculer thème clair/sombre" title="Basculer thème clair/sombre"><span aria-hidden="true">☀️</span></button>
+            </div>
         </div>
-        <button class="theme-toggle" id="pdfExportBtn" onclick="pdfExportOpen()" aria-label="Exporter des cours en PDF" title="Exporter des cours en PDF" style="margin-right:6px"><span aria-hidden="true">📄</span></button>
-        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Basculer thème clair/sombre" title="Basculer thème clair/sombre"><span aria-hidden="true">☀️</span></button>
+        <button class="nav-burger" id="navBurger" onclick="toggleNavMenu()" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
+            <span class="nav-burger-bars" aria-hidden="true"></span>
+        </button>
     </nav>
 
     <!-- PDF Export Modal (built dynamically by pdf_export.js) -->
@@ -73,40 +82,40 @@
     <!-- Scripts -->
     <!-- api-client.js DOIT être chargé en premier : il installe window.pywebview.api
          en mode web (no-op en mode desktop). Cf. commentaire dans le fichier. -->
-    <script src="js/api-client-static.js?v=1781015959"></script>
-    <script src="js/crossref.js?v=1781015959"></script>
-    <script src="js/search.js?v=1781015959"></script>
-    <script src="js/dashboard.js?v=1781015959"></script>
-    <script src="js/translator.js?v=1781015959"></script>
-    <script src="js/modules.js?v=1781015959"></script>
-    <script src="js/flashcards.js?v=1781015959"></script>
-    <script src="js/fcdb.js?v=1781015959"></script>
-    <script src="js/free_recall.js?v=1781015959"></script>
-    <script src="js/exam_mode.js?v=1781015959"></script>
-    <script src="js/references.js?v=1781015959"></script>
-    <script src="js/ref_glossary.js?v=1781015959"></script>
-    <script src="js/ref_seuils.js?v=1781015959"></script>
-    <script src="js/ref_cas.js?v=1781015959"></script>
-    <script src="js/ref_arbres.js?v=1781015959"></script>
-    <script src="js/ref_terrain.js?v=1781015959"></script>
-    <script src="js/comparisons.js?v=1781015959"></script>
-    <script src="js/fs_explorer.js?v=1781015959"></script>
-    <script src="js/progress.js?v=1781015959"></script>
-    <script src="js/qcm.js?v=1781015959"></script>
-    <script src="js/trainer.js?v=1781015959"></script>
-    <script src="js/audit.js?v=1781015959"></script>
-    <script src="js/audit_cours.js?v=1781015959"></script>
-    <script src="js/hec.js?v=1781015959"></script>
-    <script src="js/oral.js?v=1781015959"></script>
-    <script src="js/conso.js?v=1781015959"></script>
-    <script src="js/mission.js?v=1781015959"></script>
-    <script src="js/audit_seuils.js?v=1781015959"></script>
-    <script src="js/canvas.js?v=1781015959"></script>
-    <script src="js/english.js?v=1781015959"></script>
-    <script src="js/podcasts.js?v=1781015959"></script>
-    <script src="js/ai_explain.js?v=1781015959"></script>
-    <script src="js/pdf_export.js?v=1781015959"></script>
-    <script src="js/mindmap.js?v=1781015959"></script>
-    <script src="js/app.js?v=1781015959"></script>
+    <script src="js/api-client-static.js?v=1781016528"></script>
+    <script src="js/crossref.js?v=1781016528"></script>
+    <script src="js/search.js?v=1781016528"></script>
+    <script src="js/dashboard.js?v=1781016528"></script>
+    <script src="js/translator.js?v=1781016528"></script>
+    <script src="js/modules.js?v=1781016528"></script>
+    <script src="js/flashcards.js?v=1781016528"></script>
+    <script src="js/fcdb.js?v=1781016528"></script>
+    <script src="js/free_recall.js?v=1781016528"></script>
+    <script src="js/exam_mode.js?v=1781016528"></script>
+    <script src="js/references.js?v=1781016528"></script>
+    <script src="js/ref_glossary.js?v=1781016528"></script>
+    <script src="js/ref_seuils.js?v=1781016528"></script>
+    <script src="js/ref_cas.js?v=1781016528"></script>
+    <script src="js/ref_arbres.js?v=1781016528"></script>
+    <script src="js/ref_terrain.js?v=1781016528"></script>
+    <script src="js/comparisons.js?v=1781016528"></script>
+    <script src="js/fs_explorer.js?v=1781016528"></script>
+    <script src="js/progress.js?v=1781016528"></script>
+    <script src="js/qcm.js?v=1781016528"></script>
+    <script src="js/trainer.js?v=1781016528"></script>
+    <script src="js/audit.js?v=1781016528"></script>
+    <script src="js/audit_cours.js?v=1781016528"></script>
+    <script src="js/hec.js?v=1781016528"></script>
+    <script src="js/oral.js?v=1781016528"></script>
+    <script src="js/conso.js?v=1781016528"></script>
+    <script src="js/mission.js?v=1781016528"></script>
+    <script src="js/audit_seuils.js?v=1781016528"></script>
+    <script src="js/canvas.js?v=1781016528"></script>
+    <script src="js/english.js?v=1781016528"></script>
+    <script src="js/podcasts.js?v=1781016528"></script>
+    <script src="js/ai_explain.js?v=1781016528"></script>
+    <script src="js/pdf_export.js?v=1781016528"></script>
+    <script src="js/mindmap.js?v=1781016528"></script>
+    <script src="js/app.js?v=1781016528"></script>
 </body>
 </html>

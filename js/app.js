@@ -108,6 +108,10 @@ function navigate(tab, subTab) {
         if (isActive) t.setAttribute('aria-current', 'page');
         else t.removeAttribute('aria-current');
     });
+    // Referme le menu mobile et amène l'onglet actif dans la zone visible.
+    if (typeof closeNavMenu === 'function') closeNavMenu();
+    const _activeTab = document.querySelector('.tab-bar .tab.active');
+    if (_activeTab) { try { _activeTab.scrollIntoView({ inline: 'center', block: 'nearest' }); } catch (_) {} }
 
     // Show/hide sub-tabs
     const subBar = document.getElementById('subTabBar');
@@ -183,6 +187,28 @@ function navigate(tab, subTab) {
 
     hideSearchResults();
 }
+
+// ── Menu mobile (hamburger) ──────────────────────────────────────────
+function toggleNavMenu() {
+    const bar = document.getElementById('tabBar');
+    if (!bar) return;
+    const open = bar.classList.toggle('menu-open');
+    const burger = document.getElementById('navBurger');
+    if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function closeNavMenu() {
+    const bar = document.getElementById('tabBar');
+    if (!bar || !bar.classList.contains('menu-open')) return;
+    bar.classList.remove('menu-open');
+    const burger = document.getElementById('navBurger');
+    if (burger) burger.setAttribute('aria-expanded', 'false');
+}
+// Ferme le menu au clic en dehors de la barre, ou avec Échap.
+document.addEventListener('click', (e) => {
+    const bar = document.getElementById('tabBar');
+    if (bar && bar.classList.contains('menu-open') && !bar.contains(e.target)) closeNavMenu();
+});
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeNavMenu(); });
 
 // ── Barre de zoom globale ────────────────────────────────────────────
 // Zoome le contenu principal de l'app, peu importe l'onglet.
