@@ -81,15 +81,15 @@ function LTable({ title, headers = [], rows = [] }) {
   return (
     <div className="my-3">
       {title && <div className="text-sm font-semibold text-slate-700 mb-1.5">{title}</div>}
-      <div className="overflow-x-auto rounded-lg border border-slate-200">
-        <table className="w-full text-sm">
-          {headers.length > 0 && <thead><tr className="bg-slate-50 text-slate-500 text-xs">
-            {headers.map((h, i) => <th key={i} className="text-left px-3 py-2 font-medium"><MdInline text={h} /></th>)}
+      <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+        <table className="w-full text-sm border-collapse">
+          {headers.length > 0 && <thead><tr className="bg-violet-50 text-violet-700 text-xs">
+            {headers.map((h, i) => <th key={i} className={`text-left px-3 py-2.5 font-bold ${i > 0 ? "border-l border-white" : ""}`}><MdInline text={h} /></th>)}
           </tr></thead>}
           <tbody>
             {rows.map((r, i) => (
-              <tr key={i} className="border-t border-slate-100 align-top">
-                {r.map((c, j) => <td key={j} className={`px-3 py-2 ${j === 0 ? "font-medium text-slate-700" : "text-slate-600"}`}><MdInline text={c} /></td>)}
+              <tr key={i} className={`align-top ${i % 2 ? "bg-slate-50/50" : "bg-white"}`}>
+                {r.map((c, j) => <td key={j} className={`px-3 py-2.5 border-t border-slate-100 ${j > 0 ? "border-l" : ""} ${j === 0 ? "font-semibold text-slate-700" : "text-slate-600"}`}><MdInline text={c} /></td>)}
               </tr>
             ))}
           </tbody>

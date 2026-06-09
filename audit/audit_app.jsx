@@ -332,7 +332,15 @@ function Glossary({ terms }) {
 }
 function ABack({ onBack, label = "Accueil Audit" }) { return <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> {label}</button>; }
 function SectionHero({ section, fallbackIcon }) {
-  return <div className="rounded-2xl border border-violet-200 bg-violet-50/50 p-5 mb-4"><div className="flex items-center gap-2"><span className="text-2xl">{section._icon || fallbackIcon || "📋"}</span><h2 className="text-xl font-bold text-slate-800">{section._label}</h2></div>{section._description && <p className="text-sm text-slate-600 mt-1"><MdInline text={section._description} /></p>}</div>;
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-5 shadow-sm flex items-start gap-4">
+      <span className="text-2xl w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white shadow-sm shrink-0">{section._icon || fallbackIcon || "📋"}</span>
+      <div className="min-w-0">
+        <h2 className="text-xl font-bold text-slate-800 leading-tight">{section._label}</h2>
+        {section._description && <p className="text-sm text-slate-500 mt-1 leading-relaxed"><MdInline text={section._description} /></p>}
+      </div>
+    </div>
+  );
 }
 function AuditOutils({ section, onBack }) {
   const tools = section.ey_tools || [];
@@ -515,9 +523,29 @@ function AuditComparatifs({ section, onBack }) {
       <ABack onBack={onBack} /><SectionHero section={section} fallbackIcon="📊" />
       <div className="relative mb-4"><Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" /><input value={q} onChange={e => setQ(e.target.value)} placeholder="Rechercher un thème ou mot-clé…" className="w-full pl-9 pr-3 py-2 rounded-lg border border-slate-300 text-sm focus:border-violet-500 outline-none" /></div>
       {shown.map((t, i) => (
-        <div key={i} className="mb-5">
-          <div className="flex items-center justify-between gap-2 mb-2"><div className="font-bold text-sm text-slate-800">📊 {t.title}</div>{t.nas_ref && <span className="text-[11px] text-violet-600 bg-violet-50 px-2.5 py-0.5 rounded-full"><MdInline text={t.nas_ref} /></span>}</div>
-          <div className="overflow-x-auto rounded-xl border border-slate-200"><table className="w-full text-xs"><thead><tr className="bg-slate-50"><th className="text-left px-3 py-2 font-semibold text-slate-600 w-1/5">Aspect</th><th className="text-left px-3 py-2 font-semibold text-emerald-600">IFRS / IAS</th><th className="text-left px-3 py-2 font-semibold text-blue-600">Swiss GAAP RPC</th><th className="text-left px-3 py-2 font-semibold text-amber-600">CO</th></tr></thead><tbody>{(t.rows || []).map((r, j) => <tr key={j} className="border-t border-slate-100 align-top"><td className="px-3 py-2 font-medium text-slate-700">{r.aspect}</td><td className="px-3 py-2 text-slate-600"><MdInline text={r.ifrs} /></td><td className="px-3 py-2 text-slate-600"><MdInline text={r.rpc} /></td><td className="px-3 py-2 text-slate-600"><MdInline text={r.co} /></td></tr>)}</tbody></table></div>
+        <div key={i} className="mb-5 rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+          <div className="flex items-center justify-between gap-2 px-4 py-3 border-b border-slate-100 bg-gradient-to-r from-violet-50/70 to-transparent">
+            <div className="font-bold text-sm text-slate-800">📊 {t.title}</div>
+            {t.nas_ref && <span className="text-[11px] text-violet-700 bg-white border border-violet-200 px-2.5 py-0.5 rounded-full font-medium shrink-0"><MdInline text={t.nas_ref} /></span>}
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs border-collapse">
+              <thead><tr>
+                <th className="text-left px-3 py-2.5 font-bold text-slate-500 bg-slate-50 w-[18%]">Aspect</th>
+                <th className="text-left px-3 py-2.5 font-bold text-emerald-700 bg-emerald-50/70 border-l border-white">🟢 IFRS / IAS</th>
+                <th className="text-left px-3 py-2.5 font-bold text-blue-700 bg-blue-50/70 border-l border-white">🔵 Swiss GAAP RPC</th>
+                <th className="text-left px-3 py-2.5 font-bold text-amber-700 bg-amber-50/70 border-l border-white">🟠 CO</th>
+              </tr></thead>
+              <tbody>{(t.rows || []).map((r, j) => (
+                <tr key={j} className={`align-top ${j % 2 ? "bg-slate-50/40" : "bg-white"}`}>
+                  <td className="px-3 py-2.5 font-semibold text-slate-700 border-t border-slate-100">{r.aspect}</td>
+                  <td className="px-3 py-2.5 text-slate-600 border-t border-l border-slate-100 leading-relaxed"><MdInline text={r.ifrs} /></td>
+                  <td className="px-3 py-2.5 text-slate-600 border-t border-l border-slate-100 leading-relaxed"><MdInline text={r.rpc} /></td>
+                  <td className="px-3 py-2.5 text-slate-600 border-t border-l border-slate-100 leading-relaxed"><MdInline text={r.co} /></td>
+                </tr>
+              ))}</tbody>
+            </table>
+          </div>
         </div>
       ))}
       {shown.length === 0 && <div className="text-sm text-slate-400 text-center py-6">Aucun résultat.</div>}
@@ -604,7 +632,7 @@ function CasDetail({ cas, onBack }) {
   return (
     <div>
       <ABack onBack={onBack} label="Tous les cas" />
-      <div className="rounded-2xl border border-violet-200 bg-violet-50/50 p-5 mb-4"><h2 className="text-lg font-bold text-slate-800">📝 {cas.titre}</h2><div className="flex flex-wrap gap-2 mt-1 text-[11px] text-slate-500">{cas.niveau && <span>{cas.niveau}</span>}{cas.duree && <span>⏱️ {cas.duree}</span>}</div>{(cas.themes || []).length > 0 && <div className="flex flex-wrap gap-1 mt-2">{cas.themes.map((t, i) => <span key={i} className="text-[10px] bg-white text-violet-600 px-1.5 py-0.5 rounded border border-violet-200">{t}</span>)}</div>}</div>
+      <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-5 shadow-sm flex items-start gap-4"><span className="text-2xl w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white shadow-sm shrink-0">📝</span><div className="min-w-0"><h2 className="text-lg font-bold text-slate-800 leading-tight">{cas.titre}</h2><div className="flex flex-wrap gap-2 mt-1 text-[11px] text-slate-500">{cas.niveau && <span className="bg-slate-100 px-2 py-0.5 rounded">{cas.niveau}</span>}{cas.duree && <span>⏱️ {cas.duree}</span>}</div>{(cas.themes || []).length > 0 && <div className="flex flex-wrap gap-1 mt-2">{cas.themes.map((t, i) => <span key={i} className="text-[10px] bg-violet-50 text-violet-600 px-1.5 py-0.5 rounded border border-violet-100">{t}</span>)}</div>}</div></div>
       {cas.contexte && <ACollapse title="📋 Contexte" accent="blue" defaultOpen={true}><MdBlock text={cas.contexte} className="text-sm text-slate-700" /></ACollapse>}
       <ACollapse title={`❓ Questions (${(cas.questions || []).length})`} accent="violet" defaultOpen={true}>{(cas.questions || []).map((q, i) => <CasQ key={i} q={q} />)}</ACollapse>
       {(cas.points_cles || []).length > 0 && <LKeypoints title="✅ Points clés à retenir" items={cas.points_cles} accent="emerald" />}
@@ -759,7 +787,7 @@ function AuditBook({ book, onBack }) {
   return (
     <div>
       <ABack onBack={onBack} />
-      <div className="rounded-2xl border border-violet-200 bg-violet-50/50 p-5 mb-4"><div className="flex items-center gap-2"><span className="text-2xl">📚</span><h2 className="text-xl font-bold text-slate-800">Base de cours — Manuel suisse d'audit</h2></div><p className="text-sm text-slate-600 mt-1">Le cours complet, chapitre par chapitre : MSA (contrôle ordinaire) et NCR (contrôle restreint).</p></div>
+      <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-5 shadow-sm flex items-start gap-4"><span className="text-2xl w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white shadow-sm shrink-0">📚</span><div><h2 className="text-xl font-bold text-slate-800 leading-tight">Base de cours — Manuel suisse d'audit</h2><p className="text-sm text-slate-500 mt-1 leading-relaxed">Le cours complet, chapitre par chapitre : MSA (contrôle ordinaire) et NCR (contrôle restreint).</p></div></div>
       <div className="flex flex-wrap gap-2 mb-4">{vols.map(([k, ic]) => <button key={k} onClick={() => { setVol(k); setChap(null); }} className={`px-3.5 py-2 rounded-lg text-sm font-semibold border transition-colors ${vol === k ? "bg-violet-600 text-white border-violet-600" : "bg-white text-slate-600 border-slate-200 hover:border-violet-300"}`}>{ic} {book[k].titre}</button>)}</div>
       {(V.parties || []).map((p, pi) => (
         <div key={pi} className="mb-4">
@@ -981,10 +1009,7 @@ function AuditNas({ nas, cours, annuaire, onOpenCourse, onBack }) {
   return (
     <div>
       <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
-      <div className="rounded-2xl border border-violet-200 bg-violet-50/50 p-5 mb-4">
-        <div className="flex items-center gap-2"><span className="text-2xl">{nas._icon || "📐"}</span><h2 className="text-xl font-bold text-slate-800">{nas._label || "NAS / ISA"}</h2></div>
-        {nas._description && <p className="text-sm text-slate-600 mt-1"><MdInline text={nas._description} /></p>}
-      </div>
+      <SectionHero section={nas} fallbackIcon="📐" />
       {cats.map((c, ci) => (
         <div key={c.id || ci} className="mb-3">
           <button onClick={() => setOpenCat(openCat === ci ? -1 : ci)} className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-left">
@@ -1064,10 +1089,7 @@ function AuditGeneric({ section, onBack }) {
   return (
     <div>
       <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
-      <div className="rounded-2xl border border-violet-200 bg-violet-50/50 p-5 mb-4">
-        <div className="flex items-center gap-2"><span className="text-2xl">{section._icon || "📋"}</span><h2 className="text-xl font-bold text-slate-800">{section._label}</h2></div>
-        {section._description && <p className="text-sm text-slate-600 mt-1"><MdInline text={section._description} /></p>}
-      </div>
+      <SectionHero section={section} fallbackIcon="📋" />
       <AnyAudit data={omitKeys(section, ["_label", "_icon", "_description"])} />
     </div>
   );
