@@ -255,7 +255,7 @@ function OralHome({ data, onTheme, onExamen, onSim }) {
     <div className="space-y-5">
       <div className="rounded-2xl bg-gradient-to-r from-rose-500 to-violet-600 text-white p-5 shadow">
         <h2 className="text-xl font-bold">Préparer l'examen oral</h2>
-        <p className="text-sm text-rose-50 mt-1">{intro.duree ? intro.duree + " · " : ""}{intro.poids ? intro.poids + " de la note · " : ""}{intro.format || "7 thèmes, discussion technique & discussion d'experts."}</p>
+        <p className="text-sm text-rose-50 mt-1">{intro.duree ? intro.duree + " · " : ""}{intro.poids ? intro.poids + " · " : ""}{intro.format || "7 thèmes, discussion technique & discussion d'experts."}</p>
       </div>
       <div className="grid sm:grid-cols-2 gap-2.5">
         <button onClick={onExamen} className="text-left rounded-2xl border border-rose-200 bg-rose-50/60 p-4 hover:shadow-md hover:-translate-y-0.5 transition-all">

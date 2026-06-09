@@ -65,9 +65,10 @@ function NormLinks({ text, kb }) {
 
 function MdInline({ text }) {
   if (text == null) return null;
-  const parts = String(text).split(/(\*\*[^*]+\*\*|`[^`]+`)/g);
+  const parts = String(text).split(/(\*\*[^*]+\*\*|\*[^*\n]+\*|`[^`]+`)/g);
   return parts.map((p, i) => {
     if (/^\*\*[\s\S]+\*\*$/.test(p)) return <strong key={i} className="font-semibold text-slate-800"><NormLinks text={p.slice(2, -2)} kb={i} /></strong>;
+    if (/^\*[^*][\s\S]*\*$/.test(p)) return <em key={i} className="italic"><NormLinks text={p.slice(1, -1)} kb={i} /></em>;
     if (/^`[\s\S]+`$/.test(p)) return <code key={i} className="px-1 py-0.5 rounded bg-slate-100 text-indigo-700 text-[0.85em]">{p.slice(1, -1)}</code>;
     return <NormLinks key={i} text={p} kb={i} />;
   });
@@ -951,7 +952,7 @@ function OralHome({ data, onTheme, onExamen, onSim }) {
     <div className="space-y-5">
       <div className="rounded-2xl bg-gradient-to-r from-rose-500 to-violet-600 text-white p-5 shadow">
         <h2 className="text-xl font-bold">Préparer l'examen oral</h2>
-        <p className="text-sm text-rose-50 mt-1">{intro.duree ? intro.duree + " · " : ""}{intro.poids ? intro.poids + " de la note · " : ""}{intro.format || "7 thèmes, discussion technique & discussion d'experts."}</p>
+        <p className="text-sm text-rose-50 mt-1">{intro.duree ? intro.duree + " · " : ""}{intro.poids ? intro.poids + " · " : ""}{intro.format || "7 thèmes, discussion technique & discussion d'experts."}</p>
       </div>
       <div className="grid sm:grid-cols-2 gap-2.5">
         <button onClick={onExamen} className="text-left rounded-2xl border border-rose-200 bg-rose-50/60 p-4 hover:shadow-md hover:-translate-y-0.5 transition-all">
