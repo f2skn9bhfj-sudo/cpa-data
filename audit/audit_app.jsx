@@ -964,6 +964,128 @@ function AuditBook({ book, onBack }) {
   );
 }
 
+/* ═══ Seuils & Exercices (port du module natif audit_seuils.js) ═══ */
+const SEUIL_DIFF = { easy: ["Facile", "text-emerald-600 bg-emerald-50 border-emerald-200"], medium: ["Moyen", "text-amber-600 bg-amber-50 border-amber-200"], hard: ["Difficile", "text-rose-600 bg-rose-50 border-rose-200"] };
+function SeuilsMemo({ cat, onExo }) {
+  const memo = cat.aide_memoire || {};
+  const col = cat.color || "#7c3aed";
+  return (
+    <div>
+      {memo.concept && <div className="rounded-xl p-4 mb-4 text-sm text-slate-700 leading-relaxed" style={{ background: col + "12", border: "1px solid " + col + "33" }}><MdInline text={memo.concept} /></div>}
+      <div className="grid sm:grid-cols-2 gap-2.5 mb-4">
+        {(memo.niveaux || []).map((n, i) => (
+          <div key={i} className="rounded-xl border border-slate-200 bg-white p-4">
+            <div className="text-sm font-extrabold mb-2" style={{ color: col }}>{i + 1}. {n.name}</div>
+            {n.formula && <div className="rounded-lg bg-slate-100 px-3 py-2 mb-2 text-[12px] text-slate-800" style={{ fontFamily: "ui-monospace, monospace" }}>📐 {n.formula}</div>}
+            {n.benchmarks && <div className="text-xs text-slate-600 mb-1"><strong className="text-slate-700">Benchmarks :</strong> <MdInline text={n.benchmarks} /></div>}
+            {n.purpose && <div className="text-xs text-slate-600 mb-1"><strong className="text-slate-700">But :</strong> <MdInline text={n.purpose} /></div>}
+            {n.typical_value && <div className="text-[11px] text-violet-600 mt-2 pt-2 border-t border-slate-100">💡 Valeur typique : <MdInline text={n.typical_value} /></div>}
+          </div>
+        ))}
+      </div>
+      {memo.mental_model && <LCallout tone="info" title="🧠 Modèle mental" text={memo.mental_model} />}
+      {(memo.pitfalls || []).length > 0 && <LKeypoints title="⚠️ Pièges à éviter" items={memo.pitfalls} accent="amber" />}
+      <div className="text-center mt-4"><button onClick={onExo} className="px-5 py-2.5 rounded-lg text-white text-sm font-bold hover:opacity-95" style={{ background: col }}>✏️ Passer aux exercices →</button></div>
+    </div>
+  );
+}
+function SeuilsExo({ cat }) {
+  const exos = cat.exercises || [];
+  const col = cat.color || "#7c3aed";
+  const [idx, setIdx] = useState(0);
+  const [chosen, setChosen] = useState(null);
+  const [showSteps, setShowSteps] = useState(false);
+  if (!exos.length) return <div className="text-sm text-slate-400 text-center py-8">Pas d'exercices pour cette catégorie.</div>;
+  const ex = exos[Math.min(idx, exos.length - 1)];
+  const answered = chosen != null;
+  const [dLabel, dCls] = SEUIL_DIFF[ex.difficulty] || [ex.difficulty || "—", "text-slate-500 bg-slate-50 border-slate-200"];
+  const goTo = (i) => { setIdx(i); setChosen(null); setShowSteps(false); try { window.scrollTo(0, 0); } catch (e) {} };
+  return (
+    <div>
+      <div className="flex items-center justify-between text-xs mb-1.5">
+        <span className="text-slate-500">Exercice {idx + 1} / {exos.length}</span>
+        <span className={`px-2 py-0.5 rounded-full border font-semibold ${dCls}`}>⚡ {dLabel}</span>
+      </div>
+      <div className="h-1.5 rounded-full bg-slate-200 overflow-hidden mb-4"><div className="h-full rounded-full transition-all" style={{ width: Math.round(100 * (idx + 1) / exos.length) + "%", background: col }}></div></div>
+      <div className="rounded-xl border border-slate-200 bg-white p-4 mb-3">
+        <div className="text-[10px] font-bold uppercase tracking-widest mb-1.5" style={{ color: col }}>📋 Scénario</div>
+        <div className="text-sm text-slate-700 leading-relaxed"><MdBlock text={ex.scenario} /></div>
+      </div>
+      <div className="rounded-xl border border-slate-200 bg-white p-4 mb-3">
+        <div className="text-sm font-bold text-slate-800 leading-relaxed mb-3">❓ <MdInline text={ex.question} /></div>
+        <div className="space-y-2">
+          {(ex.options || []).map((opt, i) => {
+            let cls = "border-slate-200 bg-slate-50 hover:border-violet-300 cursor-pointer";
+            let badge = "border-slate-300 text-slate-500";
+            let mark = String.fromCharCode(65 + i);
+            if (answered) {
+              if (i === chosen && opt.ok) { cls = "border-emerald-300 bg-emerald-50"; badge = "border-emerald-400 text-emerald-600"; mark = "✓"; }
+              else if (i === chosen) { cls = "border-rose-300 bg-rose-50"; badge = "border-rose-400 text-rose-600"; mark = "✗"; }
+              else if (opt.ok) { cls = "border-emerald-300 bg-white"; badge = "border-emerald-400 text-emerald-600"; mark = "✓"; }
+              else { cls = "border-slate-200 bg-white opacity-60"; }
+            }
+            return (
+              <button key={i} disabled={answered} onClick={() => { setChosen(i); setShowSteps(true); }} className={`w-full text-left rounded-lg border px-3.5 py-2.5 flex items-start gap-2.5 text-sm text-slate-700 transition-colors ${cls}`}>
+                <span className={`shrink-0 w-6 h-6 rounded-full border grid place-items-center text-[11px] font-bold ${badge}`}>{mark}</span>
+                <span className="leading-relaxed"><MdInline text={opt.label} /></span>
+              </button>
+            );
+          })}
+        </div>
+        {ex.exam_ref && <div className="mt-2.5 text-[11px] text-slate-400">📚 <MdInline text={ex.exam_ref} /></div>}
+      </div>
+      {answered && (
+        <div className={`rounded-xl border p-4 mb-3 ${ex.options[chosen].ok ? "border-emerald-200 bg-emerald-50/70" : "border-rose-200 bg-rose-50/70"}`}>
+          <div className={`text-sm font-bold mb-1 ${ex.options[chosen].ok ? "text-emerald-700" : "text-rose-700"}`}>{ex.options[chosen].ok ? "✅ Correct !" : "❌ Incorrect"}</div>
+          <div className="text-sm text-slate-700 leading-relaxed"><MdBlock text={ex.options[chosen].x || ""} /></div>
+        </div>
+      )}
+      {answered && (ex.steps || []).length > 0 && (
+        <div className="rounded-xl border border-blue-200 bg-blue-50/50 p-4 mb-3">
+          <div className="flex items-center justify-between mb-1.5">
+            <div className="text-sm font-bold text-blue-700">📝 Solution pas à pas</div>
+            <button onClick={() => setShowSteps(!showSteps)} className="text-[11px] px-2.5 py-1 rounded-md border border-blue-200 text-blue-700 bg-white hover:bg-blue-50">{showSteps ? "🔽 Masquer" : "▶️ Voir"}</button>
+          </div>
+          {showSteps ? <ol className="list-decimal ml-5 space-y-1.5 text-sm text-slate-700 leading-relaxed">{ex.steps.map((s, i) => <li key={i}><MdInline text={s} /></li>)}</ol> : <div className="text-xs text-slate-400">Clique « Voir » pour le raisonnement étape par étape.</div>}
+        </div>
+      )}
+      {answered && ex.note && <LCallout tone="warn" title="À noter" text={ex.note} />}
+      <div className="flex justify-between mt-4">
+        <button onClick={() => goTo(idx - 1)} disabled={idx === 0} className={`px-4 py-2 rounded-lg border text-sm ${idx === 0 ? "opacity-40 border-slate-200 text-slate-400" : "border-slate-200 text-slate-600 hover:bg-slate-50"}`}>← Précédent</button>
+        {answered && (idx < exos.length - 1 ? <button onClick={() => goTo(idx + 1)} className="px-4 py-2 rounded-lg text-white text-sm font-semibold" style={{ background: col }}>Suivant →</button> : <span className="px-4 py-2 text-sm text-emerald-600 font-semibold">🏁 Dernier exo terminé</span>)}
+      </div>
+    </div>
+  );
+}
+function AuditSeuils({ onBack }) {
+  const data = (typeof window !== "undefined" && window.__AUDIT_SEUILS__) || { categories: [] };
+  const cats = data.categories || [];
+  const [catId, setCatId] = useState(cats.length ? cats[0].id : null);
+  const [view, setView] = useState("memo");
+  const cat = cats.find((c) => c.id === catId) || cats[0] || {};
+  const col = cat.color || "#7c3aed";
+  return (
+    <div>
+      <ABack onBack={onBack} />
+      <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-5 shadow-sm flex items-start gap-4">
+        <span className="text-2xl w-12 h-12 flex items-center justify-center rounded-2xl bg-violet-500 text-white shadow-sm shrink-0">🎯</span>
+        <div className="min-w-0">
+          <h2 className="text-xl font-bold text-slate-800 leading-tight">Seuils & Exercices</h2>
+          <p className="text-sm text-slate-500 mt-1 leading-relaxed">Comprends les seuils-clés de l'audit suisse : aide-mémoire + exercices pas-à-pas par thème.</p>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-2 mb-3">
+        {cats.map((c) => <button key={c.id} onClick={() => { setCatId(c.id); setView("memo"); }} className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${c.id === catId ? "text-white border-transparent" : "bg-white text-slate-600 border-slate-200 hover:border-violet-300"}`} style={c.id === catId ? { background: c.color || "#7c3aed" } : {}}>{c.icon || "📐"} {c.label}</button>)}
+      </div>
+      <div className="inline-flex gap-1 rounded-xl border border-slate-200 bg-white p-1 mb-4">
+        <button onClick={() => setView("memo")} className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors ${view === "memo" ? "text-white" : "text-slate-500 hover:text-slate-700"}`} style={view === "memo" ? { background: col } : {}}>📖 Aide-mémoire</button>
+        <button onClick={() => setView("exo")} className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors ${view === "exo" ? "text-white" : "text-slate-500 hover:text-slate-700"}`} style={view === "exo" ? { background: col } : {}}>✏️ Exercices ({(cat.exercises || []).length})</button>
+      </div>
+      {view === "memo" ? <SeuilsMemo cat={cat} onExo={() => setView("exo")} /> : <SeuilsExo key={cat.id} cat={cat} />}
+    </div>
+  );
+}
+
 function AuditSection({ skey, section, onBack }) {
   if (skey === "outils") return <AuditOutils section={section} onBack={onBack} />;
   if (skey === "arbres") return <AuditArbres section={section} onBack={onBack} />;
@@ -1273,7 +1395,7 @@ function AuditGeneric({ section, onBack }) {
 
 /* ── Accueil Audit (hub) ── */
 const AUDIT_ORDER = ["annuaire", "nas", "cadre_legal", "cycles", "procedures_assertions", "quiz", "cas_pratiques", "examens_blancs", "arbres", "comparatifs", "lexique", "outils", "modeles", "terrain", "independance", "fraude", "goingconcern", "timeline", "actualites"];
-function AuditHome({ data, book, onSection, onBook }) {
+function AuditHome({ data, book, onSection, onBook, onSeuils }) {
   const keys = AUDIT_ORDER.filter((k) => data[k]);
   Object.keys(data).forEach((k) => { if (k[0] !== "_" && k !== "annuaire_cours" && AUDIT_ORDER.indexOf(k) < 0) keys.push(k); });
   const hasBook = book && (book.controle_ordinaire || book.controle_restreint);
@@ -1295,7 +1417,7 @@ function AuditHome({ data, book, onSection, onBook }) {
         {[{ m: "seuils", ic: "🎯", t: "Seuils & Exercices", d: "Tous les seuils (ordinaire/restreint, matérialité) + exercices pas-à-pas." },
           { m: "canvas", ic: "🏢", t: "Canvas Perso", d: "Crée et gère tes propres engagements d'audit (desktop)." },
           { m: "mission", ic: "🎬", t: "Mission Lab", d: "Mission immersive end-to-end chez EY (desktop)." }].map((n) => (
-          <button key={n.m} onClick={() => openAuditNative(n.m)} className="text-left bg-white border border-slate-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-1.5">
+          <button key={n.m} onClick={() => (n.m === "seuils" && onSeuils) ? onSeuils() : openAuditNative(n.m)} className="text-left bg-white border border-slate-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-1.5">
             <div className="flex items-center gap-2"><span className="text-xl">{n.ic}</span><span className="font-bold text-sm text-violet-700">{n.t}</span></div>
             <div className="text-xs text-slate-500 leading-snug">{n.d}</div>
           </button>
@@ -1370,8 +1492,9 @@ function AuditApp() {
         </div>
       </header>
       <main className="max-w-5xl mx-auto px-4 py-6">
-        {view.k === "home" && <AuditHome data={data} book={book} onBook={() => go({ k: "book" })} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
+        {view.k === "home" && <AuditHome data={data} book={book} onBook={() => go({ k: "book" })} onSeuils={() => go({ k: "seuils" })} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
         {view.k === "book" && <AuditBook book={book} onBack={() => go({ k: "home" })} />}
+        {view.k === "seuils" && <AuditSeuils onBack={() => go({ k: "home" })} />}
         {view.k === "annuaire" && (
           <div>
             <button onClick={() => go({ k: "home" })} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
