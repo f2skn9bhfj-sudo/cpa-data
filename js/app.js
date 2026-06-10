@@ -113,21 +113,17 @@ function navigate(tab, subTab) {
     const _activeTab = document.querySelector('.tab-bar .tab.active');
     if (_activeTab) { try { _activeTab.scrollIntoView({ inline: 'center', block: 'nearest' }); } catch (_) {} }
 
-    // Show/hide sub-tabs
+    // Sub-tabs : tous les onglets à sous-sections (Références, Anglais…) les
+    // gèrent désormais DANS leur app iframe — la barre parent reste cachée.
     const subBar = document.getElementById('subTabBar');
-    if (tab === 'references') {
-        subBar.classList.remove('hidden');
-        renderRefSubTabs(subTab);
-    } else {
-        subBar.classList.add('hidden');
-    }
+    if (subBar) subBar.classList.add('hidden');
 
     // Render content
     const main = document.getElementById('mainContent');
     main.setAttribute('aria-busy', 'true');
     main.innerHTML = '<div class="text-center" style="padding:60px"><div class="page-title">Chargement...</div></div>';
     // Full-width pages remove the 1400px cap
-    const fullWidthTabs = ['modules', 'fs', 'conso', 'oral', 'audit'];
+    const fullWidthTabs = ['modules', 'fs', 'conso', 'oral', 'audit', 'references', 'english', 'podcasts'];
     const widthClass = fullWidthTabs.includes(tab) ? ' full-width' : '';
     main.className = 'main-content fade-in' + widthClass;
     void main.offsetWidth;
@@ -233,21 +229,6 @@ function appZoomTabStep(dir) {
 function appZoomTabReset() {
     if (typeof window.appZoomReset !== 'function') return;
     window.appZoomReset(APP_ZOOM_SELECTOR);
-}
-
-function renderRefSubTabs(active) {
-    const tabs = [
-        { id: 'glossary', label: 'Vocabulaire' },
-        { id: 'seuils', label: 'Seuils' },
-        { id: 'cas', label: 'Cas Chiffrés' },
-        { id: 'arbres', label: 'Arbres' },
-        { id: 'terrain', label: 'Terrain EY' },
-    ];
-    const bar = document.getElementById('subTabBar');
-    bar.innerHTML = '<span style="font-size:13px;color:#94a3b8;padding:6px 0">📚 Références ›</span>' +
-        tabs.map(t =>
-            `<button class="sub-tab ${(active || 'courses') === t.id ? 'active' : ''}" onclick="navigate('references','${t.id}')">${t.label}</button>`
-        ).join('');
 }
 
 // ── Init ──
