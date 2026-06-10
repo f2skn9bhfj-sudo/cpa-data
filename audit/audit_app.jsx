@@ -823,30 +823,97 @@ function BookQA({ qa }) {
   const [show, setShow] = useState(false);
   return <div className="mb-2 rounded-xl border border-slate-200 bg-white p-3"><div className="text-sm font-semibold text-slate-800 mb-1.5"><MdInline text={qa.q} /></div><button onClick={() => setShow(!show)} className="text-xs px-2.5 py-1 rounded-md border border-violet-200 text-violet-700 bg-violet-50 hover:bg-violet-100">{show ? "Masquer la réponse" : "Voir la réponse"}</button>{show && <div className="mt-2 text-sm text-slate-700 leading-relaxed bg-emerald-50/60 border border-emerald-100 rounded-lg px-3 py-2"><MdBlock text={qa.a} /></div>}</div>;
 }
-function BookChapter({ item, partieTitle, onBack, onPrev, onNext, position }) {
+/* Les 7 encadrés du MSA (mêmes libellés que l'ancien lecteur) */
+const BOOK_CALLOUTS = [
+  ["info", "💡 Pour info", "info"],
+  ["info", "⚖️ Texte légal", "legal_quote"],
+  ["key",  "🟢 Exemple concret", "example"],
+  ["info", "📊 Comparaison", "comparison"],
+  ["key",  "🎯 Point clé", "key_point"],
+  ["tip",  "🧠 Astuce mémo", "tip"],
+  ["warn", "⚠️ Attention", "warning"],
+];
+function SourceLine({ s }) {
+  const parts = String(s).split(/(https?:\/\/[^\s)]+)/g);
+  return <span>{parts.map((p, i) => /^https?:\/\//.test(p) ? <a key={i} href={p} target="_blank" rel="noopener" className="text-violet-600 underline break-all">{p}</a> : <span key={i}>{p}</span>)}</span>;
+}
+function bookInnerHtml(f) {
+  let h = "<h1>" + (f.code ? escHtml(f.code) + " — " : "") + escHtml(f.title || "") + "</h1>";
+  if (f.ref_msa) h += "<p><em>📖 " + escHtml(f.ref_msa) + "</em></p>";
+  if (f.bases_legales) h += '<div class="callout"><strong>⚖️ Bases légales</strong> ' + mdInlineHtml(f.bases_legales) + "</div>";
+  if (f.summary) h += mdToHtml(f.summary);
+  if (f.mnemonics) h += '<div class="callout"><strong>🧠 Astuce mémo</strong> ' + mdInlineHtml(f.mnemonics) + "</div>";
+  (f.sections || []).forEach((s) => {
+    h += "<h2>" + escHtml(s.title || "") + "</h2>";
+    if (s.content) h += mdToHtml(s.content);
+    BOOK_CALLOUTS.forEach(([tone, label, key]) => { if (s[key]) h += '<div class="callout"><strong>' + escHtml(label) + "</strong> " + mdToHtml(String(s[key])) + "</div>"; });
+  });
+  if ((f.auto_test || []).length) { h += "<h2>🧪 Auto-test</h2>"; f.auto_test.forEach((qa, i) => { h += "<p><strong>" + (i + 1) + ". " + mdInlineHtml(qa.q) + "</strong><br>" + mdInlineHtml(qa.a) + "</p>"; }); }
+  if (f.statut) h += "<p><em>" + escHtml(f.statut) + (f.maj ? " · maj " + escHtml(f.maj) : "") + "</em></p>";
+  return h;
+}
+function downloadBookPdf(item) {
+  const api = pywebApi();
   const f = item.fiche || {};
+  const fallback = () => openPrint(f.title || item.titre || "Chapitre", bookInnerHtml(f));
+  if (api && item.path && typeof api.export_audit_fiche_pdf === "function") {
+    auditToast("⏳ Génération du PDF…", "info");
+    try {
+      Promise.resolve(api.export_audit_fiche_pdf(item.path)).then((res) => {
+        if (res && res.ok) auditToast("✓ PDF enregistré" + (res.path ? " : " + res.path : ""), "ok");
+        else if (res && res.cancelled) auditToast("Export annulé.", "info");
+        else { auditToast("⚠️ " + ((res && res.error) || "Échec de l'export") + " — impression navigateur…", "err"); fallback(); }
+      }).catch(fallback);
+    } catch (e) { fallback(); }
+  } else fallback();
+}
+function BookChapter({ item, partieTitle, onBack, onPrev, onNext, position, anchor }) {
+  const f = item.fiche || {};
+  useEffect(() => {
+    if (!anchor) return;
+    const t = setTimeout(() => { try { const el = document.getElementById("bk-" + anchor); if (el) el.scrollIntoView({ block: "start" }); } catch (e) {} }, 250);
+    return () => clearTimeout(t);
+  }, [anchor, item]);
   return (
     <div>
       <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
         <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600"><ArrowLeft size={15} /> Sommaire</button>
-        <div className="flex items-center gap-2">{position && <span className="text-[11px] text-slate-400">{position}</span>}{onPrev && <button onClick={onPrev} className="text-xs px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50">← Précédent</button>}{onNext && <button onClick={onNext} className="text-xs px-3 py-1.5 rounded-lg bg-violet-600 text-white font-semibold">Suivant →</button>}</div>
+        <div className="flex items-center gap-2 flex-wrap">
+          {position && <span className="text-[11px] text-slate-400 tabular-nums">{position}</span>}
+          {onPrev && <button onClick={onPrev} className="text-xs px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50">← Précédent</button>}
+          {onNext && <button onClick={onNext} className="text-xs px-3 py-1.5 rounded-lg bg-violet-600 text-white font-semibold">Suivant →</button>}
+          <button onClick={() => downloadBookPdf(item)} className="text-xs px-3 py-1.5 rounded-lg bg-violet-100 text-violet-700 font-semibold hover:bg-violet-200">📥 PDF</button>
+        </div>
       </div>
       <div className="rounded-2xl border border-violet-200 bg-violet-50/40 p-5 mb-4">
-        {partieTitle && <div className="text-[11px] text-violet-500 font-semibold mb-1">{partieTitle}</div>}
-        <h2 className="text-xl font-bold text-slate-800">{f.title || item.titre}</h2>
-        <div className="flex flex-wrap gap-2 mt-1 text-[11px] text-slate-500">{f.niveau && <span className="bg-white px-2 py-0.5 rounded border border-slate-200">{f.niveau}</span>}{f.normes && <span>📏 <MdInline text={f.normes} /></span>}</div>
+        <div className="flex flex-wrap items-center gap-1.5 mb-1 text-[11px]">
+          {partieTitle && <span className="text-violet-500 font-semibold">{partieTitle}</span>}
+          {f.category && <span className="text-slate-400">· {f.category}</span>}
+        </div>
+        <div className="flex items-start gap-2.5 flex-wrap">
+          {f.code && <span className="text-white text-xs font-bold px-2.5 py-1 rounded-lg bg-violet-600 shrink-0 mt-0.5">{f.code}</span>}
+          <h2 className="text-xl font-bold text-slate-800 leading-tight">{f.title || item.titre}</h2>
+        </div>
+        <div className="flex flex-wrap gap-x-3 gap-y-1 mt-2 text-[11px] text-slate-500">
+          {f.niveau && <span className="bg-white px-2 py-0.5 rounded border border-slate-200">🎓 {f.niveau}</span>}
+          {f.normes && <span>📐 <MdInline text={f.normes} /></span>}
+        </div>
+        {f.ref_msa && <div className="mt-2 text-[11px] text-slate-500 leading-relaxed">📖 {f.ref_msa}</div>}
         {f.summary && <div className="mt-2 text-sm text-slate-700"><MdBlock text={f.summary} /></div>}
       </div>
       {f.bases_legales && <div className="mb-3"><LCallout tone="info" title="⚖️ Bases légales" text={f.bases_legales} /></div>}
+      {f.mnemonics && <div className="mb-3"><LCallout tone="tip" title="🧠 Astuce mémo" text={f.mnemonics} /></div>}
       {(f.sections || []).map((s, i) => (
-        <ACollapse key={i} title={s.title} accent="violet" defaultOpen={i < 2}>
-          {s.content && <MdBlock text={s.content} className="text-sm text-slate-700" />}
-          {s.key_point && <div className="mt-2"><LCallout tone="key" title="🔑 Point clé" text={s.key_point} /></div>}
-        </ACollapse>
+        <div key={i} id={s.anchor ? "bk-" + s.anchor : undefined}>
+          <ACollapse title={s.title} accent="violet" defaultOpen={true}>
+            {s.content && <MdBlock text={s.content} className="text-sm text-slate-700" />}
+            {BOOK_CALLOUTS.map(([tone, label, key], j) => s[key] ? <div key={j} className="mt-2"><LCallout tone={tone} title={label} text={String(s[key])} /></div> : null)}
+          </ACollapse>
+        </div>
       ))}
-      {f.mnemonics && <div className="my-3"><LCallout tone="tip" title="🧠 Mnémo" text={f.mnemonics} /></div>}
-      {(f.auto_test || []).length > 0 && <ACollapse title={`🧪 Auto-test (${f.auto_test.length})`}>{f.auto_test.map((qa, i) => <BookQA key={i} qa={qa} />)}</ACollapse>}
-      {(f.sources || []).length > 0 && <ACollapse title="📚 Sources"><ul className="space-y-1">{f.sources.map((s, i) => <li key={i} className="text-xs text-slate-500 flex gap-2"><span className="shrink-0">•</span><span><MdInline text={s} /></span></li>)}</ul></ACollapse>}
+      {(f.auto_test || []).length > 0 && <ACollapse title={`🧪 Auto-test (${f.auto_test.length})`} defaultOpen={false}>{f.auto_test.map((qa, i) => <BookQA key={i} qa={qa} />)}</ACollapse>}
+      {(f.sources || []).length > 0 && <ACollapse title="📚 Sources consultées" defaultOpen={false}><ul className="space-y-1">{f.sources.map((s, i) => <li key={i} className="text-xs text-slate-500 flex gap-2"><span className="shrink-0">•</span><SourceLine s={s} /></li>)}</ul></ACollapse>}
+      {f.statut && <div className="mt-3 text-[11px] text-slate-400 leading-relaxed">{f.statut}{f.maj ? " · maj " + f.maj : ""}</div>}
       <div className="flex justify-between mt-4">{onPrev ? <button onClick={onPrev} className="text-sm px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50">← Précédent</button> : <span />}{onNext && <button onClick={onNext} className="text-sm px-4 py-2 rounded-lg bg-violet-600 text-white font-semibold">Chapitre suivant →</button>}</div>
     </div>
   );
@@ -863,7 +930,7 @@ function AuditBook({ book, onBack }) {
     const item = (partie.fiches || [])[chap.fi] || {};
     const idx = flat.findIndex((x) => x.pi === chap.pi && x.fi === chap.fi);
     const go = (d) => { const n = flat[idx + d]; if (n) { setChap({ pi: n.pi, fi: n.fi }); try { window.scrollTo(0, 0); } catch (e) {} } };
-    return <BookChapter item={item} partieTitle={partie.titre} onBack={() => setChap(null)} onPrev={idx > 0 ? () => go(-1) : null} onNext={idx >= 0 && idx < flat.length - 1 ? () => go(1) : null} position={idx >= 0 ? `${idx + 1} / ${flat.length}` : ""} />;
+    return <BookChapter item={item} partieTitle={partie.titre} anchor={chap.anchor} onBack={() => setChap(null)} onPrev={idx > 0 ? () => go(-1) : null} onNext={idx >= 0 && idx < flat.length - 1 ? () => go(1) : null} position={idx >= 0 ? `${idx + 1} / ${flat.length}` : ""} />;
   }
   return (
     <div>
@@ -877,7 +944,19 @@ function AuditBook({ book, onBack }) {
             if (f.header) return <div key={fi} className="text-[12px] font-bold text-violet-600 pt-2 pb-0.5" style={{ paddingLeft: ((f.depth || 1) - 1) * 12 }}>{f.titre}</div>;
             const avail = !!f.fiche;
             const indent = (f.depth || 0) > 1 ? (f.depth - 1) * 12 : 0;
-            return <button key={fi} disabled={!avail} onClick={() => { if (avail) { setChap({ pi, fi }); try { window.scrollTo(0, 0); } catch (e) {} } }} style={{ marginLeft: indent }} className={`w-full text-left rounded-xl border p-3 flex items-center gap-3 transition-all ${avail ? "bg-white border-slate-200 hover:border-violet-300 hover:shadow-sm cursor-pointer" : "bg-slate-50 border-slate-100 opacity-60 cursor-default"}`}><span>📖</span><span className="flex-1 text-sm font-medium text-slate-800">{f.titre}</span>{avail ? <ArrowRight size={15} className="text-slate-300" /> : <span className="text-[10px] text-slate-400">à venir</span>}</button>;
+            const ancres = ((f.fiche && f.fiche.sections) || []).filter((s) => s.anchor && s.title).map((s) => ({ id: s.anchor, titre: s.title }));
+            return (
+              <div key={fi} style={{ marginLeft: indent }} className={`rounded-xl border transition-all overflow-hidden ${avail ? "bg-white border-slate-200 hover:border-violet-300 hover:shadow-sm" : "bg-slate-50 border-slate-100 opacity-60"}`}>
+                <button disabled={!avail} onClick={() => { if (avail) { setChap({ pi, fi }); try { window.scrollTo(0, 0); } catch (e) {} } }} className={`w-full text-left p-3 flex items-center gap-3 ${avail ? "cursor-pointer" : "cursor-default"}`}>
+                  <span>📖</span><span className="flex-1 text-sm font-medium text-slate-800">{f.titre}</span>{avail ? <ArrowRight size={15} className="text-slate-300" /> : <span className="text-[10px] text-slate-400">à venir</span>}
+                </button>
+                {avail && ancres.length > 0 && (
+                  <div className="px-3 pb-2.5 -mt-1 flex flex-wrap gap-x-3 gap-y-0.5 pl-10">
+                    {ancres.map((a, ai) => <button key={ai} onClick={() => setChap({ pi, fi, anchor: a.id })} className="text-[11px] text-slate-400 hover:text-violet-600 hover:underline text-left">{a.titre}</button>)}
+                  </div>
+                )}
+              </div>
+            );
           })}</div>
         </div>
       ))}
