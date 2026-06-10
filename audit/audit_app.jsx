@@ -67,9 +67,9 @@ function openPrint(title, inner) {
   if (!w) { try { alert("Autorise les pop-ups pour enregistrer en PDF."); } catch (e) {} return; }
   w.document.write('<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>' + escHtml(title) + '</title><style>'
     + 'body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:820px;margin:24px auto;padding:0 20px;color:#1e293b;line-height:1.55}'
-    + 'h1{font-size:22px;border-bottom:3px solid #7c3aed;padding-bottom:6px}h2{font-size:15px;background:#f5f3ff;border-left:4px solid #7c3aed;padding:6px 10px;margin:18px 0 6px}'
+    + 'h1{font-size:22px;border-bottom:3px solid #7c3aed;padding-bottom:6px}h2{font-size:15px;background:#f5f3ff;border:1px solid #ddd6fe;border-radius:6px;padding:6px 10px;margin:18px 0 6px}'
     + 'table{border-collapse:collapse;width:100%;margin:8px 0;font-size:12.5px}th,td{border:1px solid #cbd5e1;padding:5px 8px;text-align:left;vertical-align:top}th{background:#f1f5f9}'
-    + 'ul{margin:6px 0 6px 18px}p{margin:6px 0}strong{color:#0f172a}code{background:#f1f5f9;padding:1px 4px;border-radius:3px}blockquote{border-left:3px solid #c4b5fd;margin:8px 0;padding:4px 12px;color:#475569}'
+    + 'ul{margin:6px 0 6px 18px}p{margin:6px 0}strong{color:#0f172a}code{background:#f1f5f9;padding:1px 4px;border-radius:3px}blockquote{border:1px solid #ddd6fe;border-radius:6px;background:#faf5ff;margin:8px 0;padding:6px 12px;color:#475569}'
     + '.callout{background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:8px 10px;margin:8px 0}@media print{body{margin:0}}'
     + '</style></head><body>' + inner + '</body></html>');
   w.document.close();
@@ -215,7 +215,7 @@ function OpinionCalc() {
       <div className="rounded-lg bg-slate-50 border border-slate-200 p-3.5">
         <div className="font-extrabold text-sm mb-1" style={{ color: r.c }}>{r.v}</div>
         {r.nas && <div className="text-[11px] text-violet-600 mb-2">📚 {r.nas}</div>}
-        {r.w && <div className="text-sm text-slate-600 italic leading-relaxed border-l-2 pl-3" style={{ borderColor: r.c }}>{r.w}</div>}
+        {r.w && <div className="text-sm text-slate-700 italic leading-relaxed rounded-lg p-3" style={{ background: r.c + "12", border: "1px solid " + r.c + "33" }}>{r.w}</div>}
         {r.t && <div className="mt-2 text-xs text-amber-700 leading-relaxed">💡 {r.t}</div>}
         {(r.w || r.t) && <CopyBtn text={r.v + "\n\n" + r.w + "\n\nTip : " + r.t} label="📋 Copier verdict + wording" />}
       </div>
@@ -291,7 +291,7 @@ function WordingCard({ w }) {
   return (
     <div className="rounded-xl border border-slate-200 bg-white overflow-hidden">
       <button onClick={() => setOpen(!open)} className="w-full text-left px-3.5 py-2.5 hover:bg-slate-50 flex items-center justify-between gap-2"><span className="text-sm font-semibold text-slate-800">{w.label || w.title}</span><ChevronDown size={15} className={`text-slate-400 shrink-0 transition-transform ${open ? "rotate-180" : ""}`} /></button>
-      {open && <div className="px-3.5 pb-3.5 text-sm">{w.context && <div className="text-xs text-slate-500 mb-2">{w.context}</div>}<div className="bg-slate-50 border-l-2 border-violet-300 rounded p-3 text-slate-700 italic whitespace-pre-line leading-relaxed">{txt}</div><CopyBtn text={txt} /></div>}
+      {open && <div className="px-3.5 pb-3.5 text-sm">{w.context && <div className="text-xs text-slate-500 mb-2">{w.context}</div>}<div className="bg-violet-50/60 border border-violet-100 rounded-lg p-3 text-slate-700 italic whitespace-pre-line leading-relaxed">{txt}</div><CopyBtn text={txt} /></div>}
     </div>
   );
 }
@@ -300,7 +300,7 @@ function FindingCard({ f }) {
   const [open, setOpen] = useState(false);
   const col = FIND_COLOR[f.severity] || "#7c3aed";
   return (
-    <div className="rounded-xl border border-slate-200 bg-white overflow-hidden" style={{ borderLeft: "3px solid " + col }}>
+    <div className="rounded-xl border border-slate-200 bg-white overflow-hidden">
       <button onClick={() => setOpen(!open)} className="w-full text-left px-3.5 py-2.5 hover:bg-slate-50 flex items-center justify-between gap-2">
         <span><span className="block text-sm font-semibold text-slate-800">{f.title}</span><span className="text-[11px]"><span className="text-white px-2 py-0.5 rounded-full" style={{ background: col }}>{f.severity}</span> <span className="text-slate-400 ml-1">{f.category}</span></span></span>
         <ChevronDown size={15} className={`text-slate-400 shrink-0 transition-transform ${open ? "rotate-180" : ""}`} />
@@ -331,10 +331,69 @@ function Glossary({ terms }) {
   );
 }
 function ABack({ onBack, label = "Accueil Audit" }) { return <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> {label}</button>; }
+/* Templates Excel EY (desktop : générés par le backend openpyxl) */
+function ExcelTemplates() {
+  const [tpls, setTpls] = useState(null);
+  const [busy, setBusy] = useState({});
+  useEffect(() => {
+    let dead = false;
+    const api = pywebApi();
+    if (!api || typeof api.list_audit_templates !== "function") { setTpls([]); return; }
+    Promise.resolve(api.list_audit_templates()).then((r) => { if (!dead) setTpls(Array.isArray(r) ? r : []); }).catch(() => { if (!dead) setTpls([]); });
+    return () => { dead = true; };
+  }, []);
+  if (!tpls || !tpls.length) return null;
+  const dl = (id) => {
+    const api = pywebApi();
+    if (!api) return;
+    setBusy({ ...busy, [id]: "⏳ Génération…" });
+    Promise.resolve(api.download_audit_template(id)).then((r) => {
+      setBusy((b) => ({ ...b, [id]: r && r.ok ? "✅ Ouvert" : r && r.cancelled ? null : "❌ Erreur" }));
+      setTimeout(() => setBusy((b) => ({ ...b, [id]: null })), 2200);
+    }).catch(() => { setBusy((b) => ({ ...b, [id]: "❌ Erreur" })); setTimeout(() => setBusy((b) => ({ ...b, [id]: null })), 2500); });
+  };
+  return (
+    <ACollapse title={`📥 Bibliothèque Excel — templates EY (${tpls.length})`} accent="emerald">
+      <div className="grid sm:grid-cols-2 gap-2">
+        {tpls.map((t) => (
+          <div key={t.id} className="rounded-xl border border-slate-200 bg-white p-3">
+            <div className="font-semibold text-sm text-slate-800">{t.icon || "📥"} {t.name}</div>
+            <div className="text-xs text-slate-500 leading-snug mb-2">{t.description}</div>
+            <button onClick={() => dl(t.id)} disabled={!!busy[t.id]} className="w-full text-xs font-semibold py-1.5 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-70">{busy[t.id] || "📥 Télécharger .xlsx"}</button>
+          </div>
+        ))}
+      </div>
+    </ACollapse>
+  );
+}
+/* Teinte propre à chaque module : badge du héros + pastille d'icône sur l'accueil.
+   Code couleur stable → repère spatial (où je suis, où je clique). */
+const MODULE_THEME = {
+  annuaire:              { badge: "bg-violet-500",  chip: "bg-violet-50 text-violet-700 border-violet-100" },
+  nas:                   { badge: "bg-fuchsia-500", chip: "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-100" },
+  cadre_legal:           { badge: "bg-amber-500",   chip: "bg-amber-50 text-amber-700 border-amber-100" },
+  cycles:                { badge: "bg-cyan-500",    chip: "bg-cyan-50 text-cyan-700 border-cyan-100" },
+  procedures_assertions: { badge: "bg-emerald-500", chip: "bg-emerald-50 text-emerald-700 border-emerald-100" },
+  quiz:                  { badge: "bg-rose-500",    chip: "bg-rose-50 text-rose-700 border-rose-100" },
+  cas_pratiques:         { badge: "bg-orange-500",  chip: "bg-orange-50 text-orange-700 border-orange-100" },
+  examens_blancs:        { badge: "bg-red-500",     chip: "bg-red-50 text-red-700 border-red-100" },
+  arbres:                { badge: "bg-green-600",   chip: "bg-green-50 text-green-700 border-green-100" },
+  comparatifs:           { badge: "bg-indigo-500",  chip: "bg-indigo-50 text-indigo-700 border-indigo-100" },
+  lexique:               { badge: "bg-teal-500",    chip: "bg-teal-50 text-teal-700 border-teal-100" },
+  outils:                { badge: "bg-blue-500",    chip: "bg-blue-50 text-blue-700 border-blue-100" },
+  modeles:               { badge: "bg-sky-500",     chip: "bg-sky-50 text-sky-700 border-sky-100" },
+  terrain:               { badge: "bg-lime-600",    chip: "bg-lime-50 text-lime-700 border-lime-100" },
+  independance:          { badge: "bg-purple-500",  chip: "bg-purple-50 text-purple-700 border-purple-100" },
+  fraude:                { badge: "bg-pink-600",    chip: "bg-pink-50 text-pink-700 border-pink-100" },
+  goingconcern:          { badge: "bg-yellow-500",  chip: "bg-yellow-50 text-yellow-700 border-yellow-100" },
+  timeline:              { badge: "bg-slate-600",   chip: "bg-slate-100 text-slate-700 border-slate-200" },
+  actualites:            { badge: "bg-fuchsia-600", chip: "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-100" },
+};
 function SectionHero({ section, fallbackIcon }) {
+  const th = MODULE_THEME[section.__key] || {};
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-5 shadow-sm flex items-start gap-4">
-      <span className="text-2xl w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white shadow-sm shrink-0">{section._icon || fallbackIcon || "📋"}</span>
+      <span className={`text-2xl w-12 h-12 flex items-center justify-center rounded-2xl text-white shadow-sm shrink-0 ${th.badge || "bg-violet-500"}`}>{section._icon || fallbackIcon || "📋"}</span>
       <div className="min-w-0">
         <h2 className="text-xl font-bold text-slate-800 leading-tight">{section._label}</h2>
         {section._description && <p className="text-sm text-slate-500 mt-1 leading-relaxed"><MdInline text={section._description} /></p>}
@@ -358,6 +417,7 @@ function AuditOutils({ section, onBack }) {
       {findings.length > 0 && <ACollapse title={`📋 Findings library (${findings.length})`}><div className="space-y-2">{findings.map((f, i) => <FindingCard key={i} f={f} />)}</div></ACollapse>}
       {letters.length > 0 && <ACollapse title="✉️ Templates lettres"><div className="space-y-2">{letters.map((t, i) => <LetterCard key={i} t={t} />)}</div></ACollapse>}
       {tools.length > 0 && <ACollapse title={`🔧 Outils EY (${tools.length})`}><div className="grid sm:grid-cols-2 gap-2">{tools.map((t, i) => <div key={i} className="rounded-xl border border-slate-200 bg-white p-3"><div className="font-semibold text-sm text-slate-800">🔧 {t.name}</div><div className="text-xs text-slate-500 mb-1">{t.purpose}</div>{(t.key_features || []).length > 0 && <ul className="list-disc ml-4 text-xs text-slate-600 space-y-0.5">{t.key_features.map((ff, j) => <li key={j}>{ff}</li>)}</ul>}</div>)}</div></ACollapse>}
+      <ExcelTemplates />
       {gloss.length > 0 && <ACollapse title={`🌐 Glossaire trilingue (${gloss.length})`}><Glossary terms={gloss} /></ACollapse>}
     </div>
   );
@@ -382,7 +442,7 @@ function ATree({ tree, onBack }) {
       {tree.intro && cur === entry && <p className="text-xs text-slate-500 mb-3"><MdInline text={tree.intro} /></p>}
       {path.length > 0 && <div className="text-[11px] text-slate-400 mb-3 leading-relaxed">{path.map((s, i) => <span key={i}><span className="text-violet-600">{s.label}</span>{i < path.length - 1 ? " → " : ""}</span>)}</div>}
       {isLeaf ? (
-        <div className="rounded-lg p-4" style={{ background: color + "10", borderLeft: "3px solid " + color }}>
+        <div className="rounded-xl p-4" style={{ background: color + "10", border: "1px solid " + color + "44" }}>
           <div className="text-base font-bold mb-2" style={{ color }}>{node.result || node.text}</div>
           {(node.detail || node.wording) && <div className="text-sm text-slate-600 italic whitespace-pre-line leading-relaxed">{node.detail || node.wording}</div>}
           {node.tip && <div className="mt-2 text-xs text-violet-700 bg-violet-50 rounded p-2 leading-relaxed">💡 {node.tip}</div>}
@@ -418,11 +478,18 @@ function normAuditQ(q, kind) {
   if (kind === "exam") return { q: q.q, ref: q.ref, expl: q.explication, options: (q.options || []).map((o, i) => ({ text: o, ok: i === q.correct })) };
   return { q: q.q, ref: q.ref, options: (q.options || []).map(o => ({ text: o.t || o.label || "", ok: !!o.ok, expl: o.x })) };
 }
-function AScoredQuiz({ questions, kind, title, icon, intro, onBack }) {
+function AScoredQuiz({ questions, kind, title, icon, intro, onBack, progressKey }) {
   const qs = (questions || []).map(q => normAuditQ(q, kind));
   const [i, setI] = useState(0);
   const [ans, setAns] = useState({});
   const [done, setDone] = useState(false);
+  useEffect(() => {
+    if (!done || !progressKey) return;
+    const api = pywebApi();
+    if (!api || typeof api.save_audit_progress !== "function") return;
+    const correct = Object.keys(ans).filter(k => qs[k] && qs[k].options[ans[k]] && qs[k].options[ans[k]].ok).length;
+    try { Promise.resolve(api.save_audit_progress(progressKey.kind, progressKey.id, "completed", "score:" + correct + "/" + qs.length)).catch(() => {}); } catch (e) {}
+  }, [done]);
   if (!qs.length) return <div><ABack onBack={onBack} label="Menu" /><div className="text-sm text-slate-400">Aucune question.</div></div>;
   const total = qs.length;
   if (done) {
@@ -430,23 +497,37 @@ function AScoredQuiz({ questions, kind, title, icon, intro, onBack }) {
     const pct = Math.round(100 * correct / total);
     let mood = "🏆 Excellent !", col = "#10b981";
     if (pct < 60) { mood = "⚠️ À retravailler"; col = "#ef4444"; } else if (pct < 80) { mood = "👍 Solide"; col = "#f59e0b"; }
-    return <div><ABack onBack={onBack} label="Menu" /><div className="rounded-2xl border bg-white p-8 text-center" style={{ borderLeft: "3px solid " + col }}><div className="text-5xl mb-2">{mood.split(" ")[0]}</div><div className="text-lg font-bold text-slate-800 mb-3">{title} — terminé</div><div className="text-4xl font-extrabold mb-1" style={{ color: col }}>{correct} / {total}</div><div className="text-sm text-slate-500">Score {pct}% — {mood}</div><div className="flex gap-2 justify-center mt-6"><button onClick={() => { setAns({}); setI(0); setDone(false); }} className="px-4 py-2 rounded-lg bg-violet-600 text-white text-sm font-semibold">🔁 Recommencer</button><button onClick={onBack} className="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 text-sm">📋 Menu</button></div></div></div>;
+    return <div><ABack onBack={onBack} label="Menu" /><div className="rounded-2xl border bg-white p-8 text-center shadow-sm" style={{ borderColor: col + "55" }}><div className="text-5xl mb-2">{mood.split(" ")[0]}</div><div className="text-lg font-bold text-slate-800 mb-3">{title} — terminé</div><div className="text-4xl font-extrabold mb-1" style={{ color: col }}>{correct} / {total}</div><div className="text-sm text-slate-500">Score {pct}% — {mood}</div><div className="flex gap-2 justify-center mt-6"><button onClick={() => { setAns({}); setI(0); setDone(false); }} className="px-4 py-2 rounded-lg bg-violet-600 text-white text-sm font-semibold">🔁 Recommencer</button><button onClick={onBack} className="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 text-sm">📋 Menu</button></div></div></div>;
   }
   const q = qs[i];
   const chosen = ans[i];
   const answered = chosen != null;
   return (
     <div>
-      <div className="flex items-center gap-2 mb-3"><button onClick={onBack} className="text-xs px-3 py-1.5 rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50">← Menu</button><div className="flex-1 font-bold text-sm text-slate-800">{icon} {title}</div><div className="text-xs text-amber-600 font-medium">Q {i + 1} / {total}</div></div>
+      <div className="flex items-center gap-2 mb-2"><button onClick={onBack} className="text-xs px-3 py-1.5 rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50">← Menu</button><div className="flex-1 font-bold text-sm text-slate-800">{icon} {title}</div><div className="text-xs text-slate-500 font-semibold tabular-nums">{i + 1} / {total}</div></div>
+      <div className="h-1.5 rounded-full bg-slate-200 mb-4 overflow-hidden"><div className="h-full rounded-full bg-violet-500 transition-all" style={{ width: Math.round(100 * (i + (answered ? 1 : 0)) / total) + "%" }}></div></div>
       {i === 0 && intro && <div className="mb-3"><LCallout tone="warn" title="Contexte" text={intro} /></div>}
-      <div className="rounded-xl border border-slate-200 bg-white p-4 mb-3">
-        <div className="text-sm font-semibold text-slate-800 mb-3">{q.q}</div>
+      <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-3 shadow-sm">
+        <div className="flex items-start gap-3 mb-4">
+          <span className="w-7 h-7 grid place-items-center rounded-lg bg-violet-100 text-violet-700 text-xs font-bold shrink-0">Q{i + 1}</span>
+          <div className="text-base font-semibold text-slate-800 leading-snug">{q.q}</div>
+        </div>
         <div className="space-y-2">{q.options.map((o, j) => {
-          let cls = "border-slate-200 bg-slate-50 hover:border-violet-300";
-          if (answered) { if (o.ok) cls = "border-emerald-400 bg-emerald-50"; else if (j === chosen) cls = "border-rose-400 bg-rose-50"; else cls = "border-slate-200 bg-white opacity-70"; }
-          return <button key={j} disabled={answered} onClick={() => setAns({ ...ans, [i]: j })} className={`w-full text-left px-3.5 py-2.5 rounded-lg border text-sm text-slate-700 transition-colors ${cls}`}>{answered && o.ok ? "✓ " : answered && j === chosen ? "✗ " : ""}{o.text}</button>;
+          let cls = "border-slate-200 bg-white hover:border-violet-400 hover:bg-violet-50/40";
+          let chip = "bg-slate-100 text-slate-500";
+          if (answered) {
+            if (o.ok) { cls = "border-emerald-400 bg-emerald-50"; chip = "bg-emerald-500 text-white"; }
+            else if (j === chosen) { cls = "border-rose-400 bg-rose-50"; chip = "bg-rose-500 text-white"; }
+            else { cls = "border-slate-200 bg-white opacity-60"; }
+          }
+          return (
+            <button key={j} disabled={answered} onClick={() => setAns({ ...ans, [i]: j })} className={`w-full text-left px-3 py-2.5 rounded-xl border text-sm text-slate-700 transition-colors flex items-start gap-2.5 ${cls}`}>
+              <span className={`w-6 h-6 grid place-items-center rounded-md text-[11px] font-bold shrink-0 ${chip}`}>{answered && o.ok ? "✓" : answered && j === chosen ? "✗" : String.fromCharCode(65 + j)}</span>
+              <span className="leading-snug pt-0.5">{o.text}</span>
+            </button>
+          );
         })}</div>
-        {answered && <div className="mt-3 text-sm rounded-lg bg-slate-50 border border-slate-200 p-3 text-slate-600 leading-relaxed"><span className="font-semibold text-slate-700">{q.options[chosen].ok ? "✅ Correct. " : "❌ Incorrect. "}</span>{q.options[chosen].expl || q.expl || ""}{q.ref && <span className="block mt-1 text-[11px] text-violet-600">📚 {q.ref}</span>}</div>}
+        {answered && <div className={`mt-4 text-sm rounded-xl border p-3.5 leading-relaxed ${q.options[chosen].ok ? "bg-emerald-50/70 border-emerald-200 text-emerald-900" : "bg-rose-50/70 border-rose-200 text-rose-900"}`}><span className="font-bold">{q.options[chosen].ok ? "✅ Correct ! " : "❌ Incorrect. "}</span><span className="text-slate-700">{q.options[chosen].expl || q.expl || ""}</span>{q.ref && <span className="block mt-1.5"><span className="text-[11px] bg-white border border-violet-200 text-violet-700 px-2 py-0.5 rounded-full font-medium">📚 {q.ref}</span></span>}</div>}
       </div>
       <div className="flex justify-between">
         <button onClick={() => setI(Math.max(0, i - 1))} disabled={i === 0} className={`px-4 py-2 rounded-lg border text-sm ${i === 0 ? "opacity-40 border-slate-200 text-slate-400" : "border-slate-200 text-slate-600 hover:bg-slate-50"}`}>← Précédente</button>
@@ -461,9 +542,9 @@ function AuditQuizHub({ section, onBack }) {
   const scenarios = (section.simulator && section.simulator.scenarios) || [];
   const [sel, setSel] = useState(null);
   if (sel) {
-    if (sel.kind === "deck") return <AScoredQuiz questions={sel.data.questions} kind="deck" title={sel.data.title} icon={sel.data.icon || "🃏"} onBack={() => setSel(null)} />;
+    if (sel.kind === "deck") return <AScoredQuiz questions={sel.data.questions} kind="deck" title={sel.data.title} icon={sel.data.icon || "🃏"} onBack={() => setSel(null)} progressKey={{ kind: "quiz", id: sel.data.id }} />;
     if (sel.kind === "tree") return <div><ABack onBack={() => setSel(null)} label="Menu Quiz" /><ATree tree={sel.data} /></div>;
-    if (sel.kind === "sim") return <AScoredQuiz questions={sel.data.steps} kind="sim" title={sel.data.title} icon="🎬" intro={sel.data.intro} onBack={() => setSel(null)} />;
+    if (sel.kind === "sim") return <AScoredQuiz questions={sel.data.steps} kind="sim" title={sel.data.title} icon="🎬" intro={sel.data.intro} onBack={() => setSel(null)} progressKey={{ kind: "simulator", id: sel.data.id }} />;
   }
   const Card = ({ onClick, title, sub }) => <button onClick={onClick} className="text-left rounded-xl border border-slate-200 bg-white p-3 hover:shadow-md hover:-translate-y-0.5 transition-all"><div className="font-semibold text-sm text-slate-800">{title}</div>{sub && <div className="text-xs text-slate-400">{sub}</div>}</button>;
   return (
@@ -479,7 +560,7 @@ function AuditQuizHub({ section, onBack }) {
 function AuditExams({ section, onBack }) {
   const exams = section.exams || [];
   const [sel, setSel] = useState(null);
-  if (sel != null && exams[sel]) return <AScoredQuiz questions={exams[sel].questions} kind="exam" title={exams[sel].titre} icon="📝" onBack={() => setSel(null)} />;
+  if (sel != null && exams[sel]) return <AScoredQuiz questions={exams[sel].questions} kind="exam" title={exams[sel].titre} icon="📝" onBack={() => setSel(null)} progressKey={{ kind: "exam", id: exams[sel].id }} />;
   return (
     <div>
       <ABack onBack={onBack} />
@@ -592,7 +673,7 @@ function AuditTerrain({ section, onBack }) {
       <ABack onBack={onBack} /><SectionHero section={section} fallbackIcon="🛠️" />
       {phases.map((p, i) => (
         <ACollapse key={i} title={`${p.icon || "📌"} ${p.title}`} accent="violet" defaultOpen={i === 0}>
-          {p.objective && <div className="text-sm text-slate-600 italic mb-2 border-l-2 border-violet-200 pl-3"><MdInline text={p.objective} /></div>}
+          {p.objective && <div className="text-sm text-slate-600 italic mb-2 bg-violet-50/50 rounded-lg px-3 py-2"><MdInline text={p.objective} /></div>}
           {(p.checklist || []).length > 0 && <TerrainCheck items={p.checklist} />}
           {(p.deliverables || []).length > 0 && <LKeypoints title="📦 Livrables (workpapers)" items={p.deliverables} accent="emerald" />}
           {(p.tools || []).length > 0 && <LKeypoints title="🔧 Outils EY" items={p.tools} accent="blue" />}
@@ -626,7 +707,7 @@ function AuditProcedures({ section, onBack }) {
 /* ═══ Cas pratiques (liste → détail avec solutions révélables) ═══ */
 function CasQ({ q }) {
   const [show, setShow] = useState(false);
-  return <div className="mb-2 rounded-xl border border-slate-200 bg-white p-3"><div className="text-sm font-semibold text-slate-800 mb-1.5"><MdInline text={q.q} /></div><button onClick={() => setShow(!show)} className="text-xs px-2.5 py-1 rounded-md border border-violet-200 text-violet-700 bg-violet-50 hover:bg-violet-100">{show ? "Masquer la solution" : "Voir la solution"}</button>{show && <div className="mt-2 text-sm text-slate-600 leading-relaxed border-l-2 border-emerald-300 pl-3"><MdBlock text={q.solution} /></div>}</div>;
+  return <div className="mb-2 rounded-xl border border-slate-200 bg-white p-3"><div className="text-sm font-semibold text-slate-800 mb-1.5"><MdInline text={q.q} /></div><button onClick={() => setShow(!show)} className="text-xs px-2.5 py-1 rounded-md border border-violet-200 text-violet-700 bg-violet-50 hover:bg-violet-100">{show ? "Masquer la solution" : "Voir la solution"}</button>{show && <div className="mt-2 text-sm text-slate-700 leading-relaxed bg-emerald-50/60 border border-emerald-100 rounded-lg px-3 py-2"><MdBlock text={q.solution} /></div>}</div>;
 }
 function CasDetail({ cas, onBack }) {
   return (
@@ -740,7 +821,7 @@ function AuditBlocs({ section, onBack, fallbackIcon }) {
 /* ═══ Base de cours — livre MSA / NCR (volume → sommaire → chapitre) ═══ */
 function BookQA({ qa }) {
   const [show, setShow] = useState(false);
-  return <div className="mb-2 rounded-xl border border-slate-200 bg-white p-3"><div className="text-sm font-semibold text-slate-800 mb-1.5"><MdInline text={qa.q} /></div><button onClick={() => setShow(!show)} className="text-xs px-2.5 py-1 rounded-md border border-violet-200 text-violet-700 bg-violet-50 hover:bg-violet-100">{show ? "Masquer la réponse" : "Voir la réponse"}</button>{show && <div className="mt-2 text-sm text-slate-600 leading-relaxed border-l-2 border-emerald-300 pl-3"><MdBlock text={qa.a} /></div>}</div>;
+  return <div className="mb-2 rounded-xl border border-slate-200 bg-white p-3"><div className="text-sm font-semibold text-slate-800 mb-1.5"><MdInline text={qa.q} /></div><button onClick={() => setShow(!show)} className="text-xs px-2.5 py-1 rounded-md border border-violet-200 text-violet-700 bg-violet-50 hover:bg-violet-100">{show ? "Masquer la réponse" : "Voir la réponse"}</button>{show && <div className="mt-2 text-sm text-slate-700 leading-relaxed bg-emerald-50/60 border border-emerald-100 rounded-lg px-3 py-2"><MdBlock text={qa.a} /></div>}</div>;
 }
 function BookChapter({ item, partieTitle, onBack, onPrev, onNext, position }) {
   const f = item.fiche || {};
@@ -993,7 +1074,7 @@ function NasNorm({ norm, cours, annuaire, onOpenCourse }) {
       {open && (
         <div className="px-3.5 pb-3.5 text-sm space-y-2.5">
           {hasCourse && <button onClick={() => onOpenCourse(std)} className="w-full mt-1 flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white py-2.5 text-sm font-bold hover:opacity-95">📖 Voir le cours complet § par §</button>}
-          {norm.summary && <div className="text-slate-600 italic border-l-2 border-slate-200 pl-3"><MdBlock text={norm.summary} /></div>}
+          {norm.summary && <div className="text-slate-600 italic bg-slate-50 rounded-lg px-3 py-2"><MdBlock text={norm.summary} /></div>}
           {norm.key_points && norm.key_points.length > 0 && <LKeypoints title="🔑 Points clés" items={norm.key_points} accent="violet" />}
           {norm.swiss_specifics && <LCallout tone="warn" title="🇨🇭 Spécificités suisses" text={norm.swiss_specifics} />}
           {norm.exam_traps && norm.exam_traps.length > 0 && <LKeypoints title="⚠️ Pièges d'examen" items={norm.exam_traps} accent="amber" />}
@@ -1005,12 +1086,28 @@ function NasNorm({ norm, cours, annuaire, onOpenCourse }) {
 }
 function AuditNas({ nas, cours, annuaire, onOpenCourse, onBack }) {
   const [openCat, setOpenCat] = useState(0);
+  const [q, setQ] = useState("");
   const cats = (nas && nas.categories) || [];
+  const query = q.trim().toLowerCase();
+  const hits = query.length >= 2 ? cats.flatMap((c) => (c.norms || []).filter((n) => {
+    const hay = (n.code + " " + n.title + " " + (n.summary || "") + " " + ((n.key_points || []).join(" ")) + " " + (n.swiss_specifics || "")).toLowerCase();
+    return hay.includes(query);
+  }).map((n) => ({ ...n, _cat: c.label }))) : [];
   return (
     <div>
       <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
       <SectionHero section={nas} fallbackIcon="📐" />
-      {cats.map((c, ci) => (
+      <div className="relative mb-4">
+        <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher une norme (fraude, going concern, échantillonnage…)" className="w-full pl-9 pr-3 py-2 rounded-lg border border-slate-300 text-sm focus:border-fuchsia-500 outline-none" />
+      </div>
+      {query.length >= 2 ? (
+        <div>
+          <div className="text-xs text-slate-400 mb-1.5">{hits.length} norme(s) trouvée(s)</div>
+          {hits.map((n, ni) => <div key={ni}><div className="text-[10px] text-slate-400 ml-1 mb-0.5">{n._cat}</div><NasNorm norm={n} cours={cours} annuaire={annuaire} onOpenCourse={onOpenCourse} /></div>)}
+          {!hits.length && <div className="text-sm text-slate-400 text-center py-6">Aucune norme ne correspond.</div>}
+        </div>
+      ) : cats.map((c, ci) => (
         <div key={c.id || ci} className="mb-3">
           <button onClick={() => setOpenCat(openCat === ci ? -1 : ci)} className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-left">
             <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: c.color || "#7c3aed" }}></span>
@@ -1125,15 +1222,42 @@ function AuditHome({ data, book, onSection, onBook }) {
           </button>
         ))}
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-        {keys.map((k) => { const s = data[k]; return (
-          <button key={k} onClick={() => onSection(k)} className="text-left bg-white border border-slate-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-1.5">
-            <div className="flex items-center gap-2"><span className="text-xl">{s._icon || "📋"}</span><span className="font-bold text-sm text-violet-700">{s._label || k}</span></div>
-            {s._description && <div className="text-xs text-slate-500 leading-snug"><MdInline text={s._description} /></div>}
-            {k === "annuaire" && <div className="text-xs text-slate-400 mt-auto pt-1">47 normes · cours complets</div>}
-          </button>
-        ); })}
-      </div>
+      {(() => {
+        const GROUPS = [
+          { id: "apprendre", label: "Apprendre", icon: "📖", keys: ["annuaire", "nas", "cadre_legal", "cycles", "procedures_assertions"] },
+          { id: "entrainer", label: "S'entraîner", icon: "🎮", keys: ["quiz", "cas_pratiques", "examens_blancs", "arbres"] },
+          { id: "outils", label: "Boîte à outils", icon: "🧰", keys: ["outils", "modeles", "lexique", "comparatifs"] },
+          { id: "examen", label: "Examen & veille", icon: "🎯", keys: ["terrain", "independance", "fraude", "goingconcern", "timeline", "actualites"] },
+        ];
+        const placed = new Set(GROUPS.flatMap((g) => g.keys));
+        const rest = keys.filter((k) => !placed.has(k));
+        if (rest.length) GROUPS[GROUPS.length - 1].keys = [...GROUPS[GROUPS.length - 1].keys, ...rest];
+        return GROUPS.map((g) => {
+          const gk = g.keys.filter((k) => data[k]);
+          if (!gk.length) return null;
+          return (
+            <div key={g.id}>
+              <div className="flex items-center gap-2 mb-2.5 mt-1">
+                <span className="text-base">{g.icon}</span>
+                <span className="text-[11px] font-bold uppercase tracking-widest text-slate-400">{g.label}</span>
+                <span className="flex-1 h-px bg-slate-200"></span>
+              </div>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                {gk.map((k) => { const s = data[k]; const th = MODULE_THEME[k] || {}; return (
+                  <button key={k} onClick={() => onSection(k)} className="text-left bg-white border border-slate-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-start gap-3">
+                    <span className={`w-9 h-9 grid place-items-center rounded-lg border text-base shrink-0 ${th.chip || "bg-violet-50 text-violet-700 border-violet-100"}`}>{s._icon || "📋"}</span>
+                    <span className="min-w-0">
+                      <span className="block font-bold text-sm text-slate-800 leading-tight">{s._label || k}</span>
+                      {s._description && <span className="block text-xs text-slate-500 leading-snug mt-0.5"><MdInline text={s._description} /></span>}
+                      {k === "annuaire" && <span className="block text-[11px] text-violet-500 font-medium mt-1">47 normes · cours complets</span>}
+                    </span>
+                  </button>
+                ); })}
+              </div>
+            </div>
+          );
+        });
+      })()}
     </div>
   );
 }
@@ -1175,9 +1299,9 @@ function AuditApp() {
             <AuditAnnuaire annuaire={data.annuaire} cours={cours} onOpen={(st) => go({ k: "course", std: st, from: "annuaire" })} />
           </div>
         )}
-        {view.k === "nas" && <AuditNas nas={data.nas || {}} cours={cours} annuaire={data.annuaire} onOpenCourse={(st) => go({ k: "course", std: st, from: "nas" })} onBack={() => go({ k: "home" })} />}
+        {view.k === "nas" && <AuditNas nas={{ ...(data.nas || {}), __key: "nas" }} cours={cours} annuaire={data.annuaire} onOpenCourse={(st) => go({ k: "course", std: st, from: "nas" })} onBack={() => go({ k: "home" })} />}
         {view.k === "course" && <AuditCourse std={view.std} course={cours[view.std.num] || {}} onBack={() => go({ k: view.from || "annuaire" })} />}
-        {view.k === "section" && <AuditSection skey={view.key} section={data[view.key] || {}} onBack={() => go({ k: "home" })} />}
+        {view.k === "section" && <AuditSection skey={view.key} section={{ ...(data[view.key] || {}), __key: view.key }} onBack={() => go({ k: "home" })} />}
       </main>
       <footer className="max-w-5xl mx-auto px-4 py-6 text-center text-xs text-slate-400">Outil pédagogique — NAS suisses alignées sur les ISA.</footer>
     </div>
