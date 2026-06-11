@@ -3948,3 +3948,20 @@ body.light-mode .mod-audio-title { color: #0f172a; }
 }
 
 /* ── Onglet Podcasts : rendu via iframe (static/podcasts/, cf. build_podcasts.py) ── */
+
+/* ── Bulles flottantes (💭 pense-bête / 🍅 pomodoro) vs barre de lecture ──
+   Sur l'onglet Podcasts, le lecteur occupe le bas de l'écran (fixed bottom
+   dans l'iframe) : on remonte les bulles et leurs panneaux au-dessus pour
+   ne plus masquer pause / barre de progression (surtout sur mobile). */
+body[data-tab="podcasts"] #mindDumpBtn,
+body[data-tab="podcasts"] #pomoBtn { bottom: 96px !important; }
+body[data-tab="podcasts"] #pomoWidget { bottom: 96px !important; }
+body[data-tab="podcasts"] #mindDumpPanel { bottom: 150px !important; }
+
+/* Sur mobile, les bulles gênent vite (petit écran) : on les compacte et on
+   les écarte du pouce. */
+@media (max-width: 768px) {
+    #mindDumpBtn, #pomoBtn { width: 38px !important; height: 38px !important; font-size: 15px !important; opacity: 0.85; }
+    body[data-tab="podcasts"] #mindDumpBtn,
+    body[data-tab="podcasts"] #pomoBtn { bottom: 104px !important; }
+}

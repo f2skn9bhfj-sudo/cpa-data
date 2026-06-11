@@ -100,6 +100,9 @@ function announce(msg) {
 function navigate(tab, subTab) {
     currentTab = tab;
     currentSubTab = subTab || null;
+    // Expose l'onglet courant au CSS (ex. remonter les bulles flottantes
+    // au-dessus de la barre de lecture des Podcasts).
+    document.body.dataset.tab = tab;
 
     // Update tab bar + ARIA state
     document.querySelectorAll('.tab-bar .tab').forEach(t => {

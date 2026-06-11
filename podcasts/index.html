@@ -361,30 +361,31 @@ function PodcastsApp() {
       {/* ── lecteur fixe en bas ── */}
       {current && (
         <div className="fixed bottom-0 inset-x-0 z-40 bg-slate-900/95 backdrop-blur text-white border-t border-slate-700 shadow-2xl">
-          <div className="max-w-5xl mx-auto px-4 py-3 flex items-center gap-3">
+          <div className="max-w-5xl mx-auto px-3 sm:px-4 py-3 flex items-center gap-2 sm:gap-3">
             <button onClick={() => play(current)}
-              className="w-10 h-10 rounded-full bg-indigo-600 hover:bg-indigo-500 flex items-center justify-center shrink-0 transition-colors">
-              {paused ? <Play size={17} className="ml-0.5" /> : <Pause size={17} />}
+              className="w-12 h-12 sm:w-10 sm:h-10 rounded-full bg-indigo-600 hover:bg-indigo-500 flex items-center justify-center shrink-0 transition-colors">
+              {paused ? <Play size={20} className="ml-0.5 sm:hidden" /> : <Pause size={20} className="sm:hidden" />}
+              {paused ? <Play size={17} className="ml-0.5 hidden sm:block" /> : <Pause size={17} className="hidden sm:block" />}
             </button>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
-                <span className="text-[10px] font-bold rounded px-1.5 py-0.5 shrink-0" style={{ background: current._gcolor }}>{current._gid}</span>
+                <span className="text-[10px] font-bold rounded px-1.5 py-0.5 shrink-0 hidden sm:inline" style={{ background: current._gcolor }}>{current._gid}</span>
                 <span className="text-sm font-medium truncate">{current.title}</span>
                 <span className="ml-auto text-[11px] text-slate-400 tabular-nums shrink-0">{fmtT(cur)} / {fmtT(st.dur[current.id])}</span>
               </div>
               <input type="range" min="0" max={st.dur[current.id] || 0} step="1" value={Math.min(cur, st.dur[current.id] || 0)}
                 onChange={(e) => seek(+e.target.value)}
-                className="w-full h-1 mt-1.5 accent-indigo-500 cursor-pointer" />
+                className="w-full h-2 sm:h-1 mt-1.5 accent-indigo-500 cursor-pointer" />
             </div>
-            <div className="flex items-center gap-1.5 shrink-0">
-              <button onClick={() => skip(-15)} title="Reculer de 15 s" className="p-2 rounded-lg hover:bg-white/10 text-slate-300"><RotateCcw size={16} /></button>
-              <button onClick={() => skip(30)} title="Avancer de 30 s" className="p-2 rounded-lg hover:bg-white/10 text-slate-300"><RotateCw size={16} /></button>
+            <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
+              <button onClick={() => skip(-15)} title="Reculer de 15 s" className="p-2.5 sm:p-2 rounded-lg hover:bg-white/10 active:bg-white/20 text-slate-300"><RotateCcw size={18} /></button>
+              <button onClick={() => skip(30)} title="Avancer de 30 s" className="p-2.5 sm:p-2 rounded-lg hover:bg-white/10 active:bg-white/20 text-slate-300"><RotateCw size={18} /></button>
               <button onClick={cycleRate} title="Vitesse de lecture"
-                className="text-xs font-bold border border-slate-600 rounded-md px-2 py-1 hover:border-indigo-400 hover:text-indigo-300 transition-colors tabular-nums">{(st.rate || 1) + "×"}</button>
+                className="text-xs font-bold border border-slate-600 rounded-md px-2 py-1.5 sm:py-1 hover:border-indigo-400 hover:text-indigo-300 transition-colors tabular-nums">{(st.rate || 1) + "×"}</button>
               <button onClick={() => upd((n) => { n.autoNext = !n.autoNext; return n; })}
                 title={st.autoNext ? "Enchaînement automatique activé" : "Enchaînement automatique désactivé"}
-                className={"p-2 rounded-lg hover:bg-white/10 transition-colors " + (st.autoNext ? "text-indigo-400" : "text-slate-500")}><Repeat size={16} /></button>
-              <button onClick={closePlayer} title="Fermer le lecteur" className="p-2 rounded-lg hover:bg-white/10 text-slate-400"><X size={16} /></button>
+                className={"hidden sm:block p-2 rounded-lg hover:bg-white/10 transition-colors " + (st.autoNext ? "text-indigo-400" : "text-slate-500")}><Repeat size={16} /></button>
+              <button onClick={closePlayer} title="Fermer le lecteur" className="p-2.5 sm:p-2 rounded-lg hover:bg-white/10 active:bg-white/20 text-slate-400"><X size={18} /></button>
             </div>
           </div>
         </div>
