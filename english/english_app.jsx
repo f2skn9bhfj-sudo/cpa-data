@@ -1298,9 +1298,95 @@ function VideosSection({ watched, onToggle, onOpen }) {
   );
 }
 
+/* ═══════════ Mes notes — vocabulaire personnel (sessions de notes manuscrites) ═══════════ */
+function NotesBold({ text }) {
+  const parts = String(text || "").split(/(\*\*[^*]+\*\*|\*[^*\n]+\*)/g);
+  return <span>{parts.map((p, i) => {
+    if (/^\*\*[\s\S]+\*\*$/.test(p)) return <strong key={i} className="font-semibold text-slate-800">{p.slice(2, -2)}</strong>;
+    if (/^\*[^*][\s\S]*\*$/.test(p)) return <em key={i}>{p.slice(1, -1)}</em>;
+    return <span key={i}>{p}</span>;
+  })}</span>;
+}
+function MyNoteCard({ item, test }) {
+  const [revealed, setRevealed] = useState(false);
+  const show = !test || revealed;
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-3.5">
+      <div className="flex items-center gap-2 flex-wrap">
+        <span className="text-[15px] font-bold text-slate-800">{item.en}</span>
+        <SpeakBtn text={item.en} title="Écouter le mot" sm />
+        {show
+          ? <span className="text-sm text-indigo-700 font-medium">— {item.fr}</span>
+          : <button onClick={() => setRevealed(true)} className="text-xs px-2.5 py-1 rounded-md border border-indigo-200 text-indigo-600 bg-indigo-50 hover:bg-indigo-100">👁 Voir la traduction</button>}
+      </div>
+      {show && item.ex && (
+        <div className="mt-2 rounded-lg bg-slate-50 border border-slate-100 px-3 py-2">
+          <div className="flex items-start gap-2">
+            <span className="text-sm text-slate-700 italic leading-relaxed flex-1">“{item.ex}”</span>
+            <SpeakBtn text={item.ex} title="Écouter la phrase" sm />
+          </div>
+          {item.ex_fr && <div className="text-xs text-slate-400 mt-1 leading-relaxed">{item.ex_fr}</div>}
+        </div>
+      )}
+      {show && item.tip && <div className="mt-2 rounded-lg bg-violet-50/70 border border-violet-100 px-3 py-2 text-xs text-violet-900 leading-relaxed">💡 <NotesBold text={item.tip} /></div>}
+    </div>
+  );
+}
+function MyNotesSection() {
+  const notes = (E_DATA.my_notes && E_DATA.my_notes.sessions) || [];
+  const [q, setQ] = useState("");
+  const [test, setTest] = useState(false);
+  const query = q.trim().toLowerCase();
+  const total = notes.reduce((a, s) => a + (s.categories || []).reduce((b, c) => b + (c.items || []).length, 0), 0);
+  const match = (it) => !query || (it.en + " " + it.fr + " " + (it.ex || "") + " " + (it.tip || "")).toLowerCase().includes(query);
+  if (!notes.length) return <div className="text-center text-sm text-slate-400 py-12">Pas encore de notes — envoie ta première fournée !</div>;
+  return (
+    <div>
+      <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-4 shadow-sm flex items-start gap-4">
+        <span className="text-2xl w-12 h-12 flex items-center justify-center rounded-2xl bg-indigo-500 text-white shadow-sm shrink-0">📝</span>
+        <div className="min-w-0 flex-1">
+          <h2 className="text-xl font-bold text-slate-800 leading-tight">Mes notes</h2>
+          <p className="text-sm text-slate-500 mt-1 leading-relaxed">Ton vocabulaire personnel ({total} entrées · {notes.length} session{notes.length > 1 ? "s" : ""}), enrichi d'exemples professionnels et d'astuces. Nouvelle fournée de notes → elle s'ajoute ici.</p>
+        </div>
+        <button onClick={() => setTest(!test)} className={`shrink-0 px-3.5 py-2 rounded-lg text-xs font-bold border transition-colors ${test ? "bg-indigo-600 text-white border-indigo-600" : "bg-white text-slate-600 border-slate-200 hover:border-indigo-300"}`}>{test ? "🎴 Mode test ON" : "🎴 Mode test"}</button>
+      </div>
+      <div className="relative mb-4">
+        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher un mot, une traduction, un exemple…"
+          className="w-full pl-4 pr-3 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none bg-white" />
+      </div>
+      {test && <div className="text-xs text-slate-400 mb-3">Mode test : les traductions sont masquées — clique « 👁 Voir la traduction » pour vérifier ta réponse.</div>}
+      {notes.map((s) => {
+        const cats = (s.categories || []).map((c) => ({ ...c, items: (c.items || []).filter(match) })).filter((c) => c.items.length);
+        if (!cats.length && query) return null;
+        return (
+          <div key={s.id} className="mb-6">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-slate-400">📒 {s.source || s.id}</span>
+              {s.date && <span className="text-[11px] text-slate-300">· {s.date}</span>}
+              <span className="flex-1 h-px bg-slate-200"></span>
+            </div>
+            {cats.map((c) => (
+              <div key={c.id} className="mb-4">
+                <div className="text-sm font-bold text-slate-700 mb-2">{c.icon || "📌"} {c.label} <span className="text-slate-400 font-normal">({c.items.length})</span></div>
+                <div className="grid sm:grid-cols-2 gap-2">{c.items.map((it, i) => <MyNoteCard key={(test ? "t" : "l") + i + (it.en || "")} item={it} test={test} />)}</div>
+              </div>
+            ))}
+            {!query && (s.corrections || []).length > 0 && (
+              <div className="rounded-xl border border-amber-200 bg-amber-50/70 p-4 mt-1">
+                <div className="text-xs font-bold text-amber-800 mb-1.5">✍️ Corrections de tes notes manuscrites</div>
+                <ul className="space-y-1">{s.corrections.map((x, i) => <li key={i} className="text-xs text-amber-900 leading-relaxed flex gap-2"><span className="shrink-0">•</span><span><NotesBold text={x} /></span></li>)}</ul>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 /* ════════ App ════════ */
 function EnglishApp() {
-  const VALID = ["essentials", "vocab", "phrases", "fs", "constructor", "dictation", "conversations", "videos", "writing"];
+  const VALID = ["essentials", "mynotes", "vocab", "phrases", "fs", "constructor", "dictation", "conversations", "videos", "writing"];
   const hashSection = (typeof location !== "undefined" && location.hash || "").replace("#", "");
   const initial = VALID.includes(hashSection) ? hashSection : (() => { try { return localStorage.getItem(LS_SUBTAB) || "vocab"; } catch (e) { return "vocab"; } })();
   const [section, setSectionRaw] = useState(VALID.includes(initial) ? initial : "vocab");
@@ -1391,6 +1477,7 @@ function EnglishApp() {
   const D = E_DATA;
   const tabs = [
     { id: "essentials", icon: "🎯", label: "Day-1 EY" },
+    { id: "mynotes", icon: "📝", label: "Mes notes" },
     { id: "vocab", icon: "📚", label: "Vocabulaire" },
     { id: "phrases", icon: "💬", label: "Phrases & expressions" },
     { id: "fs", icon: "📊", label: "États financiers" },
@@ -1435,6 +1522,7 @@ function EnglishApp() {
       <main className="max-w-5xl mx-auto px-4 py-6">
         <AudioBar audio={audio} setAudio={setAudio} />
         {section === "essentials" && <EssentialsSection done={essentialsDone} onToggle={toggleEssential} />}
+        {section === "mynotes" && <MyNotesSection />}
         {section === "vocab" && (
           <VocabSection progress={progress} onRate={onRate}
             filters={allFilters.vocab} setFilters={setVocabFilters}

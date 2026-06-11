@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "description": "Mes notes — vocabulaire personnel de Vincent, issu de ses notes manuscrites (photos → Claude). Une session = une fournée de notes. Chaque entrée est enrichie : exemple professionnel (contexte EY/audit quand c'est naturel), traduction, astuce de registre ou piège.",
+    "workflow": "Nouvelle fournée → ajouter une session {id, date, source, categories[], corrections[]} puis relancer build_english.py."
+  },
+  "sessions": [
+    {
+      "id": "s1",
+      "date": "2026-06-11",
+      "source": "Notes manuscrites — session 1 (photo → Claude chat)",
+      "categories": [
+        {
+          "id": "connecteurs",
+          "label": "Connecteurs & mots de liaison",
+          "icon": "🔗",
+          "items": [
+            { "en": "though", "fr": "bien que", "ex": "Though the deadline was tight, the team delivered the audit file on time.", "ex_fr": "Bien que le délai ait été serré, l'équipe a livré le dossier d'audit à temps.", "tip": "« Though » peut aussi se placer en fin de phrase à l'oral : “It was hard, though.” (= cela dit, quand même). « Although » est légèrement plus formel et toujours en début de proposition." },
+            { "en": "in spite of", "fr": "malgré", "ex": "In spite of the ERP migration, no data was lost during the year-end close.", "ex_fr": "Malgré la migration ERP, aucune donnée n'a été perdue à la clôture.", "tip": "Toujours suivi d'un NOM ou d'un gérondif : in spite of the delay / in spite of being late. Synonyme plus court : « despite » (sans “of” !)." },
+            { "en": "as well as", "fr": "ainsi que", "ex": "The engagement covers the parent company as well as its three subsidiaries.", "ex_fr": "La mission couvre la société mère ainsi que ses trois filiales.", "tip": "Après « as well as », le verbe s'accorde avec le PREMIER sujet : “The CFO, as well as the controllers, WAS present.”" },
+            { "en": "such as", "fr": "tel que", "ex": "Significant risks, such as revenue recognition, require specific audit procedures.", "ex_fr": "Les risques significatifs, tels que la reconnaissance du revenu, exigent des procédures d'audit spécifiques.", "tip": "« Such as » introduit des exemples (= for example). Ne pas confondre avec « as such » (= en tant que tel)." },
+            { "en": "at the same time", "fr": "en même temps", "ex": "We need to be thorough and, at the same time, meet the reporting deadline.", "ex_fr": "Nous devons être rigoureux et, en même temps, tenir le délai de reporting.", "tip": "Sert aussi de connecteur de nuance en début de phrase : “At the same time, we shouldn't ignore the cost.” (= cela dit, d'un autre côté)." },
+            { "en": "by + -ing", "fr": "en + gérondif (en faisant)", "ex": "You reduce detection risk by increasing the sample size.", "ex_fr": "On réduit le risque de non-détection en augmentant la taille de l'échantillon.", "tip": "LE réflexe à avoir pour traduire « en faisant qqch » : by doing sth. Très fréquent dans les réponses d'examen : “The auditor responds to this risk by performing…”" },
+            { "en": "over", "fr": "au cours de, au fil de", "ex": "The group's margins improved steadily over the years.", "ex_fr": "Les marges du groupe se sont améliorées régulièrement au fil des années.", "tip": "« over the period / over the year » = très courant en audit pour les variations. Si tu veux dire « au cœur de » → “at the heart of”." }
+          ]
+        },
+        {
+          "id": "adverbes",
+          "label": "Adverbes",
+          "icon": "⚡",
+          "items": [
+            { "en": "frankly", "fr": "franchement", "ex": "Frankly, I don't think this control is operating effectively.", "ex_fr": "Franchement, je ne pense pas que ce contrôle fonctionne efficacement.", "tip": "En début de phrase = on annonce une opinion directe. Version encore plus idiomatique : “To be frank, …”" },
+            { "en": "openly", "fr": "ouvertement", "ex": "The CFO spoke openly about the going-concern uncertainty.", "ex_fr": "Le CFO a parlé ouvertement de l'incertitude sur la continuité d'exploitation.", "tip": "Souvent avec les verbes de parole : speak / discuss / admit openly." },
+            { "en": "seemingly", "fr": "apparemment, en apparence", "ex": "A seemingly minor error turned out to be material.", "ex_fr": "Une erreur en apparence mineure s'est révélée significative.", "tip": "« Seemingly » devant un adjectif = en apparence. Synonyme : apparently (plus courant à l'oral)." },
+            { "en": "steadily", "fr": "régulièrement, de façon constante", "ex": "Revenue has grown steadily since 2023.", "ex_fr": "Le chiffre d'affaires a augmenté régulièrement depuis 2023.", "tip": "Duo magique pour décrire des graphiques : increase/decline steadily. À caser dans la partie analytique (procédures analytiques) !" },
+            { "en": "downright", "fr": "carrément, franchement (péjoratif)", "ex": "Some of the supporting documents were downright bogus.", "ex_fr": "Certains justificatifs étaient carrément bidon.", "tip": "Intensificateur surtout NÉGATIF : downright rude / wrong / dangerous. On ne dit pas “downright excellent”." },
+            { "en": "acutely", "fr": "vivement, intensément", "ex": "We are acutely aware of the regulatory deadline.", "ex_fr": "Nous sommes pleinement conscients de l'échéance réglementaire.", "tip": "Collocation quasi figée : “acutely aware (of)”. Très bon niveau B2/C1 dans un e-mail pro." }
+          ]
+        },
+        {
+          "id": "adjectifs",
+          "label": "Adjectifs",
+          "icon": "🎨",
+          "items": [
+            { "en": "relevant", "fr": "pertinent", "ex": "Please attach all relevant supporting documents to the workpaper.", "ex_fr": "Merci de joindre tous les justificatifs pertinents au dossier de travail.", "tip": "Faux ami inversé : « pertinent » existe en anglais mais est rare — utilise relevant. Contraire : irrelevant (hors sujet)." },
+            { "en": "bogus", "fr": "faux, bidon", "ex": "The auditor spotted several bogus invoices in the sample.", "ex_fr": "L'auditeur a repéré plusieurs factures bidon dans l'échantillon.", "tip": "Registre familier mais utilisé même en contexte pro (fraude). Plus formel : fictitious / fraudulent invoices." },
+            { "en": "extensive", "fr": "vaste, étendu, approfondi", "ex": "We performed extensive testing on the payroll cycle.", "ex_fr": "Nous avons réalisé des tests approfondis sur le cycle paie.", "tip": "Collocations d'audit : extensive testing / extensive experience / extensive disclosure. ≠ expensive (cher) — piège de prononciation !" },
+            { "en": "repetitive", "fr": "répétitif", "ex": "Repetitive data-entry tasks are ideal candidates for automation.", "ex_fr": "Les tâches de saisie répétitives sont des candidates idéales à l'automatisation.", "tip": "Accent sur -PE- : re-PE-titive." },
+            { "en": "embarrassing", "fr": "embarrassant, gênant", "ex": "Missing the filing deadline would be embarrassing for the firm.", "ex_fr": "Rater l'échéance de dépôt serait embarrassant pour le cabinet.", "tip": "Orthographe : 2 R, 2 S. « I'm embarrassed » = je suis gêné (≠ “embarrassée” au sens enceinte en espagnol — célèbre faux ami des hispanophones)." },
+            { "en": "unusual", "fr": "inhabituel", "ex": "We investigate any unusual journal entries posted just before year-end.", "ex_fr": "Nous examinons toute écriture inhabituelle passée juste avant la clôture.", "tip": "Mot-clé ISA 240 : “unusual transactions”, “unusual journal entries” — à connaître par cœur pour le JE testing." },
+            { "en": "the largest", "fr": "le plus grand", "ex": "Helvetia SA is our largest client in the Geneva office.", "ex_fr": "Helvetia SA est notre plus gros client du bureau de Genève.", "tip": "Superlatif : large → larger → the largest. Pour une société on dit plutôt largest que biggest dans un registre pro écrit." }
+          ]
+        },
+        {
+          "id": "verbes",
+          "label": "Verbes & expressions verbales",
+          "icon": "🛠️",
+          "items": [
+            { "en": "to go back (to)", "fr": "remonter (dans le temps)", "ex": "These accounting records go back to 2018.", "ex_fr": "Ces pièces comptables remontent à 2018.", "tip": "Aussi : “Let's go back to your question” = revenons à votre question (très utile en réunion)." },
+            { "en": "to pull (sb/sth) down", "fr": "tirer vers le bas", "ex": "The impairment loss pulled the group's results down.", "ex_fr": "La perte de valeur a tiré les résultats du groupe vers le bas.", "tip": "Phrasal verb séparable : pull the results down / pull down the results." },
+            { "en": "to go backwards", "fr": "reculer, revenir en arrière", "ex": "If we change the scope now, the project will go backwards.", "ex_fr": "Si on change le périmètre maintenant, le projet va reculer.", "tip": "Figuré : “We're going backwards” = on régresse. Contraire : to move forward." },
+            { "en": "to scrap", "fr": "abandonner, mettre au rebut (un projet)", "ex": "Management decided to scrap the ERP project after the pilot phase.", "ex_fr": "La direction a décidé d'abandonner le projet ERP après la phase pilote.", "tip": "scrap a plan / project / meeting = annuler-abandonner. « Scrap metal » = ferraille." },
+            { "en": "to bear in mind", "fr": "garder à l'esprit", "ex": "Bear in mind that performance materiality is set at CHF 650k.", "ex_fr": "Garde à l'esprit que la matérialité de performance est fixée à 650 kCHF.", "tip": "Formule d'or pour les e-mails : “Please bear in mind that…”. Passé : bore, borne." },
+            { "en": "to sue / to be sued", "fr": "poursuivre en justice / être poursuivi", "ex": "The company is being sued by a former supplier for breach of contract.", "ex_fr": "La société est poursuivie par un ancien fournisseur pour rupture de contrat.", "tip": "Prononciation : /suː/ (comme “Sue”). En audit : litiges → “pending lawsuits”, lien direct avec les provisions (IAS 37)." },
+            { "en": "to gather", "fr": "rassembler, recueillir", "ex": "We gathered sufficient appropriate audit evidence on revenue.", "ex_fr": "Nous avons recueilli des éléments probants suffisants et appropriés sur le revenu.", "tip": "LA collocation ISA 500 : gather/obtain audit evidence. Aussi : “I gather that…” = je crois comprendre que…" },
+            { "en": "to lower", "fr": "réduire, baisser", "ex": "The central bank lowered interest rates twice this year.", "ex_fr": "La banque centrale a baissé les taux deux fois cette année.", "tip": "lower = transitif (on baisse qqch). Si ça baisse tout seul : decrease / fall / drop." },
+            { "en": "to hold (held, held)", "fr": "organiser, tenir (un événement)", "ex": "The annual general meeting will be held in May.", "ex_fr": "L'assemblée générale annuelle se tiendra en mai.", "tip": "Irrégulier : hold-held-held. Au passif c'est LE verbe des réunions : “the meeting was held”. Aussi : hold shares = détenir des actions." },
+            { "en": "to crop up", "fr": "surgir (à l'improviste)", "ex": "A few issues cropped up during the inventory count.", "ex_fr": "Quelques problèmes ont surgi pendant l'inventaire physique.", "tip": "Familier, imprévu. Version neutre/soutenue : to arise. “Something's cropped up” = un imprévu est arrivé (excuse classique)." },
+            { "en": "to arise (arose, arisen)", "fr": "survenir, se présenter", "ex": "Should any questions arise, feel free to reach out.", "ex_fr": "Si des questions surviennent, n'hésitez pas à me contacter.", "tip": "Registre soutenu, parfait à l'écrit. Irrégulier : arise-arose-arisen. “Should any questions arise” = tournure élégante de mail." },
+            { "en": "to wing it", "fr": "improviser (sans préparation)", "ex": "Don't wing it in front of the audit committee — prepare your slides.", "ex_fr": "N'improvise pas devant le comité d'audit — prépare tes slides.", "tip": "FAMILIER (oral entre collègues, jamais dans un rapport). “I totally winged it” = j'ai improvisé total." },
+            { "en": "to presume", "fr": "présumer, supposer", "ex": "I presume these figures are still unaudited?", "ex_fr": "Je présume que ces chiffres ne sont pas encore audités ?", "tip": "Écho ISA 240 : “presumed risk of fraud in revenue recognition” = risque PRÉSUMÉ. assume = supposer (neutre), presume = supposer avec assez de confiance." },
+            { "en": "to reach (sb)", "fr": "joindre, contacter (qqn)", "ex": "You can reach me on Teams or on my mobile until 6 pm.", "ex_fr": "Vous pouvez me joindre sur Teams ou sur mon portable jusqu'à 18 h.", "tip": "“to reach out (to sb)” = prendre contact (très corporate US) : “Feel free to reach out.”" },
+            { "en": "to throw (threw, thrown)", "fr": "lancer, jeter", "ex": "Don't throw away the supporting documents before the retention period ends.", "ex_fr": "Ne jette pas les justificatifs avant la fin du délai de conservation.", "tip": "throw away = jeter (à la poubelle). Figuré utile : “The question threw me” = la question m'a déstabilisé." },
+            { "en": "to move on", "fr": "passer à autre chose, avancer", "ex": "Let's move on to the next agenda item.", "ex_fr": "Passons au point suivant de l'ordre du jour.", "tip": "Phrase de réunion n°1 : “Shall we move on?”. Aussi émotionnel : “I've moved on” = j'ai tourné la page." },
+            { "en": "to expand", "fr": "étendre, développer, élargir", "ex": "The group expanded into the German market last year.", "ex_fr": "Le groupe s'est développé sur le marché allemand l'an dernier.", "tip": "En réunion : “Could you expand on that?” = pouvez-vous développer ? — à connaître absolument pour l'oral." }
+          ]
+        },
+        {
+          "id": "phrases_types",
+          "label": "Phrases-types",
+          "icon": "💬",
+          "items": [
+            { "en": "That goes back to…", "fr": "Cela remonte à…", "ex": "Our relationship with this client goes back to 2015.", "ex_fr": "Notre relation avec ce client remonte à 2015.", "tip": "Pratique pour raconter un historique en small talk ou en entretien." },
+            { "en": "You will be…", "fr": "Tu seras / Vous serez…", "ex": "You will be assigned to the financial services team in Geneva.", "ex_fr": "Tu seras affecté à l'équipe services financiers de Genève.", "tip": "Le futur passif (will be + participe passé) est partout en onboarding : you will be given / assigned / expected to…" },
+            { "en": "It wasn't what I expected", "fr": "Ce n'était pas ce à quoi je m'attendais", "ex": "The internship wasn't what I expected — it was even better.", "ex_fr": "Le stage n'était pas ce à quoi je m'attendais — c'était encore mieux.", "tip": "Structure à recycler : “It's not what I expected” / “That's exactly what I expected”." },
+            { "en": "It would take…", "fr": "Ça prendrait… (temps/effort)", "ex": "It would take weeks to test every transaction — that's why we sample.", "ex_fr": "Il faudrait des semaines pour tester chaque transaction — c'est pour ça qu'on échantillonne.", "tip": "Conditionnel d'estimation : “It would take 2 hours / a lot of effort”. Argument type pour justifier le sampling à l'examen !" },
+            { "en": "aren't (= are not)", "fr": "ne sont pas", "ex": "These balances aren't reconciled yet.", "ex_fr": "Ces soldes ne sont pas encore rapprochés.", "tip": "Contraction standard à l'oral et dans les e-mails informels. Dans un rapport formel : écrire “are not”." }
+          ]
+        },
+        {
+          "id": "pro_audit",
+          "label": "Vocabulaire pro / audit",
+          "icon": "💼",
+          "items": [
+            { "en": "substantive testing", "fr": "tests de substance (audit)", "ex": "Substantive testing aims to detect material misstatements at the assertion level.", "ex_fr": "Les tests de substance visent à détecter les anomalies significatives au niveau des assertions.", "tip": "Famille à maîtriser : substantive procedures = tests of details + substantive analytical procedures. Opposé : tests of controls." },
+            { "en": "to take cognizance (of)", "fr": "prendre connaissance (de)", "ex": "The board took cognizance of the auditor's long-form report.", "ex_fr": "Le conseil a pris connaissance du rapport détaillé de l'auditeur.", "tip": "TRÈS formel/juridique (PV de conseil, courriers officiels). Au quotidien on dit plutôt : “to take note of” ou “to review”." },
+            { "en": "criteria (sing. criterion)", "fr": "critères (sing. critère)", "ex": "Two of the three CO 727 criteria are met, so an ordinary audit is required.", "ex_fr": "Deux des trois critères du CO 727 sont remplis, donc un contrôle ordinaire est requis.", "tip": "Pluriel grec : ONE criterion, TWO criteria. “The criteria ARE met” (pas “is”). Même famille que phenomenon/phenomena." }
+          ]
+        }
+      ],
+      "corrections": [
+        "**mise au rebut** (orthographe : pas « rebus ») — to scrap.",
+        "**Unusual** → inhabituel (la note manuscrite disait « Unseal », qui signifie desceller/ouvrir).",
+        "**Over** = au cours de / au fil de. Pour « au cœur de » → *at the heart of*.",
+        "**criterion** (singulier) / **criteria** (pluriel) — accord du verbe au pluriel : the criteria are…",
+        "**crop up** vs **arise** : les deux = survenir. *Crop up* est familier et suggère l'imprévu ; *arise* est neutre/soutenu, parfait à l'écrit."
+      ]
+    }
+  ]
+}
