@@ -1,0 +1,23 @@
+{
+  "_meta": {
+    "description": "Podcasts ajoutés à la main (hors unified_modules.json) pour ne pas polluer les autres onglets. Append-friendly : déposer le .m4a dans static/audio/, ajouter une entrée ici (ou un nouveau groupe), relancer build_podcasts.py.",
+    "schema": "groups[] = {id, name, color, items[]}; item = {path (audio/xxx.m4a), title, code, ref, kind, mime}"
+  },
+  "groups": [
+    {
+      "id": "ISA+",
+      "name": "Audit — Terrain & éléments probants (ISA 320–510)",
+      "color": "#7c3aed",
+      "items": [
+        { "path": "audio/audit_isa_320_materialite.m4a", "title": "Matérialité (ISA 320) et jugement professionnel", "code": "ISA 320", "ref": "Caractère significatif dans la planification et la réalisation d'un audit", "kind": "podcast", "mime": "audio/mp4" },
+        { "path": "audio/audit_isa_330_reponses_risques.m4a", "title": "Réponses aux risques selon l'ISA 330", "code": "ISA 330", "ref": "Réponses de l'auditeur aux risques évalués", "kind": "podcast", "mime": "audio/mp4" },
+        { "path": "audio/audit_isa_402_services_externalises.m4a", "title": "L'audit des services externalisés (ISA 402)", "code": "ISA 402", "ref": "Audit d'une entité faisant appel à une société de services", "kind": "podcast", "mime": "audio/mp4" },
+        { "path": "audio/audit_isa_450_evaluation_anomalies.m4a", "title": "L'évaluation des anomalies (ISA 450)", "code": "ISA 450", "ref": "Évaluation des anomalies relevées au cours de l'audit", "kind": "podcast", "mime": "audio/mp4" },
+        { "path": "audio/audit_isa_500_elements_probants.m4a", "title": "Hiérarchie des éléments probants (ISA 500)", "code": "ISA 500", "ref": "Éléments probants", "kind": "podcast", "mime": "audio/mp4" },
+        { "path": "audio/audit_isa_501_stocks_litiges.m4a", "title": "Audit des stocks et litiges (ISA 501)", "code": "ISA 501", "ref": "Éléments probants — considérations spécifiques (stocks, litiges, segments)", "kind": "podcast", "mime": "audio/mp4" },
+        { "path": "audio/audit_isa_505_confirmations_externes.m4a", "title": "Réussir les confirmations externes (ISA 505)", "code": "ISA 505", "ref": "Confirmations externes", "kind": "podcast", "mime": "audio/mp4" },
+        { "path": "audio/audit_isa_510_soldes_ouverture.m4a", "title": "Audit initial des soldes d'ouverture (ISA 510)", "code": "ISA 510", "ref": "Missions d'audit initiales — soldes d'ouverture", "kind": "podcast", "mime": "audio/mp4" }
+      ]
+    }
+  ]
+}
