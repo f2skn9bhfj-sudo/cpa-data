@@ -851,6 +851,22 @@ function revisionInnerHtml(data) {
   });
   return h;
 }
+/* Retire les renvois de paragraphes (§13, §A45, §8-9…) — fiche express only.
+   Miroir léger du _strip_para_refs Python (utilisé par le repli impression). */
+function stripParaRefs(text) {
+  if (!text || text.indexOf("§") < 0) return text;
+  var REF = "§\\s*A?\\d+\\s*[a-z]?(?:\\s*[\\-\\u2013]\\s*A?\\d+\\s*[a-z]?)?(?:\\s*\\([a-z]\\))?";
+  var RUN = REF + "(?:\\s*[,/]\\s*" + REF + ")*(?:\\s+et\\s+s(?:\\.|uiv(?:\\.|ants)?)?)?";
+  text = text.replace(new RegExp("\\s*\\(\\s*" + RUN + "\\s*\\)", "g"), "");
+  text = text.replace(new RegExp("\\s*[\\u2014\\-:,]\\s*" + RUN, "g"), "");
+  text = text.replace(new RegExp("(\\()\\s*" + RUN + "\\s*[/,+]\\s*", "g"), "$1");
+  text = text.replace(new RegExp("\\s*" + RUN, "g"), "");
+  text = text.replace(/\(\s*\)/g, "").replace(/\(\s*[/,;]\s*/g, "(").replace(/\s*[;,/]\s*\)/g, ")")
+             .replace(/\s+([,.)])/g, "$1").replace(/\(\s+/g, "(").replace(/(\w)\(/g, "$1 (")
+             .replace(/\s*\+\s*/g, " + ").replace(/\(\s*\+\s*/g, "(").replace(/[ \t]{2,}/g, " ")
+             .replace(/\s+—\s*([).,])/g, "$1").replace(/[—\-]\s*$/, "");
+  return text.trim();
+}
 /* Fiche EXPRESS : l'essentiel (tldr) + mnémo par norme — HTML imprimable condensé. */
 function revisionExpressInnerHtml(data) {
   const annuaire = (data && data.annuaire) || {};
@@ -868,10 +884,10 @@ function revisionExpressInnerHtml(data) {
     norms.forEach((st) => {
       const c = cours[st.num] || {};
       h += '<h3 style="color:' + col + ';margin:12px 0 2px;font-size:14px">' + escHtml(st.code || "") + " · " + escHtml(st.title_fr || "") + "</h3>";
-      h += mdToHtml(c.tldr || "");
+      h += mdToHtml(stripParaRefs(c.tldr || ""));
       const mn = c.mnemo || {};
       if (mn.code && (mn.items || []).length) {
-        const bits = mn.items.map((it) => "<strong>" + escHtml(it.l || "") + "</strong> " + escHtml(it.t || "")).join(" · ");
+        const bits = mn.items.map((it) => "<strong>" + escHtml(it.l || "") + "</strong> " + escHtml(stripParaRefs(it.t || ""))).join(" · ");
         h += '<div style="font-size:12px;color:#475569;background:#f8fafc;border-left:3px solid ' + col + ';padding:4px 8px;margin:3px 0 4px">🧠 <strong>' + escHtml(mn.code) + "</strong> — " + bits + "</div>";
       }
     });

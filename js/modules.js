@@ -1178,9 +1178,21 @@ function modRenderLessonIfpDetail(l, m) {
                 const tipHtml        = callout('tip',     '🧠', 'Astuce mémo',       sec.tip);
                 const warningHtml    = callout('warn',    '⚠️', 'Attention',         sec.warning);
 
+                // En-tête de section "ludique" : badge numéroté coloré (module)
+                // + titre en vrai heading, accent de carte dans la couleur du module.
+                const tMatch = (sec.title || '').match(/^\s*(\d+)[.)]\s*(.+)$/);
+                const secNum = tMatch ? tMatch[1] : String(i + 1);
+                const secTitle = tMatch ? tMatch[2] : (sec.title || '');
+                const headHtml = sec.title
+                    ? `<div class="mod-card-head" id="${escapeAttr(secId)}">
+                           <span class="mod-card-num" style="background:${color}1f;color:${color}">${escapeHtml(secNum)}</span>
+                           <h3 class="mod-card-heading">${escapeHtml(secTitle)}</h3>
+                       </div>`
+                    : '';
+
                 html += `
-                <div class="mod-card">
-                    <h3 class="mod-card-label" id="${escapeAttr(secId)}">${escapeHtml(sec.title || '')}</h3>
+                <div class="mod-card mod-card-rich" style="--mc:${color}">
+                    ${headHtml}
                     <div class="mod-card-text">${formatAnswer(sec.body || '')}</div>
                     ${infoHtml}
                     ${legalHtml}
@@ -2303,6 +2315,29 @@ body.light-mode .mod-sb-ref-owner {
     white-space: pre-wrap;
 }
 .mod-card-mnemonic { border-left: 3px solid #a78bfa; background: rgba(167,139,250,.06); }
+
+/* Cartes de cours "ludiques" : en-tête numéroté à la couleur du module. */
+.mod-card-rich {
+    border-radius: 12px; border: 1px solid var(--border, #334155);
+    padding: 16px 20px 18px; margin-bottom: 16px;
+    background: var(--bg-secondary, #1e293b);
+    transition: border-color .15s, box-shadow .15s;
+}
+.mod-card-rich:hover { box-shadow: 0 3px 14px rgba(0,0,0,.18); border-color: rgba(148,163,184,.32); }
+.mod-card-head {
+    display: flex; align-items: center; gap: 11px;
+    margin: 0 0 13px; padding-bottom: 11px;
+    border-bottom: 1px solid rgba(148,163,184,.15);
+}
+.mod-card-num {
+    flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800; letter-spacing: -0.02em;
+}
+.mod-card-heading {
+    margin: 0; font-size: 16.5px; font-weight: 700; line-height: 1.3;
+    color: var(--text-bright, #f1f5f9); letter-spacing: -0.01em;
+}
 
 /* ── Differences grid ── */
 .mod-diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
