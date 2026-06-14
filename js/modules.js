@@ -2220,15 +2220,22 @@ body.light-mode .mod-sb-ref-owner {
     color: #475569; font-size: 15px;
 }
 
-/* Reading pane uses full available width */
-.mod-detail { width: 100%; max-width: 100%; margin: 0; }
+/* Colonne de lecture CENTRÉE, largeur confortable (mesure de ligne lisible)
+   au lieu de pleine largeur collée à gauche. */
+.mod-detail { width: 100%; max-width: 760px; margin: 0 auto; }
 
 /* On very wide screens, center content with generous width */
 @media (min-width: 1600px) {
-    .mod-reading { padding: 24px 48px 60px; }
+    .mod-reading { padding: 28px 48px 64px; }
+    .mod-detail { max-width: 820px; }
 }
 @media (min-width: 2000px) {
-    .mod-reading { padding: 30px 80px 80px; }
+    .mod-reading { padding: 34px 80px 88px; }
+    .mod-detail { max-width: 880px; }
+}
+/* Mobile : la colonne reprend toute la largeur (pas de gouttières). */
+@media (max-width: 768px) {
+    .mod-detail { max-width: 100%; }
 }
 
 /* ── Header card ── */
@@ -2243,8 +2250,8 @@ body.light-mode .mod-sb-ref-owner {
 .mod-hc-left { flex: 1; min-width: 0; }
 .mod-hc-cat { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
 .mod-hc-title {
-    font-size: 20px; font-weight: 700; color: #f1f5f9;
-    margin: 0; line-height: 1.3;
+    font-size: 22px; font-weight: 700; color: #f1f5f9;
+    margin: 0; line-height: 1.3; letter-spacing: -0.015em;
     word-wrap: break-word; overflow-wrap: break-word;
 }
 .mod-hc-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; flex-wrap: wrap; }
@@ -2280,10 +2287,15 @@ body.light-mode .mod-sb-ref-owner {
     text-transform: uppercase; letter-spacing: .3px;
 }
 .mod-card-text {
-    font-size: 14px; color: #cbd5e1; line-height: 1.65; white-space: pre-wrap;
+    font-size: 15.5px; color: #cbd5e1; line-height: 1.8; max-width: 100%;
     word-wrap: break-word; overflow-wrap: break-word;
     white-space: pre-wrap;
 }
+/* La colonne .mod-detail est déjà plafonnée + centrée : on neutralise le
+   cap 72ch (style.css) qui ancrait le texte à gauche avec gouttière à droite. */
+.mod-reading .mod-card-text { max-width: 100%; }
+.mod-card-text p { margin-bottom: 0.9em; }
+.mod-card-text p:last-child { margin-bottom: 0; }
 .mod-card-tips { border-left: 3px solid #f59e0b; }
 .mod-tip {
     font-size: 13px; color: #e2e8f0; padding: 4px 0; line-height: 1.5;
@@ -2320,36 +2332,38 @@ body.light-mode .mod-sb-ref-owner {
 
 /* ── Accordion ── */
 /* ── Sections (no accordion, all visible) ── */
-.mod-section { margin-bottom: 20px; }
+.mod-section { margin-bottom: 28px; }
 .mod-section-title {
-    font-size: 17px; font-weight: 700; color: #e2e8f0;
-    margin: 0 0 10px 0; padding-bottom: 8px;
-    border-bottom: 1px solid #334155;
+    font-size: 18.5px; font-weight: 700; color: #e2e8f0;
+    margin: 0 0 12px 0; padding-bottom: 9px;
+    border-bottom: 1px solid #334155; letter-spacing: -0.01em;
 }
 .mod-section-text {
-    font-size: 14.5px; color: #cbd5e1; line-height: 1.75;
+    font-size: 16px; color: #cbd5e1; line-height: 1.8;
     white-space: pre-wrap; word-wrap: break-word;
 }
+.mod-section-text p { margin-bottom: 0.95em; }
+.mod-section-text p:last-child { margin-bottom: 0; }
 
 /* Bigger text on wider screens */
 @media (min-width: 1600px) {
-    .mod-section { margin-bottom: 24px; }
-    .mod-section-title { font-size: 19px; margin-bottom: 12px; padding-bottom: 10px; }
-    .mod-section-text { font-size: 15.5px; line-height: 1.8; }
-    .mod-card-text { font-size: 15.5px; line-height: 1.8; }
+    .mod-section { margin-bottom: 30px; }
+    .mod-section-title { font-size: 20px; margin-bottom: 13px; padding-bottom: 10px; }
+    .mod-section-text { font-size: 16.5px; line-height: 1.85; }
+    .mod-card-text { font-size: 16.5px; line-height: 1.85; }
     .mod-hc-title { font-size: 24px; }
-    .mod-rule { font-size: 14.5px; line-height: 1.7; padding: 10px 14px; }
-    .mod-tip { font-size: 14.5px; line-height: 1.7; }
-    .mod-mnemonic-box { font-size: 15px; padding: 12px 16px; }
+    .mod-rule { font-size: 15px; line-height: 1.7; padding: 10px 14px; }
+    .mod-tip { font-size: 15px; line-height: 1.7; }
+    .mod-mnemonic-box { font-size: 15.5px; padding: 12px 16px; }
     .mod-tips-box { padding: 14px 18px; }
     .mod-tips-title { font-size: 14px; }
-    .mod-diff-text { font-size: 14.5px; line-height: 1.7; }
-    .mod-fc-q { font-size: 15px; }
-    .mod-fc-a { font-size: 14px; line-height: 1.75; }
+    .mod-diff-text { font-size: 15px; line-height: 1.7; }
+    .mod-fc-q { font-size: 15.5px; }
+    .mod-fc-a { font-size: 14.5px; line-height: 1.75; }
 }
 @media (min-width: 2000px) {
-    .mod-section-title { font-size: 20px; }
-    .mod-section-text, .mod-card-text { font-size: 16px; line-height: 1.85; }
+    .mod-section-title { font-size: 21px; }
+    .mod-section-text, .mod-card-text { font-size: 17px; line-height: 1.9; }
     .mod-hc-title { font-size: 26px; }
 }
 

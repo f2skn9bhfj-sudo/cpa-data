@@ -826,6 +826,80 @@ function downloadAuditPdf(std, course, isFiche) {
   }
 }
 
+/* ── Méga-fiche de révision : HTML imprimable (toutes les normes ISA) ── */
+function revisionInnerHtml(data) {
+  const annuaire = (data && data.annuaire) || {};
+  const cours = (data && data.annuaire_cours) || {};
+  const series = annuaire.series || [];
+  let total = 0;
+  series.forEach((sr) => (sr.standards || []).forEach((st) => { if ((cours[st.num] || {}).fiche_revision) total++; }));
+  let h = "<h1>Méga-fiche de révision — Normes ISA</h1>";
+  h += '<p style="color:#475569"><em>' + total + " normes ISA · synthèse, repères clés, pièges d'examen et mnémotechniques. Document de révision complet.</em></p>";
+  series.forEach((sr) => {
+    const norms = (sr.standards || []).filter((st) => ((cours[st.num] || {}).fiche_revision || []).length);
+    if (!norms.length) return;
+    const col = sr.color || "#7c3aed";
+    h += '<h1 style="color:' + col + ";border-bottom-color:" + col + '">' + escHtml(sr.label || sr.range || "") + "</h1>";
+    norms.forEach((st) => {
+      const c = cours[st.num] || {};
+      h += "<h2>" + escHtml(st.code || "") + " — " + escHtml(st.title_fr || "") + "</h2>";
+      (c.fiche_revision || []).forEach((b) => {
+        if (b.title) h += '<h3 style="color:#7c3aed;margin:12px 0 4px;font-size:13.5px">' + escHtml(b.title) + "</h3>";
+        if (b.body) h += mdToHtml(b.body);
+      });
+    });
+  });
+  return h;
+}
+/* Fiche EXPRESS : l'essentiel (tldr) + mnémo par norme — HTML imprimable condensé. */
+function revisionExpressInnerHtml(data) {
+  const annuaire = (data && data.annuaire) || {};
+  const cours = (data && data.annuaire_cours) || {};
+  const series = annuaire.series || [];
+  let total = 0;
+  series.forEach((sr) => (sr.standards || []).forEach((st) => { if ((cours[st.num] || {}).tldr) total++; }));
+  let h = "<h1>Normes ISA — l'essentiel en bref</h1>";
+  h += '<p style="color:#475569"><em>' + total + " normes · le paragraphe-clé + la mnémotechnique de chacune. Fiche express de révision.</em></p>";
+  series.forEach((sr) => {
+    const norms = (sr.standards || []).filter((st) => (cours[st.num] || {}).tldr);
+    if (!norms.length) return;
+    const col = sr.color || "#7c3aed";
+    h += '<h1 style="color:' + col + ";border-bottom-color:" + col + '">' + escHtml(sr.label || sr.range || "") + "</h1>";
+    norms.forEach((st) => {
+      const c = cours[st.num] || {};
+      h += '<h3 style="color:' + col + ';margin:12px 0 2px;font-size:14px">' + escHtml(st.code || "") + " · " + escHtml(st.title_fr || "") + "</h3>";
+      h += mdToHtml(c.tldr || "");
+      const mn = c.mnemo || {};
+      if (mn.code && (mn.items || []).length) {
+        const bits = mn.items.map((it) => "<strong>" + escHtml(it.l || "") + "</strong> " + escHtml(it.t || "")).join(" · ");
+        h += '<div style="font-size:12px;color:#475569;background:#f8fafc;border-left:3px solid ' + col + ';padding:4px 8px;margin:3px 0 4px">🧠 <strong>' + escHtml(mn.code) + "</strong> — " + bits + "</div>";
+      }
+    });
+  });
+  return h;
+}
+/* Télécharge la fiche de révision : desktop → vrai PDF (bridge) ; sinon impression.
+   kind = "express" (≈20 p., défaut) | "complete" (≈200 p.). */
+function downloadRevisionPdf(data, kind) {
+  const api = pywebApi();
+  const express = kind !== "complete";
+  const method = express ? "export_revision_express_pdf" : "export_revision_pdf";
+  const fallback = () => express
+    ? openPrint("Fiche express — Normes ISA", revisionExpressInnerHtml(data))
+    : openPrint("Méga-fiche de révision — Normes ISA", revisionInnerHtml(data));
+  if (api && typeof api[method] === "function") {
+    auditToast(express ? "⏳ Génération de la fiche express…" : "⏳ Génération du PDF complet (47 normes)…", "info");
+    try {
+      Promise.resolve(api[method]()).then((res) => {
+        if (res && res.ok) auditToast("✓ Fiche enregistrée : " + (res.filename || "dossier Téléchargements"), "ok");
+        else auditToast("⚠️ " + ((res && res.error) || "Échec de l'export") + " — impression navigateur…", "err"), fallback();
+      }).catch(() => fallback());
+    } catch (e) { fallback(); }
+  } else {
+    fallback();
+  }
+}
+
 /* Schéma audit (pyramid / flow / matrix) → composant graphique / tableau */
 function SchemaView({ schema }) {
   if (!schema || typeof schema !== "object") return null;
@@ -2105,7 +2179,7 @@ function AuditGeneric({ section, onBack }) {
 
 /* ── Accueil Audit (hub) ── */
 const AUDIT_ORDER = ["annuaire", "nas", "cadre_legal", "cycles", "procedures_assertions", "quiz", "cas_pratiques", "examens_blancs", "arbres", "comparatifs", "lexique", "outils", "modeles", "terrain", "independance", "fraude", "goingconcern", "timeline", "actualites"];
-function AuditHome({ data, book, onSection, onBook, onSeuils }) {
+function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision }) {
   const keys = AUDIT_ORDER.filter((k) => data[k]);
   Object.keys(data).forEach((k) => { if (k[0] !== "_" && k !== "annuaire_cours" && AUDIT_ORDER.indexOf(k) < 0) keys.push(k); });
   const hasBook = book && (book.controle_ordinaire || book.controle_restreint);
@@ -2116,6 +2190,11 @@ function AuditHome({ data, book, onSection, onBook, onSeuils }) {
         <h2 className="text-xl font-bold">Module Audit — NAS / ISA</h2>
         <p className="text-sm text-violet-100 mt-1">Les 47 normes ISA en cours complets, le cadre légal suisse, les cycles, les QCM et tous les outils du réviseur.</p>
       </div>
+      <button onClick={onRevision} className="w-full text-left rounded-2xl border-2 border-violet-200 bg-gradient-to-r from-violet-50 to-fuchsia-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
+        <span className="text-4xl">📋</span>
+        <span className="flex-1"><span className="block font-bold text-base text-violet-800">Révision — la méga-fiche des 47 normes ISA</span><span className="block text-sm text-slate-600 mt-0.5">Toutes les normes condensées en une seule fiche : l'essentiel, repères, synthèse, pièges d'examen, mnémo. Navigable et téléchargeable en PDF.</span><span className="block text-xs text-violet-500 mt-1 font-medium">47 normes · 1 document · révision express</span></span>
+        <ArrowRight size={20} className="text-violet-400 shrink-0" />
+      </button>
       {hasBook && (
         <button onClick={onBook} className="w-full text-left rounded-2xl border-2 border-violet-200 bg-gradient-to-r from-violet-50 to-fuchsia-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
           <span className="text-4xl">📚</span>
@@ -2173,6 +2252,112 @@ function AuditHome({ data, book, onSection, onBook, onSeuils }) {
   );
 }
 
+/* ── Méga-fiche de révision : toutes les normes ISA, navigable + téléchargeable ── */
+function RevNormCard({ st, course, open, onToggle }) {
+  const color = st.color || "#7c3aed";
+  const blocks = course.fiche_revision || [];
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white overflow-hidden mb-2.5">
+      <button onClick={onToggle} className="w-full flex items-center gap-2.5 px-3.5 py-3 text-left hover:bg-slate-50">
+        <span className="text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0" style={{ background: color }}>{st.code}</span>
+        <span className="flex-1 min-w-0">
+          <span className="block text-sm font-semibold text-slate-800 leading-tight">{st.title_fr}</span>
+          {course.duree && <span className="text-[11px] text-slate-400">⏱️ {course.duree}{course.niveau ? " · " + course.niveau : ""}</span>}
+        </span>
+        <ChevronDown size={17} className={`text-slate-400 shrink-0 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="px-3.5 pb-3.5 pt-0.5 space-y-2.5">
+          {blocks.map((b, i) => (
+            <div key={i} className="rounded-lg border border-slate-200 overflow-hidden">
+              <div className="px-3 py-2 bg-gradient-to-r from-violet-50 to-fuchsia-50 border-b border-violet-100"><span className="font-bold text-[13px] text-violet-800">{b.title}</span></div>
+              <div className="fiche-html text-[13px] text-slate-700 leading-relaxed px-3 py-2.5" dangerouslySetInnerHTML={{ __html: mdToHtml(b.body || "") }} />
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+function AuditRevision({ data, onBack }) {
+  const annuaire = data.annuaire || {};
+  const cours = data.annuaire_cours || {};
+  const series = (annuaire.series || [])
+    .map((sr) => ({ ...sr, norms: (sr.standards || []).filter((st) => ((cours[st.num] || {}).fiche_revision || []).length) }))
+    .filter((sr) => sr.norms.length);
+  const total = series.reduce((a, s) => a + s.norms.length, 0);
+
+  const [q, setQ] = useState("");
+  const [openMap, setOpenMap] = useState({});
+  const [allOpen, setAllOpen] = useState(false);
+  const query = q.trim().toLowerCase();
+  const matches = (st) => {
+    if (!query) return true;
+    const c = cours[st.num] || {};
+    const hay = (st.code + " " + st.title_fr + " " + (st.title_en || "") + " " + (c.tldr || "") + " " + (c.fiche_revision || []).map((b) => b.body).join(" ")).toLowerCase();
+    return hay.includes(query);
+  };
+  const isOpen = (code) => allOpen || !!openMap[code] || query.length >= 2;
+  const toggle = (code) => setOpenMap((m) => ({ ...m, [code]: !(allOpen || m[code]) }));
+  const jump = (id) => { try { const el = document.getElementById("rev-s-" + id); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) {} };
+
+  const filtered = series.map((sr) => ({ ...sr, norms: sr.norms.filter(matches) })).filter((sr) => sr.norms.length);
+  const shown = filtered.reduce((a, s) => a + s.norms.length, 0);
+
+  return (
+    <div>
+      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
+
+      <div className="rounded-2xl bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white p-5 shadow mb-4">
+        <div className="flex items-start gap-3 flex-wrap">
+          <span className="text-3xl">📋</span>
+          <div className="flex-1 min-w-[200px]">
+            <h2 className="text-xl font-bold">Fiche de révision — {total} normes ISA</h2>
+            <p className="text-sm text-violet-100 mt-1">L'essentiel de chaque norme, à l'écran pour réviser et en PDF pour emporter. La fiche express tient en ~20 pages : le paragraphe-clé + la mnémo de chaque norme.</p>
+          </div>
+          <div className="flex flex-col items-stretch gap-1.5 shrink-0">
+            <button onClick={() => downloadRevisionPdf(data, "express")} className="flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-white text-violet-700 hover:bg-violet-50 shadow-sm">📥 PDF express (~20 p.)</button>
+            <button onClick={() => downloadRevisionPdf(data, "complete")} className="text-[11px] text-violet-100 hover:text-white underline underline-offset-2">ou la version complète détaillée (~200 p.)</button>
+          </div>
+        </div>
+      </div>
+
+      <div className="sticky top-0 z-10 -mx-4 px-4 py-2.5 bg-slate-100/95 backdrop-blur border-b border-slate-200 mb-4">
+        <div className="flex items-center gap-2 flex-wrap">
+          <div className="relative flex-1 min-w-[200px]">
+            <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Filtrer (fraude, échantillonnage, opinion modifiée…)" className="w-full pl-9 pr-3 py-2 rounded-lg border border-slate-300 text-sm focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none" />
+          </div>
+          <button onClick={() => { setAllOpen(!allOpen); setOpenMap({}); }} className="px-3 py-2 rounded-lg text-xs font-semibold border border-slate-200 bg-white text-slate-600 hover:border-violet-300 whitespace-nowrap">{allOpen ? "Tout replier" : "Tout déplier"}</button>
+        </div>
+        {!query && (
+          <div className="flex gap-1.5 overflow-x-auto mt-2 pb-0.5">
+            {series.map((sr) => (
+              <button key={sr.id} onClick={() => jump(sr.id)} className="text-[11px] font-semibold px-2.5 py-1 rounded-full border whitespace-nowrap shrink-0" style={{ borderColor: (sr.color || "#7c3aed") + "55", color: sr.color || "#7c3aed", background: (sr.color || "#7c3aed") + "0f" }}>{sr.range} <span className="opacity-60">· {sr.norms.length}</span></button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="text-xs text-slate-400 mb-3">{query ? shown + " norme(s) trouvée(s)" : total + " normes · " + series.length + " séries — clique une norme pour la déplier, ou « Tout déplier »."}</div>
+
+      {filtered.map((sr) => (
+        <div key={sr.id} id={"rev-s-" + sr.id} className="mb-6 scroll-mt-28">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: sr.color || "#7c3aed" }}></span>
+            <h3 className="text-sm font-bold text-slate-800">{sr.label} <span className="text-slate-400 font-normal">({sr.range})</span></h3>
+            <span className="text-[11px] text-slate-400 ml-auto">{sr.norms.length} normes</span>
+          </div>
+          {sr.norms.map((st) => (
+            <RevNormCard key={st.num} st={{ ...st, color: sr.color }} course={cours[st.num] || {}} open={isOpen(st.code)} onToggle={() => toggle(st.code)} />
+          ))}
+        </div>
+      ))}
+      {!filtered.length && <div className="text-center text-slate-400 text-sm py-10">Aucune norme ne correspond à « {q} ».</div>}
+    </div>
+  );
+}
+
 function AuditApp() {
   const [data, setData] = useState(() => (typeof window !== "undefined" && window.__AUDIT__) || null);
   const [loadErr, setLoadErr] = useState(null);
@@ -2202,12 +2387,16 @@ function AuditApp() {
         </div>
       </header>
       <main className="max-w-5xl mx-auto px-4 py-6">
-        {view.k === "home" && <AuditHome data={data} book={book} onBook={() => go({ k: "book" })} onSeuils={() => go({ k: "seuils" })} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
+        {view.k === "home" && <AuditHome data={data} book={book} onBook={() => go({ k: "book" })} onSeuils={() => go({ k: "seuils" })} onRevision={() => go({ k: "revision" })} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
+        {view.k === "revision" && <AuditRevision data={data} onBack={() => go({ k: "home" })} />}
         {view.k === "book" && <AuditBook book={book} onBack={() => go({ k: "home" })} />}
         {view.k === "seuils" && <AuditSeuils onBack={() => go({ k: "home" })} />}
         {view.k === "annuaire" && (
           <div>
-            <button onClick={() => go({ k: "home" })} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
+            <div className="flex items-center gap-2 mb-3 flex-wrap">
+              <button onClick={() => go({ k: "home" })} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600"><ArrowLeft size={15} /> Accueil Audit</button>
+              <button onClick={() => go({ k: "revision" })} className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-violet-600 text-white hover:bg-violet-700">📋 Méga-fiche de révision</button>
+            </div>
             <AuditAnnuaire annuaire={data.annuaire} cours={cours} onOpen={(st) => go({ k: "course", std: st, from: "annuaire" })} />
           </div>
         )}
