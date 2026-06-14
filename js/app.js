@@ -104,6 +104,17 @@ function navigate(tab, subTab) {
     // au-dessus de la barre de lecture des Podcasts).
     document.body.dataset.tab = tab;
 
+    // Lecteur de podcasts persistant : quand on QUITTE l'onglet podcasts, on
+    // masque son hôte (sans le détruire → l'audio continue) et on rétablit le
+    // contenu principal. Le mini-lecteur global prend le relais.
+    if (tab !== 'podcasts') {
+        const _ph = document.getElementById('podcastHost');
+        if (_ph) _ph.style.display = 'none';
+        const _m = document.getElementById('mainContent');
+        if (_m) _m.style.display = '';
+    }
+    if (typeof _pcRenderMini === 'function') _pcRenderMini();
+
     // Update tab bar + ARIA state
     document.querySelectorAll('.tab-bar .tab').forEach(t => {
         const isActive = t.dataset.tab === tab;

@@ -189,6 +189,34 @@ function PodcastsApp() {
     return () => window.removeEventListener("keydown", h);
   }, []);
 
+  /* ── lecteur persistant : informer la fenêtre parente de l'état (pour le
+       mini-lecteur global) + recevoir ses commandes (pause/reprise, fermer) ── */
+  useEffect(() => {
+    try {
+      const parent = (window.parent && window.parent !== window) ? window.parent : null;
+      if (!parent) return;
+      parent.postMessage({
+        type: "podcastState",
+        hasCurrent: !!current,
+        playing: !!current && !paused,
+        title: current ? current.title : "",
+        gid: current ? current._gid : "",
+        gcolor: current ? current._gcolor : "",
+      }, "*");
+    } catch (e) {}
+  }, [current, paused]);
+  useEffect(() => {
+    const onMsg = (e) => {
+      const d = e && e.data;
+      if (!d || d.type !== "podcastCmd") return;
+      const c = currentRef.current;
+      if (d.cmd === "toggle" && c) play(c);
+      else if (d.cmd === "close") closePlayer();
+    };
+    window.addEventListener("message", onMsg);
+    return () => window.removeEventListener("message", onMsg);
+  }, []);
+
   /* ── préchargement des durées manquantes (séquentiel, metadata seulement) ── */
   useEffect(() => {
     const missing = all.filter((e) => !stRef.current.dur[e.id]);

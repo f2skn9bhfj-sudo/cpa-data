@@ -3965,3 +3965,61 @@ body[data-tab="podcasts"] #mindDumpPanel { bottom: 150px !important; }
     body[data-tab="podcasts"] #mindDumpBtn,
     body[data-tab="podcasts"] #pomoBtn { bottom: 104px !important; }
 }
+
+/* ── Mini-lecteur de podcasts global (visible sur les autres onglets) ──
+   Apparaît quand un épisode est en cours et qu'on n'est pas sur l'onglet
+   Podcasts. Permet pause/reprise, retour aux podcasts, fermeture. */
+.pc-mini {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    z-index: 320;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    max-width: min(94vw, 460px);
+    padding: 6px 8px 6px 6px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.96);
+    border: 1px solid rgba(99, 102, 241, 0.5);
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    color: #f1f5f9;
+}
+.pc-mini-pp {
+    flex-shrink: 0;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: #6366f1;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .15s;
+}
+.pc-mini-pp:hover { background: #818cf8; }
+.pc-mini-open {
+    flex: 1; min-width: 0;
+    display: flex; align-items: center; gap: 8px;
+    background: none; border: none; color: inherit;
+    cursor: pointer; padding: 4px 6px; text-align: left;
+}
+.pc-mini-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.pc-mini-text {
+    font-size: 13px; font-weight: 600;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pc-mini-eq { font-size: 12px; }
+.pc-mini-x {
+    flex-shrink: 0;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: none; background: transparent; color: #94a3b8;
+    font-size: 13px; cursor: pointer;
+}
+.pc-mini-x:hover { background: rgba(255,255,255,0.08); color: #e2e8f0; }
+@media (max-width: 768px) {
+    .pc-mini { bottom: 12px; }
+}
