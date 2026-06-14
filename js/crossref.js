@@ -91,14 +91,11 @@ function _renderPipeTable(lines) {
     const rows = lines.filter(l => !l.match(/^\s*\|[-: |]+\|\s*$/)); // strip separator lines
     if (rows.length === 0) return '';
     const isHeader = (i) => i === 0;
-    let html = '<div style="overflow-x:auto;margin:8px 0"><table style="border-collapse:collapse;width:100%;font-size:12px">';
+    let html = '<div class="cr-table-wrap"><table class="cr-table">';
     rows.forEach((row, ri) => {
         const cells = row.replace(/^\s*\|/, '').replace(/\|\s*$/, '').split('|');
         const tag = isHeader(ri) ? 'th' : 'td';
-        const style = isHeader(ri)
-            ? 'background:#1e3a5f;color:#93c5fd;font-weight:600;padding:6px 10px;border:1px solid #1e3a5f;text-align:left;white-space:nowrap'
-            : 'padding:5px 10px;border:1px solid #1e293b;color:#cbd5e1;vertical-align:top';
-        html += '<tr>' + cells.map(c => `<${tag} style="${style}">${_formatLine(c.trim())}</${tag}>`).join('') + '</tr>';
+        html += '<tr>' + cells.map(c => `<${tag}>${_formatLine(c.trim())}</${tag}>`).join('') + '</tr>';
     });
     html += '</table></div>';
     return html;

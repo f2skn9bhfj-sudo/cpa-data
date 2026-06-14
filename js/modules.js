@@ -1254,11 +1254,18 @@ function modRenderLessonIfpDetail(l, m) {
         </div>`;
     }
 
-    // QCMs liés à cette leçon (lazy-load via api('get_qcm_for_lesson', l.id))
-    html += `<div class="mod-card" id="modLessonQcmCard">
-        <div class="mod-card-label">🃏 QCM liés à cette leçon</div>
-        <div id="modLessonQcmList"><div style="color:#64748b;padding:8px;font-size:13px">Chargement...</div></div>
-    </div>`;
+    // Quiz interactif "Teste-toi" — directement depuis l.questions (inline,
+    // hors-ligne). À défaut, on retombe sur la carte QCM lazy via l'API.
+    if (Array.isArray(l.questions) && l.questions.length > 0) {
+        window._modQuiz = window._modQuiz || {};
+        window._modQuiz[l.id] = l.questions;
+        html += modRenderLessonQuiz(l, color);
+    } else {
+        html += `<div class="mod-card" id="modLessonQcmCard">
+            <div class="mod-card-label">🃏 QCM liés à cette leçon</div>
+            <div id="modLessonQcmList"><div style="color:#64748b;padding:8px;font-size:13px">Chargement...</div></div>
+        </div>`;
+    }
 
     html += `</div>`;
     el.innerHTML = html;
@@ -1276,6 +1283,80 @@ function modRenderLessonIfpDetail(l, m) {
     }
     // Async-load QCMs for this lesson
     modLoadLessonQcms(l, m);
+}
+
+// ── Quiz interactif "Teste-toi" (rendu inline depuis l.questions) ──
+const _modQuizAnswered = {};   // clé `${lessonId}_${qi}` → true
+const _modQuizScore = {};      // lessonId → nb de bonnes réponses
+
+function modRenderLessonQuiz(l, color) {
+    const qs = l.questions || [];
+    // Reset état (le DOM est reconstruit à neuf à chaque ouverture de la leçon).
+    qs.forEach((_, qi) => { delete _modQuizAnswered[l.id + '_' + qi]; });
+    _modQuizScore[l.id] = 0;
+    let h = `<div class="mod-quiz" style="--mc:${color}">
+        <div class="mod-quiz-head">
+            <span class="mod-quiz-badge" style="background:${color}1f;color:${color}">🎯</span>
+            <span class="mod-quiz-title">Teste-toi</span>
+            <span class="mod-quiz-meta">${qs.length} question${qs.length > 1 ? 's' : ''}</span>
+            <span class="mod-quiz-score" id="mq_score_${escapeAttr(l.id)}">0 / ${qs.length}</span>
+        </div>`;
+    qs.forEach((q, qi) => {
+        const isVF = q.type === 'vrai_faux';
+        const opts = isVF ? ['Vrai', 'Faux'] : (q.options || []);
+        const btns = opts.map((o, oi) =>
+            `<button class="mq-opt" id="mq_${escapeAttr(l.id)}_${qi}_${oi}"
+                     onclick="modQuizAnswer('${escapeAttr(l.id)}',${qi},${oi})">${escapeHtml(o)}</button>`
+        ).join('');
+        h += `<div class="mq-q">
+            <div class="mq-prompt"><span class="mq-num">${qi + 1}</span><span>${escapeHtml(q.question)}</span></div>
+            <div class="mq-opts">${btns}</div>
+            <div class="mq-exp" id="mq_exp_${escapeAttr(l.id)}_${qi}"></div>
+        </div>`;
+    });
+    h += `</div>`;
+    return h;
+}
+
+function modQuizAnswer(lessonId, qi, oi) {
+    const qs = (window._modQuiz || {})[lessonId];
+    if (!qs || !qs[qi]) return;
+    const key = lessonId + '_' + qi;
+    if (_modQuizAnswered[key]) return;   // une seule réponse par question
+    _modQuizAnswered[key] = true;
+
+    const q = qs[qi];
+    const isVF = q.type === 'vrai_faux';
+    let correctIdx;
+    if (isVF) {
+        const a = q.answer;
+        const isTrue = (a === true || a === 'true' || a === 'Vrai' || a === 'vrai' || a === 1);
+        correctIdx = isTrue ? 0 : 1;
+    } else {
+        correctIdx = (typeof q.answer === 'number') ? q.answer : parseInt(q.answer, 10);
+    }
+    const nOpts = isVF ? 2 : (q.options || []).length;
+    for (let k = 0; k < nOpts; k++) {
+        const b = document.getElementById('mq_' + lessonId + '_' + qi + '_' + k);
+        if (!b) continue;
+        b.disabled = true;
+        if (k === correctIdx) b.classList.add('mq-correct');
+        else if (k === oi) b.classList.add('mq-wrong');
+        else b.classList.add('mq-dim');
+    }
+    const ok = oi === correctIdx;
+    const exp = document.getElementById('mq_exp_' + lessonId + '_' + qi);
+    if (exp) {
+        exp.className = 'mq-exp ' + (ok ? 'mq-exp-ok' : 'mq-exp-no');
+        exp.innerHTML = (ok ? '✅ Correct. ' : '❌ Incorrect. ')
+            + (q.explanation ? formatAnswer(q.explanation) : '');
+        exp.style.display = 'block';
+    }
+    if (ok) {
+        _modQuizScore[lessonId] = (_modQuizScore[lessonId] || 0) + 1;
+        const sc = document.getElementById('mq_score_' + lessonId);
+        if (sc) sc.textContent = _modQuizScore[lessonId] + ' / ' + qs.length;
+    }
 }
 
 // Load QCMs matching this lesson via the api `get_qcm_for_lesson`
