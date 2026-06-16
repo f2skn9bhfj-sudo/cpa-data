@@ -3165,12 +3165,12 @@ function NestlePosteDetail({ line, color }) {
   );
   return (
     <div className="mt-2 mb-1 grid gap-2.5 animate-[fadein_.2s_ease]">
-      <Sec icon={<Info size={13} />} title="À quoi ça correspond" tint="#4f46e5">{line.definition}</Sec>
+      <Sec icon={<Info size={13} />} title="À quoi ça correspond" tint="#4f46e5"><MdInline text={line.definition} /></Sec>
       {(line.operations || []).length > 0 && (
         <Sec icon={<ChevronRight size={13} />} title="Les opérations derrière" tint="#0891b2">
           <ul className="space-y-1.5">
             {line.operations.map((op, i) => (
-              <li key={i} className="flex gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-500 shrink-0" /><span>{op}</span></li>
+              <li key={i} className="flex gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-500 shrink-0" /><span><MdInline text={op} /></span></li>
             ))}
           </ul>
         </Sec>
@@ -3179,6 +3179,14 @@ function NestlePosteDetail({ line, color }) {
         <div className="rounded-xl border border-slate-200 bg-slate-900 text-slate-100 p-3.5">
           <div className="flex items-center gap-2 mb-1.5 text-[11px] font-bold uppercase tracking-wide text-slate-400"><FileText size={13} />Écriture type</div>
           <div className="text-[12.5px] font-mono leading-relaxed text-emerald-200">{line.ecriture}</div>
+        </div>
+      )}
+      {line.exemple && (
+        <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-3.5">
+          <div className="flex items-center gap-2 mb-1.5 text-[11px] font-bold uppercase tracking-wide text-emerald-700"><Calculator size={13} />Exemple chiffré</div>
+          {Array.isArray(line.exemple)
+            ? <ul className="space-y-1.5">{line.exemple.map((e, i) => <li key={i} className="text-[13px] text-slate-700 leading-relaxed flex gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" /><span><MdInline text={e} /></span></li>)}</ul>
+            : <div className="text-[13px] text-slate-700 leading-relaxed"><MdInline text={line.exemple} /></div>}
         </div>
       )}
       {(line.norme || line.suisse) && (
@@ -3195,12 +3203,18 @@ function NestlePosteDetail({ line, color }) {
               {a.assertions.map((as, i) => <span key={i} className="px-2 py-0.5 rounded-md bg-white border border-amber-200 text-[11px] font-semibold text-amber-800">{as}</span>)}
             </div>
           )}
-          {a.risque && <div className="text-[13px] text-slate-700 leading-relaxed mb-1.5"><span className="font-bold text-rose-700">Risque · </span>{a.risque}</div>}
-          {a.procedure && <div className="text-[13px] text-slate-700 leading-relaxed"><span className="font-bold text-emerald-700">Procédure · </span>{a.procedure}</div>}
+          {a.risque && <div className="text-[13px] text-slate-700 leading-relaxed mb-1.5"><span className="font-bold text-rose-700">Risque · </span><MdInline text={a.risque} /></div>}
+          {a.procedure && <div className="text-[13px] text-slate-700 leading-relaxed"><span className="font-bold text-emerald-700">Procédure · </span><MdInline text={a.procedure} /></div>}
         </div>
       )}
       {line.lecture && (
-        <Sec icon={<TrendingUp size={13} />} title="Lecture 2025 vs 2024" tint={color}>{line.lecture}</Sec>
+        <Sec icon={<TrendingUp size={13} />} title="Lecture 2025 vs 2024" tint={color}><MdInline text={line.lecture} /></Sec>
+      )}
+      {line.note_ref && (
+        <div className="rounded-xl border border-sky-200 bg-sky-50/60 p-3 flex items-start gap-2">
+          <BookOpen size={14} className="text-sky-600 mt-0.5 shrink-0" />
+          <div className="text-[12.5px] text-slate-600 leading-relaxed"><span className="font-bold text-sky-700">Pour creuser — </span>{line.note_ref}</div>
+        </div>
       )}
     </div>
   );
@@ -3274,10 +3288,16 @@ function NestleApp({ onBack }) {
             <span className="w-5" />
           </div>
           {(st.lines || []).map((l) => {
+            if (l.kind === "header") {
+              return (
+                <div key={l.id} className="px-3.5 py-1.5 bg-slate-100/80 border-b border-slate-200 text-[11px] font-bold uppercase tracking-widest text-slate-500" style={{ paddingLeft: (14 + (l.indent || 0) * 16) + "px" }}>{l.label}</div>
+              );
+            }
             const open = openId === l.id;
             const isTot = l.kind === "total", isSub = l.kind === "subtotal";
             const muted = l.kind === "sub";
-            const pc = npct(l.v[0], l.v[1]);
+            const v = l.v || [null, null];
+            const pc = npct(v[0], v[1]);
             return (
               <div key={l.id} className={`border-b border-slate-100 last:border-0 ${isSub ? "bg-violet-50/40" : isTot ? "bg-slate-900 text-white" : ""}`}>
                 <button onClick={() => setOpenId(open ? null : l.id)}
@@ -3287,8 +3307,8 @@ function NestleApp({ onBack }) {
                     <span className={`block leading-tight ${isTot ? "font-bold text-base" : isSub ? "font-bold text-slate-800" : muted ? "text-[13px] text-slate-500 italic" : "text-[13.5px] text-slate-700 font-medium"}`}>{l.label}</span>
                     {l.note && <span className={`inline-block mt-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold ${isTot ? "bg-white/15 text-slate-200" : "bg-slate-100 text-slate-400"}`}>Note {l.note}</span>}
                   </span>
-                  <span className={`w-20 text-right tabular-nums ${isTot ? "font-bold text-base" : isSub ? "font-bold" : "text-[13.5px]"} ${l.v[0] < 0 && !isTot ? "text-rose-600" : ""}`}>{nfmt(l.v[0])}</span>
-                  <span className={`w-20 text-right tabular-nums ${isTot ? "text-slate-300" : "text-slate-400"} text-[12.5px]`}>{nfmt(l.v[1])}</span>
+                  <span className={`w-20 text-right tabular-nums ${isTot ? "font-bold text-base" : isSub ? "font-bold" : "text-[13.5px]"} ${v[0] < 0 && !isTot ? "text-rose-600" : ""}`}>{nfmt(v[0])}</span>
+                  <span className={`w-20 text-right tabular-nums ${isTot ? "text-slate-300" : "text-slate-400"} text-[12.5px]`}>{nfmt(v[1])}</span>
                   <ChevronDown size={15} className={`w-5 shrink-0 transition-transform ${open ? "rotate-180" : ""} ${isTot ? "text-slate-400" : "text-slate-300"}`} />
                 </button>
                 {open && (

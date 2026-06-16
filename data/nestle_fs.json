@@ -16,14 +16,20 @@
       "icon": "📈",
       "color": "#7c3aed",
       "status": "ready",
-      "cols": ["2025", "2024"],
+      "cols": [
+        "2025",
+        "2024"
+      ],
       "intro": "Le compte de résultat raconte la **performance de l'année** : on part du chiffre d'affaires, on retranche les coûts par paliers, et on arrive au bénéfice. Nestlé le présente « par fonction » (coût des produits vendus, distribution, commercialisation…), et fait apparaître plusieurs **sous-totaux de gestion** : résultat opérationnel courant, résultat opérationnel, bénéfice avant impôts, puis bénéfice de l'exercice.",
       "lines": [
         {
           "id": "ca",
           "label": "Chiffre d'affaires",
           "note": "3",
-          "v": [89490, 91354],
+          "v": [
+            89490,
+            91354
+          ],
           "kind": "line",
           "definition": "Le produit des ventes de biens aux clients (distributeurs, détaillants, e-commerce) sur l'année, net des remises, ristournes et retours. C'est le « haut » du compte de résultat : l'argent que les marques (Nescafé, Purina, Nespresso, eaux, nutrition…) ont fait entrer.",
           "operations": [
@@ -35,16 +41,30 @@
           "norme": "IFRS 15 — Produits des contrats conclus avec des clients (reconnaissance au transfert du contrôle).",
           "suisse": "En droit suisse : CO 959b (produits nets de l'activité). En Swiss GAAP RPC, logique proche, mais Nestlé consolide en IFRS.",
           "audit": {
-            "assertions": ["Réalité (la vente a eu lieu)", "Séparation des exercices / cut-off", "Exhaustivité", "Exactitude"],
+            "assertions": [
+              "Réalité (la vente a eu lieu)",
+              "Séparation des exercices / cut-off",
+              "Exhaustivité",
+              "Exactitude"
+            ],
             "risque": "Le chiffre d'affaires est LE poste à risque de fraude présumé (ISA 240) : tentation de comptabiliser trop tôt (ventes de fin d'année), ou des ventes fictives pour gonfler la croissance.",
             "procedure": "Tester le cut-off autour du 31.12 (bons de livraison vs facturation), confirmer des soldes clients, recalculer les remises, analyser la croissance organique par Zone."
           },
-          "lecture": "89'490 contre 91'354 : −2,0 %. La baisse vient surtout des **effets de change** (CHF fort) et de cessions ; la croissance « organique » (volumes + prix, à périmètre et change constants) est suivie séparément en Note 3."
+          "lecture": "89'490 contre 91'354 : −2,0 %. La baisse vient surtout des **effets de change** (CHF fort) et de cessions ; la croissance « organique » (volumes + prix, à périmètre et change constants) est suivie séparément en Note 3.",
+          "exemple": [
+            "Nestlé livre pour 1'000 de Nescafé à Coop, payable à 60 jours → **Débit Clients 1'000 / Crédit Chiffre d'affaires 1'000**.",
+            "Remise de fin d'année de 30 accordée → **Débit Chiffre d'affaires 30 / Crédit Clients 30** (le CA net tombe à 970).",
+            "À l'encaissement : **Débit Banque 970 / Crédit Clients 970**."
+          ],
+          "note_ref": "Note 3 — Analyses sectorielles : le chiffre d'affaires y est ventilé par Zone géographique et par catégorie de produits, avec la croissance organique (rapport p. 93)."
         },
         {
           "id": "autres_produits",
           "label": "Autres produits",
-          "v": [395, 366],
+          "v": [
+            395,
+            366
+          ],
           "kind": "line",
           "definition": "Produits accessoires liés à l'activité mais qui ne sont pas la vente de produits alimentaires elle-même : redevances de licences de marques, prestations, revenus de R&D refacturés, etc.",
           "operations": [
@@ -53,16 +73,24 @@
           ],
           "norme": "IFRS 15 (prestations) et IFRS 16/autres selon la nature ; redevances reconnues à mesure de l'usage.",
           "audit": {
-            "assertions": ["Réalité", "Classification", "Exhaustivité"],
+            "assertions": [
+              "Réalité",
+              "Classification",
+              "Exhaustivité"
+            ],
             "risque": "Risque de classement : ne pas gonfler le chiffre d'affaires « cœur » avec des produits accessoires.",
             "procedure": "Vérifier la nature des contrats de licence et le rattachement à la bonne ligne."
           },
-          "lecture": "395 (+8 %), montant marginal au regard du CA (0,4 %)."
+          "lecture": "395 (+8 %), montant marginal au regard du CA (0,4 %).",
+          "exemple": "Un tiers verse 50 de redevance pour exploiter une marque Nestlé sous licence → **Débit Banque 50 / Crédit Autres produits 50**."
         },
         {
           "id": "cpv",
           "label": "Coût des produits vendus",
-          "v": [-48694, -48670],
+          "v": [
+            -48694,
+            -48670
+          ],
           "kind": "line",
           "definition": "Le coût de fabrication des produits effectivement vendus : matières premières (café, lait, cacao, plastiques d'emballage…), main-d'œuvre d'usine, énergie, amortissement des machines. C'est de loin la plus grosse charge.",
           "operations": [
@@ -75,16 +103,29 @@
           "norme": "IAS 2 — Stocks (coût ou valeur nette de réalisation, le plus bas). Nestlé valorise en FIFO/coût moyen.",
           "suisse": "CO 960c : évaluation au plus bas du coût d'acquisition/fabrication et de la valeur de marché.",
           "audit": {
-            "assertions": ["Exhaustivité des charges", "Rattachement (cut-off des achats et des stocks)", "Évaluation des stocks"],
+            "assertions": [
+              "Exhaustivité des charges",
+              "Rattachement (cut-off des achats et des stocks)",
+              "Évaluation des stocks"
+            ],
             "risque": "Sous-évaluer le coût (donc gonfler la marge) en gardant en stock des produits qui devraient être dépréciés.",
             "procedure": "Assister à l'inventaire physique, tester la valorisation, recalculer la marge brute et l'analyser par segment."
           },
-          "lecture": "48'694 ≈ 54 % du CA. Marge brute implicite ≈ 46 %. Quasi stable en valeur malgré la baisse du CA → pression sur les coûts des matières (cacao, café)."
+          "lecture": "48'694 ≈ 54 % du CA. Marge brute implicite ≈ 46 %. Quasi stable en valeur malgré la baisse du CA → pression sur les coûts des matières (cacao, café).",
+          "exemple": [
+            "Achat de 600 de café vert → **Débit Stocks 600 / Crédit Fournisseurs 600** (pas encore une charge).",
+            "Transformation en usine : +200 de main-d'œuvre et énergie incorporés → stock de produits finis = 800.",
+            "À la vente : **Débit Coût des produits vendus 800 / Crédit Stocks 800** — la charge naît au moment de la vente."
+          ],
+          "note_ref": "Note 6 — Stocks : détail matières premières / produits finis et méthode FIFO (rapport p. 105)."
         },
         {
           "id": "distribution",
           "label": "Frais de distribution",
-          "v": [-7306, -7567],
+          "v": [
+            -7306,
+            -7567
+          ],
           "kind": "line",
           "definition": "Le coût pour acheminer les produits jusqu'aux clients : transport, logistique, entrepôts, manutention.",
           "operations": [
@@ -94,16 +135,24 @@
           ],
           "norme": "IAS 1 — présentation des charges par fonction. Loyers d'entrepôts : IFRS 16 (droit d'utilisation + amortissement).",
           "audit": {
-            "assertions": ["Réalité", "Rattachement", "Classification"],
+            "assertions": [
+              "Réalité",
+              "Rattachement",
+              "Classification"
+            ],
             "risque": "Frontière floue avec le coût des produits vendus ou la commercialisation.",
             "procedure": "Revue analytique du ratio frais de distribution / CA, test de factures de transport."
           },
-          "lecture": "7'306 (8,2 % du CA), en légère baisse — optimisation logistique et volumes plus faibles."
+          "lecture": "7'306 (8,2 % du CA), en légère baisse — optimisation logistique et volumes plus faibles.",
+          "exemple": "Facture de 120 du transporteur pour livrer les palettes → **Débit Frais de distribution 120 / Crédit Fournisseurs 120**."
         },
         {
           "id": "commercialisation",
           "label": "Frais de commercialisation et d'administration",
-          "v": [-17883, -18112],
+          "v": [
+            -17883,
+            -18112
+          ],
           "kind": "line",
           "definition": "Tout l'effort commercial (publicité, marketing, force de vente, promotions) plus l'administration (sièges, finance, RH, IT). Pour un géant des marques, le marketing est stratégique : il entretient la valeur des marques.",
           "operations": [
@@ -113,16 +162,27 @@
           ],
           "norme": "IAS 1 (par fonction). À noter : la publicité est **toujours une charge** — on ne peut pas l'inscrire à l'actif comme un « investissement marque » (IAS 38 interdit d'activer les marques créées en interne).",
           "audit": {
-            "assertions": ["Réalité", "Rattachement", "Exhaustivité"],
+            "assertions": [
+              "Réalité",
+              "Rattachement",
+              "Exhaustivité"
+            ],
             "risque": "Charges de marketing engagées mais non comptabilisées à la clôture (cut-off des charges à payer).",
             "procedure": "Recherche de passifs non enregistrés, revue des contrats publicitaires pluriannuels."
           },
-          "lecture": "17'883 (20 % du CA) : poste majeur qui montre le poids du soutien aux marques."
+          "lecture": "17'883 (20 % du CA) : poste majeur qui montre le poids du soutien aux marques.",
+          "exemple": [
+            "Campagne TV facturée 300 → **Débit Frais de commercialisation 300 / Crédit Fournisseurs 300**.",
+            "La marque Nescafé, créée en interne, **ne peut jamais** être portée à l'actif (IAS 38) : 100 % en charge."
+          ]
         },
         {
           "id": "rd",
           "label": "Frais de recherche et développement",
-          "v": [-1613, -1667],
+          "v": [
+            -1613,
+            -1667
+          ],
           "kind": "line",
           "definition": "L'effort d'innovation : nouveaux produits, reformulations (moins de sucre/sel), nutrition, science des matériaux d'emballage. Nestlé exploite un vaste réseau de centres de R&D.",
           "operations": [
@@ -132,17 +192,25 @@
           ],
           "norme": "IAS 38 — la recherche est une charge ; le développement est capitalisé seulement si faisabilité technique, intention et avantages futurs probables sont démontrés.",
           "audit": {
-            "assertions": ["Classification (charge vs actif)", "Réalité"],
+            "assertions": [
+              "Classification (charge vs actif)",
+              "Réalité"
+            ],
             "risque": "Activer indûment des frais de R&D pour réduire la charge de l'année.",
             "procedure": "Tester les frais capitalisés contre les critères d'IAS 38, vérifier qu'ils restent rares."
           },
-          "lecture": "1'613 (1,8 % du CA) : passé presque intégralement en charges → conservateur, pas de « bénéfice gonflé » par activation."
+          "lecture": "1'613 (1,8 % du CA) : passé presque intégralement en charges → conservateur, pas de « bénéfice gonflé » par activation.",
+          "exemple": "Salaires des chercheurs 80 → **Débit Frais de R&D 80 / Crédit Personnel à payer 80**. Un développement n'est activé que si les critères d'IAS 38 sont réunis (rare).",
+          "note_ref": "Note 9 — Goodwill et immobilisations incorporelles, section Recherche et développement (rapport p. 114)."
         },
         {
           "id": "autres_rev_courants",
           "label": "Autres revenus opérationnels courants",
           "note": "4",
-          "v": [135, 124],
+          "v": [
+            135,
+            124
+          ],
           "kind": "line",
           "definition": "Produits opérationnels récurrents qui ne rentrent dans aucune ligne ci-dessus : petits gains de cession d'actifs courants, indemnités, reprises de provisions d'exploitation, etc.",
           "operations": [
@@ -151,17 +219,25 @@
           ],
           "norme": "IAS 1 / IAS 37 (reprises de provisions). « Courant » = récurrent, par opposition aux éléments non courants plus bas.",
           "audit": {
-            "assertions": ["Réalité", "Classification courant/non courant"],
+            "assertions": [
+              "Réalité",
+              "Classification courant/non courant"
+            ],
             "risque": "Reclasser des éléments non récurrents en « courant » pour embellir le résultat opérationnel courant.",
             "procedure": "Analyser le détail de la Note 4, juger du caractère récurrent."
           },
-          "lecture": "135 : montant faible, peu significatif."
+          "lecture": "135 : montant faible, peu significatif.",
+          "exemple": "Une provision d'exploitation de 20 devenue sans objet est reprise → **Débit Provisions 20 / Crédit Autres revenus opérationnels courants 20**.",
+          "note_ref": "Note 4 — Autres revenus/(charges) opérationnel(le)s courant(e)s (rapport p. 103)."
         },
         {
           "id": "autres_charges_courantes",
           "label": "Autres charges opérationnelles courantes",
           "note": "4",
-          "v": [-1849, -1195],
+          "v": [
+            -1849,
+            -1195
+          ],
           "kind": "line",
           "definition": "Charges opérationnelles récurrentes hors fonctions principales : litiges courants, dotations à des provisions d'exploitation, pertes diverses récurrentes.",
           "operations": [
@@ -171,17 +247,26 @@
           ],
           "norme": "IAS 37 — Provisions (obligation actuelle, sortie de ressources probable, estimation fiable).",
           "audit": {
-            "assertions": ["Exhaustivité", "Évaluation des provisions", "Classification"],
+            "assertions": [
+              "Exhaustivité",
+              "Évaluation des provisions",
+              "Classification"
+            ],
             "risque": "Sous-doter les provisions pour ménager le résultat, ou au contraire « lisser » via des provisions excessives (cookie jar).",
             "procedure": "Revue des dossiers juridiques, confirmation des avocats, recalcul des estimations."
           },
-          "lecture": "1'849 contre 1'195 : +55 %. Hausse notable qui pèse sur le résultat courant — à creuser en Note 4."
+          "lecture": "1'849 contre 1'195 : +55 %. Hausse notable qui pèse sur le résultat courant — à creuser en Note 4.",
+          "exemple": "Litige commercial jugé probable, estimé à 40 → **Débit Autres charges opérationnelles courantes 40 / Crédit Provisions 40**.",
+          "note_ref": "Note 4 — Autres revenus/(charges) courant(e)s (p. 103) ; provisions détaillées en Note 11 (p. 133)."
         },
         {
           "id": "roc",
           "label": "Résultat opérationnel courant",
           "note": "3",
-          "v": [12675, 14633],
+          "v": [
+            12675,
+            14633
+          ],
           "kind": "subtotal",
           "definition": "Le **profit de l'activité normale et récurrente**, avant éléments exceptionnels, financement et impôts. C'est l'indicateur de performance préféré du management (« Trading Operating Profit ») : il mesure si le cœur de métier gagne de l'argent.",
           "operations": [
@@ -190,17 +275,25 @@
           ],
           "norme": "Sous-total « non-GAAP » présenté volontairement (IAS 1 autorise des sous-totaux pertinents, s'ils sont définis et constants).",
           "audit": {
-            "assertions": ["Exactitude arithmétique", "Cohérence de présentation d'un exercice à l'autre"],
+            "assertions": [
+              "Exactitude arithmétique",
+              "Cohérence de présentation d'un exercice à l'autre"
+            ],
             "risque": "Déplacer des charges récurrentes vers les lignes « non courantes » pour gonfler ce sous-total très regardé par les analystes.",
             "procedure": "Vérifier que la définition du « courant » est stable et que le classement courant/non courant est justifié."
           },
-          "lecture": "12'675 contre 14'633 : −13 %. Marge ROC à **14,2 %** (contre 16,0 % en 2024) → la rentabilité du cœur de métier recule, sous l'effet des coûts et des autres charges courantes."
+          "lecture": "12'675 contre 14'633 : −13 %. Marge ROC à **14,2 %** (contre 16,0 % en 2024) → la rentabilité du cœur de métier recule, sous l'effet des coûts et des autres charges courantes.",
+          "exemple": "Calcul : CA 89'490 + autres produits 395 − CPV 48'694 − distribution 7'306 − commercialisation 17'883 − R&D 1'613 + autres rev. courants 135 − autres charges courantes 1'849 = **12'675**.",
+          "note_ref": "Note 3.1 — le résultat opérationnel courant est suivi secteur par secteur (rapport p. 93)."
         },
         {
           "id": "autres_rev_op",
           "label": "Autres revenus opérationnels",
           "note": "4",
-          "v": [253, 474],
+          "v": [
+            253,
+            474
+          ],
           "kind": "line",
           "definition": "Produits opérationnels **non récurrents** (« one-off ») : plus-values de cession d'activités, reprises de dépréciations significatives, gains exceptionnels.",
           "operations": [
@@ -209,17 +302,26 @@
           ],
           "norme": "IFRS 5 (activités cédées), IAS 36 (reprises de pertes de valeur, sauf goodwill).",
           "audit": {
-            "assertions": ["Réalité", "Évaluation du gain", "Classification (non courant)"],
+            "assertions": [
+              "Réalité",
+              "Évaluation du gain",
+              "Classification (non courant)"
+            ],
             "risque": "Gonfler un gain de cession ou mal dater l'opération.",
             "procedure": "Examiner les contrats de cession, recalculer la plus-value, vérifier le transfert de contrôle."
           },
-          "lecture": "253 contre 474 : moitié moins de gains exceptionnels qu'en 2024."
+          "lecture": "253 contre 474 : moitié moins de gains exceptionnels qu'en 2024.",
+          "exemple": "Cession d'une marque pour 300, valeur comptable 150 → plus-value 150 : **Débit Banque 300 / Crédit Immobilisation 150 / Crédit Autres revenus opérationnels 150**.",
+          "note_ref": "Note 4.2 — Autres revenus/(charges) opérationnel(le)s (rapport p. 103)."
         },
         {
           "id": "autres_charges_op",
           "label": "Autres charges opérationnelles",
           "note": "4",
-          "v": [-651, -383],
+          "v": [
+            -651,
+            -383
+          ],
           "kind": "line",
           "definition": "Charges opérationnelles **non récurrentes** : pertes de valeur (impairment) de goodwill/immobilisations, coûts de restructuration majeurs, pertes sur cessions d'activités.",
           "operations": [
@@ -229,16 +331,25 @@
           ],
           "norme": "IAS 36 — Dépréciation d'actifs ; IAS 37 — provisions de restructuration ; IFRS 5.",
           "audit": {
-            "assertions": ["Évaluation (montant de la dépréciation)", "Exhaustivité", "Réalité de l'obligation de restructurer"],
+            "assertions": [
+              "Évaluation (montant de la dépréciation)",
+              "Exhaustivité",
+              "Réalité de l'obligation de restructurer"
+            ],
             "risque": "C'est un **point d'audit clé** chez Nestlé (cf. rapport EY) : les tests de dépréciation du goodwill reposent sur des hypothèses (croissance, taux d'actualisation) très sensibles.",
             "procedure": "Challenger les hypothèses des tests d'impairment, vérifier l'annonce et l'irréversibilité des restructurations."
           },
-          "lecture": "651 contre 383 : +70 %, davantage de dépréciations/restructurations qu'en 2024."
+          "lecture": "651 contre 383 : +70 %, davantage de dépréciations/restructurations qu'en 2024.",
+          "exemple": "Test de dépréciation : une UGT au goodwill de 500 ne vaut plus que 420 → **Débit Autres charges opérationnelles 80 / Crédit Goodwill 80**.",
+          "note_ref": "Note 9.1 — Pertes de valeur de goodwill et incorporelles (p. 118) : c'est un point d'audit clé du rapport EY."
         },
         {
           "id": "ro",
           "label": "Résultat opérationnel",
-          "v": [12277, 14724],
+          "v": [
+            12277,
+            14724
+          ],
           "kind": "subtotal",
           "definition": "Le résultat de **toute** l'exploitation, récurrente ET exceptionnelle, avant le financement et les impôts. C'est aussi le point de départ du tableau des flux de trésorerie (méthode indirecte).",
           "operations": [
@@ -246,17 +357,25 @@
           ],
           "norme": "IAS 1. Réutilisé tel quel comme première ligne du cash-flow (voir l'état des flux de trésorerie).",
           "audit": {
-            "assertions": ["Exactitude", "Cohérence avec le tableau des flux"],
+            "assertions": [
+              "Exactitude",
+              "Cohérence avec le tableau des flux"
+            ],
             "risque": "Incohérence entre le résultat opérationnel du compte de résultat et celui repris dans le cash-flow.",
             "procedure": "Rapprocher la ligne avec le point de départ de l'état des flux de trésorerie."
           },
-          "lecture": "12'277 contre 14'724 : −17 %, recul plus marqué que le ROC à cause des charges non récurrentes."
+          "lecture": "12'277 contre 14'724 : −17 %, recul plus marqué que le ROC à cause des charges non récurrentes.",
+          "exemple": "Calcul : ROC 12'675 + autres revenus op. 253 − autres charges op. 651 = **12'277**. Ce montant ouvre le tableau des flux de trésorerie.",
+          "note_ref": "Repris en tête de l'état des flux de trésorerie (p. 84) ; détail des éléments non monétaires en Note 16 (p. 159)."
         },
         {
           "id": "prod_fin",
           "label": "Produits financiers",
           "note": "5",
-          "v": [300, 358],
+          "v": [
+            300,
+            358
+          ],
           "kind": "line",
           "definition": "Les revenus de la trésorerie et des placements : intérêts encaissés sur les liquidités, dépôts, obligations détenues, certains gains de change ou sur dérivés.",
           "operations": [
@@ -265,17 +384,26 @@
           ],
           "norme": "IFRS 9 — Instruments financiers (intérêts au taux effectif, juste valeur).",
           "audit": {
-            "assertions": ["Réalité", "Exactitude", "Exhaustivité"],
+            "assertions": [
+              "Réalité",
+              "Exactitude",
+              "Exhaustivité"
+            ],
             "risque": "Faible ; risque d'évaluation sur les dérivés à la juste valeur.",
             "procedure": "Recalcul des intérêts, confirmation bancaire, test des valorisations."
           },
-          "lecture": "300 : modeste, cohérent avec une trésorerie nette plutôt débitrice (Nestlé est endettée nette)."
+          "lecture": "300 : modeste, cohérent avec une trésorerie nette plutôt débitrice (Nestlé est endettée nette).",
+          "exemple": "Intérêts de 5 encaissés sur un placement → **Débit Banque 5 / Crédit Produits financiers 5**.",
+          "note_ref": "Note 5 — Produits et charges financiers."
         },
         {
           "id": "charges_fin",
           "label": "Charges financières",
           "note": "5",
-          "v": [-1826, -1843],
+          "v": [
+            -1826,
+            -1843
+          ],
           "kind": "line",
           "definition": "Le coût de l'endettement : intérêts sur les emprunts obligataires et bancaires, intérêts sur les obligations locatives (IFRS 16), désactualisation de provisions et engagements de retraite.",
           "operations": [
@@ -286,16 +414,28 @@
           "ecriture": "Charge d'intérêt courue : Débit Charges financières / Crédit Intérêts à payer.",
           "norme": "IFRS 9 (dettes au coût amorti) ; IFRS 16 (intérêts locatifs) ; IAS 37 (désactualisation).",
           "audit": {
-            "assertions": ["Exhaustivité (intérêts courus non payés)", "Exactitude", "Rattachement"],
+            "assertions": [
+              "Exhaustivité (intérêts courus non payés)",
+              "Exactitude",
+              "Rattachement"
+            ],
             "risque": "Oublier des intérêts courus à la clôture (passif non enregistré).",
             "procedure": "Recalcul des intérêts à partir des échéanciers d'emprunts, rapprochement avec la Note 12."
           },
-          "lecture": "1'826 : quasi stable. Net financier (300 − 1'826) = **−1'526**, le coût net de la structure financière."
+          "lecture": "1'826 : quasi stable. Net financier (300 − 1'826) = **−1'526**, le coût net de la structure financière.",
+          "exemple": [
+            "Coupon annuel de 18 sur un emprunt obligataire de 600 à 3 % → **Débit Charges financières 18 / Crédit Intérêts à payer 18**.",
+            "Intérêt sur une dette de location (IFRS 16) → **Débit Charges financières / Crédit Dette de location**."
+          ],
+          "note_ref": "Note 5 — Produits et charges financiers ; dettes financières en Note 12 (rapport p. 135)."
         },
         {
           "id": "bai",
           "label": "Bénéfice avant impôts, entreprises associées et coentreprises",
-          "v": [10751, 13239],
+          "v": [
+            10751,
+            13239
+          ],
           "kind": "subtotal",
           "definition": "Le résultat après financement mais avant impôts et avant la quote-part des sociétés mises en équivalence. Base de calcul du taux d'impôt effectif.",
           "operations": [
@@ -303,17 +443,24 @@
           ],
           "norme": "IAS 1.",
           "audit": {
-            "assertions": ["Exactitude"],
+            "assertions": [
+              "Exactitude"
+            ],
             "risque": "Faible (sous-total arithmétique).",
             "procedure": "Recalcul ; sert de dénominateur au rapprochement de la charge d'impôt (Note 13)."
           },
-          "lecture": "10'751 contre 13'239 : −19 %."
+          "lecture": "10'751 contre 13'239 : −19 %.",
+          "exemple": "Calcul : RO 12'277 + produits financiers 300 − charges financières 1'826 = **10'751**. C'est le dénominateur du taux d'impôt effectif.",
+          "note_ref": "Rapprochement de la charge d'impôt en Note 13.2 (rapport p. 152)."
         },
         {
           "id": "impots",
           "label": "Impôts",
           "note": "13",
-          "v": [-2640, -3314],
+          "v": [
+            -2640,
+            -3314
+          ],
           "kind": "line",
           "definition": "La charge d'impôt sur le bénéfice : l'impôt **exigible** (dû aux administrations fiscales des pays) plus la variation des impôts **différés** (décalages entre comptabilité et fiscalité).",
           "operations": [
@@ -325,17 +472,29 @@
           "norme": "IAS 12 — Impôts sur le résultat (exigible + différé).",
           "suisse": "Comptes statutaires suisses : impôts selon le CO ; ici consolidation multi-pays sous IAS 12.",
           "audit": {
-            "assertions": ["Exactitude", "Exhaustivité", "Évaluation des positions fiscales incertaines"],
+            "assertions": [
+              "Exactitude",
+              "Exhaustivité",
+              "Évaluation des positions fiscales incertaines"
+            ],
             "risque": "Positions fiscales incertaines (prix de transfert entre filiales), impôts différés actifs non recouvrables.",
             "procedure": "Rapprochement du taux effectif (Note 13.2), revue des contrôles fiscaux en cours, test du recouvrement des actifs d'impôt différé."
           },
-          "lecture": "2'640 contre 3'314. Taux effectif ≈ 2'640 / 10'751 = **24,6 %** (contre 25,0 % en 2024). Voir le rapprochement en Note 13."
+          "lecture": "2'640 contre 3'314. Taux effectif ≈ 2'640 / 10'751 = **24,6 %** (contre 25,0 % en 2024). Voir le rapprochement en Note 13.",
+          "exemple": [
+            "Filiale : résultat fiscal 1'000 × 20 % = 200 → **Débit Charge d'impôt 200 / Crédit Dettes fiscales 200**.",
+            "Amortissement déduit plus vite en fiscalité qu'en comptabilité → **Débit Charge d'impôt / Crédit Impôts différés passifs**."
+          ],
+          "note_ref": "Note 13 — Impôts : taux effectif, impôts différés par nature, impôt minimum Pilier 2 (rapport p. 151)."
         },
         {
           "id": "associees",
           "label": "Revenus provenant des entreprises associées et des coentreprises",
           "note": "14",
-          "v": [1143, 1249],
+          "v": [
+            1143,
+            1249
+          ],
           "kind": "line",
           "definition": "La quote-part de Nestlé dans le résultat des sociétés qu'elle ne contrôle pas mais où elle a une influence notable (mise en équivalence). La plus emblématique : **L'Oréal** (Nestlé en détient une part importante).",
           "operations": [
@@ -345,16 +504,27 @@
           "ecriture": "Part de résultat : Débit Participations mises en équivalence / Crédit Revenus des entreprises associées.",
           "norme": "IAS 28 — Participations dans des entreprises associées et des coentreprises (méthode de la mise en équivalence).",
           "audit": {
-            "assertions": ["Exactitude de la quote-part", "Évaluation de la participation"],
+            "assertions": [
+              "Exactitude de la quote-part",
+              "Évaluation de la participation"
+            ],
             "risque": "Bonne reprise du pourcentage et des comptes de l'associée ; indices de dépréciation de la participation.",
             "procedure": "Obtenir les comptes audités de L'Oréal, recalculer la quote-part, tester un éventuel impairment."
           },
-          "lecture": "1'143 : contribution notable et stable, en grande partie L'Oréal. Apportée **après impôts** (la quote-part est nette d'impôt de l'associée)."
+          "lecture": "1'143 : contribution notable et stable, en grande partie L'Oréal. Apportée **après impôts** (la quote-part est nette d'impôt de l'associée).",
+          "exemple": [
+            "L'Oréal réalise 4'000 de bénéfice ; Nestlé en détient ~20 % → quote-part 800 : **Débit Participation mise en équivalence 800 / Crédit Revenus des associées 800**.",
+            "L'Oréal verse 200 de dividende à Nestlé → **Débit Banque 200 / Crédit Participation 200** (ce n'est pas un produit)."
+          ],
+          "note_ref": "Note 14 — Entreprises associées et coentreprises ; synthèse financière de L'Oréal (rapport p. 155)."
         },
         {
           "id": "benefice",
           "label": "Bénéfice de l'exercice",
-          "v": [9254, 11174],
+          "v": [
+            9254,
+            11174
+          ],
           "kind": "total",
           "definition": "Le résultat net total du Groupe pour l'année, toutes activités et tous propriétaires confondus. C'est le « bottom line » consolidé, avant de le répartir entre les actionnaires de Nestlé et les minoritaires.",
           "operations": [
@@ -363,16 +533,23 @@
           ],
           "norme": "IAS 1 — résultat de la période ; IFRS 10 impose la répartition mère / minoritaires.",
           "audit": {
-            "assertions": ["Exactitude", "Présentation et répartition correctes"],
+            "assertions": [
+              "Exactitude",
+              "Présentation et répartition correctes"
+            ],
             "risque": "Erreur de répartition entre la mère et les minoritaires.",
             "procedure": "Recalcul de la répartition à partir des pourcentages de détention des filiales partiellement détenues."
           },
-          "lecture": "9'254 contre 11'174 : **−17 %**. Une année 2025 en net repli pour Nestlé, sous l'effet conjugué des coûts, du change et d'éléments non récurrents."
+          "lecture": "9'254 contre 11'174 : **−17 %**. Une année 2025 en net repli pour Nestlé, sous l'effet conjugué des coûts, du change et d'éléments non récurrents.",
+          "exemple": "Calcul : Bénéfice avant impôts 10'751 − impôts 2'640 + quote-part des associées 1'143 = **9'254**."
         },
         {
           "id": "benefice_minoritaires",
           "label": "attribuable aux intérêts ne donnant pas le contrôle",
-          "v": [221, 290],
+          "v": [
+            221,
+            290
+          ],
           "kind": "sub",
           "indent": 1,
           "definition": "La part du bénéfice qui revient aux **actionnaires minoritaires** des filiales que Nestlé ne détient pas à 100 % (ex. une filiale détenue à 80 % → 20 % du résultat va aux minoritaires).",
@@ -381,16 +558,23 @@
           ],
           "norme": "IFRS 10 — États financiers consolidés (intérêts ne donnant pas le contrôle).",
           "audit": {
-            "assertions": ["Exactitude", "Exhaustivité du périmètre"],
+            "assertions": [
+              "Exactitude",
+              "Exhaustivité du périmètre"
+            ],
             "risque": "Pourcentages de détention erronés.",
             "procedure": "Rapprocher avec l'organigramme du Groupe et les % de la Note des sociétés."
           },
-          "lecture": "221 : faible part (2 %) → Nestlé détient l'essentiel de ses filiales à 100 %."
+          "lecture": "221 : faible part (2 %) → Nestlé détient l'essentiel de ses filiales à 100 %.",
+          "exemple": "Une filiale détenue à 80 % gagne 100 → 20 reviennent aux minoritaires : présentés en *attribuable aux intérêts ne donnant pas le contrôle*."
         },
         {
           "id": "benefice_net",
           "label": "attribuable aux actionnaires de la société mère (Bénéfice net)",
-          "v": [9033, 10884],
+          "v": [
+            9033,
+            10884
+          ],
           "kind": "sub",
           "indent": 1,
           "definition": "Le **bénéfice net part du Groupe** : ce qui revient réellement aux actionnaires de Nestlé S.A. C'est le chiffre qui sert au bénéfice par action et au dividende.",
@@ -400,11 +584,16 @@
           ],
           "norme": "IAS 33 — Résultat par action (de base et dilué).",
           "audit": {
-            "assertions": ["Exactitude", "Calcul du BPA"],
+            "assertions": [
+              "Exactitude",
+              "Calcul du BPA"
+            ],
             "risque": "Erreur sur le nombre moyen d'actions (actions propres, plans d'actions).",
             "procedure": "Recalcul du BPA, vérification du nombre moyen pondéré d'actions."
           },
-          "lecture": "9'033 contre 10'884. BPA de base = **3,51 CHF** (contre 4,19). C'est sur cette base que se décide le dividende."
+          "lecture": "9'033 contre 10'884. BPA de base = **3,51 CHF** (contre 4,19). C'est sur cette base que se décide le dividende.",
+          "exemple": "Bénéfice 9'254 − part des minoritaires 221 = **9'033**. ÷ ~2'574 millions d'actions ≈ **3,51 CHF** par action.",
+          "note_ref": "Note 15 — Résultat par action (de base et dilué)."
         }
       ],
       "footnotes": [
@@ -413,9 +602,1251 @@
         "Bénéfice par action — de base : 3,51 CHF (2024 : 4,19) · dilué : 3,51 CHF (2024 : 4,19) — Note 15."
       ]
     },
-    { "id": "resultat_global", "title": "État du résultat global", "subtitle": "de l'exercice 2025", "icon": "🌐", "color": "#0891b2", "status": "soon", "intro": "Le bénéfice net + les gains/pertes passés directement par les capitaux propres (écarts de conversion, couvertures, réévaluations des retraites). À venir — Phase 3.", "lines": [] },
-    { "id": "bilan", "title": "Bilan consolidé", "subtitle": "au 31 décembre 2025", "icon": "⚖️", "color": "#0d9488", "status": "soon", "intro": "La photo du patrimoine : ce que le Groupe possède (actif) et comment c'est financé (passif + capitaux propres). À venir — Phase 2.", "lines": [] },
-    { "id": "flux", "title": "Tableau des flux de trésorerie", "subtitle": "de l'exercice 2025", "icon": "💧", "color": "#2563eb", "status": "soon", "intro": "D'où vient et où va le cash : exploitation, investissement, financement. À venir — Phase 3.", "lines": [] },
-    { "id": "capitaux", "title": "Mouvements des capitaux propres", "subtitle": "de l'exercice 2025", "icon": "🏛️", "color": "#9333ea", "status": "soon", "intro": "L'évolution des fonds propres : résultat, dividendes, actions propres, réduction de capital. À venir — Phase 4.", "lines": [] }
+    {
+      "id": "resultat_global",
+      "title": "État du résultat global",
+      "subtitle": "de l'exercice 2025",
+      "icon": "🌐",
+      "color": "#0891b2",
+      "status": "soon",
+      "intro": "Le bénéfice net + les gains/pertes passés directement par les capitaux propres (écarts de conversion, couvertures, réévaluations des retraites). À venir — Phase 3.",
+      "lines": []
+    },
+    {
+      "id": "bilan",
+      "title": "Bilan consolidé",
+      "subtitle": "au 31 décembre 2025",
+      "icon": "⚖️",
+      "color": "#0d9488",
+      "status": "ready",
+      "intro": "La photo du **patrimoine** au 31 décembre : à gauche ce que le groupe possède (l'**actif**, classé du plus liquide au plus durable), à droite comment c'est financé (le **passif** envers les tiers + les **capitaux propres** des actionnaires). Règle d'or : **Actif = Passif + Capitaux propres**. Chez Nestlé, deux faits sautent aux yeux : les actifs immatériels (goodwill + marques ≈ 44 mias, 35 % du bilan) dominent, et les capitaux propres sont minces (26 %) — laminés par les écarts de conversion négatifs et les rachats d'actions.",
+      "lines": [
+        {
+          "kind": "header",
+          "id": "h_actif",
+          "label": "Actif",
+          "indent": 0
+        },
+        {
+          "kind": "header",
+          "id": "h_actifs_courants",
+          "label": "Actifs courants",
+          "indent": 1
+        },
+        {
+          "id": "treso",
+          "label": "Trésorerie et équivalents de trésorerie",
+          "note": "12/16",
+          "v": [
+            4579,
+            5556
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Les liquidités immédiatement disponibles : comptes bancaires, caisse et placements très liquides à très court terme (échéance ≤ 3 mois). C'est le « carburant » du groupe.",
+          "operations": [
+            "Encaissement des clients qui paient leurs factures.",
+            "Décaissements : paiement des fournisseurs, des salaires, des impôts.",
+            "Placement temporaire des excédents en dépôts ≤ 3 mois (assimilés à du cash)."
+          ],
+          "ecriture": "Encaissement d'un client : Débit Banque / Crédit Clients.",
+          "exemple": "Coop règle sa facture de 970 → **Débit Banque 970 / Crédit Clients 970** : la créance disparaît, le cash entre.",
+          "norme": "IAS 7 — un équivalent de trésorerie a une échéance ≤ 3 mois et un risque de variation de valeur négligeable.",
+          "audit": {
+            "assertions": [
+              "Existence",
+              "Exactitude",
+              "Droits (le compte est bien à Nestlé)"
+            ],
+            "risque": "Poste très liquide donc sensible au détournement ; risque de surévaluation pour masquer une tension de trésorerie.",
+            "procedure": "Confirmation bancaire directe au 31.12, rapprochements bancaires, test des opérations en transit."
+          },
+          "lecture": "4'579 (−18 %). C'est exactement le solde de clôture du tableau des flux de trésorerie.",
+          "note_ref": "Note 16 — Trésorerie en fin d'exercice (rapport p. 161) ; classes d'instruments en Note 12 (p. 135)."
+        },
+        {
+          "id": "placements_ct",
+          "label": "Placements à court terme",
+          "note": "12",
+          "v": [
+            1651,
+            2315
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Des placements financiers un peu moins liquides que le cash : dépôts à terme et titres dont l'échéance dépasse 3 mois mais reste inférieure à un an.",
+          "operations": [
+            "Souscription d'un dépôt à terme à 6 mois avec les excédents de trésorerie.",
+            "Cession ou arrivée à échéance qui ramène les fonds en trésorerie."
+          ],
+          "norme": "IFRS 9 — classement selon le modèle de gestion et les caractéristiques des flux.",
+          "audit": {
+            "assertions": [
+              "Existence",
+              "Évaluation"
+            ],
+            "risque": "Valorisation des titres ; séparation cash / placements.",
+            "procedure": "Confirmation des dépôts, contrôle des justes valeurs."
+          },
+          "lecture": "1'651 (−29 %) : moins de liquidités placées, cohérent avec le désendettement.",
+          "note_ref": "Note 12 — Instruments financiers (rapport p. 135)."
+        },
+        {
+          "id": "stocks",
+          "label": "Stocks",
+          "note": "6",
+          "v": [
+            12813,
+            13260
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Tout ce que le groupe détient pour produire et vendre : matières premières (café vert, lait, cacao), en-cours de fabrication et produits finis. Évalués au plus bas du coût (FIFO) et de la valeur nette de réalisation.",
+          "operations": [
+            "Achat de matières premières → entrée en stock.",
+            "Production : les MP deviennent des produits finis (on y incorpore main-d'œuvre et énergie).",
+            "Vente → sortie du stock vers le coût des produits vendus.",
+            "Dépréciation des lots périmés ou obsolètes (péremption alimentaire)."
+          ],
+          "ecriture": "Achat : Débit Stocks / Crédit Fournisseurs. Vente : Débit Coût des produits vendus / Crédit Stocks.",
+          "exemple": "Un lot de lait en poudre coûte 100 mais ne vaut plus que 70 à la vente (proche péremption) → dépréciation **Débit Coût des produits vendus 30 / Crédit Stocks 30**.",
+          "norme": "IAS 2 — au plus bas du coût et de la valeur nette de réalisation.",
+          "suisse": "CO 960c — évaluation au plus bas du coût et de la valeur de marché.",
+          "audit": {
+            "assertions": [
+              "Existence (le stock est physiquement là)",
+              "Évaluation (valeur nette de réalisation)",
+              "Cut-off"
+            ],
+            "risque": "Surévaluation : garder au bilan des stocks obsolètes qui devraient être dépréciés.",
+            "procedure": "Assister à l'inventaire physique, tester la valorisation, analyser la rotation des stocks par catégorie."
+          },
+          "lecture": "12'813 (−3 %). Rotation ≈ coût des produits vendus / stocks ≈ 3,8× par an.",
+          "note_ref": "Note 6 — Stocks : détail MP / produits finis et dépréciations (rapport p. 105)."
+        },
+        {
+          "id": "clients",
+          "label": "Clients et autres débiteurs",
+          "note": "7/12",
+          "v": [
+            10561,
+            11251
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Les créances commerciales : des ventes déjà facturées mais pas encore encaissées, plus d'autres débiteurs. Présentées nettes de la provision pour pertes de crédit attendues.",
+          "operations": [
+            "Vente à crédit → naissance d'une créance.",
+            "Encaissement → la créance s'éteint.",
+            "Client défaillant → dépréciation de la créance (pertes attendues)."
+          ],
+          "ecriture": "Vente : Débit Clients / Crédit Chiffre d'affaires. Dépréciation : Débit Pertes sur créances / Crédit Provision pour dépréciation.",
+          "exemple": "Sur une créance de 500 envers un client en difficulté, on estime 5 % d'irrécouvrable → **Débit Pertes sur créances 25 / Crédit Provision créances 25**.",
+          "norme": "IFRS 9 — modèle des pertes de crédit attendues (ECL) ; IFRS 15 pour la créance issue de la vente.",
+          "audit": {
+            "assertions": [
+              "Existence (la créance est réelle)",
+              "Évaluation (provision ECL)",
+              "Cut-off des ventes"
+            ],
+            "risque": "Créances fictives gonflant le CA ; provision pour créances douteuses insuffisante.",
+            "procedure": "Confirmations clients, revue de la balance âgée (aged balance), test des encaissements postérieurs à la clôture."
+          },
+          "lecture": "10'561 (−6 %). Délai de paiement client (DSO) ≈ créances / CA × 365 ≈ 43 jours.",
+          "note_ref": "Note 7 — Clients et débiteurs/créanciers, dont les accords de financement de fournisseurs (rapport p. 106)."
+        },
+        {
+          "id": "acomptes",
+          "label": "Acomptes payés",
+          "v": [
+            479,
+            543
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Des avances versées à des fournisseurs avant d'avoir reçu le bien ou le service commandé.",
+          "operations": [
+            "Versement d'un acompte à la commande.",
+            "À la livraison, l'acompte s'impute sur la facture définitive."
+          ],
+          "norme": "IAS 1 — actif courant (droit de recevoir un bien/service, pas du cash).",
+          "audit": {
+            "assertions": [
+              "Existence",
+              "Rattachement"
+            ],
+            "risque": "Acomptes anciens sans contrepartie réelle.",
+            "procedure": "Rapprochement avec les commandes et les livraisons."
+          },
+          "lecture": "479 : montant marginal."
+        },
+        {
+          "id": "derives_actif_c",
+          "label": "Dérivés actifs",
+          "note": "12",
+          "v": [
+            295,
+            792
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Des instruments dérivés (sur devises, taux d'intérêt ou matières premières) dont la juste valeur est positive à la clôture et l'échéance inférieure à un an. Servent surtout à couvrir des risques.",
+          "operations": [
+            "Contrat à terme pour fixer le prix du cacao ou d'une devise.",
+            "À la clôture, réévaluation du contrat à sa juste valeur de marché."
+          ],
+          "norme": "IFRS 9 — dérivés évalués à la juste valeur ; comptabilité de couverture possible.",
+          "audit": {
+            "assertions": [
+              "Évaluation (juste valeur)",
+              "Existence"
+            ],
+            "risque": "Valorisation (modèles, niveau 2 de la hiérarchie de juste valeur).",
+            "procedure": "Confirmation auprès des contreparties, contrôle des modèles d'évaluation."
+          },
+          "lecture": "295 (−63 %) : varie fortement selon les positions de marché à la clôture.",
+          "note_ref": "Note 12.1b — hiérarchie de juste valeur ; 12.2c risque de marché (rapport p. 135)."
+        },
+        {
+          "id": "actif_impot_ex",
+          "label": "Actifs d'impôt exigible",
+          "v": [
+            1383,
+            1334
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "L'impôt sur le bénéfice trop versé aux administrations et donc à récupérer (acomptes supérieurs à l'impôt finalement dû).",
+          "operations": [
+            "Acomptes d'impôt payés en cours d'année supérieurs à l'impôt final → créance fiscale."
+          ],
+          "norme": "IAS 12 — Impôts sur le résultat (créance d'impôt exigible).",
+          "audit": {
+            "assertions": [
+              "Existence",
+              "Évaluation"
+            ],
+            "risque": "Recouvrabilité auprès de l'administration.",
+            "procedure": "Rapprochement avec les déclarations fiscales."
+          },
+          "lecture": "1'383 : stable."
+        },
+        {
+          "id": "actifs_cedes",
+          "label": "Actifs destinés à être cédés",
+          "v": [
+            208,
+            137
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Des actifs (ou un groupe d'actifs) dont la vente est hautement probable dans les 12 mois. On les isole, on cesse de les amortir et on les évalue au plus bas de leur valeur comptable et de leur juste valeur diminuée des coûts de vente.",
+          "operations": [
+            "Décision de céder une activité → reclassement de ses actifs sur cette ligne.",
+            "Recherche active d'un acquéreur, prix raisonnable, vente attendue < 12 mois."
+          ],
+          "norme": "IFRS 5 — Actifs non courants détenus en vue de la vente et activités abandonnées.",
+          "audit": {
+            "assertions": [
+              "Classification (critères IFRS 5 réunis)",
+              "Évaluation"
+            ],
+            "risque": "Classement abusif pour figer un actif déprécié.",
+            "procedure": "Vérifier le caractère « hautement probable » de la vente (mandat, plan, calendrier)."
+          },
+          "lecture": "208 (+52 %) : quelques activités en cours de cession de plus qu'en 2024.",
+          "note_ref": "Note 2 — Périmètre de consolidation et cessions (rapport p. 90)."
+        },
+        {
+          "id": "tot_actif_courant",
+          "label": "Total des actifs courants",
+          "v": [
+            31969,
+            35188
+          ],
+          "kind": "subtotal",
+          "indent": 1,
+          "definition": "Tout ce qui doit normalement se transformer en trésorerie dans les 12 mois. On le compare au passif courant pour juger de la liquidité.",
+          "exemple": "Somme : trésorerie 4'579 + placements 1'651 + stocks 12'813 + clients 10'561 + acomptes 479 + dérivés 295 + impôt 1'383 + actifs cédés 208 = **31'969**.",
+          "norme": "IAS 1 — distinction courant / non courant.",
+          "audit": {
+            "assertions": [
+              "Exactitude",
+              "Classification courant/non courant"
+            ],
+            "risque": "Mauvaise frontière 12 mois.",
+            "procedure": "Recalcul ; comparaison au passif courant."
+          },
+          "lecture": "31'969 (−9 %). Inférieur au passif courant (40'694) → **fonds de roulement négatif** (−8'725), typique des géants de la grande consommation : ils encaissent vite et paient leurs fournisseurs plus tard, ce qui finance le cycle gratuitement."
+        },
+        {
+          "kind": "header",
+          "id": "h_actifs_non_courants",
+          "label": "Actifs non courants",
+          "indent": 1
+        },
+        {
+          "id": "immo_corp",
+          "label": "Immobilisations corporelles",
+          "note": "8",
+          "v": [
+            32549,
+            33706
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "L'outil industriel : usines, machines, lignes de production, entrepôts, terrains et matériel, ainsi que les actifs loués (droits d'utilisation IFRS 16). Comptabilisés au coût, diminué des amortissements et des dépréciations.",
+          "operations": [
+            "Achat d'une machine → entrée à l'actif (pas une charge).",
+            "Amortissement étalé sur la durée d'utilité → charge annuelle.",
+            "Location d'un entrepôt → droit d'utilisation à l'actif + dette de location au passif.",
+            "Cession ou mise au rebut → sortie de l'actif."
+          ],
+          "ecriture": "Achat : Débit Immobilisations / Crédit Fournisseurs. Amortissement : Débit Charge d'amortissement / Crédit Amortissements cumulés.",
+          "exemple": "Une ligne d'embouteillage de 1'000, durée d'utilité 10 ans → amortissement annuel **Débit Charge 100 / Crédit Amortissements cumulés 100** ; après 3 ans, valeur nette = 700.",
+          "norme": "IAS 16 — Immobilisations corporelles ; IFRS 16 — Contrats de location (droit d'utilisation).",
+          "suisse": "CO 960a/960b — coût d'acquisition ou de fabrication, amortissements nécessaires.",
+          "audit": {
+            "assertions": [
+              "Existence (inspection physique)",
+              "Évaluation (durées, dépréciation)",
+              "Droits (propriété)"
+            ],
+            "risque": "Capitaliser des charges d'entretien, durées d'amortissement trop longues.",
+            "procedure": "Inspection physique, revue des dotations, test des entrées et sorties, indices de dépréciation."
+          },
+          "lecture": "32'549 (−3 %). Les investissements (4'527, voir flux) compensent partiellement amortissements et change.",
+          "note_ref": "Note 8 — Immobilisations corporelles, dont actifs de droit d'utilisation 8.2b (rapport p. 109)."
+        },
+        {
+          "id": "goodwill",
+          "label": "Goodwill",
+          "note": "9",
+          "v": [
+            27636,
+            30595
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "L'écart d'acquisition : le « survaleur » payé lors d'un rachat, au-delà de la juste valeur des actifs nets identifiables repris. Il représente les synergies, la réputation, la part de marché. Il n'est pas amorti mais testé pour dépréciation chaque année.",
+          "operations": [
+            "Acquisition d'une société : prix payé supérieur aux actifs nets identifiables → la différence est inscrite en goodwill.",
+            "Chaque année, test de dépréciation par unité génératrice de trésorerie (UGT).",
+            "Si l'UGT vaut moins que sa valeur comptable → dépréciation définitive (jamais reprise)."
+          ],
+          "ecriture": "À l'acquisition : Débit Goodwill (montant résiduel). Dépréciation : Débit Autres charges opérationnelles / Crédit Goodwill.",
+          "exemple": "Rachat d'une marque pour 1'000 alors que ses actifs nets identifiables valent 700 → **Goodwill = 300**.",
+          "norme": "IFRS 3 — Regroupements d'entreprises ; IAS 36 — test de dépréciation (sans reprise possible pour le goodwill).",
+          "audit": {
+            "assertions": [
+              "Évaluation (valeur recouvrable des UGT)"
+            ],
+            "risque": "C'est LE point d'audit clé du rapport EY : la valeur repose sur des hypothèses (croissance, taux d'actualisation) très sensibles. Surévaluation = bénéfice futur surestimé.",
+            "procedure": "Challenger le business plan, le taux d'actualisation (WACC), les taux de croissance ; analyses de sensibilité."
+          },
+          "lecture": "27'636 (−10 %) : recul dû aux dépréciations de l'année et à l'effet de change sur les goodwills en devises.",
+          "note_ref": "Note 9 et 9.1 — Goodwill et pertes de valeur (rapport p. 114-118) ; « key audit matter » du rapport EY."
+        },
+        {
+          "id": "immo_incorp",
+          "label": "Immobilisations incorporelles",
+          "note": "9",
+          "v": [
+            16673,
+            19245
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Les actifs immatériels acquis : marques, droits, licences, logiciels, relations clients. À durée d'utilité définie (amortis) ou indéfinie (testés annuellement). Les marques développées en interne, elles, ne figurent jamais au bilan.",
+          "operations": [
+            "Marque acquise lors d'un rachat → inscrite à l'actif à sa juste valeur.",
+            "Logiciel ou droit acquis → amorti sur sa durée d'utilité.",
+            "Marque à durée indéfinie → testée pour dépréciation, pas amortie."
+          ],
+          "norme": "IAS 38 — Immobilisations incorporelles.",
+          "audit": {
+            "assertions": [
+              "Évaluation",
+              "Durée d'utilité"
+            ],
+            "risque": "Durée indéfinie injustifiée ; dépréciation tardive des marques.",
+            "procedure": "Tests de dépréciation des marques à durée indéfinie, revue des durées d'amortissement."
+          },
+          "lecture": "16'673 (−13 %) : amortissements, dépréciations et change.",
+          "note_ref": "Note 9 — Immobilisations incorporelles (rapport p. 114)."
+        },
+        {
+          "id": "participations",
+          "label": "Participations dans les entreprises associées et coentreprises",
+          "note": "14",
+          "v": [
+            12096,
+            14326
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Les parts dans des sociétés que Nestlé ne contrôle pas mais où elle a une influence notable (L'Oréal) ou un contrôle conjoint. Comptabilisées par mise en équivalence : valeur = coût + quote-part des résultats accumulés − dividendes reçus.",
+          "operations": [
+            "Quote-part du bénéfice de l'associée → augmente la valeur de la participation.",
+            "Dividende reçu → diminue la participation (ce n'est pas un produit).",
+            "Quote-part des autres éléments du résultat global de l'associée."
+          ],
+          "ecriture": "Quote-part : Débit Participation / Crédit Revenus des associées. Dividende : Débit Banque / Crédit Participation.",
+          "exemple": "L'Oréal gagne 4'000 ; Nestlé détient ~20 % → la participation augmente de **800**. Un dividende de 200 la réduit de **200**.",
+          "norme": "IAS 28 — Participations dans des entreprises associées et coentreprises (mise en équivalence).",
+          "audit": {
+            "assertions": [
+              "Évaluation (quote-part exacte, dépréciation)"
+            ],
+            "risque": "Reprise correcte des comptes de l'associée ; indices de dépréciation de la participation.",
+            "procedure": "Obtenir les comptes audités de l'associée, recalculer la quote-part, tester un éventuel impairment."
+          },
+          "lecture": "12'096 (−16 %) : effet des quotes-parts, dividendes et d'éventuelles cessions/dépréciations.",
+          "note_ref": "Note 14 — Entreprises associées et coentreprises ; synthèse financière de L'Oréal 14.3 (rapport p. 155)."
+        },
+        {
+          "id": "immo_fin",
+          "label": "Immobilisations financières",
+          "note": "12",
+          "v": [
+            3641,
+            3650
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Des actifs financiers détenus à long terme : titres de participation non consolidés (sans influence notable), prêts accordés, dépôts de garantie à long terme.",
+          "operations": [
+            "Prise d'une participation minoritaire stratégique.",
+            "Octroi d'un prêt à long terme à un partenaire."
+          ],
+          "norme": "IFRS 9 — actifs financiers (juste valeur ou coût amorti selon le modèle de gestion).",
+          "audit": {
+            "assertions": [
+              "Existence",
+              "Évaluation"
+            ],
+            "risque": "Valorisation des titres non cotés.",
+            "procedure": "Confirmation, contrôle des justes valeurs."
+          },
+          "lecture": "3'641 : stable.",
+          "note_ref": "Note 12 — Instruments financiers (rapport p. 135)."
+        },
+        {
+          "id": "derives_actif_nc",
+          "label": "Dérivés actifs",
+          "note": "12",
+          "v": [
+            229,
+            84
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Comme les dérivés actifs courants, mais à échéance supérieure à un an (couvertures de long terme, par exemple de taux sur des emprunts obligataires).",
+          "operations": [
+            "Swap de taux à long terme adossé à un emprunt obligataire.",
+            "Réévaluation à la juste valeur à la clôture."
+          ],
+          "norme": "IFRS 9 — dérivés à la juste valeur.",
+          "audit": {
+            "assertions": [
+              "Évaluation",
+              "Existence"
+            ],
+            "risque": "Valorisation longue durée.",
+            "procedure": "Confirmation contreparties, contrôle des modèles."
+          },
+          "lecture": "229 (+173 %) : sensible aux mouvements de taux.",
+          "note_ref": "Note 12 — Instruments financiers (rapport p. 135)."
+        },
+        {
+          "id": "prefin_prevoyance",
+          "label": "Préfinancement des régimes de prévoyance et droits à remboursement",
+          "note": "10",
+          "v": [
+            1412,
+            1475
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "L'excédent de certains régimes de retraite à prestations définies (quand les actifs du régime dépassent les obligations) ainsi que des droits à remboursement. C'est un actif net de pension.",
+          "operations": [
+            "Cotisations et rendements des actifs du régime supérieurs aux engagements → actif net (plafonné par l'asset ceiling).",
+            "Réévaluations actuarielles passant par les autres éléments du résultat global."
+          ],
+          "norme": "IAS 19 — Avantages du personnel (régimes à prestations définies, plafond de l'actif).",
+          "audit": {
+            "assertions": [
+              "Évaluation actuarielle",
+              "Plafonnement de l'actif"
+            ],
+            "risque": "Hypothèses actuarielles ; respect de l'asset ceiling.",
+            "procedure": "Revue des travaux de l'actuaire, contrôle du plafond de l'actif."
+          },
+          "lecture": "1'412 : stable.",
+          "note_ref": "Note 10 — Engagements envers le personnel (rapport p. 121)."
+        },
+        {
+          "id": "ida",
+          "label": "Impôts différés actifs",
+          "note": "13",
+          "v": [
+            946,
+            995
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Des économies d'impôt futures : pertes fiscales reportables et différences temporelles déductibles. Reconnues seulement si leur récupération sur des bénéfices futurs est probable.",
+          "operations": [
+            "Une provision non déductible aujourd'hui mais déductible plus tard → impôt différé actif.",
+            "Pertes fiscales reportables sur des bénéfices futurs probables."
+          ],
+          "norme": "IAS 12 — Impôts différés (reconnaissance sous condition de recouvrabilité).",
+          "audit": {
+            "assertions": [
+              "Évaluation (recouvrabilité)"
+            ],
+            "risque": "Reconnaître des actifs d'impôt qui ne seront jamais récupérés.",
+            "procedure": "Tester les projections de bénéfices futurs, l'horizon de récupération."
+          },
+          "lecture": "946 : stable. À comparer aux impôts différés actifs non reconnus (1'252, Note 13.4) par prudence.",
+          "note_ref": "Note 13 — Impôts, rapprochement des impôts différés (rapport p. 151-153)."
+        },
+        {
+          "id": "tot_actif_noncourant",
+          "label": "Total des actifs non courants",
+          "v": [
+            95182,
+            104076
+          ],
+          "kind": "subtotal",
+          "indent": 1,
+          "definition": "Les actifs destinés à servir durablement (> 12 mois) : l'outil industriel et les actifs incorporels/financiers. C'est ici que pèsent le goodwill et les marques.",
+          "exemple": "Somme : immo corporelles 32'549 + goodwill 27'636 + incorporelles 16'673 + participations 12'096 + immo financières 3'641 + dérivés 229 + prévoyance 1'412 + impôts différés 946 = **95'182**.",
+          "norme": "IAS 1.",
+          "audit": {
+            "assertions": [
+              "Exactitude"
+            ],
+            "risque": "Frontière courant / non courant.",
+            "procedure": "Recalcul."
+          },
+          "lecture": "95'182 (−9 %). Goodwill + incorporelles = 44'309, soit **35 % du bilan** : l'essentiel de la valeur de Nestlé est immatériel (marques et acquisitions)."
+        },
+        {
+          "id": "tot_actif",
+          "label": "Total de l'actif",
+          "v": [
+            127151,
+            139264
+          ],
+          "kind": "total",
+          "definition": "Tout ce que le groupe possède et contrôle. Par construction, il est strictement égal au total du passif et des capitaux propres : c'est l'équation fondamentale du bilan.",
+          "exemple": "Actifs courants 31'969 + actifs non courants 95'182 = **127'151** = passif 94'093 + capitaux propres 33'058. ✓",
+          "norme": "IAS 1 — équilibre du bilan.",
+          "audit": {
+            "assertions": [
+              "Exactitude",
+              "Équilibre"
+            ],
+            "risque": "Déséquilibre = erreur d'écriture.",
+            "procedure": "Vérifier l'égalité actif = passif + capitaux propres."
+          },
+          "lecture": "127'151 (−9 %) : le bilan se contracte d'environ 12 milliards (désendettement, change, cessions)."
+        },
+        {
+          "kind": "header",
+          "id": "h_passif_et_capitaux_propres",
+          "label": "Passif et capitaux propres",
+          "indent": 0
+        },
+        {
+          "kind": "header",
+          "id": "h_passif_courant",
+          "label": "Passif courant",
+          "indent": 1
+        },
+        {
+          "id": "dettes_fin_c",
+          "label": "Dettes financières",
+          "note": "12",
+          "v": [
+            11606,
+            11863
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Les emprunts à rembourser dans les 12 mois : billets de trésorerie (commercial paper), part courante des emprunts obligataires, dettes bancaires court terme et part courante des dettes de location.",
+          "operations": [
+            "Émission de billets de trésorerie pour financer le cycle.",
+            "Reclassement de la part à moins d'un an d'un emprunt à long terme.",
+            "Remboursement à l'échéance."
+          ],
+          "norme": "IFRS 9 — dettes au coût amorti ; IFRS 16 pour la part courante des locations.",
+          "audit": {
+            "assertions": [
+              "Exhaustivité",
+              "Exactitude (intérêts courus)",
+              "Classification courant/non courant"
+            ],
+            "risque": "Dettes ou intérêts courus omis ; mauvaise ventilation court/long terme.",
+            "procedure": "Confirmation bancaire, revue des échéanciers, test du reclassement de la part courante."
+          },
+          "lecture": "11'606 : stable.",
+          "note_ref": "Note 12.1c — variations des dettes financières (rapport p. 135)."
+        },
+        {
+          "id": "derives_passif_c",
+          "label": "Dérivés passifs",
+          "note": "12",
+          "v": [
+            202,
+            408
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Les instruments dérivés dont la juste valeur est négative à la clôture, échéance < 1 an : c'est une dette potentielle envers la contrepartie.",
+          "operations": [
+            "Un contrat de couverture qui a évolué en défaveur de Nestlé devient un passif.",
+            "Réévaluation à la juste valeur à la clôture."
+          ],
+          "norme": "IFRS 9 — dérivés à la juste valeur.",
+          "audit": {
+            "assertions": [
+              "Évaluation",
+              "Exhaustivité"
+            ],
+            "risque": "Valorisation ; omission de positions.",
+            "procedure": "Confirmation contreparties, contrôle des justes valeurs."
+          },
+          "lecture": "202 (−50 %).",
+          "note_ref": "Note 12 — Instruments financiers (rapport p. 135)."
+        },
+        {
+          "id": "fournisseurs",
+          "label": "Fournisseurs et autres créanciers",
+          "note": "7/12",
+          "v": [
+            20023,
+            21807
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Les dettes envers les fournisseurs de matières premières et de services, et d'autres créanciers : des factures reçues mais pas encore payées. C'est un financement à court terme… et gratuit.",
+          "operations": [
+            "Réception d'une facture fournisseur → naissance d'une dette.",
+            "Paiement à l'échéance → la dette s'éteint.",
+            "Accords de financement fournisseurs (reverse factoring) : un financeur paie le fournisseur, Nestlé rembourse le financeur plus tard."
+          ],
+          "ecriture": "Réception : Débit Stocks (ou Charge) / Crédit Fournisseurs. Paiement : Débit Fournisseurs / Crédit Banque.",
+          "exemple": "Réception de 600 de café → **Débit Stocks 600 / Crédit Fournisseurs 600**. Paiement à 90 jours → **Débit Fournisseurs 600 / Crédit Banque 600**.",
+          "norme": "IAS 1 ; les accords de financement fournisseurs font l'objet d'informations spécifiques (Note 7).",
+          "audit": {
+            "assertions": [
+              "Exhaustivité (passifs non enregistrés !)",
+              "Cut-off",
+              "Exactitude"
+            ],
+            "risque": "Dettes fournisseurs omises à la clôture pour embellir le bilan.",
+            "procedure": "Recherche de passifs non enregistrés, confirmations fournisseurs, test des paiements postérieurs et des factures non parvenues."
+          },
+          "lecture": "20'023 (−8 %). C'est le plus gros poste du passif courant : le délai fournisseurs finance une bonne partie du besoin en fonds de roulement.",
+          "note_ref": "Note 7 — Clients et débiteurs/créanciers, accords de financement de fournisseurs (rapport p. 106)."
+        },
+        {
+          "id": "charges_a_payer",
+          "label": "Charges à payer",
+          "v": [
+            5575,
+            5466
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Des charges déjà engagées mais pas encore facturées à la clôture : bonus du personnel, intérêts courus, remises clients restant à verser, factures non parvenues.",
+          "operations": [
+            "Estimation des bonus annuels dus au personnel.",
+            "Intérêts courus non échus sur les emprunts.",
+            "Ristournes promises aux clients, à régler après la clôture."
+          ],
+          "norme": "IAS 1 / IAS 37 — passifs estimés rattachés à l'exercice.",
+          "audit": {
+            "assertions": [
+              "Exhaustivité",
+              "Évaluation"
+            ],
+            "risque": "Sous-estimer les charges à payer pour gonfler le résultat.",
+            "procedure": "Revue des estimations, test des décaissements postérieurs."
+          },
+          "lecture": "5'575 : stable."
+        },
+        {
+          "id": "provisions_c",
+          "label": "Provisions",
+          "note": "11",
+          "v": [
+            850,
+            865
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Des passifs dont le montant ou l'échéance sont incertains, attendus dans les 12 mois : litiges, restructurations, contrats onéreux.",
+          "operations": [
+            "Dotation quand une obligation probable apparaît.",
+            "Reprise si le risque disparaît.",
+            "Utilisation quand la dépense se réalise."
+          ],
+          "norme": "IAS 37 — Provisions, passifs et actifs éventuels.",
+          "audit": {
+            "assertions": [
+              "Évaluation",
+              "Exhaustivité"
+            ],
+            "risque": "Sous-provisionner (risque caché) ou sur-provisionner (lissage du résultat).",
+            "procedure": "Confirmations des avocats, revue des dossiers, recalcul des estimations."
+          },
+          "lecture": "850 : stable.",
+          "note_ref": "Note 11 — Provisions, actifs et passifs éventuels (rapport p. 133)."
+        },
+        {
+          "id": "dettes_fiscales",
+          "label": "Dettes fiscales exigibles",
+          "v": [
+            2338,
+            2435
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "L'impôt sur le bénéfice dû aux administrations mais pas encore payé à la clôture.",
+          "operations": [
+            "Calcul de l'impôt de l'année supérieur aux acomptes déjà versés → dette."
+          ],
+          "norme": "IAS 12 — Impôts exigibles.",
+          "audit": {
+            "assertions": [
+              "Exhaustivité",
+              "Évaluation"
+            ],
+            "risque": "Positions fiscales incertaines (prix de transfert).",
+            "procedure": "Recalcul, revue des contrôles fiscaux en cours."
+          },
+          "lecture": "2'338 : stable."
+        },
+        {
+          "id": "passifs_cedes",
+          "label": "Passifs directement liés à des actifs destinés à être cédés",
+          "v": [
+            100,
+            19
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Les dettes attachées à un groupe d'actifs en cours de cession (le pendant, au passif, des « actifs destinés à être cédés »).",
+          "operations": [
+            "Reclassement des dettes d'une activité destinée à la vente."
+          ],
+          "norme": "IFRS 5 — actifs détenus en vue de la vente.",
+          "audit": {
+            "assertions": [
+              "Classification",
+              "Exhaustivité"
+            ],
+            "risque": "Périmètre du groupe cédé.",
+            "procedure": "Rapprochement avec les actifs cédés correspondants."
+          },
+          "lecture": "100 (×5) : suit le volume des activités en cours de cession."
+        },
+        {
+          "id": "tot_passif_courant",
+          "label": "Total du passif courant",
+          "v": [
+            40694,
+            42863
+          ],
+          "kind": "subtotal",
+          "indent": 1,
+          "definition": "Ce que le groupe doit régler dans les 12 mois. Comparé aux actifs courants, il révèle la structure de financement du cycle.",
+          "exemple": "Somme : dettes financières 11'606 + dérivés 202 + fournisseurs 20'023 + charges à payer 5'575 + provisions 850 + dettes fiscales 2'338 + passifs cédés 100 = **40'694**.",
+          "norme": "IAS 1.",
+          "audit": {
+            "assertions": [
+              "Exactitude",
+              "Classification"
+            ],
+            "risque": "Frontière 12 mois.",
+            "procedure": "Recalcul."
+          },
+          "lecture": "40'694 (−5 %). Supérieur aux actifs courants (31'969) → fonds de roulement négatif assumé."
+        },
+        {
+          "kind": "header",
+          "id": "h_passif_non_courant",
+          "label": "Passif non courant",
+          "indent": 1
+        },
+        {
+          "id": "dettes_fin_nc",
+          "label": "Dettes financières",
+          "note": "12",
+          "v": [
+            46246,
+            51697
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "L'endettement à plus d'un an : essentiellement des emprunts obligataires (Nestlé émet régulièrement sur les marchés), des dettes bancaires à long terme et la part long terme des dettes de location.",
+          "operations": [
+            "Émission d'un emprunt obligataire à 5 ou 10 ans → encaissement de cash, naissance d'une dette.",
+            "Souvent couvert par des dérivés de taux ou de change.",
+            "Chaque année, la part à moins d'un an bascule en dette financière courante."
+          ],
+          "ecriture": "Émission : Débit Banque / Crédit Emprunt obligataire. Chaque année : Débit Charges financières / Crédit Intérêts à payer.",
+          "exemple": "Émission d'une obligation de 1'000 à 10 ans, coupon 3 % → encaissement **Débit Banque 1'000 / Crédit Emprunt 1'000** ; intérêt annuel **Débit Charges financières 30**.",
+          "norme": "IFRS 9 — dettes au coût amorti (méthode du taux d'intérêt effectif) ; IFRS 16 pour les locations.",
+          "audit": {
+            "assertions": [
+              "Exhaustivité",
+              "Exactitude (coût amorti)",
+              "Classification"
+            ],
+            "risque": "Évaluation au coût amorti, frais d'émission, covenants.",
+            "procedure": "Confirmation, échéanciers, recalcul du coût amorti, revue des emprunts obligataires (Note 12.1d)."
+          },
+          "lecture": "46'246 (−11 %) : net désendettement, premier facteur de la contraction du bilan.",
+          "note_ref": "Note 12.1d — Emprunts obligataires, détail par émetteur et échéance (rapport p. 140)."
+        },
+        {
+          "id": "derives_passif_nc",
+          "label": "Dérivés passifs",
+          "note": "12",
+          "v": [
+            144,
+            307
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Les dérivés à juste valeur négative et échéance supérieure à un an.",
+          "operations": [
+            "Swap de taux long terme défavorable à la clôture.",
+            "Réévaluation à la juste valeur."
+          ],
+          "norme": "IFRS 9 — dérivés à la juste valeur.",
+          "audit": {
+            "assertions": [
+              "Évaluation",
+              "Exhaustivité"
+            ],
+            "risque": "Valorisation longue durée.",
+            "procedure": "Confirmation, contrôle des modèles."
+          },
+          "lecture": "144 (−53 %).",
+          "note_ref": "Note 12 — Instruments financiers (rapport p. 135)."
+        },
+        {
+          "id": "engagements_personnel",
+          "label": "Engagements envers le personnel",
+          "note": "10",
+          "v": [
+            2299,
+            2629
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Le déficit net des régimes de retraite à prestations définies et autres avantages postérieurs à l'emploi : la part des engagements envers les salariés qui n'est pas couverte par les actifs des régimes.",
+          "operations": [
+            "Les services rendus par les salariés augmentent l'obligation (coût des services).",
+            "Les réévaluations actuarielles (taux d'actualisation, mortalité) passent par les autres éléments du résultat global.",
+            "Les cotisations de l'employeur réduisent le déficit."
+          ],
+          "norme": "IAS 19 — Avantages du personnel (régimes à prestations définies).",
+          "audit": {
+            "assertions": [
+              "Évaluation (hypothèses actuarielles)",
+              "Exhaustivité"
+            ],
+            "risque": "Hypothèses sensibles : taux d'actualisation, inflation, espérance de vie.",
+            "procedure": "Recours à un actuaire, revue des hypothèses, analyses de sensibilité (Note 10.2j)."
+          },
+          "lecture": "2'299 (−13 %) : un taux d'actualisation plus élevé réduit la valeur des obligations.",
+          "note_ref": "Note 10 — Engagements envers le personnel, situation de financement par région (rapport p. 121-132)."
+        },
+        {
+          "id": "provisions_nc",
+          "label": "Provisions",
+          "note": "11",
+          "v": [
+            980,
+            1086
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Les provisions dont l'échéance dépasse 12 mois : litiges de longue durée, démantèlement, restructurations pluriannuelles, contrats onéreux.",
+          "operations": [
+            "Dotation actualisée d'une obligation lointaine.",
+            "Désactualisation annuelle (charge financière) qui rapproche l'échéance."
+          ],
+          "norme": "IAS 37 — Provisions (actualisation des obligations à long terme).",
+          "audit": {
+            "assertions": [
+              "Évaluation",
+              "Exhaustivité"
+            ],
+            "risque": "Estimation et taux d'actualisation.",
+            "procedure": "Revue des dossiers, confirmations d'avocats, recalcul de l'actualisation."
+          },
+          "lecture": "980 : stable.",
+          "note_ref": "Note 11 — Provisions (rapport p. 133)."
+        },
+        {
+          "id": "idp",
+          "label": "Impôts différés passifs",
+          "note": "13",
+          "v": [
+            3554,
+            3767
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Les impôts qui devront être payés plus tard sur des différences temporelles imposables : amortissements fiscaux plus rapides qu'en comptabilité, marques et immobilisations réévaluées lors d'acquisitions.",
+          "operations": [
+            "Lors d'une acquisition, une marque réévaluée crée un impôt différé passif.",
+            "Amortissement déduit plus vite en fiscalité → impôt différé passif qui se dénoue plus tard."
+          ],
+          "norme": "IAS 12 — Impôts différés (différences temporelles imposables).",
+          "audit": {
+            "assertions": [
+              "Exhaustivité",
+              "Évaluation"
+            ],
+            "risque": "Différences temporelles omises (surtout sur les regroupements).",
+            "procedure": "Rapprochement par nature de différence (Note 13.3)."
+          },
+          "lecture": "3'554 (−6 %).",
+          "note_ref": "Note 13.3 — Rapprochement des impôts différés par catégorie (rapport p. 153)."
+        },
+        {
+          "id": "autres_creanciers_nc",
+          "label": "Autres créanciers",
+          "note": "12",
+          "v": [
+            176,
+            222
+          ],
+          "kind": "line",
+          "indent": 1,
+          "definition": "Diverses dettes à long terme ne relevant pas des catégories ci-dessus.",
+          "operations": [
+            "Dettes diverses à échéance lointaine."
+          ],
+          "norme": "IFRS 9 / IAS 1.",
+          "audit": {
+            "assertions": [
+              "Exhaustivité",
+              "Classification"
+            ],
+            "risque": "Faible.",
+            "procedure": "Revue analytique."
+          },
+          "lecture": "176 : marginal."
+        },
+        {
+          "id": "tot_passif_noncourant",
+          "label": "Total du passif non courant",
+          "v": [
+            53399,
+            59708
+          ],
+          "kind": "subtotal",
+          "indent": 1,
+          "definition": "Les dettes à plus d'un an : surtout l'endettement obligataire et les engagements de retraite.",
+          "exemple": "Somme : dettes financières 46'246 + dérivés 144 + personnel 2'299 + provisions 980 + impôts différés 3'554 + autres 176 = **53'399**.",
+          "norme": "IAS 1.",
+          "audit": {
+            "assertions": [
+              "Exactitude"
+            ],
+            "risque": "Classification.",
+            "procedure": "Recalcul."
+          },
+          "lecture": "53'399 (−11 %) : la dette long terme baisse fortement."
+        },
+        {
+          "id": "tot_passif",
+          "label": "Total du passif",
+          "v": [
+            94093,
+            102571
+          ],
+          "kind": "subtotal",
+          "definition": "L'ensemble des dettes du groupe, courantes et non courantes. Ce que Nestlé doit à des tiers.",
+          "exemple": "Passif courant 40'694 + passif non courant 53'399 = **94'093**.",
+          "norme": "IAS 1.",
+          "audit": {
+            "assertions": [
+              "Exactitude",
+              "Exhaustivité"
+            ],
+            "risque": "Passifs non enregistrés.",
+            "procedure": "Recherche de passifs omis, revue postérieure à la clôture."
+          },
+          "lecture": "94'093 (−8 %). Représente **74 % du bilan** : Nestlé est financée majoritairement par dette, avec des capitaux propres minces (effet des actions propres rachetées et des écarts de conversion négatifs)."
+        },
+        {
+          "kind": "header",
+          "id": "h_capitaux_propres_(note_17)",
+          "label": "Capitaux propres (Note 17)",
+          "indent": 0
+        },
+        {
+          "id": "capital_actions",
+          "label": "Capital-actions",
+          "note": "17",
+          "v": [
+            258,
+            262
+          ],
+          "kind": "line",
+          "definition": "La valeur nominale du capital social de Nestlé S.A. Il diminue chaque année quand le groupe annule des actions qu'il a rachetées.",
+          "operations": [
+            "Réduction de capital par annulation d'actions propres rachetées sur le marché."
+          ],
+          "norme": "IAS 1 ; CO 621 et suivants pour le capital-actions d'une SA suisse.",
+          "audit": {
+            "assertions": [
+              "Exactitude",
+              "Existence"
+            ],
+            "risque": "Faible (registre du commerce).",
+            "procedure": "Rapprochement avec le registre du commerce et les décisions d'AG."
+          },
+          "lecture": "258 (−1,5 %) : la baisse traduit l'annulation d'actions propres décidée en assemblée générale.",
+          "note_ref": "Note 17.1 — Réduction du capital-actions (rapport p. 162)."
+        },
+        {
+          "id": "actions_propres",
+          "label": "Actions propres",
+          "note": "17",
+          "v": [
+            -388,
+            -4283
+          ],
+          "kind": "line",
+          "definition": "Les actions Nestlé rachetées par le groupe lui-même. Elles ne sont PAS un actif : elles viennent en déduction des capitaux propres (on ne peut pas être actionnaire de soi-même).",
+          "operations": [
+            "Rachat d'actions (buyback) → réduit les capitaux propres.",
+            "Annulation des actions rachetées → réduit aussi le capital-actions.",
+            "Remise d'actions aux plans d'intéressement du personnel."
+          ],
+          "ecriture": "Rachat : Débit Actions propres / Crédit Banque (en moins des capitaux propres).",
+          "exemple": "Rachat de 200 d'actions → les capitaux propres baissent de **200** (poste « actions propres » plus négatif).",
+          "norme": "IAS 32 — Instruments financiers : présentation (actions propres déduites des capitaux propres).",
+          "audit": {
+            "assertions": [
+              "Exhaustivité",
+              "Présentation (déduction, pas un actif)"
+            ],
+            "risque": "Classement erroné en actif.",
+            "procedure": "Rapprochement avec le registre des actions et les programmes de rachat."
+          },
+          "lecture": "(388) contre (4'283) : l'énorme stock d'actions propres de 2024 a été **annulé** en 2025 (d'où la réduction de capital et la baisse des bénéfices accumulés).",
+          "note_ref": "Note 17.3 — Actions propres (rapport p. 163)."
+        },
+        {
+          "id": "ecarts_conversion",
+          "label": "Écarts de conversion",
+          "note": "17",
+          "v": [
+            -29944,
+            -26788
+          ],
+          "kind": "line",
+          "definition": "Le cumul, depuis l'origine, des différences nées de la conversion en CHF des comptes des filiales étrangères. Quand le franc suisse se renforce, la valeur convertie des filiales baisse → un écart négatif qui se creuse.",
+          "operations": [
+            "Conversion des bilans des filiales au cours de clôture et des résultats au cours moyen.",
+            "La différence va directement dans les capitaux propres (autres éléments du résultat global), sans passer par le résultat."
+          ],
+          "norme": "IAS 21 — Effets des variations des cours des monnaies étrangères.",
+          "audit": {
+            "assertions": [
+              "Exactitude des taux",
+              "Présentation"
+            ],
+            "risque": "Taux de conversion erronés ; recyclage au résultat lors de cessions.",
+            "procedure": "Recalcul des conversions, contrôle des taux, suivi du recyclage."
+          },
+          "lecture": "(29'944) : se creuse encore de −3'156 en 2025 à cause d'un CHF fort. C'est le **premier poste qui ampute les capitaux propres** de Nestlé.",
+          "note_ref": "Note 17.5 — Écarts de conversion et autres réserves (rapport p. 163)."
+        },
+        {
+          "id": "autres_reserves",
+          "label": "Autres réserves",
+          "note": "17",
+          "v": [
+            -667,
+            363
+          ],
+          "kind": "line",
+          "definition": "Les réserves liées aux instruments financiers : réserves de couverture de flux de trésorerie (cash flow hedges), réévaluations d'instruments de capitaux propres, part des autres éléments du résultat global des associées.",
+          "operations": [
+            "Variation de juste valeur d'une couverture efficace → réserve de couverture (puis recyclée au résultat).",
+            "Réévaluation d'un placement en actions classé à la juste valeur par OCI."
+          ],
+          "norme": "IFRS 9 (couvertures, instruments de capitaux propres) ; IAS 28 (part d'OCI des associées).",
+          "audit": {
+            "assertions": [
+              "Exactitude",
+              "Présentation"
+            ],
+            "risque": "Efficacité des couvertures ; recyclage.",
+            "procedure": "Test de l'efficacité des couvertures, revue des mouvements (Note 17.9)."
+          },
+          "lecture": "Passe de +363 à **(667)** : retournement des réserves de couverture sur l'année.",
+          "note_ref": "Note 17.8 / 17.9 — Autres éléments du résultat global et rapprochement des autres réserves (rapport p. 164-166)."
+        },
+        {
+          "id": "benefices_accumules",
+          "label": "Bénéfices accumulés",
+          "note": "17",
+          "v": [
+            63551,
+            66363
+          ],
+          "kind": "line",
+          "definition": "Le réservoir des résultats : la somme de tous les bénéfices réalisés depuis l'origine, diminuée des dividendes distribués. C'est la richesse accumulée et non distribuée des actionnaires.",
+          "operations": [
+            "+ Le bénéfice net de l'année.",
+            "− Les dividendes versés.",
+            "− L'effet des annulations d'actions propres."
+          ],
+          "ecriture": "Affectation : Débit Résultat de l'exercice / Crédit Bénéfices accumulés ; Dividende : Débit Bénéfices accumulés / Crédit Dettes envers actionnaires.",
+          "exemple": "66'363 + bénéfice net 9'033 − dividendes 7'849 − annulation d'actions ≈ **63'551**.",
+          "norme": "IAS 1 ; affectation décidée par l'assemblée générale.",
+          "audit": {
+            "assertions": [
+              "Exactitude (report à nouveau)",
+              "Exhaustivité"
+            ],
+            "risque": "Erreur d'affectation, dividendes non conformes à la décision d'AG.",
+            "procedure": "Rapprochement avec l'état de variation des capitaux propres et le procès-verbal d'AG."
+          },
+          "lecture": "63'551 (−4 %) : le bénéfice ne couvre pas tout à fait le dividende + les annulations d'actions.",
+          "note_ref": "État des mouvements des capitaux propres (rapport p. 85)."
+        },
+        {
+          "id": "cp_mere",
+          "label": "Total des capitaux propres attribuables aux actionnaires de la société mère",
+          "v": [
+            32810,
+            35917
+          ],
+          "kind": "subtotal",
+          "definition": "Les fonds propres revenant aux actionnaires de Nestlé S.A. : capital + actions propres + écarts de conversion + autres réserves + bénéfices accumulés.",
+          "exemple": "258 − 388 − 29'944 − 667 + 63'551 = **32'810**.",
+          "norme": "IAS 1 ; IFRS 10 (distinction mère / minoritaires).",
+          "audit": {
+            "assertions": [
+              "Exactitude"
+            ],
+            "risque": "Faible.",
+            "procedure": "Recalcul, rapprochement avec l'état de variation."
+          },
+          "lecture": "32'810 (−9 %) : pénalisés par les écarts de conversion négatifs."
+        },
+        {
+          "id": "minoritaires",
+          "label": "Participations ne donnant pas le contrôle",
+          "v": [
+            248,
+            776
+          ],
+          "kind": "line",
+          "definition": "La part des capitaux propres revenant aux actionnaires minoritaires des filiales que Nestlé ne détient pas à 100 %.",
+          "operations": [
+            "Part des minoritaires dans les capitaux propres des filiales partiellement détenues.",
+            "Rachat de minoritaires (option de vente) → réduit ce poste."
+          ],
+          "norme": "IFRS 10 — États financiers consolidés.",
+          "audit": {
+            "assertions": [
+              "Exactitude",
+              "Exhaustivité du périmètre"
+            ],
+            "risque": "Pourcentages de détention.",
+            "procedure": "Rapprochement avec l'organigramme du groupe."
+          },
+          "lecture": "248 (−68 %) : forte baisse, liée à des rachats de minoritaires (voir flux de financement).",
+          "note_ref": "Note 2.3 — Acquisitions d'intérêts ne donnant pas le contrôle (rapport p. 92)."
+        },
+        {
+          "id": "tot_cp",
+          "label": "Total des capitaux propres",
+          "v": [
+            33058,
+            36693
+          ],
+          "kind": "subtotal",
+          "definition": "L'ensemble des fonds propres du groupe : part de la société mère + part des minoritaires. C'est le matelas de sécurité financé par les actionnaires.",
+          "exemple": "Capitaux propres mère 32'810 + minoritaires 248 = **33'058**.",
+          "norme": "IAS 1.",
+          "audit": {
+            "assertions": [
+              "Exactitude"
+            ],
+            "risque": "Faible.",
+            "procedure": "Recalcul."
+          },
+          "lecture": "33'058 (−10 %). Capitaux propres / total bilan = **26 %** : une structure très financée par la dette, accentuée par les rachats d'actions et un CHF fort."
+        },
+        {
+          "id": "tot_passif_cp",
+          "label": "Total du passif et des capitaux propres",
+          "v": [
+            127151,
+            139264
+          ],
+          "kind": "total",
+          "definition": "Le total des ressources : tout ce qui finance les actifs. Il est, par construction, strictement égal au total de l'actif.",
+          "exemple": "Passif 94'093 + capitaux propres 33'058 = **127'151** = total de l'actif. ✓ Le bilan est équilibré.",
+          "norme": "IAS 1 — équilibre du bilan (Actif = Passif + Capitaux propres).",
+          "audit": {
+            "assertions": [
+              "Équilibre",
+              "Exactitude"
+            ],
+            "risque": "Un déséquilibre signale une erreur.",
+            "procedure": "Vérifier l'égalité fondamentale du bilan."
+          },
+          "lecture": "127'151 : équilibre confirmé avec le total de l'actif."
+        }
+      ],
+      "cols": [
+        "2025",
+        "2024"
+      ],
+      "footnotes": [
+        "Équation du bilan : total actif 127'151 = total passif 94'093 + capitaux propres 33'058. ✓",
+        "Fonds de roulement = actifs courants 31'969 − passif courant 40'694 = −8'725 (négatif et assumé : la grande conso encaisse vite et paie tard).",
+        "Autonomie financière = capitaux propres / total bilan = 33'058 / 127'151 ≈ 26 %.",
+        "Immatériel = goodwill 27'636 + incorporelles 16'673 = 44'309, soit 35 % du bilan."
+      ]
+    },
+    {
+      "id": "flux",
+      "title": "Tableau des flux de trésorerie",
+      "subtitle": "de l'exercice 2025",
+      "icon": "💧",
+      "color": "#2563eb",
+      "status": "soon",
+      "intro": "D'où vient et où va le cash : exploitation, investissement, financement. À venir — Phase 3.",
+      "lines": []
+    },
+    {
+      "id": "capitaux",
+      "title": "Mouvements des capitaux propres",
+      "subtitle": "de l'exercice 2025",
+      "icon": "🏛️",
+      "color": "#9333ea",
+      "status": "soon",
+      "intro": "L'évolution des fonds propres : résultat, dividendes, actions propres, réduction de capital. À venir — Phase 4.",
+      "lines": []
+    }
   ]
 }
