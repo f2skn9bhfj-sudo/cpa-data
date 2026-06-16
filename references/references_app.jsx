@@ -270,7 +270,80 @@ function GlossarySection() {
   );
 }
 
-/* 4. Seuils — bandeau réflexes + recherche + cartes à valeur colorée */
+/* 4bis. Régimes de révision (CO 727/727a, 906 ; CC 69b, 83b) — vue complète */
+function RegimeRevision() {
+  const r = R_DATA.seuils_regime;
+  if (!r) return null;
+  const ord = r.ordinaire || {}, res = r.restreint || {}, oo = r.opting_out || {};
+  return (
+    <div className="mb-6">
+      <div className="rounded-2xl border border-indigo-200 bg-gradient-to-br from-indigo-50/70 to-white p-5 mb-3">
+        <div className="flex items-center gap-2"><span className="text-2xl">🧭</span><h3 className="text-lg font-bold text-slate-800">Régimes de révision</h3></div>
+        {r.intro && <p className="text-sm text-slate-600 mt-1 leading-relaxed"><Fmt text={r.intro} /></p>}
+      </div>
+
+      <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden mb-3">
+        <div className="px-4 py-3 bg-emerald-50/70 border-b border-emerald-100 flex items-center gap-2 flex-wrap">
+          <span className="font-bold text-sm text-emerald-700">✅ {ord.titre}</span>
+          {ord.ref && <span className="text-[11px] text-emerald-600 bg-white border border-emerald-200 rounded-full px-2 py-0.5">{ord.ref}</span>}
+        </div>
+        <div className="px-4 py-3.5">
+          <div className="text-xs font-semibold text-slate-500 mb-3">{ord.sous}</div>
+          <div className="space-y-3">
+            {(ord.triggers || []).map((t, i) => (
+              <div key={i} className="flex gap-3">
+                <span className="shrink-0 w-6 h-6 rounded-lg bg-emerald-100 text-emerald-700 grid place-items-center text-xs font-bold">{i + 1}</span>
+                <div className="min-w-0">
+                  <div className="text-[13.5px] font-semibold text-slate-800 flex items-center gap-2 flex-wrap">
+                    {t.t}
+                    {t.ref && <span className="text-[10px] text-slate-400 font-normal">{t.ref}</span>}
+                    {t.mnemo && <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700">{t.mnemo}</span>}
+                  </div>
+                  <div className="text-[13px] text-slate-600 leading-relaxed mt-0.5"><Fmt text={t.d} /></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-3 mb-3">
+        <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+          <div className="px-4 py-3 bg-blue-50/70 border-b border-blue-100 flex items-center gap-2 flex-wrap"><span className="font-bold text-sm text-blue-700">🔎 {res.titre}</span>{res.ref && <span className="text-[11px] text-blue-600 bg-white border border-blue-200 rounded-full px-2 py-0.5">{res.ref}</span>}</div>
+          <div className="px-4 py-3.5">
+            <div className="text-xs font-semibold text-slate-500 mb-2">{res.sous}</div>
+            <ul className="space-y-1.5">{(res.points || []).map((p, i) => <li key={i} className="text-[13px] text-slate-600 leading-relaxed flex gap-2"><span className="text-blue-400 shrink-0">▸</span><span><Fmt text={p} /></span></li>)}</ul>
+          </div>
+        </div>
+        <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+          <div className="px-4 py-3 bg-amber-50/70 border-b border-amber-100 flex items-center gap-2 flex-wrap"><span className="font-bold text-sm text-amber-700">🚫 {oo.titre}</span>{oo.mnemo && <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-100 text-amber-700">🧠 {oo.mnemo}</span>}</div>
+          <div className="px-4 py-3.5">
+            <div className="text-[10px] font-bold uppercase tracking-wide text-slate-400 mb-1.5">Conditions cumulatives{oo.ref ? " · " + oo.ref : ""}</div>
+            <ul className="space-y-1 mb-3">{(oo.conditions || []).map((c, i) => <li key={i} className="text-[13px] text-slate-700 leading-relaxed flex gap-2"><span className="text-amber-500 shrink-0 font-bold">✓</span><span><Fmt text={c} /></span></li>)}</ul>
+            {(oo.notes || []).map((n, i) => {
+              const piege = /⚠️/.test(n);
+              return <div key={i} className={"text-xs leading-relaxed mb-1.5 " + (piege ? "text-amber-800 bg-amber-50 border border-amber-100 rounded-lg px-2.5 py-1.5" : "text-slate-500 flex gap-2")}>{!piege && <span className="text-slate-300 shrink-0">·</span>}<span><Fmt text={n} /></span></div>;
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+        <div className="px-4 py-3 bg-slate-50 border-b border-slate-100"><span className="font-bold text-sm text-slate-700">⚖️ Selon la forme juridique</span></div>
+        <div className="divide-y divide-slate-50">
+          {(r.formes || []).map((f, i) => (
+            <div key={i} className="px-4 py-3">
+              <div className="flex items-center gap-2 mb-0.5 flex-wrap"><span className="text-[13.5px] font-bold text-slate-800">{f.forme}</span>{f.ref && f.ref !== "—" && <span className="text-[10px] text-slate-400">{f.ref}</span>}{f.mnemo && <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600">{f.mnemo}</span>}</div>
+              <div className="text-[13px] text-slate-600 leading-relaxed"><Fmt text={f.regle} /></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* 4. Seuils — bandeau réflexes + régimes + recherche + cartes à valeur colorée */
 function SeuilsSection() {
   const sections = R_DATA.seuils || [];
   const [q, setQ] = useState("");
@@ -297,6 +370,8 @@ function SeuilsSection() {
           </div>
         </div>
       )}
+
+      {!query && <RegimeRevision />}
 
       <div className="mb-4 max-w-md"><RSearch value={q} onChange={setQ} placeholder="Rechercher un seuil (TVA, capital, prescription, matérialité…)" /></div>
 

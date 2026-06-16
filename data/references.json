@@ -3701,5 +3701,101 @@
         }
       ]
     }
-  ]
+  ],
+  "seuils_regime": {
+    "intro": "Le régime de révision ne dépend pas QUE des seuils : opting-out, droit des 10%, opting-in volontaire et forme juridique entrent en jeu. Vue d'ensemble (CO 727–727a, 906 ; CC 69b, 83b).",
+    "ordinaire": {
+      "titre": "Contrôle ORDINAIRE",
+      "sous": "Obligatoire dès qu'UN de ces cas est rempli",
+      "ref": "art. 727 CO",
+      "triggers": [
+        {
+          "t": "Société ouverte au public",
+          "d": "Actions cotées en bourse · **ou** emprunts par obligations en cours · **ou** contribue pour ≥ 20 % aux actifs ou au CA des comptes consolidés d'une telle société.",
+          "ref": "727 al.1 ch.1"
+        },
+        {
+          "t": "Dépassement de seuils",
+          "d": "**2 des 3** valeurs dépassées durant **2 exercices** successifs : total bilan **20 mio** · CA **40 mio** · **250 EPT** (moyenne annuelle).",
+          "ref": "727 al.1 ch.2",
+          "mnemo": "20-40-250"
+        },
+        {
+          "t": "Comptes de groupe",
+          "d": "Société tenue d'établir des **comptes consolidés**.",
+          "ref": "727 al.1 ch.3"
+        },
+        {
+          "t": "Droit des 10 % (minorité)",
+          "d": "Des actionnaires représentant ensemble **≥ 10 % du capital-actions** peuvent **exiger** un contrôle ordinaire — même si aucun seuil n'est atteint.",
+          "ref": "727 al.2",
+          "mnemo": "10 %"
+        },
+        {
+          "t": "Opting-up (statuts / AG)",
+          "d": "À défaut d'obligation légale, le contrôle ordinaire peut être **prévu par les statuts** ou **décidé par l'assemblée générale**.",
+          "ref": "727 al.3"
+        }
+      ]
+    },
+    "restreint": {
+      "titre": "Contrôle RESTREINT (review)",
+      "sous": "Régime par défaut si le contrôle ordinaire n'est pas requis",
+      "ref": "art. 727a al.1 CO",
+      "points": [
+        "Assurance **négative** (« nous n'avons pas relevé d'éléments… ») — pas une opinion positive.",
+        "Travaux : **interrogations + procédures analytiques**, contrôles détaillés au besoin (≠ ISA complet).",
+        "Indépendance allégée (CO 729) : l'organe peut tenir la compta / aider, mais pas décider."
+      ]
+    },
+    "opting_out": {
+      "titre": "OPTING-OUT — renoncer à TOUTE révision",
+      "ref": "art. 727a al.2 CO",
+      "conditions": [
+        "La société **n'est pas** soumise au contrôle ordinaire.",
+        "**≤ 10 EPT** en moyenne annuelle.",
+        "**Consentement de TOUS** les actionnaires (unanimité)."
+      ],
+      "notes": [
+        "La renonciation **reste valable** pour les exercices suivants (pas à reconfirmer chaque année).",
+        "Le CA peut requérir le consentement **par écrit** : délai de 20 jours, le **silence vaut consentement**.",
+        "Chaque actionnaire peut **exiger le rétablissement** d'un contrôle restreint au plus tard **10 jours avant l'AG**.",
+        "⚠️ À ne pas confondre : opting-**OUT** = renoncer · opting-**IN / UP** = imposer un contrôle (plus élevé)."
+      ],
+      "mnemo": "U-10-T"
+    },
+    "formes": [
+      {
+        "forme": "🏢 SA",
+        "regle": "Régime ci-dessus (référence).",
+        "ref": "727 ss CO"
+      },
+      {
+        "forme": "🏬 Sàrl",
+        "regle": "Dispositions de la SA **par analogie** (même régime, mêmes seuils, opting-out possible).",
+        "ref": "818 al.1 CO"
+      },
+      {
+        "forme": "🤝 Coopérative",
+        "regle": "Dispositions SA **par analogie**. Contrôle ordinaire **exigible** par : 10 % des coopérateurs · coopérateurs à **responsabilité personnelle** ou tenus à des **versements supplémentaires** · coopérateurs représentant **≥ 10 % du capital social**.",
+        "ref": "906 CO"
+      },
+      {
+        "forme": "👥 Association",
+        "regle": "Contrôle **ordinaire** si 2/3 seuils sur 2 ans : bilan **10 mio** · CA **20 mio** · **50 EPT**. Contrôle **restreint** si un membre à responsabilité personnelle ou tenu à des versements le **requiert**. Sinon : pas d'organe de révision obligatoire.",
+        "ref": "CC 69b",
+        "mnemo": "10-20-50"
+      },
+      {
+        "forme": "🏛️ Fondation",
+        "regle": "Organe de révision **obligatoire** (ordinaire si 2/3 de 10/20/50 EPT). **Dispense** des petites fondations : total bilan **< 200'000 CHF** sur 2 ans **+** pas de **collecte publique / dons** **+** révision non nécessaire à l'appréciation (décision de l'autorité de surveillance).",
+        "ref": "CC 83b"
+      },
+      {
+        "forme": "👤 RI · SNC · SCm",
+        "regle": "**Pas** d'obligation légale de révision (opting-in volontaire possible). Comptabilité complète dès **CA ≥ 500'000** (CO 957).",
+        "ref": "—"
+      }
+    ]
+  }
 }
