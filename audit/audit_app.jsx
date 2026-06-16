@@ -3220,6 +3220,73 @@ function NestlePosteDetail({ line, color }) {
   );
 }
 
+/* Reproduction FIDÈLE d'un tableau du rapport (multi-colonnes, comme le PDF).
+   Les lignes ayant un `id` correspondant à une fiche (st.lines) sont cliquables
+   et déroulent l'explication pédagogique. */
+function NestleTable({ st, openId, setOpenId, color }) {
+  const tbl = st.table || {};
+  const cols = tbl.columns || [];
+  const lineById = {};
+  (st.lines || []).forEach((l) => { if (l.id) lineById[l.id] = l; });
+  const isNeg = (s) => typeof s === "string" && /^\(.*\)$/.test(s.trim());
+  const alignCls = (a) => a === "right" ? "text-right" : a === "center" ? "text-center" : "text-left";
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white overflow-hidden">
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse text-[13px]">
+          <thead>
+            <tr className="bg-slate-50 border-b-2 border-slate-200">
+              {cols.map((c, i) => (
+                <th key={i} className={`px-2.5 py-2 align-bottom text-[10.5px] font-bold uppercase tracking-wide text-slate-500 ${alignCls(c.align)} ${i === 0 ? "sticky left-0 bg-slate-50 z-10" : ""}`} style={c.w ? { minWidth: c.w } : {}}>{c.label}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {(tbl.rows || []).map((r, ri) => {
+              if (r.kind === "header") {
+                return <tr key={ri} className="bg-slate-100/80 border-b border-slate-200"><td colSpan={cols.length} className="px-2.5 py-1.5 text-[11px] font-bold uppercase tracking-widest text-slate-500" style={{ paddingLeft: (10 + (r.indent || 0) * 14) + "px" }}>{(r.cells || [])[0]}</td></tr>;
+              }
+              const line = r.id && lineById[r.id];
+              const open = openId && r.id && openId === r.id;
+              const isTot = r.kind === "total", isSub = r.kind === "subtotal";
+              const clickable = !!line;
+              const rowBg = isTot ? "bg-slate-900 text-white" : isSub ? "bg-violet-50/50" : "";
+              return (
+                <React.Fragment key={ri}>
+                  <tr onClick={clickable ? () => setOpenId(open ? null : r.id) : undefined}
+                    className={`border-b border-slate-100 ${rowBg} ${clickable ? "cursor-pointer hover:bg-slate-50/80" : ""} ${isTot && clickable ? "hover:bg-slate-800" : ""}`}>
+                    {(r.cells || []).map((cell, ci) => {
+                      const c = cols[ci] || {};
+                      const num = c.align === "right";
+                      const neg = num && isNeg(cell);
+                      const strong = isTot || isSub;
+                      return (
+                        <td key={ci} className={`px-2.5 py-1.5 ${alignCls(c.align)} ${num ? "tabular-nums whitespace-nowrap" : ""} ${ci === 0 ? "sticky left-0 z-10 " + (isTot ? "bg-slate-900" : isSub ? "bg-violet-50" : "bg-white") : ""} ${strong ? "font-bold" : ci === 0 ? "font-medium text-slate-700" : "text-slate-600"} ${neg && !isTot ? "text-rose-600" : ""}`}>
+                          {ci === 0 && clickable && <ChevronDown size={11} className={`inline-block mr-1 -ml-0.5 align-middle transition-transform ${open ? "rotate-180" : ""} ${isTot ? "text-slate-400" : "text-slate-300"}`} />}
+                          {ci === 0 ? <span style={{ paddingLeft: ((r.indent || 0) * 14) + "px" }}>{cell}</span> : cell}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                  {open && line && (
+                    <tr className="bg-slate-50/60"><td colSpan={cols.length} className="px-3 pb-3 pt-1 border-b border-slate-200"><NestlePosteDetail line={line} color={color} /></td></tr>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      {(tbl.notes || []).length > 0 && (
+        <div className="px-3 py-2 border-t border-slate-200 bg-slate-50 text-[11px] text-slate-500 leading-relaxed space-y-0.5">
+          {tbl.notes.map((n, i) => <div key={i}><MdInline text={n} /></div>)}
+        </div>
+      )}
+      <div className="px-3 py-1.5 border-t border-slate-100 bg-white text-[10.5px] text-slate-400 italic">Tableau reproduit du rapport · clique une ligne soulignée pour l'explication.</div>
+    </div>
+  );
+}
+
 function NestleApp({ onBack }) {
   const data = (typeof window !== "undefined" && window.__NESTLE__) || {};
   const meta = data.meta || {};
@@ -3294,6 +3361,8 @@ function NestleApp({ onBack }) {
         <div className="rounded-xl border-2 border-dashed border-slate-200 bg-slate-50 p-8 text-center text-slate-400 text-sm">
           🚧 Cet état sera commenté dans une prochaine phase. Le compte de résultat est disponible dès maintenant.
         </div>
+      ) : st.table && (st.table.rows || []).length ? (
+        <NestleTable st={st} openId={openId} setOpenId={setOpenId} color={color} />
       ) : (
         <div className="rounded-xl border border-slate-200 bg-white overflow-hidden">
           {/* en-tête colonnes */}
