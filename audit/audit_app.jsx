@@ -1485,10 +1485,13 @@ function AuditGeneric({ section, onBack }) {
 
 /* ── Accueil Audit (hub) ── */
 const AUDIT_ORDER = ["annuaire", "nas", "cadre_legal", "cycles", "procedures_assertions", "quiz", "cas_pratiques", "examens_blancs", "arbres", "comparatifs", "lexique", "outils", "modeles", "terrain", "independance", "fraude", "goingconcern", "timeline", "actualites"];
-function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlanComptable, onFraudePostes, onReferencement }) {
+function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlanComptable, onFraudePostes, onReferencement, onAnnexes, onAmortissements, onNestle }) {
+  const hasNestle = typeof window !== "undefined" && window.__NESTLE__ && (window.__NESTLE__.statements || []).length;
   const hasPlan = typeof window !== "undefined" && window.__PLAN_COMPTABLE__ && (window.__PLAN_COMPTABLE__.plans || []).length;
   const hasFraude = typeof window !== "undefined" && window.__FRAUDE_POSTES__ && (window.__FRAUDE_POSTES__.sections || []).length;
   const hasRef = typeof window !== "undefined" && window.__REFERENCEMENT__ && ((window.__REFERENCEMENT__.exemple || {}).feuilles || []).length;
+  const hasAnnexes = typeof window !== "undefined" && window.__ANNEXES__ && (window.__ANNEXES__.referentiels || []).length;
+  const hasAmort = typeof window !== "undefined" && window.__AMORTISSEMENTS__ && (window.__AMORTISSEMENTS__.lecons || []).length;
   const keys = AUDIT_ORDER.filter((k) => data[k]);
   Object.keys(data).forEach((k) => { if (k[0] !== "_" && k !== "annuaire_cours" && AUDIT_ORDER.indexOf(k) < 0) keys.push(k); });
   const hasBook = book && (book.controle_ordinaire || book.controle_restreint);
@@ -1509,6 +1512,13 @@ function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlan
           <span className="text-4xl">📊</span>
           <span className="flex-1"><span className="block font-bold text-base text-emerald-800">Plans comptables — Suisse (PME) & France (PCG)</span><span className="block text-sm text-slate-600 mt-0.5">Découvre le plan comptable suisse PME et le plan français, classe par classe. Chaque compte est relié à sa ligne du bilan et du compte de résultat.</span><span className="block text-xs text-emerald-600 mt-1 font-medium">2 plans interactifs · comptes ↔ états financiers · autres plans suisses</span></span>
           <ArrowRight size={20} className="text-emerald-400 shrink-0" />
+        </button>
+      )}
+      {hasNestle && (
+        <button onClick={onNestle} className="w-full text-left rounded-2xl border-2 border-amber-200 bg-gradient-to-r from-amber-50 to-stone-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
+          <span className="text-4xl">🏭</span>
+          <span className="flex-1"><span className="block font-bold text-base text-amber-800">Nestlé — états financiers réels commentés</span><span className="block text-sm text-slate-600 mt-0.5">Les vrais comptes consolidés 2025, reconstruits ligne par ligne. Clique un poste : à quoi il correspond, les opérations derrière, la norme IFRS et l'œil de l'auditeur.</span><span className="block text-xs text-amber-600 mt-1 font-medium">Cas réel · compte de résultat · bilan & flux à venir</span></span>
+          <ArrowRight size={20} className="text-amber-400 shrink-0" />
         </button>
       )}
       {hasBook && (
@@ -1576,6 +1586,26 @@ function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlan
                       <span className="block font-bold text-sm text-slate-800 leading-tight">Référencement croisé</span>
                       <span className="block text-xs text-slate-500 leading-snug mt-0.5">Comment un dossier d'audit relie chaque chiffre à sa preuve : index des feuilles, renvois, tickmarks, et un dossier-exemple interactif.</span>
                       <span className="block text-[11px] text-indigo-500 font-medium mt-1">dossier cliquable · cycle créances</span>
+                    </span>
+                  </button>
+                )}
+                {g.id === "outils" && hasAnnexes && (
+                  <button onClick={onAnnexes} className="text-left bg-white border border-teal-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-start gap-3">
+                    <span className="w-9 h-9 grid place-items-center rounded-lg border bg-teal-50 text-teal-700 border-teal-100 text-base shrink-0">📎</span>
+                    <span className="min-w-0">
+                      <span className="block font-bold text-sm text-slate-800 leading-tight">Annexes des états financiers</span>
+                      <span className="block text-xs text-slate-500 leading-snug mt-0.5">Tout ce que doit contenir l'annexe selon le CO, les Swiss GAAP RPC et les IFRS, avec les bases légales et un comparatif des trois référentiels.</span>
+                      <span className="block text-[11px] text-teal-600 font-medium mt-1">CO · Swiss GAAP RPC · IFRS · comparatif</span>
+                    </span>
+                  </button>
+                )}
+                {g.id === "outils" && hasAmort && (
+                  <button onClick={onAmortissements} className="text-left bg-white border border-sky-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-start gap-3">
+                    <span className="w-9 h-9 grid place-items-center rounded-lg border bg-sky-50 text-sky-700 border-sky-100 text-base shrink-0">📉</span>
+                    <span className="min-w-0">
+                      <span className="block font-bold text-sm text-slate-800 leading-tight">Amortissements</span>
+                      <span className="block text-xs text-slate-500 leading-snug mt-0.5">Linéaire et dégressif expliqués pas à pas, taux fiscaux AFC, écritures direct/indirect, et un calculateur qui déroule le calcul année par année.</span>
+                      <span className="block text-[11px] text-sky-600 font-medium mt-1">cas interactif · surtout le dégressif</span>
                     </span>
                   </button>
                 )}
@@ -2656,6 +2686,643 @@ function AuditReferencement({ data, onBack }) {
   );
 }
 
+/* ════════════════════════════════════════════════════════════════
+   ANNEXES DES ÉTATS FINANCIERS — contenu obligatoire selon CO,
+   Swiss GAAP RPC et IFRS + comparatif. window.__ANNEXES__.
+   ════════════════════════════════════════════════════════════════ */
+const ANX_COLOR = { co: "#d97706", rpc: "#2563eb", ifrs: "#059669" };
+const ANX_TABLABEL = { co: "CO", rpc: "Swiss GAAP RPC", ifrs: "IFRS" };
+function AnxV({ v }) {
+  const m = {
+    oui: { t: "✓", cls: "bg-emerald-100 text-emerald-700 border-emerald-200", lbl: "Exigé" },
+    non: { t: "–", cls: "bg-slate-100 text-slate-400 border-slate-200", lbl: "Non exigé" },
+    si: { t: "◐", cls: "bg-amber-100 text-amber-700 border-amber-200", lbl: "Si applicable / grandes entreprises" },
+    partiel: { t: "≈", cls: "bg-sky-100 text-sky-700 border-sky-200", lbl: "Exigé mais allégé" },
+  };
+  const d = m[String(v || "").toLowerCase()] || m.non;
+  return <span title={d.lbl} className={"inline-grid place-items-center h-6 w-6 rounded-full border text-[13px] font-bold " + d.cls}>{d.t}</span>;
+}
+function AnxNiveau({ niveau, color }) {
+  if (!niveau) return null;
+  const n = niveau.toLowerCase();
+  let cls = "bg-slate-100 text-slate-500 border-slate-200", style = {};
+  if (n.includes("oblig")) { cls = "text-white border-transparent"; style = { background: color }; }
+  else if (n.includes("applicable")) cls = "bg-white text-slate-500 border-slate-300";
+  else if (n.includes("grande") || n.includes("ordinaire")) cls = "bg-slate-700 text-white border-transparent";
+  else if (n.includes("recommand")) cls = "bg-violet-50 text-violet-600 border-violet-200";
+  return <span className={"text-[10px] font-bold rounded-full px-2 py-0.5 border whitespace-nowrap " + cls} style={style}>{niveau}</span>;
+}
+function AnxReferentiel({ r }) {
+  const color = ANX_COLOR[r.key] || "#0f766e";
+  return (
+    <div>
+      <div className="rounded-xl border p-4 sm:p-5 mb-4" style={{ borderColor: color + "44", background: color + "0c" }}>
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-xl">{r.drapeau}</span>
+          <h3 className="font-bold text-[16px] text-slate-800">{r.nom}</h3>
+          {r.base_legale && <span className="text-[11px] font-mono rounded px-1.5 py-0.5" style={{ background: color + "1c", color }}>{r.base_legale}</span>}
+        </div>
+        {r.philosophie && <div className="mt-2 max-w-[64ch]"><Paras text={r.philosophie} className="text-[13px] text-slate-600 leading-relaxed" /></div>}
+        {(r.etats_requis || []).length > 0 && (
+          <div className="mt-3 flex flex-wrap items-center gap-1.5">
+            <span className="text-[10.5px] font-bold uppercase tracking-[0.08em] text-slate-400">États requis</span>
+            {r.etats_requis.map((e, i) => <span key={i} className="text-[11px] rounded-full bg-white border px-2 py-0.5 text-slate-600" style={{ borderColor: color + "44" }}>{e}</span>)}
+          </div>
+        )}
+      </div>
+      {r.intro && <div className="max-w-[64ch] mb-4"><Paras text={r.intro} className="text-[13px] text-slate-600 leading-relaxed" /></div>}
+      <div className="space-y-6">
+        {(r.rubriques || []).map((rub, i) => (
+          <div key={i}>
+            <div className="flex items-center gap-2 mb-2.5">
+              {rub.icon && <span className="text-[15px]">{rub.icon}</span>}
+              <h4 className="font-bold text-[13.5px] text-slate-800">{rub.titre}</h4>
+              <span className="flex-1 h-px" style={{ background: color + "2e" }} />
+            </div>
+            <div className="space-y-2">
+              {(rub.items || []).map((it, j) => (
+                <div key={j} className="bg-white rounded-xl border border-slate-200 p-3.5">
+                  <div className="flex items-start justify-between gap-3 flex-wrap">
+                    <div className="font-semibold text-[13px] text-slate-800 leading-snug flex-1 min-w-[180px]">{it.l}</div>
+                    <div className="flex items-center gap-1.5 flex-wrap justify-end">
+                      {it.ref && <span className="text-[10px] font-mono rounded px-1.5 py-0.5 whitespace-nowrap" style={{ background: color + "16", color }}>{it.ref}</span>}
+                      <AnxNiveau niveau={it.niveau} color={color} />
+                    </div>
+                  </div>
+                  {it.d && <div className="mt-1 max-w-[70ch]"><Paras text={it.d} className="text-[12.5px] text-slate-600 leading-relaxed" /></div>}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+function AnxComparatif({ comp }) {
+  const head = [["co", "CO"], ["rpc", "RPC"], ["ifrs", "IFRS"]];
+  return (
+    <div>
+      {comp.intro && <div className="max-w-[72ch] mb-3"><Paras text={comp.intro} className="text-[13px] text-slate-600 leading-relaxed" /></div>}
+      <div className="bg-white rounded-xl border border-slate-200 overflow-x-auto">
+        <table className="w-full border-collapse text-[12.5px]">
+          <thead>
+            <tr>
+              <th className="text-left font-bold text-slate-500 px-3 py-2.5 border-b border-slate-200 sticky left-0 bg-white">Information à fournir</th>
+              {head.map(([k, lbl]) => <th key={k} className="px-2 py-2.5 border-b border-slate-200 text-center font-bold" style={{ color: ANX_COLOR[k] }}><span className="inline-flex items-center gap-1">{k === "ifrs" ? "🌍" : "🇨🇭"} {lbl}</span></th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {(comp.themes || []).map((t, i) => (
+              <tr key={i} className="border-b border-slate-50 align-top">
+                <td className="px-3 py-2 text-slate-700 font-medium leading-snug sticky left-0 bg-white">{t.theme}</td>
+                {head.map(([k]) => {
+                  const cell = t[k] || {};
+                  return (
+                    <td key={k} className="px-2 py-2 text-center">
+                      <div className="flex flex-col items-center gap-1">
+                        <AnxV v={cell.v} />
+                        {cell.note && <span className="text-[10px] text-slate-400 leading-tight max-w-[150px]">{cell.note}</span>}
+                      </div>
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="flex flex-wrap gap-x-4 gap-y-1.5 mt-3 text-[11px] text-slate-500">
+        <span className="inline-flex items-center gap-1.5"><AnxV v="oui" /> Exigé</span>
+        <span className="inline-flex items-center gap-1.5"><AnxV v="si" /> Si applicable / grandes entreprises</span>
+        <span className="inline-flex items-center gap-1.5"><AnxV v="partiel" /> Exigé mais allégé</span>
+        <span className="inline-flex items-center gap-1.5"><AnxV v="non" /> Non exigé</span>
+      </div>
+    </div>
+  );
+}
+function AuditAnnexes({ data, onBack }) {
+  const d = data || {};
+  const refs = d.referentiels || [];
+  const comp = d.comparatif || {};
+  const [lens, setLens] = useState("comparatif");
+  const TABS = [["comparatif", "⚖️ Comparatif"]].concat(refs.map((r) => [r.key, (r.drapeau ? r.drapeau + " " : "") + (ANX_TABLABEL[r.key] || r.nom)]));
+  const cur = refs.find((r) => r.key === lens);
+  if (!refs.length) return (
+    <div className="max-w-[920px] mx-auto">
+      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-teal-700 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
+      <div className="text-center text-slate-400 py-12">Données indisponibles.</div>
+    </div>
+  );
+  return (
+    <div className="max-w-[920px] mx-auto">
+      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-teal-700 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
+
+      <div className="relative overflow-hidden rounded-2xl text-white p-5 sm:p-6 shadow mb-4" style={{ background: "linear-gradient(135deg,#0f172a 0%,#134e4a 70%,#115e59 100%)" }}>
+        <div className="flex items-center gap-2 text-[10.5px] font-mono uppercase tracking-[0.18em] text-teal-300 mb-2"><FileText size={13} /> Annexe · notes aux états financiers</div>
+        <h2 className="text-2xl font-bold leading-tight">Que doit contenir l'annexe ?</h2>
+        <p className="text-[13.5px] text-slate-300 mt-1.5 max-w-[62ch] leading-relaxed">{d._description || "Le contenu obligatoire de l'annexe des comptes, référentiel par référentiel, avec la base légale de chaque information à fournir, et un comparatif des trois cadres."}</p>
+        <div className="flex flex-wrap gap-2 mt-3.5">
+          {refs.map((r) => <span key={r.key} className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11.5px] font-semibold" style={{ background: ANX_COLOR[r.key] + "26", color: r.key === "co" ? "#fcd34d" : r.key === "rpc" ? "#93c5fd" : "#6ee7b7" }}>{r.drapeau} {ANX_TABLABEL[r.key] || r.nom}</span>)}
+        </div>
+      </div>
+
+      {d.intro && <div className="bg-white rounded-xl border border-slate-200 p-4 sm:p-5 mb-5 max-w-[66ch]"><Paras text={d.intro} className="text-[13.5px] text-slate-700 leading-relaxed" /></div>}
+
+      <div className="sticky top-0 z-10 -mx-4 px-4 py-2 bg-slate-100/95 backdrop-blur border-b border-slate-200 mb-5 flex gap-1.5 overflow-x-auto">
+        {TABS.map(([k, lbl]) => (
+          <button key={k} onClick={() => { setLens(k); try { window.scrollTo(0, 0); } catch (e) {} }}
+            className={"text-[12.5px] font-semibold px-3 py-1.5 rounded-lg whitespace-nowrap transition-colors " + (lens === k ? "text-white" : "bg-white border border-slate-200 text-slate-600 hover:border-teal-300")}
+            style={lens === k ? { background: k === "comparatif" ? "#0f766e" : ANX_COLOR[k] } : {}}>{lbl}</button>
+        ))}
+      </div>
+
+      {lens === "comparatif" ? <AnxComparatif comp={comp} /> : cur ? <AnxReferentiel r={cur} /> : null}
+    </div>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════
+   AMORTISSEMENTS — linéaire & dégressif, taux AFC, écritures, et un
+   calculateur interactif (tableau année par année + courbe). window.__AMORTISSEMENTS__.
+   ════════════════════════════════════════════════════════════════ */
+const amNf = (n) => {
+  if (n === null || n === undefined || isNaN(n)) return "–";
+  const neg = n < 0; n = Math.abs(Math.round(n * 100) / 100);
+  let [a, b] = n.toFixed(2).split(".");
+  a = a.replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+  return (neg ? "-" : "") + a + (b === "00" ? "" : "." + b);
+};
+const amPct = (t) => (Math.round(t * 100) / 100).toString().replace(".", ",") + "%";
+function AmMd({ text }) {
+  const blocks = String(text || "").trim().split(/\n\s*\n/);
+  return blocks.map((bl, i) => {
+    const lines = bl.split("\n").map((l) => l.trim()).filter(Boolean);
+    const bullets = lines.filter((l) => /^[-•]\s+/.test(l));
+    if (bullets.length && bullets.length === lines.length) {
+      return <ul key={i} className="list-disc pl-5 space-y-1 my-2">{lines.map((l, j) => <li key={j} className="text-[13px] text-slate-700 leading-relaxed"><MdInline text={l.replace(/^[-•]\s+/, "")} /></li>)}</ul>;
+    }
+    return <p key={i} className="text-[13px] text-slate-700 leading-relaxed my-2 first:mt-0 max-w-[72ch]"><MdInline text={bl.replace(/\n/g, " ")} /></p>;
+  });
+}
+function AmCallout({ type, text }) {
+  const C = {
+    cle: { icon: "🎯", lab: "À retenir", cls: "border-violet-200 bg-violet-50", lc: "text-violet-700" },
+    exemple: { icon: "🧮", lab: "Exemple", cls: "border-sky-200 bg-sky-50", lc: "text-sky-700" },
+    piege: { icon: "⚠️", lab: "Piège", cls: "border-amber-200 bg-amber-50", lc: "text-amber-700" },
+    astuce: { icon: "💡", lab: "Astuce", cls: "border-emerald-200 bg-emerald-50", lc: "text-emerald-700" },
+  }[type] || {};
+  return (
+    <div className={"rounded-xl border px-3.5 py-2.5 my-2 " + C.cls}>
+      <div className={"text-[10.5px] font-bold uppercase tracking-wide mb-1 " + C.lc}>{C.icon} {C.lab}</div>
+      <div className="text-[13px] text-slate-700 leading-relaxed max-w-[72ch]"><MdInline text={text} /></div>
+    </div>
+  );
+}
+function AmLesson({ l }) {
+  return (
+    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mb-3">
+      <div className="h-1 bg-sky-500" />
+      <div className="p-4 sm:p-5">
+        <h3 className="font-bold text-[16px] text-slate-800 leading-tight">{l.titre}</h3>
+        {l.ref && <div className="text-[11px] font-mono text-sky-600 mt-0.5">{l.ref}</div>}
+        <div className="mt-2"><AmMd text={l.contenu} /></div>
+        {l.cle && <AmCallout type="cle" text={l.cle} />}
+        {l.exemple && <AmCallout type="exemple" text={l.exemple} />}
+        {l.piege && <AmCallout type="piege" text={l.piege} />}
+        {l.astuce && <AmCallout type="astuce" text={l.astuce} />}
+      </div>
+    </div>
+  );
+}
+function AmTauxAfc({ taux }) {
+  if (!taux) return null;
+  const Block = ({ titre, rows, c3 }) => (
+    <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden mb-3">
+      <div className="px-4 py-2.5 bg-slate-800 text-white text-[13px] font-bold">{titre}</div>
+      <div className="overflow-x-auto px-4 py-2">
+        <table className="w-full border-collapse text-[12.5px]">
+          <thead><tr className="text-[10px] font-bold uppercase tracking-wide text-slate-400">
+            <th className="text-left pb-1 border-b border-slate-200">Catégorie</th>
+            <th className="text-right pb-1 border-b border-slate-200 w-32">{c3 === "ca" ? "Sur valeur comptable" : "Taux max (val. comptable)"}</th>
+            <th className="text-right pb-1 border-b border-slate-200 w-40">{c3 === "ca" ? "Sur coût d'acquisition" : "Remarque"}</th>
+          </tr></thead>
+          <tbody>
+            {rows.map((r, i) => (
+              <tr key={i} className="border-b border-slate-50 last:border-0">
+                <td className="py-1.5 text-slate-700">{r.l}</td>
+                <td className="py-1.5 text-right tabular-nums font-semibold text-sky-700">{r.vc}</td>
+                <td className="py-1.5 text-right text-slate-500">{c3 === "ca" ? r.ca : (r.note || "")}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+  return (
+    <div>
+      {taux.intro && <div className="max-w-[72ch] mb-3"><Paras text={taux.intro} className="text-[13px] text-slate-600 leading-relaxed" /></div>}
+      <Block titre="Immobilisations corporelles meubles" rows={taux.meubles || []} c3="ca" />
+      <Block titre="Immeubles (bâtiments)" rows={taux.immeubles || []} c3="note" />
+      <Block titre="Immobilisations incorporelles" rows={taux.incorporelles || []} c3="ca" />
+      {taux.note && <div className="text-[12px] text-slate-500 leading-snug max-w-[72ch]">ℹ️ {taux.note}</div>}
+    </div>
+  );
+}
+/* courbe des valeurs comptables (linéaire vs dégressif) */
+function AmChart({ lin, deg, valeur, duree }) {
+  const W = 540, H = 170, padL = 10, padR = 10, padT = 12, padB = 22;
+  const x = (yr) => padL + (W - padL - padR) * (duree ? yr / duree : 0);
+  const y = (v) => padT + (H - padT - padB) * (valeur ? 1 - v / valeur : 1);
+  const ptsLin = [[0, valeur]].concat(lin.map((r) => [r.y, r.fin]));
+  const ptsDeg = [[0, valeur]].concat(deg.map((r) => [r.y, r.fin]));
+  const poly = (pts) => pts.map((p) => x(p[0]).toFixed(1) + "," + y(p[1]).toFixed(1)).join(" ");
+  return (
+    <svg viewBox={"0 0 " + W + " " + H} className="w-full" style={{ maxHeight: 190 }}>
+      <line x1={padL} y1={H - padB} x2={W - padR} y2={H - padB} stroke="#e2e8f0" />
+      <line x1={padL} y1={padT} x2={padL} y2={H - padB} stroke="#e2e8f0" />
+      <polyline points={poly(ptsLin)} fill="none" stroke="#4f46e5" strokeWidth="2" />
+      <polyline points={poly(ptsDeg)} fill="none" stroke="#e11d48" strokeWidth="2" />
+      {ptsLin.map((p, i) => <circle key={"l" + i} cx={x(p[0])} cy={y(p[1])} r="2.5" fill="#4f46e5" />)}
+      {ptsDeg.map((p, i) => <circle key={"d" + i} cx={x(p[0])} cy={y(p[1])} r="2.5" fill="#e11d48" />)}
+      {Array.from({ length: duree + 1 }, (_, i) => <text key={i} x={x(i)} y={H - padB + 13} fontSize="9" fill="#94a3b8" textAnchor="middle">{i}</text>)}
+    </svg>
+  );
+}
+function buildLineaire(valeur, duree) {
+  const annuite = valeur / duree;
+  let vc = valeur; const rows = [];
+  for (let yr = 1; yr <= duree; yr++) {
+    let amort = yr === duree ? vc : annuite;
+    const debut = vc; vc = Math.round((vc - amort) * 100) / 100;
+    if (vc < 0.005) vc = 0;
+    rows.push({ y: yr, debut, taux: 100 / duree, amort, fin: vc, formula: amNf(valeur) + " ÷ " + duree + " = " + amNf(amort) });
+  }
+  return rows;
+}
+function buildDegressif(valeur, duree, tauxDeg, zero) {
+  let vc = valeur; const rows = [];
+  for (let yr = 1; yr <= duree; yr++) {
+    const rest = duree - yr + 1;
+    const amortDeg = vc * tauxDeg / 100;
+    const quotient = vc / rest;
+    let amort = amortDeg, mode = "deg";
+    if (zero && quotient >= amortDeg) { amort = quotient; mode = "quotient"; }
+    if (zero && yr === duree) { amort = vc; mode = "quotient"; }
+    amort = Math.round(amort * 100) / 100;
+    const debut = vc; vc = Math.round((vc - amort) * 100) / 100;
+    if (vc < 0.005) vc = 0;
+    rows.push({ y: yr, debut, taux: tauxDeg, amort, fin: vc, mode,
+      formula: mode === "quotient" ? amNf(debut) + " ÷ " + rest + " = " + amNf(amort) : amNf(debut) + " × " + amPct(tauxDeg) + " = " + amNf(amort) });
+  }
+  return { rows, residual: zero ? 0 : vc };
+}
+function AmSchedTable({ rows, color, title, subtitle }) {
+  return (
+    <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+      <div className="px-4 py-2.5 text-white" style={{ background: color }}>
+        <div className="text-[13px] font-bold">{title}</div>
+        {subtitle && <div className="text-[11px] opacity-90">{subtitle}</div>}
+      </div>
+      <div className="overflow-x-auto px-3 py-2">
+        <table className="w-full border-collapse text-[12px]">
+          <thead><tr className="text-[10px] font-bold uppercase tracking-wide text-slate-400">
+            <th className="text-left pb-1 border-b border-slate-200">An</th>
+            <th className="text-right pb-1 border-b border-slate-200">Val. début</th>
+            <th className="text-left pb-1 border-b border-slate-200 pl-3">Amortissement</th>
+            <th className="text-right pb-1 border-b border-slate-200">Val. fin</th>
+          </tr></thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.y} className="border-b border-slate-50 last:border-0">
+                <td className="py-1.5 text-slate-500 tabular-nums">{r.y}</td>
+                <td className="py-1.5 text-right tabular-nums text-slate-600">{amNf(r.debut)}</td>
+                <td className="py-1.5 pl-3 text-slate-700 tabular-nums whitespace-nowrap">{r.formula}{r.mode === "quotient" ? <span className="ml-1 text-[9px] font-bold text-violet-600 align-top">quotient</span> : null}</td>
+                <td className="py-1.5 text-right tabular-nums font-semibold" style={{ color }}>{amNf(r.fin)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+function AmField({ label, value, onChange, step, suffix, hint }) {
+  return (
+    <label className="block">
+      <span className="block text-[11.5px] font-semibold text-slate-600 mb-1">{label}</span>
+      <div className="flex items-center gap-1.5">
+        <input type="number" value={value} step={step || 1} onChange={(e) => onChange(e.target.value)}
+          className="w-full rounded-lg border border-slate-300 px-2.5 py-1.5 text-[13px] tabular-nums focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none" />
+        {suffix && <span className="text-[12px] text-slate-400 shrink-0">{suffix}</span>}
+      </div>
+      {hint && <span className="block text-[10.5px] text-slate-400 mt-0.5">{hint}</span>}
+    </label>
+  );
+}
+function AmCalc() {
+  const [inp, setInp] = useState({ valeur: 100000, duree: 5, tauxDeg: 40, vue: "comparaison", zero: false });
+  const set = (k) => (v) => setInp((s) => ({ ...s, [k]: v }));
+  const valeur = Math.max(0, +inp.valeur || 0);
+  const duree = Math.min(40, Math.max(1, Math.round(+inp.duree || 1)));
+  const tauxDeg = Math.min(100, Math.max(0, +inp.tauxDeg || 0));
+  const tauxLin = 100 / duree;
+  const lin = useMemo(() => buildLineaire(valeur, duree), [valeur, duree]);
+  const deg = useMemo(() => buildDegressif(valeur, duree, tauxDeg, inp.zero), [valeur, duree, tauxDeg, inp.zero]);
+  const showLin = inp.vue !== "degressif";
+  const showDeg = inp.vue !== "lineaire";
+
+  return (
+    <div>
+      <div className="rounded-xl border border-sky-200 bg-sky-50/60 p-4 mb-4 max-w-[74ch]">
+        <div className="text-[10.5px] font-bold uppercase tracking-[0.09em] text-sky-700 mb-1">🧮 Cas interactif</div>
+        <p className="text-[13px] text-slate-700 leading-relaxed">Change les paramètres et observe le calcul se dérouler année par année. En dégressif, chaque ligne montre la formule <span className="font-mono">valeur comptable × taux</span> : la base diminue, donc l'amortissement aussi.</p>
+      </div>
+
+      <div className="grid lg:grid-cols-[280px_1fr] gap-4 items-start">
+        <div className="bg-white rounded-2xl border border-slate-200 p-4 space-y-3">
+          <div className="text-[11px] font-bold uppercase tracking-wide text-slate-400">Paramètres</div>
+          <AmField label="Valeur d'acquisition" value={inp.valeur} onChange={set("valeur")} step={1000} suffix="CHF" />
+          <AmField label="Durée d'utilisation" value={inp.duree} onChange={set("duree")} suffix="ans" hint={"Taux linéaire = 100 / durée = " + amPct(tauxLin)} />
+          <AmField label="Taux dégressif" value={inp.tauxDeg} onChange={set("tauxDeg")} step={1} suffix="%" hint={"≈ 2 × le taux linéaire (" + amPct(tauxLin * 2) + ")"} />
+          <div>
+            <span className="block text-[11.5px] font-semibold text-slate-600 mb-1">Affichage</span>
+            <div className="inline-flex rounded-lg border border-slate-200 p-0.5 w-full">
+              {[["comparaison", "Comparer"], ["lineaire", "Linéaire"], ["degressif", "Dégressif"]].map(([k, lbl]) => (
+                <button key={k} onClick={() => set("vue")(k)} className={"flex-1 text-[11.5px] font-semibold px-2 py-1 rounded-md transition-colors " + (inp.vue === k ? "bg-sky-600 text-white" : "text-slate-600 hover:text-sky-700")}>{lbl}</button>
+              ))}
+            </div>
+          </div>
+          {showDeg && (
+            <label className="flex items-start gap-2 text-[12px] text-slate-700 cursor-pointer">
+              <input type="checkbox" checked={inp.zero} onChange={(e) => set("zero")(e.target.checked)} className="mt-0.5" />
+              <span>Dégressif jusqu'à 0 <span className="text-slate-400">(bascule sur la règle du quotient en fin de vie)</span></span>
+            </label>
+          )}
+        </div>
+
+        <div className="space-y-3">
+          <div className={"grid gap-3 " + (showLin && showDeg ? "lg:grid-cols-2" : "")}>
+            {showLin && <AmSchedTable rows={lin} color="#4f46e5" title="Amortissement linéaire" subtitle={"Annuité constante = " + amNf(valeur / duree) + " (taux " + amPct(tauxLin) + ")"} />}
+            {showDeg && <AmSchedTable rows={deg.rows} color="#e11d48" title="Amortissement dégressif" subtitle={"Taux " + amPct(tauxDeg) + " sur la valeur comptable résiduelle"} />}
+          </div>
+
+          {showLin && showDeg && (
+            <div className="bg-white rounded-2xl border border-slate-200 p-4">
+              <div className="flex items-center justify-between flex-wrap gap-2 mb-1">
+                <div className="text-[11px] font-bold uppercase tracking-wide text-slate-400">Évolution de la valeur comptable</div>
+                <div className="flex items-center gap-3 text-[11px]">
+                  <span className="inline-flex items-center gap-1"><span className="inline-block w-3 h-0.5 bg-indigo-600" /> Linéaire</span>
+                  <span className="inline-flex items-center gap-1"><span className="inline-block w-3 h-0.5 bg-rose-600" /> Dégressif</span>
+                </div>
+              </div>
+              <AmChart lin={lin} deg={deg.rows} valeur={valeur} duree={duree} />
+            </div>
+          )}
+
+          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-[12.5px] text-slate-600 leading-relaxed">
+            <span className="font-semibold text-slate-700">Ce qu'on observe : </span>
+            le linéaire retire le même montant chaque année et atteint zéro à la fin de la durée. Le dégressif charge fortement les premières années puis s'allège
+            {inp.zero
+              ? ", et grâce à la règle du quotient il finit lui aussi à zéro."
+              : <span>, et il <span className="font-semibold text-rose-600">ne s'annule jamais</span> : après {duree} ans, il resterait encore <span className="font-semibold tabular-nums">{amNf(deg.residual)}</span> au bilan (active l'option « jusqu'à 0 » pour voir la bascule).</span>}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+function AuditAmortissements({ data, onBack }) {
+  const d = data || {};
+  const lecons = d.lecons || [];
+  const [tab, setTab] = useState("cours");
+  const TABS = [["cours", "📚 Cours"], ["calc", "🧮 Calculateur"], ["taux", "📊 Taux AFC"]];
+  return (
+    <div className="max-w-[920px] mx-auto">
+      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-sky-700 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
+
+      <div className="relative overflow-hidden rounded-2xl text-white p-5 sm:p-6 shadow mb-4" style={{ background: "linear-gradient(135deg,#0f172a 0%,#0c4a6e 65%,#0284c7 100%)" }}>
+        <div className="flex items-center gap-2 text-[10.5px] font-mono uppercase tracking-[0.18em] text-sky-300 mb-2">📉 Immobilisations · dépréciation</div>
+        <h2 className="text-2xl font-bold leading-tight">Amortissements : linéaire & dégressif</h2>
+        <p className="text-[13.5px] text-slate-300 mt-1.5 max-w-[64ch] leading-relaxed">{d._description || "Les deux méthodes d'amortissement, expliquées pas à pas, avec un cas interactif."}</p>
+      </div>
+
+      {d.intro && <div className="bg-white rounded-xl border border-slate-200 p-4 sm:p-5 mb-5 max-w-[66ch]"><AmMd text={d.intro} /></div>}
+
+      <div className="sticky top-0 z-10 -mx-4 px-4 py-2 bg-slate-100/95 backdrop-blur border-b border-slate-200 mb-5 flex gap-1.5 overflow-x-auto">
+        {TABS.map(([k, lbl]) => (
+          <button key={k} onClick={() => { setTab(k); try { window.scrollTo(0, 0); } catch (e) {} }}
+            className={"text-[12.5px] font-semibold px-3 py-1.5 rounded-lg whitespace-nowrap transition-colors " + (tab === k ? "bg-sky-600 text-white" : "bg-white border border-slate-200 text-slate-600 hover:border-sky-300")}>{lbl}</button>
+        ))}
+      </div>
+
+      {tab === "calc" ? <AmCalc />
+        : tab === "taux" ? <AmTauxAfc taux={d.taux_afc} />
+        : (
+          <div>
+            {lecons.map((l, i) => <AmLesson key={i} l={l} />)}
+            {(d.points_cles || []).length > 0 && (
+              <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 mb-3">
+                <div className="text-[11px] font-bold uppercase tracking-wide text-slate-400 mb-2.5">🎯 Points clés</div>
+                <ul className="space-y-1.5">{d.points_cles.map((p, i) => <li key={i} className="flex gap-2 text-[13px] text-slate-700 leading-snug"><span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-sky-500 shrink-0" /><span><MdInline text={p} /></span></li>)}</ul>
+              </div>
+            )}
+            {(d.pieges || []).length > 0 && (
+              <div className="bg-white rounded-2xl border border-amber-200 p-4 sm:p-5">
+                <div className="text-[11px] font-bold uppercase tracking-wide text-amber-700 mb-2.5">⚠️ Les pièges à éviter</div>
+                <ul className="space-y-2.5">{d.pieges.map((p, i) => <li key={i} className="text-[13px] text-slate-700 leading-snug"><span className="font-bold text-slate-800">{p.titre}</span> : <MdInline text={p.texte} /></li>)}</ul>
+              </div>
+            )}
+          </div>
+        )}
+    </div>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   NESTLÉ — États financiers réels commentés (cas pratique audit)
+   Chaque poste : à quoi ça correspond · les opérations derrière ·
+   norme IFRS (+ contraste CO/RPC) · l'œil de l'auditeur · lecture N/N-1
+   ════════════════════════════════════════════════════════════════════ */
+function nfmt(n) {
+  if (n === null || n === undefined || isNaN(n)) return "–";
+  const s = Math.abs(Math.round(n)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+  return n < 0 ? "(" + s + ")" : s;
+}
+function npct(a, b) {
+  if (!b || isNaN(a) || isNaN(b)) return null;
+  return ((a - b) / Math.abs(b)) * 100;
+}
+
+function NestlePosteDetail({ line, color }) {
+  const a = line.audit || {};
+  const Sec = ({ icon, title, tint, children }) => (
+    <div className="rounded-xl border p-3.5" style={{ borderColor: tint + "33", background: tint + "0d" }}>
+      <div className="flex items-center gap-2 mb-1.5 text-[11px] font-bold uppercase tracking-wide" style={{ color: tint }}>{icon}{title}</div>
+      <div className="text-[13px] text-slate-700 leading-relaxed">{children}</div>
+    </div>
+  );
+  return (
+    <div className="mt-2 mb-1 grid gap-2.5 animate-[fadein_.2s_ease]">
+      <Sec icon={<Info size={13} />} title="À quoi ça correspond" tint="#4f46e5">{line.definition}</Sec>
+      {(line.operations || []).length > 0 && (
+        <Sec icon={<ChevronRight size={13} />} title="Les opérations derrière" tint="#0891b2">
+          <ul className="space-y-1.5">
+            {line.operations.map((op, i) => (
+              <li key={i} className="flex gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-500 shrink-0" /><span>{op}</span></li>
+            ))}
+          </ul>
+        </Sec>
+      )}
+      {line.ecriture && (
+        <div className="rounded-xl border border-slate-200 bg-slate-900 text-slate-100 p-3.5">
+          <div className="flex items-center gap-2 mb-1.5 text-[11px] font-bold uppercase tracking-wide text-slate-400"><FileText size={13} />Écriture type</div>
+          <div className="text-[12.5px] font-mono leading-relaxed text-emerald-200">{line.ecriture}</div>
+        </div>
+      )}
+      {(line.norme || line.suisse) && (
+        <Sec icon={<Gavel size={13} />} title="Norme applicable" tint="#7c3aed">
+          {line.norme && <div className="font-semibold text-violet-900">{line.norme}</div>}
+          {line.suisse && <div className="mt-1 text-slate-600"><span className="font-semibold">🇨🇭 Suisse — </span>{line.suisse}</div>}
+        </Sec>
+      )}
+      {(a.risque || (a.assertions || []).length || a.procedure) && (
+        <div className="rounded-xl border border-amber-200 bg-amber-50/60 p-3.5">
+          <div className="flex items-center gap-2 mb-2 text-[11px] font-bold uppercase tracking-wide text-amber-700"><Eye size={13} />L'œil de l'auditeur</div>
+          {(a.assertions || []).length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mb-2">
+              {a.assertions.map((as, i) => <span key={i} className="px-2 py-0.5 rounded-md bg-white border border-amber-200 text-[11px] font-semibold text-amber-800">{as}</span>)}
+            </div>
+          )}
+          {a.risque && <div className="text-[13px] text-slate-700 leading-relaxed mb-1.5"><span className="font-bold text-rose-700">Risque · </span>{a.risque}</div>}
+          {a.procedure && <div className="text-[13px] text-slate-700 leading-relaxed"><span className="font-bold text-emerald-700">Procédure · </span>{a.procedure}</div>}
+        </div>
+      )}
+      {line.lecture && (
+        <Sec icon={<TrendingUp size={13} />} title="Lecture 2025 vs 2024" tint={color}>{line.lecture}</Sec>
+      )}
+    </div>
+  );
+}
+
+function NestleApp({ onBack }) {
+  const data = (typeof window !== "undefined" && window.__NESTLE__) || {};
+  const meta = data.meta || {};
+  const statements = data.statements || [];
+  const firstReady = (statements.find((s) => s.status === "ready") || statements[0] || {}).id;
+  const [stId, setStId] = useState(firstReady);
+  const [openId, setOpenId] = useState(null);
+  const st = statements.find((s) => s.id === stId) || statements[0] || {};
+  const color = st.color || "#7c3aed";
+  const cols = st.cols || ["2025", "2024"];
+  const ready = st.status === "ready" && (st.lines || []).length > 0;
+
+  return (
+    <div>
+      <style>{"@keyframes fadein{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}"}</style>
+      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
+
+      {/* En-tête Nestlé */}
+      <div className="rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-stone-800 text-white p-5 shadow mb-4">
+        <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-amber-300/80">Cas réel · comptes consolidés</div>
+        <h2 className="text-2xl font-bold mt-1">{meta.company || "Nestlé S.A."}</h2>
+        <p className="text-sm text-slate-300 mt-0.5">{meta.title}</p>
+        <p className="text-[13px] text-slate-300 leading-relaxed mt-3"><MdInline text={meta.intro || ""} /></p>
+        <div className="flex flex-wrap gap-2 mt-3 text-[11px]">
+          <span className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15">📐 {meta.referentiel}</span>
+          <span className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15">🔎 {meta.auditeur}</span>
+          <span className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15">💱 En {meta.unit}</span>
+        </div>
+      </div>
+
+      {/* Sélecteur d'états */}
+      <div className="flex flex-wrap gap-2 mb-4">
+        {statements.map((s) => {
+          const on = s.id === stId, rdy = s.status === "ready";
+          return (
+            <button key={s.id} onClick={() => { setStId(s.id); setOpenId(null); try { window.scrollTo(0, 0); } catch (e) {} }}
+              className={`px-3 py-2 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1.5 ${on ? "text-white border-transparent shadow" : "bg-white text-slate-600 border-slate-200 hover:border-slate-300"}`}
+              style={on ? { background: s.color || "#7c3aed" } : {}}>
+              <span>{s.icon}</span>{s.title}
+              {!rdy && <span className={`ml-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold ${on ? "bg-white/20" : "bg-slate-100 text-slate-400"}`}>bientôt</span>}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Intro de l'état */}
+      <div className="rounded-xl border border-slate-200 bg-white p-4 mb-3">
+        <div className="flex items-baseline gap-2 flex-wrap">
+          <h3 className="text-lg font-bold text-slate-800">{st.icon} {st.title}</h3>
+          <span className="text-xs text-slate-400">{st.subtitle}</span>
+        </div>
+        <p className="text-[13px] text-slate-600 leading-relaxed mt-1.5"><MdInline text={st.intro || ""} /></p>
+      </div>
+
+      {!ready ? (
+        <div className="rounded-xl border-2 border-dashed border-slate-200 bg-slate-50 p-8 text-center text-slate-400 text-sm">
+          🚧 Cet état sera commenté dans une prochaine phase. Le compte de résultat est disponible dès maintenant.
+        </div>
+      ) : (
+        <div className="rounded-xl border border-slate-200 bg-white overflow-hidden">
+          {/* en-tête colonnes */}
+          <div className="flex items-center gap-2 px-3.5 py-2 border-b border-slate-200 bg-slate-50 text-[11px] font-bold uppercase tracking-wide text-slate-400">
+            <span className="flex-1">Poste</span>
+            <span className="w-20 text-right">{cols[0]}</span>
+            <span className="w-20 text-right">{cols[1]}</span>
+            <span className="w-5" />
+          </div>
+          {(st.lines || []).map((l) => {
+            const open = openId === l.id;
+            const isTot = l.kind === "total", isSub = l.kind === "subtotal";
+            const muted = l.kind === "sub";
+            const pc = npct(l.v[0], l.v[1]);
+            return (
+              <div key={l.id} className={`border-b border-slate-100 last:border-0 ${isSub ? "bg-violet-50/40" : isTot ? "bg-slate-900 text-white" : ""}`}>
+                <button onClick={() => setOpenId(open ? null : l.id)}
+                  className={`w-full flex items-center gap-2 px-3.5 py-2.5 text-left transition-colors ${isTot ? "hover:bg-slate-800" : "hover:bg-slate-50"}`}
+                  style={{ paddingLeft: (14 + (l.indent || 0) * 16) + "px" }}>
+                  <span className="flex-1 min-w-0">
+                    <span className={`block leading-tight ${isTot ? "font-bold text-base" : isSub ? "font-bold text-slate-800" : muted ? "text-[13px] text-slate-500 italic" : "text-[13.5px] text-slate-700 font-medium"}`}>{l.label}</span>
+                    {l.note && <span className={`inline-block mt-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold ${isTot ? "bg-white/15 text-slate-200" : "bg-slate-100 text-slate-400"}`}>Note {l.note}</span>}
+                  </span>
+                  <span className={`w-20 text-right tabular-nums ${isTot ? "font-bold text-base" : isSub ? "font-bold" : "text-[13.5px]"} ${l.v[0] < 0 && !isTot ? "text-rose-600" : ""}`}>{nfmt(l.v[0])}</span>
+                  <span className={`w-20 text-right tabular-nums ${isTot ? "text-slate-300" : "text-slate-400"} text-[12.5px]`}>{nfmt(l.v[1])}</span>
+                  <ChevronDown size={15} className={`w-5 shrink-0 transition-transform ${open ? "rotate-180" : ""} ${isTot ? "text-slate-400" : "text-slate-300"}`} />
+                </button>
+                {open && (
+                  <div className={`px-3.5 pb-3 ${isTot ? "bg-white text-slate-900 border-t border-slate-200" : ""}`}>
+                    {isTot && <div className="h-2" />}
+                    {pc !== null && (
+                      <div className="flex items-center gap-1.5 text-[11px] font-semibold mb-1" style={{ color }}>
+                        {pc < 0 ? <TrendingDown size={13} /> : <TrendingUp size={13} />}
+                        Variation {cols[0]} vs {cols[1]} : {pc > 0 ? "+" : ""}{pc.toFixed(1)} %
+                      </div>
+                    )}
+                    <NestlePosteDetail line={l} color={color} />
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {ready && (st.footnotes || []).length > 0 && (
+        <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-3.5">
+          <div className="text-[11px] font-bold uppercase tracking-wide text-slate-400 mb-1.5">Indicateurs complémentaires</div>
+          <ul className="space-y-1 text-[12.5px] text-slate-600">
+            {st.footnotes.map((f, i) => <li key={i} className="flex gap-2"><span className="text-slate-300">›</span>{f}</li>)}
+          </ul>
+        </div>
+      )}
+
+      <div className="mt-4 text-center text-[11px] text-slate-400">{meta.source}</div>
+    </div>
+  );
+}
+
 function AuditApp() {
   const [data, setData] = useState(() => (typeof window !== "undefined" && window.__AUDIT__) || null);
   const [loadErr, setLoadErr] = useState(null);
@@ -2685,11 +3352,14 @@ function AuditApp() {
         </div>
       </header>
       <main className="max-w-5xl mx-auto px-4 py-6">
-        {view.k === "home" && <AuditHome data={data} book={book} onBook={() => go({ k: "book" })} onSeuils={() => go({ k: "seuils" })} onRevision={() => go({ k: "revision" })} onPlanComptable={() => go({ k: "plancomptable" })} onFraudePostes={() => go({ k: "fraudepostes" })} onReferencement={() => go({ k: "referencement" })} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
+        {view.k === "home" && <AuditHome data={data} book={book} onBook={() => go({ k: "book" })} onSeuils={() => go({ k: "seuils" })} onRevision={() => go({ k: "revision" })} onPlanComptable={() => go({ k: "plancomptable" })} onFraudePostes={() => go({ k: "fraudepostes" })} onReferencement={() => go({ k: "referencement" })} onAnnexes={() => go({ k: "annexes" })} onAmortissements={() => go({ k: "amortissements" })} onNestle={() => go({ k: "nestle" })} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
+        {view.k === "nestle" && <NestleApp onBack={() => go({ k: "home" })} />}
         {view.k === "revision" && <AuditRevision data={data} onBack={() => go({ k: "home" })} />}
         {view.k === "plancomptable" && <AuditPlanComptable data={(typeof window !== "undefined" && window.__PLAN_COMPTABLE__) || { plans: [] }} onBack={() => go({ k: "home" })} />}
         {view.k === "fraudepostes" && <AuditFraudePostes data={(typeof window !== "undefined" && window.__FRAUDE_POSTES__) || { sections: [] }} onBack={() => go({ k: "home" })} />}
         {view.k === "referencement" && <AuditReferencement data={(typeof window !== "undefined" && window.__REFERENCEMENT__) || {}} onBack={() => go({ k: "home" })} />}
+        {view.k === "annexes" && <AuditAnnexes data={(typeof window !== "undefined" && window.__ANNEXES__) || {}} onBack={() => go({ k: "home" })} />}
+        {view.k === "amortissements" && <AuditAmortissements data={(typeof window !== "undefined" && window.__AMORTISSEMENTS__) || {}} onBack={() => go({ k: "home" })} />}
         {view.k === "book" && <AuditBook book={book} onBack={() => go({ k: "home" })} />}
         {view.k === "seuils" && <AuditSeuils onBack={() => go({ k: "home" })} />}
         {view.k === "annuaire" && (

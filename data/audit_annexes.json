@@ -1,0 +1,986 @@
+{
+ "_label": "Annexes",
+ "_icon": "📎",
+ "_description": "Tout ce que doit contenir l'annexe des comptes, référentiel par référentiel (CO, Swiss GAAP RPC, IFRS), avec la base légale de chaque information, et un comparatif des trois cadres.",
+ "intro": "L'annexe (les « notes » en IFRS) fait partie intégrante des états financiers : elle complète et commente le bilan et le compte de résultat. Son contenu varie fortement selon le référentiel. Le CO fixe un contenu minimal légal, orienté protection des créanciers. Les Swiss GAAP RPC visent une image fidèle (true & fair view) et imposent un jeu d'états plus complet. Les IFRS sont de loin les plus exigeantes, avec des informations détaillées norme par norme. Choisis un onglet ci-dessous, ou commence par le comparatif pour voir d'un coup d'œil qui exige quoi.",
+ "referentiels": [
+  {
+   "key": "co",
+   "nom": "Annexe aux comptes annuels selon le Code des obligations",
+   "drapeau": "🇨🇭",
+   "base_legale": "CO art. 957 à 963b (comptabilité commerciale et présentation des comptes), annexe régie par l'art. 959c CO, indications supplémentaires pour grandes entreprises aux art. 961, 961a, 961b et 961c",
+   "philosophie": "L'annexe complète et commente le bilan et le compte de résultat afin que le destinataire se fasse une opinion fondée sur la situation économique de l'entreprise (objectif de la présentation régulière des comptes, art. 958 CO). Esprit prudent et orienté créancier propre au CO : l'information est avant tout descriptive et chiffrée, non une réévaluation à la juste valeur ; le contenu minimal est fixé par la loi, l'entreprise pouvant aller au-delà.",
+   "etats_requis": [
+    "Bilan (art. 959 et 959a CO)",
+    "Compte de résultat (art. 959b CO)",
+    "Annexe (art. 959c CO)",
+    "Tableau des flux de trésorerie : uniquement pour les grandes entreprises soumises au contrôle ordinaire (art. 961 ch. 2 et 961b CO)",
+    "Rapport annuel : uniquement pour les grandes entreprises (art. 961 ch. 3 et 961c CO)"
+   ],
+   "intro": "L'annexe forme, avec le bilan et le compte de résultat, une partie intégrante des comptes annuels (art. 958 al. 2 CO). Elle a pour fonction de compléter et de commenter les deux autres états au moyen d'informations qualitatives et chiffrées (art. 959c al. 1 CO). Le CO en fixe un contenu minimal aux art. 959c al. 1 et al. 2, l'entreprise restant libre d'y ajouter toute indication utile. Les entreprises individuelles et sociétés de personnes réalisant moins de 500'000 CHF de chiffre d'affaires lors du dernier exercice ne tiennent qu'une comptabilité simplifiée (recettes, dépenses, patrimoine) et sont dispensées d'établir une annexe au sens de l'art. 959c (art. 957 al. 2 CO). De même, l'entreprise individuelle ou la société de personnes qui n'est pas tenue de présenter ses comptes selon le titre trente-deuxième n'établit pas d'annexe structurée.",
+   "rubriques": [
+    {
+     "titre": "Principes comptables et règles d'évaluation",
+     "icon": "📐",
+     "items": [
+      {
+       "l": "Principes et méthodes d'évaluation appliqués",
+       "d": "Indiquer les principes comptables appliqués lorsqu'ils ne sont pas prescrits par la loi, par exemple les méthodes d'amortissement, les bases d'évaluation des stocks, le traitement des travaux en cours ou la conversion des monnaies étrangères. Les principes imposés par la loi n'ont pas à être mentionnés.",
+       "ref": "CO art. 959c al. 1 ch. 1",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Dérogations au principe de continuité (permanence)",
+       "d": "Lorsque la présentation des comptes s'écarte des principes de régularité, notamment de la continuité de présentation et d'évaluation, en exposer la nature et les motifs ; commenter les changements de méthode et leur effet.",
+       "ref": "CO art. 958c al. 1 et 959c al. 1",
+       "niveau": "Si applicable"
+      }
+     ]
+    },
+    {
+     "titre": "Commentaires et postes du bilan / compte de résultat",
+     "icon": "📊",
+     "items": [
+      {
+       "l": "Informations, détails et commentaires de certains postes",
+       "d": "Fournir les informations, la structure détaillée et les commentaires nécessaires à la compréhension de certains postes du bilan et du compte de résultat (par exemple ventilation d'un poste agrégé, explications sur des variations importantes).",
+       "ref": "CO art. 959c al. 1 ch. 2",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Actifs engagés en garantie et actifs sous réserve de propriété",
+       "d": "Indiquer le montant total des actifs mis en gage ou cédés pour garantir les engagements de l'entreprise, ainsi que le total des actifs grevés d'une réserve de propriété.",
+       "ref": "CO art. 959c al. 2 ch. 9",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Dissolution nette de réserves de remplacement et de réserves latentes supplémentaires",
+       "d": "Mentionner le montant global de la dissolution nette des réserves de remplacement et des réserves latentes supplémentaires constituées au-delà de celles-ci, dans la mesure où il dépasse le montant des réserves nouvellement créées, lorsque le résultat économique présenté s'en trouve sensiblement amélioré.",
+       "ref": "CO art. 959c al. 1 ch. 3",
+       "niveau": "Si applicable"
+      }
+     ]
+    },
+    {
+     "titre": "Identité de l'entreprise et effectif",
+     "icon": "🏢",
+     "items": [
+      {
+       "l": "Raison de commerce, forme juridique et siège",
+       "d": "Indiquer la raison de commerce ou le nom de l'entreprise, sa forme juridique et le lieu de son siège.",
+       "ref": "CO art. 959c al. 2 ch. 1",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Déclaration sur la moyenne des emplois à plein temps",
+       "d": "Déclarer si la moyenne annuelle des emplois à plein temps n'excède pas 10, n'excède pas 50, ou n'excède pas 250 (déclaration par paliers, sans donner le nombre exact). Renvoie aux seuils de l'art. 727 al. 1 ch. 2 et de l'art. 961 CO.",
+       "ref": "CO art. 959c al. 2 ch. 2",
+       "niveau": "Obligatoire"
+      }
+     ]
+    },
+    {
+     "titre": "Participations et parts propres",
+     "icon": "🔗",
+     "items": [
+      {
+       "l": "Participations directes importantes",
+       "d": "Indiquer la raison de commerce ou le nom, la forme juridique et le siège des entreprises dans lesquelles des participations directes importantes sont détenues, ainsi que la part du capital et la part des voix qui s'y rapportent.",
+       "ref": "CO art. 959c al. 2 ch. 3",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Nombre de parts propres détenues",
+       "d": "Indiquer le nombre de parts sociales propres (actions propres, parts propres) détenues par l'entreprise elle-même et par les entreprises qu'elle contrôle.",
+       "ref": "CO art. 959c al. 2 ch. 4",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Acquisitions et aliénations de parts propres",
+       "d": "Indiquer les acquisitions et aliénations de parts propres réalisées durant l'exercice, ainsi que les conditions auxquelles elles ont été opérées (notamment prix et contreparties).",
+       "ref": "CO art. 959c al. 2 ch. 5",
+       "niveau": "Obligatoire"
+      }
+     ]
+    },
+    {
+     "titre": "Engagements, leasing et prévoyance",
+     "icon": "💳",
+     "items": [
+      {
+       "l": "Valeur résiduelle des dettes de leasing assimilables au crédit",
+       "d": "Indiquer la valeur résiduelle des engagements résultant de contrats de leasing assimilables à des opérations de crédit (leasing financier non porté au bilan), lorsque ces contrats n'expirent pas ou ne peuvent être résiliés dans les douze mois suivant la date du bilan.",
+       "ref": "CO art. 959c al. 2 ch. 6",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Dettes envers les institutions de prévoyance",
+       "d": "Indiquer le montant des dettes envers les institutions de prévoyance (par exemple la caisse de pension de l'entreprise).",
+       "ref": "CO art. 959c al. 2 ch. 7",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Sûretés constituées en faveur de tiers",
+       "d": "Indiquer le montant total des sûretés (cautionnements, garanties, constitutions de gages) accordées en faveur de tiers.",
+       "ref": "CO art. 959c al. 2 ch. 8",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Engagements conditionnels",
+       "d": "Indiquer les engagements conditionnels et autres engagements éventuels, non encore inscrits au passif car leur réalisation dépend d'événements futurs (par exemple garanties, litiges, lettres de patronage).",
+       "ref": "CO art. 959c al. 2 ch. 10 (et art. 959a al. 4)",
+       "niveau": "Obligatoire"
+      }
+     ]
+    },
+    {
+     "titre": "Dirigeants, postes exceptionnels et événements",
+     "icon": "⚖️",
+     "items": [
+      {
+       "l": "Participations et options des dirigeants et collaborateurs",
+       "d": "Indiquer le nombre et la valeur des droits de participation ou des options sur de tels droits accordés aux membres de l'ensemble des organes de direction et d'administration ainsi qu'aux collaborateurs.",
+       "ref": "CO art. 959c al. 2 ch. 11",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Produits et charges extraordinaires, uniques ou hors période",
+       "d": "Expliciter les produits et les charges revêtant un caractère extraordinaire, unique ou se rapportant à une autre période (présentés séparément au compte de résultat, art. 959b al. 5), en indiquant leur nature et leur montant.",
+       "ref": "CO art. 959c al. 2 ch. 12 (et art. 959b al. 5)",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Événements importants postérieurs à la date du bilan",
+       "d": "Indiquer les événements importants survenus après la date du bilan et avant l'approbation des comptes, en exposant leur nature et, si possible, leur incidence financière (par exemple sinistre majeur, acquisition, litige tranché).",
+       "ref": "CO art. 959c al. 2 ch. 13",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Démission de l'organe de révision et ses motifs",
+       "d": "Indiquer, en cas de démission de l'organe de révision avant le terme de son mandat, le fait de cette démission ainsi que les raisons qui l'ont motivée.",
+       "ref": "CO art. 959c al. 2 ch. 14",
+       "niveau": "Obligatoire"
+      }
+     ]
+    },
+    {
+     "titre": "Indications supplémentaires des grandes entreprises (contrôle ordinaire)",
+     "icon": "🏛️",
+     "items": [
+      {
+       "l": "Champ d'application : grandes entreprises",
+       "d": "Sont concernées les entreprises soumises au contrôle ordinaire (art. 727 al. 1 CO), c'est-à-dire dépassant deux des trois seuils sur deux exercices successifs (total du bilan, chiffre d'affaires et effectif), ainsi que les sociétés ouvertes au public. Elles fournissent les indications supplémentaires des art. 961a à 961c en sus de l'annexe de base.",
+       "ref": "CO art. 961",
+       "niveau": "Grandes entreprises"
+      },
+      {
+       "l": "Ventilation des dettes à long terme portant intérêt par échéance",
+       "d": "Indiquer dans l'annexe la ventilation des dettes à long terme portant intérêt selon leur échéance, en distinguant celles dues dans un délai d'un à cinq ans de celles dues au-delà de cinq ans.",
+       "ref": "CO art. 961a ch. 1",
+       "niveau": "Contrôle ordinaire"
+      },
+      {
+       "l": "Honoraires de l'organe de révision",
+       "d": "Indiquer dans l'annexe le montant des honoraires versés à l'organe de révision, en ventilant séparément les honoraires pour les prestations en matière de révision (audit) et ceux pour les autres prestations de services.",
+       "ref": "CO art. 961a ch. 2",
+       "niveau": "Contrôle ordinaire"
+      },
+      {
+       "l": "Tableau des flux de trésorerie",
+       "d": "Établir un tableau des flux de trésorerie présentant séparément les flux liés à l'exploitation, à l'investissement et au financement. Ce document s'ajoute aux comptes annuels et n'est requis que des grandes entreprises.",
+       "ref": "CO art. 961 ch. 2 et 961b",
+       "niveau": "Grandes entreprises"
+      },
+      {
+       "l": "Rapport annuel",
+       "d": "Établir un rapport annuel exposant la marche des affaires et la situation économique de l'entreprise (et le cas échéant du groupe) à la fin de l'exercice, sous les angles non ressortant des comptes annuels, notamment l'effectif moyen, l'évaluation des risques, l'état des commandes, les activités de recherche et développement, les événements exceptionnels et les perspectives.",
+       "ref": "CO art. 961 ch. 3 et 961c",
+       "niveau": "Grandes entreprises"
+      },
+      {
+       "l": "Dispense en cas de comptes consolidés",
+       "d": "La grande entreprise qui établit elle-même des comptes consolidés, ou qui est incluse dans des comptes consolidés répondant à une norme reconnue, est dispensée du tableau des flux de trésorerie et du rapport annuel.",
+       "ref": "CO art. 961d al. 1",
+       "niveau": "Si applicable"
+      }
+     ]
+    },
+    {
+     "titre": "Dispenses et comptes simplifiés",
+     "icon": "🪶",
+     "items": [
+      {
+       "l": "Comptabilité simplifiée des très petites structures",
+       "d": "Les entreprises individuelles et sociétés de personnes ayant réalisé moins de 500'000 CHF de chiffre d'affaires lors du dernier exercice ne tiennent qu'une comptabilité des recettes, des dépenses et du patrimoine, et ne sont pas tenues d'établir une annexe au sens de l'art. 959c.",
+       "ref": "CO art. 957 al. 2",
+       "niveau": "Si applicable"
+      },
+      {
+       "l": "Allègement de l'annexe pour entreprises individuelles et sociétés de personnes",
+       "d": "Les entreprises individuelles et les sociétés de personnes tenues de présenter des comptes selon le titre trente-deuxième peuvent renoncer à certaines indications de l'annexe, dans la mesure où elles ne sont pas tenues de faire réviser leurs comptes (par exemple indications sur les emplois à plein temps ou la dette de leasing résiduelle non requises).",
+       "ref": "CO art. 959c al. 3",
+       "niveau": "Si applicable"
+      },
+      {
+       "l": "Information supplémentaire facultative",
+       "d": "Au-delà du contenu minimal légal, l'entreprise peut ajouter à l'annexe toute information jugée utile à la compréhension des comptes (par exemple politique de réserves latentes, segmentation, engagements futurs), conformément à l'objectif de la présentation régulière des comptes.",
+       "ref": "CO art. 958 al. 1 et 959c al. 1",
+       "niveau": "Recommandé"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "rpc",
+   "nom": "Swiss GAAP RPC (Swiss GAAP FER)",
+   "drapeau": "🇨🇭",
+   "base_legale": "Cadre conceptuel Swiss GAAP RPC + Swiss GAAP RPC 6 « L'annexe »",
+   "philosophie": "L'annexe RPC est l'instrument de la présentation fidèle (true and fair view) : elle complète le bilan, le compte de résultat, le tableau de financement et l'état des capitaux propres pour donner une image conforme à la réalité de la situation patrimoniale, financière et des résultats. Son esprit est l'information utile à la décision, et non le simple respect d'un minimum légal comme dans le Code des obligations.",
+   "etats_requis": [
+    "Bilan",
+    "Compte de résultat",
+    "Tableau de financement (flux de trésorerie)",
+    "État des capitaux propres",
+    "Annexe (notes)"
+   ],
+   "intro": "Contrairement au minimum prévu par le Code des obligations, les Swiss GAAP RPC reposent sur le principe de présentation fidèle (true and fair view) et exigent un jeu complet d'états financiers : bilan, compte de résultat, tableau de financement (flux de trésorerie), état des capitaux propres et annexe. L'annexe (RPC 6) n'est donc pas un complément accessoire mais une partie intégrante des comptes : elle explicite les principes de présentation et les règles d'évaluation, détaille les postes des autres états, expose les changements de méthode et fournit les informations spécifiques exigées par les normes RPC applicables. Les RPC fondamentales (Swiss GAAP RPC limitées) couvrent les PME, tandis que le référentiel complet impose des informations plus étendues; le contenu ci-dessous se réfère au référentiel complet, en signalant le niveau d'exigence par rubrique.",
+   "rubriques": [
+    {
+     "titre": "Principes de présentation et règles d'évaluation",
+     "icon": "📐",
+     "items": [
+      {
+       "l": "Référentiel appliqué et déclaration de conformité",
+       "d": "Indiquer que les comptes sont établis selon les Swiss GAAP RPC (référentiel complet ou RPC fondamentales pour PME) et qu'ils donnent une image fidèle de la situation patrimoniale, financière et des résultats. Préciser l'entité, la monnaie de présentation et la période couverte.",
+       "ref": "Cadre conceptuel RPC / Swiss GAAP RPC 6",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Règles d'évaluation et de présentation des postes",
+       "d": "Exposer les bases d'évaluation retenues pour les principaux postes (valeurs d'acquisition, valeurs actuelles, coûts amortis), les méthodes d'amortissement et de dépréciation, ainsi que les principes de comptabilisation des produits et charges.",
+       "ref": "Swiss GAAP RPC 6 / RPC fondamentales (cadre)",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Recours à des estimations et hypothèses",
+       "d": "Décrire les principales estimations et appréciations comportant un risque significatif d'ajustement (provisions, durées d'utilité, dépréciations), conformément au principe de prudence et de continuité d'exploitation.",
+       "ref": "Cadre conceptuel RPC",
+       "niveau": "Recommandé"
+      }
+     ]
+    },
+    {
+     "titre": "Changements de méthode, comparabilité et consolidation",
+     "icon": "🔄",
+     "items": [
+      {
+       "l": "Changements de principes comptables et d'évaluation",
+       "d": "Indiquer et justifier tout changement de méthode de présentation ou d'évaluation, ainsi que son incidence chiffrée sur les comptes; assurer la comparabilité avec l'exercice précédent (retraitement ou explication des écarts).",
+       "ref": "Swiss GAAP RPC 6 (changements de méthode)",
+       "niveau": "Si applicable"
+      },
+      {
+       "l": "Périmètre et méthode de consolidation",
+       "d": "Pour des comptes consolidés, présenter la liste des sociétés du groupe (participations directes et indirectes), le taux de détention, la méthode de consolidation (intégration globale, mise en équivalence) et les entrées/sorties de périmètre de l'exercice.",
+       "ref": "Norme RPC sur les comptes consolidés (Swiss GAAP RPC 30)",
+       "niveau": "Si applicable"
+      },
+      {
+       "l": "Conversion des comptes en monnaies étrangères",
+       "d": "Pour un groupe ou des activités à l'étranger, décrire les méthodes de conversion (cours de clôture, cours moyens) et le traitement des écarts de conversion dans les capitaux propres.",
+       "ref": "Norme RPC sur les comptes consolidés (Swiss GAAP RPC 30)",
+       "niveau": "Si applicable"
+      }
+     ]
+    },
+    {
+     "titre": "Détail et explication des postes des états financiers",
+     "icon": "🧾",
+     "items": [
+      {
+       "l": "Immobilisations corporelles et amortissements",
+       "d": "Présenter le tableau des immobilisations corporelles : valeurs brutes, entrées et sorties, amortissements cumulés et de l'exercice, valeurs nettes; préciser les durées d'utilité et les éventuelles dépréciations (valeurs de remplacement).",
+       "ref": "Norme RPC sur les immobilisations corporelles (Swiss GAAP RPC 18)",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Immobilisations incorporelles et goodwill",
+       "d": "Détailler les actifs incorporels acquis ou produits, leur amortissement et, le cas échéant, le traitement du goodwill (activation et amortissement, ou compensation avec les capitaux propres) ainsi que son incidence pro forma.",
+       "ref": "Norme RPC sur les immobilisations incorporelles (Swiss GAAP RPC 10)",
+       "niveau": "Si applicable"
+      },
+      {
+       "l": "Stocks, créances et postes courants",
+       "d": "Expliquer l'évaluation des stocks et des créances, les corrections de valeur (ducroire) et les ajustements significatifs; détailler les postes regroupés au bilan lorsque c'est nécessaire à la compréhension.",
+       "ref": "Swiss GAAP RPC 6 / norme sur les stocks (Swiss GAAP RPC 17)",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Résultats exceptionnels et hors exploitation",
+       "d": "Indiquer la nature et le montant des produits et charges exceptionnels, uniques ou hors exploitation, afin de distinguer le résultat opérationnel récurrent des éléments non récurrents.",
+       "ref": "Swiss GAAP RPC 6 / norme sur le compte de résultat (Swiss GAAP RPC 3)",
+       "niveau": "Si applicable"
+      }
+     ]
+    },
+    {
+     "titre": "Parties liées, prévoyance et impôts différés",
+     "icon": "🤝",
+     "items": [
+      {
+       "l": "Transactions avec des parties liées",
+       "d": "Indiquer les transactions significatives avec des parties liées (actionnaires, organes, sociétés du groupe, entités sous influence notable) et les soldes correspondants, en précisant leur nature et leur volume; mentionner les conditions lorsqu'elles ne sont pas conformes au marché.",
+       "ref": "Norme RPC sur les transactions avec des parties liées (Swiss GAAP RPC 15)",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Engagements de prévoyance et réserves de cotisations de l'employeur",
+       "d": "Présenter la situation économique des institutions de prévoyance : avantages économiques (excédent de couverture) ou engagements économiques (découvert) à inscrire à l'actif ou au passif, charges de prévoyance de la période et réserves de cotisations de l'employeur.",
+       "ref": "Norme RPC sur les engagements de prévoyance (Swiss GAAP RPC 16)",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Impôts différés",
+       "d": "Expliquer la méthode de calcul des impôts différés (différences temporaires entre valeurs comptables et fiscales), les actifs et passifs d'impôts différés comptabilisés, le traitement des reports de pertes activables et les taux d'impôt retenus.",
+       "ref": "Norme RPC sur les impôts (Swiss GAAP RPC 11)",
+       "niveau": "Obligatoire"
+      }
+     ]
+    },
+    {
+     "titre": "Provisions, dérivés et engagements",
+     "icon": "⚠️",
+     "items": [
+      {
+       "l": "Provisions",
+       "d": "Détailler les provisions par catégorie : solde d'ouverture, dotations, utilisations et dissolutions, solde de clôture; décrire la nature des obligations et le caractère estimatif des montants.",
+       "ref": "Norme RPC sur les provisions (Swiss GAAP RPC 23)",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Instruments financiers dérivés",
+       "d": "Présenter les instruments financiers dérivés détenus (à des fins de couverture ou de négoce), leurs valeurs et le traitement comptable retenu, notamment la comptabilité de couverture lorsqu'elle est appliquée.",
+       "ref": "Norme RPC sur les instruments financiers dérivés (Swiss GAAP RPC 27)",
+       "niveau": "Si applicable"
+      },
+      {
+       "l": "Engagements conditionnels",
+       "d": "Indiquer les engagements conditionnels (cautionnements, garanties, gages constitués en faveur de tiers, litiges en cours) avec une estimation des montants lorsqu'elle est possible.",
+       "ref": "Swiss GAAP RPC 6 (engagements conditionnels)",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Engagements de leasing et autres engagements hors bilan",
+       "d": "Détailler les engagements de leasing (notamment opérationnel) non portés au bilan et leur échéancier, ainsi que les autres engagements fermes (contrats à long terme, engagements d'investissement).",
+       "ref": "Norme RPC sur le leasing (Swiss GAAP RPC 13)",
+       "niveau": "Si applicable"
+      }
+     ]
+    },
+    {
+     "titre": "Événements postérieurs et informations complémentaires",
+     "icon": "📅",
+     "items": [
+      {
+       "l": "Événements postérieurs à la date du bilan",
+       "d": "Indiquer les événements significatifs survenus entre la date de clôture et l'établissement des comptes : ceux qui modifient l'appréciation (ajustement des comptes) et ceux qui ne donnent lieu qu'à information dans l'annexe, avec une estimation de leur incidence. Le référentiel RPC ne comporte pas de norme numérotée dédiée à ce thème : l'obligation découle du Cadre conceptuel RPC et de l'annexe (RPC 6).",
+       "ref": "Cadre conceptuel RPC / Swiss GAAP RPC 6",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Capitaux propres et tableau des fonds propres",
+       "d": "Expliquer les mouvements de capitaux propres présentés dans l'état dédié (capital, réserves, résultats reportés, écarts de conversion, propres actions), en cohérence avec le tableau des fonds propres.",
+       "ref": "Swiss GAAP RPC 6 / norme sur l'état des capitaux propres (Swiss GAAP RPC 24)",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Informations sectorielles et chiffre d'affaires",
+       "d": "Le cas échéant, ventiler le chiffre d'affaires net par secteur d'activité et par zone géographique pour les entités qui établissent une information sectorielle, afin d'éclairer la structure du résultat.",
+       "ref": "Swiss GAAP RPC 6 / norme sur l'information sectorielle (Swiss GAAP RPC 31)",
+       "niveau": "Grandes entreprises"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "ifrs",
+   "nom": "IFRS (International Financial Reporting Standards)",
+   "drapeau": "🌍",
+   "base_legale": "IAS 1 Présentation des états financiers + normes spécifiques (IAS 7, IAS 8, IFRS 7, IFRS 9, IFRS 15, IFRS 16, IAS 12, IAS 19, IAS 36, IAS 37, IAS 24, IFRS 8, IAS 33, IFRS 13, IAS 10)",
+   "philosophie": "L'annexe IFRS vise une image fidèle (true and fair view) au service de la décision des investisseurs et créanciers. La logique est celle de la substance économique sur la forme juridique et de la transparence maximale : on explique les jugements, les estimations et les risques, pas seulement les chiffres. Depuis l'amendement IAS 1 de 2023, l'accent porte sur l'information significative (material) plutôt que sur la simple récitation des méthodes comptables.",
+   "etats_requis": [
+    "État de la situation financière (bilan) à la clôture",
+    "État du résultat net et des autres éléments du résultat global (résultat global), en un ou deux états",
+    "État des variations des capitaux propres",
+    "Tableau des flux de trésorerie (IAS 7)",
+    "Notes annexes (méthodes comptables significatives, jugements, estimations, notes par poste)",
+    "État de la situation financière d'ouverture (troisième bilan) en cas d'application rétrospective, de retraitement rétrospectif ou de reclassement (IAS 1.40A)"
+   ],
+   "intro": "Les notes annexes complètent les états financiers IFRS et en font partie intégrante : sans elles, la lecture du bilan et du compte de résultat ne suffit pas à donner une image fidèle. Elles s'ouvrent par une déclaration explicite de conformité aux IFRS, exposent la base de préparation et les méthodes comptables significatives, puis détaillent les jugements et estimations clés avant de développer les informations poste par poste et par norme. Leur structure suit l'ordre logique d'IAS 1.114 : conformité, base d'évaluation, méthodes, puis informations à l'appui de chaque ligne des états primaires, et enfin les autres informations (parties liées, événements postérieurs, gestion du capital).",
+   "rubriques": [
+    {
+     "titre": "Déclaration de conformité et base de préparation",
+     "icon": "📜",
+     "items": [
+      {
+       "l": "Déclaration de conformité aux IFRS",
+       "d": "Déclarer de manière explicite et sans réserve que les états financiers sont conformes aux IFRS telles que publiées par l'IASB. Une entité ne peut faire cette déclaration que si elle respecte la totalité des dispositions de chaque norme et interprétation applicable.",
+       "ref": "IAS 1.16",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Base de préparation et d'évaluation",
+       "d": "Indiquer la ou les bases d'évaluation retenues (coût historique, juste valeur, valeur nette de réalisation, valeur actuelle des engagements, etc.). Préciser que les comptes sont établis selon l'hypothèse de continuité d'exploitation et la comptabilité d'engagement.",
+       "ref": "IAS 1.117, IAS 1.25, IAS 1.27",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Informations sur les méthodes comptables significatives",
+       "d": "Présenter les informations sur les méthodes comptables qui sont significatives (material accounting policy information), c'est-à-dire celles qui, combinées à d'autres informations, peuvent influencer les décisions des utilisateurs. Depuis l'amendement IAS 1 de 2023, on ne récite plus toutes les méthodes : on retient celles propres à l'entité, liées à des transactions complexes ou à des jugements importants.",
+       "ref": "IAS 1.117 (amendé 2023), IFRS Practice Statement 2",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Continuité d'exploitation et incertitudes",
+       "d": "Lorsque la direction a connaissance d'incertitudes significatives liées à des événements jetant un doute important sur la capacité de l'entité à poursuivre son exploitation, fournir une information à ce sujet. Si les comptes ne sont pas établis en continuité, l'indiquer avec le motif et la base utilisée.",
+       "ref": "IAS 1.25",
+       "niveau": "Si applicable"
+      },
+      {
+       "l": "Identité de l'entité et informations générales",
+       "d": "Indiquer le siège, la forme juridique, le pays d'enregistrement, l'adresse, la nature des activités, la société mère ultime, ainsi que la durée de l'exercice si elle diffère d'un an et la monnaie de présentation.",
+       "ref": "IAS 1.51, IAS 1.138, IAS 21.53",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Changements de méthodes comptables, estimations et erreurs",
+       "d": "En cas de changement de méthode (application rétrospective), de correction d'erreur d'exercices antérieurs (retraitement rétrospectif) ou de changement d'estimation, en exposer la nature, les motifs et les montants ajustés par poste. Mentionner les normes nouvelles ou amendées non encore appliquées.",
+       "ref": "IAS 8.28, IAS 8.29, IAS 8.39, IAS 8.49",
+       "niveau": "Si applicable"
+      }
+     ]
+    },
+    {
+     "titre": "Jugements et incertitudes relatives aux estimations",
+     "icon": "⚖️",
+     "items": [
+      {
+       "l": "Jugements comptables significatifs",
+       "d": "Indiquer les jugements, autres que ceux impliquant des estimations, que la direction a effectués lors de l'application des méthodes comptables et qui ont l'effet le plus significatif sur les montants comptabilisés (par exemple : existence d'un contrôle, classement preneur ou bailleur, reconnaissance du revenu à un instant ou progressivement).",
+       "ref": "IAS 1.122",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Sources majeures d'incertitude relative aux estimations",
+       "d": "Décrire les hypothèses et les autres sources majeures d'incertitude des estimations à la clôture qui présentent un risque important d'ajustement significatif des actifs et passifs au cours de l'exercice suivant : nature de l'actif ou du passif et sa valeur comptable à la clôture. Exemples : taux d'actualisation, valeur recouvrable des UGT, hypothèses actuarielles, pertes de crédit attendues.",
+       "ref": "IAS 1.125, IAS 1.129",
+       "niveau": "Obligatoire"
+      }
+     ]
+    },
+    {
+     "titre": "Produits, contrats clients et contrats de location",
+     "icon": "🧾",
+     "items": [
+      {
+       "l": "Désagrégation du chiffre d'affaires (IFRS 15)",
+       "d": "Ventiler les produits des contrats clients en catégories décrivant comment la nature, le montant, l'échéancier et l'incertitude des produits et flux de trésorerie sont affectés par des facteurs économiques (par exemple : par type de bien ou service, par zone géographique, par marché, par mode de transfert à un instant ou dans le temps).",
+       "ref": "IFRS 15.114, IFRS 15.115",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Soldes des contrats",
+       "d": "Présenter les soldes d'ouverture et de clôture des créances clients, des actifs sur contrats et des passifs sur contrats. Expliquer les variations significatives et indiquer le produit comptabilisé sur l'exercice provenant des passifs sur contrats existant à l'ouverture.",
+       "ref": "IFRS 15.116, IFRS 15.118",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Obligations de prestation",
+       "d": "Décrire quand l'entité remplit habituellement ses obligations de prestation, les modalités de paiement significatives, la nature des biens et services promis, ainsi que le montant du prix de transaction affecté aux obligations de prestation restant à remplir et le calendrier attendu de leur reconnaissance.",
+       "ref": "IFRS 15.119, IFRS 15.120",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Contrats de location, côté preneur (IFRS 16)",
+       "d": "Indiquer les amortissements des actifs au titre du droit d'utilisation par catégorie de sous-jacent, la charge d'intérêts sur les passifs locatifs, les charges relatives aux locations de courte durée et de faible valeur, les sorties de trésorerie totales au titre des contrats de location et une analyse des échéances des passifs locatifs.",
+       "ref": "IFRS 16.53, IFRS 16.58",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Contrats de location, côté bailleur (IFRS 16)",
+       "d": "Pour les contrats de location-financement, présenter le profit ou la perte de vente, les produits financiers sur l'investissement net et une analyse des échéances des paiements de loyers à recevoir. Pour les contrats de location simple, indiquer les produits locatifs et une analyse des échéances.",
+       "ref": "IFRS 16.90, IFRS 16.97",
+       "niveau": "Si applicable"
+      }
+     ]
+    },
+    {
+     "titre": "Instruments financiers, juste valeur et risques",
+     "icon": "📊",
+     "items": [
+      {
+       "l": "Catégories et classement des instruments financiers (IFRS 9)",
+       "d": "Indiquer les valeurs comptables de chaque catégorie d'instruments financiers : actifs au coût amorti, à la juste valeur par autres éléments du résultat global, à la juste valeur par résultat, et passifs au coût amorti ou à la juste valeur. Décrire la base de classement et les modèles de gestion (business model).",
+       "ref": "IFRS 7.8, IFRS 9.4.1",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Pertes de crédit attendues (modèle ECL)",
+       "d": "Présenter le rapprochement des corrections de valeur pour pertes (passages entre les trois stages), les informations sur l'augmentation significative du risque de crédit, les hypothèses prospectives (forward-looking) et les politiques de dépréciation. La preuve du risque de crédit constitue une zone d'estimation majeure.",
+       "ref": "IFRS 7.35F à 7.35N, IFRS 9.5.5",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Risque de crédit",
+       "d": "Indiquer l'exposition maximale au risque de crédit par catégorie, les concentrations de risque, la qualité de crédit des actifs non dépréciés et la gestion des garanties (collateral) et autres rehaussements.",
+       "ref": "IFRS 7.35K, IFRS 7.36",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Risque de liquidité",
+       "d": "Fournir une analyse des échéances des passifs financiers (flux contractuels non actualisés) et une description de la manière dont l'entité gère le risque de liquidité.",
+       "ref": "IFRS 7.39",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Risque de marché et analyses de sensibilité",
+       "d": "Présenter une analyse de sensibilité pour chaque type de risque de marché (taux d'intérêt, change, autres prix), montrant l'effet sur le résultat et les capitaux propres d'une variation raisonnablement possible de la variable de risque concernée.",
+       "ref": "IFRS 7.40, IFRS 7.34",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Évaluation à la juste valeur et hiérarchie",
+       "d": "Classer les évaluations à la juste valeur selon une hiérarchie à trois niveaux (niveau 1 : prix cotés sur marchés actifs ; niveau 2 : données observables ; niveau 3 : données non observables). Indiquer les techniques de valorisation, les données utilisées, les transferts entre niveaux et, pour le niveau 3, un rapprochement et une analyse de sensibilité.",
+       "ref": "IFRS 13.93, IFRS 13.72",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Comptabilité de couverture",
+       "d": "Lorsqu'une comptabilité de couverture est appliquée, décrire la stratégie de gestion des risques, l'effet attendu sur les flux de trésorerie futurs, et l'effet de la couverture sur la situation financière et la performance (inefficacité comprise).",
+       "ref": "IFRS 7.21A à 7.24F",
+       "niveau": "Si applicable"
+      }
+     ]
+    },
+    {
+     "titre": "Impôts, avantages du personnel et provisions",
+     "icon": "🏛️",
+     "items": [
+      {
+       "l": "Composantes de la charge d'impôt",
+       "d": "Détailler les principales composantes de la charge (produit) d'impôt sur le résultat : impôt exigible de l'exercice, ajustements d'impôt exigible des exercices antérieurs, impôt différé lié à la naissance et au renversement des différences temporelles.",
+       "ref": "IAS 12.79, IAS 12.80",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Preuve d'impôt (rapprochement du taux effectif)",
+       "d": "Fournir un rapprochement entre la charge d'impôt et le produit du résultat comptable par le taux d'impôt applicable, ou un rapprochement du taux d'impôt effectif moyen, en expliquant les écarts (différences permanentes, taux étrangers, pertes non activées, etc.).",
+       "ref": "IAS 12.81 (c)",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Actifs et passifs d'impôt différé",
+       "d": "Indiquer le montant des actifs et passifs d'impôt différé par catégorie de différence temporelle, les pertes fiscales et crédits d'impôt reportés, ainsi que les éléments justifiant la comptabilisation d'un actif d'impôt différé en présence de pertes récentes.",
+       "ref": "IAS 12.81 (g), IAS 12.82",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Avantages du personnel et régimes à prestations définies (IAS 19)",
+       "d": "Pour les régimes à prestations définies, décrire les caractéristiques et risques, rapprocher les soldes d'ouverture et de clôture de l'obligation et des actifs du régime, présenter les hypothèses actuarielles principales (taux d'actualisation, progression des salaires) et une analyse de sensibilité. Les hypothèses actuarielles constituent une source d'incertitude d'estimation.",
+       "ref": "IAS 19.135, IAS 19.139, IAS 19.144, IAS 19.145",
+       "niveau": "Si applicable"
+      },
+      {
+       "l": "Provisions, passifs et actifs éventuels (IAS 37)",
+       "d": "Pour chaque catégorie de provision, présenter un rapprochement des soldes (dotations, utilisations, reprises, désactualisation), la nature de l'obligation, l'échéancier attendu et les incertitudes. Décrire les passifs éventuels (sauf si la sortie de ressources est très improbable) et les actifs éventuels lorsque l'entrée est probable.",
+       "ref": "IAS 37.84, IAS 37.85, IAS 37.86, IAS 37.89",
+       "niveau": "Obligatoire"
+      }
+     ]
+    },
+    {
+     "titre": "Actifs non financiers et dépréciation",
+     "icon": "🏗️",
+     "items": [
+      {
+       "l": "Dépréciation d'actifs et test de perte de valeur (IAS 36)",
+       "d": "Pour chaque perte de valeur ou reprise significative, indiquer le montant, le poste du compte de résultat concerné, l'unité génératrice de trésorerie (UGT) et les événements ayant conduit à la dépréciation. Préciser la base de la valeur recouvrable (valeur d'utilité ou juste valeur diminuée des coûts de sortie).",
+       "ref": "IAS 36.126, IAS 36.130",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Goodwill et incorporels à durée indéterminée",
+       "d": "Indiquer la valeur comptable du goodwill et des immobilisations incorporelles à durée d'utilité indéterminée affectés à chaque UGT, la base de détermination de la valeur recouvrable, les hypothèses clés (taux de croissance, taux d'actualisation) et une analyse de sensibilité raisonnablement possible.",
+       "ref": "IAS 36.134, IAS 36.135",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Immobilisations corporelles et incorporelles",
+       "d": "Présenter par catégorie les bases d'évaluation, les méthodes et durées (ou taux) d'amortissement, un rapprochement des valeurs brutes et cumuls d'amortissement à l'ouverture et à la clôture, ainsi que les acquisitions, cessions et reclassements.",
+       "ref": "IAS 16.73, IAS 38.118",
+       "niveau": "Obligatoire"
+      }
+     ]
+    },
+    {
+     "titre": "Information sur le groupe et le périmètre",
+     "icon": "🧩",
+     "items": [
+      {
+       "l": "Secteurs opérationnels (IFRS 8)",
+       "d": "Présenter l'information par secteur opérationnel sur la base du reporting interne examiné par le principal décideur opérationnel : résultat sectoriel, actifs et passifs lorsqu'ils sont communiqués, et rapprochement des totaux sectoriels avec les montants des états financiers.",
+       "ref": "IFRS 8.22, IFRS 8.23, IFRS 8.28",
+       "niveau": "Si applicable"
+      },
+      {
+       "l": "Informations à l'échelle de l'entité (IFRS 8)",
+       "d": "Indiquer les produits par produit ou service, par zone géographique (pays de domiciliation et étranger) et l'information sur la dépendance à des clients majeurs (clients représentant 10 pour cent ou plus du chiffre d'affaires).",
+       "ref": "IFRS 8.32, IFRS 8.33, IFRS 8.34",
+       "niveau": "Si applicable"
+      },
+      {
+       "l": "Parties liées (IAS 24)",
+       "d": "Indiquer les relations entre société mère et filiales, la nature des relations avec les parties liées, le montant des transactions et des soldes (conditions, garanties, provisions pour créances douteuses), ainsi que la rémunération des principaux dirigeants ventilée par catégorie d'avantages.",
+       "ref": "IAS 24.13, IAS 24.17, IAS 24.18",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Résultat par action (IAS 33)",
+       "d": "Présenter au compte de résultat le résultat de base et le résultat dilué par action, pour le résultat des activités poursuivies et le résultat global. Indiquer les montants des numérateurs et le nombre moyen pondéré d'actions servant aux dénominateurs, avec rapprochement.",
+       "ref": "IAS 33.66, IAS 33.70",
+       "niveau": "Si applicable"
+      }
+     ]
+    },
+    {
+     "titre": "Capital, événements postérieurs et flux de trésorerie",
+     "icon": "🔚",
+     "items": [
+      {
+       "l": "Gestion du capital",
+       "d": "Décrire les objectifs, politiques et procédures de gestion du capital, les éventuelles exigences de capital externes (covenants), la manière dont l'entité y satisfait et les conséquences d'un éventuel non-respect.",
+       "ref": "IAS 1.134, IAS 1.135",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Événements postérieurs à la période de reporting (IAS 10)",
+       "d": "Pour les événements postérieurs ne donnant pas lieu à ajustement mais significatifs, indiquer leur nature et une estimation de leur effet financier (ou le fait qu'une telle estimation ne peut être faite). Mettre à jour les informations relatives aux conditions existant à la clôture pour les événements donnant lieu à ajustement.",
+       "ref": "IAS 10.21, IAS 10.22",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Date d'autorisation de publication",
+       "d": "Indiquer la date à laquelle les états financiers ont été autorisés à la publication et l'organe qui a donné cette autorisation, ainsi que le pouvoir éventuel des actionnaires ou d'autres de les modifier après publication.",
+       "ref": "IAS 10.17",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Informations complémentaires sur le tableau des flux de trésorerie (IAS 7)",
+       "d": "Présenter les composantes de la trésorerie et équivalents avec rapprochement au bilan, les rubriques de financement avec réconciliation des variations des passifs issus du financement, et les opérations sans contrepartie de trésorerie significatives.",
+       "ref": "IAS 7.45, IAS 7.44A, IAS 7.43",
+       "niveau": "Obligatoire"
+      },
+      {
+       "l": "Dividendes",
+       "d": "Indiquer le montant des dividendes proposés ou décidés avant l'autorisation de publication mais non comptabilisés en distribution, le montant par action, ainsi que le montant des dividendes privilégiés cumulatifs non comptabilisés.",
+       "ref": "IAS 1.137",
+       "niveau": "Obligatoire"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "comparatif": {
+  "intro": "Comparatif des exigences d'annexe entre le Code des obligations (CO), les Swiss GAAP RPC et les IFRS. Conventions : oui = exigé ; non = non exigé ; si = exigé seulement si applicable, pour les grandes entreprises ou les entités cotées ; partiel = exigé mais sous forme allégée. Repères normatifs : annexe CO selon art. 959c CO, informations supplémentaires pour les grandes entreprises soumises au contrôle ordinaire selon art. 961 ss CO (notamment tableau de flux de trésorerie et rapport de gestion). Les Swiss GAAP RPC visées sont le référentiel complet (Swiss GAAP RPC fondamentales plus normes complémentaires), étant précisé que les RPC pour PME (RPC fondamentales seules) sont plus allégées. IFRS = jeu complet d'états financiers selon IAS 1 et normes spécifiques. Réponses à interpréter dans une logique d'examen / d'audit, du plus exigeant (IFRS) au plus allégé (CO).",
+  "themes": [
+   {
+    "theme": "Tableau de flux de trésorerie",
+    "co": {
+     "v": "si",
+     "note": "Non exigé pour les PME ; obligatoire uniquement pour les grandes entreprises soumises au contrôle ordinaire (art. 961 ss CO)."
+    },
+    "rpc": {
+     "v": "oui",
+     "note": "Composante obligatoire des états financiers selon les Swiss GAAP RPC."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "État primaire obligatoire (IAS 7), méthode directe ou indirecte."
+    }
+   },
+   {
+    "theme": "État des variations des capitaux propres",
+    "co": {
+     "v": "non",
+     "note": "Pas d'état formel exigé ; quelques informations sur les capitaux propres figurent à l'annexe et la variation se lit via le bilan."
+    },
+    "rpc": {
+     "v": "oui",
+     "note": "Tableau des variations des capitaux propres requis dans le référentiel RPC complet (allégé pour les RPC fondamentales / PME)."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "État primaire obligatoire (IAS 1), incluant transactions avec les actionnaires et autres mouvements."
+    }
+   },
+   {
+    "theme": "Description des méthodes comptables",
+    "co": {
+     "v": "oui",
+     "note": "Indication des principes d'évaluation appliqués et de leur éventuelle modification (art. 959c CO)."
+    },
+    "rpc": {
+     "v": "oui",
+     "note": "Présentation des principes de présentation des comptes et des règles d'évaluation."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "Méthodes comptables significatives (material accounting policy information) selon IAS 1."
+    }
+   },
+   {
+    "theme": "Jugements et estimations significatifs",
+    "co": {
+     "v": "non",
+     "note": "Pas d'obligation spécifique ; l'annexe CO ne requiert pas de note dédiée aux sources d'incertitude."
+    },
+    "rpc": {
+     "v": "partiel",
+     "note": "Pas de note formelle dédiée comme en IFRS ; les hypothèses ressortent surtout via les principes d'évaluation et certaines normes."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "Information sur les jugements et les principales sources d'incertitude relatives aux estimations (IAS 1)."
+    }
+   },
+   {
+    "theme": "Transactions avec parties liées",
+    "co": {
+     "v": "non",
+     "note": "Pas d'obligation générale ; quelques éléments connexes (créances/dettes envers des participants, organes) peuvent figurer mais pas une note parties liées."
+    },
+    "rpc": {
+     "v": "oui",
+     "note": "Indication des transactions importantes avec des parties liées et de leurs conditions (norme RPC dédiée aux parties liées)."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "Informations détaillées sur les relations et transactions avec les parties liées, y compris la rémunération des principaux dirigeants (IAS 24)."
+    }
+   },
+   {
+    "theme": "Contrats de location (leasing)",
+    "co": {
+     "v": "partiel",
+     "note": "Indication du montant total des dettes de leasing non portées au bilan et non résiliables dans l'année (art. 959c CO)."
+    },
+    "rpc": {
+     "v": "oui",
+     "note": "Distinction leasing financier (capitalisé) / leasing d'exploitation et information sur les engagements ; pas de modèle « droit d'utilisation » généralisé comme IFRS 16."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "Comptabilisation au bilan de l'actif au titre du droit d'utilisation et de la dette pour le preneur, avec informations étendues (IFRS 16)."
+    }
+   },
+   {
+    "theme": "Instruments financiers et gestion des risques",
+    "co": {
+     "v": "partiel",
+     "note": "Informations limitées (par ex. évaluation, engagements conditionnels) ; pas de note structurée sur les risques financiers."
+    },
+    "rpc": {
+     "v": "partiel",
+     "note": "Information sur l'évaluation des instruments financiers et la gestion des risques, moins détaillée que le régime IFRS 7."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "Informations étendues sur les catégories, la juste valeur et les risques (crédit, liquidité, marché) avec analyses de sensibilité (IFRS 7)."
+    }
+   },
+   {
+    "theme": "Impôts différés",
+    "co": {
+     "v": "non",
+     "note": "Concept non requis dans les comptes statutaires CO (approche fiscale dominante) ; pas de note d'impôts différés."
+    },
+    "rpc": {
+     "v": "oui",
+     "note": "Comptabilisation et information sur les impôts différés (latents) dans le référentiel RPC, surtout sur la base des différences temporaires."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "Comptabilisation et rapprochement de la charge d'impôt, actifs/passifs d'impôts différés et leurs sources (IAS 12)."
+    }
+   },
+   {
+    "theme": "Information sectorielle",
+    "co": {
+     "v": "non",
+     "note": "Non exigée par le CO."
+    },
+    "rpc": {
+     "v": "si",
+     "note": "Information sur le chiffre d'affaires par secteur d'activité et région prévue surtout pour les sociétés cotées (Swiss GAAP RPC complet) ; non requise pour les PME."
+    },
+    "ifrs": {
+     "v": "si",
+     "note": "Information sectorielle obligatoire pour les entités cotées (IFRS 8), fondée sur l'approche du management."
+    }
+   },
+   {
+    "theme": "Résultat par action",
+    "co": {
+     "v": "non",
+     "note": "Non exigé par le CO."
+    },
+    "rpc": {
+     "v": "non",
+     "note": "Pas d'exigence générale RPC de présenter un résultat par action."
+    },
+    "ifrs": {
+     "v": "si",
+     "note": "Résultat par action de base et dilué obligatoire pour les entités cotées ou en cours de cotation (IAS 33)."
+    }
+   },
+   {
+    "theme": "Dépréciation / test d'impairment",
+    "co": {
+     "v": "partiel",
+     "note": "Principe de l'évaluation prudente et corrections de valeur, mais pas de méthodologie de test de dépréciation formalisée ni de note dédiée."
+    },
+    "rpc": {
+     "v": "oui",
+     "note": "Test de dépréciation requis lors d'indices de perte de valeur et information sur les corrections de valeur (norme RPC dédiée à la dépréciation des actifs)."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "Test d'impairment, valeur recouvrable, hypothèses clés et informations détaillées, notamment pour le goodwill testé annuellement (IAS 36)."
+    }
+   },
+   {
+    "theme": "Avantages du personnel et prévoyance",
+    "co": {
+     "v": "partiel",
+     "note": "Mention des dettes envers les institutions de prévoyance ; pas d'analyse actuarielle ni de note développée sur les engagements."
+    },
+    "rpc": {
+     "v": "oui",
+     "note": "Norme RPC spécifique aux engagements de prévoyance imposant d'indiquer l'avantage ou l'engagement économique envers les institutions de prévoyance et la variation de la réserve de cotisations."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "Distinction régimes à cotisations / à prestations définies, évaluation actuarielle et informations étendues sur les hypothèses (IAS 19)."
+    }
+   },
+   {
+    "theme": "Provisions et passifs éventuels",
+    "co": {
+     "v": "oui",
+     "note": "Indication des engagements conditionnels et, le cas échéant, des éléments relatifs aux provisions (art. 959c CO) ; possibilité de provisions latentes peu détaillées."
+    },
+    "rpc": {
+     "v": "oui",
+     "note": "Critères de comptabilisation des provisions et information sur les passifs éventuels (norme RPC dédiée aux provisions)."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "Tableau de mouvements des provisions, nature et incertitudes, et information sur les passifs et actifs éventuels (IAS 37)."
+    }
+   },
+   {
+    "theme": "Événements postérieurs à la clôture",
+    "co": {
+     "v": "oui",
+     "note": "Indication des événements importants survenus après la date du bilan (art. 959c CO)."
+    },
+    "rpc": {
+     "v": "oui",
+     "note": "Information sur les événements postérieurs à la date de clôture susceptibles d'influencer l'appréciation des comptes (Cadre conceptuel RPC et RPC 6 ; pas de norme RPC numérotée dédiée)."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "Distinction événements donnant lieu ou non à ajustement et informations correspondantes (IAS 10)."
+    }
+   },
+   {
+    "theme": "Juste valeur",
+    "co": {
+     "v": "partiel",
+     "note": "Possibilité d'évaluer à la valeur boursière/observable certains actifs cotés, avec mention dans l'annexe ; pas de hiérarchie de juste valeur."
+    },
+    "rpc": {
+     "v": "partiel",
+     "note": "Évaluation à la valeur actuelle de certains postes (par ex. titres, immeubles de placement selon l'option retenue) avec information, mais sans hiérarchie de niveaux."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "Évaluation et informations sur la juste valeur avec hiérarchie à trois niveaux et données sur les techniques de valorisation (IFRS 13)."
+    }
+   },
+   {
+    "theme": "Honoraires de l'organe de révision",
+    "co": {
+     "v": "si",
+     "note": "Pas d'obligation pour les PME ; ventilation des honoraires de révision (audit) et des autres prestations imposée aux grandes entreprises soumises au contrôle ordinaire (art. 961a ch. 2 CO)."
+    },
+    "rpc": {
+     "v": "non",
+     "note": "Pas d'exigence RPC spécifique de ventilation des honoraires de l'organe de révision."
+    },
+    "ifrs": {
+     "v": "non",
+     "note": "Non exigé par les IFRS elles-mêmes ; relève d'exigences locales/réglementaires (par ex. gouvernance ou droit des marchés)."
+    }
+   },
+   {
+    "theme": "Effectif (emplois à plein temps)",
+    "co": {
+     "v": "oui",
+     "note": "Indication du nombre d'emplois à plein temps en moyenne annuelle, par paliers (jusqu'à 10, 50, 250) (art. 959c CO)."
+    },
+    "rpc": {
+     "v": "non",
+     "note": "Pas d'exigence RPC spécifique d'indiquer l'effectif en équivalents plein temps."
+    },
+    "ifrs": {
+     "v": "non",
+     "note": "Pas d'obligation IFRS de présenter l'effectif (l'information sur le personnel concerne surtout les charges et avantages)."
+    }
+   },
+   {
+    "theme": "Sûretés/gages et engagements conditionnels",
+    "co": {
+     "v": "oui",
+     "note": "Indication des actifs grevés de gages/cédés en garantie, des sûretés constituées en faveur de tiers et des engagements conditionnels (art. 959c CO)."
+    },
+    "rpc": {
+     "v": "oui",
+     "note": "Information sur les actifs mis en gage et les engagements conditionnels et autres engagements hors bilan."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "Information sur les actifs donnés en garantie et sur les passifs éventuels (IFRS 7 pour les sûretés financières, IAS 37 pour les engagements conditionnels)."
+    }
+   },
+   {
+    "theme": "Gestion du capital",
+    "co": {
+     "v": "non",
+     "note": "Pas de note dédiée à la gestion du capital exigée par le CO."
+    },
+    "rpc": {
+     "v": "non",
+     "note": "Pas d'exigence RPC d'une note spécifique sur les objectifs de gestion du capital."
+    },
+    "ifrs": {
+     "v": "oui",
+     "note": "Informations sur les objectifs, politiques et procédures de gestion du capital, y compris exigences externes éventuelles (IAS 1)."
+    }
+   }
+  ]
+ }
+}

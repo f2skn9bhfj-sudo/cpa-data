@@ -1,0 +1,94 @@
+{
+ "_label": "Amortissements",
+ "_icon": "📉",
+ "_description": "Amortissement linéaire et dégressif expliqués pas à pas, avec les taux fiscaux suisses (AFC), les écritures direct/indirect, et un cas interactif qui déroule le calcul année par année — surtout le dégressif.",
+ "source": "ComptaLearn — Tome III, chapitre « Amortissement et régularisation des comptes » (CO art. 960/960a, Notice AFC A 1995).",
+ "intro": "Amortir, c'est constater comptablement la **perte de valeur d'une immobilisation** due à l'usure, à l'âge ou à l'obsolescence (CO art. 960a al. 3). Deux méthodes coexistent en Suisse : la **linéaire** (un montant constant chaque année) et la **dégressive** (un taux constant appliqué à la valeur résiduelle, donc des montants qui diminuent). Choisis un onglet, et surtout teste le **calculateur** pour voir le mécanisme se dérouler année par année.",
+ "taux_afc": {
+  "intro": "Le droit commercial ne plafonne pas l'amortissement, mais le **fisc** le limite via les taux maximaux de la **Notice AFC A 1995**. Règle d'or : ces taux s'appliquent **sur la valeur comptable** (méthode dégressive). Ils sont **réduits de moitié** s'ils sont calculés sur le coût d'acquisition (méthode linéaire).",
+  "meubles": [
+   { "l": "Machines et appareils de production", "vc": "30%", "ca": "15%" },
+   { "l": "Mobilier commercial, installations d'ateliers et d'entrepôts", "vc": "25%", "ca": "12,5%" },
+   { "l": "Machines de bureau", "vc": "40%", "ca": "20%" },
+   { "l": "Infrastructures informatiques, systèmes de communication", "vc": "40%", "ca": "20%" },
+   { "l": "Véhicules", "vc": "40%", "ca": "20%" },
+   { "l": "Instruments, outillages, palettes", "vc": "45%", "ca": "22,5%" },
+   { "l": "Entrepôts à hauts rayonnages", "vc": "15%", "ca": "7,5%" },
+   { "l": "Équipements et installations fixes", "vc": "20%", "ca": "10%" }
+  ],
+  "immeubles": [
+   { "l": "Bâtiments d'exploitation / administratifs", "vc": "4%", "note": "3% si terrain + bâtiment ensemble" },
+   { "l": "Usines, ateliers, entrepôts, bâtiments d'exposition et de vente", "vc": "8%", "note": "7% si terrain + bâtiment ensemble" },
+   { "l": "Immeubles d'habitation (logements du personnel)", "vc": "2%", "note": "1,5% si terrain + bâtiment ensemble" }
+  ],
+  "incorporelles": [
+   { "l": "Brevets, marques, licences, logiciels, goodwill", "vc": "40%", "ca": "20%" }
+  ],
+  "note": "Les terrains ne sont en principe pas amortissables (ils ne se déprécient pas), sauf perte de valeur durable (CO art. 960a)."
+ },
+ "lecons": [
+  {
+   "titre": "Qu'est-ce qu'un amortissement ?",
+   "contenu": "En comptabilité, amortir une immobilisation, c'est **réduire progressivement sa valeur au bilan** pour refléter sa dépréciation due à l'usure, à l'âge, au progrès technique ou à l'obsolescence. Tout actif immobilisé dont la durée d'utilisation est limitée doit être amorti en proportion de sa durée de vie prévisible.\n\nLe Code des obligations encadre la chose : l'art. 960a al. 1 fixe l'évaluation initiale au coût d'acquisition ; l'al. 3 impose de comptabiliser les pertes de valeur **dues à l'utilisation et au temps par des amortissements** (les autres pertes de valeur passant par des **corrections de valeur**) ; et l'art. 960 al. 3 autorise même des amortissements supplémentaires. L'amortissement n'est pas une option de confort : ne pas amortir fausse l'image fidèle de l'entreprise.\n\nCôté comptes, la charge d'amortissement est débitée au groupe **68 (compte 6800 Amortissements**, parfois détaillé 6820 corporel meuble, 6830 immeuble, 6840 incorporel). En face, soit on diminue directement le compte d'immobilisation, soit on alimente un compte correctif d'amortissement cumulé (voir la leçon direct/indirect).",
+   "cle": "Amortissement = perte de valeur due à l'usure et au temps (planifiée). À distinguer de la correction de valeur, qui couvre les autres pertes de valeur (créances douteuses, stock, titres).",
+   "ref": "CO art. 960 al. 3 et 960a al. 1 & 3",
+   "piege": "Confondre amortissement (usure, temps, planifié) et correction de valeur (autres facteurs). Une dépréciation de stock ou un ducroire n'est PAS un amortissement."
+  },
+  {
+   "titre": "Amortissement minimal et taux maximaux (le fisc)",
+   "contenu": "Deux bornes encadrent l'amortissement. **En bas**, l'amortissement minimal : à chaque clôture, le cumul des amortissements pratiqués ne peut pas être inférieur à ce qu'aurait donné la méthode **linéaire** sur la durée normale. Autrement dit, on doit amortir au moins linéairement (ne pas amortir assez est même un indice de comptes ne donnant pas une image fidèle).\n\n**En haut**, l'amortissement maximal : le droit commercial ne le limite pas, mais le **fisc** oui. L'Administration fédérale des contributions publie les taux maximaux admis (Notice A 1995). Point capital pour comprendre le dégressif : **ces taux valent sur la valeur comptable** (méthode dégressive) et sont **réduits de moitié** s'ils sont appliqués au coût d'acquisition (méthode linéaire). C'est pourquoi un véhicule s'amortit à 40% en dégressif mais 20% en linéaire.\n\nLe taux linéaire de base se calcule simplement : **100 / durée d'utilisation**. Une durée de 4 ans donne 25%, une durée de 5 ans donne 20%.",
+   "cle": "Minimal = au moins le linéaire. Maximal = les taux AFC, qui s'entendent sur la valeur comptable (dégressif) et valent moitié sur le coût d'acquisition (linéaire). Taux linéaire = 100 / durée.",
+   "ref": "LIFD art. 27, 28, 62 ; Notice AFC A 1995",
+   "exemple": "Une informatique acquise 12'000.– : taux dégressif max 40% (sur valeur comptable), soit 20% en linéaire (sur coût d'acquisition). Un bâtiment d'exploitation : 4% (ou 3% si terrain + bâtiment sont dans un seul poste).",
+   "astuce": "Mémo : « taux dégressif = 2 × taux linéaire ». Si on te donne 30% sur machine en dégressif, c'est 15% en linéaire."
+  },
+  {
+   "titre": "L'amortissement linéaire",
+   "contenu": "C'est le plus simple : on répartit la valeur en **quotes-parts égales** sur la durée d'utilisation. L'annuité est constante :\n\n**Annuité = coût d'acquisition / nombre d'années** (ou, ce qui revient au même, coût d'acquisition × taux, avec taux = 100 / durée).\n\nSon avantage : la charge est stable et reflète assez fidèlement la consommation régulière du bien dans le temps. La valeur comptable décroît en ligne droite jusqu'à zéro (en pratique, on laisse souvent **1.– pour mémoire** tant que le bien est utilisé).\n\nAttention au **prorata temporis** : la première et la dernière annuité se calculent au prorata du temps d'utilisation, en jours (année commerciale de 360 jours, soit 12 mois de 30 jours).",
+   "cle": "Linéaire = montant constant chaque année = valeur / durée. La valeur comptable descend en ligne droite jusqu'à 0 (ou 1.– pour mémoire).",
+   "ref": "Méthode linéaire — CO art. 960a",
+   "exemple": "Machine 30'000.–, durée 5 ans, mise en service le 15 juin. Taux = 100/5 = 20%, annuité = 30'000 × 20% = 6'000.–. Première année au prorata : 6'000 × 195/360 = 3'250.– (du 15 juin au 31 décembre). La dernière annuité absorbera le solde restant.",
+   "piege": "Oublier le prorata temporis la première année (et la dernière). Sur une acquisition en cours d'exercice, on ne passe pas l'annuité entière."
+  },
+  {
+   "titre": "L'amortissement dégressif (le mécanisme à comprendre)",
+   "contenu": "Le dégressif applique un **taux constant**, non pas au coût d'acquisition, mais à la **valeur comptable résiduelle** (la valeur nette qui reste au bilan). Comme cette base diminue chaque année, l'amortissement diminue lui aussi : d'où le nom « dégressif ».\n\nLa base de calcul est donc :\n- **Année 1** : la valeur d'acquisition\n- **Années suivantes** : la valeur nette comptable (acquisition − amortissements déjà passés)\n\nÀ chaque exercice : **amortissement = valeur comptable × taux**, puis nouvelle valeur comptable = ancienne − amortissement. C'est exactement ce que déroule le calculateur de ce module.\n\nDeux conséquences importantes. D'abord, le dégressif **ne s'annule jamais** mathématiquement : la valeur comptable s'approche de zéro sans l'atteindre. Ensuite, il **charge davantage les premières années**, ce qui procure un avantage fiscal (le fisc autorise un taux double du linéaire). En contrepartie, il viole le principe de continuité : la dérogation doit figurer à l'annexe.\n\n**La règle du quotient (fin de vie)** : lorsque l'annuité dégressive devient inférieure à « valeur résiduelle / nombre d'années restantes », on a le droit de basculer sur ce quotient (un mini-linéaire) pour terminer l'amortissement et atteindre zéro.",
+   "cle": "Dégressif = taux constant × valeur comptable RÉSIDUELLE → annuités décroissantes qui ne touchent jamais zéro. La base de l'année 1 est la valeur d'acquisition, ensuite c'est la valeur nette comptable.",
+   "ref": "Méthode dégressive — Notice AFC A 1995",
+   "exemple": "Machine 100'000.–, taux 40%. Année 1 : 100'000 × 40% = 40'000 → VC 60'000. Année 2 : 60'000 × 40% = 24'000 → VC 36'000. Année 3 : 36'000 × 40% = 14'400 → VC 21'600. La base diminue, donc l'amortissement aussi.",
+   "piege": "L'erreur reine : appliquer le taux dégressif sur le coût d'acquisition d'origine au lieu de la valeur comptable résiduelle. Le dégressif se recalcule chaque année sur la valeur NETTE.",
+   "astuce": "Sur la fin de vie, si l'annuité dégressive passe sous « valeur résiduelle / années restantes », bascule sur ce quotient pour finir à 0 (ou 1.– pour mémoire)."
+  },
+  {
+   "titre": "Comptabilisation : direct ou indirect",
+   "contenu": "Une fois l'annuité calculée, il faut la passer en écriture. La charge est toujours débitée au compte **6800 Amortissements**. Ce qui change, c'est la contrepartie au crédit.\n\n**Méthode directe** (la plus courante en PME) : on crédite **directement le compte d'immobilisation** (par ex. 1500 Machines), qui diminue d'autant. À la clôture, le solde du compte d'immobilisation correspond donc à la **valeur comptable nette**. Écriture : 6800 à 1500.\n\n**Méthode indirecte** : le compte d'immobilisation **conserve le coût d'acquisition** ; on crédite un **compte correctif d'amortissement cumulé** dont le numéro se termine toujours par 9 (1509 pour les machines, 1519 pour le mobilier, 1529, 1539, 1609, 1709). Écriture : 6800 à 1509. La valeur comptable nette se lit alors par différence : compte d'immobilisation − compte d'amortissement cumulé.",
+   "cle": "Direct : 6800 à 1500 (le compte d'immo porte la valeur nette). Indirect : 6800 à 1509 (le compte d'immo garde le coût d'acquisition ; le compte cumulé, en ...9, porte le total amorti).",
+   "ref": "Comptabilisation — Plan comptable général suisse (PME)",
+   "exemple": "Amortissement de 40'000.– d'une machine. Direct : Débit 6800 / Crédit 1500 = 40'000 (1500 passe de 100'000 à 60'000). Indirect : Débit 6800 / Crédit 1509 = 40'000 (1500 reste à 100'000 ; 1509 affiche 40'000 ; valeur nette = 60'000).",
+   "piege": "En indirect, créditer le compte d'immobilisation au lieu du compte cumulé (...9). En indirect, le compte d'immo ne bouge jamais : il reste au coût d'acquisition."
+  },
+  {
+   "titre": "Vendre une immobilisation amortie",
+   "contenu": "À la revente, on compare le **prix de vente** à la **valeur comptable nette** du bien. La différence est un bénéfice (compte **8514 Bénéfice résultant de la cession d'actifs immobilisés**) ou une perte (compte **8504 Perte…**).\n\nEn amortissement **direct**, le compte de l'objet contient déjà sa valeur comptable : on solde directement. En amortissement **indirect**, le compte d'immobilisation contient le coût d'acquisition ; il faut d'abord **virer le compte d'amortissement cumulé** au compte d'actif pour faire ressortir la valeur nette, puis enregistrer la vente.",
+   "cle": "Résultat de cession = prix de vente − valeur comptable nette. Bénéfice → 8514, perte → 8504. En indirect, solder d'abord le compte cumulé (...9) contre le compte d'immobilisation.",
+   "ref": "CO art. 960a ; comptes 8504 / 8514",
+   "exemple": "Immeuble vendu 600'000.–, valeur comptable 480'000.– (amorti en direct) : bénéfice de cession = 600'000 − 480'000 = 120'000.– (au crédit du 8514)."
+  }
+ ],
+ "pieges": [
+  { "titre": "Taux dégressif sur le coût d'acquisition", "texte": "Le dégressif s'applique sur la valeur comptable RÉSIDUELLE, recalculée chaque année — jamais sur le coût d'acquisition d'origine (ce serait du linéaire)." },
+  { "titre": "Croire que le dégressif atteint zéro", "texte": "Mathématiquement, le dégressif tend vers zéro sans jamais l'atteindre. Pour finir à 0, on bascule sur la règle du quotient en fin de vie." },
+  { "titre": "Oublier le prorata temporis", "texte": "Sur une acquisition en cours d'exercice, la première (et la dernière) annuité se calcule au prorata des jours (année commerciale de 360 jours)." },
+  { "titre": "Confondre amortissement et correction de valeur", "texte": "L'amortissement couvre l'usure et le temps (planifié). Les autres pertes (créances, stock, titres) passent par des corrections de valeur." },
+  { "titre": "Indirect : toucher au compte d'immobilisation", "texte": "En méthode indirecte, le compte d'immo reste au coût d'acquisition ; c'est le compte cumulé (...9) qu'on crédite." },
+  { "titre": "Amortir un terrain", "texte": "Les terrains ne sont en principe pas amortissables (ils ne s'usent pas), sauf perte de valeur durable établie." }
+ ],
+ "points_cles": [
+  "Taux linéaire = 100 / durée d'utilisation ; annuité linéaire constante = valeur / durée.",
+  "Dégressif = taux constant appliqué à la valeur comptable résiduelle → annuités décroissantes.",
+  "Taux fiscal AFC : sur valeur comptable (dégressif) = 2 × taux sur coût d'acquisition (linéaire).",
+  "Amortissement minimal = au moins le linéaire ; maximal = les taux AFC (Notice A 1995).",
+  "Écritures : direct = 6800 à 1500 ; indirect = 6800 à 1509 (compte cumulé en ...9).",
+  "Vente : résultat = prix − valeur nette ; bénéfice 8514, perte 8504."
+ ]
+}

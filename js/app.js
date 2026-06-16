@@ -89,6 +89,7 @@ const TAB_LABELS = {
     hec: '🎓 HEC',
     oral: '🎤 Oral',
     conso: '📊 Conso',
+    social: '🤝 Social',
     flashcards: 'Flashcards' // legacy redirect
 };
 
@@ -137,7 +138,7 @@ function navigate(tab, subTab) {
     main.setAttribute('aria-busy', 'true');
     main.innerHTML = '<div class="text-center" style="padding:60px"><div class="page-title">Chargement...</div></div>';
     // Full-width pages remove the 1400px cap
-    const fullWidthTabs = ['modules', 'fs', 'conso', 'oral', 'audit', 'references', 'english', 'podcasts', 'hec'];
+    const fullWidthTabs = ['modules', 'fs', 'conso', 'oral', 'audit', 'references', 'english', 'podcasts', 'hec', 'social'];
     const widthClass = fullWidthTabs.includes(tab) ? ' full-width' : '';
     main.className = 'main-content fade-in' + widthClass;
     void main.offsetWidth;
@@ -175,6 +176,10 @@ function navigate(tab, subTab) {
         case 'hec':
             if (typeof _renderHEC === 'function') _renderHEC(main);
             else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module HEC en cours de chargement...</p>';
+            break;
+        case 'social':
+            if (typeof _renderSocial === 'function') _renderSocial(main);
+            else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module Social en cours de chargement...</p>';
             break;
         case 'oral':
             if (typeof renderOral === 'function') renderOral(main);

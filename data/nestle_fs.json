@@ -1,0 +1,421 @@
+{
+  "meta": {
+    "company": "Nestlé S.A.",
+    "title": "Comptes consolidés du Groupe Nestlé — 2025",
+    "unit": "millions de CHF",
+    "referentiel": "IFRS — Normes internationales d'information financière (telles qu'adoptées par le Groupe)",
+    "auditeur": "Ernst & Young SA (organe de révision)",
+    "intro": "Nestlé est un groupe coté à la SIX Swiss Exchange. Comme toute société ouverte au public, elle est soumise au contrôle ordinaire (CO 727 al. 1 ch. 1) et publie des comptes consolidés en IFRS. On lit ici les **vrais** états financiers 2025 : chaque poste est expliqué — ce qu'il représente, les opérations qui le génèrent, la norme applicable et le regard de l'auditeur.",
+    "source": "Rapports financiers 2025 — Comptes consolidés du groupe Nestlé (états primaires p. 80-85)."
+  },
+  "statements": [
+    {
+      "id": "resultat",
+      "title": "Compte de résultat consolidé",
+      "subtitle": "de l'exercice 2025",
+      "icon": "📈",
+      "color": "#7c3aed",
+      "status": "ready",
+      "cols": ["2025", "2024"],
+      "intro": "Le compte de résultat raconte la **performance de l'année** : on part du chiffre d'affaires, on retranche les coûts par paliers, et on arrive au bénéfice. Nestlé le présente « par fonction » (coût des produits vendus, distribution, commercialisation…), et fait apparaître plusieurs **sous-totaux de gestion** : résultat opérationnel courant, résultat opérationnel, bénéfice avant impôts, puis bénéfice de l'exercice.",
+      "lines": [
+        {
+          "id": "ca",
+          "label": "Chiffre d'affaires",
+          "note": "3",
+          "v": [89490, 91354],
+          "kind": "line",
+          "definition": "Le produit des ventes de biens aux clients (distributeurs, détaillants, e-commerce) sur l'année, net des remises, ristournes et retours. C'est le « haut » du compte de résultat : l'argent que les marques (Nescafé, Purina, Nespresso, eaux, nutrition…) ont fait entrer.",
+          "operations": [
+            "Vente de produits finis à un distributeur : on livre la marchandise, le client s'engage à payer → naissance d'une créance et d'un produit.",
+            "Remises de fin d'année, rabais sur volume, coupons : ils viennent **diminuer** le chiffre d'affaires (présentés en déduction, pas en charge).",
+            "Retours de marchandises invendues : annulation partielle de la vente."
+          ],
+          "ecriture": "Débit Clients 100 / Crédit Chiffre d'affaires 100 — comptabilisé quand le contrôle du bien passe au client (en général à la livraison).",
+          "norme": "IFRS 15 — Produits des contrats conclus avec des clients (reconnaissance au transfert du contrôle).",
+          "suisse": "En droit suisse : CO 959b (produits nets de l'activité). En Swiss GAAP RPC, logique proche, mais Nestlé consolide en IFRS.",
+          "audit": {
+            "assertions": ["Réalité (la vente a eu lieu)", "Séparation des exercices / cut-off", "Exhaustivité", "Exactitude"],
+            "risque": "Le chiffre d'affaires est LE poste à risque de fraude présumé (ISA 240) : tentation de comptabiliser trop tôt (ventes de fin d'année), ou des ventes fictives pour gonfler la croissance.",
+            "procedure": "Tester le cut-off autour du 31.12 (bons de livraison vs facturation), confirmer des soldes clients, recalculer les remises, analyser la croissance organique par Zone."
+          },
+          "lecture": "89'490 contre 91'354 : −2,0 %. La baisse vient surtout des **effets de change** (CHF fort) et de cessions ; la croissance « organique » (volumes + prix, à périmètre et change constants) est suivie séparément en Note 3."
+        },
+        {
+          "id": "autres_produits",
+          "label": "Autres produits",
+          "v": [395, 366],
+          "kind": "line",
+          "definition": "Produits accessoires liés à l'activité mais qui ne sont pas la vente de produits alimentaires elle-même : redevances de licences de marques, prestations, revenus de R&D refacturés, etc.",
+          "operations": [
+            "Encaissement de redevances (royalties) quand un tiers exploite une marque ou un brevet Nestlé.",
+            "Refacturation de services techniques ou de R&D à des partenaires/coentreprises."
+          ],
+          "norme": "IFRS 15 (prestations) et IFRS 16/autres selon la nature ; redevances reconnues à mesure de l'usage.",
+          "audit": {
+            "assertions": ["Réalité", "Classification", "Exhaustivité"],
+            "risque": "Risque de classement : ne pas gonfler le chiffre d'affaires « cœur » avec des produits accessoires.",
+            "procedure": "Vérifier la nature des contrats de licence et le rattachement à la bonne ligne."
+          },
+          "lecture": "395 (+8 %), montant marginal au regard du CA (0,4 %)."
+        },
+        {
+          "id": "cpv",
+          "label": "Coût des produits vendus",
+          "v": [-48694, -48670],
+          "kind": "line",
+          "definition": "Le coût de fabrication des produits effectivement vendus : matières premières (café, lait, cacao, plastiques d'emballage…), main-d'œuvre d'usine, énergie, amortissement des machines. C'est de loin la plus grosse charge.",
+          "operations": [
+            "Achat de matières premières → entrée en stock (pas encore une charge).",
+            "Transformation en usine : on incorpore main-d'œuvre, énergie et amortissements au coût du stock de produits finis.",
+            "Quand le produit est **vendu**, son coût quitte le stock et devient une charge (principe de rattachement charges/produits).",
+            "Dépréciation de stocks périmés ou obsolètes (péremption alimentaire) : charge supplémentaire."
+          ],
+          "ecriture": "À la vente : Débit Coût des produits vendus 60 / Crédit Stocks 60 — en miroir de la vente.",
+          "norme": "IAS 2 — Stocks (coût ou valeur nette de réalisation, le plus bas). Nestlé valorise en FIFO/coût moyen.",
+          "suisse": "CO 960c : évaluation au plus bas du coût d'acquisition/fabrication et de la valeur de marché.",
+          "audit": {
+            "assertions": ["Exhaustivité des charges", "Rattachement (cut-off des achats et des stocks)", "Évaluation des stocks"],
+            "risque": "Sous-évaluer le coût (donc gonfler la marge) en gardant en stock des produits qui devraient être dépréciés.",
+            "procedure": "Assister à l'inventaire physique, tester la valorisation, recalculer la marge brute et l'analyser par segment."
+          },
+          "lecture": "48'694 ≈ 54 % du CA. Marge brute implicite ≈ 46 %. Quasi stable en valeur malgré la baisse du CA → pression sur les coûts des matières (cacao, café)."
+        },
+        {
+          "id": "distribution",
+          "label": "Frais de distribution",
+          "v": [-7306, -7567],
+          "kind": "line",
+          "definition": "Le coût pour acheminer les produits jusqu'aux clients : transport, logistique, entrepôts, manutention.",
+          "operations": [
+            "Facture du transporteur pour livrer les palettes aux distributeurs.",
+            "Loyers et coûts d'exploitation des entrepôts régionaux.",
+            "Coûts de la chaîne du froid pour les produits réfrigérés/surgelés."
+          ],
+          "norme": "IAS 1 — présentation des charges par fonction. Loyers d'entrepôts : IFRS 16 (droit d'utilisation + amortissement).",
+          "audit": {
+            "assertions": ["Réalité", "Rattachement", "Classification"],
+            "risque": "Frontière floue avec le coût des produits vendus ou la commercialisation.",
+            "procedure": "Revue analytique du ratio frais de distribution / CA, test de factures de transport."
+          },
+          "lecture": "7'306 (8,2 % du CA), en légère baisse — optimisation logistique et volumes plus faibles."
+        },
+        {
+          "id": "commercialisation",
+          "label": "Frais de commercialisation et d'administration",
+          "v": [-17883, -18112],
+          "kind": "line",
+          "definition": "Tout l'effort commercial (publicité, marketing, force de vente, promotions) plus l'administration (sièges, finance, RH, IT). Pour un géant des marques, le marketing est stratégique : il entretient la valeur des marques.",
+          "operations": [
+            "Campagnes publicitaires (TV, digital, sponsoring) : charge de l'exercice.",
+            "Salaires des équipes marketing, vente et fonctions support.",
+            "Honoraires (conseil, audit, IT), coûts des systèmes d'information."
+          ],
+          "norme": "IAS 1 (par fonction). À noter : la publicité est **toujours une charge** — on ne peut pas l'inscrire à l'actif comme un « investissement marque » (IAS 38 interdit d'activer les marques créées en interne).",
+          "audit": {
+            "assertions": ["Réalité", "Rattachement", "Exhaustivité"],
+            "risque": "Charges de marketing engagées mais non comptabilisées à la clôture (cut-off des charges à payer).",
+            "procedure": "Recherche de passifs non enregistrés, revue des contrats publicitaires pluriannuels."
+          },
+          "lecture": "17'883 (20 % du CA) : poste majeur qui montre le poids du soutien aux marques."
+        },
+        {
+          "id": "rd",
+          "label": "Frais de recherche et développement",
+          "v": [-1613, -1667],
+          "kind": "line",
+          "definition": "L'effort d'innovation : nouveaux produits, reformulations (moins de sucre/sel), nutrition, science des matériaux d'emballage. Nestlé exploite un vaste réseau de centres de R&D.",
+          "operations": [
+            "Salaires des chercheurs et coûts des laboratoires/centres R&D.",
+            "Essais cliniques en nutrition, tests produits, prototypage.",
+            "La **recherche** est passée en charge immédiatement ; le **développement** n'est activé que si des critères stricts sont remplis (rare ici)."
+          ],
+          "norme": "IAS 38 — la recherche est une charge ; le développement est capitalisé seulement si faisabilité technique, intention et avantages futurs probables sont démontrés.",
+          "audit": {
+            "assertions": ["Classification (charge vs actif)", "Réalité"],
+            "risque": "Activer indûment des frais de R&D pour réduire la charge de l'année.",
+            "procedure": "Tester les frais capitalisés contre les critères d'IAS 38, vérifier qu'ils restent rares."
+          },
+          "lecture": "1'613 (1,8 % du CA) : passé presque intégralement en charges → conservateur, pas de « bénéfice gonflé » par activation."
+        },
+        {
+          "id": "autres_rev_courants",
+          "label": "Autres revenus opérationnels courants",
+          "note": "4",
+          "v": [135, 124],
+          "kind": "line",
+          "definition": "Produits opérationnels récurrents qui ne rentrent dans aucune ligne ci-dessus : petits gains de cession d'actifs courants, indemnités, reprises de provisions d'exploitation, etc.",
+          "operations": [
+            "Reprise d'une provision d'exploitation devenue sans objet (le risque ne se réalisera pas).",
+            "Indemnités reçues, subventions d'exploitation, gains divers récurrents."
+          ],
+          "norme": "IAS 1 / IAS 37 (reprises de provisions). « Courant » = récurrent, par opposition aux éléments non courants plus bas.",
+          "audit": {
+            "assertions": ["Réalité", "Classification courant/non courant"],
+            "risque": "Reclasser des éléments non récurrents en « courant » pour embellir le résultat opérationnel courant.",
+            "procedure": "Analyser le détail de la Note 4, juger du caractère récurrent."
+          },
+          "lecture": "135 : montant faible, peu significatif."
+        },
+        {
+          "id": "autres_charges_courantes",
+          "label": "Autres charges opérationnelles courantes",
+          "note": "4",
+          "v": [-1849, -1195],
+          "kind": "line",
+          "definition": "Charges opérationnelles récurrentes hors fonctions principales : litiges courants, dotations à des provisions d'exploitation, pertes diverses récurrentes.",
+          "operations": [
+            "Dotation à une provision pour un litige commercial probable.",
+            "Pertes sur créances clients (clients insolvables) au-delà du normal.",
+            "Coûts de restructuration récurrents de moindre ampleur."
+          ],
+          "norme": "IAS 37 — Provisions (obligation actuelle, sortie de ressources probable, estimation fiable).",
+          "audit": {
+            "assertions": ["Exhaustivité", "Évaluation des provisions", "Classification"],
+            "risque": "Sous-doter les provisions pour ménager le résultat, ou au contraire « lisser » via des provisions excessives (cookie jar).",
+            "procedure": "Revue des dossiers juridiques, confirmation des avocats, recalcul des estimations."
+          },
+          "lecture": "1'849 contre 1'195 : +55 %. Hausse notable qui pèse sur le résultat courant — à creuser en Note 4."
+        },
+        {
+          "id": "roc",
+          "label": "Résultat opérationnel courant",
+          "note": "3",
+          "v": [12675, 14633],
+          "kind": "subtotal",
+          "definition": "Le **profit de l'activité normale et récurrente**, avant éléments exceptionnels, financement et impôts. C'est l'indicateur de performance préféré du management (« Trading Operating Profit ») : il mesure si le cœur de métier gagne de l'argent.",
+          "operations": [
+            "Ce n'est pas une opération mais une **somme** : CA + autres produits − tous les coûts opérationnels courants.",
+            "Sert de base au calcul de la marge opérationnelle courante (ROC / CA)."
+          ],
+          "norme": "Sous-total « non-GAAP » présenté volontairement (IAS 1 autorise des sous-totaux pertinents, s'ils sont définis et constants).",
+          "audit": {
+            "assertions": ["Exactitude arithmétique", "Cohérence de présentation d'un exercice à l'autre"],
+            "risque": "Déplacer des charges récurrentes vers les lignes « non courantes » pour gonfler ce sous-total très regardé par les analystes.",
+            "procedure": "Vérifier que la définition du « courant » est stable et que le classement courant/non courant est justifié."
+          },
+          "lecture": "12'675 contre 14'633 : −13 %. Marge ROC à **14,2 %** (contre 16,0 % en 2024) → la rentabilité du cœur de métier recule, sous l'effet des coûts et des autres charges courantes."
+        },
+        {
+          "id": "autres_rev_op",
+          "label": "Autres revenus opérationnels",
+          "note": "4",
+          "v": [253, 474],
+          "kind": "line",
+          "definition": "Produits opérationnels **non récurrents** (« one-off ») : plus-values de cession d'activités, reprises de dépréciations significatives, gains exceptionnels.",
+          "operations": [
+            "Vente d'une marque ou d'une activité dégageant une plus-value (prix de cession > valeur comptable).",
+            "Reprise d'une dépréciation d'actif quand sa valeur recouvrable remonte."
+          ],
+          "norme": "IFRS 5 (activités cédées), IAS 36 (reprises de pertes de valeur, sauf goodwill).",
+          "audit": {
+            "assertions": ["Réalité", "Évaluation du gain", "Classification (non courant)"],
+            "risque": "Gonfler un gain de cession ou mal dater l'opération.",
+            "procedure": "Examiner les contrats de cession, recalculer la plus-value, vérifier le transfert de contrôle."
+          },
+          "lecture": "253 contre 474 : moitié moins de gains exceptionnels qu'en 2024."
+        },
+        {
+          "id": "autres_charges_op",
+          "label": "Autres charges opérationnelles",
+          "note": "4",
+          "v": [-651, -383],
+          "kind": "line",
+          "definition": "Charges opérationnelles **non récurrentes** : pertes de valeur (impairment) de goodwill/immobilisations, coûts de restructuration majeurs, pertes sur cessions d'activités.",
+          "operations": [
+            "Dépréciation du goodwill d'une acquisition qui ne tient pas ses promesses (test d'impairment annuel).",
+            "Plan de restructuration : indemnités de licenciement, fermeture d'usine.",
+            "Moins-value sur la vente d'une activité (prix < valeur comptable)."
+          ],
+          "norme": "IAS 36 — Dépréciation d'actifs ; IAS 37 — provisions de restructuration ; IFRS 5.",
+          "audit": {
+            "assertions": ["Évaluation (montant de la dépréciation)", "Exhaustivité", "Réalité de l'obligation de restructurer"],
+            "risque": "C'est un **point d'audit clé** chez Nestlé (cf. rapport EY) : les tests de dépréciation du goodwill reposent sur des hypothèses (croissance, taux d'actualisation) très sensibles.",
+            "procedure": "Challenger les hypothèses des tests d'impairment, vérifier l'annonce et l'irréversibilité des restructurations."
+          },
+          "lecture": "651 contre 383 : +70 %, davantage de dépréciations/restructurations qu'en 2024."
+        },
+        {
+          "id": "ro",
+          "label": "Résultat opérationnel",
+          "v": [12277, 14724],
+          "kind": "subtotal",
+          "definition": "Le résultat de **toute** l'exploitation, récurrente ET exceptionnelle, avant le financement et les impôts. C'est aussi le point de départ du tableau des flux de trésorerie (méthode indirecte).",
+          "operations": [
+            "Somme : Résultat opérationnel courant + autres revenus op. − autres charges op."
+          ],
+          "norme": "IAS 1. Réutilisé tel quel comme première ligne du cash-flow (voir l'état des flux de trésorerie).",
+          "audit": {
+            "assertions": ["Exactitude", "Cohérence avec le tableau des flux"],
+            "risque": "Incohérence entre le résultat opérationnel du compte de résultat et celui repris dans le cash-flow.",
+            "procedure": "Rapprocher la ligne avec le point de départ de l'état des flux de trésorerie."
+          },
+          "lecture": "12'277 contre 14'724 : −17 %, recul plus marqué que le ROC à cause des charges non récurrentes."
+        },
+        {
+          "id": "prod_fin",
+          "label": "Produits financiers",
+          "note": "5",
+          "v": [300, 358],
+          "kind": "line",
+          "definition": "Les revenus de la trésorerie et des placements : intérêts encaissés sur les liquidités, dépôts, obligations détenues, certains gains de change ou sur dérivés.",
+          "operations": [
+            "Intérêts perçus sur les placements à court terme et la trésorerie.",
+            "Gains sur instruments financiers évalués à la juste valeur."
+          ],
+          "norme": "IFRS 9 — Instruments financiers (intérêts au taux effectif, juste valeur).",
+          "audit": {
+            "assertions": ["Réalité", "Exactitude", "Exhaustivité"],
+            "risque": "Faible ; risque d'évaluation sur les dérivés à la juste valeur.",
+            "procedure": "Recalcul des intérêts, confirmation bancaire, test des valorisations."
+          },
+          "lecture": "300 : modeste, cohérent avec une trésorerie nette plutôt débitrice (Nestlé est endettée nette)."
+        },
+        {
+          "id": "charges_fin",
+          "label": "Charges financières",
+          "note": "5",
+          "v": [-1826, -1843],
+          "kind": "line",
+          "definition": "Le coût de l'endettement : intérêts sur les emprunts obligataires et bancaires, intérêts sur les obligations locatives (IFRS 16), désactualisation de provisions et engagements de retraite.",
+          "operations": [
+            "Intérêts payés/courus sur les emprunts obligataires (Nestlé émet régulièrement des obligations).",
+            "Charge d'intérêt sur les dettes de location (IFRS 16).",
+            "Désactualisation : on « rapproche » dans le temps une provision long terme → charge d'intérêt."
+          ],
+          "ecriture": "Charge d'intérêt courue : Débit Charges financières / Crédit Intérêts à payer.",
+          "norme": "IFRS 9 (dettes au coût amorti) ; IFRS 16 (intérêts locatifs) ; IAS 37 (désactualisation).",
+          "audit": {
+            "assertions": ["Exhaustivité (intérêts courus non payés)", "Exactitude", "Rattachement"],
+            "risque": "Oublier des intérêts courus à la clôture (passif non enregistré).",
+            "procedure": "Recalcul des intérêts à partir des échéanciers d'emprunts, rapprochement avec la Note 12."
+          },
+          "lecture": "1'826 : quasi stable. Net financier (300 − 1'826) = **−1'526**, le coût net de la structure financière."
+        },
+        {
+          "id": "bai",
+          "label": "Bénéfice avant impôts, entreprises associées et coentreprises",
+          "v": [10751, 13239],
+          "kind": "subtotal",
+          "definition": "Le résultat après financement mais avant impôts et avant la quote-part des sociétés mises en équivalence. Base de calcul du taux d'impôt effectif.",
+          "operations": [
+            "Somme : Résultat opérationnel + produits financiers − charges financières."
+          ],
+          "norme": "IAS 1.",
+          "audit": {
+            "assertions": ["Exactitude"],
+            "risque": "Faible (sous-total arithmétique).",
+            "procedure": "Recalcul ; sert de dénominateur au rapprochement de la charge d'impôt (Note 13)."
+          },
+          "lecture": "10'751 contre 13'239 : −19 %."
+        },
+        {
+          "id": "impots",
+          "label": "Impôts",
+          "note": "13",
+          "v": [-2640, -3314],
+          "kind": "line",
+          "definition": "La charge d'impôt sur le bénéfice : l'impôt **exigible** (dû aux administrations fiscales des pays) plus la variation des impôts **différés** (décalages entre comptabilité et fiscalité).",
+          "operations": [
+            "Impôt exigible : calculé sur le résultat fiscal de chaque filiale, dans chaque pays.",
+            "Impôts différés : un amortissement déductible plus vite en fiscalité qu'en comptabilité crée un passif d'impôt différé qui se dénoue plus tard.",
+            "Effet des taux différents par pays et de l'impôt minimum mondial (Pilier 2, 15 %)."
+          ],
+          "ecriture": "Débit Charge d'impôt / Crédit Dettes fiscales (exigible) et/ou Impôts différés passifs.",
+          "norme": "IAS 12 — Impôts sur le résultat (exigible + différé).",
+          "suisse": "Comptes statutaires suisses : impôts selon le CO ; ici consolidation multi-pays sous IAS 12.",
+          "audit": {
+            "assertions": ["Exactitude", "Exhaustivité", "Évaluation des positions fiscales incertaines"],
+            "risque": "Positions fiscales incertaines (prix de transfert entre filiales), impôts différés actifs non recouvrables.",
+            "procedure": "Rapprochement du taux effectif (Note 13.2), revue des contrôles fiscaux en cours, test du recouvrement des actifs d'impôt différé."
+          },
+          "lecture": "2'640 contre 3'314. Taux effectif ≈ 2'640 / 10'751 = **24,6 %** (contre 25,0 % en 2024). Voir le rapprochement en Note 13."
+        },
+        {
+          "id": "associees",
+          "label": "Revenus provenant des entreprises associées et des coentreprises",
+          "note": "14",
+          "v": [1143, 1249],
+          "kind": "line",
+          "definition": "La quote-part de Nestlé dans le résultat des sociétés qu'elle ne contrôle pas mais où elle a une influence notable (mise en équivalence). La plus emblématique : **L'Oréal** (Nestlé en détient une part importante).",
+          "operations": [
+            "Mise en équivalence : on inscrit la part de Nestlé dans le **bénéfice** de L'Oréal et des coentreprises (pas leur chiffre d'affaires).",
+            "À la réception d'un dividende de l'associée, on ne refait pas un produit : on diminue la valeur de la participation au bilan."
+          ],
+          "ecriture": "Part de résultat : Débit Participations mises en équivalence / Crédit Revenus des entreprises associées.",
+          "norme": "IAS 28 — Participations dans des entreprises associées et des coentreprises (méthode de la mise en équivalence).",
+          "audit": {
+            "assertions": ["Exactitude de la quote-part", "Évaluation de la participation"],
+            "risque": "Bonne reprise du pourcentage et des comptes de l'associée ; indices de dépréciation de la participation.",
+            "procedure": "Obtenir les comptes audités de L'Oréal, recalculer la quote-part, tester un éventuel impairment."
+          },
+          "lecture": "1'143 : contribution notable et stable, en grande partie L'Oréal. Apportée **après impôts** (la quote-part est nette d'impôt de l'associée)."
+        },
+        {
+          "id": "benefice",
+          "label": "Bénéfice de l'exercice",
+          "v": [9254, 11174],
+          "kind": "total",
+          "definition": "Le résultat net total du Groupe pour l'année, toutes activités et tous propriétaires confondus. C'est le « bottom line » consolidé, avant de le répartir entre les actionnaires de Nestlé et les minoritaires.",
+          "operations": [
+            "Somme finale : Bénéfice avant impôts − impôts + quote-part des associées.",
+            "Il sera ensuite **réparti** : une partie aux minoritaires (intérêts ne donnant pas le contrôle), le reste aux actionnaires de Nestlé."
+          ],
+          "norme": "IAS 1 — résultat de la période ; IFRS 10 impose la répartition mère / minoritaires.",
+          "audit": {
+            "assertions": ["Exactitude", "Présentation et répartition correctes"],
+            "risque": "Erreur de répartition entre la mère et les minoritaires.",
+            "procedure": "Recalcul de la répartition à partir des pourcentages de détention des filiales partiellement détenues."
+          },
+          "lecture": "9'254 contre 11'174 : **−17 %**. Une année 2025 en net repli pour Nestlé, sous l'effet conjugué des coûts, du change et d'éléments non récurrents."
+        },
+        {
+          "id": "benefice_minoritaires",
+          "label": "attribuable aux intérêts ne donnant pas le contrôle",
+          "v": [221, 290],
+          "kind": "sub",
+          "indent": 1,
+          "definition": "La part du bénéfice qui revient aux **actionnaires minoritaires** des filiales que Nestlé ne détient pas à 100 % (ex. une filiale détenue à 80 % → 20 % du résultat va aux minoritaires).",
+          "operations": [
+            "Pour chaque filiale partiellement détenue, on calcule la part du résultat revenant aux autres actionnaires."
+          ],
+          "norme": "IFRS 10 — États financiers consolidés (intérêts ne donnant pas le contrôle).",
+          "audit": {
+            "assertions": ["Exactitude", "Exhaustivité du périmètre"],
+            "risque": "Pourcentages de détention erronés.",
+            "procedure": "Rapprocher avec l'organigramme du Groupe et les % de la Note des sociétés."
+          },
+          "lecture": "221 : faible part (2 %) → Nestlé détient l'essentiel de ses filiales à 100 %."
+        },
+        {
+          "id": "benefice_net",
+          "label": "attribuable aux actionnaires de la société mère (Bénéfice net)",
+          "v": [9033, 10884],
+          "kind": "sub",
+          "indent": 1,
+          "definition": "Le **bénéfice net part du Groupe** : ce qui revient réellement aux actionnaires de Nestlé S.A. C'est le chiffre qui sert au bénéfice par action et au dividende.",
+          "operations": [
+            "Bénéfice de l'exercice − part des minoritaires.",
+            "Divisé par le nombre d'actions → bénéfice par action (BPA)."
+          ],
+          "norme": "IAS 33 — Résultat par action (de base et dilué).",
+          "audit": {
+            "assertions": ["Exactitude", "Calcul du BPA"],
+            "risque": "Erreur sur le nombre moyen d'actions (actions propres, plans d'actions).",
+            "procedure": "Recalcul du BPA, vérification du nombre moyen pondéré d'actions."
+          },
+          "lecture": "9'033 contre 10'884. BPA de base = **3,51 CHF** (contre 4,19). C'est sur cette base que se décide le dividende."
+        }
+      ],
+      "footnotes": [
+        "En % du CA — Résultat opérationnel courant : 14,2 % (2024 : 16,0 %).",
+        "En % du CA — Bénéfice net : 10,1 % (2024 : 11,9 %).",
+        "Bénéfice par action — de base : 3,51 CHF (2024 : 4,19) · dilué : 3,51 CHF (2024 : 4,19) — Note 15."
+      ]
+    },
+    { "id": "resultat_global", "title": "État du résultat global", "subtitle": "de l'exercice 2025", "icon": "🌐", "color": "#0891b2", "status": "soon", "intro": "Le bénéfice net + les gains/pertes passés directement par les capitaux propres (écarts de conversion, couvertures, réévaluations des retraites). À venir — Phase 3.", "lines": [] },
+    { "id": "bilan", "title": "Bilan consolidé", "subtitle": "au 31 décembre 2025", "icon": "⚖️", "color": "#0d9488", "status": "soon", "intro": "La photo du patrimoine : ce que le Groupe possède (actif) et comment c'est financé (passif + capitaux propres). À venir — Phase 2.", "lines": [] },
+    { "id": "flux", "title": "Tableau des flux de trésorerie", "subtitle": "de l'exercice 2025", "icon": "💧", "color": "#2563eb", "status": "soon", "intro": "D'où vient et où va le cash : exploitation, investissement, financement. À venir — Phase 3.", "lines": [] },
+    { "id": "capitaux", "title": "Mouvements des capitaux propres", "subtitle": "de l'exercice 2025", "icon": "🏛️", "color": "#9333ea", "status": "soon", "intro": "L'évolution des fonds propres : résultat, dividendes, actions propres, réduction de capital. À venir — Phase 4.", "lines": [] }
+  ]
+}
