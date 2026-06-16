@@ -3250,9 +3250,9 @@ function NestleApp({ onBack }) {
         </div>
       </div>
 
-      {/* Sélecteur d'états */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {statements.map((s) => {
+      {/* Sélecteur d'états — états primaires puis Notes */}
+      {(() => {
+        const chip = (s) => {
           const on = s.id === stId, rdy = s.status === "ready";
           return (
             <button key={s.id} onClick={() => { setStId(s.id); setOpenId(null); try { window.scrollTo(0, 0); } catch (e) {} }}
@@ -3262,8 +3262,24 @@ function NestleApp({ onBack }) {
               {!rdy && <span className={`ml-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold ${on ? "bg-white/20" : "bg-slate-100 text-slate-400"}`}>bientôt</span>}
             </button>
           );
-        })}
-      </div>
+        };
+        const primaires = statements.filter((s) => (s.group || "primaire") === "primaire");
+        const notes = statements.filter((s) => s.group === "note");
+        return (
+          <div className="mb-4 space-y-2">
+            <div>
+              <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1.5">États primaires</div>
+              <div className="flex flex-wrap gap-2">{primaires.map(chip)}</div>
+            </div>
+            {notes.length > 0 && (
+              <div>
+                <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1.5 mt-3">📓 Notes détaillées</div>
+                <div className="flex flex-wrap gap-2">{notes.map(chip)}</div>
+              </div>
+            )}
+          </div>
+        );
+      })()}
 
       {/* Intro de l'état */}
       <div className="rounded-xl border border-slate-200 bg-white p-4 mb-3">
