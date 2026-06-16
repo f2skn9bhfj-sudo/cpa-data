@@ -1485,8 +1485,9 @@ function AuditGeneric({ section, onBack }) {
 
 /* ── Accueil Audit (hub) ── */
 const AUDIT_ORDER = ["annuaire", "nas", "cadre_legal", "cycles", "procedures_assertions", "quiz", "cas_pratiques", "examens_blancs", "arbres", "comparatifs", "lexique", "outils", "modeles", "terrain", "independance", "fraude", "goingconcern", "timeline", "actualites"];
-function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlanComptable, onFraudePostes, onReferencement, onAnnexes, onAmortissements, onNestle }) {
+function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlanComptable, onFraudePostes, onReferencement, onAnnexes, onAmortissements, onNestle, onMetier }) {
   const hasNestle = typeof window !== "undefined" && window.__NESTLE__ && (window.__NESTLE__.statements || []).length;
+  const hasMetier = typeof window !== "undefined" && window.__METIER__ && (window.__METIER__.sections || []).length;
   const hasPlan = typeof window !== "undefined" && window.__PLAN_COMPTABLE__ && (window.__PLAN_COMPTABLE__.plans || []).length;
   const hasFraude = typeof window !== "undefined" && window.__FRAUDE_POSTES__ && (window.__FRAUDE_POSTES__.sections || []).length;
   const hasRef = typeof window !== "undefined" && window.__REFERENCEMENT__ && ((window.__REFERENCEMENT__.exemple || {}).feuilles || []).length;
@@ -1512,6 +1513,13 @@ function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlan
           <span className="text-4xl">📊</span>
           <span className="flex-1"><span className="block font-bold text-base text-emerald-800">Plans comptables — Suisse (PME) & France (PCG)</span><span className="block text-sm text-slate-600 mt-0.5">Découvre le plan comptable suisse PME et le plan français, classe par classe. Chaque compte est relié à sa ligne du bilan et du compte de résultat.</span><span className="block text-xs text-emerald-600 mt-1 font-medium">2 plans interactifs · comptes ↔ états financiers · autres plans suisses</span></span>
           <ArrowRight size={20} className="text-emerald-400 shrink-0" />
+        </button>
+      )}
+      {hasMetier && (
+        <button onClick={onMetier} className="w-full text-left rounded-2xl border-2 border-indigo-200 bg-gradient-to-r from-indigo-50 to-violet-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
+          <span className="text-4xl">🧑‍💼</span>
+          <span className="flex-1"><span className="block font-bold text-base text-indigo-800">Une journée d'auditeur — la méthode pas à pas</span><span className="block text-sm text-slate-600 mt-0.5">Ce que tu fais vraiment au quotidien : risque → assertion → test, matérialité, sondage, et le fil rouge du grand livre où l'on retrace les montants jusqu'à la facture.</span><span className="block text-xs text-indigo-500 mt-1 font-medium">10 sections · exemples chiffrés · écritures · cas Wirecard</span></span>
+          <ArrowRight size={20} className="text-indigo-400 shrink-0" />
         </button>
       )}
       {hasNestle && (
@@ -3435,6 +3443,156 @@ function NestleApp({ onBack }) {
   );
 }
 
+/* ════════════════════════════════════════════════════════════════════
+   UNE JOURNÉE D'AUDITEUR — module pédagogique (d'après une vidéo terrain)
+   ════════════════════════════════════════════════════════════════════ */
+const METIER_TONES = {
+  info: { c: "#2563eb", bg: "#eff6ff", bd: "#bfdbfe", ic: <Info size={15} /> },
+  tip: { c: "#059669", bg: "#ecfdf5", bd: "#a7f3d0", ic: <Lightbulb size={15} /> },
+  warn: { c: "#d97706", bg: "#fffbeb", bd: "#fde68a", ic: <AlertTriangle size={15} /> },
+  key: { c: "#7c3aed", bg: "#f5f3ff", bd: "#ddd6fe", ic: <CheckCircle2 size={15} /> },
+  pitfall: { c: "#e11d48", bg: "#fff1f2", bd: "#fecdd3", ic: <AlertTriangle size={15} /> },
+};
+function MetierBlock({ b }) {
+  if (b.t === "p") return <p className="text-[14px] text-slate-700 leading-relaxed"><MdInline text={b.text} /></p>;
+  if (b.t === "callout") {
+    const tn = METIER_TONES[b.tone] || METIER_TONES.info;
+    return (
+      <div className="rounded-xl border p-3.5" style={{ background: tn.bg, borderColor: tn.bd }}>
+        <div className="flex items-center gap-2 mb-1 text-[12.5px] font-bold" style={{ color: tn.c }}>{tn.ic}{b.title}</div>
+        <div className="text-[13.5px] text-slate-700 leading-relaxed"><MdInline text={b.text} /></div>
+      </div>
+    );
+  }
+  if (b.t === "keys") return (
+    <ul className="space-y-1.5">{b.items.map((it, i) => (
+      <li key={i} className="flex gap-2 text-[13.5px] text-slate-700 leading-relaxed"><CheckCircle2 size={15} className="text-violet-500 mt-0.5 shrink-0" /><span><MdInline text={it} /></span></li>
+    ))}</ul>
+  );
+  if (b.t === "steps") return (
+    <div>
+      {b.title && <div className="text-[12px] font-bold uppercase tracking-wide text-slate-400 mb-2">{b.title}</div>}
+      <ol className="space-y-2.5">{b.items.map((it, i) => (
+        <li key={i} className="flex gap-3">
+          <span className="w-6 h-6 grid place-items-center rounded-full bg-violet-600 text-white text-[12px] font-bold shrink-0">{i + 1}</span>
+          <div><div className="font-bold text-[13.5px] text-slate-800">{it.title}</div><div className="text-[13px] text-slate-600 leading-relaxed mt-0.5"><MdInline text={it.text} /></div></div>
+        </li>
+      ))}</ol>
+    </div>
+  );
+  if (b.t === "table") {
+    const cols = b.columns || [];
+    return (
+      <div>
+        {b.title && <div className="text-[12px] font-bold uppercase tracking-wide text-slate-400 mb-1.5">{b.title}</div>}
+        <div className="rounded-lg border border-slate-200 overflow-x-auto">
+          <table className="w-full border-collapse text-[13px]">
+            <thead><tr className="bg-slate-50 border-b border-slate-200">{cols.map((c, i) => <th key={i} className={`px-3 py-2 text-[11px] font-bold uppercase tracking-wide text-slate-500 ${c.align === "right" ? "text-right" : "text-left"}`}>{c.label}</th>)}</tr></thead>
+            <tbody>{(b.rows || []).map((r, ri) => (
+              <tr key={ri} className={`border-b border-slate-100 last:border-0 ${r.kind === "total" ? "bg-slate-900 text-white font-bold" : ""}`}>
+                {r.cells.map((cell, ci) => <td key={ci} className={`px-3 py-1.5 ${cols[ci] && cols[ci].align === "right" ? "text-right tabular-nums" : "text-left"} ${ci === 0 && r.kind !== "total" ? "font-medium text-slate-700" : ""}`}>{cell}</td>)}
+              </tr>
+            ))}</tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
+  if (b.t === "journal") return (
+    <div className="rounded-xl border border-slate-700 bg-slate-900 text-slate-100 p-3.5">
+      {b.title && <div className="flex items-center gap-2 mb-2 text-[11px] font-bold uppercase tracking-wide text-slate-400"><FileText size={13} />{b.title}</div>}
+      <div className="space-y-2">{(b.entries || []).map((e, i) => (
+        <div key={i}>
+          <div className="text-[12px] text-slate-400 mb-1">{e.lib}</div>
+          <div className="grid grid-cols-[1fr_auto] gap-x-3 gap-y-0.5 text-[13px] font-mono">
+            <div><span className="text-rose-300 font-bold">Débit</span> {e.debit}</div><div className="text-right text-emerald-200 tabular-nums">{e.montant}</div>
+            <div className="pl-4"><span className="text-sky-300 font-bold">Crédit</span> {e.credit}</div><div className="text-right text-slate-500 tabular-nums">{e.montant}</div>
+          </div>
+        </div>
+      ))}</div>
+      {b.note && <div className="mt-2.5 pt-2.5 border-t border-slate-700 text-[12.5px] text-slate-300 leading-relaxed font-sans"><MdInline text={b.note} /></div>}
+    </div>
+  );
+  if (b.t === "example") return (
+    <div className="rounded-xl border-2 border-emerald-200 bg-emerald-50/40 p-3.5">
+      <div className="flex items-center gap-2 mb-2 text-[12.5px] font-bold text-emerald-700"><Calculator size={15} />{b.title}</div>
+      {(b.given || []).length > 0 && <div className="mb-2"><div className="text-[10.5px] font-bold uppercase tracking-wide text-slate-400 mb-1">Données</div><ul className="space-y-0.5">{b.given.map((g, i) => <li key={i} className="text-[13px] text-slate-700 flex gap-1.5"><span className="text-slate-300">›</span><MdInline text={g} /></li>)}</ul></div>}
+      {(b.calc || []).length > 0 && <div className="mb-2 rounded-lg bg-white border border-emerald-100 p-2.5"><div className="text-[10.5px] font-bold uppercase tracking-wide text-emerald-600 mb-1">Calcul</div>{b.calc.map((c, i) => <div key={i} className="text-[13px] text-slate-700 font-mono leading-relaxed"><MdInline text={c} /></div>)}</div>}
+      {b.result && <div className="text-[13.5px] text-slate-800 leading-relaxed"><span className="font-bold text-emerald-700">→ </span><MdInline text={b.result} /></div>}
+    </div>
+  );
+  if (b.t === "matrix") {
+    const cols = b.columns || [];
+    const cls = (v) => v === "●" ? "text-rose-600 font-bold" : v === "◐" ? "text-amber-500 font-bold" : "text-slate-300";
+    return (
+      <div>
+        {b.title && <div className="text-[12px] font-bold uppercase tracking-wide text-slate-400 mb-1.5">{b.title}</div>}
+        <div className="rounded-lg border border-slate-200 overflow-x-auto">
+          <table className="w-full border-collapse text-[12.5px]">
+            <thead><tr className="bg-slate-50 border-b border-slate-200">{cols.map((c, i) => <th key={i} className={`px-2 py-2 align-bottom text-[10px] font-bold uppercase tracking-wide text-slate-500 ${i === 0 ? "text-left" : "text-center"}`}>{c}</th>)}</tr></thead>
+            <tbody>{(b.rows || []).map((r, ri) => (
+              <tr key={ri} className="border-b border-slate-100 last:border-0">
+                <td className="px-2 py-1.5 font-medium text-slate-700 whitespace-nowrap">{r.label}</td>
+                {r.cells.map((v, ci) => <td key={ci} className={`px-2 py-1.5 text-center text-[15px] ${cls(v)}`}>{v || "—"}</td>)}
+              </tr>
+            ))}</tbody>
+          </table>
+        </div>
+        {b.legend && <div className="text-[11px] text-slate-400 mt-1">{b.legend}</div>}
+      </div>
+    );
+  }
+  if (b.t === "quote") return (
+    <blockquote className="border-l-4 border-rose-300 bg-rose-50/50 rounded-r-lg pl-3.5 pr-3 py-2.5">
+      <div className="text-[13.5px] text-slate-700 leading-relaxed italic"><MdInline text={b.text} /></div>
+      {b.source && <div className="text-[11.5px] text-rose-600 font-semibold mt-1.5">— {b.source}</div>}
+    </blockquote>
+  );
+  return null;
+}
+
+function AuditMetier({ onBack }) {
+  const data = (typeof window !== "undefined" && window.__METIER__) || {};
+  const meta = data.meta || {};
+  const sections = data.sections || [];
+  const [active, setActive] = useState((sections[0] || {}).id);
+  const go = (id) => { setActive(id); try { const el = document.getElementById("metier-" + id); if (el) el.scrollIntoView({ behavior: "instant", block: "start" }); } catch (e) {} };
+  return (
+    <div>
+      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
+      <div className="rounded-2xl bg-gradient-to-br from-indigo-900 via-slate-800 to-violet-900 text-white p-5 shadow mb-4">
+        <div className="text-[11px] font-semibold uppercase tracking-widest text-indigo-300/80">Métier · pratique de terrain</div>
+        <h2 className="text-2xl font-bold mt-1">{meta.title}</h2>
+        <p className="text-sm text-indigo-100 mt-0.5">{meta.subtitle}</p>
+        <p className="text-[13px] text-slate-300 leading-relaxed mt-3"><MdInline text={meta.intro || ""} /></p>
+        {meta.source && <p className="text-[11px] text-indigo-300/70 mt-2">{meta.source}</p>}
+      </div>
+      <div className="flex flex-wrap gap-1.5 mb-4 sticky top-0 z-10 bg-slate-100/95 backdrop-blur py-2 -mx-1 px-1 rounded-lg">
+        {sections.map((s) => (
+          <button key={s.id} onClick={() => go(s.id)} className={`px-2.5 py-1.5 rounded-lg text-[11.5px] font-semibold border transition-colors flex items-center gap-1 ${active === s.id ? "bg-indigo-600 text-white border-transparent" : "bg-white text-slate-600 border-slate-200 hover:border-indigo-300"}`}>
+            <span>{s.icon}</span>{s.title}
+          </button>
+        ))}
+      </div>
+      <div className="space-y-4">
+        {sections.map((s, i) => (
+          <div key={s.id} id={"metier-" + s.id} className="rounded-2xl border border-slate-200 bg-white p-5 scroll-mt-16">
+            <div className="flex items-center gap-2.5 mb-3">
+              <span className="w-10 h-10 grid place-items-center rounded-xl bg-indigo-50 text-indigo-600 text-xl shrink-0">{s.icon}</span>
+              <div>
+                {s.tag && <div className="text-[10.5px] font-bold uppercase tracking-widest text-indigo-400">{s.tag}</div>}
+                <h3 className="text-lg font-bold text-slate-800 leading-tight">{i + 1}. {s.title}</h3>
+              </div>
+            </div>
+            <div className="space-y-3">{(s.blocks || []).map((b, bi) => <MetierBlock key={bi} b={b} />)}</div>
+          </div>
+        ))}
+      </div>
+      <div className="mt-4 text-center text-[11px] text-slate-400">Module pédagogique — la méthode d'audit au quotidien.</div>
+    </div>
+  );
+}
+
 function AuditApp() {
   const [data, setData] = useState(() => (typeof window !== "undefined" && window.__AUDIT__) || null);
   const [loadErr, setLoadErr] = useState(null);
@@ -3464,8 +3622,9 @@ function AuditApp() {
         </div>
       </header>
       <main className="max-w-5xl mx-auto px-4 py-6">
-        {view.k === "home" && <AuditHome data={data} book={book} onBook={() => go({ k: "book" })} onSeuils={() => go({ k: "seuils" })} onRevision={() => go({ k: "revision" })} onPlanComptable={() => go({ k: "plancomptable" })} onFraudePostes={() => go({ k: "fraudepostes" })} onReferencement={() => go({ k: "referencement" })} onAnnexes={() => go({ k: "annexes" })} onAmortissements={() => go({ k: "amortissements" })} onNestle={() => go({ k: "nestle" })} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
+        {view.k === "home" && <AuditHome data={data} book={book} onBook={() => go({ k: "book" })} onSeuils={() => go({ k: "seuils" })} onRevision={() => go({ k: "revision" })} onPlanComptable={() => go({ k: "plancomptable" })} onFraudePostes={() => go({ k: "fraudepostes" })} onReferencement={() => go({ k: "referencement" })} onAnnexes={() => go({ k: "annexes" })} onAmortissements={() => go({ k: "amortissements" })} onNestle={() => go({ k: "nestle" })} onMetier={() => go({ k: "metier" })} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
         {view.k === "nestle" && <NestleApp onBack={() => go({ k: "home" })} />}
+        {view.k === "metier" && <AuditMetier onBack={() => go({ k: "home" })} />}
         {view.k === "revision" && <AuditRevision data={data} onBack={() => go({ k: "home" })} />}
         {view.k === "plancomptable" && <AuditPlanComptable data={(typeof window !== "undefined" && window.__PLAN_COMPTABLE__) || { plans: [] }} onBack={() => go({ k: "home" })} />}
         {view.k === "fraudepostes" && <AuditFraudePostes data={(typeof window !== "undefined" && window.__FRAUDE_POSTES__) || { sections: [] }} onBack={() => go({ k: "home" })} />}

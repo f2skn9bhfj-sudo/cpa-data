@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "title": "Une journée d'auditeur",
+    "subtitle": "ce que tu feras vraiment, au jour le jour, tes 3 premières années",
+    "source": "D'après « What you will be doing as an audit graduate [day to day] » — Paul Harris (chaîne YouTube), transposé au contexte suisse.",
+    "intro": "On t'a embauché comme auditeur junior chez un Big Four. Très vite tu réalises qu'on te donne des tâches précises — « teste ça, rapproche ce solde » — sans toujours voir le tableau d'ensemble. Ce module remet tout dans l'ordre : **pourquoi** tu fais ce que tu fais, et **comment** ça se passe concrètement, du risque jusqu'à la facture. Un fil rouge te suit du début à la fin : la **Brasserie du Léman SA**, chiffre d'affaires déclaré de 100 millions de CHF, que l'on va auditer poste par poste."
+  },
+  "sections": [
+    {
+      "id": "vue",
+      "icon": "🗺️",
+      "title": "Ce que tu audites, au fond",
+      "tag": "Vue d'ensemble",
+      "blocks": [
+        { "t": "p", "text": "Auditer, c'est se prononcer sur un **jeu d'états financiers** : le compte de résultat (P&L), le bilan, le tableau des flux de trésorerie, l'état des capitaux propres et les **notes annexes**. Les notes ne sont pas un détail : elles décomposent les soldes des états primaires. Le chiffre d'affaires, par exemple, peut se ventiler en plusieurs lignes — la note explique de quoi il est fait, parce qu'un actionnaire veut comprendre la substance, pas seulement la surface." },
+        { "t": "p", "text": "Ton travail consiste à auditer **chaque ligne** de chaque état et de chaque note. Attention au périmètre : les **autres informations** du rapport (message du président, rapport de gestion) ne sont **pas auditées** — tu les **lis** et tu signales toute **incohérence matérielle** avec les comptes audités (ISA 720), sans te prononcer sur leur fidélité. L'opinion « **image fidèle / true and fair** » ne porte que sur les **états financiers** eux-mêmes." },
+        { "t": "callout", "tone": "key", "title": "L'idée maîtresse", "text": "Tu ne « vérifies » pas des chiffres au hasard. Pour chaque poste, tu identifies **le risque** qu'il soit faux, tu le relies à une **assertion**, et tu conçois un **test** qui couvre ce risque. Risque → assertion → test : c'est la colonne vertébrale de tout l'audit." },
+        { "t": "p", "text": "Le compte de résultat se lit par paliers : **chiffre d'affaires**, moins le **coût des ventes** = **marge brute** ; moins les **charges d'exploitation** ; puis les **charges financières** et l'**impôt**. Tu descends ces sections une à une, en posant à chacune des tests adaptés à son risque propre." }
+      ]
+    },
+    {
+      "id": "assertions",
+      "icon": "🎯",
+      "title": "Les assertions : à quoi peut mentir un chiffre",
+      "tag": "Risques",
+      "blocks": [
+        { "t": "p", "text": "Une direction qui voudrait embellir ses comptes a deux réflexes : **gonfler le chiffre d'affaires** et **minorer les charges**. Pour attraper ces manœuvres, l'auditeur découpe le risque en **assertions** — les affirmations implicites que la direction fait en publiant un chiffre. Chaque test sert à confirmer (ou non) une assertion." },
+        { "t": "keys", "items": [
+          "**Réalité / Existence** — l'opération a vraiment eu lieu ; la facture existe (elle n'est pas fictive), l'actif existe physiquement.",
+          "**Exhaustivité** — tout ce qui aurait dû être comptabilisé l'a été (aucune vente, aucune charge oubliée).",
+          "**Exactitude** — les montants sont justes : on a écrit 100, pas 1'000.",
+          "**Séparation des exercices (cut-off)** — l'opération est dans le **bon exercice**, pas avancée ni reportée.",
+          "**Évaluation** — le montant retenu est correctement estimé (dépréciation, provision : il y a du jugement).",
+          "**Classification** — l'élément est dans la **bonne rubrique** (un produit financier n'est pas présenté comme du chiffre d'affaires).",
+          "**Droits & obligations** — ce qui figure au bilan appartient bien à l'entité (l'actif a été acheté par elle).",
+          "**Occurrence** — les opérations enregistrées (produits, charges) ont réellement eu lieu. C'est l'assertion-miroir de l'exhaustivité : l'**occurrence** attrape la **surévaluation** (opérations fictives, ventes gonflées), l'**exhaustivité** la **sous-évaluation** (charges omises). Côté charges, la vidéo la présente comme « l'inverse de l'existence » : a-t-on bien compté **toutes** les charges encourues ? Elle va de pair avec le cut-off (en mauvaise année, on est tenté de reporter des produits sur N+1)."
+        ]},
+        { "t": "p", "text": "L'astuce du métier : toutes les assertions ne pèsent pas pareil selon le poste. Pour le **chiffre d'affaires**, le risque est qu'on le **gonfle** → on insiste sur l'occurrence/existence (factures réelles, non fictives), le cut-off (ventes de N+1 enregistrées en N) et la classification ; l'**exhaustivité y est secondaire**. Pour les **charges**, le risque est inverse — qu'on en **oublie** → l'assertion reine devient l'**exhaustivité** (la direction a-t-elle compté toutes ses charges ?). On gonfle ce qui est positif, on cache ce qui est négatif." },
+        { "t": "matrix", "title": "Quelles assertions tester selon le poste", "legend": "● risque majeur · ◐ à surveiller · — peu sensible", "columns": ["Poste", "Réalité / Existence", "Exhaustivité", "Exactitude", "Cut-off", "Évaluation", "Classification", "Droits & oblig."], "rows": [
+          { "label": "Chiffre d'affaires", "cells": ["●", "◐", "●", "●", "—", "●", "◐"] },
+          { "label": "Charges / coûts", "cells": ["◐", "●", "●", "●", "—", "●", "—"] },
+          { "label": "Créances clients", "cells": ["●", "◐", "●", "◐", "●", "—", "●"] },
+          { "label": "Trésorerie", "cells": ["●", "●", "◐", "—", "—", "—", "●"] },
+          { "label": "Immobilisations", "cells": ["●", "◐", "◐", "—", "●", "—", "●"] },
+          { "label": "Provisions", "cells": ["◐", "●", "—", "—", "●", "◐", "—"] }
+        ]},
+        { "t": "callout", "tone": "tip", "title": "Pourquoi la classification compte", "text": "Un actionnaire juge la **croissance du haut de tableau**. Si des produits d'intérêts (par nature stables) sont présentés en chiffre d'affaires (par nature « scalable »), l'image de la croissance est faussée. Mettre chaque produit dans la bonne case n'est pas cosmétique." }
+      ]
+    },
+    {
+      "id": "materialite",
+      "icon": "⚖️",
+      "title": "La matérialité : jusqu'où faut-il chercher ?",
+      "tag": "Concept clé",
+      "blocks": [
+        { "t": "p", "text": "Aucune entreprise n'est exacte au franc près, et on ne peut pas tout tester. La **matérialité** est le seuil en dessous duquel une erreur ne change pas la décision d'un lecteur des comptes. Si la somme de toutes les erreurs trouvées reste sous ce seuil, on conclut que les comptes sont **matériellement corrects**." },
+        { "t": "example", "title": "Fil rouge — fixer le seuil de la Brasserie du Léman", "given": [
+          "Chiffre d'affaires : 100 millions de CHF",
+          "Règle retenue : 1 % du chiffre d'affaires"
+        ], "calc": [
+          "Seuil de matérialité = 100 mios × 1 % = **1 million de CHF**"
+        ], "result": "Si le cumul des erreurs détectées dans les comptes est inférieur à 1 million, l'audit est concluant. Au-delà, il faut creuser et demander des corrections." },
+        { "t": "callout", "tone": "info", "title": "Le seuil de travail (performance materiality)", "text": "En pratique on ne teste pas jusqu'au seuil global, mais jusqu'à un **seuil de travail** plus bas — la *performance materiality*, en général **50 à 75 %** de la matérialité globale (ici ~0,5 à 0,75 million). Cette marge est un amortisseur : elle absorbe le risque que des erreurs non détectées sur **plusieurs** postes s'**additionnent** et finissent par dépasser le seuil global." },
+        { "t": "p", "text": "Le seuil sert aussi à **doser l'effort**. Sur les **charges d'exploitation** (2 millions), tu couvres l'essentiel du poste et tu t'assures que la **portion non testée reste sous le seuil de travail** : ce qui n'est pas testé ne pourra pas, à lui seul, dépasser ce seuil." },
+        { "t": "example", "title": "Couvrir l'essentiel sans tout tester", "given": [
+          "Charges d'exploitation : 2 millions",
+          "Composition : 1 grosse facture de 1,1 million + 100 petites factures totalisant 0,9 million",
+          "Seuil de travail (performance materiality) : ~0,7 million"
+        ], "calc": [
+          "Tester la seule facture de 1,1 million couvre déjà > 50 % du solde",
+          "Reliquat non couvert : 0,9 million > seuil de travail (0,7) → on le complète par un sondage"
+        ], "result": "On teste à 100 % la grosse facture, puis on sonde le reliquat jusqu'à ce que la portion non testée passe **sous le seuil de travail**. La matérialité dit où concentrer l'effort ; le seuil de travail dit jusqu'où aller." },
+        { "t": "callout", "tone": "info", "title": "Matérialité ≠ précision comptable", "text": "Le seuil n'autorise pas l'à-peu-près : il borne le **risque d'audit**. On reste exigeant sur chaque test, mais on accepte qu'au global une imprécision sous le seuil ne remette pas en cause l'opinion." }
+      ]
+    },
+    {
+      "id": "sondage",
+      "icon": "🎲",
+      "title": "Le sondage et l'extrapolation",
+      "tag": "Technique",
+      "blocks": [
+        { "t": "p", "text": "Sur 100 millions de chiffre d'affaires, il peut y avoir 20'000 factures. Impossible de toutes les tester. On en **sonde** un échantillon, puis on **extrapole** l'erreur trouvée à l'ensemble. Si l'erreur projetée reste sous le seuil, le poste est validé." },
+        { "t": "example", "title": "Fil rouge — sonder le chiffre d'affaires", "given": [
+          "Population à sonder (factures homogènes, hors gros items déjà testés à 100 %) : 20'000 factures",
+          "Échantillon tiré au hasard : 100 factures",
+          "Erreur trouvée dans l'échantillon : 1'000 CHF au total"
+        ], "calc": [
+          "Facteur d'extrapolation = 20'000 ÷ 100 = ×200",
+          "Erreur projetée = 1'000 × 200 = **200'000 CHF**",
+          "200'000 < seuil 1'000'000 → marge confortable"
+        ], "result": "L'erreur extrapolée (200'000) est très en dessous de la matérialité (1 million). On conclut que le chiffre d'affaires est **matériellement correct**, puis on passe au poste suivant." },
+        { "t": "callout", "tone": "info", "title": "Deux précisions qui font la différence à l'examen", "text": "**(1)** On n'extrapole **jamais** sur les **gros items testés à 100 %** : leur erreur réelle est comptée telle quelle, et l'extrapolation ne porte que sur la **population résiduelle sondée**. **(2)** Les méthodes rigoureuses (sondage en unités monétaires, **MUS**) projettent l'erreur au prorata de la **valeur** couverte, pas du simple nombre de factures — un échantillon de 100 factures n'a pas le même poids si elles pèsent 5 % ou 80 % de la valeur." },
+        { "t": "callout", "tone": "warn", "title": "Le piège de l'extrapolation", "text": "Si l'échantillon de 100 révélait une erreur de 6'000, l'extrapolation donnerait 6'000 × 200 = 1,2 million > seuil. Là, impossible de conclure : il faut élargir le sondage, comprendre la cause de l'erreur et, souvent, demander un ajustement." },
+        { "t": "p", "text": "En pratique, on **scinde l'échantillon** : les **gros postes** (ex. une ligne de 10 millions) sont testés **un par un** — on ne tire pas au sort ce qui est énorme — et le **reste** est sondé aléatoirement. C'est exactement ce que tu vas voir dans le grand livre." }
+      ]
+    },
+    {
+      "id": "grand-livre",
+      "icon": "📒",
+      "title": "Fil rouge — le grand livre, de l'état financier à la facture",
+      "tag": "Le cœur du métier",
+      "blocks": [
+        { "t": "p", "text": "Voici ce que tu fais **vraiment** à ton bureau. Le chiffre d'affaires de la Brasserie n'est pas « un » nombre : tu demandes le **grand livre** (general ledger), une extraction de tous les comptes. Le CA s'y ventile par comptes, repérés par des codes souvent arbitraires." },
+        { "t": "table", "title": "Étape 1 — extraction du grand livre (comptes de produits)", "columns": [
+          { "label": "Compte", "align": "left" }, { "label": "Type de revenu", "align": "left" }, { "label": "Montant (CHF)", "align": "right" }
+        ], "rows": [
+          { "cells": ["3000", "Bière pression — cafés/restaurants", "50'000'000"] },
+          { "cells": ["3001", "Bière en bouteille — grande distribution", "20'000'000"] },
+          { "cells": ["3002", "Boissons sans alcool", "10'000'000"] },
+          { "cells": ["3003", "Ventes à l'export", "20'000'000"] },
+          { "cells": ["Total", "Chiffre d'affaires", "100'000'000"], "kind": "total" }
+        ]},
+        { "t": "steps", "title": "La descente, étape par étape", "items": [
+          { "title": "Test A — rapprochement (le tout premier test)", "text": "On additionne les comptes du grand livre (50 + 20 + 10 + 20 = **100 millions**) et on vérifie que le total **colle au chiffre d'affaires des états financiers** (100 millions). Chez PwC on appelait ça les « EGA » : prendre le grand livre, le coller dans un **template** standard, confirmer l'égalité. Cocher la case. C'est aussi simple — et aussi indispensable — que ça." },
+          { "title": "Test B — descendre dans un compte", "text": "On choisit le compte 3000 (50 millions) et on demande sa **liste de transactions** détaillée. On vérifie que la liste **totalise bien 50 millions**, puis on la **trie par montant décroissant**." },
+          { "title": "Sélection de l'échantillon", "text": "On isole les **gros items** — disons une ligne de 10 millions — qu'on teste **spécifiquement**. Pour le reste, on prélève un **échantillon aléatoire** de petites lignes. (Attention : un gros item peut, en zoomant, se redécomposer en une nouvelle liste de lignes — on creuse jusqu'à toucher une vraie pièce.)" },
+          { "title": "Test substantif — retrouver la pièce", "text": "Pour chaque item retenu, on demande au client deux documents : la **facture** et le **relevé d'encaissement**. On vérifie que le montant de la facture **correspond à la ligne du grand livre**, puis que l'**encaissement** correspond au **même montant** que la facture. La boucle est bouclée : grand livre → facture → banque." }
+        ]},
+        { "t": "journal", "title": "Étape 2 — les écritures que tu t'attends à retrouver", "entries": [
+          { "lib": "À la facturation d'un lot de bière à un client", "debit": "Clients (débiteurs)", "credit": "Chiffre d'affaires", "montant": "120'000" },
+          { "lib": "À l'encaissement du client", "debit": "Banque / Trésorerie", "credit": "Clients (débiteurs)", "montant": "120'000" }
+        ], "note": "Le flux normal : on **débite Clients / crédite Ventes** à la facturation (la créance et le produit naissent), puis **débite Banque / crédite Clients** à l'encaissement (la créance s'éteint, le cash entre). Toute écriture qui ne suit pas ce chemin mérite un coup d'œil." },
+        { "t": "example", "title": "Mini-cas : tester une ligne de 120'000", "given": [
+          "Ligne du grand livre (compte 3000) : 120'000 CHF",
+          "Documents demandés au client : facture n° F-2025-0457 + relevé bancaire"
+        ], "calc": [
+          "Facture F-2025-0457 = 120'000 → = ligne du grand livre ✓ (Exactitude, Réalité)",
+          "Encaissement au relevé = 120'000 → = facture ✓ (Existence, l'argent est rentré)",
+          "Date de livraison 18.12.2025 → produit bien rattaché à 2025 ✓ (Cut-off)"
+        ], "result": "Un seul item testé couvre d'un coup plusieurs assertions (réalité, exactitude, existence, cut-off). On répète sur l'échantillon, puis sur les autres comptes (3001, 3002, 3003), toujours en gardant un œil sur la matérialité." },
+        { "t": "callout", "tone": "key", "title": "Ce qu'est vraiment ton « day job »", "text": "Passer en revue chaque compte, dérouler ces tests, tracer les montants jusqu'aux pièces, et s'assurer que le **taux d'erreur reste sous le seuil**. C'est standardisé, ça ressemble à du « cochage de cases » — mais derrière chaque case, il y a une assertion couverte." }
+      ]
+    },
+    {
+      "id": "controles",
+      "icon": "🛡️",
+      "title": "Les tests de contrôles (les grandes entreprises)",
+      "tag": "Approche par les contrôles",
+      "blocks": [
+        { "t": "p", "text": "Sur une multinationale type Apple, tester 1'000 factures ne couvre presque rien. On s'appuie alors sur les **contrôles internes** de l'entreprise : s'ils sont fiables, on peut **réduire les tests substantifs**. Mais chaque contrôle doit être **documenté** et son fonctionnement **prouvé**." },
+        { "t": "keys", "items": [
+          "**Rapprochement à trois (three-way match)** — on relie trois documents : le **bon de commande**, la **facture** et l'**encaissement**. S'ils concordent, l'opération est fiable.",
+          "**Contrôles physiques / d'accès** — par exemple, seules quelques personnes ont accès au compte bancaire ; ou, en paie, les salariés partis sont retirés du système et ne sont plus payés.",
+          "**Séparation des tâches** — celui qui saisit n'est pas celui qui approuve ni celui qui paie.",
+          "**Documentation du processus** — pour les ventes, on décrit tout ce que l'entreprise fait pour s'assurer qu'aucun produit n'est gonflé et qu'aucune fraude n'est possible."
+        ]},
+        { "t": "callout", "tone": "tip", "title": "Le marché : moins de tests substantifs", "text": "Des contrôles forts et testés = on peut alléger les tests de détail. Mais c'est un échange : il faut compléter des **tables de contrôles**, cocher chaque point et **réunir les preuves** que les contrôles tournent vraiment. C'est une part énorme du quotidien." }
+      ]
+    },
+    {
+      "id": "journaux",
+      "icon": "🧮",
+      "title": "Le test des journaux (data & risk assurance)",
+      "tag": "Données",
+      "blocks": [
+        { "t": "p", "text": "Autre grand pan du métier : le **test des journaux**. On bascule là dans la **risk assurance** — l'analyse de gros volumes de données. On prend **toutes** les écritures de l'année et on vérifie qu'elles sont **approuvées** et que le **sens d'imputation** est cohérent." },
+        { "t": "p", "text": "Pour le chiffre d'affaires, on **sait** que tout devrait suivre un chemin précis : **Débit Clients → Crédit Ventes**, puis **Débit Banque → Crédit Clients**. On cartographie ce flux pour l'ensemble des comptes, puis on **isole les anomalies** : les écritures qui ne suivent pas le chemin attendu." },
+        { "t": "journal", "title": "Une écriture qui doit te faire tiquer", "entries": [
+          { "lib": "Écriture suspecte repérée dans les journaux", "debit": "Immobilisations corporelles", "credit": "Chiffre d'affaires", "montant": "?" }
+        ], "note": "Voir une écriture partir d'un compte d'**immobilisations** vers les **ventes** est inhabituel : ce n'est pas le flux normal du chiffre d'affaires. C'est typiquement le genre d'anomalie qu'on extrait et qu'on investigue." },
+        { "t": "callout", "tone": "info", "title": "Pourquoi c'est puissant", "text": "Si **tout** suit le bon chemin et que les rares anomalies s'expliquent, c'est le signe de **bons contrôles** — et une autre façon de réduire les tests substantifs. Les grands groupes s'appuient de plus en plus sur les **systèmes IT** : plus personne ne saisit chaque facture à la main, donc une part du travail consiste à vérifier que **ces systèmes fonctionnent correctement**." }
+      ]
+    },
+    {
+      "id": "simples",
+      "icon": "💥",
+      "title": "Les tests « simples » mais critiques",
+      "tag": "À ne jamais bâcler",
+      "blocks": [
+        { "t": "p", "text": "Contre-intuitif : le **premier** poste que tu testes en arrivant n'est souvent pas le chiffre d'affaires, mais la **trésorerie**. Et c'est l'un des plus importants, alors qu'il paraît trivial." },
+        { "t": "steps", "title": "Tester la trésorerie", "items": [
+          { "title": "Confirmation bancaire directe", "text": "On obtient un document **envoyé directement par la banque à l'auditeur** — pas via le client, qui pourrait l'altérer. On compare le solde de clôture de l'entreprise au solde confirmé par la banque." },
+          { "title": "Tous les comptes", "text": "Une société a souvent **plusieurs comptes**. Il faut confirmer **chacun** et vérifier qu'aucun compte qui devrait figurer n'a été **omis** (exhaustivité)." }
+        ]},
+        { "t": "quote", "text": "Wirecard, société allemande cotée au DAX, valorisée jusqu'à ~24 milliards d'euros à son apogée, s'est effondrée en 2020 parce que, pendant des années, les auditeurs n'ont pas obtenu les confirmations de trésorerie **directement** de la banque — ils se sont contentés de confirmations par un tiers (≈ 1,9 milliard € de trésorerie fictive). Un test que ferait le membre le plus junior de l'équipe… et la raison de la faillite.", "source": "Affaire Wirecard (insolvabilité, 25 juin 2020)" },
+        { "t": "callout", "tone": "pitfall", "title": "La leçon Wirecard", "text": "Le test le plus simple — « banque, confirmez-vous ce solde ? » — n'a **aucune part de jugement** : soit le cash est là, soit il ne l'est pas. C'est précisément parce qu'il paraît trivial qu'on le néglige. Ne le néglige jamais : exige toujours la confirmation **directe**." },
+        { "t": "p", "text": "Même logique pour les **créances clients** : on écrit aux **plus gros clients débiteurs** pour leur demander de **confirmer le solde** qu'ils ont dans leurs propres livres (circularisation). C'est simple, et c'est souvent là — créances et chiffre d'affaires — que se nichent les **fraudes**." },
+        { "t": "callout", "tone": "tip", "title": "Si le client ne répond pas", "text": "L'absence de réponse à la circularisation n'est **pas un échec** : on bascule sur des **procédures alternatives** — principalement la vérification des **encaissements reçus après la clôture** (subsequent receipts, l'argent est-il rentré depuis ?) et le rapprochement de la créance aux **factures et bons de livraison**. C'est un point d'examen classique." }
+      ]
+    },
+    {
+      "id": "junior-senior",
+      "icon": "🧗",
+      "title": "Junior vs senior, et pourquoi le P&L est central",
+      "tag": "Carrière & logique",
+      "blocks": [
+        { "t": "p", "text": "Répartition typique de l'équipe : le **junior** teste la **trésorerie** et les **créances** — simple en apparence, mais critique (c'est là que se cache la fraude). Le **senior** s'attaque aux **dépréciations** et aux **provisions** : pas de « bon » chiffre exact, beaucoup d'**hypothèses**, donc beaucoup plus d'erreurs potentielles. Paradoxe du métier : le débutant fait souvent le travail le plus important." },
+        { "t": "callout", "tone": "key", "title": "Pourquoi se concentrer sur le compte de résultat", "text": "Le **résultat de l'exercice explique l'essentiel de la variation des capitaux propres** entre l'ouverture et la clôture — la part qui ne provient ni des **opérations avec les actionnaires** (dividendes versés, apports de capital) ni des écritures portées **directement en capitaux propres** (réévaluations, autres éléments du résultat global). Ce n'est donc pas une simple soustraction de deux bilans. Mais le raisonnement d'audit tient : si le **bilan d'ouverture** est correct (il égale la clôture auditée de l'an dernier), que **tout le compte de résultat** est testé, et que les **journaux** prouvent une imputation correcte entre résultat et bilan, alors on obtient un fort **confort** sur le bilan de clôture — sans tout re-tester. C'est pour ça qu'on met tant de poids sur le compte de résultat." },
+        { "t": "p", "text": "Conséquence pratique : tester le bilan devient souvent **plus léger**, parce qu'une grande partie de sa fiabilité **découle** d'un P&L bien audité (le solde clients, par exemple, est juste si tout le chiffre d'affaires est juste et correctement imputé)." }
+      ]
+    },
+    {
+      "id": "opinion",
+      "icon": "✍️",
+      "title": "L'aboutissement : l'opinion d'audit",
+      "tag": "La signature",
+      "blocks": [
+        { "t": "p", "text": "Une fois tous ces tests menés sur le bilan, le compte de résultat et les flux, tu as une **conviction** sur la fidélité des comptes. Tu as couvert les **risques principaux** — ceux que toi et l'**associé** (partner) aviez identifiés pour ce client." },
+        { "t": "p", "text": "L'un des derniers actes du dossier : l'**associé** (ou le réviseur responsable) **signe** le **rapport de l'organe de révision** — l'auditor's statement — qui atteste que l'audit a été conduit et que les comptes donnent une **image fidèle et sincère**. C'est cette signature qui clôt le cycle que tu as alimenté, ligne par ligne, test par test." },
+        { "t": "callout", "tone": "tip", "title": "À retenir avant ton premier jour", "text": "Risque → assertion → test. Matérialité pour doser. Sondage + extrapolation pour conclure. Grand livre pour retrouver les montants jusqu'à la pièce. Contrôles et journaux pour démultiplier. Et les tests « simples » (trésorerie, créances) traités avec le plus grand sérieux : c'est là que tombent les Wirecard." }
+      ]
+    }
+  ]
+}
