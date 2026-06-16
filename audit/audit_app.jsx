@@ -3223,11 +3223,11 @@ function NestlePosteDetail({ line, color }) {
 /* Reproduction FIDÈLE d'un tableau du rapport (multi-colonnes, comme le PDF).
    Les lignes ayant un `id` correspondant à une fiche (st.lines) sont cliquables
    et déroulent l'explication pédagogique. */
-function NestleTable({ st, openId, setOpenId, color }) {
-  const tbl = st.table || {};
+function NestleTable({ tbl, lines, openId, setOpenId, color }) {
+  tbl = tbl || {};
   const cols = tbl.columns || [];
   const lineById = {};
-  (st.lines || []).forEach((l) => { if (l.id) lineById[l.id] = l; });
+  (lines || []).forEach((l) => { if (l.id) lineById[l.id] = l; });
   const isNeg = (s) => typeof s === "string" && /^\(.*\)$/.test(s.trim());
   const alignCls = (a) => a === "right" ? "text-right" : a === "center" ? "text-center" : "text-left";
   return (
@@ -3361,8 +3361,15 @@ function NestleApp({ onBack }) {
         <div className="rounded-xl border-2 border-dashed border-slate-200 bg-slate-50 p-8 text-center text-slate-400 text-sm">
           🚧 Cet état sera commenté dans une prochaine phase. Le compte de résultat est disponible dès maintenant.
         </div>
-      ) : st.table && (st.table.rows || []).length ? (
-        <NestleTable st={st} openId={openId} setOpenId={setOpenId} color={color} />
+      ) : ((st.tables && st.tables.length) || (st.table && (st.table.rows || []).length)) ? (
+        <div className="space-y-4">
+          {((st.tables && st.tables.length) ? st.tables : [st.table]).map((tbl, i) => (
+            <div key={i}>
+              {tbl.title && <div className="text-[13px] font-bold text-slate-700 mb-1.5 mt-1">{tbl.title}</div>}
+              <NestleTable tbl={tbl} lines={st.lines} openId={openId} setOpenId={setOpenId} color={color} />
+            </div>
+          ))}
+        </div>
       ) : (
         <div className="rounded-xl border border-slate-200 bg-white overflow-hidden">
           {/* en-tête colonnes */}
