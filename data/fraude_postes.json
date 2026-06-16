@@ -1,0 +1,1221 @@
+{
+ "_label": "Fraude par poste",
+ "_icon": "🕵️",
+ "_description": "Ce qu'il faut savoir sur la fraude potentielle de chaque poste du bilan et du compte de résultat : schémas, signaux d'alerte et procédures de détection.",
+ "intro": "Toute fraude aux états financiers manipule un poste précis du **bilan** ou du **compte de résultat**. La logique est presque toujours la même : **gonfler le résultat et les fonds propres** (surévaluer les actifs et les produits, sous-évaluer les passifs et les charges) — ou, plus rarement, les **minorer** (lissage, *big bath*, optimisation fiscale). Côté **actif et produits**, le risque dominant est la **surévaluation / la réalité** (postes fictifs, anticipés) ; côté **passif et charges**, c'est l'**omission / l'exhaustivité** (dettes, provisions et charges non comptabilisées). ISA 240 pose même une **présomption de risque de fraude sur le chiffre d'affaires** (§26). Pour chaque poste ci-dessous : les **assertions** menacées, les **schémas** de fraude (le « comment »), les **signaux d'alerte** (red flags) et les **procédures d'audit** qui les débusquent.",
+ "triangle": {
+  "titre": "🔺 Rappel — le triangle de la fraude (Cressey)",
+  "items": [
+   {
+    "l": "Pression / incitation",
+    "t": "objectifs de résultat, covenants bancaires, bonus, dettes personnelles"
+   },
+   {
+    "l": "Opportunité",
+    "t": "contrôle interne faible, contournement par la direction (management override)"
+   },
+   {
+    "l": "Rationalisation",
+    "t": "« c'est temporaire », « tout le monde le fait », « l'entreprise me le doit »"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "actif",
+   "titre": "Bilan — Actif",
+   "icon": "🏛️",
+   "color": "#0ea5e9",
+   "sous_titre": "Risque dominant : SURÉVALUATION (réalité, existence, évaluation)",
+   "postes": [
+    {
+     "poste": "Trésorerie & équivalents (banque, caisse)",
+     "icon": "💰",
+     "comptes": "CH : classe 1, 1000 Caisse / 1020 Banque · PCG 51 (512 Banque, 53 Caisse)",
+     "sens": "↑ surévalue l'actif le plus liquide — souvent gonflé pour masquer un trou ou simuler la solvabilité",
+     "assertions": [
+      "Réalité/Existence",
+      "Exhaustivité",
+      "Évaluation",
+      "Droits & obligations"
+     ],
+     "schemes": [
+      {
+       "nom": "Trésorerie fictive (faux soldes bancaires)",
+       "comment": "On fabrique de faux relevés ou de fausses lettres de confirmation bancaire pour afficher des liquidités qui n'existent pas, parfois sur des comptes étrangers difficiles à vérifier.",
+       "indice": "Soldes énormes immobilisés alors que l'entreprise emprunte à taux élevé ; produits financiers ridiculement faibles au regard du cash affiché."
+      },
+      {
+       "nom": "Kiting (cavalerie de chèques)",
+       "comment": "On exploite le délai de compensation entre deux banques en faisant tourner des chèques entre comptes pour gonfler artificiellement les soldes en fin de période.",
+       "indice": "Virements aller-retour récurrents juste avant la clôture ; éléments en rapprochement anormalement nombreux et longs à se dénouer."
+      },
+      {
+       "nom": "Détournement de caisse (skimming / larceny)",
+       "comment": "Un employé prélève des espèces avant ou après enregistrement et masque le trou par de faux ajustements ou des écritures de régularisation.",
+       "indice": "Caisse théorique systématiquement supérieure à la caisse physique ; multiplication des écritures d'arrondi et de 'manquants'."
+      },
+      {
+       "nom": "Fenêtrage de clôture (window dressing)",
+       "comment": "On encaisse en force et on retarde les décaissements juste avant la date de bilan pour présenter une position de liquidité flatteuse, puis tout repart le 2 janvier.",
+       "indice": "Pic de trésorerie le jour du bilan puis chute brutale début d'exercice suivant."
+      }
+     ],
+     "red_flags": [
+      "Soldes de trésorerie disproportionnés par rapport au chiffre d'affaires et au secteur",
+      "Comptes logés dans des banques offshore ou peu connues, hors circuit d'audit habituel",
+      "Refus ou lenteur du client à autoriser la circularisation bancaire directe",
+      "Rapprochements bancaires non revus, anciens ou bourrés d'éléments en suspens",
+      "Intérêts créditeurs incohérents avec les liquidités déclarées",
+      "Signataires uniques et absence de séparation des tâches sur les paiements"
+     ],
+     "procedures": [
+      "Circularisation bancaire directe (réponse envoyée par la banque à l'auditeur, jamais via le client)",
+      "Examen et re-performance des rapprochements bancaires de clôture",
+      "Comptage physique surprise de la caisse en présence d'un responsable",
+      "Test de cut-off des encaissements/décaissements autour de la date de bilan (recherche de kiting)",
+      "Vérification des signataires autorisés et de la séparation des tâches sur les comptes",
+      "Revue analytique des produits financiers rapportés au solde moyen de trésorerie"
+     ],
+     "exemple": "**Wirecard** (2020) : 1,9 milliard d'euros de trésorerie sur des comptes fiduciaires aux Philippines… qui n'ont jamais existé. **Parmalat** (2003) avait fabriqué une fausse confirmation Bank of America pour ~4 Md€ de liquidités fictives."
+    },
+    {
+     "poste": "Créances clients (débiteurs)",
+     "icon": "📨",
+     "comptes": "CH : 1100 Créances résultant de ventes et prestations · PCG 411 Clients",
+     "sens": "↑ surévalue l'actif ET le résultat (le produit a été comptabilisé en face)",
+     "assertions": [
+      "Réalité/Existence",
+      "Évaluation (valeur recouvrable)",
+      "Exhaustivité",
+      "Séparation des exercices (cut-off)"
+     ],
+     "schemes": [
+      {
+       "nom": "Créances fictives / ventes bidon",
+       "comment": "On enregistre des ventes à des clients inexistants ou complices, créant une créance qui ne sera jamais encaissée mais qui gonfle le chiffre d'affaires.",
+       "indice": "Créances très anciennes jamais encaissées ; clients sans coordonnées vérifiables ; DSO (délai de recouvrement) qui explose."
+      },
+      {
+       "nom": "Channel stuffing (bourrage de canal)",
+       "comment": "On force des livraisons chez les distributeurs en fin de trimestre, avec droit de retour caché, pour anticiper du chiffre d'affaires non réel.",
+       "indice": "Pic de ventes en toute fin de période suivi d'une vague de retours/avoirs au trimestre suivant."
+      },
+      {
+       "nom": "Sous-évaluation de la provision pour créances douteuses",
+       "comment": "On maintient à l'actif des créances irrécouvrables sans provision suffisante pour soutenir le résultat.",
+       "indice": "Balance âgée qui se dégrade alors que le taux de provision reste stable ou baisse."
+      },
+      {
+       "nom": "Décalage de cut-off (ventes du 2 janvier datées 31 décembre)",
+       "comment": "On rattache au mauvais exercice des ventes pour gonfler les produits de la période close.",
+       "indice": "Concentration anormale de factures les derniers jours, avoirs symétriques en début d'exercice suivant."
+      }
+     ],
+     "red_flags": [
+      "DSO (jours de créances) en forte hausse, déconnecté de la croissance des ventes",
+      "Balance âgée alourdie en tranches >90/180 jours sans provision correspondante",
+      "Clients sans adresse, sans n° TVA ou liés à des dirigeants",
+      "Avoirs et retours massifs en début d'exercice suivant",
+      "Écart entre chiffre d'affaires comptabilisé et encaissements réels qui se creuse",
+      "Refus du client de laisser circulariser certains gros débiteurs"
+     ],
+     "procedures": [
+      "Circularisation des clients (confirmations positives sur les soldes significatifs)",
+      "Procédures alternatives sur les non-réponses : suivi des encaissements postérieurs",
+      "Test de cut-off des ventes (rapprochement bons de livraison / factures / date de transfert des risques)",
+      "Revue de la balance âgée et test du caractère adéquat de la provision pour pertes",
+      "Revue analytique du DSO et de la marge par client/segment",
+      "Recherche d'avoirs et retours significatifs après clôture"
+     ],
+     "exemple": "**Lernout & Hauspie** (2000) gonflait son CA avec des clients fictifs en Asie. **Symbol Technologies** et de nombreux scandales de channel stuffing (ex. **Bristol-Myers Squibb**) illustrent la sur-livraison de fin de trimestre."
+    },
+    {
+     "poste": "Autres créances (TVA/impôt préalable, comptes courants associés)",
+     "icon": "🧾",
+     "comptes": "CH : 1170 Impôt préalable (TVA déductible), 1140 Avances/prêts, 1850 c/c associés · PCG 4456 État-TVA, 455 Associés-c/c",
+     "sens": "↑ surévalue l'actif et peut masquer une distribution déguisée ou une charge non comptabilisée",
+     "assertions": [
+      "Réalité/Existence",
+      "Droits & obligations",
+      "Évaluation (recouvrabilité)",
+      "Classement/Présentation"
+     ],
+     "schemes": [
+      {
+       "nom": "Compte courant associé débiteur masquant un prélèvement",
+       "comment": "Le dirigeant retire des fonds enregistrés en créance sur lui-même au lieu de salaire ou de dividende, gonflant l'actif et évitant l'impôt.",
+       "indice": "Compte courant associé débiteur qui ne cesse de croître et n'est jamais remboursé ; absence de convention et d'intérêts."
+      },
+      {
+       "nom": "TVA / impôt préalable gonflé ou fictif",
+       "comment": "On déduit une TVA préalable sur des factures fictives ou on surévalue la créance d'impôt récupérable pour gonfler l'actif.",
+       "indice": "Créance de TVA sans remboursement obtenu, écart persistant avec les décomptes officiels déposés."
+      },
+      {
+       "nom": "Charge déguisée en créance",
+       "comment": "Une dépense réelle est portée en 'avance' ou 'autre créance' au lieu d'être passée en charge, pour soutenir le résultat.",
+       "indice": "Avances diverses sans pièce justificative, jamais soldées, sans échéance ni contrepartie identifiée."
+      }
+     ],
+     "red_flags": [
+      "Compte courant associé débiteur croissant, sans convention écrite ni intérêts (risque de prestation appréciable en argent en CH)",
+      "Créances de TVA non remboursées d'un exercice sur l'autre",
+      "Écart entre la TVA comptabilisée et les décomptes effectivement déposés à l'AFC",
+      "Postes 'divers' / 'à régulariser' fourre-tout, anciens et non documentés",
+      "Avances à des parties liées sans échéance ni garantie"
+     ],
+     "procedures": [
+      "Rapprochement de la TVA comptabilisée avec les décomptes officiels et les remboursements reçus",
+      "Examen des conventions de compte courant associé, du taux d'intérêt et des remboursements",
+      "Circularisation ou confirmation des soldes vis-à-vis des parties liées",
+      "Vérification des pièces justificatives des avances et test de recouvrabilité",
+      "Analyse du classement (créance vs charge vs distribution déguisée)"
+     ],
+     "exemple": "Les redressements fiscaux pour 'prestation appréciable en argent' (distribution dissimulée) sur comptes courants associés sont fréquents en pratique suisse ; pas de scandale médiatique unique, mais un classique des contrôles AFC et des PME."
+    },
+    {
+     "poste": "Stocks & en-cours",
+     "icon": "📦",
+     "comptes": "CH : 1200 Stocks de marchandises, 1260 Produits finis, 1280 Travaux en cours · PCG 31-37",
+     "sens": "↑ surévalue l'actif et le résultat (gonfler le stock final réduit le coût des ventes)",
+     "assertions": [
+      "Réalité/Existence",
+      "Évaluation (coût vs valeur de réalisation)",
+      "Exhaustivité",
+      "Séparation des exercices (cut-off)"
+     ],
+     "schemes": [
+      {
+       "nom": "Stock fantôme (quantités fictives)",
+       "comment": "On gonfle les quantités à l'inventaire ou on crée de fausses fiches de stock pour des marchandises absentes.",
+       "indice": "Écarts entre inventaire physique et comptable ; cartons vides, palettes factices, sites 'pleins' jamais comptés."
+      },
+      {
+       "nom": "Absence de dépréciation des invendus/obsolètes",
+       "comment": "On maintient au coût des stocks périmés, démodés ou invendables sans abattement, pour ne pas dégrader le résultat.",
+       "indice": "Stock à rotation nulle, ancienneté élevée, valeur supérieure au prix de vente net observé."
+      },
+      {
+       "nom": "Manipulation du coût de revient / cut-off des achats",
+       "comment": "On capitalise dans le stock des charges qui n'en relèvent pas, ou on décale la comptabilisation des achats pour gonfler la valeur finale.",
+       "indice": "Coût unitaire en hausse sans raison ; marge brute incohérente ; réceptions enregistrées du mauvais côté de la clôture."
+      }
+     ],
+     "red_flags": [
+      "Marge brute en hausse inexpliquée alors que les prix de vente baissent",
+      "Rotation des stocks qui ralentit fortement (jours de stock en hausse)",
+      "Inventaire physique partiel, non observé, ou conduit hors présence de l'auditeur",
+      "Stocks entreposés chez des tiers ou sur des sites multiples difficiles à recenser",
+      "Provisions pour obsolescence stables malgré un vieillissement du stock",
+      "Mouvements de stock importants juste avant/après l'inventaire"
+     ],
+     "procedures": [
+      "Observation physique de l'inventaire (assister au comptage, contrôles par sondages aller-retour)",
+      "Tests de cut-off des achats et des réceptions autour de la date de bilan",
+      "Test d'évaluation : coût vs valeur nette de réalisation (lower of cost or NRV)",
+      "Revue analytique de la marge brute et de la rotation des stocks par famille",
+      "Confirmation des stocks détenus par des tiers (dépositaires)",
+      "Recalcul du coût de revient et des frais incorporés au stock"
+     ],
+     "exemple": "**Crazy Eddie** (années 80) : stocks gonflés et faux comptages d'inventaire (les célèbres 'fausses palettes'). **McKesson & Robbins** (1938), affaire fondatrice de l'observation physique des stocks par l'auditeur."
+    },
+    {
+     "poste": "Immobilisations corporelles",
+     "icon": "🏭",
+     "comptes": "CH : 1500 Machines, 1510 Mobilier, 1600 Immeubles d'exploitation · PCG 21 (213 Constructions, 215 Matériel)",
+     "sens": "↑ surévalue l'actif et le résultat (capitaliser au lieu de charger, ou sous-amortir)",
+     "assertions": [
+      "Réalité/Existence",
+      "Évaluation",
+      "Droits & obligations",
+      "Exhaustivité (de l'amortissement)"
+     ],
+     "schemes": [
+      {
+       "nom": "Capitalisation indue de charges",
+       "comment": "On porte à l'actif des frais d'entretien, de réparation ou d'exploitation courants au lieu de les passer en charges, gonflant l'actif et le résultat.",
+       "indice": "Hausse des immobilisations en parallèle d'une baisse anormale des charges d'entretien ; immobilisations sans facture d'investissement claire."
+      },
+      {
+       "nom": "Sous-amortissement / durées allongées",
+       "comment": "On allonge artificiellement les durées d'utilité ou on omet des dotations pour soutenir le résultat.",
+       "indice": "Durées d'amortissement supérieures aux normes du secteur ; charge d'amortissement qui baisse sans cession."
+      },
+      {
+       "nom": "Actifs fictifs ou doublons",
+       "comment": "On inscrit des immobilisations inexistantes ou comptabilisées plusieurs fois, parfois pour justifier des sorties de trésorerie.",
+       "indice": "Registre d'immobilisations non rapproché du physique ; actifs introuvables lors de l'inspection."
+      },
+      {
+       "nom": "Absence de dépréciation (impairment)",
+       "comment": "On ne déprécie pas des actifs dont la valeur d'usage a chuté (usine à l'arrêt, technologie obsolète).",
+       "indice": "Actifs inactifs maintenus à pleine valeur ; indicateurs de perte de valeur ignorés."
+      }
+     ],
+     "red_flags": [
+      "Forte hausse des actifs immobilisés couplée à une baisse des charges d'entretien",
+      "Durées et taux d'amortissement hors normes du secteur",
+      "Registre des immobilisations non rapproché à l'inventaire physique",
+      "Flux d'investissement (capex) sans documentation d'autorisation",
+      "Actifs détenus mais non exploités, sans test de dépréciation",
+      "Réévaluations à la hausse opportunes juste avant une opération de financement"
+     ],
+     "procedures": [
+      "Inspection physique des actifs significatifs et rapprochement avec le registre",
+      "Vérification des pièces de propriété et factures d'acquisition (assertion droits)",
+      "Recalcul des dotations aux amortissements et revue des durées d'utilité",
+      "Analyse des comptes de charges pour détecter des capitalisations indues",
+      "Test de dépréciation (indices de perte de valeur, valeur recouvrable)",
+      "Revue des cessions et mises au rebut, et de leur traitement comptable"
+     ],
+     "exemple": "**WorldCom** (2002) : ~3,8 Md$ de charges d'exploitation (line costs) capitalisées en immobilisations pour transformer des pertes en bénéfices — l'archétype de la capitalisation indue."
+    },
+    {
+     "poste": "Immobilisations incorporelles & goodwill",
+     "icon": "🌫️",
+     "comptes": "CH : 1700 Brevets/licences, 1770 Goodwill · PCG 20 (205 Concessions/brevets, 207 Fonds commercial)",
+     "sens": "↑ surévalue un actif 'mou' et difficilement vérifiable ; le goodwill non déprécié soutient artificiellement les capitaux propres",
+     "assertions": [
+      "Réalité/Existence",
+      "Évaluation",
+      "Exhaustivité (de la dépréciation)",
+      "Présentation"
+     ],
+     "schemes": [
+      {
+       "nom": "Frais de R&D / développement capitalisés à tort",
+       "comment": "On active des coûts de recherche ou de développement qui ne remplissent pas les critères de capitalisation, gonflant l'actif et le résultat.",
+       "indice": "Actifs incorporels en hausse sans produits futurs probables démontrés ; projets capitalisés puis abandonnés."
+      },
+      {
+       "nom": "Goodwill non déprécié (impairment évité)",
+       "comment": "Après une acquisition surpayée, on refuse de constater la dépréciation pour ne pas alourdir le résultat et entamer les capitaux propres.",
+       "indice": "Goodwill énorme face à une filiale en perte ; hypothèses du test (taux de croissance, WACC) systématiquement optimistes."
+      },
+      {
+       "nom": "Survalorisation à l'allocation du prix d'acquisition (PPA)",
+       "comment": "On surévalue des incorporels identifiables (marques, relations clients) lors d'un rachat pour réduire le goodwill ou répartir le coût avantageusement.",
+       "indice": "Multiples d'évaluation hors marché ; hypothèses non corroborées par un évaluateur indépendant."
+      }
+     ],
+     "red_flags": [
+      "Poids du goodwill et des incorporels élevé dans le total bilan",
+      "Hypothèses du test de dépréciation constamment optimistes et non documentées",
+      "Capitalisation de frais de développement sur des projets non viables",
+      "Filiales acquises en perte mais goodwill maintenu à pleine valeur",
+      "Réorganisation des unités génératrices de trésorerie (UGT) pour diluer les pertes",
+      "Évaluations établies en interne sans expert indépendant"
+     ],
+     "procedures": [
+      "Revue critique des hypothèses du test de dépréciation (taux d'actualisation, croissance, flux)",
+      "Analyse de sensibilité sur les paramètres clés du test (impairment IAS 36)",
+      "Vérification des critères de capitalisation des frais de développement (IAS 38)",
+      "Recours à un expert/évaluateur de l'auditeur pour les valeurs significatives",
+      "Examen de l'allocation du prix d'acquisition (PPA) et de la cohérence du goodwill",
+      "Contrôle de l'amortissement des incorporels à durée définie"
+     ],
+     "exemple": "**Autonomy / HP** (2011) : HP a déprécié ~8,8 Md$ après le rachat, dénonçant des incorporels et revenus gonflés. **Steinhoff** (2017) : actifs incorporels et goodwill fictifs au cœur d'une fraude de plusieurs milliards."
+    },
+    {
+     "poste": "Immobilisations financières & participations",
+     "icon": "🏦",
+     "comptes": "CH : 1400 Titres à long terme, 1480 Participations, 1440 Prêts à des tiers · PCG 26 (261 Titres de participation), 27",
+     "sens": "↑ surévalue l'actif ; sert souvent à loger des pertes ou à organiser des opérations entre parties liées",
+     "assertions": [
+      "Réalité/Existence",
+      "Évaluation",
+      "Droits & obligations",
+      "Présentation (parties liées)"
+     ],
+     "schemes": [
+      {
+       "nom": "Participations surévaluées / dépréciation évitée",
+       "comment": "On maintient à pleine valeur des titres de filiales en perte ou des prêts non recouvrables pour soutenir l'actif.",
+       "indice": "Participations dans des entités déficitaires non dépréciées ; prêts intra-groupe jamais remboursés."
+      },
+      {
+       "nom": "Entités ad hoc / SPE pour loger dettes et pertes",
+       "comment": "On crée des structures hors bilan dans lesquelles on transfère pertes et dettes, en présentant une participation flatteuse à l'actif.",
+       "indice": "Multiplication d'entités à but spécial liées aux dirigeants ; transactions circulaires sans substance économique."
+      },
+      {
+       "nom": "Prêts à des parties liées non recouvrables",
+       "comment": "On accorde des prêts à des entités liées qui servent en réalité à sortir de la trésorerie, maintenus en actif sans provision.",
+       "indice": "Prêts sans échéance, sans intérêt, sans garantie, à des parties liées ; soldes croissants."
+      }
+     ],
+     "red_flags": [
+      "Participations dans des entités en perte chronique maintenues à pleine valeur",
+      "Structures et entités ad hoc nombreuses, opaques, liées aux dirigeants",
+      "Prêts intra-groupe ou à parties liées sans documentation ni remboursement",
+      "Transactions circulaires (l'argent revient à son point de départ)",
+      "Titres non cotés valorisés sur des bases internes invérifiables",
+      "Variation des participations sans flux de trésorerie correspondant"
+     ],
+     "procedures": [
+      "Examen des comptes des entités participées et test de dépréciation des titres",
+      "Identification et confirmation des transactions et soldes avec les parties liées",
+      "Évaluation des titres non cotés (méthode, hypothèses, expert si nécessaire)",
+      "Vérification de la substance économique des entités ad hoc et de leur périmètre de consolidation",
+      "Test de recouvrabilité des prêts (garanties, capacité de remboursement)",
+      "Revue de la documentation juridique (statuts, pactes, conventions de prêt)"
+     ],
+     "exemple": "**Enron** (2001) : des centaines d'entités ad hoc (SPE comme LJM, Raptors) ont servi à dissimuler dettes et pertes hors bilan tout en présentant des participations flatteuses — cas emblématique."
+    },
+    {
+     "poste": "Actifs de régularisation / charges constatées d'avance",
+     "icon": "⏳",
+     "comptes": "CH : 1300 Actifs de régularisation (charges payées d'avance, produits à recevoir) · PCG 486 Charges constatées d'avance, 418 Produits à recevoir",
+     "sens": "↑ surévalue l'actif et le résultat (différer une charge ou anticiper un produit)",
+     "assertions": [
+      "Réalité/Existence",
+      "Séparation des exercices (cut-off)",
+      "Évaluation",
+      "Exhaustivité"
+     ],
+     "schemes": [
+      {
+       "nom": "Charge réelle différée en 'charge payée d'avance'",
+       "comment": "On reporte à l'actif une charge déjà consommée pour soutenir le résultat de l'exercice clos.",
+       "indice": "Compte de régularisation gonflé, anciens soldes jamais repris, sans pièce justifiant le décalage."
+      },
+      {
+       "nom": "Produits à recevoir fictifs / anticipés",
+       "comment": "On inscrit en actif des produits non encore acquis (commissions, prestations non rendues) pour gonfler le résultat.",
+       "indice": "Produits à recevoir récurrents jamais facturés ni encaissés l'exercice suivant."
+      },
+      {
+       "nom": "Fourre-tout d'ajustements de fin d'année",
+       "comment": "Le poste de régularisation sert à 'loger' tout ce qui arrange le résultat à la clôture (top-side entries).",
+       "indice": "Écritures manuelles de régularisation passées par la direction juste avant clôture, sans support opérationnel."
+      }
+     ],
+     "red_flags": [
+      "Soldes de régularisation en forte hausse sans explication opérationnelle",
+      "Charges constatées d'avance anciennes, jamais reprises en charges",
+      "Produits à recevoir récurrents jamais transformés en facture/encaissement",
+      "Écritures manuelles d'ajustement (top-side) concentrées sur ce poste à la clôture",
+      "Absence de pièces justifiant la période de rattachement"
+     ],
+     "procedures": [
+      "Test de cut-off : rattachement des charges et produits au bon exercice",
+      "Examen des pièces justificatives et de la base de calcul des régularisations (prorata temporis)",
+      "Revue des écritures manuelles d'ajustement de fin d'exercice (journal entry testing)",
+      "Revue analytique de l'évolution des comptes de régularisation d'une période à l'autre",
+      "Suivi du dénouement des produits à recevoir sur l'exercice suivant"
+     ],
+     "exemple": "Le report et le décalage de charges/produits via les comptes de régularisation est un levier classique de earnings management ; il apparaît en filigrane dans la plupart des grandes fraudes au résultat (ex. ajustements top-side chez **WorldCom**)."
+    }
+   ]
+  },
+  {
+   "id": "passif",
+   "titre": "Bilan — Passif & capitaux propres",
+   "icon": "⚖️",
+   "color": "#f59e0b",
+   "sous_titre": "Risque dominant : OMISSION / SOUS-ÉVALUATION (exhaustivité)",
+   "postes": [
+    {
+     "poste": "Dettes fournisseurs (créanciers)",
+     "icon": "🧾",
+     "comptes": "CH 20 (Créanciers / dettes résultant d'achats et de prestations) / PCG 401 / IFRS « Trade payables »",
+     "sens": "**Omettre ou décaler** des factures fournisseurs ↓ les charges et ↑ le résultat. Enjeu n°1 du passif = **EXHAUSTIVITÉ** : la dette qu'on ne voit pas est la dette qu'on a cachée.",
+     "assertions": [
+      "Exhaustivité",
+      "Séparation des exercices (cut-off)",
+      "Évaluation",
+      "Réalité / Droits & obligations"
+     ],
+     "schemes": [
+      {
+       "nom": "Factures « dans le tiroir » (held invoices / cut-off)",
+       "comment": "On reçoit la facture avant la clôture mais on la comptabilise en N+1, ou on la laisse dans une bannette. La charge et la dette correspondante disparaissent du bilan de clôture.",
+       "indice": "Forte concentration de comptabilisations de factures sur les premiers jours de N+1 ; écart entre date de réception (tampon courrier) et date d'enregistrement."
+      },
+      {
+       "nom": "Avoirs fournisseurs fictifs / rabais bidon",
+       "comment": "On enregistre de faux avoirs (notes de crédit) du fournisseur pour réduire la dette et la charge, sans qu'aucun rabais n'ait été réellement accordé.",
+       "indice": "Avoirs ronds, sans justificatif, concentrés en fin d'exercice ; avoirs jamais répercutés sur les paiements suivants."
+      },
+      {
+       "nom": "Dettes reclassées ou compensées à tort",
+       "comment": "On compense indûment une dette fournisseur avec une créance (netting) ou on reclasse une dette commerciale en « autre passif » pour brouiller les ratios d'endettement et le BFR.",
+       "indice": "Soldes débiteurs anormaux chez des fournisseurs ; compensations sans accord contractuel ; reclassements de dernière minute."
+      },
+      {
+       "nom": "Fournisseur fictif (sortie de trésorerie / kickback)",
+       "comment": "À l'inverse, on **gonfle** la dette/charge via un fournisseur écran pour détourner de la trésorerie (corruption, factures fantômes).",
+       "indice": "Fournisseur sans n° TVA valable, adresse = boîte postale, RIB identique à un salarié, montants juste sous le seuil d'approbation."
+      }
+     ],
+     "red_flags": [
+      "Délai fournisseurs (DPO) qui se raccourcit brutalement sans changement de politique d'achat",
+      "Pic de paiements et de comptabilisations dans les premières semaines suivant la clôture",
+      "Comptes fournisseurs avec solde nul ou débiteur en fin d'exercice alors que l'activité continue",
+      "Marge brute qui s'améliore sans hausse de prix ni baisse de coûts identifiable",
+      "Écarts récurrents lors du rapprochement des relevés fournisseurs",
+      "Fournisseurs créés juste avant la clôture, ou doublons d'identité bancaire avec des employés"
+     ],
+     "procedures": [
+      "**Recherche de passifs non enregistrés** : examiner les décaissements et factures reçues après la clôture (search for unrecorded liabilities) et les rattacher au bon exercice",
+      "Revue des paiements post-clôture sur 2 à 6 semaines : tout paiement important relève-t-il d'une dette à comptabiliser en N ?",
+      "**Circularisation des fournisseurs** (surtout les soldes faibles, nuls ou débiteurs — pas seulement les gros soldes — car la fraude par omission y loge)",
+      "Rapprochement des relevés mensuels fournisseurs avec les comptes (statement reconciliation)",
+      "Test de cut-off sur les réceptions de marchandises (bons de réception vs factures vs date d'enregistrement)",
+      "Analyse des avoirs fournisseurs de fin d'exercice : justificatif, autorisation, réalité du rabais"
+     ],
+     "exemple": "**Symbol Technologies (début 2000s)** : décalages de charges et manipulation de réserves/dettes pour lisser le résultat — illustration classique du jeu sur le rattachement des charges et passifs."
+    },
+    {
+     "poste": "Dettes financières / emprunts (bancaires, obligataires)",
+     "icon": "🏦",
+     "comptes": "CH 24 (Dettes à long terme) & part court terme en 20-21 / PCG 16-164 / IFRS 9 « Financial liabilities »",
+     "sens": "**Cacher de la dette hors bilan** pour paraître moins endetté (covenants, notation, levée de fonds). On déguise un emprunt en autre chose (vente, dérivé, préfinancement) ou on le loge dans une entité non consolidée.",
+     "assertions": [
+      "Exhaustivité",
+      "Classement (CT/LT)",
+      "Présentation & informations à fournir",
+      "Évaluation (coût amorti, covenants)"
+     ],
+     "schemes": [
+      {
+       "nom": "Dette déguisée en autre chose (financement hors bilan)",
+       "comment": "Un emprunt est habillé en « vente avec engagement de rachat », en cession-bail, en swap de devises ou en préfinancement, de sorte que l'encaissement apparaît comme un produit/un actif au lieu d'une dette.",
+       "indice": "Flux de trésorerie de financement classés en exploitation ; contrats de rachat (repo) ou clauses de remboursement adossées à de prétendues ventes."
+      },
+      {
+       "nom": "Dette logée dans une entité non consolidée (SPE / SPV)",
+       "comment": "On crée une structure ad hoc faiblement capitalisée qui porte la dette, et on évite de la consolider pour la sortir du bilan du groupe.",
+       "indice": "Garanties données à des entités « indépendantes » ; transactions circulaires ; SPV dont le seul actif/contrepartie est le groupe lui-même."
+      },
+      {
+       "nom": "Window dressing de fin d'exercice (Repo 105 style)",
+       "comment": "Juste avant la clôture, on transforme temporairement de la dette en « vente » d'actifs, puis on rachète après la date de bilan : l'endettement et le levier paraissent plus faibles le jour J.",
+       "indice": "Pics d'opérations de pension (repo) en fin de trimestre/exercice, dénoués quelques jours après ; recours à un avis juridique offshore pour qualifier la « vente »."
+      },
+      {
+       "nom": "Mauvais classement CT vs LT / dissimulation de bris de covenant",
+       "comment": "On maintient une dette en long terme alors qu'un covenant est rompu (la rendant exigible immédiatement), ou on omet l'information sur les sûretés et clauses.",
+       "indice": "Covenants tendus non mentionnés en annexe ; waivers bancaires obtenus après clôture mais non documentés ; reclassements absents."
+      }
+     ],
+     "red_flags": [
+      "Endettement déclaré incohérent avec les charges d'intérêts réellement supportées",
+      "Garanties, lettres de confort ou nantissements donnés à des entités liées ou ad hoc",
+      "Opérations de financement importantes systématiquement bouclées juste avant la clôture",
+      "Ratio de levier soudainement « pile » sous le seuil d'un covenant",
+      "Flux de financement reclassés en flux d'exploitation dans le tableau des flux",
+      "Recours répété à des entités offshore ou à des structures juridiques opaques"
+     ],
+     "procedures": [
+      "**Circularisation bancaire** complète (confirmations bancaires : soldes, lignes, sûretés, engagements, dérivés) — pierre angulaire de la recherche de dettes cachées",
+      "Lecture intégrale des **contrats d'emprunt et d'émission obligataire** : covenants, sûretés, clauses de remboursement anticipé, repo/rachat",
+      "Recherche de passifs non enregistrés et test des opérations de fin/début d'exercice (repo, ventes avec rachat)",
+      "Vérification du **classement CT/LT** et du respect des covenants à la date de clôture (waivers documentés avant approbation des comptes)",
+      "Recoupement charge d'intérêts ÷ taux moyen pour estimer l'encours de dette réel et le comparer au bilan",
+      "Analyse du périmètre de consolidation : entités ad hoc à intégrer (contrôle de fait, garanties données)"
+     ],
+     "exemple": "**Grèce / Goldman Sachs (2001)** : swaps de devises hors marché utilisés comme emprunts déguisés pour masquer la dette publique sous le seuil de Maastricht. Aussi **Lehman « Repo 105 » (2008)** : 50 Md$ de dette temporairement sortie du bilan à chaque fin de trimestre."
+    },
+    {
+     "poste": "Provisions (pour risques & charges)",
+     "icon": "🧯",
+     "comptes": "CH 23 (Provisions CT) & 26 (Provisions LT) / PCG 15 / IAS 37",
+     "sens": "Double jeu : **sous-doter** (omettre un risque connu) ↑ le résultat de l'année ; ou **sur-doter puis reprendre** (« cookie jar ») pour lisser et fabriquer du résultat les mauvaises années. Reine de la subjectivité comptable.",
+     "assertions": [
+      "Exhaustivité",
+      "Évaluation",
+      "Réalité (de l'obligation)",
+      "Présentation & informations à fournir"
+     ],
+     "schemes": [
+      {
+       "nom": "Sous-dotation / omission d'un risque connu",
+       "comment": "Un litige, un rappel produit, une restructuration ou un risque environnemental existe, mais on ne provisionne pas (ou trop peu) pour ne pas dégrader le résultat.",
+       "indice": "Réponse des avocats signalant des litiges absents des comptes ; obligation existante au bilan mais provision nulle ; restructuration annoncée non chiffrée."
+      },
+      {
+       "nom": "Provisions « tiroir » (cookie jar reserves)",
+       "comment": "Les bonnes années, on sur-dote des provisions ; les mauvaises années, on les reprend en résultat pour lisser artificiellement la performance.",
+       "indice": "Provisions génériques sans calcul sous-jacent ; reprises opportunes lors d'exercices décevants ; corrélation inverse entre dotation et résultat avant impôt."
+      },
+      {
+       "nom": "Big bath au moment d'un changement de direction",
+       "comment": "Un nouveau dirigeant passe une provision massive (« on solde tout ») la première année pour assainir et créer une réserve à reprendre ensuite, dopant les résultats futurs.",
+       "indice": "Charge de restructuration/dépréciation exceptionnelle géante l'année d'un changement de CEO/CFO, suivie de reprises."
+      }
+     ],
+     "red_flags": [
+      "Soldes de provisions stables au centime près d'une année sur l'autre (pas de recalcul réel)",
+      "Reprises de provisions qui tombent à pic lorsque le résultat menace de manquer le consensus",
+      "Litiges ou réclamations connus de la direction mais sans provision ni mention en annexe",
+      "Provisions « pour charges diverses » fourre-tout, sans dossier de calcul",
+      "Écart important entre les estimations des avocats et le montant comptabilisé",
+      "Hypothèses (taux d'actualisation, probabilité) ajustées pour atteindre un résultat cible"
+     ],
+     "procedures": [
+      "**Circularisation des avocats / conseils juridiques** (lawyer's letter) pour recenser litiges et risques, puis confronter aux provisions",
+      "Revue des **reprises de provisions** de l'exercice : justification, réalité de l'extinction du risque, pas de reprise opportuniste",
+      "Recalcul indépendant des estimations significatives (garanties, restructuration, démantèlement) et test des hypothèses",
+      "Revue des PV de conseil/comité, correspondances et événements post-clôture révélant des obligations à provisionner",
+      "Analyse rétrospective : comparer les provisions des exercices passés aux dénouements réels (look-back) pour détecter un biais systématique",
+      "Obtenir confirmation dans la **lettre d'affirmation** de l'exhaustivité des litiges et engagements connus"
+     ],
+     "exemple": "**Freddie Mac (2003)** : lissage du résultat via des réserves (sous-évaluation puis étalement des gains) — cas emblématique de cookie jar accounting à ~5 Md$. Voir aussi **Dell (SEC, 2010)** sur des paiements non divulgués lissant les résultats."
+    },
+    {
+     "poste": "Dettes fiscales & sociales (TVA due, charges sociales, impôts)",
+     "icon": "🧮",
+     "comptes": "CH 20-22 (TVA due, AVS/LPP, impôts dus) / PCG 43-44-447 / IAS 12 (impôts) & IAS 19 partiel",
+     "sens": "**Omettre ou sous-évaluer** l'impôt et les charges sociales dues ↑ le résultat net et les fonds propres, tout en finançant la trésorerie au détriment de l'État et des assurances sociales. Risque pénal direct.",
+     "assertions": [
+      "Exhaustivité",
+      "Évaluation",
+      "Séparation des exercices",
+      "Présentation"
+     ],
+     "schemes": [
+      {
+       "nom": "TVA collectée minorée / non déclarée",
+       "comment": "On déclare moins de TVA collectée que celle réellement facturée (ventes au noir, factures hors système), ou on gonfle la TVA déductible avec des factures fictives.",
+       "indice": "Écart entre la TVA théorique (CA × taux) et la TVA déclarée ; rapprochement chiffre d'affaires comptable ≠ chiffre d'affaires TVA."
+      },
+      {
+       "nom": "Sous-provision d'impôt / positions fiscales agressives",
+       "comment": "On comptabilise une charge d'impôt trop faible en ignorant des redressements probables, ou on ne provisionne pas les positions fiscales incertaines (uncertain tax positions).",
+       "indice": "Taux effectif d'impôt anormalement bas et instable ; contrôles fiscaux en cours sans provision ; impôts différés actifs surévalués."
+      },
+      {
+       "nom": "Charges sociales / salaires différés non comptabilisés",
+       "comment": "On omet de provisionner AVS/LPP, vacances, heures supplémentaires, bonus dus, ou on retarde le versement des cotisations retenues aux salariés.",
+       "indice": "Décalage entre masse salariale et cotisations versées ; comptes de cotisations dues qui gonflent ; absence de provision vacances/bonus."
+      }
+     ],
+     "red_flags": [
+      "Taux d'imposition effectif erratique ou très inférieur au taux statutaire sans explication",
+      "Soldes de TVA ou de charges sociales dues qui enflent d'exercice en exercice (paiements repoussés)",
+      "Divergence CA comptable vs CA déclaré à la TVA",
+      "Contrôles fiscaux ou notifications de redressement non reflétés dans les comptes",
+      "Retards récurrents de paiement des cotisations sociales (signal de trésorerie tendue + omission)",
+      "Impôts différés actifs importants sans perspective réaliste de bénéfices futurs"
+     ],
+     "procedures": [
+      "Rapprochement **CA comptable ↔ déclarations TVA** et recalcul de la TVA théorique sur l'exercice",
+      "Recalcul indépendant de la **charge d'impôt** et de la preuve d'impôt (tax proof / réconciliation du taux effectif)",
+      "Revue des avis de contrôle fiscal, correspondances avec l'administration et provision des positions incertaines",
+      "Test des charges sociales : masse salariale × taux ↔ cotisations comptabilisées et versées ; provisions vacances/bonus recalculées",
+      "Revue des paiements post-clôture aux administrations fiscales et sociales (recherche de passifs non enregistrés)",
+      "Confirmation des soldes dus auprès des administrations / caisses lorsque possible, et lettre d'affirmation sur l'exhaustivité fiscale"
+     ],
+     "exemple": "Schéma classique des **carrousels de TVA** (fraude organisée à la TVA intracommunautaire) et, côté entreprise, sous-provisionnement des litiges fiscaux retraité dans de nombreux dossiers SEC (uncertain tax positions sous FIN 48/ASC 740)."
+    },
+    {
+     "poste": "Produits constatés d'avance / passifs de régularisation (deferred revenue)",
+     "icon": "⏳",
+     "comptes": "CH 23 (Passifs de régularisation) / PCG 487 / IFRS 15 « Contract liabilities »",
+     "sens": "Le passif de produits différés est la **réserve secrète du chiffre d'affaires**. On le **libère trop tôt** en résultat pour gonfler les ventes, ou on le **gonfle/relâche** au gré des besoins pour lisser la croissance. Frontière dette ↔ produit = terrain de jeu.",
+     "assertions": [
+      "Exhaustivité",
+      "Séparation des exercices (cut-off)",
+      "Évaluation",
+      "Présentation"
+     ],
+     "schemes": [
+      {
+       "nom": "Reconnaissance prématurée (libération anticipée du différé)",
+       "comment": "Des produits encaissés d'avance (abonnements, maintenance, licences pluriannuelles) sont reconnus en CA dès l'encaissement au lieu d'être étalés sur la durée de la prestation.",
+       "indice": "Produit différé qui chute alors que les ventes nouvelles ne ralentissent pas ; ratio deferred revenue / CA en baisse anormale."
+      },
+      {
+       "nom": "Étalement manipulé (pilotage du rythme de libération)",
+       "comment": "On modifie discrétionnairement la durée d'étalement ou la part « livrée » d'un contrat pour accélérer ou freiner la reconnaissance selon les objectifs trimestriels.",
+       "indice": "Changements d'estimation de durée de service sans justification opérationnelle ; libérations qui collent aux écarts par rapport au consensus."
+      },
+      {
+       "nom": "Bill-and-hold / contrats à éléments multiples mal découpés",
+       "comment": "On facture et reconnaît tout de suite des prestations futures (facturé mais non livré), ou on affecte trop de prix aux composantes livrées et trop peu au support différé.",
+       "indice": "Ventes de fin de trimestre avec livraison/installation reportée ; allocation du prix de transaction biaisée vers les obligations déjà remplies."
+      }
+     ],
+     "red_flags": [
+      "Produits constatés d'avance qui diminuent alors que l'activité d'abonnement croît",
+      "Pic de chiffre d'affaires en fin de trimestre suivi d'un creux au début du suivant",
+      "Modifications répétées des durées d'étalement ou des règles de reconnaissance",
+      "Croissance du CA déconnectée de l'évolution de la trésorerie d'exploitation",
+      "Contrats avec clauses d'acceptation, de retour ou side letters non communiquées",
+      "Marges qui s'améliorent uniquement les trimestres « tendus »"
+     ],
+     "procedures": [
+      "Test de **rattachement (cut-off)** des produits : confronter la date de prestation/livraison à la période de reconnaissance",
+      "Recalcul de l'**étalement du produit différé** sur la durée des contrats (échantillon d'abonnements/maintenance)",
+      "Revue des contrats et recherche de **side letters** / clauses d'acceptation modifiant le transfert de contrôle",
+      "Analyse de la cohérence deferred revenue ↔ nouvelles ventes ↔ trésorerie encaissée",
+      "Circularisation clients ciblée sur les contrats pluriannuels / bill-and-hold",
+      "Lettre d'affirmation sur l'absence d'accords parallèles modifiant les conditions de vente"
+     ],
+     "exemple": "**MicroStrategy (2000)** : reconnaissance prématurée de revenus logiciels / contrats pluriannuels, retraitement massif et chute du titre. Schéma typique des éditeurs de logiciels jouant sur le deferred revenue."
+    },
+    {
+     "poste": "Capitaux propres (capital, réserves, report à nouveau)",
+     "icon": "🏛️",
+     "comptes": "CH 28 (Capital, réserves, bénéfice reporté) / PCG classe 10 / IAS 1 & IAS 32",
+     "sens": "Les fonds propres concentrent **tout le mensonge cumulé** (résultats gonflés → réserves gonflées). On y maquille aussi des **opérations sur capital** : rachats d'actions, transactions avec actionnaires, écritures directes en capitaux propres pour contourner le compte de résultat.",
+     "assertions": [
+      "Réalité / Droits & obligations",
+      "Exhaustivité",
+      "Présentation & informations à fournir",
+      "Évaluation"
+     ],
+     "schemes": [
+      {
+       "nom": "Écritures portées directement en capitaux propres (bypass du résultat)",
+       "comment": "On loge des pertes, des charges ou des réévaluations directement dans les réserves/capitaux propres pour qu'elles n'apparaissent pas au compte de résultat.",
+       "indice": "Mouvements de capitaux propres « autres » importants et mal expliqués dans le tableau de variation des capitaux propres."
+      },
+      {
+       "nom": "Transactions circulaires avec les actionnaires / parties liées",
+       "comment": "Apports fictifs, abandons de créance d'un actionnaire comptabilisés en produit, ou rachats d'actions financés par la société elle-même pour soutenir le cours et les ratios.",
+       "indice": "Augmentations de capital sans entrée réelle de trésorerie ; prêts à des actionnaires servant à souscrire ; opérations avec parties liées non divulguées."
+      },
+      {
+       "nom": "Capital social / actions propres fictifs ou surévalués",
+       "comment": "Apports en nature surévalués gonflant le capital, ou comptabilisation incorrecte d'actions propres et d'instruments hybrides (dette présentée en capitaux propres).",
+       "indice": "Apports en nature sans expertise indépendante ; instruments avec obligation de remboursement classés en fonds propres ; passif requalifiable en dette."
+      }
+     ],
+     "red_flags": [
+      "Mouvements importants en capitaux propres ne transitant pas par le résultat, mal documentés",
+      "Augmentations de capital ou apports sans flux de trésorerie correspondant",
+      "Opérations significatives et récurrentes avec des parties liées / actionnaires de référence",
+      "Rachats d'actions ou soutiens de cours coïncidant avec des échéances (covenants, stock-options)",
+      "Instruments hybrides classés en fonds propres alors qu'ils comportent une obligation de remboursement",
+      "Réserves dont la croissance dépend entièrement de résultats par ailleurs douteux"
+     ],
+     "procedures": [
+      "Revue exhaustive du **tableau de variation des capitaux propres** : justifier chaque mouvement, traquer les écritures directes",
+      "Vérification des **mouvements de capital** au registre du commerce / actes notariés / PV d'AG, et de l'entrée réelle de trésorerie",
+      "Identification et confirmation des **transactions avec parties liées** (apports, abandons de créance, prêts croisés)",
+      "Analyse du classement dette vs capitaux propres des instruments hybrides (substance over form, IAS 32)",
+      "Contrôle des actions propres / rachats : autorisation AG, financement, présentation",
+      "Lettre d'affirmation sur l'exhaustivité des opérations sur capital et parties liées"
+     ],
+     "exemple": "**Steinhoff (2017)** : produits fictifs et opérations avec entités liées gonflant artificiellement actifs et capitaux propres (~6,5 Md€ d'irrégularités) — l'un des plus grands scandales comptables européens, centré sur des transactions intra-groupe trompeuses."
+    },
+    {
+     "poste": "Engagements hors bilan / dettes dissimulées",
+     "icon": "🕳️",
+     "comptes": "Annexe / hors bilan (CH : engagements de garantie, leasing, nantissements) / IAS 37 (passifs éventuels), IFRS 16, IFRS 10/12 (entités structurées)",
+     "sens": "Le **trou noir du bilan** : garanties, cautions, leasings, litiges, engagements d'achat et entités ad hoc qui n'apparaissent qu'en annexe… ou pas du tout. Tout l'enjeu est l'**EXHAUSTIVITÉ de l'information** : ce qui n'est pas divulgué ne peut pas inquiéter le lecteur.",
+     "assertions": [
+      "Exhaustivité",
+      "Présentation & informations à fournir",
+      "Réalité (de l'obligation/garantie)",
+      "Évaluation (du risque)"
+     ],
+     "schemes": [
+      {
+       "nom": "Garanties, cautions et lettres de confort non divulguées",
+       "comment": "La société garantit les dettes de filiales, de dirigeants ou de partenaires sans le mentionner, exposant un risque majeur invisible au bilan et en annexe.",
+       "indice": "Confirmations bancaires mentionnant des garanties absentes des comptes ; engagements croisés au sein du groupe ; sûretés sur actifs non signalées."
+      },
+      {
+       "nom": "Entités ad hoc (SPE/SPV) pour sortir dettes et pertes du périmètre",
+       "comment": "On transfère dettes, actifs douteux ou pertes à des structures non consolidées contrôlées de fait, pour les faire disparaître des comptes du groupe.",
+       "indice": "Multiplication d'entités à finalité unique ; transactions circulaires avec le groupe ; garanties données rendant le risque réel pour la société."
+      },
+      {
+       "nom": "Leasings et engagements d'achat / contrats onéreux dissimulés",
+       "comment": "On qualifie en location simple ou on omet des engagements de leasing, des contrats take-or-pay, des commandes fermes ou des contrats déficitaires (onéreux) à provisionner.",
+       "indice": "Loyers importants sans dette de leasing comptabilisée ; engagements d'achat fermes non mentionnés ; contrats à perte connus mais non provisionnés."
+      },
+      {
+       "nom": "Passifs éventuels (litiges, environnement) volontairement passés sous silence",
+       "comment": "Litiges majeurs, risques environnementaux ou réglementaires connus de la direction mais ni provisionnés ni divulgués en annexe.",
+       "indice": "Réponses d'avocats révélant des affaires absentes des comptes ; correspondances réglementaires non reflétées ; PV de conseil évoquant des risques tus."
+      }
+     ],
+     "red_flags": [
+      "Confirmations bancaires ou d'avocats mentionnant des engagements/garanties absents des états financiers",
+      "Présence de nombreuses entités ad hoc, joint-ventures ou structures offshore au périmètre flou",
+      "Loyers ou engagements récurrents sans passif correspondant au bilan",
+      "Annexe pauvre en informations sur les engagements alors que l'activité est complexe",
+      "Garanties croisées et transactions circulaires avec des entités liées",
+      "Décalage entre les risques évoqués dans la communication / presse et ce qui figure dans les comptes"
+     ],
+     "procedures": [
+      "**Recherche systématique de passifs et engagements non enregistrés** : confirmations bancaires (sûretés, garanties, lignes), réponses d'avocats, revue des contrats significatifs",
+      "Analyse du **périmètre de consolidation** : entités structurées à intégrer (contrôle de fait, exposition aux risques/avantages, garanties données — IFRS 10)",
+      "Revue des PV de conseil/AG, des contrats majeurs (take-or-pay, leasing, achats fermes) et des correspondances réglementaires",
+      "Test des contrats de location / engagements d'achat et identification des contrats onéreux à provisionner",
+      "Revue des événements post-clôture révélant des engagements ou litiges préexistants",
+      "**Lettre d'affirmation** exigeant l'exhaustivité des engagements, garanties, passifs éventuels et entités liées"
+     ],
+     "exemple": "**Enron (2001)** : dettes et pertes massives logées dans des SPE non consolidées (LJM, Raptors) — archétype absolu de la dette hors bilan. Et **Carillion (2018)** : engagements, dettes fournisseurs (reverse factoring) et contrats déficitaires dissimulés, conduisant à la plus grande faillite de la construction britannique."
+    }
+   ]
+  },
+  {
+   "id": "resultat",
+   "titre": "Compte de résultat",
+   "icon": "📊",
+   "color": "#10b981",
+   "sous_titre": "Produits gonflés ↑ / charges minorées ou différées ↓",
+   "postes": [
+    {
+     "poste": "Chiffre d'affaires / produits des ventes",
+     "icon": "💶",
+     "comptes": "CH classe 3 (Produits) · PCG 70 · IFRS 15 « Revenue from contracts with customers »",
+     "sens": "↑ gonfle artificiellement le résultat (et souvent le BPA, déclencheur de bonus et de cours de bourse)",
+     "assertions": [
+      "Réalité (la vente a-t-elle vraiment eu lieu ?)",
+      "Rattachement / cut-off (sur le bon exercice ?)",
+      "Mesure / évaluation (au bon montant, net des retours et rabais ?)",
+      "Exhaustivité (l'inverse : minorer le CA pour évader l'impôt)",
+      "Classification (produit vs autre produit, brut vs net / agent vs principal)"
+     ],
+     "schemes": [
+      {
+       "nom": "Ventes purement fictives",
+       "comment": "On enregistre des factures à des clients **inexistants ou complices**, parfois bouclées par des flux de trésorerie circulaires (**round-tripping**) pour faire croire à un encaissement. Le cas extrême : un tiers de confiance « atteste » de soldes qui n'existent pas.",
+       "indice": "Créances clients qui **explosent plus vite que le CA** (DSO qui dérape), clients concentrés et obscurs, encaissements qui ne viennent jamais, soldes bancaires « séquestrés » non confirmables."
+      },
+      {
+       "nom": "Anticipation / cut-off (channel stuffing)",
+       "comment": "On **comptabilise sur l'exercice N** des ventes qui appartiennent à N+1 : on antidate des factures, on garde le journal des ventes ouvert quelques jours après la clôture, ou on **gave le canal de distribution** (channel stuffing) en poussant chez les distributeurs des stocks dont ils n'ont pas besoin, avec droit de retour de facto.",
+       "indice": "Pic de facturation les **derniers jours du trimestre**, avoirs et retours massifs en **début de N+1**, stocks distributeurs qui gonflent, conditions de paiement soudain rallongées."
+      },
+      {
+       "nom": "Bill-and-hold / ventes avec engagement de rachat",
+       "comment": "**Bill-and-hold** : on facture mais la marchandise reste chez le vendeur (« le client n'a pas encore de place ») — les critères stricts de transfert de contrôle (IFRS 15) ne sont pas réunis. Variante : **vente avec engagement de rachat** (repo), qui est économiquement un financement, pas une vente.",
+       "indice": "Marchandise toujours dans l'entrepôt du vendeur, **absence de demande réelle du client**, accords annexes (side letters) prévoyant rachat ou annulation, transfert des risques resté chez le vendeur."
+      },
+      {
+       "nom": "Surévaluation de l'avancement (% completion / IFRS 15 over time)",
+       "comment": "Sur les contrats long terme, on **gonfle le pourcentage d'avancement** ou on **sous-estime les coûts restant à engager** (cost-to-complete) pour reconnaître davantage de produit d'avance. On ignore les pertes à terminaison probables.",
+       "indice": "Marges d'avancement irréalistes, révisions répétées et opportunes des estimations, **travaux en cours / actifs sur contrat** qui enflent sans facturation, dérapages de coûts dissimulés."
+      }
+     ],
+     "red_flags": [
+      "DSO (jours de créances clients) qui grimpe sans explication commerciale",
+      "CA fortement concentré sur le **dernier mois / dernière semaine** du trimestre",
+      "Vague d'avoirs, retours et annulations juste après la clôture",
+      "Écart croissant entre **CA comptabilisé et cash encaissé** (qualité du résultat dégradée)",
+      "Marge brute anormale vs secteur, ou en hausse inexpliquée alors que les prix baissent",
+      "Side letters, accords verbaux, clients liés ou écrans, ajustements manuels (top-side entries) au niveau groupe"
+     ],
+     "procedures": [
+      "**Test de cut-off** : rapprocher dernières expéditions/bons de livraison de N et premières de N+1 avec dates de facturation et transfert de contrôle",
+      "**Circularisation des clients** (confirmations externes), avec suivi rigoureux des non-réponses et procédures alternatives",
+      "**Revue des avoirs et retours post-clôture** pour détecter les ventes annulées en N+1",
+      "Analyse des **flux entrants vs CA** (encaissements) et de l'évolution du DSO ; corrélation CA / livraisons physiques / consommations d'énergie ou de matières",
+      "Inspection des **contrats et side letters** (droits de retour, bill-and-hold, engagements de rachat) ; pour le %-avancement, recalcul des coûts à terminaison",
+      "**Data analytics** sur le journal des ventes : écritures en double, séquences de facturation, écritures passées hors heures ouvrées ou par des comptes inhabituels"
+     ],
+     "exemple": "**Enron** (round-tripping de contrats d'énergie et entités ad hoc), **Wirecard** (1,9 Md€ de cash inexistant sur des comptes séquestres et CA fictif via partenaires en Asie), **Xerox** (reconnaissance anticipée des revenus de leasing), **Lucent** et **Sunbeam** (channel stuffing), **Toshiba** (surestimation du %-avancement). Sur le revenu, ISA 240 §26 impose de **présumer un risque de fraude**."
+    },
+    {
+     "poste": "Achats & coût des ventes / variation de stocks",
+     "icon": "📦",
+     "comptes": "CH classe 4 (Charges de matières/marchandises) · PCG 60/603 · CMV = Achats ± Δ stocks",
+     "sens": "↓ minorer les achats ou ↑ surévaluer le stock final = **gonfle la marge et le résultat** (le stock final est dans les deux bilans : il diminue le CMV)",
+     "assertions": [
+      "Exhaustivité (toutes les charges d'achat enregistrées ?)",
+      "Rattachement / cut-off (réception vs facture sur le bon exercice)",
+      "Mesure / évaluation (stock au plus bas du coût et de la valeur réalisable nette)",
+      "Existence (le stock compté existe-t-il vraiment ?)"
+     ],
+     "schemes": [
+      {
+       "nom": "Stock final surévalué (le levier classique)",
+       "comment": "On **gonfle les quantités ou les prix** de l'inventaire : box vides empilées, stocks fantômes, double comptage, valorisation à un coût supérieur au réel. Comme le stock final réduit le CMV, **chaque franc de stock fictif est un franc de résultat fictif**.",
+       "indice": "Rotation des stocks qui ralentit, marge brute en hausse inexpliquée, écarts entre comptage physique et comptable « régularisés » sans pièce, stocks dans des sites peu accessibles."
+      },
+      {
+       "nom": "Charges d'achat différées / cut-off des fournisseurs",
+       "comment": "On **retarde la comptabilisation de factures fournisseurs** ou on capitalise des achats en stock pour ne pas les passer en charge. Variante côté distribution : négocier des **ristournes/avantages fournisseurs reconnus trop tôt** comme réduction du coût des ventes.",
+       "indice": "Factures de N reçues mais comptabilisées en N+1, dettes fournisseurs anormalement basses, accruals de ristournes agressifs et reportés."
+      },
+      {
+       "nom": "Stocks obsolètes non dépréciés",
+       "comment": "On **omet la dépréciation** des stocks invendables, périmés ou à valeur nette de réalisation inférieure au coût, pour préserver l'actif et la marge.",
+       "indice": "Stocks anciens à rotation nulle, provisions pour dépréciation stables alors que le stock vieillit, ventes ultérieures à perte."
+      }
+     ],
+     "red_flags": [
+      "Marge brute en progression sans hausse de prix justifiée",
+      "Ratio de **rotation des stocks** qui se dégrade (stock qui s'accumule)",
+      "Dettes fournisseurs en baisse alors que l'activité monte (cut-off suspect)",
+      "Ajustements d'inventaire manuels et importants en fin d'exercice",
+      "Stocks détenus chez des tiers ou en transit, difficiles à observer"
+     ],
+     "procedures": [
+      "**Assister à la prise d'inventaire physique** : comptages tests, ouverture de cartons, suivi des feuilles de comptage et du cut-off des mouvements",
+      "**Test de cut-off des achats** : rapprocher derniers bons de réception de N et premières factures de N+1",
+      "Recalcul de la **valorisation des stocks** (méthode FIFO/CMP) et test de la **valeur nette de réalisation** sur des références clés",
+      "Revue de l'**ancienneté des stocks** et du caractère suffisant des dépréciations ; rapprochement avec ventes post-clôture",
+      "Analyse de la marge brute par ligne de produits et confrontation aux flux physiques",
+      "Confirmation des stocks détenus chez des tiers (dépôts, consignation)"
+     ],
+     "exemple": "**Crazy Eddie** (gonflement massif des stocks, fausses notes de débit fournisseurs), **Phar-Mor** (stocks fictifs et charges dissimulées), **Tesco 2014** (reconnaissance trop précoce des avantages commerciaux fournisseurs, ~263 M£) — côté coûts/achats, le timing des ristournes fournisseurs est un classique."
+    },
+    {
+     "poste": "Charges de personnel",
+     "icon": "👥",
+     "comptes": "CH classe 5 (Charges de personnel) · PCG 64 · salaires, charges sociales, provisions congés/bonus",
+     "sens": "↓ minorer les charges de personnel gonfle le résultat ; à l'inverse **détournement** (sortie de cash via la paie)",
+     "assertions": [
+      "Réalité / existence (les employés existent et ont travaillé)",
+      "Exhaustivité (toutes les charges sociales et provisions enregistrées)",
+      "Mesure (montants exacts, charges patronales correctes)",
+      "Rattachement (provisions bonus/congés du bon exercice)"
+     ],
+     "schemes": [
+      {
+       "nom": "Employés fictifs (ghost employees)",
+       "comment": "Des **salariés fantômes** (inventés, ou partis non radiés) restent sur la paie ; le virement est détourné vers un compte contrôlé par le fraudeur. C'est un schéma de **détournement d'actifs**, pas de manipulation du résultat.",
+       "indice": "Salariés sans pointage ni email actif, comptes bancaires de paie partagés ou identiques, salaires versés sans charges sociales correspondantes, RH et paie gérées par la même personne."
+      },
+      {
+       "nom": "Sous-provisionnement des avantages au personnel",
+       "comment": "On **n'enregistre pas (ou sous-estime) les provisions** pour bonus, congés non pris, heures supplémentaires, ou engagements de prévoyance / indemnités de départ, afin d'améliorer le résultat.",
+       "indice": "Provisions congés/bonus stables alors que les effectifs et la rémunération montent, hypothèses actuarielles (LPP / IAS 19) optimistes, rattrapages massifs l'année suivante."
+      },
+      {
+       "nom": "Reclassement de charges en immobilisations / projets",
+       "comment": "On **capitalise des coûts de personnel** (les passant en frais de développement ou de R&D activés) pour les sortir du compte de résultat, au-delà de ce que les normes autorisent.",
+       "indice": "Frais de personnel capitalisés en forte hausse, feuilles de temps faibles ou absentes pour justifier l'activation, projets « immobilisés » sans livrable."
+      }
+     ],
+     "red_flags": [
+      "Charge de personnel par tête en baisse inexpliquée vs effectif",
+      "Provisions pour congés / bonus déconnectées de l'évolution des effectifs",
+      "Salariés sans coordonnées vérifiables ou doublons d'IBAN sur la paie",
+      "Hypothèses actuarielles de prévoyance (taux d'actualisation, rendement) anormalement favorables",
+      "Coûts de personnel capitalisés sans pièces justificatives (timesheets)"
+     ],
+     "procedures": [
+      "**Rapprochement effectif / paie / RH** : test d'existence des employés (contrats, pointages, accès informatiques)",
+      "Recalcul des **charges sociales et patronales** et rapprochement avec les décomptes AVS/LPP",
+      "Revue du caractère suffisant des **provisions** congés, heures sup, bonus, et des engagements actuariels (IAS 19 / LPP)",
+      "Analyse de la charge de personnel par tête sur plusieurs périodes et par entité",
+      "Test des **virements de paie en double** ou vers IBAN identiques (data analytics)",
+      "Vérification de la justification (feuilles de temps) des coûts de personnel **capitalisés**"
+     ],
+     "exemple": "Les **ghost employees** sont l'un des schémas de détournement les plus fréquents recensés par l'ACFE (rapport « Report to the Nations »). Côté manipulation du résultat, le sous-provisionnement des avantages au personnel reste un levier discret mais courant."
+    },
+    {
+     "poste": "Autres charges externes (services, honoraires, sous-traitance)",
+     "icon": "🧾",
+     "comptes": "CH classe 6 (Autres charges d'exploitation) · PCG 61/62 · honoraires, conseils, marketing, loyers",
+     "sens": "↓ minorer/différer les charges gonfle le résultat ; ou ↑ **gonfler de fausses charges** pour détourner du cash ou verser des pots-de-vin",
+     "assertions": [
+      "Réalité (la prestation a-t-elle été rendue ?)",
+      "Exhaustivité (charges courues non enregistrées)",
+      "Rattachement (charge du bon exercice, pas étalée à tort)",
+      "Classification (charge vs immobilisation ; nature des honoraires)"
+     ],
+     "schemes": [
+      {
+       "nom": "Factures fictives / shell companies",
+       "comment": "Un fraudeur fait payer des **prestations inexistantes ou surfacturées** par des sociétés-écrans qu'il contrôle (conseil, marketing, IT). Le cash sort de la société et revient au fraudeur — schéma classique de **détournement** et de **corruption / commissions occultes**.",
+       "indice": "Fournisseurs sans réalité économique (adresse boîte aux lettres, pas de site), prestations non documentées, paiements ronds et répétés, fournisseur partageant l'IBAN ou l'adresse d'un employé."
+      },
+      {
+       "nom": "Charges différées / étalées indûment (cookie jar)",
+       "comment": "On **reporte des charges** sur les exercices suivants, ou on les comptabilise en charges constatées d'avance / actifs sans base, pour lisser ou améliorer le résultat. À l'inverse, on **sur-provisionne** les bonnes années pour reprendre les réserves les mauvaises (**cookie jar reserves**).",
+       "indice": "Charges payées d'avance qui gonflent, provisions volatiles et opportunes, charges récurrentes soudain « exceptionnelles » ou capitalisées."
+      },
+      {
+       "nom": "Corruption déguisée en honoraires de conseil",
+       "comment": "Des **pots-de-vin ou commissions illicites** sont maquillés en honoraires de consultants, frais d'intermédiaires ou sponsoring. Risque pénal majeur (FCPA, UK Bribery Act, art. corruption CP suisse).",
+       "indice": "Consultants dans des juridictions à risque, contrats vagues sans livrable, paiements via comptes offshore, due diligence tiers inexistante."
+      }
+     ],
+     "red_flags": [
+      "Fournisseurs nouveaux, sans site web ni substance, payés rapidement",
+      "Charges constatées d'avance ou provisions au profil erratique d'une année à l'autre",
+      "Honoraires de conseil élevés sans livrables documentés",
+      "Concentration de paiements sur quelques tiers liés au management",
+      "Charges récurrentes reclassées en « exceptionnel » pour préserver le résultat opérationnel"
+     ],
+     "procedures": [
+      "Test de **réalité des prestations** : contrats, livrables, preuve de service rendu pour un échantillon d'honoraires",
+      "**Recherche de factures non enregistrées** (search for unrecorded liabilities) : revue des décaissements et factures post-clôture",
+      "Analyse des **charges payées d'avance et provisions** : base, recalcul, variations interannuelles",
+      "**Due diligence tiers** et matching fournisseur/employé (adresse, IBAN, téléphone) via data analytics",
+      "Revue des reclassements en « exceptionnel » et test de la **classification** charge vs immobilisation",
+      "Revue analytique des charges par nature vs budget et vs périodes antérieures"
+     ],
+     "exemple": "Les **sociétés-écrans facturant de faux services** figurent parmi les schémas de fraude aux décaissements les plus coûteux (ACFE). De nombreuses affaires de corruption (Siemens, Petrobras/Lava Jato) ont transité par de faux honoraires de conseil."
+    },
+    {
+     "poste": "Amortissements & dépréciations",
+     "icon": "📉",
+     "comptes": "CH classe 6 (amort.) · PCG 68/681 · IAS 16/38 (amort.), IAS 36 (dépréciation), goodwill",
+     "sens": "↓ sous-amortir ou ↑ ne pas déprécier = gonfle le résultat **et** maintient des actifs surévalués au bilan",
+     "assertions": [
+      "Mesure / évaluation (durée, méthode, valeur recouvrable)",
+      "Classification (charge vs immobilisation — capitalisation abusive)",
+      "Exhaustivité (toutes les dépréciations nécessaires enregistrées)",
+      "Existence (l'actif amorti existe encore et est utilisé)"
+     ],
+     "schemes": [
+      {
+       "nom": "Capitalisation abusive de charges (le cas WorldCom)",
+       "comment": "On **transforme des charges d'exploitation en immobilisations** (coûts réseau, maintenance, R&D, frais de personnel) pour les sortir du résultat et les étaler via l'amortissement. Effet immédiat massif sur l'EBITDA et le résultat.",
+       "indice": "Immobilisations en hausse soudaine sans projet correspondant, ratio capex/charges qui dérape, frais récurrents soudain « immobilisés », marges trop belles."
+      },
+      {
+       "nom": "Durées et méthodes d'amortissement allongées",
+       "comment": "On **étire les durées d'utilité** ou on change de méthode (linéaire vs dégressif) pour **réduire la dotation annuelle** et lisser/améliorer le résultat.",
+       "indice": "Allongement des durées d'amortissement sans justification technique, dotations en baisse alors que le parc grandit, valeurs résiduelles soudain relevées."
+      },
+      {
+       "nom": "Dépréciation (impairment) omise ou minorée — goodwill",
+       "comment": "Malgré des indices de perte de valeur (UGT déficitaires, marché en baisse), on **évite ou diffère le test de dépréciation** (IAS 36), notamment sur le **goodwill** d'acquisitions ratées, avec des hypothèses (taux d'actualisation, croissance perpétuelle) trop optimistes.",
+       "indice": "Goodwill et incorporels élevés sur activités en perte, hypothèses de cash-flows déconnectées du budget réel, head-room de test toujours « juste suffisant »."
+      }
+     ],
+     "red_flags": [
+      "Hausse brutale des immobilisations / capex sans explication opérationnelle",
+      "Durées d'amortissement allongées ou méthode changée juste avant une mauvaise année",
+      "Goodwill important sur des unités structurellement déficitaires, jamais déprécié",
+      "Dotations aux amortissements en décalage avec la base d'actifs",
+      "Hypothèses d'impairment (WACC, croissance) systématiquement favorables"
+     ],
+     "procedures": [
+      "Test de la **classification charge vs immobilisation** : revue des éléments capitalisés et de leur éligibilité (IAS 16/38)",
+      "Recalcul des **dotations aux amortissements** ; revue de la cohérence des durées et méthodes vs usage réel et secteur",
+      "Revue des **indices de dépréciation** et challenge du **test d'impairment** (IAS 36) : hypothèses, taux d'actualisation, sensibilités, recours à un évaluateur",
+      "Inspection physique d'un échantillon d'**immobilisations** (existence, état, mise au rebut)",
+      "Revue analytique du ratio capex / charges et de l'évolution du goodwill par UGT",
+      "Vérification des **mises au rebut et cessions** (actifs amortis toujours au bilan)"
+     ],
+     "exemple": "**WorldCom** : ~3,8 Md$ (au total ~11 Md$) de charges d'exploitation capitalisées à tort en immobilisations — l'un des plus grands scandales comptables de l'histoire. Côté impairment, de nombreux groupes ont été épinglés pour goodwill non déprécié sur acquisitions ratées."
+    },
+    {
+     "poste": "Charges & produits financiers",
+     "icon": "🏦",
+     "comptes": "CH classe 6 (charges fin.) / classe 4 (produits fin.) · PCG 66/76 · IFRS 9 (instruments), IFRS 16 (intérêts)",
+     "sens": "Manipulation du **classement** (opérationnel vs financier) et de l'évaluation à la juste valeur pour embellir le résultat opérationnel ou masquer l'endettement",
+     "assertions": [
+      "Mesure / évaluation (juste valeur des instruments, dépréciation des créances IFRS 9)",
+      "Classification (résultat opérationnel vs financier ; dette vs capitaux propres)",
+      "Exhaustivité (tous les intérêts courus et dérivés enregistrés)",
+      "Rattachement (intérêts courus du bon exercice)"
+     ],
+     "schemes": [
+      {
+       "nom": "Reclassement opérationnel / financier",
+       "comment": "On **déplace des charges vers le financier** (ou vers l'exceptionnel) pour embellir l'EBIT / la marge opérationnelle suivie par les analystes, ou on classe des produits financiers en CA pour gonfler le top-line.",
+       "indice": "Résultat financier qui absorbe des coûts d'exploitation récurrents, marge opérationnelle « propre » contrastant avec un résultat net médiocre."
+      },
+      {
+       "nom": "Juste valeur surévaluée (mark-to-model / mark-to-myth)",
+       "comment": "Les instruments financiers de niveau 3 (sans marché actif) sont évalués via des **modèles aux hypothèses complaisantes** pour dégager des produits financiers ou des plus-values latentes fictives.",
+       "indice": "Gains de juste valeur récurrents sur actifs niveau 3 illiquides, modèles internes non challengés, écarts avec transactions de marché comparables."
+      },
+      {
+       "nom": "Dette hors bilan / capitalisation des intérêts",
+       "comment": "On **dissimule l'endettement** (entités ad hoc, dette structurée en « vente », off-balance) et donc les charges d'intérêts associées, ou on **capitalise abusivement** des intérêts dans le coût d'actifs pour les sortir du résultat.",
+       "indice": "Endettement réel supérieur au bilan affiché, intérêts capitalisés élevés, engagements et garanties hors bilan importants en annexe."
+      }
+     ],
+     "red_flags": [
+      "Marge opérationnelle solide mais résultat net faible (coûts poussés vers le financier)",
+      "Plus-values de juste valeur récurrentes sur actifs illiquides (niveau 3)",
+      "Endettement et charges d'intérêts en décalage avec la trésorerie consommée",
+      "Engagements hors bilan importants et complexes",
+      "Dépréciation des créances et des prêts (ECL IFRS 9) anormalement faible"
+     ],
+     "procedures": [
+      "Revue de la **classification** des produits/charges entre opérationnel, financier et exceptionnel",
+      "Challenge des **évaluations à la juste valeur** (modèles, inputs niveau 3), recours à un spécialiste évaluation",
+      "Recalcul des **intérêts courus** et confirmation bancaire des emprunts, lignes et covenants",
+      "Revue des **engagements hors bilan** et des entités ad hoc (consolidation IFRS 10)",
+      "Test du calcul des **pertes de crédit attendues (ECL, IFRS 9)** sur créances et prêts",
+      "Vérification des **intérêts capitalisés** (éligibilité IAS 23)"
+     ],
+     "exemple": "**Enron** (dette et pertes logées dans des entités ad hoc / SPE hors bilan), crises de valorisation **mark-to-model** sur actifs de niveau 3 lors de la crise de 2008. Le reclassement de coûts vers le « non opérationnel » est un classique du window-dressing."
+    },
+    {
+     "poste": "Produits & charges exceptionnels / non récurrents",
+     "icon": "🎭",
+     "comptes": "CH résultat exceptionnel · PCG 67/77 · IFRS : pas de rubrique « extraordinaire », d'où jeu sur les « items ajustés / non-GAAP »",
+     "sens": "Manipulation du **classement « récurrent vs exceptionnel »** pour piloter le résultat sous-jacent communiqué (EBITDA ajusté, résultat « normalisé »)",
+     "assertions": [
+      "Classification (récurrent vs non récurrent ; nature réelle)",
+      "Rattachement (provisions de restructuration du bon exercice)",
+      "Mesure (montant des provisions et reprises)",
+      "Réalité (le « one-off » est-il vraiment ponctuel ?)"
+     ],
+     "schemes": [
+      {
+       "nom": "Big bath accounting",
+       "comment": "Lors d'une mauvaise année (ou d'un changement de dirigeant), on **charge au maximum** via des provisions de restructuration et dépréciations massives, créant des **réserves latentes** à reprendre plus tard pour doper les résultats futurs.",
+       "indice": "Provisions de restructuration surdimensionnées concentrées sur une année, reprises de provisions opportunes les exercices suivants, dépréciations « tout en une fois »."
+      },
+      {
+       "nom": "Récurrent maquillé en exceptionnel (et inversement)",
+       "comment": "On **classe des charges récurrentes en exceptionnel** (et des produits récurrents en exploitation) pour embellir le résultat opérationnel / l'EBITDA ajusté communiqué aux marchés ; les « ajustements » non-GAAP deviennent systématiques.",
+       "indice": "Charges « non récurrentes » qui reviennent chaque année, écart croissant entre résultat IFRS et résultat « ajusté », réconciliations non-GAAP opaques."
+      },
+      {
+       "nom": "Plus-values de cession pilotées (gains manufacturés)",
+       "comment": "On **organise des cessions d'actifs en fin d'exercice** pour dégager des plus-values comblant un trou de résultat, parfois entre parties liées à des prix non de marché, ou avec engagement de rachat.",
+       "indice": "Cessions opportunes juste avant clôture, contreparties liées, prix décorrélés du marché, rachat ultérieur de l'actif cédé."
+      }
+     ],
+     "red_flags": [
+      "Charges « exceptionnelles » récurrentes d'un exercice à l'autre",
+      "Écart grandissant entre résultat statutaire et résultat « ajusté » communiqué",
+      "Provisions de restructuration massives suivies de reprises bien calibrées",
+      "Plus-values de cession providentielles en fin d'exercice, surtout entre parties liées",
+      "Changement de direction suivi d'un big bath"
+     ],
+     "procedures": [
+      "Revue de la **classification récurrent / non récurrent** et challenge des ajustements non-GAAP communiqués",
+      "Test du **caractère réel et ponctuel** des éléments « exceptionnels » sur plusieurs exercices",
+      "Revue des **provisions de restructuration** (IAS 37 : obligation, plan annoncé) et de leurs reprises ultérieures",
+      "Analyse des **cessions d'actifs** : prix vs marché, identification des parties liées, clauses de rachat",
+      "Revue analytique pluriannuelle des éléments exceptionnels et de leur récurrence",
+      "Lecture critique de la communication financière (rapprochement IFRS vs « ajusté »)"
+     ],
+     "exemple": "Le **big bath** et le **cookie jar accounting** ont été dénoncés dès 1998 par Arthur Levitt (SEC) dans son discours « The Numbers Game ». L'abus des mesures **non-GAAP / ajustées** reste une cible récurrente des régulateurs (SEC, AMF, ESMA)."
+    },
+    {
+     "poste": "Impôts sur le résultat",
+     "icon": "🏛️",
+     "comptes": "CH charge d'impôt · PCG 695 · IAS 12 (impôts différés, actifs d'impôts différés)",
+     "sens": "Pilotage du **taux d'impôt effectif (ETR)** via les impôts différés et provisions fiscales pour atteindre le résultat net visé",
+     "assertions": [
+      "Mesure / évaluation (impôts courants et différés ; recouvrabilité des actifs d'impôts différés)",
+      "Exhaustivité (provisions pour risques fiscaux / positions incertaines)",
+      "Rattachement (charge d'impôt du bon exercice)",
+      "Classification (courant vs différé)"
+     ],
+     "schemes": [
+      {
+       "nom": "Pilotage du taux effectif d'impôt (ETR steering)",
+       "comment": "On **ajuste la charge d'impôt** (via des reprises de provisions fiscales ou la reconnaissance d'actifs d'impôts différés) pour **atteindre précisément le BPA attendu** par le marché — l'impôt étant la « dernière ligne » ajustable.",
+       "indice": "Taux effectif volatil et opportunément calé sur le consensus, ajustements d'impôt significatifs au T4, écart inexpliqué avec le taux théorique."
+      },
+      {
+       "nom": "Actifs d'impôts différés surévalués",
+       "comment": "On **reconnaît / maintient des actifs d'impôts différés** (sur reports déficitaires) sans probabilité suffisante de bénéfices futurs imposables, gonflant le résultat par une économie d'impôt fictive (IAS 12).",
+       "indice": "DTA importants malgré un historique de pertes, hypothèses de bénéfices futurs irréalistes, absence de plan d'affaires probant."
+      },
+      {
+       "nom": "Sous-provisionnement des risques fiscaux",
+       "comment": "On **n'enregistre pas les provisions** pour positions fiscales incertaines (prix de transfert, requalifications, contrôles en cours) afin de ne pas grever le résultat.",
+       "indice": "Positions fiscales agressives non provisionnées, litiges et contrôles fiscaux non reflétés, écart avec les redressements probables."
+      }
+     ],
+     "red_flags": [
+      "Taux effectif d'impôt erratique, comme « calé » sur le résultat cible",
+      "Ajustements d'impôt importants et discrétionnaires au dernier trimestre",
+      "Actifs d'impôts différés élevés malgré des pertes récurrentes",
+      "Absence de provision face à des contrôles ou litiges fiscaux connus",
+      "Schémas de prix de transfert agressifs vers des juridictions à faible fiscalité"
+     ],
+     "procedures": [
+      "Recalcul de la **preuve d'impôt** (rapprochement taux théorique / taux effectif) et explication des écarts",
+      "Revue de la **recouvrabilité des actifs d'impôts différés** : plan d'affaires, horizon, historique de bénéfices (IAS 12)",
+      "Évaluation du caractère suffisant des **provisions pour risques fiscaux** (positions incertaines, IFRIC 23) et lecture des correspondances avec l'administration",
+      "Recours à un **spécialiste fiscal** sur les prix de transfert et les positions complexes",
+      "Revue des **ajustements d'impôt de fin d'exercice** et de leur justification",
+      "Analyse de l'évolution pluriannuelle de l'ETR et confrontation au secteur"
+     ],
+     "exemple": "L'impôt comme **dernière variable d'ajustement du BPA** est une technique de gestion du résultat (earnings management) bien documentée dans la littérature académique. Les actifs d'impôts différés surévalués et le sous-provisionnement des risques fiscaux sont des points d'attention récurrents des régulateurs (ESMA, SEC)."
+    }
+   ]
+  }
+ ],
+ "assertions": [
+  {
+   "key": "existence",
+   "nom": "Existence / Réalité",
+   "icon": "🔍",
+   "color": "#0ea5e9",
+   "sens": "Surévaluation",
+   "sens_dir": "up",
+   "def": "L'actif, le passif ou l'opération comptabilisé **existe réellement** à la date de clôture (et l'opération a vraiment eu lieu).",
+   "fraude": "La fraude la plus directe : inscrire des **actifs ou des ventes fictifs** pour gonfler le bilan et le résultat.",
+   "cas": "Trésorerie inexistante (Wirecard), ventes bidon (Lernout & Hauspie), stocks fantômes (McKesson & Robbins).",
+   "postes": "Trésorerie · Créances clients · Stocks · Chiffre d'affaires"
+  },
+  {
+   "key": "exhaustivite",
+   "nom": "Exhaustivité",
+   "icon": "🧩",
+   "color": "#f59e0b",
+   "sens": "Omission / sous-évaluation",
+   "sens_dir": "down",
+   "def": "**Tout** ce qui devait être comptabilisé l'a été : aucune opération, aucun actif ni passif n'a été **oublié**.",
+   "fraude": "L'arme du passif : **omettre** des dettes, provisions ou charges pour alléger le bilan et gonfler le résultat.",
+   "cas": "Dettes hors bilan (Enron), provisions non dotées, factures « dans le tiroir », engagements tus (Carillion).",
+   "postes": "Dettes fournisseurs · Emprunts · Provisions · Charges"
+  },
+  {
+   "key": "droits",
+   "nom": "Droits & obligations",
+   "icon": "📜",
+   "color": "#8b5cf6",
+   "sens": "Surévaluation de l'actif net",
+   "sens_dir": "up",
+   "def": "L'entité **détient ou contrôle** réellement les actifs ; les dettes sont bien des **obligations** qui lui incombent.",
+   "fraude": "Comptabiliser des actifs qu'on ne possède pas (consignation, biens nantis) ou « sortir » des dettes via des entités ad hoc.",
+   "cas": "Stocks en consignation comptés comme siens ; dettes logées dans des SPE (Enron).",
+   "postes": "Stocks · Immobilisations · Participations · Dettes"
+  },
+  {
+   "key": "evaluation",
+   "nom": "Évaluation & imputation",
+   "icon": "⚖️",
+   "color": "#6366f1",
+   "sens": "Surévaluation",
+   "sens_dir": "up",
+   "def": "Les éléments sont comptabilisés pour le **bon montant** ; les ajustements de valeur (dépréciations, provisions) sont corrects.",
+   "fraude": "**Gonfler les valeurs** (pas de dépréciation des stocks, créances, goodwill) ou manipuler les **estimations comptables**.",
+   "cas": "Goodwill non déprécié (Autonomy/HP), stocks obsolètes maintenus, ducroire insuffisant.",
+   "postes": "Stocks · Créances · Goodwill · Immobilisations · Provisions"
+  },
+  {
+   "key": "cutoff",
+   "nom": "Séparation des exercices (cut-off)",
+   "icon": "✂️",
+   "color": "#ec4899",
+   "sens": "Décale le résultat entre exercices",
+   "sens_dir": "flip",
+   "def": "Les opérations sont rattachées au **bon exercice** : ni anticipées, ni reportées.",
+   "fraude": "Le maquillage de clôture : **anticiper des ventes**, **décaler des charges**, « tenir les livres ouverts » après le 31/12.",
+   "cas": "Ventes facturées d'avance, charges reportées, timing fournisseurs (Tesco 2014).",
+   "postes": "Chiffre d'affaires · Achats · Charges · Régularisations"
+  },
+  {
+   "key": "classification",
+   "nom": "Classification",
+   "icon": "🗂️",
+   "color": "#14b8a6",
+   "sens": "Améliore artificiellement ratios & EBIT",
+   "sens_dir": "up",
+   "def": "Les opérations et soldes sont enregistrés dans les **bons comptes** (bon poste, bonne rubrique).",
+   "fraude": "Déguiser la nature d'un flux : **charge capitalisée en actif** (WorldCom), dette CT classée en LT, exceptionnel maquillé en récurrent.",
+   "cas": "WorldCom (charges → immobilisations), reclassement opérationnel ↔ financier.",
+   "postes": "Immobilisations · Charges · Dettes · Résultat exceptionnel"
+  },
+  {
+   "key": "presentation",
+   "nom": "Présentation & informations (annexe)",
+   "icon": "📑",
+   "color": "#64748b",
+   "sens": "Dissimulation",
+   "sens_dir": "hide",
+   "def": "Les états financiers et l'**annexe** présentent et décrivent fidèlement et complètement les opérations (informations à fournir).",
+   "fraude": "Cacher l'essentiel : **engagements hors bilan, parties liées, risques, changements de méthode** non divulgués.",
+   "cas": "Engagements hors bilan tus, transactions avec parties liées non décrites.",
+   "postes": "Annexe · Engagements hors bilan · Parties liées"
+  }
+ ]
+}

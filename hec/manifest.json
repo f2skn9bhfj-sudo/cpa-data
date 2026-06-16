@@ -36,6 +36,36 @@
           "statut": "complet"
         }
       ]
+    },
+    {
+      "id": "cours_2_iccf2_ma",
+      "code": "ICCF2 — Cours 2",
+      "titre": "Fusions-Acquisitions (M&A)",
+      "ecole": "HEC Paris",
+      "description": "Cours ICCF2 — Fusions-Acquisitions. 4 semaines : le marché du M&A et la croissance externe, les process de cession et la valorisation, la typologie des opérations et les schémas de rapprochement, les grands enjeux de la négociation (prix, due diligence, SPA), et les offres publiques (OPA/OPE).",
+      "sommaire": "cours_2_iccf2_ma/_sommaire.md",
+      "couleur": "#1e3a8a",
+      "fiches": [
+        { "id": "semaine_1", "titre": "Semaine 1 — Introduction au M&A, négociation & valorisation", "fichier": "cours_2_iccf2_ma/semaine_1.json", "statut": "complet" },
+        { "id": "semaine_2", "titre": "Semaine 2 — Typologie des opérations & schémas de rapprochement", "fichier": "cours_2_iccf2_ma/semaine_2.json", "statut": "complet" },
+        { "id": "semaine_3", "titre": "Semaine 3 — Les grands enjeux de la négociation", "fichier": "cours_2_iccf2_ma/semaine_3.json", "statut": "complet" },
+        { "id": "semaine_4", "titre": "Semaine 4 — Offres publiques & conclusion sur le M&A", "fichier": "cours_2_iccf2_ma/semaine_4.json", "statut": "complet" }
+      ]
+    },
+    {
+      "id": "cours_3_iccf2_capital",
+      "code": "ICCF2 — Cours 3",
+      "titre": "Capital & Ingénierie Financière",
+      "ecole": "HEC Paris",
+      "description": "Cours ICCF2 — Capital et Ingénierie Financière. 4 semaines : gérer le capital (actionnariat, distribution, levée de fonds), le Private Equity & les LBO, l'introduction en bourse (IPO), et l'optimisation de la structure du groupe (carve-out, sortie de bourse, scission, organigramme financier).",
+      "sommaire": "cours_3_iccf2_capital/_sommaire.md",
+      "couleur": "#0f766e",
+      "fiches": [
+        { "id": "semaine_1", "titre": "Semaine 1 — Gérer le capital : structure, distribution & levée de fonds", "fichier": "cours_3_iccf2_capital/semaine_1.json", "statut": "complet" },
+        { "id": "semaine_2", "titre": "Semaine 2 — Private Equity & LBO", "fichier": "cours_3_iccf2_capital/semaine_2.json", "statut": "complet" },
+        { "id": "semaine_3", "titre": "Semaine 3 — L'introduction en bourse (IPO)", "fichier": "cours_3_iccf2_capital/semaine_3.json", "statut": "complet" },
+        { "id": "semaine_4", "titre": "Semaine 4 — Optimiser la structure de son groupe", "fichier": "cours_3_iccf2_capital/semaine_4.json", "statut": "complet" }
+      ]
     }
   ]
 }

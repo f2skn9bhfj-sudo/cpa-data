@@ -2467,7 +2467,9 @@
         {
           "label": "Contrôle ORDINAIRE (art. 727 CO)",
           "val": "2/3 sur 2 exercices : bilan 20M · CA 40M · 250 ETP",
-          "extra": "+ sociétés cotées + comptes consolidés obligatoires"
+          "extra": "+ sociétés cotées + comptes consolidés obligatoires",
+          "star": 1,
+          "mnemo": "20-40-250"
         },
         {
           "label": "Contrôle RESTREINT (art. 727a CO)",
@@ -2477,12 +2479,29 @@
         {
           "label": "OPTING-OUT (art. 727a al. 2 CO)",
           "val": "≤ 10 ETP + accord de TOUS les actionnaires",
-          "extra": "Renonciation totale au contrôle"
+          "extra": "Renonciation totale au contrôle",
+          "star": 1,
+          "mnemo": "U-10-T"
         },
         {
           "label": "Obligation comptabilité complète",
           "val": "CA ≥ CHF 500'000 (art. 957 CO)",
           "extra": "< 500k → comptabilité simplifiée"
+        },
+        {
+          "label": "Conservation des pièces comptables",
+          "val": "10 ans",
+          "extra": "Livres, pièces, rapport de gestion & de révision (art. 958f CO). Sous forme papier ou électronique."
+        },
+        {
+          "label": "Assemblée générale ordinaire",
+          "val": "Dans les 6 mois après la clôture",
+          "extra": "Art. 699 al. 2 CO. Approuve les comptes, décharge, affectation du bénéfice."
+        },
+        {
+          "label": "Prescription — action en responsabilité",
+          "val": "5 ans dès connaissance · 10 ans absolue",
+          "extra": "Art. 760 CO. Délai pénal plus long si l'acte est punissable (action contre administrateurs/réviseur)."
         }
       ]
     },
@@ -2492,7 +2511,9 @@
         {
           "label": "RPC fondamentales (petites entités)",
           "val": "2/3 sur 2 exercices : bilan 10M · CA 20M · 50 ETP",
-          "extra": "⚠️ Sociétés cotées = JAMAIS limitées aux fondamentales"
+          "extra": "⚠️ Sociétés cotées = JAMAIS limitées aux fondamentales",
+          "star": 1,
+          "mnemo": "10-20-50"
         },
         {
           "label": "RPC 30 pour petits groupes",
@@ -2517,7 +2538,8 @@
         {
           "label": "Taux NORMAL (dès 01.01.2024)",
           "val": "8,1%",
-          "extra": "Ancien : 7,7%"
+          "extra": "Ancien : 7,7%",
+          "star": 1
         },
         {
           "label": "Taux RÉDUIT",
@@ -2532,7 +2554,8 @@
         {
           "label": "Seuil assujettissement",
           "val": "CHF 100'000 CA mondial",
-          "extra": "Sportives/culturelles non lucratives : CHF 250'000"
+          "extra": "Sportives/culturelles non lucratives : CHF 250'000",
+          "star": 1
         },
         {
           "label": "Impôt sur les acquisitions — assujetti",
@@ -2637,7 +2660,8 @@
         {
           "label": "Surendettement (art. 725b CO)",
           "val": "Dettes > actifs (évaluation aux valeurs de continuation ET de liquidation)",
-          "extra": "Avis au juge si pas de perspective d'assainissement"
+          "extra": "Avis au juge si pas de perspective d'assainissement",
+          "star": 1
         },
         {
           "label": "Rôle de l'organe de révision",
@@ -2662,7 +2686,8 @@
         {
           "label": "Base : Bénéfice avant impôts",
           "val": "5 – 10%",
-          "extra": "Si BAI stable et significatif"
+          "extra": "Si BAI stable et significatif",
+          "star": 1
         },
         {
           "label": "Base : Chiffre d'affaires",
@@ -2692,12 +2717,14 @@
         {
           "label": "Capital-actions minimum SA",
           "val": "CHF 100'000",
-          "extra": "Libération min 20% (et au moins CHF 50'000)"
+          "extra": "Libération min 20% (et au moins CHF 50'000)",
+          "star": 1
         },
         {
           "label": "Capital social minimum Sàrl",
           "val": "CHF 20'000",
-          "extra": "Entièrement libéré à la constitution"
+          "extra": "Entièrement libéré à la constitution",
+          "star": 1
         },
         {
           "label": "Réserve légale issue du bénéfice",
@@ -2712,7 +2739,9 @@
         {
           "label": "Rotation associé d'audit (CH)",
           "val": "7 ans max + cooling-off 2 ans",
-          "extra": "EXPERTsuisse / LSR"
+          "extra": "EXPERTsuisse / LSR",
+          "star": 1,
+          "mnemo": "7+2"
         }
       ]
     }

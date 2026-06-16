@@ -270,28 +270,69 @@ function GlossarySection() {
   );
 }
 
-/* 4. Seuils */
+/* 4. Seuils — bandeau réflexes + recherche + cartes à valeur colorée */
 function SeuilsSection() {
   const sections = R_DATA.seuils || [];
+  const [q, setQ] = useState("");
+  const query = q.trim().toLowerCase();
+  const stripLabel = (s) => String(s || "").replace(/\s*\((?:art|RPC|LIFD|LTVA)[^)]*\)\s*$/i, "").trim();
+  const starred = [];
+  sections.forEach((sec) => (sec.items || []).forEach((it) => { if (it.star) starred.push({ ...it, _col: rCatColor(sec.cat) }); }));
+  const match = (it) => !query || ((it.label || "") + " " + (it.val || "") + " " + (it.extra || "") + " " + (it.mnemo || "")).toLowerCase().includes(query);
+  const anyHit = sections.some((s) => (s.items || []).some(match));
+
   return (
-    <div className="lg:columns-2 gap-3">
-      {sections.map((section, si) => {
-        const col = rCatColor(section.cat);
-        return (
-          <div key={si} className="bg-white rounded-xl border border-slate-200 mb-3 overflow-hidden break-inside-avoid" style={{ borderLeft: "3px solid " + col }}>
-            <div className="px-4 py-3 text-sm font-semibold border-b border-slate-100" style={{ color: col }}>{section.cat}</div>
-            {(section.items || []).map((item, ii) => (
-              <div key={ii} className="flex items-baseline justify-between gap-4 px-4 py-2.5 border-b border-slate-50">
-                <div className="min-w-0">
-                  <div className="text-sm text-slate-700">{item.label}</div>
-                  {item.extra && <div className="text-xs text-slate-400 mt-0.5">{item.extra}</div>}
-                </div>
-                <div className="text-sm font-semibold text-amber-600 whitespace-nowrap text-right shrink-0">{item.val}</div>
+    <div>
+      {!query && starred.length > 0 && (
+        <div className="mb-6">
+          <div className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-2.5">⭐ Réflexes chiffrés à connaître par cœur</div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
+            {starred.map((it, i) => (
+              <div key={i} className="rounded-2xl border bg-white p-3.5 shadow-sm" style={{ borderColor: it._col + "33" }}>
+                <div className="text-[17px] font-extrabold leading-none" style={{ color: it._col }}>{it.mnemo || it.val}</div>
+                <div className="text-[11px] text-slate-500 leading-snug mt-1.5">{stripLabel(it.label)}</div>
+                {it.mnemo && <div className="text-[10px] text-slate-400 mt-1 leading-snug">{it.val}</div>}
               </div>
             ))}
           </div>
-        );
-      })}
+        </div>
+      )}
+
+      <div className="mb-4 max-w-md"><RSearch value={q} onChange={setQ} placeholder="Rechercher un seuil (TVA, capital, prescription, matérialité…)" /></div>
+
+      <div className="lg:columns-2 gap-3">
+        {sections.map((section, si) => {
+          const col = rCatColor(section.cat);
+          const items = (section.items || []).filter(match);
+          if (!items.length) return null;
+          return (
+            <div key={si} className="bg-white rounded-2xl border border-slate-200 mb-3 overflow-hidden break-inside-avoid shadow-sm">
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-100" style={{ background: col + "0e" }}>
+                <span className="font-bold text-sm" style={{ color: col }}>{section.cat}</span>
+                <span className="ml-auto text-[11px] font-medium text-slate-400">{items.length}</span>
+              </div>
+              <div className="divide-y divide-slate-50">
+                {items.map((item, ii) => {
+                  const piege = /⚠️/.test(item.extra || "");
+                  return (
+                    <div key={ii} className="px-4 py-3">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-[13.5px] font-semibold text-slate-800 leading-snug">{item.star ? "⭐ " : ""}{item.label}</span>
+                        {item.mnemo && <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ background: col + "16", color: col }}>🧠 {item.mnemo}</span>}
+                      </div>
+                      <div className="text-[13.5px] font-bold mt-1 leading-snug" style={{ color: col }}>{item.val}</div>
+                      {item.extra && (
+                        <div className={"text-xs mt-1.5 leading-relaxed " + (piege ? "text-amber-800 bg-amber-50 border border-amber-100 rounded-lg px-2.5 py-1.5" : "text-slate-400")}>{item.extra}</div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      {query && !anyHit && <div className="text-sm text-slate-400 text-center py-8">Aucun seuil ne correspond à « {q} ».</div>}
     </div>
   );
 }

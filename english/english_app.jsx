@@ -91,7 +91,11 @@ function bridgeCall(method) {
   return Promise.reject(new Error("no-bridge"));
 }
 
-/* ── TTS (Web Speech API) — port fidèle ── */
+/* ── TTS (Web Speech API) ──────────────────────────────────────────
+   Les voix « Desktop » historiques de Windows sont robotiques. WebView2/Edge
+   expose aussi les voix NEURONALES « Online (Natural) » (Aria, Libby, Sonia,
+   Ryan…) — bien plus réalistes. On les classe par qualité et on prend la
+   meilleure par défaut, tout en laissant l'utilisateur choisir une voix précise. */
 let _voicesCache = null;
 function englishVoices() {
   if (!("speechSynthesis" in window)) return [];
@@ -103,26 +107,93 @@ function englishVoices() {
 if (typeof window !== "undefined" && "speechSynthesis" in window) {
   window.speechSynthesis.onvoiceschanged = () => { _voicesCache = null; };
 }
-function pickVoice(wanted) {
-  wanted = (wanted || "en-GB").toLowerCase();
-  const voices = englishVoices();
-  return voices.find((v) => v.lang.toLowerCase() === wanted)
-    || voices.find((v) => v.lang.toLowerCase().startsWith(wanted.split("-")[0]))
-    || voices[0] || null;
+/* marqueurs de voix « haut de gamme » dans les noms exposés par l'OS/navigateur */
+const GOOD_VOICE = /natural|neural|online|multilingual|google|aria|jenny|libby|sonia|ryan|guy|emma|ava|andrew|brian|michelle|natasha|clara|maisie|thomas|abbi|hollie|oliver|olivia|wavenet|premium|enhanced|siri|eloquence/i;
+const BAD_VOICE = /desktop|david|zira|mark|hazel|eva\b|server/i;   // anciennes voix SAPI robotiques
+function rankVoice(v, region) {
+  const lang = (v.lang || "").toLowerCase();
+  let s = 0;
+  if (region && lang === region.toLowerCase()) s += 4;            // bonne région exacte
+  else if (lang.slice(0, 2) === (region || "en").slice(0, 2)) s += 2;
+  if (GOOD_VOICE.test(v.name || "")) s += 6;                       // voix neuronale
+  if (!v.localService) s += 3;                                     // online ≈ neuronale
+  if (BAD_VOICE.test(v.name || "")) s -= 5;                        // vieille voix Desktop
+  return s;
 }
-let _audioCfg = { voice: "en-GB", rate: 0.95 };   // mis à jour par App
-function speak(text) {
-  if (!("speechSynthesis" in window) || !text || typeof text !== "string") return;
+function bestVoice(region) {
+  const vs = englishVoices();
+  if (!vs.length) return null;
+  return vs.map((v) => [rankVoice(v, region), v]).sort((a, b) => b[0] - a[0])[0][1];
+}
+function pickVoice(cfg) {
+  cfg = cfg || {};
+  const vs = englishVoices();
+  if (cfg.voiceName) { const m = vs.find((v) => v.name === cfg.voiceName); if (m) return m; }
+  return bestVoice(cfg.voice || "en-GB");
+}
+/* ── Voix neuronales edge-tts (Microsoft, gratuit) via le pont Python ── */
+const EDGE_VOICES = [
+  { id: "en-GB-SoniaNeural", label: "🇬🇧 Sonia · UK (F)" },
+  { id: "en-GB-RyanNeural", label: "🇬🇧 Ryan · UK (M)" },
+  { id: "en-GB-LibbyNeural", label: "🇬🇧 Libby · UK (F)" },
+  { id: "en-GB-ThomasNeural", label: "🇬🇧 Thomas · UK (M)" },
+  { id: "en-US-AriaNeural", label: "🇺🇸 Aria · US (F)" },
+  { id: "en-US-JennyNeural", label: "🇺🇸 Jenny · US (F)" },
+  { id: "en-US-GuyNeural", label: "🇺🇸 Guy · US (M)" },
+  { id: "en-US-AndrewMultilingualNeural", label: "🇺🇸 Andrew · US (M)" },
+  { id: "en-US-EmmaMultilingualNeural", label: "🇺🇸 Emma · US (F)" },
+];
+function ttsBridge() {
+  const api = pywebApi();
+  return (api && typeof api.tts_speak === "function") ? api : null;
+}
+const _edgeCache = {};       // "voice|rate|text" -> data URI
+let _edgeAudio = null;       // élément <audio> partagé
+let _edgeBusy = false;
+async function edgeSpeak(text) {
+  const api = ttsBridge();
+  if (!api) throw new Error("no-bridge");
+  const voice = _audioCfg.edgeVoice || "en-GB-SoniaNeural";
+  const rate = _audioCfg.rate || 1.0;
+  const key = voice + "|" + rate + "|" + text;
+  try { if ("speechSynthesis" in window) window.speechSynthesis.cancel(); } catch (e) {}
+  if (_edgeAudio) { try { _edgeAudio.pause(); } catch (e) {} }
+  let src = _edgeCache[key];
+  if (!src) {
+    _edgeBusy = true;
+    let res;
+    try { res = await Promise.resolve(api.tts_speak(text, voice, rate)); }
+    finally { _edgeBusy = false; }
+    if (!res || !res.ok || !res.audio) throw new Error((res && res.error) || "tts-failed");
+    src = "data:" + (res.mime || "audio/mpeg") + ";base64," + res.audio;
+    _edgeCache[key] = src;
+  }
+  if (!_edgeAudio) _edgeAudio = new Audio();
+  _edgeAudio.src = src;
+  _edgeAudio.playbackRate = 1.0;   // la vitesse est déjà appliquée à la synthèse
+  await _edgeAudio.play();
+}
+
+let _audioCfg = { voice: "en-GB", voiceName: "", rate: 0.95, engine: "edge", edgeVoice: "en-GB-SoniaNeural" };
+function webSpeak(text) {
+  if (!("speechSynthesis" in window) || !text) return;
   try {
     window.speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
-    const v = pickVoice(_audioCfg.voice);
-    if (v) u.voice = v;
-    u.lang = _audioCfg.voice || "en-GB";
+    const v = pickVoice(_audioCfg);
+    if (v) { u.voice = v; u.lang = v.lang; } else { u.lang = _audioCfg.voice || "en-GB"; }
     u.rate = _audioCfg.rate || 0.95;
     u.pitch = 1.0;
     window.speechSynthesis.speak(u);
   } catch (e) {}
+}
+function speak(text) {
+  if (!text || typeof text !== "string") return;
+  if (_audioCfg.engine === "edge" && ttsBridge()) {
+    edgeSpeak(text).catch(() => webSpeak(text));   // repli voix navigateur si réseau/erreur
+  } else {
+    webSpeak(text);
+  }
 }
 function SpeakBtn({ text, title, sm }) {
   return (
@@ -157,28 +228,91 @@ function ProgressBar({ pct, color }) {
   return <div className="h-1.5 rounded-full bg-slate-200 overflow-hidden flex-1"><div className="h-full rounded-full transition-all" style={{ width: pct + "%", background: color || "#4f46e5" }} /></div>;
 }
 
-/* ════════ Barre audio ════════ */
+/* ════════ Barre audio — sélecteur de voix (priorité aux voix neuronales) ════════ */
+function voiceFlag(lang) {
+  const l = (lang || "").toLowerCase();
+  if (l.startsWith("en-gb")) return "🇬🇧"; if (l.startsWith("en-us")) return "🇺🇸";
+  if (l.startsWith("en-au")) return "🇦🇺"; if (l.startsWith("en-ie")) return "🇮🇪";
+  if (l.startsWith("en-in")) return "🇮🇳"; if (l.startsWith("en-ca")) return "🇨🇦";
+  if (l.startsWith("en-za")) return "🇿🇦"; return "🌐";
+}
+function voiceShortName(v) {
+  // « Microsoft Aria Online (Natural) - English (United States) » → « Aria (Natural) »
+  let n = (v.name || "").replace(/^Microsoft\s+/i, "").replace(/\s*-\s*English.*/i, "")
+    .replace(/\bOnline\b/i, "").replace(/\s{2,}/g, " ").trim();
+  return n || v.name;
+}
 function AudioBar({ audio, setAudio }) {
-  const supported = "speechSynthesis" in window;
+  const supported = typeof window !== "undefined" && "speechSynthesis" in window;
+  const [, force] = useState(0);
+  useEffect(() => {
+    if (!supported) return;
+    const h = () => { _voicesCache = null; force((x) => x + 1); };
+    try { window.speechSynthesis.addEventListener("voiceschanged", h); } catch (e) {}
+    const t1 = setTimeout(h, 400), t2 = setTimeout(h, 1500);   // certaines voix arrivent tard
+    return () => { try { window.speechSynthesis.removeEventListener("voiceschanged", h); } catch (e) {} clearTimeout(t1); clearTimeout(t2); };
+  }, []);
   if (!supported) return <div className="text-xs text-slate-400 italic mb-4">🔇 Synthèse vocale non disponible dans ce navigateur.</div>;
-  const vBtn = (val, label) => (
-    <button onClick={() => setAudio({ ...audio, voice: val })}
-      className={"text-[11px] px-2.5 py-1 rounded-full border transition-colors " + (audio.voice === val ? "bg-indigo-600 border-indigo-600 text-white" : "border-slate-300 text-slate-500 hover:text-slate-700")}>{label}</button>
-  );
+
+  const voices = englishVoices().slice().sort((a, b) => rankVoice(b, audio.voice) - rankVoice(a, audio.voice));
+  const auto = bestVoice(audio.voice);
+  const hasNeural = voices.some((v) => GOOD_VOICE.test(v.name) || !v.localService);
+  const hasEdge = !!ttsBridge();
+  const engine = hasEdge ? (audio.engine || "edge") : "system";
+
   const rBtn = (val, label) => (
     <button onClick={() => setAudio({ ...audio, rate: val })}
-      className={"text-[11px] px-2.5 py-1 rounded-full border transition-colors " + (Math.abs(audio.rate - val) < 0.01 ? "bg-emerald-600 border-emerald-600 text-white" : "border-slate-300 text-slate-500 hover:text-slate-700")}>{label}</button>
+      className={"text-[11px] px-2.5 py-1 rounded-full border transition-colors " + (Math.abs((audio.rate || 0.95) - val) < 0.01 ? "bg-emerald-600 border-emerald-600 text-white" : "border-slate-300 text-slate-500 hover:text-slate-700")}>{label}</button>
   );
+  const engBtn = (val, label) => (
+    <button onClick={() => setAudio({ ...audio, engine: val })}
+      className={"text-[11px] px-2.5 py-1 rounded-lg border font-semibold transition-colors " + (engine === val ? "bg-indigo-600 border-indigo-600 text-white" : "border-slate-300 text-slate-500 hover:text-slate-700")}>{label}</button>
+  );
+
   return (
-    <div className="flex items-center gap-2.5 flex-wrap text-[11px] text-slate-500 bg-white border border-slate-200 rounded-xl px-3 py-2 mb-4">
-      <span>🔊 Audio :</span>
-      <span className="flex gap-1.5">{vBtn("en-GB", "🇬🇧 UK")}{vBtn("en-US", "🇺🇸 US")}</span>
-      <span className="ml-1.5">Vitesse :</span>
-      <span className="flex gap-1.5">{rBtn(0.75, "0.75×")}{rBtn(0.95, "1×")}{rBtn(1.15, "1.15×")}</span>
-      <label className="inline-flex items-center gap-1.5 ml-auto cursor-pointer">
-        <input type="checkbox" checked={!!audio.autoplay} onChange={() => setAudio({ ...audio, autoplay: !audio.autoplay })} />
-        <span>Auto-play au retournement</span>
-      </label>
+    <div className="bg-white border border-slate-200 rounded-xl px-3 py-2.5 mb-4">
+      <div className="flex items-center gap-2.5 flex-wrap text-[11px] text-slate-500">
+        <span className="font-medium text-slate-600">🔊 Voix</span>
+        {hasEdge && (
+          <span className="flex gap-1">{engBtn("edge", "✨ Neuronale")}{engBtn("system", "Système")}</span>
+        )}
+        {engine === "edge" ? (
+          <select value={audio.edgeVoice || "en-GB-SoniaNeural"}
+            onChange={(e) => setAudio({ ...audio, edgeVoice: e.target.value })}
+            className="text-[12px] border border-slate-300 rounded-lg px-2 py-1 bg-white text-slate-700 max-w-[280px] focus:border-indigo-500 outline-none">
+            {EDGE_VOICES.map((v) => <option key={v.id} value={v.id}>{v.label}</option>)}
+          </select>
+        ) : (
+          <select value={audio.voiceName || "__auto__"}
+            onChange={(e) => setAudio({ ...audio, voiceName: e.target.value === "__auto__" ? "" : e.target.value })}
+            className="text-[12px] border border-slate-300 rounded-lg px-2 py-1 bg-white text-slate-700 max-w-[280px] focus:border-indigo-500 outline-none">
+            <option value="__auto__">⭐ Auto — meilleure voix{auto ? " (" + voiceShortName(auto) + ")" : ""}</option>
+            {voices.map((v) => (
+              <option key={v.name} value={v.name}>
+                {voiceFlag(v.lang)} {voiceShortName(v)}{GOOD_VOICE.test(v.name) || !v.localService ? " ✨" : ""}
+              </option>
+            ))}
+          </select>
+        )}
+        <span className="ml-1.5">Vitesse</span>
+        <span className="flex gap-1.5">{rBtn(0.75, "0.75×")}{rBtn(0.95, "1×")}{rBtn(1.15, "1.15×")}</span>
+        <button onClick={() => speak("Hello, this is a preview of the selected voice.")}
+          className="text-[11px] px-2.5 py-1 rounded-full border border-indigo-200 text-indigo-600 hover:bg-indigo-50">▶ Tester</button>
+        <label className="inline-flex items-center gap-1.5 ml-auto cursor-pointer">
+          <input type="checkbox" checked={!!audio.autoplay} onChange={() => setAudio({ ...audio, autoplay: !audio.autoplay })} />
+          <span>Auto-play au retournement</span>
+        </label>
+      </div>
+      {engine === "edge" && (
+        <div className="text-[11px] text-indigo-700 bg-indigo-50 border border-indigo-100 rounded-lg px-2.5 py-1.5 mt-2 leading-snug">
+          ✨ Voix neuronales Microsoft (edge-tts, gratuit) — qualité supérieure, nécessite une connexion internet ; sinon repli automatique sur la voix du navigateur.
+        </div>
+      )}
+      {engine === "system" && !hasNeural && (
+        <div className="text-[11px] text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-2.5 py-1.5 mt-2 leading-snug">
+          💡 Seules des voix « Desktop » basiques sont installées. {hasEdge ? "Choisis plutôt « ✨ Neuronale » ci-dessus." : "Pour des voix plus naturelles : Windows → Paramètres → Heure et langue → Voix → ajoute une voix anglaise « Natural »."}
+        </div>
+      )}
     </div>
   );
 }
@@ -1401,7 +1535,7 @@ function EnglishApp() {
       phrases: Object.assign({ category: null, search: "" }, f.phrases || {}),
     };
   });
-  const [audio, setAudioRaw] = useState(() => Object.assign({ voice: "en-GB", autoplay: false, rate: 0.95 }, lsGet(LS_AUDIO, {})));
+  const [audio, setAudioRaw] = useState(() => Object.assign({ voice: "en-GB", voiceName: "", autoplay: false, rate: 0.95, engine: "edge", edgeVoice: "en-GB-SoniaNeural" }, lsGet(LS_AUDIO, {})));
   const [deleted, setDeleted] = useState(() => lsGet(LS_DELETED, {}));
   const [videosWatched, setVideosWatched] = useState(() => lsGet(LS_VIDEOS, {}));
   const [essentialsDone, setEssentialsDone] = useState(() => lsGet(LS_ESSENTIALS, {}));
@@ -1411,7 +1545,7 @@ function EnglishApp() {
   const [fsView, setFsView] = useState("income");
   const [phraseSession, setPhraseSession] = useState(null);
 
-  useEffect(() => { _audioCfg = { voice: audio.voice, rate: audio.rate }; }, [audio]);
+  useEffect(() => { _audioCfg = { voice: audio.voice, voiceName: audio.voiceName, rate: audio.rate, engine: audio.engine, edgeVoice: audio.edgeVoice }; }, [audio]);
   const setAudio = (a) => { setAudioRaw(a); lsSet(LS_AUDIO, a); };
   const setVocabFilters = (v) => { const n = { ...allFilters, vocab: v }; setAllFilters(n); lsSet(LS_FILTERS, n); };
   const setPhrasesFilters = (p) => { const n = { ...allFilters, phrases: p }; setAllFilters(n); lsSet(LS_FILTERS, n); };

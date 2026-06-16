@@ -1485,7 +1485,10 @@ function AuditGeneric({ section, onBack }) {
 
 /* ── Accueil Audit (hub) ── */
 const AUDIT_ORDER = ["annuaire", "nas", "cadre_legal", "cycles", "procedures_assertions", "quiz", "cas_pratiques", "examens_blancs", "arbres", "comparatifs", "lexique", "outils", "modeles", "terrain", "independance", "fraude", "goingconcern", "timeline", "actualites"];
-function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision }) {
+function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlanComptable, onFraudePostes, onReferencement }) {
+  const hasPlan = typeof window !== "undefined" && window.__PLAN_COMPTABLE__ && (window.__PLAN_COMPTABLE__.plans || []).length;
+  const hasFraude = typeof window !== "undefined" && window.__FRAUDE_POSTES__ && (window.__FRAUDE_POSTES__.sections || []).length;
+  const hasRef = typeof window !== "undefined" && window.__REFERENCEMENT__ && ((window.__REFERENCEMENT__.exemple || {}).feuilles || []).length;
   const keys = AUDIT_ORDER.filter((k) => data[k]);
   Object.keys(data).forEach((k) => { if (k[0] !== "_" && k !== "annuaire_cours" && AUDIT_ORDER.indexOf(k) < 0) keys.push(k); });
   const hasBook = book && (book.controle_ordinaire || book.controle_restreint);
@@ -1501,6 +1504,13 @@ function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision }) {
         <span className="flex-1"><span className="block font-bold text-base text-violet-800">Révision — la méga-fiche des 47 normes ISA</span><span className="block text-sm text-slate-600 mt-0.5">Toutes les normes condensées en une seule fiche : l'essentiel, repères, synthèse, pièges d'examen, mnémo. Navigable et téléchargeable en PDF.</span><span className="block text-xs text-violet-500 mt-1 font-medium">47 normes · 1 document · révision express</span></span>
         <ArrowRight size={20} className="text-violet-400 shrink-0" />
       </button>
+      {hasPlan && (
+        <button onClick={onPlanComptable} className="w-full text-left rounded-2xl border-2 border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
+          <span className="text-4xl">📊</span>
+          <span className="flex-1"><span className="block font-bold text-base text-emerald-800">Plans comptables — Suisse (PME) & France (PCG)</span><span className="block text-sm text-slate-600 mt-0.5">Découvre le plan comptable suisse PME et le plan français, classe par classe. Chaque compte est relié à sa ligne du bilan et du compte de résultat.</span><span className="block text-xs text-emerald-600 mt-1 font-medium">2 plans interactifs · comptes ↔ états financiers · autres plans suisses</span></span>
+          <ArrowRight size={20} className="text-emerald-400 shrink-0" />
+        </button>
+      )}
       {hasBook && (
         <button onClick={onBook} className="w-full text-left rounded-2xl border-2 border-violet-200 bg-gradient-to-r from-violet-50 to-fuchsia-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
           <span className="text-4xl">📚</span>
@@ -1549,6 +1559,26 @@ function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision }) {
                     </span>
                   </button>
                 ); })}
+                {g.id === "outils" && hasFraude && (
+                  <button onClick={onFraudePostes} className="text-left bg-white border border-rose-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-start gap-3">
+                    <span className="w-9 h-9 grid place-items-center rounded-lg border bg-rose-50 text-rose-700 border-rose-100 text-base shrink-0">🕵️</span>
+                    <span className="min-w-0">
+                      <span className="block font-bold text-sm text-slate-800 leading-tight">Fraude par poste</span>
+                      <span className="block text-xs text-slate-500 leading-snug mt-0.5">Schémas de fraude, signaux d'alerte & procédures de détection, ligne par ligne du bilan et du compte de résultat.</span>
+                      <span className="block text-[11px] text-rose-500 font-medium mt-1">{(window.__FRAUDE_POSTES__.sections || []).reduce((a, x) => a + (x.postes || []).length, 0)} postes · 76 schémas</span>
+                    </span>
+                  </button>
+                )}
+                {g.id === "outils" && hasRef && (
+                  <button onClick={onReferencement} className="text-left bg-white border border-indigo-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-start gap-3">
+                    <span className="w-9 h-9 grid place-items-center rounded-lg border bg-indigo-50 text-indigo-700 border-indigo-100 text-base shrink-0">🔗</span>
+                    <span className="min-w-0">
+                      <span className="block font-bold text-sm text-slate-800 leading-tight">Référencement croisé</span>
+                      <span className="block text-xs text-slate-500 leading-snug mt-0.5">Comment un dossier d'audit relie chaque chiffre à sa preuve : index des feuilles, renvois, tickmarks, et un dossier-exemple interactif.</span>
+                      <span className="block text-[11px] text-indigo-500 font-medium mt-1">dossier cliquable · cycle créances</span>
+                    </span>
+                  </button>
+                )}
               </div>
             </div>
           );
@@ -1664,6 +1694,968 @@ function AuditRevision({ data, onBack }) {
   );
 }
 
+/* ════════════════════════════════════════════════════════════════
+   PLAN COMPTABLE — plans suisses (PME) & français (PCG), interactifs :
+   chaque compte est relié à sa ligne du bilan / compte de résultat.
+   Données : window.__PLAN_COMPTABLE__ (build_audit.py).
+   ════════════════════════════════════════════════════════════════ */
+function _pcFlash(id, ring, _try) {
+  const el = document.getElementById(id);
+  if (!el) {                                   // l'élément vient peut-être d'être (dé)monté
+    if ((_try || 0) < 6) setTimeout(() => _pcFlash(id, ring, (_try || 0) + 1), 80);
+    return;
+  }
+  try {
+    el.scrollIntoView({ block: "center" });    // instantané : plus fiable que smooth en iframe
+    const cls = ring ? "pc-flash-ring" : "pc-flash";
+    el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls);
+    setTimeout(() => el.classList.remove(cls), 1900);
+  } catch (e) {}
+}
+/* table plate des comptes d'un plan, avec le contexte de classe/groupe */
+function pcFlatAccounts(plan) {
+  const out = [];
+  (plan.classes || []).forEach((c) => (c.groups || []).forEach((g) =>
+    (g.accounts || []).forEach((a) => out.push({
+      num: String(a.num), label: a.label, note: a.note || "",
+      groupCode: String(g.code), groupTitle: g.title,
+      classNum: String(c.num), classTitle: c.title, color: c.color || plan.accent,
+    }))));
+  return out;
+}
+function pcAllLines(plan) {
+  const st = plan.statements || {};
+  const tag = (arr, sec) => (arr || []).map((l) => ({ ...l, _sec: sec }));
+  return [].concat(tag(st.bilan_actif, "actif"), tag(st.bilan_passif, "passif"), tag(st.compte_resultat, "cr"));
+}
+/* un compte appartient à une ligne si son n° commence par un préfixe, OU si son
+   code de groupe commence par le préfixe (ex. 1020 Banque → groupe 100 → ligne
+   « Liquidités » de préfixe 100). On NE matche PAS l'inverse (préfixe plus
+   précis que le groupe), qui rattacherait à tort un compte à une ligne voisine. */
+function pcAcctMatchesPrefixes(acct, prefixes) {
+  return (prefixes || []).some((p) => acct.num.startsWith(p) || acct.groupCode.startsWith(p));
+}
+function pcBestPrefixLen(acct, prefixes) {
+  let best = -1;
+  (prefixes || []).forEach((p) => {
+    if (acct.num.startsWith(p) || acct.groupCode.startsWith(p)) best = Math.max(best, p.length);
+  });
+  return best;
+}
+
+function PcAccountRow({ a, onGo }) {
+  return (
+    <div id={"acct-" + a.num} onClick={() => onGo(a)}
+      className="group flex items-start gap-3 px-3 py-2 rounded-lg hover:bg-violet-50 cursor-pointer transition-colors border border-transparent hover:border-violet-100">
+      <span className="font-mono text-[12px] font-bold text-white rounded px-1.5 py-0.5 shrink-0 mt-0.5" style={{ background: a.color }}>{a.num}</span>
+      <span className="min-w-0 flex-1">
+        <span className="text-[13.5px] text-slate-800 font-medium leading-snug">{a.label}</span>
+        {a.note && <span className="block text-[12px] text-slate-500 leading-snug mt-0.5">{a.note}</span>}
+      </span>
+      <ArrowRight size={14} className="text-slate-300 group-hover:text-violet-500 shrink-0 mt-1 transition-colors" />
+    </div>
+  );
+}
+
+function AuditPlanComptable({ data, onBack }) {
+  const plans = (data && data.plans) || [];
+  const others = (data && data.others) || { plans: [] };
+  const [planId, setPlanId] = useState(plans.length ? plans[0].id : null);
+  const [mode, setMode] = useState("comptes");          // comptes | etats | legal
+  const [q, setQ] = useState("");
+  const [openLine, setOpenLine] = useState(null);
+  const [pending, setPending] = useState(null);          // {id, ring} à surligner après rendu
+
+  const showOthers = planId === "__others__";
+  const plan = plans.find((p) => p.id === planId) || plans[0];
+
+  const accounts = useMemo(() => (plan ? pcFlatAccounts(plan) : []), [planId]);
+  const lines = useMemo(() => (plan ? pcAllLines(plan) : []), [planId]);
+
+  useEffect(() => {
+    if (!pending) return;
+    const t = setTimeout(() => { _pcFlash(pending.id, pending.ring); setPending(null); }, 60);
+    return () => clearTimeout(t);
+  }, [pending, mode, planId]);
+
+  const norm = (s) => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+  /* compte -> ligne d'état (préfixe le plus spécifique ; repli : section de la classe) */
+  function lineForAccount(a) {
+    let best = null, bestLen = -1;
+    lines.forEach((l) => {
+      const len = pcBestPrefixLen(a, l.prefixes);
+      if (len > bestLen) { bestLen = len; best = l; }
+    });
+    if (best && bestLen >= 0) return best;
+    // repli : 1re ligne de niveau 1 de la section correspondant à la classe
+    const sec = pcClassSection(plan.id, a.classNum);
+    return lines.find((l) => l._sec === sec) || null;
+  }
+  function goToStatement(a) {
+    const l = lineForAccount(a);
+    if (!l) return;
+    setMode("etats"); setOpenLine(l.id); setPending({ id: "line-" + l.id, ring: false });
+  }
+  function goToAccount(num) {
+    setMode("comptes"); setPending({ id: "acct-" + num, ring: true });
+  }
+  function accountsForLine(l) {
+    return accounts.filter((a) => pcAcctMatchesPrefixes(a, l.prefixes));
+  }
+
+  if (!plan && !showOthers) {
+    return <div className="text-center text-slate-400 py-12">Plan comptable indisponible.</div>;
+  }
+
+  const accent = plan ? plan.accent : "#7c3aed";
+  const query = norm(q.trim());
+  const filtered = query.length >= 2
+    ? accounts.filter((a) => norm(a.num + " " + a.label + " " + a.note).includes(query))
+    : null;
+
+  return (
+    <div>
+      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
+
+      {/* hero */}
+      <div className="rounded-2xl bg-gradient-to-r from-slate-900 to-violet-900 text-white p-5 shadow mb-4">
+        <div className="flex items-center gap-3 flex-wrap">
+          <Layers size={26} className="text-violet-300" />
+          <div className="flex-1 min-w-[220px]">
+            <h2 className="text-xl font-bold">Plans comptables</h2>
+            <p className="text-sm text-violet-100 mt-0.5">Le plan suisse PME et le plan français (PCG), expliqués — et chaque compte relié à sa place dans le bilan et le compte de résultat.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* sélecteur de plan */}
+      <div className="flex gap-2 flex-wrap mb-4">
+        {plans.map((p) => (
+          <button key={p.id} onClick={() => { setPlanId(p.id); setMode("comptes"); setQ(""); }}
+            className={"flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold border transition-all " +
+              (planId === p.id ? "text-white shadow-sm" : "bg-white text-slate-600 border-slate-200 hover:border-violet-300")}
+            style={planId === p.id ? { background: p.accent, borderColor: p.accent } : {}}>
+            <span className="text-base">{p.flag}</span>{p.name}
+          </button>
+        ))}
+        {(others.plans || []).length > 0 && (
+          <button onClick={() => setPlanId("__others__")}
+            className={"flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold border transition-all " +
+              (showOthers ? "bg-slate-700 text-white border-slate-700" : "bg-white text-slate-600 border-slate-200 hover:border-slate-400")}>
+            📚 Autres plans suisses
+          </button>
+        )}
+      </div>
+
+      {showOthers ? <PcOthers others={others} /> : (
+        <div>
+          {/* intro plan + onglets de mode */}
+          <div className="rounded-xl border bg-white p-4 mb-4" style={{ borderColor: accent + "44" }}>
+            <div className="flex items-center gap-2 mb-1 flex-wrap">
+              <span className="text-2xl">{plan.flag}</span>
+              <div>
+                <div className="font-bold text-slate-800">{plan.name}</div>
+                <div className="text-xs text-slate-500">{plan.subtitle}</div>
+              </div>
+            </div>
+            <p className="text-[13px] text-slate-600 leading-relaxed mt-1.5">{plan.intro}</p>
+          </div>
+
+          <div className="flex gap-2 flex-wrap mb-4">
+            <PcTab on={mode === "comptes"} accent={accent} onClick={() => setMode("comptes")} icon={<BookOpen size={15} />}>Plan de comptes</PcTab>
+            <PcTab on={mode === "etats"} accent={accent} onClick={() => setMode("etats")} icon={<Scale size={15} />}>Bilan & compte de résultat</PcTab>
+            {plan.legal && <PcTab on={mode === "legal"} accent={accent} onClick={() => setMode("legal")} icon={<FileText size={15} />}>Structure légale (CO)</PcTab>}
+          </div>
+
+          {mode === "comptes" && <PcComptes plan={plan} accounts={accounts} filtered={filtered} q={q} setQ={setQ} onGo={goToStatement} lineForAccount={lineForAccount} />}
+          {mode === "etats" && <PcEtats plan={plan} openLine={openLine} setOpenLine={setOpenLine} accountsForLine={accountsForLine} onAccount={goToAccount} />}
+          {mode === "legal" && plan.legal && <PcLegal legal={plan.legal} accent={accent} />}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function PcTab({ on, accent, onClick, icon, children }) {
+  return (
+    <button onClick={onClick}
+      className={"flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold border transition-colors " +
+        (on ? "text-white" : "bg-white text-slate-600 border-slate-200 hover:border-violet-300")}
+      style={on ? { background: accent, borderColor: accent } : {}}>{icon}{children}</button>
+  );
+}
+
+/* ── Vue « Plan de comptes » : classes colorées, groupes, comptes cliquables ── */
+function PcComptes({ plan, accounts, filtered, q, setQ, onGo, lineForAccount }) {
+  if (filtered) {
+    return (
+      <div>
+        <PcSearch q={q} setQ={setQ} accent={plan.accent} count={filtered.length} />
+        <div className="bg-white rounded-xl border border-slate-200 p-2">
+          {filtered.length === 0 && <div className="text-center text-slate-400 text-sm py-8">Aucun compte ne correspond.</div>}
+          {filtered.map((a) => <PcAccountRow key={a.num + a.label} a={a} onGo={onGo} />)}
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div>
+      <PcSearch q={q} setQ={setQ} accent={plan.accent} count={accounts.length} />
+      {/* navigation par classe */}
+      <div className="flex gap-1.5 overflow-x-auto pb-1 mb-3 sticky top-0 bg-slate-100/95 backdrop-blur z-10 -mx-1 px-1">
+        {(plan.classes || []).map((c) => (
+          <button key={c.num} onClick={() => _pcFlash("class-" + c.num, false)}
+            className="text-[11px] font-bold px-2.5 py-1 rounded-full border whitespace-nowrap shrink-0"
+            style={{ borderColor: c.color + "66", color: c.color, background: c.color + "10" }}>
+            {c.num} · {c.title.length > 22 ? c.title.slice(0, 22) + "…" : c.title}
+          </button>
+        ))}
+      </div>
+      {(plan.classes || []).map((c) => (
+        <div key={c.num} id={"class-" + c.num} className="mb-5 scroll-mt-16">
+          <div className="rounded-xl p-3.5 mb-2 text-white" style={{ background: c.color }}>
+            <div className="flex items-center gap-2.5">
+              <span className="text-2xl font-black opacity-90">{c.num}</span>
+              <span className="font-bold text-[15px] leading-tight">Classe {c.num} — {c.title}</span>
+            </div>
+            {c.intro && <p className="text-[12.5px] text-white/90 leading-relaxed mt-1.5">{c.intro}</p>}
+          </div>
+          {(c.groups || []).map((g) => (
+            <div key={g.code} className="bg-white rounded-xl border border-slate-200 mb-2 overflow-hidden">
+              <div className="px-3.5 py-2 bg-slate-50 border-b border-slate-100 flex items-center gap-2">
+                <span className="font-mono text-[11px] font-bold text-slate-500">{g.code}</span>
+                <span className="text-[13px] font-semibold text-slate-700">{g.title}</span>
+              </div>
+              <div className="p-1.5">
+                {(g.accounts || []).map((a) => (
+                  <PcAccountRow key={a.num} a={{ ...a, num: String(a.num), groupCode: String(g.code), color: c.color, classNum: String(c.num) }} onGo={onGo} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function PcSearch({ q, setQ, accent, count }) {
+  return (
+    <div className="flex items-center gap-3 mb-3">
+      <div className="relative flex-1 max-w-md">
+        <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher un compte (n° ou libellé)…"
+          className="w-full pl-9 pr-3 py-2 rounded-lg border border-slate-300 text-sm outline-none focus:ring-1"
+          style={{ borderColor: q ? accent : undefined }} />
+      </div>
+      <span className="text-xs text-slate-400">{count} comptes</span>
+    </div>
+  );
+}
+
+/* ── Vue « Bilan & compte de résultat » : lignes cliquables ↔ comptes ── */
+function PcStatementBlock({ title, icon, lines, openLine, setOpenLine, accountsForLine, onAccount, accent }) {
+  if (!lines || !lines.length) return null;
+  return (
+    <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+      <div className="px-4 py-2.5 text-white font-bold text-sm flex items-center gap-2" style={{ background: accent }}>{icon}{title}</div>
+      <div className="divide-y divide-slate-100">
+        {lines.map((l) => {
+          const open = openLine === l.id;
+          const accts = open ? accountsForLine(l) : null;
+          const lvl1 = (l.niveau || 1) === 1;
+          return (
+            <div key={l.id} id={"line-" + l.id} className="scroll-mt-16">
+              <button onClick={() => setOpenLine(open ? null : l.id)}
+                className={"w-full text-left flex items-start gap-2 px-3 py-2 hover:bg-violet-50 transition-colors " + (lvl1 ? "" : "pl-7")}>
+                <span className="flex-1 min-w-0">
+                  <span className={lvl1 ? "text-[13.5px] font-bold text-slate-800" : "text-[13px] text-slate-700"}>{l.label}</span>
+                  {l.note && <span className="block text-[11.5px] text-slate-400 leading-snug mt-0.5">{l.note}</span>}
+                </span>
+                <span className="flex items-center gap-1 shrink-0">
+                  {(l.prefixes || []).slice(0, 5).map((p, i) => (
+                    <span key={i} className="font-mono text-[11.5px] font-bold rounded px-1.5 py-0.5 border tabular-nums"
+                      style={{ color: accent, background: accent + "14", borderColor: accent + "3a" }}>{p}</span>
+                  ))}
+                  {(l.prefixes || []).length > 5 && <span className="text-[11px] font-semibold text-slate-400">+{(l.prefixes || []).length - 5}</span>}
+                  <ChevronDown size={15} className={"text-slate-400 transition-transform ml-0.5 " + (open ? "rotate-180" : "")} />
+                </span>
+              </button>
+              {open && (
+                <div className="px-3 pb-2.5 pt-0.5 bg-slate-50/60">
+                  {accts.length === 0 && <div className="text-[12px] text-slate-400 px-2 py-1">Aucun compte détaillé rattaché dans ce plan.</div>}
+                  <div className="flex flex-wrap gap-1.5">
+                    {accts.map((a) => (
+                      <button key={a.num} onClick={() => onAccount(a.num)}
+                        title={a.label}
+                        className="flex items-center gap-1.5 text-[12px] rounded-lg border border-slate-200 bg-white hover:border-violet-300 hover:bg-violet-50 pl-1 pr-2 py-1 transition-colors">
+                        <span className="font-mono text-[11.5px] font-bold text-white rounded px-1.5 py-0.5 tabular-nums" style={{ background: a.color }}>{a.num}</span>
+                        <span className="text-slate-700 max-w-[220px] truncate">{a.label}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function PcEtats({ plan, openLine, setOpenLine, accountsForLine, onAccount }) {
+  const st = plan.statements || {};
+  return (
+    <div>
+      <div className="bg-violet-50 border border-violet-100 rounded-xl px-4 py-3 mb-4 text-[12.5px] text-violet-800 leading-relaxed flex gap-2">
+        <Info size={16} className="shrink-0 mt-0.5" />
+        <span>Clique sur une ligne pour voir les comptes qui l'alimentent ; clique sur un compte pour revenir à sa place dans le plan. {st.intro ? "" : ""}</span>
+      </div>
+      <div className="grid lg:grid-cols-2 gap-3 mb-3 items-start">
+        <PcStatementBlock title="BILAN — Actif" icon={<Banknote size={15} />} lines={st.bilan_actif} accent={plan.accent}
+          openLine={openLine} setOpenLine={setOpenLine} accountsForLine={accountsForLine} onAccount={onAccount} />
+        <PcStatementBlock title="BILAN — Passif" icon={<Scale size={15} />} lines={st.bilan_passif} accent="#64748b"
+          openLine={openLine} setOpenLine={setOpenLine} accountsForLine={accountsForLine} onAccount={onAccount} />
+      </div>
+      <PcStatementBlock title="COMPTE DE RÉSULTAT" icon={<FileText size={15} />} lines={st.compte_resultat} accent="#0f766e"
+        openLine={openLine} setOpenLine={setOpenLine} accountsForLine={accountsForLine} onAccount={onAccount} />
+    </div>
+  );
+}
+
+/* ── Vue « Structure légale CO » (Suisse) ── */
+function PcLegal({ legal, accent }) {
+  return (
+    <div>
+      {legal.intro && <div className="bg-white rounded-xl border border-slate-200 p-4 mb-3 text-[13px] text-slate-600 leading-relaxed">{legal.intro}</div>}
+      {(legal.sections || []).map((s, si) => (
+        <div key={si} className="bg-white rounded-xl border border-slate-200 mb-3 overflow-hidden">
+          <div className="px-4 py-2.5 border-b border-slate-100 flex items-center gap-2 flex-wrap">
+            <span className="font-bold text-[14px] text-slate-800">{s.titre}</span>
+            {s.article && <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-violet-50 text-violet-700 border border-violet-200">{s.article}</span>}
+          </div>
+          <div className="p-2">
+            {(s.postes || []).map((p, pi) => (
+              <div key={pi} className={"flex items-start gap-2 px-3 py-1.5 " + ((p.niveau || 1) === 1 ? "font-semibold text-slate-800 mt-1" : "pl-7 text-slate-600")}>
+                <span className="flex-1 text-[13px]">{p.label}</span>
+                {p.note && <span className="text-[11px] text-slate-400 shrink-0 max-w-[45%] text-right">{p.note}</span>}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ── Vue « Autres plans suisses » ── */
+function PcOthers({ others }) {
+  return (
+    <div>
+      {others.intro && <div className="bg-white rounded-xl border border-slate-200 p-4 mb-3 text-[13px] text-slate-600 leading-relaxed">{others.intro}</div>}
+      <div className="grid md:grid-cols-2 gap-3 items-start">
+        {(others.plans || []).map((p, i) => (
+          <div key={i} className="bg-white rounded-xl border border-slate-200 p-4">
+            <div className="font-bold text-[14px] text-slate-800 mb-1">{p.nom}</div>
+            {p.usage && <div className="text-[12px] text-violet-700 bg-violet-50 border border-violet-100 rounded-lg px-2.5 py-1.5 mb-2 leading-snug"><span className="font-semibold">Usage : </span>{p.usage}</div>}
+            <div className="text-[13px] text-slate-600 leading-relaxed">{p.description}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+function pcClassSection(planId, classNum) {
+  const n = String(classNum);
+  if (planId === "fr_pcg") return (n === "1") ? "passif" : (n === "6" || n === "7" || n === "8") ? "cr" : "actif";
+  // suisse : 1 actif, 2 passif, 3-9 compte de résultat
+  return n === "1" ? "actif" : n === "2" ? "passif" : "cr";
+}
+
+/* ════════════════════════════════════════════════════════════════
+   FRAUDE PAR POSTE — ce qu'il faut savoir sur la fraude potentielle
+   de chaque ligne du bilan & du compte de résultat (schémas, signaux
+   d'alerte, procédures de détection). Données : window.__FRAUDE_POSTES__.
+   ════════════════════════════════════════════════════════════════ */
+/* sens directionnel d'une assertion : ↑ surévaluer · ↓ omettre · ↕ décaler · ∅ dissimuler */
+const FP_DIR = {
+  up:   { arrow: "↑", bg: "#fff1f2", bd: "#fecdd3", fg: "#be123c" },
+  down: { arrow: "↓", bg: "#fffbeb", bd: "#fde68a", fg: "#b45309" },
+  flip: { arrow: "↕", bg: "#f5f3ff", bd: "#ddd6fe", fg: "#6d28d9" },
+  hide: { arrow: "∅", bg: "#f1f5f9", bd: "#cbd5e1", fg: "#475569" },
+};
+function FpSensBadge({ dir, text }) {
+  const d = FP_DIR[dir] || FP_DIR.up;
+  return (
+    <span className="inline-flex items-center gap-1 text-[11px] font-bold rounded-full border px-2 py-0.5 whitespace-nowrap"
+      style={{ background: d.bg, borderColor: d.bd, color: d.fg }}>
+      <span className="text-[12px] leading-none">{d.arrow}</span>{text}
+    </span>
+  );
+}
+/* libellé de section : icône + titre capitales + filet teinté (pas de bordure latérale) */
+function FpSectionLabel({ icon, children, color }) {
+  return (
+    <div className="flex items-center gap-2 mb-1.5">
+      <span className="text-[12px] leading-none">{icon}</span>
+      <span className="text-[10.5px] font-bold uppercase tracking-[0.09em]" style={{ color }}>{children}</span>
+      <span className="flex-1 h-px rounded-full" style={{ background: color + "26" }} />
+    </div>
+  );
+}
+function FpListBlock({ icon, title, color, items }) {
+  if (!items || !items.length) return null;
+  return (
+    <div className="mt-3">
+      <FpSectionLabel icon={icon} color={color}>{title}</FpSectionLabel>
+      <ul className="space-y-1.5">
+        {items.map((it, i) => (
+          <li key={i} className="text-[13px] text-slate-700 leading-snug flex gap-2">
+            <span className="mt-[6px] h-1.5 w-1.5 rounded-full shrink-0" style={{ background: color }} />
+            <span className="max-w-[68ch]"><MdInline text={it} /></span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+/* relie un libellé d'assertion (texte libre d'un poste) à la clé de l'assertion documentée */
+function _fpAssertKey(text, assertions) {
+  const n = String(text || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim();
+  let hit = null;
+  (assertions || []).forEach((a) => {
+    const an = String(a.nom || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    if (an.includes(n) || n.includes(a.key) || an.split(/[ /]/)[0] === n.split(/[ /]/)[0]) hit = a.key;
+  });
+  return hit;
+}
+/* carte d'assertion : médaillon + définition + comment la fraude l'attaque + postes exposés cliquables */
+function FpAssertionCard({ a, onPoste }) {
+  const c = a.color || "#6366f1";
+  return (
+    <div id={"fp-assert-" + a.key} className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all duration-300 ease-out hover:shadow-md hover:-translate-y-0.5">
+      <div className="h-1" style={{ background: c }} />
+      <div className="p-4 sm:p-5">
+        <div className="flex items-start gap-3.5">
+          <div className="h-11 w-11 shrink-0 rounded-xl grid place-items-center text-[22px]" style={{ background: c + "14", boxShadow: "inset 0 0 0 1px " + c + "33" }}>{a.icon}</div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 flex-wrap">
+              <h3 className="font-bold text-[15.5px] text-slate-800 leading-tight">{a.nom}</h3>
+              <FpSensBadge dir={a.sens_dir} text={a.sens} />
+            </div>
+            <p className="text-[13.5px] text-slate-600 leading-relaxed mt-1.5 max-w-[68ch]"><MdInline text={a.def} /></p>
+          </div>
+        </div>
+        <div className="mt-3 rounded-xl border px-3.5 py-2.5" style={{ background: c + "0d", borderColor: c + "33" }}>
+          <div className="text-[10.5px] font-bold uppercase tracking-[0.09em] mb-1" style={{ color: c }}>🎭 Comment la fraude l'attaque</div>
+          <p className="text-[13px] text-slate-700 leading-snug max-w-[68ch]"><MdInline text={a.fraude} /></p>
+        </div>
+        {a.cas && (
+          <p className="text-[12.5px] text-slate-500 leading-snug mt-2.5 max-w-[70ch]"><span className="font-semibold text-slate-600">Cas emblématiques :</span> <MdInline text={a.cas} /></p>
+        )}
+        {a.postes && (
+          <div className="flex flex-wrap items-center gap-1.5 mt-3">
+            <span className="text-[10.5px] font-bold uppercase tracking-[0.09em] text-slate-400">Postes exposés</span>
+            {a.postes.split("·").map((p, i) => {
+              const t = p.trim();
+              if (!t) return null;
+              return <button key={i} onClick={() => onPoste && onPoste(t)} className="text-[11.5px] font-medium rounded-full px-2.5 py-0.5 bg-slate-100 text-slate-600 hover:bg-slate-800 hover:text-white transition-colors">{t}</button>;
+            })}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+function FpPosteCard({ p, secColor, open, onToggle, onAssertion }) {
+  const nSch = (p.schemes || []).length;
+  return (
+    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all duration-300 ease-out hover:shadow-md">
+      <button onClick={onToggle} className="w-full flex items-center gap-3 px-4 py-3 text-left">
+        <span className="h-10 w-10 shrink-0 rounded-xl grid place-items-center text-[20px]" style={{ background: secColor + "14", boxShadow: "inset 0 0 0 1px " + secColor + "30" }}>{p.icon || "•"}</span>
+        <span className="flex-1 min-w-0">
+          <span className="block font-bold text-[14.5px] text-slate-800 leading-tight">{p.poste}</span>
+          <span className="flex items-center gap-2 flex-wrap mt-0.5">
+            {p.comptes && <span className="text-[10px] font-mono text-slate-500 bg-slate-100 rounded px-1.5 py-0.5">{p.comptes}</span>}
+            {p.sens && <span className="text-[11px] text-slate-500"><MdInline text={p.sens} /></span>}
+          </span>
+        </span>
+        {nSch > 0 && <span className="hidden sm:inline-flex items-center gap-1 text-[10.5px] font-bold rounded-full px-2 py-0.5 bg-rose-50 text-rose-600 border border-rose-200 whitespace-nowrap">{nSch} schéma{nSch > 1 ? "s" : ""}</span>}
+        <ChevronDown size={16} className={"text-slate-400 shrink-0 transition-transform duration-300 " + (open ? "rotate-180" : "")} />
+      </button>
+      {open && (
+        <div className="px-4 pb-4 pt-1 border-t border-slate-100">
+          {(p.assertions || []).length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mt-3 mb-1 items-center">
+              <span className="text-[10.5px] font-bold uppercase tracking-[0.09em] text-slate-400 self-center">Assertions visées</span>
+              {p.assertions.map((a, i) => (
+                <button key={i} onClick={() => onAssertion && onAssertion(a)} title="Voir l'assertion" className="group text-[11px] font-semibold px-2.5 py-0.5 rounded-full border transition-colors hover:brightness-95" style={{ color: secColor, borderColor: secColor + "55", background: secColor + "10" }}>{a} <span className="opacity-50 group-hover:opacity-100">→</span></button>
+              ))}
+            </div>
+          )}
+          {nSch > 0 && (
+            <div className="mt-3">
+              <FpSectionLabel icon="🎭" color="#be123c">Schémas de fraude</FpSectionLabel>
+              <div className="space-y-2">
+                {p.schemes.map((s, i) => (
+                  <div key={i} className="rounded-xl border border-rose-200 bg-rose-50/70 px-3 py-2.5">
+                    <div className="flex gap-2.5">
+                      <span className="shrink-0 h-5 min-w-[20px] px-1 grid place-items-center rounded-md bg-rose-600 text-white text-[10.5px] font-bold tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                      <div className="min-w-0">
+                        <div className="text-[13px] font-bold text-rose-800"><MdInline text={s.nom || ""} /></div>
+                        {s.comment && <div className="text-[13px] text-slate-700 leading-snug mt-0.5 max-w-[68ch]"><MdInline text={s.comment} /></div>}
+                        {s.indice && <div className="text-[12px] text-slate-500 leading-snug mt-1.5">🔎 <span className="font-semibold">Indice :</span> <MdInline text={s.indice} /></div>}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          <FpListBlock icon="🚩" title="Signaux d'alerte" color="#b45309" items={p.red_flags} />
+          <FpListBlock icon="✅" title="Procédures d'audit" color="#047857" items={p.procedures} />
+          {p.exemple && (
+            <div className="mt-3 rounded-xl bg-slate-50 border border-slate-200 px-3.5 py-2.5">
+              <div className="text-[10.5px] font-bold uppercase tracking-[0.09em] text-slate-400 mb-0.5">💼 Cas réel</div>
+              <div className="text-[12.5px] text-slate-600 leading-snug max-w-[70ch]"><MdInline text={p.exemple} /></div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+function AuditFraudePostes({ data, onBack }) {
+  const fp = data || {};
+  const sections = fp.sections || [];
+  const assertions = fp.assertions || [];
+  const [lens, setLens] = useState("postes");
+  const [tab, setTab] = useState(sections.length ? sections[0].id : null);
+  const [q, setQ] = useState("");
+  const [openMap, setOpenMap] = useState({});
+  const [allOpen, setAllOpen] = useState(false);
+  const norm = (s) => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  const query = norm(q.trim());
+  const matchPoste = (p) => !query || norm(JSON.stringify(p)).includes(query);
+  const key = (sid, i) => sid + "-" + i;
+  const isOpen = (sid, i) => allOpen || !!openMap[key(sid, i)] || query.length >= 2;
+
+  if (!sections.length) return <div className="text-center text-slate-400 py-12">Données indisponibles.</div>;
+
+  const totalPostes = sections.reduce((a, s) => a + (s.postes || []).length, 0);
+  const totalSchemes = sections.reduce((a, s) => a + (s.postes || []).reduce((b, p) => b + (p.schemes || []).length, 0), 0);
+  const filteredSections = query.length >= 2
+    ? sections.map((s) => ({ ...s, postes: (s.postes || []).filter(matchPoste) })).filter((s) => s.postes.length)
+    : sections.filter((s) => s.id === tab);
+
+  // liens croisés
+  const jumpToAssertion = (txt) => {
+    const k = _fpAssertKey(txt, assertions);
+    setLens("assertions");
+    if (k) setTimeout(() => _pcFlash("fp-assert-" + k, true), 70);
+  };
+  const jumpToPoste = (txt) => {
+    setAllOpen(false); setOpenMap({}); setQ(txt); setLens("postes");
+    try { window.scrollTo({ top: 0 }); } catch (e) {}
+  };
+
+  const LEGEND = [
+    { d: "up", t: "Actif & produits : on surévalue" },
+    { d: "down", t: "Passif & charges : on omet" },
+    { d: "flip", t: "Cut-off : on décale entre exercices" },
+  ];
+
+  return (
+    <div>
+      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-rose-700 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
+
+      {/* hero — dossier d'enquête */}
+      <div className="relative overflow-hidden rounded-2xl text-white p-5 sm:p-6 shadow mb-4" style={{ background: "linear-gradient(135deg,#0f172a 0%,#221a2e 55%,#3b1020 100%)" }}>
+        <div className="flex items-center gap-2 text-[10.5px] font-mono uppercase tracking-[0.18em] text-rose-300 mb-2">
+          <AlertTriangle size={13} /> Dossier · fraude financière
+        </div>
+        <h2 className="text-2xl font-bold leading-tight">Cartographie de la fraude, poste par poste</h2>
+        <p className="text-[13.5px] text-slate-300 mt-1.5 max-w-[72ch] leading-relaxed">Pour chaque ligne du bilan et du compte de résultat : par quel schéma on la falsifie, à quels signaux la repérer, par quelles procédures la débusquer. Et, en miroir, les assertions d'audit que chaque fraude vient attaquer.</p>
+        <div className="flex flex-wrap gap-2 mt-4">
+          {LEGEND.map((l, i) => {
+            const d = FP_DIR[l.d];
+            return <span key={i} className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-2.5 py-1 text-[11.5px] text-slate-200"><span className="font-bold" style={{ color: d.fg === "#475569" ? "#cbd5e1" : "#fda4af" }}>{d.arrow}</span>{l.t}</span>;
+          })}
+        </div>
+        <div className="flex flex-wrap gap-2 mt-3 text-[11.5px] font-semibold">
+          <span className="rounded-md bg-white/10 px-2.5 py-1 tabular-nums">{totalPostes} postes</span>
+          <span className="rounded-md bg-white/10 px-2.5 py-1 tabular-nums">{totalSchemes} schémas de fraude</span>
+          <span className="rounded-md bg-white/10 px-2.5 py-1 tabular-nums">{assertions.length} assertions</span>
+        </div>
+      </div>
+
+      {fp.intro && <div className="bg-white rounded-xl border border-slate-200 p-4 mb-3 text-[13.5px] text-slate-700 leading-relaxed max-w-[74ch]"><MdInline text={fp.intro} /></div>}
+      {fp.triangle && (
+        <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 mb-4">
+          <div className="text-[12.5px] font-bold uppercase tracking-[0.06em] text-amber-800 mb-2.5">{fp.triangle.titre}</div>
+          <div className="grid sm:grid-cols-3 gap-2">
+            {(fp.triangle.items || []).map((it, i) => (
+              <div key={i} className="bg-white rounded-lg px-3 py-2.5 border border-amber-100">
+                <div className="text-[12.5px] font-bold text-amber-900">{it.l}</div>
+                <div className="text-[12px] text-slate-600 leading-snug mt-0.5">{it.t}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* sélecteur de lentille */}
+      <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
+        <div className="inline-flex rounded-xl border border-slate-200 bg-white p-0.5 shadow-sm">
+          {[["postes", "🗂️ Par poste"], ["assertions", "🎯 Par assertion"]].map(([k, lbl]) => (
+            <button key={k} onClick={() => setLens(k)} className={"px-3.5 py-1.5 rounded-lg text-[13px] font-semibold transition-colors " + (lens === k ? "bg-slate-800 text-white" : "text-slate-500 hover:text-slate-800")}>{lbl}</button>
+          ))}
+        </div>
+        <p className="text-[12px] text-slate-400 max-w-[42ch]">{lens === "postes" ? "Déplie un poste pour ses schémas, signaux et procédures." : "L'angle de l'auditeur : ce que chaque fraude vient violer."}</p>
+      </div>
+
+      {lens === "assertions" ? (
+        <div>
+          <p className="text-[13px] text-slate-500 mb-3.5 max-w-[74ch] leading-relaxed">Les sept assertions d'audit sont les affirmations implicites de la direction sur les comptes. Toute fraude revient à en violer une. Clique un poste exposé pour basculer sur sa fiche détaillée.</p>
+          <div className="grid gap-3 lg:grid-cols-2 items-start">
+            {assertions.map((a) => <FpAssertionCard key={a.key} a={a} onPoste={jumpToPoste} />)}
+          </div>
+        </div>
+      ) : (
+        <div>
+          {/* recherche + onglets */}
+          <div className="sticky top-0 z-10 -mx-4 px-4 py-2.5 bg-slate-100/95 backdrop-blur border-b border-slate-200 mb-4">
+            <div className="flex items-center gap-2 flex-wrap">
+              <div className="relative flex-1 min-w-[220px]">
+                <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher (stock, cut-off, provisions, Enron…)" className="w-full pl-9 pr-3 py-2 rounded-lg border border-slate-300 text-sm focus:border-rose-500 focus:ring-1 focus:ring-rose-500 outline-none" />
+              </div>
+              <button onClick={() => { setAllOpen(!allOpen); setOpenMap({}); }} className="px-3 py-2 rounded-lg text-xs font-semibold border border-slate-200 bg-white text-slate-600 hover:border-rose-300 whitespace-nowrap">{allOpen ? "Tout replier" : "Tout déplier"}</button>
+            </div>
+            {!query && (
+              <div className="flex gap-1.5 overflow-x-auto mt-2 pb-0.5">
+                {sections.map((s) => (
+                  <button key={s.id} onClick={() => setTab(s.id)}
+                    className={"flex items-center gap-1.5 text-[12px] font-semibold px-3 py-1.5 rounded-full whitespace-nowrap border transition-colors " + (tab === s.id ? "text-white" : "bg-white text-slate-600 border-slate-200 hover:border-rose-300")}
+                    style={tab === s.id ? { background: s.color, borderColor: s.color } : {}}>
+                    {s.icon} {s.titre} <span className={"text-[10px] rounded-full px-1.5 " + (tab === s.id ? "bg-white/20" : "bg-slate-100 text-slate-400")}>{(s.postes || []).length}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {filteredSections.map((s) => (
+            <div key={s.id} className="mb-6">
+              <div className="flex items-center gap-2.5 mb-3">
+                <span className="h-8 w-8 shrink-0 rounded-lg grid place-items-center text-[17px]" style={{ background: s.color + "14", boxShadow: "inset 0 0 0 1px " + s.color + "30" }}>{s.icon}</span>
+                <div className="min-w-0">
+                  <div className="font-bold text-[15px] text-slate-800 leading-tight">{s.titre}</div>
+                  {s.sous_titre && <div className="text-[12px] text-slate-500 leading-snug">{s.sous_titre}</div>}
+                </div>
+                <span className="ml-auto text-[11px] font-bold text-slate-400 tabular-nums whitespace-nowrap">{s.postes.length} postes</span>
+              </div>
+              <div className="space-y-2.5">
+                {s.postes.map((p, i) => {
+                  const realIdx = (sections.find((x) => x.id === s.id).postes).indexOf(p);
+                  return <FpPosteCard key={i} p={p} secColor={s.color} open={isOpen(s.id, realIdx)} onToggle={() => setOpenMap((m) => ({ ...m, [key(s.id, realIdx)]: !(allOpen || m[key(s.id, realIdx)]) }))} onAssertion={jumpToAssertion} />;
+                })}
+              </div>
+            </div>
+          ))}
+          {query.length >= 2 && !filteredSections.length && <div className="text-center text-slate-400 text-sm py-10">Aucun poste ne correspond à « {q} ».</div>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RÉFÉRENCEMENT CROISÉ — comment un dossier d'audit relie chaque
+   chiffre à sa preuve : index des feuilles, renvois, tickmarks, et
+   un dossier-exemple interactif (cycle créances). window.__REFERENCEMENT__.
+   ════════════════════════════════════════════════════════════════ */
+/* éclate un long texte en paragraphes courts (protège les abréviations courantes) */
+function Paras({ text, className }) {
+  const s = String(text || "").trim();
+  if (!s) return null;
+  const cls = className || "text-[13px] text-slate-600 leading-relaxed";
+  if (s.length <= 230) return <p className={cls}><MdInline text={s} /></p>;
+  const tmp = s.replace(/\b(art|al|lit|ch|pp?|cf|ex|no|etc|env|fig|tab|réf)\./gi, (m) => m.replace(".", "§"));
+  const chunks = tmp.split(/\.\s+/);
+  const paras = []; let cur = "";
+  chunks.forEach((c, i) => {
+    const piece = c + (i < chunks.length - 1 ? "." : "");
+    if (cur && (cur.length + piece.length) > 230) { paras.push(cur); cur = piece; }
+    else cur = (cur ? cur + " " : "") + piece;
+  });
+  if (cur) paras.push(cur);
+  return <>{paras.map((p, i) => <p key={i} className={cls + " mb-2.5 last:mb-0"}><MdInline text={p.replace(/§/g, ".")} /></p>)}</>;
+}
+function RcTick({ sym }) {
+  return <span title="marque de révision" className="inline-grid place-items-center text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-200 rounded px-1 h-4 min-w-[16px] leading-none align-middle">{sym}</span>;
+}
+function RcXref({ idx, onJump }) {
+  return <button onClick={() => onJump(idx)} title={"Aller à la feuille " + idx} className="inline-flex items-center text-[10.5px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 rounded px-1.5 h-4 leading-none hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-colors align-middle">→{idx}</button>;
+}
+function RcRefCell({ ligne, onJump }) {
+  const tk = ligne.tickmarks || [], xr = ligne.xref || [];
+  if (!tk.length && !xr.length) return null;
+  return (
+    <span className="inline-flex items-center gap-1 flex-wrap justify-end">
+      {tk.map((t, i) => <RcTick key={"t" + i} sym={t} />)}
+      {xr.map((x, i) => <RcXref key={"x" + i} idx={x} onJump={onJump} />)}
+    </span>
+  );
+}
+function RcFeuilleCard({ f, onJump }) {
+  const cols = f.colonnes || [];
+  const isTable = cols.length > 0;
+  const isPiece = f.type === "piece";
+  const last = cols.length - 1;
+  const colCount = isTable ? cols.length : 3;
+  const hasNotes = (f.lignes || []).some((l) => l.note);
+  const [showNotes, setShowNotes] = useState(false);
+  const TYPE = { etats: "États financiers", lead: "Feuille maîtresse", detail: "Détail", test: "Test", calcul: "Calcul", tb: "Balance générale", piece: "Pièce probante" };
+  return (
+    <div id={"ref-feuille-" + f.index} className={"bg-white rounded-xl shadow-sm overflow-hidden scroll-mt-20 border " + (isPiece ? "border-emerald-300" : "border-slate-200")}>
+      <div className={"flex items-center gap-2 px-4 py-2.5 text-white " + (isPiece ? "bg-emerald-800" : "bg-slate-800")}>
+        {isPiece && <span className="text-[14px] shrink-0">📎</span>}
+        <span className="font-mono text-[12px] font-bold bg-white/15 rounded px-2 py-0.5 shrink-0">{f.index}</span>
+        <span className="font-bold text-[13px] sm:text-[13.5px] flex-1 min-w-0 leading-tight">{f.titre}</span>
+        {f.type && TYPE[f.type] && <span className="text-[10px] bg-white/10 rounded px-2 py-0.5 shrink-0 hidden sm:inline">{TYPE[f.type]}</span>}
+      </div>
+      {(f.prepare || f.revu || f.date || f.objectif) && (
+        <div className="px-4 py-2 bg-slate-50 border-b border-slate-100">
+          <div className="flex flex-wrap gap-x-4 gap-y-0.5 text-[11px] text-slate-500">
+            {f.prepare && <span>Préparé : <b className="text-slate-700">{f.prepare}</b></span>}
+            {f.revu && <span>Revu : <b className="text-slate-700">{f.revu}</b></span>}
+            {f.date && <span>Date : <b className="text-slate-700">{f.date}</b></span>}
+          </div>
+          {f.objectif && <div className="text-[11.5px] text-slate-500 leading-snug mt-1 max-w-[64ch]">🎯 {f.objectif}</div>}
+        </div>
+      )}
+      <div className="px-4 py-3 overflow-x-auto">
+        <table className="w-full border-collapse text-[13px]">
+          {isTable && (
+            <thead>
+              <tr className="text-[10px] font-bold uppercase tracking-wide text-slate-400">
+                {cols.map((c, i) => <th key={i} className={"pb-1.5 border-b border-slate-200 " + (i === 0 ? "text-left" : "text-right pl-3 whitespace-nowrap")}>{i === last ? "Réf." : c}</th>)}
+              </tr>
+            </thead>
+          )}
+          <tbody>
+            {(f.lignes || []).map((l, i) => {
+              const vals = l.valeurs || [];
+              return (
+                <React.Fragment key={i}>
+                  <tr className={l.total ? "border-t-2 border-slate-300" : "border-b border-slate-50"}>
+                    {isTable ? cols.map((c, ci) => {
+                      if (ci === 0) return <td key={ci} className={"py-1.5 pr-3 align-top leading-snug " + (l.total ? "font-bold text-slate-800" : "text-slate-700")}>{l.libelle}</td>;
+                      if (ci === last) return <td key={ci} className="py-1.5 pl-3 text-right align-top whitespace-nowrap"><RcRefCell ligne={l} onJump={onJump} /></td>;
+                      return <td key={ci} className={"py-1.5 pl-3 text-right align-top tabular-nums whitespace-nowrap " + (l.total ? "font-bold text-slate-800" : "text-slate-600")}>{vals[ci] || ""}</td>;
+                    }) : (
+                      <>
+                        <td className={"py-1.5 pr-3 align-top leading-snug " + (l.total ? "font-bold text-slate-800" : "text-slate-700")}>{l.libelle}</td>
+                        <td className={"py-1.5 pl-3 text-right align-top tabular-nums whitespace-nowrap " + (l.total ? "font-bold text-slate-800" : "text-slate-600")}>{l.montant || ""}</td>
+                        <td className="py-1.5 pl-3 text-right align-top whitespace-nowrap"><RcRefCell ligne={l} onJump={onJump} /></td>
+                      </>
+                    )}
+                  </tr>
+                  {showNotes && l.note && (
+                    <tr><td colSpan={colCount} className="pb-2 pl-3 text-[11px] text-slate-400 italic leading-snug">↳ {l.note}</td></tr>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      {(hasNotes || (f.tickmarks_legende || []).length > 0) && (
+        <div className="px-4 pb-2.5 flex flex-wrap items-center gap-x-3 gap-y-1">
+          {hasNotes && <button onClick={() => setShowNotes(!showNotes)} className="text-[10.5px] font-semibold text-indigo-600 hover:text-indigo-800">{showNotes ? "− Masquer les notes" : "+ Notes & renvois expliqués"}</button>}
+          {hasNotes && (f.tickmarks_legende || []).length > 0 && <span className="text-slate-300">·</span>}
+          {(f.tickmarks_legende || []).map((t, i) => <span key={i} className="text-[10.5px] text-slate-500"><span className="font-bold text-amber-700">{t.sym}</span> {t.sens}</span>)}
+        </div>
+      )}
+      {f.commentaire && <div className="px-4 py-2.5 bg-slate-50 border-t border-slate-100 text-[12px] text-slate-600 leading-snug"><span className="font-semibold text-slate-700">Conclusion : </span><MdInline text={f.commentaire} /></div>}
+    </div>
+  );
+}
+function RcSection({ id, icon, title, sub, children }) {
+  return (
+    <section id={"rc-" + id} className="scroll-mt-20 mb-8">
+      <div className="flex items-center gap-2 mb-2.5">
+        <span className="text-base">{icon}</span>
+        <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-400">{title}</h3>
+        <span className="flex-1 h-px bg-slate-200" />
+      </div>
+      {sub && <div className="max-w-[64ch] mb-3"><Paras text={sub} className="text-[12.5px] text-slate-500 leading-relaxed" /></div>}
+      {children}
+    </section>
+  );
+}
+function AuditReferencement({ data, onBack }) {
+  const d = data || {};
+  const ex = d.exemple || {};
+  const principe = d.principe || {};
+  const idx = d.indexation || {};
+  const vocab = d.vocab || [];
+  const tickmarks = d.tickmarks || [];
+  const checklist = d.checklist || [];
+  const pieges = d.pieges || [];
+  const feuilles = ex.feuilles || [];
+  const jumpFeuille = (i) => _pcFlash("ref-feuille-" + i, true);
+  const goAnchor = (a) => { try { const el = document.getElementById("rc-" + a); if (el) el.scrollIntoView({ block: "start" }); } catch (e) {} };
+  const stripNum = (s) => String(s || "").replace(/^[①-⑳\d]+[\.\)\-\s]*/, "").trim();
+  const NAV = [["principe", "Principe"], ["index", "Index"], ["lexique", "Lexique"], ["tickmarks", "Tickmarks"], ["exemple", "⭐ Exemple"], ["check", "Check-list"]].filter(([a]) => {
+    if (a === "principe") return (principe.etapes || []).length;
+    if (a === "index") return (idx.schema || []).length;
+    if (a === "lexique") return vocab.length;
+    if (a === "tickmarks") return tickmarks.length;
+    if (a === "exemple") return feuilles.length;
+    if (a === "check") return checklist.length || pieges.length;
+    return true;
+  });
+
+  return (
+    <div className="max-w-[900px] mx-auto">
+      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-700 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
+
+      <div className="relative overflow-hidden rounded-2xl text-white p-5 sm:p-6 shadow mb-4" style={{ background: "linear-gradient(135deg,#0f172a 0%,#1e1b4b 60%,#312e81 100%)" }}>
+        <div className="flex items-center gap-2 text-[10.5px] font-mono uppercase tracking-[0.18em] text-indigo-300 mb-2"><ArrowLeftRight size={13} /> Dossier de révision · traçabilité</div>
+        <h2 className="text-2xl font-bold leading-tight">Le référencement croisé</h2>
+        <p className="text-[13.5px] text-slate-300 mt-1.5 max-w-[62ch] leading-relaxed">{d._description || "Chaque chiffre des états financiers doit pouvoir être suivi jusqu'à sa preuve. Voici la grammaire qui rend un dossier d'audit traçable : index des feuilles, renvois croisés et marques de révision, illustrés par un dossier-exemple cliquable."}</p>
+      </div>
+
+      {d.intro && (
+        <div className="bg-white rounded-xl border border-slate-200 p-4 sm:p-5 mb-5 max-w-[64ch]">
+          <Paras text={d.intro} className="text-[13.5px] text-slate-700 leading-relaxed" />
+        </div>
+      )}
+
+      <div className="sticky top-0 z-10 -mx-4 px-4 py-2 bg-slate-100/95 backdrop-blur border-b border-slate-200 mb-5 flex gap-1.5 overflow-x-auto">
+        {NAV.map(([a, t]) => <button key={a} onClick={() => goAnchor(a)} className="text-[12px] font-semibold px-2.5 py-1 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 whitespace-nowrap">{t}</button>)}
+      </div>
+
+      {(principe.etapes || []).length > 0 && (
+        <RcSection id="principe" icon="🔗" title={principe.titre || "Le principe : la chaîne de traçabilité"}>
+          <div className="bg-white rounded-xl border border-slate-200 p-4 sm:p-5">
+            <ol className="space-y-0">
+              {principe.etapes.map((e, i) => (
+                <li key={i} className="relative pl-10 pb-5 last:pb-0">
+                  {i < principe.etapes.length - 1 && <span className="absolute left-[15px] top-8 bottom-0 w-px bg-indigo-200" />}
+                  <span className="absolute left-0 top-0.5 h-8 w-8 grid place-items-center rounded-full bg-indigo-600 text-white text-[13px] font-bold shadow-sm">{i + 1}</span>
+                  <div className="font-bold text-[14px] text-slate-800 leading-tight pt-1.5">{stripNum(e.l)}</div>
+                  <div className="mt-1 max-w-[60ch]"><Paras text={e.t} className="text-[12.5px] text-slate-600 leading-relaxed" /></div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </RcSection>
+      )}
+
+      {(idx.schema || []).length > 0 && (
+        <RcSection id="index" icon="🗂️" title="Indexation des feuilles" sub={idx.intro}>
+          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div className="grid grid-cols-[58px_1fr] sm:grid-cols-[58px_minmax(150px,1fr)_1.5fr] text-[10px] font-bold uppercase tracking-wide text-slate-400 bg-slate-50 border-b border-slate-100">
+              <span className="px-3 py-2">Index</span><span className="px-3 py-2">Cycle</span><span className="px-3 py-2 hidden sm:block">Exemple de feuille</span>
+            </div>
+            {idx.schema.map((r, i) => (
+              <div key={i} className="grid grid-cols-[58px_1fr] sm:grid-cols-[58px_minmax(150px,1fr)_1.5fr] text-[12.5px] border-b border-slate-50 last:border-0 items-start">
+                <span className="px-3 py-2"><span className="font-mono font-bold text-[11px] text-indigo-700 bg-indigo-50 rounded px-1.5 py-0.5">{r.idx}</span></span>
+                <span className="px-3 py-2 text-slate-700 font-medium leading-snug">{r.cycle}</span>
+                <span className="px-3 py-2 text-slate-500 leading-snug hidden sm:block">{r.exemple || ""}</span>
+              </div>
+            ))}
+          </div>
+        </RcSection>
+      )}
+
+      {vocab.length > 0 && (
+        <RcSection id="lexique" icon="📖" title="Le vocabulaire du référencement">
+          <div className="grid sm:grid-cols-2 gap-2.5">
+            {vocab.map((v, i) => (
+              <div key={i} className="bg-white rounded-xl border border-slate-200 p-3.5">
+                <div className="flex items-baseline gap-2 flex-wrap"><span className="font-bold text-[13.5px] text-slate-800">{v.terme}</span>{v.en && <span className="text-[11px] text-indigo-400 font-medium">{v.en}</span>}</div>
+                <div className="text-[12.5px] text-slate-600 leading-snug mt-1"><MdInline text={v.def} /></div>
+                {v.exemple && <div className="text-[11.5px] text-slate-400 italic mt-1.5 leading-snug">Ex. <MdInline text={v.exemple} /></div>}
+              </div>
+            ))}
+          </div>
+        </RcSection>
+      )}
+
+      {tickmarks.length > 0 && (
+        <RcSection id="tickmarks" icon="✓" title="Les tickmarks (marques de révision)" sub="Chaque marque atteste d'un travail effectué sur le chiffre à côté duquel elle est posée. **Les symboles ne sont pas normalisés** : ils varient d'un cabinet et d'un dossier à l'autre. La règle d'or : **chaque feuille porte sa propre légende**.">
+          <div className="grid sm:grid-cols-2 gap-2">
+            {tickmarks.map((t, i) => (
+              <div key={i} className="flex items-start gap-2.5 bg-white rounded-lg border border-slate-200 px-3 py-2">
+                <span className="inline-grid place-items-center text-[12px] font-bold text-amber-700 bg-amber-50 border border-amber-200 rounded h-6 min-w-[24px] px-1 shrink-0 mt-0.5">{t.sym}</span>
+                <div className="min-w-0">
+                  <div className="flex items-baseline gap-2 flex-wrap"><span className="font-bold text-[12.5px] text-slate-800">{t.nom}</span>{t.en && <span className="text-[10.5px] text-slate-400">{t.en}</span>}</div>
+                  <div className="text-[12px] text-slate-600 leading-snug">{t.sens}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </RcSection>
+      )}
+
+      {feuilles.length > 0 && (
+        <RcSection id="exemple" icon="⭐" title={"Le dossier-exemple · " + (ex.titre || "cycle Créances clients")}>
+          {ex.contexte && (
+            <div className="bg-white rounded-xl border border-slate-200 p-4 mb-3 max-w-[64ch]">
+              <div className="text-[10.5px] font-bold uppercase tracking-[0.09em] text-slate-400 mb-1.5">Contexte de la mission</div>
+              <Paras text={ex.contexte} className="text-[12.5px] text-slate-600 leading-relaxed" />
+            </div>
+          )}
+          <div className="rounded-xl border border-indigo-200 bg-indigo-50/60 p-4 mb-4">
+            <div className="text-[10.5px] font-bold uppercase tracking-[0.09em] text-indigo-700 mb-2">🧭 Le fil rouge · suis le net 2’470’000 CHF de feuille en feuille</div>
+            <div className="flex flex-wrap items-center gap-1.5">
+              {feuilles.map((f, i) => (
+                <React.Fragment key={f.index}>
+                  {i > 0 && <span className="text-indigo-300 text-[13px]">→</span>}
+                  <button onClick={() => jumpFeuille(f.index)} title={f.titre} className={"font-mono text-[11px] font-bold rounded px-2 py-0.5 border transition-colors " + (f.type === "piece" ? "bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-600 hover:text-white" : "bg-white text-indigo-700 border-indigo-200 hover:bg-indigo-600 hover:text-white")}>{f.index}</button>
+                </React.Fragment>
+              ))}
+            </div>
+            <div className="text-[11.5px] text-indigo-600 mt-2.5 leading-snug">Clique une feuille ci-dessus, ou n'importe quel renvoi <span className="font-mono bg-white border border-indigo-200 rounded px-1">→B-1</span> dans une feuille : il saute à la feuille liée et la fait clignoter. À chaque étape, le même montant se retrouve à l'identique, c'est le bouclage.</div>
+          </div>
+          <div className="space-y-3">
+            {feuilles.map((f, i) => <RcFeuilleCard key={i} f={f} onJump={jumpFeuille} />)}
+          </div>
+        </RcSection>
+      )}
+
+      {(checklist.length > 0 || pieges.length > 0) && (
+        <RcSection id="check" icon="✅" title="Bien référencer · check-list & pièges">
+          <div className="grid lg:grid-cols-2 gap-3 items-start">
+            {checklist.length > 0 && (
+              <div className="bg-white rounded-xl border border-emerald-200 p-4">
+                <div className="text-[11px] font-bold uppercase tracking-wide text-emerald-700 mb-2.5">✅ Check-list du bon référencement</div>
+                <ul className="space-y-2">
+                  {checklist.map((c, i) => <li key={i} className="flex gap-2 text-[12.5px] text-slate-700 leading-snug"><span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0" /><span><MdInline text={c} /></span></li>)}
+                </ul>
+              </div>
+            )}
+            {pieges.length > 0 && (
+              <div className="bg-white rounded-xl border border-amber-200 p-4">
+                <div className="text-[11px] font-bold uppercase tracking-wide text-amber-700 mb-2.5">⚠️ Pièges classiques</div>
+                <ul className="space-y-2.5">
+                  {pieges.map((p, i) => <li key={i} className="text-[12.5px] text-slate-700 leading-snug"><span className="font-bold text-slate-800">{p.l}</span> : <MdInline text={p.t} /></li>)}
+                </ul>
+              </div>
+            )}
+          </div>
+        </RcSection>
+      )}
+    </div>
+  );
+}
+
 function AuditApp() {
   const [data, setData] = useState(() => (typeof window !== "undefined" && window.__AUDIT__) || null);
   const [loadErr, setLoadErr] = useState(null);
@@ -1693,8 +2685,11 @@ function AuditApp() {
         </div>
       </header>
       <main className="max-w-5xl mx-auto px-4 py-6">
-        {view.k === "home" && <AuditHome data={data} book={book} onBook={() => go({ k: "book" })} onSeuils={() => go({ k: "seuils" })} onRevision={() => go({ k: "revision" })} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
+        {view.k === "home" && <AuditHome data={data} book={book} onBook={() => go({ k: "book" })} onSeuils={() => go({ k: "seuils" })} onRevision={() => go({ k: "revision" })} onPlanComptable={() => go({ k: "plancomptable" })} onFraudePostes={() => go({ k: "fraudepostes" })} onReferencement={() => go({ k: "referencement" })} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
         {view.k === "revision" && <AuditRevision data={data} onBack={() => go({ k: "home" })} />}
+        {view.k === "plancomptable" && <AuditPlanComptable data={(typeof window !== "undefined" && window.__PLAN_COMPTABLE__) || { plans: [] }} onBack={() => go({ k: "home" })} />}
+        {view.k === "fraudepostes" && <AuditFraudePostes data={(typeof window !== "undefined" && window.__FRAUDE_POSTES__) || { sections: [] }} onBack={() => go({ k: "home" })} />}
+        {view.k === "referencement" && <AuditReferencement data={(typeof window !== "undefined" && window.__REFERENCEMENT__) || {}} onBack={() => go({ k: "home" })} />}
         {view.k === "book" && <AuditBook book={book} onBack={() => go({ k: "home" })} />}
         {view.k === "seuils" && <AuditSeuils onBack={() => go({ k: "home" })} />}
         {view.k === "annuaire" && (

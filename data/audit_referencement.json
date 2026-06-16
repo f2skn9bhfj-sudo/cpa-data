@@ -1,0 +1,1062 @@
+{
+ "_label": "Référencement croisé",
+ "_icon": "🔗",
+ "_description": "Comment un dossier d'audit relie chaque chiffre à sa preuve : index des feuilles, renvois croisés, tickmarks, et un dossier-exemple interactif (cycle créances) où l'on suit un montant de l'opinion jusqu'à la pièce justificative.",
+ "intro": "Le référencement croisé répond à une exigence simple de la NAS 230 / ISA 230 : la documentation d'audit doit être assez claire pour qu'un réviseur expérimenté, totalement extérieur à la mission, puisse refaire le chemin tout seul. Le test concret est le suivant. Ce tiers doit pouvoir partir d'un chiffre de l'opinion, puis le « tracer » jusqu'à la pièce qui le justifie. Et en sens inverse, remonter d'une simple facture jusqu'à son impact dans les comptes. Le référencement croisé est le système de renvois (index, références de feuilles, tickmarks) qui rend cette chaîne navigable dans les deux sens. Sans lui, le dossier n'est qu'une pile de feuilles isolées. Les conclusions ne se vérifient plus, la revue par l'associé n'est plus traçable, et le cabinet ne peut plus prouver, en cas de contrôle qualité ou de litige, que l'opinion repose vraiment sur des éléments probants.",
+ "principe": {
+  "titre": "La chaîne de traçabilité : de l'opinion à la pièce probante (top-down) et retour (bottom-up)",
+  "etapes": [
+   {
+    "l": "① Opinion / Rapport d'audit (auditor's report)",
+    "t": "Point de départ descendant. L'opinion affirme que les états financiers donnent une image fidèle. Elle ne contient pas de chiffres isolés à tracer, mais elle s'appuie sur l'ensemble du dossier : le renvoi se fait vers le mémo de bouclage (completion memo) et la synthèse des ajustements (summary of audit differences), qui à leur tour pointent vers chaque cycle. C'est le maillon que le réviseur indépendant lit en premier, puis qu'il « descend »."
+   },
+   {
+    "l": "② États financiers (financial statements)",
+    "t": "Chaque poste du bilan et du compte de résultat porte une référence vers la feuille maîtresse du cycle concerné. Exemple : le poste « Débiteurs » renvoie à la lead B (clients). Vers le haut, les EF agrègent les leads ; vers le bas, chaque ligne pointe vers la lead qui la justifie. Le total des EF doit s'agréer (tie-out) avec la balance générale (trial balance) référencée."
+   },
+   {
+    "l": "③ Annexe / Notes (notes to the financial statements)",
+    "t": "Les notes détaillent et ventilent les postes du bilan. Chaque montant de l'annexe doit être croisé-référencé avec la feuille de travail qui le supporte et s'agréer au poste correspondant des EF (ex. : la note « ventilation des immobilisations » boucle avec la ligne « Immobilisations corporelles » et renvoie à la lead F). L'annexe relie le chiffre publié au détail du dossier."
+   },
+   {
+    "l": "④ Feuille maîtresse / Lead schedule (top schedule)",
+    "t": "Pivot du cycle. La lead reprend, par sous-compte, les soldes d'ouverture (report / carry-forward de l'an dernier), les mouvements, le solde de clôture et les ajustements proposés. Vers le haut elle s'agrège au poste des EF (le total de la lead = la ligne du bilan) ; vers le bas chaque ligne de la lead porte une référence vers la feuille de travail détaillée qui teste ce sous-compte. C'est ici que se vérifie le footing (le total de la lead boucle)."
+   },
+   {
+    "l": "⑤ Feuilles de travail détaillées (detailed working papers)",
+    "t": "Le travail d'audit proprement dit : analyses, échantillons, tests de procédures, tests de détail, calculs de provisions. Chaque feuille porte un index, un objectif, la procédure, les tickmarks expliqués par une légende, et une conclusion. Vers le haut, son total ou sa conclusion remonte à la lead ; vers le bas, chaque élément testé (chaque ligne d'échantillon) renvoie à la pièce probante examinée."
+   },
+   {
+    "l": "⑥ Pièces probantes (audit evidence : factures, confirmations, contrats, relevés)",
+    "t": "Le socle. Factures fournisseurs, confirmations bancaires et clients (confirmations), contrats, relevés bancaires, procès-verbaux. Chaque pièce est indexée et rattachée à la ligne de la feuille de travail qui l'utilise. C'est le terminus descendant : on ne peut pas « tracer » plus bas. En remontant (bottom-up), on part de la facture, on la retrouve dans l'échantillon de la feuille détaillée (vouching), puis dans la lead, puis dans les EF (tracing)."
+   },
+   {
+    "l": "↕ Lecture dans les deux sens",
+    "t": "Top-down (du haut vers le bas) = je pars de l'opinion / d'un chiffre des EF et je descends jusqu'à la pièce : c'est la logique de revue et de vouching (le chiffre est-il justifié ?). Bottom-up (du bas vers le haut) = je pars d'une transaction réelle et je vérifie qu'elle est correctement enregistrée et présentée : c'est la logique de tracing (l'exhaustivité / completeness). Un référencement croisé correct rend les deux trajets possibles sans jamais « casser »."
+   }
+  ]
+ },
+ "indexation": {
+  "intro": "L'indexation consiste à attribuer à chaque feuille du dossier un code unique (généralement lettre = cycle, numéro = feuille au sein du cycle, décimale = pièce rattachée), afin que tout renvoi croisé pointe vers une adresse claire et que la revue puisse circuler dans le dossier. Avertissement important : il n'existe pas de norme universelle d'indexation ; chaque Big 4 utilise un référentiel de codes-cycles propriétaire intégré à son outil de dossier électronique (EY emploie son propre schéma dans Canvas / EY Helix, comme Deloitte, KPMG et PwC ont les leurs). Le schéma ci-dessous est strictement pédagogique : il illustre la logique lettre/cycle/feuille, mais ne reproduit pas les codes réels d'EY, qu'on apprend en mission. Sur le terrain, on suit le plan d'indexation de la firme, pas une convention personnelle.",
+  "schema": [
+   {
+    "idx": "A",
+    "cycle": "Trésorerie (banques, caisse)",
+    "exemple": "Lead trésorerie ; A-1 rapprochement bancaire ; A-1.1 confirmation bancaire"
+   },
+   {
+    "idx": "B",
+    "cycle": "Clients / débiteurs et ventes",
+    "exemple": "Lead clients ; B-1 balance âgée (PBC) ; B-2 circularisation ; B-3 provision créances douteuses"
+   },
+   {
+    "idx": "C",
+    "cycle": "Stocks",
+    "exemple": "Lead stocks ; C-1 observation d'inventaire ; C-2 test de valorisation (coût vs valeur nette de réalisation)"
+   },
+   {
+    "idx": "D",
+    "cycle": "Fournisseurs / créanciers et achats",
+    "exemple": "Lead fournisseurs ; D-1 recherche de passifs non comptabilisés (search for unrecorded liabilities) ; D-2 cut-off achats"
+   },
+   {
+    "idx": "E",
+    "cycle": "Autres actifs courants et comptes de régularisation",
+    "exemple": "Lead régularisations actif ; E-1 charges payées d'avance ; E-2 produits à recevoir"
+   },
+   {
+    "idx": "F",
+    "cycle": "Immobilisations (corporelles et incorporelles)",
+    "exemple": "Lead immobilisations ; F-1 tableau des mouvements et amortissements ; F-2 test des additions (vouching factures)"
+   },
+   {
+    "idx": "G",
+    "cycle": "Personnel et charges sociales",
+    "exemple": "Lead personnel ; G-1 reconstitution masse salariale ; G-2 provision vacances/heures supplémentaires"
+   },
+   {
+    "idx": "H",
+    "cycle": "Provisions, passifs et engagements",
+    "exemple": "Lead provisions ; H-1 provision litiges ; H-2 lettre de l'avocat (legal letter)"
+   },
+   {
+    "idx": "K",
+    "cycle": "Fonds propres",
+    "exemple": "Lead capitaux propres ; K-1 mouvements de capital et réserves ; K-2 PV d'assemblée générale"
+   },
+   {
+    "idx": "P",
+    "cycle": "Compte de résultat (produits et charges)",
+    "exemple": "Lead résultat ; P-1 revue analytique du chiffre d'affaires ; P-2 analyse des marges"
+   },
+   {
+    "idx": "Z / 10",
+    "cycle": "Bouclage et synthèse (completion)",
+    "exemple": "Z-1 summary of audit differences ; Z-2 completion memo ; Z-3 lettre d'affirmation (management representation letter)"
+   }
+  ]
+ },
+ "vocab": [
+  {
+   "terme": "Référence croisée",
+   "en": "cross-reference",
+   "def": "Renvoi réciproque qui relie deux feuilles ou un chiffre à sa source : la feuille A indique « voir B-2 » et B-2 indique « reporté en A ». Le renvoi fonctionne dans les deux sens.",
+   "exemple": "Sur la lead B (clients), le solde net porte « → B-3 » ; la feuille B-3 (analyse de la provision pour créances douteuses) porte en retour « reporté en B »."
+  },
+  {
+   "terme": "Indexation",
+   "en": "indexing / referencing",
+   "def": "Système d'attribution d'un code unique (lettre + numéro) à chaque feuille du dossier, de façon à pouvoir la citer et la retrouver. Base de tout renvoi.",
+   "exemple": "Le cycle trésorerie est indexé « A », la feuille de rapprochement bancaire devient « A-1 », la confirmation bancaire « A-1.1 »."
+  },
+  {
+   "terme": "Feuille maîtresse",
+   "en": "lead schedule (lead sheet)",
+   "def": "Feuille de synthèse en tête d'un cycle qui récapitule par sous-compte les soldes d'ouverture, mouvements et soldes de clôture, et qui s'agrège au poste des états financiers. Aussi appelée top schedule.",
+   "exemple": "La lead F « Immobilisations » liste terrains, bâtiments, machines ; son total boucle avec la ligne « Immobilisations corporelles » du bilan."
+  },
+  {
+   "terme": "Tickmark",
+   "en": "tickmark",
+   "def": "Symbole ou abréviation apposé à côté d'un chiffre pour signaler la procédure d'audit effectuée. Chaque tickmark doit être défini dans une légende sur la même feuille.",
+   "exemple": "Le symbole « ⊕ = agréé à la confirmation bancaire » placé à côté du solde de trésorerie, avec sa définition en bas de feuille."
+  },
+  {
+   "terme": "Footing / cross-footing",
+   "en": "footing / cross-footing",
+   "def": "Footing = vérifier l'addition verticale d'une colonne (le total annoncé est-il juste ?). Cross-footing = vérifier la cohérence croisée d'un tableau (la somme des colonnes = la somme des lignes = le grand total).",
+   "exemple": "On « foote » la colonne des montants HT, la TVA et le TTC, puis on cross-foote : HT + TVA doit égaler TTC sur chaque ligne et au total."
+  },
+  {
+   "terme": "Vouching",
+   "en": "vouching",
+   "def": "Procédure descendante : partir d'un chiffre enregistré dans les comptes et remonter à la pièce justificative pour confirmer qu'il est réel et correctement évalué. Vise la réalité (existence / occurrence).",
+   "exemple": "Partir d'une charge de 12'000 au grand livre et retrouver la facture fournisseur correspondante qui la justifie."
+  },
+  {
+   "terme": "Tracing",
+   "en": "tracing",
+   "def": "Procédure ascendante : partir d'une pièce justificative (transaction réelle) et vérifier qu'elle a bien été enregistrée dans les comptes. Vise l'exhaustivité (completeness).",
+   "exemple": "Partir d'un bon de livraison de décembre et vérifier que la vente correspondante figure bien dans le chiffre d'affaires de l'exercice (cut-off)."
+  },
+  {
+   "terme": "Agréer / rapprocher",
+   "en": "agree / reconcile",
+   "def": "Confirmer qu'un chiffre est identique à (agréer) ou réconciliable avec (rapprocher) une source indépendante, en documentant l'écart éventuel et son explication.",
+   "exemple": "Agréer le solde du compte banque à la confirmation bancaire ; rapprocher le solde comptable du relevé via les chèques en circulation."
+  },
+  {
+   "terme": "Tie-out / bouclage",
+   "en": "tie-out",
+   "def": "S'assurer que des montants reliés dans le dossier coïncident parfaitement : EF = balance générale, lead = poste des EF, total feuille détaillée = ligne de la lead. Le dossier « boucle ».",
+   "exemple": "Le total de la lead C « Stocks » de 845'200 doit faire un tie-out exact avec la ligne « Stocks » du bilan."
+  },
+  {
+   "terme": "Report / report à nouveau",
+   "en": "carry-forward",
+   "def": "Reprise sur la feuille de l'exercice courant des données de clôture de l'exercice précédent (soldes d'ouverture), avec renvoi au dossier permanent ou au dossier N-1.",
+   "exemple": "Le solde d'ouverture des immobilisations est reporté (carry-forward) de la lead F de l'an dernier, référencé « PY F »."
+  },
+  {
+   "terme": "PBC (préparé par le client)",
+   "en": "prepared by client (PBC)",
+   "def": "Document ou feuille fourni par l'entité auditée (et non produit par l'auditeur). Doit être identifié comme tel, puis testé par l'auditeur ; il n'est pas un élément probant tant qu'il n'a pas été vérifié.",
+   "exemple": "Le grand livre auxiliaire clients (balance âgée) est marqué « PBC », puis l'auditeur en agrée le total à la balance générale et teste un échantillon."
+  },
+  {
+   "terme": "Feuille de synthèse de cycle",
+   "en": "top schedule",
+   "def": "Synonyme de feuille maîtresse : la feuille de plus haut niveau d'un cycle, qui chapeaute les feuilles détaillées et fait le lien avec les états financiers.",
+   "exemple": "Le top schedule du cycle « Personnel » (G) agrège salaires, charges sociales et provisions vacances avant de remonter au compte de résultat."
+  },
+  {
+   "terme": "Programme de travail",
+   "en": "audit programme",
+   "def": "Liste des procédures planifiées par cycle ; chaque procédure renvoie (cross-reference) à la feuille de travail qui en documente l'exécution et la conclusion.",
+   "exemple": "La procédure « confirmer 25 soldes clients » du programme du cycle B renvoie « → B-4 » où figurent les confirmations reçues et leur dépouillement."
+  }
+ ],
+ "tickmarks": [
+  {
+   "sym": "✓",
+   "nom": "Pointé / vouché",
+   "en": "Vouched / ticked",
+   "sens": "Le poste a été rapproché à sa pièce justificative source (facture fournisseur, contrat, relevé). Le réviseur atteste l'existence et l'exactitude de l'élément en remontant de l'enregistrement comptable vers le document probant (sens vouching : du grand livre vers la pièce)."
+  },
+  {
+   "sym": "F",
+   "nom": "Additionné",
+   "en": "Footed",
+   "sens": "La colonne ou le total vertical a été recalculé manuellement par le réviseur et concorde avec le montant indiqué. Atteste l'exactitude arithmétique des additions d'une colonne (exhaustivité et exactitude de la sommation)."
+  },
+  {
+   "sym": "^",
+   "nom": "Pointé en croix",
+   "en": "Cross-footed",
+   "sens": "Les totaux horizontaux et verticaux d'un tableau (tableau croisé, lead schedule) ont été recalculés et se recoupent : la somme des lignes égale la somme des colonnes égale le grand total. Atteste la cohérence arithmétique transversale."
+  },
+  {
+   "sym": "TB",
+   "nom": "Rapproché à la balance générale",
+   "en": "Agreed to trial balance / general ledger",
+   "sens": "Le solde de la feuille de travail a été rapproché sans écart à la balance de vérification (balance générale / grand livre). Atteste que le montant audité se déverse correctement dans la comptabilité et in fine dans les comptes annuels."
+  },
+  {
+   "sym": "PY",
+   "nom": "Comparé à l'exercice précédent",
+   "en": "Agreed to prior year",
+   "sens": "Le solde d'ouverture ou le comparatif a été rapproché aux papiers de travail (ou aux comptes) de l'exercice antérieur. Atteste la continuité des soldes d'ouverture et la cohérence des données comparatives (procédures analytiques de variation N/N-1)."
+  },
+  {
+   "sym": "C",
+   "nom": "Confirmé / circularisé",
+   "en": "Confirmed / circularized",
+   "sens": "Le solde a fait l'objet d'une confirmation externe directe reçue d'un tiers (client, fournisseur, banque, avocat) et concorde avec la comptabilité. Atteste l'existence et l'exactitude par élément probant externe (NAS 505 / ISA 505)."
+  },
+  {
+   "sym": "PJ",
+   "nom": "Rapproché à pièce justificative",
+   "en": "Agreed to supporting document",
+   "sens": "L'élément a été appuyé par une pièce probante (contrat, bon de livraison, procès-verbal, relevé bancaire) examinée et conservée au dossier. Atteste la réalité et la valorisation de l'opération par inspection du document."
+  },
+  {
+   "sym": "AJE",
+   "nom": "Écriture d'ajustement (proposée)",
+   "en": "Adjusting journal entry (AJE)",
+   "sens": "Une anomalie identifiée a donné lieu à une écriture de correction proposée à l'entité, reportée dans le sommaire des ajustements. Atteste le traitement d'une différence détectée (corrigée ou portée au récapitulatif des écarts non corrigés / SUD)."
+  },
+  {
+   "sym": "R",
+   "nom": "Recalculé",
+   "en": "Recomputed / recalculated",
+   "sens": "Le réviseur a refait indépendamment le calcul (intérêts, amortissements, provision, prorata, conversion de devise, impôt différé) et le résultat concorde avec le montant comptabilisé. Atteste l'exactitude mathématique d'une estimation ou d'un calcul (NAS 500)."
+  },
+  {
+   "sym": "Ø",
+   "nom": "Sans exception / RAS",
+   "en": "No exception noted",
+   "sens": "La procédure a été exécutée sur l'élément testé et n'a révélé aucune anomalie ni écart. Atteste qu'aucune exception n'est à signaler pour le test concerné (résultat satisfaisant)."
+  },
+  {
+   "sym": "‡",
+   "nom": "À reporter / reporté",
+   "en": "Carried forward / brought forward",
+   "sens": "Le sous-total est reporté vers une autre feuille (feuille maîtresse, lead schedule) ou repris d'une feuille amont. Atteste la traçabilité du déversement des montants entre papiers de travail (chaînage des totaux)."
+  },
+  {
+   "sym": "X",
+   "nom": "Exception relevée",
+   "en": "Exception / discrepancy noted",
+   "sens": "La procédure a révélé une anomalie, un écart ou une déviation de contrôle nécessitant un suivi, une explication ou une extension de procédure. Atteste l'identification d'un point à investiguer (renvoi à un commentaire ou memo)."
+  },
+  {
+   "sym": "O",
+   "nom": "Observation physique / assisté à l'inventaire",
+   "en": "Physically observed / attended count",
+   "sens": "Le réviseur a observé directement l'existence d'un actif (inventaire physique des stocks, immobilisations, caisse) et rapproché les quantités relevées aux fiches de comptage. Atteste l'existence et l'état par inspection physique (NAS 501 / ISA 501)."
+  },
+  {
+   "sym": "@",
+   "nom": "Test de cut-off / séparation des exercices",
+   "en": "Cut-off tested",
+   "sens": "Les opérations enregistrées autour de la date de clôture (dernières/premières livraisons, factures, encaissements) ont été testées pour vérifier leur rattachement au bon exercice. Atteste l'assertion de séparation des périodes (cut-off)."
+  },
+  {
+   "sym": "a",
+   "nom": "Renvoi de note / tickmark explicatif",
+   "en": "Footnote / explanatory tickmark",
+   "sens": "Lettre minuscule renvoyant à une légende ou un commentaire détaillé en bas de feuille décrivant précisément la procédure appliquée à l'élément marqué. Atteste qu'une explication documentée accompagne le pointage (référence croisée interne)."
+  },
+  {
+   "sym": "W/P",
+   "nom": "Référence croisée vers papier de travail",
+   "en": "Cross-referenced to working paper",
+   "sens": "Le montant ou la conclusion est relié à une autre feuille du dossier (indexation W/P) permettant de retrouver le détail du test ou la pièce. Atteste la traçabilité et le chaînage documentaire au sein du dossier de révision."
+  }
+ ],
+ "exemple": {
+  "titre": "Dossier de révision — Cycle Créances clients — Helvétia Composants SA, exercice clos le 31.12.2025 (CHF)",
+  "contexte": "Client fictif : Helvétia Composants SA, PME industrielle suisse (fabrication de composants), exercice clos le 31.12.2025, comptes tenus et présentés en CHF. Référentiel : Code des obligations (CO art. 957a, 959, 960e) ; normes d'audit NAS-CH alignées sur les ISA (ISA-CH 505 confirmations externes, ISA-CH 540 estimations comptables, ISA-CH 240 fraude au revenu, ISA-CH 500 éléments probants). Seuil de signification (materiality) global retenu : 130'000 CHF ; seuil de remontée des anomalies (clearly trivial / SAD threshold) : 6'500 CHF. Le cycle créances clients est jugé à risque significatif au titre de la présomption de fraude au revenu (ISA-CH 240 par. 27). Préparé par VB, revu par ML.",
+  "comment_lire": "Ce dossier se lit comme un vrai classeur de révision : un fil rouge, le montant net des créances clients de 2'470'000 CHF, relie toutes les feuilles. Partez de la feuille {EF} (extrait du bilan, le chiffre tel qu'il apparaît dans les états financiers signés) puis suivez les renvois cliquables (xref) de feuille en feuille, du général vers la pièce justificative. {EF} renvoie à la feuille maîtresse {B} (lead schedule), qui décompose le net 2'470'000 en créances brutes 2'620'000 moins ducroire 150'000. De {B}, descendez dans le détail : le brut 2'620'000 se justifie par la balance âgée {B-1} (aging), elle-même corroborée par la circularisation {B-2} et le test de césure {B-3} ; le ducroire 150'000 se recalcule sur la feuille {B-4}. La feuille {TB} montre que les comptes 1100 et 1109 de la balance générale s'agrègent exactement à {B}. Cliquez chaque renvoi pour remonter ou redescendre la chaîne : à chaque étape, le même chiffre doit se retrouver à l'identique (c'est le principe du « cross-referencing » et du « footing/tying » en révision). Les tickmarks (symboles ^, F, TB, etc.) posés sur les lignes signalent la nature exacte du travail effectué par le réviseur sur ce chiffre précis ; chaque feuille porte sa propre légende. Assertions couvertes par l'ensemble : existence (la créance correspond à une vente réelle), évaluation / correction de valeur (le ducroire couvre le risque d'irrécouvrabilité), césure (cut-off : les ventes sont rattachées au bon exercice). Comme aucune anomalie au-dessus du seuil n'a été détectée, aucun ajustement n'est reporté à la synthèse des écarts (feuille de bouclage Z) : le net remonte directement à l'opinion.",
+  "feuilles": [
+   {
+    "index": "EF",
+    "type": "etats",
+    "titre": "Extrait des états financiers — poste « Créances résultant de la vente de biens et de prestations de services »",
+    "prepare": "VB",
+    "revu": "ML",
+    "date": "12.02.2026",
+    "objectif": "Point de départ du fil rouge : rattacher le montant net présenté au bilan (présentation / presentation & disclosure) au dossier de travail. Le net testé en aval couvre les assertions existence, évaluation (correction de valeur) et césure.",
+    "colonnes": [
+     "Poste du bilan (actif circulant)",
+     "31.12.2025",
+     "31.12.2024",
+     "Réf."
+    ],
+    "lignes": [
+     {
+      "libelle": "Créances résultant de ventes et prestations (net)",
+      "valeurs": [
+       "Créances résultant de ventes et prestations (net)",
+       "2’470’000",
+       "2’180’000",
+       "B"
+      ],
+      "tickmarks": [
+       "A"
+      ],
+      "xref": [
+       "B"
+      ],
+      "note": "Montant net présenté au bilan selon CO art. 959/959a (créances clients déduction faite du ducroire). C'est le chiffre vedette du dossier : il est repris tel quel sur la feuille maîtresse B. Variation +290'000 vs N-1 cohérente avec la hausse du chiffre d'affaires (revue analytique séparée).",
+      "total": true
+     },
+     {
+      "libelle": "Variation N-1 → N (revue analytique préliminaire)",
+      "valeurs": [
+       "Variation 2024 → 2025",
+       "+290’000",
+       "+13.3 %",
+       "B"
+      ],
+      "tickmarks": [
+       "AP"
+      ],
+      "xref": [
+       "B"
+      ],
+      "note": "2'470'000 - 2'180'000 = +290'000 (+13.3 %). Hausse jugée plausible au regard de la croissance du chiffre d'affaires ; aucun signal d'alerte (DSO stable). Le détail du mouvement est ventilé sur la feuille maîtresse B.",
+      "total": false
+     }
+    ],
+    "tickmarks_legende": [
+     {
+      "sym": "A",
+      "sens": "Rapproché aux états financiers signés (annual report) — montant identique au bilan définitif"
+     },
+     {
+      "sym": "AP",
+      "sens": "Procédure analytique préliminaire — variation revue et jugée plausible"
+     }
+    ],
+    "commentaire": "Le poste net de 2'470'000 CHF présenté au bilan correspond exactement au net de la feuille maîtresse B. Présentation conforme au CO (créances clients nettes du ducroire, créances tiers séparées des créances intragroupe — aucune créance intragroupe significative ce jour). La variation +290'000 vs N-1 est plausible. Renvoi vers B pour la décomposition. VB / revu ML."
+   },
+   {
+    "index": "B",
+    "type": "lead",
+    "titre": "Feuille maîtresse (lead schedule) — Créances clients",
+    "prepare": "VB",
+    "revu": "ML",
+    "date": "12.02.2026",
+    "objectif": "Articuler le net du bilan (assertion présentation) entre brut et correction de valeur, et orienter vers les feuilles de détail. Assertions : existence et césure (sur le brut), évaluation / correction de valeur (sur le ducroire).",
+    "colonnes": [
+     "Composante",
+     "Solde 31.12.24",
+     "Mouvement",
+     "Solde 31.12.25",
+     "Réf."
+    ],
+    "lignes": [
+     {
+      "libelle": "Créances clients brutes",
+      "valeurs": [
+       "Créances clients brutes",
+       "2’310’000",
+       "+310’000",
+       "2’620’000",
+       "B-1 / TB"
+      ],
+      "tickmarks": [
+       "W/P",
+       "TB",
+       "PY"
+      ],
+      "xref": [
+       "B-1",
+       "TB"
+      ],
+      "note": "Total brut des créances clients. Rapproché ligne à ligne à la balance âgée B-1 (tickmark ^ = cross-référencé) et au compte 1100 de la balance générale TB. Le mouvement +310'000 traduit la croissance d'activité. Soldes d'ouverture (2’310’000) reportés du dossier N-1 (tickmark PY, ISA-CH 510).",
+      "total": false
+     },
+     {
+      "libelle": "Ducroire / correction de valeur (allowance for doubtful accounts)",
+      "valeurs": [
+       "Ducroire / correction de valeur",
+       "(130’000)",
+       "(20’000)",
+       "(150’000)",
+       "B-4"
+      ],
+      "tickmarks": [
+       "R"
+      ],
+      "xref": [
+       "B-4"
+      ],
+      "note": "Correction de valeur en diminution de l'actif (CO art. 960e al. 1-3). Recalculée de façon indépendante sur la feuille B-4 (tickmark R = recalculé). Renforcement de 20'000 vs N-1, lié au passage en douteux spécifique d'un client > 90 jours.",
+      "total": false
+     },
+     {
+      "libelle": "Créances clients nettes",
+      "valeurs": [
+       "Créances clients nettes",
+       "2’180’000",
+       "+290’000",
+       "2’470’000",
+       "EF"
+      ],
+      "tickmarks": [
+       "F",
+       "A"
+      ],
+      "xref": [
+       "EF"
+      ],
+      "note": "Net = brut 2'620'000 moins ducroire 150'000 = 2'470'000. Total additionné (F = footed) et rapproché au bilan EF (A). C'est le montant repris dans l'opinion. Boucle vérifiée.",
+      "total": true
+     }
+    ],
+    "tickmarks_legende": [
+     {
+      "sym": "W/P",
+      "sens": "Cross-référencé à la feuille de travail liée (montant concordant)"
+     },
+     {
+      "sym": "TB",
+      "sens": "Rapproché à la balance générale (trial balance) — feuille TB"
+     },
+     {
+      "sym": "R",
+      "sens": "Recalculé de manière indépendante par le réviseur"
+     },
+     {
+      "sym": "F",
+      "sens": "Footed — addition de la colonne revérifiée et exacte"
+     },
+     {
+      "sym": "A",
+      "sens": "Rapproché aux états financiers signés (bilan EF)"
+     },
+     {
+      "sym": "PY",
+      "sens": "Soldes d'ouverture reportés (carry-forward) du dossier de l'exercice précédent (ISA-CH 510)"
+     }
+    ],
+    "commentaire": "Feuille maîtresse bouclée : brut 2'620'000 (vers B-1 et TB) moins ducroire 150'000 (vers B-4) = net 2'470'000 (vers EF). Les trois renvois sont concordants. Le brut est justifié en aval par la balance âgée B-1, la circularisation B-2 et la césure B-3 ; le ducroire par le recalcul B-4. Aucune anomalie au-dessus du seuil de remontée. VB / revu ML."
+   },
+   {
+    "index": "B-1",
+    "type": "detail",
+    "titre": "Balance âgée des créances clients (aging) au 31.12.2025",
+    "prepare": "VB",
+    "revu": "ML",
+    "date": "10.02.2026",
+    "objectif": "Justifier le total brut de la feuille maîtresse et servir de base au calcul du ducroire. Assertions : existence (via B-2), évaluation (tranches d'âge, vers B-4), césure (via B-3). Document PBC (fourni par le client), agréé au grand-livre puis testé.",
+    "colonnes": [
+     "Tranche d'ancienneté",
+     "Montant brut",
+     "% du total",
+     "Réf."
+    ],
+    "lignes": [
+     {
+      "libelle": "Non échu (within terms, conditions 30 j net)",
+      "valeurs": [
+       "Non échu",
+       "1’900’000",
+       "72.6 %",
+       ""
+      ],
+      "tickmarks": [
+       "TB"
+      ],
+      "xref": [],
+      "note": "Créances dans les conditions de paiement contractuelles (30 j net). Recoupées avec le sub-ledger AR extrait au 31.12.2025.",
+      "total": false
+     },
+     {
+      "libelle": "Échu 1 à 30 jours",
+      "valeurs": [
+       "Échu 1–30 j",
+       "410’000",
+       "15.6 %",
+       "B-4"
+      ],
+      "tickmarks": [
+       "TB"
+      ],
+      "xref": [
+       "B-4"
+      ],
+      "note": "Léger retard, sans signal de difficulté. Inclus dans l'assiette de la provision statistique (B-4).",
+      "total": false
+     },
+     {
+      "libelle": "Échu 31 à 90 jours",
+      "valeurs": [
+       "Échu 31–90 j",
+       "210’000",
+       "8.0 %",
+       "B-4"
+      ],
+      "tickmarks": [
+       "TB"
+      ],
+      "xref": [
+       "B-4"
+      ],
+      "note": "Retard modéré. Inclus dans l'assiette de la provision statistique (B-4).",
+      "total": false
+     },
+     {
+      "libelle": "Échu > 90 jours",
+      "valeurs": [
+       "Échu > 90 j",
+       "100’000",
+       "3.8 %",
+       "B-4"
+      ],
+      "tickmarks": [
+       "I"
+      ],
+      "xref": [
+       "B-4"
+      ],
+      "note": "Créances anciennes investiguées individuellement (un client en contentieux). Provisionnées spécifiquement à 100 % sur la feuille B-4.",
+      "total": false
+     },
+     {
+      "libelle": "Total brut des créances clients",
+      "valeurs": [
+       "Total brut",
+       "2’620’000",
+       "100.0 %",
+       "B"
+      ],
+      "tickmarks": [
+       "F",
+       "W/P",
+       "PBC"
+      ],
+      "xref": [
+       "B",
+       "B-2",
+       "B-3"
+      ],
+      "note": "Somme des tranches : 1'900'000 + 410'000 + 210'000 + 100'000 = 2'620'000. Total additionné (F) et rapproché à la feuille maîtresse B. L'existence de ce total est corroborée par la circularisation B-2 (échantillon) et la césure B-3.",
+      "total": true
+     }
+    ],
+    "tickmarks_legende": [
+     {
+      "sym": "TB",
+      "sens": "Rapproché au sub-ledger AR / balance générale (compte 1100)"
+     },
+     {
+      "sym": "I",
+      "sens": "Item investigué individuellement (analyse de récupérabilité)"
+     },
+     {
+      "sym": "F",
+      "sens": "Footed — somme des tranches recalculée : 2'620'000"
+     },
+     {
+      "sym": "W/P",
+      "sens": "Cross-référencé à la feuille de travail liée (montant concordant)"
+     },
+     {
+      "sym": "PBC",
+      "sens": "Document préparé par le client (prepared by client), agréé au grand-livre auxiliaire puis testé"
+     }
+    ],
+    "commentaire": "Aging recalculé de façon indépendante à partir du sub-ledger AR ; cohérent avec les conditions de paiement (30 j net). Total 2'620'000 footé et tié à B. La concentration en non-échu (72.5 %) est saine ; les 100'000 > 90 j sont isolés et provisionnés en B-4. Existence testée via circularisation B-2 ; rattachement à l'exercice via césure B-3. VB / revu ML."
+   },
+   {
+    "index": "B-2",
+    "type": "test",
+    "titre": "Circularisation des créances clients (confirmations externes — ISA-CH 505)",
+    "prepare": "VB",
+    "revu": "ML",
+    "date": "30.01.2026",
+    "objectif": "Tester l'assertion existence (et les droits) par confirmation directe des soldes auprès des clients. Confirmations positives envoyées et reçues directement par le réviseur.",
+    "colonnes": [
+     "Indicateur",
+     "Montant / nombre",
+     "Couverture",
+     "Réf."
+    ],
+    "lignes": [
+     {
+      "libelle": "Population testée — total brut des créances",
+      "valeurs": [
+       "Population (brut B-1)",
+       "2’620’000",
+       "100 %",
+       "B-1"
+      ],
+      "tickmarks": [
+       "W/P"
+      ],
+      "xref": [
+       "B-1"
+      ],
+      "note": "Population de référence : total brut repris de la balance âgée B-1.",
+      "total": false
+     },
+     {
+      "libelle": "Échantillon circularisé — 6 clients (confirmations positives)",
+      "valeurs": [
+       "Échantillon (6 clients)",
+       "1’820’000",
+       "69.5 %",
+       ""
+      ],
+      "tickmarks": [
+       "C"
+      ],
+      "xref": [],
+      "note": "6 plus gros débiteurs sélectionnés en couverture (coverage approach). 1'820'000 / 2'620'000 = 69.5 % du brut. Lettres envoyées directement auditeur vers client, réponses reçues directement client vers auditeur.",
+      "total": false
+     },
+     {
+      "libelle": "Réponses concordantes (sans écart)",
+      "valeurs": [
+       "Réponses concordantes",
+       "1’650’000",
+       "90.7 % de l'éch.",
+       ""
+      ],
+      "tickmarks": [
+       "C"
+      ],
+      "xref": [
+       "B-2.1"
+      ],
+      "note": "1'650'000 confirmés sans réserve par les clients : existence avérée. 1'650'000 / 1'820'000 = 90.7 % de l'échantillon circularisé.",
+      "total": false
+     },
+     {
+      "libelle": "Écarts expliqués (paiements en transit / cut-off)",
+      "valeurs": [
+       "Écarts expliqués",
+       "170’000",
+       "9.3 % de l'éch.",
+       "B-3"
+      ],
+      "tickmarks": [
+       "I",
+       "R"
+      ],
+      "xref": [
+       "B-3"
+      ],
+      "note": "1'820'000 - 1'650'000 = 170'000 d'écarts. Tous expliqués : paiements clients en transit à la clôture (encaissés début janvier) et décalages de césure rapprochés au test B-3. Aucune anomalie résiduelle, aucun écart non expliqué.",
+      "total": false
+     }
+    ],
+    "tickmarks_legende": [
+     {
+      "sym": "W/P",
+      "sens": "Cross-référencé à la feuille de travail liée (montant concordant)"
+     },
+     {
+      "sym": "C",
+      "sens": "Confirmation externe positive reçue directement du client (ISA-CH 505)"
+     },
+     {
+      "sym": "I",
+      "sens": "Écart investigué individuellement et rapproché à une pièce"
+     },
+     {
+      "sym": "R",
+      "sens": "Réconciliation des écarts revue et validée"
+     }
+    ],
+    "commentaire": "Circularisation positive sur 6 clients couvrant 1'820'000 (69.5 % du brut). 1'650'000 confirmés sans écart. Les 170'000 d'écarts s'expliquent intégralement par des paiements en transit et des décalages de césure rapprochés au test B-3 ; aucun écart non résolu, aucune anomalie au-dessus du seuil. Existence des créances corroborée. Renvoi vers B-1 (population) et B-3 (écarts de césure). VB / revu ML."
+   },
+   {
+    "index": "B-3",
+    "type": "test",
+    "titre": "Test de césure des ventes (cut-off) autour du 31.12.2025",
+    "prepare": "VB",
+    "revu": "ML",
+    "date": "05.02.2026",
+    "objectif": "Tester l'assertion césure (cut-off) : les ventes et créances sont rattachées au bon exercice. Rapprochement factures / bons de livraison (BL) signés de part et d'autre de la date de clôture.",
+    "colonnes": [
+     "Échantillon examiné",
+     "Période",
+     "Conclusion",
+     "Réf."
+    ],
+    "lignes": [
+     {
+      "libelle": "15 dernières factures émises avant le 31.12.2025",
+      "valeurs": [
+       "15 dernières factures avant clôture",
+       "20–31.12.2025",
+       "BL daté ≤ 31.12 — correct",
+       ""
+      ],
+      "tickmarks": [
+       "✓"
+      ],
+      "xref": [
+       "B-3.1"
+      ],
+      "note": "Pour chaque facture pré-clôture, le bon de livraison signé est daté au plus tard le 31.12.2025 : le revenu est bien rattaché à 2025 (transfert de contrôle réalisé). Aucune facture anticipée détectée.",
+      "total": false
+     },
+     {
+      "libelle": "15 premières factures émises après le 01.01.2026",
+      "valeurs": [
+       "15 premières factures après clôture",
+       "01–10.01.2026",
+       "BL daté ≥ 01.01 — correct",
+       ""
+      ],
+      "tickmarks": [
+       "✓"
+      ],
+      "xref": [],
+      "note": "Pour chaque facture post-clôture, le BL signé est daté à partir du 01.01.2026 : aucune vente de 2026 indûment comptabilisée en 2025, aucune vente de 2025 omise.",
+      "total": false
+     },
+     {
+      "libelle": "Rapprochement avec les écarts de circularisation",
+      "valeurs": [
+       "Écarts de césure rapprochés",
+       "Clôture",
+       "Concordant avec B-2",
+       "B-2"
+      ],
+      "tickmarks": [
+       "W/P"
+      ],
+      "xref": [
+       "B-1",
+       "B-2"
+      ],
+      "note": "Les décalages de césure identifiés ici expliquent une partie des 170'000 d'écarts de la circularisation B-2 (paiements et livraisons à cheval sur la clôture). Cohérence confirmée.",
+      "total": false
+     }
+    ],
+    "tickmarks_legende": [
+     {
+      "sym": "✓",
+      "sens": "Vouché — rapproché à la pièce justificative source"
+     },
+     {
+      "sym": "W/P",
+      "sens": "Cross-référencé à la feuille de travail liée (montant concordant)"
+     }
+    ],
+    "commentaire": "Test de césure satisfaisant : sur les 15 dernières factures de décembre et les 15 premières de janvier, chaque BL signé est daté du bon côté de la clôture. Aucune vente anticipée (bill and hold) ni omise. Les décalages identifiés recoupent les écarts expliqués de B-2. Conclusion : les ventes sont correctement rattachées à l'exercice. Renvoi vers B-1 (cycle) et B-2. VB / revu ML."
+   },
+   {
+    "index": "B-4",
+    "type": "calcul",
+    "titre": "Recalcul du ducroire (correction de valeur sur créances — ISA-CH 540 / CO art. 960e)",
+    "prepare": "VB",
+    "revu": "ML",
+    "date": "11.02.2026",
+    "objectif": "Tester l'assertion évaluation / correction de valeur : la provision pour créances douteuses est adéquate. Recalcul indépendant combinant provision statistique et provision spécifique.",
+    "colonnes": [
+     "Composante du ducroire",
+     "Assiette",
+     "Provision",
+     "Réf."
+    ],
+    "lignes": [
+     {
+      "libelle": "Provision statistique (taux historiques sur créances échues courantes)",
+      "valeurs": [
+       "Provision statistique",
+       "620’000 (échu < 90 j)",
+       "50’000",
+       "B-1"
+      ],
+      "tickmarks": [
+       "R"
+      ],
+      "xref": [
+       "B-1"
+      ],
+      "note": "Appliquée aux tranches échues hors douteux spécifiques (410'000 + 210'000 = 620'000) selon les taux de défaut historiques par tranche. Résultat recalculé : 50'000. Données d'ancienneté reprises de la balance âgée B-1.",
+      "total": false
+     },
+     {
+      "libelle": "Provision spécifique sur créances douteuses (> 90 jours)",
+      "valeurs": [
+       "Provision spécifique",
+       "100’000 (> 90 j)",
+       "100’000",
+       "B-1"
+      ],
+      "tickmarks": [
+       "R",
+       "I"
+      ],
+      "xref": [
+       "B-1"
+      ],
+      "note": "Les 100'000 de créances > 90 jours (un client en contentieux) sont provisionnés à 100 % après analyse individuelle de récupérabilité. Montant repris de la tranche > 90 j de B-1.",
+      "total": false
+     },
+     {
+      "libelle": "Ducroire total recalculé",
+      "valeurs": [
+       "Ducroire total",
+       "—",
+       "150’000",
+       "B"
+      ],
+      "tickmarks": [
+       "F",
+       "W/P"
+      ],
+      "xref": [
+       "B"
+      ],
+      "note": "50'000 + 100'000 = 150'000. Total recalculé (F) et rapproché à la feuille maîtresse B. Identique au montant comptabilisé : aucun ajustement requis.",
+      "total": true
+     }
+    ],
+    "tickmarks_legende": [
+     {
+      "sym": "R",
+      "sens": "Recalculé indépendamment par le réviseur (taux × assiette)"
+     },
+     {
+      "sym": "I",
+      "sens": "Créance investiguée individuellement (analyse de récupérabilité)"
+     },
+     {
+      "sym": "F",
+      "sens": "Footed — somme des composantes recalculée : 150'000"
+     },
+     {
+      "sym": "W/P",
+      "sens": "Cross-référencé à la feuille de travail liée (montant concordant)"
+     }
+    ],
+    "commentaire": "Ducroire recalculé de manière indépendante : 50'000 (statistique, assiette échue < 90 j de B-1) + 100'000 (spécifique sur les > 90 j de B-1) = 150'000. Identique au ducroire comptabilisé et au montant porté sur la feuille maîtresse B. Hypothèses de taux et de récupérabilité jugées raisonnables (ISA-CH 540). Aucune sous-provision détectée. Renvoi vers B. VB / revu ML."
+   },
+   {
+    "index": "TB",
+    "type": "tb",
+    "titre": "Extrait de la balance générale (trial balance) — comptes du cycle créances clients",
+    "prepare": "VB",
+    "revu": "ML",
+    "date": "09.02.2026",
+    "objectif": "Rapprocher les soldes de la comptabilité générale (balance générale) à la feuille maîtresse. Assertion : exhaustivité / présentation (tous les comptes du cycle sont repris, sans omission ni doublon).",
+    "colonnes": [
+     "N° compte",
+     "Intitulé",
+     "Solde 31.12.2025",
+     "Réf."
+    ],
+    "lignes": [
+     {
+      "libelle": "1100 — Créances clients (créances résultant de ventes et prestations)",
+      "valeurs": [
+       "1100",
+       "Créances clients (brutes)",
+       "2’620’000",
+       "B"
+      ],
+      "tickmarks": [
+       "TB",
+       "W/P"
+      ],
+      "xref": [
+       "B"
+      ],
+      "note": "Solde débiteur brut du grand-livre. Égal au total brut de la feuille maîtresse B et de la balance âgée B-1.",
+      "total": false
+     },
+     {
+      "libelle": "1109 — Ducroire (correction de valeur sur créances clients)",
+      "valeurs": [
+       "1109",
+       "Ducroire (correction de valeur)",
+       "(150’000)",
+       "B"
+      ],
+      "tickmarks": [
+       "TB",
+       "W/P"
+      ],
+      "xref": [
+       "B"
+      ],
+      "note": "Compte de correction de valeur (solde créditeur, présenté en diminution de l'actif). Égal au ducroire recalculé en B-4 et porté en B.",
+      "total": false
+     },
+     {
+      "libelle": "Net comptable du cycle (1100 + 1109)",
+      "valeurs": [
+       "",
+       "Créances clients nettes",
+       "2’470’000",
+       "B"
+      ],
+      "tickmarks": [
+       "F"
+      ],
+      "xref": [
+       "B"
+      ],
+      "note": "2'620'000 - 150'000 = 2'470'000. Égal au net de la feuille maîtresse B et au poste du bilan EF. La balance générale boucle avec le dossier.",
+      "total": true
+     }
+    ],
+    "tickmarks_legende": [
+     {
+      "sym": "TB",
+      "sens": "Solde extrait directement de la balance générale arrêtée (grand-livre)"
+     },
+     {
+      "sym": "W/P",
+      "sens": "Cross-référencé à la feuille de travail liée (montant concordant)"
+     },
+     {
+      "sym": "F",
+      "sens": "Footed — net recalculé : 2'470'000"
+     }
+    ],
+    "commentaire": "Les comptes 1100 (brut 2'620'000) et 1109 (ducroire 150'000) de la balance générale s'agrègent à un net de 2'470'000, identique à la feuille maîtresse B et au bilan EF. Aucun autre compte du cycle (effets à recevoir, créances intragroupe) n'est mouvementé de façon significative. Boucle complète vérifiée. Renvoi vers B. VB / revu ML."
+   },
+   {
+    "index": "B-2.1",
+    "type": "piece",
+    "titre": "Pièce — Réponse de confirmation client (Maag Précision SA)",
+    "prepare": "reçu par VB",
+    "revu": "ML",
+    "date": "22.01.2026",
+    "objectif": "Pièce probante externe : confirmation positive reçue directement du client (ISA-CH 505). Soutient l'assertion existence.",
+    "lignes": [
+     {
+      "libelle": "Émetteur : Maag Précision SA (client n° 1042)"
+     },
+     {
+      "libelle": "Solde confirmé au 31.12.2025",
+      "montant": "540’000",
+      "tickmarks": [
+       "C"
+      ]
+     },
+     {
+      "libelle": "Reçue le 22.01.2026, directement par l'auditeur (pli scellé)"
+     },
+     {
+      "libelle": "Concordance avec la comptabilité",
+      "montant": "sans écart",
+      "tickmarks": [
+       "Ø"
+      ],
+      "xref": [
+       "B-2"
+      ],
+      "note": "Confirmé sans réserve. Reporté au dépouillement de la circularisation B-2."
+     }
+    ],
+    "tickmarks_legende": [
+     {
+      "sym": "C",
+      "sens": "Confirmation externe positive reçue directement du tiers (ISA-CH 505)"
+     },
+     {
+      "sym": "Ø",
+      "sens": "Sans exception — aucun écart relevé"
+     }
+    ],
+    "commentaire": "Pièce conservée au dossier (copie scannée). Terminus de la chaîne descendante pour ce solde : on ne peut pas tracer plus bas. Remonte vers B-2. reçu VB / revu ML."
+   },
+   {
+    "index": "B-3.1",
+    "type": "piece",
+    "titre": "Pièce — Facture de vente n° 2025-1487 + bon de livraison signé",
+    "prepare": "VB",
+    "revu": "ML",
+    "date": "30.12.2025",
+    "objectif": "Pièce probante : justifie le rattachement d'une vente au bon exercice (assertion césure / cut-off).",
+    "lignes": [
+     {
+      "libelle": "Facture n° 2025-1487, datée du 30.12.2025"
+     },
+     {
+      "libelle": "Montant HT",
+      "montant": "38’500",
+      "tickmarks": [
+       "✓"
+      ]
+     },
+     {
+      "libelle": "Bon de livraison signé par le client le 30.12.2025 (transfert de contrôle)",
+      "tickmarks": [
+       "✓"
+      ]
+     },
+     {
+      "libelle": "Rattachement à l'exercice",
+      "montant": "2025",
+      "tickmarks": [
+       "@"
+      ],
+      "xref": [
+       "B-3"
+      ],
+      "note": "Transfert de contrôle réalisé avant la clôture : vente correctement rattachée à 2025. Reporté au test de césure B-3."
+     }
+    ],
+    "tickmarks_legende": [
+     {
+      "sym": "✓",
+      "sens": "Vouché — facture rapprochée à la pièce (montant et date)"
+     },
+     {
+      "sym": "@",
+      "sens": "Test de césure — rattachement à l'exercice vérifié"
+     }
+    ],
+    "commentaire": "Pièce conservée au dossier. Terminus descendant pour cet échantillon de césure. Remonte vers B-3. VB / revu ML."
+   }
+  ]
+ },
+ "checklist": [
+  "Chaque feuille porte un index unique, un en-tête (entité, exercice, cycle), l'objectif de la procédure, le préparateur et le réviseur (avec dates).",
+  "Tout renvoi est réciproque : la feuille source pointe vers la cible et la cible pointe en retour vers la source ; aucun renvoi à sens unique.",
+  "Chaque lead s'agrée (tie-out) au poste des états financiers, et les états financiers s'agréent à la balance générale : le dossier boucle de bout en bout.",
+  "Chaque tickmark utilisé est défini dans une légende présente sur la même feuille (ou dans une légende standard du dossier).",
+  "Les totaux sont vérifiés : footing des colonnes et cross-footing des tableaux, avec le tickmark correspondant.",
+  "Les soldes d'ouverture sont reportés (carry-forward) du dossier N-1 et référencés ; les pièces PBC sont identifiées comme telles puis testées.",
+  "Chaque chiffre significatif est traçable jusqu'à une pièce probante (vouching descendant) et chaque pièce testée remonte jusqu'aux comptes (tracing ascendant).",
+  "Toute conclusion de feuille renvoie au programme de travail correspondant ; les ajustements proposés sont centralisés dans la synthèse des écarts (summary of audit differences)."
+ ],
+ "pieges": [
+  {
+   "t": "Une feuille renvoie à un index qui n'existe pas, a été renommé ou supprimé. Le réviseur ne peut plus suivre la chaîne ; le renvoi doit être réciproque et toujours valide.",
+   "l": "Référence cassée (broken cross-reference)"
+  },
+  {
+   "t": "Un montant apparaît sur la lead ou dans les EF sans renvoi vers la feuille de travail ni vers la pièce qui le justifie. Le chiffre flotte : impossible de savoir d'où il vient ni s'il a été audité.",
+   "l": "Chiffre non tracé (dangling figure)"
+  },
+  {
+   "t": "Un symbole est apposé à côté d'un chiffre mais n'est défini nulle part. On ne sait pas quelle procédure a réellement été effectuée ; le tickmark ne prouve rien sans sa définition.",
+   "l": "Tickmark sans légende (unexplained tickmark)"
+  },
+  {
+   "t": "Le total de la feuille maîtresse diffère du poste des EF ou de la balance, sans rapprochement documenté. Le bouclage (tie-out) est rompu : l'agrégation du cycle n'est pas fiable.",
+   "l": "Lead qui ne boucle pas (lead does not tie out)"
+  },
+  {
+   "t": "La feuille A pointe vers B mais B ne pointe pas en retour vers A. La navigation bottom-up est impossible ; un tiers partant de B ne sait pas où le chiffre est utilisé.",
+   "l": "Renvoi à sens unique (one-way reference)"
+  },
+  {
+   "t": "Une feuille fournie par le client est intégrée et référencée comme si elle était auditée, alors qu'aucun test n'a été effectué. Un PBC n'est probant qu'une fois vérifié (agréé, footé, échantillonné).",
+   "l": "PBC pris pour un élément probant (untested client schedule)"
+  }
+ ]
+}
