@@ -1485,9 +1485,10 @@ function AuditGeneric({ section, onBack }) {
 
 /* ── Accueil Audit (hub) ── */
 const AUDIT_ORDER = ["annuaire", "nas", "cadre_legal", "cycles", "procedures_assertions", "quiz", "cas_pratiques", "examens_blancs", "arbres", "comparatifs", "lexique", "outils", "modeles", "terrain", "independance", "fraude", "goingconcern", "timeline", "actualites"];
-function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlanComptable, onFraudePostes, onReferencement, onAnnexes, onAmortissements, onNestle, onMetier }) {
+function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlanComptable, onFraudePostes, onReferencement, onAnnexes, onAmortissements, onNestle, onMetier, onTests }) {
   const hasNestle = typeof window !== "undefined" && window.__NESTLE__ && (window.__NESTLE__.statements || []).length;
   const hasMetier = typeof window !== "undefined" && window.__METIER__ && (window.__METIER__.sections || []).length;
+  const hasTests = typeof window !== "undefined" && window.__TESTS__ && (window.__TESTS__.tests || []).length;
   const hasPlan = typeof window !== "undefined" && window.__PLAN_COMPTABLE__ && (window.__PLAN_COMPTABLE__.plans || []).length;
   const hasFraude = typeof window !== "undefined" && window.__FRAUDE_POSTES__ && (window.__FRAUDE_POSTES__.sections || []).length;
   const hasRef = typeof window !== "undefined" && window.__REFERENCEMENT__ && ((window.__REFERENCEMENT__.exemple || {}).feuilles || []).length;
@@ -1513,6 +1514,13 @@ function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlan
           <span className="text-4xl">📊</span>
           <span className="flex-1"><span className="block font-bold text-base text-emerald-800">Plans comptables — Suisse (PME) & France (PCG)</span><span className="block text-sm text-slate-600 mt-0.5">Découvre le plan comptable suisse PME et le plan français, classe par classe. Chaque compte est relié à sa ligne du bilan et du compte de résultat.</span><span className="block text-xs text-emerald-600 mt-1 font-medium">2 plans interactifs · comptes ↔ états financiers · autres plans suisses</span></span>
           <ArrowRight size={20} className="text-emerald-400 shrink-0" />
+        </button>
+      )}
+      {hasTests && (
+        <button onClick={onTests} className="w-full text-left rounded-2xl border-2 border-teal-200 bg-gradient-to-r from-teal-50 to-cyan-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
+          <span className="text-4xl">🧪</span>
+          <span className="flex-1"><span className="block font-bold text-base text-teal-800">Catalogue des tests d'audit</span><span className="block text-sm text-slate-600 mt-0.5">Tous les tests d'audit, cycle par cycle : pourquoi (le risque), comment, quelle assertion — avec un cas interactif (QCM) par test et un niveau junior/senior/manager. Les 8 techniques ISA 500 + {(window.__TESTS__.tests || []).length} tests, filtrables par assertion, cycle et niveau.</span><span className="block text-xs text-teal-600 mt-1 font-medium">Référence · {(window.__TESTS__.tests || []).length} tests · cas interactifs · junior/senior/manager</span></span>
+          <ArrowRight size={20} className="text-teal-400 shrink-0" />
         </button>
       )}
       {hasMetier && (
@@ -3593,6 +3601,183 @@ function AuditMetier({ onBack }) {
   );
 }
 
+/* ════════════════════════════════════════════════════════════════════
+   CATALOGUE DES TESTS D'AUDIT — filtrable par assertion / cycle
+   ════════════════════════════════════════════════════════════════════ */
+const TEST_TYPE_STYLE = {
+  controle: "bg-sky-50 text-sky-700 border-sky-200",
+  substantif: "bg-violet-50 text-violet-700 border-violet-200",
+  analytique: "bg-emerald-50 text-emerald-700 border-emerald-200",
+};
+const TEST_TYPE_LABEL = { controle: "Test de contrôle", substantif: "Substantif", analytique: "Analytique" };
+const SENIO = {
+  junior: { label: "Junior", c: "bg-emerald-100 text-emerald-700 border-emerald-200" },
+  senior: { label: "Senior", c: "bg-amber-100 text-amber-700 border-amber-200" },
+  manager: { label: "Manager", c: "bg-rose-100 text-rose-700 border-rose-200" },
+};
+function TestExo({ exo }) {
+  const [picked, setPicked] = useState(null);
+  const opts = exo.options || [];
+  const reveal = picked !== null;
+  return (
+    <div className="mt-2 rounded-lg bg-teal-50/60 border border-teal-100 p-2.5">
+      <div className="text-[12.5px] text-slate-700 leading-relaxed mb-1.5"><MdInline text={exo.contexte || ""} /></div>
+      <div className="text-[12.5px] font-semibold text-slate-800 mb-2"><MdInline text={exo.question || ""} /></div>
+      <div className="space-y-1">
+        {opts.map((o, i) => {
+          const chosen = picked === i;
+          let cls = "bg-white border-slate-200 hover:border-teal-300";
+          if (reveal && o.ok) cls = "bg-emerald-50 border-emerald-300";
+          else if (reveal && chosen) cls = "bg-rose-50 border-rose-300";
+          else if (reveal) cls = "bg-white border-slate-100 opacity-60";
+          return (
+            <button key={i} onClick={() => { if (!reveal) setPicked(i); }} disabled={reveal}
+              className={`w-full text-left rounded-lg border px-2.5 py-1.5 text-[12.5px] transition-colors ${cls}`}>
+              <div className="flex items-start gap-1.5">
+                <span className="shrink-0">{reveal ? (o.ok ? "✅" : chosen ? "❌" : "▫️") : "▫️"}</span>
+                <span className="min-w-0">
+                  <span className={reveal && o.ok ? "font-semibold text-emerald-800" : ""}>{o.t}</span>
+                  {reveal && (chosen || o.ok) && <span className="block text-[11.5px] text-slate-600 mt-0.5 leading-snug">{o.fb}</span>}
+                </span>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+      {reveal && <button onClick={() => setPicked(null)} className="mt-1.5 text-[11px] text-teal-600 font-semibold">↺ Réessayer</button>}
+    </div>
+  );
+}
+function TestCard({ t }) {
+  const [openExo, setOpenExo] = useState(false);
+  const crit = t.niveau === "critique";
+  const sen = SENIO[t.seniorite];
+  return (
+    <div className={`rounded-xl border bg-white p-3.5 ${crit ? "border-rose-200" : "border-slate-200"}`}>
+      <div className="flex items-start gap-2 mb-1.5">
+        {crit && <span className="text-[10px] font-bold text-rose-600 bg-rose-50 border border-rose-200 rounded px-1.5 py-0.5 shrink-0 mt-0.5">★ CLÉ</span>}
+        <h4 className="font-bold text-[14px] text-slate-800 leading-tight flex-1">{t.nom}</h4>
+        {sen && <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded border shrink-0 mt-0.5 ${sen.c}`}>{sen.label}</span>}
+      </div>
+      <div className="flex flex-wrap gap-1 mb-2">
+        {(t.type || []).map((ty, i) => <span key={i} className={`text-[10px] font-semibold px-1.5 py-0.5 rounded border ${TEST_TYPE_STYLE[ty] || "bg-slate-50 text-slate-600 border-slate-200"}`}>{TEST_TYPE_LABEL[ty] || ty}</span>)}
+        {(t.assertions || []).map((a, i) => <span key={i} className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-100">{a}</span>)}
+      </div>
+      <div className="space-y-1.5 text-[13px] leading-relaxed">
+        <div className="text-slate-700"><span className="font-bold text-rose-600">Pourquoi · </span><MdInline text={t.pourquoi || ""} /></div>
+        <div className="text-slate-700"><span className="font-bold text-indigo-600">Comment · </span><MdInline text={t.comment || ""} /></div>
+        {t.exemple && <div className="text-slate-600 bg-slate-50 rounded-lg px-2.5 py-1.5"><span className="font-bold text-slate-500">Ex. · </span><MdInline text={t.exemple} /></div>}
+      </div>
+      {(t.procedure || []).length > 0 && <div className="mt-2 flex flex-wrap gap-1">{t.procedure.map((p, i) => <span key={i} className="text-[10px] text-slate-400 bg-slate-50 border border-slate-100 rounded px-1.5 py-0.5">{p}</span>)}</div>}
+      {t.exo && (
+        <div className="mt-2.5 border-t border-slate-100 pt-2">
+          <button onClick={() => setOpenExo((s) => !s)} className="flex items-center gap-1 text-[12px] font-bold text-teal-700 hover:text-teal-800"><GraduationCap size={13} /> Cas interactif <ChevronDown size={13} className={`transition-transform ${openExo ? "rotate-180" : ""}`} /></button>
+          {openExo && <TestExo exo={t.exo} />}
+        </div>
+      )}
+    </div>
+  );
+}
+function AuditTests({ onBack }) {
+  const data = (typeof window !== "undefined" && window.__TESTS__) || {};
+  const meta = data.meta || {};
+  const techniques = data.techniques || [];
+  const cats = data.cats || [];
+  const tests = data.tests || [];
+  const [asserts, setAsserts] = useState(() => new Set());
+  const [cat, setCat] = useState(null);
+  const [senio, setSenio] = useState(null);
+  const [q, setQ] = useState("");
+  const toggleA = (a) => setAsserts((prev) => { const n = new Set(prev); n.has(a) ? n.delete(a) : n.add(a); return n; });
+  const filtered = tests.filter((t) => {
+    if (cat && t.cat !== cat) return false;
+    if (senio && t.seniorite !== senio) return false;
+    if (asserts.size && !(t.assertions || []).some((a) => asserts.has(a))) return false;
+    if (q) { const s = ((t.nom || "") + " " + (t.pourquoi || "") + " " + (t.comment || "") + " " + (t.exemple || "")).toLowerCase(); if (!s.includes(q.toLowerCase())) return false; }
+    return true;
+  });
+  const catLabel = (id) => (cats.find((c) => c.id === id) || {});
+  const grouped = cats.map((c) => ({ c, items: filtered.filter((t) => t.cat === c.id) })).filter((g) => g.items.length);
+  const hasFilter = asserts.size || cat || senio || q;
+  const SENIO_FILTER = [{ k: "junior", l: "Junior" }, { k: "senior", l: "Senior" }, { k: "manager", l: "Manager" }];
+  return (
+    <div>
+      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Accueil Audit</button>
+      <div className="rounded-2xl bg-gradient-to-br from-teal-800 via-slate-800 to-cyan-900 text-white p-5 shadow mb-4">
+        <div className="text-[11px] font-semibold uppercase tracking-widest text-teal-300/80">Référence · procédures d'audit</div>
+        <h2 className="text-2xl font-bold mt-1">{meta.title}</h2>
+        <p className="text-sm text-teal-100 mt-0.5">{meta.subtitle}</p>
+        <p className="text-[13px] text-slate-300 leading-relaxed mt-3"><MdInline text={meta.intro || ""} /></p>
+      </div>
+
+      {/* Techniques ISA 500 */}
+      <div className="mb-5">
+        <div className="text-[12px] font-bold uppercase tracking-widest text-slate-400 mb-2">Les 8 techniques de collecte de preuves (ISA 500)</div>
+        <div className="grid sm:grid-cols-2 gap-2.5">
+          {techniques.map((tq) => (
+            <div key={tq.id} className="rounded-xl border border-slate-200 bg-white p-3.5">
+              <div className="flex items-center gap-2 mb-1"><span className="text-lg">{tq.icon}</span><span className="font-bold text-[14px] text-slate-800">{tq.nom}</span></div>
+              <div className="text-[12.5px] text-slate-600 leading-relaxed"><MdInline text={tq.definition} /></div>
+              {tq.exemple && <div className="text-[12px] text-slate-500 mt-1.5 bg-slate-50 rounded-lg px-2.5 py-1.5"><span className="font-semibold">Ex. · </span>{tq.exemple}</div>}
+              {tq.fiabilite && <div className="text-[11px] text-teal-600 mt-1.5 font-medium">Fiabilité : {tq.fiabilite}</div>}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Filtres */}
+      <div className="sticky top-0 z-10 bg-slate-100/95 backdrop-blur rounded-xl p-3 mb-4 space-y-2 -mx-1 px-3">
+        <div className="flex items-center gap-2">
+          <Search size={15} className="text-slate-400 shrink-0" />
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher un test…" className="flex-1 bg-white border border-slate-200 rounded-lg px-2.5 py-1.5 text-[13px] outline-none focus:border-teal-400" />
+          {hasFilter ? <button onClick={() => { setAsserts(new Set()); setCat(null); setSenio(null); setQ(""); }} className="text-[11px] text-slate-500 hover:text-rose-600 font-semibold shrink-0">Réinitialiser</button> : null}
+        </div>
+        <div>
+          <div className="text-[10px] font-bold uppercase tracking-wide text-slate-400 mb-1">Par niveau (qui réalise le test)</div>
+          <div className="flex flex-wrap gap-1">
+            {SENIO_FILTER.map((s) => (
+              <button key={s.k} onClick={() => setSenio(senio === s.k ? null : s.k)} className={`text-[11px] font-semibold px-2.5 py-1 rounded-lg border transition-colors ${senio === s.k ? (s.k === "junior" ? "bg-emerald-600" : s.k === "senior" ? "bg-amber-600" : "bg-rose-600") + " text-white border-transparent" : "bg-white text-slate-600 border-slate-200 hover:border-slate-300"}`}>{s.l}</button>
+            ))}
+          </div>
+        </div>
+        <div>
+          <div className="text-[10px] font-bold uppercase tracking-wide text-slate-400 mb-1">Par assertion</div>
+          <div className="flex flex-wrap gap-1">
+            {(data.assertions || []).map((a) => (
+              <button key={a} onClick={() => toggleA(a)} className={`text-[11px] font-medium px-2 py-1 rounded-lg border transition-colors ${asserts.has(a) ? "bg-amber-500 text-white border-transparent" : "bg-white text-amber-700 border-amber-200 hover:border-amber-300"}`}>{a}</button>
+            ))}
+          </div>
+        </div>
+        <div>
+          <div className="text-[10px] font-bold uppercase tracking-wide text-slate-400 mb-1">Par cycle</div>
+          <div className="flex flex-wrap gap-1">
+            {cats.map((c) => (
+              <button key={c.id} onClick={() => setCat(cat === c.id ? null : c.id)} className={`text-[11px] font-semibold px-2 py-1 rounded-lg border transition-colors flex items-center gap-1 ${cat === c.id ? "bg-teal-600 text-white border-transparent" : "bg-white text-slate-600 border-slate-200 hover:border-teal-300"}`}><span>{c.icon}</span>{c.label}</button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="text-[12px] text-slate-500 mb-2 font-medium">{filtered.length} test{filtered.length > 1 ? "s" : ""} {hasFilter ? "correspondant au filtre" : "au total"}</div>
+
+      {grouped.length === 0 ? (
+        <div className="rounded-xl border-2 border-dashed border-slate-200 bg-slate-50 p-8 text-center text-slate-400 text-sm">Aucun test ne correspond à ce filtre.</div>
+      ) : grouped.map((g) => (
+        <div key={g.c.id} className="mb-5">
+          <div className="flex items-center gap-2 mb-2.5">
+            <span className="text-lg">{g.c.icon}</span>
+            <span className="font-bold text-[15px] text-slate-800">{g.c.label}</span>
+            <span className="text-[11px] text-slate-400 font-semibold">{g.items.length}</span>
+            <span className="flex-1 h-px bg-slate-200" />
+          </div>
+          <div className="grid lg:grid-cols-2 gap-2.5">{g.items.map((t, i) => <TestCard key={i} t={t} />)}</div>
+        </div>
+      ))}
+      <div className="mt-4 text-center text-[11px] text-slate-400">Catalogue pédagogique — tests d'audit selon les normes ISA.</div>
+    </div>
+  );
+}
+
 function AuditApp() {
   const [data, setData] = useState(() => (typeof window !== "undefined" && window.__AUDIT__) || null);
   const [loadErr, setLoadErr] = useState(null);
@@ -3622,9 +3807,10 @@ function AuditApp() {
         </div>
       </header>
       <main className="max-w-5xl mx-auto px-4 py-6">
-        {view.k === "home" && <AuditHome data={data} book={book} onBook={() => go({ k: "book" })} onSeuils={() => go({ k: "seuils" })} onRevision={() => go({ k: "revision" })} onPlanComptable={() => go({ k: "plancomptable" })} onFraudePostes={() => go({ k: "fraudepostes" })} onReferencement={() => go({ k: "referencement" })} onAnnexes={() => go({ k: "annexes" })} onAmortissements={() => go({ k: "amortissements" })} onNestle={() => go({ k: "nestle" })} onMetier={() => go({ k: "metier" })} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
+        {view.k === "home" && <AuditHome data={data} book={book} onBook={() => go({ k: "book" })} onSeuils={() => go({ k: "seuils" })} onRevision={() => go({ k: "revision" })} onPlanComptable={() => go({ k: "plancomptable" })} onFraudePostes={() => go({ k: "fraudepostes" })} onReferencement={() => go({ k: "referencement" })} onAnnexes={() => go({ k: "annexes" })} onAmortissements={() => go({ k: "amortissements" })} onNestle={() => go({ k: "nestle" })} onMetier={() => go({ k: "metier" })} onTests={() => go({ k: "tests" })} onSection={(k) => go(k === "annuaire" ? { k: "annuaire" } : k === "nas" ? { k: "nas" } : { k: "section", key: k })} />}
         {view.k === "nestle" && <NestleApp onBack={() => go({ k: "home" })} />}
         {view.k === "metier" && <AuditMetier onBack={() => go({ k: "home" })} />}
+        {view.k === "tests" && <AuditTests onBack={() => go({ k: "home" })} />}
         {view.k === "revision" && <AuditRevision data={data} onBack={() => go({ k: "home" })} />}
         {view.k === "plancomptable" && <AuditPlanComptable data={(typeof window !== "undefined" && window.__PLAN_COMPTABLE__) || { plans: [] }} onBack={() => go({ k: "home" })} />}
         {view.k === "fraudepostes" && <AuditFraudePostes data={(typeof window !== "undefined" && window.__FRAUDE_POSTES__) || { sections: [] }} onBack={() => go({ k: "home" })} />}
