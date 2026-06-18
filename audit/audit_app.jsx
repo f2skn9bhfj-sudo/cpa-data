@@ -3648,15 +3648,34 @@ function TestExo({ exo }) {
     </div>
   );
 }
-function TestCard({ t }) {
+function TestDeroule({ d }) {
+  return (
+    <div className="mt-1 rounded-lg bg-slate-50 border border-slate-200 p-3">
+      {d.titre && <div className="font-bold text-[13px] text-slate-800 mb-2">{d.titre}</div>}
+      <ol className="space-y-2 mb-2">{(d.etapes || []).map((e, i) => (
+        <li key={i} className="flex gap-2"><span className="w-5 h-5 grid place-items-center rounded-full bg-teal-600 text-white text-[10px] font-bold shrink-0 mt-0.5">{i + 1}</span>
+          <div><div className="font-semibold text-[12.5px] text-slate-800">{e.titre}</div><div className="text-[12.5px] text-slate-600 leading-relaxed"><MdInline text={e.texte || ""} /></div></div></li>
+      ))}</ol>
+      {(d.ecritures || []).length > 0 && <div className="rounded-lg bg-slate-900 text-slate-100 p-2.5 mb-2 space-y-2">{d.ecritures.map((e, i) => (
+        <div key={i}><div className="text-[11px] text-slate-400 mb-0.5">{e.lib}</div>
+          <div className="grid grid-cols-[1fr_auto] gap-x-3 text-[12px] font-mono"><div><span className="text-rose-300 font-bold">DT</span> {e.debit}</div><div className="text-right text-emerald-200 tabular-nums">{e.montant}</div><div className="pl-3"><span className="text-sky-300 font-bold">CT</span> {e.credit}</div><div className="text-right text-slate-500 tabular-nums">{e.montant}</div></div></div>
+      ))}</div>}
+      {d.conclusion && <div className="text-[12.5px] text-slate-700 leading-relaxed"><span className="font-bold text-emerald-700">Conclusion · </span><MdInline text={d.conclusion} /></div>}
+    </div>
+  );
+}
+function TestCard({ t, mastered }) {
   const [openExo, setOpenExo] = useState(false);
+  const [tab, setTab] = useState("exo");
   const crit = t.niveau === "critique";
   const sen = SENIO[t.seniorite];
+  const tabCls = (k) => `text-[11px] font-semibold px-2 py-1 rounded-lg border transition-colors ${tab === k ? "bg-teal-600 text-white border-transparent" : "bg-white text-slate-600 border-slate-200"}`;
   return (
-    <div className={`rounded-xl border bg-white p-3.5 ${crit ? "border-rose-200" : "border-slate-200"}`}>
+    <div className={`rounded-xl border bg-white p-3.5 ${mastered ? "border-emerald-300 bg-emerald-50/20" : crit ? "border-rose-200" : "border-slate-200"}`}>
       <div className="flex items-start gap-2 mb-1.5">
         {crit && <span className="text-[10px] font-bold text-rose-600 bg-rose-50 border border-rose-200 rounded px-1.5 py-0.5 shrink-0 mt-0.5">★ CLÉ</span>}
         <h4 className="font-bold text-[14px] text-slate-800 leading-tight flex-1">{t.nom}</h4>
+        {mastered && <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 border border-emerald-200 rounded px-1.5 py-0.5 shrink-0 mt-0.5" title="Maîtrisé en entraînement">✓ Maîtrisé</span>}
         {sen && <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded border shrink-0 mt-0.5 ${sen.c}`}>{sen.label}</span>}
       </div>
       <div className="flex flex-wrap gap-1 mb-2">
@@ -3671,13 +3690,112 @@ function TestCard({ t }) {
       {(t.procedure || []).length > 0 && <div className="mt-2 flex flex-wrap gap-1">{t.procedure.map((p, i) => <span key={i} className="text-[10px] text-slate-400 bg-slate-50 border border-slate-100 rounded px-1.5 py-0.5">{p}</span>)}</div>}
       {t.exo && (
         <div className="mt-2.5 border-t border-slate-100 pt-2">
-          <button onClick={() => setOpenExo((s) => !s)} className="flex items-center gap-1 text-[12px] font-bold text-teal-700 hover:text-teal-800"><GraduationCap size={13} /> Cas interactif <ChevronDown size={13} className={`transition-transform ${openExo ? "rotate-180" : ""}`} /></button>
-          {openExo && <TestExo exo={t.exo} />}
+          <button onClick={() => setOpenExo((s) => !s)} className="flex items-center gap-1 text-[12px] font-bold text-teal-700 hover:text-teal-800"><GraduationCap size={13} /> Cas interactif{(t.exo2 || t.deroule) ? " + approfondi" : ""} <ChevronDown size={13} className={`transition-transform ${openExo ? "rotate-180" : ""}`} /></button>
+          {openExo && (
+            <div className="mt-1.5">
+              {(t.exo2 || t.deroule) && (
+                <div className="flex flex-wrap gap-1 mb-1">
+                  <button onClick={() => setTab("exo")} className={tabCls("exo")}>Cas 1</button>
+                  {t.exo2 && <button onClick={() => setTab("exo2")} className={tabCls("exo2")}>🔥 Cas 2 · difficile</button>}
+                  {t.deroule && <button onClick={() => setTab("deroule")} className={tabCls("deroule")}>📋 Déroulé chiffré</button>}
+                </div>
+              )}
+              {tab === "exo2" && t.exo2 ? <TestExo exo={t.exo2} /> : tab === "deroule" && t.deroule ? <TestDeroule d={t.deroule} /> : <TestExo exo={t.exo} />}
+            </div>
+          )}
         </div>
       )}
     </div>
   );
 }
+function loadTestProg() { try { return JSON.parse(localStorage.getItem("cpa_audit_progress") || "{}"); } catch (e) { return {}; } }
+function saveTestProg(p) { try { localStorage.setItem("cpa_audit_progress", JSON.stringify(p)); } catch (e) {} }
+function shuffleArr(a) { const r = a.slice(); for (let i = r.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const x = r[i]; r[i] = r[j]; r[j] = x; } return r; }
+
+function TrainingMode({ pool, catLabel, hard, onExit, onProgress }) {
+  const [order] = useState(() => shuffleArr(pool));
+  const [idx, setIdx] = useState(0);
+  const [picked, setPicked] = useState(null);
+  const [answers, setAnswers] = useState([]);
+  const [done, setDone] = useState(false);
+  const total = order.length;
+  const cur = order[idx];
+  const exo = cur ? ((hard && cur.exo2) ? cur.exo2 : cur.exo) : null;
+  const pick = (i) => {
+    if (picked !== null || !exo) return;
+    setPicked(i);
+    const ok = !!(exo.options[i] && exo.options[i].ok);
+    setAnswers((a) => [...a, { id: cur.id, ok, nom: cur.nom, cat: cur.cat }]);
+    if (ok) { const p = loadTestProg(); p.mastered = p.mastered || {}; p.mastered[cur.id] = true; saveTestProg(p); if (onProgress) onProgress(); }
+  };
+  const next = () => { if (idx + 1 >= total) setDone(true); else { setIdx(idx + 1); setPicked(null); } };
+
+  if (!total) return null;
+  if (done) {
+    const correct = answers.filter((a) => a.ok).length;
+    const pct = Math.round((correct / total) * 100);
+    const wrong = answers.filter((a) => !a.ok);
+    const msg = pct >= 90 ? "Excellent — niveau examen ! 🎉" : pct >= 70 ? "Bien joué, quelques points à revoir 💪" : pct >= 50 ? "En progrès — refais les ratés 🔁" : "À retravailler — chaque erreur est un apprentissage 📚";
+    return (
+      <div className="rounded-2xl border border-slate-200 bg-white p-5">
+        <div className="text-center py-3">
+          <div className="text-[12px] font-bold uppercase tracking-widest text-teal-500">Résultats</div>
+          <div className={`text-5xl font-black mt-1 ${pct >= 70 ? "text-emerald-600" : pct >= 50 ? "text-amber-600" : "text-rose-600"}`}>{pct}%</div>
+          <div className="text-sm text-slate-600 mt-1">{correct} / {total} bonnes réponses</div>
+          <div className="text-[13px] text-slate-700 mt-2 font-medium">{msg}</div>
+        </div>
+        {wrong.length > 0 && (
+          <div className="mt-3">
+            <div className="text-[11px] font-bold uppercase tracking-wide text-rose-500 mb-1.5">À revoir ({wrong.length})</div>
+            <ul className="space-y-1">{wrong.map((w, i) => <li key={i} className="text-[13px] text-slate-600 flex gap-2"><span className="text-rose-400">✗</span>{w.nom}</li>)}</ul>
+          </div>
+        )}
+        <div className="flex gap-2 mt-4">
+          <button onClick={onExit} className="flex-1 px-4 py-2.5 rounded-xl bg-slate-100 text-slate-700 font-semibold text-sm hover:bg-slate-200">Retour au catalogue</button>
+          {wrong.length > 0 && <button onClick={() => { const ids = new Set(wrong.map((w) => w.id)); onExit(pool.filter((t) => ids.has(t.id))); }} className="flex-1 px-4 py-2.5 rounded-xl bg-amber-500 text-white font-semibold text-sm hover:bg-amber-600">↻ Revoir les {wrong.length} ratés</button>}
+          <button onClick={() => { setIdx(0); setPicked(null); setAnswers([]); setDone(false); }} className="flex-1 px-4 py-2.5 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700">Recommencer</button>
+        </div>
+      </div>
+    );
+  }
+  const scoreSoFar = answers.filter((a) => a.ok).length;
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5">
+      <div className="flex items-center gap-3 mb-3">
+        <button onClick={() => onExit()} className="text-[12px] text-slate-400 hover:text-rose-600 font-semibold shrink-0">✕ Quitter</button>
+        <div className="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div className="h-full bg-teal-500 transition-all" style={{ width: ((idx) / total * 100) + "%" }} /></div>
+        <span className="text-[12px] font-bold text-slate-500 shrink-0 tabular-nums">{idx + 1}/{total}</span>
+        <span className="text-[12px] font-bold text-emerald-600 shrink-0 tabular-nums">★ {scoreSoFar}</span>
+      </div>
+      <div className="text-[11px] font-semibold uppercase tracking-wide text-teal-500 mb-1">{catLabel(cur.cat).icon} {catLabel(cur.cat).label} {hard && cur.exo2 ? "· difficile" : ""}</div>
+      <h4 className="font-bold text-[15px] text-slate-800 mb-2">{cur.nom}</h4>
+      {exo && <>
+        <div className="text-[13.5px] text-slate-700 leading-relaxed mb-2 bg-slate-50 rounded-lg p-3"><MdInline text={exo.contexte || ""} /></div>
+        <div className="text-[14px] font-semibold text-slate-800 mb-2.5"><MdInline text={exo.question || ""} /></div>
+        <div className="space-y-1.5">
+          {(exo.options || []).map((o, i) => {
+            const chosen = picked === i, reveal = picked !== null;
+            let cls = "bg-white border-slate-200 hover:border-teal-400 hover:bg-teal-50/30";
+            if (reveal && o.ok) cls = "bg-emerald-50 border-emerald-300";
+            else if (reveal && chosen) cls = "bg-rose-50 border-rose-300";
+            else if (reveal) cls = "bg-white border-slate-100 opacity-60";
+            return (
+              <button key={i} onClick={() => pick(i)} disabled={reveal} className={`w-full text-left rounded-xl border px-3 py-2.5 text-[13.5px] transition-all ${cls}`}>
+                <div className="flex items-start gap-2">
+                  <span className="shrink-0 text-base">{reveal ? (o.ok ? "✅" : chosen ? "❌" : "▫️") : "▫️"}</span>
+                  <span className="min-w-0"><span className={reveal && o.ok ? "font-semibold text-emerald-800" : reveal && chosen ? "text-rose-800" : ""}>{o.t}</span>
+                    {reveal && (chosen || o.ok) && <span className="block text-[12px] text-slate-600 mt-1 leading-snug">{o.fb}</span>}</span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+        {picked !== null && <button onClick={next} className="mt-3 w-full px-4 py-2.5 rounded-xl bg-teal-600 text-white font-bold text-sm hover:bg-teal-700">{idx + 1 >= total ? "Voir les résultats →" : "Question suivante →"}</button>}
+      </>}
+    </div>
+  );
+}
+
 function AuditTests({ onBack }) {
   const data = (typeof window !== "undefined" && window.__TESTS__) || {};
   const meta = data.meta || {};
@@ -3688,6 +3806,11 @@ function AuditTests({ onBack }) {
   const [cat, setCat] = useState(null);
   const [senio, setSenio] = useState(null);
   const [q, setQ] = useState("");
+  const [training, setTraining] = useState(null); // null | { pool, hard }
+  const [progTick, setProgTick] = useState(0);
+  const prog = loadTestProg();
+  const mastered = prog.mastered || {};
+  const masteredCount = tests.filter((t) => mastered[t.id]).length;
   const toggleA = (a) => setAsserts((prev) => { const n = new Set(prev); n.has(a) ? n.delete(a) : n.add(a); return n; });
   const filtered = tests.filter((t) => {
     if (cat && t.cat !== cat) return false;
@@ -3710,6 +3833,22 @@ function AuditTests({ onBack }) {
         <p className="text-[13px] text-slate-300 leading-relaxed mt-3"><MdInline text={meta.intro || ""} /></p>
       </div>
 
+      {/* Mode entraînement + progression */}
+      <div className="flex flex-wrap items-center gap-2 mb-4">
+        <button onClick={() => setTraining({ pool: (hasFilter ? filtered : tests).filter((t) => t.exo), hard: false })}
+          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-bold text-sm shadow hover:from-teal-700 hover:to-cyan-700 flex items-center gap-2">
+          <GraduationCap size={16} /> Mode entraînement{hasFilter ? ` · ${filtered.filter((t) => t.exo).length} Q` : ""}
+        </button>
+        {tests.some((t) => t.exo2) && <button onClick={() => setTraining({ pool: (hasFilter ? filtered : tests).filter((t) => t.exo2), hard: true })} className="px-3 py-2.5 rounded-xl bg-rose-500 text-white font-bold text-sm shadow hover:bg-rose-600 flex items-center gap-1.5">🔥 Difficile</button>}
+        <div className="ml-auto flex items-center gap-2">
+          <div className="text-[11px] text-slate-500 font-semibold tabular-nums">{masteredCount}/{tests.length} maîtrisés</div>
+          <div className="w-24 h-2 rounded-full bg-slate-200 overflow-hidden"><div className="h-full bg-emerald-500 transition-all" style={{ width: (tests.length ? masteredCount / tests.length * 100 : 0) + "%" }} /></div>
+          {masteredCount > 0 && <button onClick={() => { const p = loadTestProg(); p.mastered = {}; saveTestProg(p); setProgTick((x) => x + 1); }} className="text-[10px] text-slate-400 hover:text-rose-500">réinit.</button>}
+        </div>
+      </div>
+      {training && <div className="mb-5"><TrainingMode pool={training.pool} hard={training.hard} catLabel={catLabel} onExit={(subset) => { setProgTick((x) => x + 1); if (subset && subset.length) setTraining({ pool: subset, hard: training.hard }); else setTraining(null); }} onProgress={() => setProgTick((x) => x + 1)} /></div>}
+
+      {!training && (<>
       {/* Techniques ISA 500 */}
       <div className="mb-5">
         <div className="text-[12px] font-bold uppercase tracking-widest text-slate-400 mb-2">Les 8 techniques de collecte de preuves (ISA 500)</div>
@@ -3770,9 +3909,10 @@ function AuditTests({ onBack }) {
             <span className="text-[11px] text-slate-400 font-semibold">{g.items.length}</span>
             <span className="flex-1 h-px bg-slate-200" />
           </div>
-          <div className="grid lg:grid-cols-2 gap-2.5">{g.items.map((t, i) => <TestCard key={i} t={t} />)}</div>
+          <div className="grid lg:grid-cols-2 gap-2.5">{g.items.map((t, i) => <TestCard key={i} t={t} mastered={!!mastered[t.id]} />)}</div>
         </div>
       ))}
+      </>)}
       <div className="mt-4 text-center text-[11px] text-slate-400">Catalogue pédagogique — tests d'audit selon les normes ISA.</div>
     </div>
   );
