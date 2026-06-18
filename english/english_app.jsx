@@ -1466,6 +1466,85 @@ function MyNoteCard({ item, test }) {
     </div>
   );
 }
+/* ════════ LISTE EXPRESS — tous les mots → traduction, en un coup d'œil ════════ */
+const QL_DOMS = [
+  { k: "audit", label: "🔍 Audit" },
+  { k: "ifrs", label: "📊 IFRS / comptabilité" },
+  { k: "business", label: "💼 Business" },
+  { k: "daily", label: "🗓️ Quotidien" },
+  { k: "notes", label: "📝 Mes notes" },
+];
+function QuickListSection() {
+  const [q, setQ] = useState("");
+  const [dom, setDom] = useState("");
+  const [lvl, setLvl] = useState("");
+  const [hide, setHide] = useState("");   // "" | "fr" | "en"
+  const [revealed, setRevealed] = useState(() => new Set());
+  const all = useMemo(() => {
+    const out = [];
+    (E_DATA.vocab || []).forEach((v) => out.push({ en: v.en, fr: v.fr, ipa: v.ipa, level: v.level, dom: v.domain }));
+    ((E_DATA.my_notes || {}).sessions || []).forEach((s) => (s.categories || []).forEach((c) => (c.items || []).forEach((it) => out.push({ en: it.en, fr: it.fr, dom: "notes" }))));
+    return out;
+  }, []);
+  const filtered = all.filter((w) => {
+    if (dom && w.dom !== dom) return false;
+    if (lvl && w.level !== lvl) return false;
+    if (q) { const s = ((w.en || "") + " " + (w.fr || "")).toLowerCase(); if (!s.includes(q.toLowerCase())) return false; }
+    return true;
+  });
+  const groups = QL_DOMS.map((d) => ({ d, items: filtered.filter((w) => w.dom === d.k).sort((a, b) => (a.en || "").localeCompare(b.en || "")) })).filter((g) => g.items.length);
+  const toggleRow = (key) => { if (!hide) return; setRevealed((prev) => { const n = new Set(prev); n.has(key) ? n.delete(key) : n.add(key); return n; }); };
+  const chip = (active, on) => `text-[12px] font-semibold px-2.5 py-1 rounded-lg border transition-colors ${active ? "bg-indigo-600 text-white border-transparent" : "bg-white text-slate-600 border-slate-200 hover:border-indigo-300"}`;
+  return (
+    <div>
+      <div className="rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white p-4 mb-4">
+        <h2 className="text-lg font-bold">⚡ Liste express — vocabulaire d'un coup d'œil</h2>
+        <p className="text-[13px] text-indigo-100 mt-0.5">Tous les mots et leur traduction, sans phrases : lecture rapide. {all.length} entrées. Active « cacher » pour t'auto‑tester (clique un mot pour révéler).</p>
+      </div>
+      <div className="sticky top-[49px] z-[5] bg-slate-100/95 backdrop-blur py-2 rounded-xl mb-3 space-y-2">
+        <div className="flex items-center gap-2">
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher un mot (EN ou FR)…" className="flex-1 bg-white border border-slate-200 rounded-lg px-3 py-2 text-[13px] outline-none focus:border-indigo-400" />
+          {(q || dom || lvl) && <button onClick={() => { setQ(""); setDom(""); setLvl(""); }} className="text-[11px] text-slate-500 hover:text-rose-600 font-semibold shrink-0">Réinit.</button>}
+        </div>
+        <div className="flex flex-wrap gap-1.5 items-center">
+          <button onClick={() => setDom("")} className={chip(!dom)}>Tous</button>
+          {QL_DOMS.map((d) => <button key={d.k} onClick={() => setDom(dom === d.k ? "" : d.k)} className={chip(dom === d.k)}>{d.label}</button>)}
+          <span className="w-px h-5 bg-slate-300 mx-1" />
+          {["A2", "B1", "B2"].map((L) => <button key={L} onClick={() => setLvl(lvl === L ? "" : L)} className={chip(lvl === L)}>{L}</button>)}
+          <span className="w-px h-5 bg-slate-300 mx-1" />
+          <button onClick={() => { setHide(hide === "fr" ? "" : "fr"); setRevealed(new Set()); }} className={chip(hide === "fr")}>🙈 Cacher FR</button>
+          <button onClick={() => { setHide(hide === "en" ? "" : "en"); setRevealed(new Set()); }} className={chip(hide === "en")}>🙈 Cacher EN</button>
+        </div>
+        <div className="text-[11px] text-slate-500 font-medium">{filtered.length} mot{filtered.length > 1 ? "s" : ""}{hide ? " · clique un mot pour révéler" : ""}</div>
+      </div>
+      {groups.length === 0 ? (
+        <div className="rounded-xl border-2 border-dashed border-slate-200 bg-white p-8 text-center text-slate-400 text-sm">Aucun mot pour ce filtre.</div>
+      ) : groups.map((g) => (
+        <div key={g.d.k} className="mb-5">
+          <div className="flex items-center gap-2 mb-1.5"><span className="font-bold text-[14px] text-slate-700">{g.d.label}</span><span className="text-[11px] text-indigo-500 font-bold bg-indigo-50 rounded-full px-2 py-0.5">{g.items.length}</span><span className="flex-1 h-px bg-slate-200" /></div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-5">
+            {g.items.map((w, i) => {
+              const key = g.d.k + i;
+              const rv = revealed.has(key);
+              const maskFr = hide === "fr" && !rv, maskEn = hide === "en" && !rv;
+              return (
+                <div key={key} onClick={() => toggleRow(key)} className={`flex items-baseline justify-between gap-2 border-b border-slate-100 py-1 ${hide ? "cursor-pointer" : ""}`}>
+                  <span className="min-w-0 flex items-center gap-1">
+                    <span className={`font-semibold text-[13.5px] text-slate-800 ${maskEn ? "blur-[5px] select-none" : ""}`}>{w.en}</span>
+                    {!maskEn && <SpeakBtn text={w.en} sm />}
+                  </span>
+                  <span className={`text-[13px] text-slate-500 text-right shrink-0 ${maskFr ? "blur-[5px] select-none" : ""}`}>{w.fr}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+      <div className="mt-2 text-center text-[11px] text-slate-400">Liste de lecture rapide — pour le détail (exemples, tips, prononciation), va dans « Vocabulaire » ou « Mes notes ».</div>
+    </div>
+  );
+}
+
 function MyNotesSection() {
   const notes = (E_DATA.my_notes && E_DATA.my_notes.sessions) || [];
   const [q, setQ] = useState("");
@@ -1612,6 +1691,7 @@ function EnglishApp() {
   const tabs = [
     { id: "essentials", icon: "🎯", label: "Day-1 EY" },
     { id: "mynotes", icon: "📝", label: "Mes notes" },
+    { id: "liste", icon: "⚡", label: "Liste express" },
     { id: "vocab", icon: "📚", label: "Vocabulaire" },
     { id: "phrases", icon: "💬", label: "Phrases & expressions" },
     { id: "fs", icon: "📊", label: "États financiers" },
@@ -1657,6 +1737,7 @@ function EnglishApp() {
         <AudioBar audio={audio} setAudio={setAudio} />
         {section === "essentials" && <EssentialsSection done={essentialsDone} onToggle={toggleEssential} />}
         {section === "mynotes" && <MyNotesSection />}
+        {section === "liste" && <QuickListSection />}
         {section === "vocab" && (
           <VocabSection progress={progress} onRate={onRate}
             filters={allFilters.vocab} setFilters={setVocabFilters}
