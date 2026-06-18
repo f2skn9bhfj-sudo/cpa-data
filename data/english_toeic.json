@@ -1,0 +1,1799 @@
+{
+  "meta": {
+    "title": "TOEIC — préparation",
+    "intro": "Tout pour viser un bon score au TOEIC Listening & Reading : comprendre le format et les 7 parties, les stratégies qui font gagner des points, et le vocabulaire professionnel thématique le plus fréquent à l'examen."
+  },
+  "overview": {
+    "blurb": "Le TOEIC Listening & Reading est le test d'anglais professionnel le plus utilisé par les recruteurs. Il ne mesure PAS l'expression (ni à l'écrit ni à l'oral) : 200 questions à choix multiples (QCM), uniquement de la compréhension orale et écrite, en contexte professionnel (bureau, voyages, finance, RH…).",
+    "facts": [
+      {
+        "k": "Format",
+        "v": "200 questions QCM · 2 sections · ~2 h"
+      },
+      {
+        "k": "Listening",
+        "v": "100 questions · ~45 min · audio"
+      },
+      {
+        "k": "Reading",
+        "v": "100 questions · 75 min · à votre rythme"
+      },
+      {
+        "k": "Score",
+        "v": "10 à 990 (chaque section : 5 à 495)"
+      },
+      {
+        "k": "Pénalité",
+        "v": "AUCUNE pour une mauvaise réponse → répondez TOUJOURS"
+      },
+      {
+        "k": "Validité",
+        "v": "2 ans"
+      }
+    ]
+  },
+  "parts": [
+    {
+      "part": "Part 1",
+      "section": "listening",
+      "icon": "🖼️",
+      "title_en": "Photographs",
+      "title_fr": "Photographies",
+      "count": "6 questions",
+      "what": "Une photo ; vous entendez 4 affirmations (A–D, non imprimées). Choisissez celle qui décrit le mieux la photo.",
+      "tips": [
+        "Décrivez mentalement la photo AVANT l'audio : qui ? quoi ? où ?",
+        "Méfiez-vous des mots qui « sonnent » comme la photo mais décrivent autre chose (pièges sonores).",
+        "Attention aux temps : present continuous (« is doing ») pour une action en cours vs present simple pour un état."
+      ],
+      "example": {
+        "q": "Photo : une femme assise à un bureau, en train de taper sur un clavier.",
+        "options": [
+          "(A) She is filing some documents.",
+          "(B) She is typing on a keyboard.",
+          "(C) She is leaving the office.",
+          "(D) She is talking on the phone."
+        ],
+        "answer": "B",
+        "why": "Seule (B) décrit l'action réellement visible. (A)(C)(D) sont des distracteurs plausibles mais faux."
+      }
+    },
+    {
+      "part": "Part 2",
+      "section": "listening",
+      "icon": "💬",
+      "title_en": "Question–Response",
+      "title_fr": "Question–Réponse",
+      "count": "25 questions",
+      "what": "Vous entendez une question (ou affirmation) puis 3 réponses (A–C, non imprimées). Choisissez la meilleure réponse.",
+      "tips": [
+        "Identifiez le mot interrogatif (Where / When / Who / Why / How) — il commande le type de réponse.",
+        "Piège classique : une réponse qui REPREND un mot entendu (ou un homophone) est souvent fausse.",
+        "Les réponses indirectes (« I'm not sure », « Let me check ») sont souvent les bonnes."
+      ],
+      "example": {
+        "q": "Where's the nearest pharmacy?",
+        "options": [
+          "(A) Around 9 o'clock.",
+          "(B) It's just around the corner.",
+          "(C) I bought some yesterday."
+        ],
+        "answer": "B",
+        "why": "« Where » appelle un lieu → (B). (A) répond à « when », (C) est un piège lexical."
+      }
+    },
+    {
+      "part": "Part 3",
+      "section": "listening",
+      "icon": "🗣️",
+      "title_en": "Conversations",
+      "title_fr": "Conversations",
+      "count": "39 questions (13 × 3)",
+      "what": "Une conversation entre 2–3 personnes ; 3 questions par conversation (imprimées, avec les options).",
+      "tips": [
+        "LISEZ les 3 questions AVANT que l'audio commence — vous saurez quoi écouter.",
+        "Repérez : le sujet, le problème, ce que la personne va faire ensuite (« What will the man do next? »).",
+        "Certaines questions portent sur l'intention/le ton (« Why does she say… ? ») ou un visuel (graphique)."
+      ]
+    },
+    {
+      "part": "Part 4",
+      "section": "listening",
+      "icon": "📢",
+      "title_en": "Short Talks",
+      "title_fr": "Monologues",
+      "count": "30 questions (10 × 3)",
+      "what": "Un monologue (annonce, message vocal, publicité, bulletin) ; 3 questions chacun.",
+      "tips": [
+        "Identifiez le type de message : annonce d'aéroport, message répondeur, tour guidé, météo…",
+        "Lisez les questions d'abord ; le début donne souvent le contexte, la fin l'action attendue.",
+        "Écoutez les chiffres, heures et lieux : ils sont souvent demandés."
+      ]
+    },
+    {
+      "part": "Part 5",
+      "section": "reading",
+      "icon": "✏️",
+      "title_en": "Incomplete Sentences",
+      "title_fr": "Phrases à compléter",
+      "count": "30 questions",
+      "what": "Une phrase avec un blanc ; choisissez le mot (A–D) qui complète correctement — grammaire ET vocabulaire.",
+      "tips": [
+        "Identifiez le point testé : forme du mot (nom/verbe/adjectif/adverbe), temps, préposition, connecteur, accord.",
+        "Si c'est du vocabulaire, traduisez la phrase et cherchez la collocation juste.",
+        "Partie rapide : ne vous attardez pas (visez ~20–30 s/question) pour garder du temps sur la Part 7."
+      ],
+      "example": {
+        "q": "The report must be submitted ____ Friday at the latest.",
+        "options": [
+          "(A) in",
+          "(B) on",
+          "(C) at",
+          "(D) by"
+        ],
+        "answer": "D",
+        "why": "« by Friday » = au plus tard vendredi (échéance). Point testé : préposition de délai."
+      }
+    },
+    {
+      "part": "Part 6",
+      "section": "reading",
+      "icon": "📝",
+      "title_en": "Text Completion",
+      "title_fr": "Texte à compléter",
+      "count": "16 questions (4 × 4)",
+      "what": "Un court texte (e-mail, note, annonce) avec 4 blancs ; comme la Part 5, mais en contexte. Un des blancs demande d'insérer une PHRASE entière.",
+      "tips": [
+        "Lisez la phrase AVANT et APRÈS le blanc : le contexte décide (temps, connecteur, pronom).",
+        "Pour la question « insérez la phrase », vérifiez la cohérence logique avec ce qui précède/suit.",
+        "Les connecteurs (However, Therefore, In addition…) sont très testés ici."
+      ]
+    },
+    {
+      "part": "Part 7",
+      "section": "reading",
+      "icon": "📰",
+      "title_en": "Reading Comprehension",
+      "title_fr": "Compréhension de l'écrit",
+      "count": "54 questions",
+      "what": "Textes seuls (29 q) puis textes multiples (25 q : doubles/triples passages) : e-mails, articles, annonces, formulaires, conversations en ligne.",
+      "tips": [
+        "Repérez le type de document et la question : information précise (scan), idée générale (skim), ou déduction.",
+        "Pour les passages multiples, l'info se combine entre les documents (ex. un e-mail + un planning).",
+        "Gérez le temps : c'est la partie la plus longue. Si vous bloquez, répondez au mieux et avancez."
+      ]
+    }
+  ],
+  "scoring": {
+    "blurb": "Chaque section est notée de 5 à 495 ; le total va de 10 à 990. Le score est une échelle (pas un % de bonnes réponses). Correspondances indicatives avec le CECRL :",
+    "bands": [
+      {
+        "score": "945–990",
+        "cefr": "C1",
+        "desc": "Maîtrise opérationnelle complète"
+      },
+      {
+        "score": "785–940",
+        "cefr": "B2",
+        "desc": "Autonomie professionnelle (cible fréquente des recruteurs)"
+      },
+      {
+        "score": "550–780",
+        "cefr": "B1",
+        "desc": "Capacité à se débrouiller dans des situations courantes"
+      },
+      {
+        "score": "225–545",
+        "cefr": "A2",
+        "desc": "Connaissances de base"
+      }
+    ],
+    "tips": [
+      "Aucune pénalité : ne laissez JAMAIS une réponse vide, même au hasard.",
+      "Le timing est l'enjeu n°1 de la section Reading — entraînez-vous chronométré.",
+      "Un score se prépare : la régularité du vocabulaire thématique fait gagner beaucoup de points en Parts 5–7."
+    ]
+  },
+  "strategy": [
+    {
+      "icon": "⏱️",
+      "title": "Le temps est l'examen",
+      "text": "En Listening, le rythme est imposé par l'audio : impossible de revenir en arrière. En Reading, VOUS gérez les 75 min — beaucoup manquent de temps en Part 7. Entraînez-vous toujours chronométré et gardez ~30 min pour la Part 7."
+    },
+    {
+      "icon": "✅",
+      "title": "Répondez à TOUT",
+      "text": "Pas de point négatif. Avant la fin de chaque section, remplissez toutes les réponses restantes (au pire au hasard, idéalement la même lettre)."
+    },
+    {
+      "icon": "👀",
+      "title": "Lisez les questions d'abord",
+      "text": "En Parts 3, 4 et 7, parcourez les questions AVANT le texte/l'audio : vous saurez quelle information chercher au lieu de tout retenir."
+    },
+    {
+      "icon": "🪤",
+      "title": "Repérez les pièges sonores",
+      "text": "Parts 1–2 : les distracteurs réutilisent un mot entendu ou un homophone (fare/fair, copy/coffee). Un mot répété est souvent le piège, pas la réponse."
+    },
+    {
+      "icon": "🔤",
+      "title": "Part 5 : identifiez le point testé",
+      "text": "Avant de lire les 4 options, demandez-vous : est-ce une question de FORME (nom/verbe/adjectif/adverbe), de TEMPS, de PRÉPOSITION, de CONNECTEUR ou de VOCABULAIRE ? Ça oriente la réponse en quelques secondes."
+    },
+    {
+      "icon": "📚",
+      "title": "Le vocabulaire thématique paie",
+      "text": "Le TOEIC recycle les mêmes champs lexicaux (bureau, RH, finance, voyages, logistique…). Réviser ces thèmes (onglet « Vocabulaire » ci-dessous) est le meilleur ratio effort/points."
+    }
+  ],
+  "themes": [
+    {
+      "id": "office_admin",
+      "label_fr": "Bureau & administration",
+      "label_en": "Office & administration",
+      "icon": "🏢",
+      "words": [
+        {
+          "en": "supplies",
+          "fr": "fournitures (de bureau)",
+          "note": "souvent pluriel : office supplies ; à distinguer de supply (offre/approvisionnement)"
+        },
+        {
+          "en": "stationery",
+          "fr": "papeterie, articles de bureau",
+          "note": "faux-ami : stationery (papeterie) vs stationary (immobile)"
+        },
+        {
+          "en": "file (a document)",
+          "fr": "classer / déposer (un document)",
+          "note": "verbe TOEIC : file a report, file a claim ; aussi nom : a file"
+        },
+        {
+          "en": "photocopier",
+          "fr": "photocopieuse",
+          "note": "souvent dans les annonces de panne : the photocopier is out of order"
+        },
+        {
+          "en": "out of order",
+          "fr": "hors service, en panne",
+          "note": "collocation typique des écriteaux : machine out of order"
+        },
+        {
+          "en": "memo",
+          "fr": "note de service, mémo",
+          "note": "abréviation de memorandum ; circulate / send a memo"
+        },
+        {
+          "en": "attach",
+          "fr": "joindre (un fichier)",
+          "note": "please find attached... ; nom : attachment (pièce jointe)"
+        },
+        {
+          "en": "forward",
+          "fr": "transférer, faire suivre",
+          "note": "forward an email to someone ; aussi dans look forward to (avoir hâte de)"
+        },
+        {
+          "en": "schedule",
+          "fr": "planning ; programmer",
+          "note": "nom et verbe ; schedule a meeting ; behind schedule = en retard sur le planning"
+        },
+        {
+          "en": "reschedule",
+          "fr": "reprogrammer, déplacer (un rdv)",
+          "note": "très fréquent : reschedule the appointment for next week"
+        },
+        {
+          "en": "clerical",
+          "fr": "administratif, de bureau",
+          "note": "adjectif : clerical work / clerical error (erreur d'écriture)"
+        },
+        {
+          "en": "in charge of",
+          "fr": "responsable de, chargé de",
+          "note": "who is in charge of the budget? ; ne pas confondre avec free of charge"
+        },
+        {
+          "en": "deadline",
+          "fr": "date limite, échéance",
+          "note": "meet / miss a deadline ; tight deadline = délai serré"
+        },
+        {
+          "en": "paperwork",
+          "fr": "paperasse, formalités administratives",
+          "note": "indénombrable : a lot of paperwork (pas 'paperworks')"
+        },
+        {
+          "en": "vendor",
+          "fr": "fournisseur, prestataire",
+          "note": "synonyme de supplier au TOEIC ; preferred vendor"
+        },
+        {
+          "en": "invoice",
+          "fr": "facture",
+          "note": "issue / submit / settle an invoice ; à distinguer de receipt (reçu)"
+        },
+        {
+          "en": "on behalf of",
+          "fr": "au nom de, de la part de",
+          "note": "on behalf of the manager = au nom du responsable (agir pour qqn)"
+        },
+        {
+          "en": "replenish",
+          "fr": "réapprovisionner, regarnir",
+          "note": "replenish the supplies / the stock ; registre soutenu fréquent au TOEIC"
+        }
+      ]
+    },
+    {
+      "id": "meetings",
+      "label_fr": "Réunions & négociation",
+      "label_en": "Meetings & negotiation",
+      "icon": "🗓️",
+      "words": [
+        {
+          "en": "agenda",
+          "fr": "ordre du jour",
+          "note": "« item on the agenda » = point à l'ordre du jour"
+        },
+        {
+          "en": "minutes",
+          "fr": "compte rendu (de réunion)",
+          "note": "toujours pluriel ; « take the minutes » = rédiger le PV"
+        },
+        {
+          "en": "to reach an agreement",
+          "fr": "parvenir à un accord",
+          "note": "collocation très fréquente en négociation"
+        },
+        {
+          "en": "to reschedule",
+          "fr": "reporter / replanifier",
+          "note": "verbe TOEIC type pour un rendez-vous déplacé"
+        },
+        {
+          "en": "attendee",
+          "fr": "participant (à une réunion)",
+          "note": "nom ; synonyme de « participant »"
+        },
+        {
+          "en": "to chair (a meeting)",
+          "fr": "présider (une réunion)",
+          "note": "verbe ; « the meeting was chaired by… »"
+        },
+        {
+          "en": "to adjourn",
+          "fr": "lever / suspendre la séance",
+          "note": "verbe formel ; « the meeting was adjourned »"
+        },
+        {
+          "en": "compromise",
+          "fr": "compromis",
+          "note": "« reach a compromise » ; aussi verbe : « to compromise »"
+        },
+        {
+          "en": "proposal",
+          "fr": "proposition",
+          "note": "« submit / put forward a proposal »"
+        },
+        {
+          "en": "on behalf of",
+          "fr": "au nom de / pour le compte de",
+          "note": "locution prépositionnelle fréquente en négociation"
+        },
+        {
+          "en": "to negotiate (terms)",
+          "fr": "négocier (les conditions)",
+          "note": "« negotiate the terms of a contract »"
+        },
+        {
+          "en": "unanimous",
+          "fr": "unanime",
+          "note": "adjectif ; « a unanimous decision »"
+        },
+        {
+          "en": "to postpone",
+          "fr": "reporter / ajourner",
+          "note": "faux-ami : ce n'est PAS annuler (= cancel)"
+        },
+        {
+          "en": "venue",
+          "fr": "lieu (de réunion / d'événement)",
+          "note": "nom ; « change the venue »"
+        },
+        {
+          "en": "to follow up",
+          "fr": "assurer le suivi / donner suite",
+          "note": "phrasal verb ; « follow up on the action items »"
+        },
+        {
+          "en": "consensus",
+          "fr": "consensus",
+          "note": "« reach a consensus » ; nom indénombrable"
+        },
+        {
+          "en": "keynote speaker",
+          "fr": "conférencier principal / intervenant vedette",
+          "note": "fréquent dans les annonces de conférence"
+        },
+        {
+          "en": "deadlock",
+          "fr": "impasse (dans une négociation)",
+          "note": "« the talks reached a deadlock »"
+        }
+      ]
+    },
+    {
+      "id": "hr_personnel",
+      "label_fr": "RH & personnel",
+      "label_en": "HR & personnel",
+      "icon": "👥",
+      "words": [
+        {
+          "en": "applicant",
+          "fr": "candidat (à un poste)",
+          "note": "vient de 'to apply for a job' ; ne pas confondre avec 'application' (la candidature)"
+        },
+        {
+          "en": "resume / CV",
+          "fr": "curriculum vitae",
+          "note": "'resume' (US), 'CV' (UK) ; 'submit/attach your resume'"
+        },
+        {
+          "en": "cover letter",
+          "fr": "lettre de motivation",
+          "note": "collocation : 'enclose a cover letter'"
+        },
+        {
+          "en": "job opening",
+          "fr": "poste vacant, offre d'emploi",
+          "note": "synonymes TOEIC : 'vacancy', 'position', 'job posting'"
+        },
+        {
+          "en": "qualifications",
+          "fr": "qualifications, compétences requises",
+          "note": "souvent au pluriel ; 'meet the qualifications for the position'"
+        },
+        {
+          "en": "overtime",
+          "fr": "heures supplémentaires",
+          "note": "'work overtime', 'get paid overtime' ; thème paie très fréquent au TOEIC"
+        },
+        {
+          "en": "hire",
+          "fr": "embaucher, recruter",
+          "note": "verbe ; 'new hire' = nouvelle recrue (nom). Contraire : 'lay off / fire'"
+        },
+        {
+          "en": "recruit",
+          "fr": "recruter ; une recrue",
+          "note": "verbe et nom ; 'recruitment' = le recrutement"
+        },
+        {
+          "en": "interview",
+          "fr": "entretien (d'embauche)",
+          "note": "'schedule / conduct an interview' ; 'interviewee' (candidat) vs 'interviewer'"
+        },
+        {
+          "en": "benefits",
+          "fr": "avantages sociaux",
+          "note": "faux-ami : pas 'bénéfices' (= profits) mais avantages (assurance, congés) ; 'benefits package'"
+        },
+        {
+          "en": "salary",
+          "fr": "salaire (fixe, annuel)",
+          "note": "distinct de 'wage' (paie horaire) ; 'a competitive salary'"
+        },
+        {
+          "en": "raise",
+          "fr": "augmentation de salaire",
+          "note": "US : 'a pay raise' ; UK : 'a pay rise' ; 'ask for / get a raise'"
+        },
+        {
+          "en": "promotion",
+          "fr": "promotion (avancement)",
+          "note": "'be promoted to manager' ; attention au double sens (aussi 'promotion commerciale')"
+        },
+        {
+          "en": "retire",
+          "fr": "partir à la retraite",
+          "note": "verbe ; 'retirement' (la retraite), 'a retiree' (un retraité)"
+        },
+        {
+          "en": "resign",
+          "fr": "démissionner",
+          "note": "'resign from one's position' ; nom : 'resignation' = démission (lettre : 'resignation letter')"
+        },
+        {
+          "en": "supervisor",
+          "fr": "responsable, supérieur hiérarchique",
+          "note": "'report to your supervisor' ; proche de 'manager'"
+        },
+        {
+          "en": "performance review",
+          "fr": "évaluation des performances, entretien annuel",
+          "note": "aussi 'performance appraisal / evaluation' ; 'conduct a performance review'"
+        },
+        {
+          "en": "shift",
+          "fr": "équipe, poste (plage horaire de travail)",
+          "note": "'work the night shift' ; 'cover someone's shift' = remplacer un collègue"
+        }
+      ]
+    },
+    {
+      "id": "recruitment",
+      "label_fr": "Recrutement & carrières",
+      "label_en": "Recruitment & careers",
+      "icon": "📄",
+      "words": [
+        {
+          "en": "applicant",
+          "fr": "candidat (à un poste)",
+          "note": "nom ; celui qui postule. À distinguer de 'application' (la candidature)"
+        },
+        {
+          "en": "resume / CV",
+          "fr": "CV",
+          "note": "'resume' (US, sans accent au TOEIC), 'CV' (UK) ; 'submit/update your resume'"
+        },
+        {
+          "en": "cover letter",
+          "fr": "lettre de motivation",
+          "note": "collocation figée ; accompagne le resume"
+        },
+        {
+          "en": "job opening",
+          "fr": "poste à pourvoir, offre d'emploi",
+          "note": "= 'vacancy', 'job opportunity' ; 'a job opening for...'"
+        },
+        {
+          "en": "to hire",
+          "fr": "embaucher, recruter",
+          "note": "verbe ; contraire 'to fire/lay off'. Nom : 'new hire' = nouvel embauché"
+        },
+        {
+          "en": "candidate",
+          "fr": "candidat",
+          "note": "nom ; 'the ideal/qualified candidate for the position'"
+        },
+        {
+          "en": "qualifications",
+          "fr": "qualifications, compétences requises",
+          "note": "souvent au pluriel ; 'meet the qualifications'"
+        },
+        {
+          "en": "experience",
+          "fr": "expérience (professionnelle)",
+          "note": "indénombrable ici ; 'work experience', 'prior experience in...'"
+        },
+        {
+          "en": "to apply for",
+          "fr": "postuler à, faire une demande de",
+          "note": "toujours 'apply FOR a job' (préposition piège au TOEIC)"
+        },
+        {
+          "en": "interview",
+          "fr": "entretien d'embauche",
+          "note": "nom et verbe ; 'a job interview', 'to interview a candidate'"
+        },
+        {
+          "en": "reference",
+          "fr": "référence, recommandation",
+          "note": "souvent pluriel ; 'provide references', 'a letter of reference'"
+        },
+        {
+          "en": "recruiter",
+          "fr": "recruteur",
+          "note": "nom ; personne ou agence ('recruitment agency') qui recrute"
+        },
+        {
+          "en": "to promote",
+          "fr": "promouvoir (donner une promotion)",
+          "note": "verbe ; nom 'promotion'. Aussi 'promouvoir un produit' (sens marketing)"
+        },
+        {
+          "en": "salary",
+          "fr": "salaire (annuel, fixe)",
+          "note": "nom ; 'a competitive salary'. À distinguer de 'wage' (salaire horaire)"
+        },
+        {
+          "en": "benefits",
+          "fr": "avantages sociaux",
+          "note": "au pluriel ; 'health benefits', 'a benefits package' (mutuelle, congés, etc.)"
+        },
+        {
+          "en": "position",
+          "fr": "poste, fonction",
+          "note": "nom ; synonyme courant de 'job' au TOEIC ; 'fill a position'"
+        },
+        {
+          "en": "to resign",
+          "fr": "démissionner",
+          "note": "verbe ; 'resign from a position'. Nom : 'resignation'"
+        },
+        {
+          "en": "full-time / part-time",
+          "fr": "à temps plein / à temps partiel",
+          "note": "adjectifs ; 'a full-time position', 'work part-time'"
+        }
+      ]
+    },
+    {
+      "id": "finance_banking",
+      "label_fr": "Finance & banque",
+      "label_en": "Finance & banking",
+      "icon": "💰",
+      "words": [
+        {
+          "en": "loan",
+          "fr": "prêt, emprunt",
+          "note": "verbe to take out / repay a loan ; nom très fréquent"
+        },
+        {
+          "en": "interest rate",
+          "fr": "taux d'intérêt",
+          "note": "collocation : a high/low interest rate"
+        },
+        {
+          "en": "deposit",
+          "fr": "dépôt ; verser (de l'argent)",
+          "note": "nom et verbe : to deposit a check / make a deposit"
+        },
+        {
+          "en": "withdraw",
+          "fr": "retirer (de l'argent)",
+          "note": "nom : withdrawal ; opposé de deposit"
+        },
+        {
+          "en": "account balance",
+          "fr": "solde du compte",
+          "note": "balance = solde (le montant disponible), pas « équilibre »"
+        },
+        {
+          "en": "invoice",
+          "fr": "facture",
+          "note": "verbe to invoice = facturer ; synonyme bill"
+        },
+        {
+          "en": "mortgage",
+          "fr": "prêt hypothécaire, hypothèque",
+          "note": "le « t » est muet : /ˈmɔːɡɪdʒ/"
+        },
+        {
+          "en": "branch",
+          "fr": "agence, succursale (bancaire)",
+          "note": "a bank branch ; aussi branche/secteur"
+        },
+        {
+          "en": "transaction",
+          "fr": "transaction, opération",
+          "note": "to process a transaction"
+        },
+        {
+          "en": "statement",
+          "fr": "relevé (de compte)",
+          "note": "a bank / monthly statement ; aussi déclaration"
+        },
+        {
+          "en": "overdraft",
+          "fr": "découvert (bancaire)",
+          "note": "to go into overdraft = être à découvert"
+        },
+        {
+          "en": "fee",
+          "fr": "frais, commission",
+          "note": "souvent au pluriel : bank/service fees ; à ne pas confondre avec fare (tarif de transport)"
+        },
+        {
+          "en": "invest",
+          "fr": "investir",
+          "note": "nom investment ; to invest in shares/stocks"
+        },
+        {
+          "en": "reimburse",
+          "fr": "rembourser",
+          "note": "plus formel que pay back ; nom reimbursement"
+        },
+        {
+          "en": "creditworthy",
+          "fr": "solvable, digne de crédit",
+          "note": "adjectif ; nom creditworthiness"
+        },
+        {
+          "en": "installment",
+          "fr": "versement, mensualité",
+          "note": "to pay in monthly installments"
+        },
+        {
+          "en": "exchange rate",
+          "fr": "taux de change",
+          "note": "the dollar-euro exchange rate"
+        },
+        {
+          "en": "outstanding",
+          "fr": "impayé, dû (solde) ; exceptionnel",
+          "note": "an outstanding balance = solde restant dû, pas « remarquable »"
+        }
+      ]
+    },
+    {
+      "id": "accounting",
+      "label_fr": "Comptabilité & facturation",
+      "label_en": "Accounting & invoicing",
+      "icon": "📊",
+      "words": [
+        {
+          "en": "invoice",
+          "fr": "facture",
+          "note": "nom ; aussi verbe : to invoice a client (facturer un client)"
+        },
+        {
+          "en": "receipt",
+          "fr": "reçu, justificatif",
+          "note": "≠ recipe (recette de cuisine), faux-ami classique au TOEIC"
+        },
+        {
+          "en": "outstanding balance",
+          "fr": "solde restant dû",
+          "note": "outstanding = non encore réglé ; ici le montant qu'il reste à payer"
+        },
+        {
+          "en": "overdue",
+          "fr": "en retard, échu",
+          "note": "adj. : an overdue payment ; the invoice is overdue (la facture est en retard)"
+        },
+        {
+          "en": "reimburse",
+          "fr": "rembourser",
+          "note": "verbe ; nom : reimbursement ; reimburse an employee for expenses (rembourser des frais)"
+        },
+        {
+          "en": "expense report",
+          "fr": "note de frais",
+          "note": "collocation : submit / file an expense report (soumettre une note de frais)"
+        },
+        {
+          "en": "accounts payable",
+          "fr": "comptes fournisseurs (dettes à payer)",
+          "note": "toujours au pluriel ; opposé : accounts receivable (créances clients)"
+        },
+        {
+          "en": "due date",
+          "fr": "date d'échéance",
+          "note": "payment is due on... ; the balance is due (le solde est exigible)"
+        },
+        {
+          "en": "audit",
+          "fr": "audit, vérification (des comptes)",
+          "note": "nom et verbe : to audit the accounts ; auditor = auditeur"
+        },
+        {
+          "en": "ledger",
+          "fr": "grand livre, registre comptable",
+          "note": "general ledger = grand livre général"
+        },
+        {
+          "en": "settle an account",
+          "fr": "régler un compte, solder un compte",
+          "note": "to settle = régler (une facture, une dette)"
+        },
+        {
+          "en": "itemized",
+          "fr": "détaillé (ligne par ligne)",
+          "note": "adj. : an itemized bill / invoice (facture détaillée)"
+        },
+        {
+          "en": "discrepancy",
+          "fr": "écart, divergence",
+          "note": "a discrepancy in the figures (un écart dans les chiffres)"
+        },
+        {
+          "en": "remittance",
+          "fr": "versement, règlement (envoyé)",
+          "note": "remittance advice = avis de paiement ; please send your remittance (votre règlement)"
+        },
+        {
+          "en": "accrue",
+          "fr": "courir, s'accumuler (intérêts, charges)",
+          "note": "verbe : interest accrues ; accrued expenses = charges à payer"
+        },
+        {
+          "en": "VAT",
+          "fr": "TVA",
+          "note": "Value Added Tax ; exclusive / inclusive of VAT (HT / TTC)"
+        },
+        {
+          "en": "write off",
+          "fr": "passer en perte, radier (une créance)",
+          "note": "verbe à particule : to write off a bad debt (passer une créance irrécouvrable en perte)"
+        },
+        {
+          "en": "in arrears",
+          "fr": "en retard de paiement, arriéré",
+          "note": "locution : the account is in arrears (paiements en arriéré)"
+        }
+      ]
+    },
+    {
+      "id": "contracts_legal",
+      "label_fr": "Contrats & juridique",
+      "label_en": "Contracts & legal",
+      "icon": "⚖️",
+      "words": [
+        {
+          "en": "agreement",
+          "fr": "accord, contrat",
+          "note": "reach / sign an agreement ; quasi-synonyme de contract au TOEIC"
+        },
+        {
+          "en": "contract",
+          "fr": "contrat",
+          "note": "verbe aussi : to contract (sous-traiter) ; collocation award a contract"
+        },
+        {
+          "en": "clause",
+          "fr": "clause, article (d'un contrat)",
+          "note": "a confidentiality / termination clause"
+        },
+        {
+          "en": "terms and conditions",
+          "fr": "conditions générales",
+          "note": "toujours au pluriel ; souvent abrégé T&C"
+        },
+        {
+          "en": "provision",
+          "fr": "disposition, clause",
+          "note": "faux-ami : pas 'provision' financière ici, mais une stipulation du contrat"
+        },
+        {
+          "en": "binding",
+          "fr": "contraignant, qui engage",
+          "note": "adjectif : a legally binding contract ; contraire non-binding"
+        },
+        {
+          "en": "liable",
+          "fr": "responsable (juridiquement)",
+          "note": "be liable for damages ; nom : liability"
+        },
+        {
+          "en": "breach",
+          "fr": "violation, manquement",
+          "note": "breach of contract ; verbe aussi : to breach an agreement"
+        },
+        {
+          "en": "comply with",
+          "fr": "se conformer à, respecter",
+          "note": "comply WITH regulations ; nom : compliance"
+        },
+        {
+          "en": "negotiate",
+          "fr": "négocier",
+          "note": "negotiate the terms / a deal ; nom : negotiation"
+        },
+        {
+          "en": "amend",
+          "fr": "modifier, amender",
+          "note": "amend a clause ; nom : amendment (avenant)"
+        },
+        {
+          "en": "terminate",
+          "fr": "résilier, mettre fin à",
+          "note": "terminate a contract ; nom : termination"
+        },
+        {
+          "en": "renew",
+          "fr": "renouveler, reconduire",
+          "note": "renew a lease / a contract ; nom : renewal"
+        },
+        {
+          "en": "waive",
+          "fr": "renoncer à (un droit)",
+          "note": "waive a fee / a right ; nom : waiver"
+        },
+        {
+          "en": "enforce",
+          "fr": "faire appliquer, faire respecter",
+          "note": "enforce a contract / the law ; adjectif enforceable (exécutoire)"
+        },
+        {
+          "en": "obligation",
+          "fr": "obligation, engagement",
+          "note": "fulfil / meet one's obligations"
+        },
+        {
+          "en": "party",
+          "fr": "partie (à un contrat)",
+          "note": "the parties to the agreement ; rien à voir avec 'fête'"
+        },
+        {
+          "en": "attorney",
+          "fr": "avocat, mandataire",
+          "note": "surtout US ; cf. lawyer (GB) ; power of attorney = procuration"
+        }
+      ]
+    },
+    {
+      "id": "marketing",
+      "label_fr": "Marketing & publicité",
+      "label_en": "Marketing & advertising",
+      "icon": "📣",
+      "words": [
+        {
+          "en": "advertisement",
+          "fr": "publicité, annonce",
+          "note": "souvent abrégé en 'ad' ; 'an advert' en anglais britannique"
+        },
+        {
+          "en": "campaign",
+          "fr": "campagne",
+          "note": "collocation : 'launch / run an advertising campaign'"
+        },
+        {
+          "en": "brand",
+          "fr": "marque",
+          "note": "'brand awareness' = notoriété de la marque ; 'brand loyalty' = fidélité"
+        },
+        {
+          "en": "target audience",
+          "fr": "public cible, audience visée",
+          "note": "verbe 'to target' = cibler ; piège fréquent au TOEIC"
+        },
+        {
+          "en": "promote",
+          "fr": "promouvoir, faire la promotion de",
+          "note": "nom : 'promotion' ; aussi 'promote someone' = promouvoir qqn"
+        },
+        {
+          "en": "market research",
+          "fr": "étude de marché",
+          "note": "indénombrable : pas de 'a market research'"
+        },
+        {
+          "en": "launch",
+          "fr": "lancer (un produit) ; lancement",
+          "note": "nom et verbe ; 'product launch' très fréquent"
+        },
+        {
+          "en": "consumer",
+          "fr": "consommateur",
+          "note": "à distinguer de 'customer' (client) ; 'consumer goods' = biens de consommation"
+        },
+        {
+          "en": "survey",
+          "fr": "sondage, enquête",
+          "note": "'conduct a survey' = mener une enquête"
+        },
+        {
+          "en": "endorse",
+          "fr": "recommander, soutenir (publiquement)",
+          "note": "'celebrity endorsement' = recommandation par une célébrité"
+        },
+        {
+          "en": "slogan",
+          "fr": "slogan",
+          "note": "phrase courte et mémorisable d'une campagne"
+        },
+        {
+          "en": "discount",
+          "fr": "remise, réduction",
+          "note": "'offer a discount' ; 'at a discount' = à prix réduit"
+        },
+        {
+          "en": "competitor",
+          "fr": "concurrent",
+          "note": "verbe 'compete' ; adjectif 'competitive' = compétitif"
+        },
+        {
+          "en": "appeal to",
+          "fr": "plaire à, séduire",
+          "note": "'this ad appeals to young consumers' ; aussi nom 'appeal' = attrait"
+        },
+        {
+          "en": "outlet",
+          "fr": "point de vente, magasin",
+          "note": "'retail outlet' ; aussi 'media outlet' = média"
+        },
+        {
+          "en": "persuasive",
+          "fr": "persuasif, convaincant",
+          "note": "verbe 'persuade' ; nom 'persuasion'"
+        },
+        {
+          "en": "word of mouth",
+          "fr": "bouche-à-oreille",
+          "note": "expression figée ; 'by word of mouth'"
+        },
+        {
+          "en": "merchandise",
+          "fr": "marchandise(s), articles",
+          "note": "indénombrable ; verbe 'to merchandise' = mettre en avant / promouvoir la vente de"
+        }
+      ]
+    },
+    {
+      "id": "sales_purchasing",
+      "label_fr": "Ventes & achats",
+      "label_en": "Sales & purchasing",
+      "icon": "🛒",
+      "words": [
+        {
+          "en": "purchase order",
+          "fr": "bon de commande",
+          "note": "abrégé PO ; place/issue a purchase order"
+        },
+        {
+          "en": "invoice",
+          "fr": "facture",
+          "note": "verbe aussi : to invoice a client ; issue/settle an invoice"
+        },
+        {
+          "en": "discount",
+          "fr": "remise, rabais",
+          "note": "offer a discount ; a 10% discount on bulk orders"
+        },
+        {
+          "en": "retail",
+          "fr": "vente au détail",
+          "note": "opposé de wholesale ; retail price = prix de détail"
+        },
+        {
+          "en": "wholesale",
+          "fr": "vente en gros",
+          "note": "buy at wholesale prices ; opposé de retail"
+        },
+        {
+          "en": "vendor",
+          "fr": "fournisseur, vendeur",
+          "note": "synonyme de supplier au TOEIC ; preferred vendor"
+        },
+        {
+          "en": "supplier",
+          "fr": "fournisseur",
+          "note": "select/switch suppliers ; supply chain"
+        },
+        {
+          "en": "quote",
+          "fr": "devis",
+          "note": "aussi quotation ; request/provide a quote"
+        },
+        {
+          "en": "merchandise",
+          "fr": "marchandise(s)",
+          "note": "indénombrable ; display/return merchandise"
+        },
+        {
+          "en": "refund",
+          "fr": "remboursement",
+          "note": "nom et verbe ; request a refund / refund the amount"
+        },
+        {
+          "en": "warranty",
+          "fr": "garantie",
+          "note": "under warranty = sous garantie ; ne pas confondre avec guarantee"
+        },
+        {
+          "en": "in stock",
+          "fr": "en stock, disponible",
+          "note": "opposé : out of stock ; restock = réapprovisionner"
+        },
+        {
+          "en": "shipment",
+          "fr": "envoi, expédition",
+          "note": "track a shipment ; shipping costs = frais de port"
+        },
+        {
+          "en": "bargain",
+          "fr": "bonne affaire",
+          "note": "nom : a real bargain ; verbe : marchander"
+        },
+        {
+          "en": "clearance sale",
+          "fr": "liquidation, soldes",
+          "note": "clearance = déstockage ; everything must go"
+        },
+        {
+          "en": "procurement",
+          "fr": "approvisionnement, achats",
+          "note": "vocabulaire B2 ; procurement department = service achats"
+        },
+        {
+          "en": "negotiate",
+          "fr": "négocier",
+          "note": "negotiate terms/prices/a contract ; nom : negotiation"
+        },
+        {
+          "en": "place an order",
+          "fr": "passer une commande",
+          "note": "collocation clé ; opposé : cancel an order"
+        }
+      ]
+    },
+    {
+      "id": "manufacturing",
+      "label_fr": "Production & qualité",
+      "label_en": "Manufacturing & quality",
+      "icon": "🏭",
+      "words": [
+        {
+          "en": "assembly line",
+          "fr": "chaîne de montage",
+          "note": "work on / along the assembly line ; nom composé fréquent en usine"
+        },
+        {
+          "en": "manufacturing plant",
+          "fr": "usine de fabrication",
+          "note": "= factory ; aussi 'manufacturing facility'"
+        },
+        {
+          "en": "quality control",
+          "fr": "contrôle qualité",
+          "note": "souvent abrégé QC ; 'pass quality control'"
+        },
+        {
+          "en": "defect",
+          "fr": "défaut, malfaçon",
+          "note": "nom ; adj. 'defective' (defective product = produit défectueux)"
+        },
+        {
+          "en": "inspect",
+          "fr": "inspecter, contrôler",
+          "note": "verbe ; nom 'inspection', personne 'inspector'"
+        },
+        {
+          "en": "warehouse",
+          "fr": "entrepôt",
+          "note": "lieu de stockage ; ne pas confondre avec 'wholesale' (vente en gros)"
+        },
+        {
+          "en": "inventory",
+          "fr": "stock, inventaire",
+          "note": "'take inventory' = faire l'inventaire ; US English (UK: 'stock')"
+        },
+        {
+          "en": "supply chain",
+          "fr": "chaîne d'approvisionnement",
+          "note": "collocation très fréquente au TOEIC (logistique)"
+        },
+        {
+          "en": "output",
+          "fr": "production, rendement",
+          "note": "'increase output' ; opposé de 'input'"
+        },
+        {
+          "en": "equipment",
+          "fr": "équipement, matériel",
+          "note": "INDÉNOMBRABLE : pas de 'equipments', on dit 'a piece of equipment'"
+        },
+        {
+          "en": "raw materials",
+          "fr": "matières premières",
+          "note": "toujours au pluriel ; matériaux non transformés"
+        },
+        {
+          "en": "maintenance",
+          "fr": "entretien, maintenance",
+          "note": "'routine / scheduled maintenance' ; verbe 'maintain'"
+        },
+        {
+          "en": "streamline",
+          "fr": "rationaliser, optimiser",
+          "note": "verbe ; 'streamline the production process' = fluidifier"
+        },
+        {
+          "en": "durable",
+          "fr": "résistant, solide (qui dure)",
+          "note": "adj. ; faux ami : 'durable' anglais = robuste, pas 'écologique' ; 'durable goods' = biens durables"
+        },
+        {
+          "en": "shut down",
+          "fr": "arrêter, fermer (une machine/usine)",
+          "note": "phrasal verb ; nom 'shutdown' (the plant shutdown)"
+        },
+        {
+          "en": "comply with",
+          "fr": "se conformer à, respecter",
+          "note": "'comply with safety standards' ; nom 'compliance'"
+        },
+        {
+          "en": "faulty",
+          "fr": "défectueux, en panne",
+          "note": "adj. ; synonyme de 'defective' ; 'faulty wiring'"
+        },
+        {
+          "en": "productivity",
+          "fr": "productivité",
+          "note": "'boost / improve productivity' ; ne pas confondre avec 'production'"
+        }
+      ]
+    },
+    {
+      "id": "logistics",
+      "label_fr": "Logistique & expédition",
+      "label_en": "Logistics & shipping",
+      "icon": "🚚",
+      "words": [
+        {
+          "en": "shipment",
+          "fr": "envoi, cargaison",
+          "note": "track a shipment ; désigne la marchandise expédiée elle-même"
+        },
+        {
+          "en": "freight",
+          "fr": "fret, marchandises transportées",
+          "note": "freight charges = frais de transport ; nom indénombrable"
+        },
+        {
+          "en": "warehouse",
+          "fr": "entrepôt",
+          "note": "existe aussi comme verbe : to warehouse goods = stocker"
+        },
+        {
+          "en": "inventory",
+          "fr": "stock, inventaire",
+          "note": "take/check inventory ; désigne le stock, pas seulement la liste des articles"
+        },
+        {
+          "en": "to dispatch",
+          "fr": "expédier, envoyer",
+          "note": "goods are dispatched ; existe aussi comme nom : dispatch"
+        },
+        {
+          "en": "carrier",
+          "fr": "transporteur",
+          "note": "the carrier delivers ; désigne l'entreprise de transport, pas le colis"
+        },
+        {
+          "en": "freight forwarder",
+          "fr": "transitaire",
+          "note": "organise le transport pour le compte du client"
+        },
+        {
+          "en": "customs",
+          "fr": "douane",
+          "note": "forme toujours en -s ; clear customs = dédouaner"
+        },
+        {
+          "en": "to track",
+          "fr": "suivre (un colis)",
+          "note": "tracking number = numéro de suivi"
+        },
+        {
+          "en": "delivery",
+          "fr": "livraison",
+          "note": "delivery date, on delivery ; verbe : to deliver"
+        },
+        {
+          "en": "consignment",
+          "fr": "lot, envoi (de marchandises)",
+          "note": "a consignment of goods ; registre formel"
+        },
+        {
+          "en": "to load",
+          "fr": "charger",
+          "note": "load/unload the truck ; antonyme : to unload"
+        },
+        {
+          "en": "pallet",
+          "fr": "palette",
+          "note": "goods stacked on a pallet"
+        },
+        {
+          "en": "bulk",
+          "fr": "vrac, grande quantité",
+          "note": "in bulk = en vrac / en grande quantité ; buy in bulk"
+        },
+        {
+          "en": "logistics",
+          "fr": "logistique",
+          "note": "traité comme singulier : logistics is complex"
+        },
+        {
+          "en": "to expedite",
+          "fr": "accélérer, traiter en priorité",
+          "note": "expedite the order = traiter en urgence ; verbe TOEIC fréquent"
+        },
+        {
+          "en": "backorder",
+          "fr": "commande en attente (rupture)",
+          "note": "on backorder = en rupture, livraison différée"
+        },
+        {
+          "en": "supply chain",
+          "fr": "chaîne d'approvisionnement",
+          "note": "supply chain disruption = rupture de la chaîne d'approvisionnement"
+        }
+      ]
+    },
+    {
+      "id": "travel",
+      "label_fr": "Voyages & transport",
+      "label_en": "Travel & transport",
+      "icon": "✈️",
+      "words": [
+        {
+          "en": "itinerary",
+          "fr": "itinéraire (de voyage)",
+          "note": "nom ; the travel itinerary — très fréquent en Part 7 (mails de voyage)"
+        },
+        {
+          "en": "boarding pass",
+          "fr": "carte d'embarquement",
+          "note": "nom composé ; show your boarding pass"
+        },
+        {
+          "en": "departure",
+          "fr": "départ",
+          "note": "nom ; departure gate/lounge ; opposé de arrival"
+        },
+        {
+          "en": "layover",
+          "fr": "escale",
+          "note": "nom ; a two-hour layover — escale courte entre deux vols (un stopover désigne plutôt une escale longue)"
+        },
+        {
+          "en": "to board",
+          "fr": "embarquer (à bord)",
+          "note": "verbe ; board the flight/train — faux-ami : pas « border »"
+        },
+        {
+          "en": "delay",
+          "fr": "retard",
+          "note": "nom et verbe ; the flight was delayed — classique des annonces"
+        },
+        {
+          "en": "round-trip ticket",
+          "fr": "billet aller-retour",
+          "note": "US ; UK = return ticket ; opposé : one-way"
+        },
+        {
+          "en": "luggage",
+          "fr": "bagages",
+          "note": "nom INDÉNOMBRABLE : pas de pluriel « luggages » ; a piece of luggage"
+        },
+        {
+          "en": "to check in",
+          "fr": "s'enregistrer (vol/hôtel)",
+          "note": "verbe à particule ; nom : check-in counter"
+        },
+        {
+          "en": "fare",
+          "fr": "tarif / prix du billet",
+          "note": "nom ; airfare, train fare — à distinguer de « fair »"
+        },
+        {
+          "en": "to reschedule",
+          "fr": "reprogrammer / décaler",
+          "note": "verbe ; reschedule a flight/meeting — très utilisé"
+        },
+        {
+          "en": "customs",
+          "fr": "douane",
+          "note": "nom (au pluriel dans ce sens) ; go through customs"
+        },
+        {
+          "en": "reservation",
+          "fr": "réservation",
+          "note": "nom ; make/confirm/cancel a reservation"
+        },
+        {
+          "en": "shuttle",
+          "fr": "navette",
+          "note": "nom ; airport shuttle, shuttle bus"
+        },
+        {
+          "en": "connecting flight",
+          "fr": "vol de correspondance",
+          "note": "nom composé ; miss the connecting flight"
+        },
+        {
+          "en": "to confirm",
+          "fr": "confirmer",
+          "note": "verbe ; confirm your booking/reservation"
+        },
+        {
+          "en": "destination",
+          "fr": "destination",
+          "note": "nom ; final destination — fréquent dans les annonces"
+        },
+        {
+          "en": "detour",
+          "fr": "déviation / détour",
+          "note": "nom ; take a detour — souvent pour le transport routier"
+        }
+      ]
+    },
+    {
+      "id": "hospitality",
+      "label_fr": "Restauration & hôtellerie",
+      "label_en": "Dining & hotels",
+      "icon": "🍽️",
+      "words": [
+        {
+          "en": "reservation",
+          "fr": "réservation",
+          "note": "make/cancel/confirm a reservation ; mot-clé Part 3-4"
+        },
+        {
+          "en": "to book (a room/table)",
+          "fr": "réserver (une chambre/table)",
+          "note": "verbe ; book a room in advance"
+        },
+        {
+          "en": "accommodation(s)",
+          "fr": "hébergement, logement",
+          "note": "indénombrable en anglais GB (accommodation) ; pluriel en anglais US (accommodations)"
+        },
+        {
+          "en": "check-in / check-out",
+          "fr": "arrivée (enregistrement) / départ",
+          "note": "horaires types au TOEIC: check-in 3 p.m., check-out 11 a.m."
+        },
+        {
+          "en": "front desk",
+          "fr": "réception (comptoir d'accueil)",
+          "note": "= reception desk ; contact the front desk"
+        },
+        {
+          "en": "amenities",
+          "fr": "équipements, prestations",
+          "note": "nom pluriel ; hotel amenities: Wi-Fi, gym, pool"
+        },
+        {
+          "en": "complimentary",
+          "fr": "offert, gratuit",
+          "note": "adjectif TOEIC fréquent ; complimentary breakfast/shuttle"
+        },
+        {
+          "en": "vacancy",
+          "fr": "chambre disponible, disponibilité",
+          "note": "no vacancy = complet ; contraire de fully booked"
+        },
+        {
+          "en": "to cater",
+          "fr": "assurer le traiteur, restaurer",
+          "note": "cater an event ; nom: catering service / caterer"
+        },
+        {
+          "en": "beverage",
+          "fr": "boisson",
+          "note": "registre formel ; \"food and beverages\" sur menus/factures"
+        },
+        {
+          "en": "appetizer",
+          "fr": "entrée, hors-d'œuvre",
+          "note": "US ; GB = starter ; ne pas confondre avec \"entrée\" = plat principal en US"
+        },
+        {
+          "en": "to seat (guests)",
+          "fr": "placer, installer (des clients)",
+          "note": "verbe ; \"please be seated\" / a table for four"
+        },
+        {
+          "en": "banquet hall",
+          "fr": "salle de banquet / réception",
+          "note": "collocation ; lieu d'événements et séminaires"
+        },
+        {
+          "en": "itinerary",
+          "fr": "itinéraire, programme de voyage",
+          "note": "nom ; travel itinerary ; fréquent en hôtellerie/voyages d'affaires"
+        },
+        {
+          "en": "concierge",
+          "fr": "concierge (services aux clients)",
+          "note": "emprunt au français ; concierge service / desk"
+        },
+        {
+          "en": "to upgrade",
+          "fr": "surclasser, améliorer (la catégorie)",
+          "note": "upgrade to a suite ; nom: a complimentary upgrade"
+        },
+        {
+          "en": "refreshments",
+          "fr": "rafraîchissements, collations",
+          "note": "toujours au pluriel ; refreshments will be served"
+        },
+        {
+          "en": "hospitality",
+          "fr": "hôtellerie ; accueil, hospitalité",
+          "note": "the hospitality industry/sector ; secteur entier au TOEIC"
+        }
+      ]
+    },
+    {
+      "id": "technology",
+      "label_fr": "Technologie & informatique",
+      "label_en": "Technology & IT",
+      "icon": "💻",
+      "words": [
+        {
+          "en": "upgrade",
+          "fr": "mettre à niveau ; mise à niveau",
+          "note": "verbe et nom ; upgrade the software/system"
+        },
+        {
+          "en": "install",
+          "fr": "installer",
+          "note": "install an application / update ; nom : installation"
+        },
+        {
+          "en": "device",
+          "fr": "appareil, dispositif",
+          "note": "mobile device ; terme générique très fréquent"
+        },
+        {
+          "en": "software",
+          "fr": "logiciel",
+          "note": "indénombrable : pas de 's' (a piece of software)"
+        },
+        {
+          "en": "hardware",
+          "fr": "matériel (informatique)",
+          "note": "indénombrable ; s'oppose à software"
+        },
+        {
+          "en": "network",
+          "fr": "réseau",
+          "note": "network connection ; verbe : networking (réseautage)"
+        },
+        {
+          "en": "back up",
+          "fr": "sauvegarder (des données)",
+          "note": "verbe : back up files ; nom : a backup"
+        },
+        {
+          "en": "troubleshoot",
+          "fr": "dépanner, résoudre un problème",
+          "note": "IT support ; nom : troubleshooting"
+        },
+        {
+          "en": "access",
+          "fr": "accéder à ; accès",
+          "note": "access the database ; remote access"
+        },
+        {
+          "en": "update",
+          "fr": "mettre à jour ; mise à jour",
+          "note": "verbe et nom ; security update"
+        },
+        {
+          "en": "settings",
+          "fr": "paramètres, réglages",
+          "note": "toujours au pluriel ; change the settings"
+        },
+        {
+          "en": "crash",
+          "fr": "planter, tomber en panne (système)",
+          "note": "the system crashed ; nom : a crash"
+        },
+        {
+          "en": "reboot",
+          "fr": "redémarrer",
+          "note": "reboot/restart the computer ; synonyme : restart"
+        },
+        {
+          "en": "compatible",
+          "fr": "compatible",
+          "note": "collocation : compatible with (et non 'compatible to')"
+        },
+        {
+          "en": "user-friendly",
+          "fr": "convivial, facile à utiliser",
+          "note": "adjectif ; a user-friendly interface"
+        },
+        {
+          "en": "feature",
+          "fr": "fonctionnalité, caractéristique",
+          "note": "new feature ; verbe : the device features..."
+        },
+        {
+          "en": "data",
+          "fr": "données",
+          "note": "data storage / transfer ; souvent traité comme indénombrable"
+        },
+        {
+          "en": "glitch",
+          "fr": "bug, dysfonctionnement passager",
+          "note": "a minor glitch ; technical glitch"
+        }
+      ]
+    },
+    {
+      "id": "property",
+      "label_fr": "Immobilier & locaux",
+      "label_en": "Property & facilities",
+      "icon": "🏗️",
+      "words": [
+        {
+          "en": "lease",
+          "fr": "bail / contrat de location",
+          "note": "nom ET verbe ; renew/sign/terminate a lease"
+        },
+        {
+          "en": "tenant",
+          "fr": "locataire",
+          "note": "≠ landlord (propriétaire-bailleur)"
+        },
+        {
+          "en": "landlord",
+          "fr": "propriétaire-bailleur",
+          "note": "celui qui loue le bien ; fém. landlady"
+        },
+        {
+          "en": "premises",
+          "fr": "locaux / lieux",
+          "note": "toujours pluriel ; on/off the premises"
+        },
+        {
+          "en": "rent",
+          "fr": "loyer / louer",
+          "note": "nom (le loyer) et verbe (louer) ; rent due, monthly rent"
+        },
+        {
+          "en": "facilities",
+          "fr": "installations / équipements",
+          "note": "office facilities, parking facilities"
+        },
+        {
+          "en": "maintenance",
+          "fr": "entretien / maintenance",
+          "note": "routine/scheduled maintenance ; nom indénombrable"
+        },
+        {
+          "en": "renovation",
+          "fr": "rénovation / travaux",
+          "note": "undergo renovation ; verbe to renovate"
+        },
+        {
+          "en": "property",
+          "fr": "bien immobilier / propriété",
+          "note": "property management, commercial property"
+        },
+        {
+          "en": "vacant",
+          "fr": "vacant / libre / inoccupé",
+          "note": "adj. ; a vacant office/unit ; ≠ occupied"
+        },
+        {
+          "en": "square footage",
+          "fr": "superficie (en pieds carrés)",
+          "note": "unité US ; aussi square feet/meters"
+        },
+        {
+          "en": "utilities",
+          "fr": "charges (eau, gaz, électricité)",
+          "note": "pluriel ; utilities included in the rent"
+        },
+        {
+          "en": "furnished",
+          "fr": "meublé",
+          "note": "adj. ; a fully furnished apartment ; ≠ unfurnished"
+        },
+        {
+          "en": "relocate",
+          "fr": "déménager / délocaliser",
+          "note": "verbe ; relocate to new offices ; nom relocation"
+        },
+        {
+          "en": "floor plan",
+          "fr": "plan (des pièces / d'aménagement)",
+          "note": "faux-ami : pas un \"étage\" mais le schéma des pièces"
+        },
+        {
+          "en": "deposit",
+          "fr": "caution / dépôt de garantie",
+          "note": "security deposit ; pay/refund a deposit"
+        },
+        {
+          "en": "on-site",
+          "fr": "sur place / sur site",
+          "note": "adj./adv. ; on-site parking ; ≠ off-site"
+        },
+        {
+          "en": "refurbish",
+          "fr": "rénover / remettre à neuf",
+          "note": "verbe soutenu fréquent au TOEIC ; nom refurbishment"
+        }
+      ]
+    },
+    {
+      "id": "health_env",
+      "label_fr": "Santé & environnement",
+      "label_en": "Health & environment",
+      "icon": "🩺",
+      "words": [
+        {
+          "en": "appointment",
+          "fr": "rendez-vous (médical)",
+          "note": "make/schedule/cancel an appointment ; pas 'meeting' chez le médecin"
+        },
+        {
+          "en": "prescription",
+          "fr": "ordonnance",
+          "note": "fill a prescription = exécuter une ordonnance ; ≠ recipe (recette)"
+        },
+        {
+          "en": "checkup",
+          "fr": "bilan de santé, visite de contrôle",
+          "note": "annual/routine checkup ; nom courant en Part 1/3"
+        },
+        {
+          "en": "insurance coverage",
+          "fr": "couverture d'assurance",
+          "note": "health insurance coverage ; collocation très fréquente"
+        },
+        {
+          "en": "pharmacy",
+          "fr": "pharmacie",
+          "note": "= drugstore (US) ; pick up medication at the pharmacy"
+        },
+        {
+          "en": "symptom",
+          "fr": "symptôme",
+          "note": "experience/report symptoms ; adj. symptomatic"
+        },
+        {
+          "en": "recover",
+          "fr": "se rétablir, guérir",
+          "note": "recover from an illness ; nom: recovery"
+        },
+        {
+          "en": "physician",
+          "fr": "médecin",
+          "note": "registre formel pour 'doctor' ; refer a patient to a physician"
+        },
+        {
+          "en": "clinic",
+          "fr": "clinique, dispensaire",
+          "note": "go to / visit a clinic ; cadre santé fréquent au TOEIC"
+        },
+        {
+          "en": "emergency",
+          "fr": "urgence",
+          "note": "emergency room (ER) ; in case of emergency"
+        },
+        {
+          "en": "pollution",
+          "fr": "pollution",
+          "note": "air/water pollution ; reduce pollution ; thème environnement"
+        },
+        {
+          "en": "recycle",
+          "fr": "recycler",
+          "note": "verbe ; nom: recycling program ; sort and recycle waste"
+        },
+        {
+          "en": "sustainable",
+          "fr": "durable",
+          "note": "sustainable energy/development ; idée de ce qui peut durer dans le temps"
+        },
+        {
+          "en": "emissions",
+          "fr": "émissions (polluantes)",
+          "note": "reduce/cut carbon emissions ; souvent au pluriel"
+        },
+        {
+          "en": "conservation",
+          "fr": "conservation, préservation (de l'environnement)",
+          "note": "energy/water conservation ; ≠ conversation"
+        },
+        {
+          "en": "renewable",
+          "fr": "renouvelable",
+          "note": "renewable energy/resources ; opposé: non-renewable"
+        },
+        {
+          "en": "hazardous",
+          "fr": "dangereux, nocif",
+          "note": "hazardous waste/materials ; adjectif fréquent (sécurité/environnement)"
+        },
+        {
+          "en": "dispose of",
+          "fr": "se débarrasser de, jeter",
+          "note": "dispose of waste properly ; verbe à particule + 'of' obligatoire ; nom: disposal"
+        }
+      ]
+    }
+  ]
+}

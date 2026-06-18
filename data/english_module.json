@@ -5635,6 +5635,921 @@
           "en": "Business formal is required with this banking client."
         }
       ]
+    },
+    {
+      "id": "en_v_chg_001",
+      "domain": "business",
+      "level": "A2",
+      "fr": "augmenter ; augmentation",
+      "en": "increase",
+      "ipa": "ɪnˈkriːs",
+      "notes": "Verbe et nom ; l'accent change (verbe /ɪnˈkriːs/, nom /ˈɪnkriːs/). « increase BY 8% » = de 8 % ; « increase TO 100 » = jusqu'à 100.",
+      "examples": [
+        {
+          "fr": "Le chiffre d'affaires a augmenté de 8 % cette année.",
+          "en": "Revenue increased by 8% this year."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_002",
+      "domain": "business",
+      "level": "A2",
+      "fr": "monter, augmenter ; hausse",
+      "en": "rise",
+      "ipa": "raɪz",
+      "notes": "Intransitif (pas d'objet) : rise-rose-risen. À ne pas confondre avec « raise » (transitif).",
+      "examples": [
+        {
+          "fr": "Les coûts ont fortement augmenté au second semestre.",
+          "en": "Costs rose sharply in the second half."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_003",
+      "domain": "business",
+      "level": "A2",
+      "fr": "croître, augmenter",
+      "en": "grow",
+      "ipa": "ɡrəʊ",
+      "notes": "grow-grew-grown. Nom : « growth ».",
+      "examples": [
+        {
+          "fr": "Le marché a crû de 5 % l'an dernier.",
+          "en": "The market grew by 5% last year."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_004",
+      "domain": "business",
+      "level": "B1",
+      "fr": "grimper, augmenter",
+      "en": "climb",
+      "ipa": "klaɪm",
+      "notes": "Le « b » est muet : /klaɪm/.",
+      "examples": [
+        {
+          "fr": "L'action a grimpé à un niveau record.",
+          "en": "Shares climbed to a record high."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_005",
+      "domain": "business",
+      "level": "B2",
+      "fr": "bondir, grimper en flèche ; forte hausse",
+      "en": "surge",
+      "ipa": "sɜːdʒ",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "La demande a bondi après le lancement.",
+          "en": "Demand surged after the launch."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_006",
+      "domain": "business",
+      "level": "B2",
+      "fr": "monter en flèche",
+      "en": "soar",
+      "ipa": "sɔː",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les bénéfices ont grimpé en flèche l'an dernier.",
+          "en": "Profits soared last year."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_007",
+      "domain": "business",
+      "level": "A2",
+      "fr": "bondir, faire un bond",
+      "en": "jump",
+      "ipa": "dʒʌmp",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les ventes ont bondi de 20 % au T4.",
+          "en": "Sales jumped 20% in Q4."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_008",
+      "domain": "business",
+      "level": "B1",
+      "fr": "culminer, atteindre un pic ; pic",
+      "en": "peak",
+      "ipa": "piːk",
+      "notes": "Nom et verbe : « to peak » = atteindre un sommet.",
+      "examples": [
+        {
+          "fr": "Les prix ont culminé en mars.",
+          "en": "Prices peaked in March."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_009",
+      "domain": "business",
+      "level": "A2",
+      "fr": "doubler",
+      "en": "double",
+      "ipa": "ˈdʌbl",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Le chiffre d'affaires a doublé en deux ans.",
+          "en": "Revenue doubled in two years."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_010",
+      "domain": "business",
+      "level": "B1",
+      "fr": "reprendre, repartir",
+      "en": "pick up",
+      "ipa": "pɪk ʌp",
+      "notes": "Phrasal verb : reprise d'une activité après un creux.",
+      "examples": [
+        {
+          "fr": "L'activité a repris durant l'été.",
+          "en": "Activity picked up over the summer."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_011",
+      "domain": "business",
+      "level": "B2",
+      "fr": "intensifier, monter en puissance",
+      "en": "ramp up",
+      "ipa": "ræmp ʌp",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Ils ont intensifié la production avant la clôture.",
+          "en": "They ramped up production before year-end."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_012",
+      "domain": "business",
+      "level": "B2",
+      "fr": "s'intensifier, grimper",
+      "en": "escalate",
+      "ipa": "ˈeskəleɪt",
+      "notes": "Souvent négatif : coûts/tensions qui s'emballent.",
+      "examples": [
+        {
+          "fr": "Les coûts ont grimpé rapidement.",
+          "en": "Costs escalated quickly."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_013",
+      "domain": "business",
+      "level": "B2",
+      "fr": "accélérer, s'accélérer",
+      "en": "accelerate",
+      "ipa": "əkˈseləreɪt",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "La croissance s'est accélérée au troisième trimestre.",
+          "en": "Growth accelerated in the third quarter."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_014",
+      "domain": "business",
+      "level": "A2",
+      "fr": "diminuer ; diminution",
+      "en": "decrease",
+      "ipa": "dɪˈkriːs",
+      "notes": "Verbe /dɪˈkriːs/, nom /ˈdiːkriːs/.",
+      "examples": [
+        {
+          "fr": "Les charges ont légèrement diminué.",
+          "en": "Expenses decreased slightly."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_015",
+      "domain": "business",
+      "level": "B1",
+      "fr": "baisser, décliner ; baisse",
+      "en": "decline",
+      "ipa": "dɪˈklaɪn",
+      "notes": "Aussi « to decline » = décliner / refuser poliment.",
+      "examples": [
+        {
+          "fr": "Les ventes ont baissé pour la troisième année.",
+          "en": "Sales declined for a third year."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_016",
+      "domain": "business",
+      "level": "A2",
+      "fr": "chuter ; chute",
+      "en": "fall",
+      "ipa": "fɔːl",
+      "notes": "fall-fell-fallen. « fall TO » = jusqu'à ; « fall BY » = de.",
+      "examples": [
+        {
+          "fr": "Les marges ont chuté à 12 %.",
+          "en": "Margins fell to 12%."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_017",
+      "domain": "business",
+      "level": "A2",
+      "fr": "chuter, baisser ; baisse",
+      "en": "drop",
+      "ipa": "drɒp",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Le cours de l'action a chuté de 5 %.",
+          "en": "The share price dropped 5%."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_018",
+      "domain": "business",
+      "level": "B1",
+      "fr": "se contracter, rétrécir",
+      "en": "shrink",
+      "ipa": "ʃrɪŋk",
+      "notes": "shrink-shrank-shrunk.",
+      "examples": [
+        {
+          "fr": "Le marché s'est contracté en 2024.",
+          "en": "The market shrank in 2024."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_019",
+      "domain": "business",
+      "level": "B2",
+      "fr": "plonger, chuter brutalement",
+      "en": "plunge",
+      "ipa": "plʌndʒ",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les bénéfices ont plongé après le rappel produit.",
+          "en": "Profits plunged after the recall."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_020",
+      "domain": "business",
+      "level": "B2",
+      "fr": "s'effondrer, dégringoler",
+      "en": "plummet",
+      "ipa": "ˈplʌmɪt",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "L'action a dégringolé de 30 %.",
+          "en": "The stock plummeted 30%."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_021",
+      "domain": "business",
+      "level": "B2",
+      "fr": "s'effondrer ; effondrement",
+      "en": "slump",
+      "ipa": "slʌmp",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "La demande s'est effondrée pendant la crise.",
+          "en": "Demand slumped during the crisis."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_022",
+      "domain": "business",
+      "level": "B1",
+      "fr": "fléchir légèrement ; léger recul",
+      "en": "dip",
+      "ipa": "dɪp",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les ventes ont légèrement fléchi en janvier.",
+          "en": "Sales dipped in January."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_023",
+      "domain": "business",
+      "level": "B2",
+      "fr": "réduire de moitié",
+      "en": "halve",
+      "ipa": "hɑːv",
+      "notes": "Le « l » est muet : /hɑːv/.",
+      "examples": [
+        {
+          "fr": "Ils ont réduit le dividende de moitié.",
+          "en": "They halved the dividend."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_024",
+      "domain": "business",
+      "level": "B2",
+      "fr": "se contracter",
+      "en": "contract",
+      "ipa": "kənˈtrækt",
+      "notes": "Verbe /kənˈtrækt/ vs nom « contract » (un contrat) /ˈkɒntrækt/.",
+      "examples": [
+        {
+          "fr": "L'économie s'est contractée pendant deux trimestres.",
+          "en": "The economy contracted for two quarters."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_025",
+      "domain": "business",
+      "level": "B2",
+      "fr": "diminuer progressivement",
+      "en": "taper off",
+      "ipa": "ˈteɪpər ɒf",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "La croissance a diminué progressivement en fin d'année.",
+          "en": "Growth tapered off late in the year."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_026",
+      "domain": "business",
+      "level": "B1",
+      "fr": "rester stable",
+      "en": "remain stable",
+      "ipa": "rɪˈmeɪn ˈsteɪbl",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les coûts sont restés stables d'une année sur l'autre.",
+          "en": "Costs remained stable year on year."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_027",
+      "domain": "business",
+      "level": "B2",
+      "fr": "se stabiliser (après une variation)",
+      "en": "level off",
+      "ipa": "ˈlevl ɒf",
+      "notes": "Phrasal verb : se stabiliser après une hausse/baisse.",
+      "examples": [
+        {
+          "fr": "Les ventes se sont stabilisées au T3.",
+          "en": "Sales levelled off in Q3."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_028",
+      "domain": "business",
+      "level": "B2",
+      "fr": "atteindre un palier ; palier",
+      "en": "plateau",
+      "ipa": "ˈplætəʊ",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "La croissance a atteint un palier.",
+          "en": "Growth reached a plateau."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_029",
+      "domain": "business",
+      "level": "B1",
+      "fr": "se maintenir, rester constant",
+      "en": "hold steady",
+      "ipa": "həʊld ˈstedi",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les prix se sont maintenus toute l'année.",
+          "en": "Prices held steady all year."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_030",
+      "domain": "business",
+      "level": "B2",
+      "fr": "stagner",
+      "en": "stagnate",
+      "ipa": "stæɡˈneɪt",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Le marché a stagné pendant une décennie.",
+          "en": "The market stagnated for a decade."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_031",
+      "domain": "business",
+      "level": "B2",
+      "fr": "fluctuer, varier",
+      "en": "fluctuate",
+      "ipa": "ˈflʌktʃueɪt",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les taux de change fluctuent au jour le jour.",
+          "en": "Exchange rates fluctuate daily."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_032",
+      "domain": "business",
+      "level": "B2",
+      "fr": "osciller (autour de)",
+      "en": "hover",
+      "ipa": "ˈhɒvə",
+      "notes": "« hover around X » = se maintenir autour de X.",
+      "examples": [
+        {
+          "fr": "L'inflation a oscillé autour de 2 %.",
+          "en": "Inflation hovered around 2%."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_033",
+      "domain": "business",
+      "level": "B2",
+      "fr": "s'aplatir, se tasser",
+      "en": "flatten",
+      "ipa": "ˈflætn",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "La courbe de croissance s'est aplatie.",
+          "en": "The growth curve flattened."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_034",
+      "domain": "business",
+      "level": "A2",
+      "fr": "relever, augmenter (qqch)",
+      "en": "raise",
+      "ipa": "reɪz",
+      "notes": "TRANSITIF (raise something). « rise » est intransitif. raise-raised-raised.",
+      "examples": [
+        {
+          "fr": "Ils ont relevé les prix de 3 %.",
+          "en": "They raised prices by 3%."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_035",
+      "domain": "business",
+      "level": "A2",
+      "fr": "abaisser, réduire",
+      "en": "lower",
+      "ipa": "ˈləʊə",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Nous avons abaissé l'estimation.",
+          "en": "We lowered the estimate."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_036",
+      "domain": "business",
+      "level": "B1",
+      "fr": "stimuler, doper",
+      "en": "boost",
+      "ipa": "buːst",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "La campagne a dopé les ventes.",
+          "en": "The campaign boosted sales."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_037",
+      "domain": "business",
+      "level": "A2",
+      "fr": "réduire, couper",
+      "en": "cut",
+      "ipa": "kʌt",
+      "notes": "cut-cut-cut (invariable au passé).",
+      "examples": [
+        {
+          "fr": "Ils ont réduit les coûts de 10 %.",
+          "en": "They cut costs by 10%."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_038",
+      "domain": "business",
+      "level": "A2",
+      "fr": "réduire",
+      "en": "reduce",
+      "ipa": "rɪˈdjuːs",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Nous avons réduit la provision.",
+          "en": "We reduced the provision."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_039",
+      "domain": "business",
+      "level": "B1",
+      "fr": "étendre, développer, se développer",
+      "en": "expand",
+      "ipa": "ɪkˈspænd",
+      "notes": "Nom : « expansion ».",
+      "examples": [
+        {
+          "fr": "Le groupe s'est développé à l'étranger.",
+          "en": "The group expanded abroad."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_040",
+      "domain": "business",
+      "level": "B2",
+      "fr": "réduire, resserrer (un écart)",
+      "en": "narrow",
+      "ipa": "ˈnærəʊ",
+      "notes": "Contraire : « widen ».",
+      "examples": [
+        {
+          "fr": "L'écart s'est resserré au second semestre.",
+          "en": "The gap narrowed in the second half."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_041",
+      "domain": "business",
+      "level": "B2",
+      "fr": "élargir, creuser (un écart)",
+      "en": "widen",
+      "ipa": "ˈwaɪdn",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Le déficit s'est creusé.",
+          "en": "The deficit widened."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_042",
+      "domain": "business",
+      "level": "B2",
+      "fr": "compenser",
+      "en": "offset",
+      "ipa": "ˈɒfset",
+      "notes": "offset-offset-offset. Très utilisé en compta : compenser un poste par un autre.",
+      "examples": [
+        {
+          "fr": "Les gains ont compensé les pertes.",
+          "en": "Gains offset the losses."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_043",
+      "domain": "business",
+      "level": "B1",
+      "fr": "dépasser, excéder",
+      "en": "exceed",
+      "ipa": "ɪkˈsiːd",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les coûts ont dépassé le budget.",
+          "en": "Costs exceeded the budget."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_044",
+      "domain": "business",
+      "level": "B2",
+      "fr": "être à la traîne, accuser un retard",
+      "en": "lag",
+      "ipa": "læɡ",
+      "notes": "« lag behind » = être en retard par rapport à.",
+      "examples": [
+        {
+          "fr": "Les ventes ont accusé du retard sur les prévisions.",
+          "en": "Sales lagged behind forecasts."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_045",
+      "domain": "business",
+      "level": "B2",
+      "fr": "croître plus vite que, distancer",
+      "en": "outpace",
+      "ipa": "aʊtˈpeɪs",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Le chiffre d'affaires a progressé plus vite que les coûts.",
+          "en": "Revenue outpaced costs."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_046",
+      "domain": "business",
+      "level": "B1",
+      "fr": "significativement, nettement",
+      "en": "significantly",
+      "ipa": "sɪɡˈnɪfɪkəntli",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les coûts ont nettement augmenté.",
+          "en": "Costs rose significantly."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_047",
+      "domain": "business",
+      "level": "B1",
+      "fr": "régulièrement, de façon constante",
+      "en": "steadily",
+      "ipa": "ˈstedɪli",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Le chiffre d'affaires a progressé régulièrement.",
+          "en": "Revenue grew steadily."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_048",
+      "domain": "business",
+      "level": "B1",
+      "fr": "progressivement",
+      "en": "gradually",
+      "ipa": "ˈɡrædʒuəli",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les marges se sont améliorées progressivement.",
+          "en": "Margins improved gradually."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_049",
+      "domain": "business",
+      "level": "B2",
+      "fr": "spectaculairement, radicalement",
+      "en": "dramatically",
+      "ipa": "drəˈmætɪkli",
+      "notes": "Faux-ami : « dramatically » = de façon spectaculaire/forte, pas « dramatiquement ».",
+      "examples": [
+        {
+          "fr": "La demande a chuté de façon spectaculaire.",
+          "en": "Demand dropped dramatically."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_050",
+      "domain": "business",
+      "level": "B2",
+      "fr": "légèrement, à la marge",
+      "en": "marginally",
+      "ipa": "ˈmɑːdʒɪnəli",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Le bénéfice a légèrement reculé.",
+          "en": "Profit fell marginally."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_051",
+      "domain": "business",
+      "level": "B2",
+      "fr": "considérablement",
+      "en": "substantially",
+      "ipa": "səbˈstænʃəli",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "La trésorerie s'est considérablement améliorée.",
+          "en": "Cash improved substantially."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_052",
+      "domain": "business",
+      "level": "A2",
+      "fr": "légèrement",
+      "en": "slightly",
+      "ipa": "ˈslaɪtli",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les ventes ont légèrement augmenté.",
+          "en": "Sales rose slightly."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_053",
+      "domain": "business",
+      "level": "B1",
+      "fr": "fortement, brusquement",
+      "en": "sharply",
+      "ipa": "ˈʃɑːpli",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les prix ont chuté brusquement.",
+          "en": "Prices fell sharply."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_054",
+      "domain": "business",
+      "level": "A2",
+      "fr": "croissance",
+      "en": "growth",
+      "ipa": "ɡrəʊθ",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "La croissance organique a atteint 6 %.",
+          "en": "Organic growth reached 6%."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_055",
+      "domain": "business",
+      "level": "B2",
+      "fr": "ralentissement, repli (conjoncturel)",
+      "en": "downturn",
+      "ipa": "ˈdaʊntɜːn",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Le secteur a connu un net ralentissement.",
+          "en": "The sector faced a sharp downturn."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_056",
+      "domain": "business",
+      "level": "B2",
+      "fr": "reprise, redressement",
+      "en": "upturn",
+      "ipa": "ˈʌptɜːn",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Une reprise est attendue l'an prochain.",
+          "en": "An upturn is expected next year."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_057",
+      "domain": "business",
+      "level": "B1",
+      "fr": "ralentissement",
+      "en": "slowdown",
+      "ipa": "ˈsləʊdaʊn",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Un ralentissement a touché la consommation.",
+          "en": "A slowdown hit consumer spending."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_058",
+      "domain": "business",
+      "level": "B2",
+      "fr": "rebond, reprise",
+      "en": "rebound",
+      "ipa": "ˈriːbaʊnd",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les résultats ont montré un net rebond.",
+          "en": "Earnings showed a strong rebound."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_059",
+      "domain": "business",
+      "level": "A2",
+      "fr": "tendance",
+      "en": "trend",
+      "ipa": "trend",
+      "notes": "« upward/downward trend » = tendance à la hausse/baisse.",
+      "examples": [
+        {
+          "fr": "La tendance générale est à la hausse.",
+          "en": "The overall trend is upward."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_060",
+      "domain": "business",
+      "level": "B2",
+      "fr": "pic, forte hausse soudaine",
+      "en": "spike",
+      "ipa": "spaɪk",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Il y a eu un pic de demande.",
+          "en": "There was a spike in demand."
+        }
+      ]
+    },
+    {
+      "id": "en_v_chg_061",
+      "domain": "business",
+      "level": "B2",
+      "fr": "variation, fluctuation (forte)",
+      "en": "swing",
+      "ipa": "swɪŋ",
+      "notes": "",
+      "examples": [
+        {
+          "fr": "Les fortes variations de change ont pesé sur les marges.",
+          "en": "Currency swings hurt margins."
+        }
+      ]
     }
   ],
   "phrases": [

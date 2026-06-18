@@ -1798,6 +1798,176 @@ function MeetingSection({ audio, setAudio }) {
   );
 }
 
+/* ════════ TOEIC — cours (7 parties, scoring, stratégies) + vocabulaire thématique ════════ */
+function ToeicPartCard({ p }) {
+  const ans = (p.example && p.example.answer) || "";
+  return (
+    <div className="bg-white rounded-xl border border-slate-200 p-4">
+      <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+        <span className="text-[12px] font-bold px-2 py-0.5 rounded-md bg-rose-50 text-rose-600 border border-rose-200">{p.icon} {p.part}</span>
+        <span className="font-bold text-[15px] text-slate-800">{p.title_fr}</span>
+        <span className="text-[11px] text-slate-400 italic">{p.title_en}</span>
+        <span className="text-[11px] text-indigo-500 font-semibold bg-indigo-50 rounded-full px-2 py-0.5 ml-auto">{p.count}</span>
+      </div>
+      <p className="text-[13px] text-slate-600 leading-snug mb-2">{p.what}</p>
+      {(p.tips || []).length > 0 && (
+        <ul className="space-y-1 mb-1">
+          {p.tips.map((t, i) => <li key={i} className="text-[12.5px] text-slate-600 flex gap-1.5 leading-snug"><span className="text-rose-400 shrink-0">▸</span><span>{t}</span></li>)}
+        </ul>
+      )}
+      {p.example && (
+        <div className="mt-2 rounded-lg bg-slate-50 border border-slate-100 px-3 py-2.5">
+          <div className="text-[11px] uppercase tracking-wide text-slate-400 mb-1">Exemple</div>
+          <div className="text-[13px] text-slate-700 font-medium mb-1.5">{p.example.q}</div>
+          <div className="space-y-1">
+            {(p.example.options || []).map((o, i) => {
+              const ok = ans && o.replace(/[^A-D]/, "").charAt(0) === ans || o.startsWith("(" + ans + ")");
+              return <div key={i} className={"text-[13px] px-2 py-1 rounded-md " + (ok ? "bg-emerald-100 text-emerald-800 font-semibold" : "text-slate-600")}>{o}{ok ? " ✓" : ""}</div>;
+            })}
+          </div>
+          {p.example.why && <div className="text-[12px] text-indigo-600 mt-1.5 leading-snug">💡 {p.example.why}</div>}
+        </div>
+      )}
+    </div>
+  );
+}
+function ToeicSection({ audio, setAudio }) {
+  const T = E_DATA.toeic || {};
+  const [view, setView] = useState("test");   // test | vocab
+  const themes = T.themes || [];
+  const [th, setTh] = useState("");
+  const [q, setQ] = useState("");
+  const [hideFr, setHideFr] = useState(false);
+  const [revealed, setRevealed] = useState(() => new Set());
+
+  const parts = T.parts || [];
+  const listening = parts.filter((p) => p.section === "listening");
+  const reading = parts.filter((p) => p.section === "reading");
+  const allWords = themes.reduce((a, t) => a + (t.words || []).length, 0);
+
+  const ql = q.trim().toLowerCase();
+  const matchW = (w) => !ql || ((w.en || "") + " " + (w.fr || "") + " " + (w.note || "")).toLowerCase().includes(ql);
+  const shownThemes = themes
+    .filter((t) => !th || t.id === th)
+    .map((t) => ({ ...t, words: (t.words || []).filter(matchW) }))
+    .filter((t) => t.words.length);
+  const totalShown = shownThemes.reduce((a, t) => a + t.words.length, 0);
+  const toggleReveal = (k) => { if (!hideFr) return; setRevealed((prev) => { const n = new Set(prev); n.has(k) ? n.delete(k) : n.add(k); return n; }); };
+
+  const vBtn = (id, label) => (
+    <button onClick={() => setView(id)} className={"px-3 py-1.5 rounded-lg text-[13px] font-semibold border transition-colors " + (view === id ? "bg-rose-600 text-white border-rose-600" : "bg-white text-slate-600 border-slate-200 hover:border-rose-300")}>{label}</button>
+  );
+  const chip = (active) => "text-[12px] font-semibold px-2.5 py-1 rounded-lg border transition-colors " + (active ? "bg-rose-600 text-white border-transparent" : "bg-white text-slate-600 border-slate-200 hover:border-rose-300");
+
+  if (!parts.length && !themes.length) return <div className="text-center text-sm text-slate-400 py-12">Contenu TOEIC indisponible.</div>;
+
+  return (
+    <div>
+      <div className="rounded-2xl bg-gradient-to-r from-rose-600 to-orange-600 text-white p-4 mb-4">
+        <h2 className="text-lg font-bold">🎓 TOEIC — préparation</h2>
+        <p className="text-[13px] text-rose-50 mt-0.5">{T.meta && T.meta.intro}</p>
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        {vBtn("test", "📖 Le test & stratégies")}
+        {vBtn("vocab", "📚 Vocabulaire (" + allWords + ")")}
+      </div>
+
+      {view === "test" && (
+        <div>
+          {T.overview && (
+            <div className="bg-white rounded-xl border border-slate-200 p-4 mb-4">
+              <p className="text-[13px] text-slate-600 leading-relaxed mb-3">{T.overview.blurb}</p>
+              <div className="grid sm:grid-cols-2 gap-2">
+                {(T.overview.facts || []).map((f, i) => (
+                  <div key={i} className="flex gap-2 text-[12.5px]"><span className="font-semibold text-slate-700 min-w-[78px]">{f.k}</span><span className="text-slate-500">{f.v}</span></div>
+                ))}
+              </div>
+            </div>
+          )}
+          <div className="flex items-center gap-2 mb-2"><span className="text-[13px] font-bold text-blue-700">🎧 Listening</span><span className="text-[11px] text-slate-400">100 questions · ~45 min</span><span className="flex-1 h-px bg-slate-200" /></div>
+          <div className="grid md:grid-cols-2 gap-3 mb-4">{listening.map((p, i) => <ToeicPartCard key={i} p={p} />)}</div>
+          <div className="flex items-center gap-2 mb-2"><span className="text-[13px] font-bold text-emerald-700">📖 Reading</span><span className="text-[11px] text-slate-400">100 questions · 75 min</span><span className="flex-1 h-px bg-slate-200" /></div>
+          <div className="grid md:grid-cols-2 gap-3 mb-4">{reading.map((p, i) => <ToeicPartCard key={i} p={p} />)}</div>
+
+          {T.scoring && (
+            <div className="bg-white rounded-xl border border-slate-200 p-4 mb-4">
+              <div className="text-[14px] font-bold text-slate-800 mb-1.5">🎯 Score & niveaux</div>
+              <p className="text-[12.5px] text-slate-600 leading-snug mb-2.5">{T.scoring.blurb}</p>
+              <div className="space-y-1.5 mb-2.5">
+                {(T.scoring.bands || []).map((b, i) => (
+                  <div key={i} className="flex items-center gap-2 text-[12.5px]">
+                    <span className="font-bold text-rose-600 min-w-[88px]">{b.score}</span>
+                    <span className="text-[11px] font-bold px-1.5 py-0.5 rounded border border-slate-300 text-slate-500 min-w-[34px] text-center">{b.cefr}</span>
+                    <span className="text-slate-500">{b.desc}</span>
+                  </div>
+                ))}
+              </div>
+              {(T.scoring.tips || []).map((t, i) => <div key={i} className="text-[12px] text-slate-500 flex gap-1.5 leading-snug"><span className="text-rose-400">▸</span><span>{t}</span></div>)}
+            </div>
+          )}
+
+          <div className="text-[14px] font-bold text-slate-800 mb-2">🧭 Stratégies qui font gagner des points</div>
+          <div className="grid md:grid-cols-2 gap-3">
+            {(T.strategy || []).map((s, i) => (
+              <div key={i} className="bg-white rounded-xl border border-slate-200 p-4">
+                <div className="text-[14px] font-bold text-slate-800 mb-1">{s.icon} {s.title}</div>
+                <div className="text-[12.5px] text-slate-600 leading-relaxed">{s.text}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {view === "vocab" && (
+        <div>
+          <div className="sticky top-[49px] z-[5] bg-slate-100/95 backdrop-blur py-2 rounded-xl mb-3 space-y-2">
+            <div className="flex items-center gap-2 border-b border-slate-200 pb-2">
+              <VoiceMini audio={audio} setAudio={setAudio} />
+            </div>
+            <div className="flex items-center gap-2">
+              <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher un mot TOEIC (EN ou FR)…" className="flex-1 bg-white border border-slate-200 rounded-lg px-3 py-2 text-[13px] outline-none focus:border-rose-400" />
+              <button onClick={() => { setHideFr(!hideFr); setRevealed(new Set()); }} className={chip(hideFr)}>🙈 Cacher FR</button>
+            </div>
+            <div className="flex flex-wrap gap-1.5 items-center">
+              <button onClick={() => setTh("")} className={chip(!th)}>Tous ({allWords})</button>
+              {themes.map((t) => <button key={t.id} onClick={() => setTh(th === t.id ? "" : t.id)} className={chip(th === t.id)} title={t.label_en}>{t.icon} {t.label_fr}</button>)}
+            </div>
+            <div className="text-[11px] text-slate-500 font-medium">{totalShown} mot{totalShown > 1 ? "s" : ""}{hideFr ? " · clique une carte pour révéler" : ""}</div>
+          </div>
+          {shownThemes.length === 0 ? (
+            <div className="rounded-xl border-2 border-dashed border-slate-200 bg-white p-8 text-center text-slate-400 text-sm">Aucun mot pour ce filtre.</div>
+          ) : shownThemes.map((t) => (
+            <div key={t.id} className="mb-5">
+              <div className="flex items-baseline gap-2 mb-1.5">
+                <span className="font-bold text-[15px] text-slate-800">{t.icon} {t.label_fr}</span>
+                <span className="text-[11px] text-slate-400 italic">{t.label_en}</span>
+                <span className="text-[11px] text-rose-500 font-bold bg-rose-50 rounded-full px-2 py-0.5">{t.words.length}</span>
+              </div>
+              <div className="grid md:grid-cols-2 gap-2">
+                {t.words.map((w, i) => {
+                  const key = t.id + i;
+                  const masked = hideFr && !revealed.has(key);
+                  return (
+                    <div key={key} onClick={() => toggleReveal(key)} className={"bg-white rounded-xl border border-slate-200 px-3.5 py-2.5 " + (hideFr ? "cursor-pointer hover:border-rose-300" : "")}>
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="font-semibold text-[14px] text-slate-800 leading-snug">{w.en}</div>
+                        <SpeakBtn text={w.en} title="Écouter" sm />
+                      </div>
+                      <div className={"text-[12.5px] text-slate-500 mt-0.5 " + (masked ? "blur-[5px] select-none" : "")}>{w.fr}</div>
+                      {w.note && <div className="text-[11px] text-rose-500 mt-1 leading-snug">💡 {w.note}</div>}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 /* ── Mini-Anki sur « Mes notes » : flip 3D + file « à revoir / acquis » ── */
 function NotesFlashcards({ items, audio, onExit }) {
   const [queue, setQueue] = useState(() => shuffle(items.map((_, i) => i)));
@@ -1969,7 +2139,7 @@ function MyNotesSection({ audio }) {
 
 /* ════════ App ════════ */
 function EnglishApp() {
-  const VALID = ["essentials", "mynotes", "liste", "meeting", "vocab", "phrases", "fs", "constructor", "dictation", "conversations", "videos", "writing"];
+  const VALID = ["essentials", "mynotes", "liste", "meeting", "toeic", "vocab", "phrases", "fs", "constructor", "dictation", "conversations", "videos", "writing"];
   const hashSection = (typeof location !== "undefined" && location.hash || "").replace("#", "");
   const initial = VALID.includes(hashSection) ? hashSection : (() => { try { return localStorage.getItem(LS_SUBTAB) || "vocab"; } catch (e) { return "vocab"; } })();
   const [section, setSectionRaw] = useState(VALID.includes(initial) ? initial : "vocab");
@@ -2063,6 +2233,7 @@ function EnglishApp() {
     { id: "mynotes", icon: "📝", label: "Mes notes" },
     { id: "liste", icon: "⚡", label: "Liste express" },
     { id: "meeting", icon: "🗓️", label: "Meeting" },
+    { id: "toeic", icon: "🎓", label: "TOEIC" },
     { id: "vocab", icon: "📚", label: "Vocabulaire" },
     { id: "phrases", icon: "💬", label: "Phrases & expressions" },
     { id: "fs", icon: "📊", label: "États financiers" },
@@ -2105,7 +2276,7 @@ function EnglishApp() {
       </nav>
 
       <main className="max-w-5xl mx-auto px-4 py-6">
-        {section !== "liste" && section !== "meeting" && (
+        {section !== "liste" && section !== "meeting" && section !== "toeic" && (
           <div className="sticky top-[49px] z-[8] -mx-4 px-4 py-2 bg-slate-100/95 backdrop-blur border-b border-slate-200 mb-4">
             <VoiceMini audio={audio} setAudio={setAudio} />
           </div>
@@ -2114,6 +2285,7 @@ function EnglishApp() {
         {section === "mynotes" && <MyNotesSection audio={audio} />}
         {section === "liste" && <QuickListSection audio={audio} setAudio={setAudio} />}
         {section === "meeting" && <MeetingSection audio={audio} setAudio={setAudio} />}
+        {section === "toeic" && <ToeicSection audio={audio} setAudio={setAudio} />}
         {section === "vocab" && (
           <VocabSection progress={progress} onRate={onRate}
             filters={allFilters.vocab} setFilters={setVocabFilters}
