@@ -1498,52 +1498,21 @@ function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlan
   Object.keys(data).forEach((k) => { if (k[0] !== "_" && k !== "annuaire_cours" && AUDIT_ORDER.indexOf(k) < 0) keys.push(k); });
   const hasBook = book && (book.controle_ordinaire || book.controle_restreint);
   const bookChapters = hasBook ? ["controle_ordinaire", "controle_restreint"].reduce((a, vk) => a + (((book[vk] || {}).parties || []).reduce((b, p) => b + (p.fiches || []).filter(f => f.fiche).length, 0)), 0) : 0;
+  const nbTests = (typeof window !== "undefined" && window.__TESTS__ && (window.__TESTS__.tests || []).length) || 0;
+  const flagships = [
+    { show: true, onClick: onRevision, icon: "📋", chip: "bg-violet-50 text-violet-700 border-violet-100", label: "Révision — méga-fiche des 47 ISA", desc: "Toutes les normes ISA condensées : essentiel, repères, pièges, mnémo · navigable et PDF." },
+    { show: hasBook, onClick: onBook, icon: "📚", chip: "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-100", label: "Base de cours — Manuel suisse d'audit", desc: `Le cours chapitre par chapitre · ${bookChapters} chapitres (MSA contrôle ordinaire + NCR restreint).` },
+    { show: hasTests, onClick: onTests, icon: "🧪", chip: "bg-teal-50 text-teal-700 border-teal-100", label: "Catalogue des tests d'audit", desc: `${nbTests} tests (pourquoi/comment/assertion) · cas interactifs · mode entraînement · exercice journal client.` },
+    { show: hasMetier, onClick: onMetier, icon: "🧑‍💼", chip: "bg-indigo-50 text-indigo-700 border-indigo-100", label: "Une journée d'auditeur", desc: "La méthode pas à pas : risque → assertion → test, matérialité, sondage, grand livre, cas Wirecard." },
+    { show: hasNestle, onClick: onNestle, icon: "🏭", chip: "bg-amber-50 text-amber-700 border-amber-100", label: "Nestlé — états financiers réels commentés", desc: "Les 5 états + 18 notes des comptes consolidés 2025, commentés poste par poste (cas réel)." },
+    { show: hasPlan, onClick: onPlanComptable, icon: "📊", chip: "bg-emerald-50 text-emerald-700 border-emerald-100", label: "Plans comptables (Suisse PME / France PCG)", desc: "Plan suisse PME & plan français, classe par classe ; comptes reliés au bilan et au compte de résultat." },
+  ].filter((f) => f.show);
   return (
     <div className="space-y-5">
       <div className="rounded-2xl bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white p-5 shadow">
         <h2 className="text-xl font-bold">Module Audit — NAS / ISA</h2>
         <p className="text-sm text-violet-100 mt-1">Les 47 normes ISA en cours complets, le cadre légal suisse, les cycles, les QCM et tous les outils du réviseur.</p>
       </div>
-      <button onClick={onRevision} className="w-full text-left rounded-2xl border-2 border-violet-200 bg-gradient-to-r from-violet-50 to-fuchsia-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
-        <span className="text-4xl">📋</span>
-        <span className="flex-1"><span className="block font-bold text-base text-violet-800">Révision — la méga-fiche des 47 normes ISA</span><span className="block text-sm text-slate-600 mt-0.5">Toutes les normes condensées en une seule fiche : l'essentiel, repères, synthèse, pièges d'examen, mnémo. Navigable et téléchargeable en PDF.</span><span className="block text-xs text-violet-500 mt-1 font-medium">47 normes · 1 document · révision express</span></span>
-        <ArrowRight size={20} className="text-violet-400 shrink-0" />
-      </button>
-      {hasPlan && (
-        <button onClick={onPlanComptable} className="w-full text-left rounded-2xl border-2 border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
-          <span className="text-4xl">📊</span>
-          <span className="flex-1"><span className="block font-bold text-base text-emerald-800">Plans comptables — Suisse (PME) & France (PCG)</span><span className="block text-sm text-slate-600 mt-0.5">Découvre le plan comptable suisse PME et le plan français, classe par classe. Chaque compte est relié à sa ligne du bilan et du compte de résultat.</span><span className="block text-xs text-emerald-600 mt-1 font-medium">2 plans interactifs · comptes ↔ états financiers · autres plans suisses</span></span>
-          <ArrowRight size={20} className="text-emerald-400 shrink-0" />
-        </button>
-      )}
-      {hasTests && (
-        <button onClick={onTests} className="w-full text-left rounded-2xl border-2 border-teal-200 bg-gradient-to-r from-teal-50 to-cyan-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
-          <span className="text-4xl">🧪</span>
-          <span className="flex-1"><span className="block font-bold text-base text-teal-800">Catalogue des tests d'audit</span><span className="block text-sm text-slate-600 mt-0.5">Tous les tests d'audit, cycle par cycle : pourquoi (le risque), comment, quelle assertion — avec un cas interactif (QCM) par test et un niveau junior/senior/manager. Les 8 techniques ISA 500 + {(window.__TESTS__.tests || []).length} tests, filtrables par assertion, cycle et niveau.</span><span className="block text-xs text-teal-600 mt-1 font-medium">Référence · {(window.__TESTS__.tests || []).length} tests · cas interactifs · junior/senior/manager</span></span>
-          <ArrowRight size={20} className="text-teal-400 shrink-0" />
-        </button>
-      )}
-      {hasMetier && (
-        <button onClick={onMetier} className="w-full text-left rounded-2xl border-2 border-indigo-200 bg-gradient-to-r from-indigo-50 to-violet-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
-          <span className="text-4xl">🧑‍💼</span>
-          <span className="flex-1"><span className="block font-bold text-base text-indigo-800">Une journée d'auditeur — la méthode pas à pas</span><span className="block text-sm text-slate-600 mt-0.5">Ce que tu fais vraiment au quotidien : risque → assertion → test, matérialité, sondage, et le fil rouge du grand livre où l'on retrace les montants jusqu'à la facture.</span><span className="block text-xs text-indigo-500 mt-1 font-medium">10 sections · exemples chiffrés · écritures · cas Wirecard</span></span>
-          <ArrowRight size={20} className="text-indigo-400 shrink-0" />
-        </button>
-      )}
-      {hasNestle && (
-        <button onClick={onNestle} className="w-full text-left rounded-2xl border-2 border-amber-200 bg-gradient-to-r from-amber-50 to-stone-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
-          <span className="text-4xl">🏭</span>
-          <span className="flex-1"><span className="block font-bold text-base text-amber-800">Nestlé — états financiers réels commentés</span><span className="block text-sm text-slate-600 mt-0.5">Les vrais comptes consolidés 2025, reconstruits ligne par ligne. Clique un poste : à quoi il correspond, les opérations derrière, la norme IFRS et l'œil de l'auditeur.</span><span className="block text-xs text-amber-600 mt-1 font-medium">Cas réel · les 5 états complets : résultat · bilan · flux · résultat global · capitaux propres</span></span>
-          <ArrowRight size={20} className="text-amber-400 shrink-0" />
-        </button>
-      )}
-      {hasBook && (
-        <button onClick={onBook} className="w-full text-left rounded-2xl border-2 border-violet-200 bg-gradient-to-r from-violet-50 to-fuchsia-50 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4">
-          <span className="text-4xl">📚</span>
-          <span className="flex-1"><span className="block font-bold text-base text-violet-800">Base de cours — Manuel suisse d'audit</span><span className="block text-sm text-slate-600 mt-0.5">Le cours complet chapitre par chapitre : MSA (contrôle ordinaire) + NCR (contrôle restreint).</span><span className="block text-xs text-violet-500 mt-1 font-medium">{bookChapters} chapitres · format livre</span></span>
-          <ArrowRight size={20} className="text-violet-400 shrink-0" />
-        </button>
-      )}
       <div className="grid sm:grid-cols-3 gap-2.5">
         {[{ m: "seuils", ic: "🎯", t: "Seuils & Exercices", d: "Tous les seuils (ordinaire/restreint, matérialité) + exercices pas-à-pas." },
           { m: "canvas", ic: "🏢", t: "Canvas Perso", d: "Crée et gère tes propres engagements d'audit (desktop)." },
@@ -1554,6 +1523,19 @@ function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlan
           </button>
         ))}
       </div>
+      {flagships.length > 0 && (
+        <div>
+          <div className="flex items-center gap-2 mb-2.5 mt-1"><span className="text-base">📚</span><span className="text-[11px] font-bold uppercase tracking-widest text-slate-400">Cours, cas pratiques & références</span><span className="flex-1 h-px bg-slate-200"></span></div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+            {flagships.map((f, i) => (
+              <button key={i} onClick={f.onClick} className="text-left bg-white border border-slate-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-start gap-3">
+                <span className={`w-9 h-9 grid place-items-center rounded-lg border text-base shrink-0 ${f.chip}`}>{f.icon}</span>
+                <span className="min-w-0"><span className="block font-bold text-sm text-slate-800 leading-tight">{f.label}</span><span className="block text-xs text-slate-500 leading-snug mt-0.5">{f.desc}</span></span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
       {(() => {
         const GROUPS = [
           { id: "apprendre", label: "Apprendre", icon: "📖", keys: ["annuaire", "nas", "cadre_legal", "cycles", "procedures_assertions"] },
@@ -3810,6 +3792,135 @@ function TrainingMode({ pool, catLabel, hard, onExit, onProgress }) {
   );
 }
 
+/* ════════ EXERCICE — RETRACER LE JOURNAL CLIENT (type export ERP) ════════ */
+function JournalQCM({ exo }) {
+  const [picked, setPicked] = useState(null);
+  const [sol, setSol] = useState(false);
+  const reveal = picked !== null;
+  const opts = exo.options || [];
+  const sn = SENIO[exo.niveau];
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-3.5">
+      <div className="flex items-start gap-2 mb-1.5">
+        <h4 className="font-bold text-[14px] text-slate-800 leading-tight flex-1">{exo.titre}</h4>
+        {sn && <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded border shrink-0 mt-0.5 ${sn.c}`}>{sn.label}</span>}
+      </div>
+      <div className="text-[13px] text-slate-700 leading-relaxed mb-1.5 bg-slate-50 rounded-lg p-2.5"><MdInline text={exo.contexte || ""} /></div>
+      <div className="text-[13.5px] font-semibold text-slate-800 mb-1"><MdInline text={exo.question || ""} /></div>
+      {exo.indice && <div className="text-[12px] text-teal-700 bg-teal-50/60 rounded px-2 py-1 mb-2">💡 {exo.indice}</div>}
+      <div className="space-y-1.5">
+        {opts.map((o, i) => {
+          const chosen = picked === i;
+          let cls = "bg-white border-slate-200 hover:border-teal-400";
+          if (reveal && o.ok) cls = "bg-emerald-50 border-emerald-300";
+          else if (reveal && chosen) cls = "bg-rose-50 border-rose-300";
+          else if (reveal) cls = "bg-white border-slate-100 opacity-60";
+          return (
+            <button key={i} onClick={() => { if (!reveal) setPicked(i); }} disabled={reveal} className={`w-full text-left rounded-lg border px-2.5 py-2 text-[13px] transition-colors ${cls}`}>
+              <div className="flex items-start gap-1.5"><span className="shrink-0">{reveal ? (o.ok ? "✅" : chosen ? "❌" : "▫️") : "▫️"}</span>
+                <span className="min-w-0"><span className={reveal && o.ok ? "font-semibold text-emerald-800" : ""}>{o.t}</span>
+                  {reveal && (chosen || o.ok) && <span className="block text-[12px] text-slate-600 mt-0.5 leading-snug">{o.fb}</span>}</span></div>
+            </button>
+          );
+        })}
+      </div>
+      {reveal && (
+        <div className="mt-2">
+          <button onClick={() => setSol((s) => !s)} className="text-[12px] font-bold text-indigo-700 hover:text-indigo-800">{sol ? "▾" : "▸"} Solution détaillée</button>
+          {sol && <div className="mt-1 text-[12.5px] text-slate-700 bg-indigo-50/50 border border-indigo-100 rounded-lg p-2.5 leading-relaxed"><MdInline text={exo.solution_texte || ""} /></div>}
+          <button onClick={() => { setPicked(null); setSol(false); }} className="ml-3 text-[11px] text-teal-600 font-semibold">↺ Réessayer</button>
+        </div>
+      )}
+    </div>
+  );
+}
+function JournalViewer({ lignes, journaux }) {
+  const [q, setQ] = useState("");
+  const [cpt, setCpt] = useState("");
+  const [jrn, setJrn] = useState("");
+  const [page, setPage] = useState(0);
+  const PER = 40;
+  const comptes = useMemo(() => { const m = {}; lignes.forEach((l) => { m[l.compte] = l.compte_lib; }); return Object.keys(m).map(Number).sort((a, b) => a - b).map((c) => [c, m[c]]); }, [lignes]);
+  const filtered = useMemo(() => lignes.filter((l) => {
+    if (cpt && String(l.compte) !== cpt) return false;
+    if (jrn && l.journal !== jrn) return false;
+    if (q) { const s = (l.texte + " " + l.tiers + " " + l.ref + " " + l.piece + " " + l.compte + " " + l.compte_lib).toLowerCase(); if (!s.includes(q.toLowerCase())) return false; }
+    return true;
+  }), [lignes, q, cpt, jrn]);
+  const td = filtered.reduce((a, l) => a + (l.debit || 0), 0);
+  const tc = filtered.reduce((a, l) => a + (l.credit || 0), 0);
+  const nf = (n) => n ? n.toLocaleString("fr-CH", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).replace(/ | /g, "'") : "";
+  const pages = Math.max(1, Math.ceil(filtered.length / PER));
+  const pg = Math.min(page, pages - 1);
+  const rows = filtered.slice(pg * PER, pg * PER + PER);
+  const reset = () => setPage(0);
+  return (
+    <div>
+      <div className="text-[13px] font-bold text-slate-700 mb-2 flex items-center gap-2"><FileText size={15} /> Journal comptable — {lignes.length.toLocaleString("fr-CH").replace(/ | /g, "'")} lignes</div>
+      <div className="flex flex-wrap gap-2 mb-2 items-center">
+        <div className="flex items-center gap-1.5 flex-1 min-w-[180px]"><Search size={14} className="text-slate-400" /><input value={q} onChange={(e) => { setQ(e.target.value); reset(); }} placeholder="Rechercher (texte, réf, tiers, pièce…)" className="flex-1 bg-white border border-slate-200 rounded-lg px-2.5 py-1.5 text-[12.5px] outline-none focus:border-teal-400" /></div>
+        <select value={cpt} onChange={(e) => { setCpt(e.target.value); reset(); }} className="bg-white border border-slate-200 rounded-lg px-2 py-1.5 text-[12px] text-slate-600 max-w-[200px]"><option value="">Tous les comptes</option>{comptes.map(([c, lib]) => <option key={c} value={c}>{c} — {lib}</option>)}</select>
+        <select value={jrn} onChange={(e) => { setJrn(e.target.value); reset(); }} className="bg-white border border-slate-200 rounded-lg px-2 py-1.5 text-[12px] text-slate-600"><option value="">Tous les journaux</option>{Object.keys(journaux || {}).map((k) => <option key={k} value={k}>{k} — {journaux[k]}</option>)}</select>
+        {(q || cpt || jrn) && <button onClick={() => { setQ(""); setCpt(""); setJrn(""); reset(); }} className="text-[11px] text-slate-500 hover:text-rose-600 font-semibold">Réinitialiser</button>}
+      </div>
+      <div className="rounded-lg border border-slate-200 overflow-x-auto">
+        <table className="w-full border-collapse text-[12px]">
+          <thead><tr className="bg-slate-100 border-b border-slate-300 text-[10.5px] uppercase tracking-wide text-slate-500">
+            <th className="px-2 py-1.5 text-left">Date</th><th className="px-2 py-1.5 text-left">Pièce</th><th className="px-2 py-1.5 text-left">Jrnl</th><th className="px-2 py-1.5 text-left">Compte</th><th className="px-2 py-1.5 text-left">Libellé</th><th className="px-2 py-1.5 text-left">Tiers</th><th className="px-2 py-1.5 text-left">Réf.</th><th className="px-2 py-1.5 text-right">Débit</th><th className="px-2 py-1.5 text-right">Crédit</th>
+          </tr></thead>
+          <tbody>{rows.map((l) => (
+            <tr key={l.id} className="border-b border-slate-100 hover:bg-amber-50/40">
+              <td className="px-2 py-1 whitespace-nowrap text-slate-500 tabular-nums">{l.date}</td>
+              <td className="px-2 py-1 whitespace-nowrap font-mono text-[11px] text-slate-600">{l.piece}</td>
+              <td className="px-2 py-1"><span className="text-[10px] font-bold px-1 py-0.5 rounded bg-slate-100 text-slate-500">{l.journal}</span></td>
+              <td className="px-2 py-1 font-mono tabular-nums text-slate-700">{l.compte}</td>
+              <td className="px-2 py-1 text-slate-700 min-w-[180px]">{l.texte}{l.tva ? <span className="ml-1 text-[10px] text-slate-400">[{l.tva}]</span> : ""}</td>
+              <td className="px-2 py-1 text-slate-500 whitespace-nowrap">{l.tiers}</td>
+              <td className="px-2 py-1 font-mono text-[11px] text-slate-500 whitespace-nowrap">{l.ref}</td>
+              <td className="px-2 py-1 text-right tabular-nums text-slate-800">{nf(l.debit)}</td>
+              <td className="px-2 py-1 text-right tabular-nums text-slate-800">{nf(l.credit)}</td>
+            </tr>
+          ))}</tbody>
+          <tfoot><tr className="bg-slate-900 text-white font-bold text-[11.5px]"><td className="px-2 py-1.5" colSpan={7}>Total ({filtered.length} lignes filtrées)</td><td className="px-2 py-1.5 text-right tabular-nums">{nf(td)}</td><td className="px-2 py-1.5 text-right tabular-nums">{nf(tc)}</td></tr></tfoot>
+        </table>
+      </div>
+      <div className="flex items-center justify-between mt-2 text-[12px] text-slate-500">
+        <button onClick={() => setPage(Math.max(0, pg - 1))} disabled={pg === 0} className="px-2.5 py-1 rounded-lg border border-slate-200 disabled:opacity-40 hover:border-teal-300">← Précédent</button>
+        <span className="font-semibold tabular-nums">Page {pg + 1} / {pages}</span>
+        <button onClick={() => setPage(Math.min(pages - 1, pg + 1))} disabled={pg >= pages - 1} className="px-2.5 py-1 rounded-lg border border-slate-200 disabled:opacity-40 hover:border-teal-300">Suivant →</button>
+      </div>
+    </div>
+  );
+}
+function JournalExercice({ onExit }) {
+  const data = (typeof window !== "undefined" && window.__JOURNAL__) || {};
+  const meta = data.meta || {};
+  const t = meta.totaux || {};
+  const nf = (n) => (n || n === 0) ? Number(n).toLocaleString("fr-CH", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).replace(/ | /g, "'") : "—";
+  return (
+    <div>
+      <button onClick={onExit} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Retour au catalogue</button>
+      <div className="rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-teal-900 text-white p-5 shadow mb-4">
+        <div className="text-[11px] font-semibold uppercase tracking-widest text-teal-300/80">Exercice · cas pratique sur pièces réelles</div>
+        <h2 className="text-2xl font-bold mt-1">📒 Retracer le journal — {meta.company}</h2>
+        <p className="text-sm text-slate-300 mt-0.5">{meta.activite} · exercice {meta.exercice} · {meta.referentiel}</p>
+        <p className="text-[13px] text-slate-300 leading-relaxed mt-3"><MdInline text={meta.intro || ""} /></p>
+        <div className="flex flex-wrap gap-2 mt-3 text-[11px]">
+          <span className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15">{(meta.nb_lignes || 0).toLocaleString("fr-CH").replace(/ | /g, "'")} lignes · {meta.nb_pieces} pièces</span>
+          <span className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15">Σ Débit = Σ Crédit = {nf(t.debit)}</span>
+          <span className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15">Solde clients {nf(t.solde_clients)}</span>
+        </div>
+      </div>
+      <div className="mb-5">
+        <div className="text-[12px] font-bold uppercase tracking-widest text-slate-400 mb-2">🎯 Cas de traçage — réponds, puis vérifie dans le journal ci-dessous</div>
+        <div className="grid lg:grid-cols-2 gap-2.5">{(data.exercices || []).map((e) => <JournalQCM key={e.id} exo={e} />)}</div>
+      </div>
+      <JournalViewer lignes={data.lignes || []} journaux={meta.journaux} />
+      <div className="mt-4 text-center text-[11px] text-slate-400">Journal fictif réaliste — entraînement au traçage d'écritures.</div>
+    </div>
+  );
+}
+
 function AuditTests({ onBack }) {
   const data = (typeof window !== "undefined" && window.__TESTS__) || {};
   const meta = data.meta || {};
@@ -3821,7 +3932,9 @@ function AuditTests({ onBack }) {
   const [senio, setSenio] = useState(null);
   const [q, setQ] = useState("");
   const [training, setTraining] = useState(null); // null | { pool, hard }
+  const [exercice, setExercice] = useState(false);
   const [progTick, setProgTick] = useState(0);
+  const hasJournal = typeof window !== "undefined" && window.__JOURNAL__ && (window.__JOURNAL__.lignes || []).length;
   const prog = loadTestProg();
   const mastered = prog.mastered || {};
   const masteredCount = tests.filter((t) => mastered[t.id]).length;
@@ -3847,12 +3960,14 @@ function AuditTests({ onBack }) {
         <p className="text-[13px] text-slate-300 leading-relaxed mt-3"><MdInline text={meta.intro || ""} /></p>
       </div>
 
+      {exercice ? <JournalExercice onExit={() => setExercice(false)} /> : (<>
       {/* Mode entraînement + progression */}
       <div className="flex flex-wrap items-center gap-2 mb-4">
         <button onClick={() => setTraining({ pool: (hasFilter ? filtered : tests).filter((t) => t.exo), hard: false })}
           className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-bold text-sm shadow hover:from-teal-700 hover:to-cyan-700 flex items-center gap-2">
           <GraduationCap size={16} /> Mode entraînement{hasFilter ? ` · ${filtered.filter((t) => t.exo).length} Q` : ""}
         </button>
+        {hasJournal && <button onClick={() => setExercice(true)} className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-slate-800 to-teal-800 text-white font-bold text-sm shadow hover:from-slate-900 hover:to-teal-900 flex items-center gap-2"><FileText size={16} /> Exercice — Journal client</button>}
         {tests.some((t) => t.exo2) && <button onClick={() => setTraining({ pool: (hasFilter ? filtered : tests).filter((t) => t.exo2), hard: true })} className="px-3 py-2.5 rounded-xl bg-rose-500 text-white font-bold text-sm shadow hover:bg-rose-600 flex items-center gap-1.5">🔥 Difficile</button>}
         <div className="ml-auto flex items-center gap-2">
           <div className="text-[11px] text-slate-500 font-semibold tabular-nums">{masteredCount}/{tests.length} maîtrisés</div>
@@ -3928,6 +4043,7 @@ function AuditTests({ onBack }) {
       ))}
       </>)}
       <div className="mt-4 text-center text-[11px] text-slate-400">Catalogue pédagogique — tests d'audit selon les normes ISA.</div>
+      </>)}
     </div>
   );
 }
