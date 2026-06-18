@@ -336,35 +336,47 @@ function VoiceMini({ audio, setAudio }) {
   const engine = hasEdge ? (audio.engine || "edge") : "system";
   const voices = englishVoices().slice().sort((a, b) => rankVoice(b, audio.voice) - rankVoice(a, audio.voice));
   const auto = bestVoice(audio.voice);
+  const hasNeural = voices.some((v) => GOOD_VOICE.test(v.name) || !v.localService);
   const selCls = "text-[12px] border border-slate-300 rounded-lg px-2 py-1 bg-white text-slate-700 max-w-[210px] focus:border-indigo-500 outline-none";
   const rBtn = (val, label) => (
     <button key={label} onClick={() => setAudio({ ...audio, rate: val })}
       className={"text-[11px] px-2 py-1 rounded-full border transition-colors " + (Math.abs((audio.rate || 0.95) - val) < 0.01 ? "bg-emerald-600 border-emerald-600 text-white" : "border-slate-300 text-slate-500 hover:text-slate-700")}>{label}</button>
   );
   return (
-    <div className="flex items-center gap-1.5 flex-wrap text-[11px] text-slate-500">
-      <span className="font-semibold text-slate-600">🔊 Voix</span>
-      {hasEdge && (
-        <span className="inline-flex rounded-lg border border-slate-200 overflow-hidden">
-          {[["edge", "✨ Neuronale"], ["system", "Système"]].map(([v, l]) => (
-            <button key={v} onClick={() => setAudio({ ...audio, engine: v })}
-              className={"px-2 py-1 font-semibold transition-colors " + (engine === v ? "bg-indigo-600 text-white" : "bg-white text-slate-500 hover:text-slate-700")}>{l}</button>
-          ))}
-        </span>
+    <div className="w-full">
+      <div className="flex items-center gap-1.5 flex-wrap text-[11px] text-slate-500">
+        <span className="font-semibold text-slate-600">🔊 Voix</span>
+        {hasEdge && (
+          <span className="inline-flex rounded-lg border border-slate-200 overflow-hidden">
+            {[["edge", "✨ Neuronale"], ["system", "Système"]].map(([v, l]) => (
+              <button key={v} onClick={() => setAudio({ ...audio, engine: v })}
+                className={"px-2 py-1 font-semibold transition-colors " + (engine === v ? "bg-indigo-600 text-white" : "bg-white text-slate-500 hover:text-slate-700")}>{l}</button>
+            ))}
+          </span>
+        )}
+        {engine === "edge" ? (
+          <select value={audio.edgeVoice || "en-GB-SoniaNeural"} onChange={(e) => setAudio({ ...audio, edgeVoice: e.target.value })} className={selCls}>
+            {EDGE_VOICES.map((v) => <option key={v.id} value={v.id}>{v.label}</option>)}
+          </select>
+        ) : (
+          <select value={audio.voiceName || "__auto__"} onChange={(e) => setAudio({ ...audio, voiceName: e.target.value === "__auto__" ? "" : e.target.value })} className={selCls}>
+            <option value="__auto__">⭐ Auto{auto ? " (" + voiceShortName(auto) + ")" : ""}</option>
+            {voices.map((v) => <option key={v.name} value={v.name}>{voiceFlag(v.lang)} {voiceShortName(v)}{GOOD_VOICE.test(v.name) || !v.localService ? " ✨" : ""}</option>)}
+          </select>
+        )}
+        <span className="flex gap-1">{rBtn(0.75, "0.75×")}{rBtn(0.95, "1×")}{rBtn(1.15, "1.15×")}</span>
+        <button onClick={() => speak("Hello, this is the selected voice.")}
+          className="text-[11px] px-2 py-1 rounded-full border border-indigo-200 text-indigo-600 hover:bg-indigo-50">▶ Tester</button>
+        <label className="inline-flex items-center gap-1.5 ml-auto cursor-pointer">
+          <input type="checkbox" checked={!!audio.autoplay} onChange={() => setAudio({ ...audio, autoplay: !audio.autoplay })} />
+          <span>Auto-play</span>
+        </label>
+      </div>
+      {engine === "system" && !hasNeural && (
+        <div className="text-[10.5px] text-amber-700 mt-1 leading-snug">
+          💡 {hasEdge ? "Choisis « ✨ Neuronale » pour des voix plus naturelles." : "Voix « Desktop » basiques uniquement. Pour des voix naturelles dans le navigateur, l'app desktop propose les voix neuronales."}
+        </div>
       )}
-      {engine === "edge" ? (
-        <select value={audio.edgeVoice || "en-GB-SoniaNeural"} onChange={(e) => setAudio({ ...audio, edgeVoice: e.target.value })} className={selCls}>
-          {EDGE_VOICES.map((v) => <option key={v.id} value={v.id}>{v.label}</option>)}
-        </select>
-      ) : (
-        <select value={audio.voiceName || "__auto__"} onChange={(e) => setAudio({ ...audio, voiceName: e.target.value === "__auto__" ? "" : e.target.value })} className={selCls}>
-          <option value="__auto__">⭐ Auto{auto ? " (" + voiceShortName(auto) + ")" : ""}</option>
-          {voices.map((v) => <option key={v.name} value={v.name}>{voiceFlag(v.lang)} {voiceShortName(v)}{GOOD_VOICE.test(v.name) || !v.localService ? " ✨" : ""}</option>)}
-        </select>
-      )}
-      <span className="flex gap-1">{rBtn(0.75, "0.75×")}{rBtn(0.95, "1×")}{rBtn(1.15, "1.15×")}</span>
-      <button onClick={() => speak("Hello, this is the selected voice.")}
-        className="text-[11px] px-2 py-1 rounded-full border border-indigo-200 text-indigo-600 hover:bg-indigo-50">▶ Tester</button>
     </div>
   );
 }
@@ -1786,14 +1798,128 @@ function MeetingSection({ audio, setAudio }) {
   );
 }
 
-function MyNotesSection() {
+/* ── Mini-Anki sur « Mes notes » : flip 3D + file « à revoir / acquis » ── */
+function NotesFlashcards({ items, audio, onExit }) {
+  const [queue, setQueue] = useState(() => shuffle(items.map((_, i) => i)));
+  const [flipped, setFlipped] = useState(false);
+  const [known, setKnown] = useState(0);
+  const [seen, setSeen] = useState(0);
+  const [dir, setDir] = useState("fr2en");   // fr2en (prod.) | en2fr (compréhension)
+  const total = items.length;
+  const card = queue.length ? items[queue[0]] : null;
+
+  const flip = () => setFlipped((f) => {
+    const nf = !f;
+    if (nf && audio && audio.autoplay && card) setTimeout(() => speak(card.en), 200);
+    return nf;
+  });
+  const grade = (wasKnown) => {
+    if (!card) return;
+    setSeen((s) => s + 1);
+    setFlipped(false);
+    setQueue((q) => {
+      const [head, ...rest] = q;
+      if (wasKnown) { setKnown((k) => k + 1); return rest; }
+      return rest.concat([head]);   // « à revoir » → repart en fin de file
+    });
+  };
+  const restart = () => { setQueue(shuffle(items.map((_, i) => i))); setFlipped(false); setKnown(0); setSeen(0); };
+
+  useEffect(() => {
+    const h = (e) => {
+      const t = document.activeElement;
+      if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA")) return;
+      if (e.key === " " || e.code === "Space") { e.preventDefault(); flip(); }
+      else if (flipped && (e.key === "1")) { e.preventDefault(); grade(false); }
+      else if (flipped && (e.key === "2")) { e.preventDefault(); grade(true); }
+    };
+    document.addEventListener("keydown", h);
+    return () => document.removeEventListener("keydown", h);
+  });
+
+  if (!total) return <div className="text-center text-sm text-slate-400 py-12">Aucun mot à réviser.</div>;
+
+  const dirBtn = (id, label) => (
+    <button onClick={() => { setDir(id); setFlipped(false); }} className={"text-[11px] px-2.5 py-1 rounded-full border font-semibold transition-colors " + (dir === id ? "bg-indigo-600 text-white border-indigo-600" : "border-slate-300 text-slate-500 hover:text-slate-700")}>{label}</button>
+  );
+
+  return (
+    <div>
+      <div className="flex items-center gap-2 mb-3.5 flex-wrap">
+        <button onClick={onExit} className="text-xs px-3 py-1.5 rounded-lg border border-slate-300 text-slate-600 hover:bg-slate-50">← Liste</button>
+        <span className="text-[13px] text-slate-500 font-semibold">🎴 Révision · {known}/{total} acquis</span>
+        <span className="ml-auto flex items-center gap-1.5">
+          <span className="text-[11px] text-slate-400">Sens</span>
+          {dirBtn("fr2en", "FR → EN")}
+          {dirBtn("en2fr", "EN → FR")}
+          <button onClick={restart} className="text-[11px] px-2.5 py-1 rounded-full border border-slate-300 text-slate-500 hover:text-slate-700">↻ Recommencer</button>
+        </span>
+      </div>
+      <div className="max-w-2xl mx-auto mb-3"><ProgressBar pct={total ? (known / total) * 100 : 0} color="#10b981" /></div>
+
+      {!card ? (
+        <div className="bg-white rounded-xl border border-slate-200 p-6 text-center max-w-md mx-auto">
+          <div className="text-3xl mb-2">🎉</div>
+          <div className="text-lg font-bold text-slate-800 mb-1">Tous les mots sont acquis !</div>
+          <div className="text-sm text-slate-500 mb-4">{total} mot{total > 1 ? "s" : ""} révisé{total > 1 ? "s" : ""} en {seen} carte{seen > 1 ? "s" : ""}.</div>
+          <div className="flex gap-2 justify-center">
+            <button onClick={restart} className="px-4 py-2 rounded-lg bg-indigo-600 text-white text-[13px] font-medium hover:bg-indigo-500">↻ Recommencer</button>
+            <button onClick={onExit} className="px-4 py-2 rounded-lg border border-slate-300 text-slate-600 text-[13px] hover:bg-slate-50">Retour à la liste</button>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <div className="text-center text-[11px] text-slate-400 mb-2">Restantes : {queue.length}</div>
+          <div className="eflip-wrap" onClick={flip}>
+            <div className={"eflip" + (flipped ? " flipped" : "")}>
+              <div className="eface">
+                <span className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-600 border border-indigo-200 mb-3">📝 Mes notes</span>
+                <div className="text-[27px] font-bold text-slate-800 leading-snug mb-2">{dir === "fr2en" ? card.fr : card.en}</div>
+                {dir === "en2fr" && <SpeakBtn text={card.en} title="Écouter" sm />}
+                <div className="text-xs text-slate-400 mt-3">Cliquer ou Espace pour retourner</div>
+              </div>
+              <div className="eface back">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="text-[23px] font-semibold text-indigo-600 leading-snug">{card.en}</div>
+                  <SpeakBtn text={card.en} title="Écouter en anglais" />
+                </div>
+                <div className="text-[16px] text-slate-700 font-medium mb-1">{card.fr}</div>
+                {card.ex && (
+                  <div className="text-left max-w-lg w-full mt-2 px-2.5 py-2 rounded-md bg-indigo-50/50 border-l-2 border-indigo-400">
+                    <div className="flex items-start gap-2">
+                      <span className="text-[13px] text-indigo-600 italic flex-1">“{card.ex}”</span>
+                      <SpeakBtn text={card.ex} title="Écouter la phrase" sm />
+                    </div>
+                    {card.ex_fr && <div className="text-[12px] text-slate-500 mt-1">{card.ex_fr}</div>}
+                  </div>
+                )}
+                {card.tip && <div className="text-[12px] text-violet-900 bg-violet-50/70 border border-violet-100 rounded-lg px-3 py-2 mt-2 text-left max-w-lg leading-relaxed">💡 <NotesBold text={card.tip} /></div>}
+              </div>
+            </div>
+          </div>
+          {flipped && (
+            <div className="max-w-2xl mx-auto mt-4 flex justify-center gap-2 flex-wrap">
+              <button onClick={(e) => { e.stopPropagation(); grade(false); }} className="min-w-[140px] px-4 py-2.5 rounded-xl text-[13px] font-semibold bg-amber-100 text-amber-700 hover:bg-amber-200 transition-transform hover:scale-[1.03]">🔁 À revoir<br /><span className="text-[10px] opacity-75 font-normal">touche 1</span></button>
+              <button onClick={(e) => { e.stopPropagation(); grade(true); }} className="min-w-[140px] px-4 py-2.5 rounded-xl text-[13px] font-semibold bg-emerald-100 text-emerald-700 hover:bg-emerald-200 transition-transform hover:scale-[1.03]">✅ Acquis<br /><span className="text-[10px] opacity-75 font-normal">touche 2</span></button>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function MyNotesSection({ audio }) {
   const notes = (E_DATA.my_notes && E_DATA.my_notes.sessions) || [];
   const [q, setQ] = useState("");
   const [test, setTest] = useState(false);
+  const [anki, setAnki] = useState(false);
   const query = q.trim().toLowerCase();
   const total = notes.reduce((a, s) => a + (s.categories || []).reduce((b, c) => b + (c.items || []).length, 0), 0);
+  const allItems = notes.flatMap((s) => (s.categories || []).flatMap((c) => c.items || []));
   const match = (it) => !query || (it.en + " " + it.fr + " " + (it.ex || "") + " " + (it.tip || "")).toLowerCase().includes(query);
   if (!notes.length) return <div className="text-center text-sm text-slate-400 py-12">Pas encore de notes — envoie ta première fournée !</div>;
+  if (anki) return <NotesFlashcards items={allItems} audio={audio} onExit={() => setAnki(false)} />;
   return (
     <div>
       <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-4 shadow-sm flex items-start gap-4">
@@ -1802,7 +1928,10 @@ function MyNotesSection() {
           <h2 className="text-xl font-bold text-slate-800 leading-tight">Mes notes</h2>
           <p className="text-sm text-slate-500 mt-1 leading-relaxed">Ton vocabulaire personnel ({total} entrées · {notes.length} session{notes.length > 1 ? "s" : ""}), enrichi d'exemples professionnels et d'astuces. Nouvelle fournée de notes → elle s'ajoute ici.</p>
         </div>
-        <button onClick={() => setTest(!test)} className={`shrink-0 px-3.5 py-2 rounded-lg text-xs font-bold border transition-colors ${test ? "bg-indigo-600 text-white border-indigo-600" : "bg-white text-slate-600 border-slate-200 hover:border-indigo-300"}`}>{test ? "🎴 Mode test ON" : "🎴 Mode test"}</button>
+        <div className="shrink-0 flex flex-col gap-2">
+          <button onClick={() => setAnki(true)} className="px-3.5 py-2 rounded-lg text-xs font-bold border bg-emerald-600 text-white border-emerald-600 hover:bg-emerald-500 transition-colors">🎴 Réviser (Anki)</button>
+          <button onClick={() => setTest(!test)} className={`px-3.5 py-2 rounded-lg text-xs font-bold border transition-colors ${test ? "bg-indigo-600 text-white border-indigo-600" : "bg-white text-slate-600 border-slate-200 hover:border-indigo-300"}`}>{test ? "👁 Test ON" : "👁 Mode test"}</button>
+        </div>
       </div>
       <div className="relative mb-4">
         <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher un mot, une traduction, un exemple…"
@@ -1976,9 +2105,13 @@ function EnglishApp() {
       </nav>
 
       <main className="max-w-5xl mx-auto px-4 py-6">
-        {section !== "liste" && <AudioBar audio={audio} setAudio={setAudio} />}
+        {section !== "liste" && section !== "meeting" && (
+          <div className="sticky top-[49px] z-[8] -mx-4 px-4 py-2 bg-slate-100/95 backdrop-blur border-b border-slate-200 mb-4">
+            <VoiceMini audio={audio} setAudio={setAudio} />
+          </div>
+        )}
         {section === "essentials" && <EssentialsSection done={essentialsDone} onToggle={toggleEssential} />}
-        {section === "mynotes" && <MyNotesSection />}
+        {section === "mynotes" && <MyNotesSection audio={audio} />}
         {section === "liste" && <QuickListSection audio={audio} setAudio={setAudio} />}
         {section === "meeting" && <MeetingSection audio={audio} setAudio={setAudio} />}
         {section === "vocab" && (
