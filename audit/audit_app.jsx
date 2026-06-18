@@ -3611,10 +3611,17 @@ const TEST_TYPE_STYLE = {
 };
 const TEST_TYPE_LABEL = { controle: "Test de contrôle", substantif: "Substantif", analytique: "Analytique" };
 const SENIO = {
-  junior: { label: "Junior", c: "bg-emerald-100 text-emerald-700 border-emerald-200" },
-  senior: { label: "Senior", c: "bg-amber-100 text-amber-700 border-amber-200" },
-  manager: { label: "Manager", c: "bg-rose-100 text-rose-700 border-rose-200" },
+  junior: { label: "Junior", c: "bg-emerald-100 text-emerald-700 border-emerald-200", accent: "#10b981" },
+  senior: { label: "Senior", c: "bg-amber-100 text-amber-700 border-amber-200", accent: "#f59e0b" },
+  manager: { label: "Manager", c: "bg-rose-100 text-rose-700 border-rose-200", accent: "#f43f5e" },
 };
+const CYCLE_COLOR = {
+  ventes_clients: "#0ea5e9", achats_fourn: "#f59e0b", stocks: "#ca8a04", immobilisations: "#9a3412",
+  tresorerie: "#059669", paie: "#db2777", capitaux_emprunts: "#7c3aed", estimations: "#dc2626",
+  transversaux: "#475569", audit_it: "#2563eb", consolidation: "#0891b2", fiscal: "#16a34a",
+  suisse_revision: "#e11d48", secteur_public: "#0d9488",
+};
+const cyCol = (id) => CYCLE_COLOR[id] || "#0d9488";
 function TestExo({ exo }) {
   const [picked, setPicked] = useState(null);
   const opts = exo.options || [];
@@ -3671,7 +3678,8 @@ function TestCard({ t, mastered }) {
   const sen = SENIO[t.seniorite];
   const tabCls = (k) => `text-[11px] font-semibold px-2 py-1 rounded-lg border transition-colors ${tab === k ? "bg-teal-600 text-white border-transparent" : "bg-white text-slate-600 border-slate-200"}`;
   return (
-    <div className={`rounded-xl border bg-white p-3.5 ${mastered ? "border-emerald-300 bg-emerald-50/20" : crit ? "border-rose-200" : "border-slate-200"}`}>
+    <div className={`rounded-xl border bg-white p-3.5 transition-shadow hover:shadow-md ${mastered ? "border-emerald-300 bg-emerald-50/20" : crit ? "border-rose-200" : "border-slate-200"}`}
+      style={{ borderLeftWidth: "4px", borderLeftColor: sen ? sen.accent : "#cbd5e1" }}>
       <div className="flex items-start gap-2 mb-1.5">
         {crit && <span className="text-[10px] font-bold text-rose-600 bg-rose-50 border border-rose-200 rounded px-1.5 py-0.5 shrink-0 mt-0.5">★ CLÉ</span>}
         <h4 className="font-bold text-[14px] text-slate-800 leading-tight flex-1">{t.nom}</h4>
@@ -3718,6 +3726,8 @@ function TrainingMode({ pool, catLabel, hard, onExit, onProgress }) {
   const [picked, setPicked] = useState(null);
   const [answers, setAnswers] = useState([]);
   const [done, setDone] = useState(false);
+  const [streak, setStreak] = useState(0);
+  const [best, setBest] = useState(0);
   const total = order.length;
   const cur = order[idx];
   const exo = cur ? ((hard && cur.exo2) ? cur.exo2 : cur.exo) : null;
@@ -3726,6 +3736,7 @@ function TrainingMode({ pool, catLabel, hard, onExit, onProgress }) {
     setPicked(i);
     const ok = !!(exo.options[i] && exo.options[i].ok);
     setAnswers((a) => [...a, { id: cur.id, ok, nom: cur.nom, cat: cur.cat }]);
+    setStreak((s) => { const n = ok ? s + 1 : 0; setBest((b) => Math.max(b, n)); return n; });
     if (ok) { const p = loadTestProg(); p.mastered = p.mastered || {}; p.mastered[cur.id] = true; saveTestProg(p); if (onProgress) onProgress(); }
   };
   const next = () => { if (idx + 1 >= total) setDone(true); else { setIdx(idx + 1); setPicked(null); } };
@@ -3738,10 +3749,12 @@ function TrainingMode({ pool, catLabel, hard, onExit, onProgress }) {
     const msg = pct >= 90 ? "Excellent — niveau examen ! 🎉" : pct >= 70 ? "Bien joué, quelques points à revoir 💪" : pct >= 50 ? "En progrès — refais les ratés 🔁" : "À retravailler — chaque erreur est un apprentissage 📚";
     return (
       <div className="rounded-2xl border border-slate-200 bg-white p-5">
+        <style>{"@keyframes pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}"}</style>
         <div className="text-center py-3">
+          <div className="text-3xl mb-1 animate-[pop_.5s_ease]">{pct >= 90 ? "🏆" : pct >= 70 ? "🎉" : pct >= 50 ? "💪" : "📚"}</div>
           <div className="text-[12px] font-bold uppercase tracking-widest text-teal-500">Résultats</div>
-          <div className={`text-5xl font-black mt-1 ${pct >= 70 ? "text-emerald-600" : pct >= 50 ? "text-amber-600" : "text-rose-600"}`}>{pct}%</div>
-          <div className="text-sm text-slate-600 mt-1">{correct} / {total} bonnes réponses</div>
+          <div className={`text-5xl font-black mt-1 animate-[pop_.45s_ease] ${pct >= 70 ? "text-emerald-600" : pct >= 50 ? "text-amber-600" : "text-rose-600"}`}>{pct}%</div>
+          <div className="text-sm text-slate-600 mt-1">{correct} / {total} bonnes réponses{best >= 3 ? ` · meilleure série 🔥 ${best}` : ""}</div>
           <div className="text-[13px] text-slate-700 mt-2 font-medium">{msg}</div>
         </div>
         {wrong.length > 0 && (
@@ -3765,6 +3778,7 @@ function TrainingMode({ pool, catLabel, hard, onExit, onProgress }) {
         <button onClick={() => onExit()} className="text-[12px] text-slate-400 hover:text-rose-600 font-semibold shrink-0">✕ Quitter</button>
         <div className="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div className="h-full bg-teal-500 transition-all" style={{ width: ((idx) / total * 100) + "%" }} /></div>
         <span className="text-[12px] font-bold text-slate-500 shrink-0 tabular-nums">{idx + 1}/{total}</span>
+        {streak >= 2 && <span className="text-[12px] font-bold text-orange-500 shrink-0 tabular-nums animate-[pop_.3s_ease]">🔥 {streak}</span>}
         <span className="text-[12px] font-bold text-emerald-600 shrink-0 tabular-nums">★ {scoreSoFar}</span>
       </div>
       <div className="text-[11px] font-semibold uppercase tracking-wide text-teal-500 mb-1">{catLabel(cur.cat).icon} {catLabel(cur.cat).label} {hard && cur.exo2 ? "· difficile" : ""}</div>
@@ -3891,7 +3905,7 @@ function AuditTests({ onBack }) {
           <div className="text-[10px] font-bold uppercase tracking-wide text-slate-400 mb-1">Par cycle</div>
           <div className="flex flex-wrap gap-1">
             {cats.map((c) => (
-              <button key={c.id} onClick={() => setCat(cat === c.id ? null : c.id)} className={`text-[11px] font-semibold px-2 py-1 rounded-lg border transition-colors flex items-center gap-1 ${cat === c.id ? "bg-teal-600 text-white border-transparent" : "bg-white text-slate-600 border-slate-200 hover:border-teal-300"}`}><span>{c.icon}</span>{c.label}</button>
+              <button key={c.id} onClick={() => setCat(cat === c.id ? null : c.id)} className={`text-[11px] font-semibold px-2 py-1 rounded-lg border transition-colors flex items-center gap-1 ${cat === c.id ? "text-white border-transparent" : "bg-white text-slate-600 border-slate-200 hover:border-slate-300"}`} style={cat === c.id ? { background: cyCol(c.id) } : {}}><span>{c.icon}</span>{c.label}</button>
             ))}
           </div>
         </div>
@@ -3904,10 +3918,10 @@ function AuditTests({ onBack }) {
       ) : grouped.map((g) => (
         <div key={g.c.id} className="mb-5">
           <div className="flex items-center gap-2 mb-2.5">
-            <span className="text-lg">{g.c.icon}</span>
+            <span className="w-8 h-8 grid place-items-center rounded-lg text-base shrink-0" style={{ background: cyCol(g.c.id) + "1a", color: cyCol(g.c.id) }}>{g.c.icon}</span>
             <span className="font-bold text-[15px] text-slate-800">{g.c.label}</span>
-            <span className="text-[11px] text-slate-400 font-semibold">{g.items.length}</span>
-            <span className="flex-1 h-px bg-slate-200" />
+            <span className="text-[11px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: cyCol(g.c.id) + "1a", color: cyCol(g.c.id) }}>{g.items.length}</span>
+            <span className="flex-1 h-0.5 rounded-full" style={{ background: cyCol(g.c.id) + "26" }} />
           </div>
           <div className="grid lg:grid-cols-2 gap-2.5">{g.items.map((t, i) => <TestCard key={i} t={t} mastered={!!mastered[t.id]} />)}</div>
         </div>
