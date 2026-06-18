@@ -1600,6 +1600,192 @@ function QuickListSection({ audio, setAudio }) {
   );
 }
 
+/* ════════ MEETING — l'anglais des réunions (EY / audit) ════════ */
+const REGISTER = {
+  formal: { label: "soutenu", color: "#2563eb", bg: "#eff6ff" },
+  neutral: { label: "standard", color: "#64748b", bg: "#f8fafc" },
+  informal: { label: "détendu", color: "#d97706", bg: "#fffbeb" },
+};
+function RegChip({ register }) {
+  const r = REGISTER[register] || REGISTER.neutral;
+  return <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-md border shrink-0" style={{ color: r.color, borderColor: r.color + "55", background: r.bg }}>{r.label}</span>;
+}
+function MeetingDialogue({ dlg, onBack }) {
+  return (
+    <div className="max-w-3xl mx-auto">
+      <div className="flex items-center gap-2.5 mb-3.5">
+        <button onClick={onBack} className="text-xs px-3 py-1.5 rounded-lg border border-slate-300 text-slate-600 hover:bg-slate-50">← Dialogues</button>
+        <div className="flex-1 min-w-0">
+          <div className="text-sm font-semibold text-slate-800">{dlg.title}</div>
+          <div className="text-[11px] text-slate-400 truncate">{dlg.context}</div>
+        </div>
+        <LevelBadge level={dlg.level} />
+      </div>
+      {(dlg.turns || []).map((t, i) => {
+        const style = SPEAKER_STYLES[t.speaker] || SPEAKER_STYLES.client;
+        const mine = t.speaker === "you";
+        return (
+          <div key={i} className={"my-2 " + (mine ? "ml-8 text-right" : "mr-8")}>
+            <div className="inline-block rounded-2xl px-3.5 py-2.5 max-w-[85%] border text-left" style={{ background: style.bg, borderColor: style.color + "55" }}>
+              <div className="text-[10px] uppercase tracking-wide mb-1 flex items-center justify-between gap-2.5" style={{ color: style.color }}>
+                <span>{style.icon} {t.name || t.speaker}</span>
+                <button onClick={(e) => { e.stopPropagation(); speak(t.en); }} title="Écouter" className="text-[13px]">🔊</button>
+              </div>
+              <div className="text-[13px] leading-normal text-slate-800">{t.en}</div>
+              {t.fr && <div className="text-[11px] leading-normal text-slate-500 mt-1.5 italic">{t.fr}</div>}
+            </div>
+            {t.note && <div className={"text-[10.5px] text-indigo-500 mt-1 " + (mine ? "mr-1" : "ml-1")}>💡 {t.note}</div>}
+          </div>
+        );
+      })}
+      <div className="text-center mt-4"><button onClick={onBack} className="px-4 py-2 rounded-lg border border-slate-300 text-slate-600 text-[13px] hover:bg-slate-50">← Retour aux dialogues</button></div>
+    </div>
+  );
+}
+function MeetingSection({ audio, setAudio }) {
+  const M = E_DATA.meeting || {};
+  const funcs = M.functions || [];
+  const [view, setView] = useState("situations");   // situations | glossaire | dialogues | conseils
+  const [fn, setFn] = useState("");                  // filtre fonction
+  const [q, setQ] = useState("");
+  const [hideFr, setHideFr] = useState(false);
+  const [revealed, setRevealed] = useState(() => new Set());
+  const [dlgId, setDlgId] = useState(null);
+
+  if (!funcs.length) return <div className="text-center text-sm text-slate-400 py-12">Contenu « Meeting » indisponible.</div>;
+
+  const ql = q.trim().toLowerCase();
+  const matchP = (p) => !ql || ((p.en || "") + " " + (p.fr || "") + " " + (p.note || "")).toLowerCase().includes(ql);
+  const shown = funcs
+    .filter((f) => !fn || f.id === fn)
+    .map((f) => ({ ...f, phrases: (f.phrases || []).filter(matchP) }))
+    .filter((f) => f.phrases.length);
+  const totalShown = shown.reduce((a, f) => a + f.phrases.length, 0);
+  const toggleReveal = (k) => { if (!hideFr) return; setRevealed((prev) => { const n = new Set(prev); n.has(k) ? n.delete(k) : n.add(k); return n; }); };
+  const vBtn = (id, label) => (
+    <button onClick={() => setView(id)}
+      className={"px-3 py-1.5 rounded-lg text-[13px] font-semibold border transition-colors " + (view === id ? "bg-indigo-600 text-white border-indigo-600" : "bg-white text-slate-600 border-slate-200 hover:border-indigo-300")}>{label}</button>
+  );
+  const chip = (active) => "text-[12px] font-semibold px-2.5 py-1 rounded-lg border transition-colors " + (active ? "bg-indigo-600 text-white border-transparent" : "bg-white text-slate-600 border-slate-200 hover:border-indigo-300");
+
+  return (
+    <div>
+      <div className="rounded-2xl bg-gradient-to-r from-blue-700 to-indigo-700 text-white p-4 mb-4">
+        <h2 className="text-lg font-bold">🗓️ Meeting — l'anglais des réunions</h2>
+        <p className="text-[13px] text-indigo-100 mt-0.5">{M.meta && M.meta.intro}</p>
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        {vBtn("situations", "💬 Par situation")}
+        {vBtn("glossaire", "📖 Glossaire")}
+        {vBtn("dialogues", "🎭 Dialogues d'audit")}
+        {vBtn("conseils", "💡 Conseils")}
+      </div>
+
+      {view === "situations" && (
+        <div>
+          <div className="sticky top-[49px] z-[5] bg-slate-100/95 backdrop-blur py-2 rounded-xl mb-3 space-y-2">
+            <div className="flex items-center gap-2 border-b border-slate-200 pb-2">
+              <VoiceMini audio={audio} setAudio={setAudio} />
+            </div>
+            <div className="flex items-center gap-2">
+              <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher une expression (EN ou FR)…" className="flex-1 bg-white border border-slate-200 rounded-lg px-3 py-2 text-[13px] outline-none focus:border-indigo-400" />
+              <button onClick={() => { setHideFr(!hideFr); setRevealed(new Set()); }} className={chip(hideFr)}>🙈 Cacher FR</button>
+            </div>
+            <div className="flex flex-wrap gap-1.5 items-center">
+              <button onClick={() => setFn("")} className={chip(!fn)}>Tous ({funcs.reduce((a, f) => a + (f.phrases || []).length, 0)})</button>
+              {funcs.map((f) => <button key={f.id} onClick={() => setFn(fn === f.id ? "" : f.id)} className={chip(fn === f.id)} title={f.label_en}>{f.icon} {f.label_fr}</button>)}
+            </div>
+            <div className="text-[11px] text-slate-500 font-medium">{totalShown} expression{totalShown > 1 ? "s" : ""}{hideFr ? " · clique une carte pour révéler le FR" : ""}</div>
+          </div>
+          {shown.length === 0 ? (
+            <div className="rounded-xl border-2 border-dashed border-slate-200 bg-white p-8 text-center text-slate-400 text-sm">Aucune expression pour ce filtre.</div>
+          ) : shown.map((f) => (
+            <div key={f.id} className="mb-5">
+              <div className="flex items-baseline gap-2 mb-1">
+                <span className="font-bold text-[15px] text-slate-800">{f.icon} {f.label_fr}</span>
+                <span className="text-[11px] text-slate-400 italic">{f.label_en}</span>
+                <span className="text-[11px] text-indigo-500 font-bold bg-indigo-50 rounded-full px-2 py-0.5">{f.phrases.length}</span>
+              </div>
+              {f.intro && <p className="text-[12px] text-slate-500 leading-snug mb-2">{f.intro}</p>}
+              <div className="grid md:grid-cols-2 gap-2">
+                {f.phrases.map((p, i) => {
+                  const key = f.id + i;
+                  const masked = hideFr && !revealed.has(key);
+                  return (
+                    <div key={key} onClick={() => toggleReveal(key)} className={"bg-white rounded-xl border border-slate-200 px-3.5 py-2.5 " + (hideFr ? "cursor-pointer hover:border-indigo-300" : "")}>
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="font-semibold text-[14px] text-slate-800 leading-snug">{p.en}</div>
+                        <div className="flex items-center gap-1.5 shrink-0">
+                          <RegChip register={p.register} />
+                          <SpeakBtn text={p.en} title="Écouter" sm />
+                        </div>
+                      </div>
+                      <div className={"text-[12.5px] text-slate-500 mt-1 " + (masked ? "blur-[5px] select-none" : "")}>{p.fr}</div>
+                      {p.note && <div className="text-[11px] text-indigo-500 mt-1 leading-snug">💡 {p.note}</div>}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {view === "glossaire" && (
+        <div>
+          <p className="text-[12px] text-slate-500 mb-3">Le jargon des réunions et de l'audit — {(M.glossary || []).length} termes. ⚠️ = faux-ami à connaître.</p>
+          <div className="grid sm:grid-cols-2 gap-2">
+            {(M.glossary || []).map((g, i) => (
+              <div key={i} className="bg-white rounded-xl border border-slate-200 px-3.5 py-2.5">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-semibold text-[13.5px] text-slate-800">{g.en}</span>
+                  <SpeakBtn text={g.en} title="Écouter" sm />
+                </div>
+                <div className="text-[12.5px] text-slate-500">{g.fr}</div>
+                {g.note && <div className="text-[11px] text-indigo-500 mt-1 leading-snug">💡 {g.note}</div>}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {view === "dialogues" && (
+        dlgId ? (
+          <MeetingDialogue dlg={(M.dialogues || []).find((d) => d.id === dlgId)} onBack={() => setDlgId(null)} />
+        ) : (
+          <div>
+            <p className="text-[12px] text-slate-500 mb-3">Deux réunions d'audit jouées de bout en bout, chaque réplique annotée (💡 = la technique illustrée). Écoute chaque ligne avec 🔊.</p>
+            <div className="grid md:grid-cols-2 gap-3">
+              {(M.dialogues || []).map((d) => (
+                <div key={d.id} onClick={() => setDlgId(d.id)} className="bg-white rounded-xl border border-slate-200 hover:border-indigo-400 p-4 cursor-pointer transition-colors">
+                  <div className="flex justify-between items-start gap-2.5">
+                    <div className="text-[15px] text-slate-800 font-semibold mb-1.5">{d.title}</div>
+                    <LevelBadge level={d.level} />
+                  </div>
+                  <div className="text-xs text-slate-500 leading-normal mb-2">{d.context}</div>
+                  <div className="text-[11px] text-slate-400">🗣️ {(d.turns || []).length} répliques · ▶ Lire le dialogue</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      )}
+
+      {view === "conseils" && (
+        <div className="grid md:grid-cols-2 gap-3">
+          {(M.tips || []).map((t, i) => (
+            <div key={i} className="bg-white rounded-xl border border-slate-200 p-4">
+              <div className="text-[14px] font-bold text-slate-800 mb-1.5">{t.icon} {t.title}</div>
+              <div className="text-[12.5px] text-slate-600 leading-relaxed">{t.text}</div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function MyNotesSection() {
   const notes = (E_DATA.my_notes && E_DATA.my_notes.sessions) || [];
   const [q, setQ] = useState("");
@@ -1654,7 +1840,7 @@ function MyNotesSection() {
 
 /* ════════ App ════════ */
 function EnglishApp() {
-  const VALID = ["essentials", "mynotes", "liste", "vocab", "phrases", "fs", "constructor", "dictation", "conversations", "videos", "writing"];
+  const VALID = ["essentials", "mynotes", "liste", "meeting", "vocab", "phrases", "fs", "constructor", "dictation", "conversations", "videos", "writing"];
   const hashSection = (typeof location !== "undefined" && location.hash || "").replace("#", "");
   const initial = VALID.includes(hashSection) ? hashSection : (() => { try { return localStorage.getItem(LS_SUBTAB) || "vocab"; } catch (e) { return "vocab"; } })();
   const [section, setSectionRaw] = useState(VALID.includes(initial) ? initial : "vocab");
@@ -1747,6 +1933,7 @@ function EnglishApp() {
     { id: "essentials", icon: "🎯", label: "Day-1 EY" },
     { id: "mynotes", icon: "📝", label: "Mes notes" },
     { id: "liste", icon: "⚡", label: "Liste express" },
+    { id: "meeting", icon: "🗓️", label: "Meeting" },
     { id: "vocab", icon: "📚", label: "Vocabulaire" },
     { id: "phrases", icon: "💬", label: "Phrases & expressions" },
     { id: "fs", icon: "📊", label: "États financiers" },
@@ -1793,6 +1980,7 @@ function EnglishApp() {
         {section === "essentials" && <EssentialsSection done={essentialsDone} onToggle={toggleEssential} />}
         {section === "mynotes" && <MyNotesSection />}
         {section === "liste" && <QuickListSection audio={audio} setAudio={setAudio} />}
+        {section === "meeting" && <MeetingSection audio={audio} setAudio={setAudio} />}
         {section === "vocab" && (
           <VocabSection progress={progress} onRate={onRate}
             filters={allFilters.vocab} setFilters={setVocabFilters}

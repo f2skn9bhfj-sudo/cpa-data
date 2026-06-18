@@ -1,0 +1,1075 @@
+{
+  "meta": {
+    "title": "Meeting — l'anglais des réunions",
+    "intro": "L'anglais concret des réunions professionnelles, orienté EY / audit : les expressions par situation (ouvrir, animer, faire le point, clarifier, donner son avis, être d'accord ou non, interrompre, négocier, calls à distance, résumer, conclure, réunions d'audit), le jargon, deux dialogues d'audit commentés et des conseils d'étiquette.",
+    "register_legend": {
+      "formal": "Soutenu — client, partner, écrit",
+      "neutral": "Standard pro — la plupart des réunions",
+      "informal": "Détendu — entre collègues"
+    }
+  },
+  "functions": [
+    {
+      "id": "opening",
+      "icon": "🟢",
+      "label_fr": "Ouvrir & cadrer la réunion",
+      "label_en": "Opening & framing",
+      "intro": "Les 60 premières secondes donnent le ton : annonce l'objectif, l'ordre du jour et le temps imparti — sinon la réunion part dans tous les sens.",
+      "phrases": [
+        {
+          "en": "Thanks everyone for joining — shall we get started?",
+          "fr": "Merci à tous d'être là — on peut commencer ?",
+          "register": "neutral"
+        },
+        {
+          "en": "The main purpose of today's meeting is to walk through the open audit points.",
+          "fr": "L'objectif principal de cette réunion est de passer en revue les points d'audit ouverts.",
+          "register": "formal"
+        },
+        {
+          "en": "We've got about 45 minutes, so let's try to keep to time.",
+          "fr": "On a environ 45 minutes, essayons donc de respecter l'horaire.",
+          "register": "neutral",
+          "note": "« keep to time » = tenir l'horaire."
+        },
+        {
+          "en": "I've shared an agenda — there are three items I'd like to cover.",
+          "fr": "J'ai partagé un ordre du jour — j'aimerais aborder trois points.",
+          "register": "neutral"
+        },
+        {
+          "en": "Before we dive in, let's do a quick round of introductions.",
+          "fr": "Avant d'entrer dans le vif, faisons un rapide tour de table.",
+          "register": "neutral",
+          "note": "« dive in » = entrer dans le vif du sujet."
+        },
+        {
+          "en": "Just to set the scene, here's where we stand on the audit.",
+          "fr": "Pour poser le contexte, voici où nous en sommes sur l'audit.",
+          "register": "neutral",
+          "note": "« set the scene » = planter le décor / poser le contexte."
+        },
+        {
+          "en": "Would anyone like to add anything to the agenda?",
+          "fr": "Quelqu'un souhaite-t-il ajouter un point à l'ordre du jour ?",
+          "register": "neutral"
+        },
+        {
+          "en": "Could someone volunteer to take the minutes?",
+          "fr": "Quelqu'un peut-il se charger du compte rendu ?",
+          "register": "neutral",
+          "note": "« minutes » = compte rendu / PV (toujours au pluriel)."
+        },
+        {
+          "en": "I suggest we leave the last ten minutes for questions and next steps.",
+          "fr": "Je propose de garder les dix dernières minutes pour les questions et la suite.",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "running",
+      "icon": "🧭",
+      "label_fr": "Animer & enchaîner",
+      "label_en": "Running the meeting & transitions",
+      "intro": "Savoir passer d'un point à l'autre, redonner la parole et « garer » un sujet hors-scope, c'est ce qui tient une réunion dans les temps sans froisser personne.",
+      "phrases": [
+        {
+          "en": "Let's move on to the next point.",
+          "fr": "Passons au point suivant.",
+          "register": "neutral"
+        },
+        {
+          "en": "I think we've covered this — shall we move on?",
+          "fr": "Je pense qu'on a fait le tour — on enchaîne ?",
+          "register": "neutral"
+        },
+        {
+          "en": "Let's park that for now and come back to it later.",
+          "fr": "Mettons ça de côté pour l'instant et revenons-y plus tard.",
+          "register": "neutral",
+          "note": "« park » un sujet = le mettre de côté (très courant en réunion)."
+        },
+        {
+          "en": "Can we take that offline?",
+          "fr": "On peut en discuter en aparté, après la réunion ?",
+          "register": "informal",
+          "note": "« take it offline » = en parler en dehors de la réunion (pas « hors ligne »)."
+        },
+        {
+          "en": "We're running a bit short on time, so let's keep this brief.",
+          "fr": "On manque un peu de temps, soyons brefs.",
+          "register": "neutral",
+          "note": "« run short on time » = manquer de temps."
+        },
+        {
+          "en": "I'd like to hand over to Sarah for the next item.",
+          "fr": "Je passe la parole à Sarah pour le point suivant.",
+          "register": "neutral",
+          "note": "« hand over to » = passer la parole à."
+        },
+        {
+          "en": "To keep us on track, let's stick to the agenda.",
+          "fr": "Pour rester dans les temps, tenons-nous-en à l'ordre du jour.",
+          "register": "neutral",
+          "note": "« on track » = dans les clous / sur les rails."
+        },
+        {
+          "en": "Let's come back to that when we discuss the timeline.",
+          "fr": "Revenons-y quand on parlera du calendrier.",
+          "register": "neutral"
+        },
+        {
+          "en": "Does that work for everyone?",
+          "fr": "Ça convient à tout le monde ?",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "update",
+      "icon": "📊",
+      "label_fr": "Faire le point / présenter",
+      "label_en": "Status updates & presenting",
+      "intro": "Commence par le message clé (« the headline »), puis détaille. En audit, on présente l'avancement et les premiers constats sans noyer l'auditoire.",
+      "phrases": [
+        {
+          "en": "Here's a quick update on where we are.",
+          "fr": "Voici un point rapide sur l'avancement.",
+          "register": "neutral"
+        },
+        {
+          "en": "We're broadly on track, with a couple of open items.",
+          "fr": "Nous sommes globalement dans les temps, avec quelques points en suspens.",
+          "register": "neutral",
+          "note": "« broadly » = globalement ; « open items » = points ouverts / en suspens."
+        },
+        {
+          "en": "Let me walk you through the figures on this slide.",
+          "fr": "Laissez-moi vous détailler les chiffres de cette diapositive.",
+          "register": "formal",
+          "note": "« walk someone through » = expliquer pas à pas."
+        },
+        {
+          "en": "So far, the testing hasn't flagged any major issues.",
+          "fr": "Jusqu'ici, les tests n'ont relevé aucun problème majeur.",
+          "register": "neutral",
+          "note": "« flag » = signaler / faire ressortir."
+        },
+        {
+          "en": "We're still waiting on a few items from the client.",
+          "fr": "Nous attendons encore quelques éléments de la part du client.",
+          "register": "neutral",
+          "note": "« waiting on » (US) / « waiting for » (UK)."
+        },
+        {
+          "en": "The headline is that revenue is up 8% year on year.",
+          "fr": "Le point clé, c'est que le chiffre d'affaires progresse de 8 % sur un an.",
+          "register": "neutral",
+          "note": "« headline » = le message principal ; « year on year » = en glissement annuel."
+        },
+        {
+          "en": "To give you the bigger picture, the group restructured in Q2.",
+          "fr": "Pour vous donner une vue d'ensemble, le groupe s'est restructuré au 2e trimestre.",
+          "register": "neutral"
+        },
+        {
+          "en": "We're slightly behind on the inventory count, but we'll catch up by Friday.",
+          "fr": "Nous avons un peu de retard sur l'inventaire, mais nous le rattraperons d'ici vendredi.",
+          "register": "neutral",
+          "note": "« behind » = en retard ; « catch up » = rattraper."
+        },
+        {
+          "en": "I'll send round the detailed numbers after the call.",
+          "fr": "J'enverrai les chiffres détaillés après l'appel.",
+          "register": "neutral",
+          "note": "« send round » = faire circuler / envoyer à tous."
+        }
+      ]
+    },
+    {
+      "id": "clarify",
+      "icon": "❓",
+      "label_fr": "Questionner & clarifier",
+      "label_en": "Asking & clarifying",
+      "intro": "Poser une bonne question et reformuler avant de répondre, c'est le cœur d'un walkthrough d'audit — et ça évite les malentendus coûteux.",
+      "phrases": [
+        {
+          "en": "Sorry, could you say that again?",
+          "fr": "Pardon, pouvez-vous répéter ?",
+          "register": "neutral"
+        },
+        {
+          "en": "Just to make sure I've understood, you're saying that the cut-off was reviewed?",
+          "fr": "Juste pour être sûr d'avoir bien compris, vous dites que le cut-off a été vérifié ?",
+          "register": "neutral",
+          "note": "Formule clé pour reformuler avant de répondre."
+        },
+        {
+          "en": "Could you elaborate on that?",
+          "fr": "Pourriez-vous développer ?",
+          "register": "formal",
+          "note": "« elaborate » = développer / préciser (pas « élaborer »)."
+        },
+        {
+          "en": "What exactly do you mean by 'recognised'?",
+          "fr": "Qu'entendez-vous exactement par « recognised » (comptabilisé) ?",
+          "register": "neutral"
+        },
+        {
+          "en": "Can you give me a concrete example?",
+          "fr": "Pouvez-vous me donner un exemple concret ?",
+          "register": "neutral"
+        },
+        {
+          "en": "Am I right in thinking that the provision was booked in December?",
+          "fr": "Si je comprends bien, la provision a été comptabilisée en décembre ?",
+          "register": "formal",
+          "note": "« Am I right in thinking…? » = manière polie de vérifier une hypothèse."
+        },
+        {
+          "en": "Could you walk me through how this number was calculated?",
+          "fr": "Pouvez-vous m'expliquer comment ce montant a été calculé ?",
+          "register": "neutral"
+        },
+        {
+          "en": "Sorry to interrupt — could you clarify the timeline?",
+          "fr": "Désolé de vous interrompre — pouvez-vous clarifier le calendrier ?",
+          "register": "neutral"
+        },
+        {
+          "en": "Who would be the best person to ask about this?",
+          "fr": "Qui serait la personne la mieux placée pour répondre à ça ?",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "opinion",
+      "icon": "💭",
+      "label_fr": "Donner son avis & nuancer",
+      "label_en": "Giving opinions & hedging",
+      "intro": "En audit, nuancer (« hedging ») n'est pas une faiblesse mais une marque de prudence professionnelle : on évite d'affirmer trop catégoriquement un point non vérifié.",
+      "phrases": [
+        {
+          "en": "From my point of view, the main risk is revenue recognition.",
+          "fr": "De mon point de vue, le principal risque est la reconnaissance du revenu.",
+          "register": "neutral"
+        },
+        {
+          "en": "I'd say the estimate is on the optimistic side.",
+          "fr": "Je dirais que l'estimation est plutôt optimiste.",
+          "register": "neutral",
+          "note": "« I'd say » adoucit l'affirmation ; « on the … side » = plutôt…"
+        },
+        {
+          "en": "It seems to me that we'd need more evidence here.",
+          "fr": "Il me semble qu'il nous faudrait davantage d'éléments probants ici.",
+          "register": "neutral"
+        },
+        {
+          "en": "I'm not entirely sure, but my sense is that the balance is overstated.",
+          "fr": "Je n'en suis pas tout à fait sûr, mais j'ai l'impression que le solde est surévalué.",
+          "register": "neutral",
+          "note": "« my sense is » = mon impression / mon intuition."
+        },
+        {
+          "en": "We'd need to look into this further before drawing a conclusion.",
+          "fr": "Il faudrait creuser davantage avant de conclure.",
+          "register": "formal",
+          "note": "« look into » = examiner / creuser."
+        },
+        {
+          "en": "On balance, I think we should extend the sample.",
+          "fr": "Tout bien pesé, je pense qu'on devrait élargir l'échantillon.",
+          "register": "neutral",
+          "note": "« on balance » = tout bien considéré."
+        },
+        {
+          "en": "I'd be cautious about relying on management's estimate here.",
+          "fr": "Je serais prudent avant de me fier à l'estimation de la direction ici.",
+          "register": "formal",
+          "note": "Registre prudent, orienté client / partner."
+        },
+        {
+          "en": "That's a fair point, although I'd add that the standard is stricter.",
+          "fr": "C'est un point juste, même si j'ajouterais que la norme est plus stricte.",
+          "register": "neutral"
+        },
+        {
+          "en": "I may be wrong, but the disclosure looks incomplete.",
+          "fr": "Je me trompe peut-être, mais l'annexe semble incomplète.",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "agree",
+      "icon": "⚖️",
+      "label_fr": "D'accord / pas d'accord (diplomatique)",
+      "label_en": "Agreeing & disagreeing diplomatically",
+      "intro": "Le désaccord frontal (« No, you're wrong ») passe pour brutal en anglais professionnel. La norme : reconnaître d'abord, nuancer ensuite — le fameux « yes, but ».",
+      "phrases": [
+        {
+          "en": "I completely agree.",
+          "fr": "Je suis tout à fait d'accord.",
+          "register": "neutral"
+        },
+        {
+          "en": "That makes sense to me.",
+          "fr": "Ça me paraît logique.",
+          "register": "neutral"
+        },
+        {
+          "en": "I see your point, but I'm not sure I agree.",
+          "fr": "Je comprends votre point de vue, mais je ne suis pas certain d'être d'accord.",
+          "register": "neutral",
+          "note": "Le « yes, but » diplomatique : reconnaître puis nuancer."
+        },
+        {
+          "en": "I'd partly agree with that.",
+          "fr": "Je serais en partie d'accord.",
+          "register": "neutral"
+        },
+        {
+          "en": "I'm afraid I see it slightly differently.",
+          "fr": "Je crains de voir les choses un peu différemment.",
+          "register": "formal",
+          "note": "« I'm afraid » = formule polie pour annoncer un désaccord."
+        },
+        {
+          "en": "With respect, I think there's another way to look at this.",
+          "fr": "Avec tout le respect que je vous dois, je pense qu'on peut voir ça autrement.",
+          "register": "formal",
+          "note": "« With respect » introduit un désaccord poli — attention au ton."
+        },
+        {
+          "en": "I'm not convinced that's the right approach.",
+          "fr": "Je ne suis pas convaincu que ce soit la bonne approche.",
+          "register": "neutral"
+        },
+        {
+          "en": "Could we find a middle ground?",
+          "fr": "Pourrait-on trouver un compromis ?",
+          "register": "neutral",
+          "note": "« middle ground » = terrain d'entente / compromis."
+        },
+        {
+          "en": "I hear you, but the standard is quite clear on this.",
+          "fr": "J'entends bien, mais la norme est assez claire là-dessus.",
+          "register": "informal",
+          "note": "« I hear you » = j'entends / je comprends (sans forcément être d'accord) — assez familier, à réserver entre collègues."
+        }
+      ]
+    },
+    {
+      "id": "interrupt",
+      "icon": "✋",
+      "label_fr": "Interrompre & gérer la parole",
+      "label_en": "Interrupting & turn-taking",
+      "intro": "Interrompre poliment, reprendre la parole quand on te coupe, et faire participer les silencieux : des réflexes qui te feront exister dans une réunion en anglais.",
+      "phrases": [
+        {
+          "en": "Sorry, may I jump in here?",
+          "fr": "Pardon, puis-je intervenir ?",
+          "register": "neutral",
+          "note": "« jump in » = intervenir / se glisser dans la conversation."
+        },
+        {
+          "en": "Can I add something quickly?",
+          "fr": "Puis-je ajouter quelque chose rapidement ?",
+          "register": "neutral"
+        },
+        {
+          "en": "If I could just finish my point…",
+          "fr": "Si je pouvais juste terminer mon idée…",
+          "register": "neutral",
+          "note": "Pour reprendre la parole quand on vous coupe."
+        },
+        {
+          "en": "Sorry to cut in, but I think this is relevant.",
+          "fr": "Désolé de vous couper, mais je pense que c'est pertinent.",
+          "register": "neutral"
+        },
+        {
+          "en": "Let's let Marc finish.",
+          "fr": "Laissons Marc terminer.",
+          "register": "neutral"
+        },
+        {
+          "en": "Going back to what you said earlier…",
+          "fr": "Pour revenir à ce que vous disiez tout à l'heure…",
+          "register": "neutral"
+        },
+        {
+          "en": "I'd like to come back to your earlier point.",
+          "fr": "J'aimerais revenir sur votre point de tout à l'heure.",
+          "register": "formal"
+        },
+        {
+          "en": "Sarah, you've been quiet — what's your take?",
+          "fr": "Sarah, tu n'as rien dit — quel est ton avis ?",
+          "register": "informal",
+          "note": "« what's your take? » = quel est ton avis ? (faire participer)."
+        },
+        {
+          "en": "Hold that thought — let me just finish this point.",
+          "fr": "Garde ça en tête — laisse-moi finir ce point.",
+          "register": "informal",
+          "note": "« hold that thought » = garde cette idée pour dans un instant."
+        }
+      ]
+    },
+    {
+      "id": "pushback",
+      "icon": "🛡️",
+      "label_fr": "Push-back & négocier",
+      "label_en": "Pushing back & negotiating",
+      "intro": "Dire non sans braquer : on reconnaît la contrainte, puis on propose une alternative. Essentiel pour négocier un délai, un périmètre ou la disponibilité des documents.",
+      "phrases": [
+        {
+          "en": "I understand the deadline is tight, but we'll need a bit more time to do this properly.",
+          "fr": "Je comprends que le délai est serré, mais il nous faudra un peu plus de temps pour bien faire les choses.",
+          "register": "formal",
+          "note": "Reconnaître la contrainte AVANT d'opposer une objection (technique du « yes, but »)."
+        },
+        {
+          "en": "That might be difficult on our side.",
+          "fr": "Ça pourrait être compliqué de notre côté.",
+          "register": "neutral",
+          "note": "« on our side » = de notre côté ; formulation prudente."
+        },
+        {
+          "en": "I'd rather not commit to that until I've checked.",
+          "fr": "Je préfère ne pas m'engager là-dessus avant d'avoir vérifié.",
+          "register": "neutral"
+        },
+        {
+          "en": "Can we revisit the scope before we agree on a date?",
+          "fr": "Peut-on revoir le périmètre avant de fixer une date ?",
+          "register": "neutral",
+          "note": "« revisit » = réexaminer ; « scope » = périmètre."
+        },
+        {
+          "en": "We can do that, but it would mean pushing back the deadline.",
+          "fr": "On peut le faire, mais cela décalerait l'échéance.",
+          "register": "neutral",
+          "note": "« push back a deadline » = repousser une échéance."
+        },
+        {
+          "en": "Realistically, the earliest we could deliver is next Wednesday.",
+          "fr": "En toute honnêteté, le plus tôt qu'on pourrait livrer, c'est mercredi prochain.",
+          "register": "neutral",
+          "note": "« realistically » = soyons réalistes / en toute honnêteté (introduit une estimation prudente)."
+        },
+        {
+          "en": "Would you be open to a compromise?",
+          "fr": "Seriez-vous ouvert à un compromis ?",
+          "register": "formal"
+        },
+        {
+          "en": "Just so we're on the same page, this is outside the agreed scope.",
+          "fr": "Pour qu'on soit bien d'accord, cela dépasse le périmètre convenu.",
+          "register": "neutral",
+          "note": "« on the same page » = sur la même longueur d'onde."
+        },
+        {
+          "en": "Let me check with my manager and get back to you.",
+          "fr": "Laissez-moi vérifier avec mon manager et je reviens vers vous.",
+          "register": "neutral",
+          "note": "« get back to you » = revenir vers vous."
+        }
+      ]
+    },
+    {
+      "id": "remote",
+      "icon": "💻",
+      "label_fr": "Calls à distance (Teams / Zoom)",
+      "label_en": "Remote calls",
+      "intro": "Le vocabulaire des visios : son, partage d'écran, connexion. Ces réflexes te feront gagner en aisance dès ta première semaine sur Teams.",
+      "phrases": [
+        {
+          "en": "Can everyone hear me okay?",
+          "fr": "Tout le monde m'entend bien ?",
+          "register": "neutral"
+        },
+        {
+          "en": "Sorry, you're on mute.",
+          "fr": "Désolé, tu es en sourdine.",
+          "register": "informal",
+          "note": "« on mute » = micro coupé — LA phrase culte des calls."
+        },
+        {
+          "en": "You're cutting out — could you repeat that?",
+          "fr": "Ça coupe — peux-tu répéter ?",
+          "register": "neutral",
+          "note": "« cutting out » = ça coupe (mauvaise connexion)."
+        },
+        {
+          "en": "Let me share my screen — can you see it?",
+          "fr": "Je partage mon écran — vous le voyez ?",
+          "register": "neutral"
+        },
+        {
+          "en": "Sorry, I've got a bit of a lag.",
+          "fr": "Désolé, j'ai un peu de latence.",
+          "register": "informal",
+          "note": "« lag » = latence / décalage."
+        },
+        {
+          "en": "Would you mind turning your camera on?",
+          "fr": "Pourriez-vous allumer votre caméra ?",
+          "register": "formal"
+        },
+        {
+          "en": "I'll drop the link in the chat.",
+          "fr": "Je mets le lien dans le chat.",
+          "register": "informal",
+          "note": "« drop in the chat » = mettre dans la conversation."
+        },
+        {
+          "en": "I think we lost Marc — he dropped off.",
+          "fr": "Je crois qu'on a perdu Marc — il s'est déconnecté.",
+          "register": "neutral",
+          "note": "« drop off » = se déconnecter (involontairement)."
+        },
+        {
+          "en": "Let's give people a minute to join.",
+          "fr": "Laissons une minute aux gens pour se connecter.",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "summarize",
+      "icon": "📝",
+      "label_fr": "Reformuler & résumer",
+      "label_en": "Paraphrasing & summarizing",
+      "intro": "Reformuler montre que tu écoutes et verrouille la compréhension. À mi-réunion comme à la fin, un bon résumé évite les quiproquos.",
+      "phrases": [
+        {
+          "en": "So, to summarise, we agree on the scope but not yet on the timing.",
+          "fr": "Donc, pour résumer, on est d'accord sur le périmètre mais pas encore sur le calendrier.",
+          "register": "neutral",
+          "note": "UK « summarise » / US « summarize »."
+        },
+        {
+          "en": "Let me recap the main points.",
+          "fr": "Laissez-moi récapituler les points principaux.",
+          "register": "neutral",
+          "note": "« recap » = récapituler."
+        },
+        {
+          "en": "If I understood correctly, the key takeaway is that controls improved.",
+          "fr": "Si j'ai bien compris, le point essentiel à retenir, c'est que les contrôles se sont améliorés.",
+          "register": "neutral",
+          "note": "« takeaway » = point à retenir."
+        },
+        {
+          "en": "So what I'm hearing is that the deadline can't move.",
+          "fr": "Donc, ce que je comprends, c'est que l'échéance ne peut pas bouger.",
+          "register": "neutral",
+          "note": "Reformulation pour vérifier / montrer qu'on écoute."
+        },
+        {
+          "en": "Just to play that back to you, you'll send the receipts by Thursday.",
+          "fr": "Juste pour vous le reformuler : vous enverrez les justificatifs d'ici jeudi.",
+          "register": "neutral",
+          "note": "« play it back » = reformuler ce qui vient d'être dit."
+        },
+        {
+          "en": "In a nutshell, the provision is understated.",
+          "fr": "En résumé, la provision est sous-évaluée.",
+          "register": "neutral",
+          "note": "« in a nutshell » = en un mot / en résumé."
+        },
+        {
+          "en": "Let me make sure we're aligned before we move on.",
+          "fr": "Assurons-nous d'être alignés avant de continuer.",
+          "register": "neutral",
+          "note": "« aligned » = aligné / d'accord."
+        },
+        {
+          "en": "Correct me if I'm wrong, but the action is on your side.",
+          "fr": "Corrigez-moi si je me trompe, mais l'action est de votre côté.",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "icon": "🏁",
+      "label_fr": "Conclure : décisions & actions",
+      "label_en": "Closing & action points",
+      "intro": "Une réunion anglo-saxonne se juge à ses « action points » : qui fait quoi, pour quand. Termine toujours en verrouillant les actions et le suivi.",
+      "phrases": [
+        {
+          "en": "Let's wrap up.",
+          "fr": "Concluons.",
+          "register": "neutral",
+          "note": "« wrap up » = conclure / clôturer."
+        },
+        {
+          "en": "Before we finish, let's agree on the action points.",
+          "fr": "Avant de terminer, mettons-nous d'accord sur les actions à mener.",
+          "register": "neutral",
+          "note": "« action points / action items » = actions à réaliser."
+        },
+        {
+          "en": "So the action on my side is to send the request list by Thursday.",
+          "fr": "Donc, de mon côté, l'action c'est d'envoyer la liste de demandes d'ici jeudi.",
+          "register": "neutral",
+          "note": "« the action on my side » / « my action point » = l'action qui m'incombe."
+        },
+        {
+          "en": "Who's owning this?",
+          "fr": "Qui pilote ça ? / Qui en est responsable ?",
+          "register": "informal",
+          "note": "« own » une action = en être responsable / porteur."
+        },
+        {
+          "en": "Let's set a deadline for the end of next week.",
+          "fr": "Fixons une échéance pour la fin de la semaine prochaine.",
+          "register": "neutral"
+        },
+        {
+          "en": "I'll circulate the minutes after the meeting.",
+          "fr": "Je ferai circuler le compte rendu après la réunion.",
+          "register": "formal",
+          "note": "« circulate » = faire circuler / diffuser."
+        },
+        {
+          "en": "Let's schedule a follow-up for next Monday.",
+          "fr": "Planifions un point de suivi pour lundi prochain.",
+          "register": "neutral",
+          "note": "« follow-up » = suivi / réunion de suivi."
+        },
+        {
+          "en": "If there's nothing else, I think we can finish a few minutes early.",
+          "fr": "S'il n'y a rien d'autre, je pense qu'on peut finir quelques minutes en avance.",
+          "register": "neutral"
+        },
+        {
+          "en": "Thanks everyone — that was really helpful.",
+          "fr": "Merci à tous — c'était très utile.",
+          "register": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "audit",
+      "icon": "🔍",
+      "label_fr": "Réunions d'audit (terrain)",
+      "label_en": "Audit-specific meetings",
+      "intro": "Du kick-off au closing meeting : les phrases types pour lancer la mission, mener un walkthrough, demander les documents (PBC) et présenter les ajustements à la direction.",
+      "phrases": [
+        {
+          "en": "Thanks for making time for the kick-off meeting.",
+          "fr": "Merci d'avoir pris le temps pour la réunion de lancement.",
+          "register": "neutral",
+          "note": "« kick-off meeting » = réunion de lancement de la mission."
+        },
+        {
+          "en": "We'd like to understand the key changes in the business this year.",
+          "fr": "Nous aimerions comprendre les principaux changements dans l'activité cette année.",
+          "register": "formal"
+        },
+        {
+          "en": "Could you walk us through your revenue recognition process?",
+          "fr": "Pourriez-vous nous détailler votre processus de reconnaissance du revenu ?",
+          "register": "formal",
+          "note": "Question type de walkthrough."
+        },
+        {
+          "en": "What controls are in place over the approval of invoices?",
+          "fr": "Quels contrôles sont en place sur l'approbation des factures ?",
+          "register": "formal",
+          "note": "« controls in place » = contrôles en place."
+        },
+        {
+          "en": "Here is our PBC list — the documents we'll need from you.",
+          "fr": "Voici notre liste PBC — les documents dont nous aurons besoin de votre part.",
+          "register": "neutral",
+          "note": "« PBC » = Prepared By Client (préparé par le client)."
+        },
+        {
+          "en": "When would the team be available for the inventory count?",
+          "fr": "Quand l'équipe serait-elle disponible pour l'inventaire physique ?",
+          "register": "formal"
+        },
+        {
+          "en": "We've identified a few points we'd like to discuss at the closing meeting.",
+          "fr": "Nous avons identifié quelques points à aborder lors de la réunion de clôture.",
+          "register": "formal",
+          "note": "« closing / clearance meeting » = réunion de clôture avec la direction."
+        },
+        {
+          "en": "We're proposing an adjustment of CHF 120,000 to the provision.",
+          "fr": "Nous proposons un ajustement de 120 000 CHF sur la provision.",
+          "register": "formal",
+          "note": "« adjustment » = ajustement / écriture de correction proposée."
+        },
+        {
+          "en": "Could you confirm who we should contact for the bank confirmations?",
+          "fr": "Pouvez-vous confirmer qui contacter pour les confirmations bancaires ?",
+          "register": "formal",
+          "note": "« bank confirmations » = confirmations bancaires (circularisation)."
+        },
+        {
+          "en": "We'll need access to the accounting system for our testing.",
+          "fr": "Nous aurons besoin d'un accès au système comptable pour nos tests.",
+          "register": "neutral"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "en": "agenda",
+      "fr": "ordre du jour"
+    },
+    {
+      "en": "minutes",
+      "fr": "compte rendu, procès-verbal",
+      "note": "Toujours au pluriel dans ce sens."
+    },
+    {
+      "en": "to take the minutes",
+      "fr": "rédiger le compte rendu"
+    },
+    {
+      "en": "attendee",
+      "fr": "participant"
+    },
+    {
+      "en": "to chair (a meeting)",
+      "fr": "présider (une réunion)",
+      "note": "« the chair » = le président de séance."
+    },
+    {
+      "en": "AOB (Any Other Business)",
+      "fr": "questions diverses, divers",
+      "note": "Point « questions diverses » en fin d'ordre du jour."
+    },
+    {
+      "en": "action item / action point",
+      "fr": "action à réaliser",
+      "note": "Qui fait quoi, pour quand."
+    },
+    {
+      "en": "deliverable",
+      "fr": "livrable"
+    },
+    {
+      "en": "deadline",
+      "fr": "échéance, date limite"
+    },
+    {
+      "en": "to follow up",
+      "fr": "faire le suivi, relancer"
+    },
+    {
+      "en": "follow-up",
+      "fr": "point / réunion de suivi"
+    },
+    {
+      "en": "to circle back",
+      "fr": "revenir sur (un sujet plus tard)",
+      "note": "Sous-entend « plus tard » : « Let's circle back to this next week. » Ne signifie jamais « faire le tour »."
+    },
+    {
+      "en": "to park (an issue)",
+      "fr": "mettre un sujet de côté"
+    },
+    {
+      "en": "to take it offline",
+      "fr": "en discuter en dehors de la réunion"
+    },
+    {
+      "en": "to table (a point)",
+      "fr": "UK : mettre à l'ordre du jour / US : ajourner",
+      "note": "⚠️ Faux-ami : sens OPPOSÉS entre anglais britannique et américain."
+    },
+    {
+      "en": "takeaway",
+      "fr": "point à retenir"
+    },
+    {
+      "en": "stakeholder",
+      "fr": "partie prenante"
+    },
+    {
+      "en": "to align / aligned",
+      "fr": "s'aligner / aligné, d'accord"
+    },
+    {
+      "en": "on the same page",
+      "fr": "sur la même longueur d'onde"
+    },
+    {
+      "en": "to loop someone in",
+      "fr": "mettre quelqu'un dans la boucle"
+    },
+    {
+      "en": "to touch base",
+      "fr": "faire un point rapide"
+    },
+    {
+      "en": "to run something by someone",
+      "fr": "soumettre qqch à qqn",
+      "note": "« Let me run it by you » = je te le soumets."
+    },
+    {
+      "en": "a heads-up",
+      "fr": "un avertissement, une info en amont",
+      "note": "« give someone a heads-up » = prévenir à l'avance."
+    },
+    {
+      "en": "ballpark (figure)",
+      "fr": "ordre de grandeur, fourchette approximative"
+    },
+    {
+      "en": "to flag",
+      "fr": "signaler"
+    },
+    {
+      "en": "bandwidth",
+      "fr": "disponibilité, capacité",
+      "note": "« I don't have the bandwidth » = je n'ai pas la dispo."
+    },
+    {
+      "en": "EOD / COB",
+      "fr": "fin de journée (End Of Day / Close Of Business)",
+      "note": "COB = heure de fermeture des bureaux (~17-18h) ; EOD peut aller jusqu'à minuit — préciser le fuseau pour éviter un malentendu d'échéance."
+    },
+    {
+      "en": "kick-off",
+      "fr": "lancement (de mission)"
+    },
+    {
+      "en": "walkthrough",
+      "fr": "revue détaillée d'un processus (audit)"
+    },
+    {
+      "en": "PBC (Prepared By Client)",
+      "fr": "documents préparés par le client"
+    }
+  ],
+  "dialogues": [
+    {
+      "id": "kickoff",
+      "title": "Réunion de lancement (kick-off)",
+      "level": "B2",
+      "context": "EY rencontre le CFO du client pour cadrer l'audit annuel. Toi (Vincent) es le junior sur le terrain.",
+      "turns": [
+        {
+          "speaker": "manager",
+          "name": "EY Manager",
+          "en": "Thanks for joining us. The purpose of today's kick-off is to align on the scope and timing for the year-end audit.",
+          "fr": "Merci de votre présence. L'objectif de ce lancement est de nous aligner sur le périmètre et le calendrier de l'audit de clôture.",
+          "note": "Ouverture : annonce de l'objectif."
+        },
+        {
+          "speaker": "client",
+          "name": "CFO",
+          "en": "Happy to be here. We've blocked out the morning for you.",
+          "fr": "Ravi d'être là. On vous a réservé toute la matinée."
+        },
+        {
+          "speaker": "manager",
+          "name": "EY Manager",
+          "en": "Great. I'll hand over to Vincent, who'll be on site for most of the fieldwork.",
+          "fr": "Parfait. Je passe la parole à Vincent, qui sera sur place pour l'essentiel du travail de terrain.",
+          "note": "Transition : « hand over to »."
+        },
+        {
+          "speaker": "you",
+          "name": "Toi",
+          "en": "Thanks. To start, could you walk us through any major changes in the business this year?",
+          "fr": "Merci. Pour commencer, pourriez-vous nous présenter les principaux changements dans l'activité cette année ?",
+          "note": "Question de cadrage (walkthrough)."
+        },
+        {
+          "speaker": "client",
+          "name": "CFO",
+          "en": "Sure. We acquired a small competitor in June, so consolidation is new for us.",
+          "fr": "Bien sûr. Nous avons racheté un petit concurrent en juin, donc la consolidation est nouvelle pour nous."
+        },
+        {
+          "speaker": "you",
+          "name": "Toi",
+          "en": "Understood. We'll want to look into the acquisition accounting. Could you confirm who prepared the purchase price allocation?",
+          "fr": "Compris. Nous voudrons examiner la comptabilisation de l'acquisition. Pouvez-vous confirmer qui a préparé l'affectation du prix d'acquisition (PPA) ?",
+          "note": "« look into » + clarifier le responsable."
+        },
+        {
+          "speaker": "client",
+          "name": "CFO",
+          "en": "Our group controller, Anna. I'll loop her in.",
+          "fr": "Notre contrôleuse de gestion groupe, Anna. Je la mets dans la boucle.",
+          "note": "« loop in » (voir glossaire)."
+        },
+        {
+          "speaker": "manager",
+          "name": "EY Manager",
+          "en": "Perfect. We've shared our PBC list — the documents we'll need. Could the first batch be ready by next Friday?",
+          "fr": "Parfait. Nous avons partagé notre liste PBC — les documents nécessaires. Le premier lot pourrait-il être prêt pour vendredi prochain ?",
+          "note": "PBC + négociation du délai."
+        },
+        {
+          "speaker": "client",
+          "name": "CFO",
+          "en": "Friday might be tight with the acquisition files. Could we say the following Monday?",
+          "fr": "Vendredi risque d'être juste avec les dossiers d'acquisition. Pourrait-on dire le lundi suivant ?",
+          "note": "Push-back côté client (diplomatique)."
+        },
+        {
+          "speaker": "manager",
+          "name": "EY Manager",
+          "en": "That works. Let's set Monday as the deadline and schedule a follow-up call to check progress.",
+          "fr": "Ça marche. Fixons le lundi comme échéance et planifions un point de suivi pour faire le point.",
+          "note": "Décision + follow-up."
+        },
+        {
+          "speaker": "you",
+          "name": "Toi",
+          "en": "I'll circulate the minutes and the agreed action points this afternoon.",
+          "fr": "Je ferai circuler le compte rendu et les actions convenues cet après-midi.",
+          "note": "Clôture : action points."
+        },
+        {
+          "speaker": "manager",
+          "name": "EY Manager",
+          "en": "Thanks everyone — that was a productive start.",
+          "fr": "Merci à tous — un début productif."
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "title": "Réunion de clôture (closing / clearance meeting)",
+      "level": "B2",
+      "context": "EY présente ses constats à la direction. Désaccord poli sur une provision — à régler avec des éléments probants.",
+      "turns": [
+        {
+          "speaker": "manager",
+          "name": "EY Manager",
+          "en": "Thanks for making time for the closing meeting. We'd like to walk you through our findings.",
+          "fr": "Merci d'avoir dégagé du temps pour la réunion de clôture. Nous aimerions vous présenter nos constats.",
+          "note": "Ouverture (audit)."
+        },
+        {
+          "speaker": "manager",
+          "name": "EY Manager",
+          "en": "Overall, the audit went smoothly. We have two points to discuss.",
+          "fr": "Globalement, l'audit s'est bien déroulé. Nous avons deux points à aborder.",
+          "note": "« the headline » d'abord."
+        },
+        {
+          "speaker": "client",
+          "name": "CFO",
+          "en": "Go ahead.",
+          "fr": "Allez-y."
+        },
+        {
+          "speaker": "manager",
+          "name": "EY Manager",
+          "en": "The first is the bad-debt provision. Based on the ageing, we think it's understated by around CHF 120,000.",
+          "fr": "Le premier concerne la provision pour créances douteuses. D'après la balance âgée, nous la pensons sous-évaluée d'environ 120 000 CHF.",
+          "note": "Constat + ballpark figure."
+        },
+        {
+          "speaker": "client",
+          "name": "CFO",
+          "en": "I see it slightly differently — several of those balances were settled in January.",
+          "fr": "Je vois les choses un peu différemment — plusieurs de ces soldes ont été réglés en janvier.",
+          "note": "Désaccord diplomatique (client)."
+        },
+        {
+          "speaker": "manager",
+          "name": "EY Manager",
+          "en": "That's a fair point. Could you share the post-year-end receipts so we can look into it?",
+          "fr": "C'est un point juste. Pourriez-vous nous transmettre les encaissements postérieurs à la clôture pour qu'on puisse vérifier ?",
+          "note": "Reconnaître + demander la preuve."
+        },
+        {
+          "speaker": "client",
+          "name": "CFO",
+          "en": "Of course, I'll send them over today.",
+          "fr": "Bien sûr, je vous les envoie aujourd'hui.",
+          "note": "« send over » = transmettre."
+        },
+        {
+          "speaker": "partner",
+          "name": "EY Partner",
+          "en": "Just to be clear, if the receipts support the balances, we'd be comfortable with no adjustment.",
+          "fr": "Pour être clair : si les encaissements confirment les soldes, nous serions à l'aise sans ajustement.",
+          "note": "Position nuancée / conditionnelle."
+        },
+        {
+          "speaker": "manager",
+          "name": "EY Manager",
+          "en": "The second point is a disclosure on the acquisition — we'd recommend expanding the note.",
+          "fr": "Le second point porte sur une information en annexe relative à l'acquisition — nous recommandons d'étoffer la note.",
+          "note": "Recommandation."
+        },
+        {
+          "speaker": "client",
+          "name": "CFO",
+          "en": "Understood. We can update the note.",
+          "fr": "Compris. Nous pouvons mettre la note à jour."
+        },
+        {
+          "speaker": "partner",
+          "name": "EY Partner",
+          "en": "Thank you. To summarise: you'll send the receipts and update the acquisition note. We'll confirm our conclusion by Thursday.",
+          "fr": "Merci. Pour résumer : vous envoyez les encaissements et mettez à jour la note sur l'acquisition. Nous confirmerons notre conclusion d'ici jeudi.",
+          "note": "Résumé + actions (qui / quoi / quand)."
+        },
+        {
+          "speaker": "client",
+          "name": "CFO",
+          "en": "Sounds good. Thanks for a constructive audit.",
+          "fr": "Très bien. Merci pour cet audit constructif."
+        }
+      ]
+    }
+  ],
+  "tips": [
+    {
+      "icon": "🤐",
+      "title": "Reconnaître avant de contredire",
+      "text": "En anglais professionnel, on adoucit presque toujours un désaccord : « I see your point, but… », « That's fair, although… ». Attaquer frontalement (« No, you're wrong ») passe pour brutal. Le « yes, but » diplomatique est la norme Big 4."
+    },
+    {
+      "icon": "🎭",
+      "title": "Nuancer (hedging) = crédibilité, pas faiblesse",
+      "text": "« It seems… », « I'd say… », « broadly… », « I may be wrong, but… » : en audit, c'est la marque de la prudence professionnelle. Affirmer trop catégoriquement un chiffre non vérifié est risqué."
+    },
+    {
+      "icon": "🔇",
+      "title": "Les classiques du call à distance",
+      "text": "« You're on mute », « you're cutting out », « can you see my screen? », « I'll drop it in the chat ». Ces réflexes te feront gagner en aisance dès la première semaine sur Teams."
+    },
+    {
+      "icon": "📝",
+      "title": "Verrouille les actions à la fin",
+      "text": "Une réunion anglo-saxonne se juge à ses « action points » : qui fait quoi, pour quand. Termine toujours par « So, to summarise, the action on you is… by Friday », puis « I'll circulate the minutes »."
+    },
+    {
+      "icon": "⚠️",
+      "title": "Faux-amis qui piègent en réunion",
+      "text": "« To table a point » : UK = le mettre à l'ordre du jour ; US = l'ajourner (sens opposés !). « Elaborate » = développer (pas « élaborer »). « Eventually » = finalement (pas « éventuellement »). « Actually » = en fait (pas « actuellement »)."
+    },
+    {
+      "icon": "⏱️",
+      "title": "Cadre le temps dès l'ouverture",
+      "text": "« We've got 30 minutes, so let's keep to time » donne le ton. En cours de route : « we're running short on time », « let's park that », « can we take that offline? » pour tenir l'horaire sans froisser."
+    },
+    {
+      "icon": "🙋",
+      "title": "Faire participer & reprendre la parole",
+      "text": "Pour solliciter quelqu'un : « Sarah, what's your take? ». Pour récupérer la parole quand on te coupe : « If I could just finish my point… ». Pour t'inviter : « Sorry, may I jump in? »."
+    }
+  ]
+}
