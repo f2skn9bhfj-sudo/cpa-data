@@ -4042,6 +4042,29 @@ body[data-tab="podcasts"] #mindDumpPanel { bottom: 150px !important; }
 .cr-table tr:nth-child(even) td { background: rgba(148,163,184,.05); }
 .cr-table tr:hover td { background: rgba(99,102,241,.06); }
 
+/* ── Listes markdown (formatAnswer) : puces / numéros accentués, aérés ──
+   Classes uniques → aucun conflit. Marqueurs via ::before pour un rendu
+   identique en thème sombre/clair, robuste face à un éventuel reset ul. */
+.cr-list, .cr-olist {
+    margin: 8px 0 12px; padding-left: 0.2em; list-style: none;
+}
+.cr-list > li, .cr-olist > li {
+    position: relative; padding-left: 1.6em; margin: 5px 0; line-height: 1.6;
+}
+.cr-list > li::before {
+    content: "▸"; position: absolute; left: 0.2em; top: 0;
+    color: var(--accent-blue, #6366f1); font-weight: 700;
+}
+.cr-olist { counter-reset: cro; }
+.cr-olist > li { counter-increment: cro; }
+.cr-olist > li::before {
+    content: counter(cro) "."; position: absolute; left: 0; top: 0;
+    color: var(--accent-blue, #6366f1); font-weight: 700;
+    font-variant-numeric: tabular-nums; min-width: 1.3em;
+}
+/* Imbrication éventuelle : puce secondaire plus discrète */
+.cr-list .cr-list > li::before, .cr-olist .cr-list > li::before { content: "–"; color: var(--text-secondary); }
+
 /* ── Quiz inline "Teste-toi" dans une leçon ── */
 .mod-quiz {
     border-radius: 12px; border: 1px solid var(--border);

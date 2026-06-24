@@ -101,13 +101,25 @@ function _renderPipeTable(lines) {
     return html;
 }
 
+// Markers for list detection (line-start only → conservative, never touches prose).
+// Unicode bullets allow no space; dash/star bullets REQUIRE a trailing space so
+// "**bold**" (star not followed by space) is never mistaken for a bullet.
+const _RX_UBULLET = /^\s*[•‣◦▪·]\s*(.+)$/;
+const _RX_DBULLET = /^\s*[-–]\s+(.+)$/;
+const _RX_STAR    = /^\s*\*\s+(.+)$/;
+const _RX_NUM     = /^\s*(\d{1,2})[.)]\s+(.+)$/;
+const _isBullet = (l) => _RX_UBULLET.test(l) || _RX_DBULLET.test(l) || _RX_STAR.test(l);
+const _bulletText = (l) => (l.match(_RX_UBULLET) || l.match(_RX_DBULLET) || l.match(_RX_STAR))[1];
+
 function _formatLines(text) {
     const lines = text.split('\n');
     let result = '';
     let i = 0;
+    const endsBlock = () => /(?:<\/ul>|<\/ol>|<\/table>|<\/div>|<br>)$/.test(result);
     while (i < lines.length) {
+        const line = lines[i];
         // Detect pipe-table block: 2+ consecutive lines starting with |
-        if (lines[i].trim().startsWith('|')) {
+        if (line.trim().startsWith('|')) {
             let tableLines = [];
             while (i < lines.length && lines[i].trim().startsWith('|')) {
                 tableLines.push(lines[i]);
@@ -116,9 +128,29 @@ function _formatLines(text) {
             result += _renderPipeTable(tableLines);
             continue;
         }
-        // Skip duplicate blank lines
-        if (lines[i].trim() === '' && result.endsWith('<br>')) { i++; continue; }
-        result += _formatLine(lines[i]) + '<br>';
+        // Bullet list (• ‣ ◦ ▪ · or "- "/"– "/"* ") → real <ul>
+        if (_isBullet(line)) {
+            let items = [];
+            while (i < lines.length && _isBullet(lines[i])) {
+                items.push(`<li>${_formatLine(_bulletText(lines[i]).trim())}</li>`);
+                i++;
+            }
+            result += `<ul class="cr-list">${items.join('')}</ul>`;
+            continue;
+        }
+        // Numbered list ("1." / "1)" …) → real <ol>
+        if (_RX_NUM.test(line)) {
+            let items = [];
+            while (i < lines.length && _RX_NUM.test(lines[i])) {
+                items.push(`<li>${_formatLine(lines[i].match(_RX_NUM)[2].trim())}</li>`);
+                i++;
+            }
+            result += `<ol class="cr-olist">${items.join('')}</ol>`;
+            continue;
+        }
+        // Skip blank lines that would only add empty space after text/blocks
+        if (line.trim() === '' && endsBlock()) { i++; continue; }
+        result += _formatLine(line) + '<br>';
         i++;
     }
     return result.replace(/<br>$/, '');
