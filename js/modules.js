@@ -497,7 +497,7 @@ function modRenderNormDetail(n, m) {
     const accentBg = catColors.bg || color + '33';
     const fcCount = (n.flashcard_ids || []).length;
 
-    let html = `<div class="mod-detail fade-in">
+    let html = `<div class="mod-detail fade-in" style="--mod-accent:${accent}">
 
     <!-- Header card -->
     <div class="mod-header-card" style="border-color:${accent}44;background:linear-gradient(135deg, ${accentBg}66, ${accentBg}22)">
@@ -575,6 +575,19 @@ function modRenderNormDetail(n, m) {
         const mnemText = Array.isArray(n.mnemonics) ? n.mnemonics.join('\n') : n.mnemonics;
         html += `<div class="mod-mnemonic-box">
             💡 ${formatAnswer(mnemText)}
+        </div>`;
+    }
+
+    // ── Seuils & chiffres clés (grille visuelle, données jusqu'ici non affichées) ──
+    if (Array.isArray(n.thresholds) && n.thresholds.length > 0) {
+        html += `<div class="mod-section">
+            <h3 class="mod-section-title">📐 Seuils &amp; chiffres clés</h3>
+            <div class="mod-thr-grid">
+                ${n.thresholds.map(t => `<div class="mod-thr-item">
+                    <div class="mod-thr-val">${formatInline(String(t.value || ''))}</div>
+                    <div class="mod-thr-label">${escapeHtml(t.label || '')}</div>
+                </div>`).join('')}
+            </div>
         </div>`;
     }
 
@@ -669,6 +682,25 @@ function modRenderNormDetail(n, m) {
             if (kd.co)   html += `<div class="mod-diff-item mod-diff-co"><div class="mod-diff-tag">CO</div><div class="mod-diff-text">${formatAnswer(kd.co)}</div></div>`;
         }
         html += `</div></div>`;
+    }
+
+    // ── Comparaison synthétique référentiels (IFRS / RPC / CO) — donnée jusqu'ici non affichée ──
+    if (n.comparisons) {
+        const c = n.comparisons;
+        const cards = [];
+        if (Array.isArray(c)) {
+            c.forEach(item => cards.push(`<div class="mod-comp-card"><div class="mod-comp-text">${formatAnswer(String(item))}</div></div>`));
+        } else if (typeof c === 'object') {
+            if (c.ifrs) cards.push(`<div class="mod-comp-card mod-comp-ifrs"><div class="mod-comp-tag">IFRS / IAS</div><div class="mod-comp-text">${formatAnswer(c.ifrs)}</div></div>`);
+            if (c.rpc)  cards.push(`<div class="mod-comp-card mod-comp-rpc"><div class="mod-comp-tag">Swiss GAAP RPC</div><div class="mod-comp-text">${formatAnswer(c.rpc)}</div></div>`);
+            if (c.co)   cards.push(`<div class="mod-comp-card mod-comp-co"><div class="mod-comp-tag">CO</div><div class="mod-comp-text">${formatAnswer(c.co)}</div></div>`);
+        }
+        if (cards.length) {
+            html += `<div class="mod-section">
+                <h3 class="mod-section-title">📊 Comparaison référentiels (synthèse)</h3>
+                <div class="mod-comp-grid">${cards.join('')}</div>
+            </div>`;
+        }
     }
 
     // ── Flashcards — directly visible ──
@@ -2438,6 +2470,28 @@ body.light-mode .mod-sb-ref-owner {
 .mod-diff-co   .mod-diff-tag { color: #b45309; }
 .mod-diff-text { font-size: 13px; color: #cbd5e1; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; }
 
+/* ── Seuils & chiffres clés (grille de cartes) ── */
+.mod-thr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.mod-thr-item {
+    background: linear-gradient(135deg, rgba(99,102,241,.12), rgba(99,102,241,.03));
+    border: 1px solid rgba(99,102,241,.28); border-left: 3px solid var(--mod-accent, #6366f1);
+    border-radius: 10px; padding: 12px 14px;
+}
+.mod-thr-val { font-size: 18px; font-weight: 800; color: #a5b4fc; line-height: 1.2; word-wrap: break-word; }
+.mod-thr-label { font-size: 12px; color: #94a3b8; margin-top: 5px; line-height: 1.35; }
+
+/* ── Comparaison référentiels (synthèse) ── */
+.mod-comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+.mod-comp-card { border-radius: 10px; padding: 12px 14px; border: 1px solid #334155; }
+.mod-comp-ifrs { border-color: rgba(56,161,105,.35); background: rgba(56,161,105,.07); }
+.mod-comp-rpc  { border-color: rgba(49,130,206,.35); background: rgba(49,130,206,.07); }
+.mod-comp-co   { border-color: rgba(180,83,9,.35);   background: rgba(180,83,9,.07); }
+.mod-comp-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+.mod-comp-ifrs .mod-comp-tag { color: #38a169; }
+.mod-comp-rpc  .mod-comp-tag { color: #3182ce; }
+.mod-comp-co   .mod-comp-tag { color: #b45309; }
+.mod-comp-text { font-size: 13.5px; color: #cbd5e1; line-height: 1.55; }
+
 /* ── Rules ── */
 .mod-rule {
     font-size: 13px; color: #cbd5e1; padding: 6px 0;
@@ -2451,8 +2505,9 @@ body.light-mode .mod-sb-ref-owner {
 .mod-section { margin-bottom: 28px; }
 .mod-section-title {
     font-size: 18.5px; font-weight: 700; color: #e2e8f0;
-    margin: 0 0 12px 0; padding-bottom: 9px;
-    border-bottom: 1px solid #334155; letter-spacing: -0.01em;
+    margin: 0 0 12px 0; padding: 0 0 9px 12px;
+    border-bottom: 1px solid #334155; border-left: 3px solid var(--mod-accent, #6366f1);
+    letter-spacing: -0.01em;
 }
 .mod-section-text {
     font-size: 16px; color: #cbd5e1; line-height: 1.8;
@@ -2500,8 +2555,16 @@ body.light-mode .mod-sb-ref-owner {
 .mod-memo-a { font-size: 13px; color: #94a3b8; line-height: 1.6; white-space: pre-wrap; }
 
 /* Light mode sections */
-body.light-mode .mod-section-title { color: #0f172a; border-color: #e2e8f0; }
+body.light-mode .mod-section-title { color: #0f172a; border-bottom-color: #e2e8f0; }
 body.light-mode .mod-section-text { color: #334155; }
+body.light-mode .mod-thr-item { background: linear-gradient(135deg, #eef2ff, #f8fafc); border-color: #c7d2fe; }
+body.light-mode .mod-thr-val { color: #4338ca; }
+body.light-mode .mod-thr-label { color: #64748b; }
+body.light-mode .mod-comp-card { border-color: #e2e8f0; background: #fafbfc; }
+body.light-mode .mod-comp-ifrs { border-color: rgba(5,150,105,.35); background: rgba(5,150,105,.06); }
+body.light-mode .mod-comp-rpc  { border-color: rgba(37,99,235,.35); background: rgba(37,99,235,.06); }
+body.light-mode .mod-comp-co   { border-color: rgba(180,83,9,.35);  background: rgba(180,83,9,.06); }
+body.light-mode .mod-comp-text { color: #374151; }
 body.light-mode .mod-mnemonic-box { background: #f0fdf4; color: #166534; border-left-color: #22c55e; }
 body.light-mode .mod-tips-box { background: #fffbeb; border-left-color: #f59e0b; }
 body.light-mode .mod-tips-title { color: #92400e; }
