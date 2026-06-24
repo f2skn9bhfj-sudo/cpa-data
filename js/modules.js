@@ -497,6 +497,24 @@ function modRenderNormDetail(n, m) {
     const accentBg = catColors.bg || color + '33';
     const fcCount = (n.flashcard_ids || []).length;
 
+    // Sections « utiles » + helpers (réutilisés par le sommaire ET la boucle)
+    const _isMeaningful = (s) => s && ((s.title && s.title.trim())
+        || (s.content && s.content.trim().length > 20)
+        || s.info || s.legal_quote || s.example || s.comparison
+        || s.key_point || s.tip || s.warning);
+    const meaningful = (n.sections || []).filter(_isMeaningful);
+    const _secId = (sec, i) => sec.section_id || `${n.id}_s${i + 1}`;
+    const _artM = String(n.code || '').match(/(\d+[a-z]?(?:-\d+[a-z]?)?)/);
+    const artLabel = _artM ? 'art. ' + _artM[1] : '';
+    const _fact = (t) => `<span class="mod-fact">${t}</span>`;
+    const facts = [
+        artLabel ? _fact('§ ' + artLabel) : '',
+        meaningful.length ? _fact('📖 ' + meaningful.length + ' sections') : '',
+        fcCount ? _fact('🃏 ' + fcCount + ' flashcards') : '',
+        (n.questions || []).length ? _fact('❓ ' + n.questions.length + ' QCM') : '',
+        (n.cross_refs || []).length ? _fact('🔗 ' + n.cross_refs.length + ' liées') : '',
+    ].filter(Boolean).join('');
+
     let html = `<div class="mod-detail fade-in" style="--mod-accent:${accent}">
 
     <!-- Header card -->
@@ -537,8 +555,22 @@ function modRenderNormDetail(n, m) {
                 </button>` : ''}
             </div>
         </div>
+        ${facts ? `<div class="mod-hc-facts">${facts}</div>` : ''}
         ${n.last_revised ? `<div class="mod-hc-meta">Derniere revision : ${modTimeAgo(n.last_revised)} · Revise ${n.revision_count}x</div>` : '<div class="mod-hc-meta">Jamais revise</div>'}
     </div>`;
+
+    // ── Mini-sommaire navigable (sections titrées) ──
+    {
+        const titled = meaningful.map((s, i) => ({ s, i })).filter((x) => x.s.title && x.s.title.trim());
+        if (titled.length >= 3) {
+            html += `<nav class="mod-toc" aria-label="Sommaire de la fiche">
+                ${titled.map((x) => {
+                    const id = escapeAttr(_secId(x.s, x.i));
+                    return `<button class="mod-toc-chip" onclick="var e=document.getElementById('${id}');if(e)e.scrollIntoView({behavior:'smooth',block:'start'})"><span class="mod-toc-num">${x.i + 1}</span>${escapeHtml(x.s.title)}</button>`;
+                }).join('')}
+            </nav>`;
+        }
+    }
 
     // ── Audio files (podcasts, NotebookLM-style) ──
     if (Array.isArray(n.audio_files) && n.audio_files.length > 0) {
@@ -596,7 +628,7 @@ function modRenderNormDetail(n, m) {
     // titres-parents (ex: "2. Définition et concepts") n'ont pas de contenu
     // propre — leurs enfants 2.1, 2.2 le portent — mais on doit les afficher
     // comme séparateurs hiérarchiques, sinon la leçon paraît tronquée.
-    if (n.sections && n.sections.length > 0) {
+    if (meaningful.length > 0) {
         // Callouts pour les normes : même structure que les leçons IFP
         // (cf. modRenderLessonIfpDetail). Champs optionnels par section :
         // info, legal_quote, example, comparison, key_point, tip, warning.
@@ -608,19 +640,13 @@ function modRenderNormDetail(n, m) {
                </aside>`
             : '';
 
-        const meaningful = n.sections.filter(s =>
-            (s.title && s.title.trim())
-            || (s.content && s.content.trim().length > 20)
-            || s.info || s.legal_quote || s.example || s.comparison
-            || s.key_point || s.tip || s.warning
-        );
         meaningful.forEach((sec, i) => {
-            const secId = sec.section_id || `${n.id}_s${i + 1}`;
+            const secId = _secId(sec, i);
             const hasTitle = sec.title && sec.title.trim();
             const hasContent = sec.content && sec.content.trim().length > 0;
-            html += `<div class="mod-section">`;
+            html += `<div class="mod-section" id="${escapeAttr(secId)}">`;
             if (hasTitle) {
-                html += `<h3 class="mod-section-title" id="${escapeAttr(secId)}">${escapeHtml(sec.title)}</h3>`;
+                html += `<h3 class="mod-section-title"><span class="mod-sec-num">${i + 1}</span>${escapeHtml(sec.title)}</h3>`;
             }
             if (hasContent) {
                 html += `<div class="mod-section-text">${formatAnswer(sec.content)}</div>`;
@@ -2473,12 +2499,40 @@ body.light-mode .mod-sb-ref-owner {
 /* ── Seuils & chiffres clés (grille de cartes) ── */
 .mod-thr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 .mod-thr-item {
-    background: linear-gradient(135deg, rgba(99,102,241,.12), rgba(99,102,241,.03));
-    border: 1px solid rgba(99,102,241,.28); border-left: 3px solid var(--mod-accent, #6366f1);
-    border-radius: 10px; padding: 12px 14px;
+    background: rgba(99,102,241,.07); border: 1px solid rgba(99,102,241,.22);
+    border-radius: 12px; padding: 13px 15px; transition: border-color .15s, background .15s;
 }
-.mod-thr-val { font-size: 18px; font-weight: 800; color: #a5b4fc; line-height: 1.2; word-wrap: break-word; }
+.mod-thr-item:hover { border-color: rgba(99,102,241,.42); background: rgba(99,102,241,.11); }
+.mod-thr-val { font-size: 19px; font-weight: 800; color: #a5b4fc; line-height: 1.2; word-wrap: break-word; font-variant-numeric: tabular-nums; }
 .mod-thr-label { font-size: 12px; color: #94a3b8; margin-top: 5px; line-height: 1.35; }
+
+/* ── Quick-facts (en-tête de fiche) ── */
+.mod-hc-facts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.mod-fact {
+    font-size: 11.5px; font-weight: 600; color: #cbd5e1;
+    background: rgba(148,163,184,.14); border: 1px solid rgba(148,163,184,.22);
+    padding: 3px 9px; border-radius: 999px; white-space: nowrap;
+}
+
+/* ── Mini-sommaire navigable ── */
+.mod-toc {
+    display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 22px 0;
+    padding: 12px 14px; border-radius: 12px;
+    background: rgba(148,163,184,.06); border: 1px solid rgba(148,163,184,.14);
+}
+.mod-toc-chip {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 12.5px; color: #cbd5e1; cursor: pointer;
+    background: var(--bg-secondary, #1e293b); border: 1px solid rgba(148,163,184,.2);
+    padding: 5px 11px 5px 5px; border-radius: 999px;
+    transition: border-color .15s, color .15s, transform .12s;
+}
+.mod-toc-chip:hover { border-color: var(--mod-accent, #6366f1); color: #fff; transform: translateY(-1px); }
+.mod-toc-num {
+    flex: 0 0 auto; width: 20px; height: 20px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800; color: #fff; background: var(--mod-accent, #6366f1);
+}
 
 /* ── Comparaison référentiels (synthèse) ── */
 .mod-comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
@@ -2505,10 +2559,17 @@ body.light-mode .mod-sb-ref-owner {
 .mod-section { margin-bottom: 28px; }
 .mod-section-title {
     font-size: 18.5px; font-weight: 700; color: #e2e8f0;
-    margin: 0 0 12px 0; padding: 0 0 9px 12px;
-    border-bottom: 1px solid #334155; border-left: 3px solid var(--mod-accent, #6366f1);
-    letter-spacing: -0.01em;
+    margin: 0 0 14px 0; padding: 0 0 9px 0;
+    border-bottom: 1px solid #334155; letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 10px; scroll-margin-top: 12px;
 }
+.mod-sec-num {
+    flex: 0 0 auto; width: 26px; height: 26px; border-radius: 8px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; line-height: 1;
+    background: var(--mod-accent, #6366f1); box-shadow: 0 2px 5px rgba(0,0,0,.28);
+}
+.mod-section { scroll-margin-top: 12px; }
 .mod-section-text {
     font-size: 16px; color: #cbd5e1; line-height: 1.8;
     white-space: pre-wrap; word-wrap: break-word;
@@ -2557,9 +2618,15 @@ body.light-mode .mod-sb-ref-owner {
 /* Light mode sections */
 body.light-mode .mod-section-title { color: #0f172a; border-bottom-color: #e2e8f0; }
 body.light-mode .mod-section-text { color: #334155; }
-body.light-mode .mod-thr-item { background: linear-gradient(135deg, #eef2ff, #f8fafc); border-color: #c7d2fe; }
+body.light-mode .mod-thr-item { background: #f5f7ff; border-color: #c7d2fe; }
+body.light-mode .mod-thr-item:hover { background: #eef2ff; border-color: #a5b4fc; }
 body.light-mode .mod-thr-val { color: #4338ca; }
 body.light-mode .mod-thr-label { color: #64748b; }
+body.light-mode .mod-fact { color: #475569; background: #f1f5f9; border-color: #e2e8f0; }
+body.light-mode .mod-toc { background: #f8fafc; border-color: #e2e8f0; }
+body.light-mode .mod-toc-chip { background: #fff; border-color: #e2e8f0; color: #475569; }
+body.light-mode .mod-toc-chip:hover { color: #0f172a; }
+body.light-mode .mod-section-title { border-bottom-color: #e2e8f0; }
 body.light-mode .mod-comp-card { border-color: #e2e8f0; background: #fafbfc; }
 body.light-mode .mod-comp-ifrs { border-color: rgba(5,150,105,.35); background: rgba(5,150,105,.06); }
 body.light-mode .mod-comp-rpc  { border-color: rgba(37,99,235,.35); background: rgba(37,99,235,.06); }

@@ -138,11 +138,14 @@ function _formatLines(text) {
             result += `<ul class="cr-list">${items.join('')}</ul>`;
             continue;
         }
-        // Numbered list ("1." / "1)" …) → real <ol>
+        // Numbered list ("1." / "1)" …) → real <ol>, en gardant le numéro SOURCE
+        // (un compteur CSS repartirait à 1 quand les items sont séparés par des
+        //  sous-lignes "→ …", donc on rend le chiffre réel de la donnée).
         if (_RX_NUM.test(line)) {
             let items = [];
             while (i < lines.length && _RX_NUM.test(lines[i])) {
-                items.push(`<li>${_formatLine(lines[i].match(_RX_NUM)[2].trim())}</li>`);
+                const mm = lines[i].match(_RX_NUM);
+                items.push(`<li><span class="cr-num">${mm[1]}.</span>${_formatLine(mm[2].trim())}</li>`);
                 i++;
             }
             result += `<ol class="cr-olist">${items.join('')}</ol>`;
