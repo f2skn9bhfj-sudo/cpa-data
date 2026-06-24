@@ -610,6 +610,17 @@ function modRenderNormDetail(n, m) {
         </div>`;
     }
 
+    // ── Schémas / diagrammes (SVG, données additives) ──
+    if (Array.isArray(n.diagrams) && n.diagrams.length > 0) {
+        n.diagrams.forEach((dg) => {
+            if (!dg || !dg.svg) return;
+            html += `<figure class="mod-figure">
+                <div class="mod-figure-svg">${dg.svg}</div>
+                ${dg.title ? `<figcaption class="mod-figure-cap">${escapeHtml(dg.title)}${dg.caption ? ' · ' + escapeHtml(dg.caption) : ''}</figcaption>` : ''}
+            </figure>`;
+        });
+    }
+
     // ── Seuils & chiffres clés (grille visuelle, données jusqu'ici non affichées) ──
     if (Array.isArray(n.thresholds) && n.thresholds.length > 0) {
         html += `<div class="mod-section">
@@ -2533,6 +2544,14 @@ body.light-mode .mod-sb-ref-owner {
     display: inline-flex; align-items: center; justify-content: center;
     font-size: 11px; font-weight: 800; color: #fff; background: var(--mod-accent, #6366f1);
 }
+
+/* ── Schémas / figures (SVG) ── */
+.mod-figure { margin: 0 0 24px; padding: 18px 16px; border-radius: 14px; background: rgba(148,163,184,.05); border: 1px solid rgba(148,163,184,.16); }
+.mod-figure-svg { width: 100%; overflow-x: auto; }
+.mod-figure-svg svg { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+.mod-figure-cap { margin-top: 12px; text-align: center; font-size: 12.5px; color: #94a3b8; font-style: italic; }
+body.light-mode .mod-figure { background: #f8fafc; border-color: #e2e8f0; }
+body.light-mode .mod-figure-cap { color: #64748b; }
 
 /* ── Comparaison référentiels (synthèse) ── */
 .mod-comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
