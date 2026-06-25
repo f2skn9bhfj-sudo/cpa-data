@@ -569,6 +569,29 @@ function modSelectFlashcards() {
 // Norm detail (full reading pane)
 // ═══════════════════════════════════════
 
+// Repli « Approfondir le cours » : tout le détail est dans #modDeep (replié par
+// défaut). Rien n'est retiré du DOM (recherche/PDF intacts) ; on bascule juste
+// l'affichage. L'export PDF passe par l'API serveur, donc non affecté.
+function modToggleDeep() {
+    const d = document.getElementById('modDeep');
+    const b = document.getElementById('modDeepToggle');
+    if (!d) return;
+    const willOpen = d.style.display === 'none';
+    d.style.display = willOpen ? 'block' : 'none';
+    if (b) {
+        b.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        const main = b.querySelector('.mod-deep-main');
+        const hint = b.querySelector('.mod-deep-hint');
+        if (main) main.innerHTML = willOpen ? '<span class="mod-deep-ic">▴</span> Réduire le cours' : '<span class="mod-deep-ic">▾</span> Approfondir le cours';
+        if (hint) hint.style.display = willOpen ? 'none' : '';
+    }
+}
+function modExpandDeep() { const d = document.getElementById('modDeep'); if (d && d.style.display === 'none') modToggleDeep(); }
+function modGotoSection(id) {
+    modExpandDeep();
+    setTimeout(() => { const e = document.getElementById(id); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 40);
+}
+
 function modRenderNormDetail(n, m) {
     const el = document.getElementById('modReading');
     if (!el) return;
@@ -649,10 +672,40 @@ function modRenderNormDetail(n, m) {
             html += `<nav class="mod-toc" aria-label="Sommaire de la fiche">
                 ${titled.map((x) => {
                     const id = escapeAttr(_secId(x.s, x.i));
-                    return `<button class="mod-toc-chip" onclick="var e=document.getElementById('${id}');if(e)e.scrollIntoView({behavior:'smooth',block:'start'})"><span class="mod-toc-num">${x.i + 1}</span>${escapeHtml(x.s.title)}</button>`;
+                    return `<button class="mod-toc-chip" onclick="modGotoSection('${id}')"><span class="mod-toc-num">${x.i + 1}</span>${escapeHtml(x.s.title)}</button>`;
                 }).join('')}
             </nav>`;
         }
+    }
+
+    // ── « L'essentiel » : résumé + schéma + 3 points clés + mémo (vue rapide) ──
+    const _tips3 = (n.exam_tips || []).slice(0, 3);
+    const _mnemText = n.mnemonics ? (Array.isArray(n.mnemonics) ? n.mnemonics.join('\n') : n.mnemonics) : '';
+    const _diagHtml = (Array.isArray(n.diagrams) ? n.diagrams : []).filter(dg => dg && dg.svg).map(dg => `<figure class="mod-figure" style="margin:14px 0 4px">
+        <div class="mod-figure-svg">${dg.svg}</div>
+        ${dg.title ? `<figcaption class="mod-figure-cap">${escapeHtml(dg.title)}${dg.caption ? ' · ' + escapeHtml(dg.caption) : ''}</figcaption>` : ''}
+    </figure>`).join('');
+    const _hasEss = !!(n.summary || _tips3.length || _mnemText || _diagHtml);
+    if (_hasEss) {
+        html += `<div class="mod-essentiel">
+            <div class="mod-ess-kicker">⚡ L'essentiel</div>
+            ${n.summary ? `<div class="mod-section-text">${formatAnswer(n.summary)}</div>` : ''}
+            ${_diagHtml}
+            ${_tips3.length ? `<div class="mod-ess-points">${_tips3.map(t => `<div class="mod-ess-point"><span class="mod-ess-ic">🎯</span><span>${formatAnswer(t)}</span></div>`).join('')}</div>` : ''}
+            ${_mnemText ? `<div class="mod-mnemonic-box" style="margin-top:12px">💡 ${formatAnswer(_mnemText)}</div>` : ''}
+        </div>`;
+    }
+
+    // ── Bouton « Approfondir » + conteneur repliable. Si pas d'« essentiel »,
+    //    on ouvre directement le détail (pas de bouton solitaire). ──
+    if (_hasEss) {
+        html += `<button class="mod-deep-toggle" id="modDeepToggle" onclick="modToggleDeep()" aria-expanded="false">
+            <span class="mod-deep-main"><span class="mod-deep-ic">▾</span> Approfondir le cours</span>
+            <span class="mod-deep-hint">${meaningful.length ? meaningful.length + ' sections · ' : ''}exemples · pièges · comparaisons · flashcards</span>
+        </button>
+        <div id="modDeep" class="mod-deep" style="display:none">`;
+    } else {
+        html += `<div id="modDeep" class="mod-deep" style="display:block">`;
     }
 
     // ── Audio files (podcasts, NotebookLM-style) ──
@@ -678,31 +731,7 @@ function modRenderNormDetail(n, m) {
         }
     }
 
-    // ── Summary — always visible at top ──
-    if (n.summary) {
-        html += `<div class="mod-section">
-            <div class="mod-section-text">${formatAnswer(n.summary)}</div>
-        </div>`;
-    }
-
-    // ── Mnemonics — quick memory aid ──
-    if (n.mnemonics) {
-        const mnemText = Array.isArray(n.mnemonics) ? n.mnemonics.join('\n') : n.mnemonics;
-        html += `<div class="mod-mnemonic-box">
-            💡 ${formatAnswer(mnemText)}
-        </div>`;
-    }
-
-    // ── Schémas / diagrammes (SVG, données additives) ──
-    if (Array.isArray(n.diagrams) && n.diagrams.length > 0) {
-        n.diagrams.forEach((dg) => {
-            if (!dg || !dg.svg) return;
-            html += `<figure class="mod-figure">
-                <div class="mod-figure-svg">${dg.svg}</div>
-                ${dg.title ? `<figcaption class="mod-figure-cap">${escapeHtml(dg.title)}${dg.caption ? ' · ' + escapeHtml(dg.caption) : ''}</figcaption>` : ''}
-            </figure>`;
-        });
-    }
+    // (résumé, mnémo et schémas sont affichés dans le panneau « L'essentiel » ci-dessus)
 
     // ── Seuils & chiffres clés (grille visuelle, données jusqu'ici non affichées) ──
     if (Array.isArray(n.thresholds) && n.thresholds.length > 0) {
@@ -866,6 +895,7 @@ function modRenderNormDetail(n, m) {
         <div id="modNormQcmList"><div style="color:#64748b;padding:8px;font-size:13px">Chargement...</div></div>
     </div>`;
 
+    html += `</div>`; // close #modDeep
     html += `</div>`; // close mod-detail
     el.innerHTML = html;
     el.scrollTop = 0;
@@ -1840,6 +1870,7 @@ function modLocalSearch(query) {
     }
     const el = document.getElementById('modReading');
     if (!el) return;
+    modExpandDeep();   // déplier le cours pour que les résultats soient visibles
     const lower = query.toLowerCase();
     const qLen = lower.length;
 
@@ -2665,6 +2696,21 @@ body.light-mode .mod-home-card-title { color: #0f172a; }
 body.light-mode .mod-home-card-teaser { color: #64748b; }
 body.light-mode .mod-home-entry { background: #fff; border-color: #e2e8f0; color: #475569; }
 body.light-mode .mod-home-entry:hover { color: #0f172a; }
+
+/* ── « L'essentiel » + repli « Approfondir » ── */
+.mod-essentiel { background: rgba(99,102,241,.07); border: 1px solid rgba(99,102,241,.2); border-radius: 14px; padding: 16px 18px; margin-bottom: 16px; }
+.mod-ess-kicker { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--mod-accent, #818cf8); margin-bottom: 9px; }
+.mod-ess-points { margin-top: 12px; display: flex; flex-direction: column; gap: 9px; }
+.mod-ess-point { display: flex; gap: 9px; align-items: flex-start; font-size: 14.5px; line-height: 1.5; color: #e2e8f0; }
+.mod-ess-ic { flex: 0 0 auto; }
+.mod-deep-toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; text-align: left; cursor: pointer; background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 13px 16px; color: #e2e8f0; font-size: 15px; font-weight: 700; margin-bottom: 18px; transition: border-color .15s; }
+.mod-deep-toggle:hover { border-color: var(--mod-accent, #6366f1); }
+.mod-deep-ic { color: var(--mod-accent, #818cf8); font-weight: 800; margin-right: 6px; }
+.mod-deep-hint { font-size: 12px; font-weight: 500; color: #64748b; }
+body.light-mode .mod-essentiel { background: #eef2ff; border-color: #c7d2fe; }
+body.light-mode .mod-ess-point { color: #1e293b; }
+body.light-mode .mod-deep-toggle { background: #fff; border-color: #e2e8f0; color: #0f172a; }
+body.light-mode .mod-deep-hint { color: #94a3b8; }
 
 /* ── Comparaison référentiels (synthèse) ── */
 .mod-comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
