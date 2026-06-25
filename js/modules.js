@@ -288,13 +288,96 @@ function modTruncate(str, len) {
 // Level 3 — Reading pane routing
 // ═══════════════════════════════════════
 
+const MODULE_INTROS = {
+    M1: "Le vocabulaire et les repères de base de l'expertise comptable : référentiels, acteurs et cadre légal. Le point de départ de tout le cursus.",
+    M2: "Premiers pas dans l'audit : à quoi il sert, comment une mission s'organise, et les normes qui l'encadrent.",
+    M3: "Le socle comptable et juridique suisse : tenir, présenter et faire réviser les comptes, et le droit des sociétés (CO + Swiss GAAP RPC).",
+    M4: "Le référentiel international norme par norme : reconnaissance, évaluation et présentation selon les IFRS / IAS.",
+    M5: "Comment on prépare un audit : comprendre l'entité, évaluer les risques et bâtir la stratégie de mission.",
+    M6: "Le droit utile à l'expert-comptable : contrats, sociétés, poursuites et responsabilités.",
+    M7: "La fiscalité des entreprises : impôt sur le bénéfice et le capital, et leurs pièges récurrents.",
+    M8: "La TVA suisse de A à Z : assujettissement, taux, déduction de l'impôt préalable et décomptes.",
+    M9: "L'audit à l'ère des données : systèmes d'information, contrôles informatiques et analyse de données.",
+    M10: "La dernière ligne droite de l'audit : conclure, documenter et rédiger le rapport.",
+    M11: "Combiner les comptes d'un groupe : périmètre, méthodes de consolidation et écritures.",
+    M12: "Le contrôle restreint (review) : une assurance limitée, ses spécificités et ses normes (SER).",
+    M13: "La pratique du métier : indépendance, éthique, qualité et organisation du cabinet.",
+    M14: "Au-delà de l'audit classique : les autres missions d'assurance et leurs cadres.",
+    M15: "Le jugement professionnel : comment décider face à l'incertitude et à la complexité.",
+    M16: "Tendances et regards sur l'audit : ce qui fait évoluer le métier.",
+};
+function _modStripMd(s) { return String(s || '').replace(/\*\*/g, '').replace(/[#`>]/g, '').replace(/\s+/g, ' ').trim(); }
+function _modCleanTitle(t, code) {
+    let s = String(t || '').replace(/^[A-Za-zÉ/]+\s*\d*[a-z]?(?:-\d+[a-z]?)?\s*[—–-]\s*/, '').replace(/\s*\(art\.[^)]*\)\s*$/, '').trim();
+    return s || code;
+}
+
+// Accueil de module (remplace l'ancien panneau « sélectionnez un élément »).
 function modRenderEmpty() {
     const el = document.getElementById('modReading');
     if (!el) return;
-    el.innerHTML = `<div class="mod-empty-state">
-        <div style="font-size:44px;opacity:.2;margin-bottom:10px">📖</div>
-        <div>Selectionnez un element dans la barre laterale</div>
+    const m = modData.find(x => x.id === modSelectedId);
+    if (!m) { el.innerHTML = ''; return; }
+    const color = m.color || getModuleColor(m.code);
+    const norms = m.norms || [];
+    const lessonsIfp = m.lessons_ifp || [];
+    const lessonsNotion = m.lessons_notion || [];
+    const fcCount = m.flashcard_count || 0;
+    const intro = MODULE_INTROS[m.id] || ("Les normes et concepts clés du module « " + m.name + " ».");
+
+    // Regroupe les normes par catégorie (CO / Swiss GAAP RPC / IFRS…)
+    const groups = {};
+    norms.forEach(n => { const c = n.category || 'Normes'; (groups[c] = groups[c] || []).push(n); });
+    const catKeys = Object.keys(groups);
+
+    let html = `<div class="mod-home fade-in" style="--mod-accent:${color}">`;
+    html += `<div class="mod-home-hero" style="border-color:${color}55;background:linear-gradient(135deg, ${color}22, ${color}0a)">
+        <div class="mod-home-code" style="color:${color}">${escapeHtml(m.code)}${m.year || m.phase ? ' · ' + escapeHtml([m.year, m.phase].filter(Boolean).join(' — ')) : ''}</div>
+        <h2 class="mod-home-title">${escapeHtml(m.name)}</h2>
+        <p class="mod-home-intro">${escapeHtml(intro)}</p>
+        <div class="mod-home-facts">
+            ${norms.length ? `<span class="mod-home-fact">📘 ${norms.length} norme${norms.length > 1 ? 's' : ''}</span>` : ''}
+            ${lessonsIfp.length ? `<span class="mod-home-fact">📖 ${lessonsIfp.length} leçon${lessonsIfp.length > 1 ? 's' : ''}</span>` : ''}
+            ${lessonsNotion.length ? `<span class="mod-home-fact">📝 ${lessonsNotion.length} fiches</span>` : ''}
+            ${fcCount ? `<span class="mod-home-fact">🃏 ${fcCount} flashcards</span>` : ''}
+            ${m.hours_async ? `<span class="mod-home-fact">⏱️ ${m.hours_async}h</span>` : ''}
+        </div>
     </div>`;
+
+    if (norms.length) {
+        html += `<div class="mod-home-lead">Explore les normes</div>`;
+        catKeys.forEach(cat => {
+            const cc = getColor(cat) || {};
+            const acc = cc.accent || color;
+            html += `<div class="mod-home-group">`;
+            if (catKeys.length > 1) html += `<div class="mod-home-group-title" style="color:${acc}">${escapeHtml(cat)} <span style="opacity:.6">· ${groups[cat].length}</span></div>`;
+            html += `<div class="mod-home-grid">`;
+            groups[cat].forEach(n => {
+                const rawTitle = (window._coursNormMap && window._coursNormMap[n.code]) || n.title || '';
+                const title = _modCleanTitle(rawTitle, n.code);
+                const teaser = n.summary ? _modStripMd(n.summary).slice(0, 95) : '';
+                html += `<div class="mod-home-card" style="--c:${acc}" onclick="modSelectNorm('${escapeAttr(n.id)}')" role="button" tabindex="0">
+                    <div class="mod-home-card-code" style="color:${acc}">${escapeHtml(n.code)}</div>
+                    <div class="mod-home-card-title">${escapeHtml(title)}</div>
+                    ${teaser ? `<div class="mod-home-card-teaser">${escapeHtml(teaser)}${n.summary && n.summary.length > 95 ? '…' : ''}</div>` : ''}
+                </div>`;
+            });
+            html += `</div></div>`;
+        });
+    }
+
+    const entries = [];
+    if (lessonsIfp.length) entries.push(`<button class="mod-home-entry" onclick="modSelectLessonIfp('${escapeAttr(lessonsIfp[0].id)}')">📖 Leçons (${lessonsIfp.length})</button>`);
+    if (lessonsNotion.length) entries.push(`<button class="mod-home-entry" onclick="modSelectNotionLessons()">📝 Leçons Notion (${lessonsNotion.length})</button>`);
+    if (fcCount) entries.push(`<button class="mod-home-entry" onclick="modSelectFlashcards()">🃏 Flashcards (${fcCount})</button>`);
+    if (entries.length) html += `<div class="mod-home-lead" style="margin-top:8px">Réviser autrement</div><div class="mod-home-entries">${entries.join('')}</div>`;
+
+    if (!norms.length && !entries.length) {
+        html += `<div class="mod-empty-state"><div style="font-size:44px;opacity:.2;margin-bottom:10px">📖</div><div>Contenu en préparation pour ce module.</div></div>`;
+    }
+
+    html += `</div>`;
+    el.innerHTML = html;
     el.scrollTop = 0;
     modLsHide();
 }
@@ -2552,6 +2635,36 @@ body.light-mode .mod-sb-ref-owner {
 .mod-figure-cap { margin-top: 12px; text-align: center; font-size: 12.5px; color: #94a3b8; font-style: italic; }
 body.light-mode .mod-figure { background: #f8fafc; border-color: #e2e8f0; }
 body.light-mode .mod-figure-cap { color: #64748b; }
+
+/* ── Accueil de module ── */
+.mod-home { max-width: 1040px; }
+.mod-home-hero { border: 1px solid; border-radius: 16px; padding: 20px 22px; margin-bottom: 22px; }
+.mod-home-code { font-size: 12px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+.mod-home-title { font-size: 26px; font-weight: 800; color: #e2e8f0; margin: 7px 0 9px; letter-spacing: -0.02em; line-height: 1.15; }
+.mod-home-intro { font-size: 15.5px; line-height: 1.65; color: #cbd5e1; margin: 0 0 15px; max-width: 72ch; }
+.mod-home-facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.mod-home-fact { font-size: 12px; font-weight: 700; color: #cbd5e1; background: rgba(148,163,184,.14); border: 1px solid rgba(148,163,184,.22); border-radius: 999px; padding: 4px 11px; }
+.mod-home-lead { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; color: #64748b; margin: 4px 0 12px; }
+.mod-home-group { margin-bottom: 20px; }
+.mod-home-group-title { font-size: 12.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 10px; }
+.mod-home-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.mod-home-card { background: #1e293b; border: 1px solid #334155; border-radius: 14px; padding: 14px 16px; cursor: pointer; transition: border-color .15s, transform .12s, background .15s; }
+.mod-home-card:hover { border-color: var(--c, #6366f1); transform: translateY(-2px); background: #243149; }
+.mod-home-card-code { font-size: 12px; font-weight: 800; margin-bottom: 4px; }
+.mod-home-card-title { font-size: 14.5px; font-weight: 700; color: #e2e8f0; line-height: 1.3; }
+.mod-home-card-teaser { font-size: 12.5px; color: #94a3b8; line-height: 1.45; margin-top: 6px; }
+.mod-home-entries { display: flex; flex-wrap: wrap; gap: 10px; }
+.mod-home-entry { font-size: 13px; font-weight: 700; color: #cbd5e1; background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 10px 16px; cursor: pointer; transition: border-color .15s, color .15s; }
+.mod-home-entry:hover { border-color: var(--mod-accent, #6366f1); color: #fff; }
+body.light-mode .mod-home-title { color: #0f172a; }
+body.light-mode .mod-home-intro { color: #334155; }
+body.light-mode .mod-home-fact { color: #475569; background: #f1f5f9; border-color: #e2e8f0; }
+body.light-mode .mod-home-card { background: #fff; border-color: #e2e8f0; }
+body.light-mode .mod-home-card:hover { background: #f8fafc; }
+body.light-mode .mod-home-card-title { color: #0f172a; }
+body.light-mode .mod-home-card-teaser { color: #64748b; }
+body.light-mode .mod-home-entry { background: #fff; border-color: #e2e8f0; color: #475569; }
+body.light-mode .mod-home-entry:hover { color: #0f172a; }
 
 /* ── Comparaison référentiels (synthèse) ── */
 .mod-comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
