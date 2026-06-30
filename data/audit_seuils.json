@@ -4,7 +4,6 @@
     "description": "Tous les seuils clés de l'audit suisse + exercices pas-à-pas pour vraiment les comprendre.",
     "version": "1.0.0"
   },
-
   "categories": [
     {
       "id": "materialite",
@@ -51,10 +50,26 @@
           "scenario": "PME industrielle · RAI moyen 3 ans = CHF 2'000'000 · CA = CHF 30M · Total actif = CHF 25M",
           "question": "Quelle est la matérialité globale (PM) en utilisant le RAI comme base à 5% ?",
           "options": [
-            {"label": "CHF 50'000", "ok": false, "x": "Trop bas — tu as peut-être calculé sur 0.5%."},
-            {"label": "CHF 100'000", "ok": true, "x": "Correct : 5% × CHF 2'000'000 = CHF 100'000."},
-            {"label": "CHF 150'000", "ok": false, "x": "Tu as utilisé 7.5%, pas 5%."},
-            {"label": "CHF 1'000'000", "ok": false, "x": "Erreur décimale — c'est 5% (=0.05), pas 50%."}
+            {
+              "label": "CHF 50'000",
+              "ok": false,
+              "x": "Trop bas — tu as peut-être calculé sur 0.5%."
+            },
+            {
+              "label": "CHF 100'000",
+              "ok": true,
+              "x": "Correct : 5% × CHF 2'000'000 = CHF 100'000."
+            },
+            {
+              "label": "CHF 150'000",
+              "ok": false,
+              "x": "Tu as utilisé 7.5%, pas 5%."
+            },
+            {
+              "label": "CHF 1'000'000",
+              "ok": false,
+              "x": "Erreur décimale — c'est 5% (=0.05), pas 50%."
+            }
           ],
           "steps": [
             "1. On utilise la base RAI (classique pour entreprises commerciales)",
@@ -69,10 +84,26 @@
           "scenario": "Même PME : PM = CHF 100'000. Le risque d'audit est ÉLEVÉ (nouvelle mission, SCI faible, parties liées).",
           "question": "Quelle Performance Materiality (TE) choisis-tu ?",
           "options": [
-            {"label": "CHF 50'000 (50% de PM)", "ok": true, "x": "Correct : risque élevé → 50% de PM pour test plus strict."},
-            {"label": "CHF 75'000 (75% de PM)", "ok": false, "x": "75% serait pour un risque FAIBLE. Ici risque élevé → 50%."},
-            {"label": "CHF 100'000 (= PM)", "ok": false, "x": "Impossible : Performance < PM toujours."},
-            {"label": "CHF 5'000 (5% de PM)", "ok": false, "x": "Confusion avec le SUD."}
+            {
+              "label": "CHF 50'000 (50% de PM)",
+              "ok": true,
+              "x": "Correct : risque élevé → 50% de PM pour test plus strict."
+            },
+            {
+              "label": "CHF 75'000 (75% de PM)",
+              "ok": false,
+              "x": "75% serait pour un risque FAIBLE. Ici risque élevé → 50%."
+            },
+            {
+              "label": "CHF 100'000 (= PM)",
+              "ok": false,
+              "x": "Impossible : Performance < PM toujours."
+            },
+            {
+              "label": "CHF 5'000 (5% de PM)",
+              "ok": false,
+              "x": "Confusion avec le SUD."
+            }
           ],
           "steps": [
             "1. Performance Materiality est TOUJOURS < Matérialité globale",
@@ -89,10 +120,26 @@
           "scenario": "PM = CHF 100'000. Performance = CHF 50'000.",
           "question": "Quelle est le SUD (seuil de remontée, clearly trivial threshold) ?",
           "options": [
-            {"label": "CHF 5'000 (5% de PM)", "ok": true, "x": "Correct : SUD = ~5% de la PM GLOBALE (pas de Performance)."},
-            {"label": "CHF 2'500 (5% de Performance)", "ok": false, "x": "Piège classique : le SUD se calcule sur la PM globale, pas sur la TE."},
-            {"label": "CHF 10'000", "ok": false, "x": "Trop élevé — ça serait 10% de PM."},
-            {"label": "CHF 1'000", "ok": false, "x": "Trop bas."}
+            {
+              "label": "CHF 5'000 (5% de PM)",
+              "ok": true,
+              "x": "Correct : SUD = ~5% de la PM GLOBALE (pas de Performance)."
+            },
+            {
+              "label": "CHF 2'500 (5% de Performance)",
+              "ok": false,
+              "x": "Piège classique : le SUD se calcule sur la PM globale, pas sur la TE."
+            },
+            {
+              "label": "CHF 10'000",
+              "ok": false,
+              "x": "Trop élevé — ça serait 10% de PM."
+            },
+            {
+              "label": "CHF 1'000",
+              "ok": false,
+              "x": "Trop bas."
+            }
           ],
           "steps": [
             "1. Le SUD est un % de la MATÉRIALITÉ GLOBALE (PM), pas de la Performance",
@@ -108,10 +155,26 @@
           "scenario": "Société avec PERTE significative en 2025 (RAI = -CHF 500k). Historique : 2024 RAI +CHF 3M, 2023 RAI +CHF 2.8M. CA 2025 = CHF 45M. Total actif = CHF 35M.",
           "question": "Comment calcules-tu la matérialité globale ?",
           "options": [
-            {"label": "5% de la perte 2025 = 5% × -500k = -25k (non-sens)", "ok": false, "x": "FAUX — on ne calcule pas sur un résultat négatif."},
-            {"label": "Passer à 0.5% du CA = CHF 225'000", "ok": false, "x": "Possible mais souvent on utilise plutôt le RAI NORMALISÉ quand le résultat est exceptionnel."},
-            {"label": "RAI normalisé (moyenne 3 ans) = (3M + 2.8M − 0.5M)/3 = CHF 1.77M. PM = 5% × 1.77M = CHF 88'500", "ok": true, "x": "Correct — base normalisée en cas de résultat anormal. Approche recommandée."},
-            {"label": "1% du total actif = CHF 350'000", "ok": false, "x": "Possible comme sanity check mais pas la méthode usuelle pour commerciale."}
+            {
+              "label": "5% de la perte 2025 = 5% × -500k = -25k (non-sens)",
+              "ok": false,
+              "x": "FAUX — on ne calcule pas sur un résultat négatif."
+            },
+            {
+              "label": "Passer à 0.5% du CA = CHF 225'000",
+              "ok": false,
+              "x": "Possible mais souvent on utilise plutôt le RAI NORMALISÉ quand le résultat est exceptionnel."
+            },
+            {
+              "label": "RAI normalisé (moyenne 3 ans) = (3M + 2.8M − 0.5M)/3 = CHF 1.77M. PM = 5% × 1.77M = CHF 88'500",
+              "ok": true,
+              "x": "Correct — base normalisée en cas de résultat anormal. Approche recommandée."
+            },
+            {
+              "label": "1% du total actif = CHF 350'000",
+              "ok": false,
+              "x": "Possible comme sanity check mais pas la méthode usuelle pour commerciale."
+            }
           ],
           "steps": [
             "1. Le RAI 2025 négatif ne reflète pas la capacité normale de l'entité",
@@ -128,10 +191,26 @@
           "scenario": "PM = CHF 200'000, Performance = CHF 130'000, SUD = CHF 10'000. Tu identifies : Anomalie 1 : CHF 15'000 (au-dessus SUD). Anomalie 2 : CHF 8'000 (en dessous SUD). Anomalie 3 : CHF 170'000 (entre SUD et PM). Anomalie 4 : fraude direction pour CHF 12'000.",
           "question": "Quelles anomalies entrent dans ton SAD cumul final ? Quel est l'impact ?",
           "options": [
-            {"label": "Total SAD = 15 + 170 = CHF 185k — en dessous de PM → opinion OK", "ok": false, "x": "Oubli — la fraude direction est QUALITATIVE (à retenir même < SUD)."},
-            {"label": "Total SAD = 15 + 170 + 12 (fraude) = CHF 197k — sous PM mais QUALITATIF critique → opinion modifiée", "ok": true, "x": "Correct — la fraude direction est retenue indépendamment du SUD (matérialité qualitative)."},
-            {"label": "Total SAD = 15 + 8 + 170 + 12 = CHF 205k — dépasse PM → défavorable", "ok": false, "x": "L'anomalie 2 (CHF 8k) est SOUS le SUD → ne s'accumule pas."},
-            {"label": "Rien ne s'accumule car tout est < PM individuellement", "ok": false, "x": "FAUX — le SAD se cumule et se compare à la PM."}
+            {
+              "label": "Total SAD = 15 + 170 = CHF 185k — en dessous de PM → opinion OK",
+              "ok": false,
+              "x": "Oubli — la fraude direction est QUALITATIVE (à retenir même < SUD)."
+            },
+            {
+              "label": "Total SAD = 15 + 170 + 12 (fraude) = CHF 197k — sous PM mais QUALITATIF critique → opinion modifiée",
+              "ok": true,
+              "x": "Correct — la fraude direction est retenue indépendamment du SUD (matérialité qualitative)."
+            },
+            {
+              "label": "Total SAD = 15 + 8 + 170 + 12 = CHF 205k — dépasse PM → défavorable",
+              "ok": false,
+              "x": "L'anomalie 2 (CHF 8k) est SOUS le SUD → ne s'accumule pas."
+            },
+            {
+              "label": "Rien ne s'accumule car tout est < PM individuellement",
+              "ok": false,
+              "x": "FAUX — le SAD se cumule et se compare à la PM."
+            }
           ],
           "steps": [
             "1. SUD = CHF 10'000. Anomalies < SUD = IGNORÉES (anomalie 2 ignorée)",
@@ -144,7 +223,6 @@
         }
       ]
     },
-
     {
       "id": "co727",
       "label": "CO 727 — Régimes de révision (ordinaire / restreint / opting-out)",
@@ -190,10 +268,26 @@
           "scenario": "PME SA · Bilan 15 mio · CA 45 mio · 180 employés · NON cotée · pas de consolidation",
           "question": "Quel régime d'audit ?",
           "options": [
-            {"label": "Révision ORDINAIRE — CA > 40M", "ok": false, "x": "Piège : 1 SEUL critère dépassé (CA) → insuffisant pour ordinaire."},
-            {"label": "Contrôle RESTREINT — seulement 1 critère dépassé", "ok": true, "x": "Correct : il faut DEUX critères dépassés × 2 exercices pour déclencher l'ordinaire."},
-            {"label": "Opting-out — entreprise familiale", "ok": false, "x": "Opting-out nécessite ≤ 10 ETP."},
-            {"label": "Révision ordinaire — société > 100 employés", "ok": false, "x": "100 n'est pas un seuil."}
+            {
+              "label": "Révision ORDINAIRE — CA > 40M",
+              "ok": false,
+              "x": "Piège : 1 SEUL critère dépassé (CA) → insuffisant pour ordinaire."
+            },
+            {
+              "label": "Contrôle RESTREINT — seulement 1 critère dépassé",
+              "ok": true,
+              "x": "Correct : il faut DEUX critères dépassés × 2 exercices pour déclencher l'ordinaire."
+            },
+            {
+              "label": "Opting-out — entreprise familiale",
+              "ok": false,
+              "x": "Opting-out nécessite ≤ 10 ETP."
+            },
+            {
+              "label": "Révision ordinaire — société > 100 employés",
+              "ok": false,
+              "x": "100 n'est pas un seuil."
+            }
           ],
           "steps": [
             "1. Bilan 15 < 20 mio → KO",
@@ -210,10 +304,26 @@
           "scenario": "SA · Bilan 10 mio · CA 15 mio · 45 employés · NON cotée · cotée à SIX pour emprunts obligataires",
           "question": "Quel régime d'audit ?",
           "options": [
-            {"label": "Contrôle restreint (sous les seuils)", "ok": false, "x": "Piège : cotée = ordinaire même sous les seuils."},
-            {"label": "Révision ORDINAIRE — émettrice d'emprunts par obligations", "ok": true, "x": "Correct : CO 727 al. 1 ch. 1 — les sociétés ouvertes au public incluent les débiteurs d'emprunts par obligations."},
-            {"label": "Opting-out possible", "ok": false, "x": "Impossible : société ouverte au public."},
-            {"label": "Contrôle restreint avec mention spéciale", "ok": false, "x": "La cotation déclenche l'ordinaire."}
+            {
+              "label": "Contrôle restreint (sous les seuils)",
+              "ok": false,
+              "x": "Piège : cotée = ordinaire même sous les seuils."
+            },
+            {
+              "label": "Révision ORDINAIRE — émettrice d'emprunts par obligations",
+              "ok": true,
+              "x": "Correct : CO 727 al. 1 ch. 1 — les sociétés ouvertes au public incluent les débiteurs d'emprunts par obligations."
+            },
+            {
+              "label": "Opting-out possible",
+              "ok": false,
+              "x": "Impossible : société ouverte au public."
+            },
+            {
+              "label": "Contrôle restreint avec mention spéciale",
+              "ok": false,
+              "x": "La cotation déclenche l'ordinaire."
+            }
           ],
           "steps": [
             "1. Société 'ouverte au public' = cotée OU débitrice d'emprunts par obligations",
@@ -229,10 +339,26 @@
           "scenario": "SA familiale · 2024 : Bilan 22 mio, CA 38 mio, 230 employés · 2025 : Bilan 25 mio, CA 42 mio, 255 employés",
           "question": "Quel régime pour 2025 ?",
           "options": [
-            {"label": "Contrôle restreint — pas la même combinaison 2 ans de suite", "ok": false, "x": "Analyse à refaire — voir les steps."},
-            {"label": "Révision ORDINAIRE — 2 critères dépassés × 2 ans", "ok": true, "x": "Correct — on a bien 2 critères en commun qui dépassent les 2 ans."},
-            {"label": "Ordinaire — juste parce que 2025 dépasse 3 critères", "ok": false, "x": "Règle est '2 ans consécutifs' pas '3 critères une année'."},
-            {"label": "Restreint — 2024 ne dépassait que 2 critères, pas 3", "ok": false, "x": "Il faut 2 critères sur 2 ans, pas 3."}
+            {
+              "label": "Contrôle restreint — pas la même combinaison 2 ans de suite",
+              "ok": false,
+              "x": "Analyse à refaire — voir les steps."
+            },
+            {
+              "label": "Révision ORDINAIRE — 2 critères dépassés × 2 ans",
+              "ok": true,
+              "x": "Correct — on a bien 2 critères en commun qui dépassent les 2 ans."
+            },
+            {
+              "label": "Ordinaire — juste parce que 2025 dépasse 3 critères",
+              "ok": false,
+              "x": "Règle est '2 ans consécutifs' pas '3 critères une année'."
+            },
+            {
+              "label": "Restreint — 2024 ne dépassait que 2 critères, pas 3",
+              "ok": false,
+              "x": "Il faut 2 critères sur 2 ans, pas 3."
+            }
           ],
           "steps": [
             "1. Analyser 2024 : Bilan 22>20 OK · CA 38<40 KO · Empl 230<250 KO → 1 critère OK",
@@ -252,10 +378,26 @@
           "scenario": "SA · Bilan 5 mio · CA 8 mio · 8 employés ETP · Tous les actionnaires votent l'opting-out à l'unanimité",
           "question": "Quel régime ?",
           "options": [
-            {"label": "Contrôle restreint (obligatoire malgré décision AG)", "ok": false, "x": "Non, opting-out est légalement possible ici."},
-            {"label": "Opting-out — conditions remplies (≤10 ETP + unanimité)", "ok": true, "x": "Correct : CO 727a al. 2 — renonciation possible."},
-            {"label": "Révision ordinaire — pour protection des actionnaires", "ok": false, "x": "Pas obligatoire."},
-            {"label": "Restreint car bilan > 1M", "ok": false, "x": "Pas de seuil bilan pour opting-out."}
+            {
+              "label": "Contrôle restreint (obligatoire malgré décision AG)",
+              "ok": false,
+              "x": "Non, opting-out est légalement possible ici."
+            },
+            {
+              "label": "Opting-out — conditions remplies (≤10 ETP + unanimité)",
+              "ok": true,
+              "x": "Correct : CO 727a al. 2 — renonciation possible."
+            },
+            {
+              "label": "Révision ordinaire — pour protection des actionnaires",
+              "ok": false,
+              "x": "Pas obligatoire."
+            },
+            {
+              "label": "Restreint car bilan > 1M",
+              "ok": false,
+              "x": "Pas de seuil bilan pour opting-out."
+            }
           ],
           "steps": [
             "1. Conditions opting-out (CO 727a al. 2) : ≤ 10 employés ETP + accord UNANIME des actionnaires",
@@ -272,10 +414,26 @@
           "scenario": "SA · Bilan 12 mio · CA 18 mio · 95 employés · Non cotée · pas de consolidation · Un actionnaire détient 12% du capital et demande une révision ordinaire",
           "question": "Quel régime s'applique ?",
           "options": [
-            {"label": "Contrôle restreint — sous les seuils", "ok": false, "x": "Piège : opting-up est possible."},
-            {"label": "Révision ORDINAIRE — opting-up demandé par actionnaire ≥ 10% du capital", "ok": true, "x": "Correct : CO 727 al. 2 — ≥10% capital peut exiger l'ordinaire."},
-            {"label": "Opting-out possible", "ok": false, "x": "Employés > 10."},
-            {"label": "Révision ordinaire si la majorité vote", "ok": false, "x": "Pas besoin de majorité — 10% suffit."}
+            {
+              "label": "Contrôle restreint — sous les seuils",
+              "ok": false,
+              "x": "Piège : opting-up est possible."
+            },
+            {
+              "label": "Révision ORDINAIRE — opting-up demandé par actionnaire ≥ 10% du capital",
+              "ok": true,
+              "x": "Correct : CO 727 al. 2 — ≥10% capital peut exiger l'ordinaire."
+            },
+            {
+              "label": "Opting-out possible",
+              "ok": false,
+              "x": "Employés > 10."
+            },
+            {
+              "label": "Révision ordinaire si la majorité vote",
+              "ok": false,
+              "x": "Pas besoin de majorité — 10% suffit."
+            }
           ],
           "steps": [
             "1. Sans la demande : seuils CO 727 non atteints → restreint",
@@ -288,7 +446,263 @@
         }
       ]
     },
-
+    {
+      "id": "co961",
+      "label": "CO 961-961d — Grandes entreprises vs PME (rapport de gestion)",
+      "icon": "📊",
+      "color": "#3b82f6",
+      "aide_memoire": {
+        "concept": "Le droit comptable distingue PME et grandes entreprises. Les grandes entreprises (celles soumises au contrôle ordinaire, CO 727) doivent un rapport de gestion plus étoffé.",
+        "niveaux": [
+          {
+            "name": "PME (rapport standard)",
+            "formula": "Ne dépasse PAS 2 des 3 critères pendant 2 exercices successifs (et non cotée, sans comptes de groupe)",
+            "benchmarks": "Sous les seuils : bilan 20M · CA 40M · 250 EPT",
+            "purpose": "Rapport de gestion = bilan + compte de résultat + annexe",
+            "typical_value": "Majorité des sociétés"
+          },
+          {
+            "name": "Grande entreprise (CO 961)",
+            "formula": "Cotée OU obligation de comptes de groupe OU dépasse 2 des 3 critères × 2 exercices successifs",
+            "benchmarks": "Total du bilan CHF 20M · Chiffre d'affaires CHF 40M · 250 emplois plein temps (moyenne annuelle)",
+            "purpose": "Bilan + CR + annexe ÉLARGIE + tableau des flux de trésorerie + rapport annuel",
+            "typical_value": "Grandes PME, cotées, groupes"
+          },
+          {
+            "name": "Dispense (CO 961d al. 1)",
+            "formula": "Peut renoncer à l'annexe élargie, au tableau des flux et au rapport annuel",
+            "benchmarks": "Si l'entreprise (ou une personne morale qui la contrôle) établit des comptes consolidés selon une norme reconnue",
+            "purpose": "Éviter la double charge de présentation",
+            "typical_value": "Filiales de groupes consolidés"
+          }
+        ],
+        "mental_model": "Mêmes 3 seuils que le contrôle ordinaire (CO 727) — mais ici il s'agit de la PRÉSENTATION des comptes, pas de la révision. 2 des 3 critères dépassés × 2 ans (ou cotée / comptes de groupe) → grande entreprise → annexe élargie + TFT + rapport annuel. Sinon PME (bilan + CR + annexe).",
+        "pitfalls": [
+          "Mêmes seuils que CO 727 (20M / 40M / 250), mais finalité différente : contenu du rapport de gestion, pas régime de révision.",
+          "Il faut 2 des 3 critères dépassés pendant 2 exercices SUCCESSIFS (pas un seul critère, pas une seule année).",
+          "Le tableau des flux de trésorerie et le rapport annuel ne sont exigés QUE des grandes entreprises (jamais des PME).",
+          "Dispense 961d/1 possible UNIQUEMENT si des comptes consolidés sont établis selon une norme reconnue (par l'entité elle-même ou une société qui la contrôle).",
+          "CO 961d/2 : peuvent EXIGER des comptes 'grande entreprise' → des associés représentant ≥ 10% du capital social, 10% des coopérateurs ou 20% des membres d'une association, ou tout associé indéfiniment responsable / soumis à versements supplémentaires."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "co961_ex1",
+          "difficulty": "easy",
+          "scenario": "SA non cotée · Bilan 25 mio · CA 50 mio · 300 EPT · 2e exercice consécutif · pas de comptes de groupe",
+          "question": "Que doit contenir le rapport de gestion ?",
+          "options": [
+            {
+              "label": "Bilan + CR + annexe (rapport PME)",
+              "ok": false,
+              "x": "Non : 3 critères dépassés × 2 ans → grande entreprise."
+            },
+            {
+              "label": "Bilan + CR + annexe élargie + tableau des flux + rapport annuel",
+              "ok": true,
+              "x": "Correct : grande entreprise (CO 961) → rapport étoffé."
+            },
+            {
+              "label": "Uniquement un bilan",
+              "ok": false,
+              "x": "Le CO exige au minimum bilan + CR + annexe."
+            },
+            {
+              "label": "Comptes consolidés obligatoires",
+              "ok": false,
+              "x": "La consolidation relève de CO 963, pas du contenu du rapport de gestion."
+            }
+          ],
+          "steps": [
+            "Bilan 25 > 20M → OK",
+            "CA 50 > 40M → OK",
+            "EPT 300 > 250 → OK",
+            "≥ 2 critères × 2 exercices → grande entreprise",
+            "→ annexe élargie + TFT + rapport annuel"
+          ]
+        },
+        {
+          "id": "co961_ex2",
+          "difficulty": "medium",
+          "scenario": "Grande entreprise, filiale d'un groupe qui publie des comptes consolidés selon les IFRS",
+          "question": "Peut-elle renoncer au tableau des flux et au rapport annuel ?",
+          "options": [
+            {
+              "label": "Oui — comptes consolidés selon une norme reconnue (CO 961d/1)",
+              "ok": true,
+              "x": "Correct : la dispense 961d/1 s'applique."
+            },
+            {
+              "label": "Non — une grande entreprise n'a jamais de dispense",
+              "ok": false,
+              "x": "La dispense 961d/1 existe précisément pour ce cas."
+            },
+            {
+              "label": "Oui, mais seulement si elle est cotée",
+              "ok": false,
+              "x": "La cotation n'est pas la condition ; c'est la consolidation selon une norme reconnue."
+            }
+          ],
+          "steps": [
+            "Grande entreprise → rapport étoffé en principe",
+            "Mais comptes consolidés IFRS (norme reconnue) par le groupe",
+            "CO 961d/1 → renonciation à annexe élargie + TFT + rapport annuel"
+          ]
+        },
+        {
+          "id": "co961_ex3",
+          "difficulty": "medium",
+          "scenario": "SA · des actionnaires représentant 12% du capital social exigent un rapport 'grande entreprise'",
+          "question": "Leur demande est-elle recevable ?",
+          "options": [
+            {
+              "label": "Oui — ils dépassent le seuil de 10% du capital (CO 961d/2)",
+              "ok": true,
+              "x": "Correct : ≥ 10% du capital social → ils peuvent l'exiger."
+            },
+            {
+              "label": "Non — il faut 20% du capital",
+              "ok": false,
+              "x": "20% concerne CO 962/2 (norme reconnue), pas le rapport grande entreprise."
+            },
+            {
+              "label": "Non — seul le conseil d'administration décide",
+              "ok": false,
+              "x": "CO 961d/2 donne ce droit à une minorité qualifiée."
+            }
+          ],
+          "steps": [
+            "Seuil CO 961d/2 = 10% du capital social",
+            "12% > 10% → demande recevable"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "co962",
+      "label": "CO 962-962a — États financiers selon une norme reconnue",
+      "icon": "📐",
+      "color": "#10b981",
+      "aide_memoire": {
+        "concept": "En plus des comptes établis selon le CO, certaines entreprises doivent (ou peuvent être contraintes d')établir des états financiers selon une norme reconnue (Swiss GAAP RPC, IFRS, US GAAP).",
+        "niveaux": [
+          {
+            "name": "Obligation (CO 962 al. 1)",
+            "formula": "DOIVENT établir des états financiers selon une norme reconnue",
+            "benchmarks": "Sociétés cotées (si la bourse l'exige) · sociétés coopératives ≥ 2000 membres · fondations soumises au contrôle ordinaire",
+            "purpose": "Information financière fiable, au-delà du minimum CO",
+            "typical_value": "Cotées, grandes coopératives, grandes fondations"
+          },
+          {
+            "name": "Sur demande (CO 962 al. 2)",
+            "formula": "Peuvent EXIGER des états financiers selon une norme reconnue",
+            "benchmarks": "Associés ≥ 20% du capital social · 10% des coopérateurs ou 20% des membres d'une association · associé indéfiniment responsable / soumis à versements supplémentaires",
+            "purpose": "Protection des associés / minoritaires",
+            "typical_value": "Minorités qualifiées"
+          },
+          {
+            "name": "Dispense (CO 962 al. 3)",
+            "formula": "L'obligation d'états financiers individuels selon une norme reconnue s'éteint",
+            "benchmarks": "Si l'entreprise présente des comptes CONSOLIDÉS établis selon une norme reconnue",
+            "purpose": "Éviter la double présentation (individuel + consolidé)",
+            "typical_value": "Groupes consolidés"
+          }
+        ],
+        "mental_model": "Qui DOIT (962/1) : cotées + coopératives ≥ 2000 membres + fondations au contrôle ordinaire. Qui peut l'EXIGER (962/2) : associés ≥ 20% du capital, etc. Dispense (962/3) : comptes consolidés selon une norme reconnue. Normes reconnues = Swiss GAAP RPC, IFRS, et US GAAP (cas particuliers), désignées par le Conseil fédéral (CO 962a/5).",
+        "pitfalls": [
+          "Ne pas confondre les seuils d'EXIGENCE : 10% du capital pour exiger un rapport 'grande entreprise' (CO 961d/2), mais 20% du capital pour exiger une norme reconnue (CO 962/2).",
+          "Coopératives : ≥ 2000 membres déclenche l'obligation (962/1).",
+          "Une 'norme reconnue' n'est pas le CO : Swiss GAAP RPC, IFRS, ou US GAAP (cas particuliers).",
+          "Comptes consolidés selon une norme reconnue → dispense d'états financiers individuels selon une norme reconnue (962/3).",
+          "C'est le Conseil fédéral qui désigne les normes reconnues et peut fixer les conditions de choix/changement (CO 962a/5)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "co962_ex1",
+          "difficulty": "easy",
+          "scenario": "Société coopérative comptant 2500 membres",
+          "question": "Doit-elle établir des états financiers selon une norme reconnue ?",
+          "options": [
+            {
+              "label": "Oui — coopérative ≥ 2000 membres (CO 962/1)",
+              "ok": true,
+              "x": "Correct : le seuil de 2000 membres est dépassé."
+            },
+            {
+              "label": "Non — seules les sociétés cotées sont visées",
+              "ok": false,
+              "x": "Les coopératives ≥ 2000 membres et les fondations au contrôle ordinaire le sont aussi."
+            },
+            {
+              "label": "Non — uniquement si elle le souhaite",
+              "ok": false,
+              "x": "Au-delà de 2000 membres, c'est une obligation."
+            }
+          ],
+          "steps": [
+            "Coopérative · 2500 membres",
+            "Seuil CO 962/1 = 2000 membres",
+            "2500 ≥ 2000 → obligation"
+          ]
+        },
+        {
+          "id": "co962_ex2",
+          "difficulty": "medium",
+          "scenario": "SA · des actionnaires représentant 22% du capital exigent des comptes IFRS",
+          "question": "Peuvent-ils l'exiger ?",
+          "options": [
+            {
+              "label": "Oui — ≥ 20% du capital social (CO 962/2)",
+              "ok": true,
+              "x": "Correct : 22% ≥ 20% → ils peuvent exiger une norme reconnue."
+            },
+            {
+              "label": "Non — il faut 10% du capital",
+              "ok": false,
+              "x": "10% concerne le rapport 'grande entreprise' (961d/2), pas la norme reconnue."
+            },
+            {
+              "label": "Non — l'AG seule peut décider du référentiel",
+              "ok": false,
+              "x": "CO 962/2 donne ce droit à une minorité de 20%."
+            }
+          ],
+          "steps": [
+            "Seuil CO 962/2 = 20% du capital social",
+            "22% ≥ 20% → demande recevable",
+            "Norme reconnue : RPC, IFRS ou US GAAP"
+          ]
+        },
+        {
+          "id": "co962_ex3",
+          "difficulty": "medium",
+          "scenario": "Groupe coté présentant des comptes consolidés établis selon les IFRS",
+          "question": "La société-mère doit-elle aussi des états financiers individuels selon une norme reconnue ?",
+          "options": [
+            {
+              "label": "Non — l'obligation s'éteint (CO 962/3)",
+              "ok": true,
+              "x": "Correct : comptes consolidés selon une norme reconnue → dispense au niveau individuel."
+            },
+            {
+              "label": "Oui — toujours, en plus des consolidés",
+              "ok": false,
+              "x": "CO 962/3 dispense précisément de la double présentation."
+            },
+            {
+              "label": "Oui, mais en US GAAP uniquement",
+              "ok": false,
+              "x": "Aucune obligation supplémentaire : la dispense s'applique."
+            }
+          ],
+          "steps": [
+            "Comptes consolidés établis selon une norme reconnue (IFRS)",
+            "CO 962/3 → l'obligation d'EF individuels selon une norme reconnue s'éteint"
+          ]
+        }
+      ]
+    },
     {
       "id": "rpc30",
       "label": "RPC 30 — Consolidation",
@@ -331,10 +745,26 @@
           "scenario": "Holding · Bilan groupe 25 mio · CA groupe 45 mio · 280 employés groupe · depuis 3 ans",
           "question": "La consolidation est-elle obligatoire ?",
           "options": [
-            {"label": "Oui — 3 critères dépassés × 3 ans", "ok": true, "x": "Correct : seuils 20/40/250 largement dépassés sur plus de 2 ans."},
-            {"label": "Non — filiales petites", "ok": false, "x": "On regarde le total groupe, pas les filiales isolées."},
-            {"label": "Non — moins de 500 employés", "ok": false, "x": "Seuil est 250, pas 500."},
-            {"label": "Exempté car holding", "ok": false, "x": "Les holdings ne sont pas automatiquement exemptés."}
+            {
+              "label": "Oui — 3 critères dépassés × 3 ans",
+              "ok": true,
+              "x": "Correct : seuils 20/40/250 largement dépassés sur plus de 2 ans."
+            },
+            {
+              "label": "Non — filiales petites",
+              "ok": false,
+              "x": "On regarde le total groupe, pas les filiales isolées."
+            },
+            {
+              "label": "Non — moins de 500 employés",
+              "ok": false,
+              "x": "Seuil est 250, pas 500."
+            },
+            {
+              "label": "Exempté car holding",
+              "ok": false,
+              "x": "Les holdings ne sont pas automatiquement exemptés."
+            }
           ],
           "steps": [
             "1. Seuils CO 963 : Bilan 20 · CA 40 · ETP 250 · sur 2 ans",
@@ -351,10 +781,26 @@
           "scenario": "SA mère de 2 filiales · Bilan groupe 18 mio · CA groupe 35 mio · 180 employés groupe · ANNÉE 1",
           "question": "Consolidation requise en année 1 ?",
           "options": [
-            {"label": "Oui — entreprise a des filiales", "ok": false, "x": "Les seuils comptent, pas la simple présence de filiales."},
-            {"label": "Non — aucun critère dépassé", "ok": true, "x": "Correct : 18 < 20, 35 < 40, 180 < 250 → 0/3 critères dépassés."},
-            {"label": "Oui — précaution", "ok": false, "x": "Pas obligatoire sans dépassement."},
-            {"label": "À voir après 2 ans", "ok": false, "x": "Même après 2 ans, il faut encore dépasser 2 critères."}
+            {
+              "label": "Oui — entreprise a des filiales",
+              "ok": false,
+              "x": "Les seuils comptent, pas la simple présence de filiales."
+            },
+            {
+              "label": "Non — aucun critère dépassé",
+              "ok": true,
+              "x": "Correct : 18 < 20, 35 < 40, 180 < 250 → 0/3 critères dépassés."
+            },
+            {
+              "label": "Oui — précaution",
+              "ok": false,
+              "x": "Pas obligatoire sans dépassement."
+            },
+            {
+              "label": "À voir après 2 ans",
+              "ok": false,
+              "x": "Même après 2 ans, il faut encore dépasser 2 critères."
+            }
           ],
           "steps": [
             "1. Bilan 18 < 20 → KO",
@@ -367,7 +813,6 @@
         }
       ]
     },
-
     {
       "id": "sampling",
       "label": "Sampling (MUS, Attribute)",
@@ -406,10 +851,26 @@
           "scenario": "Test substantif sur créances clients · Population CHF 5'000'000 · Performance Materiality CHF 200'000 · Confiance modérée (facteur 2.3)",
           "question": "Taille d'échantillon MUS ?",
           "options": [
-            {"label": "25 items", "ok": false, "x": "Ça serait une taille attribute, pas MUS."},
-            {"label": "58 items", "ok": true, "x": "Correct : (5'000'000 / 200'000) × 2.3 = 25 × 2.3 = 57.5 → arrondi 58."},
-            {"label": "100 items", "ok": false, "x": "Tu as probablement utilisé facteur 4."},
-            {"label": "12 items", "ok": false, "x": "Trop peu — oubli du facteur de confiance."}
+            {
+              "label": "25 items",
+              "ok": false,
+              "x": "Ça serait une taille attribute, pas MUS."
+            },
+            {
+              "label": "58 items",
+              "ok": true,
+              "x": "Correct : (5'000'000 / 200'000) × 2.3 = 25 × 2.3 = 57.5 → arrondi 58."
+            },
+            {
+              "label": "100 items",
+              "ok": false,
+              "x": "Tu as probablement utilisé facteur 4."
+            },
+            {
+              "label": "12 items",
+              "ok": false,
+              "x": "Trop peu — oubli du facteur de confiance."
+            }
           ],
           "steps": [
             "1. Formule MUS : n = (Pop / PM) × facteur",
@@ -426,10 +887,26 @@
           "scenario": "Test de contrôle QUOTIDIEN (contrôle exécuté chaque jour) · Niveau de confiance MODÉRÉ",
           "question": "Taille échantillon attribute sampling ?",
           "options": [
-            {"label": "10 items", "ok": false, "x": "Trop peu pour un contrôle quotidien confiance modérée."},
-            {"label": "25 items", "ok": true, "x": "Correct : matrice EY GAM pour contrôle quotidien confiance modérée."},
-            {"label": "60 items", "ok": false, "x": "C'est pour confiance élevée / contrôle multi-quotidien."},
-            {"label": "Dépend du volume total", "ok": false, "x": "Non : attribute sampling est basé sur la FRÉQUENCE, pas le volume."}
+            {
+              "label": "10 items",
+              "ok": false,
+              "x": "Trop peu pour un contrôle quotidien confiance modérée."
+            },
+            {
+              "label": "25 items",
+              "ok": true,
+              "x": "Correct : matrice EY GAM pour contrôle quotidien confiance modérée."
+            },
+            {
+              "label": "60 items",
+              "ok": false,
+              "x": "C'est pour confiance élevée / contrôle multi-quotidien."
+            },
+            {
+              "label": "Dépend du volume total",
+              "ok": false,
+              "x": "Non : attribute sampling est basé sur la FRÉQUENCE, pas le volume."
+            }
           ],
           "steps": [
             "1. Attribute sampling = matrice fixée selon fréquence × confiance",
@@ -446,10 +923,26 @@
           "scenario": "Test MUS sur stocks : n=50 items testés. 2 items ont une erreur. Erreur 1 : CHF 15'000 (item vaut 80'000). Erreur 2 : CHF 3'000 (item vaut 50'000). Intervalle sondage = CHF 100'000. Performance Materiality = CHF 200'000.",
           "question": "Erreur projetée à la population ?",
           "options": [
-            {"label": "18'000 CHF (somme des erreurs)", "ok": false, "x": "Piège : il faut EXTRAPOLER, pas juste sommer."},
-            {"label": "~25'000 CHF", "ok": false, "x": "Trop bas pour l'extrapolation."},
-            {"label": "~22'750 CHF (méthode complexe)", "ok": false, "x": "Pas le calcul standard MUS."},
-            {"label": "~24'750 CHF (erreur 1 = 15k × 100% + erreur 2 projeté avec ratio)", "ok": true, "x": "Correct : items > intervalle projetés à 100% ; items < intervalle avec ratio erreur/item."}
+            {
+              "label": "18'000 CHF (somme des erreurs)",
+              "ok": false,
+              "x": "Piège : il faut EXTRAPOLER, pas juste sommer."
+            },
+            {
+              "label": "~25'000 CHF",
+              "ok": false,
+              "x": "Trop bas pour l'extrapolation."
+            },
+            {
+              "label": "~22'750 CHF (méthode complexe)",
+              "ok": false,
+              "x": "Pas le calcul standard MUS."
+            },
+            {
+              "label": "~24'750 CHF (erreur 1 = 15k × 100% + erreur 2 projeté avec ratio)",
+              "ok": true,
+              "x": "Correct : items > intervalle projetés à 100% ; items < intervalle avec ratio erreur/item."
+            }
           ],
           "steps": [
             "1. Règle MUS : si item testé ≥ intervalle → projeter à 100% de l'erreur observée",
@@ -464,7 +957,6 @@
         }
       ]
     },
-
     {
       "id": "rotation",
       "label": "Rotation & Indépendance",
@@ -513,10 +1005,26 @@
           "scenario": "Tu es engagement partner sur un mandat cotée depuis 2019. Nous sommes en 2026 (8 ans).",
           "question": "Peux-tu continuer ?",
           "options": [
-            {"label": "Oui — pas de limite stricte", "ok": false, "x": "FAUX — il y a une limite de 7 ans."},
-            {"label": "Non — max 7 ans (CO 728 al. 2 ch. 5) → rotation obligatoire", "ok": true, "x": "Correct : tu dois passer le flambeau."},
-            {"label": "Oui sauf demande explicite ASR", "ok": false, "x": "Pas de dérogation prévue."},
-            {"label": "Oui si l'équipe change", "ok": false, "x": "C'est le PARTNER qui rotate, pas l'équipe."}
+            {
+              "label": "Oui — pas de limite stricte",
+              "ok": false,
+              "x": "FAUX — il y a une limite de 7 ans."
+            },
+            {
+              "label": "Non — max 7 ans (CO 728 al. 2 ch. 5) → rotation obligatoire",
+              "ok": true,
+              "x": "Correct : tu dois passer le flambeau."
+            },
+            {
+              "label": "Oui sauf demande explicite ASR",
+              "ok": false,
+              "x": "Pas de dérogation prévue."
+            },
+            {
+              "label": "Oui si l'équipe change",
+              "ok": false,
+              "x": "C'est le PARTNER qui rotate, pas l'équipe."
+            }
           ],
           "steps": [
             "1. CO 728 al. 2 ch. 5 : engagement partner max 7 ans sur un même mandat",
@@ -533,10 +1041,26 @@
           "scenario": "Un client représente 22% des revenus totaux de votre cabinet (seul cabinet pour cette industrie spécialisée)",
           "question": "Quelle est la menace ?",
           "options": [
-            {"label": "Aucune — 22% c'est OK", "ok": false, "x": "Menace au-delà de ~15% pour cotées."},
-            {"label": "Intérêt personnel (dépendance économique)", "ok": true, "x": "Correct — risque d'indépendance compromise."},
-            {"label": "Familiarité uniquement", "ok": false, "x": "Liée à la durée, pas au volume."},
-            {"label": "Auto-révision", "ok": false, "x": "Auto-révision = réviser son propre travail passé."}
+            {
+              "label": "Aucune — 22% c'est OK",
+              "ok": false,
+              "x": "Menace au-delà de ~15% pour cotées."
+            },
+            {
+              "label": "Intérêt personnel (dépendance économique)",
+              "ok": true,
+              "x": "Correct — risque d'indépendance compromise."
+            },
+            {
+              "label": "Familiarité uniquement",
+              "ok": false,
+              "x": "Liée à la durée, pas au volume."
+            },
+            {
+              "label": "Auto-révision",
+              "ok": false,
+              "x": "Auto-révision = réviser son propre travail passé."
+            }
           ],
           "steps": [
             "1. Seuil indicatif IESBA : 15% des revenus cabinet (pour cotées)",
@@ -549,7 +1073,6 @@
         }
       ]
     },
-
     {
       "id": "co725",
       "label": "CO 725 — Perte capital & surendettement",
@@ -587,10 +1110,26 @@
           "scenario": "SA · Capital-actions CHF 1'000'000 · Réserve légale CHF 100'000 · Fonds propres totaux CHF 450'000",
           "question": "CO 725a applicable ?",
           "options": [
-            {"label": "Non — FP positifs", "ok": false, "x": "FP positifs ne suffit pas — il faut ≥ 50% du capital + réserves."},
-            {"label": "Oui — FP < 50% de (capital + réserves légales)", "ok": true, "x": "Correct : 50% × (1'000 + 100) = 550k. FP 450k < 550k → perte de capital."},
-            {"label": "Non — pas encore surendetté", "ok": false, "x": "Confusion avec CO 725b (surendettement)."},
-            {"label": "Seulement si les pertes continuent", "ok": false, "x": "La seule situation de bilan suffit."}
+            {
+              "label": "Non — FP positifs",
+              "ok": false,
+              "x": "FP positifs ne suffit pas — il faut ≥ 50% du capital + réserves."
+            },
+            {
+              "label": "Oui — FP < 50% de (capital + réserves légales)",
+              "ok": true,
+              "x": "Correct : 50% × (1'000 + 100) = 550k. FP 450k < 550k → perte de capital."
+            },
+            {
+              "label": "Non — pas encore surendetté",
+              "ok": false,
+              "x": "Confusion avec CO 725b (surendettement)."
+            },
+            {
+              "label": "Seulement si les pertes continuent",
+              "ok": false,
+              "x": "La seule situation de bilan suffit."
+            }
           ],
           "steps": [
             "1. Formule CO 725a : FP < 50% × (Capital + Réserves légales)",
@@ -607,10 +1146,26 @@
           "scenario": "SA · Actifs (valeur continuité) CHF 2'000'000 · Actifs (valeur liquidation) CHF 1'400'000 · Dettes CHF 1'800'000",
           "question": "Surendettement au sens CO 725b ?",
           "options": [
-            {"label": "Non — actifs continuité > dettes", "ok": false, "x": "L'article exige les DEUX tests (continuité ET liquidation)."},
-            {"label": "Oui — actifs liquidation < dettes", "ok": true, "x": "Correct : surendettement si DETTES > actifs dans l'UNE des deux évaluations."},
-            {"label": "Non — l'auditeur détermine", "ok": false, "x": "C'est objectif selon CO 725b."},
-            {"label": "Oui — car actifs continuité = 2M", "ok": false, "x": "Erreur de raisonnement."}
+            {
+              "label": "Non — actifs continuité > dettes",
+              "ok": false,
+              "x": "L'article exige les DEUX tests (continuité ET liquidation)."
+            },
+            {
+              "label": "Oui — actifs liquidation < dettes",
+              "ok": true,
+              "x": "Correct : surendettement si DETTES > actifs dans l'UNE des deux évaluations."
+            },
+            {
+              "label": "Non — l'auditeur détermine",
+              "ok": false,
+              "x": "C'est objectif selon CO 725b."
+            },
+            {
+              "label": "Oui — car actifs continuité = 2M",
+              "ok": false,
+              "x": "Erreur de raisonnement."
+            }
           ],
           "steps": [
             "1. CO 725b : surendettement si DETTES dépassent les actifs évalués tant à leur valeur d'exploitation qu'à leur valeur de liquidation",
@@ -628,10 +1183,26 @@
           "scenario": "SA en surendettement manifeste (CO 725b). Le CA est au courant depuis 3 mois mais n'a RIEN fait. En tant qu'organe de révision ordinaire, quelle est ton obligation ?",
           "question": "Action obligatoire ?",
           "options": [
-            {"label": "Démissionner sans rien faire", "ok": false, "x": "Démission ne lève pas l'obligation légale."},
-            {"label": "AVISER LE JUGE toi-même (CO 728c al. 3)", "ok": true, "x": "Correct : obligation subsidiaire de l'auditeur en cas de passivité du CA."},
-            {"label": "Aviser seulement les actionnaires", "ok": false, "x": "Insuffisant — le juge doit être saisi."},
-            {"label": "Attendre la prochaine AG", "ok": false, "x": "Trop tard — danger pour les créanciers."}
+            {
+              "label": "Démissionner sans rien faire",
+              "ok": false,
+              "x": "Démission ne lève pas l'obligation légale."
+            },
+            {
+              "label": "AVISER LE JUGE toi-même (CO 728c al. 3)",
+              "ok": true,
+              "x": "Correct : obligation subsidiaire de l'auditeur en cas de passivité du CA."
+            },
+            {
+              "label": "Aviser seulement les actionnaires",
+              "ok": false,
+              "x": "Insuffisant — le juge doit être saisi."
+            },
+            {
+              "label": "Attendre la prochaine AG",
+              "ok": false,
+              "x": "Trop tard — danger pour les créanciers."
+            }
           ],
           "steps": [
             "1. CO 728c al. 3 : si le CA omet d'aviser le juge malgré surendettement manifeste, l'organe de révision en informe le juge",
