@@ -84,7 +84,8 @@ async function stBuildIndex(onProgress) {
                 Array.isArray(nrm.mnemonics) ? nrm.mnemonics.join(' ') : (nrm.mnemonics || ''),
                 (nrm.thresholds || []).map(t => t && (t.label + ' ' + t.value)).join(' '),
                 (nrm.questions || []).map(q => q && (q.question + ' ' + (q.explanation || ''))).join(' ')].join(' ');
-            push('norme', (nrm.code || '') + ' — ' + (nrm.title || nrm.code), 'Module ' + m.id + ' · ' + (m.name || ''),
+            const _t0 = nrm.title || nrm.code || '';
+            push('norme', (nrm.code && !_t0.startsWith(nrm.code)) ? nrm.code + ' — ' + _t0 : _t0, 'Module ' + m.id + ' · ' + (m.name || ''),
                 secTxt + ' ' + extras, { k: 'norm', code: nrm.code }, (nrm.summary || '') + '\n\n' + secTxt);
         }
         for (const l of (m.lessons_ifp || [])) {
@@ -196,6 +197,12 @@ async function stBuildIndex(onProgress) {
 }
 
 /* ── Recherche + scoring ── */
+// Tokens « référentiel » : quand la requête contient rpc/ifrs/co…, on booste
+// fortement les documents dont le titre/la catégorie portent ce référentiel
+// (ex. « goodwill RPC » → le cours RPC sur le goodwill remonte en tête).
+const ST_REF_TOKENS = { rpc: 1, ifrs: 1, ias: 1, co: 1, isa: 1, nas: 1, lfus: 1, tva: 1, lia: 1, lifd: 1 };
+const ST_COURSE_TYPES = { norme: 1, lecon: 1, audit: 1, seuil: 1, reference: 1 };
+
 function stSearch(query) {
     const q = stNorm(query.trim());
     if (!q || q.length < 2 || !_stIndex) return [];
@@ -211,10 +218,25 @@ function stSearch(query) {
         if (tiN === q) score += 400;
         else if (tiN.includes(q)) score += 160;
         if (tiN.startsWith(q)) score += 90;
-        for (const t of tokens) { if (tiN.includes(t)) score += 40; if (brN.includes(t)) score += 10; }
+        for (const t of tokens) {
+            if (tiN.includes(t)) score += 40;
+            if (brN.includes(t)) score += 12;
+            // Fréquence du terme dans le texte : un cours qui parle VRAIMENT du
+            // sujet (goodwill × 15) bat une carte qui le mentionne une fois.
+            let occ = 0, p = 0;
+            while (occ < 12 && (p = d.x.indexOf(t, p)) >= 0) { occ++; p += t.length; }
+            score += Math.min(occ, 12) * 5;
+            // Bonus référentiel : « rpc » dans la requête + titre/catégorie RPC
+            if (ST_REF_TOKENS[t] && (tiN.includes(t) || brN.includes(t))) score += 55;
+        }
         if (d.x.includes(q)) score += 60;
-        score += Math.min(tokens.length * 8, 30);
-        if (d.t === 'norme') score += 18; else if (d.t === 'lecon' || d.t === 'audit' || d.t === 'seuil') score += 8;
+        // Priorité pédagogique : les COURS avant les cartes isolées
+        if (d.t === 'norme') score += 28;
+        else if (d.t === 'lecon' || d.t === 'audit') score += 20;
+        else if (d.t === 'seuil') score += 14;
+        else if (d.t === 'notion') score += 4;
+        else if (d.t === 'flashcard') score -= 12;
+        else if (d.t === 'anglais') score -= 10;
         out.push({ d, score });
     }
     out.sort((a, b) => b.score - a.score);
@@ -357,8 +379,28 @@ function stRun(query) {
             <div class="st-empty-sub">Essaie moins de mots, ou vérifie l'orthographe. ${window._stAiOn ? 'Ou demande à l\'IA ci-dessus 🤖' : ''}</div></div>`;
         return;
     }
+    // 🎓 Bandeau « Cours recommandés » : les 3 meilleurs documents de type
+    // cours (norme / leçon / cours audit / seuil) épinglés en tête, pour
+    // atterrir directement sur LE cours (ex. « goodwill RPC » → RPC 2).
+    let pinned = '';
+    if (!_stFilter) {
+        const courses = [];
+        hits.forEach((d, i) => { if (courses.length < 3 && ST_COURSE_TYPES[d.t] && d.act) courses.push({ d, i }); });
+        if (courses.length) {
+            pinned = `<div class="st-pin"><div class="st-pin-h">🎓 Cours recommandés</div><div class="st-pin-row">`
+                + courses.map(({ d, i }) => {
+                    const ty = ST_TYPES[d.t] || { ic: '📄', label: d.t, color: '#64748b' };
+                    return `<div class="st-pin-card" style="--c:${ty.color}" onclick="stOpen(${i})">
+                        <span class="st-pin-type">${ty.ic} ${ty.label}</span>
+                        <div class="st-pin-title">${escapeHtml(d.ti.slice(0, 90))}</div>
+                        <div class="st-pin-br">${escapeHtml(d.br)}</div>
+                        <span class="st-pin-open">Ouvrir le cours →</span>
+                    </div>`;
+                }).join('') + `</div></div>`;
+        }
+    }
     const MAXSHOW = 60;
-    res.innerHTML = hits.slice(0, MAXSHOW).map((d, i) => {
+    res.innerHTML = pinned + hits.slice(0, MAXSHOW).map((d, i) => {
         const ty = ST_TYPES[d.t] || { ic: '📄', label: d.t, color: '#64748b' };
         return `<div class="st-card" id="stCard${i}">
             <div class="st-card-head" onclick="stToggle(${i})">
@@ -392,8 +434,7 @@ function stToggle(i) {
     } else { full.style.display = 'none'; if (exp) exp.textContent = '▾'; }
 }
 
-function stOpen(i) {
-    const d = _stResults[i];
+function stOpenDoc(d) {
     if (!d || !d.act) return;
     const a = d.act;
     if (a.k === 'norm' && typeof navigateToNormByCode === 'function') { navigateToNormByCode(a.code); return; }
@@ -404,6 +445,8 @@ function stOpen(i) {
     }
     if (a.k === 'tab') { navigate(a.tab); return; }
 }
+function stOpen(i) { stOpenDoc(_stResults[i]); }
+function stOpenAiHit(i) { stOpenDoc((window._stAiHits || [])[i]); }
 
 /* ── Assistant IA (Mistral) ── */
 function stAiKey() { try { return localStorage.getItem('swisscpa_mistral_key') || ''; } catch (e) { return ''; } }
@@ -458,7 +501,7 @@ async function stAskAI() {
             body: JSON.stringify({
                 model: stAiModel(), temperature: 0.3, max_tokens: 900,
                 messages: [
-                    { role: 'system', content: "Tu es l'assistant de révision d'une application de préparation au diplôme fédéral suisse d'expert-comptable (CO, Swiss GAAP RPC, IFRS, audit ISA/NAS, fiscalité). Réponds en FRANÇAIS, de façon précise et structurée. Appuie-toi d'abord sur les EXTRAITS DU COURS fournis et cite-les par leur numéro [n]. Si l'information n'y figure pas, dis-le explicitement puis réponds prudemment avec tes connaissances (droit suisse en vigueur, réforme SA 2023)." },
+                    { role: 'system', content: "Tu es l'assistant de révision d'une application de préparation au diplôme fédéral suisse d'expert-comptable (CO, Swiss GAAP RPC, IFRS, audit ISA/NAS, fiscalité). Tu as deux rôles : (1) RÉPONDRE en FRANÇAIS, précis et structuré, en t'appuyant d'abord sur les EXTRAITS DU COURS fournis, cités par leur numéro [n] ; si l'information n'y figure pas, dis-le puis réponds prudemment avec tes connaissances (droit suisse en vigueur, réforme SA 2023). (2) GUIDER vers les bons cours : termine TOUJOURS ta réponse par une ligne séparée, exactement au format « RECO: 1, 3 » (numéros des 1 à 3 extraits les plus pertinents à ouvrir pour approfondir, dans l'ordre d'utilité). Si aucun extrait n'est pertinent, écris « RECO: aucun »." },
                     { role: 'user', content: 'QUESTION : ' + question + '\n\nEXTRAITS DU COURS :\n\n' + (extracts || '(aucun extrait trouvé dans l\'app)') }
                 ]
             })
@@ -469,13 +512,34 @@ async function stAskAI() {
             return;
         }
         const j = await r.json();
-        const txt = (j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content) || '(réponse vide)';
+        let txt = (j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content) || '(réponse vide)';
+        // « RECO: 1, 3 » → cartes de cours recommandés par l'IA (cliquables)
+        window._stAiHits = hits;
+        let recoIdx = [];
+        const recoM = txt.match(/RECO\s*:\s*([\d,\s]+|aucun)/i);
+        if (recoM) {
+            txt = txt.replace(recoM[0], '').trim();
+            if (!/aucun/i.test(recoM[1])) {
+                recoIdx = recoM[1].split(/[,\s]+/).map(x => parseInt(x, 10) - 1).filter(n => n >= 0 && n < hits.length).slice(0, 3);
+            }
+        }
         let html = escapeHtml(txt)
-            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\*\*/g, '')
+            .replace(/^#+\s*(.*)$/gm, '<strong>$1</strong>')
             .replace(/^[-•] (.*)$/gm, '<span class="st-ai-li">• $1</span>')
             .replace(/\[(\d+)\]/g, '<span class="st-ai-src">[$1]</span>')
             .replace(/\n/g, '<br>');
-        out.innerHTML = `<div class="st-ai-answer">${html}</div>` + (hits.length ?
+        const recoHtml = recoIdx.length ? `<div class="st-ai-reco"><div class="st-pin-h">🎓 L'IA te recommande d'ouvrir</div><div class="st-pin-row">`
+            + recoIdx.map(n => {
+                const d = hits[n], ty = ST_TYPES[d.t] || { ic: '📄', label: d.t, color: '#64748b' };
+                return `<div class="st-pin-card" style="--c:${ty.color}" onclick="stOpenAiHit(${n})">
+                    <span class="st-pin-type">${ty.ic} ${ty.label}</span>
+                    <div class="st-pin-title">${escapeHtml(d.ti.slice(0, 90))}</div>
+                    <div class="st-pin-br">${escapeHtml(d.br)}</div>
+                    <span class="st-pin-open">Ouvrir le cours →</span>
+                </div>`;
+            }).join('') + `</div></div>` : '';
+        out.innerHTML = `<div class="st-ai-answer">${html}</div>` + recoHtml + (hits.length ?
             `<div class="st-ai-sources">Sources : ${hits.map((d, i) => `<span class="st-ai-schip" title="${escapeAttr(d.br)}">[${i + 1}] ${escapeHtml(d.ti.slice(0, 45))}</span>`).join(' ')}</div>` : '');
     } catch (e) {
         out.innerHTML = `<div class="st-ai-err">Impossible de joindre l'API Mistral (${escapeHtml(String(e).slice(0, 80))}). Vérifie ta connexion.</div>`;
@@ -527,6 +591,21 @@ function stStyles() {
 .st-more { text-align: center; color: #64748b; font-size: 13px; padding: 16px; }
 .st-empty { text-align: center; color: #94a3b8; padding: 40px 10px; font-size: 15px; }
 .st-empty-sub { font-size: 13px; color: #64748b; margin-top: 8px; }
+.st-pin { margin: 12px 0 16px; }
+.st-pin-h { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; color: #a5b4fc; margin: 0 0 8px; }
+.st-pin-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+.st-pin-card { background: linear-gradient(135deg, rgba(99,102,241,.14), rgba(99,102,241,.04)); border: 1px solid rgba(99,102,241,.4);
+  border-radius: 14px; padding: 12px 14px; cursor: pointer; transition: border-color .15s, transform .12s; }
+.st-pin-card:hover { border-color: #818cf8; transform: translateY(-2px); }
+.st-pin-type { font-size: 10.5px; font-weight: 800; color: var(--c); }
+.st-pin-title { font-size: 13.5px; font-weight: 700; color: #e2e8f0; line-height: 1.3; margin: 5px 0 3px; }
+.st-pin-br { font-size: 11px; color: #64748b; }
+.st-pin-open { display: inline-block; font-size: 11.5px; font-weight: 700; color: #a5b4fc; margin-top: 8px; }
+.st-ai-reco { margin: 6px 0 4px; }
+body.light-mode .st-pin-card { background: #eef2ff; border-color: #c7d2fe; }
+body.light-mode .st-pin-title { color: #0f172a; }
+body.light-mode .st-pin-h { color: #4f46e5; }
+body.light-mode .st-pin-open { color: #4f46e5; }
 .st-ai { max-width: 720px; margin: 10px auto 18px; background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 12px 16px; }
 .st-ai-on { border-color: rgba(99,102,241,.5); }
 .st-ai-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }

@@ -402,10 +402,10 @@ async function navigateToNormByCode(normCode) {
     // Ensure we're on the modules tab and data is loaded
     await navigate('modules');
 
-    // Wait a tick for data to load
+    // Wait for data to load (premier chargement : unified_modules ≈ 6 MB)
     let attempts = 0;
-    while ((!modData || modData.length === 0) && attempts < 20) {
-        await new Promise(r => setTimeout(r, 50));
+    while ((!modData || modData.length === 0) && attempts < 100) {
+        await new Promise(r => setTimeout(r, 60));
         attempts++;
     }
     if (!modData || modData.length === 0) return;
@@ -419,20 +419,20 @@ async function navigateToNormByCode(normCode) {
             return c === targetCode || nid === targetCode;
         });
         if (n) {
-            modSelectedId = m.id;
-            modSelectedItem = { type: 'norm', id: n.id };
-            // Re-render UI
+            // renderModules() RÉINITIALISE modSelectedItem → on capture la cible
+            // avant, puis on sélectionne après le re-render.
+            const targetMid = m.id, targetNid = n.id;
             const main = document.getElementById('mainContent');
-            if (main) renderModules(main).then(() => {
-                // After re-render, trigger selection
-                setTimeout(() => {
-                    const m2 = modData.find(x => x.id === modSelectedId);
-                    if (m2) {
-                        const n2 = (m2.norms || []).find(x => x.id === modSelectedItem.id);
-                        if (n2) modRenderNormDetail(n2, m2);
-                    }
-                }, 100);
-            });
+            if (main) { try { await renderModules(main); } catch (e) {} }
+            modSelectedId = targetMid;
+            modSelectedItem = { type: 'norm', id: targetNid };
+            const m2 = modData.find(x => x.id === targetMid);
+            const n2 = m2 && (m2.norms || []).find(x => x.id === targetNid);
+            if (m2 && n2) {
+                try { modRenderPills(); modRenderSidebar(); } catch (e) {}
+                modRenderNormDetail(n2, m2);
+                if (typeof modLsShow === 'function') modLsShow();
+            }
             return;
         }
     }
