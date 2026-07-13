@@ -460,12 +460,12 @@ function stRenderAiPanel() {
     el.innerHTML = `
     <div class="st-ai ${on ? 'st-ai-on' : ''}">
         <div class="st-ai-head">
-            <label class="st-ai-toggle"><input type="checkbox" ${on ? 'checked' : ''} onchange="stAiToggle(this.checked)"> <span>🤖 Assistant IA <b>Mistral</b></span></label>
-            ${on ? `<button class="st-ai-gear" onclick="stAiSettings()" title="Configurer la clé API">⚙️ ${hasKey ? 'Configuré' : 'Configurer la clé'}</button>` : '<span class="st-ai-hint">Active pour poser des questions en langage naturel sur tout le contenu</span>'}
+            <label class="st-ai-toggle"><input type="checkbox" ${on ? 'checked' : ''} onchange="stAiToggle(this.checked)"> <span>🤖 Recherche assistée par IA <b>Mistral</b></span></label>
+            ${on ? `<button class="st-ai-gear" onclick="stAiSettings()" title="Configurer la clé API">⚙️ ${hasKey ? 'Configuré' : 'Configurer la clé'}</button>` : '<span class="st-ai-hint">Décris ce que tu cherches, l\'IA te trouve le bon cours</span>'}
         </div>
         ${on ? `<div class="st-ai-ask">
-            <input id="stAiQ" class="st-ai-input" type="text" placeholder="Pose ta question… (ex. quelle différence entre perte de capital et surendettement ?)" onkeydown="if(event.key==='Enter')stAskAI()">
-            <button class="st-ai-btn" onclick="stAskAI()">✨ Demander</button>
+            <input id="stAiQ" class="st-ai-input" type="text" placeholder="Décris ce que tu cherches… (ex. le cours qui compare le goodwill entre RPC et IFRS)" onkeydown="if(event.key==='Enter')stAskAI()">
+            <button class="st-ai-btn" onclick="stAskAI()">🔍 Trouver mon cours</button>
         </div>
         <div id="stAiOut"></div>` : ''}
     </div>`;
@@ -482,18 +482,36 @@ function stAiSettings() {
     try { localStorage.setItem('swisscpa_mistral_key', key.trim()); } catch (e) {}
     stRenderAiPanel();
 }
+// Extraction des candidats pour l'IA : une phrase naturelle (« je cherche le
+// cours qui parle du goodwill en RPC ») ne doit pas donner 0 candidat.
+// → retire les mots vides FR, puis recherche ; en secours, union par mot-clé.
+const ST_STOPWORDS = new Set(('je tu il elle on nous vous ils elles le la les un une des du de d en et ou où qui que quoi dont ne pas plus est sont suis c ce cette ces cet mon ma mes ton ta tes son sa ses au aux avec dans pour sur par comme mais donc or ni car si y a ai as avons avez ont être avoir fait faire veux veut voulez cherche cherches recherche recherchent trouver trouve trouvez montre montrer donne donner cours truc chose parle parlent parlant traite traitent concernant concerne sujet propos').split(' '));
+function stAiCandidates(question) {
+    const toks = stNorm(question).split(/[^a-z0-9]+/).filter(t => t.length >= 2 && !ST_STOPWORDS.has(t));
+    let hits = toks.length ? stSearch(toks.join(' ')) : stSearch(question);
+    if (hits.length < 5 && toks.length > 1) {
+        // Mode OU : union des meilleures réponses par mot-clé
+        const seen = new Set(hits);
+        for (const t of toks) {
+            for (const d of stSearch(t).slice(0, 15)) { if (!seen.has(d)) { seen.add(d); hits.push(d); } }
+        }
+    }
+    return hits.slice(0, 25);
+}
+
 async function stAskAI() {
     const qEl = document.getElementById('stAiQ');
     const out = document.getElementById('stAiOut');
     if (!qEl || !out) return;
     const question = qEl.value.trim() || _stQuery.trim();
-    if (!question) { out.innerHTML = `<div class="st-ai-err">Écris une question d'abord 🙂</div>`; return; }
+    if (!question) { out.innerHTML = `<div class="st-ai-err">Décris d'abord ce que tu cherches 🙂</div>`; return; }
     const key = stAiKey();
     if (!key) { out.innerHTML = `<div class="st-ai-err">Pas de clé API — clique ⚙️ pour la configurer (gratuite sur console.mistral.ai).</div>`; return; }
-    // Contexte : top résultats de la recherche locale sur la question
-    const hits = stSearch(question).slice(0, 8);
-    const extracts = hits.map((d, i) => `[${i + 1}] ${d.ti} (${d.br})\n${(d.full || d.raw).slice(0, 650)}`).join('\n\n---\n\n');
-    out.innerHTML = `<div class="st-ai-loading">🤖 Mistral réfléchit…</div>`;
+    // Candidats : top 25 de la recherche locale (titre + extrait court) —
+    // l'IA sert à CHOISIR le bon cours parmi eux, pas à répondre à la question.
+    const hits = stAiCandidates(question);
+    const extracts = hits.map((d, i) => `[${i + 1}] (${ST_TYPES[d.t] ? ST_TYPES[d.t].label : d.t}) ${d.ti} — ${d.br}\n${(d.raw || '').slice(0, 220)}`).join('\n\n');
+    out.innerHTML = `<div class="st-ai-loading">🤖 Mistral cherche le bon cours…</div>`;
     try {
         const r = await fetch('https://api.mistral.ai/v1/chat/completions', {
             method: 'POST',
@@ -501,8 +519,8 @@ async function stAskAI() {
             body: JSON.stringify({
                 model: stAiModel(), temperature: 0.3, max_tokens: 900,
                 messages: [
-                    { role: 'system', content: "Tu es l'assistant de révision d'une application de préparation au diplôme fédéral suisse d'expert-comptable (CO, Swiss GAAP RPC, IFRS, audit ISA/NAS, fiscalité). Tu as deux rôles : (1) RÉPONDRE en FRANÇAIS, précis et structuré, en t'appuyant d'abord sur les EXTRAITS DU COURS fournis, cités par leur numéro [n] ; si l'information n'y figure pas, dis-le puis réponds prudemment avec tes connaissances (droit suisse en vigueur, réforme SA 2023). (2) GUIDER vers les bons cours : termine TOUJOURS ta réponse par une ligne séparée, exactement au format « RECO: 1, 3 » (numéros des 1 à 3 extraits les plus pertinents à ouvrir pour approfondir, dans l'ordre d'utilité). Si aucun extrait n'est pertinent, écris « RECO: aucun »." },
-                    { role: 'user', content: 'QUESTION : ' + question + '\n\nEXTRAITS DU COURS :\n\n' + (extracts || '(aucun extrait trouvé dans l\'app)') }
+                    { role: 'system', content: "Tu es le moteur de recherche intelligent d'une application de révision pour le diplôme fédéral suisse d'expert-comptable (CO, Swiss GAAP RPC, IFRS, audit ISA/NAS, fiscalité). L'utilisateur décrit ce qu'il CHERCHE (parfois vaguement, avec des synonymes ou du franglais). Ta mission : identifier parmi les DOCUMENTS CANDIDATS ceux qui correspondent le mieux à sa recherche. Tu ne réponds PAS à la question de fond — tu ORIENTES vers le bon cours.\n\nRéponds STRICTEMENT dans ce format (rien d'autre) :\nRECO: <numéro> | <raison en une courte phrase (pourquoi c'est LE bon document)>\nRECO: <numéro> | <raison>\n(1 à 4 lignes RECO, du plus au moins pertinent)\nTERMES: <2 à 4 termes de recherche alternatifs séparés par des virgules (synonymes, terme technique exact, équivalent FR/EN)>\n\nSi aucun candidat ne convient, écris « RECO: aucun » puis la ligne TERMES avec de meilleurs mots-clés." },
+                    { role: 'user', content: 'RECHERCHE DE L\'UTILISATEUR : ' + question + '\n\nDOCUMENTS CANDIDATS :\n\n' + (extracts || '(aucun candidat trouvé)') }
                 ]
             })
         });
@@ -512,35 +530,34 @@ async function stAskAI() {
             return;
         }
         const j = await r.json();
-        let txt = (j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content) || '(réponse vide)';
-        // « RECO: 1, 3 » → cartes de cours recommandés par l'IA (cliquables)
+        const txt = (j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content) || '';
         window._stAiHits = hits;
-        let recoIdx = [];
-        const recoM = txt.match(/RECO\s*:\s*([\d,\s]+|aucun)/i);
-        if (recoM) {
-            txt = txt.replace(recoM[0], '').trim();
-            if (!/aucun/i.test(recoM[1])) {
-                recoIdx = recoM[1].split(/[,\s]+/).map(x => parseInt(x, 10) - 1).filter(n => n >= 0 && n < hits.length).slice(0, 3);
+        // Parse « RECO: n | raison » (1-4 lignes) + « TERMES: a, b, c »
+        const recos = [];
+        for (const line of txt.split('\n')) {
+            const m = line.match(/^\s*RECO\s*:\s*(\d+)\s*(?:\|\s*(.*))?$/i);
+            if (m) {
+                const n = parseInt(m[1], 10) - 1;
+                if (n >= 0 && n < hits.length && !recos.some(r => r.n === n)) recos.push({ n, why: (m[2] || '').trim() });
             }
         }
-        let html = escapeHtml(txt)
-            .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\*\*/g, '')
-            .replace(/^#+\s*(.*)$/gm, '<strong>$1</strong>')
-            .replace(/^[-•] (.*)$/gm, '<span class="st-ai-li">• $1</span>')
-            .replace(/\[(\d+)\]/g, '<span class="st-ai-src">[$1]</span>')
-            .replace(/\n/g, '<br>');
-        const recoHtml = recoIdx.length ? `<div class="st-ai-reco"><div class="st-pin-h">🎓 L'IA te recommande d'ouvrir</div><div class="st-pin-row">`
-            + recoIdx.map(n => {
+        const termesM = txt.match(/TERMES\s*:\s*(.+)/i);
+        const termes = termesM ? termesM[1].split(/[,;]/).map(t => t.trim()).filter(t => t && t.length < 40).slice(0, 4) : [];
+        const recoHtml = recos.length ? `<div class="st-ai-reco"><div class="st-pin-h">🎯 Cours trouvés pour ta recherche</div><div class="st-pin-row">`
+            + recos.slice(0, 4).map(({ n, why }) => {
                 const d = hits[n], ty = ST_TYPES[d.t] || { ic: '📄', label: d.t, color: '#64748b' };
                 return `<div class="st-pin-card" style="--c:${ty.color}" onclick="stOpenAiHit(${n})">
                     <span class="st-pin-type">${ty.ic} ${ty.label}</span>
                     <div class="st-pin-title">${escapeHtml(d.ti.slice(0, 90))}</div>
                     <div class="st-pin-br">${escapeHtml(d.br)}</div>
+                    ${why ? `<div class="st-ai-why">💡 ${escapeHtml(why.slice(0, 140))}</div>` : ''}
                     <span class="st-pin-open">Ouvrir le cours →</span>
                 </div>`;
-            }).join('') + `</div></div>` : '';
-        out.innerHTML = `<div class="st-ai-answer">${html}</div>` + recoHtml + (hits.length ?
-            `<div class="st-ai-sources">Sources : ${hits.map((d, i) => `<span class="st-ai-schip" title="${escapeAttr(d.br)}">[${i + 1}] ${escapeHtml(d.ti.slice(0, 45))}</span>`).join(' ')}</div>` : '');
+            }).join('') + `</div></div>`
+            : `<div class="st-ai-err">L'IA n'a pas trouvé de cours correspondant${termes.length ? ' — essaie les termes ci-dessous' : ''}.</div>`;
+        const termesHtml = termes.length ? `<div class="st-ai-termes"><span class="st-ai-termes-l">Essaie aussi :</span> ${termes.map(t =>
+            `<button class="st-recent st-ex" onclick="stSet('${escapeAttr(t)}')">${escapeHtml(t)}</button>`).join(' ')}</div>` : '';
+        out.innerHTML = recoHtml + termesHtml;
     } catch (e) {
         out.innerHTML = `<div class="st-ai-err">Impossible de joindre l'API Mistral (${escapeHtml(String(e).slice(0, 80))}). Vérifie ta connexion.</div>`;
     }
@@ -601,7 +618,11 @@ function stStyles() {
 .st-pin-title { font-size: 13.5px; font-weight: 700; color: #e2e8f0; line-height: 1.3; margin: 5px 0 3px; }
 .st-pin-br { font-size: 11px; color: #64748b; }
 .st-pin-open { display: inline-block; font-size: 11.5px; font-weight: 700; color: #a5b4fc; margin-top: 8px; }
-.st-ai-reco { margin: 6px 0 4px; }
+.st-ai-reco { margin: 10px 0 4px; }
+.st-ai-why { font-size: 11.5px; color: #94a3b8; line-height: 1.4; margin-top: 6px; }
+.st-ai-termes { margin: 10px 0 4px; font-size: 12px; color: #64748b; display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+.st-ai-termes-l { font-weight: 700; }
+body.light-mode .st-ai-why { color: #64748b; }
 body.light-mode .st-pin-card { background: #eef2ff; border-color: #c7d2fe; }
 body.light-mode .st-pin-title { color: #0f172a; }
 body.light-mode .st-pin-h { color: #4f46e5; }
