@@ -80,7 +80,7 @@ async function api(method, ...args) {
 // Tab labels kept at module scope so both navigate() and the a11y
 // announcement helper can reuse them.
 const TAB_LABELS = {
-    dashboard: 'Accueil', modules: 'Modules', trainer: '🎯 Entraînement',
+    dashboard: 'Accueil', recherche: '🔎 Recherche', modules: 'Modules', trainer: '🎯 Entraînement',
     fcdb: '🃏 BDD Flashcards', qcm: '❓ QCM', compare: 'Comparaisons', progress: 'Stats',
     fs: 'États Financiers', references: 'Références',
     audit: '🔍 Audit',
@@ -155,6 +155,10 @@ function navigate(tab, subTab) {
 
     switch (tab) {
         case 'dashboard': renderDashboard(main); break;
+        case 'recherche':
+            if (typeof renderRechercheTab === 'function') renderRechercheTab(main);
+            else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Recherche en cours de chargement...</p>';
+            break;
         case 'modules': renderModules(main); break;
         case 'compare': renderComparisons(main); break;
         case 'fs': renderFsExplorer(main); break;
