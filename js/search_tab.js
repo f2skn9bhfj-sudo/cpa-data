@@ -87,6 +87,19 @@ async function stBuildIndex(onProgress) {
             const _t0 = nrm.title || nrm.code || '';
             push('norme', (nrm.code && !_t0.startsWith(nrm.code)) ? nrm.code + ' — ' + _t0 : _t0, 'Module ' + m.id + ' · ' + (m.name || ''),
                 secTxt + ' ' + extras, { k: 'norm', code: nrm.code }, (nrm.summary || '') + '\n\n' + secTxt);
+            // Sections individuelles → deep-link PRÉCIS vers l'endroit du cours.
+            // L'ancre doit répliquer exactement la logique de modules.js
+            // (filtre « meaningful » + section_id || `${id}_s${i+1}`).
+            const meaningful = (nrm.sections || []).filter(s => s && ((s.title && s.title.trim())
+                || (s.content && s.content.trim().length > 20)
+                || s.info || s.legal_quote || s.example || s.comparison || s.key_point || s.tip || s.warning));
+            meaningful.forEach((s, mi) => {
+                if (!s.title || !s.title.trim() || !(s.content || '').trim()) return;
+                const anchor = s.section_id || ((nrm.id || '') + '_s' + (mi + 1));
+                const stxt = (s.content || '') + ' ' + (s.key_point || '') + ' ' + (s.example || '') + ' ' + (s.warning || '');
+                push('norme', (nrm.code || '') + ' § ' + s.title, 'Module ' + m.id + ' · ' + _t0.slice(0, 60),
+                    stxt, { k: 'norm', code: nrm.code, sec: anchor }, s.content || '');
+            });
         }
         for (const l of (m.lessons_ifp || [])) {
             const body = (l.content || []).map(c => (c && (c.title ? c.title + ' — ' : '') + (c.body || '')) || '').join('\n');
@@ -437,7 +450,21 @@ function stToggle(i) {
 function stOpenDoc(d) {
     if (!d || !d.act) return;
     const a = d.act;
-    if (a.k === 'norm' && typeof navigateToNormByCode === 'function') { navigateToNormByCode(a.code); return; }
+    if (a.k === 'norm' && typeof navigateToNormByCode === 'function') {
+        Promise.resolve(navigateToNormByCode(a.code)).then(() => {
+            // Deep-link précis : scroll (et dépliage) jusqu'à la section trouvée
+            if (a.sec) {
+                let tries = 0;
+                const go = () => {
+                    const el = document.getElementById(a.sec);
+                    if (el && typeof modGotoSection === 'function') { modGotoSection(a.sec); }
+                    else if (++tries < 12) setTimeout(go, 350);
+                };
+                setTimeout(go, 350);
+            }
+        });
+        return;
+    }
     if (a.k === 'module') {
         navigate('modules');
         setTimeout(() => { try { modSelectModule(a.mid); } catch (e) {} }, 700);

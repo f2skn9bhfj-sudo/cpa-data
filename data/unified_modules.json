@@ -9584,28 +9584,7 @@
             "Changement de méthode = rétrospectif + divulgation ; changement d'estimation = prospectif.",
             "Dérogation aux RPC : possible uniquement si image fidèle l'exige, avec divulgation complète."
           ],
-          "thresholds": [
-            {
-              "label": "s RPC complètes :  Critères de taille :  - Total du bilan",
-              "value": "CHF 10 millions"
-            },
-            {
-              "label": "- Total du bilan : CHF 10 millions  - Chiffre d'affaires",
-              "value": "CHF 20 millions"
-            },
-            {
-              "label": "- Total du bilan : CHF 20 millions  - Chiffre d'affaires",
-              "value": "CHF 40 millions"
-            },
-            {
-              "label": "fre d'affaires : CHF 20 millions  - Emplois à plein temps",
-              "value": "50 ETP"
-            },
-            {
-              "label": "fre d'affaires : CHF 40 millions  - Emplois à plein temps",
-              "value": "250 ETP"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "RPC 2",
             "RPC 3",
@@ -10159,108 +10138,7 @@
             "Pas d'impôts différés en RPC fondamentales (uniquement via RPC 11 dans les complètes).",
             "Goodwill négatif (badwill) : analysé puis comptabilisé au passif avec relâchement justifié."
           ],
-          "thresholds": [
-            {
-              "label": "L’entreprise A a inscrit des stocks avec : coûts matériaux",
-              "value": "CHF 50"
-            },
-            {
-              "label": "stocks avec : coûts matériaux CHF 50’000, coûts production",
-              "value": "CHF 30"
-            },
-            {
-              "label": "x",
-              "value": "CHF 5"
-            },
-            {
-              "label": "30’000, charges stockage CHF 5’000, frais généraux matières",
-              "value": "CHF 2"
-            },
-            {
-              "label": "ais généraux matières CHF 2’000, frais généraux fabrication",
-              "value": "CHF 1"
-            },
-            {
-              "label": "brication CHF 1’000. Prix de vente possible au 31.12.20.1",
-              "value": "CHF 130"
-            },
-            {
-              "label": "HF 5’000.  En outre, un brevet développé en interne : coûts",
-              "value": "CHF 75"
-            },
-            {
-              "label": "développé en interne : coûts CHF 75’000, avantage probable",
-              "value": "CHF 20"
-            },
-            {
-              "label": "bable CHF 20’000/an sur 5 ans, charges de commercialisation",
-              "value": "CHF 10"
-            },
-            {
-              "label": "n :  a) Stocks : Valeur de marché nette = 130’000 – 5’000 =",
-              "value": "CHF 125"
-            },
-            {
-              "label": "Coût de revient = 50’000 + 30’000 + 5’000 + 2’000 + 1’000 =",
-              "value": "CHF 88"
-            },
-            {
-              "label": "rise B détient un bien immobilier. Prix de vente possible",
-              "value": "CHF 600"
-            },
-            {
-              "label": "de transfert/notaire : CHF 10’000. Si non vendu : location",
-              "value": "CHF 55"
-            },
-            {
-              "label": "s, taux d’actualisation 5%. Valeur résiduelle après 8 ans",
-              "value": "CHF 300"
-            },
-            {
-              "label": "000)  620’000   Valeur de marché nette = 600’000 – 10’000 =",
-              "value": "CHF 590"
-            },
-            {
-              "label": "USD.   Solution :  • Compte bancaire USD : 850’000 × 0.90 =",
-              "value": "CHF 765"
-            },
-            {
-              "label": "765’000 (cours de clôture)  • Titres USD : 45’000 × 0.90 =",
-              "value": "CHF 40"
-            },
-            {
-              "label": "rties au cours du jour de la transaction = 200’000 × 0.95 =",
-              "value": "CHF 190"
-            },
-            {
-              "label": "on déterminable clairement → amortissement généralement sur",
-              "value": "5 ans"
-            },
-            {
-              "label": "certains cas dûment justifiés : durée plus longue, maximum",
-              "value": "20 ans"
-            },
-            {
-              "label": ": CHF 10’000. Si non vendu : location CHF 55’000/an pendant",
-              "value": "8 ans"
-            },
-            {
-              "label": "Valeur résiduelle après 8 ans : CHF 300’000. Acheté il y a",
-              "value": "32 ans"
-            },
-            {
-              "label": "oût d’acquisition CHF 1’900’000, amortissement linéaire sur",
-              "value": "40 ans"
-            },
-            {
-              "label": "0’000   Valeur de marché nette = 600’000 – 10’000 = CHF 590’000   Année  Cash-flow  Valeur actuel",
-              "value": "000\n\n\nAn"
-            },
-            {
-              "label": "location CHF 55’000/an pendant 8 ans, taux d’actualisation",
-              "value": "5%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IAS 16",
             "IAS 8",
@@ -10645,16 +10523,7 @@
             "Créances et dettes envers organes dirigeants/actionnaires : présentation séparée obligatoire.",
             "Capitaux propres négatifs : présentation en négatif + mention annexe + avis juge si surendetté."
           ],
-          "thresholds": [
-            {
-              "label": "fectuée en fonction de la durée (critère de délimitation de",
-              "value": "12 mois"
-            },
-            {
-              "label": "Impôts différés actifs sur le bénéfice  – Participations (≥",
-              "value": "20%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "RPC 1/2",
             "RPC 11/3",
@@ -11209,16 +11078,7 @@
             "Nantissements : valeur comptable de l'actif nanti + montant de la dette garantie à divulguer.",
             "Dividendes proposés non votés par l'AG : hors bilan (pas encore une obligation)."
           ],
-          "thresholds": [
-            {
-              "label": "Plainte déposée par l'entreprise C le 14 janvier 20.2 pour",
-              "value": "CHF 80"
-            },
-            {
-              "label": "nts CT dans l'activité commerciale courante avec échéance <",
-              "value": "1 an"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "Art. 959c CO",
             "RPC 13/5",
@@ -11759,20 +11619,7 @@
             "Goodwill d'acquisition : traité exclusivement par RPC 30, pas par RPC 10.",
             "Publication (RPC 10/12-13) : tableau de mouvement (valeurs brutes, amortissements cumulés, VCN début/fin) + méthodes + durées + changements de durée avec impact quantifié."
           ],
-          "thresholds": [
-            {
-              "label": "certains cas justifiés, la période peut par exemple être de",
-              "value": "30 ans"
-            },
-            {
-              "label": "tilisation NON déterminable  Amortissement systématique sur",
-              "value": "5 ans"
-            },
-            {
-              "label": "ans en principe. Dans certains cas dûment justifiés : max.",
-              "value": "20 ans"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "RPC 10/1",
             "RPC 10/10",
@@ -12104,20 +11951,7 @@
             "FX sur ID (RPC 11/25) : effets de change sur ID publiés séparément, pas dans charge/produit d'impôt.",
             "Via capitaux propres (RPC 11/17) : ID sur éléments en CP → aussi via CP, séparément publié."
           ],
-          "thresholds": [
-            {
-              "label": "du 31.12.20.2 : pertes fiscales reportées non utilisées de",
-              "value": "CHF 500"
-            },
-            {
-              "label": "s-value couverte par réduction pour participation → taux de",
-              "value": "0%"
-            },
-            {
-              "label": "rtées non utilisées de CHF 500’000, taux d’imposition moyen",
-              "value": "25%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "RPC 11/1",
             "RPC 11/10",
@@ -12434,68 +12268,7 @@
             "TFT sale and leaseback : produit de cession → investissement.",
             "Annexe leasing d'exploitation (RPC 13/11) : total engagements résiduels + échéancier maturités (<1 an, 1-5 ans, >5 ans) + conditions importantes."
           ],
-          "thresholds": [
-            {
-              "label": ")  Véhicule (leasing d’exploitation)    Coût d’acquisition",
-              "value": "CHF 622"
-            },
-            {
-              "label": "sing d’exploitation)    Coût d’acquisition  CHF 622’677.00",
-              "value": "CHF 86"
-            },
-            {
-              "label": "e économique  7 ans  8 ans    Redevances mensuelles  1ère",
-              "value": "CHF 32"
-            },
-            {
-              "label": "s    Redevances mensuelles  1ère : CHF 32’518.85 ; 2 à 72",
-              "value": "CHF 9"
-            },
-            {
-              "label": "elles  1ère : CHF 32’518.85 ; 2 à 72 : CHF 9’499.35  1ère",
-              "value": "CHF 22"
-            },
-            {
-              "label": "85 ; 2 à 72 : CHF 9’499.35  1ère : CHF 22’304.85 ; 2 à 60",
-              "value": "CHF 835.00"
-            },
-            {
-              "label": "F 835.00    Valeur résiduelle  0,5% du coût d’acquisition =",
-              "value": "CHF 3"
-            },
-            {
-              "label": "leur résiduelle  0,5% du coût d’acquisition = CHF 3’113.40",
-              "value": "CHF 25"
-            },
-            {
-              "label": "mages-intérêts pour résiliation    Charges administratives",
-              "value": "CHF 5"
-            },
-            {
-              "label": "pour résiliation    Charges administratives  CHF 5’000.00",
-              "value": "CHF 433.45"
-            },
-            {
-              "label": "isition  CHF 622’677.00  CHF 86’691.60    Durée du contrat",
-              "value": "6 ans"
-            },
-            {
-              "label": "6’691.60    Durée du contrat  6 ans (1.20.1 au 31.12.20.6)",
-              "value": "5 ans"
-            },
-            {
-              "label": ")  5 ans (1.20.1 au 31.12.20.5)    Durée de vie économique",
-              "value": "7 ans"
-            },
-            {
-              "label": "s (1.20.1 au 31.12.20.5)    Durée de vie économique  7 ans",
-              "value": "8 ans"
-            },
-            {
-              "label": ": CHF 22’304.85 ; 2 à 60 : CHF 835.00    Valeur résiduelle",
-              "value": "0,5%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IFRS 16",
             "RPC 13/1",
@@ -12796,84 +12569,7 @@
             "Regroupement (RPC 15/9) : transactions similaires peuvent être regroupées ; transactions matérielles individuellement → publication individuelle ; conditions différentes → publications séparées.",
             "Comptes consolidés : transactions intra-groupe éliminées → pas de publication RPC 15. Seules les transactions avec des parties liées EXTERNES au périmètre sont publiées."
           ],
-          "thresholds": [
-            {
-              "label": "on (en découvert) un bien immobilier hors exploitation pour",
-              "value": "CHF 5"
-            },
-            {
-              "label": "r CHF 5’000’000. Valeur estimée par un expert indépendant",
-              "value": "CHF 9"
-            },
-            {
-              "label": "à publication (RPC 15/9).  Publier : description, montant (",
-              "value": "CHF 5 M"
-            },
-            {
-              "label": "ontant (CHF 5 Mio), conditions essentielles (valeur estimée",
-              "value": "CHF 9 M"
-            },
-            {
-              "label": "pour la compréhension.    b)  Le CFO perçoit un salaire de",
-              "value": "CHF 250"
-            },
-            {
-              "label": "b)  Le CFO perçoit un salaire de CHF 250’000 et un bonus de",
-              "value": "CHF 100"
-            },
-            {
-              "label": "liée (RPC 15/7, membre de la direction). Salaire + bonus =",
-              "value": "CHF 350"
-            },
-            {
-              "label": "être publié (RPC 15/10).    c)  A vend des marchandises de",
-              "value": "CHF 10 M"
-            },
-            {
-              "label": "%, délai 45 jours mais acompte 50%. Solde débiteur ouvert",
-              "value": "CHF 2 M"
-            },
-            {
-              "label": "d)  A loue des bureaux à son actionnaire principal pour",
-              "value": "CHF 500"
-            },
-            {
-              "label": "immeuble à des tiers pour CHF 350/m². Solde créditeur dû",
-              "value": "CHF 200"
-            },
-            {
-              "label": ") à l’entreprise B (25% des droits de vote). Délai paiement",
-              "value": "45 jours"
-            },
-            {
-              "label": "possède une participation déterminante    4  Actionnaires ≥",
-              "value": "20%"
-            },
-            {
-              "label": "r la forme du cadre interne  • Membre non exécutif du CA (à",
-              "value": "10%"
-            },
-            {
-              "label": "it une indemnité supérieure à celle d’un membre exécutif (à",
-              "value": "100%"
-            },
-            {
-              "label": "es marchandises de CHF 10 Mio (marge 20%) à l’entreprise B (",
-              "value": "25%"
-            },
-            {
-              "label": "e vote). Délai paiement 45 jours. Avec des tiers : marge 18",
-              "value": "24%"
-            },
-            {
-              "label": "Avec des tiers : marge 18-24%, délai 45 jours mais acompte",
-              "value": "50%"
-            },
-            {
-              "label": "treprise C (100% des droits de vote) un prêt de CHF 2 Mio à",
-              "value": "5%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "RPC 15/1",
             "RPC 15/10",
@@ -13155,40 +12851,7 @@
             "RCE en découvert + renonciation → correction de valeur obligatoire ; RCE ≤ découvert (art. 65e al. 2 LPP)",
             "1er pilier AVS/AI : EXCLU du champ d'application RPC 16 — régime étatique sans influence employeur"
           ],
-          "thresholds": [
-            {
-              "label": "de prévoyance B. Fin 20.2, l'IPP B présente un découvert de",
-              "value": "CHF 3"
-            },
-            {
-              "label": "inanciers.  L'entreprise A estime l'engagement économique à",
-              "value": "CHF 1"
-            },
-            {
-              "label": "eur (670) + Augmentation de l'engagement économique (110) =",
-              "value": "CHF 780"
-            },
-            {
-              "label": "u 31.12.20.2.  Différence : CHF 1 550 000 - CHF 1 330 000 =",
-              "value": "CHF 220"
-            },
-            {
-              "label": "treprise C dans les fonds libres de la caisse de pension C (",
-              "value": "CHF 6"
-            },
-            {
-              "label": "ll. 12/7 à 12/9)  13.1 Données de l'énoncé  L'entreprise C (",
-              "value": "580 collaborateurs"
-            },
-            {
-              "label": "l'avantage ou l'engagement est déterminé sur une période de",
-              "value": "5 ans"
-            },
-            {
-              "label": "te de clôture de ces comptes ne doit pas remonter à plus de",
-              "value": "12 mois"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IAS 19",
             "RPC 16/1",
@@ -13512,92 +13175,7 @@
             "Acomptes clients : peuvent être déduits des stocks si pas de droit de retour (à publier dans annexe)",
             "Méthode rétrograde autorisée pour commerces sans inventaire permanent (prix vente – marge = coût)"
           ],
-          "thresholds": [
-            {
-              "label": "Exemple numérique comparatif  Stock initial : 100 unités à",
-              "value": "CHF 25.00"
-            },
-            {
-              "label": "ck initial : 100 unités à CHF 25.00 | Achats : 900 unités à",
-              "value": "CHF 26.00"
-            },
-            {
-              "label": "130 unités   Coût moyen  FIFO  LIFO (à titre indicatif)",
-              "value": "CHF 3"
-            },
-            {
-              "label": "dicatif)    CHF 3 367  CHF 3 380  CHF 3 280    130 unités à",
-              "value": "CHF 25.90"
-            },
-            {
-              "label": "ptables (Ill. 13/11)   Date  Libellé  Débit  Crédit  CHF    31.12.20.1  Constitution correction  Coû",
-              "value": "CHF\n\n\n\n31.12.20.1"
-            },
-            {
-              "label": "pements sportifs. Au 31.12.20.1 : acomptes reçus de clients",
-              "value": "CHF 500"
-            },
-            {
-              "label": "us de clients CHF 500 000, acomptes versés aux fournisseurs",
-              "value": "CHF 350"
-            },
-            {
-              "label": "acquisition des marchandises vendues» (avant corrections)",
-              "value": "CHF 89"
-            },
-            {
-              "label": "asse. Correction de valeur sur stock pour l'exercice 20.1",
-              "value": "CHF 319"
-            },
-            {
-              "label": "diminué de la marge brute.  Stocks au bilan au 31.12.20.1 =",
-              "value": "CHF 15"
-            },
-            {
-              "label": "é nette (62 564) → correction de valeur = 65 426 – 62 564 =",
-              "value": "CHF 2"
-            },
-            {
-              "label": "+ Produits finis A (100 379) + Produits finis B (62 564) =",
-              "value": "CHF 237"
-            },
-            {
-              "label": "vec acomptes : 237 553 – 50 000 (reçus) + 35 000 (versés) =",
-              "value": "CHF 222"
-            },
-            {
-              "label": "ur la quote-part des charges générales.  Travaux en cours",
-              "value": "CHF 600"
-            },
-            {
-              "label": "générales.  Travaux en cours : CHF 600 000 (31.12.20.0) et",
-              "value": "CHF 960"
-            },
-            {
-              "label": "e coût de revient sauf pour une commande (coût de revient",
-              "value": "CHF 48"
-            },
-            {
-              "label": "de (coût de revient : CHF 48 000 ; valeur nette de marché",
-              "value": "CHF 38"
-            },
-            {
-              "label": "F 38 000).  Stocks au bilan 31.12.20.1 = 960 000 – 10 000 =",
-              "value": "CHF 950"
-            },
-            {
-              "label": "= 960 000 – 10 000 = CHF 950 000  (Correction de valeur de",
-              "value": "CHF 10"
-            },
-            {
-              "label": "unitaire (hors taxes)  895.00  466.00    Escomptes usuels (",
-              "value": "2%"
-            },
-            {
-              "label": "u coût de revient = charges salariales directes majorées de",
-              "value": "20%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "ISA 501",
             "RPC 10",
@@ -13943,64 +13521,7 @@
             "Intérêts intercalaires : activables si VU couvre VCN+intérêts, montant ≤ total intérêts réels (RPC 18/7)",
             "Tableau des immobilisations obligatoire : valeurs brutes + amortissements cumulés + valeurs nettes (RPC 18/15)"
           ],
-          "thresholds": [
-            {
-              "label": "ilisation (RPC 18/25).  Exemple numérique : Machine acquise",
-              "value": "CHF 1"
-            },
-            {
-              "label": "CHF 1 000 000. Juste valeur : CHF 1 025 000 au 31.12.20.2,",
-              "value": "CHF 990"
-            },
-            {
-              "label": "Fins d'exploitation (coût historique)   Période  Écriture  CHF    20.1 Acquisition  Immeuble  / Banq",
-              "value": "CHF\n\n\n\n20.1"
-            },
-            {
-              "label": "du 1.1.20.2. Valeur résiduelle nulle. Durée d'utilisation",
-              "value": "5 ans"
-            },
-            {
-              "label": "te de l'exemple : à fin 20.4, la machine peut encore servir",
-              "value": "4 ans"
-            },
-            {
-              "label": "1 500 000 – 300 000 – 500 000 = 700 000. Durée résiduelle =",
-              "value": "2 ans"
-            },
-            {
-              "label": "Cédé pour CHF 1 030 000 le 1.1.20.4. Amortissement linéaire",
-              "value": "40 ans"
-            },
-            {
-              "label": "– ⁿ√(VR/Coût). Si VR ≈ 0 : multiple du taux linéaire (p.ex.",
-              "value": "30%"
-            },
-            {
-              "label": "Si VR ≈ 0 : multiple du taux linéaire (p.ex. 30% au lieu de",
-              "value": "15%"
-            },
-            {
-              "label": "rée d'utilisation : 5 ans (15 000 heures). Taux dégressif",
-              "value": "40%"
-            },
-            {
-              "label": "12 000 = 162 667. Dégressif : VCN = 324 000. Nouveau taux =",
-              "value": "50%"
-            },
-            {
-              "label": "162 667. Dégressif : VCN = 324 000. Nouveau taux = 50% (2 ×",
-              "value": "25%"
-            },
-            {
-              "label": "yen sur les engagements portant intérêts = 1,8 × 100 / 30 =",
-              "value": "6%"
-            },
-            {
-              "label": "40,6  Taux d'intérêt moyen = 2,8 × 100 / [(30 + 40) / 2] =",
-              "value": "8%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IAS 16",
             "IAS 23",
@@ -14357,92 +13878,7 @@
             "IC de rendement JV : dépréciations ET reprises → toutes par le résultat (P&L) (RPC 20/13, 20/18)",
             "Test annuel minimum à chaque clôture ; examen intermédiaire si indicateurs entre deux clôtures (RPC 20/2, 20/22)"
           ],
-          "thresholds": [
-            {
-              "label": "ation d’une UGT  Valeur comptable du groupe au 31.12.20.1",
-              "value": "CHF 1"
-            },
-            {
-              "label": "s’est atténuée. Amortissements systématiques 20.2 et 20.3",
-              "value": "CHF 50"
-            },
-            {
-              "label": "lité en 20.3 : CHF 1 400 000. VCN du groupe au 31.12.20.3",
-              "value": "CHF 900"
-            },
-            {
-              "label": "B, C ne peut pas non plus être augmentée. L’augmentation de",
-              "value": "CHF 500"
-            },
-            {
-              "label": "ns d’actifs des immobilisations corporelles d’un montant de",
-              "value": "CHF 2"
-            },
-            {
-              "label": "s au 31.12.20.5 (après amortissements ordinaires) : Terrain",
-              "value": "CHF 800"
-            },
-            {
-              "label": "es) : Terrain CHF 800 000, Bâtiment CHF 1 530 000, Machines",
-              "value": "CHF 600"
-            },
-            {
-              "label": "rotection 10 ans, amortissement linéaire. VCN au 1.1.20.2",
-              "value": "CHF 3"
-            },
-            {
-              "label": "fie un taux de 12%, il faudrait une correction de valeur de",
-              "value": "CHF 200"
-            },
-            {
-              "label": "2 625 000.  Dépréciation d’actif = 2 930 000 – 2 625 000 =",
-              "value": "CHF 305"
-            },
-            {
-              "label": "20/20.  7.3 Dépréciation d’actif d’une créance  Créance de",
-              "value": "CHF 80"
-            },
-            {
-              "label": "ce il y a 2 mois. Bureau de recouvrement : rachèterait pour",
-              "value": "CHF 35"
-            },
-            {
-              "label": "35 000 (valeur de marché nette). Valeur d’utilité estimée",
-              "value": "CHF 65"
-            },
-            {
-              "label": "000) = CHF 65 000. Correction de valeur = 80 000 – 65 000 =",
-              "value": "CHF 15"
-            },
-            {
-              "label": "s prix de vente.  b) Brevet «Preciso»  Brevet déposé il y a",
-              "value": "4 ans"
-            },
-            {
-              "label": "«Preciso»  Brevet déposé il y a 4 ans, durée de protection",
-              "value": "10 ans"
-            },
-            {
-              "label": ".5 : CHF 1 920 000 (3 200 – 4 × 320). Examen au 31.12.20.5 (",
-              "value": "6 an"
-            },
-            {
-              "label": "ne créance  Créance de CHF 80 000 arrivée à échéance il y a",
-              "value": "2 mois"
-            },
-            {
-              "label": "’utilité.   Examen brevet «Preciso» au 1.1.20.2 (kCHF)  i =",
-              "value": "8%"
-            },
-            {
-              "label": ".   Examen brevet «Preciso» au 1.1.20.2 (kCHF)  i = 8%  i =",
-              "value": "10%"
-            },
-            {
-              "label": "n brevet «Preciso» au 1.1.20.2 (kCHF)  i = 8%  i = 10%  i =",
-              "value": "12%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IAS 36",
             "RPC 10",
@@ -14788,100 +14224,7 @@
             "WIP > acomptes reçus → ACTIF ; acomptes reçus > WIP → PASSIF (jamais compenser entre contrats différents)",
             "Révisions d'estimations : traitement prospectif (pas rétroactif), sauf erreur fondamentale (RPC 3)"
           ],
-          "thresholds": [
-            {
-              "label": "Entreprise A : solutions logicielles de sécurité. Commande",
-              "value": "CHF 420"
-            },
-            {
-              "label": "cielles de sécurité. Commande CHF 420 000, charges estimées",
-              "value": "CHF 380"
-            },
-            {
-              "label": "ions complexes   Exemple cost to cost : Charges encourues =",
-              "value": "CHF 200"
-            },
-            {
-              "label": "harges encourues = CHF 200 000, charges totales attendues =",
-              "value": "CHF 1"
-            },
-            {
-              "label": "contrats à long terme saisis selon POCM  Ex. : produit net",
-              "value": "CHF 2"
-            },
-            {
-              "label": "scrits à l’actif et manière dont ils sont déterminés  Ex.",
-              "value": "CHF 25"
-            },
-            {
-              "label": "nt déterminés  Ex. : CHF 25 050 sur base CE moyens affectés",
-              "value": "CHF 835"
-            },
-            {
-              "label": "OCM    Acomptes reçus pour des contrats à long terme  Ex.",
-              "value": "CHF 375"
-            },
-            {
-              "label": "la construction d’un pont routier. Montant de la commande",
-              "value": "CHF 9"
-            },
-            {
-              "label": ": CHF 9 000 000. Charges totales estimées à la conclusion",
-              "value": "CHF 8"
-            },
-            {
-              "label": "icultés raccordement réseau routier). Charges augmentées de",
-              "value": "CHF 150"
-            },
-            {
-              "label": "ntées de CHF 150 000. Matériel de construction racheté pour",
-              "value": "CHF 100"
-            },
-            {
-              "label": "cifiques du bilan  Dette résultant de contrats à long terme",
-              "value": "CHF 347"
-            },
-            {
-              "label": "tat  Les produits nets des livraisons et des prestations de",
-              "value": "CHF 4"
-            },
-            {
-              "label": "er les charges encourues de CHF 2 093 000 et le bénéfice de",
-              "value": "CHF 60"
-            },
-            {
-              "label": "e 20.1.  Problème : comment comptabiliser cette commande de",
-              "value": "17 mois"
-            },
-            {
-              "label": "s totales estimées à la conclusion : CHF 8 600 000. Durée",
-              "value": "3 ans"
-            },
-            {
-              "label": "es totales attendues = CHF 1 000 000 → degré d’avancement =",
-              "value": "20%"
-            },
-            {
-              "label": "viduelles construites sur 50 prévues → degré d’avancement =",
-              "value": "50%"
-            },
-            {
-              "label": "sur base CE moyens affectés CHF 835 000, taux moyen pondéré",
-              "value": "3%"
-            },
-            {
-              "label": "prévu  250  300  300    Degré d’avancement (cost to cost)",
-              "value": "23,92%"
-            },
-            {
-              "label": "250  300  300    Degré d’avancement (cost to cost)  23,92%",
-              "value": "69,30%"
-            },
-            {
-              "label": "300    Degré d’avancement (cost to cost)  23,92%  69,30%",
-              "value": "100%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "RPC 17",
             "RPC 2/10",
@@ -15566,92 +14909,7 @@
             "Obligations convertibles : split à l'émission — dette = VA flux au taux marché ; FP = résidu",
             "5% bénéfice annuel en réserve légale jusqu'à 20% du capital (CO art. 671) — obligation légale"
           ],
-          "thresholds": [
-            {
-              "label": "20.1, l’entreprise A achète 100 actions propres au cours de",
-              "value": "CHF 1"
-            },
-            {
-              "label": "pres au 31.12.20.1 = (100 × CHF 1 200) + (80 × CHF 1 400) =",
-              "value": "CHF 232"
-            },
-            {
-              "label": "24/17), la valeur comptable des 150 actions vendues est de",
-              "value": "CHF 190"
-            },
-            {
-              "label": "CALCUL DE LA PLUS-VALUE  Prix de vente : 150 × CHF 1 600 =",
-              "value": "CHF 240"
-            },
-            {
-              "label": "00 × CHF 1 200 + 50 × CHF 1 400 = CHF 190 000  Plus-value =",
-              "value": "CHF 50"
-            },
-            {
-              "label": "rmais 30 actions propres pour une valeur de CHF 1 400, soit",
-              "value": "CHF 42"
-            },
-            {
-              "label": "on initiale  En 20.1, l’entreprise A augmente le capital de",
-              "value": "CHF 2"
-            },
-            {
-              "label": "000 par libération en espèces. Le prix d’émission s’élève à",
-              "value": "CHF 3"
-            },
-            {
-              "label": "ion (due diligence, assistance juridique, etc.) s’élèvent à",
-              "value": "CHF 100"
-            },
-            {
-              "label": "s comptes RPC, il convient d’augmenter la charge fiscale de",
-              "value": "CHF 20"
-            },
-            {
-              "label": "résentent une augmentation nette des réserves de capital de",
-              "value": "CHF 920"
-            },
-            {
-              "label": "(RPC 24/4). Le fait de renoncer à l’intérêt d’un montant de",
-              "value": "CHF 200"
-            },
-            {
-              "label": "enoncement à l’intérêt = 100 000 / 1,05 + 100 000 / 1,05² =",
-              "value": "CHF 185"
-            },
-            {
-              "label": "les réserves de capital.  Provisions pour impôts différés",
-              "value": "CHF 37"
-            },
-            {
-              "label": "par rapport à l’année précédente = 1 904 762 – 1 814 059 =",
-              "value": "CHF 90"
-            },
-            {
-              "label": "90 703 → débit charge d’intérêts  Charge fiscale diminue de",
-              "value": "CHF 18"
-            },
-            {
-              "label": "1)  Différence par rapport à 20.2 = 2 000 000 – 1 904 762 =",
-              "value": "CHF 95"
-            },
-            {
-              "label": "it charge d’intérêts  Réduction provision impôts différés",
-              "value": "CHF 19"
-            },
-            {
-              "label": "à l’entreprise C un prêt sans intérêt de CHF 2 000 000 sur",
-              "value": "2 ans"
-            },
-            {
-              "label": "etc.) s’élèvent à CHF 100 000. Le taux d’imposition est de",
-              "value": "20 %"
-            },
-            {
-              "label": "sur 2 ans. Le taux d’intérêt habituel sur le marché est de",
-              "value": "5 %"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "RPC 1",
             "RPC 11",
@@ -15974,68 +15232,7 @@
             "Dérivés incorporés : séparer si écon. non lié au hôte + serait dérivé seul + hôte non JV/P&L",
             "JV positive → actif financier ; JV négative → passif financier (présentation distincte au bilan)"
           ],
-          "thresholds": [
-            {
-              "label": "rs de change est de CHF/EUR 1.24. La variation de valeur de",
-              "value": "CHF 40"
-            },
-            {
-              "label": ".29. Les dettes résultant de L&P doivent être augmentées de",
-              "value": "CHF 50"
-            },
-            {
-              "label": "L&P doivent être augmentées de CHF 50 000 au cours actuel (",
-              "value": "CHF 1"
-            },
-            {
-              "label": "0 000. L’opération à terme est dénouée (l’entreprise reçoit",
-              "value": "CHF 90"
-            },
-            {
-              "label": "dispose d’un stock de blé de 1 000 tonnes acheté au prix de",
-              "value": "CHF 400"
-            },
-            {
-              "label": "de blé :  1er janvier 20.2 : CHF 400/t  31 décembre 20.2",
-              "value": "CHF 390"
-            },
-            {
-              "label": "CHF 400/t  31 décembre 20.2 : CHF 390/t  31 décembre 20.3",
-              "value": "CHF 405"
-            },
-            {
-              "label": "2 : CHF 390/t  31 décembre 20.3 : CHF 405/t  30 juin 20.4",
-              "value": "CHF 380"
-            },
-            {
-              "label": "isition (CHF 400 000), la valeur des stocks est corrigée de",
-              "value": "CHF 10"
-            },
-            {
-              "label": "si saisie (CHF 10 000, future retourne à zéro). La perte de",
-              "value": "CHF 5"
-            },
-            {
-              "label": ": juste valeur des stocks = CHF 380 000. Stocks diminués de",
-              "value": "CHF 20"
-            },
-            {
-              "label": "urs est CHF/EUR 1.29. Les dettes doivent être augmentées de",
-              "value": "CHF 30"
-            },
-            {
-              "label": "pliquent le remplacement d’un taux variable (p. ex. Euribor",
-              "value": "3 mois"
-            },
-            {
-              "label": "sion (ex. transaction sur titres avec délai de livraison de",
-              "value": "3 jours"
-            },
-            {
-              "label": "e, devise et montant nominal sont identiques. Efficacité de",
-              "value": "100 %"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "RPC 1",
             "RPC 17",
@@ -16536,56 +15733,7 @@
             "Évaluation à la juste valeur obligatoire pour les subventions non monétaires liées à des actifs (RPC 28/4), même si une déduction intervient ensuite.",
             "Subventions au net : publication obligatoire selon méthode brute dans l’annexe"
           ],
-          "thresholds": [
-            {
-              "label": "oit une subvention publique liée à un actif d’un montant de",
-              "value": "CHF 200"
-            },
-            {
-              "label": "ontant de CHF 200 000 pour l’achat d’une installation (prix",
-              "value": "CHF 1"
-            },
-            {
-              "label": "ptables   Date  Libellé  Écriture (Débit / Crédit)  Montant CHF    20.1  Perception de la subvention",
-              "value": "CHF\n\n\n\n20.1"
-            },
-            {
-              "label": "tabilisée est dissoute de façon analogue (CHF 200 000 / 5 =",
-              "value": "CHF 40"
-            },
-            {
-              "label": "égularisation passif est de CHF 200 000 – 40 000 – 40 000 =",
-              "value": "CHF 120"
-            },
-            {
-              "label": "ée est déduite de l’installation (CHF 1 000 000 – 200 000 =",
-              "value": "CHF 800"
-            },
-            {
-              "label": "ment sur la durée d’utilisation de 5 ans (CHF 800 000 / 5 =",
-              "value": "CHF 160"
-            },
-            {
-              "label": "mmables en lien avec un projet de recherche d’un montant de",
-              "value": "CHF 20"
-            },
-            {
-              "label": "e CHF 20 000. En 20.1, les charges en question se montent à",
-              "value": "CHF 60"
-            },
-            {
-              "label": "t au début de l’année 20.2). L’installation est amortie sur",
-              "value": "5 ans"
-            },
-            {
-              "label": "0 000    ℹ️ Calculs détaillés – Méthode nette année 20.3/20.4    Année 20.3 : Valeur comptable a",
-              "value": "4\n\n\n\nAn"
-            },
-            {
-              "label": "000.  Année 20.4 : VNC début = 600 000, durée résiduelle =",
-              "value": "3 ans"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "RPC 18",
             "RPC 21",
@@ -23643,12 +22791,7 @@
             "Le compte de résultat peut être présenté par nature ou par fonction. Si par fonction → informations par nature en notes obligatoires.",
             "IFRS 18 remplacera IAS 1 dès 2027 avec des sous-totaux obligatoires et la publication des MPM (Management Performance Measures)."
           ],
-          "thresholds": [
-            {
-              "label": "autres que la transaction    Échéance  Réalisable dans les",
-              "value": "12 mois"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IAS 10",
             "IAS 12",
@@ -23961,24 +23104,7 @@
             "Abattements forfaitaires : tolérés en CO (ex. : 33.3% pour obsolescence), interdits en IFRS.",
             "Coût spécifique (si non interchangeable), sinon FIFO ou CMP. Jamais LIFO."
           ],
-          "thresholds": [
-            {
-              "label": ": 100 + 150 - 120 + 80 = 210 unités. Prix de vente estimé",
-              "value": "CHF 280"
-            },
-            {
-              "label": "s. Prix de vente estimé : CHF 280 / unité. Coûts de vente",
-              "value": "CHF 10"
-            },
-            {
-              "label": "reuves)  Tolérés en pratique (ex. : « provision générale de",
-              "value": "5%"
-            },
-            {
-              "label": "ge fidèle.  Abattements forfaitaires : tolérés en CO (ex.",
-              "value": "33.3%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "Art. 960a CO",
             "IAS 11",
@@ -24514,12 +23640,7 @@
             "L'application rétrospective est exonérée si « impraticable » → l'entité doit démontrer qu'elle a fait tous les efforts raisonnables. Publier les circonstances.",
             "Les changements d'estimation sont TOUJOURS prospectifs : impact sur la période courante et les périodes futures uniquement. Jamais de retraitement N-1."
           ],
-          "thresholds": [
-            {
-              "label": "000 ; CMP = 565'000 (différence = 35'000)  • Taux d'impôt",
-              "value": "20%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IAS 1",
             "IAS 10",
@@ -24793,12 +23914,7 @@
             "Les dividendes proposés ou déclarés après la date de clôture ne sont PAS comptabilisés comme passif au 31.12 (IAS 10.12). Publication en notes obligatoire.",
             "La date d'autorisation de publication doit TOUJOURS être publiée dans les notes (IAS 10.17). C'est une exigence absolue."
           ],
-          "thresholds": [
-            {
-              "label": "si erreur significative).    Le CA propose un dividende de",
-              "value": "CHF 5"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IAS 1",
             "IAS 36",
@@ -25373,108 +24489,7 @@
             "NON, toujours en charge (IAS 16.19c).",
             "NON, méthode fondée sur les revenus interdite (IAS 16.62A)."
           ],
-          "thresholds": [
-            {
-              "label": "omposant  Coût  Durée  Amort. annuel    Cellule (fuselage)",
-              "value": "CHF 40'000'000"
-            },
-            {
-              "label": "nnuel    Cellule (fuselage)  CHF 40'000'000  25 ans  CHF 1'600'000    Moteurs  CHF 20'000'000  10 an",
-              "value": "CHF 1'600'000\n\n\n\nM"
-            },
-            {
-              "label": "uselage)  CHF 40'000'000  25 ans  CHF 1'600'000    Moteurs",
-              "value": "CHF 20'000'000"
-            },
-            {
-              "label": "25 ans  CHF 1'600'000    Moteurs  CHF 20'000'000  10 ans",
-              "value": "CHF 2'000'000"
-            },
-            {
-              "label": "20'000'000  10 ans  CHF 2'000'000    Aménagement intérieur",
-              "value": "CHF 10'000'000"
-            },
-            {
-              "label": "2'000'000    Aménagement intérieur  CHF 10'000'000  8 ans",
-              "value": "CHF 1'250'000"
-            },
-            {
-              "label": "00'000  8 ans  CHF 1'250'000    Révision majeure (D-check)",
-              "value": "CHF 5'000'000"
-            },
-            {
-              "label": "50'000    Révision majeure (D-check)  CHF 5'000'000  5 ans",
-              "value": "CHF 1'000'000"
-            },
-            {
-              "label": "re (D-check)  CHF 5'000'000  5 ans  CHF 1'000'000    TOTAL",
-              "value": "CHF 75'000'000"
-            },
-            {
-              "label": "F 5'000'000  5 ans  CHF 1'000'000    TOTAL  CHF 75'000'000",
-              "value": "CHF 5'850'000"
-            },
-            {
-              "label": "COMPTABLES TYPES  9.1 Acquisition  Achat d'une machine pour",
-              "value": "CHF 500'000,"
-            },
-            {
-              "label": "Achat d'une machine pour CHF 500'000, coûts d'installation",
-              "value": "CHF 30'000,"
-            },
-            {
-              "label": "CHF 500'000, coûts d'installation CHF 30'000, coûts de test",
-              "value": "CHF 10'000"
-            },
-            {
-              "label": "ation CHF 30'000, coûts de test CHF 10'000 (produit de test",
-              "value": "CHF 3'000"
-            },
-            {
-              "label": "seurs  537'000   Coût = 500'000 + 30'000 + 10'000 − 3'000 =",
-              "value": "CHF 537'000"
-            },
-            {
-              "label": "nt annuel (linéaire)  Machine ci-dessus, durée 10 ans, VR =",
-              "value": "CHF 37'000"
-            },
-            {
-              "label": "VR = CHF 37'000 → Amortissement = (537'000 − 37'000) / 10 =",
-              "value": "CHF 50'000"
-            },
-            {
-              "label": "'000   9.4 Cession (vente)  Vente de la machine (VC nette =",
-              "value": "CHF 300'000"
-            },
-            {
-              "label": "(vente)  Vente de la machine (VC nette = CHF 300'000) pour",
-              "value": "CHF 280'000"
-            },
-            {
-              "label": "machine (VC nette = CHF 300'000) pour CHF 280'000 → Perte =",
-              "value": "CHF 20'000"
-            },
-            {
-              "label": "Durée  Amort. annuel    Cellule (fuselage)  CHF 40'000'000",
-              "value": "25 ans"
-            },
-            {
-              "label": "'000'000  25 ans  CHF 1'600'000    Moteurs  CHF 20'000'000",
-              "value": "10 ans"
-            },
-            {
-              "label": "ns  CHF 2'000'000    Aménagement intérieur  CHF 10'000'000",
-              "value": "8 ans"
-            },
-            {
-              "label": "CHF 1'250'000    Révision majeure (D-check)  CHF 5'000'000",
-              "value": "5 ans"
-            },
-            {
-              "label": "0'000   9.3 Réévaluation à la hausse (méthode nette)  Après",
-              "value": "3 ans"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IAS 2",
             "IAS 20",
@@ -25782,16 +24797,7 @@
             "Obligatoire pour les réévaluations",
             "Depuis 2011, la méthode du corridor est SUPPRIMÉE. Les écarts actuariels vont INTÉGRALEMENT en OCI, jamais étalés. C'est un OCI non reclassable (jamais recyclé en résultat)."
           ],
-          "thresholds": [
-            {
-              "label": "Avantages dont le règlement intégral est attendu dans les",
-              "value": "12 mois"
-            },
-            {
-              "label": "00'000  |  Passif net = 2'000'000  • Taux d'actualisation =",
-              "value": "2.5%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IAS 24",
             "IAS 26",
@@ -27457,40 +26463,7 @@
             "En CO et Swiss GAAP RPC, le goodwill est TOUJOURS amorti (5 ans, 20 exceptionnellement).",
             "Oui → étape 2. Non → pas de test (sauf goodwill/incorporels indéfinis : test annuel obligatoire)"
           ],
-          "thresholds": [
-            {
-              "label": "T  1’100’000   La valeur recouvrable de l’UGT est estimée à",
-              "value": "CHF 850"
-            },
-            {
-              "label": "UGT est estimée à CHF 850’000.  La FVLCD du bâtiment est de",
-              "value": "CHF 420"
-            },
-            {
-              "label": "e : 200’000.  Solde à répartir : 250’000 - 200’000 = 50’000",
-              "value": "CHF."
-            },
-            {
-              "label": "ts approuvés par la direction    Horizon explicite  Maximum",
-              "value": "5 ans"
-            },
-            {
-              "label": "t  Quote-part  Dépréciation  VC après    Bâtiment  500’000",
-              "value": "55.6%"
-            },
-            {
-              "label": "ment  500’000  55.6%  27’778  472’222    Machines  300’000",
-              "value": "33.3%"
-            },
-            {
-              "label": "chines  300’000  33.3%  16’667  283’333    Brevet  100’000",
-              "value": "11.1%"
-            },
-            {
-              "label": "Brevet  100’000  11.1%  5’556  94’444    Total  900’000",
-              "value": "100%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IAS 12",
             "IAS 16",
@@ -27856,12 +26829,7 @@
             "Note si entrée probable ; jamais comptabilisé",
             "Actualisation OBLIGATOIRE si l'effet de la valeur temps est significatif. La désactualisation annuelle est une charge financière. Taux = avant impôt, spécifique au passif."
           ],
-          "thresholds": [
-            {
-              "label": "gation → évaluer si « more likely than not » (probabilité >",
-              "value": "50%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IAS 10",
             "IAS 12",
@@ -28200,20 +27168,7 @@
             "Non (amortissement obligatoire)",
             "Non (amortissement obligatoire, max 20 ans)"
           ],
-          "thresholds": [
-            {
-              "label": "ssement goodwill acquis  Non (test annuel IAS 36)  Oui, max",
-              "value": "5 ans"
-            },
-            {
-              "label": "tissement obligatoire)  Non (amortissement obligatoire, max",
-              "value": "20 ans"
-            },
-            {
-              "label": "à Banque  100’000   10.2 Amortissement annuel (linéaire,",
-              "value": "10 ans"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "Art. 960 al. 2 CO",
             "IAS 12",
@@ -29512,128 +28467,7 @@
             "POCI : TIE ajusté du crédit dès l'origine, variations ECL directement en P&L",
             "Application obligatoire 01.01.2018 ; amendements 2024 sur ESG/SPPI applicables 01.01.2026"
           ],
-          "thresholds": [
-            {
-              "label": "obligation  Alpha SA achète une obligation de Nestlé (AA) à",
-              "value": "CHF 100'000,"
-            },
-            {
-              "label": "— Classification d'un fonds de placement  Beta SA investit",
-              "value": "CHF 500'000"
-            },
-            {
-              "label": "sous le pair)  Gamma SA achète le 01.01.N une obligation à",
-              "value": "CHF 95'000"
-            },
-            {
-              "label": "ète le 01.01.N une obligation à CHF 95'000 (valeur nominale",
-              "value": "CHF 100'000"
-            },
-            {
-              "label": ", coupon 4% annuel, échéance 3 ans.  Coûts de transaction",
-              "value": "CHF 500."
-            },
-            {
-              "label": "ple 4 — Modèle ECL en 3 étapes  Delta SA accorde un prêt de",
-              "value": "CHF 1'000'000"
-            },
-            {
-              "label": "ECL 12 mois = PD(12m) × LGD × EAD = 1% × 40% × 1'000'000 =",
-              "value": "CHF 4'000"
-            },
-            {
-              "label": "fetime = PD(lifetime) × LGD × EAD = 15% × 40% × 1'000'000 =",
-              "value": "CHF 60'000"
-            },
-            {
-              "label": "• ECL lifetime = PD × LGD × EAD = 80% × 40% × 1'000'000 =",
-              "value": "CHF 320'000"
-            },
-            {
-              "label": "r créances commerciales  Epsilon SA a un solde débiteurs de",
-              "value": "CHF 2'000'000"
-            },
-            {
-              "label": "CHF 2'000'000 au 31.12.N réparti comme suit :  • Non échu",
-              "value": "CHF 1'200'000"
-            },
-            {
-              "label": "N réparti comme suit :  • Non échu : CHF 1'200'000 × 0.7% =",
-              "value": "CHF 8'400"
-            },
-            {
-              "label": "Non échu : CHF 1'200'000 × 0.7% = CHF 8'400  • 1-30 jours",
-              "value": "CHF 400'000"
-            },
-            {
-              "label": "000 × 0.7% = CHF 8'400  • 1-30 jours : CHF 400'000 × 1.8% =",
-              "value": "CHF 7'200"
-            },
-            {
-              "label": "-30 jours : CHF 400'000 × 1.8% = CHF 7'200  • 31-60 jours",
-              "value": "CHF 200'000"
-            },
-            {
-              "label": "00 × 1.8% = CHF 7'200  • 31-60 jours : CHF 200'000 × 5.5% =",
-              "value": "CHF 11'000"
-            },
-            {
-              "label": "× 11.0% = CHF 11'000  • > 90 jours : CHF 100'000 × 30.0% =",
-              "value": "CHF 30'000"
-            },
-            {
-              "label": "'000 × 30.0% = CHF 30'000  TOTAL correction de valeur ECL =",
-              "value": "CHF 67'600"
-            },
-            {
-              "label": "ions (non recyclable)  Zeta SA achète 1'000 actions Roche à",
-              "value": "CHF 250"
-            },
-            {
-              "label": "ble)  Zeta SA achète 1'000 actions Roche à CHF 250/action =",
-              "value": "CHF 250'000."
-            },
-            {
-              "label": "ion = CHF 250'000. Choix irrévocable JVOCI.  31.12.N : JV =",
-              "value": "CHF 280"
-            },
-            {
-              "label": "0. Plus-value latente = +30'000 → en OCI.  Dividende reçu",
-              "value": "CHF 5'000"
-            },
-            {
-              "label": "Dividende reçu : CHF 5'000 → en résultat.  31.12.N+1 : JV =",
-              "value": "CHF 220"
-            },
-            {
-              "label": "en OCI (cumul = −30'000 depuis l'achat).  Dividende reçu",
-              "value": "CHF 5'200"
-            },
-            {
-              "label": ": CHF 5'200 → en résultat.  01.07.N+2 : Vente des actions à",
-              "value": "CHF 240"
-            },
-            {
-              "label": "résultat.  01.07.N+2 : Vente des actions à CHF 240/action =",
-              "value": "CHF 240'000."
-            },
-            {
-              "label": ")  → Coût des stocks = USD 500'000 × 0.90 (cours forward) =",
-              "value": "CHF 450'000"
-            },
-            {
-              "label": "gation de Nestlé (AA) à CHF 100'000, taux fixe 3%, échéance",
-              "value": "5 ans"
-            },
-            {
-              "label": "0 (valeur nominale CHF 100'000), coupon 4% annuel, échéance",
-              "value": "3 ans"
-            },
-            {
-              "label": "| Coupon reçu = 4'000 | Amort. décote = 1'348 | VC fin = 96'848  Année N+1 : VC début = 96'848",
-              "value": "848\n\nAn"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IAS 19",
             "IAS 21",
@@ -30668,40 +29502,7 @@
             "Flux trésorerie : principal en financement, intérêts selon politique IAS 7",
             "Bailleur : maintien distinction finance/operating lease (comme IAS 17)"
           ],
-          "thresholds": [
-            {
-              "label": "SA signe un bail de 5 ans pour des bureaux. Loyer annuel",
-              "value": "CHF 120"
-            },
-            {
-              "label": "’emprunt marginal du preneur : 5%. Coûts directs initiaux",
-              "value": "CHF 10"
-            },
-            {
-              "label": "ats de courte durée (short-term leases)  Durée du contrat ≤",
-              "value": "12 mois"
-            },
-            {
-              "label": "te de commencement, pas à la durée restante.  Un contrat de",
-              "value": "3 ans"
-            },
-            {
-              "label": ".  Un contrat de 3 ans avec une option de sortie au bout de",
-              "value": "9 mois"
-            },
-            {
-              "label": "9 mois n’est PAS un contrat de courte durée.  Un contrat de",
-              "value": "10 mois"
-            },
-            {
-              "label": "7. Cas pratique chiffré  Énoncé  Tech SA signe un bail de",
-              "value": "5 ans"
-            },
-            {
-              "label": "at ni de prolongation. Taux d’emprunt marginal du preneur",
-              "value": "5%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "IAS 16",
             "IAS 17",
@@ -31063,100 +29864,7 @@
             "Couverture JV (FVH) = PAS d'OCI — P&L direct sur instrument + élément couvert",
             "Impôts sur OCI : comptabilisés en OCI (pas en P&L)"
           ],
-          "thresholds": [
-            {
-              "label": "cyclable)  Alpha SA achète le 01.01.N une obligation UBS de",
-              "value": "CHF 100'000,"
-            },
-            {
-              "label": "usiness model Hold & Sell).  31.12.N : JV de l'obligation =",
-              "value": "CHF 103'000"
-            },
-            {
-              "label": "'000 (hausse due à la baisse des taux).  • Intérêt au TIE",
-              "value": "CHF 3'000"
-            },
-            {
-              "label": "n de JV en résultat)  15.06.N+1 : Alpha vend l'obligation à",
-              "value": "CHF 105'000."
-            },
-            {
-              "label": "ity, non recyclable)  Beta SA achète 500 actions Novartis à",
-              "value": "CHF 80"
-            },
-            {
-              "label": "ble)  Beta SA achète 500 actions Novartis à CHF 80/action =",
-              "value": "CHF 40'000."
-            },
-            {
-              "label": "CHF 40'000. Désignation irrévocable JVOCI.  31.12.N : JV =",
-              "value": "CHF 90"
-            },
-            {
-              "label": "ignation irrévocable JVOCI.  31.12.N : JV = CHF 90/action =",
-              "value": "CHF 45'000."
-            },
-            {
-              "label": "12.N : JV = CHF 90/action = CHF 45'000.  • Dividende reçu",
-              "value": "CHF 1'500"
-            },
-            {
-              "label": "ns JVOCI +5'000  01.03.N+1 : Beta vend toutes les actions à",
-              "value": "CHF 85"
-            },
-            {
-              "label": "01.03.N+1 : Beta vend toutes les actions à CHF 85/action =",
-              "value": "CHF 42'500."
-            },
-            {
-              "label": "tions définies. Au 31.12.N :  • DBO estimée début d'année =",
-              "value": "CHF 10'000'000"
-            },
-            {
-              "label": "but d'année = CHF 10'000'000  • DBO recalculée (actuaire) =",
-              "value": "CHF 10'500'000"
-            },
-            {
-              "label": ")  • Coût des stocks = USD 200'000 × 0.88 (cours forward) =",
-              "value": "CHF 176'000"
-            },
-            {
-              "label": "de réévaluation IAS 16)  Zeta SA possède un immeuble : coût",
-              "value": "CHF 1'000'000,"
-            },
-            {
-              "label": "de un immeuble : coût CHF 1'000'000, amortissements cumulés",
-              "value": "CHF 200'000,"
-            },
-            {
-              "label": "F 1'000'000, amortissements cumulés CHF 200'000, VC nette =",
-              "value": "CHF 800'000."
-            },
-            {
-              "label": "0'000, VC nette = CHF 800'000.  Expertise au 31.12.N : JV =",
-              "value": "CHF 950'000."
-            },
-            {
-              "label": "r et à mesure de l'amortissement :  • Si durée résiduelle =",
-              "value": "15 ans"
-            },
-            {
-              "label": "achète le 01.01.N une obligation UBS de CHF 100'000, coupon",
-              "value": "3%"
-            },
-            {
-              "label": "Conversion d'une filiale étrangère  Gamma SA (CHF) détient",
-              "value": "100%"
-            },
-            {
-              "label": "0'000 (perte)  • Raison : baisse du taux d'actualisation de",
-              "value": "2.5%"
-            },
-            {
-              "label": "perte)  • Raison : baisse du taux d'actualisation de 2.5% à",
-              "value": "2.0%"
-            }
-          ],
+          "thresholds": [],
           "cross_refs": [
             "Art. 67 LIFD",
             "Art. 675 CO",

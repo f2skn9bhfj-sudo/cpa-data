@@ -589,7 +589,22 @@ function modToggleDeep() {
 function modExpandDeep() { const d = document.getElementById('modDeep'); if (d && d.style.display === 'none') modToggleDeep(); }
 function modGotoSection(id) {
     modExpandDeep();
-    setTimeout(() => { const e = document.getElementById(id); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 40);
+    // scrollIntoView/scrollTo « smooth » sont annulés par les chargements
+    // différés (QCM, leçons liées) qui mutent le DOM → scroll INSTANTANÉ sur
+    // le conteneur #modReading, puis re-calage après stabilisation.
+    const goTo = () => {
+        const e = document.getElementById(id);
+        if (!e) return;
+        const reading = document.getElementById('modReading');
+        if (reading && reading.contains(e)) {
+            const top = e.getBoundingClientRect().top - reading.getBoundingClientRect().top + reading.scrollTop - 14;
+            reading.scrollTop = Math.max(0, top);
+        } else {
+            e.scrollIntoView({ block: 'start' });
+        }
+    };
+    setTimeout(goTo, 60);
+    setTimeout(goTo, 800);   // re-calage une fois les contenus lazy chargés
 }
 
 function modRenderNormDetail(n, m) {
@@ -734,16 +749,22 @@ function modRenderNormDetail(n, m) {
     // (résumé, mnémo et schémas sont affichés dans le panneau « L'essentiel » ci-dessus)
 
     // ── Seuils & chiffres clés (grille visuelle, données jusqu'ici non affichées) ──
-    if (Array.isArray(n.thresholds) && n.thresholds.length > 0) {
-        html += `<div class="mod-section">
-            <h3 class="mod-section-title">📐 Seuils &amp; chiffres clés</h3>
-            <div class="mod-thr-grid">
-                ${n.thresholds.map(t => `<div class="mod-thr-item">
-                    <div class="mod-thr-val">${formatInline(String(t.value || ''))}</div>
-                    <div class="mod-thr-label">${escapeHtml(t.label || '')}</div>
-                </div>`).join('')}
-            </div>
-        </div>`;
+    // Garde-fou : n'affiche que des items bien formés (label court qui commence
+    // en majuscule/chiffre, valeur mono-ligne) — écarte les artefacts d'extraction.
+    {
+        const thrOk = (Array.isArray(n.thresholds) ? n.thresholds : []).filter(t => t && t.label && t.value
+            && String(t.label).length <= 60 && !/\n/.test(String(t.value)) && /^[A-ZÀ-Ý0-9]/.test(String(t.label).trim()));
+        if (thrOk.length > 0) {
+            html += `<div class="mod-section">
+                <h3 class="mod-section-title">📐 Seuils &amp; chiffres clés</h3>
+                <div class="mod-thr-grid">
+                    ${thrOk.map(t => `<div class="mod-thr-item">
+                        <div class="mod-thr-val">${formatInline(String(t.value || ''))}</div>
+                        <div class="mod-thr-label">${escapeHtml(t.label || '')}</div>
+                    </div>`).join('')}
+                </div>
+            </div>`;
+        }
     }
 
     // ── Sections from docx — ALL displayed directly, NO accordion ──
