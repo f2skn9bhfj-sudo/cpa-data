@@ -314,10 +314,11 @@ function toggleTheme() {
     if (btn) btn.textContent = isLight ? '🌙' : '☀️';
 }
 
-// Restore saved theme
+// Restore saved theme — CLAIR par défaut (préférence utilisateur) ;
+// le sombre ne s'applique que s'il a été choisi explicitement via le toggle.
 (function() {
     const saved = localStorage.getItem('swisscpa_theme');
-    if (saved === 'light') {
+    if (saved !== 'dark') {
         document.body.classList.add('light-mode');
         setTimeout(() => {
             const btn = document.getElementById('themeToggle');
