@@ -385,10 +385,6 @@ async function renderTrainerHome(main) {
                     <div class="trainer-progress-fill" style="width:${studiedPct}%"></div>
                 </div>
             </div>
-            <button onclick="navigate('progress')"
-                style="background:transparent;border:1px solid #3b82f6;color:#93c5fd;padding:7px 14px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600">
-                Voir stats détaillées →
-            </button>
         </div>
     ` : '';
 
