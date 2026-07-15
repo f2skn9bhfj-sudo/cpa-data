@@ -9,6 +9,7 @@ const HUB_SECTIONS = [
         title: '🎓 Étudier',
         cards: [
             { tab: 'modules', ic: '📚', t: 'Modules', d: 'Les 16 modules du diplôme : cours, normes CO / RPC / IFRS, leçons et fiches.' },
+            { tab: 'grandlivre', ic: '📗', t: 'Grand Livre', d: "Le grand livre de la comptabilité suisse : théorie, écritures, TVA, cas." },
             { tab: 'audit', ic: '🔍', t: 'Audit', d: "NAS/ISA, catalogue des tests, journée d'auditeur, Nestlé, journal client…" },
             { tab: 'conso', ic: '📊', t: 'Conso', d: 'Consolidation, IFRS et Swiss GAAP pas à pas, avec fil rouge chiffré.' },
             { tab: 'social', ic: '🤝', t: 'Social', d: 'Droit du travail, assurances sociales et paie suisse (calculateur inclus).' },
