@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#FFE600">
-<title>EY Staff 1 - Field Manual</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23FFE600'/><text x='50' y='72' font-size='64' font-weight='900' text-anchor='middle' font-family='Arial'>EY</text></svg>">
-<style>html,body{margin:0;padding:0;background:#F7F6F1;}#loading{font-family:system-ui,sans-serif;color:#6E6E64;padding:40px;text-align:center;}</style>
-<script src="vendor/react.production.min.js"></script>
-<script src="vendor/react-dom.production.min.js"></script>
-<script src="vendor/babel.min.js"></script>
-</head>
-<body>
-<div id="root"><div id="loading">Chargement du manuel...</div></div>
-<script type="text/plain" id="fm-src">
-const { useState, useMemo } = React;
+import { useState, useMemo } from "react";
+
 // ============================================================
 // EY STAFF 1 — FIELD MANUAL · Audit / Assurance Suisse
 // Manuel de terrain pour exceller comme junior auditeur
@@ -2947,7 +2931,7 @@ function SearchResults({ q, go }) {
 }
 
 // ---------- App ----------
-function App() {
+export default function App() {
   const [tab, setTab] = useState("A");
   const [q, setQ] = useState("");
   const searching = q.trim().length >= 2;
@@ -3043,20 +3027,3 @@ function App() {
     </div>
   );
 }
-</script>
-<script>
-(function(){
-  var root = document.getElementById('root');
-  try {
-    var src = document.getElementById('fm-src').textContent;
-    var out = Babel.transform(src, { presets: [['react', { runtime: 'classic' }]] }).code;
-    (0, eval)(out);
-    ReactDOM.createRoot(root).render(React.createElement(App));
-  } catch (e) {
-    if (root) root.innerHTML = '<div style="padding:40px;font-family:system-ui,sans-serif;color:#B3372B">Erreur de chargement du manuel : ' + (e && e.message ? e.message : e) + '</div>';
-    console.error('EY manual bootstrap:', e);
-  }
-})();
-</script>
-</body>
-</html>
