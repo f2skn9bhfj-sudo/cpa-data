@@ -1301,7 +1301,7 @@ function AuditCourse({ std, course, onBack }) {
   const hasFiche = !!(course.fiche_revision && course.fiche_revision.length);
   const tabCls = (on) => `px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors ${on ? "bg-violet-600 text-white border-violet-600" : "bg-white text-slate-600 border-slate-200 hover:border-violet-300"}`;
   return (
-    <div>
+    <div className="max-w-[920px] mx-auto">
       <div className="flex items-center gap-2 flex-wrap mb-3">
         <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mr-1"><ArrowLeft size={15} /> Retour</button>
         <button onClick={() => setMode("cours")} className={tabCls(mode === "cours")}>📖 Cours complet</button>
@@ -1324,7 +1324,7 @@ function AuditCourse({ std, course, onBack }) {
         {course.tldr && (
           <div className="bg-white px-5 py-4 border-t" style={{ borderColor: color + "33" }}>
             <div className="text-[11px] font-bold uppercase tracking-wide mb-1.5" style={{ color }}>📌 La norme en bref</div>
-            <div className="text-[15px] text-slate-700 leading-relaxed max-w-[72ch]"><MdBlock text={course.tldr} /></div>
+            <div className="text-[15px] text-slate-700 leading-relaxed"><MdBlock text={course.tldr} /></div>
           </div>
         )}
       </div>
@@ -1388,7 +1388,7 @@ function AuditCourse({ std, course, onBack }) {
         </div>
       )}
 
-      {course.intro && <div className="text-sm text-slate-700 mb-3 max-w-[72ch]"><MdBlock text={course.intro} /></div>}
+      {course.intro && <div className="text-sm text-slate-700 mb-3"><MdBlock text={course.intro} /></div>}
       {sections.map((s, i) => (
         <AuditCourseSection key={i} id={"course-sec-" + i} num={i + 1} title={s.titre} open={!!openSecs[i]} onToggle={() => toggleSec(i)}>
           {s.body && <MdBlock text={s.body} className="text-sm text-slate-700" />}
