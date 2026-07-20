@@ -1388,7 +1388,12 @@ function AuditCourse({ std, course, onBack }) {
         </div>
       )}
 
-      {course.intro && <div className="text-sm text-slate-700 mb-3"><MdBlock text={course.intro} /></div>}
+      {course.intro && (
+        <div className="rounded-2xl border border-slate-200 bg-white px-5 py-4 mb-4 shadow-sm">
+          <div className="text-[11px] font-bold uppercase tracking-wide text-slate-400 mb-2">📖 Introduction</div>
+          <div className="text-[15px] text-slate-700 leading-[1.7]"><MdBlock text={course.intro} /></div>
+        </div>
+      )}
       {sections.map((s, i) => (
         <AuditCourseSection key={i} id={"course-sec-" + i} num={i + 1} title={s.titre} open={!!openSecs[i]} onToggle={() => toggleSec(i)}>
           {s.body && <MdBlock text={s.body} className="text-sm text-slate-700" />}
