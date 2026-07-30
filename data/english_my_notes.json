@@ -698,6 +698,481 @@
         "« behemoth » = un mastodonte / un colosse (entreprise géante) ; « béhémoth » (créature biblique) n'est pas le sens usuel.",
         "« I would get » = conditionnel de get : « j'obtiendrais / je recevrais ». « j'aurais » (posséder) = « I would have »."
       ]
+    },
+    {
+      "id": "s3",
+      "date": "2026-07-20",
+      "source": "Décharge mentale — session 3 (liste chat) + vocab compta demandé",
+      "categories": [
+        {
+          "id": "verbes",
+          "icon": "🛠️",
+          "label": "Verbes & expressions verbales",
+          "items": [
+            {
+              "en": "hang",
+              "fr": "accrocher, suspendre",
+              "ex": "Hang on a second — I'll check the file.",
+              "ex_fr": "Attends une seconde — je vérifie le fichier.",
+              "tip": "« hang on » = attends ; « get the hang of it » = prendre le coup de main. Deux expressions très fréquentes au bureau."
+            },
+            {
+              "en": "entertain",
+              "fr": "divertir ; envisager (une idée)",
+              "ex": "The partner is willing to entertain the client's proposal.",
+              "ex_fr": "L'associé est disposé à envisager la proposition du client.",
+              "tip": "Sens caché utile en pro : « to entertain an idea/question » = envisager, prendre en considération. Pas seulement « divertir »."
+            },
+            {
+              "en": "dig",
+              "fr": "creuser",
+              "ex": "Let's dig into the variance before the review.",
+              "ex_fr": "Creusons cet écart avant la revue.",
+              "tip": "« dig into » = creuser un sujet — expression d'audit quotidienne. « dig up » = déterrer (une vieille info)."
+            },
+            {
+              "en": "scramble",
+              "fr": "se démener, se précipiter",
+              "ex": "We scrambled to meet the filing deadline.",
+              "ex_fr": "On s'est démenés pour tenir le délai de dépôt.",
+              "tip": "⚠️ Ton signalement était juste : aussi « brouiller » (scrambled eggs = œufs brouillés). En busy season : « it's a scramble » = c'est la course."
+            },
+            {
+              "en": "crave",
+              "fr": "désirer fortement, avoir très envie de",
+              "ex": "After busy season, everyone craves a real weekend.",
+              "ex_fr": "Après la busy season, tout le monde rêve d'un vrai week-end.",
+              "tip": "« to crave » (verbe) → « a craving » (nom) = une envie irrépressible. Registre plutôt informel."
+            },
+            {
+              "en": "shove",
+              "fr": "pousser (brutalement), bousculer",
+              "ex": "Don't just shove the adjustments into December.",
+              "ex_fr": "Ne balance pas juste les ajustements sur décembre.",
+              "tip": "* Plus brutal que « push ». Au sens figuré : caser quelque chose sans soin — utile pour parler d'écritures mal placées."
+            },
+            {
+              "en": "release",
+              "fr": "libérer, relâcher ; publier ; reprendre (une provision)",
+              "ex": "The provision was released to P&L in Q4.",
+              "ex_fr": "La provision a été reprise en résultat au T4.",
+              "tip": "* Triple sens à connaître : « press release » = communiqué ; « release a provision » = REPRISE de provision (vocabulaire d'audit courant) ; « release the report » = publier."
+            },
+            {
+              "en": "hope",
+              "fr": "espérer",
+              "ex": "We hoped the client would deliver the PBC list on time.",
+              "ex_fr": "On espérait que le client livrerait la PBC list à temps.",
+              "tip": "Tu avais noté « hoped » (prétérit régulier). Nuance : « hope » = espoir réaliste ; « wish » = souhait irréel ; « expect » = s'attendre à."
+            },
+            {
+              "en": "steal",
+              "fr": "voler, dérober",
+              "ex": "The employee was caught stealing from petty cash.",
+              "ex_fr": "L'employé a été surpris en train de voler dans la petite caisse.",
+              "tip": "Tu avais noté « stealing » (gérondif). En audit : « theft » = le vol (nom), « fraud » = la fraude — ISA 240 couvre les deux."
+            }
+          ]
+        },
+        {
+          "id": "adjectifs",
+          "icon": "🎨",
+          "label": "Adjectifs",
+          "items": [
+            {
+              "en": "awful",
+              "fr": "horrible, affreux",
+              "ex": "The data quality in that file is awful.",
+              "ex_fr": "La qualité des données de ce fichier est affreuse.",
+              "tip": "Contraire trompeur : « awesome » = génial. Awful/awesome — deux mots proches, sens opposés."
+            },
+            {
+              "en": "swamped",
+              "fr": "débordé, submergé",
+              "ex": "Sorry for the late reply — I'm swamped with PBC requests.",
+              "ex_fr": "Désolé pour la réponse tardive — je suis débordé de demandes PBC.",
+              "tip": "Vient de « swamp » (marécage). Très utilisé en busy season : « I'm swamped » = je suis sous l'eau."
+            },
+            {
+              "en": "sacred",
+              "fr": "sacré",
+              "ex": "Friday reviews are sacred for the manager — never move them.",
+              "ex_fr": "Les revues du vendredi sont sacrées pour le manager — on n'y touche pas.",
+              "tip": "Prononciation : /ˈseɪkrɪd/ — deux syllabes, pas « sacred » à la française."
+            },
+            {
+              "en": "unlikely",
+              "fr": "peu probable, improbable",
+              "ex": "The misstatement is unlikely to be material.",
+              "ex_fr": "Il est peu probable que l'anomalie soit significative.",
+              "tip": "Formule d'audit en or : « unlikely to be material ». Contraire : « likely ». « Highly unlikely » = très improbable."
+            },
+            {
+              "en": "painful",
+              "fr": "douloureux, pénible",
+              "ex": "The year-end reconciliation was painful this year.",
+              "ex_fr": "Le rapprochement de clôture a été pénible cette année.",
+              "tip": "Au bureau, presque toujours au sens figuré : « a painful process » = un processus laborieux."
+            },
+            {
+              "en": "bored",
+              "fr": "ennuyé, qui s'ennuie",
+              "ex": "I was bored during the training session.",
+              "ex_fr": "Je me suis ennuyé pendant la formation.",
+              "tip": "Piège classique : « I'm bored » = je m'ennuie ; « I'm boring » = JE SUIS ennuyeux. Ne les confonds jamais en réunion !"
+            },
+            {
+              "en": "quiet",
+              "fr": "calme, silencieux",
+              "ex": "The office is quiet in August.",
+              "ex_fr": "Le bureau est calme en août.",
+              "tip": "Piège orthographe : « quiet » (calme) ≠ « quite » (assez/plutôt). En finance cotée : « quiet period » = période de silence avant résultats."
+            }
+          ]
+        },
+        {
+          "id": "noms",
+          "icon": "📦",
+          "label": "Noms",
+          "items": [
+            {
+              "en": "thought",
+              "fr": "pensée, réflexion",
+              "ex": "Any thoughts on the draft memo?",
+              "ex_fr": "Des remarques sur le projet de mémo ?",
+              "tip": "« Thoughts? » seul en fin d'email = « qu'en penses-tu ? ». Aussi prétérit de think : « I thought so » = c'est bien ce que je pensais."
+            },
+            {
+              "en": "outage",
+              "fr": "panne, interruption de service",
+              "ex": "The ERP outage delayed our journal entry testing.",
+              "ex_fr": "La panne de l'ERP a retardé notre test des écritures.",
+              "tip": "« power outage » = coupure de courant ; « IT outage » = panne informatique. Mot fréquent dans les findings IT."
+            },
+            {
+              "en": "pledge",
+              "fr": "engagement, promesse ; gage",
+              "ex": "Assets pledged as collateral are disclosed in note 18.",
+              "ex_fr": "Les actifs nantis en garantie sont présentés en note 18.",
+              "tip": "Double sens crucial en audit : « pledged assets » = actifs NANTIS/gagés — tu le verras sur chaque confirmation bancaire."
+            },
+            {
+              "en": "screw",
+              "fr": "vis",
+              "ex": "One loose screw and the whole shelf falls.",
+              "ex_fr": "Une vis desserrée et toute l'étagère tombe.",
+              "tip": "Familier à connaître (à l'oral seulement) : « to screw up » = se planter ; « I screwed up the formula » = j'ai raté la formule."
+            },
+            {
+              "en": "spike",
+              "fr": "pointe, pic (hausse brutale)",
+              "ex": "We noted a spike in revenue in the last week of December.",
+              "ex_fr": "Nous avons relevé un pic de chiffre d'affaires la dernière semaine de décembre.",
+              "tip": "Tu avais noté « spikes » (pluriel). En analyse : « a spike in X » = pic suspect → cut-off risk. Vocabulaire de revue analytique."
+            },
+            {
+              "en": "hole",
+              "fr": "trou ; lacune",
+              "ex": "There are holes in the audit trail for Q3.",
+              "ex_fr": "Il y a des trous dans la piste d'audit du T3.",
+              "tip": "Au figuré : « holes in the documentation/reasoning » = lacunes. « loophole » = faille (juridique/fiscale)."
+            },
+            {
+              "en": "craving",
+              "fr": "envie irrépressible",
+              "ex": "I have a craving for coffee every morning at 10.",
+              "ex_fr": "J'ai une envie de café tous les matins à 10h.",
+              "tip": "Nom dérivé de « to crave ». « sugar craving » = envie de sucre."
+            },
+            {
+              "en": "bone",
+              "fr": "os",
+              "ex": "Let's cut the deck to the bare bones.",
+              "ex_fr": "Réduisons le deck au strict minimum.",
+              "tip": "Tu avais noté « bones ». Expression pro utile : « bare bones » = le strict minimum ; « I have a bone to pick with you » = j'ai un compte à régler (informel)."
+            },
+            {
+              "en": "wisdom",
+              "fr": "sagesse",
+              "ex": "Conventional wisdom says revenue testing comes first.",
+              "ex_fr": "L'idée reçue veut qu'on teste d'abord le chiffre d'affaires.",
+              "tip": "« conventional wisdom » = l'opinion communément admise — très utilisé à l'écrit pro. « a piece of wisdom » = un conseil avisé."
+            },
+            {
+              "en": "hunger",
+              "fr": "faim",
+              "ex": "His hunger for recognition drives his overtime.",
+              "ex_fr": "Sa soif de reconnaissance explique ses heures sup.",
+              "tip": "Au figuré : « hunger for success/recognition » = soif de réussite. Adjectif : « hungry » — « stay hungry » = reste ambitieux."
+            },
+            {
+              "en": "third parties",
+              "fr": "tiers",
+              "ex": "External confirmations are obtained directly from third parties.",
+              "ex_fr": "Les confirmations externes sont obtenues directement auprès de tiers.",
+              "tip": "Cœur du vocabulaire d'audit : « third-party confirmation », « related parties » (parties liées, IAS 24) — ne confonds pas les deux."
+            },
+            {
+              "en": "assumption",
+              "fr": "hypothèse",
+              "ex": "The impairment test relies on aggressive growth assumptions.",
+              "ex_fr": "Le test de dépréciation repose sur des hypothèses de croissance agressives.",
+              "tip": "« key assumptions » = hypothèses clés (IAS 36, IAS 19…). Verbe : « to assume ». À challenger systématiquement en audit."
+            }
+          ]
+        },
+        {
+          "id": "structures",
+          "icon": "🔗",
+          "label": "Structures & mots de liaison",
+          "items": [
+            {
+              "en": "the latter",
+              "fr": "ce dernier / cette dernière (des deux)",
+              "ex": "We considered FIFO and weighted average; the latter was retained.",
+              "ex_fr": "Nous avons étudié FIFO et le coût moyen pondéré ; ce dernier a été retenu.",
+              "tip": "Paire indissociable : « the former » = le premier (des deux), « the latter » = le second. Registre écrit soutenu — parfait pour les mémos."
+            }
+          ]
+        },
+        {
+          "id": "compta_bookkeeping",
+          "icon": "🧾",
+          "label": "Compta quotidienne & tenue des comptes",
+          "items": [
+            {
+              "en": "bookkeeping",
+              "fr": "tenue de la comptabilité",
+              "ex": "The client outsources its bookkeeping to a fiduciary.",
+              "ex_fr": "Le client externalise sa tenue comptable à une fiduciaire.",
+              "tip": "« bookkeeper » = comptable (saisie). Distinct de « accountant » (comptable diplômé) et « auditor »."
+            },
+            {
+              "en": "double-entry bookkeeping",
+              "fr": "comptabilité en partie double",
+              "ex": "Double-entry bookkeeping requires every debit to have a matching credit.",
+              "ex_fr": "La partie double exige que chaque débit ait un crédit correspondant.",
+              "tip": "Fondement du métier : « every debit has a credit »."
+            },
+            {
+              "en": "chart of accounts",
+              "fr": "plan comptable",
+              "ex": "Map the client's chart of accounts to our lead schedules.",
+              "ex_fr": "Fais correspondre le plan comptable du client à nos feuilles maîtresses.",
+              "tip": "Abrégé « CoA ». En Suisse, souvent basé sur le plan comptable PME (Käfer/Sterchi)."
+            },
+            {
+              "en": "debit / credit",
+              "fr": "débit / crédit",
+              "ex": "Which account do we debit for the accrual?",
+              "ex_fr": "Quel compte débite-t-on pour la charge à payer ?",
+              "tip": "« Dr » / « Cr » dans les écritures. Verbe aussi : « to debit an account ». Attention : en banque de détail, « credit » sur ton relevé = argent qui ENTRE."
+            },
+            {
+              "en": "journal entry (JE)",
+              "fr": "écriture comptable",
+              "ex": "All manual journal entries above CHF 50k require approval.",
+              "ex_fr": "Toute écriture manuelle au-dessus de 50k CHF exige une approbation.",
+              "tip": "« manual JE » = écriture manuelle — cible n°1 du test anti-fraude ISA 240 (« JE testing »)."
+            },
+            {
+              "en": "posting",
+              "fr": "imputation, enregistrement",
+              "ex": "The invoice was posted to the wrong account.",
+              "ex_fr": "La facture a été imputée sur le mauvais compte.",
+              "tip": "« to post » = passer/imputer une écriture. « posting date » ≠ « document date » — écart classique à tester en cut-off."
+            },
+            {
+              "en": "accrued expenses",
+              "fr": "charges à payer",
+              "ex": "Accrued expenses cover December services invoiced in January.",
+              "ex_fr": "Les charges à payer couvrent les prestations de décembre facturées en janvier.",
+              "tip": "Écriture de clôture type. Famille complète : accrued expenses (charges à payer), accrued income (produits à recevoir)."
+            },
+            {
+              "en": "prepaid expenses",
+              "fr": "charges payées d'avance",
+              "ex": "The insurance premium is recognised as a prepaid expense.",
+              "ex_fr": "La prime d'assurance est comptabilisée en charges payées d'avance.",
+              "tip": "Actif de régularisation. Miroir : « deferred income » côté passif."
+            },
+            {
+              "en": "deferred income",
+              "fr": "produits constatés d'avance",
+              "ex": "Annual subscriptions received in advance sit in deferred income.",
+              "ex_fr": "Les abonnements annuels encaissés d'avance figurent en produits constatés d'avance.",
+              "tip": "Aussi « deferred revenue ». Sous IFRS 15, souvent présenté en « contract liability »."
+            },
+            {
+              "en": "accrual basis vs cash basis",
+              "fr": "comptabilité d'engagement vs de caisse",
+              "ex": "IFRS requires the accrual basis of accounting.",
+              "ex_fr": "Les IFRS imposent la comptabilité d'engagement.",
+              "tip": "« accrual basis » = on rattache les produits/charges à la période, indépendamment des paiements. « cash basis » = on suit les flux."
+            },
+            {
+              "en": "matching principle",
+              "fr": "principe de rattachement (des charges aux produits)",
+              "ex": "Under the matching principle, COGS follows the related revenue.",
+              "ex_fr": "Selon le rattachement, le coût des ventes suit le revenu correspondant.",
+              "tip": "Base conceptuelle des accruals et du cut-off."
+            },
+            {
+              "en": "bad debt",
+              "fr": "créance irrécouvrable",
+              "ex": "The bad debt was written off after the bankruptcy ruling.",
+              "ex_fr": "La créance irrécouvrable a été passée en perte après le jugement de faillite.",
+              "tip": "« bad debt expense » = charge de créances douteuses. Sous IFRS 9, estimée via le modèle ECL."
+            },
+            {
+              "en": "allowance for doubtful accounts",
+              "fr": "provision pour créances douteuses",
+              "ex": "The allowance covers 60% of receivables aged over 90 days.",
+              "ex_fr": "La provision couvre 60% des créances de plus de 90 jours.",
+              "tip": "Aussi « loss allowance » (terme IFRS 9). Compte de contrepartie de l'actif (contra-asset)."
+            },
+            {
+              "en": "aged trial balance",
+              "fr": "balance âgée",
+              "ex": "Pull the aged trial balance of receivables at year-end.",
+              "ex_fr": "Sors la balance âgée des créances à la clôture.",
+              "tip": "Aussi « aging schedule / aging report ». Base du test de valorisation des créances."
+            },
+            {
+              "en": "bank reconciliation",
+              "fr": "rapprochement bancaire",
+              "ex": "The December bank reconciliation shows three outstanding items.",
+              "ex_fr": "Le rapprochement bancaire de décembre montre trois éléments en suspens.",
+              "tip": "« reconciling items » = éléments en rapprochement ; « outstanding cheques » = chèques non débités. Contrôle clé du cycle trésorerie."
+            },
+            {
+              "en": "suspense account",
+              "fr": "compte d'attente",
+              "ex": "The suspense account must be cleared before closing.",
+              "ex_fr": "Le compte d'attente doit être apuré avant la clôture.",
+              "tip": "« to clear an account » = apurer/solder. Un compte d'attente non apuré = red flag d'audit."
+            },
+            {
+              "en": "subledger",
+              "fr": "grand livre auxiliaire",
+              "ex": "The AR subledger doesn't tie to the general ledger.",
+              "ex_fr": "L'auxiliaire clients ne cadre pas avec le grand livre.",
+              "tip": "« to tie to » = cadrer avec (jargon d'audit quotidien). AP/AR subledgers = auxiliaires fournisseurs/clients."
+            },
+            {
+              "en": "accounts payable (AP)",
+              "fr": "dettes fournisseurs / comptabilité fournisseurs",
+              "ex": "The AP team processes about 800 invoices a month.",
+              "ex_fr": "L'équipe fournisseurs traite environ 800 factures par mois.",
+              "tip": "Désigne le poste ET le service. « AP clerk » = comptable fournisseurs. Miroir : AR."
+            },
+            {
+              "en": "accounts receivable (AR)",
+              "fr": "créances clients / comptabilité clients",
+              "ex": "Days sales outstanding measures how fast AR converts to cash.",
+              "ex_fr": "Le DSO mesure la vitesse de conversion des créances en cash.",
+              "tip": "« DSO » (days sales outstanding) = délai moyen d'encaissement — ratio d'analyse courant."
+            },
+            {
+              "en": "purchase order (PO)",
+              "fr": "bon de commande",
+              "ex": "No invoice is paid without a matching purchase order.",
+              "ex_fr": "Aucune facture n'est payée sans bon de commande correspondant.",
+              "tip": "Contrôle « 3-way match » : PO + réception (« goods receipt ») + facture. À citer en test des contrôles achats."
+            },
+            {
+              "en": "credit note",
+              "fr": "avoir, note de crédit",
+              "ex": "The supplier issued a credit note for the damaged goods.",
+              "ex_fr": "Le fournisseur a émis un avoir pour la marchandise endommagée.",
+              "tip": "Avoirs émis APRÈS la clôture = test classique de cut-off ventes (retours masqués)."
+            },
+            {
+              "en": "petty cash",
+              "fr": "petite caisse",
+              "ex": "Petty cash is counted by surprise twice a year.",
+              "ex_fr": "La petite caisse est comptée par surprise deux fois par an.",
+              "tip": "« cash count » = comptage de caisse. Faible montant mais zone de fraude fréquente."
+            },
+            {
+              "en": "payroll",
+              "fr": "paie",
+              "ex": "Payroll is the largest expense caption for service companies.",
+              "ex_fr": "La paie est le plus gros poste de charges des sociétés de services.",
+              "tip": "« payroll run » = traitement mensuel de paie ; « to be on the payroll » = être salarié de l'entité."
+            },
+            {
+              "en": "withholding tax",
+              "fr": "impôt à la source / impôt anticipé",
+              "ex": "Swiss dividends suffer a 35% withholding tax.",
+              "ex_fr": "Les dividendes suisses subissent un impôt anticipé de 35%.",
+              "tip": "En Suisse : « Verrechnungssteuer » (impôt anticipé). Aussi l'impôt à la source des salariés étrangers."
+            },
+            {
+              "en": "net book value (NBV)",
+              "fr": "valeur nette comptable (VNC)",
+              "ex": "The machine's NBV is cost less accumulated depreciation.",
+              "ex_fr": "La VNC de la machine = coût moins amortissements cumulés.",
+              "tip": "Synonyme IFRS : « carrying amount ». « NBV » domine à l'oral, « carrying amount » à l'écrit normé."
+            },
+            {
+              "en": "depreciation schedule",
+              "fr": "plan d'amortissement",
+              "ex": "Recalculate the depreciation schedule for additions of the year.",
+              "ex_fr": "Recalcule le plan d'amortissement des acquisitions de l'exercice.",
+              "tip": "Aussi « fixed asset register » = fichier des immobilisations — demande PBC standard."
+            },
+            {
+              "en": "write-down",
+              "fr": "dépréciation partielle, réduction de valeur",
+              "ex": "Obsolete inventory was written down to net realisable value.",
+              "ex_fr": "Le stock obsolète a été déprécié à la valeur nette de réalisation.",
+              "tip": "Nuance : « write-down » = réduction PARTIELLE de valeur ; « write-off » = sortie TOTALE. Les deux se conjuguent : to write down/off."
+            },
+            {
+              "en": "opening / closing balance",
+              "fr": "solde d'ouverture / de clôture",
+              "ex": "Agree the opening balances to last year's signed accounts.",
+              "ex_fr": "Cale les soldes d'ouverture sur les comptes signés de l'an dernier.",
+              "tip": "« to agree X to Y » = rapprocher X de Y (jargon d'audit). ISA 510 couvre les soldes d'ouverture en première mission."
+            },
+            {
+              "en": "year-end closing",
+              "fr": "clôture annuelle",
+              "ex": "The client's year-end closing takes eight working days.",
+              "ex_fr": "La clôture annuelle du client prend huit jours ouvrés.",
+              "tip": "« month-end closing » = clôture mensuelle ; « fast close » = clôture accélérée. « closing entries » = écritures de clôture."
+            },
+            {
+              "en": "variance analysis",
+              "fr": "analyse des écarts",
+              "ex": "Variance analysis against budget flagged an unusual margin drop.",
+              "ex_fr": "L'analyse des écarts vs budget a révélé une chute de marge inhabituelle.",
+              "tip": "Cœur des procédures analytiques : « flux analysis », « budget vs actual ». « to flag » = signaler."
+            },
+            {
+              "en": "audit trail",
+              "fr": "piste d'audit",
+              "ex": "Every posting must leave a complete audit trail.",
+              "ex_fr": "Chaque écriture doit laisser une piste d'audit complète.",
+              "tip": "= la capacité à retracer une écriture jusqu'à sa pièce d'origine. « no audit trail » = finding immédiat."
+            },
+            {
+              "en": "fiscal year / financial year",
+              "fr": "exercice comptable / fiscal",
+              "ex": "Their fiscal year ends on 30 June, not 31 December.",
+              "ex_fr": "Leur exercice se termine le 30 juin, pas le 31 décembre.",
+              "tip": "US : « fiscal year (FY) » ; UK : « financial year ». « FY25 » = exercice 2025. « reporting period » = période de reporting."
+            }
+          ]
+        }
+      ],
+      "corrections": [
+        "« scramble » ⚠️ que tu avais marqué : oui, deux sens — se démener/se précipiter ET brouiller (scrambled eggs). Au bureau c'est presque toujours le premier.",
+        "« release » * : en audit, « release a provision » = REPRENDRE une provision (pas « libérer » au sens physique). Réflexe à ancrer.",
+        "« latter » ne s'utilise jamais seul : toujours « the latter », et uniquement quand on vient de citer DEUX éléments (sinon « the last one »).",
+        "« third parties » : ne confonds pas avec « related parties » (parties liées, IAS 24) — presque le contraire : un tiers est indépendant, une partie liée ne l'est pas."
+      ]
     }
   ]
 }

@@ -90,6 +90,7 @@ const TAB_LABELS = {
     oral: '🎤 Oral',
     conso: '📊 Conso',
     social: '🤝 Social',
+    fusion: '🔀 Fusion',
     eymanual: '📕 Manuel EY',
     grandlivre: '📗 Grand Livre',
     flashcards: 'Flashcards' // legacy redirect
@@ -140,7 +141,7 @@ function navigate(tab, subTab) {
     main.setAttribute('aria-busy', 'true');
     main.innerHTML = '<div class="text-center" style="padding:60px"><div class="page-title">Chargement...</div></div>';
     // Full-width pages remove the 1400px cap
-    const fullWidthTabs = ['modules', 'fs', 'conso', 'oral', 'audit', 'references', 'english', 'podcasts', 'hec', 'social', 'eymanual', 'grandlivre'];
+    const fullWidthTabs = ['modules', 'fs', 'conso', 'oral', 'audit', 'references', 'english', 'podcasts', 'hec', 'social', 'eymanual', 'grandlivre', 'fusion'];
     const widthClass = fullWidthTabs.includes(tab) ? ' full-width' : '';
     main.className = 'main-content fade-in' + widthClass;
     void main.offsetWidth;
@@ -186,6 +187,10 @@ function navigate(tab, subTab) {
         case 'social':
             if (typeof _renderSocial === 'function') _renderSocial(main);
             else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module Social en cours de chargement...</p>';
+            break;
+        case 'fusion':
+            if (typeof _renderFusion === 'function') _renderFusion(main);
+            else main.innerHTML = '<p style="padding:40px;color:#94a3b8">Module Fusion en cours de chargement...</p>';
             break;
         case 'eymanual':
             if (typeof _renderEyManual === 'function') _renderEyManual(main);

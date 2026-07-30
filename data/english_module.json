@@ -12849,13 +12849,13 @@
           "note_fr": "Associées et coentreprises — quote-part dans l'actif net + écart d'acquisition implicite."
         },
         {
-          "label_en": "Investments in joint operations",
-          "label_fr": "Quote-part dans les activités conjointes",
+          "label_en": "Loans to associates and joint ventures",
+          "label_fr": "Prêts aux entreprises associées et coentreprises",
           "type": "line",
           "indent": 0,
           "value": 90000,
           "ref": "IFRS 11",
-          "note_fr": "Intégration proportionnelle ligne à ligne."
+          "note_fr": "Poste réel des comptes de groupe. Piège IFRS 11 : une 'joint operation' ne figure JAMAIS en titre de participation — l'opérateur intègre sa quote-part d'actifs/passifs ligne à ligne. Seules les coentreprises (JV) sont mises en équivalence."
         },
         {
           "label_en": "Deferred tax assets",

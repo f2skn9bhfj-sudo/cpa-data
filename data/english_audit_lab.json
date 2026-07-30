@@ -1,0 +1,1066 @@
+{
+  "_meta": {
+    "intro": "Le kit de survie linguistique d'une mission d'audit : assertions, cycles, papiers de travail, abréviations et écritures — tout ce que tu dois savoir dire et comprendre pour être opérationnel dès le premier jour.",
+    "generated": "2026-07-20"
+  },
+  "assertions": [
+    {
+      "en": "Occurrence",
+      "fr": "Réalité / survenance",
+      "scope": "transactions",
+      "def_fr": "Les transactions enregistrées ont réellement eu lieu et concernent l'entité.",
+      "proc_en": "We vouched 25 recorded sales to signed delivery notes to test occurrence.",
+      "proc_fr": "Nous avons vérifié 25 ventes enregistrées contre les bons de livraison signés pour tester la réalité.",
+      "tip": "Occurrence répond au risque de SURESTIMATION (transactions fictives). Sens du test : de la compta vers la pièce (vouching)."
+    },
+    {
+      "en": "Completeness",
+      "fr": "Exhaustivité",
+      "scope": "transactions + soldes",
+      "def_fr": "Tout ce qui devait être enregistré l'a été — rien n'a été omis.",
+      "proc_en": "We traced a sample of goods received notes to the purchase ledger to test completeness.",
+      "proc_fr": "Nous avons suivi un échantillon de bons de réception jusqu'au journal des achats pour tester l'exhaustivité.",
+      "tip": "Répond au risque de SOUS-estimation (charges ou dettes cachées). Sens inverse d'occurrence : de la pièce vers la compta (tracing)."
+    },
+    {
+      "en": "Accuracy",
+      "fr": "Exactitude",
+      "scope": "transactions",
+      "def_fr": "Les montants et données ont été enregistrés correctement.",
+      "proc_en": "We recalculated the invoice amounts, including discounts and VAT, without exception.",
+      "proc_fr": "Nous avons recalculé les montants facturés, remises et TVA incluses, sans exception.",
+      "tip": "Le verbe roi : « to recalculate ». Variante pour les estimations : « accuracy, valuation and allocation » côté soldes."
+    },
+    {
+      "en": "Cut-off",
+      "fr": "Séparation des exercices (césure)",
+      "scope": "transactions",
+      "def_fr": "Les transactions sont enregistrées dans la bonne période comptable.",
+      "proc_en": "We tested sales recorded five days either side of year-end against shipping documents.",
+      "proc_fr": "Nous avons testé les ventes enregistrées cinq jours avant/après la clôture contre les documents d'expédition.",
+      "tip": "« either side of year-end » = de part et d'autre de la clôture — la formule consacrée du test de césure."
+    },
+    {
+      "en": "Classification",
+      "fr": "Classification",
+      "scope": "transactions",
+      "def_fr": "Les transactions sont enregistrées dans les bons comptes.",
+      "proc_en": "We reviewed repairs expense for items that should have been capitalised.",
+      "proc_fr": "Nous avons revu les charges d'entretien à la recherche d'éléments qui auraient dû être immobilisés.",
+      "tip": "Test classique : charges vs immobilisations (« expense vs capitalise » — un grand débat d'audit)."
+    },
+    {
+      "en": "Existence",
+      "fr": "Existence",
+      "scope": "soldes",
+      "def_fr": "Les actifs, passifs et capitaux propres inscrits au bilan existent réellement.",
+      "proc_en": "We attended the physical inventory count and performed test counts on 40 items.",
+      "proc_fr": "Nous avons assisté à l'inventaire physique et réalisé des comptages tests sur 40 références.",
+      "tip": "Pour les créances : confirmation externe. Pour les stocks : présence à l'inventaire. Pour le cash : confirmation bancaire."
+    },
+    {
+      "en": "Rights and obligations",
+      "fr": "Droits et obligations",
+      "scope": "soldes",
+      "def_fr": "L'entité détient les droits sur les actifs et les passifs sont bien ses obligations.",
+      "proc_en": "We inspected title deeds to confirm the entity owns the building.",
+      "proc_fr": "Nous avons examiné les titres de propriété pour confirmer que l'entité détient l'immeuble.",
+      "tip": "Piège fréquent : stocks en consignation (« consignment stock ») — présents physiquement mais pas la propriété de l'entité."
+    },
+    {
+      "en": "Valuation and allocation",
+      "fr": "Évaluation et imputation",
+      "scope": "soldes",
+      "def_fr": "Les éléments figurent au bilan pour des montants appropriés (dépréciations comprises).",
+      "proc_en": "We challenged the key assumptions underlying the impairment test, including the discount rate.",
+      "proc_fr": "Nous avons challengé les hypothèses clés du test de dépréciation, dont le taux d'actualisation.",
+      "tip": "« to challenge an assumption » = remettre en cause une hypothèse — LE verbe de l'audit des estimations (ISA 540)."
+    }
+  ],
+  "cycles": [
+    {
+      "id": "revenue",
+      "icon": "💰",
+      "label_fr": "Ventes — Clients",
+      "label_en": "Revenue & receivables",
+      "vocab": [
+        {
+          "en": "sales order",
+          "fr": "commande client"
+        },
+        {
+          "en": "delivery note / shipping document",
+          "fr": "bon de livraison",
+          "note": "Aussi « proof of delivery (POD) »."
+        },
+        {
+          "en": "sales invoice",
+          "fr": "facture de vente"
+        },
+        {
+          "en": "credit limit",
+          "fr": "limite de crédit",
+          "note": "« credit check » = contrôle de solvabilité avant commande."
+        },
+        {
+          "en": "discount / rebate",
+          "fr": "remise / ristourne",
+          "note": "Rebate = ristourne de volume, souvent en fin d'année — zone de risque IFRS 15."
+        },
+        {
+          "en": "days sales outstanding (DSO)",
+          "fr": "délai moyen d'encaissement",
+          "note": "DSO qui grimpe = créances qui vieillissent = risque de valorisation."
+        }
+      ],
+      "procedures": [
+        {
+          "en": "We performed a three-way match between order, delivery note and invoice.",
+          "fr": "Nous avons rapproché commande, bon de livraison et facture (3-way match)."
+        },
+        {
+          "en": "We circularised the top 20 customers and obtained an 85% response rate.",
+          "fr": "Nous avons circularisé les 20 principaux clients avec un taux de réponse de 85%.",
+          "note": "« to circularise » = envoyer des demandes de confirmation externe — verbe d'audit UK très courant."
+        },
+        {
+          "en": "Unmatched responses were reconciled through subsequent cash receipts testing.",
+          "fr": "Les réponses divergentes ont été rapprochées via le test des encaissements postérieurs.",
+          "note": "« subsequent receipts » = encaissements après clôture — procédure alternative classique."
+        },
+        {
+          "en": "We reviewed credit notes issued after year-end for indications of channel stuffing.",
+          "fr": "Nous avons revu les avoirs émis après la clôture à la recherche de ventes forcées.",
+          "note": "« channel stuffing » = gonfler les ventes de fin d'année en surchargeant les distributeurs."
+        }
+      ]
+    },
+    {
+      "id": "purchases",
+      "icon": "🛒",
+      "label_fr": "Achats — Fournisseurs",
+      "label_en": "Purchases & payables",
+      "vocab": [
+        {
+          "en": "purchase requisition",
+          "fr": "demande d'achat",
+          "note": "Précède le bon de commande dans le flux P2P."
+        },
+        {
+          "en": "goods received note (GRN)",
+          "fr": "bon de réception"
+        },
+        {
+          "en": "supplier statement",
+          "fr": "relevé fournisseur",
+          "note": "« supplier statement reconciliation » = rapprochement des relevés fournisseurs — test clé d'exhaustivité."
+        },
+        {
+          "en": "unmatched invoices",
+          "fr": "factures non rapprochées"
+        },
+        {
+          "en": "accrued invoices (GRNI)",
+          "fr": "factures non parvenues (FNP)",
+          "note": "GRNI = goods received not invoiced — l'équivalent de nos FNP."
+        },
+        {
+          "en": "payment run",
+          "fr": "campagne de paiement",
+          "note": "Le batch hebdomadaire des virements fournisseurs."
+        }
+      ],
+      "procedures": [
+        {
+          "en": "We searched for unrecorded liabilities by examining payments made after year-end.",
+          "fr": "Nous avons recherché les passifs non comptabilisés en examinant les paiements postérieurs à la clôture.",
+          "note": "« search for unrecorded liabilities » = LE test d'exhaustivité des dettes. À connaître par cœur."
+        },
+        {
+          "en": "We reconciled the ten largest supplier statements to the payables ledger.",
+          "fr": "Nous avons rapproché les dix principaux relevés fournisseurs de l'auxiliaire fournisseurs."
+        },
+        {
+          "en": "We tested the three-way match control on a sample of 25 purchase transactions.",
+          "fr": "Nous avons testé le contrôle de rapprochement à trois voies sur un échantillon de 25 achats."
+        },
+        {
+          "en": "We reviewed debit balances in accounts payable for potential reclassification.",
+          "fr": "Nous avons revu les soldes débiteurs fournisseurs en vue d'un éventuel reclassement."
+        }
+      ]
+    },
+    {
+      "id": "payroll",
+      "icon": "👥",
+      "label_fr": "Paie — Personnel",
+      "label_en": "Payroll",
+      "vocab": [
+        {
+          "en": "gross pay / net pay",
+          "fr": "salaire brut / net"
+        },
+        {
+          "en": "payslip",
+          "fr": "fiche de paie"
+        },
+        {
+          "en": "social security contributions",
+          "fr": "charges sociales",
+          "note": "En Suisse : AVS/AI/APG, LPP, LAA — reste en français même en anglais suisse."
+        },
+        {
+          "en": "overtime",
+          "fr": "heures supplémentaires"
+        },
+        {
+          "en": "headcount",
+          "fr": "effectif",
+          "note": "« headcount reconciliation » = rapprocher effectif payé vs effectif RH — test anti-salariés fictifs."
+        },
+        {
+          "en": "severance pay",
+          "fr": "indemnité de départ"
+        }
+      ],
+      "procedures": [
+        {
+          "en": "We reconciled total payroll cost per the GL to the payroll system reports.",
+          "fr": "Nous avons rapproché la charge de paie du grand livre avec les états du logiciel de paie."
+        },
+        {
+          "en": "We performed a proof in total of salary expense using average headcount and salary.",
+          "fr": "Nous avons réalisé un test global de la charge salariale à partir de l'effectif et du salaire moyens.",
+          "note": "« proof in total » = test analytique global — quand la population est homogène, plus efficace que du détail."
+        },
+        {
+          "en": "We tested a sample of joiners and leavers to authorisation letters.",
+          "fr": "Nous avons testé un échantillon d'entrées et de sorties contre les lettres d'autorisation.",
+          "note": "« joiners and leavers » = entrées et sorties de personnel — vocabulaire RH/audit standard."
+        },
+        {
+          "en": "We verified that terminated employees were removed from the December payroll run.",
+          "fr": "Nous avons vérifié que les salariés partis étaient bien sortis de la paie de décembre."
+        }
+      ]
+    },
+    {
+      "id": "inventory",
+      "icon": "📦",
+      "label_fr": "Stocks",
+      "label_en": "Inventory",
+      "vocab": [
+        {
+          "en": "stock count / inventory count",
+          "fr": "inventaire physique",
+          "note": "UK : stocktake. « perpetual inventory » = inventaire permanent."
+        },
+        {
+          "en": "count sheets / tags",
+          "fr": "feuilles / étiquettes de comptage"
+        },
+        {
+          "en": "slow-moving inventory",
+          "fr": "stocks à rotation lente",
+          "note": "« obsolete » = obsolète ; « excess » = excédentaire. Trio de la provision stocks."
+        },
+        {
+          "en": "standard cost",
+          "fr": "coût standard",
+          "note": "« variance capitalisation » = incorporation des écarts au bilan."
+        },
+        {
+          "en": "work in progress (WIP)",
+          "fr": "en-cours de production"
+        },
+        {
+          "en": "consignment stock",
+          "fr": "stock en consignation",
+          "note": "Présent physiquement mais pas la propriété de l'entité — piège de l'assertion droits."
+        }
+      ],
+      "procedures": [
+        {
+          "en": "We attended the year-end count at the two largest warehouses, covering 78% of inventory value.",
+          "fr": "Nous avons assisté à l'inventaire de clôture dans les deux principaux entrepôts, couvrant 78% de la valeur."
+        },
+        {
+          "en": "We performed two-way test counts: from floor to sheet and from sheet to floor.",
+          "fr": "Nous avons compté dans les deux sens : du terrain vers la feuille et de la feuille vers le terrain.",
+          "note": "« floor-to-sheet » teste l'exhaustivité, « sheet-to-floor » teste l'existence. Réponse d'entretien classique !"
+        },
+        {
+          "en": "We tested net realisable value by comparing carrying amounts to post-year-end selling prices.",
+          "fr": "Nous avons testé la valeur nette de réalisation en comparant les valeurs comptables aux prix de vente après clôture."
+        },
+        {
+          "en": "We recalculated the slow-moving provision based on the aging of inventory items.",
+          "fr": "Nous avons recalculé la provision pour rotation lente à partir de l'ancienneté des articles."
+        }
+      ]
+    },
+    {
+      "id": "cash",
+      "icon": "🏦",
+      "label_fr": "Trésorerie",
+      "label_en": "Cash & bank",
+      "vocab": [
+        {
+          "en": "bank confirmation",
+          "fr": "confirmation bancaire",
+          "note": "Envoyée directement par la banque à l'auditeur — jamais via le client."
+        },
+        {
+          "en": "outstanding cheques / deposits in transit",
+          "fr": "chèques non débités / dépôts en transit",
+          "note": "Les deux grands « reconciling items » du rapprochement bancaire."
+        },
+        {
+          "en": "cash pooling",
+          "fr": "centralisation de trésorerie",
+          "note": "Structure groupe fréquente — vérifier les soldes intragroupe."
+        },
+        {
+          "en": "standing order / direct debit",
+          "fr": "ordre permanent / prélèvement"
+        },
+        {
+          "en": "borrowing facilities / covenants",
+          "fr": "lignes de crédit / covenants",
+          "note": "« covenant breach » = bris de covenant → peut reclasser la dette en courant !"
+        },
+        {
+          "en": "window dressing",
+          "fr": "habillage de bilan",
+          "note": "Paiements retardés/avancés autour de la clôture pour embellir la position de trésorerie."
+        }
+      ],
+      "procedures": [
+        {
+          "en": "We obtained bank confirmations for all accounts, including nil balances and closed accounts.",
+          "fr": "Nous avons obtenu les confirmations bancaires de tous les comptes, y compris soldes nuls et comptes clôturés.",
+          "note": "Les comptes « oubliés » sont précisément là où se cachent les passifs non enregistrés."
+        },
+        {
+          "en": "We tested the year-end bank reconciliations and agreed reconciling items to January statements.",
+          "fr": "Nous avons testé les rapprochements bancaires de clôture et calé les éléments en suspens sur les relevés de janvier."
+        },
+        {
+          "en": "We reviewed the confirmations for undisclosed security, guarantees and pledged assets.",
+          "fr": "Nous avons revu les confirmations à la recherche de sûretés, garanties et actifs nantis non mentionnés."
+        }
+      ]
+    },
+    {
+      "id": "fixed_assets",
+      "icon": "🏗️",
+      "label_fr": "Immobilisations",
+      "label_en": "Fixed assets (PP&E)",
+      "vocab": [
+        {
+          "en": "fixed asset register (FAR)",
+          "fr": "fichier des immobilisations",
+          "note": "PBC standard de tout audit — à réconcilier au grand livre."
+        },
+        {
+          "en": "additions / disposals",
+          "fr": "acquisitions / cessions"
+        },
+        {
+          "en": "capital expenditure (capex)",
+          "fr": "investissements",
+          "note": "Opposé : « opex » (operating expenditure) = charges courantes."
+        },
+        {
+          "en": "self-constructed assets",
+          "fr": "immobilisations produites en interne",
+          "note": "Vérifier la capitalisation des coûts internes et des intérêts (IAS 23)."
+        },
+        {
+          "en": "useful life review",
+          "fr": "revue des durées d'utilité",
+          "note": "Obligatoire chaque année sous IAS 16.51 — souvent oubliée par les clients."
+        },
+        {
+          "en": "scrapping",
+          "fr": "mise au rebut"
+        }
+      ],
+      "procedures": [
+        {
+          "en": "We agreed the fixed asset register to the general ledger and investigated the CHF 12k difference.",
+          "fr": "Nous avons calé le fichier des immobilisations sur le grand livre et investigué l'écart de 12k CHF."
+        },
+        {
+          "en": "We vouched additions above CHF 50k to invoices and capital expenditure approvals.",
+          "fr": "Nous avons vérifié les acquisitions supérieures à 50k CHF contre factures et approbations d'investissement."
+        },
+        {
+          "en": "We recalculated depreciation on a sample basis and reperformed the useful life review.",
+          "fr": "Nous avons recalculé les amortissements par sondage et réexécuté la revue des durées d'utilité."
+        },
+        {
+          "en": "We physically verified a sample of assets from the register and traced assets on site back to the register.",
+          "fr": "Nous avons vérifié physiquement un échantillon d'actifs du fichier, et retracé des actifs sur site vers le fichier.",
+          "note": "Deux sens : register→floor (existence) et floor→register (exhaustivité). Même logique que les stocks."
+        }
+      ]
+    },
+    {
+      "id": "provisions",
+      "icon": "⚖️",
+      "label_fr": "Provisions & litiges",
+      "label_en": "Provisions & litigation",
+      "vocab": [
+        {
+          "en": "legal letter / lawyer's confirmation",
+          "fr": "confirmation des avocats",
+          "note": "Demande directe aux avocats du client sur les litiges en cours."
+        },
+        {
+          "en": "constructive obligation",
+          "fr": "obligation implicite",
+          "note": "IAS 37 — née d'une pratique passée créant une attente légitime, pas d'un contrat."
+        },
+        {
+          "en": "best estimate",
+          "fr": "meilleure estimation"
+        },
+        {
+          "en": "unwinding of the discount",
+          "fr": "désactualisation",
+          "note": "La provision actualisée « remonte » chaque année en charge financière."
+        },
+        {
+          "en": "warranty provision",
+          "fr": "provision pour garantie"
+        },
+        {
+          "en": "onerous contract",
+          "fr": "contrat déficitaire"
+        }
+      ],
+      "procedures": [
+        {
+          "en": "We obtained legal letters from all external counsel handling material cases.",
+          "fr": "Nous avons obtenu les confirmations de tous les avocats externes gérant des dossiers significatifs."
+        },
+        {
+          "en": "We challenged the completeness of provisions by reviewing board minutes and subsequent events.",
+          "fr": "Nous avons challengé l'exhaustivité des provisions en revoyant les PV du conseil et les événements postérieurs.",
+          "note": "« board minutes » = procès-verbaux du conseil — lecture obligatoire sur chaque audit."
+        },
+        {
+          "en": "We assessed whether the restructuring announcement created a constructive obligation at year-end.",
+          "fr": "Nous avons apprécié si l'annonce de restructuration créait une obligation implicite à la clôture."
+        }
+      ]
+    },
+    {
+      "id": "tax",
+      "icon": "🧮",
+      "label_fr": "Impôts",
+      "label_en": "Tax",
+      "vocab": [
+        {
+          "en": "current tax charge",
+          "fr": "charge d'impôt courant"
+        },
+        {
+          "en": "tax return",
+          "fr": "déclaration fiscale",
+          "note": "« to file a tax return » = déposer la déclaration."
+        },
+        {
+          "en": "tax assessment",
+          "fr": "taxation / avis d'imposition",
+          "note": "En Suisse : la décision de taxation définitive peut arriver des années après."
+        },
+        {
+          "en": "effective tax rate reconciliation",
+          "fr": "preuve d'impôt",
+          "note": "Le « tax proof » : réconciliation entre taux théorique et taux effectif — demande PBC systématique."
+        },
+        {
+          "en": "uncertain tax position",
+          "fr": "position fiscale incertaine",
+          "note": "IFRIC 23 — provisionner si le fisc a plus de chances qu'autrement de contester."
+        },
+        {
+          "en": "tax loss carry-forward",
+          "fr": "report de pertes fiscales",
+          "note": "7 ans en Suisse. DTA seulement si bénéfices futurs probables."
+        }
+      ],
+      "procedures": [
+        {
+          "en": "We reperformed the effective tax rate reconciliation and corroborated the permanent differences.",
+          "fr": "Nous avons réexécuté la preuve d'impôt et corroboré les différences permanentes."
+        },
+        {
+          "en": "We agreed the current tax liability to the latest assessments and returns filed.",
+          "fr": "Nous avons calé la dette d'impôt courant sur les dernières taxations et déclarations déposées."
+        },
+        {
+          "en": "We involved our tax specialists to assess the recoverability of deferred tax assets.",
+          "fr": "Nous avons impliqué nos fiscalistes pour apprécier la recouvrabilité des actifs d'impôts différés.",
+          "note": "« to involve a specialist » = faire intervenir un expert (ISA 620) — phrase de mémo standard."
+        }
+      ]
+    },
+    {
+      "id": "equity_financing",
+      "icon": "🏛️",
+      "label_fr": "Capitaux propres & financement",
+      "label_en": "Equity & financing",
+      "vocab": [
+        {
+          "en": "share issuance",
+          "fr": "émission d'actions"
+        },
+        {
+          "en": "dividend declaration",
+          "fr": "décision de distribution",
+          "note": "Déclarée par l'AG (« AGM » = assemblée générale annuelle)."
+        },
+        {
+          "en": "commercial register extract",
+          "fr": "extrait du registre du commerce",
+          "note": "La pièce de référence en Suisse pour capital et signatures."
+        },
+        {
+          "en": "loan agreement",
+          "fr": "contrat de prêt"
+        },
+        {
+          "en": "maturity profile",
+          "fr": "échéancier de la dette",
+          "note": "Base du split courant/non courant et de la note liquidité IFRS 7."
+        },
+        {
+          "en": "legal reserve",
+          "fr": "réserve légale",
+          "note": "CO 671 s. — spécificité suisse à savoir expliquer en anglais à un reviewer étranger."
+        }
+      ],
+      "procedures": [
+        {
+          "en": "We agreed share capital to the commercial register extract and the articles of association.",
+          "fr": "Nous avons calé le capital-actions sur l'extrait du registre du commerce et les statuts.",
+          "note": "« articles of association » = les statuts de la société."
+        },
+        {
+          "en": "We recalculated the current/non-current split of borrowings based on contractual maturities.",
+          "fr": "Nous avons recalculé le partage courant/non courant des emprunts à partir des échéances contractuelles."
+        },
+        {
+          "en": "We tested covenant compliance at year-end and reviewed the headroom available.",
+          "fr": "Nous avons testé le respect des covenants à la clôture et revu la marge disponible.",
+          "note": "« headroom » = la marge avant de casser un covenant ou un seuil — mot très Big 4."
+        }
+      ]
+    }
+  ],
+  "workpapers": {
+    "verbs": [
+      {
+        "en": "to agree X to Y",
+        "fr": "caler / rapprocher X sur Y",
+        "note": "LE verbe des papiers de travail : « Agreed to bank statement » = rapproché du relevé bancaire."
+      },
+      {
+        "en": "to tie (out)",
+        "fr": "cadrer, concorder",
+        "note": "« The schedule ties to the TB » = le tableau cadre avec la balance. « tie-out » = le cadrage complet."
+      },
+      {
+        "en": "to foot / to cast",
+        "fr": "additionner (vérifier le total)",
+        "note": "US : foot ; UK : cast. « Cross-foot » = vérifier les totaux en ligne ET en colonne."
+      },
+      {
+        "en": "to vouch",
+        "fr": "vérifier vers la pièce (existence)",
+        "note": "De l'écriture VERS le justificatif. Teste la réalité/existence."
+      },
+      {
+        "en": "to trace",
+        "fr": "suivre vers la compta (exhaustivité)",
+        "note": "Du justificatif VERS l'écriture. Teste l'exhaustivité. Sens inverse de vouch."
+      },
+      {
+        "en": "to reperform",
+        "fr": "réexécuter",
+        "note": "Refaire soi-même un contrôle du client — la preuve la plus forte sur un contrôle."
+      },
+      {
+        "en": "to recalculate / to recompute",
+        "fr": "recalculer"
+      },
+      {
+        "en": "to corroborate",
+        "fr": "corroborer",
+        "note": "Croiser une explication du management avec une preuve indépendante — obligatoire, une inquiry seule ne suffit jamais."
+      },
+      {
+        "en": "to scan",
+        "fr": "parcourir (revue d'ensemble)",
+        "note": "« We scanned the GL for unusual items » = revue rapide à la recherche d'anomalies évidentes."
+      },
+      {
+        "en": "to inspect",
+        "fr": "examiner (un document, un actif)"
+      },
+      {
+        "en": "to observe",
+        "fr": "observer (un processus)"
+      },
+      {
+        "en": "to inquire (of)",
+        "fr": "s'enquérir auprès de",
+        "note": "« We inquired of the CFO » — noter le « of ». Preuve faible seule."
+      },
+      {
+        "en": "to select a sample",
+        "fr": "sélectionner un échantillon",
+        "note": "« We selected 25 items using MUS » = sélection par unités monétaires."
+      },
+      {
+        "en": "to clear a review note",
+        "fr": "lever un point de revue",
+        "note": "Le senior/manager laisse des « review notes » ; tu dois toutes les « clear » avant l'archivage."
+      },
+      {
+        "en": "to roll forward",
+        "fr": "actualiser depuis l'intérim",
+        "note": "« Roll-forward procedures » = pont entre les travaux d'intérim et la clôture."
+      },
+      {
+        "en": "to book / to post / to record",
+        "fr": "comptabiliser",
+        "note": "Trois synonymes interchangeables : « the client booked/posted/recorded the entry »."
+      }
+    ],
+    "conclusions": [
+      {
+        "en": "No exceptions noted.",
+        "fr": "Aucune exception relevée.",
+        "note": "LA phrase de conclusion des tests. Abrégée « NEN » dans certains dossiers."
+      },
+      {
+        "en": "No further work required.",
+        "fr": "Aucun travail complémentaire requis."
+      },
+      {
+        "en": "Difference is below the clearly trivial threshold — passed.",
+        "fr": "Écart inférieur au seuil trivial — non investigué.",
+        "note": "⚠️ « passed » en audit = qu'on laisse passer SANS ajustement (pas « réussi »). « Passed adjustment » = ajustement non corrigé."
+      },
+      {
+        "en": "Satisfactory — agreed to supporting documentation.",
+        "fr": "Satisfaisant — rapproché des pièces justificatives."
+      },
+      {
+        "en": "Based on the procedures performed, the balance is fairly stated in all material respects.",
+        "fr": "Sur la base des procédures réalisées, le solde est correctement présenté dans tous ses aspects significatifs.",
+        "note": "La formule de conclusion de section. « fairly stated » = présenté de manière fidèle."
+      },
+      {
+        "en": "The exception was investigated and resolved — see W/P ref D-12.",
+        "fr": "L'exception a été investiguée et résolue — cf. réf. D-12.",
+        "note": "Toujours croiser les feuilles : « see W/P ref » = voir la référence du papier de travail."
+      },
+      {
+        "en": "Immaterial — no adjustment proposed.",
+        "fr": "Non significatif — aucun ajustement proposé."
+      },
+      {
+        "en": "Comparative figures agreed to prior year signed financial statements.",
+        "fr": "Chiffres comparatifs calés sur les comptes signés de l'exercice précédent."
+      }
+    ],
+    "annotations": [
+      {
+        "en": "PBC (prepared by client)",
+        "fr": "préparé par le client",
+        "note": "Tamponné sur chaque fichier reçu du client."
+      },
+      {
+        "en": "W/P ref",
+        "fr": "référence du papier de travail",
+        "note": "Le système de référencement croisé du dossier (A = général, B = capitaux…, U = impôts selon l'index du cabinet)."
+      },
+      {
+        "en": "c/f — b/f (carried forward / brought forward)",
+        "fr": "report à nouveau /报 solde reporté",
+        "note": "c/f = reporté vers l'avant ; b/f = repris de la période précédente."
+      },
+      {
+        "en": "per client / per audit",
+        "fr": "selon le client / selon l'audit",
+        "note": "Les deux colonnes d'un tableau d'écart : montant client vs montant recalculé."
+      },
+      {
+        "en": "TBD / TBC",
+        "fr": "à déterminer / à confirmer",
+        "note": "to be determined / to be confirmed."
+      },
+      {
+        "en": "o/s (outstanding)",
+        "fr": "en suspens",
+        "note": "« 3 items o/s » = 3 points encore ouverts. À apurer avant la revue partner."
+      },
+      {
+        "en": "n/a (not applicable)",
+        "fr": "sans objet"
+      },
+      {
+        "en": "agreed ✓ / immaterial ✗",
+        "fr": "symboles de pointage (tickmarks)",
+        "note": "Chaque cabinet a sa légende de tickmarks — toujours définie en bas de feuille."
+      }
+    ]
+  },
+  "abbreviations": [
+    {
+      "abbr": "PBC",
+      "full": "Prepared By Client",
+      "fr": "documents préparés par le client — la fameuse « PBC list »"
+    },
+    {
+      "abbr": "TB",
+      "full": "Trial Balance",
+      "fr": "balance des comptes"
+    },
+    {
+      "abbr": "GL",
+      "full": "General Ledger",
+      "fr": "grand livre"
+    },
+    {
+      "abbr": "JE",
+      "full": "Journal Entry",
+      "fr": "écriture comptable"
+    },
+    {
+      "abbr": "AJE",
+      "full": "Adjusting Journal Entry",
+      "fr": "écriture d'ajustement proposée par l'audit"
+    },
+    {
+      "abbr": "SAD / SUM",
+      "full": "Summary of Audit Differences / Summary of Unadjusted Misstatements",
+      "fr": "récap des écarts d'audit (corrigés ou non)"
+    },
+    {
+      "abbr": "TOC",
+      "full": "Test Of Controls",
+      "fr": "test des contrôles"
+    },
+    {
+      "abbr": "TOD",
+      "full": "Test Of Details",
+      "fr": "test de détail"
+    },
+    {
+      "abbr": "SAP",
+      "full": "Substantive Analytical Procedures",
+      "fr": "procédures analytiques substantives"
+    },
+    {
+      "abbr": "MUS",
+      "full": "Monetary Unit Sampling",
+      "fr": "échantillonnage par unités monétaires"
+    },
+    {
+      "abbr": "RoMM",
+      "full": "Risk of Material Misstatement",
+      "fr": "risque d'anomalies significatives"
+    },
+    {
+      "abbr": "CTT",
+      "full": "Clearly Trivial Threshold",
+      "fr": "seuil de remontée trivial"
+    },
+    {
+      "abbr": "PM",
+      "full": "Performance Materiality",
+      "fr": "seuil de signification de réalisation"
+    },
+    {
+      "abbr": "FSLI",
+      "full": "Financial Statement Line Item",
+      "fr": "poste des états financiers"
+    },
+    {
+      "abbr": "P&L",
+      "full": "Profit and Loss",
+      "fr": "compte de résultat — prononcé « P and L »"
+    },
+    {
+      "abbr": "BS",
+      "full": "Balance Sheet",
+      "fr": "bilan"
+    },
+    {
+      "abbr": "CF",
+      "full": "Cash Flow",
+      "fr": "flux de trésorerie"
+    },
+    {
+      "abbr": "SOCIE",
+      "full": "Statement Of Changes In Equity",
+      "fr": "état des variations des capitaux propres — prononcé « so-shi »"
+    },
+    {
+      "abbr": "YE / PY / CY",
+      "full": "Year-End / Prior Year / Current Year",
+      "fr": "clôture / exercice précédent / exercice courant"
+    },
+    {
+      "abbr": "FY / HY / Q",
+      "full": "Full Year / Half Year / Quarter",
+      "fr": "exercice complet / semestre / trimestre (FY25, Q3…)"
+    },
+    {
+      "abbr": "WP / W/P",
+      "full": "Working Paper",
+      "fr": "papier de travail"
+    },
+    {
+      "abbr": "EQR",
+      "full": "Engagement Quality Review(er)",
+      "fr": "revue qualité de mission (associé indépendant)"
+    },
+    {
+      "abbr": "KAM",
+      "full": "Key Audit Matter",
+      "fr": "point clé de l'audit (rapport ISA 701)"
+    },
+    {
+      "abbr": "MRL / LOR",
+      "full": "Management Representation Letter / Letter Of Representation",
+      "fr": "lettre d'affirmation de la direction"
+    },
+    {
+      "abbr": "ML",
+      "full": "Management Letter",
+      "fr": "lettre de recommandations"
+    },
+    {
+      "abbr": "TCWG",
+      "full": "Those Charged With Governance",
+      "fr": "personnes en charge de la gouvernance (CA, comité d'audit)"
+    },
+    {
+      "abbr": "IC",
+      "full": "Internal Control",
+      "fr": "contrôle interne"
+    },
+    {
+      "abbr": "ITGC",
+      "full": "IT General Controls",
+      "fr": "contrôles généraux informatiques"
+    },
+    {
+      "abbr": "SoD",
+      "full": "Segregation of Duties",
+      "fr": "séparation des tâches"
+    },
+    {
+      "abbr": "GRN / GRNI",
+      "full": "Goods Received Note / Goods Received Not Invoiced",
+      "fr": "bon de réception / factures non parvenues (FNP)"
+    },
+    {
+      "abbr": "PO",
+      "full": "Purchase Order",
+      "fr": "bon de commande"
+    },
+    {
+      "abbr": "AP / AR",
+      "full": "Accounts Payable / Accounts Receivable",
+      "fr": "fournisseurs / clients"
+    },
+    {
+      "abbr": "FAR",
+      "full": "Fixed Asset Register",
+      "fr": "fichier des immobilisations"
+    },
+    {
+      "abbr": "NBV",
+      "full": "Net Book Value",
+      "fr": "valeur nette comptable"
+    },
+    {
+      "abbr": "NRV",
+      "full": "Net Realisable Value",
+      "fr": "valeur nette de réalisation (IAS 2)"
+    },
+    {
+      "abbr": "WIP",
+      "full": "Work In Progress",
+      "fr": "en-cours"
+    },
+    {
+      "abbr": "CGU",
+      "full": "Cash-Generating Unit",
+      "fr": "unité génératrice de trésorerie (IAS 36)"
+    },
+    {
+      "abbr": "VIU / FVLCD",
+      "full": "Value In Use / Fair Value Less Costs of Disposal",
+      "fr": "valeur d'utilité / juste valeur nette des frais de cession"
+    },
+    {
+      "abbr": "ECL",
+      "full": "Expected Credit Losses",
+      "fr": "pertes de crédit attendues (IFRS 9)"
+    },
+    {
+      "abbr": "ROU",
+      "full": "Right-Of-Use (asset)",
+      "fr": "droit d'utilisation (IFRS 16)"
+    },
+    {
+      "abbr": "IBR",
+      "full": "Incremental Borrowing Rate",
+      "fr": "taux d'emprunt marginal (IFRS 16)"
+    },
+    {
+      "abbr": "PPA",
+      "full": "Purchase Price Allocation",
+      "fr": "allocation du prix d'acquisition (IFRS 3)"
+    },
+    {
+      "abbr": "NCI",
+      "full": "Non-Controlling Interests",
+      "fr": "participations ne donnant pas le contrôle"
+    },
+    {
+      "abbr": "DTA / DTL",
+      "full": "Deferred Tax Asset / Liability",
+      "fr": "actif / passif d'impôt différé (IAS 12)"
+    },
+    {
+      "abbr": "ETR",
+      "full": "Effective Tax Rate",
+      "fr": "taux d'impôt effectif — le « tax proof »"
+    },
+    {
+      "abbr": "OCI",
+      "full": "Other Comprehensive Income",
+      "fr": "autres éléments du résultat global"
+    },
+    {
+      "abbr": "EPS",
+      "full": "Earnings Per Share",
+      "fr": "résultat par action (IAS 33)"
+    },
+    {
+      "abbr": "COGS",
+      "full": "Cost Of Goods Sold",
+      "fr": "coût des ventes"
+    },
+    {
+      "abbr": "SG&A",
+      "full": "Selling, General & Administrative",
+      "fr": "frais commerciaux et administratifs"
+    },
+    {
+      "abbr": "EBITDA",
+      "full": "Earnings Before Interest, Taxes, Depreciation & Amortisation",
+      "fr": "résultat avant intérêts, impôts et amortissements"
+    },
+    {
+      "abbr": "GAAP",
+      "full": "Generally Accepted Accounting Principles",
+      "fr": "principes comptables généralement admis (US GAAP, Swiss GAAP…)"
+    }
+  ],
+  "entries": {
+    "intro": "Savoir dicter, écrire et lire une écriture en anglais. Structure universelle : « Dr [compte] X / Cr [compte] X — being [motif] » (UK) ou « To record [motif] » (US). À l'oral : « we debit…, we credit… ».",
+    "items": [
+      {
+        "title_fr": "Charge à payer (accrual)",
+        "dr": "Dr Audit fees expense 45,000",
+        "cr": "Cr Accrued expenses 45,000",
+        "narr": "Being accrual of the FY25 audit fee invoiced in January 2026.",
+        "narr_fr": "Rattachement des honoraires d'audit FY25 facturés en janvier 2026.",
+        "tip": "« being » introduit le libellé de l'écriture en anglais UK — tu le verras sur toutes les AJE."
+      },
+      {
+        "title_fr": "Amortissement de l'exercice",
+        "dr": "Dr Depreciation expense 250,000",
+        "cr": "Cr Accumulated depreciation 250,000",
+        "narr": "To record the annual depreciation charge on machinery.",
+        "narr_fr": "Constatation de la dotation annuelle aux amortissements des machines.",
+        "tip": "« depreciation charge » (UK) = « depreciation expense » (US). Le compte de bilan est TOUJOURS « accumulated depreciation »."
+      },
+      {
+        "title_fr": "Provision pour créances douteuses (ECL)",
+        "dr": "Dr Impairment loss on trade receivables 38,000",
+        "cr": "Cr Loss allowance 38,000",
+        "narr": "Being increase in the ECL allowance on receivables aged over 90 days.",
+        "narr_fr": "Augmentation de la provision ECL sur créances de plus de 90 jours.",
+        "tip": "Sous IFRS 9 le compte s'appelle « loss allowance » — plus « provision for bad debts » (ancien vocabulaire)."
+      },
+      {
+        "title_fr": "Sortie d'une créance irrécouvrable",
+        "dr": "Dr Loss allowance 15,000",
+        "cr": "Cr Trade receivables 15,000",
+        "narr": "To write off the receivable from Meier AG following bankruptcy.",
+        "narr_fr": "Sortie de la créance Meier AG suite à la faillite.",
+        "tip": "Le write-off consomme l'allowance — pas de nouvel impact P&L si la provision était suffisante."
+      },
+      {
+        "title_fr": "Dépréciation de stock à la VNR",
+        "dr": "Dr Cost of sales 62,000",
+        "cr": "Cr Inventory 62,000",
+        "narr": "Being write-down of obsolete inventory to net realisable value.",
+        "narr_fr": "Dépréciation du stock obsolète à la valeur nette de réalisation.",
+        "tip": "IAS 2 impose de passer la dépréciation en « cost of sales », pas dans un poste séparé."
+      },
+      {
+        "title_fr": "Correction de cut-off ventes",
+        "dr": "Dr Revenue 120,000",
+        "cr": "Cr Contract liabilities (deferred income) 120,000",
+        "narr": "To defer revenue on goods shipped in January but invoiced in December.",
+        "narr_fr": "Report du revenu sur marchandises expédiées en janvier mais facturées en décembre.",
+        "tip": "« to defer revenue » = différer le revenu. L'AJE de cut-off la plus fréquente en audit."
+      },
+      {
+        "title_fr": "Provision pour litige",
+        "dr": "Dr Legal expense 200,000",
+        "cr": "Cr Provision for litigation 200,000",
+        "narr": "Being best estimate of the probable outflow on the Geneva court case.",
+        "narr_fr": "Meilleure estimation de la sortie probable sur le litige de Genève.",
+        "tip": "« probable outflow » = sortie de ressources probable — les mots exacts d'IAS 37."
+      },
+      {
+        "title_fr": "Impôt différé sur pertes reportables",
+        "dr": "Dr Deferred tax asset 85,000",
+        "cr": "Cr Deferred tax income (P&L) 85,000",
+        "narr": "To recognise a DTA on tax losses carried forward, recovery assessed as probable.",
+        "narr_fr": "Reconnaissance d'un actif d'impôt différé sur pertes reportables, récupération jugée probable.",
+        "tip": "« to recognise » = comptabiliser (au sens IFRS). Contraire : « to derecognise » = décomptabiliser."
+      },
+      {
+        "title_fr": "Location IFRS 16 — mise en place",
+        "dr": "Dr Right-of-use asset 480,000",
+        "cr": "Cr Lease liability 480,000",
+        "narr": "Being initial recognition of the new office lease at the present value of lease payments.",
+        "narr_fr": "Comptabilisation initiale du nouveau bail de bureaux à la valeur actualisée des loyers.",
+        "tip": "« present value » = valeur actualisée. Le taux : « discounted at the incremental borrowing rate »."
+      },
+      {
+        "title_fr": "Reprise de provision devenue sans objet",
+        "dr": "Dr Provision for restructuring 90,000",
+        "cr": "Cr Other operating income 90,000",
+        "narr": "To release the unused portion of the restructuring provision.",
+        "narr_fr": "Reprise de la partie non utilisée de la provision pour restructuration.",
+        "tip": "« to release a provision » = reprendre une provision. « unused » = devenue sans objet. Une reprise ≠ une utilisation !"
+      }
+    ]
+  }
+}

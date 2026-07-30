@@ -1795,5 +1795,657 @@
         }
       ]
     }
-  ]
+  ],
+  "quiz": {
+    "intro": "Trois formats de test pour évaluer ton niveau en conditions réelles : grammaire Part 5 (le cœur du Reading), compréhension orale avec les pièges sonores classiques, et sprint de vocabulaire sur les 16 thèmes officiels.",
+    "part5": [
+      {
+        "id": "p5_01",
+        "q": "The auditor ___ the final report to the committee yesterday.",
+        "options": [
+          "submitted",
+          "has submitted",
+          "submits",
+          "is submitting"
+        ],
+        "answer": 0,
+        "expl_fr": "« yesterday » = passé daté → prétérit simple. Le present perfect est impossible avec une date passée précise."
+      },
+      {
+        "id": "p5_02",
+        "q": "By the time the partner arrives, the team ___ the fieldwork.",
+        "options": [
+          "will have completed",
+          "completes",
+          "has completed",
+          "completed"
+        ],
+        "answer": 0,
+        "expl_fr": "Action achevée AVANT un repère futur → futur antérieur (future perfect) : will have + participe passé."
+      },
+      {
+        "id": "p5_03",
+        "q": "We ___ with this client since 2019.",
+        "options": [
+          "have been working",
+          "are working",
+          "worked",
+          "work"
+        ],
+        "answer": 0,
+        "expl_fr": "« since + date » → present perfect (continu ici) : l'action a commencé dans le passé et continue."
+      },
+      {
+        "id": "p5_04",
+        "q": "While the manager ___ the memo, the client called twice.",
+        "options": [
+          "was reviewing",
+          "reviewed",
+          "has reviewed",
+          "reviews"
+        ],
+        "answer": 0,
+        "expl_fr": "Action longue en arrière-plan interrompue par un événement → past continuous."
+      },
+      {
+        "id": "p5_05",
+        "q": "The invoice ___ before the goods were even shipped.",
+        "options": [
+          "had been issued",
+          "was issuing",
+          "has been issued",
+          "is issued"
+        ],
+        "answer": 0,
+        "expl_fr": "Antériorité dans le passé + voix passive → past perfect passif : had been + participe."
+      },
+      {
+        "id": "p5_06",
+        "q": "The reconciliation must be completed ___ Friday at the latest.",
+        "options": [
+          "by",
+          "until",
+          "at",
+          "in"
+        ],
+        "answer": 0,
+        "expl_fr": "« by » = au plus tard le. « until » = jusqu'à (continuité). Piège TOEIC ultra-classique."
+      },
+      {
+        "id": "p5_07",
+        "q": "The increase ___ revenue is mainly due to the new contract.",
+        "options": [
+          "in",
+          "of",
+          "on",
+          "at"
+        ],
+        "answer": 0,
+        "expl_fr": "« an increase/decrease IN something » — la préposition est toujours « in » pour la grandeur qui varie."
+      },
+      {
+        "id": "p5_08",
+        "q": "The team is fully responsible ___ the inventory count.",
+        "options": [
+          "for",
+          "of",
+          "about",
+          "with"
+        ],
+        "answer": 0,
+        "expl_fr": "« responsible FOR » — jamais « responsible of ». Calque du français à éliminer."
+      },
+      {
+        "id": "p5_09",
+        "q": "Please refer ___ note 12 for further details.",
+        "options": [
+          "to",
+          "at",
+          "on",
+          "in"
+        ],
+        "answer": 0,
+        "expl_fr": "« to refer TO » — verbe à préposition fixe."
+      },
+      {
+        "id": "p5_10",
+        "q": "The results are consistent ___ our expectations.",
+        "options": [
+          "with",
+          "to",
+          "at",
+          "for"
+        ],
+        "answer": 0,
+        "expl_fr": "« consistent WITH » = cohérent avec — collocation d'audit incontournable."
+      },
+      {
+        "id": "p5_11",
+        "q": "The CFO gave a very ___ presentation of the annual results.",
+        "options": [
+          "comprehensive",
+          "comprehension",
+          "comprehensively",
+          "comprehend"
+        ],
+        "answer": 0,
+        "expl_fr": "Devant un nom (presentation), il faut un ADJECTIF : comprehensive = complet. ⚠️ Faux-ami : pas « compréhensif » !"
+      },
+      {
+        "id": "p5_12",
+        "q": "The variance was ___ investigated by the audit team.",
+        "options": [
+          "thoroughly",
+          "thorough",
+          "thoroughness",
+          "more thorough"
+        ],
+        "answer": 0,
+        "expl_fr": "Entre auxiliaire et participe, on attend un ADVERBE : thoroughly = de manière approfondie."
+      },
+      {
+        "id": "p5_13",
+        "q": "Your ___ to detail makes you a strong reviewer.",
+        "options": [
+          "attention",
+          "attentive",
+          "attentively",
+          "attend"
+        ],
+        "answer": 0,
+        "expl_fr": "Après un possessif (your), il faut un NOM : attention to detail = souci du détail."
+      },
+      {
+        "id": "p5_14",
+        "q": "The client's explanation was not sufficiently ___.",
+        "options": [
+          "persuasive",
+          "persuade",
+          "persuasion",
+          "persuasively"
+        ],
+        "answer": 0,
+        "expl_fr": "Après « was » + adverbe, on attend un ADJECTIF attribut : persuasive."
+      },
+      {
+        "id": "p5_15",
+        "q": "We need managerial ___ before booking this adjustment.",
+        "options": [
+          "approval",
+          "approve",
+          "approved",
+          "approvingly"
+        ],
+        "answer": 0,
+        "expl_fr": "Après un adjectif (managerial), il faut un NOM : approval = approbation."
+      },
+      {
+        "id": "p5_16",
+        "q": "The client agreed ___ the supporting documents by Monday.",
+        "options": [
+          "to provide",
+          "providing",
+          "provide",
+          "provided"
+        ],
+        "answer": 0,
+        "expl_fr": "« agree TO do » — agree est suivi de l'infinitif complet."
+      },
+      {
+        "id": "p5_17",
+        "q": "We recommend ___ the provision by CHF 200,000.",
+        "options": [
+          "increasing",
+          "to increase",
+          "increase",
+          "increased"
+        ],
+        "answer": 0,
+        "expl_fr": "« recommend + gérondif » (recommend doing). L'infinitif direct est incorrect ici."
+      },
+      {
+        "id": "p5_18",
+        "q": "The intern is not used to ___ under tight deadlines yet.",
+        "options": [
+          "working",
+          "work",
+          "be working",
+          "worked"
+        ],
+        "answer": 0,
+        "expl_fr": "« be used TO + gérondif » (habitude). Ne pas confondre avec « used to work » = travaillait autrefois."
+      },
+      {
+        "id": "p5_19",
+        "q": "Management denied ___ aware of the misstatement.",
+        "options": [
+          "being",
+          "to be",
+          "be",
+          "been"
+        ],
+        "answer": 0,
+        "expl_fr": "« deny + gérondif » : deny being/doing. Les verbes admit, deny, avoid, consider prennent le gérondif."
+      },
+      {
+        "id": "p5_20",
+        "q": "Remember ___ the file before you leave tonight.",
+        "options": [
+          "to lock",
+          "locking",
+          "lock",
+          "locked"
+        ],
+        "answer": 0,
+        "expl_fr": "« remember TO do » = penser à faire (futur). « remember doing » = se souvenir d'avoir fait (passé)."
+      },
+      {
+        "id": "p5_21",
+        "q": "All journal entries above CHF 50,000 must ___ by the controller.",
+        "options": [
+          "be approved",
+          "approve",
+          "be approving",
+          "approved"
+        ],
+        "answer": 0,
+        "expl_fr": "Modal + voix passive : must BE + participe passé."
+      },
+      {
+        "id": "p5_22",
+        "q": "The new policy ___ to all subsidiaries last month.",
+        "options": [
+          "was communicated",
+          "communicated",
+          "has communicated",
+          "communicating"
+        ],
+        "answer": 0,
+        "expl_fr": "La politique ne communique pas elle-même → passif. « last month » → prétérit."
+      },
+      {
+        "id": "p5_23",
+        "q": "This year's closing was ___ than the previous one.",
+        "options": [
+          "smoother",
+          "more smooth",
+          "smoothest",
+          "smooth"
+        ],
+        "answer": 0,
+        "expl_fr": "Adjectif court (2 syllabes en -th) → comparatif en -er : smoother than."
+      },
+      {
+        "id": "p5_24",
+        "q": "The ___ the documentation, the faster the review.",
+        "options": [
+          "better",
+          "best",
+          "good",
+          "well"
+        ],
+        "answer": 0,
+        "expl_fr": "Structure « the + comparatif..., the + comparatif... » : the better..., the faster..."
+      },
+      {
+        "id": "p5_25",
+        "q": "Q4 revenue was twice ___ high as Q1.",
+        "options": [
+          "as",
+          "so",
+          "more",
+          "much"
+        ],
+        "answer": 0,
+        "expl_fr": "« twice AS high AS » — le multiplicateur s'emploie avec as...as."
+      },
+      {
+        "id": "p5_26",
+        "q": "___ the tight deadline, the team delivered a high-quality file.",
+        "options": [
+          "Despite",
+          "Although",
+          "However",
+          "Whereas"
+        ],
+        "answer": 0,
+        "expl_fr": "Devant un NOM (the deadline) → Despite. « Although » exige une proposition (sujet + verbe)."
+      },
+      {
+        "id": "p5_27",
+        "q": "The balance was confirmed; ___, no further testing is required.",
+        "options": [
+          "therefore",
+          "despite",
+          "although",
+          "whereas"
+        ],
+        "answer": 0,
+        "expl_fr": "Lien de conséquence entre deux propositions indépendantes → therefore."
+      },
+      {
+        "id": "p5_28",
+        "q": "Neither the invoice ___ the contract could be located.",
+        "options": [
+          "nor",
+          "or",
+          "and",
+          "either"
+        ],
+        "answer": 0,
+        "expl_fr": "Corrélatif figé : neither... nor..."
+      },
+      {
+        "id": "p5_29",
+        "q": "___ you have any questions, feel free to contact our office.",
+        "options": [
+          "Should",
+          "Would",
+          "Unless",
+          "Whether"
+        ],
+        "answer": 0,
+        "expl_fr": "Inversion conditionnelle formelle : « Should you have... » = si jamais vous avez... Très courant en courrier pro."
+      },
+      {
+        "id": "p5_30",
+        "q": "The audit cannot be finalised ___ the bank confirmation is received.",
+        "options": [
+          "until",
+          "by",
+          "since",
+          "while"
+        ],
+        "answer": 0,
+        "expl_fr": "« not... until » = pas avant que. « by » ne s'emploie pas avec une proposition."
+      },
+      {
+        "id": "p5_31",
+        "q": "Each of the subsidiaries ___ its own trial balance monthly.",
+        "options": [
+          "submits",
+          "submit",
+          "have submitted",
+          "are submitting"
+        ],
+        "answer": 0,
+        "expl_fr": "« Each of + pluriel » reste SINGULIER → submits. Piège d'accord favori du TOEIC."
+      },
+      {
+        "id": "p5_32",
+        "q": "There is very ___ time left before the filing deadline.",
+        "options": [
+          "little",
+          "few",
+          "less",
+          "fewer"
+        ],
+        "answer": 0,
+        "expl_fr": "« time » est indénombrable → little. « few » s'emploie avec les dénombrables."
+      },
+      {
+        "id": "p5_33",
+        "q": "The number of exceptions ___ decreased significantly this year.",
+        "options": [
+          "has",
+          "have",
+          "are",
+          "were"
+        ],
+        "answer": 0,
+        "expl_fr": "« THE number of » est singulier → has. (« A number of » = pluriel — le contraste piège.)"
+      },
+      {
+        "id": "p5_34",
+        "q": "Employees ___ timesheets are incomplete will be contacted by HR.",
+        "options": [
+          "whose",
+          "who",
+          "which",
+          "whom"
+        ],
+        "answer": 0,
+        "expl_fr": "Possession dans une relative → whose (les feuilles de temps DES employés)."
+      },
+      {
+        "id": "p5_35",
+        "q": "Please send the signed engagement letter to Ms Keller or ___.",
+        "options": [
+          "me",
+          "I",
+          "myself",
+          "mine"
+        ],
+        "answer": 0,
+        "expl_fr": "Après une préposition (to), pronom complément : me. « myself » n'est correct que réfléchi."
+      },
+      {
+        "id": "p5_36",
+        "q": "The meeting has been ___ until next Thursday due to the CFO's absence.",
+        "options": [
+          "postponed",
+          "prevented",
+          "preceded",
+          "proceeded"
+        ],
+        "answer": 0,
+        "expl_fr": "postpone = reporter. Les 3 distracteurs sont des paronymes — piège de forme classique."
+      },
+      {
+        "id": "p5_37",
+        "q": "We would like to ___ an appointment with the tax advisor.",
+        "options": [
+          "schedule",
+          "predict",
+          "attain",
+          "conduct"
+        ],
+        "answer": 0,
+        "expl_fr": "« to schedule an appointment » = fixer un rendez-vous — collocation figée."
+      },
+      {
+        "id": "p5_38",
+        "q": "The warranty period ___ on 31 December next year.",
+        "options": [
+          "expires",
+          "expends",
+          "extends",
+          "expects"
+        ],
+        "answer": 0,
+        "expl_fr": "expire = arriver à échéance. Paronymes : expend (dépenser), extend (prolonger), expect (s'attendre à)."
+      },
+      {
+        "id": "p5_39",
+        "q": "Sales figures exceeded ___ for the third consecutive quarter.",
+        "options": [
+          "expectations",
+          "exceptions",
+          "expenses",
+          "extensions"
+        ],
+        "answer": 0,
+        "expl_fr": "« to exceed expectations » = dépasser les attentes. Attention au paronyme exceptions !"
+      },
+      {
+        "id": "p5_40",
+        "q": "Please find ___ the revised fee proposal for your review.",
+        "options": [
+          "enclosed",
+          "inclusive",
+          "included",
+          "enclosing"
+        ],
+        "answer": 0,
+        "expl_fr": "« Please find enclosed... » = formule figée de courrier (pièce jointe physique ; attached pour email)."
+      }
+    ],
+    "listening": [
+      {
+        "id": "li_01",
+        "text": "The meeting has been postponed until Thursday afternoon.",
+        "options": [
+          "The meeting has been postponed until Thursday afternoon.",
+          "The meeting has been proposed for Tuesday afternoon.",
+          "The meeting will be held on Thursday morning."
+        ],
+        "answer": 0,
+        "expl_fr": "Piège paronyme : postponed/proposed + jour et moment à capter précisément."
+      },
+      {
+        "id": "li_02",
+        "text": "The report is due on the thirtieth of June.",
+        "options": [
+          "The report is due on June 30th.",
+          "The report is due on June 13th.",
+          "The report was due on June 3rd."
+        ],
+        "answer": 0,
+        "expl_fr": "13 (thirteen) vs 30 (thirty) — LE piège de nombres du TOEIC. Écoute l'accent : thirTEEN vs THIRty."
+      },
+      {
+        "id": "li_03",
+        "text": "Could you copy me on your reply to the client?",
+        "options": [
+          "He asks to be copied on the reply.",
+          "He asks for a copy of the contract.",
+          "He asks for coffee before the meeting."
+        ],
+        "answer": 0,
+        "expl_fr": "copy/coffee — paronymes sonores. « copy me on » = me mettre en copie."
+      },
+      {
+        "id": "li_04",
+        "text": "The auditors will walk through the purchase process on Monday.",
+        "options": [
+          "They will review the purchase process step by step.",
+          "They will work through the weekend on purchases.",
+          "They will walk to the client's office on Monday."
+        ],
+        "answer": 0,
+        "expl_fr": "walk/work + sens figuré de « walk through » = passer en revue étape par étape."
+      },
+      {
+        "id": "li_05",
+        "text": "Our fees have risen by fifteen percent since last year.",
+        "options": [
+          "Fees increased 15% year on year.",
+          "Fees increased 50% year on year.",
+          "Fees decreased 15% since last year."
+        ],
+        "answer": 0,
+        "expl_fr": "fifteen (15) vs fifty (50) — deuxième grand piège de nombres. fifTEEN vs FIFty."
+      },
+      {
+        "id": "li_06",
+        "text": "The warehouse inventory count is scheduled for December 31st.",
+        "options": [
+          "The stock count takes place on 31 December.",
+          "The warehouse closes on 13 December.",
+          "The inventory will be sold by December."
+        ],
+        "answer": 0,
+        "expl_fr": "Paraphrase : inventory count = stock count. Re-piège 31/13."
+      },
+      {
+        "id": "li_07",
+        "text": "I'm afraid the partner is unavailable at the moment.",
+        "options": [
+          "The partner cannot be reached right now.",
+          "The partner is afraid of the client.",
+          "The partner is available in a moment."
+        ],
+        "answer": 0,
+        "expl_fr": "« I'm afraid » = formule de politesse (malheureusement), pas la peur ! available/unavailable à bien capter."
+      },
+      {
+        "id": "li_08",
+        "text": "Please review the draft before it goes out to the client.",
+        "options": [
+          "Check the draft before it is sent to the client.",
+          "Print the draft after the client meeting.",
+          "Sign the contract before the client arrives."
+        ],
+        "answer": 0,
+        "expl_fr": "« goes out » = est envoyé. Paraphrase review→check, goes out→is sent."
+      },
+      {
+        "id": "li_09",
+        "text": "The invoice amount doesn't tie to the general ledger.",
+        "options": [
+          "The invoice doesn't match the accounting records.",
+          "The invoice is tied to the ledger with a clip.",
+          "The invoice amount was paid twice."
+        ],
+        "answer": 0,
+        "expl_fr": "« to tie to » (jargon audit) = cadrer avec. Le distracteur littéral (attaché) est le piège."
+      },
+      {
+        "id": "li_10",
+        "text": "We should be able to wrap up the engagement by Friday.",
+        "options": [
+          "The engagement should be finished by Friday.",
+          "The engagement gift should be wrapped on Friday.",
+          "The team should work up until Friday night."
+        ],
+        "answer": 0,
+        "expl_fr": "« wrap up » = terminer/boucler. Le sens littéral (emballer) est le distracteur."
+      },
+      {
+        "id": "li_11",
+        "text": "The flight to the Zurich office leaves at eight forty.",
+        "options": [
+          "The flight departs at 8:40.",
+          "The flight departs at 8:14.",
+          "The flight arrives at 4:08."
+        ],
+        "answer": 0,
+        "expl_fr": "forty vs fourteen + leaves = departs. Toujours reformulé dans la bonne réponse."
+      },
+      {
+        "id": "li_12",
+        "text": "Could you forward the bank confirmation as soon as it arrives?",
+        "options": [
+          "He wants the confirmation forwarded upon receipt.",
+          "He wants to confirm the bank's forward rate.",
+          "He wants four copies of the bank statement."
+        ],
+        "answer": 0,
+        "expl_fr": "forward (transférer) / four — et « as soon as it arrives » paraphrasé en « upon receipt »."
+      },
+      {
+        "id": "li_13",
+        "text": "The provision was released because the lawsuit was settled.",
+        "options": [
+          "The provision was reversed after the case was resolved.",
+          "The provision was increased because of the lawsuit.",
+          "The press release discussed the lawsuit."
+        ],
+        "answer": 0,
+        "expl_fr": "release a provision = reprendre. settled = résolu. Le distracteur « press release » joue sur le double sens."
+      },
+      {
+        "id": "li_14",
+        "text": "Headcount grew from ninety to one hundred and nineteen this year.",
+        "options": [
+          "Staff numbers went from 90 to 119.",
+          "Staff numbers went from 19 to 90.",
+          "Staff numbers went from 90 to 190."
+        ],
+        "answer": 0,
+        "expl_fr": "ninety/nineteen/one-nineteen — triple piège de nombres dans une seule phrase."
+      },
+      {
+        "id": "li_15",
+        "text": "Unless we receive the PBC list today, the deadline is at risk.",
+        "options": [
+          "If the documents don't arrive today, the deadline may slip.",
+          "Since the documents arrived today, the deadline is safe.",
+          "The PBC list was received, so the deadline is met."
+        ],
+        "answer": 0,
+        "expl_fr": "« unless » = si... ne... pas — inverseur logique que le TOEIC adore tester."
+      }
+    ]
+  }
 }

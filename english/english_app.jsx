@@ -980,10 +980,13 @@ function fsFormatValue(v) {
 function FsSection({ fsView, setFsView }) {
   const fs = E_DATA.financial_statements;
   const [tt, setTt] = useState(null);   // tooltip {x, y, fr, note, ref}
+  const [bsLayout, setBsLayout] = useState("side");   // bilans : "side" (actif | passif) ou "list"
   if (!fs) return <div className="text-center py-10 bg-white rounded-xl border border-slate-200"><div className="text-4xl mb-2.5">📊</div><div className="text-sm text-slate-500">États financiers non disponibles.</div></div>;
   const map = { income: fs.income_statement, balance: fs.balance_sheet, conso: fs.balance_sheet_conso, cashflow: fs.cash_flow_statement, equity: fs.changes_in_equity };
   const stmt = map[fsView] || map.income;
   const isTable = stmt.type === "table";
+  const isBalance = fsView === "balance" || fsView === "conso";
+  const sideActive = isBalance && bsLayout === "side";
 
   const ttAttrs = (fr, note, ref) => ({
     onMouseEnter: (e) => setTt({ x: e.clientX + 16, y: e.clientY + 16, fr, note, ref }),
@@ -1005,7 +1008,7 @@ function FsSection({ fsView, setFsView }) {
     if (line.type === "space") return <div key={i} className="h-2" />;
     const indent = line.indent || 0;
     const isNeg = typeof line.value === "number" && line.value < 0;
-    let cls = "grid grid-cols-[1fr_auto] gap-3 px-3 py-1.5 text-[13px] leading-normal cursor-help border-b border-transparent hover:bg-indigo-50 transition-colors";
+    let cls = "group grid grid-cols-[1fr_auto] gap-3 px-3 py-1.5 text-[13px] leading-normal cursor-help border-b border-transparent hover:bg-indigo-50 transition-colors";
     let lblCls = "text-slate-700 flex items-center gap-1.5 min-w-0";
     let valCls = "text-slate-500 tabular-nums whitespace-nowrap" + (isNeg ? " text-red-500" : "");
     if (line.type === "header") { cls += " bg-indigo-50/70 rounded-t-md mt-3 !py-2.5"; lblCls = "font-bold text-indigo-700 uppercase text-xs tracking-wide flex items-center gap-1.5"; }
@@ -1018,6 +1021,9 @@ function FsSection({ fsView, setFsView }) {
           {line.label_en}
           {line.ref && <span className="text-[9px] font-semibold px-1.5 py-px rounded bg-sky-50 text-sky-600 border border-sky-200 whitespace-nowrap">{line.ref}</span>}
           {line.note_fr && <span className="text-[11px] text-amber-500 opacity-80" title="Note disponible">💡</span>}
+          <button onClick={(e) => { e.stopPropagation(); speak(line.label_en); }}
+            title="Écouter le terme anglais"
+            className="opacity-0 group-hover:opacity-100 transition-opacity text-[12px] text-indigo-400 hover:text-indigo-600 shrink-0 px-0.5">🔊</button>
         </span>
         <span className={valCls}>{fsFormatValue(line.value)}</span>
       </div>
@@ -1029,6 +1035,38 @@ function FsSection({ fsView, setFsView }) {
     const formatted = Math.abs(v).toLocaleString("en-US").replace(/,/g, "'");
     const neg = v < 0;
     return <span className={(neg ? "text-red-500 " : bold ? "text-slate-900 " : "text-slate-500 ") + (bold ? "font-bold" : "")}>{neg ? "(" + formatted + ")" : formatted}</span>;
+  };
+
+  /* Bilan « en compte » : actif à gauche, passif (CP + dettes) à droite — convention suisse/CO. */
+  const renderBalanceSide = () => {
+    const lines = stmt.lines || [];
+    const splitIdx = lines.findIndex((l) => l.type === "header" && /equity and liabilities/i.test(l.label_en || ""));
+    if (splitIdx < 0) return <div>{lines.map(renderLine)}</div>;
+    const trim = (arr) => { let a = arr.slice(); while (a.length && a[0].type === "space") a.shift(); while (a.length && a[a.length - 1].type === "space") a.pop(); return a; };
+    const left = trim(lines.slice(0, splitIdx));
+    const right = trim(lines.slice(splitIdx));
+    const totA = lines.find((l) => l.type === "total" && /total assets/i.test(l.label_en || ""));
+    const totP = lines.find((l) => l.type === "total" && /total equity and liabilities/i.test(l.label_en || ""));
+    const balanced = totA && totP && totA.value === totP.value;
+    return (
+      <div>
+        <div className="grid lg:grid-cols-2 gap-x-8 gap-y-6 items-start">
+          <div className="lg:border-r lg:border-slate-300 lg:pr-8">
+            <div className="text-center text-[11px] font-bold uppercase tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-md py-1.5 mb-1">Actif · Assets</div>
+            {left.map(renderLine)}
+          </div>
+          <div>
+            <div className="text-center text-[11px] font-bold uppercase tracking-widest text-rose-700 bg-rose-50 border border-rose-200 rounded-md py-1.5 mb-1">Passif · Equity and liabilities</div>
+            {right.map(renderLine)}
+          </div>
+        </div>
+        {balanced && (
+          <div className="mt-5 rounded-lg bg-indigo-50 border border-indigo-200 text-center py-2.5 text-[12.5px] font-semibold text-indigo-700">
+            ✓ Bilan équilibré — Total actif = Total passif = {fsFormatValue(totA.value)}
+          </div>
+        )}
+      </div>
+    );
   };
 
   const renderTable = () => {
@@ -1082,19 +1120,32 @@ function FsSection({ fsView, setFsView }) {
         {tabBtn("cashflow", "💧 Flux de trésorerie", "IAS 7 indirecte")}
         {tabBtn("equity", "📋 Variations CP", "Tableau multi-colonnes")}
       </div>
-      <div className={"bg-white rounded-xl border border-slate-200 p-4" + (isTable ? "" : " max-w-4xl mx-auto")}>
+      <div className={"bg-white rounded-xl border border-slate-200 p-4" + (isTable || sideActive ? "" : " max-w-4xl mx-auto")}>
         <div className="border-b border-slate-200 pb-3 mb-2">
-          <div className="text-[17px] font-bold text-slate-800 mb-0.5">{stmt.title_en}</div>
-          <div className="text-[11px] text-slate-400 italic">{stmt.title_fr}</div>
+          <div className="flex items-start justify-between gap-3 flex-wrap">
+            <div className="min-w-0">
+              <div className="text-[17px] font-bold text-slate-800 mb-0.5">{stmt.title_en}</div>
+              <div className="text-[11px] text-slate-400 italic">{stmt.title_fr}</div>
+            </div>
+            {isBalance && (
+              <div className="flex gap-1 shrink-0">
+                <button onClick={() => setBsLayout("side")}
+                  className={"text-[11px] font-semibold px-2.5 py-1.5 rounded-lg border transition-colors " + (bsLayout === "side" ? "bg-indigo-600 text-white border-indigo-600" : "bg-white text-slate-500 border-slate-200 hover:border-indigo-300")}>⚌ En compte</button>
+                <button onClick={() => setBsLayout("list")}
+                  className={"text-[11px] font-semibold px-2.5 py-1.5 rounded-lg border transition-colors " + (bsLayout === "list" ? "bg-indigo-600 text-white border-indigo-600" : "bg-white text-slate-500 border-slate-200 hover:border-indigo-300")}>☰ En liste</button>
+              </div>
+            )}
+          </div>
           <div className="flex justify-between mt-2 text-[11px] text-slate-500">
             <span>{stmt.period_en} <span className="text-slate-400 italic">— {stmt.period_fr}</span></span>
             <span>({stmt.currency})</span>
           </div>
         </div>
         <div className="text-[11px] text-slate-400 mb-3.5 leading-normal">
-          🖱️ Survole n'importe quelle ligne {isTable ? "ou colonne " : ""}pour voir la traduction française, la référence IFRS et la note explicative. 💡 indique une note disponible.
+          🖱️ Survole n'importe quelle ligne {isTable ? "ou colonne " : ""}pour voir la traduction française, la référence IFRS et la note explicative. 💡 indique une note disponible.{isTable ? "" : " 🔊 (au survol) lit le terme anglais à voix haute."}
+          {sideActive ? " Présentation « en compte » : actif à gauche, passif à droite (convention CO)." : ""}
         </div>
-        {isTable ? renderTable() : <div>{(stmt.lines || []).map(renderLine)}</div>}
+        {isTable ? renderTable() : sideActive ? renderBalanceSide() : <div>{(stmt.lines || []).map(renderLine)}</div>}
       </div>
       {tt && (tt.fr || tt.note || tt.ref) && (
         <div className="fixed z-50 pointer-events-none bg-white border border-indigo-400 rounded-lg px-3 py-2.5 max-w-sm shadow-xl text-xs" style={{ left: tt.x, top: tt.y }}>
@@ -1565,7 +1616,7 @@ function QuickListSection({ audio, setAudio }) {
         <h2 className="text-lg font-bold">⚡ Liste express — vocabulaire d'un coup d'œil</h2>
         <p className="text-[13px] text-indigo-100 mt-0.5">Tous les mots et leur traduction, sans phrases : lecture rapide. {all.length} entrées. Active « cacher » pour t'auto‑tester (clique un mot pour révéler).</p>
       </div>
-      <div className="sticky top-[49px] z-[5] bg-slate-100/95 backdrop-blur py-2 rounded-xl mb-3 space-y-2">
+      <div className="sticky top-[var(--navh,49px)] z-[5] bg-slate-100/95 backdrop-blur py-2 rounded-xl mb-3 space-y-2">
         <div className="flex items-center gap-2 border-b border-slate-200 pb-2">
           <VoiceMini audio={audio} setAudio={setAudio} />
         </div>
@@ -1654,6 +1705,204 @@ function MeetingDialogue({ dlg, onBack }) {
     </div>
   );
 }
+/* ════════ Compta/Audit — le kit de survie linguistique d'une mission ════════ */
+function AuditLabSection({ audio, setAudio }) {
+  const A = E_DATA.audit_lab || {};
+  const [view, setView] = useState("cycles");   // cycles | assertions | workpapers | abbrev | entries
+  const [cy, setCy] = useState("");              // filtre cycle
+  const [q, setQ] = useState("");
+  const [hideFr, setHideFr] = useState(false);
+  const [revealed, setRevealed] = useState(() => new Set());
+
+  const cycles = A.cycles || [];
+  if (!cycles.length) return <div className="text-center text-sm text-slate-400 py-12">Contenu « Compta/Audit » indisponible.</div>;
+
+  const ql = q.trim().toLowerCase();
+  const has = (...xs) => !ql || xs.join(" ").toLowerCase().includes(ql);
+  const toggleReveal = (k) => { if (!hideFr) return; setRevealed((prev) => { const n = new Set(prev); n.has(k) ? n.delete(k) : n.add(k); return n; }); };
+  const chip = (active) => "text-[12px] font-semibold px-2.5 py-1 rounded-lg border transition-colors " + (active ? "bg-emerald-700 text-white border-transparent" : "bg-white text-slate-600 border-slate-200 hover:border-emerald-400");
+  const vBtn = (id, label) => (
+    <button onClick={() => setView(id)}
+      className={"px-3 py-1.5 rounded-lg text-[13px] font-semibold border transition-colors " + (view === id ? "bg-emerald-700 text-white border-emerald-700" : "bg-white text-slate-600 border-slate-200 hover:border-emerald-400")}>{label}</button>
+  );
+
+  /* Carte générique en/fr/note avec masquage FR + audio */
+  const Card = ({ en, fr, note, k, mono }) => {
+    const masked = hideFr && !revealed.has(k);
+    return (
+      <div onClick={() => toggleReveal(k)} className={"bg-white rounded-xl border border-slate-200 px-3.5 py-2.5 " + (hideFr ? "cursor-pointer hover:border-emerald-400" : "")}>
+        <div className="flex items-start justify-between gap-2">
+          <div className={"font-semibold text-[13.5px] text-slate-800 leading-snug " + (mono ? "font-mono text-[12.5px]" : "")}>{en}</div>
+          <SpeakBtn text={en} title="Écouter" sm />
+        </div>
+        <div className={"text-[12.5px] text-slate-500 mt-1 " + (masked ? "blur-[5px] select-none" : "")}>{fr}</div>
+        {note && <div className={"text-[11px] text-emerald-700 mt-1 leading-snug " + (masked ? "blur-[5px] select-none" : "")}>💡 {note}</div>}
+      </div>
+    );
+  };
+
+  const shownCycles = cycles
+    .filter((c) => !cy || c.id === cy)
+    .map((c) => ({
+      ...c,
+      vocab: (c.vocab || []).filter((x) => has(x.en, x.fr, x.note || "")),
+      procedures: (c.procedures || []).filter((x) => has(x.en, x.fr, x.note || "")),
+    }))
+    .filter((c) => c.vocab.length + c.procedures.length);
+
+  const wp = A.workpapers || {};
+  const wpGroups = [
+    { id: "verbs", icon: "🛠️", label: "Les verbes de la documentation", items: wp.verbs || [] },
+    { id: "conclusions", icon: "✅", label: "Formules de conclusion", items: wp.conclusions || [] },
+    { id: "annotations", icon: "🏷️", label: "Annotations & références", items: wp.annotations || [] },
+  ];
+
+  return (
+    <div>
+      <div className="rounded-2xl bg-gradient-to-r from-emerald-800 to-teal-700 text-white p-4 mb-4">
+        <h2 className="text-lg font-bold">🧾 Compta/Audit — opérationnel en mission</h2>
+        <p className="text-[13px] text-emerald-100 mt-0.5">{A._meta && A._meta.intro}</p>
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-3">
+        {vBtn("cycles", "🔄 Cycles d'audit")}
+        {vBtn("assertions", "🎯 Assertions")}
+        {vBtn("workpapers", "📝 Workpapers")}
+        {vBtn("abbrev", "🔤 Abréviations")}
+        {vBtn("entries", "✍️ Écritures en anglais")}
+      </div>
+
+      <div className="sticky top-[var(--navh,49px)] z-[5] bg-slate-100/95 backdrop-blur py-2 rounded-xl mb-3 space-y-2">
+        <div className="flex items-center gap-2 border-b border-slate-200 pb-2">
+          <VoiceMini audio={audio} setAudio={setAudio} />
+        </div>
+        <div className="flex items-center gap-2">
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher (EN ou FR)…"
+            className="flex-1 bg-white border border-slate-200 rounded-lg px-3 py-2 text-[13px] outline-none focus:border-emerald-500" />
+          <button onClick={() => { setHideFr(!hideFr); setRevealed(new Set()); }} className={chip(hideFr)}>🙈 Cacher FR</button>
+        </div>
+        {view === "cycles" && (
+          <div className="flex flex-wrap gap-1.5">
+            <button onClick={() => setCy("")} className={chip(!cy)}>Tous</button>
+            {cycles.map((c) => <button key={c.id} onClick={() => setCy(cy === c.id ? "" : c.id)} className={chip(cy === c.id)} title={c.label_en}>{c.icon} {c.label_fr}</button>)}
+          </div>
+        )}
+      </div>
+
+      {view === "cycles" && (shownCycles.length === 0 ? (
+        <div className="rounded-xl border-2 border-dashed border-slate-200 bg-white p-8 text-center text-slate-400 text-sm">Rien pour ce filtre.</div>
+      ) : shownCycles.map((c) => (
+        <div key={c.id} className="mb-6">
+          <div className="flex items-baseline gap-2 mb-2">
+            <span className="font-bold text-[15px] text-slate-800">{c.icon} {c.label_fr}</span>
+            <span className="text-[11px] text-slate-400 italic">{c.label_en}</span>
+          </div>
+          {c.vocab.length > 0 && <>
+            <div className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-1.5">Vocabulaire clé</div>
+            <div className="grid md:grid-cols-2 gap-2 mb-3">
+              {c.vocab.map((x, i) => <Card key={c.id + "v" + i} k={c.id + "v" + i} en={x.en} fr={x.fr} note={x.note} />)}
+            </div>
+          </>}
+          {c.procedures.length > 0 && <>
+            <div className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-1.5">Procédures — à savoir dire</div>
+            <div className="grid gap-2">
+              {c.procedures.map((x, i) => <Card key={c.id + "p" + i} k={c.id + "p" + i} en={x.en} fr={x.fr} note={x.note} />)}
+            </div>
+          </>}
+        </div>
+      )))}
+
+      {view === "assertions" && (
+        <div className="grid md:grid-cols-2 gap-3">
+          {(A.assertions || []).filter((a) => has(a.en, a.fr, a.def_fr, a.proc_en)).map((a, i) => {
+            const k = "as" + i;
+            const masked = hideFr && !revealed.has(k);
+            return (
+              <div key={k} onClick={() => toggleReveal(k)} className={"bg-white rounded-xl border border-slate-200 p-4 " + (hideFr ? "cursor-pointer hover:border-emerald-400" : "")}>
+                <div className="flex items-start justify-between gap-2 mb-0.5">
+                  <div className="font-bold text-[15px] text-slate-800">{a.en}</div>
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    <span className="text-[10px] font-bold uppercase tracking-wide bg-emerald-50 text-emerald-700 rounded-full px-2 py-0.5">{a.scope}</span>
+                    <SpeakBtn text={a.en + ". " + a.proc_en} title="Écouter" sm />
+                  </div>
+                </div>
+                <div className={"text-[12.5px] text-slate-500 " + (masked ? "blur-[5px] select-none" : "")}>{a.fr}</div>
+                <div className={"text-[12px] text-slate-600 mt-1.5 leading-snug " + (masked ? "blur-[5px] select-none" : "")}>{a.def_fr}</div>
+                <div className="mt-2 rounded-lg bg-slate-50 border border-slate-100 px-3 py-2">
+                  <div className="text-[12.5px] text-slate-800 italic leading-snug">« {a.proc_en} »</div>
+                  <div className={"text-[11.5px] text-slate-500 mt-0.5 " + (masked ? "blur-[5px] select-none" : "")}>{a.proc_fr}</div>
+                </div>
+                {a.tip && <div className={"text-[11px] text-emerald-700 mt-1.5 leading-snug " + (masked ? "blur-[5px] select-none" : "")}>💡 {a.tip}</div>}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {view === "workpapers" && wpGroups.map((g) => {
+        const items = g.items.filter((x) => has(x.en, x.fr, x.note || ""));
+        if (!items.length) return null;
+        return (
+          <div key={g.id} className="mb-5">
+            <div className="font-bold text-[15px] text-slate-800 mb-2">{g.icon} {g.label} <span className="text-[11px] text-indigo-500 font-bold bg-indigo-50 rounded-full px-2 py-0.5">{items.length}</span></div>
+            <div className="grid md:grid-cols-2 gap-2">
+              {items.map((x, i) => <Card key={g.id + i} k={g.id + i} en={x.en} fr={x.fr} note={x.note} />)}
+            </div>
+          </div>
+        );
+      })}
+
+      {view === "abbrev" && (
+        <div className="grid sm:grid-cols-2 gap-2">
+          {(A.abbreviations || []).filter((x) => has(x.abbr, x.full, x.fr)).map((x, i) => {
+            const k = "ab" + i;
+            const masked = hideFr && !revealed.has(k);
+            return (
+              <div key={k} onClick={() => toggleReveal(k)} className={"bg-white rounded-xl border border-slate-200 px-3.5 py-2.5 " + (hideFr ? "cursor-pointer hover:border-emerald-400" : "")}>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-mono font-bold text-[13.5px] text-emerald-800">{x.abbr}</span>
+                  <SpeakBtn text={x.full} title="Écouter la forme complète" sm />
+                </div>
+                <div className="text-[12.5px] text-slate-700 mt-0.5">{x.full}</div>
+                <div className={"text-[12px] text-slate-500 mt-0.5 " + (masked ? "blur-[5px] select-none" : "")}>{x.fr}</div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {view === "entries" && (
+        <div>
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50/70 p-3.5 mb-4 text-[12.5px] text-emerald-900 leading-relaxed">
+            {(A.entries || {}).intro}
+          </div>
+          <div className="grid md:grid-cols-2 gap-3">
+            {((A.entries || {}).items || []).filter((e) => has(e.title_fr, e.dr, e.cr, e.narr, e.narr_fr)).map((e, i) => {
+              const k = "je" + i;
+              const masked = hideFr && !revealed.has(k);
+              return (
+                <div key={k} onClick={() => toggleReveal(k)} className={"bg-white rounded-xl border border-slate-200 p-4 " + (hideFr ? "cursor-pointer hover:border-emerald-400" : "")}>
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <div className="font-bold text-[13.5px] text-slate-800">{e.title_fr}</div>
+                    <SpeakBtn text={e.dr + ". " + e.cr + ". " + e.narr} title="Écouter l'écriture" sm />
+                  </div>
+                  <div className="rounded-lg bg-slate-900 text-slate-100 font-mono text-[12px] px-3 py-2.5 leading-relaxed">
+                    <div>{e.dr}</div>
+                    <div className="pl-6">{e.cr}</div>
+                    <div className="text-emerald-300 mt-1 italic">{e.narr}</div>
+                  </div>
+                  <div className={"text-[12px] text-slate-500 mt-1.5 " + (masked ? "blur-[5px] select-none" : "")}>{e.narr_fr}</div>
+                  {e.tip && <div className={"text-[11px] text-emerald-700 mt-1 leading-snug " + (masked ? "blur-[5px] select-none" : "")}>💡 {e.tip}</div>}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function MeetingSection({ audio, setAudio }) {
   const M = E_DATA.meeting || {};
   const funcs = M.functions || [];
@@ -1696,7 +1945,7 @@ function MeetingSection({ audio, setAudio }) {
 
       {view === "situations" && (
         <div>
-          <div className="sticky top-[49px] z-[5] bg-slate-100/95 backdrop-blur py-2 rounded-xl mb-3 space-y-2">
+          <div className="sticky top-[var(--navh,49px)] z-[5] bg-slate-100/95 backdrop-blur py-2 rounded-xl mb-3 space-y-2">
             <div className="flex items-center gap-2 border-b border-slate-200 pb-2">
               <VoiceMini audio={audio} setAudio={setAudio} />
             </div>
@@ -1831,9 +2080,147 @@ function ToeicPartCard({ p }) {
     </div>
   );
 }
+/* ── Tests interactifs TOEIC : moteur générique de QCM (timer, feedback, score, niveau estimé) ── */
+function toeicBand(pct) {
+  if (pct >= 90) return { score: "≈ 850+", cefr: "C1", msg: "Excellent — tu es au-dessus du niveau requis pour EY.", color: "text-emerald-600" };
+  if (pct >= 75) return { score: "≈ 700–845", cefr: "B2+", msg: "Très solide — continue sur ce rythme.", color: "text-emerald-600" };
+  if (pct >= 60) return { score: "≈ 550–695", cefr: "B2", msg: "Bon niveau opérationnel — vise la régularité.", color: "text-amber-600" };
+  if (pct >= 45) return { score: "≈ 400–545", cefr: "B1", msg: "En progression — refais les zones ratées.", color: "text-amber-600" };
+  return { score: "< 400", cefr: "A2–B1", msg: "Continue — chaque session compte.", color: "text-rose-600" };
+}
+
+function QuizRunner({ title, icon, questions, secondsPer, onExit, onRestart }) {
+  const [idx, setIdx] = useState(0);
+  const [chosen, setChosen] = useState(null);   // null = pas répondu ; -1 = temps écoulé
+  const [mistakes, setMistakes] = useState([]);
+  const [done, setDone] = useState(false);
+  const [left, setLeft] = useState(secondsPer || 0);
+  const q = questions[idx];
+
+  /* Compte à rebours par question (si secondsPer) */
+  useEffect(() => {
+    if (!secondsPer || done) return;
+    setLeft(secondsPer);
+    const t = setInterval(() => {
+      setLeft((l) => {
+        if (l <= 1) { clearInterval(t); setChosen((c) => (c === null ? -1 : c)); return 0; }
+        return l - 1;
+      });
+    }, 1000);
+    return () => clearInterval(t);
+  }, [idx, done, secondsPer]);
+  /* Le temps écoulé compte comme une erreur (une seule fois) */
+  useEffect(() => {
+    if (chosen === -1) setMistakes((m) => (m.some((x) => x.idx === idx) ? m : [...m, { idx, q, chosen: -1 }]));
+  }, [chosen]);
+  /* Item d'écoute : lecture auto à l'arrivée sur la question */
+  useEffect(() => { if (q && q.listen) { const t = setTimeout(() => speak(q.text), 350); return () => clearTimeout(t); } }, [idx]);
+
+  if (!q) return null;
+  const answered = chosen !== null;
+  const pick = (i) => {
+    if (answered) return;
+    setChosen(i);
+    if (i !== q.answer) setMistakes((m) => [...m, { idx, q, chosen: i }]);
+  };
+  const next = () => {
+    if (idx + 1 >= questions.length) { setDone(true); return; }
+    setIdx(idx + 1); setChosen(null);
+  };
+
+  if (done) {
+    const nOk = questions.length - mistakes.length;
+    const pct = Math.round((nOk / questions.length) * 100);
+    const band = toeicBand(pct);
+    return (
+      <div className="bg-white rounded-2xl border border-slate-200 p-6">
+        <div className="text-center mb-5">
+          <div className="text-4xl mb-2">{pct >= 75 ? "🎉" : pct >= 50 ? "👍" : "💪"}</div>
+          <div className="text-2xl font-extrabold text-slate-800">{nOk} / {questions.length} <span className="text-slate-400 font-semibold text-lg">({pct}%)</span></div>
+          <div className={"mt-2 text-[15px] font-bold " + band.color}>TOEIC estimé : {band.score} · {band.cefr}</div>
+          <div className="text-[12.5px] text-slate-500 mt-1">{band.msg}</div>
+          <div className="text-[10.5px] text-slate-400 mt-1 italic">Estimation indicative sur {questions.length} questions — seul un test complet fait foi.</div>
+        </div>
+        {mistakes.length > 0 && (
+          <div className="mb-5">
+            <div className="text-[13px] font-bold text-slate-700 mb-2">✍️ À revoir ({mistakes.length}) :</div>
+            <div className="space-y-2">
+              {mistakes.map((m, i) => (
+                <div key={i} className="rounded-xl border border-rose-200 bg-rose-50/60 px-3.5 py-2.5">
+                  <div className="text-[13px] text-slate-800 font-medium">{m.q.listen ? "🎧 " + m.q.text : m.q.q}</div>
+                  <div className="text-[12px] mt-1">
+                    <span className="text-rose-600">✗ {m.chosen === -1 ? "(temps écoulé)" : m.q.options[m.chosen]}</span>
+                    <span className="text-emerald-700 ml-3">✓ {m.q.options[m.q.answer]}</span>
+                  </div>
+                  {m.q.expl_fr && <div className="text-[11.5px] text-slate-500 mt-1 leading-snug">💡 {m.q.expl_fr}</div>}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        <div className="flex gap-2 justify-center">
+          <button onClick={onRestart} className="px-4 py-2 rounded-lg bg-rose-600 text-white text-[13px] font-bold hover:bg-rose-500">↻ Nouvelle série</button>
+          <button onClick={onExit} className="px-4 py-2 rounded-lg border border-slate-300 text-slate-600 text-[13px] font-bold hover:border-rose-300">← Retour aux tests</button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="bg-white rounded-2xl border border-slate-200 p-5">
+      <div className="flex items-center gap-3 mb-3">
+        <button onClick={onExit} className="text-[12px] text-slate-400 hover:text-slate-600 shrink-0">← Quitter</button>
+        <div className="text-[13px] font-bold text-slate-700 flex-1 truncate">{icon} {title}</div>
+        <div className="text-[12px] text-slate-500 font-semibold shrink-0">{idx + 1} / {questions.length}</div>
+        {secondsPer > 0 && !answered && (
+          <div className={"text-[13px] font-mono font-bold shrink-0 rounded-md px-2 py-0.5 " + (left <= 5 ? "bg-rose-100 text-rose-600" : "bg-slate-100 text-slate-600")}>⏱ {left}s</div>
+        )}
+      </div>
+      <div className="h-1.5 bg-slate-100 rounded-full mb-4"><div className="h-full bg-rose-500 rounded-full transition-all" style={{ width: ((idx + (answered ? 1 : 0)) / questions.length * 100) + "%" }} /></div>
+
+      {q.listen ? (
+        <div className="text-center mb-4">
+          <button onClick={() => speak(q.text)} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 text-white font-bold text-[14px] hover:bg-indigo-500">
+            🔊 {answered ? "Réécouter" : "Écouter la phrase"}
+          </button>
+          <div className="text-[11.5px] text-slate-400 mt-2">Écoute (autant de fois que nécessaire) puis choisis ce que tu as entendu.</div>
+          {answered && <div className="mt-2 text-[13px] text-slate-700 italic">« {q.text} »</div>}
+        </div>
+      ) : (
+        <div className="text-[15px] text-slate-800 font-medium leading-relaxed mb-4">{q.q}</div>
+      )}
+
+      <div className="grid gap-2 mb-4">
+        {q.options.map((opt, i) => {
+          let cls = "text-left px-4 py-2.5 rounded-xl border text-[13.5px] transition-colors ";
+          if (!answered) cls += "bg-white border-slate-200 hover:border-rose-400 hover:bg-rose-50/40 cursor-pointer";
+          else if (i === q.answer) cls += "bg-emerald-50 border-emerald-400 text-emerald-800 font-semibold";
+          else if (i === chosen) cls += "bg-rose-50 border-rose-400 text-rose-700";
+          else cls += "bg-white border-slate-100 text-slate-400";
+          return <button key={i} onClick={() => pick(i)} className={cls}>{String.fromCharCode(65 + i)}. {opt}</button>;
+        })}
+      </div>
+
+      {answered && (
+        <div>
+          {chosen === -1 && <div className="text-[12.5px] font-semibold text-rose-600 mb-1.5">⏱ Temps écoulé !</div>}
+          {q.expl_fr && (
+            <div className="rounded-xl bg-indigo-50/70 border border-indigo-100 px-3.5 py-2.5 text-[12.5px] text-slate-700 leading-snug mb-3">💡 {q.expl_fr}</div>
+          )}
+          <div className="text-right">
+            <button onClick={next} className="px-5 py-2 rounded-lg bg-rose-600 text-white text-[13px] font-bold hover:bg-rose-500">
+              {idx + 1 >= questions.length ? "Voir le résultat →" : "Question suivante →"}
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function ToeicSection({ audio, setAudio }) {
   const T = E_DATA.toeic || {};
-  const [view, setView] = useState("test");   // test | vocab
+  const [view, setView] = useState("test");   // test | tests | vocab
   const themes = T.themes || [];
   const [th, setTh] = useState("");
   const [q, setQ] = useState("");
@@ -1859,6 +2246,37 @@ function ToeicSection({ audio, setAudio }) {
   );
   const chip = (active) => "text-[12px] font-semibold px-2.5 py-1 rounded-lg border transition-colors " + (active ? "bg-rose-600 text-white border-transparent" : "bg-white text-slate-600 border-slate-200 hover:border-rose-300");
 
+  /* ── Tests interactifs : construction des séries ── */
+  const [quiz, setQuiz] = useState(null);    // {kind, title, icon, secondsPer, questions, seed}
+  const QZ = T.quiz || {};
+
+  const buildVocabQuestions = (n) => {
+    const all = themes.flatMap((t) => (t.words || []).map((w) => ({ ...w, theme: t.id })));
+    return shuffle(all).slice(0, n).map((w, i) => {
+      const same = all.filter((x) => x.theme === w.theme && x.en !== w.en);
+      const pool = same.length >= 3 ? same : all.filter((x) => x.en !== w.en);
+      const options = shuffle([w.en, ...shuffle(pool).slice(0, 3).map((o) => o.en)]);
+      return { id: "vq" + i, q: "Comment dit-on « " + w.fr + " » en anglais ?", options, answer: options.indexOf(w.en), expl_fr: w.note || (w.en + " = " + w.fr) };
+    });
+  };
+  /* Mélange les options (la banque est rédigée avec la bonne réponse en premier). */
+  const reshuffleOptions = (x) => {
+    const correct = x.options[x.answer];
+    const options = shuffle(x.options);
+    return { ...x, options, answer: options.indexOf(correct) };
+  };
+  const buildPart5 = (n) => shuffle(QZ.part5 || []).slice(0, n).map(reshuffleOptions);
+  const buildListening = (n) => shuffle(QZ.listening || []).slice(0, n).map((x) => ({ ...reshuffleOptions(x), listen: true }));
+
+  const startQuiz = (kind) => {
+    let cfg;
+    if (kind === "part5") cfg = { title: "Part 5 — Incomplete sentences", icon: "📝", secondsPer: 30, questions: buildPart5(10) };
+    else if (kind === "listening") cfg = { title: "Listening — pièges sonores", icon: "🎧", secondsPer: 0, questions: buildListening(8) };
+    else if (kind === "vocab") cfg = { title: "Vocab sprint", icon: "⚡", secondsPer: 15, questions: buildVocabQuestions(10) };
+    else cfg = { title: "Évaluation mixte", icon: "🎯", secondsPer: 30, questions: shuffle([...buildPart5(8), ...buildListening(5), ...buildVocabQuestions(7)]) };
+    setQuiz({ kind, seed: Date.now(), ...cfg });
+  };
+
   if (!parts.length && !themes.length) return <div className="text-center text-sm text-slate-400 py-12">Contenu TOEIC indisponible.</div>;
 
   return (
@@ -1870,8 +2288,44 @@ function ToeicSection({ audio, setAudio }) {
 
       <div className="flex flex-wrap gap-2 mb-4">
         {vBtn("test", "📖 Le test & stratégies")}
+        {vBtn("tests", "🧪 Tests interactifs")}
         {vBtn("vocab", "📚 Vocabulaire (" + allWords + ")")}
       </div>
+
+      {view === "tests" && (
+        quiz ? (
+          <QuizRunner key={quiz.seed} title={quiz.title} icon={quiz.icon} questions={quiz.questions}
+            secondsPer={quiz.secondsPer} onExit={() => setQuiz(null)} onRestart={() => startQuiz(quiz.kind)} />
+        ) : (
+          <div>
+            <div className="rounded-xl border border-rose-200 bg-rose-50/70 p-3.5 mb-4 text-[12.5px] text-rose-900 leading-relaxed">
+              {QZ.intro || "Choisis un format de test."} Feedback immédiat à chaque question, correction expliquée et score TOEIC estimé à la fin.
+            </div>
+            <div className="grid md:grid-cols-2 gap-3">
+              <div onClick={() => startQuiz("part5")} className="bg-white rounded-xl border border-slate-200 hover:border-rose-400 p-4 cursor-pointer transition-colors">
+                <div className="text-[15px] font-bold text-slate-800 mb-1">📝 Part 5 — Incomplete sentences</div>
+                <div className="text-[12px] text-slate-500 leading-normal mb-2">Le cœur du Reading : grammaire, prépositions, formation des mots. 10 questions tirées d'une banque de {(QZ.part5 || []).length}.</div>
+                <div className="text-[11px] text-rose-500 font-semibold">⏱ 30 s / question — comme le vrai rythme TOEIC</div>
+              </div>
+              <div onClick={() => startQuiz("listening")} className="bg-white rounded-xl border border-slate-200 hover:border-rose-400 p-4 cursor-pointer transition-colors">
+                <div className="text-[15px] font-bold text-slate-800 mb-1">🎧 Listening — pièges sonores</div>
+                <div className="text-[12px] text-slate-500 leading-normal mb-2">Écoute la phrase (TTS) puis choisis ce que tu as VRAIMENT entendu : 13/30, walk/work, copy/coffee… 8 items sur {(QZ.listening || []).length}.</div>
+                <div className="text-[11px] text-indigo-500 font-semibold">🔊 Réécoute illimitée — entraîne ton oreille</div>
+              </div>
+              <div onClick={() => startQuiz("vocab")} className="bg-white rounded-xl border border-slate-200 hover:border-rose-400 p-4 cursor-pointer transition-colors">
+                <div className="text-[15px] font-bold text-slate-800 mb-1">⚡ Vocab sprint</div>
+                <div className="text-[12px] text-slate-500 leading-normal mb-2">10 mots FR→EN tirés des {allWords} mots des 16 thèmes officiels, distracteurs du même thème.</div>
+                <div className="text-[11px] text-rose-500 font-semibold">⏱ 15 s / mot — réflexe, pas réflexion</div>
+              </div>
+              <div onClick={() => startQuiz("mixed")} className="bg-white rounded-xl border-2 border-rose-300 hover:border-rose-500 p-4 cursor-pointer transition-colors bg-gradient-to-br from-white to-rose-50/50">
+                <div className="text-[15px] font-bold text-slate-800 mb-1">🎯 Évaluation complète</div>
+                <div className="text-[12px] text-slate-500 leading-normal mb-2">20 questions mélangées (grammaire + écoute + vocabulaire) pour estimer ton niveau global.</div>
+                <div className="text-[11px] text-rose-600 font-bold">→ Score TOEIC estimé + CEFR à la fin</div>
+              </div>
+            </div>
+          </div>
+        )
+      )}
 
       {view === "test" && (
         <div>
@@ -1921,7 +2375,7 @@ function ToeicSection({ audio, setAudio }) {
 
       {view === "vocab" && (
         <div>
-          <div className="sticky top-[49px] z-[5] bg-slate-100/95 backdrop-blur py-2 rounded-xl mb-3 space-y-2">
+          <div className="sticky top-[var(--navh,49px)] z-[5] bg-slate-100/95 backdrop-blur py-2 rounded-xl mb-3 space-y-2">
             <div className="flex items-center gap-2 border-b border-slate-200 pb-2">
               <VoiceMini audio={audio} setAudio={setAudio} />
             </div>
@@ -2139,7 +2593,7 @@ function MyNotesSection({ audio }) {
 
 /* ════════ App ════════ */
 function EnglishApp() {
-  const VALID = ["essentials", "mynotes", "liste", "meeting", "toeic", "vocab", "phrases", "fs", "constructor", "dictation", "conversations", "videos", "writing"];
+  const VALID = ["essentials", "mynotes", "liste", "meeting", "auditlab", "toeic", "vocab", "phrases", "fs", "constructor", "dictation", "conversations", "videos", "writing"];
   const hashSection = (typeof location !== "undefined" && location.hash || "").replace("#", "");
   const initial = VALID.includes(hashSection) ? hashSection : (() => { try { return localStorage.getItem(LS_SUBTAB) || "vocab"; } catch (e) { return "vocab"; } })();
   const [section, setSectionRaw] = useState(VALID.includes(initial) ? initial : "vocab");
@@ -2174,6 +2628,19 @@ function EnglishApp() {
     const onHash = () => { const h = (location.hash || "").replace("#", ""); if (VALID.includes(h)) setSection(h); };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
+  /* Nav multi-lignes : publie sa hauteur réelle en --navh pour caler les barres sticky en dessous. */
+  const navRef = useRef(null);
+  useEffect(() => {
+    const el = navRef.current;
+    if (!el) return;
+    const setH = () => document.documentElement.style.setProperty("--navh", el.offsetHeight + "px");
+    setH();
+    let ro = null;
+    if (typeof ResizeObserver !== "undefined") { ro = new ResizeObserver(setH); ro.observe(el); }
+    window.addEventListener("resize", setH);
+    return () => { if (ro) ro.disconnect(); window.removeEventListener("resize", setH); };
   }, []);
 
   /* Progression : port exact de engUpdateProgress + sync bridge best-effort */
@@ -2233,6 +2700,7 @@ function EnglishApp() {
     { id: "mynotes", icon: "📝", label: "Mes notes" },
     { id: "liste", icon: "⚡", label: "Liste express" },
     { id: "meeting", icon: "🗓️", label: "Meeting" },
+    { id: "auditlab", icon: "🧾", label: "Compta/Audit" },
     { id: "toeic", icon: "🎓", label: "TOEIC" },
     { id: "vocab", icon: "📚", label: "Vocabulaire" },
     { id: "phrases", icon: "💬", label: "Phrases & expressions" },
@@ -2259,16 +2727,19 @@ function EnglishApp() {
           <div className="flex items-center gap-2 text-xs">
             <span className="bg-white/10 rounded-lg px-3 py-1.5 font-medium">🎯 {Object.keys(essentialsDone).length}/{(D.essentials || []).length} Day-1</span>
             <span className="bg-white/10 rounded-lg px-3 py-1.5 font-medium">🎬 {Object.keys(videosWatched).length}/{(D.videos || []).length} vues</span>
+            <button onClick={() => { try { const u = new URL(location.href); u.searchParams.set("r", Date.now().toString(36)); location.replace(u.toString()); } catch (e) { location.reload(); } }}
+              title="Recharger l'application (après une mise à jour du contenu)"
+              className="bg-white/10 hover:bg-white/25 rounded-lg px-3 py-1.5 font-bold transition-colors">↻ Recharger</button>
           </div>
         </div>
       </header>
 
-      <nav className="bg-white border-b border-slate-200 sticky top-0 z-10">
-        <div className="max-w-5xl mx-auto px-2 flex gap-1 overflow-x-auto">
+      <nav ref={navRef} className="bg-white border-b border-slate-200 sticky top-0 z-10 shadow-sm">
+        <div className="max-w-5xl mx-auto px-2 py-1.5 flex flex-wrap gap-1">
           {tabs.map((t) => (
             <button key={t.id} onClick={() => { setPhraseSession(null); setSection(t.id); }}
-              className={"flex items-center gap-1.5 px-3 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors " +
-                (section === t.id ? "border-indigo-600 text-indigo-700" : "border-transparent text-slate-500 hover:text-slate-800")}>
+              className={"flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[12.5px] font-semibold whitespace-nowrap border transition-colors " +
+                (section === t.id ? "bg-indigo-600 text-white border-indigo-600" : "bg-white text-slate-500 border-transparent hover:border-indigo-200 hover:text-slate-800")}>
               <span>{t.icon}</span>{t.label}
             </button>
           ))}
@@ -2276,8 +2747,8 @@ function EnglishApp() {
       </nav>
 
       <main className="max-w-5xl mx-auto px-4 py-6">
-        {section !== "liste" && section !== "meeting" && section !== "toeic" && (
-          <div className="sticky top-[49px] z-[8] -mx-4 px-4 py-2 bg-slate-100/95 backdrop-blur border-b border-slate-200 mb-4">
+        {section !== "liste" && section !== "meeting" && section !== "toeic" && section !== "auditlab" && (
+          <div className="sticky top-[var(--navh,49px)] z-[8] -mx-4 px-4 py-2 bg-slate-100/95 backdrop-blur border-b border-slate-200 mb-4">
             <VoiceMini audio={audio} setAudio={setAudio} />
           </div>
         )}
@@ -2285,6 +2756,7 @@ function EnglishApp() {
         {section === "mynotes" && <MyNotesSection audio={audio} />}
         {section === "liste" && <QuickListSection audio={audio} setAudio={setAudio} />}
         {section === "meeting" && <MeetingSection audio={audio} setAudio={setAudio} />}
+        {section === "auditlab" && <AuditLabSection audio={audio} setAudio={setAudio} />}
         {section === "toeic" && <ToeicSection audio={audio} setAudio={setAudio} />}
         {section === "vocab" && (
           <VocabSection progress={progress} onRate={onRate}

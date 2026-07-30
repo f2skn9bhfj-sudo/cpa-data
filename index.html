@@ -10,9 +10,9 @@
         Migration progressive : chaque écran refait en Tailwind remplace
         ses règles dans style.css (Phase 4b).
     -->
-    <link rel="stylesheet" href="css/style.css?v=1784571037">
-    <link rel="stylesheet" href="css/pdf_export.css?v=1784571037">
-    <link rel="stylesheet" href="css/audit_cours.css?v=1784571037">
+    <link rel="stylesheet" href="css/style.css?v=1785430077">
+    <link rel="stylesheet" href="css/pdf_export.css?v=1785430077">
+    <link rel="stylesheet" href="css/audit_cours.css?v=1785430077">
 </head>
 <body>
     <!-- ARIA live region for page changes (assertive nav announcements) -->
@@ -40,6 +40,7 @@
                 <button class="tab" data-tab="hec" onclick="navigate('hec')" aria-label="Cours HEC"><span class="tab-emoji" aria-hidden="true">🎓</span>HEC</button>
                 <button class="tab" data-tab="oral" onclick="navigate('oral')" aria-label="Examen oral"><span class="tab-emoji" aria-hidden="true">🎤</span>Oral</button>
                 <button class="tab" data-tab="conso" onclick="navigate('conso')" aria-label="Consolidation, IFRS et Swiss GAAP"><span class="tab-emoji" aria-hidden="true">📊</span>Conso</button>
+                <button class="tab" data-tab="fusion" onclick="navigate('fusion')" aria-label="Fusions, apports partiels d'actif et scissions"><span class="tab-emoji" aria-hidden="true">🔀</span>Fusion</button>
                 <button class="tab" data-tab="social" onclick="navigate('social')" aria-label="Droit du travail, assurances sociales et paie"><span class="tab-emoji" aria-hidden="true">🤝</span>Social</button>
             </div>
             <div class="nav-right">
@@ -90,39 +91,59 @@
     <!-- Scripts -->
     <!-- api-client.js DOIT être chargé en premier : il installe window.pywebview.api
          en mode web (no-op en mode desktop). Cf. commentaire dans le fichier. -->
-    <script src="js/api-client-static.js?v=1784571037"></script>
-    <script src="js/crossref.js?v=1784571037"></script>
-    <script src="js/search.js?v=1784571037"></script>
-    <script src="js/search_tab.js?v=1784571037"></script>
-    <script src="js/dashboard.js?v=1784571037"></script>
-    <script src="js/translator.js?v=1784571037"></script>
-    <script src="js/modules.js?v=1784571037"></script>
-    <script src="js/flashcards.js?v=1784571037"></script>
-    <script src="js/fcdb.js?v=1784571037"></script>
-    <script src="js/free_recall.js?v=1784571037"></script>
-    <script src="js/exam_mode.js?v=1784571037"></script>
-    <script src="js/references.js?v=1784571037"></script>
-    <script src="js/comparisons.js?v=1784571037"></script>
-    <script src="js/fs_explorer.js?v=1784571037"></script>
-    <script src="js/progress.js?v=1784571037"></script>
-    <script src="js/qcm.js?v=1784571037"></script>
-    <script src="js/trainer.js?v=1784571037"></script>
-    <script src="js/audit.js?v=1784571037"></script>
-    <script src="js/audit_cours.js?v=1784571037"></script>
-    <script src="js/hec.js?v=1784571037"></script>
-    <script src="js/social.js?v=1784571037"></script>
-    <script src="js/eymanual.js?v=1784571037"></script>
-    <script src="js/grandlivre.js?v=1784571037"></script>
-    <script src="js/oral.js?v=1784571037"></script>
-    <script src="js/conso.js?v=1784571037"></script>
-    <script src="js/mission.js?v=1784571037"></script>
-    <script src="js/audit_seuils.js?v=1784571037"></script>
-    <script src="js/canvas.js?v=1784571037"></script>
-    <script src="js/english.js?v=1784571037"></script>
-    <script src="js/podcasts.js?v=1784571037"></script>
-    <script src="js/ai_explain.js?v=1784571037"></script>
-    <script src="js/pdf_export.js?v=1784571037"></script>
-    <script src="js/mindmap.js?v=1784571037"></script>
-    <script src="js/app.js?v=1784571037"></script>
+    <script src="js/api-client-static.js?v=1785430077"></script>
+    <script src="js/crossref.js?v=1785430077"></script>
+    <script src="js/search.js?v=1785430077"></script>
+    <script src="js/search_tab.js?v=1785430077"></script>
+    <script src="js/dashboard.js?v=1785430077"></script>
+    <script src="js/translator.js?v=1785430077"></script>
+    <script src="js/modules.js?v=1785430077"></script>
+    <script src="js/flashcards.js?v=1785430077"></script>
+    <script src="js/fcdb.js?v=1785430077"></script>
+    <script src="js/free_recall.js?v=1785430077"></script>
+    <script src="js/exam_mode.js?v=1785430077"></script>
+    <script src="js/references.js?v=1785430077"></script>
+    <script src="js/comparisons.js?v=1785430077"></script>
+    <script src="js/fs_explorer.js?v=1785430077"></script>
+    <script src="js/progress.js?v=1785430077"></script>
+    <script src="js/qcm.js?v=1785430077"></script>
+    <script src="js/trainer.js?v=1785430077"></script>
+    <script src="js/audit.js?v=1785430077"></script>
+    <script src="js/audit_cours.js?v=1785430077"></script>
+    <script src="js/hec.js?v=1785430077"></script>
+    <script src="js/social.js?v=1785430077"></script>
+    <script src="js/eymanual.js?v=1785430077"></script>
+    <script src="js/grandlivre.js?v=1785430077"></script>
+    <script src="js/oral.js?v=1785430077"></script>
+    <script src="js/conso.js?v=1785430077"></script>
+    <script src="js/fusion.js?v=1785430077"></script>
+    <script src="js/mission.js?v=1785430077"></script>
+    <script src="js/audit_seuils.js?v=1785430077"></script>
+    <script src="js/canvas.js?v=1785430077"></script>
+    <script src="js/english.js?v=1785430077"></script>
+    <script src="js/podcasts.js?v=1785430077"></script>
+    <script src="js/ai_explain.js?v=1785430077"></script>
+    <script src="js/pdf_export.js?v=1785430077"></script>
+    <script src="js/mindmap.js?v=1785430077"></script>
+    <script src="js/app.js?v=1785430077"></script>
+    <!-- Dev auto-reload : recharge la fenêtre dès qu'un fichier front-end change.
+         Actif uniquement en bureau (pywebview) ET si static/.devmode existe.
+         En production, dev_build_token() renvoie null → le poller s'arrête tout seul. -->
+    <script>
+    (function () {
+        var baseline = null;
+        function tick() {
+            var api = window.pywebview && window.pywebview.api;
+            if (!api || typeof api.dev_build_token !== 'function') { setTimeout(tick, 1000); return; }
+            Promise.resolve(api.dev_build_token()).then(function (token) {
+                if (token == null) return;                 // dev-reload off → on arrête le polling
+                if (baseline === null) { baseline = token; }
+                else if (token > baseline) { location.reload(); return; }
+                setTimeout(tick, 1500);
+            }).catch(function () { setTimeout(tick, 2500); });
+        }
+        setTimeout(tick, 1500);
+    })();
+    </script>
 </body>
 </html>

@@ -12,6 +12,7 @@ const HUB_SECTIONS = [
             { tab: 'grandlivre', ic: '📗', t: 'Grand Livre', d: "Le grand livre de la comptabilité suisse : théorie, écritures, TVA, cas." },
             { tab: 'audit', ic: '🔍', t: 'Audit', d: "NAS/ISA, catalogue des tests, journée d'auditeur, Nestlé, journal client…" },
             { tab: 'conso', ic: '📊', t: 'Conso', d: 'Consolidation, IFRS et Swiss GAAP pas à pas, avec fil rouge chiffré.' },
+            { tab: 'fusion', ic: '🔀', t: 'Fusion', d: "Fusions, apports partiels d'actif et scissions : parité, prime, mali, écritures." },
             { tab: 'social', ic: '🤝', t: 'Social', d: 'Droit du travail, assurances sociales et paie suisse (calculateur inclus).' },
             { tab: 'hec', ic: '🎓', t: 'HEC', d: 'Structure financière, M&A et ingénierie du capital.' },
             { tab: 'english', ic: '🇬🇧', t: 'Anglais', d: 'Vocabulaire, meetings, TOEIC — prêt pour EY.' },
