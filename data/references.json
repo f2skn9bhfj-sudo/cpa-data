@@ -2589,7 +2589,7 @@
         },
         {
           "label": "Exonération trafic touristique",
-          "val": "Achat min CHF 300 TTC + export dans 30 jours",
+          "val": "Achat min CHF 300 TTC + export dans 90 jours",
           "extra": "Acheteur non domicilié en Suisse"
         }
       ]

@@ -10129,9 +10129,9 @@
               "type": "mcq",
               "question": "Le principe de déterminance signifie :",
               "options": [
-                "Le fisc détermine librement le bénéfice imposable",
-                "Le résultat commercial CO sert de base au bénéfice imposable",
-                "Le bénéfice IFRS est déterminant",
+                "Le fisc détermine librement le bénéfice imposable, sans lien avec les comptes",
+                "Le résultat commercial (CO) fonde le bénéfice imposable",
+                "Le bénéfice établi selon les IFRS est déterminant pour l'impôt",
                 "Le bénéfice consolidé s'applique"
               ],
               "answer": 1,
@@ -10147,10 +10147,10 @@
               "type": "mcq",
               "question": "Une société avec siège aux Bahamas possède un immeuble à Genève. Quel est son statut ?",
               "options": [
-                "Assujettie limitée (rattachement économique)",
+                "Assujettie limitée (immeuble)",
                 "Non assujettie",
-                "Assujettie illimitée",
-                "Exonérée par CDI"
+                "Assujettie de manière illimitée en Suisse",
+                "Exonérée en vertu d'une convention de double imposition"
               ],
               "answer": 0,
               "explanation": "Art. 51 LIFD : rattachement économique via l'immeuble suisse → assujettissement limité sur le rendement et la valeur de l'immeuble."
@@ -10177,7 +10177,7 @@
                 "Reprise de CHF 350'000 (distribution dissimulée)",
                 "Intégralement déductible comme charge salariale",
                 "Reprise de CHF 600'000",
-                "Aucune conséquence si l'AVS est payée"
+                "Aucune conséquence fiscale si les cotisations AVS sont payées sur 600'000"
               ],
               "answer": 0,
               "explanation": "La part excédant le salaire de marché (350'000) est une prestation appréciable en argent requalifiée en dividende dissimulé. Reprise au niveau société + imposition comme dividende au niveau actionnaire (art. 58 LIFD)."
@@ -10210,8 +10210,8 @@
               "type": "mcq",
               "question": "La circulaire AFC n° 6 sur le capital propre dissimulé établit :",
               "options": [
-                "Le taux d'impôt fédéral",
-                "Les ratios de financement admis par type d'actif",
+                "Le taux de l'impôt fédéral direct sur le bénéfice des sociétés de capitaux",
+                "Les taux de financement admis par catégorie d'actifs",
                 "Les taux d'amortissement",
                 "Le barème des amendes"
               ],
@@ -10237,9 +10237,9 @@
               "type": "mcq",
               "question": "Une société détient 8 % d'une filiale (valeur vénale CHF 2 M). Le dividende qualifie-t-il pour la réduction ?",
               "options": [
-                "Non, seuil 10 % pas atteint",
-                "Oui, mais uniquement à 80 %",
-                "Oui, valeur vénale ≥ 1 M suffit",
+                "Non, le seuil de 10 % du capital n'est pas atteint",
+                "Oui, mais uniquement à hauteur de 80 % du dividende",
+                "Oui : valeur vénale ≥ 1 M",
                 "Non, il faut 20 %"
               ],
               "answer": 2,
@@ -10318,9 +10318,9 @@
               "type": "mcq",
               "question": "Les apports de capital (KER) distribués aux actionnaires sont :",
               "options": [
-                "Imposables comme dividendes ordinaires",
-                "Soumis à l'impôt anticipé 35 %",
-                "Exonérés si inscrits en compte séparé et annoncés à l'AFC",
+                "Imposables comme des dividendes ordinaires, au barème du revenu",
+                "Soumis à l'impôt anticipé de 35 %, récupérable par l'actionnaire",
+                "Exonérés si comptabilisés à part et annoncés à l'AFC",
                 "Imposables à 50 %"
               ],
               "answer": 2,
@@ -10377,9 +10377,9 @@
               "question": "AlphaCorp SA verse à son gérant-actionnaire (85 % du capital) un salaire de 450'000 CHF/an. L'AFC estime la rémunération de marché à 300'000. Traitement fiscal chez AlphaCorp + impact actionnaire ?",
               "options": [
                 "Déductible intégralement (relation de travail avérée)",
-                "Reprise 150'000 mais pas de conséquence sur l'actionnaire",
-                "50 % admis (règle du 50-50 LIFD)",
-                "Reprise fiscale 150'000 (prestation appréciable en argent art. 58) + double imposition économique"
+                "Reprise de 150'000 chez la SA, sans aucune conséquence fiscale pour l'actionnaire",
+                "Admis à 50 %, en vertu d'une règle forfaitaire 50/50 de la LIFD",
+                "Reprise de 150'000 (prestation appréciable en argent) chez la SA"
               ],
               "answer": 3,
               "explanation": "**Réponse : D — Reprise 150'000 + double imposition économique**\n\n**PRESTATION APPRÉCIABLE EN ARGENT (PAA)** — art. 58 al. 1 let. b LIFD :\n\n**Définition** : toute prestation fournie par la société à son actionnaire (ou proche) **sans contrepartie équivalente** et dont un tiers indépendant n'aurait pas bénéficié. C'est une **distribution CACHÉE de bénéfice**.\n\n**Caractéristiques** :\n- **Prestation de la société à l'actionnaire**\n- **Sans contrepartie** équivalente\n- **Dolum** (volonté) ou **reconnaissance** implicite\n- Un **tiers** n'aurait pas accepté ces conditions\n\n**Types courants de PAA** :\n\n**① Rémunérations EXCESSIVES** (notre cas) :\n- Salaires au-dessus du marché\n- Bonus non justifiés\n- Cars de fonction luxueuses disproportionnées\n\n**② LOYERS EXCESSIFS** payés aux proches :\n- Location à taux supra-marché\n\n**③ PRÊTS à taux préférentiels** :\n- Intérêts < taux AFC (circulaire 158)\n- Cf. question M8 sur les prêts actionnaires\n\n**④ VENTES à prix réduits** :\n- Cession d'actifs sous la JV\n- Ristournes non usuelles\n\n**⑤ ACHATS à prix gonflés** :\n- Paiement de biens au-dessus du marché\n\n**Cas AlphaCorp** :\n\n- Rémunération actionnaire : 450'000\n- Rémunération marché : 300'000\n- **Excédent = PAA** : **150'000 CHF**\n\n**TRAITEMENT FISCAL** :\n\n**① Chez AlphaCorp** (société) :\n- **Reprise fiscale +150'000** au bénéfice imposable\n- Base d'impôt augmentée\n- IFD : 150'000 × 8.5 % = 12'750\n- Impôt cantonal/communal : ~19'500 (selon canton)\n\n**② Chez l'actionnaire-gérant** (personne physique) :\n\n**a) IMPÔT sur le REVENU** :\n- Les 150'000 sont requalifiés en **dividende caché** (rendement de participations — art. 20 al. 1 let. c LIFD)\n- Déjà comptabilisés en tant que salaire mais **requalifiés** fiscalement\n- L'actionnaire (PP) les a déjà imposés comme salaire — **double imposition ÉCONOMIQUE** apparente\n\n**b) RÉDUCTION POUR PARTICIPATION** (art. 20 al. 1bis LIFD) :\n- Si actionnaire détient ≥ **10 %** du capital (ici 85 % ✓) :\n- **Réduction de 40 %** au fédéral (50 % cantons en moyenne)\n- Dividende imposable au fédéral : 150'000 × 60 % = **90'000**\n- Taux marginal PP (supposons 35 % + cantonal) : ~40'000 impôts supplémentaires\n\n**c) IMPÔT ANTICIPÉ** (art. 4 LIA) :\n- PAA = distribution cachée → **35 % d'impôt anticipé**\n- **AlphaCorp doit retenir** 35 % sur 150'000 = **52'500 CHF**\n- Verser à l'AFC\n- Actionnaire demande **remboursement** sur sa déclaration fiscale (art. 22 LIA)\n- Remboursement conditionné à la déclaration honnête des revenus\n\n**CHARGE FISCALE TOTALE** :\n\n**Sans PAA (tout salaire déductible)** :\n- Actionnaire imposé sur 450'000 de salaire\n- Charges sociales + impôts PP\n\n**Avec PAA identifiée** :\n- Société : impôt supplémentaire sur 150'000\n- Actionnaire : impôt sur 450'000 salaire (déjà payé)\n- + Impôt anticipé 52'500 (récupérable)\n- **Double imposition économique** : le même 150'000 imposé 2 fois\n- Réduction partielle via art. 20 al. 1bis (rapprochement au niveau du PP)\n\n**IDENTIFICATION par l'AFC** :\n\nSources de détection :\n- Ratios de rémunération / bénéfice\n- Comparaisons sectorielles\n- Contrôles sur place\n- Dénonciations\n- **Critères AFC** : le salaire correspond-il à l'activité/responsabilité/marché ?\n\n**PROCÉDURE** :\n\n- Notification de la reprise à l'assujetti\n- Délai de réclamation : 30 jours\n- Procédure de recours (art. 132 LIFD)\n- Transaction possible (règlements)\n\n**COMMENT ÉVITER** :\n\n**① Documentation** :\n- Cahier des charges détaillé de l'actionnaire-gérant\n- Évaluation par experts RH\n- Comparaisons sectorielles documentées\n\n**② Ruling FISCAL** :\n- Accord préalable avec l'administration fiscale\n- Validation de la rémunération\n\n**③ Plafonds indicatifs** :\n- Généralement rémunération ≤ 1-2 M CHF acceptée sans question\n- Au-delà : nécessite justification renforcée\n\n**Piège A** : contrat de travail ne protège pas contre la requalification.\n**Piège B** : double impact obligatoire (société + actionnaire).\n**Piège C** : règle 50-50 inexistante en LIFD.",
@@ -10389,13 +10389,13 @@
               "type": "mcq",
               "question": "TechCo SA — pertes reportables cumulées 4.2 M (réparties : exercice 2017 : 1.8 M, 2018 : 1.2 M, 2019 : 1.2 M). Bénéfice imposable 2024 avant report : 2.5 M. Pertes utilisables en 2024 selon art. 67 LIFD ?",
               "options": [
-                "4.2 M utilisables (tout le report)",
-                "Report limité à 7 ans : vérifier prescription exercice par exercice",
-                "2.5 M utilisables (plafonné au bénéfice) ; impôt sur solde 0",
+                "4,2 M imputés, l'excédent de 1,7 M devenant une perte reportable sur 2025",
+                "2,5 M imputés (2017 puis 2018) ; solde reportable de 1,7 M",
+                "1,8 M seulement : une seule année de pertes imputable par exercice",
                 "1.2 M (2018) + 1.2 M (2019) = 2.4 M ; exercice 2017 prescrit"
               ],
               "answer": 1,
-              "explanation": "**Réponse : B — Report limité à 7 ans, vérifier prescription par exercice**\n\n**Art. 67 LIFD — REPORT DES PERTES** :\n\n**Règle** : les pertes des **7 exercices précédents** peuvent être reportées et déduites du bénéfice imposable.\n\n**Analyse cas TechCo 2024** :\n\n| Exercice origine | Montant | Prescription (7 ans après) | Utilisable en 2024 ? |\n|---|---|---|---|\n| **2017** | 1.8 M | Jusqu'en **2024** inclus | ✓ **DERNIÈRE ANNÉE** |\n| **2018** | 1.2 M | Jusqu'en **2025** inclus | ✓ |\n| **2019** | 1.2 M | Jusqu'en **2026** inclus | ✓ |\n\n**→ TOUTES les 4.2 M sont utilisables en 2024** (2017 est encore dans le délai).\n\n**Mais** — **PLAFONNÉES AU BÉNÉFICE IMPOSABLE** :\n- Bénéfice 2024 : 2.5 M\n- Pertes utilisables : **2.5 M** (consommation partielle)\n\n**Ordre d'utilisation** : règle FIFO (First In, First Out) — on épuise d'abord les **plus anciennes** (pour éviter la prescription).\n\n**Calcul** :\n```\nBénéfice 2024 avant report : 2'500'000\nPerte 2017 (en premier) :  − 1'800'000\nReste bénéfice :              700'000\nPerte 2018 (partielle) :   −   700'000\nBénéfice imposable 2024 :         0\n```\n\n**Pertes RESTANTES à reporter** :\n- Perte 2018 non utilisée : 1.2 − 0.7 = **0.5 M** (utilisable jusqu'en 2025)\n- Perte 2019 intacte : **1.2 M** (utilisable jusqu'en 2026)\n- **Total résiduel** : **1.7 M**\n\n**Impôt 2024** : sur **0 CHF** → IFD = 0\n\n**IMPACT FISCAL** :\n- Pas d'IFD en 2024 (bénéfice net imposable nul)\n- Mais **impôt sur le capital cantonal** (art. 29 LHID) reste dû\n- Taxe professionnelle communale (VD notamment) reste due\n\n**RÈGLES DÉTAILLÉES du REPORT** :\n\n**① PRESCRIPTION 7 ANS** (art. 67 al. 1 LIFD) :\n- Comptée à partir de **la fin** de l'exercice qui a généré la perte\n- Ex. : perte 2017 → utilisable jusqu'à la clôture 2024 (7 exercices)\n\n**② ORDRE d'IMPUTATION** :\n- **FIFO** : pertes les plus anciennes d'abord\n- Évite la prescription\n- Logique fiscale avantageuse pour l'entreprise\n\n**③ NATURE DES PERTES REPORTABLES** :\n- Pertes d'**exploitation** (résultat négatif)\n- Calculées selon art. 58 LIFD (bénéfice négatif)\n- **Pas** les pertes de capital ou sur participation directe\n\n**④ ASSUJETTISSEMENT** :\n- Continuité de l'assujettissement à l'IFD\n- Déménagement intercantonal : transfert du report\n- **Perte en cas de restructuration** : voir art. 61 LIFD\n\n**⑤ CHANGEMENTS de CONTRÔLE** (art. 61 al. 4 LIFD) :\n- Si changement majeur de propriétaire + activité → risque de perte du report\n- Règle anti-abus\n- Exception : restructuration économiquement justifiée\n\n**EXEMPLE EXTRÊME** :\n\nShell companies achetées pour exploiter leurs pertes reportables :\n→ Anti-abus fiscal (art. 61 al. 4 LIFD)\n→ Pertes non utilisables si changement de contrôle + changement d'activité\n\n**RESTRUCTURATIONS avec continuité fiscale** (art. 61 LIFD) :\n- Fusion : pertes transférables si **continuité** économique\n- Scission : répartition proportionnelle\n- Transformation : maintien des pertes\n- Apports : pertes chez la société d'accueil SI continuité\n\n**DISCLOSURE fiscale** :\n\n- Déclaration fiscale : ligne \"report de pertes non utilisées\"\n- Cumul par année d'origine\n- Justification lors de contrôles\n\n**IMPACT IAS 12 (si IFRS)** :\n\nLes pertes reportables génèrent un **actif d'impôt différé** (DTA) :\n- Reconnu **seulement** si probable d'utilisation (cf. question M4)\n- Critère \"probable\" > 50 %\n- Test à chaque clôture\n\n**Piège A** : report plafonné au bénéfice annuel.\n**Piège C** : techniquement correct mais n'analyse pas la prescription.\n**Piège D** : la perte 2017 **expire en 2024** → **dernière année** d'utilisation (pas prescrite encore).",
+              "explanation": "**Réponse : B — 2,5 M imputés (1,8 M de 2017, puis 0,7 M de 2018) ; 1,7 M restent reportables**\n\n**Art. 67 LIFD — REPORT DES PERTES** :\n\n**Règle** : les pertes des **7 exercices précédents** peuvent être reportées et déduites du bénéfice imposable.\n\n**Analyse cas TechCo 2024** :\n\n| Exercice origine | Montant | Prescription (7 ans après) | Utilisable en 2024 ? |\n|---|---|---|---|\n| **2017** | 1.8 M | Jusqu'en **2024** inclus | ✓ **DERNIÈRE ANNÉE** |\n| **2018** | 1.2 M | Jusqu'en **2025** inclus | ✓ |\n| **2019** | 1.2 M | Jusqu'en **2026** inclus | ✓ |\n\n**→ TOUTES les 4.2 M sont utilisables en 2024** (2017 est encore dans le délai).\n\n**Mais** — **PLAFONNÉES AU BÉNÉFICE IMPOSABLE** :\n- Bénéfice 2024 : 2.5 M\n- Pertes utilisables : **2.5 M** (consommation partielle)\n\n**Ordre d'utilisation** : règle FIFO (First In, First Out) — on épuise d'abord les **plus anciennes** (pour éviter la prescription).\n\n**Calcul** :\n```\nBénéfice 2024 avant report : 2'500'000\nPerte 2017 (en premier) :  − 1'800'000\nReste bénéfice :              700'000\nPerte 2018 (partielle) :   −   700'000\nBénéfice imposable 2024 :         0\n```\n\n**Pertes RESTANTES à reporter** :\n- Perte 2018 non utilisée : 1.2 − 0.7 = **0.5 M** (utilisable jusqu'en 2025)\n- Perte 2019 intacte : **1.2 M** (utilisable jusqu'en 2026)\n- **Total résiduel** : **1.7 M**\n\n**Impôt 2024** : sur **0 CHF** → IFD = 0\n\n**IMPACT FISCAL** :\n- Pas d'IFD en 2024 (bénéfice net imposable nul)\n- Mais **impôt sur le capital cantonal** (art. 29 LHID) reste dû\n- Taxe professionnelle communale (Genève uniquement) reste due\n\n**RÈGLES DÉTAILLÉES du REPORT** :\n\n**① PRESCRIPTION 7 ANS** (art. 67 al. 1 LIFD) :\n- Comptée à partir de **la fin** de l'exercice qui a généré la perte\n- Ex. : perte 2017 → utilisable jusqu'à la clôture 2024 (7 exercices)\n\n**② ORDRE d'IMPUTATION** :\n- **FIFO** : pertes les plus anciennes d'abord\n- Évite la prescription\n- Logique fiscale avantageuse pour l'entreprise\n\n**③ NATURE DES PERTES REPORTABLES** :\n- Pertes d'**exploitation** (résultat négatif)\n- Calculées selon art. 58 LIFD (bénéfice négatif)\n- **Pas** les pertes de capital ou sur participation directe\n\n**④ ASSUJETTISSEMENT** :\n- Continuité de l'assujettissement à l'IFD\n- Déménagement intercantonal : transfert du report\n- **Perte en cas de restructuration** : voir art. 61 LIFD\n\n**⑤ MANTEAU D'ACTIONS** (jurisprudence du TF, évasion fiscale) :\n- Société économiquement liquidée, vendue puis réactivée → les pertes antérieures ne sont plus reportables\n- Règle anti-abus\n- Exception : restructuration économiquement justifiée\n\n**EXEMPLE EXTRÊME** :\n\nShell companies achetées pour exploiter leurs pertes reportables :\n→ Évasion fiscale (manteau d'actions)\n→ Pertes non utilisables si la société était économiquement liquidée\n\n**RESTRUCTURATIONS avec continuité fiscale** (art. 61 LIFD) :\n- Fusion : pertes transférables si **continuité** économique\n- Scission : répartition proportionnelle\n- Transformation : maintien des pertes\n- Apports : pertes chez la société d'accueil SI continuité\n\n**DISCLOSURE fiscale** :\n\n- Déclaration fiscale : ligne \"report de pertes non utilisées\"\n- Cumul par année d'origine\n- Justification lors de contrôles\n\n**IMPACT IAS 12 (si IFRS)** :\n\nLes pertes reportables génèrent un **actif d'impôt différé** (DTA) :\n- Reconnu **seulement** si probable d'utilisation (cf. question M4)\n- Critère \"probable\" > 50 %\n- Test à chaque clôture\n\n**Piège A** : le report est plafonné au bénéfice de l'exercice ; il ne crée pas de perte.\n**Piège C** : aucune règle ne limite l'imputation à une seule année de pertes ; on impute jusqu'à concurrence du bénéfice.\n**Piège D** : la perte 2017 **expire en 2024** → **dernière année** d'utilisation (pas prescrite encore).",
               "difficulty": "hard"
             },
             {
@@ -10409,23 +10409,23 @@
               "type": "mcq",
               "question": "Holding CH SA détient 18 % dans FilialeEtrangère SA (valeur 12 M CHF). En 2024, elle reçoit dividende 800'000 CHF. Conditions d'application de la réduction pour participation (art. 69-70 LIFD) ?",
               "options": [
-                "Pas de réduction (< 20 % = pas de participation qualifiée)",
-                "Réduction possible : ≥ 10 % capital OU valeur ≥ 1 M (art. 69 al. 1) ; détention ≥ 1 an",
+                "Pas de réduction : il faut au moins 20 % du capital pour une participation qualifiée",
+                "Réduction possible : 18 % ≥ 10 % (art. 69 LIFD), sans durée minimale",
                 "Réduction intégrale (Suisse = exemption totale)",
                 "Réduction uniquement sur les sociétés suisses"
               ],
               "answer": 1,
-              "explanation": "**Réponse : B — Réduction possible : 10 % OU 1 M, ≥ 1 an**\n\n**Art. 69-70 LIFD — RÉDUCTION POUR PARTICIPATIONS** :\n\n**Objectif** : **éviter la double imposition économique** des dividendes entre sociétés.\n\n**CONDITIONS CUMULATIVES** (art. 69 al. 1 LIFD) :\n\n**① PARTICIPATION QUALIFIÉE** (art. 69 al. 1) :\n- **≥ 10 % du capital-actions** de la société distributrice, OU\n- **≥ 10 % des bénéfices et réserves**, OU\n- **Valeur vénale ≥ 1'000'000 CHF**\n\n**② DURÉE DE DÉTENTION** :\n- **Au moins 1 an** à la date de distribution (art. 69 al. 1)\n- **Sauf** cession → période de détention de l'ancien propriétaire transférée\n\n**Analyse cas Holding CH** :\n\n**① Critère participation qualifiée** :\n- Capital : **18 %** ≥ 10 % → **OUI** ✓\n- Valeur : **12 M** ≥ 1 M → **OUI** ✓ (2 critères satisfaits, 1 suffit)\n\n**② Détention ≥ 1 an** : à vérifier (pas précisé, supposé oui)\n\n→ **RÉDUCTION APPLICABLE** ✓\n\n**CALCUL DE LA RÉDUCTION** (art. 70 LIFD) :\n\n**Formule simplifiée** :\n```\nRéduction = (Rendement NET de la participation / Bénéfice net)\n```\n\n**Où** :\n- **Rendement BRUT** = dividende reçu\n- **Rendement NET** = dividende − **coûts de financement** − coûts de gestion\n  • Coûts de financement = intérêts passifs × (valeur participations / actifs totaux)\n  • Coûts de gestion = 5 % forfaitaire (ou prouver les frais réels)\n\n**Exemple** :\n- Dividende brut : 800'000\n- Coûts de financement imputables : 80'000\n- Coûts de gestion (5 %) : 40'000\n- **Rendement net** : 800 − 80 − 40 = **680'000**\n\n**Bénéfice total imposable** de Holding CH : supposons 2 M\n**Ratio de réduction** : 680'000 / 2'000'000 = **34 %**\n\n**IFD avant réduction** : 2'000'000 × 8.5 % = 170'000\n**Réduction** : 170'000 × 34 % = 57'800\n**IFD après réduction** : 170'000 − 57'800 = **112'200 CHF**\n\n**ÉCONOMIE D'IMPÔT** : **57'800 CHF** grâce à la réduction.\n\n**PAYS D'ORIGINE** :\n\n**Suisse ET étranger** : la réduction s'applique aux dividendes de TOUTE origine (pas seulement suisses) — art. 69 LIFD.\n\n**EXCLUSIONS spécifiques** (art. 70 al. 2-3) :\n\n**① BAD INCOME** (art. 70 al. 3) :\n- Revenus de participations dans sociétés **passives** (ne payant pas d'impôt équivalent)\n- Dividendes de sociétés en paradis fiscaux\n- **PAS de réduction**\n\n**② AMORTISSEMENTS JUSTIFIÉS** sur participations :\n- Sont déduits des revenus de participations\n- Réduisent le \"rendement net\" imposable\n\n**③ VENTES DE PARTICIPATIONS** (art. 70 al. 4) :\n- **Bénéfices de cession** bénéficient aussi de la réduction (condition : détention ≥ 1 an + participation ≥ 10 %)\n- Calculé sur la différence prix vente − prix acquisition\n\n**CAS PARTICULIERS** :\n\n**① RÉORGANISATIONS** (art. 70 al. 5) :\n- Fusion, scission, transformation\n- Principe de **neutralité fiscale** préservé\n- La durée de détention du prédécesseur est imputée\n\n**② DÉTENTION INDIRECTE** :\n- Via une filiale intermédiaire\n- Règles spéciales anti-abus\n\n**③ PARTICIPATIONS CRÉÉES par STEP-UP** (réforme RFFA 2020) :\n- Possibilité de réévaluer les réserves latentes sur 5 ans\n- Amortissements supplémentaires autorisés\n\n**IMPACT HOLDING PURE** :\n\nAvant RFFA 2020 : régime statut holding (art. 28 LIPM) → exonération cantonale totale.\n\nDepuis 2020 : **suppression** du statut holding → imposition ordinaire + réduction pour participation (mêmes conditions qu'IFD).\n\n**ÉQUIVALENT IFD fédéral** : **Art. 69-70 LIFD** (jamais supprimés, toujours en vigueur).\n\n**CONTEXTE INTERNATIONAL** :\n\n- Participation exemption répandue :\n  • Allemagne : 95 % exonéré pour ≥ 10 %\n  • France : 95 % exonéré pour ≥ 5 %\n  • Luxembourg, Pays-Bas : exemptions totales sous conditions\n\n**CONVENTIONS DOUBLE IMPOSITION (CDI)** :\n- Réduction additionnelle des retenues à la source étrangères\n- Ex. : France-Suisse → dividendes remboursables à 15 % au lieu de 30 %\n\n**Piège A** : le seuil est **10 % (non 20 %)**, OU valeur 1 M.\n**Piège C** : pas d'exemption totale — réduction proportionnelle.\n**Piège D** : applicable aux participations suisses ET étrangères.",
+              "explanation": "**Réponse : B — Réduction possible : 10 % OU 1 M (aucune durée minimale pour un dividende)**\n\n**Art. 69-70 LIFD — RÉDUCTION POUR PARTICIPATIONS** :\n\n**Objectif** : **éviter la double imposition économique** des dividendes entre sociétés.\n\n**CONDITIONS** (art. 69 LIFD) :\n\n**① PARTICIPATION QUALIFIÉE** (art. 69 al. 1) :\n- **≥ 10 % du capital-actions** de la société distributrice, OU\n- **≥ 10 % des bénéfices et réserves**, OU\n- **Valeur vénale ≥ 1'000'000 CHF**\n\n**② DURÉE DE DÉTENTION** :\n- **Aucune** pour les dividendes (art. 69 LIFD)\n- **Au moins 1 an** seulement pour les gains en capital sur participations ≥ 10 % (art. 70 al. 4 let. b LIFD)\n\n**Analyse cas Holding CH** :\n\n**① Critère participation qualifiée** :\n- Capital : **18 %** ≥ 10 % → **OUI** ✓\n- Valeur : **12 M** ≥ 1 M → **OUI** ✓ (2 critères satisfaits, 1 suffit)\n\n**② Durée de détention** : sans importance pour un dividende\n\n→ **RÉDUCTION APPLICABLE** ✓\n\n**CALCUL DE LA RÉDUCTION** (art. 70 LIFD) :\n\n**Formule simplifiée** :\n```\nRéduction = (Rendement NET de la participation / Bénéfice net)\n```\n\n**Où** :\n- **Rendement BRUT** = dividende reçu\n- **Rendement NET** = dividende − **coûts de financement** − coûts de gestion\n  • Coûts de financement = intérêts passifs × (valeur participations / actifs totaux)\n  • Coûts de gestion = 5 % forfaitaire (ou prouver les frais réels)\n\n**Exemple** :\n- Dividende brut : 800'000\n- Coûts de financement imputables : 80'000\n- Coûts de gestion (5 %) : 40'000\n- **Rendement net** : 800 − 80 − 40 = **680'000**\n\n**Bénéfice total imposable** de Holding CH : supposons 2 M\n**Ratio de réduction** : 680'000 / 2'000'000 = **34 %**\n\n**IFD avant réduction** : 2'000'000 × 8.5 % = 170'000\n**Réduction** : 170'000 × 34 % = 57'800\n**IFD après réduction** : 170'000 − 57'800 = **112'200 CHF**\n\n**ÉCONOMIE D'IMPÔT** : **57'800 CHF** grâce à la réduction.\n\n**PAYS D'ORIGINE** :\n\n**Suisse ET étranger** : la réduction s'applique aux dividendes de TOUTE origine (pas seulement suisses) — art. 69 LIFD.\n\n**EXCLUSIONS spécifiques** (art. 70 al. 2-3) :\n\n**① PAS DE CONDITION D'IMPOSITION DE LA FILIALE** :\n- Le droit suisse n'exige pas que la filiale soit imposée (pas de règle « subject to tax » ni de règle CFC)\n- Le rendement brut exclut toutefois les produits de réévaluation et certaines charges justifiées (art. 70 al. 2 LIFD)\n\n**② AMORTISSEMENTS JUSTIFIÉS** sur participations :\n- Sont déduits des revenus de participations\n- Réduisent le \"rendement net\" imposable\n\n**③ VENTES DE PARTICIPATIONS** (art. 70 al. 4) :\n- **Bénéfices de cession** bénéficient aussi de la réduction (condition : détention ≥ 1 an + participation ≥ 10 %)\n- Calculé sur la différence prix vente − prix acquisition\n\n**CAS PARTICULIERS** :\n\n**① RÉORGANISATIONS** (art. 70 al. 5) :\n- Fusion, scission, transformation\n- Principe de **neutralité fiscale** préservé\n- La durée de détention du prédécesseur est imputée\n\n**② DÉTENTION INDIRECTE** :\n- Via une filiale intermédiaire\n- Règles spéciales anti-abus\n\n**③ PARTICIPATIONS CRÉÉES par STEP-UP** (réforme RFFA 2020) :\n- Possibilité de réévaluer les réserves latentes sur 5 ans\n- Amortissements supplémentaires autorisés\n\n**IMPACT HOLDING PURE** :\n\nAvant RFFA 2020 : régime du statut holding (art. 28 al. 2 aLHID) → exonération cantonale totale.\n\nDepuis 2020 : **suppression** du statut holding → imposition ordinaire + réduction pour participation (mêmes conditions qu'IFD).\n\n**ÉQUIVALENT IFD fédéral** : **Art. 69-70 LIFD** (jamais supprimés, toujours en vigueur).\n\n**CONTEXTE INTERNATIONAL** :\n\n- Participation exemption répandue :\n  • Allemagne : 95 % exonéré pour ≥ 10 %\n  • France : 95 % exonéré pour ≥ 5 %\n  • Luxembourg, Pays-Bas : exemptions totales sous conditions\n\n**CONVENTIONS DOUBLE IMPOSITION (CDI)** :\n- Réduction additionnelle des retenues à la source étrangères\n- Ex. : France-Suisse → dividendes remboursables à 15 % au lieu de 30 %\n\n**Piège A** : le seuil est **10 % (non 20 %)**, OU valeur 1 M.\n**Piège C** : pas d'exemption totale — réduction proportionnelle.\n**Piège D** : applicable aux participations suisses ET étrangères.",
               "difficulty": "hard"
             },
             {
               "type": "mcq",
               "question": "Industries Alpines SA possède 25 % de Filiale Distributor SA. En 2024, elle cède ces titres pour 8.5 M CHF (valeur comptable 3.2 M, détenue depuis 2019). Imposition du gain ?",
               "options": [
-                "Gain 5.3 M entièrement imposable",
-                "Gain 5.3 M bénéficiant de la réduction pour participations (art. 70 al. 4 LIFD)",
-                "Gain exonéré (plus-value mobilière PP)",
-                "Imposable au taux réduit 50 %"
+                "Gain de 5,3 M entièrement imposable, sans aucun allègement",
+                "Gain de 5,3 M bénéficiant de la réduction pour participations",
+                "Gain exonéré, comme une plus-value mobilière privée d'une personne physique",
+                "Gain imposable au taux réduit de 50 %, comme pour l'imposition partielle"
               ],
               "answer": 1,
               "explanation": "**Réponse : B — Gain 5.3 M avec réduction pour participations**\n\n**Art. 70 al. 4 LIFD — RÉDUCTION pour GAINS de CESSION de PARTICIPATIONS** :\n\n**Principe** : les **BÉNÉFICES DE CESSION** (plus-values) de participations qualifiées bénéficient de la **même réduction** que les dividendes.\n\n**CONDITIONS** (art. 70 al. 4 LIFD) :\n\n**① Participation qualifiée à la CESSION** :\n- **≥ 10 % du capital** (ici 25 % ✓)\n- OU valeur vénale ≥ 1 M (ici 8.5 M ✓)\n\n**② Détention ≥ 1 AN** :\n- Acquisition 2019 → Cession 2024 = **5 ans** ✓\n\n**③ Calcul du GAIN** :\n- Prix de cession : 8'500'000\n- Valeur comptable (base fiscale) : 3'200'000\n- **Gain imposable** : **5'300'000 CHF**\n\n**CALCUL DE LA RÉDUCTION** :\n\nLe gain de 5.3 M s'ajoute au bénéfice imposable ordinaire.\n\nFormule art. 70 :\n```\nRéduction = (Gain de cession / Bénéfice total) × IFD\n```\n\n**Exemple** :\n- Autres bénéfices 2024 : 1'200'000\n- Bénéfice total : 5'300'000 + 1'200'000 = 6'500'000\n- Ratio : 5'300'000 / 6'500'000 = **81.5 %**\n- IFD avant réduction : 6'500'000 × 8.5 % = 552'500\n- Réduction : 552'500 × 81.5 % = **450'288**\n- **IFD après réduction** : 552'500 − 450'288 = **102'212 CHF**\n\n**ÉCONOMIE** : ~450'000 CHF d'impôt évité.\n\n**LIMITATIONS et CAS PARTICULIERS** :\n\n**① AMORTISSEMENTS ANTÉRIEURS RÉCUPÉRÉS** :\n- Les amortissements antérieurs pratiqués sur la participation sont **réintégrés** dans le gain (art. 70 al. 4 let. b)\n- Objectif : neutraliser la déduction antérieure\n\n**Exemple** :\n- Coût d'acquisition originel : 4 M\n- Amortissements pratiqués : 800k\n- Valeur comptable : 3.2 M\n- Gain déclaré : 8.5 − 3.2 = 5.3 M\n- **Dont amortissements récupérés** : 800k → imposés **plainement** (pas de réduction)\n- **Vraie plus-value** : 5.3 − 0.8 = 4.5 M → bénéficie de la réduction\n\n**② PARTICIPATIONS ACQUISES RÉCEMMENT** :\n- Si détenues depuis moins de 1 an → pas de réduction sur gain\n- Sauf si héritage, fusion, restructuration\n\n**③ GAINS SUR SOCIÉTÉS DANS \"PARADIS FISCAUX\"** :\n- Art. 70 al. 3 LIFD : exclusion possible\n- Société offshore sans activité substantielle\n\n**PROCÉDURE DE DÉCLARATION** :\n\n- Annexe spécifique à la déclaration fiscale\n- Relevé détaillé des cessions de participations\n- Pièces justificatives (contrats, valeurs historiques)\n\n**COMPARAISON avec AUTRES GAINS** :\n\n| Type de gain | Imposable ? | Réduction ? |\n|---|---|---|\n| **Gain cession participation qualifiée (≥ 10 %, ≥ 1 an)** | OUI | **OUI** |\n| **Gain cession part. non qualifiée** | OUI | NON |\n| **Gain cession immeuble** | OUI | NON |\n| **Gain cession autre actif** | OUI | NON |\n\n**PARTICULARITÉ SUISSE — PP vs PM** :\n\n**Chez PERSONNE PHYSIQUE** :\n- Plus-values sur **parts privées** de fortune **EXONÉRÉES** (art. 16 al. 3 LIFD)\n- Sauf si activité de commerçant professionnel (art. 18 LIFD)\n\n**Chez PERSONNE MORALE (société)** :\n- Plus-values **IMPOSABLES** (bénéfice d'exploitation)\n- Mais **réduction participations** possible\n\n**RESTRUCTURATIONS et RÉORGANISATIONS** :\n\n**Art. 61 LIFD** : transferts en neutralité fiscale si :\n- Apport à une société filiale\n- Fusion / scission\n- Transformation\n\n**Conditions de neutralité** :\n- Poursuite des valeurs comptables\n- Substance économique\n- Pas d'évasion fiscale\n\n**CLAUSE ANTI-ABUS** (art. 61 al. 4 LIFD) :\n- Si restructuration utilisée pour **éviter l'impôt**\n- Requalification possible par l'AFC\n\n**CAS PRATIQUE : VENTE en BOURSE** :\n\nVentes sur plateforme boursière :\n- Identification des lots (FIFO, moyenne pondérée)\n- Suivi précis par société\n- Déclaration annuelle détaillée\n\n**Piège A** : ignore la réduction pour participations.\n**Piège C** : applicable aux PP sur fortune privée, pas aux sociétés.\n**Piège D** : pas de taux forfaitaire 50 % — c'est un **ratio calculé**.",
@@ -10443,12 +10443,12 @@
               "question": "Groupe Manufacturier SA (holding) veut céder son usine de Genève à sa filiale Industrie Alpine Sàrl (100 % détenue). Valeur bilan usine 8.5 M, JV 15 M. Conditions pour NEUTRALITÉ FISCALE art. 61 LIFD ?",
               "options": [
                 "Aucune neutralité possible (transfert intra-groupe toujours taxable)",
-                "Neutralité si : valeurs comptables préservées + entité continue l'activité + substance économique, sans contournement fiscal",
-                "Neutralité automatique (transactions intra-groupe détiennent 100 %)",
+                "Neutre à la valeur fiscale (art. 61 LIFD), avec délai de blocage de 5 ans",
+                "Neutralité automatique, la holding détenant 100 % de la filiale (consolidation fiscale)",
                 "Neutralité si bénéfice < 1 M (petites transactions)"
               ],
               "answer": 1,
-              "explanation": "**Réponse : B — Neutralité sous conditions (art. 61 LIFD)**\n\n**Art. 61 LIFD — RESTRUCTURATIONS avec NEUTRALITÉ FISCALE** :\n\n**Principe général** (art. 61 al. 1) :\n> Les réserves latentes d'une personne morale ne sont **pas imposées** lors de restructurations, notamment lors d'une **fusion, d'une scission** ou d'une **transformation**, pour autant que :\n> a) la **société demeure assujettie** à l'impôt en Suisse, et\n> b) les **valeurs déterminantes** pour l'impôt sur le bénéfice soient reprises\n\n**CONDITIONS CUMULATIVES pour NEUTRALITÉ** :\n\n**① CONTINUITÉ de l'ASSUJETTISSEMENT en SUISSE** :\n- La société (ou l'entité receveuse) reste assujettie en CH\n- Pas de délocalisation à l'étranger (ex. : transfert hors-frontière déclencherait l'imposition)\n\n**② VALEURS DÉTERMINANTES PRÉSERVÉES** :\n- Les **valeurs comptables FISCALES** (pas nécessairement comptables) sont reprises par l'entité receveuse\n- Base d'amortissement continue\n- Pas de step-up à la JV au niveau fiscal\n- Les réserves latentes sont transférées\n\n**③ OPÉRATION ÉCONOMIQUEMENT JUSTIFIÉE** :\n- **Substance économique** réelle (pas de shell)\n- Continuité de l'activité\n- Motifs commerciaux valides\n- **Pas d'évasion fiscale** (art. 61 al. 4 LIFD)\n\n**TYPES D'OPÉRATIONS éligibles** (art. 61 al. 1-3) :\n\n**① FUSION** (art. 3 LFus) :\n- Absorption : société A absorbe société B\n- Combination : A + B → C (nouvelle)\n\n**② SCISSION** (art. 29 LFus) :\n- Scission complète : A → B + C (A disparaît)\n- Scission partielle : A → A + B (A continue)\n- Séparation de branches d'activité\n\n**③ TRANSFORMATION** (art. 53 LFus) :\n- Changement de forme juridique (Sàrl → SA)\n- Neutralité si conditions respectées\n\n**④ TRANSFERT de PATRIMOINE** (art. 69 LFus) :\n- Transfert d'une branche d'activité (partie de patrimoine)\n- Cédant à filiale ou entre sociétés-sœurs\n\n**⑤ APPORTS à une FILIALE** (art. 61 al. 3) :\n- Apport d'actifs en échange d'actions\n- Société-mère détient la filiale\n\n**Cas Groupe Manufacturier** :\n\n**Transfert** : Cession intra-groupe (Holding → Filiale détenue 100 %)\n\n**Qualification** :\n- Si transfert global (branche d'activité usine complète) : possible art. 61\n- Si simple cession d'actif isolé : **NON éligible** (art. 61 ne s'applique pas aux transferts d'actifs isolés)\n\n**Conditions art. 61 si éligible** :\n- Valeur comptable transférée : 8.5 M (pas JV 15 M)\n- Filiale poursuit l'activité de l'usine\n- Substance économique préservée\n- **Réserves latentes** (15 − 8.5 = 6.5 M) **ne sont PAS imposées** à la transaction\n\n**SI NEUTRALITÉ ACCORDÉE** :\n\n```\nChez Groupe Manufacturier (cédant) :\nAucun gain imposable = 0 CHF d'impôt supplémentaire\n\nChez Industrie Alpine (reprenant) :\nUsine inscrite à la valeur fiscale 8.5 M (base future d'amortissement)\nRéserves latentes 6.5 M transférées (impôt différé)\n```\n\n**SI NEUTRALITÉ REFUSÉE** :\n\n```\nChez Groupe Manufacturier :\nPlus-value : 15 − 8.5 = 6.5 M\nIFD : 6.5 M × 8.5 % = 552'500\nCantonal : ~14 % = 910'000\nTotal : ~1.46 M d'impôts\n```\n\n**ENGAGEMENTS POST-TRANSFERT** (art. 61 al. 2 + anti-abus) :\n\n**RÈGLE DU HOLD** : la filiale doit **conserver** les valeurs transférées pour au moins **5 ans**, sinon re-qualification rétroactive.\n\nExemple : si Industrie Alpine revend l'usine à un tiers dans 3 ans :\n- Imposition **rétroactive** des réserves latentes à Groupe Manufacturier\n- Intérêts moratoires\n\n**CLAUSE ANTI-ABUS** (art. 61 al. 4) :\n\nSi l'opération est **artificielle** et vise **uniquement** à éviter l'impôt :\n- L'AFC peut **requalifier** en transaction imposable\n- Règle antianabuse importante dans la pratique\n\n**Indicateurs d'abus** :\n- Pas de substance économique\n- Transfert suivi immédiatement d'une revente\n- Changement d'actionnariat concomitant\n- Shell companies\n\n**RULING FISCAL** :\n\n**Très fortement recommandé** pour les restructurations complexes :\n- Demande préalable à l'AFC\n- Délai réponse : ~3-6 mois\n- Engage l'AFC si conditions respectées\n- Sécurité juridique élevée\n\n**RÉSERVES LATENTES : MÉCANISME** :\n\n**Concept** :\n- Différence entre JV et valeur comptable\n- Représentent des profits non encore réalisés fiscalement\n- \"Mise en veille fiscale\" tant qu'elles ne sont pas réalisées\n\n**Réalisation ultérieure** :\n- Lorsque Industrie Alpine **vend** à un tiers\n- Elle paiera l'impôt sur (Prix vente − 8.5 M), pas (Prix − 15 M)\n- Reporte l'impôt dans le temps\n\n**DIFFÉRENCE AVEC CO** :\n- **LFus** (Loi fusion) : neutralité **civile** et commerciale\n- **LIFD art. 61** : neutralité **fiscale** (conditions spécifiques)\n- Les deux peuvent coexister mais conditions différentes\n\n**Piège A** : art. 61 est une exception à l'imposition.\n**Piège C** : la détention à 100 % ne suffit pas — conditions économiques requises.\n**Piège D** : pas de seuil quantitatif dans art. 61.",
+              "explanation": "**Réponse : B — Neutralité sous conditions (art. 61 LIFD)**\n\n**Art. 61 LIFD — RESTRUCTURATIONS avec NEUTRALITÉ FISCALE** :\n\n**Principe général** (art. 61 al. 1) :\n> Les réserves latentes d'une personne morale ne sont **pas imposées** lors de restructurations, notamment lors d'une **fusion, d'une scission** ou d'une **transformation**, pour autant que :\n> a) la **société demeure assujettie** à l'impôt en Suisse, et\n> b) les **valeurs déterminantes** pour l'impôt sur le bénéfice soient reprises\n\n**CONDITIONS CUMULATIVES pour NEUTRALITÉ** :\n\n**① CONTINUITÉ de l'ASSUJETTISSEMENT en SUISSE** :\n- La société (ou l'entité receveuse) reste assujettie en CH\n- Pas de délocalisation à l'étranger (ex. : transfert hors-frontière déclencherait l'imposition)\n\n**② VALEURS DÉTERMINANTES PRÉSERVÉES** :\n- Les **valeurs comptables FISCALES** (pas nécessairement comptables) sont reprises par l'entité receveuse\n- Base d'amortissement continue\n- Pas de step-up à la JV au niveau fiscal\n- Les réserves latentes sont transférées\n\n**③ OPÉRATION ÉCONOMIQUEMENT JUSTIFIÉE** :\n- **Substance économique** réelle (pas de shell)\n- Continuité de l'activité\n- Motifs commerciaux valides\n- **Pas d'évasion fiscale** (art. 61 al. 4 LIFD)\n\n**TYPES D'OPÉRATIONS éligibles** (art. 61 al. 1-3) :\n\n**① FUSION** (art. 3 LFus) :\n- Absorption : société A absorbe société B\n- Combination : A + B → C (nouvelle)\n\n**② SCISSION** (art. 29 LFus) :\n- Scission complète : A → B + C (A disparaît)\n- Scission partielle : A → A + B (A continue)\n- Séparation de branches d'activité\n\n**③ TRANSFORMATION** (art. 53 LFus) :\n- Changement de forme juridique (Sàrl → SA)\n- Neutralité si conditions respectées\n\n**④ TRANSFERT de PATRIMOINE** (art. 69 LFus) :\n- Transfert d'une branche d'activité (partie de patrimoine)\n- Cédant à filiale ou entre sociétés-sœurs\n\n**⑤ TRANSFERT à une FILIALE suisse** (art. 61 al. 1 let. d) :\n- Exploitations, parties distinctes ou biens immobilisés de l'exploitation\n- Délai de blocage de 5 ans (art. 61 al. 2)\n\n**⑥ TRANSFERT entre sociétés du GROUPE** (art. 61 al. 3-4) :\n- Participations ≥ 20 %, exploitations, biens immobilisés, entre sociétés suisses sous direction unique\n- Délai de blocage de 5 ans\n\n**Cas Groupe Manufacturier** :\n\n**Transfert** : Cession intra-groupe (Holding → Filiale détenue 100 %)\n\n**Qualification** :\n- L'usine fait partie des **biens immobilisés de l'exploitation** : son transfert à une filiale suisse (≥ 20 %) est expressément visé par l'art. 61 al. 1 let. d LIFD, même sans transfert d'une exploitation entière\n- Un actif de placement (immeuble locatif, titres de placement) ne serait pas visé\n\n**Conditions art. 61 si éligible** :\n- Valeur comptable transférée : 8.5 M (pas JV 15 M)\n- Filiale poursuit l'activité de l'usine\n- Substance économique préservée\n- **Réserves latentes** (15 − 8.5 = 6.5 M) **ne sont PAS imposées** à la transaction\n\n**SI NEUTRALITÉ ACCORDÉE** :\n\n```\nChez Groupe Manufacturier (cédant) :\nAucun gain imposable = 0 CHF d'impôt supplémentaire\n\nChez Industrie Alpine (reprenant) :\nUsine inscrite à la valeur fiscale 8.5 M (base future d'amortissement)\nRéserves latentes 6.5 M transférées (impôt différé)\n```\n\n**SI NEUTRALITÉ REFUSÉE** :\n\n```\nChez Groupe Manufacturier :\nPlus-value : 15 − 8.5 = 6.5 M\nIFD : 6.5 M × 8.5 % = 552'500\nCantonal : ~14 % = 910'000\nTotal : ~1.46 M d'impôts\n```\n\n**ENGAGEMENTS POST-TRANSFERT** (art. 61 al. 2) :\n\n**RÈGLE DU HOLD** : la filiale doit **conserver** les valeurs transférées pour au moins **5 ans**, sinon re-qualification rétroactive.\n\nExemple : si Industrie Alpine revend l'usine à un tiers dans 3 ans :\n- Imposition **rétroactive** des réserves latentes à Groupe Manufacturier\n- Intérêts moratoires\n\n**CLAUSE ANTI-ABUS** (évasion fiscale) :\n\nSi l'opération est **artificielle** et vise **uniquement** à éviter l'impôt :\n- L'AFC peut **requalifier** en transaction imposable\n- Règle antianabuse importante dans la pratique\n\n**Indicateurs d'abus** :\n- Pas de substance économique\n- Transfert suivi immédiatement d'une revente\n- Changement d'actionnariat concomitant\n- Shell companies\n\n**RULING FISCAL** :\n\n**Très fortement recommandé** pour les restructurations complexes :\n- Demande préalable à l'AFC\n- Délai réponse : ~3-6 mois\n- Engage l'AFC si conditions respectées\n- Sécurité juridique élevée\n\n**RÉSERVES LATENTES : MÉCANISME** :\n\n**Concept** :\n- Différence entre JV et valeur comptable\n- Représentent des profits non encore réalisés fiscalement\n- \"Mise en veille fiscale\" tant qu'elles ne sont pas réalisées\n\n**Réalisation ultérieure** :\n- Lorsque Industrie Alpine **vend** à un tiers\n- Elle paiera l'impôt sur (Prix vente − 8.5 M), pas (Prix − 15 M)\n- Reporte l'impôt dans le temps\n\n**DIFFÉRENCE AVEC CO** :\n- **LFus** (Loi fusion) : neutralité **civile** et commerciale\n- **LIFD art. 61** : neutralité **fiscale** (conditions spécifiques)\n- Les deux peuvent coexister mais conditions différentes\n\n**Piège A** : art. 61 est une exception à l'imposition.\n**Piège C** : la détention à 100 % ne suffit pas — conditions économiques requises.\n**Piège D** : pas de seuil quantitatif dans art. 61.",
               "difficulty": "hard"
             },
             {
@@ -10481,10 +10481,10 @@
               "type": "mcq",
               "question": "Société AB SA verse en 2024 un dividende ordinaire de 400'000 CHF aux actionnaires PP suisses. Procédure + timing impôt anticipé ?",
               "options": [
-                "Déclaration dans les 30 jours + paiement dans les 30 jours de 140'000 à l'AFC",
+                "Déclaration à l'AFC et paiement de 140'000 dans les 60 jours suivant l'assemblée générale",
                 "Retenir 35 % seulement si actionnaire étranger",
-                "Retenir 35 % (140'000) à la source, verser à l'AFC dans les 30 jours, déclaration actionnaires récupèrent lors déclaration annuelle",
-                "Pas d'impôt anticipé sur dividendes inférieurs à 500'000 CHF"
+                "Retenue de 35 % (140'000), versée dans les 30 jours ; remboursement ensuite",
+                "Aucun impôt anticipé sur les dividendes inférieurs à CHF 500'000 par exercice"
               ],
               "answer": 2,
               "explanation": "**Réponse : C — Retenir 35 % + verser AFC + récupération par actionnaire**\n\n**IMPÔT ANTICIPÉ (IA) — Loi fédérale sur l'impôt anticipé (LIA)** :\n\n**Principe** : prélèvement à la **source** sur les dividendes, intérêts et gains de loterie — garantie de déclaration fiscale complète des bénéficiaires.\n\n**Taux** : **35 %** (art. 13 LIA) sur :\n- Dividendes et rendements d'actions\n- Intérêts sur obligations suisses\n- Gains de loterie > 1 million\n\n**MÉCANISME en 4 ÉTAPES** :\n\n**① Décision de distribution** (AG) :\n- Approbation du dividende\n- Date de versement\n\n**② RETENUE à la SOURCE** :\n- **Société AB prélève 35 %** sur les 400'000 = **140'000 CHF**\n- Verse 260'000 CHF **NET** aux actionnaires\n\n**③ DÉCLARATION et VERSEMENT à l'AFC** :\n- **Formulaire 103** (impôt anticipé) à déposer dans les **30 JOURS** après l'échéance\n- Versement de 140'000 à l'AFC dans le **MÊME DÉLAI**\n- Intérêts moratoires en cas de retard (4.5 % en 2025)\n\n**④ RÉCUPÉRATION par l'actionnaire** (art. 22 LIA) :\n- L'actionnaire **déclare** honnêtement le dividende brut (400 ÷ 100 × nbre d'actions) dans sa déclaration fiscale annuelle\n- **Demande remboursement** de l'impôt anticipé\n- Remboursement : **intégral** pour résidents CH\n\n**EXEMPLE CONCRET — Actionnaire Dupont (5 % des actions)** :\n\n```\nDividende brut reçu : 5 % × 400'000 = 20'000\nImpôt anticipé retenu : 35 % × 20'000 = 7'000\nDividende NET encaissé : 13'000\n\nDéclaration fiscale Dupont N+1 :\n- Revenu imposable : +20'000 (brut)\n- Demande remboursement impôt anticipé : 7'000\n- Impôt PP sur 20'000 (avec réduction partic. si ≥ 10 %) : ~4'000-6'000\n- Remboursement net : 7'000 − impôt PP = bénéfice net ~1-3'000 CHF\n```\n\n**OBJECTIFS de l'IMPÔT ANTICIPÉ** :\n\n**① Garantie de déclaration** :\n- Dissuader les PP de cacher leurs revenus\n- \"Remboursement\" conditionnel à la déclaration\n\n**② Équité** :\n- PP et PM imposées sur mêmes revenus\n- Alignement des pratiques\n\n**③ Revenu pour la Confédération** :\n- Environ 7 milliards CHF/an\n- Principale source avec TVA et IFD\n\n**RÉSIDENTS ÉTRANGERS** :\n\n**Remboursement via CDI (Convention de Double Imposition)** :\n- Réduction à **15 %** dans la plupart des conventions\n- **Formulaire 102** ou équivalent\n- Délai prescription : **3 ans**\n\n**Sans CDI** :\n- Pas de remboursement (impôt perdu)\n- Taux effectif : 35 %\n\n**Exemples de taux réduits** :\n- **France** : 15 % (dividendes)\n- **Allemagne** : 15 % (0 % pour participations ≥ 10 %)\n- **USA** : 15 % (5 % pour participations significatives)\n- **UK** : 15 % (0 % certaines situations)\n\n**PROCÉDURE DE DÉCLARATION** (art. 20 LIA) :\n\n**Remplacement du prélèvement** par une déclaration :\n- Applicable **uniquement** dans des cas précis\n- Avec **autorisation préalable AFC**\n- Ex. : distribution à une société mère suisse à 100 %\n\n**Procédures courantes** :\n\n**Formulaire 106** : déclaration annuelle IA (sociétés qui versent régulièrement)\n**Formulaire 15** : déclaration de dividendes d'une SA\n**Formulaire 102** : remboursement IA par résidents étrangers (selon CDI)\n**Formulaire 24** : déclaration de substitution (groupes intégrés)\n\n**CAS INTRAGROUPE — \"NOTIFICATION\"** :\n\n**Art. 20 LIA + art. 24 OIA** :\n- Société-fille → société-mère détenant ≥ 10 %\n- Autorisation de **ne pas prélever** l'IA\n- Au lieu : notification formelle de la distribution\n- Simplification et évite blocage de trésorerie\n\n**SANCTIONS pour NON-PAIEMENT** :\n\n- **Intérêts moratoires** : 4.5 %/an (2025)\n- **Amende** administrative : jusqu'à **trois fois** l'impôt dû\n- **Responsabilité** solidaire des organes (CA, direction)\n- Si intentionnel : **infractions pénales** (art. 61 LIA)\n\n**PRESCRIPTION** :\n\n- Demande de remboursement : **3 ANS** à compter de la fin de l'année civile\n- Passée cette date : l'IA est **définitivement perdu**\n\n**COMPTABILISATION** :\n\n**Chez Société AB** — versement du dividende :\n```\nDébit  : Réserves (ou bénéfice reporté)   400'000\nCrédit : Trésorerie                        260'000\nCrédit : Impôt anticipé à payer AFC        140'000\n```\n\n**Versement à l'AFC** :\n```\nDébit  : Impôt anticipé à payer AFC        140'000\nCrédit : Trésorerie                        140'000\n```\n\n**Chez Dupont** — comptabilisation privée (fortune privée) :\nPas de comptabilisation formelle, mais note mentale :\n- Dividende brut déclarable : 20'000\n- Impôt anticipé à récupérer : 7'000\n\n**Piège A** : le versement à l'AFC = 35 % (140'000), pas 30 jours pour paiement mais oui pour déclaration.\n**Piège B** : l'impôt anticipé s'applique à **tous** les actionnaires, y compris CH.\n**Piège D** : pas de seuil — tous les dividendes sont soumis.",
@@ -10501,9 +10501,9 @@
               "type": "mcq",
               "question": "Capitaux propres de MediumCorp SA : capital 1 M, réserve légale 100k, réserves libres 2.5 M, bénéfice reporté 800k. Quel montant maximum distribuable en dividendes selon CO ?",
               "options": [
-                "4.4 M (toutes les réserves + bénéfice)",
-                "3.3 M (réserves libres + bénéfice reporté)",
-                "3.4 M (3.3 + partie légale libérable)",
+                "4,4 M (toutes les réserves + le bénéfice reporté)",
+                "3,3 M (libres + reporté)",
+                "3,4 M (3,3 M + la réserve légale libérable)",
                 "2.5 M (réserves libres seulement)"
               ],
               "answer": 1,
@@ -10514,10 +10514,10 @@
               "type": "mcq",
               "question": "Recherche Novation SA (société suisse R&D) — budget R&D annuel 2 M (dont 80 % concerne un brevet breveté). Bénéfice imposable avant mesures fiscales 5 M (canton Vaud). Utilisation PATENT BOX + R&D super-déduction ?",
               "options": [
-                "Pas de réduction fiscale (R&D ordinaire)",
-                "Patent Box 100 % des bénéfices brevets (exonération totale)",
+                "Aucune réduction fiscale, la R&D étant une activité ordinaire de l'entreprise",
+                "Patent box sur 100 % des bénéfices de brevets, soit une exonération totale",
                 "Super-déduction R&D jusqu'à 200 % des frais",
-                "Réduction Patent Box + super-déduction, limite globale 70 % du bénéfice imposable"
+                "Patent box + super-déduction, allègement plafonné à 70 %"
               ],
               "answer": 3,
               "explanation": "**Réponse : D — Réductions cumulables, plafonnées à 70 % du bénéfice**\n\n**RÉFORME RFFA 2020 — NOUVELLES MESURES INCITATIVES** :\n\n**① PATENT BOX** (art. 24a LHID + 24b) :\n\n**Principe** : **réduction jusqu'à 90 %** des revenus provenant de **brevets et droits similaires** au niveau cantonal.\n\n**Revenus éligibles** :\n- Revenus de brevets\n- Licences sur brevets\n- Ventes de brevets\n- Revenus indirects via produits contenant des brevets\n\n**Calcul de la part \"Patent Box\"** :\n- Méthode du **NEXUS** (lien R&D / revenus) :\n  • Ratio = R&D propre / R&D totale liée au brevet\n  • Approche BEPS Action 5\n\n**Exemple Novation SA** :\n- Revenus brevetés : 4 M (sur CA total)\n- R&D propre : 80 % × 2 M = 1.6 M\n- R&D totale (propre + sous-traitée) : 2 M\n- **Nexus ratio** : 1.6 / 2 = **80 %**\n- Revenus éligibles Patent Box : 4 M × 80 % = **3.2 M**\n- Réduction fiscale (canton VD ~80 %) : **2.56 M de revenus exonérés**\n\n**Taux cantonaux Patent Box** :\n- VD : 60-80 %\n- GE : 90 % (maximum)\n- Cantons plus conservateurs : 30-50 %\n\n**② SUPER-DÉDUCTION R&D** (art. 25a LHID) :\n\n**Principe** : **déduction jusqu'à 150 %** des frais de R&D (au lieu de 100 %).\n\n**Optionnelle par canton** — certains cantons appliquent :\n- **100 %** (pas de super-déduction, minimum LHID)\n- **130 %** (soit 30 % supplémentaires) — VD, GE\n- **150 %** (soit 50 % supplémentaires) — plus rare\n\n**Frais éligibles** :\n- **Salaires R&D** (personnel dédié)\n- **Matériels et équipements** dédiés R&D\n- **Services externes R&D** (conseil, tests, brevets)\n- Ne sont **PAS éligibles** : marketing, production régulière\n\n**Calcul Novation SA** (super-déduction 130 % VD) :\n- Frais R&D : 2 M\n- Super-déduction complémentaire : 30 % × 2 M = **600'000 CHF**\n- Total déductible : 2.6 M (au lieu de 2 M)\n- **Économie d'impôt** : 600k × 14 % = **84'000 CHF**\n\n**③ LIMITE GLOBALE 70 %** (art. 25b LHID) :\n\n**Règle anti-abus** : l'**ensemble** des réductions Patent Box + Super-R&D + amortissements des valeurs cachées (step-up) ne peut pas réduire le bénéfice imposable **au-delà de 70 %**.\n\n**Formule** : bénéfice réduit ≥ 30 % du bénéfice avant mesures\n\n**Application Novation** :\n- Bénéfice avant mesures : 5 M\n- **Minimum imposable** : 30 % × 5 M = **1.5 M**\n- **Réductions maximum cumulées** : 5 − 1.5 = **3.5 M**\n\n**Si réductions Patent Box + R&D > 3.5 M** :\n- Plafonnement automatique\n- Minimum 1.5 M reste imposable\n\n**④ AMORTISSEMENTS STEP-UP** (ex-holdings) :\n\nPour les ex-sociétés holding (avant RFFA 2020) :\n- Réévaluation des réserves latentes sur **5 ans**\n- Amortissements complémentaires\n- Lissage de la charge fiscale post-réforme\n\n**CALCUL COMPLET Novation SA** (Canton VD) :\n\n```\nBénéfice avant mesures                   : 5'000'000\n\nPatent Box : réduction sur revenus brevets\n  - Revenus éligibles : 3.2 M\n  - Réduction 80 % VD : -2'560'000\n\nSuper-R&D : déduction supplémentaire 30 %\n  - Frais R&D : 2 M\n  - Super-déduction :    -600'000\n\nTotal réductions                         : 3'160'000\nLimite 70 % (3.5 M)                      : OK ✓\n\nBénéfice imposable final                 : 1'840'000\nIFD (8.5 %) : 156'400\nCantonal VD (~14 %) : 257'600\nTOTAL IMPÔTS : 414'000 (au lieu de ~1.05 M sans mesures)\nÉCONOMIE : ~636'000 CHF\n```\n\n**DÉCLARATION FISCALE** :\n\n**Annexes spécifiques** :\n- Décomposition des revenus Patent Box\n- Justificatifs R&D\n- Calcul nexus ratio\n- Documentation technique des brevets\n\n**CONDITIONS DOCUMENTAIRES** :\n- Brevets déposés (pas en cours de dépôt)\n- Lien direct revenus / brevets\n- Justificatifs R&D\n- Conservation 10 ans\n\n**IMPACT sur IAS 12** (IFRS si applicable) :\n\n- Mesures fiscales = réductions permanentes ou temporaires ?\n- **Patent Box** : permanente (pas d'impôts différés)\n- **Super-R&D** : permanente pour les frais déjà engagés\n- **Step-up** : temporaire (réversible sur 5 ans, impôts différés)\n\n**CANTONS les PLUS ATTRACTIFS POUR R&D** :\n\n| Canton | Patent Box | Super-R&D | Taux ordinaire |\n|---|---|---|---|\n| **Genève** | 90 % | 150 % | 14 % |\n| **Vaud** | 70 % | 130 % | 14 % |\n| **Neuchâtel** | 90 % | 150 % | 13 % |\n| **Bâle-Ville** | 90 % | 150 % | 13 % |\n| **Zug** | 90 % | 150 % | 11.9 % |\n| **Soleure** | 90 % | 150 % | 13 % |\n\n**COMPARAISON INTERNATIONALE** :\n\n- **France** : CIR 30 % des frais (crédit d'impôt, pas déduction)\n- **Belgique** : Innovation Box 85 % d'exonération\n- **Pays-Bas** : Innovation Box 9 % (taux réduit)\n- **UK** : Patent Box 10 % (taux effectif)\n\nLa Suisse reste **très compétitive** pour la R&D.\n\n**Piège A** : mesures disponibles à utiliser.\n**Piège B** : pas d'exonération totale — réduction jusqu'à 90 % max.\n**Piège C** : super-déduction 150 % max (pas 200 %).",
@@ -10527,9 +10527,9 @@
               "type": "mcq",
               "question": "PrixTransfert AG (filiale CH d'un groupe US) vend des composants à sa société-sœur allemande à un prix \"interne\" de 100 CHF/unité. Prix de marché (arm's length) comparable : 150 CHF/unité. Volumes : 50'000 unités/an. Risque fiscal CH ?",
               "options": [
-                "Aucun risque (prix intra-groupe librement fixé)",
-                "Seulement si détection par audit international",
-                "Reprise fiscale de (150 − 100) × 50'000 = 2.5 M CHF sur PrixTransfert (prestation au marché)",
+                "Aucun risque, le prix intra-groupe étant librement fixé par la société mère",
+                "Reprise uniquement si l'écart est détecté par un audit fiscal international",
+                "Reprise de (150 − 100) × 50'000 = 2,5 M chez PrixTransfert",
                 "Prix résolu entre France et Allemagne uniquement"
               ],
               "answer": 2,
@@ -11363,10 +11363,10 @@
               "type": "mcq",
               "question": "La LHID harmonise :",
               "options": [
-                "Les taux d'impôt cantonaux",
+                "Les taux d'impôt cantonaux, fixés par la Confédération",
                 "Les coefficients communaux",
-                "Les barèmes progressifs",
-                "Les règles d'assujettissement et de détermination de la base"
+                "Les barèmes progressifs et les déductions chiffrées",
+                "L'assujettissement et la détermination de la base"
               ],
               "answer": 3,
               "explanation": "Art. 1 LHID : harmonisation des règles (assujettissement, objet, base, procédure). Les taux et barèmes restent de la souveraineté cantonale."
@@ -11400,9 +11400,9 @@
               "question": "Un canton peut-il introduire une déduction fiscale inconnue de la LHID ?",
               "options": [
                 "Oui, librement",
-                "Non, la LHID est exhaustive sur les déductions admises",
-                "Oui, uniquement pour les PME",
-                "Oui, avec accord du Conseil fédéral"
+                "Non : la liste de la LHID est exhaustive",
+                "Oui, mais uniquement pour les PME inscrites au registre du commerce",
+                "Oui, avec l'accord préalable du Conseil fédéral"
               ],
               "answer": 1,
               "explanation": "La LHID fixe de manière exhaustive les corrections au bénéfice commercial. Un canton ne peut créer une déduction non prévue (ATF 2C_645/2011)."
@@ -11444,10 +11444,10 @@
               "type": "mcq",
               "question": "Le préciput du siège représente :",
               "options": [
-                "Un supplément de 1 % d'impôt",
-                "Une exonération partielle",
+                "Un supplément d'impôt de 1 % perçu au profit du canton du siège",
+                "Une exonération partielle accordée à l'établissement stable",
                 "Une amende",
-                "Une quote-part additionnelle (10-20 %) pour le canton du siège"
+                "Une quote-part additionnelle pour le canton du siège"
               ],
               "answer": 3,
               "explanation": "Le préciput reconnaît la fonction de direction : 10 à 20 % du bénéfice sont attribués au siège avant répartition par facteurs."
@@ -11462,10 +11462,10 @@
               "type": "mcq",
               "question": "Quel facteur n'est PAS utilisé dans la méthode indirecte par quotes-parts ?",
               "options": [
-                "Chiffre d'affaires",
-                "Masse salariale",
-                "Actifs",
-                "Nombre d'actionnaires"
+                "Le chiffre d'affaires",
+                "La masse salariale",
+                "Les actifs localisés dans chaque canton",
+                "Le nombre d'actionnaires"
               ],
               "answer": 3,
               "explanation": "Les quotes-parts utilisent CA, masse salariale et actifs selon le type d'activité. Le nombre d'actionnaires n'a aucune pertinence."
@@ -11526,10 +11526,10 @@
               "type": "mcq",
               "question": "La super-déduction R&D permet de déduire jusqu'à :",
               "options": [
-                "150 % des dépenses R&D suisses",
-                "110 %",
-                "125 %",
-                "200 %"
+                "150 % des dépenses R&D",
+                "110 % des dépenses R&D",
+                "125 % des dépenses R&D",
+                "200 % des dépenses R&D"
               ],
               "answer": 0,
               "explanation": "Art. 25a LHID : déduction jusqu'à 150 % des dépenses R&D effectuées en Suisse. Mesure FACULTATIVE pour les cantons."
@@ -11801,7 +11801,7 @@
           "id": "tva_l4",
           "title": "Décompte, corrections et sanctions",
           "duration_min": 10,
-          "content": "**Périodicité des décomptes** (art. 35 LTVA) :\n• **Trimestrielle** (standard)\n• **Semestrielle** (si TDFN)\n• **Mensuelle** (sur demande, si remboursements récurrents)\n\n**Délais** :\n• Décompte + paiement : 60 jours après fin de période\n• Décompte de concordance (Finalisierung) : dans les 240 jours après clôture de l'exercice → obligatoire pour rapprocher CA comptable et TVA\n\n**Méthodes de décompte** :\n| Méthode | Description |\n|---|---|\n| Contre-prestations convenues | Dette née à la facturation (défaut) |\n| Contre-prestations reçues | Dette née à l'encaissement (sur demande) |\n\n**Correction d'erreurs** :\n• **Dans les 240 jours** post-clôture : correction via décompte de concordance (pas d'intérêt)\n• **Au-delà** : correction spontanée possible, intérêts moratoires (4.75 % p.a. 2024)\n\n**Contrôles TVA** :\n• Prescription : 5 ans absolue, 10 ans avec soustraction\n• Estimation d'office possible si comptabilité défaillante\n\n**Sanctions** (art. 96 ss LTVA) :\n• **Soustraction simple** : amende jusqu'à 400'000 CHF ou montant soustrait × 2\n• **Soustraction qualifiée** (art. 14 DPA) : amende + peine privative de liberté\n• **Violation des devoirs de procédure** : amende jusqu'à CHF 10'000\n\n**Dénonciation spontanée** :\n• Première fois : amende réduite au minimum (généralement 0)\n• Rappel d'impôt et intérêts moratoires restent dus\n\n⚠️ **Piège** : le décompte de concordance est OBLIGATOIRE, son omission constitue une violation de devoirs de procédure même si la TVA a été correctement payée.",
+          "content": "**Périodicité des décomptes** (art. 35 LTVA) :\n• **Trimestrielle** (standard)\n• **Semestrielle** (si TDFN)\n• **Mensuelle** (sur demande, si remboursements récurrents)\n\n**Délais** :\n• Décompte + paiement : 60 jours après fin de période\n• Décompte de concordance (Finalisierung) : dans les 240 jours après clôture de l'exercice → obligatoire pour rapprocher CA comptable et TVA\n\n**Méthodes de décompte** :\n| Méthode | Description |\n|---|---|\n| Contre-prestations convenues | Dette née à la facturation (défaut) |\n| Contre-prestations reçues | Dette née à l'encaissement (sur demande) |\n\n**Correction d'erreurs** :\n• **Dans les 240 jours** post-clôture : correction via décompte de concordance (pas d'intérêt)\n• **Au-delà** : correction spontanée possible, intérêts moratoires (4 % p.a. en 2026-2027)\n\n**Contrôles TVA** :\n• Prescription : 5 ans absolue, 10 ans avec soustraction\n• Estimation d'office possible si comptabilité défaillante\n\n**Sanctions** (art. 96 ss LTVA) :\n• **Soustraction simple** : amende jusqu'à 400'000 CHF ou montant soustrait × 2\n• **Soustraction qualifiée** (art. 14 DPA) : amende + peine privative de liberté\n• **Violation des devoirs de procédure** : amende jusqu'à CHF 10'000\n\n**Dénonciation spontanée** :\n• Première fois : amende réduite au minimum (généralement 0)\n• Rappel d'impôt et intérêts moratoires restent dus\n\n⚠️ **Piège** : le décompte de concordance est OBLIGATOIRE, son omission constitue une violation de devoirs de procédure même si la TVA a été correctement payée.",
           "key_points": [
             "Décompte trimestriel standard, délai 60 jours",
             "Concordance annuelle obligatoire dans 240 jours post-clôture",
@@ -11830,15 +11830,15 @@
             },
             {
               "type": "mcq",
-              "question": "Quel est le taux d'intérêt moratoire TVA applicable en 2024 ?",
+              "question": "Quel est le taux d'intérêt moratoire TVA applicable en 2026-2027 ?",
               "options": [
                 "2.00 %",
-                "4.00 %",
+                "4.50 %",
                 "5.50 %",
-                "4.75 %"
+                "4.00 %"
               ],
               "answer": 3,
-              "explanation": "Dès 2024, le taux d'intérêt moratoire a été porté à 4.75 % p.a. (avant 4 %)."
+              "explanation": "Taux unique des impôts fédéraux (ordonnance du DFF, RS 631.014), fixé chaque année : 4,75 % en 2024, 4,5 % en 2025, 4 % en 2026 et en 2027."
             },
             {
               "type": "vrai_faux",
@@ -12732,10 +12732,10 @@
               "type": "mcq",
               "question": "Le délai pour demander le remboursement de l'IA par un contribuable suisse est de :",
               "options": [
-                "1 an",
-                "5 ans",
-                "3 ans après la fin de l'année civile où le revenu est échu",
-                "10 ans"
+                "1 an dès la réception du revenu",
+                "5 ans dès la date de la distribution",
+                "3 ans dès la fin de l'année d'échéance",
+                "10 ans, comme la conservation des pièces"
               ],
               "answer": 2,
               "explanation": "Art. 32 LIA : 3 ans après la fin de l'année civile d'échéance. Délai péremptoire."
@@ -12813,9 +12813,9 @@
               "type": "mcq",
               "question": "Le concept de beneficial ownership signifie que :",
               "options": [
-                "Le bénéficiaire détient légalement les actions",
-                "Le bénéficiaire a un réel droit de jouissance sur le revenu",
-                "Le bénéficiaire est domicilié dans un pays CDI",
+                "Le bénéficiaire détient légalement les actions au registre",
+                "Le bénéficiaire a un réel droit de jouissance",
+                "Le bénéficiaire est domicilié dans un État ayant conclu une CDI",
                 "Le bénéficiaire est inscrit au registre"
               ],
               "answer": 1,
@@ -12831,10 +12831,10 @@
               "type": "mcq",
               "question": "Quel formulaire permet à une société-mère étrangère de recevoir un dividende sans retenue IA (procédure de déclaration internationale) ?",
               "options": [
-                "Formulaire 25",
-                "Formulaire 106",
-                "Formulaire DA-1",
-                "Formulaire 823 (selon pays 823B/C)"
+                "Formulaire 25 (remboursement PM)",
+                "Formulaire 106 (déclaration interne)",
+                "Formulaire DA-1 (imputation forfaitaire)",
+                "Formulaire 823 (823B/C)"
               ],
               "answer": 3,
               "explanation": "Le formulaire 823 (et variantes B/C selon pays) demande l'autorisation préalable à l'AFC. Délivrée pour 3 ans, il permet d'éviter la retenue effective sur dividendes qualifiants."
@@ -12858,9 +12858,9 @@
               "type": "mcq",
               "question": "Dans quel cas la liquidation partielle indirecte s'applique-t-elle ?",
               "options": [
-                "Toute vente d'actions > 10 %",
-                "Rachat d'actions propres",
-                "Vente par PP d'une participation ≥ 20 % à une SA, avec distribution dans les 5 ans",
+                "Toute vente d'au moins 10 % des actions d'une société, à n'importe quel acquéreur",
+                "Le rachat par une société de ses propres actions dans la limite de 10 %",
+                "Vente ≥ 20 % par une PP à une SA, distribution de substance dans les 5 ans",
                 "Fusion avec filiale"
               ],
               "answer": 2,
@@ -12892,15 +12892,15 @@
             },
             {
               "type": "mcq",
-              "question": "Taux d'intérêt moratoire sur IA non payé :",
+              "question": "Taux d'intérêt moratoire sur l'impôt anticipé payé en retard (2026-2027) :",
               "options": [
+                "4,75 %",
+                "5 %",
                 "4 %",
-                "4.75 %",
-                "5 % p.a.",
                 "7 %"
               ],
               "answer": 2,
-              "explanation": "Ordonnance DFF : 5 % p.a. pour l'IA (différent du taux TVA qui est à 4.75 % depuis 2024)."
+              "explanation": "Ordonnance du DFF sur les taux d'intérêt (RS 631.014) : depuis 2022, un taux unique s'applique aux impôts fédéraux (IFD, TVA, impôt anticipé, droits de timbre…). Il est fixé chaque année d'après la situation au 30 juin précédent : 4,75 % en 2024, 4,5 % en 2025, 4 % en 2026 et en 2027 (intérêt rémunératoire sur paiements anticipés IFD : 0 %)."
             }
           ]
         }
@@ -13092,10 +13092,10 @@
               "type": "mcq",
               "question": "Un investisseur institutionnel étranger est-il imposable au droit de négociation ?",
               "options": [
-                "Oui",
-                "Oui, à 50 %",
-                "Non, il est exonéré comme contrepartie",
-                "Uniquement sur titres suisses"
+                "Oui, intégralement",
+                "Oui, mais à 50 % seulement",
+                "Non, il est exonéré",
+                "Uniquement sur les titres suisses"
               ],
               "answer": 2,
               "explanation": "Art. 17a LT : investisseurs étrangers (États, fonds souverains, caisses de pension, assurances, banques, fonds) sont exonérés en tant que contrepartie."
@@ -13112,7 +13112,7 @@
             "Exonérations : LAMal, LAA, LPP, vie-prévoyance",
             "Débiteur : assureur suisse (ou preneur si assureur étranger)",
             "Décompte semestriel",
-            "Prescription 5 ans, intérêts moratoires 5 %"
+            "Prescription 5 ans, intérêts moratoires 4 % (2026-2027)"
           ],
           "questions": [
             {
@@ -13974,9 +13974,9 @@
               "type": "mcq",
               "question": "La méthode d'élimination de la double imposition habituellement retenue par la Suisse est :",
               "options": [
-                "Imputation intégrale",
-                "Imputation ordinaire",
-                "Exemption avec progression",
+                "L'imputation intégrale de l'impôt étranger",
+                "L'imputation ordinaire de l'impôt étranger",
+                "L'exemption avec progression",
                 "Déduction"
               ],
               "answer": 2,
@@ -14055,9 +14055,9 @@
               "type": "mcq",
               "question": "Le principe AOA pour l'imposition des ES signifie :",
               "options": [
-                "Attribution globale au siège",
-                "Allocation forfaitaire par CA",
-                "Approche de l'entité distincte (separate entity)",
+                "Attribuer globalement tout le bénéfice au siège",
+                "Allouer le bénéfice forfaitairement selon le CA",
+                "Traiter l'ES comme une entité distincte",
                 "Méthode de répartition linéaire"
               ],
               "answer": 2,
@@ -14073,10 +14073,10 @@
               "type": "mcq",
               "question": "Selon BEPS Action 7, une activité initialement auxiliaire peut être requalifiée en ES si :",
               "options": [
-                "Elle dure plus de 3 ans",
-                "Elle fait partie d'un ensemble cohérent d'activités fragmentées",
+                "Elle dure plus de trois ans dans l'État de la source",
+                "Elle s'inscrit dans des activités fragmentées cohérentes",
                 "Elle génère > CHF 1 M de CA",
-                "Elle emploie plus de 5 personnes"
+                "Elle emploie plus de cinq personnes à plein temps dans l'État concerné"
               ],
               "answer": 1,
               "explanation": "L'anti-fragmentation vise les groupes qui divisent artificiellement une activité unique entre plusieurs entités pour échapper à la qualification d'ES. Analyse combinée."
@@ -14100,9 +14100,9 @@
               "type": "mcq",
               "question": "Selon le Modèle OCDE, les redevances sont imposables :",
               "options": [
-                "À la source uniquement",
-                "Dans l'État de résidence du bénéficiaire uniquement",
-                "Par les deux États",
+                "Uniquement dans l'État de la source des redevances",
+                "Dans l'État de résidence du bénéficiaire",
+                "Dans les deux États, avec imputation de l'impôt",
                 "Selon le choix du contribuable"
               ],
               "answer": 1,
@@ -14118,10 +14118,10 @@
               "type": "mcq",
               "question": "Une CDI prévoit un taux résiduel de 5 % sur dividendes qualifiants. La société mère reçoit 1 M et l'IA est de 35 %. Remboursement ?",
               "options": [
-                "300'000 (35 % - 5 %)",
-                "Aucun",
-                "950'000",
-                "350'000"
+                "300'000 (35 % − 5 %)",
+                "Aucun remboursement",
+                "950'000 (100 % − 5 %)",
+                "350'000 (la totalité de l'IA)"
               ],
               "answer": 0,
               "explanation": "Taux résiduel 5 % = 50'000 dû. IA prélevé 350'000. Remboursement de 300'000 (350k − 50k)."
@@ -14164,9 +14164,9 @@
               "question": "Délai pour saisir l'autorité compétente d'une procédure amiable :",
               "options": [
                 "3 ans dès la première notification",
-                "1 an",
-                "2 ans",
-                "5 ans"
+                "1 an dès la notification de la décision de taxation",
+                "2 ans dès l'entrée en force",
+                "5 ans dès la fin de l'exercice"
               ],
               "answer": 0,
               "explanation": "Art. 25 al. 1 OCDE : 3 ans à compter de la première notification de la mesure contestée. Délai strict."
@@ -14181,10 +14181,10 @@
               "type": "mcq",
               "question": "Le PPT (Principal Purpose Test) refuse le bénéfice de la CDI si :",
               "options": [
-                "L'opération est illégale",
-                "L'un des buts principaux était l'obtention de l'avantage CDI, sans conformité à l'objet/but",
-                "Le contribuable est non-résident",
-                "La société n'a pas d'employés"
+                "L'opération est illégale au regard du droit de l'État de la source",
+                "Obtenir l'avantage était l'un des buts principaux, contraire à l'objet de la CDI",
+                "Le contribuable n'est pas résident de l'un des États contractants",
+                "La société bénéficiaire n'a ni employés ni locaux dans son État de résidence déclaré"
               ],
               "answer": 1,
               "explanation": "Standard BEPS Action 6 intégré par MLI : test subjectif. Refus sauf conformité à l'objet et au but de la CDI."
@@ -14199,9 +14199,9 @@
               "type": "mcq",
               "question": "Quelle clause anti-abus est basée sur des critères OBJECTIFS (cotation, activité, ownership) ?",
               "options": [
-                "PPT",
-                "Abus de droit",
-                "Règle des 183 jours",
+                "PPT (Principal Purpose Test)",
+                "L'abus de droit (jurisprudence)",
+                "La règle des 183 jours",
                 "LOB (Limitation on Benefits)"
               ],
               "answer": 3,
@@ -17212,7 +17212,7 @@
           "title": "5. Rendement de la fortune immobilière — art. 21 LIFD",
           "duration_min": 8,
           "type": "lecture",
-          "content": "**Art. 21 al. 1 LIFD** — sont imposables :\n- **a.** Les **loyers** et autres prestations de locataires ou fermiers\n- **b.** La **valeur locative** des immeubles ou parts d'immeubles que le contribuable occupe (ou qu'il met gratuitement à disposition de tiers)\n- **c.** Les produits des **servitudes**\n- **d.** Les produits de l'**exploitation de gravières, sablières**, etc.\n\n**Loyers perçus (let. a)** :\nLoyer brut reçu, déduction faite des frais d'entretien et d'acquisition du revenu (déductibles — voir section 7).\n\n**Valeur locative (let. b)** :\nRevenu **fictif** correspondant au loyer que le contribuable pourrait percevoir s'il louait son logement à un tiers. C'est une **spécificité suisse** parmi les plus débattues.\n\n**Fondement** : égalité de traitement entre le propriétaire-occupant et le locataire. Le locataire paie un loyer avec son revenu imposé ; le propriétaire-occupant « économise » un loyer. Pour équilibrer, on lui impute une valeur locative imposable.\n\n**Calcul de la valeur locative** :\n- Fixée par l'autorité fiscale cantonale\n- Généralement **60-70 % de la valeur locative de marché**\n- Révisable périodiquement\n\n**Abattements possibles** :\n- Sous-occupation (enfants partis du domicile)\n- Usage partiel du bien\n- Occupation temporaire (résidence secondaire)\n\n**⚠️ Attention :** **Projet de suppression de la valeur locative** — régulièrement débattu au Parlement (2020s). Un projet prévoit la suppression en contrepartie de la suppression de la déductibilité des intérêts hypothécaires et des frais d'entretien pour la résidence principale. Votation probable dans les années à venir."
+          "content": "**Art. 21 al. 1 LIFD** — sont imposables :\n- **a.** Les **loyers** et autres prestations de locataires ou fermiers\n- **b.** La **valeur locative** des immeubles ou parts d'immeubles que le contribuable occupe (ou qu'il met gratuitement à disposition de tiers)\n- **c.** Les produits des **servitudes**\n- **d.** Les produits de l'**exploitation de gravières, sablières**, etc.\n\n**Loyers perçus (let. a)** :\nLoyer brut reçu, déduction faite des frais d'entretien et d'acquisition du revenu (déductibles — voir section 7).\n\n**Valeur locative (let. b)** :\nRevenu **fictif** correspondant au loyer que le contribuable pourrait percevoir s'il louait son logement à un tiers. C'est une **spécificité suisse** parmi les plus débattues.\n\n**Fondement** : égalité de traitement entre le propriétaire-occupant et le locataire. Le locataire paie un loyer avec son revenu imposé ; le propriétaire-occupant « économise » un loyer. Pour équilibrer, on lui impute une valeur locative imposable.\n\n**Calcul de la valeur locative** :\n- Fixée par l'autorité fiscale cantonale\n- Généralement **60-70 % de la valeur locative de marché**\n- Révisable périodiquement\n\n**Abattements possibles** :\n- Sous-occupation (enfants partis du domicile)\n- Usage partiel du bien\n- Occupation temporaire (résidence secondaire)\n\n**⚠️ Attention :** **Suppression de la valeur locative** — acceptée en votation le 28.09.2025, **en vigueur le 1.1.2029** (Conseil fédéral, 1.4.2026). Jusqu'au 31.12.2028, le régime actuel s'applique. Ensuite : plus de valeur locative (résidences principales et secondaires) ; plus de déduction des frais d'entretien (les cantons peuvent maintenir certaines déductions, p. ex. économies d'énergie, monuments historiques) ; intérêts passifs privés déductibles seulement en lien avec des immeubles loués ou affermés ; déduction dégressive pour les primo-acquéreurs ; les cantons peuvent introduire un impôt sur les résidences secondaires."
         },
         {
           "id": "fisc_L5_s6",
@@ -17384,7 +17384,7 @@
           "title": "9. Stratégies d'optimisation et pièges courants",
           "duration_min": 8,
           "type": "lecture",
-          "content": "**Stratégies d'optimisation légales** (optimisation fiscale — voir L1 pour la distinction avec évasion / soustraction) :\n\n**① Maximiser les cotisations à la prévoyance**\n- Rachats LPP (jusqu'au plafond de prévoyance)\n- 3e pilier A (7'373 max avec LPP)\n- Effet : déduction immédiate + différé d'impôt + sortie à 1/5\n\n**② Échelonner les retraits de capital**\n- 2 comptes LP retirés sur 2 ans\n- Combiner 2e + 3e piliers sur plusieurs années\n- Éviter les années de gros revenus (vente immobilière, bonus)\n\n**③ Optimiser les frais d'entretien d'immeuble**\n- Choisir effectif vs forfaitaire chaque année\n- Concentrer les grosses rénovations sur une année (effectif > forfaitaire)\n- Investissements énergétiques → déductibles (art. 32 al. 2)\n\n**④ Stratégie des dons**\n- Dons ≥ CHF 100 par bénéficiaire reconnue utilité publique\n- Max 20 % du revenu net → puissant en année de gros revenu\n\n**⑤ Stratégie des frais de formation**\n- Jusqu'à CHF 13'000/an (2025-2026)\n- Formation continue = déductible ; nouvelle profession = non déductible\n\n**⑥ Couples mariés — splitting vs imposition séparée**\n- Barème plus favorable pour couples mariés (art. 36 al. 2)\n- Actuellement en discussion : passage à une imposition individuelle\n\n**Pièges classiques à éviter** :\n- Rachat LPP suivi d'un retrait capital dans les 3 ans → non déductible (TF)\n- Non-remboursement du versement anticipé EPL avant de racheter\n- Pension alimentaire versée aux enfants majeurs → plus déductible\n- Impôts payés déduits par erreur → non déductibles (art. 34 let. e)\n- Remboursement de capital d'emprunt confondu avec intérêts → non déductible\n- APG militaire non déclarée (imposable contrairement à la solde)\n- Activité de trading intense → requalification en commerce de titres (perte exonération gains en capital)\n\n**⚠️ Attention :** **Veille réglementaire importante** :\n- **Imposition individuelle** : projet de réforme en discussion au Parlement (passer du couple au conjoint-par-conjoint)\n- **Suppression valeur locative** : projet récurrent, votation à prévoir\n- **Pilier 2.0** : projet de refonte LPP en cours de discussion\n\nCes réformes sont susceptibles de modifier substantiellement le régime fiscal des personnes physiques dans les 3-5 prochaines années."
+          "content": "**Stratégies d'optimisation légales** (optimisation fiscale — voir L1 pour la distinction avec évasion / soustraction) :\n\n**① Maximiser les cotisations à la prévoyance**\n- Rachats LPP (jusqu'au plafond de prévoyance)\n- 3e pilier A (7'373 max avec LPP)\n- Effet : déduction immédiate + différé d'impôt + sortie à 1/5\n\n**② Échelonner les retraits de capital**\n- 2 comptes LP retirés sur 2 ans\n- Combiner 2e + 3e piliers sur plusieurs années\n- Éviter les années de gros revenus (vente immobilière, bonus)\n\n**③ Optimiser les frais d'entretien d'immeuble**\n- Choisir effectif vs forfaitaire chaque année\n- Concentrer les grosses rénovations sur une année (effectif > forfaitaire)\n- Investissements énergétiques → déductibles (art. 32 al. 2)\n\n**④ Stratégie des dons**\n- Dons ≥ CHF 100 par bénéficiaire reconnue utilité publique\n- Max 20 % du revenu net → puissant en année de gros revenu\n\n**⑤ Stratégie des frais de formation**\n- Jusqu'à CHF 13'000/an (2025-2026)\n- Formation continue = déductible ; nouvelle profession = non déductible\n\n**⑥ Couples mariés — splitting vs imposition séparée**\n- Barème plus favorable pour couples mariés (art. 36 al. 2)\n- Actuellement en discussion : passage à une imposition individuelle\n\n**Pièges classiques à éviter** :\n- Rachat LPP suivi d'un retrait capital dans les 3 ans → non déductible (TF)\n- Non-remboursement du versement anticipé EPL avant de racheter\n- Pension alimentaire versée aux enfants majeurs → plus déductible\n- Impôts payés déduits par erreur → non déductibles (art. 34 let. e)\n- Remboursement de capital d'emprunt confondu avec intérêts → non déductible\n- APG militaire non déclarée (imposable contrairement à la solde)\n- Activité de trading intense → requalification en commerce de titres (perte exonération gains en capital)\n\n**⚠️ Attention :** **Veille réglementaire** :\n- **Imposition individuelle** : acceptée en votation le 08.03.2026 (54 % de oui) ; entrée en vigueur au plus tard le 1.1.2032 (chaque conjoint déposera sa propre déclaration). D'ici là : imposition commune des époux (art. 9 LIFD).\n- **Valeur locative** : suppression acceptée le 28.09.2025, en vigueur le 1.1.2029 (fin des déductions de frais d'entretien, intérêts passifs privés limités).\n- **Prévoyance** : la réforme LPP 21 a été rejetée en votation le 22.09.2024 ; le taux de conversion minimal reste de 6,8 %.\n\nÀ l'examen, appliquer le droit en vigueur pendant la période fiscale visée par l'énoncé."
         }
       ]
     },
@@ -18317,7 +18317,7 @@
                 "Si CA annuel ≥ 1 mio CHF"
               ],
               "answer": 2,
-              "explanation": "**CHF 100'000** de CA annuel en petits envois (TVA ≤ 5 CHF) → inscription obligatoire (art. 7 al. 3 let. b LTVA). But : lutter contre la distorsion vs commerces CH. Concerne Amazon, AliExpress, Wish, etc. Depuis 2024, règle renforcée via art. 20a (plateformes)."
+              "explanation": "**CHF 100'000** de CA annuel en petits envois (TVA ≤ 5 CHF) → inscription obligatoire (art. 7 al. 3 let. b LTVA). But : lutter contre la distorsion vs commerces CH. Concerne Amazon, AliExpress, Wish, etc. Depuis 2025, règle renforcée via art. 20a (plateformes)."
             }
           ]
         },
@@ -18824,7 +18824,7 @@
           "title": "7. Représentation INDIRECTE et plateformes numériques (art. 20, 20a LTVA)",
           "duration_min": 8,
           "type": "lecture",
-          "content": "**REPRÉSENTATION INDIRECTE** (art. 20 al. 3 LTVA) :\n\n**Principe** : l'intermédiaire agit **EN SON PROPRE NOM** (mais pour le compte d'un tiers). Fiction fiscale : **DEUX rapports de prestations distincts** sont créés.\n\n**Schéma** :\n\nMandant ──(prestation 1)──▶ Intermédiaire ──(prestation 2)──▶ Client final\n\n**Conséquences fiscales** :\n- 2 prestations consécutives imposables\n- Intermédiaire **achète** puis **revend**\n- Double TVA dans le flux\n\n**Exemples classiques** :\n- **Commissionnaire** (droit civil art. 425 CO) qui achète/vend en son nom\n- **Agence de voyage** qui achète des nuitées d'hôtels puis revend à ses clients dans un package\n- Importateur exclusif qui achète à l'étranger puis revend en CH\n\n**Test pratique** :\n- Qui apparaît sur la **facture** ?\n  - Intermédiaire seulement → INDIRECTE\n  - Mandant indiqué → DIRECTE\n\n**REPRÉSENTATION INDIRECTE vs VENDEUR** :\n- Si l'intermédiaire **n'est pas payé par commission** mais par marge → **vendeur** (représentation indirecte assimilée)\n\n**PLATEFORMES NUMÉRIQUES** (art. 20a LTVA — en vigueur depuis 01.01.2024) :\n\n**Règle spéciale** : lorsqu'une **plateforme numérique** facilite une **livraison** (pas PS !) entre un vendeur et un acheteur, la **plateforme** est réputée être le **fournisseur** de la prestation.\n\n**CONDITIONS** (art. 20a al. 1) :\n- Plateforme numérique (marketplace)\n- Rend possible une **LIVRAISON DE BIENS**\n- Vendeur et acheteur mis en relation via la plateforme\n\n**EFFETS** :\n- **2 rapports de prestations fictifs** (fiction légale) :\n  - Vendeur → Plateforme (LB)\n  - Plateforme → Acheteur (LB)\n- La **plateforme facture** la TVA à l'acheteur\n- Le vendeur est **libéré** de ses obligations TVA en CH\n\n**EXCLUSIONS** (art. 20a al. 2 — la plateforme n'est pas réputée fournisseur) :\n- **PS** uniquement (règle limitée aux LB)\n- Pas de marketplace de services (type Upwork, Fiverr)\n\n**Exemples** :\n- **Amazon, eBay, AliExpress, Digitec, Galaxus** qui hébergent des marchands tiers\n- Plateforme rend possible la vente → plateforme = fournisseur TVA\n\n**But de la règle** : lutter contre la concurrence déloyale et la fraude TVA des marchands étrangers opérant via marketplaces.\n\n**Cas particuliers** (art. 20a al. 3) :\n- Plateforme acte uniquement comme service de paiement → pas d'application\n- Plateforme acte uniquement pour la publicité → pas d'application\n- Plateforme n'a pas les infos sur les biens → application limitée",
+          "content": "**REPRÉSENTATION INDIRECTE** (art. 20 al. 3 LTVA) :\n\n**Principe** : l'intermédiaire agit **EN SON PROPRE NOM** (mais pour le compte d'un tiers). Fiction fiscale : **DEUX rapports de prestations distincts** sont créés.\n\n**Schéma** :\n\nMandant ──(prestation 1)──▶ Intermédiaire ──(prestation 2)──▶ Client final\n\n**Conséquences fiscales** :\n- 2 prestations consécutives imposables\n- Intermédiaire **achète** puis **revend**\n- Double TVA dans le flux\n\n**Exemples classiques** :\n- **Commissionnaire** (droit civil art. 425 CO) qui achète/vend en son nom\n- **Agence de voyage** qui achète des nuitées d'hôtels puis revend à ses clients dans un package\n- Importateur exclusif qui achète à l'étranger puis revend en CH\n\n**Test pratique** :\n- Qui apparaît sur la **facture** ?\n  - Intermédiaire seulement → INDIRECTE\n  - Mandant indiqué → DIRECTE\n\n**REPRÉSENTATION INDIRECTE vs VENDEUR** :\n- Si l'intermédiaire **n'est pas payé par commission** mais par marge → **vendeur** (représentation indirecte assimilée)\n\n**PLATEFORMES NUMÉRIQUES** (art. 20a LTVA — en vigueur depuis 01.01.2025) :\n\n**Règle spéciale** : lorsqu'une **plateforme numérique** facilite une **livraison** (pas PS !) entre un vendeur et un acheteur, la **plateforme** est réputée être le **fournisseur** de la prestation.\n\n**CONDITIONS** (art. 20a al. 1) :\n- Plateforme numérique (marketplace)\n- Rend possible une **LIVRAISON DE BIENS**\n- Vendeur et acheteur mis en relation via la plateforme\n\n**EFFETS** :\n- **2 rapports de prestations fictifs** (fiction légale) :\n  - Vendeur → Plateforme (LB)\n  - Plateforme → Acheteur (LB)\n- La **plateforme facture** la TVA à l'acheteur\n- Le vendeur est **libéré** de ses obligations TVA en CH\n\n**EXCLUSIONS** (art. 20a al. 2 — la plateforme n'est pas réputée fournisseur) :\n- **PS** uniquement (règle limitée aux LB)\n- Pas de marketplace de services (type Upwork, Fiverr)\n\n**Exemples** :\n- **Amazon, eBay, AliExpress, Digitec, Galaxus** qui hébergent des marchands tiers\n- Plateforme rend possible la vente → plateforme = fournisseur TVA\n\n**But de la règle** : lutter contre la concurrence déloyale et la fraude TVA des marchands étrangers opérant via marketplaces.\n\n**Cas particuliers** (art. 20a al. 3) :\n- Plateforme acte uniquement comme service de paiement → pas d'application\n- Plateforme acte uniquement pour la publicité → pas d'application\n- Plateforme n'a pas les infos sur les biens → application limitée",
           "key_points": [
             "2 prestations consécutives imposables",
             "Intermédiaire achète puis revend",
@@ -18835,9 +18835,9 @@
           "questions": [
             {
               "type": "vrai_faux",
-              "question": "Depuis 2024, les plateformes numériques facilitant des livraisons de biens sont réputées être le fournisseur (art. 20a LTVA).",
+              "question": "Depuis 2025, les plateformes numériques facilitant des livraisons de biens sont réputées être le fournisseur (art. 20a LTVA).",
               "answer": true,
-              "explanation": "**VRAI** — art. 20a LTVA en vigueur **01.01.2024**. Amazon, eBay, AliExpress, Digitec etc. qui facilitent des livraisons de biens entre vendeurs tiers et acheteurs CH → **réputés fournisseur**. Fiction : 2 rapports (vendeur-plateforme + plateforme-acheteur). Ne concerne PAS les PS (Upwork, Fiverr)."
+              "explanation": "**VRAI** — art. 20a LTVA en vigueur **01.01.2025**. Amazon, eBay, AliExpress, Digitec etc. qui facilitent des livraisons de biens entre vendeurs tiers et acheteurs CH → **réputés fournisseur**. Fiction : 2 rapports (vendeur-plateforme + plateforme-acheteur). Ne concerne PAS les PS (Upwork, Fiverr)."
             }
           ]
         },
@@ -19132,7 +19132,7 @@
           "title": "2. Exportations de biens (art. 23 al. 2 ch. 1 LTVA)",
           "duration_min": 8,
           "type": "lecture",
-          "content": "**EXPORTATION DIRECTE de biens** : livraison de biens transportés ou expédiés **directement à l'étranger**.\n\n**Exonération** : taux 0 %, IP déductible sur les coûts de production/achat.\n\n**Principe** : neutralité fiscale internationale — l'acheteur étranger paiera la TVA de son propre pays à l'import. La CH ne taxe pas l'export.\n\n**Conditions** :\n- Bien **effectivement** sorti du territoire suisse\n- **PREUVE D'EXPORTATION** (décision de taxation électronique - DTe, document d'exportation timbré, etc.)\n- Documentation conservée 10 ans\n\n**EXPORTATIONS DIRECTES** (art. 23 al. 3 LTVA) :\n\nLe bien livré est exporté vers un pays étranger, ou dans un **entrepôt douanier ouvert (EDO)** ou **dépôt franc sous douane**, **SANS avoir été employé** sur le territoire suisse.\n\n**Opérations en chaîne avec perfectionnement** :\nSi le bien est modifié (transformé, finishing) avant export par des mandataires de l'acquéreur → l'exonération s'étend à TOUS les fournisseurs de la chaîne.\n\n**Exemple** :\n- Textiles SA (Sion) livre des t-shirts à Maginfo SAS (Paris)\n- Avant export, t-shirts remis à PRINT SA (Lausanne) pour y ajouter un logo\n- Puis expédiés à Paris\n- **Les 2 livraisons sont exonérées** (art. 23 al. 2 ch. 1 + al. 3)\n- La remise de Textiles SA à Print SA ne vaut pas livraison\n\n**CAS PARTICULIER — Vente de véhicule en CH** :\n- Exonération admise si le véhicule **QUITTE le territoire suisse dans les 48 heures** après la livraison\n- Documentation : preuve du passage en douane, quittance d'exportation\n\n**Exemple de garagiste** :\n- Garagiste assujetti vend voiture au nom d'une cliente de Nyon\n- Acheteur = PP domiciliée en France\n- Commission garagiste : 2'000 CHF\n- Facture \"Commission sur vente de votre véhicule\"\n- **Entremise exonérée** (art. 23 al. 2 ch. 9) **SI** le véhicule quitte la CH dans les 48h après vente",
+          "content": "**EXPORTATION DIRECTE de biens** : livraison de biens transportés ou expédiés **directement à l'étranger**.\n\n**Exonération** : taux 0 %, IP déductible sur les coûts de production/achat.\n\n**Principe** : neutralité fiscale internationale — l'acheteur étranger paiera la TVA de son propre pays à l'import. La CH ne taxe pas l'export.\n\n**Conditions** :\n- Bien **effectivement** sorti du territoire suisse\n- **PREUVE D'EXPORTATION** (décision de taxation électronique - DTe, document d'exportation timbré, etc.)\n- Documentation conservée 10 ans\n\n**EXPORTATIONS DIRECTES** (art. 23 al. 3 LTVA) :\n\nLe bien livré est exporté vers un pays étranger, ou dans un **entrepôt douanier ouvert (EDO)** ou **dépôt franc sous douane**, **SANS avoir été employé** sur le territoire suisse.\n\n**Opérations en chaîne avec perfectionnement** :\nSi le bien est modifié (transformé, finishing) avant export par des mandataires de l'acquéreur → l'exonération s'étend à TOUS les fournisseurs de la chaîne.\n\n**Exemple** :\n- Textiles SA (Sion) livre des t-shirts à Maginfo SAS (Paris)\n- Avant export, t-shirts remis à PRINT SA (Lausanne) pour y ajouter un logo\n- Puis expédiés à Paris\n- **Les 2 livraisons sont exonérées** (art. 23 al. 2 ch. 1 + al. 3)\n- La remise de Textiles SA à Print SA ne vaut pas livraison\n\n**CAS PARTICULIER — Vente de véhicule en CH** :\n- Exonération admise si le véhicule est **effectivement exporté** (expédié ou transporté à l'étranger)\n- Documentation : preuve du passage en douane, quittance d'exportation\n\n**Exemple de garagiste** :\n- Garagiste assujetti vend voiture au nom d'une cliente de Nyon\n- Acheteur = PP domiciliée en France\n- Commission garagiste : 2'000 CHF\n- Facture \"Commission sur vente de votre véhicule\"\n- **Entremise exonérée** (art. 23 al. 2 ch. 9) **SI** le véhicule est exporté (preuve douanière)",
           "key_points": [
             "Bien effectivement sorti du territoire suisse",
             "PREUVE D'EXPORTATION (décision de taxation électronique - DTe, document d'exportation timbré, etc.)",
@@ -19145,7 +19145,7 @@
               "type": "vrai_faux",
               "question": "L'exportation de biens est exonérée de TVA avec droit à la déduction de l'impôt préalable.",
               "answer": true,
-              "explanation": "**VRAI** (art. 23 al. 2 ch. 1 LTVA). Exportation = taux **0 %** + **IP récupérable** → pas de taxe occulte → compétitivité préservée pour l'exportateur. Documentation obligatoire : **DTe** (décision de taxation électronique à l'exportation). Véhicule vendu en CH : doit quitter le territoire dans les 48h."
+              "explanation": "**VRAI** (art. 23 al. 2 ch. 1 LTVA). Exportation = taux **0 %** + **IP récupérable** → pas de taxe occulte → compétitivité préservée pour l'exportateur. Documentation obligatoire : **DTe** (décision de taxation électronique à l'exportation). Véhicule vendu en CH : l'exportation doit être prouvée par un document douanier."
             }
           ]
         },
@@ -19238,7 +19238,7 @@
           "title": "6. Intermédiaires, agences de voyage, hors taxes (al. 2 ch. 9-11)",
           "duration_min": 8,
           "type": "lecture",
-          "content": "**Ch. 9 — PRESTATIONS D'INTERMÉDIAIRES** :\n\nExonérées si :\n- L'intermédiaire agit **au NOM et POUR LE COMPTE** d'un tiers (représentation directe)\n- L'**opération sous-jacente** est :\n  - **Exonérée**, OU\n  - **Réalisée exclusivement à l'étranger**\n\n**Règle de partage** : si l'opération est partiellement en CH, seule la partie entremise relative à la **partie étrangère** est exonérée.\n\n**Exemple — garagiste** :\n- Vend véhicule au nom de sa cliente Nyon\n- Acheteur = personne domiciliée en France\n- Commission : 2'000 CHF\n- Vente = exportation (véhicule quitte CH dans 48h)\n- **Commission exonérée** car opération sous-jacente exonérée\n\n**Ch. 10 — AGENCES DE VOYAGES / ORGANISATEURS** :\n\n**Exonérées** : prestations de services fournies par des agences de voyages ou organisateurs **EN LEUR PROPRE NOM**, dans la mesure où ils recourent à des prestations de tiers fournies **à l'étranger**.\n\n**Distinction avec art. 21 al. 2 ch. 31** :\n- Ch. 31 (EXCLUE) : prestations revendues, agence agit en propre nom\n- Ch. 10 (EXONÉRÉE) : prestations propres organisateur, mais tiers à l'étranger\n\n**Application** : applicable **seulement si aucun autre lieu** de la prestation n'est défini par les autres règles.\n\n**Principe général agence de voyages étranger** :\n- Hébergement à l'étranger → lieu = lieu hôtel (art. 8 al. 2 let. f) → étranger\n- Vol → lieu du trajet (art. 8 al. 2 let. e) → étranger\n- → Toutes prestations **exonérées**\n\n**Ch. 11 — BOUTIQUES HORS TAXES** (Duty Free) :\n\nVoyageurs prenant un vol à destination de l'étranger ou arrivant de l'étranger peuvent acheter en **franchise** dans les boutiques hors taxes.\n\n**Marchandises couvertes** :\n- **Boissons spiritueuses**\n- **Vins mousseux**\n- **Produits de toilette et cosmétiques**\n- **Tabacs manufacturés**\n\n**Ventes exonérées** → pas de TVA CH.\n\n**Conditions** :\n- Acheteur = voyageur international\n- Vente en zone \"airside\" des aéroports internationaux\n- Preuve de voyage international (carte d'embarquement)",
+          "content": "**Ch. 9 — PRESTATIONS D'INTERMÉDIAIRES** :\n\nExonérées si :\n- L'intermédiaire agit **au NOM et POUR LE COMPTE** d'un tiers (représentation directe)\n- L'**opération sous-jacente** est :\n  - **Exonérée**, OU\n  - **Réalisée exclusivement à l'étranger**\n\n**Règle de partage** : si l'opération est partiellement en CH, seule la partie entremise relative à la **partie étrangère** est exonérée.\n\n**Exemple — garagiste** :\n- Vend véhicule au nom de sa cliente Nyon\n- Acheteur = personne domiciliée en France\n- Commission : 2'000 CHF\n- Vente = exportation (véhicule exporté, preuve douanière)\n- **Commission exonérée** car opération sous-jacente exonérée\n\n**Ch. 10 — AGENCES DE VOYAGES / ORGANISATEURS** :\n\n**Exonérées** : prestations de services fournies par des agences de voyages ou organisateurs **EN LEUR PROPRE NOM**, dans la mesure où ils recourent à des prestations de tiers fournies **à l'étranger**.\n\n**Distinction avec art. 21 al. 2 ch. 31** :\n- Ch. 31 (EXCLUE) : prestations revendues, agence agit en propre nom\n- Ch. 10 (EXONÉRÉE) : prestations propres organisateur, mais tiers à l'étranger\n\n**Application** : applicable **seulement si aucun autre lieu** de la prestation n'est défini par les autres règles.\n\n**Principe général agence de voyages étranger** :\n- Hébergement à l'étranger → lieu = lieu hôtel (art. 8 al. 2 let. f) → étranger\n- Vol → lieu du trajet (art. 8 al. 2 let. e) → étranger\n- → Toutes prestations **exonérées**\n\n**Ch. 11 — BOUTIQUES HORS TAXES** (Duty Free) :\n\nVoyageurs prenant un vol à destination de l'étranger ou arrivant de l'étranger peuvent acheter en **franchise** dans les boutiques hors taxes.\n\n**Marchandises couvertes** :\n- **Boissons spiritueuses**\n- **Vins mousseux**\n- **Produits de toilette et cosmétiques**\n- **Tabacs manufacturés**\n\n**Ventes exonérées** → pas de TVA CH.\n\n**Conditions** :\n- Acheteur = voyageur international\n- Vente en zone \"airside\" des aéroports internationaux\n- Preuve de voyage international (carte d'embarquement)",
           "key_points": [
             "L'intermédiaire agit au NOM et POUR LE COMPTE d'un tiers (représentation directe)",
             "L'opération sous-jacente est :",
@@ -19275,11 +19275,11 @@
               "options": [
                 "Non, jamais",
                 "Oui, automatiquement",
-                "Oui, via trafic des voyageurs si export dans 30 jours (art. 23 al. 5)",
+                "Oui, via trafic des voyageurs si export dans 90 jours (art. 23 al. 5)",
                 "Oui, via Global Blue uniquement"
               ],
               "answer": 2,
-              "explanation": "**Oui — art. 23 al. 5 LTVA** (trafic des voyageurs). Conditions cumulatives :\n① Valeur ≥ **CHF 300** (TVA incluse)\n② Domicile à l'étranger\n③ Usage privé ou cadeau\n④ **Export dans 30 jours**\n⑤ Quittance au nom du touriste\n\nRemboursement via Global Blue (avec frais) ou directement par le magasin."
+              "explanation": "**Oui — art. 23 al. 5 LTVA** (trafic des voyageurs). Conditions cumulatives :\n① Valeur ≥ **CHF 300** (TVA incluse)\n② Domicile à l'étranger\n③ Usage privé ou cadeau\n④ **Export dans 90 jours**\n⑤ Quittance au nom du touriste\n\nRemboursement via Global Blue (avec frais) ou directement par le magasin."
             }
           ]
         },
@@ -19288,12 +19288,12 @@
           "title": "8. Autres cas et preuves d'exonération",
           "duration_min": 8,
           "type": "lecture",
-          "content": "**Ch. 13 — PLATEFORMES NUMÉRIQUES (livraisons art. 20a)** :\n- Vendeur → Plateforme (fiction) : LB exonérée\n- Pour les petits envois gérés par la plateforme (depuis 2024)\n\n**TRAFIC DES VOYAGEURS** (art. 23 al. 5 LTVA) :\n\nVentes en CH à des voyageurs étrangers pour export dans le trafic des voyageurs (\"tax refund\" touristes) :\n\n**Conditions CUMULATIVES** :\n**①** Valeur minimum **CHF 300** (TVA comprise)\n**②** Acheteur **domicilié à l'étranger**\n**③** Bien destiné à **usage privé** ou cadeau\n**④** Bien **exporté par l'acheteur** dans les **30 jours** (avec preuve douanière)\n**⑤** **Quittance/facture** au nom de l'acheteur\n\n**Mécanisme** : l'acheteur paie la TVA à l'achat, puis se fait rembourser via un formulaire \"Global Blue\" ou similaire, après validation à la frontière.\n\n**BÉNÉFICIAIRES INSTITUTIONNELS** (art. 107 al. 1 let. a LTVA + art. 143-150 OTVA) :\n\n**Exonérées** : prestations sur territoire CH à des **bénéficiaires exemptés** selon la loi dans l'État hôte :\n- **Missions diplomatiques** (ambassades, consulats)\n- **Organisations internationales** (ONU, CICR, OMS, OMC…)\n- Consulats\n- Personnel diplomatique (achats personnels sous conditions)\n\n**Déclaration** : sous **chiffre 220** du décompte TVA (distinct des exportations).\n\n**PREUVES D'EXONÉRATION** (art. 81 al. 3 LTVA) :\n\n**Principe** : LIBRE APPRÉCIATION des preuves — l'AFC accepte des documents divers.\n\n**Pour EXPORTATIONS DE BIENS** :\n- **Décision de taxation ÉLECTRONIQUE à l'exportation (DTe)** — principal\n- Document d'exportation dans le trafic touristique dûment timbré\n- Décision de taxation (formulaire 11.49) pour trafic des voyageurs\n- Formulaire Poste (trafic lettres/paquets)\n\n**Pour LOCATION DE BIENS** :\n- Trains/aéronefs : documents du droit du transport (suivis d'acheminement, contrats)\n- Véhicules : contrats, quittances de péages, stations-service\n\n**Pour PRESTATIONS DE SERVICES** :\n- Pièces et documents comptables\n- **Copies de factures**\n- **Contrats, mandats**\n- Commandes, bulletins de livraison\n- Documents de transport\n\n**Exigences** : documents doivent mentionner nom/adresse entreprise + siège destinataire + détails précis sur la prestation (pour déterminer le lieu).\n\n**Support** : papier OU électronique.\n\n**POUR BÉNÉFICIAIRES INSTITUTIONNELS** :\n- **Formulaire A** (n° 1070_02)\n- **Formulaire AA** (n° 1076_02)\n- **Formulaire A/OI** (n° 1078_02, organisations internationales)",
+          "content": "**Ch. 13 — PLATEFORMES NUMÉRIQUES (livraisons art. 20a)** :\n- Vendeur → Plateforme (fiction) : LB exonérée\n- Pour les petits envois gérés par la plateforme (depuis 2025)\n\n**TRAFIC DES VOYAGEURS** (art. 23 al. 5 LTVA) :\n\nVentes en CH à des voyageurs étrangers pour export dans le trafic des voyageurs (\"tax refund\" touristes) :\n\n**Conditions CUMULATIVES** :\n**①** Valeur minimum **CHF 300** (TVA comprise)\n**②** Acheteur **domicilié à l'étranger**\n**③** Bien destiné à **usage privé** ou cadeau\n**④** Bien **exporté par l'acheteur** dans les **90 jours** (avec preuve douanière)\n**⑤** **Quittance/facture** au nom de l'acheteur\n\n**Mécanisme** : l'acheteur paie la TVA à l'achat, puis se fait rembourser via un formulaire \"Global Blue\" ou similaire, après validation à la frontière.\n\n**BÉNÉFICIAIRES INSTITUTIONNELS** (art. 107 al. 1 let. a LTVA + art. 143-150 OTVA) :\n\n**Exonérées** : prestations sur territoire CH à des **bénéficiaires exemptés** selon la loi dans l'État hôte :\n- **Missions diplomatiques** (ambassades, consulats)\n- **Organisations internationales** (ONU, CICR, OMS, OMC…)\n- Consulats\n- Personnel diplomatique (achats personnels sous conditions)\n\n**Déclaration** : sous **chiffre 220** du décompte TVA (distinct des exportations).\n\n**PREUVES D'EXONÉRATION** (art. 81 al. 3 LTVA) :\n\n**Principe** : LIBRE APPRÉCIATION des preuves — l'AFC accepte des documents divers.\n\n**Pour EXPORTATIONS DE BIENS** :\n- **Décision de taxation ÉLECTRONIQUE à l'exportation (DTe)** — principal\n- Document d'exportation dans le trafic touristique dûment timbré\n- Décision de taxation (formulaire 11.49) pour trafic des voyageurs\n- Formulaire Poste (trafic lettres/paquets)\n\n**Pour LOCATION DE BIENS** :\n- Trains/aéronefs : documents du droit du transport (suivis d'acheminement, contrats)\n- Véhicules : contrats, quittances de péages, stations-service\n\n**Pour PRESTATIONS DE SERVICES** :\n- Pièces et documents comptables\n- **Copies de factures**\n- **Contrats, mandats**\n- Commandes, bulletins de livraison\n- Documents de transport\n\n**Exigences** : documents doivent mentionner nom/adresse entreprise + siège destinataire + détails précis sur la prestation (pour déterminer le lieu).\n\n**Support** : papier OU électronique.\n\n**POUR BÉNÉFICIAIRES INSTITUTIONNELS** :\n- **Formulaire A** (n° 1070_02)\n- **Formulaire AA** (n° 1076_02)\n- **Formulaire A/OI** (n° 1078_02, organisations internationales)",
           "key_points": [
             "Valeur minimum CHF 300 (TVA comprise)",
             "Acheteur domicilié à l'étranger",
             "Bien destiné à usage privé ou cadeau",
-            "Bien exporté par l'acheteur dans les 30 jours (avec preuve douanière)",
+            "Bien exporté par l'acheteur dans les 90 jours (avec preuve douanière)",
             "Quittance/facture au nom de l'acheteur"
           ],
           "questions": [
@@ -19487,7 +19487,7 @@
           "title": "7. Importations franches d'impôt (art. 53 LTVA)",
           "duration_min": 8,
           "type": "lecture",
-          "content": "**IMPORTATIONS FRANCHES d'impôt** (art. 53 LTVA) — liste exhaustive d'exceptions.\n\n**A. PETITES QUANTITÉS et VALEURS MINIMES** :\n\n**①** Biens en **franchise quantitative** (selon accords douaniers) :\n- Alcool : 1L > 18 % vol, 2L < 18 % vol (par personne)\n- Cigarettes : 250\n- Viande/poisson : 1 kg (ajustable)\n- Achats personnels en CHF : 300 (total)\n\n**②** Valeur d'impôt **minime** :\n- TVA calculée **≤ CHF 5** → franchise\n- Ex. : envoi postal valeur CHF 62 × 8.1 % = CHF 5.02 → juste au-dessus → imposé\n- Envoi CHF 60 × 8.1 % = CHF 4.86 → franchise\n\n**⚠️ Exception** : les **plateformes numériques** (art. 20a) imposent depuis 2024 les petits envois dès 100k CHF de CA annuel.\n\n**B. IMPORTATIONS DIPLOMATIQUES** :\n- Biens des missions diplomatiques, consulaires\n- Organisations internationales\n- Transferts intergouvernementaux\n\n**C. IMPORTATIONS TEMPORAIRES** (admission temporaire) :\n- Biens importés pour usage temporaire (expositions, salons, prêt)\n- Régime spécial douanier\n- **Carnet ATA** possible (simplification internationale)\n- Ex. : œuvres d'art prêtées pour expo temporaire\n\n**D. PERFECTIONNEMENT ACTIF** :\n- Biens importés pour être **transformés** puis réexportés\n- Régime spécial : pas de TVA à l'import si respect du régime\n- Ex. : montres assemblées avec composants importés puis exportées\n\n**E. ENTREPÔTS DOUANIERS et DÉPÔTS FRANCS** :\n- Biens stockés sous surveillance douanière\n- TVA uniquement à la sortie du régime (si mise à la consommation en CH)\n\n**F. BIENS EN TRANSIT** :\n- Ne sont pas destinés à la consommation CH\n- Simple passage physique sur le territoire\n\n**G. IMPORTATIONS DE RETOUR** :\n- Biens suisses exportés puis ré-importés\n- Sans avoir été modifiés significativement\n\n**H. IMPORTATIONS HUMANITAIRES** :\n- Aide humanitaire, dons\n- Sous conditions spécifiques\n\n**I. DÉMÉNAGEMENTS INTERNATIONAUX** :\n- Biens personnels transférés lors d'un changement de domicile\n- Conditions : usage préalable > 6 mois par le propriétaire, transfert dans les 12 mois du déménagement\n\n**J. SUCCESSIONS et DONATIONS** :\n- Biens hérités à l'étranger et ramenés en CH\n- Documents requis (acte de succession, preuve)",
+          "content": "**IMPORTATIONS FRANCHES d'impôt** (art. 53 LTVA) — liste exhaustive d'exceptions.\n\n**A. PETITES QUANTITÉS et VALEURS MINIMES** :\n\n**①** Biens en **franchise quantitative** (selon accords douaniers) :\n- Alcool : 1L > 18 % vol, 2L < 18 % vol (par personne)\n- Cigarettes : 250\n- Viande/poisson : 1 kg (ajustable)\n- Achats personnels en CHF : 300 (total)\n\n**②** Valeur d'impôt **minime** :\n- TVA calculée **≤ CHF 5** → franchise\n- Ex. : envoi postal valeur CHF 62 × 8.1 % = CHF 5.02 → juste au-dessus → imposé\n- Envoi CHF 60 × 8.1 % = CHF 4.86 → franchise\n\n**⚠️ Exception** : les **plateformes numériques** (art. 20a) imposent depuis 2025 les petits envois dès 100k CHF de CA annuel.\n\n**B. IMPORTATIONS DIPLOMATIQUES** :\n- Biens des missions diplomatiques, consulaires\n- Organisations internationales\n- Transferts intergouvernementaux\n\n**C. IMPORTATIONS TEMPORAIRES** (admission temporaire) :\n- Biens importés pour usage temporaire (expositions, salons, prêt)\n- Régime spécial douanier\n- **Carnet ATA** possible (simplification internationale)\n- Ex. : œuvres d'art prêtées pour expo temporaire\n\n**D. PERFECTIONNEMENT ACTIF** :\n- Biens importés pour être **transformés** puis réexportés\n- Régime spécial : pas de TVA à l'import si respect du régime\n- Ex. : montres assemblées avec composants importés puis exportées\n\n**E. ENTREPÔTS DOUANIERS et DÉPÔTS FRANCS** :\n- Biens stockés sous surveillance douanière\n- TVA uniquement à la sortie du régime (si mise à la consommation en CH)\n\n**F. BIENS EN TRANSIT** :\n- Ne sont pas destinés à la consommation CH\n- Simple passage physique sur le territoire\n\n**G. IMPORTATIONS DE RETOUR** :\n- Biens suisses exportés puis ré-importés\n- Sans avoir été modifiés significativement\n\n**H. IMPORTATIONS HUMANITAIRES** :\n- Aide humanitaire, dons\n- Sous conditions spécifiques\n\n**I. DÉMÉNAGEMENTS INTERNATIONAUX** :\n- Biens personnels transférés lors d'un changement de domicile\n- Conditions : usage préalable > 6 mois par le propriétaire, transfert dans les 12 mois du déménagement\n\n**J. SUCCESSIONS et DONATIONS** :\n- Biens hérités à l'étranger et ramenés en CH\n- Documents requis (acte de succession, preuve)",
           "key_points": [
             "Biens en franchise quantitative (selon accords douaniers) :",
             "Valeur d'impôt minime :",
@@ -19528,7 +19528,7 @@
                 "Par l'AFC (acquisitions)"
               ],
               "answer": 0,
-              "explanation": "**Par Amazon** — art. 20a LTVA depuis **01.01.2024**. Plateformes numériques avec CA > 100k CHF en petits envois = fournisseur réputé. Fiction : vendeur → plateforme + plateforme → client CH. Amazon facture la TVA CH directement (inscription obligatoire). Fin de la distorsion vs commerces CH."
+              "explanation": "**Par Amazon** — art. 20a LTVA depuis **01.01.2025**. Plateformes numériques avec CA > 100k CHF en petits envois = fournisseur réputé. Fiction : vendeur → plateforme + plateforme → client CH. Amazon facture la TVA CH directement (inscription obligatoire). Fin de la distorsion vs commerces CH."
             }
           ]
         }
@@ -19928,7 +19928,7 @@
               "question": "Voiture d'entreprise 54'000 CHF TTC mise à disposition privée. Forfait mensuel pour TVA ?",
               "options": [
                 "0.8 % par mois du prix HT",
-                "0.9 % par mois du prix HT (depuis 2022)",
+                "0.9 % par mois du prix HT",
                 "1 % du prix TTC",
                 "CHF 150 fixe"
               ],
@@ -19942,7 +19942,7 @@
           "title": "6. Prestations au personnel (art. 24 al. 2 + notice N2)",
           "duration_min": 8,
           "type": "lecture",
-          "content": "**PRINCIPE** : les prestations qui doivent figurer sur le **certificat de salaire** représentent un rapport de prestations entre employeur et employé, **imposables** à la TVA.\n\n**Base de calcul** : montant du certificat de salaire (TVA incluse au taux applicable).\n\n**PRESTATIONS NON SUR CERTIFICAT** = réputées à titre gratuit → **pas d'imposition** ni de correction IP (motif entrepreneurial présumé).\n\n**Exemples NON imposables** :\n- Remise **gratuite d'un abonnement CFF demi-tarif**\n- Utilisation **privée** d'outils de travail (téléphone, ordinateur)\n- **Cadeaux de Noël, anniversaire** ou usuels ≤ **CHF 500** par occasion\n\n**NOTICE N2/2007** — forfaits IFD applicables à la TVA :\n\n**Pension (incl. TVA 8.1 %)** :\n- Petit-déjeuner : **CHF 3.50/jour**\n- Dîner : **CHF 10.00/jour**\n- Souper : **CHF 8.00/jour**\n\n**Hébergement** : CHF 11.50/jour (prestation **EXCLUE** — art. 21 al. 2 ch. 21)\n\n**Repas à prix réduit à la cantine** :\nSi repas à 8.50 CHF au lieu de 10 (forfait) → différence 1.50 × jours travaillés → à déclarer dans le certificat de salaire + TVA.\n\n**VOITURE DE SERVICE avec usage privé** :\n\n**Calcul forfaitaire** (si usage commercial > 50 %) :\n- **0.9 % par mois** du prix d'achat **sans TVA** (depuis 2022, avant : 0.8 %)\n- **Minimum CHF 150/mois**\n- Montant inclut la TVA à 8.1 %\n\n**Exemple** :\nVoiture achetée 54'000 CHF TTC = 49'953.75 CHF HT :\n- Valeur mensuelle : 49'953.75 × 0.9 % = **449.60 CHF**\n- Annuelle : 5'395.20 CHF\n- TVA due : 5'395.20 × 8.1 / 108.1 = **404.25 CHF** par an\n\n**LEASING** :\n- Base = **valeur consignée HT** dans le contrat de leasing (incl. équipements spéciaux)\n- Au terme du leasing (devenu propriétaire) : valeur initiale reste la base\n\n**Exemple leasing** :\n- Hyundai Plug-in prise en leasing 3 ans, valeur consignée HT 39'483.75 CHF\n- Mensuel : 39'483.75 × 0.9 % = 355.35 CHF\n- TVA mensuelle : 355.35 × 8.1/108.1 = **26.65 CHF**",
+          "content": "**PRINCIPE** : les prestations qui doivent figurer sur le **certificat de salaire** représentent un rapport de prestations entre employeur et employé, **imposables** à la TVA.\n\n**Base de calcul** : montant du certificat de salaire (TVA incluse au taux applicable).\n\n**PRESTATIONS NON SUR CERTIFICAT** = réputées à titre gratuit → **pas d'imposition** ni de correction IP (motif entrepreneurial présumé).\n\n**Exemples NON imposables** :\n- Remise **gratuite d'un abonnement CFF demi-tarif**\n- Utilisation **privée** d'outils de travail (téléphone, ordinateur)\n- **Cadeaux de Noël, anniversaire** ou usuels ≤ **CHF 500** par occasion\n\n**NOTICE N2/2007** — forfaits IFD applicables à la TVA :\n\n**Pension (incl. TVA 8.1 %)** :\n- Petit-déjeuner : **CHF 3.50/jour**\n- Dîner : **CHF 10.00/jour**\n- Souper : **CHF 8.00/jour**\n\n**Hébergement** : CHF 11.50/jour (prestation **EXCLUE** — art. 21 al. 2 ch. 21)\n\n**Repas à prix réduit à la cantine** :\nSi repas à 8.50 CHF au lieu de 10 (forfait) → différence 1.50 × jours travaillés → à déclarer dans le certificat de salaire + TVA.\n\n**VOITURE DE SERVICE avec usage privé** :\n\n**Calcul forfaitaire** (si usage commercial > 50 %) :\n- **0.9 % par mois** du prix d'achat **sans TVA** (TVA : depuis 2018, avant : 0.8 %)\n- **Minimum CHF 150/mois**\n- Montant inclut la TVA à 8.1 %\n\n**Exemple** :\nVoiture achetée 54'000 CHF TTC = 49'953.75 CHF HT :\n- Valeur mensuelle : 49'953.75 × 0.9 % = **449.58 CHF**\n- Annuelle : 5'394.96 CHF\n- TVA due : 5'394.96 × 8.1 / 108.1 = **404.25 CHF** par an\n\n**LEASING** :\n- Base = **valeur consignée HT** dans le contrat de leasing (incl. équipements spéciaux)\n- Au terme du leasing (devenu propriétaire) : valeur initiale reste la base\n\n**Exemple leasing** :\n- Hyundai Plug-in prise en leasing 3 ans, valeur consignée HT 39'483.75 CHF\n- Mensuel : 39'483.75 × 0.9 % = 355.35 CHF\n- TVA mensuelle : 355.35 × 8.1/108.1 = **26.65 CHF**",
           "key_points": [
             "Remise gratuite d'un abonnement CFF demi-tarif",
             "Utilisation privée d'outils de travail (téléphone, ordinateur)",
@@ -21056,7 +21056,7 @@
           "title": "8. Violation de procédure, dénonciation spontanée, prescription (art. 98-105)",
           "duration_min": 8,
           "type": "lecture",
-          "content": "**VIOLATION D'OBLIGATION DE PROCÉDURE** (art. 98 LTVA) :\n\nPunie d'**amende** (intentionnellement OU par négligence) celui qui :\n\n- **a)** Ne respecte pas l'**obligation de s'annoncer**\n- **b)** Ne remet pas un décompte dans les délais malgré sommation\n- **c)** Ne déclare pas l'impôt pour la **période de naissance** de la créance\n- **d)** Ne fournit pas dûment les **sûretés** requises\n- **e)** Ne tient pas / conserve pas / produit pas dûment les **livres** et pièces\n- **f)** Malgré sommation, ne fournit pas les **renseignements** (ou faux)\n- **g)** Fait figurer un montant de TVA **non dû** ou **différent** sur facture\n- **h)** Mentionne un **numéro d'enregistrement** (faux assujettissement)\n- **i)** Malgré sommation, entrave ou empêche un **contrôle**\n\n**⚠️ IMPORTANT** : art. 98 = **SUBSIDIAIRE** (« à moins que l'acte ne soit passible d'une peine plus lourde en vertu d'une autre disposition »).\n\n**DÉNONCIATION SPONTANÉE** (art. 102 LTVA) :\n\n**Principe** : ne fait pas l'objet d'une poursuite pénale la personne qui se dénonce **AVANT** que l'autorité compétente n'ait connaissance de l'infraction.\n\n**Conditions cumulatives** (al. 1) :\n- **a)** Soutenir raisonnablement l'administration pour déterminer le montant\n- **b)** Mettre **tout en œuvre** pour payer l'impôt dû\n\n**Personnes non-assujetties** (al. 2) : dénonciation spontanée possible pour infractions commises ou auxquelles elles ont participé.\n\n**Personne morale** (al. 3) : dénonciation par **organe ou représentant** ; lève la responsabilité solidaire de ce dernier.\n\n**⚠️ ALINÉA 4** : **CHAQUE CORRECTION DE DÉCOMPTE VAUT DÉNONCIATION SPONTANÉE**.\n\nConséquence : tout décompte rectificatif (concordance annuelle) ou correction d'erreur avant un contrôle bénéficie automatiquement de la protection → **pas de poursuite pénale** (mais paiement de l'impôt + intérêts moratoires dus).\n\n**Exemple** :\nUn assujetti constate en juin 2025 qu'il a oublié de déclarer 100'000 CHF de recettes en 2024. Il envoie spontanément un décompte rectificatif :\n- ✅ Dénonciation spontanée (al. 4)\n- ✅ Pas de poursuite pénale\n- ❌ Doit payer : TVA sur 100k + intérêts moratoires 4.5 %\n\n**PRESCRIPTION DE L'ACTION PÉNALE** (art. 105 LTVA) :\n\n**Prescription du droit d'ENGAGER** une poursuite pénale :\n\n| Infraction | Prescription | Point de départ |\n|---|---|---|\n| **Violation procédure** (art. 98) | Entrée en force de la créance |\n| **Soustraction simple** (art. 96 al. 1-3, 97 al. 2) | **6 mois** | Entrée en force |\n| **Soustraction gravité accrue** (art. 96 al. 4) | **2 ans** | Entrée en force |\n| **Recel** (art. 99) | **7 ans** | Fin période fiscale |\n| **Impôt sur importations** | **7 ans** | — |\n\n**Prescription du droit de POURSUIVRE** (al. 4) :\n- **5 ans** pour terminer une procédure engagée\n- **Suspendue** tant que l'inculpé est à l'étranger\n\n**Cessation de prescription** : décision pénale ou jugement de 1re instance avant échéance → **ne court plus**.\n\n**PRESCRIPTION FRAIS ET AMENDES** :\n- **5 ans** à compter de l'entrée en force\n- Régime similaire à art. 91 (recouvrement)\n\n**STRATÉGIE** :\n- Dès qu'une erreur est détectée → **dénoncer spontanément** via décompte rectificatif ou courrier à l'AFC\n- Paie le surplus d'impôt + intérêts → **évite amende pénale**\n- Si lourde erreur : solliciter conseil avant pour structurer la dénonciation",
+          "content": "**VIOLATION D'OBLIGATION DE PROCÉDURE** (art. 98 LTVA) :\n\nPunie d'**amende** (intentionnellement OU par négligence) celui qui :\n\n- **a)** Ne respecte pas l'**obligation de s'annoncer**\n- **b)** Ne remet pas un décompte dans les délais malgré sommation\n- **c)** Ne déclare pas l'impôt pour la **période de naissance** de la créance\n- **d)** Ne fournit pas dûment les **sûretés** requises\n- **e)** Ne tient pas / conserve pas / produit pas dûment les **livres** et pièces\n- **f)** Malgré sommation, ne fournit pas les **renseignements** (ou faux)\n- **g)** Fait figurer un montant de TVA **non dû** ou **différent** sur facture\n- **h)** Mentionne un **numéro d'enregistrement** (faux assujettissement)\n- **i)** Malgré sommation, entrave ou empêche un **contrôle**\n\n**⚠️ IMPORTANT** : art. 98 = **SUBSIDIAIRE** (« à moins que l'acte ne soit passible d'une peine plus lourde en vertu d'une autre disposition »).\n\n**DÉNONCIATION SPONTANÉE** (art. 102 LTVA) :\n\n**Principe** : ne fait pas l'objet d'une poursuite pénale la personne qui se dénonce **AVANT** que l'autorité compétente n'ait connaissance de l'infraction.\n\n**Conditions cumulatives** (al. 1) :\n- **a)** Soutenir raisonnablement l'administration pour déterminer le montant\n- **b)** Mettre **tout en œuvre** pour payer l'impôt dû\n\n**Personnes non-assujetties** (al. 2) : dénonciation spontanée possible pour infractions commises ou auxquelles elles ont participé.\n\n**Personne morale** (al. 3) : dénonciation par **organe ou représentant** ; lève la responsabilité solidaire de ce dernier.\n\n**⚠️ ALINÉA 4** : **CHAQUE CORRECTION DE DÉCOMPTE VAUT DÉNONCIATION SPONTANÉE**.\n\nConséquence : tout décompte rectificatif (concordance annuelle) ou correction d'erreur avant un contrôle bénéficie automatiquement de la protection → **pas de poursuite pénale** (mais paiement de l'impôt + intérêts moratoires dus).\n\n**Exemple** :\nUn assujetti constate en juin 2025 qu'il a oublié de déclarer 100'000 CHF de recettes en 2024. Il envoie spontanément un décompte rectificatif :\n- ✅ Dénonciation spontanée (al. 4)\n- ✅ Pas de poursuite pénale\n- ❌ Doit payer : TVA sur 100k + intérêts moratoires (4 % en 2026-2027)\n\n**PRESCRIPTION DE L'ACTION PÉNALE** (art. 105 LTVA) :\n\n**Prescription du droit d'ENGAGER** une poursuite pénale :\n\n| Infraction | Prescription | Point de départ |\n|---|---|---|\n| **Violation procédure** (art. 98) | Entrée en force de la créance |\n| **Soustraction simple** (art. 96 al. 1-3, 97 al. 2) | **6 mois** | Entrée en force |\n| **Soustraction gravité accrue** (art. 96 al. 4) | **2 ans** | Entrée en force |\n| **Recel** (art. 99) | **7 ans** | Fin période fiscale |\n| **Impôt sur importations** | **7 ans** | — |\n\n**Prescription du droit de POURSUIVRE** (al. 4) :\n- **5 ans** pour terminer une procédure engagée\n- **Suspendue** tant que l'inculpé est à l'étranger\n\n**Cessation de prescription** : décision pénale ou jugement de 1re instance avant échéance → **ne court plus**.\n\n**PRESCRIPTION FRAIS ET AMENDES** :\n- **5 ans** à compter de l'entrée en force\n- Régime similaire à art. 91 (recouvrement)\n\n**STRATÉGIE** :\n- Dès qu'une erreur est détectée → **dénoncer spontanément** via décompte rectificatif ou courrier à l'AFC\n- Paie le surplus d'impôt + intérêts → **évite amende pénale**\n- Si lourde erreur : solliciter conseil avant pour structurer la dénonciation",
           "key_points": [
             "Art. 98 : violation procédure (9 cas) ; subsidiaire si autre peine plus lourde",
             "Dénonciation spontanée art. 102 : avant que l'AFC ne sache + soutien + paiement = impunité pénale",
