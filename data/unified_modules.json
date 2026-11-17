@@ -79,13 +79,13 @@
               "type": "mcq",
               "question": "Quelle est la nature exacte du diplome d'Expert-comptable diplome en Suisse ?",
               "options": [
-                "A. Un master universitaire delivre par les HES",
-                "B. Un diplome federal supérieur (Hohere Fachprufung) delivre par EXPERTsuisse sous surveillance du SEFRI",
-                "C. Un titre cantonal reconnu par les chambres de commerce",
-                "D. Une certification privée EXPERTsuisse sans reconnaissance fédérale"
+                "A. Un master universitaire délivré par les hautes écoles spécialisées (HES)",
+                "B. Un diplôme fédéral (examen professionnel supérieur) reconnu par le SEFRI",
+                "C. Un titre cantonal reconnu par les chambres de commerce et d'industrie",
+                "D. Une certification privée EXPERTsuisse, sans aucune reconnaissance fédérale"
               ],
               "answer": 1,
-              "explanation": "L'Expert-comptable diplome (Expert suisse) est un diplome federal supérieur (Hohere Fachprufung) delivre par EXPERTsuisse, sous surveillance du SEFRI. Bases légales : LFPr (RS 412.10), OFPr (RS 412.101) et règlement d'examen approuve par le SEFRI. Ce n'est ni un titre universitaire (HES/EPF), ni un titre cantonal, ni une certification privée.",
+              "explanation": "L'expert-comptable diplômé obtient un diplôme fédéral (examen professionnel supérieur, LFPr) : EXPERTsuisse organise l'examen comme organe responsable, selon un règlement approuvé par le SEFRI, qui délivre le diplôme. Ce n'est ni un titre universitaire, ni un titre cantonal, ni une certification privée.",
               "difficulty": "easy",
               "section_id": "m1_L1_s1"
             },
@@ -119,13 +119,13 @@
               "type": "mcq",
               "question": "Sur lesquels des 5 principes fondamentaux du Code de déontologie EXPERTsuisse / IESBA repose le devoir de confidentialité des informations obtenues en mission ?",
               "options": [
-                "A. Intégrité et objectivité uniquement",
-                "B. Comportement professionnel uniquement",
-                "C. Compétence et diligence professionnelles",
-                "D. Confidentialité, supportée par le secret professionnel (CO 321a al. 4, CO 398, CP 162)"
+                "A. L'intégrité et l'objectivité uniquement, à l'exclusion des autres principes",
+                "B. Le comportement professionnel uniquement, au sens du Code de l'IESBA",
+                "C. La compétence et la diligence professionnelles, à l'exclusion du secret",
+                "D. La confidentialité, adossée au secret professionnel (CP 321, CO 730b)"
               ],
               "answer": 3,
-              "explanation": "La confidentialité est l'un des 5 principes fondamentaux IESBA (avec intégrité, objectivité, compétence et comportement professionnel). Le secret professionnel est ancre dans CO 321a al. 4 (employé), CO 398 (mandataire) et CP 162 (secret de fabrication / commercial). Il survit a la fin du mandat.",
+              "explanation": "La confidentialité est l'un des 5 principes fondamentaux de l'IESBA (avec intégrité, objectivité, compétence et diligence, comportement professionnel). Pour l'organe de révision, elle s'appuie sur CO 730b al. 2 (discrétion) et sur l'art. 321 CP, qui punit la violation du secret professionnel par les « contrôleurs astreints au secret en vertu du code des obligations ». Elle survit à la fin du mandat.",
               "difficulty": "medium",
               "section_id": "m1_L1_s3"
             },
@@ -159,10 +159,10 @@
               "type": "mcq",
               "question": "Quelle est la base légale principale de l'ASR (Autorité fédérale de surveillance en matière de révision) et son siège ?",
               "options": [
-                "A. LSR (RS 221.302) + OSRev (RS 221.302.3), siège a Berne",
-                "B. LFINMA, siège a Zurich",
-                "C. CO 727 a 731a, siège a Berne",
-                "D. LBA (RS 955.0), siège a Berne"
+                "A. LSR + OSRev, siège à Berne",
+                "B. LFINMA, siège à Zurich",
+                "C. CO 727 à 731a, siège à Berne",
+                "D. LBA, siège à Berne"
               ],
               "answer": 0,
               "explanation": "L'ASR repose sur la LSR (RS 221.302) et son ordonnance OSRev (RS 221.302.3). Son siège est a Berne. Sa mission : agréer les réviseurs (art. 4-7 LSR), surveiller les ESE (entreprises de révision soumises a la surveillance de l'État), tenir le registre public (rab-asr.ch) et conduire les inspections qualité (ISQM 1).",
@@ -174,10 +174,10 @@
               "type": "mcq",
               "question": "Quelles conditions doit remplir un candidat pour obtenir l'agrément d'expert-réviseur (auditeur de contrôles ordinaires) selon l'art. 4 LSR ?",
               "options": [
-                "A. Brevet federal de spécialiste en finance et comptabilité + 1 an d'expérience en audit",
-                "B. Diplome HES + 1 an d'expérience en audit",
-                "C. Expert-comptable diplome (Expert suisse), agree directement, sans condition d'années d'expérience supplémentaires",
-                "D. Expert-comptable diplome + 12 ans d'expérience"
+                "A. Brevet fédéral de spécialiste en finance et comptabilité + 1 an d'expérience en audit",
+                "B. Un diplôme HES en économie + 1 an d'expérience, quel que soit le domaine",
+                "C. Diplôme fédéral d'expert-comptable, sans durée de pratique supplémentaire",
+                "D. Un master universitaire en droit + 3 ans d'expérience, sans supervision exigée"
               ],
               "answer": 2,
               "explanation": "Selon l'art. 4 al. 1 LSR, le titulaire du diplome federal d'expert-comptable (Expert suisse) est agree comme expert-réviseur directement, SANS années d'expérience supplémentaires. Les 5 ans (art. 4 al. 2 let. a) ne visent QUE les autres diplomes fédéraux (expert-fiduciaire, expert fiscal, expert en finance et controlling) ; un diplome universitaire/HES ou un brevet federal exige 12 ans (art. 4 al. 2 let. b). L'agrément de simple réviseur (art. 5 LSR), pour le contrôle restreint, requiert un titre (Brevet, HES, Expert) avec 1 an d'expérience seulement.",
@@ -214,10 +214,10 @@
               "type": "mcq",
               "question": "Quel article du Code des obligations fonde spécifiquement la responsabilité civile de l'organe de révision envers la société, les actionnaires et les créanciers ?",
               "options": [
-                "A. CO 755 (responsabilité de l'organe de révision)",
-                "B. CO 41 (responsabilité delictuelle)",
-                "C. CO 398 (mandat)",
-                "D. CO 127 (prescription decennale)"
+                "A. CO 755 (organe de révision)",
+                "B. CO 41 (responsabilité délictuelle)",
+                "C. CO 398 (diligence du mandataire)",
+                "D. CO 127 (prescription décennale)"
               ],
               "answer": 0,
               "explanation": "CO 755 fonde la responsabilité spécifique de l'organe de révision envers la société, les actionnaires et les créanciers. CO 41 vise la responsabilité delictuelle générale envers les tiers, CO 398 la responsabilité contractuelle du mandataire envers son client, et CO 127 traite la prescription. Tous peuvent jouer en complément, mais 755 est l'article clé de la responsabilité du réviseur.",
@@ -229,10 +229,10 @@
               "type": "mcq",
               "question": "Quels sont les délais de prescription applicables a l'action en responsabilité contre l'organe de révision selon CO 760 ?",
               "options": [
-                "A. 1 an depuis connaissance, 5 ans depuis acte dommageable",
-                "B. 10 ans depuis connaissance, 20 ans depuis acte dommageable",
-                "C. 5 ans depuis connaissance du dommage, 10 ans depuis l'acte dommageable",
-                "D. Imprescriptible"
+                "A. 1 an dès la connaissance, 5 ans dès l'acte dommageable",
+                "B. 10 ans dès la connaissance, 20 ans dès l'acte dommageable",
+                "C. 5 ans dès la connaissance, 10 ans dès l'acte dommageable",
+                "D. Imprescriptible, comme toute action en responsabilité d'un organe"
               ],
               "answer": 2,
               "explanation": "CO 760 prévoit une prescription relative de 5 ans des la connaissance du dommage et de l'identité du responsable, et une prescription absolue de 10 ans des l'acte dommageable. C'est un régime distinct de la prescription contractuelle générale (10 ans CO 127, ou 5 ans CO 128 pour certaines créances).",
@@ -254,10 +254,10 @@
               "type": "mcq",
               "question": "Un expert-comptable detecte un soupçon fonde de blanchiment dans le cadre d'une activité d'intermédiaire financier. A qui doit-il communiquer en vertu de l'art. 9 LBA ?",
               "options": [
-                "A. A l'ASR uniquement",
-                "B. Au MROS (Money Laundering Reporting Office Switzerland)",
-                "C. A la FINMA, qui transmet au juge",
-                "D. Directement au Ministère public federal"
+                "A. À l'ASR uniquement, qui décide seule des suites à donner",
+                "B. Au MROS (bureau de communication en matière de blanchiment)",
+                "C. À la FINMA, qui transmet ensuite le dossier au juge pénal",
+                "D. Directement au Ministère public de la Confédération, par plainte pénale"
               ],
               "answer": 1,
               "explanation": "L'art. 9 LBA impose la communication au MROS (Bureau de communication en matière de blanchiment d'argent), rattache a fedpol. Le MROS analyse, peut bloquer les avoirs, et transmet le cas échéant aux autorités pénales. L'ASR et la FINMA ne sont pas les destinataires de cette communication, et le Ministère public n'est saisi qu'en aval.",
@@ -369,9 +369,9 @@
               "question": "Parmi les situations suivantes, laquelle constitue une incompatibilité ABSOLUE avec le mandat de réviseur ordinaire selon CO 728 al. 2 ?",
               "options": [
                 "A. Être membre du conseil d'administration de la société auditée",
-                "B. Avoir audite la société l'année précédente",
-                "C. Avoir un client commun avec la société auditée",
-                "D. Avoir une formation en fiscalité"
+                "B. Avoir audité la même société au cours de l'exercice précédent",
+                "C. Avoir un client commun avec la société auditée dans le même canton",
+                "D. Avoir suivi une formation en fiscalité auprès d'un concurrent du client"
               ],
               "answer": 0,
               "explanation": "L'appartenance au CA, toute fonction décisionnelle ou rapport de travail dans la société auditée figure parmi les incompatibilités absolues du CO 728 al. 2 (ch. 1). Les autres incompatibilités listees : participation au capital, relations étroites, collaboration a la comptabilité (auto-révision), relations contractuelles hors mandat, acceptation de cadeaux précieux.",
@@ -393,10 +393,10 @@
               "type": "mcq",
               "question": "Quelle est la différence essentielle entre l'indépendance exigée en contrôle ordinaire (CO 728) et en contrôle restreint (CO 729) ?",
               "options": [
-                "A. Le contrôle restreint n'exige aucune indépendance",
-                "B. Le contrôle restreint autorise le concours a la tenue de la comptabilité, sous réserve de mesures organisationnelles (séparation des équipes)",
-                "C. Le contrôle ordinaire admet les conflits d'intérêts",
-                "D. Le contrôle restreint permet la présence au CA"
+                "A. Le contrôle restreint n'exige aucune indépendance, vu l'assurance seulement limitée",
+                "B. Le contrôle restreint admet la tenue de la comptabilité, avec des équipes séparées",
+                "C. Le contrôle ordinaire admet les conflits d'intérêts s'ils sont annoncés à l'AG",
+                "D. Les deux régimes appliquent exactement les mêmes règles d'indépendance du CO"
               ],
               "answer": 1,
               "explanation": "CO 729 al. 2 autorise, en contrôle restreint, le concours a la tenue de la comptabilité et d'autres prestations, a condition qu'il n'y ait pas de risque de devoir réviser sa propre prestation OU que des mesures organisationnelles et personnelles suffisantes soient prises (séparation des équipes etanches). En contrôle ordinaire (CO 728 al. 2 ch. 4), c'est une incompatibilité absolue.",
@@ -408,10 +408,10 @@
               "type": "mcq",
               "question": "Quelle norme professionnelle est applicable au contrôle restreint en Suisse ?",
               "options": [
-                "A. NAS / ISA (identique au contrôle ordinaire)",
-                "B. ISRS 4400 (procédures convenues)",
-                "C. ISQM 1",
-                "D. NCR (Norme suisse de contrôle restreint) editee par EXPERTsuisse"
+                "A. Les NAS-CH / ISA, identiques à celles du contrôle ordinaire",
+                "B. L'ISRS 4400 sur les procédures convenues, sans assurance",
+                "C. L'ISQM 1 sur la gestion de la qualité au niveau du cabinet",
+                "D. La NCR (Norme suisse relative au contrôle restreint)"
               ],
               "answer": 3,
               "explanation": "La NCR (Norme suisse de contrôle restreint) editee par EXPERTsuisse régit le contrôle restreint. Elle est moins exigeante que les NAS/ISA (contrôle ordinaire) : davantage d'analyses critiques et de demandes d'informations, moins de tests substantifs et de procédures détaillées. ISRS 4400 vise les procédures convenues, et ISQM 1 le système qualité des cabinets.",
@@ -448,10 +448,10 @@
               "type": "mcq",
               "question": "Selon CO 730a al. 1, qui peut révoquer l'organe de révision et a quelles conditions ?",
               "options": [
-                "A. Le CA, avec accord de l'ASR",
-                "B. L'AG, a tout moment et avec effet immédiat, sans motif obligatoire",
+                "A. Le CA, avec l'accord préalable de l'ASR et pour justes motifs",
+                "B. L'AG, en tout temps et avec effet immédiat, sans motif requis",
                 "C. Le président du CA, en cas de faute grave seulement",
-                "D. Seul le juge compétent"
+                "D. Seul le juge compétent, sur requête d'un actionnaire"
               ],
               "answer": 1,
               "explanation": "CO 730a al. 1 confère a l'AG le droit de révoquer l'organe de révision a tout moment avec effet immédiat, sans qu'un motif particulier ne soit requis. Cette flexibilité est conçue pour protéger les actionnaires, mais une révocation injustifiée peut donner lieu a des dommages-intérêts contractuels et a une obligation d'information de l'ASR si le motif est suspect.",
@@ -478,10 +478,10 @@
               "type": "mcq",
               "question": "Quelles sont les conditions cumulatives pour un opting-out valable selon CO 727a al. 2 ?",
               "options": [
-                "A. < 20 EPT et accord majoritaire de l'AG",
-                "B. < 50 EPT et inscription RC",
-                "C. ≤ 10 EPT en moyenne annuelle ET unanimité des actionnaires",
-                "D. Société non cotée et capital < 100 000 CHF"
+                "A. < 20 EPT en moyenne annuelle et accord de la majorité de l'AG",
+                "B. < 50 EPT et simple inscription de la renonciation au registre du commerce",
+                "C. ≤ 10 EPT en moyenne annuelle ET accord de tous les actionnaires",
+                "D. Société non cotée et capital-actions inférieur à 100 000 CHF"
               ],
               "answer": 2,
               "explanation": "L'opting-out exige deux conditions cumulatives (CO 727a al. 2) : (1) la société a 10 EPT au plus en moyenne annuelle et (2) tous les actionnaires y consentent (unanimité). En outre, la société ne doit pas être tenue au contrôle ordinaire. Une fois decide, l'opting-out vaut pour les exercices a venir jusqu'a révocation ; depuis le 1.1.2025 il doit être requis avant le début de l'exercice (plus d'effet rétroactif) et reste révocable par tout actionnaire.",
@@ -503,10 +503,10 @@
               "type": "mcq",
               "question": "Une SA presente : bilan 22 mio, CA 35 mio, 180 EPT sur 2024 et 2025. Quel régime de révision lui est applicable ?",
               "options": [
-                "A. Contrôle ordinaire (un seul critère depasse suffit)",
-                "B. Opting-out automatique vu le faible effectif",
-                "C. Contrôle restreint, car seul le bilan depasse son seuil (1/3 critère)",
-                "D. Contrôle ordinaire, car le bilan depasse 20 mio"
+                "A. Contrôle ordinaire : un seul critère dépassé suffit, ici le total du bilan",
+                "B. Opting-out automatique, l'effectif restant inférieur à 250 emplois",
+                "C. Contrôle restreint : seul le bilan dépasse son seuil (1 critère sur 3)",
+                "D. Contrôle ordinaire, car le bilan dépasse 20 mio deux exercices de suite"
               ],
               "answer": 2,
               "explanation": "Seul le total du bilan (22 > 20 mio) depasse son seuil. Le CA (35 < 40) et les EPT (180 < 250) restent sous les seuils. Comme la regle exige 2 critères sur 3, sur 2 exercices consécutifs, la société reste en contrôle restreint. Le passage en ordinaire necessite que 2 critères soient dépassés simultanément sur 2 ans.",
@@ -518,10 +518,10 @@
               "type": "mcq",
               "question": "Si l'organe de révision detecte un surendettement au sens de CO 725b, quelle est l'obligation centrale qui lui incombe ?",
               "options": [
-                "A. Communication immédiate au MROS",
-                "B. Convocation directe d'une AG extraordinaire",
-                "C. Démission immédiate sans rapport",
-                "D. Notification au juge si le CA n'agit pas, et signalement dans le rapport d'audit"
+                "A. Communiquer immédiatement la situation au MROS",
+                "B. Convoquer elle-même une assemblée générale extraordinaire",
+                "C. Démissionner immédiatement sans remettre de rapport",
+                "D. Aviser le juge si le CA ne le fait pas (CO 728c al. 3)"
               ],
               "answer": 3,
               "explanation": "En cas de surendettement (CO 725b), c'est en premier lieu le CA qui doit notifier le juge. Si le CA ne le fait pas, l'organe de révision a une obligation subsidiaire de notification (CO 728c al. 3 / CO 729c). Le rapport doit signaler la situation financière compromise. Le MROS concerne la LBA, et l'AG est convoquee a un stade antérieur (perte de la moitié des fonds propres, CO 725a).",
@@ -620,10 +620,10 @@
               "type": "mcq",
               "question": "Quelle est la part approximative des PME (< 250 EPT) dans le tissu économique suisse ?",
               "options": [
-                "A. ~50 % des entreprises",
-                "B. ~75 % des entreprises",
+                "A. ~50,0 % des entreprises",
+                "B. ~75,0 % des entreprises",
                 "C. ~99,7 % des entreprises",
-                "D. ~80 % des entreprises"
+                "D. ~90,0 % des entreprises"
               ],
               "answer": 2,
               "explanation": "Les PME (< 250 EPT) représentent environ 99,7 % des entreprises suisses, dont environ 91 % de micro-entreprises (< 10 EPT). Les grandes entreprises (~0,3 %) emploient environ 30 % des actifs. Cette structure très PME-isee oriente la pratique comptable suisse vers le CO de base et le contrôle restreint.",
@@ -660,10 +660,10 @@
               "type": "mcq",
               "question": "Quelle autorité fédérale est compétente en matière d'IFD, de TVA, d'impôt anticipe et de droits de timbre ?",
               "options": [
-                "A. SECO",
-                "B. FINMA",
+                "A. SECO (Secrétariat d'État à l'économie)",
+                "B. FINMA (surveillance des marchés financiers)",
                 "C. AFC (Administration fédérale des contributions)",
-                "D. OFDF (anciennement administration des douanes)"
+                "D. OFDF (Office fédéral de la douane et de la sécurité des frontières)"
               ],
               "answer": 2,
               "explanation": "L'AFC est compétente en matière d'IFD, TVA, impôt anticipe, droits de timbre et CDI. Le SECO traite la politique économique et le commerce extérieur, la FINMA surveille les acteurs financiers, et l'OFDF (depuis 2022) gere la douane et la sécurité des frontieres (perception de la TVA a l'importation et droits de douane).",
@@ -675,10 +675,10 @@
               "type": "mcq",
               "question": "Quel est le role principal de la BNS (Banque nationale suisse) dans le système institutionnel federal ?",
               "options": [
-                "A. Autorité de surveillance des banques commerciales",
-                "B. Politique monétaire et émission du CHF, avec indépendance constitutionnelle (art. 99 Cst.)",
-                "C. Gestion des finances fédérales",
-                "D. Lutte contre le blanchiment"
+                "A. Surveillance prudentielle des banques commerciales et des assurances suisses",
+                "B. Politique monétaire et émission du franc, en toute indépendance",
+                "C. Gestion des finances fédérales et établissement du budget de la Confédération",
+                "D. Lutte contre le blanchiment et réception des communications de soupçons"
               ],
               "answer": 1,
               "explanation": "La BNS conduit la politique monétaire (taux directeur, interventions de change) et émet le franc suisse. Son indépendance est consacrée par l'art. 99 Cst. La FINMA est l'autorité de surveillance bancaire, l'AFF (Administration fédérale des finances) gere les finances fédérales, et le MROS traite la communication LBA.",
@@ -700,10 +700,10 @@
               "type": "mcq",
               "question": "Le système suisse repose sur un federalisme a 3 niveaux. Lequel des éléments suivants releve EXCLUSIVEMENT de la compétence cantonale ?",
               "options": [
-                "A. La TVA",
+                "A. La TVA sur les livraisons et prestations en Suisse",
                 "B. L'impôt sur la fortune des personnes physiques",
-                "C. L'IFD sur les personnes morales",
-                "D. Les droits de timbre"
+                "C. L'IFD sur le bénéfice des personnes morales",
+                "D. Les droits de timbre d'émission et de négociation"
               ],
               "answer": 1,
               "explanation": "L'impôt sur la fortune des PP est exclusivement cantonal (pas d'équivalent federal). De même pour l'impôt sur le capital des PM, les gains immobiliers, les successions et donations, et les droits de mutation. La TVA, l'IFD et les droits de timbre sont fédéraux.",
@@ -715,10 +715,10 @@
               "type": "mcq",
               "question": "Quel est l'objet principal de la LHID (RS 642.14) introduite en 1993 dans le système fiscal suisse ?",
               "options": [
-                "A. Imposer des taux d'imposition cantonaux uniformes",
-                "B. Supprimer la souveraineté fiscale cantonale",
-                "C. Reglementer uniquement la TVA",
-                "D. Harmoniser formellement les bases d'imposition cantonales sans uniformiser les taux"
+                "A. Imposer des taux d'imposition cantonaux uniformes dans toute la Suisse",
+                "B. Supprimer la souveraineté fiscale des cantons au profit de la Confédération",
+                "C. Réglementer uniquement la TVA et les droits de timbre perçus par les cantons",
+                "D. Harmoniser les bases d'imposition cantonales, sans uniformiser les taux"
               ],
               "answer": 3,
               "explanation": "La LHID (Loi sur l'harmonisation des impôts directs) realise une harmonisation formelle : mêmes définitions, mécanismes et procédures dans les 26 lois fiscales cantonales, mais les TAUX restent libres (concurrence fiscale intercantonale). L'harmonisation matérielle (taux unifies) n'est pas l'objet du texte.",
@@ -730,10 +730,10 @@
               "type": "mcq",
               "question": "Quel est l'ordre correct dans la hiérarchie des normes en Suisse ?",
               "options": [
-                "A. Lois cantonales > Cst. féd. > lois fédérales",
-                "B. Règlements communaux > lois cantonales > Cst. féd.",
-                "C. Cst. féd. > lois fédérales > ordonnances fédérales > constitutions cantonales > lois cantonales > règlements communaux",
-                "D. Cst. féd. > lois cantonales > lois fédérales"
+                "A. Lois cantonales > Cst. féd. > lois fédérales > ordonnances > règlements communaux",
+                "B. Règlements communaux > lois cantonales > Cst. féd. > lois fédérales > ordonnances",
+                "C. Cst. > lois féd. > ordonnances féd. > droit cantonal > règlements communaux",
+                "D. Cst. féd. > lois cantonales > lois fédérales > ordonnances > règlements communaux"
               ],
               "answer": 2,
               "explanation": "La hiérarchie est : Cst. féd. > lois fédérales > ordonnances fédérales > constitutions cantonales > lois cantonales > règlements communaux. Le principe de subsidiarite (Cst. féd. art. 5a) prévoit que la Confédération n'intervient que si le canton ne peut agir efficacement, mais le droit federal prime toujours en cas de conflit (force derogatoire du droit federal, art. 49 Cst.).",
@@ -770,10 +770,10 @@
               "type": "mcq",
               "question": "Quelle est la base légale principale de la surveillance des banques en Suisse ?",
               "options": [
-                "A. LB (Loi sur les banques, RS 952.0) + OB",
-                "B. CO 727 a 731a",
-                "C. LSR (RS 221.302)",
-                "D. LBA (RS 955.0)"
+                "A. La LB (loi sur les banques) et l'OB",
+                "B. Les art. 727 à 731a du Code des obligations",
+                "C. La LSR (loi sur la surveillance de la révision)",
+                "D. La LBA (loi sur le blanchiment d'argent) seule"
               ],
               "answer": 0,
               "explanation": "La surveillance bancaire repose sur la LB (RS 952.0) et son ordonnance OB. Les banques sont agréées et surveillées par la FINMA selon la LFINMA. Bâle III (et Bâle IV en déploiement) fixe les exigences de fonds propres. La LSR concerne la révision, et la LBA le blanchiment — distincts du régime prudentiel bancaire.",
@@ -883,10 +883,10 @@
               "type": "mcq",
               "question": "Quel est le capital minimum legal d'une SA selon CO 621 (depuis le nouveau droit 2023) ?",
               "options": [
-                "A. 20 000 CHF",
-                "B. 50 000 CHF",
-                "C. 100 000 CHF (ou équivalent en monnaie étrangère)",
-                "D. 250 000 CHF"
+                "A. 20 000 CHF, comme pour la société à responsabilité limitée",
+                "B. 50 000 CHF, libérés intégralement à la fondation",
+                "C. 100 000 CHF (ou contre-valeur en monnaie étrangère)",
+                "D. 250 000 CHF pour les sociétés soumises au contrôle ordinaire"
               ],
               "answer": 2,
               "explanation": "Le capital minimum d'une SA est de 100 000 CHF (CO 621), ou son équivalent en monnaie étrangère (USD, EUR, GBP, JPY) depuis le nouveau droit 2023, si la comptabilité est tenue dans cette monnaie. La Sarl exige 20 000 CHF. La libération initiale doit être d'au moins 20 % par action, avec un total minimum de 50 000 CHF (CO 632).",
@@ -898,10 +898,10 @@
               "type": "mcq",
               "question": "Quelle est la libération minimale du capital-actions exigée a la fondation d'une SA selon CO 632 ?",
               "options": [
-                "A. 20 % par action et 50 000 CHF au total au minimum",
-                "B. 100 % du capital souscrit",
-                "C. 50 % du capital souscrit",
-                "D. Aucune libération initiale exigée"
+                "A. 20 % par action, et au total au moins 50 000 CHF",
+                "B. 100 % du capital souscrit, dès la fondation",
+                "C. 50 % du capital souscrit, sans minimum en francs",
+                "D. Aucune libération initiale n'est exigée par la loi"
               ],
               "answer": 0,
               "explanation": "CO 632 exige la libération minimum de 20 % de chaque action, avec un total de 50 000 CHF au minimum. La SA peut ainsi être fondée avec 100 000 CHF souscrits dont seulement 50 000 versés. Le solde reste exigible (capital souscrit non libere, inscrit a l'actif du bilan selon CO 959a).",
@@ -913,10 +913,10 @@
               "type": "mcq",
               "question": "Selon CO 698 al. 2, lequel des éléments suivants relèvent EXCLUSIVEMENT de l'AG d'une SA (compétence inaliénable) ?",
               "options": [
-                "A. La gestion opérationnelle quotidienne",
-                "B. La fixation des prix et tarifs",
-                "C. La sélection des fournisseurs",
-                "D. L'approbation du rapport de gestion, des comptes annuels, et l'affectation du bénéfice"
+                "A. La gestion opérationnelle quotidienne de la société et de ses filiales",
+                "B. La fixation des prix et tarifs appliqués aux clients de la société",
+                "C. La sélection des fournisseurs et la conclusion des contrats importants",
+                "D. L'approbation des comptes annuels et l'emploi du bénéfice"
               ],
               "answer": 3,
               "explanation": "L'AG est l'organe suprême et détient des compétences inaliénables (CO 698 al. 2) : modifier les statuts, nommer/révoquer le CA et l'organe de révision, approuver le rapport de gestion / les comptes / l'affectation du bénéfice, donner decharge au CA, décider de la dissolution. La gestion opérationnelle releve du CA (CO 716a) et de la direction.",
@@ -928,10 +928,10 @@
               "type": "mcq",
               "question": "Selon CO 716a, lequel des éléments suivants est une attribution INALIÉNABLE du conseil d'administration ?",
               "options": [
-                "A. La modification des statuts",
-                "B. L'approbation des comptes annuels",
-                "C. La haute direction de la société et la fixation des principes de comptabilité et du contrôle financier",
-                "D. La nomination de l'organe de révision"
+                "A. La modification des statuts et du but social de la société",
+                "B. L'approbation des comptes annuels et de l'emploi du bénéfice",
+                "C. La haute direction et l'organisation de la comptabilité",
+                "D. La nomination et la révocation de l'organe de révision"
               ],
               "answer": 2,
               "explanation": "CO 716a liste 7 attributions inaliénables du CA : haute direction, organisation, principes de comptabilité et contrôle financier, nomination/révocation de la direction, surveillance, rapport de gestion, convocations AG, notification au juge en cas de surendettement. Modification des statuts, approbation des comptes et nomination de l'organe de révision relèvent de l'AG (CO 698).",
@@ -953,10 +953,10 @@
               "type": "mcq",
               "question": "Quelle innovation du nouveau droit de la SA (entrée en vigueur 01.01.2023) permet la flexibilité du capital ?",
               "options": [
-                "A. La suppression du capital minimum",
-                "B. L'introduction d'actions sans valeur nominale",
-                "C. La marge de fluctuation du capital (CO 653s-v) : autorisation d'augmenter ou réduire jusqu'a +/-50 % sur 5 ans maximum",
-                "D. La libération différée a 10 ans"
+                "A. La suppression pure et simple du capital minimum légal de la SA",
+                "B. L'introduction d'actions sans valeur nominale, comme aux États-Unis",
+                "C. La marge de fluctuation du capital (CO 653s ss)",
+                "D. La libération différée du capital sur dix ans au plus"
               ],
               "answer": 2,
               "explanation": "La marge de fluctuation du capital (CO 653s-v) est l'innovation majeure : l'AG peut autoriser le CA a augmenter ou réduire le capital dans une fourchette (max +/- 50 %) pendant 5 ans maximum. Elle remplace l'ancienne augmentation autorisée et ajoute la possibilité de réduction. Les actions sans valeur nominale restent interdites.",
@@ -968,10 +968,10 @@
               "type": "mcq",
               "question": "Le nouveau droit de la SA introduit la possibilité de distribuer des dividendes intermédiaires (CO 675a). A quelles conditions ?",
               "options": [
-                "A. Bilan intermédiaire verifie + bénéfice disponible",
-                "B. Aucune condition particulière",
-                "C. Accord unanime des actionnaires",
-                "D. Autorisation préalable de l'ASR"
+                "A. Des comptes intermédiaires vérifiés et un bénéfice disponible",
+                "B. Aucune condition particulière, sur simple décision du CA",
+                "C. L'accord unanime de tous les actionnaires présents à l'AG",
+                "D. Une autorisation préalable de l'ASR et de l'administration fiscale"
               ],
               "answer": 0,
               "explanation": "CO 675a (nouveau) autorise les dividendes intermédiaires en cours d'exercice, a condition d'établir un bilan intermédiaire verifie par l'organe de révision et de constater l'existence d'un bénéfice distribuable. Cette innovation aligne le droit suisse sur les pratiques internationales et offre de la flexibilité aux groupes.",
@@ -1023,10 +1023,10 @@
               "type": "mcq",
               "question": "Quelle est la différence principale entre une SA et une Sarl en termes de transparence ?",
               "options": [
-                "A. Aucune, les deux ont le même régime",
-                "B. Les associés d'une Sarl figurent au Registre du commerce, alors que les actionnaires d'une SA non",
-                "C. Les actionnaires d'une SA sont systématiquement publiés",
-                "D. Les Sarl n'ont pas de RC"
+                "A. Aucune : les deux formes sont soumises exactement au même régime de publicité",
+                "B. Les associés d'une Sàrl sont inscrits au RC, pas les actionnaires d'une SA",
+                "C. Les actionnaires d'une SA sont systématiquement publiés dans la FOSC",
+                "D. Les Sàrl ne sont pas inscrites au registre du commerce, contrairement aux SA"
               ],
               "answer": 1,
               "explanation": "Les associés d'une Sarl figurent nominativement au RC, ce qui implique une perte de confidentialité. Les actionnaires d'une SA, eux, ne sont pas inscrits au RC (anonymat partiel). C'est l'une des raisons pour lesquelles les structures de groupe et les ventures internationaux preferent souvent la SA, malgré le capital minimum plus eleve (100 k vs 20 k).",
@@ -1063,10 +1063,10 @@
               "type": "mcq",
               "question": "Quelle base légale régit les fusions, scissions, transformations et transferts de patrimoine en Suisse ?",
               "options": [
-                "A. CO 620 a 763 uniquement",
-                "B. ORC (Ordonnance sur le RC)",
-                "C. CC (Code civil)",
-                "D. LFus (Loi sur la fusion, RS 221.301), entrée en vigueur le 01.07.2004"
+                "A. Les art. 620 à 763 CO uniquement, sans loi spéciale",
+                "B. L'ordonnance sur le registre du commerce (ORC) seule",
+                "C. Le Code civil (CC), livre premier sur les personnes",
+                "D. La LFus (loi sur la fusion), en vigueur depuis 2004"
               ],
               "answer": 3,
               "explanation": "La LFus (RS 221.301), entrée en vigueur le 01.07.2004, régit 4 types d'operations : fusion (art. 3-28), scission (art. 29-52), transformation (art. 53-68) et transfert de patrimoine (art. 69-77). Le CO régit les types societaires individuellement, mais les operations transfrontalieres et structurelles relèvent de la LFus.",
@@ -1078,10 +1078,10 @@
               "type": "mcq",
               "question": "Quel quorum est requis a l'AG de chaque société pour approuver une fusion selon l'art. 18 LFus ?",
               "options": [
-                "A. Majorité simple",
-                "B. Unanimité",
-                "C. 2/3 des voix + majorité absolue des valeurs nominales",
-                "D. 3/4 des voix uniquement"
+                "A. La majorité simple des voix exprimées à l'assemblée",
+                "B. L'unanimité de tous les actionnaires inscrits",
+                "C. 2/3 des voix représentées et majorité des nominaux",
+                "D. Les 3/4 des voix représentées, sans autre condition"
               ],
               "answer": 2,
               "explanation": "L'art. 18 LFus exige une double majorité : 2/3 des voix exprimées ET majorité absolue des valeurs nominales representees. Cette majorité qualifiée se justifie par la portée de la décision (transfert universel du patrimoine, modification structurelle de la société). Les statuts peuvent prévoir des conditions plus strictes mais pas plus laxistes.",
@@ -1093,10 +1093,10 @@
               "type": "mcq",
               "question": "Quelles conditions cumulatives permettent la neutralité fiscale d'une restructuration au sens de l'art. 61 LIFD ?",
               "options": [
-                "A. Aucune condition spécifique",
-                "B. Assujettissement maintenu en CH, reprise des valeurs comptables et continuité économique",
-                "C. Accord préalable de l'ASR",
-                "D. Cotation de la société absorbante"
+                "A. Aucune condition spécifique : toute restructuration est neutre",
+                "B. Assujettissement maintenu en Suisse, valeurs déterminantes reprises",
+                "C. Un accord préalable de l'ASR et de la FINMA pour toute l'opération envisagée",
+                "D. La cotation en bourse de la société absorbante au jour de la fusion"
               ],
               "answer": 1,
               "explanation": "L'art. 61 LIFD permet la neutralité fiscale des restructurations sous trois conditions cumulatives : (1) l'assujettissement reste maintenu en Suisse, (2) reprise des valeurs comptables (pas de step-up), et (3) continuité économique. A défaut, les réserves latentes sont réalisées et imposées. Ce régime est central en pratique pour structurer une fusion ou scission.",
@@ -1194,10 +1194,10 @@
               "type": "mcq",
               "question": "Quand le droit comptable revise (CO 957-963b) est-il pleinement entre en vigueur ?",
               "options": [
-                "A. 01.01.2010",
-                "B. 01.01.2013, pleinement applicable des 2015 (PME) / 2016 (grandes)",
-                "C. 01.01.2020",
-                "D. 01.01.2023, simultanément au nouveau droit SA"
+                "A. 1.1.2010, appliqué immédiatement par toutes les sociétés",
+                "B. 1.1.2013, appliqué dès 2015 / 2016 (comptes consolidés)",
+                "C. 1.1.2020, avec la réforme de l'imposition des entreprises",
+                "D. 1.1.2023, en même temps que le nouveau droit de la SA"
               ],
               "answer": 1,
               "explanation": "Le droit comptable revise (CO 957-963b) est entre en vigueur le 01.01.2013, avec une application pleine pour les comptes 2015 (petites entités) et 2016 (grandes). Il a remplace l'ancien régime base sur la forme juridique par un régime base sur la taille de l'entreprise. Le nouveau droit SA de 2023 est distinct.",
@@ -1209,10 +1209,10 @@
               "type": "mcq",
               "question": "Qui est tenu a la comptabilité simplifiée dite 'carnet du lait' (CO 957 al. 2-3) ?",
               "options": [
-                "A. Entreprises individuelles et sociétés de personnes avec CA < 500 000 CHF, et associations / fondations non tenues de s'inscrire au RC",
-                "B. Toutes les SA",
-                "C. Toutes les fondations",
-                "D. Les coopératives uniquement"
+                "A. Raisons individuelles et sociétés de personnes avec CA < 500 000 CHF",
+                "B. Toutes les sociétés anonymes, quelle que soit leur taille",
+                "C. Toutes les fondations, y compris celles soumises au contrôle ordinaire",
+                "D. Les coopératives uniquement, en raison de leur but non lucratif"
               ],
               "answer": 0,
               "explanation": "La comptabilité simplifiée (recettes, dépenses, patrimoine) est réservée aux entreprises individuelles et sociétés de personnes avec CA < 500 000 CHF, ainsi qu'aux associations et fondations non tenues de s'inscrire au RC, et aux fondations libérées de l'obligation de désigner un organe de révision. Les SA, Sarl et coopératives sont toujours tenues a la comptabilité complete.",
@@ -1264,10 +1264,10 @@
               "type": "mcq",
               "question": "Selon CO 960a, comment évaluer les actifs lors de la PREMIÈRE comptabilisation ?",
               "options": [
-                "A. A la valeur de marche",
-                "B. Au coût d'acquisition ou de fabrication (limite supérieure)",
-                "C. A la valeur d'usage",
-                "D. A la juste valeur (fair value)"
+                "A. À la valeur de marché à la date de l'acquisition",
+                "B. Au coût d'acquisition ou de revient (maximum)",
+                "C. À la valeur d'usage estimée par la direction",
+                "D. À la juste valeur (fair value), comme en IFRS"
               ],
               "answer": 1,
               "explanation": "CO 960a al. 1 prescrit la première comptabilisation au coût d'acquisition ou de fabrication, qui constitue la limite supérieure. Les evaluations ultérieures ne peuvent jamais dépasser ce coût (al. 2), avec prise en compte des correctifs (amortissements, dépréciations). Une exception : CO 960b autorise l'évaluation a la valeur de marche pour certains actifs avec cours observable.",
@@ -1279,10 +1279,10 @@
               "type": "mcq",
               "question": "Comment évaluer les stocks et prestations de services non facturées selon CO 960c ?",
               "options": [
-                "A. Au coût OU a la valeur du marche si celle-ci est inférieure (LCNM)",
-                "B. Au coût uniquement",
-                "C. A la valeur de marche uniquement",
-                "D. A la valeur de remplacement"
+                "A. Au coût, ou à la valeur de réalisation si elle est inférieure",
+                "B. Au coût d'acquisition uniquement, sans autre test de valeur",
+                "C. À la valeur de marché uniquement, même si elle est supérieure au coût",
+                "D. À la valeur de remplacement à la date de clôture de l'exercice"
               ],
               "answer": 0,
               "explanation": "CO 960c impose l'évaluation au coût ou a la valeur de marche si celle-ci est inférieure (LCNM — Lower of Cost or Net Realizable Value). C'est une application du principe de prudence : en cas de baisse de la valeur, la perte est constatée immédiatement. Les hausses ne sont pas constatées au-delà du coût.",
@@ -1294,10 +1294,10 @@
               "type": "mcq",
               "question": "Selon CO 960e al. 2-3, dans quel cas constituer une provision ?",
               "options": [
-                "A. Pour réduire artificiellement le bénéfice",
-                "B. Uniquement pour des amendes administratives",
-                "C. Pour des engagements résultant d'événements passés dont le montant ou l'échéance est incertain",
-                "D. Sans condition particulière"
+                "A. Pour réduire le bénéfice imposable de l'exercice, sans justification économique particulière",
+                "B. Uniquement pour des amendes administratives déjà notifiées par une autorité",
+                "C. Pour des engagements nés d'événements passés, au montant ou à l'échéance incertains",
+                "D. Sans condition particulière, selon le seul jugement du conseil d'administration"
               ],
               "answer": 2,
               "explanation": "CO 960e al. 2 prescrit la constitution de provisions pour les engagements résultant d'événements passés dont le montant ou l'échéance est incertain. Elles sont enregistrées a la charge du compte de résultat. CO 960e al. 4 admet en outre des provisions justifiées par l'usage commercial (réserves latentes sur dettes), qui n'ont pas d'équivalent IFRS.",
@@ -1309,10 +1309,10 @@
               "type": "mcq",
               "question": "Quelles entités sont obligees d'établir des comptes selon une norme reconnue (CO 962) ?",
               "options": [
-                "A. Toutes les SA",
-                "B. Toutes les Sarl",
-                "C. Les entreprises individuelles dépassant 1 mio CHF de CA",
-                "D. Sociétés cotées, coopératives ≥ 2 000 membres, et grandes fondations soumises au contrôle ordinaire"
+                "A. Toutes les SA, quelle que soit leur taille ou leur forme de financement",
+                "B. Toutes les Sàrl soumises au contrôle restreint ou à l'opting-out",
+                "C. Les entreprises individuelles dépassant 1 mio CHF de chiffre d'affaires",
+                "D. Sociétés cotées, coopératives ≥ 2 000 membres, grandes fondations"
               ],
               "answer": 3,
               "explanation": "CO 962 al. 1 impose l'établissement de comptes selon une norme reconnue aux sociétés cotées, aux coopératives de >= 2 000 membres et aux grandes fondations soumises au contrôle ordinaire. CO 962 al. 2 admet aussi qu'une telle obligation puisse decouler des statuts ou d'une demande de minorité, dont le seuil dépend de la forme : 20 % du capital-actions pour une SA, 10 % des associés pour une coopérative, 20 % des membres pour une association (ou tout associé indefiniment responsable).",
@@ -1349,10 +1349,10 @@
               "type": "mcq",
               "question": "Selon CO 963a, quels seuils permettent une exemption de consolidation pour un groupe ?",
               "options": [
-                "A. Bilan consolide < 5 mio / CA < 10 mio / 50 EPT",
-                "B. Bilan consolide < 20 mio / CA < 40 mio / < 250 EPT (2 sur 3, sur 2 exercices)",
-                "C. Bilan consolide < 100 mio / CA < 200 mio / 500 EPT",
-                "D. Aucune exemption possible"
+                "A. Bilan < 5 mio / CA < 10 mio / < 50 EPT (2 sur 3, un seul exercice)",
+                "B. Bilan < 20 mio / CA < 40 mio / < 250 EPT (2 sur 3, deux exercices)",
+                "C. Bilan < 100 mio / CA < 200 mio / < 500 EPT (les 3 critères cumulés)",
+                "D. Aucune exemption possible : tout groupe doit établir des comptes consolidés"
               ],
               "answer": 1,
               "explanation": "CO 963a permet l'exemption de consolidation si 2 des 3 seuils ne sont PAS dépassés sur 2 exercices : bilan consolide 20 mio, CA consolide 40 mio, 250 EPT consolidés. Alternativement, si la mère est elle-même consolidée dans des comptes supérieurs établis selon une norme reconnue ET accessibles publiquement, l'exemption est possible.",
@@ -1374,10 +1374,10 @@
               "type": "mcq",
               "question": "Selon CO 958f et l'OReLi (RS 221.431), comment doivent être conservés le rapport de gestion et le rapport de révision ?",
               "options": [
-                "A. En électronique uniquement",
-                "B. Sans contrainte de support",
-                "C. En papier signe (ou via signature électronique qualifiée)",
-                "D. En microfilm uniquement"
+                "A. En format électronique uniquement, sans signature",
+                "B. Sans aucune contrainte de support ni de signature",
+                "C. Sous forme écrite et signés",
+                "D. Sur microfilm uniquement, pour en garantir la durée"
               ],
               "answer": 2,
               "explanation": "Le rapport de gestion et le rapport de révision doivent être conservés en papier signe (ou via une signature électronique qualifiée selon SCSE). Les autres documents (livres, pièces justificatives) peuvent être conservés en électronique avec horodatage securise et intégrité garantie. L'OReLi (Ordonnance sur la tenue et la conservation) précise les exigences techniques.",
@@ -1468,9 +1468,9 @@
               "question": "Selon CO 959a, dans quel ordre les actifs du bilan sont-ils classes en droit suisse ?",
               "options": [
                 "A. Par ordre de liquidité croissante (le moins liquide d'abord)",
-                "B. Par ordre de liquidité décroissante (le plus liquide d'abord)",
-                "C. Par ordre alphabetique",
-                "D. Par valeur croissante"
+                "B. Par ordre de liquidité décroissante",
+                "C. Par ordre alphabétique des comptes du plan comptable",
+                "D. Par valeur croissante des postes à la date de clôture"
               ],
               "answer": 1,
               "explanation": "CO 959a impose le classement des actifs par ordre de liquidité décroissante : actif circulant (liquidités, créances, stocks) puis actif immobilise (immobilisations financières, participations, corporelles, incorporelles). Les passifs sont classes par exigibilité décroissante (court terme avant long terme). C'est le 'modèle continental européen' (oppose au modèle anglo-saxon ou la liquidité croit du haut vers le bas).",
@@ -1482,10 +1482,10 @@
               "type": "mcq",
               "question": "Lequel des éléments suivants figure normalement dans l'actif circulant d'un bilan établi selon CO 959a ?",
               "options": [
-                "A. Participations",
-                "B. Immobilisations corporelles",
-                "C. Liquidités et titres cotes détenus a court terme",
-                "D. Capital social souscrit non libere"
+                "A. Les participations durables dans d'autres sociétés",
+                "B. Les immobilisations corporelles et leurs amortissements cumulés",
+                "C. Les liquidités et les titres cotés détenus à court terme",
+                "D. Le capital social souscrit mais non encore libéré"
               ],
               "answer": 2,
               "explanation": "L'actif circulant inclut : (1) liquidités et titres cotes détenus a court terme, (2) créances livraisons/prestations, (3) autres créances court terme, (4) stocks et prestations non facturées, (5) actifs de régularisation. Les participations et immobilisations corporelles relèvent de l'actif immobilise. Le capital souscrit non libere figure aussi a l'actif immobilise.",
@@ -1507,10 +1507,10 @@
               "type": "mcq",
               "question": "Lequel des postes suivants figure dans la rubrique 'capitaux propres' d'une SA selon CO 959a ?",
               "options": [
-                "A. Provisions pour litiges",
-                "B. Réserves légales issues du bénéfice",
-                "C. Dettes envers les actionnaires",
-                "D. Passifs de régularisation"
+                "A. Les provisions pour litiges en cours",
+                "B. Les réserves légales issues du bénéfice",
+                "C. Les dettes envers les actionnaires et les administrateurs",
+                "D. Les passifs de régularisation de l'exercice"
               ],
               "answer": 1,
               "explanation": "Les capitaux propres comprennent : capital-actions (valeur nominale), réserves légales issues du capital (agios, RAC), réserves légales issues du bénéfice, réserves statutaires, réserves facultatives / bénéfice reporte, bénéfice/perte de l'exercice, et propres actions (déduction). Les provisions et passifs de régularisation sont au passif sous capitaux étrangers.",
@@ -1522,10 +1522,10 @@
               "type": "mcq",
               "question": "CO 959b al. 1 prévoit deux méthodes de presentation du compte de résultat. Lesquelles ?",
               "options": [
-                "A. Méthode directe et méthode indirecte",
-                "B. Méthode par nature et méthode par fonction des charges",
-                "C. Méthode brute et méthode nette",
-                "D. Méthode courte et méthode longue"
+                "A. Méthode directe et méthode indirecte des flux de trésorerie",
+                "B. Méthode par nature et méthode par fonction",
+                "C. Méthode brute et méthode nette, au choix de chaque année",
+                "D. Méthode courte et méthode longue selon la taille de l'entreprise"
               ],
               "answer": 1,
               "explanation": "CO 959b autorise deux méthodes : (1) la méthode par nature des charges (matières, personnel, autres charges, amortissements...) preferee en pratique CH ; (2) la méthode par fonction (coût des biens vendus, charges commerciales, administratives, etc.) plus rare en Suisse mais courante sous IFRS. La méthode par fonction implique une indication séparée du personnel et des amortissements en annexe (CO 959b al. 3).",
@@ -1537,10 +1537,10 @@
               "type": "mcq",
               "question": "Si une société utilise la méthode par fonction (CO 959b), quelles informations doit-elle indiquer séparément dans l'annexe (CO 959b al. 3) ?",
               "options": [
-                "A. Aucune information particulière",
-                "B. Charges de personnel et amortissements / corrections de valeur sur immobilisations",
-                "C. Honoraires du CA uniquement",
-                "D. La marge brute uniquement"
+                "A. Aucune information particulière n'est exigée",
+                "B. Les charges de personnel et les amortissements",
+                "C. Les honoraires versés aux membres du CA uniquement",
+                "D. La marge brute réalisée par secteur d'activité uniquement"
               ],
               "answer": 1,
               "explanation": "CO 959b al. 3 oblige a indiquer séparément en annexe les charges de personnel ET les amortissements/corrections de valeur lorsque la méthode par fonction est retenue. Cette obligation compense la perte d'information induite par le regroupement par destination, et permet la comparabilité avec la méthode par nature.",
@@ -1562,10 +1562,10 @@
               "type": "mcq",
               "question": "Lequel des éléments suivants doit OBLIGATOIREMENT figurer dans l'annexe selon CO 959c ?",
               "options": [
-                "A. Le nom de la banque principale uniquement",
-                "B. Le nombre moyen d'emplois a plein temps sur l'exercice",
-                "C. La liste des clients principaux",
-                "D. Le budget de l'exercice suivant"
+                "A. Le nom de la banque principale et le taux des crédits",
+                "B. Le nombre moyen d'emplois à plein temps (tranche)",
+                "C. La liste des principaux clients et fournisseurs de la société",
+                "D. Le budget de l'exercice suivant approuvé par le conseil"
               ],
               "answer": 1,
               "explanation": "CO 959c impose l'indication du nombre moyen d'emplois a plein temps sur l'exercice (al. 1 ch. 4 du contenu informationnel). L'annexe doit aussi contenir : principes d'évaluation, presentation du bilan/CR, actifs en garantie, engagements eventuels, dettes de prévoyance, dettes envers les organes/groupe, total des honoraires des organes, événements postérieurs, motifs de démission de l'organe de révision, etc.",
@@ -1602,10 +1602,10 @@
               "type": "mcq",
               "question": "Quelles obligations supplémentaires CO 961-961d imposent-ils aux 'grandes entreprises' (soumises au contrôle ordinaire) ?",
               "options": [
-                "A. Établir un budget prévisionnel a 3 ans",
-                "B. Publier un rapport mensuel",
-                "C. Établir un tableau de flux de trésorerie ET un rapport annuel",
-                "D. Soumettre les comptes a l'approbation de l'ASR"
+                "A. Un budget prévisionnel sur trois ans approuvé par l'organe de révision",
+                "B. Un rapport mensuel publié dans la Feuille officielle suisse du commerce",
+                "C. Un tableau des flux de trésorerie et un rapport annuel",
+                "D. La soumission des comptes annuels à l'approbation préalable de l'ASR"
               ],
               "answer": 2,
               "explanation": "CO 961 al. 1 impose aux grandes entreprises (contrôle ordinaire) deux obligations supplémentaires : (1) un tableau de flux de trésorerie (ch. 1) avec 3 catégories — exploitation, investissement, financement ; (2) un rapport annuel (ch. 2 et CO 961c) rétrospectif sur la marche des affaires, les risques, la R&D et les perspectives. CO 961a impose en plus des annexes supplémentaires.",
@@ -1642,10 +1642,10 @@
               "type": "mcq",
               "question": "Selon CO 964a-964c, qui doit publier un rapport sur les questions non financières (durabilité) ?",
               "options": [
-                "A. Les grandes entreprises d'intérêt public (cotées + seuils cumulés : >= 500 EPT et bilan 20 mio ou CA 40 mio)",
-                "B. Toutes les SA",
-                "C. Les Sarl uniquement",
-                "D. Les fondations"
+                "A. Sociétés d'intérêt public ≥ 500 EPT, > 20 mio de bilan ou 40 mio de CA",
+                "B. Toutes les SA, quelle que soit leur taille, dès le premier exercice comptable",
+                "C. Les Sàrl uniquement, les SA publiant déjà un rapport annuel détaillé",
+                "D. Les fondations d'utilité publique soumises à la surveillance fédérale"
               ],
               "answer": 0,
               "explanation": "CO 964a-964c (en vigueur 2022) impose le rapport de durabilité aux grandes entreprises d'intérêt public : sociétés cotées ou regulees (banques, assurances) qui dépassent simultanément >= 500 EPT en moyenne annuelle ET bilan 20 mio CHF ou CA 40 mio CHF. Le rapport couvre l'environnement (CO2), le social, les droits humains et la lutte contre la corruption. Approuve par l'AG.",
@@ -1755,10 +1755,10 @@
               "type": "mcq",
               "question": "Après la RFFA 2020, quelle est la répartition de l'IFD entre Confédération et cantons ?",
               "options": [
-                "A. 100 % Confédération",
+                "A. 100 % Confédération, sans part cantonale",
                 "B. 78,8 % Confédération / 21,2 % cantons",
-                "C. 50 % / 50 %",
-                "D. 60 % cantons / 40 % Confédération"
+                "C. 50 % Confédération / 50 % cantons",
+                "D. 40 % Confédération / 60 % cantons"
               ],
               "answer": 1,
               "explanation": "Depuis la RFFA (Réforme fiscale et financement de l'AVS, en vigueur 01.01.2020), la part cantonale dans l'IFD a ete portée a 21,2 % (contre 17 % auparavant), pour compenser la perte des statuts spéciaux (holding, mixte, auxiliaire). La Confédération conserve 78,8 %.",
@@ -1770,10 +1770,10 @@
               "type": "mcq",
               "question": "Quel est le seuil de domicile/séjour déclenchant l'assujettissement illimité a l'IFD pour une personne physique (LIFD art. 3) ?",
               "options": [
-                "A. > 30 jours avec activité lucrative OU > 90 jours sans activité",
-                "B. 30 jours sans activité OU 60 jours avec activité",
-                "C. > 6 mois indifféremment",
-                "D. Domicile fiscal étranger uniquement"
+                "A. ≥ 30 jours avec activité lucrative ou ≥ 90 jours sans",
+                "B. 30 jours sans activité lucrative ou 60 jours avec activité",
+                "C. Plus de six mois de séjour, avec ou sans activité",
+                "D. Uniquement un domicile fiscal à l'étranger, sans séjour"
               ],
               "answer": 0,
               "explanation": "L'art. 3 LIFD prévoit l'assujettissement illimité si : (a) domicile en CH, (b) séjour de plus de 30 jours avec activité lucrative, ou (c) séjour de plus de 90 jours même sans activité lucrative. L'assujettissement limite (art. 5 LIFD) découle d'un rattachement économique : immeuble, établissement stable, activité ponctuelle en CH.",
@@ -1840,10 +1840,10 @@
               "type": "mcq",
               "question": "Quelle est la difference entre 'opérations exonerees' (art. 23 LTVA) et 'opérations exclues' (art. 21 LTVA) ?",
               "options": [
-                "A. Les exonérées (ex. exportations) preservent le droit a déduction de l'impôt préalable ; les exclues (santé, finance, immobilier) ne le preservent pas",
-                "B. Aucune différence",
-                "C. Les exclues sont taxees a 50 %",
-                "D. Seules les exclues necessitent une déclaration"
+                "A. Exonérées : déduction de l'impôt préalable maintenue ; exclues : non",
+                "B. Aucune différence : les deux termes sont synonymes dans la LTVA",
+                "C. Les exclues sont taxées à 50 % du taux normal, les exonérées à 0 % seulement",
+                "D. Seules les exclues doivent figurer dans le décompte TVA trimestriel"
               ],
               "answer": 0,
               "explanation": "La différence est cruciale en pratique : les operations exonérées (art. 23 LTVA — exportations, transports internationaux) preservent le droit a déduction de l'impôt préalable (vraie 'taxation a 0 %'). Les operations exclues (art. 21 LTVA — santé, éducation, finance, immobilier d'habitation) sont hors champ et n'autorisent PAS la déduction de l'IP, sauf option pour imposition volontaire.",
@@ -1966,10 +1966,10 @@
               "type": "mcq",
               "question": "Quelle est la base normative de la lettre de mission en audit ?",
               "options": [
-                "A. ISA / NAS 200",
-                "B. ISA / NAS 210 — Convenir des termes d'un mandat d'audit",
+                "A. ISA / NAS 200 (objectifs généraux)",
+                "B. ISA / NAS 210 (termes de mission)",
                 "C. ISA / NAS 230 (documentation)",
-                "D. ISQM 1"
+                "D. ISQM 1 (qualité du cabinet)"
               ],
               "answer": 1,
               "explanation": "La lettre de mission est encadrée par l'ISA / NAS 210 'Convenir des termes d'un mandat d'audit'. ISA 200 traite des objectifs généraux de l'auditeur, ISA 230 de la documentation des travaux, et ISQM 1 du système qualité global du cabinet. La lettre de mission formalise les responsabilités mutuelles et doit être signée avant le début de la mission.",
@@ -1981,10 +1981,10 @@
               "type": "mcq",
               "question": "Lequel des elements suivants doit IMPÉRATIVEMENT figurer dans une lettre de mission d'audit (NAS 210) ?",
               "options": [
-                "A. Le pseudonyme du client",
-                "B. La déclaration fiscale du client",
-                "C. La liste des concurrents du client",
-                "D. L'objectif de la mission, le référentiel applicable et la répartition des responsabilités"
+                "A. Le pseudonyme du client et le nom de ses principaux concurrents",
+                "B. La dernière déclaration fiscale du client et son avis de taxation",
+                "C. La liste des concurrents du client et leurs parts de marché",
+                "D. L'objectif, le référentiel et les responsabilités respectives"
               ],
               "answer": 3,
               "explanation": "Le contenu obligatoire d'une lettre de mission inclut : (1) objectif de la mission, (2) étendue (référentiel applicable, période), (3) responsabilités de la direction et de l'auditeur, (4) forme du rapport, (5) honoraires, (6) conditions générales (délais, confidentialité). Elle doit être signée par les deux parties avant le début des travaux.",
@@ -2008,8 +2008,8 @@
               "options": [
                 "A. La lettre de mission de l'année en cours",
                 "B. La planification de l'audit de l'année en cours",
-                "C. Le rapport de l'année",
-                "D. Les statuts a jour de la société et l'extrait RC"
+                "C. Le rapport d'audit de l'exercice",
+                "D. Les statuts à jour et l'extrait du RC"
               ],
               "answer": 3,
               "explanation": "Le dossier permanent (Dauerakte / Permanent File) regroupe des documents pluriannuels reutilisables : statuts a jour, extrait RC, règlement d'organisation, contrats importants, plan comptable, règlement du personnel, historique des participations, décisions fiscales ruling, évaluation du CI. Le dossier courant (Jahresakte) regroupe les documents spécifiques a l'exercice (lettre de mission de l'année, planification, papiers de travail, rapport...).",
@@ -2024,7 +2024,7 @@
                 "A. 3 ans",
                 "B. 5 ans",
                 "C. 20 ans",
-                "D. 10 ans (aligne sur CO 958f)"
+                "D. 10 ans"
               ],
               "answer": 3,
               "explanation": "La durée minimum de conservation est de 10 ans, alignée sur CO 958f. Cette durée couvre la prescription civile (CO 127), la prescription absolue de la responsabilité du réviseur (CO 760, 10 ans des l'acte), et la prescription fiscale absolue (15 ans en pratique conseilles). La conservation électronique est admise avec horodatage securise et signature qualifiée.",
@@ -2061,9 +2061,9 @@
               "type": "mcq",
               "question": "Quelle norme internationale a remplace l'ancienne ISQC 1 pour le contrôle qualité des cabinets d'audit, et depuis quand ?",
               "options": [
-                "A. ISQM 2, depuis 2020",
-                "B. ISA 220, en 2018",
-                "C. ISQC 2, en 2025",
+                "A. ISQM 2, depuis le 15.12.2020",
+                "B. ISA 220, depuis le 15.12.2018",
+                "C. ISQC 2, depuis le 15.12.2025",
                 "D. ISQM 1, depuis le 15.12.2022"
               ],
               "answer": 3,
@@ -45482,7 +45482,7 @@
                 "Toujours si elle n'est pas cotée et que ses filiales sont soumises au contrôle restreint",
                 "Si elle détient moins de 5 filiales et qu'aucune n'a plus de 50 emplois à plein temps",
                 "Si toutes ses filiales sont à l'étranger et établissent des comptes selon le droit local",
-                "S'il ne dépasse pas 2 des 3 seuils (20 MCHF bilan, 40 MCHF CA, 250 EPT) deux ans de suite"
+                "S'il ne dépasse pas 2 des 3 seuils (20 M bilan, 40 M CA, 250 EPT) deux ans de suite"
               ],
               "answer": 3,
               "explanation": "CO 963a al. 1 ch. 1 : dispense si la société, avec les entreprises qu'elle contrôle, ne dépasse pas deux des valeurs 20 MCHF de total du bilan, 40 MCHF de chiffre d'affaires et 250 emplois à plein temps durant deux exercices consécutifs. Des comptes consolidés restent exigés notamment s'ils sont nécessaires à une appréciation fiable de la situation économique, ou si des associés représentant au moins 20 % du capital social le demandent (CO 963a al. 2).",
@@ -47730,7 +47730,7 @@
               "type": "mcq",
               "question": "Qu'est-ce que l'esprit critique (scepticisme professionnel) selon ISA 200 ?",
               "options": [
-                "Un esprit interrogateur, attentif aux éléments contradictoires, qui évalue les preuves",
+                "Un esprit interrogateur, attentif aux contradictions, qui évalue les preuves",
                 "Supposer d'emblée que la direction est malhonnête jusqu'à preuve du contraire",
                 "Refuser toute explication orale de la direction qui n'est pas documentée par écrit",
                 "Vérifier 100 % des opérations dès qu'un risque de fraude est identifié"
@@ -47778,7 +47778,7 @@
                 "Uniquement la conclusion retenue, signée par l'associé responsable de la mission",
                 "Tous les brouillons et versions successives des feuilles de travail de l'équipe",
                 "Rien, si l'associé a approuvé oralement le jugement lors de la revue de la mission",
-                "Les jugements importants et les conclusions, compréhensibles par un auditeur expérimenté"
+                "Les jugements importants et conclusions, compréhensibles par un tiers expérimenté"
               ],
               "answer": 3,
               "explanation": "ISA 230.8 : la documentation doit permettre à un auditeur expérimenté sans lien avec la mission de comprendre la nature, le calendrier et l'étendue des procédures, les résultats, les questions importantes et les jugements exercés.",
@@ -47832,7 +47832,7 @@
                 "Biais d'ancrage",
                 "Biais de confirmation",
                 "Biais de disponibilité",
-                "Biais d'autorité"
+                "Biais d'autorité ou de statut"
               ],
               "answer": 2,
               "explanation": "Le biais de disponibilité fait juger la fréquence ou la probabilité d'un événement selon la facilité avec laquelle des exemples reviennent en mémoire (ex. une fraude médiatisée).",
@@ -48254,7 +48254,7 @@
               "question": "Sur quoi portent les devoirs de diligence de CO 964j ss ?",
               "options": [
                 "La protection des données personnelles des clients et des collaborateurs",
-                "Les minerais et métaux provenant de zones de conflit et le travail des enfants",
+                "Les minerais de zones de conflit et le travail des enfants",
                 "La lutte contre le blanchiment d'argent et le financement du terrorisme",
                 "Les émissions de CO2 et la trajectoire de réduction vers zéro émission nette"
               ],
