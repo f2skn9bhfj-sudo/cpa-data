@@ -3509,8 +3509,8 @@
               "options": [
                 "A. Contrôle ordinaire (1 critère dépassé suffit)",
                 "B. Opting-out automatique vu l'effectif < 250",
-                "C. Contrôle restreint — un seul critère dépassé sur les 3",
-                "D. Contrôle ordinaire car le bilan dépasse 20 MCHF"
+                "C. Contrôle restreint (1 seul critère dépassé)",
+                "D. Contrôle ordinaire, car le total du bilan dépasse 20 MCHF deux années de suite"
               ],
               "answer": 2,
               "explanation": "Seul le bilan (22 > 20 MCHF) est dépassé. CA et effectif sont sous les seuils. La règle exige 2 critères sur 3 sur 2 exercices consécutifs : Beta SA reste donc en contrôle restreint. Si en 2026 le CA dépassait 40 MCHF, il faudrait encore attendre 2027 pour basculer.",
@@ -3522,9 +3522,9 @@
               "type": "mcq",
               "question": "En vertu de l'art. 727 al. 2 CO, qui peut exiger un contrôle ordinaire même si la société n'atteint pas les seuils ?",
               "options": [
-                "A. Tout actionnaire, quelle que soit sa participation",
+                "A. Tout actionnaire, quelle que soit l'importance de sa participation au capital",
                 "B. Le conseil d'administration uniquement",
-                "C. Un actionnaire détenant au moins 10 % du capital (ou seuil statutaire inférieur)",
+                "C. Des actionnaires détenant au moins 10 % du capital",
                 "D. L'ASR à sa propre initiative"
               ],
               "answer": 2,
@@ -3538,9 +3538,9 @@
               "question": "Quelles sont les 3 conditions cumulatives pour un opting-out valable selon l'art. 727a al. 2 CO ?",
               "options": [
                 "A. CA < 5 MCHF, bilan < 5 MCHF, et accord majoritaire à l'AG",
-                "B. Effectif ≤ 50 ETP, exercice court, accord du conseil d'administration",
-                "C. Effectif ≤ 10 ETP, non-soumission au contrôle ordinaire, consentement unanime des actionnaires",
-                "D. Société non cotée, effectif ≤ 250 ETP, et inscription RC"
+                "B. Effectif ≤ 50 EPT, exercice court et accord préalable du conseil d'administration",
+                "C. ≤ 10 EPT, pas de contrôle ordinaire, accord de tous les actionnaires",
+                "D. Société non cotée, effectif ≤ 250 EPT et inscription préalable au registre du commerce"
               ],
               "answer": 2,
               "explanation": "L'opting-out exige 3 conditions cumulatives (CO 727a al. 2) : (1) la société n'est pas tenue au contrôle ordinaire ; (2) son effectif ne dépasse pas 10 emplois à plein temps en moyenne annuelle ; (3) tous les actionnaires y consentent (unanimité, à chaque exercice ou par décision durable statutaire). Mnémonique : U-10-T.",
@@ -3562,10 +3562,10 @@
               "type": "mcq",
               "question": "Selon l'art. 728 al. 2 CO, lequel des éléments suivants est INCOMPATIBLE avec l'indépendance dans un contrôle ordinaire ?",
               "options": [
-                "A. Émettre une note d'honoraires au client",
+                "A. Émettre une note d'honoraires détaillée au client audité",
                 "B. Visiter les locaux du client",
                 "C. Échanger avec le directeur financier",
-                "D. Tenir simultanément la comptabilité de la société à réviser"
+                "D. Tenir la comptabilité de la société révisée"
               ],
               "answer": 3,
               "explanation": "L'art. 728 al. 2 ch. 5 CO interdit la collaboration à la tenue de la comptabilité dans le contrôle ordinaire (auto-révision). Note importante : cette interdiction est levée dans le contrôle restreint (CO 729 al. 2, sous conditions), différence majeure entre les deux régimes.",
@@ -3578,9 +3578,9 @@
               "question": "Pour un audit de société cotée, après combien d'années l'associé responsable de la mission doit-il faire l'objet d'une rotation selon le régime renforcé suisse aligné IESBA ?",
               "options": [
                 "A. 3 ans, avec cooling-off de 1 an",
-                "B. 7 ans maximum, avec cooling-off de 3 ans",
+                "B. 7 ans, puis délai de carence de 3 ans",
                 "C. 5 ans, avec cooling-off de 2 ans",
-                "D. 10 ans maximum, sans cooling-off requis"
+                "D. 10 ans au maximum, sans délai de carence ultérieur requis"
               ],
               "answer": 1,
               "explanation": "L'art. 728a CO et le régime IESBA aligné imposent à l'associé responsable d'une mission cotée une rotation après 7 ans maximum, avec un cooling-off de 3 ans avant retour. C'est une mesure de lutte contre la familiarity threat (menace de familiarité).",
@@ -3647,10 +3647,10 @@
               "type": "mcq",
               "question": "Quelle est la nature de la responsabilité de l'auditeur selon l'art. 755 CO ?",
               "options": [
-                "A. Subsidiaire — l'auditeur n'est responsable que si le CA est insolvable",
-                "B. Solidaire avec le CA et la direction, pour faute intentionnelle ou négligence",
+                "A. Subsidiaire : l'auditeur n'est responsable que si le conseil d'administration est insolvable",
+                "B. Responsabilité pour faute (intention ou négligence), solidarité différenciée",
                 "C. Personnelle uniquement, sans solidarité",
-                "D. Limitée à la faute intentionnelle (le simple manque n'engage pas)"
+                "D. Limitée à la faute intentionnelle, la simple négligence n'engageant jamais l'auditeur"
               ],
               "answer": 1,
               "explanation": "L'art. 755 CO instaure une responsabilité solidaire : l'auditeur répond du dommage qu'il cause solidairement avec le CA et la direction, pour faute intentionnelle OU par négligence (négligence simple suffit). Le dommage est différentiel (situation actuelle vs hypothétique sans faute).",
@@ -3674,8 +3674,8 @@
               "options": [
                 "A. Invoquer l'absence de mandat écrit",
                 "B. Invoquer l'absence d'agrément ASR du cabinet",
-                "C. Refuser de produire ses dossiers de travail",
-                "D. Démontrer la conformité aux normes ISA/NAS (présomption de diligence)"
+                "C. Refuser de produire ses dossiers de travail en invoquant le secret professionnel",
+                "D. Prouver le respect des normes (NAS/ISA) et sa diligence"
               ],
               "answer": 3,
               "explanation": "La conformité aux normes ISA/NAS crée une présomption de diligence. Autres défenses pertinentes : limites inhérentes de l'audit (ISA 200 — assurance raisonnable, pas absolue), causalité rompue (fraude indétectable), faute concurrente du CA. Refuser de produire les dossiers serait au contraire incriminant.",
@@ -3829,10 +3829,10 @@
               "type": "mcq",
               "question": "Combien de grandes catégories de missions structurent l'activité de l'auditeur, selon la pyramide des missions ?",
               "options": [
-                "A. 2 (audit + non-audit)",
-                "B. 3 (ordinaire / restreint / opting-out)",
+                "A. 2 : les missions d'audit et les missions non-audit, sans autre distinction utile",
+                "B. 3 : contrôle ordinaire, contrôle restreint et opting-out, selon les seuils du CO",
                 "C. 5 (par série ISA)",
-                "D. 4 (audit ordinaire, examen limité, autres assurances ISAE, services connexes ISRS)"
+                "D. 4 : audit, examen limité, autres missions d'assurance, services connexes"
               ],
               "answer": 3,
               "explanation": "L'auditeur dispose de 4 grandes catégories : audit ordinaire (ISA/NAS, assurance raisonnable), examen limité (ISRE 2400/NCR, assurance limitée), autres assurances (ISAE 3000-3420, niveau variable) et services connexes (ISRS 4400 procédures convenues / 4410 compilation, sans assurance).",
@@ -3910,9 +3910,9 @@
               "question": "Pharma Beta SA prépare son IPO et publie un prospectus contenant des EF pro forma intégrant une acquisition récente. Quelle norme s'applique à l'attestation de l'auditeur ?",
               "options": [
                 "A. ISAE 3000 (cadre général)",
-                "B. ISAE 3402 (organismes de service)",
-                "C. ISAE 3420 (informations financières pro forma)",
-                "D. ISAE 3410 (climate)"
+                "B. ISAE 3402 (contrôles des organismes de service)",
+                "C. ISAE 3420 (informations pro forma)",
+                "D. ISAE 3410 (bilans de gaz à effet de serre)"
               ],
               "answer": 2,
               "explanation": "ISAE 3420 régit spécifiquement les informations financières pro forma dans les prospectus IPO ou en cas de fusion-acquisition. L'auditeur atteste que les ajustements pro forma sont calculés correctement à partir des hypothèses retenues (présentation 'comme si' la transaction avait eu lieu).",
@@ -3924,10 +3924,10 @@
               "type": "mcq",
               "question": "Une banque demande au cabinet de vérifier le respect d'un covenant bancaire à fin de trimestre. Quelle est la mission appropriée ?",
               "options": [
-                "A. Audit ordinaire (ISA/NAS)",
-                "B. Examen limité (ISRE 2400)",
+                "A. Un audit ordinaire selon les ISA et les NAS",
+                "B. Un examen limité selon la norme ISRE 2400",
                 "C. Compilation (ISRS 4410)",
-                "D. Procédures convenues — PCC (ISRS 4400)"
+                "D. Procédures convenues (ISRS 4400)"
               ],
               "answer": 3,
               "explanation": "Une vérification ponctuelle d'un covenant bancaire correspond à des procédures convenues (PCC, ISRS 4400) : l'auditeur exécute des procédures spécifiques convenues avec le destinataire (la banque) et émet des constatations factuelles, sans opinion ni assurance. Le destinataire tire ses propres conclusions.",
@@ -3950,9 +3950,9 @@
               "question": "Quelle est la différence-clé entre une PCC (ISRS 4400) et un examen limité (ISRE 2400) ?",
               "options": [
                 "A. La PCC fournit une assurance limitée, l'examen limité non",
-                "B. La PCC est sans assurance et émet des constatations factuelles ; l'examen limité fournit une assurance limitée et émet une conclusion",
-                "C. Les deux fournissent une assurance limitée mais sur des périmètres différents",
-                "D. La PCC est obligatoire en Suisse, l'examen limité est facultatif"
+                "B. PCC : constatations sans assurance ; examen limité : assurance limitée",
+                "C. Les deux fournissent une assurance limitée, mais sur des périmètres différents",
+                "D. La PCC est obligatoire en Suisse, alors que l'examen limité reste facultatif"
               ],
               "answer": 1,
               "explanation": "La PCC (ISRS 4400) ne fournit AUCUNE assurance — elle livre des constatations factuelles que le destinataire interprète lui-même. L'examen limité (ISRE 2400 / NCR) fournit une assurance LIMITÉE avec conclusion négative. Distinction critique pour cadrer la lettre de mission (ISA 210).",
@@ -3964,8 +3964,8 @@
               "type": "mcq",
               "question": "Un client demande 'un audit'. Quelle est la première chose à faire ?",
               "options": [
-                "A. Clarifier le périmètre exact dans la lettre de mission (ISA 210) — 'audit' est un terme générique souvent mal utilisé",
-                "B. Accepter la mission au tarif standard d'audit ordinaire",
+                "A. Clarifier le périmètre exact (lettre de mission, ISA 210)",
+                "B. Accepter la mission au tarif standard d'un audit ordinaire selon les NAS",
                 "C. Refuser systématiquement par prudence",
                 "D. Renvoyer le client vers un confrère"
               ],
@@ -3989,10 +3989,10 @@
               "type": "mcq",
               "question": "Une fondation suisse souhaite produire un rapport ESG/durabilité crédible auprès de ses bailleurs publics. Quelle norme est la plus appropriée ?",
               "options": [
-                "A. Audit ordinaire (ISA/NAS)",
+                "A. Un audit ordinaire des comptes selon les ISA et les NAS",
                 "B. Examen limité (ISRE 2400)",
-                "C. ISAE 3000 (assurance non-financier) ou ISAE 3410 si focus climat",
-                "D. ISRS 4410 (compilation)"
+                "C. ISAE 3000 (ou ISAE 3410 pour le climat)",
+                "D. Une compilation selon la norme ISRS 4410"
               ],
               "answer": 2,
               "explanation": "Pour un rapport ESG/durabilité destiné à un public externe avec recherche de crédibilité, l'ISAE 3000 (cadre général d'assurance non-financier) ou l'ISAE 3410 (focus climat) sont les normes adaptées. Elles permettent 2 niveaux d'assurance (raisonnable ou limitée) selon le mandat. Les ISA portent sur des EF historiques.",
@@ -4029,10 +4029,10 @@
               "type": "mcq",
               "question": "Quelle est la principale logique de choix entre les différents types de mandats ?",
               "options": [
-                "A. Obligation légale, puis besoin du destinataire, puis budget/délai",
+                "A. Obligation légale, besoin du destinataire, puis budget",
                 "B. Le tarif horaire du cabinet",
-                "C. La géographie du client (canton)",
-                "D. Le secteur d'activité uniquement"
+                "C. La situation géographique du client et son canton de domicile",
+                "D. Le seul secteur d'activité du client et sa taille relative"
               ],
               "answer": 0,
               "explanation": "Logique en 3 questions : (1) y a-t-il une obligation légale (CO 727 ou 729) imposant un régime ? (2) si oui ou en complément, quel est le besoin du destinataire (banque, investisseur, AG, régulateur) ? (3) quel budget/délai disponible — choisir le mandat le moins exigeant qui couvre le risque acceptable.",
@@ -4185,10 +4185,10 @@
               "type": "mcq",
               "question": "Quelle norme professionnelle suisse encadre spécifiquement le contrôle restreint ?",
               "options": [
-                "A. NAS (Normes d'Audit Suisses)",
-                "B. NCR (Norme suisse de Contrôle Restreint)",
-                "C. ISA 200 adapté",
-                "D. ISRS 4400"
+                "A. Les NAS (Normes d'audit suisses)",
+                "B. La NCR (contrôle restreint)",
+                "C. L'ISA 200 dans une version adaptée",
+                "D. L'ISRS 4400 (procédures convenues)"
               ],
               "answer": 1,
               "explanation": "La NCR (Norme suisse de Contrôle Restreint) émise par EXPERTsuisse encadre le contrôle restreint en Suisse. Elle est alignée sur l'ISRE 2400 international tout en intégrant les exigences propres au droit suisse (notamment surendettement CO 725, augmentations de capital CO 652f/653f).",
@@ -4211,9 +4211,9 @@
               "question": "Lequel des éléments suivants caractérise le contrôle restreint par rapport au contrôle ordinaire ?",
               "options": [
                 "A. Tests des contrôles obligatoires",
-                "B. Observation systématique des inventaires physiques",
+                "B. L'observation systématique des inventaires physiques à la date de clôture",
                 "C. Confirmations externes systématiques",
-                "D. Pas de tests des contrôles requis ; pas d'observation systématique d'inventaire"
+                "D. Ni tests des contrôles, ni observation systématique des stocks"
               ],
               "answer": 3,
               "explanation": "Le contrôle restreint se caractérise par des procédures allégées : pas de tests des contrôles requis, pas d'observation systématique des inventaires, pas de confirmations externes systématiques. Les tests substantifs sont ciblés (pas étendus). Les piliers sont les interrogations et les procédures analytiques.",
@@ -4225,9 +4225,9 @@
               "type": "mcq",
               "question": "Lequel des éléments suivants est PERMIS dans le contrôle restreint mais INTERDIT dans le contrôle ordinaire ?",
               "options": [
-                "A. La tenue de la comptabilité du client par l'auditeur (sous conditions)",
+                "A. Tenir la comptabilité du client (sous conditions)",
                 "B. Le rapport au CA",
-                "C. La signature de la lettre de mission",
+                "C. La signature d'une lettre de mission par les deux parties avant le début des travaux",
                 "D. La documentation des procédures"
               ],
               "answer": 0,
@@ -4251,7 +4251,7 @@
               "question": "La NCR (en vigueur version 2015 révisée 2018) est alignée sur quelle norme internationale ?",
               "options": [
                 "A. ISA 200",
-                "B. ISRE 2400 (Revised)",
+                "B. ISRE 2400",
                 "C. ISAE 3000",
                 "D. ISRS 4400"
               ],
@@ -4265,9 +4265,9 @@
               "type": "mcq",
               "question": "Quelles sont les 2 catégories de procédures qui constituent les piliers du contrôle restreint selon la NCR ?",
               "options": [
-                "A. Interrogations (inquiry) + procédures analytiques",
+                "A. Interrogations et procédures analytiques",
                 "B. Tests des contrôles + tests substantifs étendus",
-                "C. Observations + recalculs",
+                "C. Observations physiques et recalculs arithmétiques",
                 "D. Confirmations externes + inspections physiques"
               ],
               "answer": 0,
@@ -4280,9 +4280,9 @@
               "type": "mcq",
               "question": "Lors de procédures analytiques, l'auditeur découvre une marge brute passée de 71 % à 58 %. Quelle est la démarche correcte ?",
               "options": [
-                "A. Interroger le management pour comprendre l'écart, et documenter la réponse + procédures supplémentaires si non satisfait",
-                "B. Conclure à une anomalie matérielle et émettre un rapport modifié",
-                "C. Ignorer si le seuil de matérialité n'est pas atteint",
+                "A. Interroger la direction, documenter, approfondir si besoin",
+                "B. Conclure à une anomalie significative et émettre un rapport modifié sans attendre",
+                "C. Ignorer l'écart tant que le seuil de signification global n'est pas atteint",
                 "D. Refuser de poursuivre la mission"
               ],
               "answer": 0,
@@ -4310,10 +4310,10 @@
               "type": "mcq",
               "question": "Le rapport de contrôle restreint (CO 729b) doit contenir quelles mentions obligatoires ?",
               "options": [
-                "A. KAM, opinion positive, paragraphe EOM",
-                "B. Mention de l'organe + agrément ASR, indépendance, périmètre, référence NCR, conclusion négative, date/lieu/signature",
+                "A. Les KAM, une opinion positive et un paragraphe d'observation (Emphasis of Matter)",
+                "B. Agrément, indépendance, NCR, conclusion négative, date et signature",
                 "C. Uniquement la conclusion finale",
-                "D. Constatations factuelles détaillées sans avis"
+                "D. Des constatations factuelles détaillées, sans conclusion ni avis de l'auditeur"
               ],
               "answer": 1,
               "explanation": "Le CO 729b al.1 impose 6 éléments : (1) mention de l'organe et son agrément ASR, (2) déclaration d'indépendance, (3) description du périmètre (EF + proposition d'emploi du bénéfice), (4) référence aux normes (NCR + ISRE 2400), (5) conclusion négative sur conformité loi/statuts, (6) date, lieu, signature. Mnémonique 'PIRCC'.",
@@ -4335,9 +4335,9 @@
               "type": "mcq",
               "question": "Quelles sont les 4 conditions cumulatives permettant à un auditeur du contrôle restreint de tenir AUSSI la comptabilité du client (CO 729 al. 2) ?",
               "options": [
-                "A. Pas de décisions par l'auditeur, client responsable des EF, documentation séparée, personnes différentes si organisationnellement possible",
-                "B. Accord écrit de l'AG, paiement de honoraires distincts, audit < 100h, mission < 1 an",
-                "C. Cabinet ≥ 50 collaborateurs, 2 associés signataires, séparation géographique, contrôle ASR",
+                "A. Pas de décision de l'auditeur, client responsable, séparation des tâches",
+                "B. Accord écrit de l'AG, honoraires distincts, audit de moins de 100 heures et mission de moins d'un an",
+                "C. Cabinet d'au moins 50 collaborateurs, deux associés signataires, séparation géographique et contrôle ASR",
                 "D. CA client < 1 MCHF, opting-out exclu, NCR allégée, supervision renforcée"
               ],
               "answer": 0,
@@ -4365,9 +4365,9 @@
               "type": "mcq",
               "question": "Sàrl Helvetia Tech (8 ETP, CA 5,2 MCHF, 3 associés dont un investisseur 25 %) — quel régime de révision s'applique ?",
               "options": [
-                "A. Contrôle ordinaire (effectif > 5 ETP)",
-                "B. Opting-out automatique (effectif ≤ 10 ETP)",
-                "C. Contrôle restreint — sous les seuils CO 727, opting-out exclu par l'investisseur",
+                "A. Contrôle ordinaire, car l'effectif dépasse 5 EPT en moyenne annuelle",
+                "B. Opting-out automatique, l'effectif étant inférieur ou égal à 10 EPT",
+                "C. Contrôle restreint (opting-out refusé par l'investisseur)",
                 "D. Aucun contrôle requis"
               ],
               "answer": 2,
@@ -4380,10 +4380,10 @@
               "type": "mcq",
               "question": "Pour la même Sàrl Helvetia Tech, quel est l'ordre de grandeur typique d'un mandat de contrôle restreint ?",
               "options": [
-                "A. ~50k CHF, 400-500 heures",
-                "B. ~100k CHF, ~1500 heures",
-                "C. ~500 CHF, 5 heures",
-                "D. ~12k CHF, environ 75-80 heures"
+                "A. ~50k CHF, ~450 heures",
+                "B. ~100k CHF, ~1'500 heures",
+                "C. ~500 CHF, ~5 heures",
+                "D. ~12k CHF, ~80 heures"
               ],
               "answer": 3,
               "explanation": "Pour une Sàrl d'environ 5 MCHF de CA, un mandat de contrôle restreint coûte typiquement 5 à 25k CHF (vs 30 à 100k+ pour un audit ordinaire). Helvetia Tech : ~12k CHF / 75-80h. La durée mission est de 2-6 semaines (vs 3-9 mois pour l'ordinaire). Mnémonique : restreint = 1 ordre de grandeur sous l'ordinaire.",
@@ -4405,10 +4405,10 @@
               "type": "mcq",
               "question": "Quelle formulation est CORRECTE pour la conclusion d'un rapport de contrôle restreint ?",
               "options": [
-                "A. 'Sur la base de notre contrôle, nous n'avons pas rencontré d'éléments nous permettant de conclure que les comptes annuels...ne sont pas conformes à la loi et aux statuts.'",
-                "B. 'À notre avis, les comptes annuels donnent une image fidèle...'",
-                "C. 'Nous certifions sans réserve...'",
-                "D. 'Voici nos constatations factuelles...'"
+                "A. « Nous n'avons pas rencontré d'éléments nous permettant de conclure que les comptes ne sont pas conformes… »",
+                "B. « Selon notre appréciation, les comptes annuels donnent une image fidèle du patrimoine, de la situation financière et des résultats »",
+                "C. « Nous certifions sans réserve l'exactitude des comptes annuels »",
+                "D. « Voici nos constatations factuelles détaillées »"
               ],
               "answer": 0,
               "explanation": "Le contrôle restreint exprime une assurance limitée par une conclusion négative ('n'avons pas rencontré d'éléments...'). Une formulation positive ('À notre avis...') correspond à l'audit ordinaire (assurance raisonnable) — utiliser une formulation positive dans un rapport CO 729b est une faute grave.",
@@ -4431,8 +4431,8 @@
               "question": "Que désigne le mnémonique 'PIRCC' utilisé pour mémoriser les éléments du rapport CO 729b (contrôle restreint) ?",
               "options": [
                 "A. Procédures, Inquiry, Risques, Contrôles, Continuité",
-                "B. Périmètre, Indépendance, Référentiel, Conclusion négative, Conservation 10 ans",
-                "C. Précision, Intégrité, Référence, Comptabilité, Confidentialité",
+                "B. Périmètre, Indépendance, Référentiel, Conclusion, Conservation",
+                "C. Précision, Intégrité, Référence comptable, Comptabilité et Confidentialité des dossiers",
                 "D. Profession, ISA, Reporting, Contrôle, Critères"
               ],
               "answer": 1,
@@ -4571,10 +4571,10 @@
               "type": "mcq",
               "question": "Quel organisme international émet les normes ISA, ISRE, ISAE, ISRS et ISQM ?",
               "options": [
-                "A. IAASB (émanation de l'IFAC)",
+                "A. L'IAASB",
                 "B. EXPERTsuisse",
-                "C. PCAOB",
-                "D. IESBA"
+                "C. Le PCAOB",
+                "D. L'IESBA"
               ],
               "answer": 0,
               "explanation": "L'IAASB (International Auditing and Assurance Standards Board), émanation de l'IFAC (International Federation of Accountants) et siégeant à New York, émet l'ensemble des normes d'audit, d'examens limités, d'autres assurances et de services connexes. L'IESBA est l'organe éthique de l'IFAC. Le PCAOB est le régulateur US pour les audits SEC.",
@@ -4586,8 +4586,8 @@
               "type": "mcq",
               "question": "Quelle est la hiérarchie des sources applicables à la révision en Suisse ?",
               "options": [
-                "A. Loi suisse (CO, LSR, OSRev) > NAS / NCR > ISA > Code IESBA",
-                "B. ISA (IAASB) > NAS (EXPERTsuisse) > Loi suisse",
+                "A. Loi (CO, LSR) > NAS / NCR > ISA",
+                "B. Les ISA (IAASB) priment les NAS (EXPERTsuisse), qui priment la loi suisse",
                 "C. Code IESBA > ISA > NAS > Loi suisse",
                 "D. NAS = ISA, sans hiérarchie"
               ],
@@ -4651,10 +4651,10 @@
               "type": "mcq",
               "question": "Quelle est la principale adaptation des NAS par rapport aux ISA pour les audits suisses ?",
               "options": [
-                "A. Aucune — NAS et ISA sont identiques",
-                "B. Les NAS allègent les exigences des ISA",
+                "A. Aucune : les NAS et les ISA sont strictement identiques, sans adaptation suisse",
+                "B. Les NAS allègent systématiquement les exigences des ISA pour les PME",
                 "C. Les NAS s'appliquent uniquement aux Big 4",
-                "D. Référentiel comptable (CO + Swiss GAAP RPC), conservation 10 ans, rapport CA détaillé (CO 728a), surendettement CO 725"
+                "D. Droit suisse : CO 728a, rapport détaillé au CA, art. 725 CO"
               ],
               "answer": 3,
               "explanation": "Les NAS adaptent les ISA au droit suisse : référentiel comptable (CO + Swiss GAAP RPC vs IFRS/US GAAP), conservation 10 ans (vs 5 ans ISA 230), rapport CA détaillé (CO 728a — spécificité suisse, 2 rapports), vérification surendettement CO 725, dispositions CO 725b dans ISA 570.",
@@ -4682,9 +4682,9 @@
               "question": "Dans une norme ISA, quelle est la différence entre les paragraphes 'Requirements' et 'Application material' ?",
               "options": [
                 "A. Aucune — les deux sont obligatoires",
-                "B. Les Requirements (\"shall\") sont obligatoires ; l'Application material (paragraphes A1, A2...) est de la guidance, fortement recommandée mais non strictement obligatoire",
-                "C. Les Requirements sont facultatifs ; l'Application material est obligatoire",
-                "D. Les Requirements concernent uniquement les sociétés cotées"
+                "B. Requirements (« shall ») obligatoires ; application material = guidance",
+                "C. Les Requirements sont facultatifs, tandis que l'Application material est obligatoire",
+                "D. Les Requirements concernent uniquement les sociétés cotées et les EIP"
               ],
               "answer": 1,
               "explanation": "Distinction critique : Requirements (paragraphes utilisant 'shall') = OBLIGATOIRES. Application material (numérotation A1, A2...) = guidance, exemples — fortement recommandés mais l'auditeur qui s'en écarte doit pouvoir le justifier. La citation 'ISA 315.27' désigne un Requirement ; 'ISA 315.A47' désigne de la guidance.",
@@ -4721,8 +4721,8 @@
               "type": "mcq",
               "question": "Pour un audit d'exercice 2024, quelle version de l'ISA 600 doit être appliquée ?",
               "options": [
-                "A. ISA 600 (Revised 2022) — entrée en vigueur exercices à partir du 15.12.2023, donc pleinement applicable en 2024",
-                "B. La version antérieure à 2022 (composants significatifs)",
+                "A. ISA 600 (Revised), applicable dès le 15.12.2023",
+                "B. La version antérieure à 2022, fondée sur les composants significatifs du groupe",
                 "C. ISA 600 (Revised 2024)",
                 "D. Aucune version — ISA 600 est volontaire"
               ],
@@ -4736,10 +4736,10 @@
               "type": "mcq",
               "question": "Le Code IESBA, intégré dans le Code de déontologie EXPERTsuisse, traite notamment de quels sujets ?",
               "options": [
-                "A. 5 principes fondamentaux + indépendance audit (Section 4) + autres assurances (Section 5)",
-                "B. Méthodologie d'audit uniquement",
-                "C. Comptabilité générale et IFRS",
-                "D. Procédures fiscales suisses"
+                "A. Principes et indépendance",
+                "B. La méthodologie d'audit uniquement",
+                "C. La comptabilité générale et les IFRS",
+                "D. Les procédures fiscales suisses applicables"
               ],
               "answer": 0,
               "explanation": "Le Code IESBA structure : Section 1 (cadre conceptuel), Section 2 (5 principes fondamentaux : intégrité, objectivité, compétence, confidentialité, comportement professionnel), Section 3 (cabinets), Section 4 (indépendance audit), Section 5 (autres missions d'assurance). Détaillé en L15 (éthique).",
@@ -4753,8 +4753,8 @@
               "options": [
                 "A. Suppression des estimations dans l'audit",
                 "B. Renvoi aux contrôles substantifs uniquement",
-                "C. Externalisation des estimations à un expert obligatoire",
-                "D. Approche en 3 voies (procédure, point estimate ou test des événements postérieurs) + management bias explicitement traité"
+                "C. Le recours obligatoire à un expert externe pour toute estimation significative",
+                "D. Réponses graduées au risque, biais de la direction traité"
               ],
               "answer": 3,
               "explanation": "ISA 540 (Revised 2018) introduit une approche en 3 voies : tester (1) le processus du management, (2) un point estimate de l'auditeur, ou (3) les événements postérieurs. Le management bias (recherche d'asymétrie dans les estimations) est explicitement traité. Réponse aux estimations complexes (impairment, ECL IFRS 9, juste valeur level 3). Détaillé en L11.",
@@ -4892,10 +4892,10 @@
               "type": "mcq",
               "question": "Combien de normes compose la série ISA 200 et selon quelle structure pédagogique sont-elles regroupées ?",
               "options": [
-                "A. 6 normes regroupées en 3 paires (bases / risques / rapport)",
-                "B. 8 normes regroupées en 4 paires logiques (bases / trace / risques externes / dialogue)",
+                "A. 6 normes regroupées en 3 paires (bases, risques, rapport)",
+                "B. 8 normes (200 à 265), regroupées par paires",
                 "C. 10 normes sans regroupement formel",
-                "D. 8 normes regroupées par ordre numérique sans thème"
+                "D. 8 normes classées par ordre numérique, sans regroupement thématique"
               ],
               "answer": 1,
               "explanation": "La série 200 contient 8 normes (200, 210, 220, 230, 240, 250, 260, 265) regroupées en 4 paires logiques : bases conceptuelles (200/210/220), traçabilité (230), risques externes (240/250), dialogue avec l'entité (260/265). Cette structure est le socle conceptuel transverse de tout audit.",
@@ -4917,9 +4917,9 @@
               "type": "mcq",
               "question": "Selon le modèle du risque d'audit RA = RI x RC x RND, sur quelle composante l'auditeur peut-il directement agir ?",
               "options": [
-                "A. Le risque de non-detection (RND), via la nature/étendue/calendrier des procédures",
-                "B. Le risque inherent (RI), via des procédures preventives",
-                "C. Le risque de non-contrôle (RC), en renforçant le SCI du client",
+                "A. Le risque de non-détection (RND)",
+                "B. Le risque inhérent (RI), au moyen de procédures préventives",
+                "C. Le risque lié au contrôle (RC), en renforçant le SCI du client",
                 "D. Aucun, le risque est entièrement subi"
               ],
               "answer": 0,
@@ -4933,8 +4933,8 @@
               "question": "Que signifie l'expression 'assurance raisonnable' au sens d'ISA 200, dans le contexte d'un audit financier mene selon les normes internationales ?",
               "options": [
                 "A. Une certitude absolue sur l'absence d'anomalies",
-                "B. Un haut niveau de confiance, sans certitude absolue, en raison des limites inhérentes",
-                "C. Une probabilité mathématique de 95 % d'absence d'erreur",
+                "B. Un niveau élevé d'assurance, sans certitude absolue",
+                "C. Une probabilité mathématique de 95 % d'absence d'erreur significative",
                 "D. La garantie que toute fraude sera détectée"
               ],
               "answer": 1,
@@ -4957,9 +4957,9 @@
               "type": "mcq",
               "question": "Selon ISA 210, quelles sont les preconditions a vérifier AVANT d'accepter une mission d'audit ?",
               "options": [
-                "A. Référentiel comptable acceptable et reconnaissance par la direction de ses 3 responsabilités (EF, SCI, accès)",
-                "B. Honoraires payés d'avance et police d'assurance RC en regle",
-                "C. Existence d'un comité d'audit indépendant et certification ISO du client",
+                "A. Référentiel acceptable et responsabilités reconnues par la direction",
+                "B. Des honoraires payés d'avance et une police d'assurance RC professionnelle en règle",
+                "C. L'existence d'un comité d'audit indépendant et la certification ISO du client",
                 "D. Cotation de l'entité sur un marche reglemente"
               ],
               "answer": 0,
@@ -4973,9 +4973,9 @@
               "question": "Lequel des éléments suivants ne fait PAS partie du contenu minimum d'une lettre de mission selon ISA 210.10 ?",
               "options": [
                 "A. Objectif et étendue de l'audit",
-                "B. Responsabilités de l'auditeur et de la direction",
+                "B. Les responsabilités respectives de l'auditeur et de la direction de l'entité",
                 "C. Forme et contenu attendus du rapport",
-                "D. Honoraires détaillés ligne par ligne et politique de facturation"
+                "D. Le détail des honoraires ligne par ligne"
               ],
               "answer": 3,
               "explanation": "ISA 210.10 exige : objectif/étendue, responsabilités de l'auditeur, responsabilités de la direction, référentiel comptable, forme/contenu du rapport. Les honoraires détaillés ne font pas partie du contenu minimum normatif - ils figurent souvent dans la lettre mais ne sont pas une exigence ISA. La spécificité suisse mentionne en plus art. 728/729 CO et l'ASR.",
@@ -4998,9 +4998,9 @@
               "question": "Dans la pyramide qualité ISA 220 / ISQM 1 / ISQM 2, quel niveau correspond a quelle responsabilité ?",
               "options": [
                 "A. ISA 220 = cabinet, ISQM 1 = mission, ISQM 2 = revue qualité",
-                "B. ISA 220 = mission individuelle, ISQM 1 = cabinet (firm-wide), ISQM 2 = revue qualité (EQR)",
+                "B. ISA 220 : mission ; ISQM 1 : cabinet ; ISQM 2 : EQR",
                 "C. ISA 220 = revue qualité, ISQM 1 = mission, ISQM 2 = cabinet",
-                "D. Les trois normes sont des synonymes designant le même niveau"
+                "D. Les trois normes sont des synonymes désignant le même niveau de responsabilité"
               ],
               "answer": 1,
               "explanation": "ISA 220 régit la qualité d'une mission individuelle (engagement, associé responsable). ISQM 1 régit la qualité du cabinet globalement (politiques, supervision, monitoring annuel). ISQM 2 régit la revue qualité de la mission (EQR, reviewer indépendant). Confondre ISA 220 et ISQM 1 est l'un des pieges classiques d'examen.",
@@ -5012,9 +5012,9 @@
               "type": "mcq",
               "question": "Dans quels cas une revue qualité de la mission (EQR, ISQM 2) est-elle obligatoire ?",
               "options": [
-                "A. Entités cotées, entités d'intérêt public, ou risque eleve identifie par le cabinet",
+                "A. Entités cotées, EIP ou risque élevé selon le cabinet",
                 "B. Pour toute mission d'audit sans exception",
-                "C. Uniquement pour les missions de plus de CHF 1 million d'honoraires",
+                "C. Uniquement pour les missions dont les honoraires dépassent CHF 1 million",
                 "D. Uniquement lorsque le client en fait la demande explicite"
               ],
               "answer": 0,
@@ -5078,7 +5078,7 @@
               "question": "Selon ISA 240, laquelle des affirmations suivantes correspond a une présomption obligatoire que l'auditeur doit traiter ?",
               "options": [
                 "A. Toute estimation comptable est présumée frauduleuse",
-                "B. Le risque de fraude sur la reconnaissance du revenu est presume dans toute mission (a infirmer si non pertinent)",
+                "B. Le risque de fraude sur le revenu (présomption réfragable)",
                 "C. La direction est présumée de bonne foi, ce qui exclut tout test de fraude",
                 "D. Les écritures comptables manuelles sont interdites"
               ],
@@ -5092,10 +5092,10 @@
               "type": "mcq",
               "question": "Quelles sont les trois pointes du triangle de la fraude de Cressey, repris par ISA 240, qui caracterisent les conditions favorisant la fraude au sein d'une organisation ?",
               "options": [
-                "A. Pression, Opportunité, Rationalisation",
-                "B. Connaissance, Pouvoir, Argent",
+                "A. Pression, opportunité, rationalisation",
+                "B. Connaissance, pouvoir et argent",
                 "C. Direction, Employés, Tiers",
-                "D. SCI, Audit interne, Audit externe"
+                "D. SCI, audit interne et audit externe de l'entité"
               ],
               "answer": 0,
               "explanation": "Le triangle de Cressey, repris par ISA 240, identifie trois conditions presentes dans la majorité des fraudes : Pression (objectif financier, dette, addiction), Opportunité (faille SCI, segregation absente), Rationalisation ('je rembourserai', 'tout le monde le fait'). L'auditeur evalue ces facteurs lors du brainstorming d'équipe.",
@@ -5107,9 +5107,9 @@
               "type": "mcq",
               "question": "Selon ISA 250, quelle est la différence entre une loi a 'direct effect' et une loi a 'indirect effect' sur les EF ?",
               "options": [
-                "A. Direct effect = lois fiscales/sociétés/comptabilité, audit direct des transactions ; indirect effect = concurrence/environnement, vigilance et procédures limitées",
-                "B. Direct effect = lois suisses, indirect effect = lois étrangères",
-                "C. Direct effect = lois en vigueur, indirect effect = lois abrogées",
+                "A. Effet direct : montants des EF ; indirect : activité (vigilance)",
+                "B. Effet direct : lois suisses ; effet indirect : lois étrangères applicables",
+                "C. Effet direct : lois en vigueur ; effet indirect : lois abrogées mais encore invoquées",
                 "D. Il n'existe pas de distinction dans ISA 250"
               ],
               "answer": 0,
@@ -5148,9 +5148,9 @@
               "question": "Selon ISA 260, quel format de communication écrite avec la gouvernance est typiquement utilise en pratique ?",
               "options": [
                 "A. Un courriel informel resumant les principaux points",
-                "B. La Management Letter (lettre de recommandations) ou un rapport au comité d'audit",
+                "B. Une lettre de recommandations ou un rapport au CA",
                 "C. Une publication dans le rapport annuel",
-                "D. Aucune communication écrite n'est exigée si le climat est cordial"
+                "D. Aucune communication écrite n'est exigée si les relations avec la direction sont bonnes"
               ],
               "answer": 1,
               "explanation": "ISA 260 impose une communication ÉCRITE avec la gouvernance (audit committee/board). Le format usuel est la Management Letter (lettre de recommandations en français) ou un rapport dédié au comité d'audit. Elle couvre : périmètre/calendrier, indépendance, constatations significatives, modifications du rapport envisagées, going concern.",
@@ -5319,8 +5319,8 @@
               "type": "mcq",
               "question": "Selon ISA 300, quelle est la différence entre la stratégie globale et le plan d'audit ?",
               "options": [
-                "A. La stratégie est détaillée par cycle, le plan est high-level",
-                "B. La stratégie est high-level (périmètre/calendrier/ressources), le plan est detaille (programmes par cycle, procédures spécifiques)",
+                "A. La stratégie est détaillée par cycle, tandis que le plan reste général",
+                "B. Stratégie : vue d'ensemble ; plan : procédures détaillées",
                 "C. Les deux sont synonymes",
                 "D. La stratégie n'est requise que pour les entités cotées, le plan pour toutes"
               ],
@@ -5334,10 +5334,10 @@
               "type": "mcq",
               "question": "Sur une nouvelle mission, ISA 300.13 impose des procédures additionnelles. Lesquelles ?",
               "options": [
-                "A. Prise de connaissance approfondie, soldes d'ouverture ISA 510, lecture des dossiers prédécesseur",
+                "A. Compréhension approfondie, soldes d'ouverture (ISA 510), dossiers du prédécesseur",
                 "B. Augmenter les honoraires de 30 %",
-                "C. Refuser toute reliance sur le SCI lors du premier exercice",
-                "D. Faire signer une lettre de mission par le prédécesseur"
+                "C. Refuser toute confiance dans le SCI lors du premier exercice audité, sans exception",
+                "D. Faire signer une lettre de mission conjointe par l'auditeur prédécesseur"
               ],
               "answer": 0,
               "explanation": "ISA 300.13 prévoit pour une nouvelle mission : prise de connaissance approfondie, audit des soldes d'ouverture conformément a ISA 510, lecture des dossiers du prédécesseur (avec autorisation client). Ces procédures justifient le surcoût de planification (jusqu'a 30 % du budget).",
@@ -5351,8 +5351,8 @@
               "options": [
                 "A. Uniquement au niveau global des EF",
                 "B. Uniquement au niveau des assertions",
-                "C. Au double niveau : global des EF (overall financial statement level) ET niveau des assertions (transaction class, account balance, disclosure)",
-                "D. Au niveau de chaque ligne d'écriture comptable"
+                "C. Au niveau des EF pris dans leur ensemble et des assertions",
+                "D. Au niveau de chaque ligne d'écriture comptable enregistrée dans l'exercice"
               ],
               "answer": 2,
               "explanation": "ISA 315 (R2019) impose une identification des RMM au DOUBLE niveau : (1) niveau global des EF (overall financial statement level), avec réponses globales en ISA 330 ; (2) niveau des assertions (par classe de transaction, solde, ou disclosure), avec procédures spécifiques. Cette dualite structure toute la planification.",
@@ -5364,9 +5364,9 @@
               "type": "mcq",
               "question": "Lequel des critères suivants caractérise un 'significant risk' au sens d'ISA 315.27 ?",
               "options": [
-                "A. Risque de fraude, transactions inhabituelles/complexes, estimations très subjectives, transactions avec parties liées hors cours normal",
-                "B. Tout risque dont l'impact financier depasse la materiality",
-                "C. Risque identifie pour la première fois sur la mission",
+                "A. Un risque inhérent au haut de l'échelle (fraude, inhabituel, subjectif)",
+                "B. Tout risque dont l'impact financier potentiel dépasse le seuil de signification global",
+                "C. Un risque identifié pour la première fois au cours de la mission en cours",
                 "D. Risque mentionne dans la lettre de mission"
               ],
               "answer": 0,
@@ -5389,9 +5389,9 @@
               "type": "mcq",
               "question": "Pour une société commerciale stable, quel benchmark de calcul de l'overall materiality (OM) est typiquement retenu ?",
               "options": [
-                "A. 5 % du résultat avant impôt",
-                "B. 10 % du chiffre d'affaires",
-                "C. 25 % de l'actif total",
+                "A. 5 % du résultat avant impôts",
+                "B. 10 % du chiffre d'affaires net",
+                "C. 25 % du total de l'actif",
                 "D. 50 % des fonds propres"
               ],
               "answer": 0,
@@ -5444,10 +5444,10 @@
               "type": "mcq",
               "question": "Lequel des éléments suivants constitue une réponse globale (overall response) au sens d'ISA 330 ?",
               "options": [
-                "A. Confirmation des soldes clients",
-                "B. Inspection physique des stocks",
-                "C. Affecter du personnel plus expérimenté, surveillance accrue, imprévisibilité des procédures",
-                "D. Recalcul des amortissements"
+                "A. La confirmation externe des soldes clients",
+                "B. L'inspection physique des stocks à la clôture",
+                "C. Équipe expérimentée, imprévisibilité",
+                "D. Le recalcul des amortissements de l'exercice"
               ],
               "answer": 2,
               "explanation": "Les réponses globales d'ISA 330 visent le niveau EF : renforcer le scepticisme, affecter personnel plus expérimenté ou experts, surveillance accrue de l'équipe, imprévisibilité des procédures (rotation des sites, dates surprise). Les options A, B, D sont des procédures supplémentaires au niveau des assertions.",
@@ -5459,9 +5459,9 @@
               "type": "mcq",
               "question": "A quelles conditions un auditeur peut-il légitimement réaliser des tests des contrôles (TOC) plutôt qu'une approche substantive pure ?",
               "options": [
-                "A. Le client demande de minimiser le coût",
-                "B. L'auditeur s'attend a ce que les contrôles fonctionnent ET un test substantif seul ne fournit pas suffisamment d'éléments probants",
-                "C. Le SCI a ete certifie par un audit interne",
+                "A. Le client demande de minimiser le coût de l'audit et le nombre d'heures",
+                "B. Contrôles attendus efficaces, ou substance seule insuffisante",
+                "C. Le SCI a été certifié par l'audit interne de l'entité au cours de l'exercice",
                 "D. La mission est récurrente depuis plus de 3 ans"
               ],
               "answer": 1,
@@ -5597,8 +5597,8 @@
               "type": "mcq",
               "question": "Que prescrit l'art. 728a al.1 ch.3 CO en matière de SCI dans le contrôle ordinaire ?",
               "options": [
-                "A. L'auditeur émet une opinion publique sur l'efficacité du SCI",
-                "B. L'auditeur constate l'existence d'un SCI dont la conception est définie par le CA selon les activités et la taille",
+                "A. L'auditeur émet une opinion publique sur l'efficacité opérationnelle du SCI",
+                "B. L'auditeur vérifie l'existence d'un SCI",
                 "C. L'auditeur certifie la conformité SOX du SCI",
                 "D. L'auditeur impose un cadre COSO obligatoire"
               ],
@@ -5622,10 +5622,10 @@
               "type": "mcq",
               "question": "Quelles sont les 5 composantes du cadre COSO 2013 (Internal Control - Integrated Framework), reprises par ISA 315 comme structure de la compréhension du SCI ?",
               "options": [
-                "A. Acceptation, Planification, Exécution, Rapport, Suivi",
+                "A. Acceptation, planification, exécution, rapport et suivi des recommandations",
                 "B. Stratégie, Operations, Reporting, Compliance, IT",
-                "C. Tone, Risque, Action, Info, Surveillance (ou Environnement / Risques / Activités de contrôle / Information & communication / Pilotage)",
-                "D. Existence, Exhaustivité, Mesure, Évaluation, Presentation"
+                "C. Environnement, risques, activités, information, pilotage",
+                "D. Existence, exhaustivité, mesure, évaluation et présentation des informations"
               ],
               "answer": 2,
               "explanation": "Les 5 composantes COSO 2013 sont : (1) Environnement de contrôle (tone at the top, éthique, gouvernance), (2) Évaluation des risques, (3) Activités de contrôle (autorisations, rapprochements, segregation, contrôles IT), (4) Information & communication (SI comptable, IT, reporting), (5) Pilotage/monitoring (audit interne, suivi des déficiences). 17 principes les déclinent.",
@@ -5663,8 +5663,8 @@
               "question": "Quelle est la différence entre conception (design), implementation et efficacité opérationnelle d'un contrôle ?",
               "options": [
                 "A. Aucune, ce sont des synonymes",
-                "B. Conception = automatise ; implementation = manuel ; efficacité = mixte",
-                "C. Conception = contrôle existe et est bien conçu sur le papier ; implementation = contrôle effectivement mis en oeuvre (1-2 transactions) ; efficacité opérationnelle = fonctionne sur la durée (test sur échantillon de 25)",
+                "B. Conception = contrôle automatisé ; mise en place = manuel ; efficacité = mixte",
+                "C. Bien conçu, effectivement mis en place, efficace sur la période",
                 "D. Conception = design IT ; implementation = formation utilisateurs ; efficacité = audit interne"
               ],
               "answer": 2,
@@ -5677,10 +5677,10 @@
               "type": "mcq",
               "question": "Qu'est-ce qu'un walkthrough en audit, et quelle est sa finalité dans la phase de compréhension du SCI exigée par ISA 315 ?",
               "options": [
-                "A. Le suivi d'une transaction de bout en bout (commande -> expédition -> facture -> encaissement -> comptabilisation) pour comprendre le processus",
+                "A. Suivre une transaction de bout en bout dans le processus",
                 "B. Une visite physique des locaux du client",
-                "C. Une marche d'équipe pour fortifier la cohesion",
-                "D. Un test substantif aléatoire sur 100 transactions"
+                "C. Une sortie d'équipe destinée à renforcer la cohésion des auditeurs",
+                "D. Un test de substance aléatoire portant sur 100 transactions de l'exercice"
               ],
               "answer": 0,
               "explanation": "Un walkthrough consiste a suivre UNE transaction de bout en bout dans le processus, par exemple cycle vente : commande -> expédition -> facture -> encaissement -> comptabilisation. L'objectif est de comprendre la conception et confirmer l'implementation des contrôles clés. C'est un outil de compréhension (pas un test d'efficacité opérationnelle qui exige un échantillon).",
@@ -5732,8 +5732,8 @@
               "type": "mcq",
               "question": "Quelle est la principale limitation inhérente du système de contrôle interne (SCI) identifiée par ISA 240, et qui constitue le risque numéro un en matière de fraude ?",
               "options": [
-                "A. Le management override of controls (contournement par la direction)",
-                "B. Le coût des contrôles depasse leurs bénéfices",
+                "A. Le contournement des contrôles par la direction",
+                "B. Le coût des contrôles, qui dépasse souvent les bénéfices attendus",
                 "C. La complexité des systèmes IT",
                 "D. La rotation du personnel"
               ],
@@ -5748,9 +5748,9 @@
               "question": "Quelle réponse l'ISA 240 prescrit-il face au risque de management override, quel que soit le niveau de qualité du SCI ?",
               "options": [
                 "A. Refuser la mission",
-                "B. Demander une déclaration écrite au CEO",
-                "C. Limiter les procédures aux confirmations clients",
-                "D. Tester les journaux atypiques (manual JE, écritures de fin de période, contre-passés) sur tout l'exercice"
+                "B. Obtenir une déclaration écrite du CEO attestant l'absence de fraude",
+                "C. Limiter les procédures aux confirmations des clients et des banques",
+                "D. Tester les écritures de journal et les ajustements"
               ],
               "answer": 3,
               "explanation": "ISA 240.32 prescrit des tests obligatoires de journaux atypiques (manual journal entries, écritures de fin de période, contre-passés) sur tout l'exercice, en réponse au risque de management override. Ces tests sont non negociables, INDÉPENDAMMENT du niveau de qualité percue du SCI : même un SCI excellent ne neutralise pas le risque de contournement par la direction.",
@@ -5772,10 +5772,10 @@
               "type": "mcq",
               "question": "Pourquoi la substantive approach est-elle souvent preferable lors de l'audit d'une PME suisse ?",
               "options": [
-                "A. Parce que la loi suisse l'exige pour les PME",
-                "B. Parce que l'effectif comptable réduit limite la segregation, la documentation est limitée, et la forte implication du dirigeant accroît le risque de management override",
+                "A. Parce que la loi suisse l'exige expressément pour toutes les PME révisées",
+                "B. Peu de séparation des tâches et dirigeant très impliqué",
                 "C. Parce que les PME n'ont jamais de SCI",
-                "D. Parce que l'audit interne PME est plus efficace"
+                "D. Parce que l'audit interne des PME est généralement plus efficace que leur SCI"
               ],
               "answer": 1,
               "explanation": "Sur PME (effectif comptable de 1-3 personnes, segregation limitée, documentation orale, IT simple Bexio/Abacus/Cresus), l'auditeur opte souvent pour une substantive approach : pas de reliance, procédures de fond étendues, analytiques de fond plus puissantes. La forte implication du dirigeant peut être un contrôle de pilotage mais aussi accroît le risque de management override -> vigilance accrue.",
@@ -5923,8 +5923,8 @@
               "type": "mcq",
               "question": "Combien de normes compose la série ISA 400 ?",
               "options": [
-                "A. Une seule : ISA 402 - Considerations relatives a l'audit d'une entité utilisatrice de services",
-                "B. Trois : ISA 401, 402, 403",
+                "A. Une seule : ISA 402 (organismes de service)",
+                "B. Trois normes : ISA 401, 402 et 403 (environnement informatique)",
                 "C. Cinq : ISA 401 a 405",
                 "D. Aucune, la série 400 a ete supprimée"
               ],
@@ -5938,8 +5938,8 @@
               "type": "mcq",
               "question": "Dans le vocabulaire ISA 402, qui est le 'user auditor' ?",
               "options": [
-                "A. L'auditeur de l'organisme de service (le tiers)",
-                "B. L'auditeur de l'entité utilisatrice (= notre client audite)",
+                "A. L'auditeur de l'organisme de service (le prestataire tiers)",
+                "B. L'auditeur de l'entité utilisatrice",
                 "C. L'utilisateur final des services informatiques",
                 "D. L'auditeur interne du tiers"
               ],
@@ -5980,8 +5980,8 @@
               "options": [
                 "A. Type 1 = annuel, Type 2 = semestriel",
                 "B. Type 1 = US, Type 2 = international",
-                "C. Type 1 = signe par associé, Type 2 = signe par EQR",
-                "D. Type 1 = description + design des contrôles a une date ; Type 2 = description + design + efficacité opérationnelle sur une période (>= 6 mois)"
+                "C. Type 1 : signé par l'associé ; Type 2 : signé par le réviseur qualité (EQR) du cabinet",
+                "D. Type 1 : conception à une date ; Type 2 : efficacité sur une période"
               ],
               "answer": 3,
               "explanation": "Type 1 = description du SCI et design des contrôles a une DATE (point dans le temps) - pas de tests d'efficacité. Type 2 = description + design + efficacité opérationnelle sur une PÉRIODE (minimum 6 mois) avec tests d'efficacité. Pour le user auditor, seul le Type 2 fournit des éléments probants sur l'efficacité opérationnelle.",
@@ -6003,9 +6003,9 @@
               "type": "mcq",
               "question": "Quelles sont les 4 étapes de la démarche du user auditor selon ISA 402 ?",
               "options": [
-                "A. Acceptation -> Planification -> Exécution -> Rapport",
-                "B. Visiter le tiers -> Signer un NDA -> Tester -> Conclure",
-                "C. Comprendre l'utilisation -> Évaluer les RMM -> Décider de l'approche -> Si éléments probants requis chez le tiers, choisir parmi 3 options (SOC, audit direct, sub-service auditor)",
+                "A. Acceptation, planification, exécution et rapport, comme pour tout audit",
+                "B. Visiter le prestataire, signer un accord de confidentialité, tester et conclure",
+                "C. Comprendre, évaluer les RMM, choisir l'approche, obtenir les preuves",
                 "D. Demander SOC -> Le lire -> Le signer -> L'archiver"
               ],
               "answer": 2,
@@ -6018,9 +6018,9 @@
               "type": "mcq",
               "question": "Que sont les Complementary User Entity Controls (CUEC) ?",
               "options": [
-                "A. Des contrôles que l'entité utilisatrice doit mettre en oeuvre de son cote, listes en annexe du SOC, et que le user auditor doit tester chez le client",
-                "B. Des contrôles supplémentaires que le service auditor ajoute au SOC",
-                "C. Des contrôles facultatifs evoques mais non requis",
+                "A. Des contrôles que l'entité utilisatrice doit avoir chez elle",
+                "B. Des contrôles supplémentaires que l'auditeur du prestataire ajoute à son rapport SOC",
+                "C. Des contrôles facultatifs évoqués dans le rapport SOC, mais jamais requis",
                 "D. Les contrôles automatisés du tiers"
               ],
               "answer": 0,
@@ -6045,8 +6045,8 @@
               "options": [
                 "A. Refuser le rapport SOC en bloc",
                 "B. Étendre artificiellement la materiality",
-                "C. Obtenir une bridging letter du service auditor + effectuer des procédures complémentaires sur la période non couverte",
-                "D. Considérer le gap comme négligeable par défaut"
+                "C. Bridging letter et procédures sur la période non couverte",
+                "D. Considérer par défaut l'écart de couverture comme négligeable pour l'audit"
               ],
               "answer": 2,
               "explanation": "La solution standard pour un gap period est : obtenir une bridging letter du service auditor (couvrant la période entre la fin du SOC et la clôture du client) + effectuer des procédures complémentaires sur la période non couverte. Ignorer le décalage de période est l'un des quatre pieges classiques d'examen ISA 402.",
@@ -6074,9 +6074,9 @@
               "question": "Sur une PME suisse confiant sa paie a un petit fiduciaire local SANS rapport SOC, quelle approche le user auditor adoptera-t-il ?",
               "options": [
                 "A. Refuser la mission",
-                "B. Exiger que le fiduciaire produise un SOC avant l'audit",
-                "C. Se contenter d'une déclaration écrite du fiduciaire",
-                "D. Effectuer les procédures directement : prise de connaissance du fiduciaire, recalcul échantillon paie, rapprochement charges sociales (AVS, LPP, AC), confirmation employés clés - approche substantive dominante"
+                "B. Exiger du fiduciaire qu'il produise un rapport SOC 1 Type 2 avant le début de l'audit",
+                "C. Se contenter d'une attestation écrite du fiduciaire sur la qualité de ses contrôles",
+                "D. Procédures directes (recalcul de la paie, rapprochements AVS/LPP)"
               ],
               "answer": 3,
               "explanation": "Sans SOC ni ISAE 3402, le user auditor effectue les procédures directement : prise de connaissance du fiduciaire (compétence, organisation), recalcul d'un échantillon paie, rapprochement des charges sociales (AVS, LPP, AC), confirmation auprès d'employés clés. C'est une approche substantive dominante typique en audit PME suisse, conforme a la démarche ISA 402 étape 4 option 2.",
@@ -6282,9 +6282,9 @@
               "type": "mcq",
               "question": "Une auditrice teste 200 factures fournisseurs et constate que 195 sont conformes. Elle conclut que la quantité obtenue est largement suffisante. Quelle critique ISA 500 peut-on lui faire ?",
               "options": [
-                "A. Aucune — la quantité est élevée, donc les critères sont remplis",
+                "A. Aucune : la quantité testée est élevée, donc les deux critères sont remplis",
                 "B. Elle aurait du tester 300 factures minimum",
-                "C. Quantité ne compense pas la qualité : suffisant et approprié sont cumulatifs, pas substituables",
+                "C. Suffisant et approprié sont deux critères cumulatifs",
                 "D. Les confirmations externes sont obligatoires en complément"
               ],
               "answer": 2,
@@ -6322,10 +6322,10 @@
               "type": "mcq",
               "question": "Pour les litiges, quelle est la procédure-clé prévue par ISA 501 ?",
               "options": [
-                "A. Demander a la direction un resume des litiges en cours",
+                "A. Demander à la direction un résumé écrit de tous les litiges en cours",
                 "B. Lecture des rapports d'audit interne",
-                "C. Lettre directe de l'auditeur a l'avocat de l'entité, avec réponse directe a l'auditeur",
-                "D. Confirmation auprès des autorités fiscales uniquement"
+                "C. Une lettre à l'avocat, réponse directe à l'auditeur",
+                "D. Une confirmation obtenue auprès des autorités fiscales uniquement"
               ],
               "answer": 2,
               "explanation": "ISA 501.9-12 prévoit une lettre a l'avocat (legal letter) — DEMANDE DIRECTE par l'auditeur avec réponse DIRECTE a l'auditeur. Si l'avocat refuse de répondre, c'est une limitation de scope avec impact potentiel sur l'opinion (ISA 705).",
@@ -6338,8 +6338,8 @@
               "question": "Selon ISA 505, dans quelle situation l'utilisation de confirmations NEGATIVES est-elle appropriée ?",
               "options": [
                 "A. Soldes matériels avec RMM eleve",
-                "B. Toujours, lorsque positive est trop coûteuse",
-                "C. Faible RMM + faibles montants individuels + grand nombre de comptes + faible taux d'exception attendu (les 4 conditions cumulatives)",
+                "B. Toujours, dès que les confirmations positives seraient trop coûteuses à obtenir",
+                "C. RMM faible, petits soldes nombreux, peu d'exceptions attendues",
                 "D. Uniquement pour les soldes intra-groupe"
               ],
               "answer": 2,
@@ -6363,9 +6363,9 @@
               "question": "Si la direction REFUSE de laisser l'auditeur envoyer des confirmations externes, quelle est la démarche ISA 505 ?",
               "options": [
                 "A. Accepter le refus sans question",
-                "B. Demander une lettre de representations couvrant le solde",
-                "C. Comprendre les motifs, évaluer impact RMM (signal fraude potentiel), faire procédures alternatives ; si refus déraisonnable, limitation de scope",
-                "D. Démissionner immédiatement de la mission"
+                "B. Demander une lettre d'affirmation couvrant le solde, qui remplace la confirmation",
+                "C. Comprendre les motifs, procédures alternatives, sinon limitation",
+                "D. Démissionner immédiatement de la mission, sans autre analyse des motifs"
               ],
               "answer": 2,
               "explanation": "ISA 505 prévoit : (1) comprendre et valider les motifs du refus, (2) évaluer l'impact sur le RMM (un refus peut être signal de fraude), (3) réaliser des procédures alternatives. Si le refus n'est pas raisonnable, c'est une limitation de scope avec impact opinion (ISA 705).",
@@ -6408,8 +6408,8 @@
               "question": "Selon ISA 540 (R2018), le risque inherent (RI) lie a une estimation comptable est module par 3 facteurs. Lesquels ?",
               "options": [
                 "A. Matérialité, taille, secteur",
-                "B. Risque inherent, risque de contrôle, risque de detection",
-                "C. Incertitude d'estimation, complexité, subjectivité (+ biais management)",
+                "B. Le risque inhérent, le risque lié au contrôle et le risque de non-détection",
+                "C. Incertitude, complexité, subjectivité",
                 "D. Volume, valeur, fréquence"
               ],
               "answer": 2,
@@ -6422,10 +6422,10 @@
               "type": "mcq",
               "question": "Selon ISA 550, quel est le critère DEFINISSANT une partie liée ?",
               "options": [
-                "A. Volume d'affaires important avec l'entité",
-                "B. Contrôle, être contrôlée par, ou exercer une influence notable sur l'entité",
+                "A. Un volume d'affaires important avec l'entité",
+                "B. Contrôle ou influence notable",
                 "C. Localisation géographique commune",
-                "D. Appartenance au même secteur d'activité"
+                "D. L'appartenance au même secteur d'activité"
               ],
               "answer": 1,
               "explanation": "ISA 550 définit la partie liée par CONTRÔLE, ÊTRE CONTRÔLÉE PAR, ou INFLUENCE NOTABLE. Un fournisseur a fort volume n'est PAS une partie liée au sens d'ISA 550 — le critère est le contrôle/influence, pas le volume d'affaires.",
@@ -6447,9 +6447,9 @@
               "type": "mcq",
               "question": "Un fait existant a la clôture mais revele après (ex. faillite d'un client important survenue avant clôture mais apprise en mars) est qualifie de :",
               "options": [
-                "A. Type I — adjusting event (les EF doivent être ajustés)",
-                "B. Type II — non-adjusting event (disclosure uniquement)",
-                "C. Post-date du rapport",
+                "A. Événement ajustant (type I)",
+                "B. Événement non ajustant (type II) : information en annexe uniquement",
+                "C. Un événement postérieur à la date du rapport d'audit",
                 "D. Hors champ ISA 560"
               ],
               "answer": 0,
@@ -6477,10 +6477,10 @@
               "type": "mcq",
               "question": "Selon ISA 580, quel est le statut de la lettre de representations (LoR) par rapport aux autres éléments probants ?",
               "options": [
-                "A. Substitut acceptable a une procédure manquante",
+                "A. Un substitut acceptable à une procédure d'audit manquante",
                 "B. Équivalente a une confirmation externe",
-                "C. Optionnelle pour les missions de petite taille",
-                "D. Complément aux autres éléments probants, jamais substitut"
+                "C. Un document optionnel pour les missions de petite taille",
+                "D. Un complément, jamais un substitut"
               ],
               "answer": 3,
               "explanation": "ISA 580.4 enonce explicitement que la LoR est un COMPLÉMENT, pas un substitut. Elle confirme ce qu'on a déjà teste, ne le remplace JAMAIS. Trap d'examen : un candidat coche LoR obtenue et croit que cela couvre l'absence de procédures sur, par ex., le goodwill — faux.",
@@ -6492,8 +6492,8 @@
               "type": "mcq",
               "question": "Quelle est la conséquence si la direction refuse de fournir une LoR (ISA 580) ?",
               "options": [
-                "A. Aucune — la mission peut continuer normalement",
-                "B. Limitation de scope conduisant a une opinion modifiée (qualified ou disclaimer)",
+                "A. Aucune : la mission peut se poursuivre normalement, la lettre étant facultative",
+                "B. Opinion modifiée (en général impossibilité d'exprimer une opinion)",
                 "C. Démission immédiate sans autre formalité",
                 "D. Communication a la FINMA uniquement"
               ],
@@ -6652,10 +6652,10 @@
               "type": "mcq",
               "question": "Selon ISA 530.5, l'échantillonnage est défini comme :",
               "options": [
-                "A. Tester un nombre fixe d'éléments predetermine par le partner",
+                "A. Tester un nombre fixe d'éléments déterminé à l'avance par l'associé responsable",
                 "B. Tester uniquement les transactions non routinieres",
-                "C. Application de procédures a moins de 100% des éléments, chaque élément ayant une chance d'être selectionne",
-                "D. Effectuer des procédures analytiques sur la population entière"
+                "C. Tester moins de 100 % des éléments, chacun pouvant être sélectionné",
+                "D. Mettre en œuvre des procédures analytiques sur l'ensemble de la population étudiée"
               ],
               "answer": 2,
               "explanation": "ISA 530.5 définit l'échantillonnage comme application de procédures a MOINS de 100% des éléments, avec la condition que CHAQUE ÉLÉMENT a une chance d'être selectionne, dans le but de fournir une base raisonnable pour conclure sur la population.",
@@ -6667,8 +6667,8 @@
               "type": "mcq",
               "question": "Le risque non lie a l'échantillonnage (non-sampling risk) est :",
               "options": [
-                "A. Reductible par l'augmentation de la taille de l'échantillon",
-                "B. Lie aux erreurs de jugement, supervision, application des procédures — non reductible par n",
+                "A. Un risque réductible par l'augmentation de la taille de l'échantillon testé",
+                "B. Erreurs de jugement ou d'exécution, non réductibles par n",
                 "C. Toujours égal a 5% par convention",
                 "D. Uniquement applicable aux tests des contrôles"
               ],
@@ -6692,8 +6692,8 @@
               "type": "mcq",
               "question": "Le critère principal distinguant l'échantillonnage statistique de l'échantillonnage non-statistique est :",
               "options": [
-                "A. La conclusion mathématique avec niveau de confiance quantifie",
-                "B. Le caractère aléatoire ou non de la sélection",
+                "A. Une conclusion chiffrée avec niveau de confiance",
+                "B. Le caractère aléatoire ou non de la sélection des éléments",
                 "C. La taille de l'échantillon",
                 "D. La présence d'un logiciel d'audit"
               ],
@@ -6707,10 +6707,10 @@
               "type": "mcq",
               "question": "Parmi les méthodes de sélection suivantes, laquelle est DECONSEILLEE par ISA 530 en raison du biais structurel ?",
               "options": [
-                "A. Random (tirage aléatoire pur)",
-                "B. Systematic (pas constant)",
-                "C. Block (sélection de groupes contigus)",
-                "D. MUS / PPS"
+                "A. Random (tirage aléatoire)",
+                "B. Systématique (pas constant)",
+                "C. Block (groupes contigus)",
+                "D. MUS / PPS (unités monétaires)"
               ],
               "answer": 2,
               "explanation": "Block sampling (selection de factures n° 1000-1100 contiguës) est DECONSEILLEE car elle introduit un biais structurel (effet temporel, traitements similaires d'un meme periode/operateur). Les autres methodes sont acceptables. Systematic = pas constant, different du block.",
@@ -6723,8 +6723,8 @@
               "question": "La logique fondamentale du MUS (Monetary Unit Sampling) est :",
               "options": [
                 "A. Sélection de lignes equiprobable",
-                "B. Sélection avec probabilité proportionnelle a la valeur monétaire",
-                "C. Sélection ciblant les soldes négatifs",
+                "B. Probabilité proportionnelle à la valeur",
+                "C. Une sélection ciblant les soldes négatifs et créditeurs du grand livre",
                 "D. Sélection chronologique"
               ],
               "answer": 1,
@@ -6778,7 +6778,7 @@
               "question": "Quel est l'effet d'une AUGMENTATION du niveau de confiance souhaite (par ex. de 90% a 95%) sur la taille d'échantillon n ?",
               "options": [
                 "A. n diminue",
-                "B. n augmente (R passe de 2.3 a 3.0)",
+                "B. n augmente",
                 "C. n reste inchangé",
                 "D. n devient indéterminé"
               ],
@@ -6802,10 +6802,10 @@
               "type": "mcq",
               "question": "Une anomalie est trouvée sur une créance de book value 250 KCHF, dans un échantillon ou k = 150 KCHF. Comment traiter cette anomalie selon MUS ?",
               "options": [
-                "A. Extrapoler au prorata via le tainting factor",
+                "A. L'extrapoler au prorata de la population au moyen du tainting factor",
                 "B. Ignorer car l'élément est hors échantillon",
                 "C. Calculer la moyenne avec les autres anomalies",
-                "D. Anomalie factuelle uniquement, PAS d'extrapolation (top stratum, audite a 100%)"
+                "D. Anomalie factuelle, sans extrapolation (élément > k)"
               ],
               "answer": 3,
               "explanation": "Élément ≥ k (250 > 150) = TOP STRATUM = audite a 100% = anomalie FACTUELLE uniquement, pas d'extrapolation. La logique : on a teste a 100%, ce qui est trouve est ce qui existe. Cas oppose : élément < k → extrapoler via tainting × k.",
@@ -6817,10 +6817,10 @@
               "type": "mcq",
               "question": "Créance de book value 80 KCHF, anomalie réelle 20 KCHF, k = 130 KCHF. Quelle est l'anomalie projetée MUS ?",
               "options": [
-                "A. Tainting = 20/80 = 0.25 → projetée = 0.25 × 130 = 32.5 KCHF",
-                "B. 20 KCHF (factuelle)",
-                "C. 130 KCHF",
-                "D. 50 KCHF"
+                "A. 32.5 KCHF",
+                "B. 20 KCHF (anomalie factuelle)",
+                "C. 130 KCHF (intervalle)",
+                "D. 50 KCHF (moyenne)"
               ],
               "answer": 0,
               "explanation": "Élément < k (80 < 130) = SAMPLING STRATUM = extrapolation. Tainting = anomalie / book value = 20/80 = 0.25. Projetée = tainting × k = 0.25 × 130 = 32.5 KCHF. La projection capture l'effet \"si toutes les créances de cette taille avaient le même tainting\".",
@@ -6833,9 +6833,9 @@
               "question": "L'auditeur trouve 3 anomalies de 1 KCHF dans son échantillon. Conclusion correcte ?",
               "options": [
                 "A. Total = 3 KCHF, négligeable, accepter",
-                "B. Étendre l'échantillon a 100% systématiquement",
+                "B. Étendre l'échantillon à 100 % de la population, systématiquement",
                 "C. Demander une LoR couvrant les anomalies",
-                "D. Il faut EXTRAPOLER les anomalies a la population, pas les sommer brut"
+                "D. Extrapoler les anomalies à la population"
               ],
               "answer": 3,
               "explanation": "Trap classique. 3 anomalies de 1 KCHF dans un échantillon de 100 éléments sur une population de 10 000 éléments représentent statistiquement bien plus de 3 KCHF a la population. Extrapolation OBLIGATOIRE via tainting (ou méthode appropriée). Comparaison ensuite a la performance materiality.",
@@ -6857,10 +6857,10 @@
               "type": "mcq",
               "question": "Le mnémonique BR-TEM pour la formule MUS represente :",
               "options": [
-                "A. (BV / R) au numérateur ; (TM + EM) au dénominateur",
-                "B. BV au numérateur ; R × TM × EM × EF au dénominateur",
-                "C. BR au numérateur uniquement",
-                "D. (BV × R) au numérateur ; (TM − EM × EF) au dénominateur"
+                "A. (BV / R) / (TM + EM × EF)",
+                "B. BV / (R × TM × EM × EF)",
+                "C. BR / (TM × EM)",
+                "D. (BV × R) / (TM − EM × EF)"
               ],
               "answer": 3,
               "explanation": "BR-TEM : BV × R (Book value × Reliability) au numérateur, TM − EM × EF (Tolerable Misstatement − Expected Misstatement × Expansion Factor) au dénominateur. Mnémonique pratique pour mémoriser la formule MUS standard utilisée en EXPERTsuisse.",
@@ -6974,8 +6974,8 @@
               "type": "mcq",
               "question": "Selon ISA 540 (R2018).7, une estimation comptable est :",
               "options": [
-                "A. Un montant determine avec précision a partir d'une transaction",
-                "B. Un montant monétaire dont la mesure est soumise a incertitude, nécessitant hypothèses, méthodes et données",
+                "A. Un montant déterminé avec précision à partir d'une transaction documentée",
+                "B. Un montant mesuré sous incertitude (hypothèses, méthode, données)",
                 "C. Un solde issu d'une confirmation externe",
                 "D. Un calcul mathématique exact issu du système ERP"
               ],
@@ -7015,9 +7015,9 @@
               "question": "L'auditeur developpe une range de 80 a 95 MCHF pour la valeur recouvrable d'une UGT. Le management point estimate est 100 MCHF. Anomalie ?",
               "options": [
                 "A. Aucune — la range est indicative",
-                "B. Anomalie = 100 − 95 = 5 MCHF (écart au plus proche bord de la range)",
+                "B. 5 MCHF (écart au bord le plus proche)",
                 "C. Anomalie = 100 − 80 = 20 MCHF",
-                "D. Anomalie = 100 − 87.5 = 12.5 MCHF (centre)"
+                "D. 12.5 MCHF (écart par rapport au centre de la fourchette de l'auditeur)"
               ],
               "answer": 1,
               "explanation": "Si le management point estimate est HORS de la range auditeur, l'anomalie = écart au PLUS PROCHE BORD de la range. Ici 100 − 95 = 5 MCHF. Si le point management était 90 (dans la range), pas d'anomalie. C'est le bord, pas le centre, ni le pire bord.",
@@ -7031,8 +7031,8 @@
               "options": [
                 "A. Aussi large que possible pour être prudent",
                 "B. Réduite a un point pour éviter ambiguïté",
-                "C. Refléter UNIQUEMENT les hypothèses raisonnables et être suffisamment étroite pour conclure",
-                "D. Identique a l'intervalle de confiance statistique standard 95%"
+                "C. Seulement des montants raisonnables, assez étroite pour conclure",
+                "D. Identique à l'intervalle de confiance statistique standard à 95 % du modèle"
               ],
               "answer": 2,
               "explanation": "ISA 540.31-32 exige une range reflétant UNIQUEMENT les hypothèses raisonnables, suffisamment ÉTROITE pour conclure. Une range trop large = signal d'incertitude excessive (impact opinion potentiel). Trap : croire qu'une range large est prudente — c'est l'inverse.",
@@ -7044,8 +7044,8 @@
               "type": "mcq",
               "question": "ISA 540 (R2018) décrit 3 approches d'audit des estimations. Lesquelles ?",
               "options": [
-                "A. Tester le calcul, tester la documentation, tester les contrôles",
-                "B. Tester le processus management, développer un point estimate/range indépendant, évaluer les événements jusqu'a la date du rapport",
+                "A. Tester le calcul, tester la documentation et tester les contrôles de l'entité",
+                "B. Tester le processus, estimer soi-même, utiliser les événements ultérieurs",
                 "C. Confirmer auprès d'experts, demander LoR, faire analytiques",
                 "D. Tester le past, le présent, le future"
               ],
@@ -7061,8 +7061,8 @@
               "options": [
                 "A. Approche A seulement (tester le processus)",
                 "B. Approche C seulement (événements postérieurs)",
-                "C. Approche B (point estimate auditeur via DCF indépendant) avec expert auditeur ISA 620",
-                "D. Aucune procédure nécessaire si management a fait un test de dépréciation"
+                "C. Estimation indépendante (DCF), avec un expert",
+                "D. Aucune procédure n'est nécessaire si la direction a fait un test de dépréciation"
               ],
               "answer": 2,
               "explanation": "Pour un goodwill impairment cote, l'approche B (point estimate ou range indépendant via DCF avec WACC indépendant) est typique. Souvent combinée a un expert auditeur ISA 620 (valuation specialist). L'approche C n'est pas pertinente ici (estimation ne se materialise pas a court terme).",
@@ -7075,8 +7075,8 @@
               "question": "Pour une provision litige de 2.5 MCHF au 31.12, le tribunal federal a rendu son verdict le 10.03 (avant signature rapport 25.03) condamnant a 3.2 MCHF. Quelle approche ISA 540 / ISA 560 ?",
               "options": [
                 "A. Type II event — disclosure uniquement",
-                "B. Approche C (événements jusqu'a date rapport) + Type I event ISA 560 — ajustement EF de 700 KCHF",
-                "C. Aucune action — le litige est résolu après clôture",
+                "B. Événement ajustant : provision portée à 3.2 MCHF",
+                "C. Aucune action, le litige ayant été résolu après la date de clôture",
                 "D. Limitation de scope — opinion modifiée"
               ],
               "answer": 1,
@@ -7099,9 +7099,9 @@
               "type": "mcq",
               "question": "Le look-back analysis (examen rétrospectif) sert principalement a :",
               "options": [
-                "A. Comparer les estimations passées aux outcomes réels pour détecter biais management",
+                "A. Comparer estimations passées et réalisé (biais)",
                 "B. Vérifier les amortissements antérieurs",
-                "C. Reconstituer la matérialité des années antérieures",
+                "C. Reconstituer la matérialité retenue lors des exercices antérieurs",
                 "D. Confirmer les soldes d'ouverture (ISA 510)"
               ],
               "answer": 0,
@@ -7114,9 +7114,9 @@
               "type": "mcq",
               "question": "Indicateur classique de biais management cookie jar :",
               "options": [
-                "A. Sur-provisionnement en haut de cycle puis reprise opportuniste en bas",
+                "A. Sur-provisionner puis reprendre opportunément",
                 "B. Sous-provisionnement systématique",
-                "C. Conservatisme constant et symétrique d'une année a l'autre",
+                "C. Un conservatisme constant et symétrique d'une année à l'autre",
                 "D. Application rigoureuse de la même méthode chaque année"
               ],
               "answer": 0,
@@ -7139,10 +7139,10 @@
               "type": "mcq",
               "question": "Cas Tech Zurich SA : provisions garanties = 1.2 MCHF basées sur 2% du CA. Look-back 3 ans : coûts réels = 1.8% du CA. Mais nouveau produit lance en septembre avec retours observes 5%. Quelle erreur d'audit éviter ?",
               "options": [
-                "A. Aucune — la méthode 2% est OK",
-                "B. Ne pas stratifier ancien portefeuille (1.8%) vs nouveau produit (5%) → sous-provisionnement masque",
+                "A. Aucune : la méthode des 2 % est validée par le look-back sur 3 ans",
+                "B. Le nouveau produit (5 %) n'est pas isolé : sous-provision",
                 "C. Surveiller uniquement le total CA",
-                "D. Demander une LoR couvrant le montant"
+                "D. Demander une lettre d'affirmation couvrant le montant de la provision"
               ],
               "answer": 1,
               "explanation": "L'erreur a éviter : appliquer un taux unique (2%) sur le CA total alors que le nouveau produit a un profil de risque très different (5%). Stratification obligatoire : provision = (CA ancien × 1.8%) + (CA nouveau × 5%). Sans stratification, sous-provisionnement masque par effet de moyenne.",
@@ -7154,10 +7154,10 @@
               "type": "mcq",
               "question": "Cas Holding Romandie : management goodwill impairment = pas d'impairment (valeur recouvrable 55 MCHF). Auditeur DCF indépendant avec WACC 9.5% et EBITDA plat → range 35-45 MCHF. Conclusion ?",
               "options": [
-                "A. Pas d'anomalie — méthode management acceptable",
-                "B. Demander une LoR sur les hypothèses management",
+                "A. Pas d'anomalie : la méthode de la direction reste acceptable en soi",
+                "B. Demander une lettre d'affirmation sur les hypothèses de la direction",
                 "C. Démission immédiate",
-                "D. Anomalie minimum = 55 − 45 = 10 MCHF → demande d'ajustement (impairment)"
+                "D. Anomalie d'au moins 10 MCHF : dépréciation à demander"
               ],
               "answer": 3,
               "explanation": "Management point (55) hors de la range auditeur (35-45). Anomalie minimum = écart au plus proche bord = 55 − 45 = 10 MCHF. Demande d'ajustement (impairment a comptabiliser). Si refus management → opinion modifiée (qualified si seul écart matériel, adverse si destabilise les EF).",
@@ -7269,8 +7269,8 @@
               "type": "mcq",
               "question": "La série 600 couvre 3 types d'« autres ». Lesquels ?",
               "options": [
-                "A. Component auditors (ISA 600), audit interne client (ISA 610), expert auditeur (ISA 620)",
-                "B. Auditeur succedant, auditeur prédécesseur, auditeur conjoint",
+                "A. Auditeurs de composants, audit interne, expert",
+                "B. Auditeur successeur, auditeur prédécesseur et auditeur conjoint (co-commissariat)",
                 "C. Audit interne, audit externe, audit fiscal",
                 "D. Big 4, mid-tier, sole practitioners"
               ],
@@ -7294,10 +7294,10 @@
               "type": "mcq",
               "question": "Changement majeur d'ISA 600 (Revised 2022) :",
               "options": [
-                "A. Approche risk-based remplace l'approche par périmètre — la notion de significant component basée uniquement sur la matérialité a disparu",
+                "A. Approche fondée sur les risques, sans « composant important »",
                 "B. Suppression de l'audit de groupe",
                 "C. Externalisation obligatoire des audits de filiales",
-                "D. Réduction des obligations de communication aux component auditors"
+                "D. Une réduction des obligations de communication envers les auditeurs des composants"
               ],
               "answer": 0,
               "explanation": "ISA 600 (R2022) — applicable aux exercices ouverts a partir du 15 dec 2023. La notion ancienne de \"significant component\" basée uniquement sur la matérialité a DISPARU. Désormais, tout component contribuant aux RMM est audite, matériel ou non. Approche par les RISQUES, pas par le périmètre.",
@@ -7310,8 +7310,8 @@
               "question": "Selon ISA 600 (R2022).41, quels travaux le group team doit effectuer OBLIGATOIREMENT ?",
               "options": [
                 "A. Auditer 100% des components",
-                "B. Uniquement les components > 10% du CA consolide",
-                "C. Consolidation process (éliminations intercos, conversion devises, écritures de consolidation) + components contribuant aux RMM",
+                "B. Uniquement les composants représentant plus de 10 % du CA consolidé",
+                "C. Le processus de consolidation et les composants à RMM",
                 "D. Aucune obligation spécifique"
               ],
               "answer": 2,
@@ -7334,8 +7334,8 @@
               "type": "mcq",
               "question": "Cas Helvetia Industries (Zoug) — 15 filiales mondiales. CA = 4.2 MdCHF. Group materiality = 28 MCHF (5% résultat). RMM identifiés : revenu Chine + goodwill UK + provisions garanties Allemagne. Quelle allocation ?",
               "options": [
-                "A. Audit complet par component auditor + visite group team pour CN/UK/DE (RMM les + élevés) ; procédures analytiques pour les non-matériels sans RMM",
-                "B. Audit complet de toutes les 15 filiales",
+                "A. Audit ciblé des composants à RMM (CN/UK/DE), analytique ailleurs",
+                "B. Un audit complet des 15 filiales par le group team, sans exception géographique",
                 "C. Procédures analytiques uniquement",
                 "D. Audit du seul siège"
               ],
@@ -7350,8 +7350,8 @@
               "question": "Pourquoi le group team EY Zurich effectue obligatoirement des visites physiques chez les component auditors en Chine et UK ?",
               "options": [
                 "A. Politesse internationale",
-                "B. Components ou sont concentres les RMM significatifs (revenu CN, goodwill UK) — supervision et revue effective",
-                "C. Obligation légale FINMA",
+                "B. Les RMM importants y sont concentrés",
+                "C. Une obligation légale imposée par la FINMA aux groupes suisses",
                 "D. Réduire les coûts de mission"
               ],
               "answer": 1,
@@ -7364,9 +7364,9 @@
               "type": "mcq",
               "question": "Distinction ISA 610 entre using the work of internal audit et direct assistance :",
               "options": [
-                "A. Using = utiliser des travaux DÉJÀ effectués par audit interne ; Direct assistance = AI travaille pour l'audit externe sous direction de l'auditeur",
+                "A. Using : travaux déjà faits ; direct assistance : sous notre direction",
                 "B. Aucune différence",
-                "C. Using = inférieur a 50 heures, Direct assistance = supérieur a 50 heures",
+                "C. Using : moins de 50 heures ; direct assistance : plus de 50 heures de travail interne",
                 "D. Using est obligatoire, Direct assistance est optionnelle"
               ],
               "answer": 0,
@@ -7380,8 +7380,8 @@
               "question": "Quelles sont les 3 conditions cumulatives ISA 610.15 pour s'appuyer sur l'audit interne du client ?",
               "options": [
                 "A. Taille, geographie, ancienneté",
-                "B. Compétence, objectivité organisationnelle, approche systématique et disciplinée",
-                "C. Indépendance complete, certification CIA, rotation 5 ans",
+                "B. Compétence, objectivité, approche systématique",
+                "C. Indépendance complète, certification CIA de chaque auditeur interne et rotation sur 5 ans",
                 "D. Validation FINMA"
               ],
               "answer": 1,
@@ -7405,8 +7405,8 @@
               "question": "Distinction expert de l'AUDITEUR (ISA 620) vs expert de la DIRECTION (ISA 500) :",
               "options": [
                 "A. Aucune — même régime",
-                "B. Expert auditeur = engage PAR L'AUDITEUR pour son audit (ISA 620) ; Expert direction = engage par la direction pour préparer les EF (ISA 500)",
-                "C. Expert auditeur uniquement pour groupes cotes",
+                "B. Engagé par l'auditeur (ISA 620) ou par la direction (ISA 500)",
+                "C. L'expert de l'auditeur n'est autorisé que pour les groupes cotés en bourse",
                 "D. Expert direction interdit pour les estimations"
               ],
               "answer": 1,
@@ -7420,8 +7420,8 @@
               "question": "Selon ISA 620, quels sont les 4 piliers de la démarche d'utilisation d'un expert auditeur ?",
               "options": [
                 "A. Engagement letter, paiement, livraison, signature",
-                "B. Compétence/objectivité ; champ d'intervention ; nature/calendrier/étendue ; évaluation du caractère adéquat des travaux",
-                "C. Indépendance, certification, ancienneté, geographie",
+                "B. Compétence, champ, nature/calendrier, adéquation des travaux",
+                "C. Indépendance, certification, ancienneté et localisation géographique de l'expert",
                 "D. Mission, lettre, rapport, archivage"
               ],
               "answer": 1,
@@ -7434,10 +7434,10 @@
               "type": "mcq",
               "question": "Cas a discriminer rapidement : une société cliente fait appel a un actuaire externe pour calculer ses engagements LPP. Quelle norme s'applique pour l'auditeur ?",
               "options": [
-                "A. ISA 500 — l'actuaire est un expert de la direction (le travail est un élément probant a valider)",
+                "A. ISA 500 (expert de la direction)",
                 "B. ISA 600 (audit de groupe)",
                 "C. ISA 610 (audit interne du client)",
-                "D. ISA 620 — l'actuaire devient expert de l'auditeur"
+                "D. ISA 620 : l'actuaire devient l'expert de l'auditeur dès qu'il est utilisé"
               ],
               "answer": 0,
               "explanation": "Si l'actuaire est ENGAGE PAR LA DIRECTION pour préparer les EF (calcul des engagements LPP), son travail releve d'ISA 500 (élément probant a valider). ISA 620 ne s'applique que si l'auditeur engage SON PROPRE actuaire pour valider les calculs ou développer un point estimate alternatif.",
@@ -7450,8 +7450,8 @@
               "question": "Mnémonique GIE de la série 600 :",
               "options": [
                 "A. Groupe / Internet / Expert",
-                "B. Groupe (600) / Interne audit interne (610) / Expert (620)",
-                "C. Group auditor / Independent / External",
+                "B. Groupe (600), audit Interne (610), Expert (620)",
+                "C. Group auditor, Independent auditor et External auditor (série 600)",
                 "D. General / Industrial / Engineering"
               ],
               "answer": 1,
@@ -7566,7 +7566,7 @@
             {
               "title": "8. Pièges examen + mnémonique",
               "section_id": "m2_L13_s8",
-              "body": "**6 pièges classiques :**\n\n1. **Confondre EOM et opinion modifiée** — EOM = clean + paragraphe informatif. Opinion modifiée = qualified/adverse/disclaimer.\n\n2. **KAM = problème** — non, un KAM est un sujet **complexe ou significatif**, pas forcément problématique. Une mission peut avoir 5 KAM et opinion clean.\n\n3. **Going concern uncertainty = qualified opinion** — non, si **disclosure adéquate**, c'est une **EOM Material Uncertainty** avec opinion **clean** (ISA 570). Qualified seulement si disclosure inadéquate. Voir L16.\n\n4. **Pervasive = matériel** — non, pervasive = affecte plusieurs éléments OU élément substantiel OU fondamental à la compréhension. **Plus exigeant** que material.\n\n5. **Date du rapport = date AG** — pas nécessairement. C'est la date d'obtention du suffisant evidence. Souvent veille de l'AG, parfois plus tôt. **Jamais antérieure** à la signature direction.\n\n6. **Confondre rapport AG et rapport CA** — en Suisse, contrôle ordinaire = **deux rapports distincts** (CO 728a + 728b). Voir L14.\n\n**Mnémonique série 700 — « OK-MOLA » :**\n\n- **O**pinion (700) — Standard\n- **K**AM (701) — Sujets clés\n- **M**odifiée (705) — Réserve / défavorable / refus\n- **O**bservation (706) — EOM / OM\n- **L**aps (710) — Comparatives (LAst Period)\n- **A**utres (720) — Other information\n\n**À retenir :** *le rapport conclut tout l'audit* — livrable unique, structure ISA 700 figée, modulée par 701-720 selon contexte."
+              "body": "**6 pièges classiques :**\n\n1. **Confondre EOM et opinion modifiée** — EOM = clean + paragraphe informatif. Opinion modifiée = qualified/adverse/disclaimer.\n\n2. **KAM = problème** — non, un KAM est un sujet **complexe ou significatif**, pas forcément problématique. Une mission peut avoir 5 KAM et opinion clean.\n\n3. **Going concern uncertainty = qualified opinion** — non, si **disclosure adéquate**, c'est une opinion **non modifiée** avec section **« Incertitude significative »** (ISA 570). Qualified seulement si disclosure inadéquate. Voir L16.\n\n4. **Pervasive = matériel** — non, pervasive = affecte plusieurs éléments OU élément substantiel OU fondamental à la compréhension. **Plus exigeant** que material.\n\n5. **Date du rapport = date AG** — pas nécessairement. C'est la date d'obtention du suffisant evidence. Souvent veille de l'AG, parfois plus tôt. **Jamais antérieure** à la signature direction.\n\n6. **Confondre rapport AG et rapport CA** — en Suisse, contrôle ordinaire = **deux rapports distincts** (CO 728a + 728b). Voir L14.\n\n**Mnémonique série 700 — « OK-MOLA » :**\n\n- **O**pinion (700) — Standard\n- **K**AM (701) — Sujets clés\n- **M**odifiée (705) — Réserve / défavorable / refus\n- **O**bservation (706) — EOM / OM\n- **L**aps (710) — Comparatives (LAst Period)\n- **A**utres (720) — Other information\n\n**À retenir :** *le rapport conclut tout l'audit* — livrable unique, structure ISA 700 figée, modulée par 701-720 selon contexte."
             }
           ],
           "questions": [
@@ -7576,9 +7576,9 @@
               "question": "Combien de normes composent la série 700 (rapport d'audit) selon le decoupage IAASB ?",
               "options": [
                 "A. 4 normes (700, 701, 705, 706)",
-                "B. 8 normes (700-707)",
+                "B. 8 normes (700 à 707 et 710)",
                 "C. 10 normes (700-709)",
-                "D. 6 normes (700, 701, 705, 706, 710, 720)"
+                "D. 6 normes (700 à 720)"
               ],
               "answer": 3,
               "explanation": "La série 700 regroupe 6 normes : ISA 700 (rapport standard), 701 (KAM), 705 (opinion modifiée), 706 (paragraphes EOM/OM), 710 (informations comparatives) et 720 (other information). Cette série définit la communication de la conclusion d'audit.",
@@ -7615,10 +7615,10 @@
               "type": "mcq",
               "question": "Quelle est la date du rapport d'audit selon ISA 700 ?",
               "options": [
-                "A. La date de clôture des comptes annuels",
+                "A. La date de clôture des comptes annuels audités",
                 "B. La date de l'assemblée générale des actionnaires",
-                "C. La date de signature du contrat de mission",
-                "D. La date a laquelle l'auditeur a obtenu suffisamment d'éléments probants"
+                "C. La date de signature de la lettre de mission",
+                "D. Quand les preuves suffisantes sont réunies"
               ],
               "answer": 3,
               "explanation": "La date du rapport est celle d'obtention du suffisant evidence. Elle ne peut jamais être antérieure a la signature des EF par la direction et est souvent proche de l'AG, sans pour autant en être la date exacte.",
@@ -7640,10 +7640,10 @@
               "type": "mcq",
               "question": "Quel est l'ordre correct de l'entonnoir de sélection des KAM (ISA 701.9-10) ?",
               "options": [
-                "A. Sujets demandes par direction -> communiqués a gouvernance -> les plus importants",
-                "B. Sujets ayant requis attention significative -> communiqués a la gouvernance -> les plus importants",
+                "A. Sujets demandés par la direction → communiqués à la gouvernance → les plus importants",
+                "B. Attention importante → communiqué à la gouvernance → plus importants",
                 "C. Tous les sujets d'audit -> sujets a risque -> sujets significatifs",
-                "D. Risques RMM identifiés -> ajustements proposés -> sujets retenus en KAM"
+                "D. Risques RMM identifiés → ajustements proposés → sujets finalement retenus en KAM"
               ],
               "answer": 1,
               "explanation": "L'entonnoir ISA 701 part des sujets ayant requis une attention significative de l'auditeur, restreint a ceux communiqués a la gouvernance (ISA 260), puis selectionne les plus importants comme KAM. Trois étapes du plus large au plus sélectif.",
@@ -7682,8 +7682,8 @@
               "options": [
                 "A. Affecte uniquement le résultat net",
                 "B. Est supérieure au seuil de matérialité globale",
-                "C. Affecte plusieurs éléments des EF, ou un seul élément substantiel, ou est fondamentale a la compréhension",
-                "D. Résulte d'une fraude intentionnelle de la direction"
+                "C. Plusieurs postes, une part substantielle ou un point fondamental",
+                "D. Elle résulte d'une fraude intentionnelle commise par la direction de l'entité"
               ],
               "answer": 2,
               "explanation": "ISA 705.5a définit pervasive comme : (i) affectant plusieurs éléments des EF, OU (ii) affectant un seul élément substantiel des EF, OU (iii) pour les disclosures, fondamentale a la compréhension. Plus exigeant que material - fréquent piege d'examen.",
@@ -7705,9 +7705,9 @@
               "type": "mcq",
               "question": "Quelle est la différence entre un paragraphe Emphasis of Matter (EOM) et une opinion modifiée ?",
               "options": [
-                "A. EOM = clean + paragraphe informatif sur sujet déjà dans EF ; opinion modifiée = qualified/adverse/disclaimer",
+                "A. EOM : opinion non modifiée + paragraphe ; modifiée : réserve, etc.",
                 "B. EOM modifie l'opinion, opinion modifiée non",
-                "C. EOM est obligatoire, opinion modifiée facultative",
+                "C. L'EOM est toujours obligatoire, alors que l'opinion modifiée reste facultative",
                 "D. EOM concerne le passe, opinion modifiée le futur"
               ],
               "answer": 0,
@@ -7722,8 +7722,8 @@
               "options": [
                 "A. EOM est obligatoire, OM facultatif",
                 "B. EOM est place avant l'opinion, OM après",
-                "C. EOM concerne les filiales, OM la maison-mère",
-                "D. EOM concerne sujet dans les EF ; OM sujet non présent dans les EF mais pertinent"
+                "C. L'EOM concerne les filiales du groupe, l'OM la société mère seule",
+                "D. EOM : sujet présenté dans les EF ; OM : sujet hors EF"
               ],
               "answer": 3,
               "explanation": "EOM = sujet PRESENTE dans les EF que l'auditeur souligne (going concern uncertainty avec disclosure adequate, litige connu). OM = sujet NON PRESENTE dans les EF mais pertinent (restriction d'usage, comparatives auditées par autre auditeur, changement d'auditeur).",
@@ -7745,8 +7745,8 @@
               "type": "mcq",
               "question": "Selon ISA 710, en Suisse (CO/RPC/IFRS), comment sont présentées les informations comparatives ?",
               "options": [
-                "A. Comparative financial statements (opinion séparée par année)",
-                "B. Corresponding figures (partie intégrante des EF de l'année courante)",
+                "A. Comparative financial statements, avec une opinion séparée par exercice",
+                "B. Chiffres correspondants (corresponding figures)",
                 "C. En annexe non auditée",
                 "D. Les deux frameworks au choix de la direction"
               ],
@@ -7760,10 +7760,10 @@
               "type": "mcq",
               "question": "Si les comparatives ont ete auditées par un autre auditeur (prédécesseur), quelle est la procédure ISA 710 ?",
               "options": [
-                "A. Ajouter un paragraphe Other Matter mentionnant l'auditeur prédécesseur, sa date et son opinion",
-                "B. Re-auditer les comparatives intégralement",
+                "A. Un paragraphe « Autre point » sur l'auditeur prédécesseur",
+                "B. Ré-auditer intégralement les comparatifs avant de signer le rapport",
                 "C. Refuser la mission",
-                "D. Mentionner uniquement dans le rapport au CA"
+                "D. Le mentionner uniquement dans le rapport détaillé au conseil d'administration"
               ],
               "answer": 0,
               "explanation": "ISA 710 prévoit qu'un OM (Other Matter) signale au lecteur que les EF de l'exercice précédent ont ete audités par un autre auditeur, avec date du rapport et type d'opinion émise. Permet la transparence sans engager la responsabilité du nouvel auditeur sur les comparatives.",
@@ -7786,9 +7786,9 @@
               "question": "Que doit faire l'auditeur si la direction refuse de corriger une incohérence majeure dans les autres informations ?",
               "options": [
                 "A. Démissionner immédiatement",
-                "B. Modifier l'opinion sur les EF",
-                "C. Ignorer car non audite",
-                "D. Communiquer a la gouvernance et considérer un paragraphe 'Material Misstatement of Other Information' dans le rapport"
+                "B. Modifier l'opinion sur les états financiers (réserve ou opinion défavorable)",
+                "C. Ignorer l'incohérence, les autres informations n'étant pas auditées",
+                "D. Informer la gouvernance et le signaler dans le rapport"
               ],
               "answer": 3,
               "explanation": "ISA 720 prévoit communication écrite a la gouvernance, puis paragraphe 'Material Misstatement of Other Information' dans le rapport si non corrige. Considérer retrait si gravité extrême. L'opinion sur EF n'est pas modifiée car les autres informations ne sont pas auditées.",
@@ -7800,10 +7800,10 @@
               "type": "mcq",
               "question": "Quelle responsabilité légale suisse impose la vérification du rapport de gestion par l'auditeur ?",
               "options": [
-                "A. CO 727 - obligation générale de révision",
+                "A. CO 727 (obligation générale de révision)",
                 "B. CO 728a - rapport au CA",
-                "C. CO 961-961d - rapport de gestion grandes entreprises",
-                "D. CO 957 - obligation de tenir des comptes"
+                "C. CO 961-961d (grandes entreprises)",
+                "D. CO 957 (obligation de tenir une comptabilité)"
               ],
               "answer": 2,
               "explanation": "CO 961-961d encadre l'établissement du rapport de gestion pour les grandes entreprises (CO 961). L'auditeur verifie la cohérence rapport de gestion / EF audités - une lecture critique conforme a ISA 720, et non un audit complet.",
@@ -7975,9 +7975,9 @@
               "type": "mcq",
               "question": "Quelle est la finalité du rapport au CA selon CO 728a ?",
               "options": [
-                "A. Permettre au CA de piloter l'entreprise via constatations détaillées + recommandations",
+                "A. Informer le CA en détail (constatations, recommandations)",
                 "B. Donner une opinion synthétique aux actionnaires",
-                "C. Servir de base juridique pour la decharge des organes",
+                "C. Servir de base juridique à la décharge des organes lors de l'assemblée générale",
                 "D. Être publie au registre du commerce"
               ],
               "answer": 0,
@@ -7990,10 +7990,10 @@
               "type": "mcq",
               "question": "Quel est le terme technique designant le rapport au CA dans la pratique suisse ?",
               "options": [
-                "A. Long-form report ou 'rapport circonstancié'",
+                "A. Rapport détaillé (long-form report)",
                 "B. Short-form report",
                 "C. Audit memorandum",
-                "D. Report to those charged with governance"
+                "D. Report to those charged with governance (ISA 260 uniquement)"
               ],
               "answer": 0,
               "explanation": "Le rapport CO 728a est appele 'rapport circonstancié' en francais ou 'long-form report' en anglais (synonymes : detailed report, management report). Volume typique 20-100 pages selon entite. A distinguer du short-form (rapport AG) public et synthetique.",
@@ -8018,7 +8018,7 @@
                 "A. 2 constats",
                 "B. 3 constats",
                 "C. 6 constats",
-                "D. 4 constats (conformité EF, existence SCI, proposition usage bénéfice, conformité capital)"
+                "D. 4 constats"
               ],
               "answer": 3,
               "explanation": "CO 728a al.1 énumère 4 constats obligatoires : (1) conformité des comptes au référentiel, (2) existence du SCI, (3) constat sur la proposition d'usage du bénéfice au bilan, (4) conformité aux dispositions légales sur le capital. Constats additionnels obligatoires : SCI déficient, fraude, surendettement, indépendance.",
@@ -8055,8 +8055,8 @@
               "type": "mcq",
               "question": "Quelle particularité suisse s'ajoute a la signature ISA 700 du rapport AG ?",
               "options": [
-                "A. Numéro d'agrément ASR du réviseur responsable et du cabinet",
-                "B. Numéro de commerce du cabinet",
+                "A. Le nom du réviseur responsable (agrément ASR)",
+                "B. Le numéro d'identification des entreprises (IDE) du cabinet de révision",
                 "C. Numéro de TVA",
                 "D. Numéro IBAN du cabinet"
               ],
@@ -8070,10 +8070,10 @@
               "type": "mcq",
               "question": "Quelle phrase type de recommandation a l'AG l'auditeur formule-t-il dans le rapport CO 728b ?",
               "options": [
-                "A. 'Sur la base de notre audit, nous recommandons d'approuver les comptes annuels qui vous sont soumis'",
+                "A. « Nous recommandons d'approuver les comptes annuels »",
                 "B. 'Notre opinion engage les actionnaires'",
-                "C. 'Les comptes sont approuvés par l'organe de révision'",
-                "D. 'L'AG doit suivre nos recommandations sous peine de litige'"
+                "C. « Les comptes annuels sont approuvés par l'organe de révision, sans autre formalité »",
+                "D. « L'assemblée générale doit suivre nos recommandations sous peine de litige »"
               ],
               "answer": 0,
               "explanation": "CO 728b al.2 impose une recommandation explicite a l'AG sur l'approbation : approuver / approuver avec restriction / rejeter. La phrase type est 'Sur la base de notre audit, nous recommandons d'approuver les comptes annuels qui vous sont soumis'.",
@@ -8095,10 +8095,10 @@
               "type": "mcq",
               "question": "Comparativement, quel pays applique aussi une logique 'short-form + long-form' similaire a la Suisse ?",
               "options": [
-                "A. Allemagne (Bestätigungsvermerk + Prüfungsbericht)",
-                "B. France (rapport CAC unique)",
+                "A. L'Allemagne (Bestätigungsvermerk + Prüfungsbericht)",
+                "B. La France (rapport unique du commissaire aux comptes à l'AG)",
                 "C. USA (rapport ISA 700 unique)",
-                "D. Royaume-Uni (rapport unique FRC)"
+                "D. Le Royaume-Uni (rapport unique établi selon les normes du FRC)"
               ],
               "answer": 0,
               "explanation": "L'Allemagne applique une logique similaire avec le Bestätigungsvermerk (court, public) et le Prüfungsbericht (long, confidentiel). France = rapport CAC unique avec annexes. USA / IFRS pure = rapport ISA 700 unique. La dualite stricte comme la Suisse reste rare.",
@@ -8111,9 +8111,9 @@
               "question": "Quelle est la forme typique du rapport CA pour une société cotée SIX (CA 800 MCHF) ?",
               "options": [
                 "A. 3 pages, format ISA 700 enrichi",
-                "B. Email synthétique au Président du CA",
-                "C. 80 pages, structure complete avec resume exécutif, étendue, constatations, déficiences SCI, recommandations",
-                "D. Rapport oral en seance de gouvernance"
+                "B. Un courriel synthétique adressé au président du conseil d'administration",
+                "C. Un rapport complet : synthèse, constatations, SCI, recommandations",
+                "D. Un rapport oral présenté en séance du comité d'audit, sans document écrit"
               ],
               "answer": 2,
               "explanation": "Une société cotée de cette taille genere typiquement 80 pages de rapport au CA : resume exécutif, étendue (périmètre, équipe, matérialité), constatations significatives par domaine, déficiences SCI niveau gravité, going concern, recommandations IT (ERP), commentaires audit interne (ISA 610).",
@@ -8245,8 +8245,8 @@
               "question": "Quelle est l'autorité émettrice du Code IESBA applicable a l'auditeur suisse ?",
               "options": [
                 "A. EXPERTsuisse",
-                "B. IFAC / IESBA (International Ethics Standards Board for Accountants)",
-                "C. ASR (Autorité fédérale de surveillance)",
+                "B. L'IESBA (sous l'égide de l'IFAC)",
+                "C. L'ASR (Autorité fédérale de surveillance en matière de révision)",
                 "D. FINMA"
               ],
               "answer": 1,
@@ -8259,10 +8259,10 @@
               "type": "mcq",
               "question": "Quels sont les 5 principes fondamentaux du Code IESBA Section 110 ?",
               "options": [
-                "A. Indépendance, prudence, matérialité, confidentialité, prévoyance",
+                "A. Indépendance, prudence, matérialité, confidentialité et prévoyance professionnelle",
                 "B. Prudence, sincérité, régularité, image fidèle, continuité",
                 "C. Indépendance, intégrité, expertise, secret, communication",
-                "D. Intégrité, objectivité, compétence et diligence, confidentialité, comportement professionnel"
+                "D. Intégrité, objectivité, compétence, confidentialité, comportement"
               ],
               "answer": 3,
               "explanation": "Les 5 principes IESBA (Section 110) sont : Intégrité, Objectivité, Compétence et diligence, Confidentialité, Comportement professionnel. Mnémonique I-O-C-C-P. Violation = sanction disciplinaire ASR + EXPERTsuisse + potentiellement pénale.",
@@ -8285,8 +8285,8 @@
               "question": "Quelles sont les 2 dimensions de l'indépendance selon IESBA Section 400 ?",
               "options": [
                 "A. Indépendance économique et juridique",
-                "B. Indépendance interne et externe",
-                "C. Indépendance d'esprit (mind) et apparente (in appearance)",
+                "B. Indépendance interne et externe au cabinet",
+                "C. Indépendance d'esprit et en apparence",
                 "D. Indépendance totale et partielle"
               ],
               "answer": 2,
@@ -8324,10 +8324,10 @@
               "type": "mcq",
               "question": "Quelles sont les 5 catégories de menaces a l'indépendance selon IESBA 120.6 ?",
               "options": [
-                "A. Conflit, corruption, conformité, complicité, complaisance",
+                "A. Conflit, corruption, conformité, complicité et complaisance envers le client de l'audit",
                 "B. Pression, opportunité, rationalisation, fraude, erreur",
-                "C. Indépendance, intégrité, objectivité, compétence, professionnalisme",
-                "D. Intérêt personnel, auto-révision, defense, familiarité, intimidation"
+                "C. Indépendance, intégrité, objectivité, compétence et professionnalisme de l'associé",
+                "D. Intérêt personnel, autocontrôle, représentation, familiarité, intimidation"
               ],
               "answer": 3,
               "explanation": "Les 5 menaces IESBA : (1) Intérêt personnel - bénéfice influençant le jugement, (2) Auto-révision - évaluer ses propres travaux, (3) Defense - promouvoir position du client, (4) Familiarité - liens trop proches, (5) Intimidation - pression du client/tiers. Mnémonique : SAS-FAFI.",
@@ -8354,9 +8354,9 @@
               "type": "mcq",
               "question": "Quelle est la démarche IESBA pour traiter une menace identifiée ?",
               "options": [
-                "A. Appliquer immédiatement les sauvegardes maximales",
-                "B. Identifier -> Évaluer la significativité -> Appliquer des sauvegardes si non acceptable",
-                "C. Reporter au cabinet et attendre la décision",
+                "A. Appliquer immédiatement les sauvegardes maximales prévues par le Code",
+                "B. Identifier, évaluer, appliquer des sauvegardes",
+                "C. Reporter au cabinet et attendre sa décision avant toute autre mesure",
                 "D. Demissioner systématiquement"
               ],
               "answer": 1,
@@ -8369,10 +8369,10 @@
               "type": "mcq",
               "question": "Selon ISA 240, quelle est la différence entre fraude et erreur ?",
               "options": [
-                "A. Le montant : fraude > matérialité, erreur < matérialité",
+                "A. Le montant : la fraude dépasse le seuil de signification, l'erreur reste en dessous",
                 "B. L'auteur : fraude = direction, erreur = employés",
                 "C. La detection : fraude détectée, erreur non détectée",
-                "D. L'intention : fraude = anomalie intentionnelle, erreur = non intentionnelle"
+                "D. L'intention (fraude : anomalie intentionnelle)"
               ],
               "answer": 3,
               "explanation": "ISA 240.11 : la fraude est une anomalie INTENTIONNELLE dans les EF, par opposition a l'erreur (non intentionnelle). Cette distinction par l'intention est le critère central. Procédures différentes : fraude = scepticisme renforce + JE testing + escalade ; erreur = correction + impact matérialité.",
@@ -8384,7 +8384,7 @@
               "type": "mcq",
               "question": "Le triangle de la fraude (Cressey, 1953) identifie 3 éléments déclencheurs :",
               "options": [
-                "A. Motivation, capacité, dissimulation",
+                "A. Motivation, capacité et dissimulation de l'auteur de la fraude",
                 "B. Faille SCI, tentation, gain",
                 "C. Pression, opportunité, rationalisation",
                 "D. Greed, fear, ego"
@@ -8409,8 +8409,8 @@
               "type": "mcq",
               "question": "Selon ISA 240.32, quelles sont les procédures obligatoires liées au risque de management override of controls ?",
               "options": [
-                "A. Confirmation externe de toutes les parties liées",
-                "B. Tests JE (journal entries) + revue des estimations pour biais + transactions inhabituelles",
+                "A. La confirmation externe de toutes les parties liées et de leurs soldes au bilan",
+                "B. Tests des écritures, biais des estimations, opérations inhabituelles",
                 "C. Audit du SCI au sens SOX",
                 "D. Lettre de confidentialité de la direction"
               ],
@@ -8424,10 +8424,10 @@
               "type": "mcq",
               "question": "Selon ISA 250, quelle est la distinction direct vs indirect effect ?",
               "options": [
-                "A. Direct = lois suisses, indirect = lois étrangères",
+                "A. Direct : lois suisses applicables ; indirect : lois étrangères applicables à l'entité",
                 "B. Direct = lois pénales, indirect = lois civiles",
-                "C. Direct = obligations connues, indirect = obligations potentielles",
-                "D. Direct = lois affectant directement les montants/disclosures EF (fiscal, CO) ; indirect = lois fondamentales pour l'activité sans effet direct EF (concurrence, environnement, RGPD)"
+                "C. Direct : obligations connues de la direction ; indirect : obligations potentielles futures",
+                "D. Direct : montants des EF (fiscal, CO) ; indirect : activité (environnement)"
               ],
               "answer": 3,
               "explanation": "ISA 250 distingue : (1) Direct effect = lois affectant la détermination des montants/disclosures EF (LIFD, LTVA, CO 957-963) -> audit direct des transactions affectées, (2) Indirect effect = lois fondamentales pour l'activité sans effet direct EF (LCart, environnement, RGPD/LPD, droit du travail) -> vigilance + procédures limitées.",
@@ -8464,9 +8464,9 @@
               "type": "mcq",
               "question": "Quelles sont les 4 étapes de la démarche NOCLAR (IESBA Section 360 / 225) ?",
               "options": [
-                "A. Comprendre -> discuter avec direction et gouvernance -> évaluer la réaction -> reporting externe si refus",
+                "A. Comprendre, discuter, évaluer la réaction, signaler si nécessaire",
                 "B. Détecter -> documenter -> reporter ASR -> demissioner",
-                "C. Constater -> aviser le juge -> attendre instructions -> émettre rapport modifie",
+                "C. Constater, aviser le juge, attendre ses instructions, puis émettre un rapport modifié",
                 "D. Identifier -> classer -> escalader -> archiver"
               ],
               "answer": 0,
@@ -8505,8 +8505,8 @@
               "question": "Quel mnémonique resume les 5 menaces IESBA ?",
               "options": [
                 "A. POR (Pression-Opportunité-Rationalisation)",
-                "B. SAS-FAFI (Self-interest, Auto-révision, Advocacy, Familiarité, Intimidation)",
-                "C. I-O-C-C-P (Intégrité-Objectivité-Compétence-Confidentialité-Professional)",
+                "B. Self-interest, Auto-révision, Advocacy, Familiarité, Intimidation",
+                "C. Intégrité, Objectivité, Compétence, Confidentialité et Professional behaviour (I-O-C-C-P)",
                 "D. CDQA (Clean-Disclosure-Qualified-Adverse)"
               ],
               "answer": 1,
@@ -8608,7 +8608,7 @@
             {
               "title": "4. 4 scénarios d'opinion (matrice avec disclosure adéquate ou non)",
               "section_id": "m2_L16_s4",
-              "body": "**Matrice fondamentale ISA 570 (R2024) — 4 scénarios :**\n\n| # | Situation | Disclosure direction | Conséquence rapport |\n|---|---|---|---|\n| **1** | **Pas de doute** sur going concern | Standard | **Opinion clean** — rapport standard ISA 700 |\n| **2** | **Incertitude significative** identifiée | **Adéquate** (notes décrivent les conditions + plans direction) | **EOM Material Uncertainty** — opinion **clean** + paragraphe « Material Uncertainty Related to Going Concern » |\n| **3** | **Incertitude significative** identifiée | **Inadéquate** (omise ou insuffisante) | **Opinion modifiée** — Qualified si isolée, **Adverse** si pervasive (ISA 705) |\n| **4** | Going concern **inappropriée** + EF préparés sur base de continuité | N/A — base comptable erronée | **Adverse opinion** systématique |\n\n**Détails scénario 2 — paragraphe Material Uncertainty :**\n\nFormat imposé par ISA 570 R2024 :\n\n> « **Incertitude significative liée à la continuité d'exploitation** — Nous attirons l'attention sur la note X qui indique que [décrire événements/conditions]. Ces conditions, ainsi que les autres questions exposées dans la note X, indiquent l'existence d'une **incertitude significative** susceptible de jeter un doute important sur la capacité de la société à poursuivre son exploitation. Notre opinion **n'est pas modifiée** au regard de cette question. »\n\n**Position dans le rapport :** **avant** la section KAM (si applicable). Mention spécifique = pas un EOM ordinaire — section dédiée.\n\n**Détails scénario 3 — opinion modifiée :**\n\n- *Qualified* : « **Sauf** pour [insufficient disclosure of going concern uncertainty], les EF donnent une image fidèle... »\n- *Adverse* : si l'absence de disclosure est tellement pervasive qu'elle déforme fondamentalement l'image — « les EF **ne donnent pas** une image fidèle. »\n\n**Détails scénario 4 — adverse systématique :**\n\nSi la direction prépare les EF sur base **going concern** alors que les conditions imposent une **base de liquidation** → l'auditeur émet une **opinion adverse** car le référentiel comptable a été appliqué à tort. ISA 570.21 explicite.",
+              "body": "**Matrice fondamentale ISA 570 (R2024) — 4 scénarios :**\n\n| # | Situation | Disclosure direction | Conséquence rapport |\n|---|---|---|---|\n| **1** | **Pas de doute** sur going concern | Standard | **Opinion clean** — rapport standard ISA 700 |\n| **2** | **Incertitude significative** identifiée | **Adéquate** (notes décrivent les conditions + plans direction) | **Section ISA 570** — opinion **non modifiée** + section « Material Uncertainty Related to Going Concern » |\n| **3** | **Incertitude significative** identifiée | **Inadéquate** (omise ou insuffisante) | **Opinion modifiée** — Qualified si isolée, **Adverse** si pervasive (ISA 705) |\n| **4** | Going concern **inappropriée** + EF préparés sur base de continuité | N/A — base comptable erronée | **Adverse opinion** systématique |\n\n**Détails scénario 2 — paragraphe Material Uncertainty :**\n\nFormat imposé par ISA 570 R2024 :\n\n> « **Incertitude significative liée à la continuité d'exploitation** — Nous attirons l'attention sur la note X qui indique que [décrire événements/conditions]. Ces conditions, ainsi que les autres questions exposées dans la note X, indiquent l'existence d'une **incertitude significative** susceptible de jeter un doute important sur la capacité de la société à poursuivre son exploitation. Notre opinion **n'est pas modifiée** au regard de cette question. »\n\n**Position dans le rapport :** **avant** la section KAM (si applicable). Mention spécifique = pas un EOM ordinaire — section dédiée.\n\n**Détails scénario 3 — opinion modifiée :**\n\n- *Qualified* : « **Sauf** pour [insufficient disclosure of going concern uncertainty], les EF donnent une image fidèle... »\n- *Adverse* : si l'absence de disclosure est tellement pervasive qu'elle déforme fondamentalement l'image — « les EF **ne donnent pas** une image fidèle. »\n\n**Détails scénario 4 — adverse systématique :**\n\nSi la direction prépare les EF sur base **going concern** alors que les conditions imposent une **base de liquidation** → l'auditeur émet une **opinion adverse** car le référentiel comptable a été appliqué à tort. ISA 570.21 explicite.",
               "warning": "**Trap d'examen majeur :** scénario 2 (incertitude significative + disclosure adéquate) **ne déclenche PAS d'opinion modifiée**. C'est une opinion **clean** avec paragraphe spécial (Material Uncertainty). Erreur classique : croire que toute incertitude = qualified."
             },
             {
@@ -8620,12 +8620,12 @@
               "title": "6. Obligations d'avis au juge — responsabilité auditeur",
               "section_id": "m2_L16_s6",
               "body": "**CO 725b al.4 — obligation subsidiaire de l'organe de révision.**\n\n**Cascade légale :**\n\n1. **Si CA ne réagit pas** face à un surendettement avéré → \n2. **L'organe de révision doit aviser le juge** (CO 725b al.4 in fine)\n\n**Démarche concrète auditeur :**\n\n**Étape 1 — Identification du surendettement** lors de l'audit :\n- Bilan présentant fonds propres négatifs (à valeur d'exploitation)\n- Demander bilan à valeur de liquidation (CO 725b al.1)\n- Si **les deux bilans** présentent surendettement → soupçon fondé\n\n**Étape 2 — Communication formelle au CA :**\n- Lettre formelle à l'attention du Président du CA\n- Description de la situation + référence CO 725b\n- Délai de réaction donné (typiquement 30-90 jours)\n\n**Étape 3 — Évaluation des mesures du CA :**\n\n| Mesure CA | Conséquence |\n|---|---|\n| **Postpositions de créances** suffisantes | Avis au juge **non requis** |\n| **Plan d'assainissement crédible** ≤ 90 jours | Avis suspendu, suivi requis |\n| **Aucune mesure** ou mesures insuffisantes | Auditeur **doit aviser le juge** |\n\n**Étape 4 — Avis au juge (si requis) :**\n- Tribunal compétent : juge des faillites du siège social\n- Communication écrite + dossier (bilans intermédiaires, constatations, échanges avec CA)\n- **Dérogation au secret professionnel** légalement prévue\n\n**Responsabilité de l'auditeur :**\n\n- **CO 755** : responsabilité civile envers société, actionnaires, créanciers — prescription **5 ans** après dommage causé\n- **Pénale** : CP 251 (faux dans les titres) si auditeur signe rapport conforme alors que surendettement avéré et tu\n- **Administrative** : ASR peut suspendre l'agrément en cas de manquement aux obligations 725b\n\n**Articulation avec le rapport d'audit (lien L13) :**\n\n- Rapport au CA (CO 728a) : **constatation détaillée** surendettement + actions du CA\n- Rapport AG (CO 728b) : **opinion modifiée ou EOM** selon scénarios going concern (s4)\n- Avis au juge : démarche **séparée** non publique",
-              "example": "**Cas Tau SA (PME genevoise, contrôle ordinaire) :** clôture 2025 présente fonds propres -2.1 MCHF (capital 1 MCHF, déficit cumulé 3.1 MCHF). Auditeur EY demande bilan à valeur liquidation : -3.5 MCHF. CA tente d'obtenir postposition de la holding mère pour 4 MCHF. Auditeur attend 60 jours. Postposition signée et notariée → **avis au juge non requis**. Rapport AG : opinion clean + EOM Material Uncertainty (going concern dépend de pérennité du support actionnaire)."
+              "example": "**Cas Tau SA (PME genevoise, contrôle ordinaire) :** clôture 2025 présente fonds propres -2.1 MCHF (capital 1 MCHF, déficit cumulé 3.1 MCHF). Auditeur EY demande bilan à valeur liquidation : -3.5 MCHF. CA tente d'obtenir postposition de la holding mère pour 4 MCHF. Auditeur attend 60 jours. Postposition signée → **avis au juge non requis**. Rapport AG : opinion non modifiée + section « Incertitude significative » (ISA 570) (going concern dépend de pérennité du support actionnaire)."
             },
             {
               "title": "7. Pièges examen + cas concrets",
               "section_id": "m2_L16_s7",
-              "body": "**6 pièges classiques :**\n\n1. **Confondre incertitude significative et opinion modifiée** — scénario 2 (disclosure adéquate) = **opinion clean** + paragraphe Material Uncertainty. Pas de qualified. Voir s4.\n\n2. **Confondre CO 725a (perte capital) et CO 725b (surendettement)** — 725a = fonds propres < 50 % cap + réserves légales (situation préoccupante mais positifs). 725b = fonds propres **négatifs** (les deux bilans). Conséquences très différentes.\n\n3. **Penser que going concern = 12 mois depuis clôture** — non, **12 mois depuis date du rapport** (ISA 570.13). Important si clôture déc. mais rapport en mai → couverture jusqu'à mai N+1.\n\n4. **Croire que postposition suffit toujours** — la postposition doit être **valide juridiquement** (acte signé, montant suffisant, rang explicite). Une lettre informelle de la holding ne suffit **pas**.\n\n5. **Penser que l'avis au juge vient toujours du CA** — non, **si CA refuse d'agir**, l'**organe de révision DOIT aviser le juge** lui-même (CO 725b al.4 in fine). Responsabilité directe et personnelle.\n\n6. **Oublier le bilan à valeur de liquidation** — CO 725b demande **les deux bilans** (exploitation + liquidation). L'auditeur doit vérifier les **deux**. Surendettement uniquement à valeur de liquidation = surendettement avéré.\n\n**Mnémonique CO 725 (révisé 2023) — « ILS » :**\n\n- **I**nsolvabilité (725) — risque court-terme\n- **L**iberté (725a) — perte capital\n- **S**urendettement (725b) — fonds propres négatifs\n\n**Mnémonique 4 scénarios ISA 570 — « CDQA » :**\n\n- **C**lean (pas de doute)\n- **D**isclosure adéquate (clean + EOM Material Uncertainty)\n- **Q**ualified ou adverse (disclosure inadéquate)\n- **A**dverse systématique (going concern inappropriée)\n\n**À retenir :** *going concern = jugement professionnel sur 12 mois*. La frontière incertitude/inappropriée est une zone à fort enjeu pour la responsabilité. En Suisse, **CO 725b** ajoute une **obligation positive** d'avis au juge propre à l'auditeur — unique au monde."
+              "body": "**6 pièges classiques :**\n\n1. **Confondre incertitude significative et opinion modifiée** — scénario 2 (disclosure adéquate) = **opinion clean** + paragraphe Material Uncertainty. Pas de qualified. Voir s4.\n\n2. **Confondre CO 725a (perte capital) et CO 725b (surendettement)** — 725a = fonds propres < 50 % cap + réserves légales (situation préoccupante mais positifs). 725b = fonds propres **négatifs** (les deux bilans). Conséquences très différentes.\n\n3. **Penser que going concern = 12 mois depuis clôture** — non, **12 mois depuis date du rapport** (ISA 570.13). Important si clôture déc. mais rapport en mai → couverture jusqu'à mai N+1.\n\n4. **Croire que postposition suffit toujours** — la postposition doit être **valide juridiquement** (acte signé, montant suffisant, rang explicite). Une lettre informelle de la holding ne suffit **pas**.\n\n5. **Penser que l'avis au juge vient toujours du CA** — non, **si CA refuse d'agir**, l'**organe de révision DOIT aviser le juge** lui-même (CO 725b al.4 in fine). Responsabilité directe et personnelle.\n\n6. **Oublier le bilan à valeur de liquidation** — CO 725b demande **les deux bilans** (exploitation + liquidation). L'auditeur doit vérifier les **deux**. Surendettement uniquement à valeur de liquidation = surendettement avéré.\n\n**Mnémonique CO 725 (révisé 2023) — « ILS » :**\n\n- **I**nsolvabilité (725) — risque court-terme\n- **L**iberté (725a) — perte capital\n- **S**urendettement (725b) — fonds propres négatifs\n\n**Mnémonique 4 scénarios ISA 570 — « CDQA » :**\n\n- **C**lean (pas de doute)\n- **D**isclosure adéquate (opinion non modifiée + section « Incertitude significative » ISA 570)\n- **Q**ualified ou adverse (disclosure inadéquate)\n- **A**dverse systématique (going concern inappropriée)\n\n**À retenir :** *going concern = jugement professionnel sur 12 mois*. La frontière incertitude/inappropriée est une zone à fort enjeu pour la responsabilité. En Suisse, **CO 725b** ajoute une **obligation positive** d'avis au juge propre à l'auditeur — unique au monde."
             }
           ],
           "questions": [
@@ -8636,8 +8636,8 @@
               "options": [
                 "A. L'entreprise est rentable et solvable",
                 "B. L'entreprise n'a pas de dette",
-                "C. Les EF sont préparés en supposant que l'entité continuera son activité dans un futur prévisible",
-                "D. L'auditeur garantit la continuité de l'activité"
+                "C. L'entité poursuivra son activité dans un avenir prévisible",
+                "D. L'auditeur garantit la poursuite de l'activité de l'entité pendant au moins 12 mois"
               ],
               "answer": 2,
               "explanation": "Le going concern est le fondement de la comptabilité standard : les EF sont préparés en supposant que l'entité continuera son activité. Si abandonnée, on bascule en bases de liquidation (valeur de réalisation, provisions cessation, reclassement dette long terme en court terme).",
@@ -8652,10 +8652,10 @@
                 "A. 6 mois depuis la clôture",
                 "B. 12 mois depuis la clôture des comptes",
                 "C. 24 mois depuis la clôture",
-                "D. 12 mois depuis la date du rapport d'audit"
+                "D. 12 mois depuis l'approbation des EF"
               ],
               "answer": 3,
-              "explanation": "ISA 570.13 fixe la période a 12 mois MINIMUM depuis la DATE DU RAPPORT (et non depuis la clôture). Important : si clôture décembre mais rapport en mai, la couverture s'étend jusqu'a mai N+1. ISA 570 R2024 incite a considérer au-delà si signaux clairs.",
+              "explanation": "ISA 570 (révisée 2024), applicable aux audits des périodes ouvertes dès le 15.12.2026 : l'appréciation de la continuité porte sur au moins 12 mois à compter de la date d'approbation des états financiers (en pratique proche de la date du rapport). Sous ISA 570 (2015) et IAS 1.26 : au moins 12 mois à compter de la date de clôture.",
               "difficulty": "medium",
               "section_id": "m2_L16_s2"
             },
@@ -8664,9 +8664,9 @@
               "type": "mcq",
               "question": "Quelles sont les 3 étapes de la démarche auditeur ISA 570 R2024 ?",
               "options": [
-                "A. Évaluer l'analyse de la direction -> tester les hypothèses clés -> conclure et documenter",
+                "A. Évaluer l'analyse de la direction, tester les hypothèses, conclure",
                 "B. Identifier indicateurs -> évaluer scenarios -> émettre rapport",
-                "C. Demander direction -> obtenir confirmation banque -> signer rapport",
+                "C. Interroger la direction, obtenir une confirmation de la banque et signer le rapport",
                 "D. Audit externe -> audit interne -> audit consolide"
               ],
               "answer": 0,
@@ -8679,10 +8679,10 @@
               "type": "mcq",
               "question": "Selon la matrice ISA 570, scenario : incertitude significative identifiée + disclosure ADEQUATE par la direction. Quelle est la conséquence sur le rapport ?",
               "options": [
-                "A. Opinion qualified obligatoire",
-                "B. Opinion clean + paragraphe 'Material Uncertainty Related to Going Concern'",
-                "C. Adverse opinion",
-                "D. Disclaimer of opinion"
+                "A. Une opinion avec réserve (qualified), obligatoirement",
+                "B. Non modifiée + section « Incertitude significative »",
+                "C. Une opinion défavorable (adverse), la continuité étant compromise",
+                "D. Une impossibilité d'exprimer une opinion"
               ],
               "answer": 1,
               "explanation": "Scenario 2 (matrice ISA 570) : incertitude significative + disclosure adequate -> opinion CLEAN + paragraphe spécifique 'Material Uncertainty Related to Going Concern' (pas un EOM ordinaire, section dédiée). L'opinion n'est PAS modifiée. Trap d'examen majeur : confondre avec qualified.",
@@ -8694,10 +8694,10 @@
               "type": "mcq",
               "question": "Selon la matrice ISA 570, scenario : incertitude significative identifiée + disclosure INADÉQUATE (omise ou insuffisante). Quelle est la conséquence ?",
               "options": [
-                "A. Opinion clean avec EOM",
+                "A. Opinion non modifiée avec un paragraphe d'observation (EOM)",
                 "B. Disclaimer systématique",
-                "C. Pas de modification du rapport",
-                "D. Opinion modifiée : qualified si isolée, adverse si pervasive (ISA 705)"
+                "C. Aucune modification du rapport n'est requise",
+                "D. Opinion modifiée : réserve ou défavorable"
               ],
               "answer": 3,
               "explanation": "Scenario 3 : disclosure inadéquate -> opinion modifiée. Qualified si l'insuffisance est isolée, Adverse si pervasive (deforme fondamentalement l'image). Phrase qualified : 'Sauf pour [insufficient disclosure of going concern uncertainty]...'. Renvoi explicite a ISA 705 pour la matrice qualified/adverse/disclaimer.",
@@ -8709,10 +8709,10 @@
               "type": "mcq",
               "question": "Selon ISA 570, scenario : going concern INAPPROPRIÉE mais EF préparés sur cette base. Quelle est la conséquence ?",
               "options": [
-                "A. Qualified opinion",
-                "B. Adverse opinion systématique",
+                "A. Opinion avec réserve (qualified)",
+                "B. Opinion défavorable (adverse)",
                 "C. Disclaimer of opinion",
-                "D. EOM Material Uncertainty"
+                "D. Opinion non modifiée + section ISA 570"
               ],
               "answer": 1,
               "explanation": "Scenario 4 (ISA 570.21) : si la direction prepare les EF sur base going concern alors que les conditions imposent une base de liquidation, le référentiel comptable est applique a tort. L'auditeur émet une ADVERSE OPINION systématique - pas qualified, pas EOM. Le scenario le plus severe.",
@@ -8734,10 +8734,10 @@
               "type": "mcq",
               "question": "Parmi les indicateurs de risque ISA 570.A3, lequel est de nature OPÉRATIONNELLE ?",
               "options": [
-                "A. Pertes répétées sur plusieurs exercices",
-                "B. Perte d'un client représentant 40% du CA",
+                "A. Des pertes répétées sur plusieurs exercices",
+                "B. Perte d'un client (40 % du CA)",
                 "C. Réglementation défavorable du secteur",
-                "D. Fonds propres négatifs"
+                "D. Des fonds propres négatifs au bilan"
               ],
               "answer": 1,
               "explanation": "Indicateurs OPÉRATIONNELS : perte de clients/fournisseurs clés, départ dirigeants, conflits sociaux, penuries inputs critiques, technologie obsolete, perte permis/licence. Pertes répétées et fonds propres négatifs = financiers. Réglementation défavorable = externe.",
@@ -8749,9 +8749,9 @@
               "type": "mcq",
               "question": "Quelle réforme du droit suisse a restructure les anciens art. 725 et 725a CO en 3 articles distincts ?",
               "options": [
-                "A. Réforme du droit de la SA, entrée en vigueur 1er janvier 2023",
-                "B. Réforme 2015 (LFus)",
-                "C. Réforme LSR 2018",
+                "A. La réforme du droit de la SA (1.1.2023)",
+                "B. La loi sur la fusion (LFus) entrée en vigueur en 2004",
+                "C. La révision de la LSR et de l'OSRev de 2018",
                 "D. Réforme RPC 2020"
               ],
               "answer": 0,
@@ -8765,9 +8765,9 @@
               "question": "Quel est le seuil déclenchant l'application de CO 725a (perte de capital) ?",
               "options": [
                 "A. Fonds propres négatifs (passifs > actifs)",
-                "B. Résultat négatif sur 3 exercices consécutifs",
-                "C. Dernier bilan presente un déficit > 1/2 (capital social + réserves légales non disponibles)",
-                "D. Trésorerie inférieure a 6 mois de charges"
+                "B. Un résultat négatif sur trois exercices consécutifs, quel que soit le bilan",
+                "C. Moitié du capital et des réserves légales non couverte",
+                "D. Une trésorerie inférieure à six mois de charges courantes d'exploitation"
               ],
               "answer": 2,
               "explanation": "CO 725a (perte de capital) declenche obligations si dernier bilan presente un DÉFICIT supérieur a la moitié du (capital social + réserves légales non disponibles). Conséquences : CA prend mesures d'assainissement, bilan intermédiaire VERIFIE par organe de révision (al.2), convocation AG.",
@@ -8779,13 +8779,13 @@
               "type": "mcq",
               "question": "Quel est le critère déclenchant CO 725b (surendettement) ?",
               "options": [
-                "A. Fonds propres négatifs : passifs > actifs (a valeur d'exploitation OU liquidation)",
+                "A. Dettes non couvertes (exploitation et liquidation)",
                 "B. Trésorerie opérationnelle negative sur 3 exercices",
                 "C. Résultat net négatif",
                 "D. Endettement bancaire supérieur a 50% du bilan"
               ],
               "answer": 0,
-              "explanation": "CO 725b (surendettement) : fonds propres NÉGATIFS - les passifs dépassent les actifs, a valeur d'exploitation OU liquidation. Si soupçon fonde -> CA établit DEUX bilans intermédiaires (exploitation + liquidation), verifies par organe de révision agree. Si les deux confirment -> avis au juge.",
+              "explanation": "CO 725b : s'il existe des raisons sérieuses d'admettre que les dettes ne sont plus couvertes par les actifs, le CA établit des comptes intermédiaires aux valeurs d'exploitation et de liquidation, vérifiés par un réviseur agréé. Si la société est surendettée selon LES DEUX évaluations, le CA avise le tribunal, sauf postposition suffisante ou perspective sérieuse d'assainissement dans les 90 jours (art. 725b al. 4).",
               "difficulty": "hard",
               "section_id": "m2_L16_s5"
             },
@@ -8804,10 +8804,10 @@
               "type": "mcq",
               "question": "Selon CO 725b al.4, dans quels cas l'avis au juge n'est PAS requis malgré un surendettement avere ?",
               "options": [
-                "A. Si l'entreprise emploie plus de 100 personnes",
-                "B. Si postpositions de créances suffisantes OU probabilité d'assainissement dans un délai approprié (max 90 jours)",
+                "A. Si l'entreprise emploie plus de 100 personnes en Suisse et assure des emplois",
+                "B. Postposition suffisante ou assainissement probable (90 jours)",
                 "C. Si la holding s'engage moralement",
-                "D. Si le CA promet de redresser dans l'année"
+                "D. Si le conseil d'administration promet de redresser la situation dans l'année"
               ],
               "answer": 1,
               "explanation": "CO 725b al.4 prévoit deux dérogations a l'avis au juge : (1) ch.1 - postpositions de créances suffisantes, valides juridiquement (acte signe, montant suffisant, rang explicite), (2) ch.2 - probabilité d'assainissement dans un délai approprié (max 90 jours). Lettre informelle de holding ne suffit pas.",
@@ -8830,12 +8830,12 @@
               "question": "Quelle est la durée de prescription de la responsabilité civile de l'auditeur selon CO 755 ?",
               "options": [
                 "A. 1 an",
-                "B. 3 ans",
-                "C. 10 ans depuis la mission",
-                "D. 5 ans après dommage cause"
+                "B. 3 ans dès le dommage causé",
+                "C. 10 ans dès la fin de la mission",
+                "D. 5 ans dès la connaissance"
               ],
               "answer": 3,
-              "explanation": "CO 755 : responsabilite civile de l'auditeur envers societe, actionnaires, creanciers - prescription 5 ans apres dommage cause. Risque pénal additionnel (CP 251 faux dans les titres si surendettement avere et tu) et administratif (ASR peut suspendre l'agrement).",
+              "explanation": "CO 760 : l'action en responsabilité contre l'organe de révision (CO 755) se prescrit par 5 ans dès le jour où le lésé a eu connaissance du dommage et de la personne responsable, mais au plus tard par 10 ans dès le fait dommageable (délai porté à celui de l'action pénale si plus long). La réforme de 2020 a porté la prescription délictuelle de CO 60 à 3 ans, mais CO 760 est resté à 5 ans. Risques additionnels : pénal (CP 251) et administratif (retrait de l'agrément par l'ASR).",
               "difficulty": "hard",
               "section_id": "m2_L16_s6"
             },
@@ -8845,12 +8845,12 @@
               "question": "Quelles sauvegardes valides l'auditeur EY peut-il accepter pour éviter l'avis au juge en cas de surendettement ?",
               "options": [
                 "A. Promesse verbale du CEO",
-                "B. Lettre de support informelle de la maison-mère",
-                "C. Postposition signée, notariée, montant suffisant et rang explicite",
+                "B. Une lettre de soutien informelle (letter of comfort) de la maison mère",
+                "C. Postposition écrite, suffisante et au bon rang",
                 "D. Engagement moral du conseil de fondation"
               ],
               "answer": 2,
-              "explanation": "Pour éviter l'avis au juge, la postposition doit être VALIDE JURIDIQUEMENT : acte écrit signe, montant suffisant, rang explicite, idéalement notariée. Lettres informelles, promesses verbales, engagements moraux ne sont pas suffisants. Cas Tau SA : 4 MCHF de postposition signée et notariée = avis au juge non requis.",
+              "explanation": "Pour éviter l'avis au juge, la postposition doit être juridiquement valable : déclaration écrite et signée du créancier, montant suffisant pour couvrir le surendettement (intérêts compris), rang postposé à tous les autres créanciers. Aucune forme notariée n'est exigée. Lettres informelles, promesses verbales ou engagements moraux ne suffisent pas. Cas Tau SA : 4 MCHF de postposition signée = avis au juge non requis.",
               "difficulty": "hard",
               "section_id": "m2_L16_s6"
             },
@@ -8869,13 +8869,13 @@
               "type": "mcq",
               "question": "Le mnémonique 'CDQA' pour les 4 scenarios ISA 570 designe :",
               "options": [
-                "A. Clean - Disclosure adequate (clean + EOM Material Uncertainty) - Qualified ou adverse - Adverse systématique",
-                "B. Continuité - Doute - Question - Action",
+                "A. Clean, Disclosure (section ISA 570), Qualified/adverse, Adverse",
+                "B. Continuité, Doute, Question, Action (les quatre étapes de l'analyse de la direction)",
                 "C. Comptes - Direction - Qualité - Audit",
                 "D. Capital - Dette - Qualifie - Adverse"
               ],
               "answer": 0,
-              "explanation": "Mnémonique CDQA des 4 scenarios ISA 570 : (C) Clean = pas de doute, (D) Disclosure adequate = clean + EOM Material Uncertainty, (Q) Qualified ou adverse = disclosure inadéquate, (A) Adverse systématique = going concern inappropriée. Aide a mémoriser la matrice fondamentale.",
+              "explanation": "Mnémonique CDQA des 4 scenarios ISA 570 : (C) Clean = pas de doute, (D) Disclosure adequate = opinion non modifiée + section « Incertitude significative » (ISA 570), (Q) Qualified ou adverse = disclosure inadéquate, (A) Adverse systématique = going concern inappropriée. Aide a mémoriser la matrice fondamentale.",
               "difficulty": "easy",
               "section_id": "m2_L16_s7"
             }
@@ -8912,13 +8912,13 @@
             {
               "title": "6. Duty to notify the judge — auditor liability",
               "section_id": "m2_L16_s6",
-              "body": "**CO 725b para 4 — subsidiary obligation of the audit body.**\n\n**Legal cascade:**\n\n1. **If the Board does not react** to confirmed over-indebtedness →\n2. **The audit body must notify the judge** (CO 725b para 4 in fine)\n\n**Concrete auditor approach:**\n\n**Step 1 — Identification of over-indebtedness** during the audit:\n- Balance sheet showing negative equity (at going concern value)\n- Request balance sheet at liquidation value (CO 725b para 1)\n- If **both balance sheets** show over-indebtedness → substantiated suspicion\n\n**Step 2 — Formal communication to the Board:**\n- Formal letter addressed to the Chairman of the Board\n- Description of the situation + reference to CO 725b\n- Response deadline given (typically 30-90 days)\n\n**Step 3 — Assessment of Board measures:**\n\n| Board measure | Consequence |\n|---|---|\n| Sufficient **debt subordinations** | Notification to judge **not required** |\n| **Credible restructuring plan** ≤ 90 days | Notification suspended, follow-up required |\n| **No measure** or insufficient measures | Auditor **must notify the judge** |\n\n**Step 4 — Notification of the judge (if required):**\n- Competent court: bankruptcy judge of the registered office\n- Written communication + file (interim balance sheets, findings, exchanges with the Board)\n- **Derogation from professional secrecy** legally provided\n\n**Auditor liability:**\n\n- **CO 755**: civil liability vis-à-vis the company, shareholders, creditors — limitation **5 years** after damage caused\n- **Criminal**: Criminal Code 251 (forgery in instruments) if the auditor signs a compliant report while over-indebtedness is established and known\n- **Administrative**: ASR can suspend the licence for failure to meet 725b obligations\n\n**Articulation with the audit report (link L13):**\n\n- Board report (CO 728a): **detailed finding** of over-indebtedness + Board actions\n- AGM report (CO 728b): **modified opinion or EOM** depending on going concern scenarios (s4)\n- Notification to judge: **separate non-public** approach\n\n**Tau SA case (Geneva SME, ordinary audit):** 2025 closing shows equity of CHF -2.1M (capital CHF 1M, accumulated deficit CHF 3.1M). EY auditor requests balance sheet at liquidation values: CHF -3.5M. Board attempts to obtain subordination from parent holding for CHF 4M. Auditor waits 60 days. Subordination signed and notarised → **notification to judge not required**. AGM report: clean opinion + EOM Material Uncertainty (going concern depends on continued shareholder support).",
-              "example": "**Cas Tau SA (PME genevoise, contrôle ordinaire) :** clôture 2025 présente fonds propres -2.1 MCHF (capital 1 MCHF, déficit cumulé 3.1 MCHF). Auditeur EY demande bilan à valeur liquidation : -3.5 MCHF. CA tente d'obtenir postposition de la holding mère pour 4 MCHF. Auditeur attend 60 jours. Postposition signée et notariée → **avis au juge non requis**. Rapport AG : opinion clean + EOM Material Uncertainty (going concern dépend de pérennité du support actionnaire)."
+              "body": "**CO 725b para 4 — subsidiary obligation of the audit body.**\n\n**Legal cascade:**\n\n1. **If the Board does not react** to confirmed over-indebtedness →\n2. **The audit body must notify the judge** (CO 725b para 4 in fine)\n\n**Concrete auditor approach:**\n\n**Step 1 — Identification of over-indebtedness** during the audit:\n- Balance sheet showing negative equity (at going concern value)\n- Request balance sheet at liquidation value (CO 725b para 1)\n- If **both balance sheets** show over-indebtedness → substantiated suspicion\n\n**Step 2 — Formal communication to the Board:**\n- Formal letter addressed to the Chairman of the Board\n- Description of the situation + reference to CO 725b\n- Response deadline given (typically 30-90 days)\n\n**Step 3 — Assessment of Board measures:**\n\n| Board measure | Consequence |\n|---|---|\n| Sufficient **debt subordinations** | Notification to judge **not required** |\n| **Credible restructuring plan** ≤ 90 days | Notification suspended, follow-up required |\n| **No measure** or insufficient measures | Auditor **must notify the judge** |\n\n**Step 4 — Notification of the judge (if required):**\n- Competent court: bankruptcy judge of the registered office\n- Written communication + file (interim balance sheets, findings, exchanges with the Board)\n- **Derogation from professional secrecy** legally provided\n\n**Auditor liability:**\n\n- **CO 755**: civil liability vis-à-vis the company, shareholders, creditors — limitation **5 years** after damage caused\n- **Criminal**: Criminal Code 251 (forgery in instruments) if the auditor signs a compliant report while over-indebtedness is established and known\n- **Administrative**: ASR can suspend the licence for failure to meet 725b obligations\n\n**Articulation with the audit report (link L13):**\n\n- Board report (CO 728a): **detailed finding** of over-indebtedness + Board actions\n- AGM report (CO 728b): **modified opinion or EOM** depending on going concern scenarios (s4)\n- Notification to judge: **separate non-public** approach\n\n**Tau SA case (Geneva SME, ordinary audit):** 2025 closing shows equity of CHF -2.1M (capital CHF 1M, accumulated deficit CHF 3.1M). EY auditor requests balance sheet at liquidation values: CHF -3.5M. Board attempts to obtain subordination from parent holding for CHF 4M. Auditor waits 60 days. Subordination signed → **notification to judge not required**. AGM report: unmodified opinion + separate Material Uncertainty Related to Going Concern section (going concern depends on continued shareholder support).",
+              "example": "**Cas Tau SA (PME genevoise, contrôle ordinaire) :** clôture 2025 présente fonds propres -2.1 MCHF (capital 1 MCHF, déficit cumulé 3.1 MCHF). Auditeur EY demande bilan à valeur liquidation : -3.5 MCHF. CA tente d'obtenir postposition de la holding mère pour 4 MCHF. Auditeur attend 60 jours. Postposition signée → **avis au juge non requis**. Rapport AG : opinion non modifiée + section « Incertitude significative » (ISA 570) (going concern dépend de pérennité du support actionnaire)."
             },
             {
               "title": "7. Exam traps + concrete cases",
               "section_id": "m2_L16_s7",
-              "body": "**6 classic traps:**\n\n1. **Confusing material uncertainty and modified opinion** — scenario 2 (adequate disclosure) = **clean opinion** + Material Uncertainty paragraph. Not qualified. See s4.\n\n2. **Confusing CO 725a (capital loss) and CO 725b (over-indebtedness)** — 725a = equity < 50% capital + legal reserves (concerning situation but positive). 725b = **negative** equity (both balance sheets). Very different consequences.\n\n3. **Thinking going concern = 12 months from closing** — no, **12 months from date of the report** (ISA 570.13). Important if Dec closing but May report → coverage until May N+1.\n\n4. **Believing subordination always suffices** — subordination must be **legally valid** (signed deed, sufficient amount, explicit rank). An informal letter from the holding is **not** sufficient.\n\n5. **Thinking notification to the judge always comes from the Board** — no, **if the Board refuses to act**, the **audit body MUST notify the judge** itself (CO 725b para 4 in fine). Direct and personal liability.\n\n6. **Forgetting the balance sheet at liquidation values** — CO 725b requires **both balance sheets** (going concern + liquidation). The auditor must check **both**. Over-indebtedness at liquidation values only = confirmed over-indebtedness.\n\n**CO 725 mnemonic (revised 2023) — \"ILS\":**\n\n- **I**nsolvency (725) — short-term risk\n- **L**oss (725a) — capital loss\n- **S**ur-indebtedness (725b) — negative equity\n\n**4 ISA 570 scenarios mnemonic — \"CDQA\":**\n\n- **C**lean (no doubt)\n- **D**isclosure adequate (clean + EOM Material Uncertainty)\n- **Q**ualified or adverse (inadequate disclosure)\n- **A**dverse systematic (going concern inappropriate)\n\n**Key takeaway:** *going concern = professional judgement on 12 months*. The boundary between uncertainty and inappropriate is a high-stakes area for liability. In Switzerland, **CO 725b** adds a **positive obligation** to notify the judge, specific to the auditor — unique in the world."
+              "body": "**6 classic traps:**\n\n1. **Confusing material uncertainty and modified opinion** — scenario 2 (adequate disclosure) = **clean opinion** + Material Uncertainty paragraph. Not qualified. See s4.\n\n2. **Confusing CO 725a (capital loss) and CO 725b (over-indebtedness)** — 725a = equity < 50% capital + legal reserves (concerning situation but positive). 725b = **negative** equity (both balance sheets). Very different consequences.\n\n3. **Thinking going concern = 12 months from closing** — no, **12 months from date of the report** (ISA 570.13). Important if Dec closing but May report → coverage until May N+1.\n\n4. **Believing subordination always suffices** — subordination must be **legally valid** (signed deed, sufficient amount, explicit rank). An informal letter from the holding is **not** sufficient.\n\n5. **Thinking notification to the judge always comes from the Board** — no, **if the Board refuses to act**, the **audit body MUST notify the judge** itself (CO 725b para 4 in fine). Direct and personal liability.\n\n6. **Forgetting the balance sheet at liquidation values** — CO 725b requires **both balance sheets** (going concern + liquidation). The auditor must check **both**. Over-indebtedness at liquidation values only = confirmed over-indebtedness.\n\n**CO 725 mnemonic (revised 2023) — \"ILS\":**\n\n- **I**nsolvency (725) — short-term risk\n- **L**oss (725a) — capital loss\n- **S**ur-indebtedness (725b) — negative equity\n\n**4 ISA 570 scenarios mnemonic — \"CDQA\":**\n\n- **C**lean (no doubt)\n- **D**isclosure adequate (opinion non modifiée + section « Incertitude significative » ISA 570)\n- **Q**ualified or adverse (inadequate disclosure)\n- **A**dverse systematic (going concern inappropriate)\n\n**Key takeaway:** *going concern = professional judgement on 12 months*. The boundary between uncertainty and inappropriate is a high-stakes area for liability. In Switzerland, **CO 725b** adds a **positive obligation** to notify the judge, specific to the auditor — unique in the world."
             }
           ]
         },

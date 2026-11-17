@@ -9012,7 +9012,7 @@
           },
           {
             "q": "3. La promesse verbale de la holding suffit-elle à éviter l'avis au juge ?",
-            "solution": "**NON.** Une promesse VERBALE est insuffisante. Pour écarter le surendettement, il faut :\n• une **postposition de créances** juridiquement valable (acte signé, montant suffisant, rang explicite), OU\n• une lettre de soutien (letter of support) **contraignante et crédible**, OU\n• un apport effectif de fonds\n\n*Piège classique : une lettre de confort informelle ne suffit PAS. La postposition doit être notariée/signée et couvrir le montant du surendettement.*"
+            "solution": "**NON.** Une promesse VERBALE est insuffisante. Pour écarter le surendettement, il faut :\n• une **postposition de créances** juridiquement valable (acte signé, montant suffisant, rang explicite), OU\n• une lettre de soutien (letter of support) **contraignante et crédible**, OU\n• un apport effectif de fonds\n\n*Piège classique : une lettre de confort informelle ne suffit PAS. La postposition doit être écrite et signée (pas d'acte notarié requis) et couvrir le montant du surendettement.*"
           },
           {
             "q": "4. Quelle est la responsabilité de l'auditeur si le CA n'agit pas ?",
@@ -11278,7 +11278,7 @@
             ]
           ]
         },
-        "warning": "Une promesse VERBALE ou une lettre de confort informelle ne suffisent PAS. La postposition doit être juridiquement valable (signée, notariée, montant suffisant)."
+        "warning": "Une promesse VERBALE ou une lettre de confort informelle ne suffisent PAS. La postposition doit être juridiquement valable (écrite et signée, montant suffisant ; aucune forme notariée requise)."
       },
       {
         "id": "cas",
@@ -11286,7 +11286,7 @@
         "icon": "📌",
         "color": "#a855f7",
         "intro": "Application concrète de la cascade CO 725b.",
-        "example": "Clôture 2025 : fonds propres -2,1 MCHF (capital 1 MCHF, déficit cumulé 3,1 MCHF). L'auditeur EY demande le bilan à valeur de liquidation : -3,5 MCHF. Le CA tente d'obtenir une postposition de la holding-mère pour 4 MCHF. L'auditeur attend 60 jours. La postposition est signée et notariée → avis au juge NON requis. Rapport AG : opinion clean + EOM Material Uncertainty (le going concern dépend de la pérennité du soutien actionnaire).",
+        "example": "Clôture 2025 : fonds propres -2,1 MCHF (capital 1 MCHF, déficit cumulé 3,1 MCHF). L'auditeur EY demande le bilan à valeur de liquidation : -3,5 MCHF. Le CA tente d'obtenir une postposition de la holding-mère pour 4 MCHF. L'auditeur attend 60 jours. La postposition est signée → avis au juge NON requis. Rapport AG : opinion non modifiée + section « Incertitude significative » (ISA 570) (le going concern dépend de la pérennité du soutien actionnaire).",
         "warning": "Le rapport AG (CO 728b) reflète l'incertitude (Material Uncertainty), le rapport CA (CO 728a) détaille la situation, et l'avis au juge (s'il avait eu lieu) serait une démarche séparée non publique."
       },
       {
