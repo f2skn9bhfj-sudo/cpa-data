@@ -977,71 +977,7 @@
             return results.slice(0, 50);
         },
 
-        // ── Mission Lab (Audit immersif) — stubs ──
-        async list_missions() { return _lsGet('missions_list', []); },
-        async list_mission_scenarios() { return []; },
-        async get_mission_full(id) { return _lsGet('mission_' + id, null); },
-        async start_mission(scenario_id) {
-            const id = Date.now();
-            const m = { id, scenario_id, started: new Date().toISOString(), phase: 0 };
-            const list = _lsGet('missions_list', []);
-            list.unshift({ id, scenario_id, title: 'Mission ' + id, started: m.started });
-            _lsSet('missions_list', list);
-            _lsSet('mission_' + id, m);
-            return m;
-        },
-        async mission_advance_phase() { return true; },
-        async mission_finish() { return true; },
-        async mission_delete(id) {
-            const list = _lsGet('missions_list', []).filter(m => m.id !== id);
-            _lsSet('missions_list', list);
-            try { localStorage.removeItem(LS_PREFIX + 'mission_' + id); } catch (_) {}
-            return true;
-        },
-        async mission_save_decision() { return true; },
-        async mission_mark_finding() { return true; },
-        async mission_mark_email_read() { return true; },
-        async mission_trigger_random_event() { return null; },
-        async mission_update_workpaper() { return true; },
-        async export_mission_pdf() { return { ok: false, error: 'PDF export desktop only' }; },
-
-        // ── Canvas (audit work papers) — stubs avec localStorage ──
-        async canvas_library() { return await _loadJson('canvas_library.json') || {}; },
-        async canvas_list_engagements() { return _lsGet('canvas_engagements', []); },
-        async canvas_create_engagement(name) {
-            const id = 'eng_' + Date.now();
-            const list = _lsGet('canvas_engagements', []);
-            list.unshift({ id, name: name || 'Engagement', created: new Date().toISOString() });
-            _lsSet('canvas_engagements', list);
-            return { id, name };
-        },
-        async canvas_delete_engagement(id) {
-            _lsSet('canvas_engagements', _lsGet('canvas_engagements', []).filter(e => e.id !== id));
-            return true;
-        },
-        async canvas_get_engagement(id) { return _lsGet('canvas_eng_' + id, null); },
-        async canvas_get_workpaper(eng_id, wp_id) { return _lsGet('canvas_wp_' + eng_id + '_' + wp_id, null); },
-        async canvas_create_workpaper() { return { ok: true, id: 'wp_' + Date.now() }; },
-        async canvas_update_workpaper() { return true; },
-        async canvas_delete_workpaper() { return true; },
-        async canvas_get_memo(eng_id) { return _lsGet('canvas_memo_' + eng_id, ''); },
-        async canvas_save_memo(eng_id, memo) { _lsSet('canvas_memo_' + eng_id, memo); return true; },
-        async canvas_add_pbc() { return { ok: true }; },
-        async canvas_update_pbc() { return true; },
-        async canvas_delete_pbc() { return true; },
-        async canvas_add_sad() { return { ok: true }; },
-        async canvas_update_sad() { return true; },
-        async canvas_delete_sad() { return true; },
-        async canvas_add_note() { return { ok: true }; },
-        async canvas_respond_note() { return true; },
-        async canvas_clear_note() { return true; },
-        async canvas_delete_note() { return true; },
-        async canvas_add_attachment() { return { ok: false, error: 'Attachments desktop only' }; },
-        async canvas_open_attachment() { return false; },
-        async canvas_delete_attachment() { return true; },
-        async canvas_add_time() { return true; },
-        async canvas_import_tb() { return { ok: false, error: 'TB import desktop only' }; },
-        async canvas_export_pdf() { return { ok: false, error: 'PDF export desktop only' }; },
+        // (Mission Lab et Canvas Perso retirés : non fonctionnels en version web.)
 
         // ── Stubs (features Python-only, désactivées en mobile) ──
 
@@ -1065,12 +1001,6 @@
         async read_file() { return ''; },
         async open_file_external() { return false; },
         async get_file_tree() { return []; },
-
-        async list_mission_scenarios() { return []; },
-
-        // ── Canvas (peut tourner en local via localStorage) ──
-        async canvas_save(data) { _lsSet('canvas_data', data); return true; },
-        async canvas_load() { return _lsGet('canvas_data', null); },
     };
 
     // Installe pywebview.api avec ce shim

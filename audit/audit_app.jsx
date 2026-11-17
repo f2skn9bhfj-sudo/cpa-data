@@ -80,13 +80,6 @@ function pywebApi() {
   const tryGet = (w) => { try { return (w && w.pywebview && w.pywebview.api) || null; } catch (e) { return null; } };
   return tryGet(window) || tryGet(window.parent) || tryGet(window.top) || null;
 }
-/* Ouvre un module natif (Canvas / Mission / Seuils) via la fenêtre parente */
-function openAuditNative(module) {
-  try {
-    const parent = (window.parent && window.parent !== window) ? window.parent : window;
-    parent.postMessage({ type: "openAuditNative", module: module }, "*");
-  } catch (e) {}
-}
 function auditToast(msg, kind) {
   let el = document.getElementById("audit-toast");
   if (!el) { el = document.createElement("div"); el.id = "audit-toast"; document.body.appendChild(el); }
@@ -239,9 +232,25 @@ function QAList({ items = [], title }) {
 
 /* ═══ Outils interactifs (calculateurs, copie, glossaire) ═══ */
 function fmtCHF(v) { try { return Math.round(v || 0).toLocaleString("fr-CH"); } catch (e) { return String(Math.round(v || 0)); } }
+/* Copie robuste : l'API Clipboard peut être refusée (iframe, iOS, http) →
+   repli sur une zone de texte temporaire + execCommand("copy"). */
+function copyText(text) {
+  const fallback = () => {
+    try {
+      const ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select(); document.execCommand("copy"); document.body.removeChild(ta);
+    } catch (e) {}
+  };
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text).catch(fallback);
+  } catch (e) {}
+  fallback();
+  return Promise.resolve();
+}
 function CopyBtn({ text, label = "📋 Copier" }) {
   const [done, setDone] = useState(false);
-  return <button onClick={() => { try { if (navigator.clipboard) navigator.clipboard.writeText(text); setDone(true); setTimeout(() => setDone(false), 1500); } catch (e) {} }}
+  return <button onClick={() => { copyText(text); setDone(true); setTimeout(() => setDone(false), 1500); }}
     className="mt-2 text-[11px] px-2.5 py-1 rounded-md border border-violet-200 text-violet-700 bg-violet-50 hover:bg-violet-100">{done ? "✓ Copié" : label}</button>;
 }
 const AINP = "w-full bg-white border border-slate-300 rounded-md px-2.5 py-1.5 text-sm focus:border-violet-500 outline-none";
@@ -1567,134 +1576,86 @@ function AuditGeneric({ section, onBack }) {
 }
 
 /* ── Accueil Audit (hub) ── */
-const AUDIT_ORDER = ["annuaire", "nas", "cadre_legal", "cycles", "procedures_assertions", "quiz", "cas_pratiques", "examens_blancs", "arbres", "comparatifs", "lexique", "outils", "modeles", "terrain", "independance", "fraude", "goingconcern", "timeline", "actualites"];
+/* ── Accueil Audit : tuiles regroupées par usage ──
+   Une entrée "@x" désigne une vue spéciale (clé de SPECIAL ci-dessous),
+   sinon une section de data/audit.json (data[k]._icon / _label / _description).
+   Toute section de data non listée ici est ajoutée au dernier groupe. */
+const AUDIT_HOME_GROUPS = [
+  { id: "normes",    label: "Apprendre les normes",       icon: "📖", items: ["@revision", "annuaire", "nas", "@book", "cadre_legal", "independance"] },
+  { id: "methode",   label: "Méthode & terrain",          icon: "🔍", items: ["@metier", "timeline", "cycles", "procedures_assertions", "@tests", "@referencement", "terrain"] },
+  { id: "risques",   label: "Fraude & continuité",        icon: "⚠️", items: ["fraude", "@fraudepostes", "goingconcern"] },
+  { id: "comptes",   label: "Comptes & états financiers", icon: "📊", items: ["@nestle", "@annexes", "@amortissements", "@plan", "comparatifs"] },
+  { id: "entrainer", label: "S'entraîner",                icon: "🎮", items: ["quiz", "cas_pratiques", "examens_blancs", "arbres", "@seuils"] },
+  { id: "outils",    label: "Boîte à outils & veille",    icon: "🧰", items: ["outils", "modeles", "lexique", "actualites"] },
+];
+function AuditTile({ icon, chip, label, desc, md, sub, subColor, onClick }) {
+  return (
+    <button onClick={onClick} className="text-left bg-white border border-slate-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-start gap-3">
+      <span className={`w-9 h-9 grid place-items-center rounded-lg border text-base shrink-0 ${chip || "bg-violet-50 text-violet-700 border-violet-100"}`}>{icon || "📋"}</span>
+      <span className="min-w-0">
+        <span className="block font-bold text-sm text-slate-800 leading-tight">{label}</span>
+        {desc && <span className="block text-xs text-slate-500 leading-snug mt-0.5">{md ? <MdInline text={desc} /> : desc}</span>}
+        {sub && <span className={`block text-[11px] font-medium mt-1 ${subColor || "text-violet-500"}`}>{sub}</span>}
+      </span>
+    </button>
+  );
+}
 function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlanComptable, onFraudePostes, onReferencement, onAnnexes, onAmortissements, onNestle, onMetier, onTests }) {
-  const hasNestle = typeof window !== "undefined" && window.__NESTLE__ && (window.__NESTLE__.statements || []).length;
-  const hasMetier = typeof window !== "undefined" && window.__METIER__ && (window.__METIER__.sections || []).length;
-  const hasTests = typeof window !== "undefined" && window.__TESTS__ && (window.__TESTS__.tests || []).length;
-  const hasPlan = typeof window !== "undefined" && window.__PLAN_COMPTABLE__ && (window.__PLAN_COMPTABLE__.plans || []).length;
-  const hasFraude = typeof window !== "undefined" && window.__FRAUDE_POSTES__ && (window.__FRAUDE_POSTES__.sections || []).length;
-  const hasRef = typeof window !== "undefined" && window.__REFERENCEMENT__ && ((window.__REFERENCEMENT__.exemple || {}).feuilles || []).length;
-  const hasAnnexes = typeof window !== "undefined" && window.__ANNEXES__ && (window.__ANNEXES__.referentiels || []).length;
-  const hasAmort = typeof window !== "undefined" && window.__AMORTISSEMENTS__ && (window.__AMORTISSEMENTS__.lecons || []).length;
-  const keys = AUDIT_ORDER.filter((k) => data[k]);
-  Object.keys(data).forEach((k) => { if (k[0] !== "_" && k !== "annuaire_cours" && AUDIT_ORDER.indexOf(k) < 0) keys.push(k); });
-  const hasBook = book && (book.controle_ordinaire || book.controle_restreint);
+  const W = typeof window !== "undefined" ? window : {};
+  const len = (x) => (Array.isArray(x) ? x.length : 0);
+  const hasBook = !!(book && (book.controle_ordinaire || book.controle_restreint));
   const bookChapters = hasBook ? ["controle_ordinaire", "controle_restreint"].reduce((a, vk) => a + (((book[vk] || {}).parties || []).reduce((b, p) => b + (p.fiches || []).filter(f => f.fiche).length, 0)), 0) : 0;
-  const nbTests = (typeof window !== "undefined" && window.__TESTS__ && (window.__TESTS__.tests || []).length) || 0;
-  const flagships = [
-    { show: true, onClick: onRevision, icon: "📋", chip: "bg-violet-50 text-violet-700 border-violet-100", label: "Révision — méga-fiche des 47 ISA", desc: "Toutes les normes ISA condensées : essentiel, repères, pièges, mnémo · navigable et PDF." },
-    { show: hasBook, onClick: onBook, icon: "📚", chip: "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-100", label: "Base de cours — Manuel suisse d'audit", desc: `Le cours chapitre par chapitre · ${bookChapters} chapitres (MSA contrôle ordinaire + NCR restreint).` },
-    { show: hasTests, onClick: onTests, icon: "🧪", chip: "bg-teal-50 text-teal-700 border-teal-100", label: "Catalogue des tests d'audit", desc: `${nbTests} tests (pourquoi/comment/assertion) · cas interactifs · mode entraînement · exercice journal client.` },
-    { show: hasMetier, onClick: onMetier, icon: "🧑‍💼", chip: "bg-indigo-50 text-indigo-700 border-indigo-100", label: "Une journée d'auditeur", desc: "La méthode pas à pas : risque → assertion → test, matérialité, sondage, grand livre, cas Wirecard." },
-    { show: hasNestle, onClick: onNestle, icon: "🏭", chip: "bg-amber-50 text-amber-700 border-amber-100", label: "Nestlé — états financiers réels commentés", desc: "Les 5 états + 18 notes des comptes consolidés 2025, commentés poste par poste (cas réel)." },
-    { show: hasPlan, onClick: onPlanComptable, icon: "📊", chip: "bg-emerald-50 text-emerald-700 border-emerald-100", label: "Plans comptables (Suisse PME / France PCG)", desc: "Plan suisse PME & plan français, classe par classe ; comptes reliés au bilan et au compte de résultat." },
-  ].filter((f) => f.show);
+  const nbTests = len((W.__TESTS__ || {}).tests);
+  const postes = ((W.__FRAUDE_POSTES__ || {}).sections || []).flatMap((s) => s.postes || []);
+  const nbSchemes = postes.reduce((a, p) => a + len(p.schemes), 0);
+  const nbIsa = ((data.annuaire || {}).series || []).reduce((a, s) => a + len(s.standards), 0);
+  const SPECIAL = {
+    revision: { show: true, on: onRevision, icon: "📋", chip: "bg-violet-50 text-violet-700 border-violet-100", label: `Révision — méga-fiche des ${nbIsa} ISA`, desc: "Toutes les normes ISA condensées : essentiel, repères, pièges, mnémo · navigable et PDF." },
+    book: { show: hasBook, on: onBook, icon: "📚", chip: "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-100", label: "Base de cours — Manuel suisse d'audit", desc: `Le cours chapitre par chapitre · ${bookChapters} chapitres (MSA contrôle ordinaire + NCR restreint).` },
+    tests: { show: nbTests > 0, on: onTests, icon: "🧪", chip: "bg-teal-50 text-teal-700 border-teal-100", label: "Catalogue des tests d'audit", desc: `${nbTests} tests (pourquoi/comment/assertion) · cas interactifs · mode entraînement · exercice journal client.` },
+    metier: { show: len((W.__METIER__ || {}).sections) > 0, on: onMetier, icon: "🧑‍💼", chip: "bg-indigo-50 text-indigo-700 border-indigo-100", label: "Une journée d'auditeur", desc: "La méthode pas à pas : risque → assertion → test, matérialité, sondage, grand livre, cas Wirecard." },
+    nestle: { show: len((W.__NESTLE__ || {}).statements) > 0, on: onNestle, icon: "🏭", chip: "bg-amber-50 text-amber-700 border-amber-100", label: "Nestlé — états financiers réels commentés", desc: "Les 5 états + 18 notes des comptes consolidés 2025, commentés poste par poste (cas réel)." },
+    plan: { show: len((W.__PLAN_COMPTABLE__ || {}).plans) > 0, on: onPlanComptable, icon: "🗂️", chip: "bg-emerald-50 text-emerald-700 border-emerald-100", label: "Plans comptables (Suisse PME / France PCG)", desc: "Plan suisse PME & plan français, classe par classe ; comptes reliés au bilan et au compte de résultat." },
+    fraudepostes: { show: postes.length > 0, on: onFraudePostes, icon: "🕵️", chip: "bg-rose-50 text-rose-700 border-rose-100", label: "Fraude par poste", desc: "Schémas de fraude, signaux d'alerte & procédures de détection, ligne par ligne du bilan et du compte de résultat.", sub: `${postes.length} postes · ${nbSchemes} schémas`, subColor: "text-rose-500" },
+    referencement: { show: len(((W.__REFERENCEMENT__ || {}).exemple || {}).feuilles) > 0, on: onReferencement, icon: "🔗", chip: "bg-indigo-50 text-indigo-700 border-indigo-100", label: "Référencement croisé", desc: "Comment un dossier d'audit relie chaque chiffre à sa preuve : index des feuilles, renvois, tickmarks, et un dossier-exemple interactif.", sub: "dossier cliquable · cycle créances", subColor: "text-indigo-500" },
+    annexes: { show: len((W.__ANNEXES__ || {}).referentiels) > 0, on: onAnnexes, icon: "📎", chip: "bg-teal-50 text-teal-700 border-teal-100", label: "Annexes des états financiers", desc: "Tout ce que doit contenir l'annexe selon le CO, les Swiss GAAP RPC et les IFRS, avec les bases légales et un comparatif des trois référentiels.", sub: "CO · Swiss GAAP RPC · IFRS · comparatif", subColor: "text-teal-600" },
+    amortissements: { show: len((W.__AMORTISSEMENTS__ || {}).lecons) > 0, on: onAmortissements, icon: "⏳", chip: "bg-sky-50 text-sky-700 border-sky-100", label: "Amortissements", desc: "Linéaire et dégressif expliqués pas à pas, taux fiscaux AFC, écritures direct/indirect, et un calculateur qui déroule le calcul année par année.", sub: "cas interactif · surtout le dégressif", subColor: "text-sky-600" },
+    seuils: { show: len((W.__AUDIT_SEUILS__ || {}).categories) > 0, on: onSeuils, icon: "📏", chip: "bg-red-50 text-red-700 border-red-100", label: "Seuils & Exercices", desc: "Tous les seuils (ordinaire/restreint, matérialité) + exercices pas-à-pas." },
+  };
+  const groups = AUDIT_HOME_GROUPS.map((g) => ({ ...g, items: [...g.items] }));
+  const placed = new Set(groups.flatMap((g) => g.items));
+  Object.keys(data).forEach((k) => { if (k[0] !== "_" && k !== "annuaire_cours" && !placed.has(k)) groups[groups.length - 1].items.push(k); });
+  const tileFor = (it) => {
+    if (it[0] === "@") {
+      const s = SPECIAL[it.slice(1)];
+      return s && s.show ? <AuditTile key={it} {...s} onClick={s.on} /> : null;
+    }
+    const s = data[it];
+    if (!s) return null;
+    const th = MODULE_THEME[it] || {};
+    return <AuditTile key={it} icon={s._icon} chip={th.chip} label={s._label || it} desc={s._description} md
+      sub={it === "annuaire" ? `${nbIsa} normes · cours complets` : null} onClick={() => onSection(it)} />;
+  };
   return (
     <div className="space-y-5">
       <div className="rounded-2xl bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white p-5 shadow">
         <h2 className="text-xl font-bold">Module Audit — NAS / ISA</h2>
-        <p className="text-sm text-violet-100 mt-1">Les 47 normes ISA en cours complets, le cadre légal suisse, les cycles, les QCM et tous les outils du réviseur.</p>
+        <p className="text-sm text-violet-100 mt-1">Les {nbIsa} normes ISA en cours complets, le cadre légal suisse, les cycles, les QCM et tous les outils du réviseur.</p>
       </div>
-      <div className="grid sm:grid-cols-3 gap-2.5">
-        {[{ m: "seuils", ic: "🎯", t: "Seuils & Exercices", d: "Tous les seuils (ordinaire/restreint, matérialité) + exercices pas-à-pas." },
-          { m: "canvas", ic: "🏢", t: "Canvas Perso", d: "Crée et gère tes propres engagements d'audit (desktop)." },
-          { m: "mission", ic: "🎬", t: "Mission Lab", d: "Mission immersive end-to-end chez EY (desktop)." }].map((n) => (
-          <button key={n.m} onClick={() => (n.m === "seuils" && onSeuils) ? onSeuils() : openAuditNative(n.m)} className="text-left bg-white border border-slate-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-1.5">
-            <div className="flex items-center gap-2"><span className="text-xl">{n.ic}</span><span className="font-bold text-sm text-violet-700">{n.t}</span></div>
-            <div className="text-xs text-slate-500 leading-snug">{n.d}</div>
-          </button>
-        ))}
-      </div>
-      {flagships.length > 0 && (
-        <div>
-          <div className="flex items-center gap-2 mb-2.5 mt-1"><span className="text-base">📚</span><span className="text-[11px] font-bold uppercase tracking-widest text-slate-400">Cours, cas pratiques & références</span><span className="flex-1 h-px bg-slate-200"></span></div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-            {flagships.map((f, i) => (
-              <button key={i} onClick={f.onClick} className="text-left bg-white border border-slate-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-start gap-3">
-                <span className={`w-9 h-9 grid place-items-center rounded-lg border text-base shrink-0 ${f.chip}`}>{f.icon}</span>
-                <span className="min-w-0"><span className="block font-bold text-sm text-slate-800 leading-tight">{f.label}</span><span className="block text-xs text-slate-500 leading-snug mt-0.5">{f.desc}</span></span>
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-      {(() => {
-        const GROUPS = [
-          { id: "apprendre", label: "Apprendre", icon: "📖", keys: ["annuaire", "nas", "cadre_legal", "cycles", "procedures_assertions"] },
-          { id: "entrainer", label: "S'entraîner", icon: "🎮", keys: ["quiz", "cas_pratiques", "examens_blancs", "arbres"] },
-          { id: "outils", label: "Boîte à outils", icon: "🧰", keys: ["outils", "modeles", "lexique", "comparatifs"] },
-          { id: "examen", label: "Examen & veille", icon: "🎯", keys: ["terrain", "independance", "fraude", "goingconcern", "timeline", "actualites"] },
-        ];
-        const placed = new Set(GROUPS.flatMap((g) => g.keys));
-        const rest = keys.filter((k) => !placed.has(k));
-        if (rest.length) GROUPS[GROUPS.length - 1].keys = [...GROUPS[GROUPS.length - 1].keys, ...rest];
-        return GROUPS.map((g) => {
-          const gk = g.keys.filter((k) => data[k]);
-          if (!gk.length) return null;
-          return (
-            <div key={g.id}>
-              <div className="flex items-center gap-2 mb-2.5 mt-1">
-                <span className="text-base">{g.icon}</span>
-                <span className="text-[11px] font-bold uppercase tracking-widest text-slate-400">{g.label}</span>
-                <span className="flex-1 h-px bg-slate-200"></span>
-              </div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-                {gk.map((k) => { const s = data[k]; const th = MODULE_THEME[k] || {}; return (
-                  <button key={k} onClick={() => onSection(k)} className="text-left bg-white border border-slate-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-start gap-3">
-                    <span className={`w-9 h-9 grid place-items-center rounded-lg border text-base shrink-0 ${th.chip || "bg-violet-50 text-violet-700 border-violet-100"}`}>{s._icon || "📋"}</span>
-                    <span className="min-w-0">
-                      <span className="block font-bold text-sm text-slate-800 leading-tight">{s._label || k}</span>
-                      {s._description && <span className="block text-xs text-slate-500 leading-snug mt-0.5"><MdInline text={s._description} /></span>}
-                      {k === "annuaire" && <span className="block text-[11px] text-violet-500 font-medium mt-1">47 normes · cours complets</span>}
-                    </span>
-                  </button>
-                ); })}
-                {g.id === "outils" && hasFraude && (
-                  <button onClick={onFraudePostes} className="text-left bg-white border border-rose-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-start gap-3">
-                    <span className="w-9 h-9 grid place-items-center rounded-lg border bg-rose-50 text-rose-700 border-rose-100 text-base shrink-0">🕵️</span>
-                    <span className="min-w-0">
-                      <span className="block font-bold text-sm text-slate-800 leading-tight">Fraude par poste</span>
-                      <span className="block text-xs text-slate-500 leading-snug mt-0.5">Schémas de fraude, signaux d'alerte & procédures de détection, ligne par ligne du bilan et du compte de résultat.</span>
-                      <span className="block text-[11px] text-rose-500 font-medium mt-1">{(window.__FRAUDE_POSTES__.sections || []).reduce((a, x) => a + (x.postes || []).length, 0)} postes · 76 schémas</span>
-                    </span>
-                  </button>
-                )}
-                {g.id === "outils" && hasRef && (
-                  <button onClick={onReferencement} className="text-left bg-white border border-indigo-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-start gap-3">
-                    <span className="w-9 h-9 grid place-items-center rounded-lg border bg-indigo-50 text-indigo-700 border-indigo-100 text-base shrink-0">🔗</span>
-                    <span className="min-w-0">
-                      <span className="block font-bold text-sm text-slate-800 leading-tight">Référencement croisé</span>
-                      <span className="block text-xs text-slate-500 leading-snug mt-0.5">Comment un dossier d'audit relie chaque chiffre à sa preuve : index des feuilles, renvois, tickmarks, et un dossier-exemple interactif.</span>
-                      <span className="block text-[11px] text-indigo-500 font-medium mt-1">dossier cliquable · cycle créances</span>
-                    </span>
-                  </button>
-                )}
-                {g.id === "outils" && hasAnnexes && (
-                  <button onClick={onAnnexes} className="text-left bg-white border border-teal-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-start gap-3">
-                    <span className="w-9 h-9 grid place-items-center rounded-lg border bg-teal-50 text-teal-700 border-teal-100 text-base shrink-0">📎</span>
-                    <span className="min-w-0">
-                      <span className="block font-bold text-sm text-slate-800 leading-tight">Annexes des états financiers</span>
-                      <span className="block text-xs text-slate-500 leading-snug mt-0.5">Tout ce que doit contenir l'annexe selon le CO, les Swiss GAAP RPC et les IFRS, avec les bases légales et un comparatif des trois référentiels.</span>
-                      <span className="block text-[11px] text-teal-600 font-medium mt-1">CO · Swiss GAAP RPC · IFRS · comparatif</span>
-                    </span>
-                  </button>
-                )}
-                {g.id === "outils" && hasAmort && (
-                  <button onClick={onAmortissements} className="text-left bg-white border border-sky-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-start gap-3">
-                    <span className="w-9 h-9 grid place-items-center rounded-lg border bg-sky-50 text-sky-700 border-sky-100 text-base shrink-0">📉</span>
-                    <span className="min-w-0">
-                      <span className="block font-bold text-sm text-slate-800 leading-tight">Amortissements</span>
-                      <span className="block text-xs text-slate-500 leading-snug mt-0.5">Linéaire et dégressif expliqués pas à pas, taux fiscaux AFC, écritures direct/indirect, et un calculateur qui déroule le calcul année par année.</span>
-                      <span className="block text-[11px] text-sky-600 font-medium mt-1">cas interactif · surtout le dégressif</span>
-                    </span>
-                  </button>
-                )}
-              </div>
+      {groups.map((g) => {
+        const tiles = g.items.map(tileFor).filter(Boolean);
+        if (!tiles.length) return null;
+        return (
+          <div key={g.id}>
+            <div className="flex items-center gap-2 mb-2.5 mt-1">
+              <span className="text-base">{g.icon}</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest text-slate-400">{g.label}</span>
+              <span className="flex-1 h-px bg-slate-200"></span>
             </div>
-          );
-        });
-      })()}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">{tiles}</div>
+          </div>
+        );
+      })}
     </div>
   );
 }

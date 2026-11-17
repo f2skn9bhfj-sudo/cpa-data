@@ -223,24 +223,55 @@ def sync(app, write):
         report.append(f'  ~ code {p} modifié (ou segment non retrouvé)')
         break
     if not old_segments_found:
-        # Repli : reconstruire à partir des bornes connues (en-tête / fin) en
-        # retrouvant les segments via la version git HEAD des sources.
+        # Repli : on repère chaque segment embarqué par son DÉBUT (préfixe) et sa
+        # FIN (suffixe), pris dans la source actuelle ou dans sa version git HEAD.
+        # Marche tant qu'une modification ne touche pas à la fois les premières
+        # et les dernières lignes d'un même fichier.
         import subprocess
-        segs = []
-        cur = 0
-        for p in cfg['code']:
+
+        def versions(p):
+            out = [transform(app, p, rd(p))]
             try:
-                head_src = subprocess.run(['git', 'show', 'HEAD:' + p], cwd=ROOT, capture_output=True,
-                                          text=True, check=True).stdout
+                head = subprocess.run(['git', 'show', 'HEAD:' + p], cwd=ROOT, capture_output=True,
+                                      text=True, check=True).stdout
+                out.append(transform(app, p, head))
             except subprocess.CalledProcessError:
-                raise SystemExit(f'{app}: impossible de lire HEAD:{p}')
-            old = transform(app, p, head_src)
-            i = code.find(old, cur)
-            if i < 0:
-                raise SystemExit(f'{app}: segment {p} (version HEAD) introuvable — '
-                                 f'index.html et la source avaient déjà divergé ; corriger à la main.')
-            segs.append((i, i + len(old), transform(app, p, rd(p))))
-            cur = i + len(old)
+                pass
+            return out
+
+        files = cfg['code']
+        vers = [versions(p) for p in files]
+        starts, cur = [], 0
+        for k, p in enumerate(files):
+            pos = None
+            for v in vers[k]:
+                for n in (400, 200, 100, 60):
+                    i = code.find(v[:n], cur)
+                    if i >= 0:
+                        pos = i
+                        break
+                if pos is not None:
+                    break
+            if pos is None:
+                raise SystemExit(f'{app}: début du segment {p} introuvable dans index.html — corriger à la main.')
+            starts.append(pos)
+            cur = pos + 1
+        tail = code.rfind('createRoot(')
+        segs = []
+        for k, p in enumerate(files):
+            bound = starts[k + 1] if k + 1 < len(files) else (tail if tail > starts[k] else len(code))
+            end = None
+            for v in vers[k]:
+                for n in (400, 200, 100, 60):
+                    j = code.rfind(v[-n:], starts[k], bound)
+                    if j >= 0:
+                        end = j + n
+                        break
+                if end is not None:
+                    break
+            if end is None:
+                raise SystemExit(f'{app}: fin du segment {p} introuvable dans index.html — corriger à la main.')
+            segs.append((starts[k], end, vers[k][0]))
         out, last = [], 0
         for a, b, repl in segs:
             out.append(code[last:a])
