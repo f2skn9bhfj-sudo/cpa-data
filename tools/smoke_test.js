@@ -48,16 +48,21 @@ const server = http.createServer((req, res) => {
       const f = m.querySelector('iframe');
       return { text: (m.innerText || '').trim().length, iframe: f ? f.getAttribute('src') : null };
     });
-    let sub = '';
-    if (info.iframe) {
-      const frame = page.frames().find(fr => fr.url().includes(info.iframe.split('?')[0]));
-      if (frame) {
-        await page.waitForTimeout(1500);
-        const n = await frame.evaluate(() => (document.body.innerText || '').trim().length).catch(() => 0);
-        sub = ` iframe=${info.iframe.split('?')[0]} texte=${n}c`;
+    let sub = '', empty = false;
+    const src = info.iframe || (t === 'podcasts' ? 'podcasts/index.html' : null);
+    if (src) {
+      // Les sous-apps compilent leur JSX au chargement (Babel) : on attend que
+      // le contenu réel remplace « Chargement… » (jusqu'à 20 s).
+      let n = 0;
+      for (let k = 0; k < 40 && n < 300; k++) {
+        await page.waitForTimeout(500);
+        const frame = page.frames().find(fr => fr.url().includes(src.split('?')[0]));
+        n = frame ? await frame.evaluate(() => (document.body.innerText || '').trim().length).catch(() => 0) : 0;
       }
+      empty = n < 300;
+      sub = ` iframe=${src.split('?')[0]} texte=${n}c${empty ? ' (VIDE)' : ''}`;
     }
-    const ok = !errs.length && !local404.length;
+    const ok = !errs.length && !local404.length && !empty;
     if (!ok) bad++;
     console.log(`${ok ? 'OK ' : 'ERR'} ${t.padEnd(11)} texte=${info.text}c${sub}`);
     errs.forEach(e => console.log('     erreur JS :', e));
