@@ -16,7 +16,8 @@ const HUB_SECTIONS = [
             { tab: 'social', ic: '🤝', t: 'Social', d: 'Droit du travail, assurances sociales et paie suisse (calculateur inclus).' },
             { tab: 'hec', ic: '🎓', t: 'HEC', d: 'Structure financière, M&A et ingénierie du capital.' },
             { tab: 'english', ic: '🇬🇧', t: 'Anglais', d: 'Vocabulaire, meetings, TOEIC — prêt pour EY.' },
-            { tab: 'eymanual', ic: '📕', t: 'Manuel EY', d: "Le field manual Staff 1 : réflexes terrain pour tes débuts chez EY." },
+            // Masqué (voir HIDDEN_TABS dans js/app.js) :
+            // { tab: 'eymanual', ic: '📕', t: 'Manuel EY', d: "Le field manual Staff 1 : réflexes terrain pour tes débuts chez EY." },
         ],
     },
     {

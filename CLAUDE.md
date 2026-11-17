@@ -34,7 +34,7 @@ css/style.css         styles globaux (thème sombre de base, body.light-mode)
 audio/*.m4a           39 podcasts (531 Mo) lus par l'onglet Podcasts
 ```
 
-**Cache-busting** : toutes les balises de `index.html` portent `?v=1785430077`
+**Cache-busting** : toutes les balises de `index.html` portent `?v=<nombre>` (même valeur partout)
 et les wrappers d'iframe recopient ce `v` dans l'URL de la sous-app. Après une
 modification de JS/CSS/sous-app, **remplacer ce nombre partout dans
 `index.html`** (ex. `date +%s`) sinon les navigateurs gardent l'ancienne version.
@@ -52,6 +52,13 @@ modification de JS/CSS/sous-app, **remplacer ce nombre partout dans
 | compare | comparisons.js `renderComparisons` | natif | comparisons.json (25 thèmes) |
 | fs, references, audit, english, oral, conso, hec, social, fusion, eymanual, grandlivre | js/<app>.js → iframe `<app>/index.html` | sous-app | embarquées (voir plus bas) |
 | podcasts | podcasts.js → iframe persistante dans `#podcastHost` (l'audio continue en changeant d'onglet ; mini-lecteur `_pcRenderMini`) | sous-app | `__PODCASTS__` |
+
+**Onglets masqués** : `eymanual` (Manuel EY). Mécanisme : bouton commenté dans
+`index.html`, tuile commentée dans `HUB_SECTIONS` (js/dashboard.js), et
+`HIDDEN_TABS` dans js/app.js (le bandeau « Reprendre » ignore ces onglets). Le
+code, le routeur et le dossier restent en place : `navigate('eymanual')`
+fonctionne toujours. Pour réactiver : faire l'inverse des 3 points.
+Pour masquer un autre onglet : même procédure.
 
 L'onglet Audit relaie par `postMessage({type:'openAuditNative', module})` vers 3
 modules natifs de la page parente : `renderCanvas` (canvas.js),

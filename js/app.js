@@ -96,6 +96,10 @@ const TAB_LABELS = {
     flashcards: 'Flashcards' // legacy redirect
 };
 
+// Onglets masqués : plus de bouton ni de tuile d'accueil, et le bandeau
+// « Reprendre » ne les propose plus. Le code reste chargé (réactivation facile).
+const HIDDEN_TABS = ['eymanual'];
+
 function announce(msg) {
     const live = document.getElementById('srStatus');
     if (live) live.textContent = msg;
@@ -278,7 +282,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // "Reprends ici" banner — restore last context
     setTimeout(() => {
         const lastCtx = JSON.parse(localStorage.getItem('swisscpa_last_ctx') || 'null');
-        if (lastCtx && lastCtx.tab && lastCtx.tab !== 'dashboard') {
+        if (lastCtx && lastCtx.tab && lastCtx.tab !== 'dashboard' && !HIDDEN_TABS.includes(lastCtx.tab)) {
             const banner = document.createElement('div');
             banner.id = 'reprendsBanner';
             banner.style.cssText = 'position:fixed;top:52px;right:16px;background:#1e3a5f;border:1px solid #3b82f6;border-radius:10px;padding:10px 16px;font-size:13px;color:#93c5fd;z-index:200;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.4);display:flex;align-items:center;gap:10px';
