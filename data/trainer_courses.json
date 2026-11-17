@@ -86,9 +86,9 @@
               "type": "mcq",
               "question": "Une société a cumulé CHF 10 M de pertes fiscales reportables (taux 20 %). Elle a aussi un IDP de CHF 6 M lié à une dépréciation fiscale accélérée qui va se renverser dans les 3 ans. Quel IDA reconnaître ?",
               "options": [
-                "Zéro car la société est en perte",
-                "CHF 1.2 M (6 M × 20 %) si pas de preuve de bénéfices au-delà",
-                "CHF 2 M (10 M × 20 %)",
+                "Zéro, car la société est en perte fiscale",
+                "CHF 1.2 M (6 M × 20 %)",
+                "CHF 2 M (10 M × 20 %), sans autre condition",
                 "CHF 3.2 M cumul des deux"
               ],
               "answer": 1,
@@ -104,9 +104,9 @@
               "type": "mcq",
               "question": "Quel élément ne constitue PAS une source acceptable de profit imposable futur ?",
               "options": [
-                "Renversement d'IDP sur la même période fiscale",
+                "Le renversement de différences imposables sur la même période fiscale",
                 "Carnet de commandes signé avec marge bénéficiaire",
-                "Projection optimiste de la direction sans justification",
+                "Une projection optimiste non étayée",
                 "Opportunités de planification fiscale documentées"
               ],
               "answer": 2,
@@ -122,8 +122,8 @@
               "type": "mcq",
               "question": "Une filiale a eu 3 années consécutives de pertes. La direction projette un retour aux bénéfices grâce à une restructuration toujours en cours. Quelle est la conduite à tenir ?",
               "options": [
-                "Reconnaître l'IDA sur la totalité des pertes reportables",
-                "Ne reconnaître aucun IDA sans preuve robuste et convaincante (IAS 12.35)",
+                "Reconnaître l'IDA sur la totalité des pertes fiscales reportables",
+                "Aucun IDA sans preuve convaincante (IAS 12.35)",
                 "Reconnaître 50 % par prudence",
                 "Reconnaître au prorata des bénéfices projetés"
               ],
@@ -157,8 +157,8 @@
               "options": [
                 "CHF 10 M (50 × 20 %)",
                 "CHF 10 M mais en OCI",
-                "Dépend du contrôle fiscal",
-                "Aucun (exception goodwill, IAS 12.15(a))"
+                "Cela dépend du contrôle fiscal à venir",
+                "Aucun (exception goodwill)"
               ],
               "answer": 3,
               "explanation": "IAS 12 exclut explicitement la reconnaissance d'un IDP sur le goodwill initial non déductible pour éviter un effet circulaire."
@@ -185,8 +185,8 @@
               "type": "mcq",
               "question": "L'initial recognition exemption (IRE) évite la reconnaissance d'impôts différés lorsque :",
               "options": [
-                "L'actif/passif provient d'un regroupement d'entreprises",
-                "L'opération n'affecte ni le résultat comptable ni le résultat fiscal à l'origine et n'est pas un regroupement",
+                "L'actif ou le passif provient d'un regroupement d'entreprises",
+                "Opération sans effet comptable ni fiscal, hors regroupement",
                 "L'écart est lié à du goodwill déductible",
                 "Le renversement est prévu dans plus de 10 ans"
               ],
@@ -248,10 +248,10 @@
               "type": "mcq",
               "question": "Dans une tax proof (rapprochement taux effectif / théorique), quel élément explique typiquement un ÉCART positif par rapport au taux statutaire ?",
               "options": [
-                "Produits non imposables (dividendes exonérés)",
+                "Des produits non imposables (dividendes exonérés)",
                 "Crédits d'impôt sur R&D",
-                "IDA reconnu précédemment non activé",
-                "Charges non déductibles (amendes, représentation)"
+                "Une baisse du taux d'impôt votée pour l'exercice suivant",
+                "Des charges non déductibles"
               ],
               "answer": 3,
               "explanation": "Charges non déductibles augmentent la charge d'impôt effective au-delà du taux théorique. Les produits exonérés et crédits d'impôt réduisent au contraire l'écart. La tax proof est obligatoire (IAS 12.81c)."
@@ -275,9 +275,9 @@
               "type": "mcq",
               "question": "TechCorp SA vend un logiciel en licence 3 ans + maintenance + formation + support technique pour un forfait de 120'000 CHF. Prix \"stand-alone\" : licence 90k, maintenance 20k, formation 10k, support 15k (total 135k). Allocation IFRS 15 ?",
               "options": [
-                "120'000 alloués à la licence (transaction principale)",
+                "120'000 alloués entièrement à la licence (transaction principale du contrat)",
                 "Reconnaissance globale à la fin du contrat (3 ans)",
-                "120 × 90/135 = 80k licence, 120 × 20/135 = 17.8k maintenance, etc. (allocation prorata prix stand-alone)",
+                "Répartition au prorata des prix de vente spécifiques",
                 "Libre choix d'allocation selon la stratégie commerciale"
               ],
               "answer": 2,
@@ -288,10 +288,10 @@
               "type": "mcq",
               "question": "Construction Industrielle SA — contrat 24 mois pour 40 M CHF. Clause : bonus 3 M si livraison avant mois 20, pénalité 2 M si retard > 3 mois. Au mois 12 : probabilité bonus évaluée à 75 %, probabilité pénalité 5 %. Prix de transaction à retenir IFRS 15 ?",
               "options": [
-                "40 M — la contrepartie variable est ignorée tant qu'elle n'est pas encaissée",
+                "40 M — la contrepartie variable est toujours exclue jusqu'à la fin du contrat",
                 "43 M — le bonus est plus probable qu'improbable (75 %), il est donc inclus",
                 "42.85 M — valeur attendue : 40 + 3 × 75 % − 2 × 5 %",
-                "40 M — montant le plus probable 43 M, mais limité par la contrainte (§56) : 75 % n'est pas « hautement probable »"
+                "40 M (contrainte : bonus pas hautement probable)"
               ],
               "answer": 3,
               "explanation": "**Réponse : D — 40 M (bonus estimé puis exclu par la contrainte de §56)**\n\n**IFRS 15 §50-58 — CONTREPARTIE VARIABLE** :\n\n**Exemples de contrepartie variable** :\n- Bonus / malus\n- Remises conditionnelles\n- Incitations de performance\n- Retours / remboursements\n- Prix liés à indices\n\n**Deux méthodes d'estimation** (§53) :\n\n**① VALEUR ATTENDUE** (*expected value*) :\n- Moyenne pondérée par probabilités\n- Approprié : **nombreux contrats similaires** (ensemble statistique)\n\n**② MONTANT LE PLUS PROBABLE** (*most likely amount*) :\n- Le résultat unique le plus probable\n- Approprié : **contrat unique** à deux issues binaires\n\n**Cas Construction SA** — contrat **unique** avec 2 scénarios binaires :\n→ Méthode **\"most likely amount\"** applicable\n\n**CONTRAINTE CRITIQUE** (§56) — **\"HIGHLY PROBABLE\"** :\n\n> L'entité n'inclut la contrepartie variable dans le prix de transaction que dans la mesure où il est **HIGHLY PROBABLE** qu'une **reprise ultérieure SIGNIFICATIVE** du revenu ne se produira **PAS** lorsque l'incertitude sera résolue.\n\n**Seuil \"highly probable\"** : supérieur à \"probable\" (IFRS 15) — généralement estimé à **> 80-85 %**.\n\n**Analyse cas** :\n- Bonus 3 M avec probabilité 75 %\n- **75 % < seuil \"highly probable\"** → **PAS à inclure** dans le prix de transaction\n- Prix de transaction : **40 M** seul (base)\n\n**SI probabilité montait à 85 %+** :\n- Highly probable atteint → inclure 3 M\n- Prix de transaction : **43 M**\n\n**Traitement de la PÉNALITÉ 2 M avec proba 5 %** :\n- Réduction probable → estimation par expected value : 2 × 5 % = 100k\n- OU si most likely amount : pas de pénalité\n- Généralement négligée si proba très faible\n\n**RÉÉVALUATION à chaque clôture** (§59) :\n- Mise à jour des estimations\n- Ajustement du prix de transaction\n- Comptabilisation dans l'exercice courant\n\n**Exemples pratiques** :\n\nAu mois 12 (proba bonus 75 %) : **40 M** comptabilisé au prorata\nAu mois 18 (proba bonus 95 %) : **43 M** — rattrapage en mois 18\nAu mois 22 (livré avec bonus) : **43 M** confirmé\n\n**Clé** : pour un bonus binaire, on estime selon le **montant le plus probable** (43 M), puis on applique la **contrainte** : n'inclure que ce qui est **hautement probable** de ne pas donner lieu à une reprise importante. À 75 %, ce n'est pas le cas → **40 M** au mois 12 ; le bonus sera inclus quand la probabilité deviendra suffisante.\n\n**Piège A** : bon montant, mauvais raisonnement — la contrepartie variable **doit être estimée** (pas ignorée).\n**Piège B** : anticiper sans contrainte = trop optimiste.\n**Piège C** : valeur attendue inappropriée pour un bonus binaire (et contrainte non appliquée).",
@@ -301,9 +301,9 @@
               "type": "mcq",
               "question": "Vente de biens IFRS 15 — Agro SA vend des fruits frais à GrandeSurface. Contrat avec **droit de retour** sous 30 jours. Volume 500'000 CHF. Historique : 8 % des produits retournés. Coût de revient : 300'000 CHF. Comptabilisation ?",
               "options": [
-                "Revenu 500'000 et charge 300'000 (comptabilisation brute)",
+                "Revenu 500'000 et charge de 300'000, retours comptabilisés au fur et à mesure",
                 "Attendre la fin des 30 jours (pas de reconnaissance prématurée)",
-                "Revenu 460'000 (500 − 8 % estimé), actif \"right to recover\" 24'000, passif \"refund liability\" 40'000",
+                "Revenu 460k, actif de récupération 24k, passif 40k",
                 "Revenu 500'000 et provision 40'000 pour retours"
               ],
               "answer": 2,
@@ -314,8 +314,8 @@
               "type": "mcq",
               "question": "FleetSA loue 15 camions pour 5 ans. Loyers 12'000 CHF/mois/camion (soit 180'000/mois groupe). Taux d'emprunt marginal FleetSA : 4.5 %. Application IFRS 16 — comptabilisation à la date de début du contrat ?",
               "options": [
-                "Rien à comptabiliser (location opérationnelle = hors bilan sous IAS 17)",
-                "Actif ROU = VA des loyers futurs actualisés à 4.5 % ; Passif = même montant",
+                "Rien à comptabiliser au bilan : location opérationnelle hors bilan comme sous IAS 17",
+                "ROU et dette = VA des loyers à 4.5 %",
                 "Capitalisation à la JV des camions ; amortissement 5 ans",
                 "Charges de loyer mensuelles en résultat (opex classique)"
               ],
@@ -348,9 +348,9 @@
               "question": "InduSwiss SA (IFRS) — immobilisation machine 1'200'000 CHF. Amortissement comptable 10 ans linéaire. Amortissement fiscal autorisé 4 ans linéaire. Taux d'impôt 18 %. Impôts différés après 2 ans ?",
               "options": [
                 "Passif d'impôt différé 18'000 CHF",
-                "Actif d'impôt différé 64'800 CHF (différence temporaire déductible)",
+                "Actif d'impôt différé de 64'800 CHF (différence temporaire déductible)",
                 "Pas d'impôt différé (les amortissements égalisent sur la durée totale)",
-                "Passif d'impôt différé 64'800 CHF (différence temporaire imposable 360'000 × 18 %)"
+                "Passif d'impôt différé de 64'800"
               ],
               "answer": 3,
               "explanation": "**Réponse : D — Passif d'impôt différé 64'800 CHF**\n\n**IAS 12 — IMPÔTS SUR LE RÉSULTAT** :\n\n**Principe : DIFFÉRENCES TEMPORAIRES** entre :\n- **Valeur comptable** de l'actif/passif\n- **Base fiscale** (valeur pour l'impôt)\n\n**2 types de différences** :\n\n**① IMPOSABLES** → **Passif d'IDIFF** (DTL - Deferred Tax Liability)\n- Valeur comptable **>** Base fiscale (actif)\n- Plus d'impôt à payer dans le futur\n\n**② DÉDUCTIBLES** → **Actif d'IDIFF** (DTA - Deferred Tax Asset)\n- Valeur comptable **<** Base fiscale (actif)\n- Moins d'impôt à payer dans le futur\n\n**Calcul cas InduSwiss** :\n\n**Valeur COMPTABLE (IFRS)** après 2 ans :\n- Coût : 1'200'000\n- Amortissement comptable : 2 × (1'200'000 / 10) = 240'000\n- **VNC comptable** : **960'000**\n\n**Base FISCALE** après 2 ans :\n- Coût : 1'200'000\n- Amortissement fiscal : 2 × (1'200'000 / 4) = 600'000\n- **Valeur fiscale** : **600'000**\n\n**DIFFÉRENCE TEMPORAIRE** :\n- Valeur comptable (960'000) **>** Base fiscale (600'000)\n- Différence : **360'000** → différence **IMPOSABLE** → **PASSIF d'IDIFF**\n\n**DTL** = 360'000 × 18 % = **64'800 CHF**\n\n→ **Passif d'IDIFF** = Différence temporaire × Taux d'impôt\n\n**ÉCRITURES** :\n\n**Année 1** — première constatation :\n- VNC 1'080'000 − base fiscale 900'000 = 180'000 → DTL = 32'400\n\n```\nDébit  : Charge d'impôt différé      32'400\nCrédit : Passif d'impôt différé      32'400\n```\n\n**Année 2** — augmentation :\n- Différence cumulée : 360'000 → DTL = 64'800\n- Augmentation : 64'800 − 32'400 = 32'400\n\n```\nDébit  : Charge d'impôt différé      32'400\nCrédit : Passif d'impôt différé      32'400\n```\n\n**LOGIQUE ÉCONOMIQUE** :\n\nL'entreprise **accélère fiscalement** l'amortissement :\n- **Économise de l'impôt aujourd'hui** (bénéfice fiscal réduit)\n- Devra **payer plus d'impôt plus tard** (quand l'amortissement fiscal sera épuisé mais pas le comptable)\n\n**Schéma temporel** :\n```\nAnnée 1-4 : Amort fiscal > Amort comptable → DTL augmente\nAnnée 5-10: Amort fiscal = 0, Amort comptable continue → DTL diminue\nAnnée 10 : DTL = 0 (amortissements cumulés s'égalisent)\n```\n\n**TAUX À UTILISER** (§47) :\n- Taux qui s'applique lors du **REVERSEMENT attendu** de la différence\n- Basé sur les **textes en vigueur** ou **substantially enacted**\n- CH : généralement 15-22 % selon canton\n\n**ACTIF D'IDIFF — critère de RECONNAISSANCE** (§34) :\n- DTA reconnu **seulement** si **probable** d'avoir des bénéfices imposables futurs contre lesquels l'utiliser\n- Sinon : **non-reconnu** (deferred tax asset write-down)\n- Exemples de DTA :\n  • Reports déficitaires\n  • Provisions fiscalement non déductibles\n  • Obligation post-emploi supérieure à la contribution fiscale\n\n**Piège A** : 18'000 manifestement trop petit.\n**Piège B** : confondre sens de la différence = DTA vs DTL.\n**Piège C** : à long terme équilibré MAIS à la date du bilan → différence temporaire réelle.",
@@ -394,8 +394,8 @@
               "question": "MegaHolding SA — CGU \"Division Europe\" : actifs nets 85 M (dont goodwill 18 M). Valeur d'utilité calculée (DCF 5 ans + valeur terminale) = 72 M. JV − coûts de vente = 68 M. Impairment IAS 36 ?",
               "options": [
                 "Aucun (valeur d'utilité < VNC OK)",
-                "Impairment 13 M ; prioritairement sur goodwill (18M → 5M)",
-                "Impairment 17 M (VNC − Min des deux méthodes)",
+                "Perte de 13 M, imputée au goodwill",
+                "Perte de 17 M (VNC − minimum des deux valeurs), au prorata des actifs",
                 "Goodwill non sensible à l'impairment"
               ],
               "answer": 1,
@@ -406,9 +406,9 @@
               "type": "mcq",
               "question": "Cimenterie Alpine SA — cash-generating unit (CGU) Ciments Région Nord : cash flows futurs annuels 2.8 M sur 10 ans puis valeur terminale avec g=1.5 %. WACC 8.5 %. Calcul de la valeur d'utilité (DCF) simplifiée ?",
               "options": [
-                "28 M (somme brute sans actualisation)",
-                "Valeur nominale × taux inflation",
-                "VA rente 10 ans + VA valeur terminale perpétuelle actualisée",
+                "28 M (somme brute des flux, sans actualisation)",
+                "La valeur nominale des flux multipliée par le taux d'inflation attendu",
+                "VA des flux (10 ans) + VA de la valeur terminale",
                 "2.8 M × 10 = 28 M moins une provision de 10 %"
               ],
               "answer": 2,
@@ -420,8 +420,8 @@
               "question": "Bank Alpine SA a classé son portefeuille obligataire comme \"Held to Collect\" sous IFRS 9. Volume 100 M. Au 31.12.2024 : juste valeur 104 M, valeur amortisée 102 M. Évaluation au bilan ?",
               "options": [
                 "Juste valeur 104 M via OCI (FVOCI)",
-                "Coût amorti 102 M (Business Model \"Hold to Collect\" + critère SPPI)",
-                "Juste valeur 104 M via P&L (FVTPL)",
+                "Coût amorti 102 M (HTC + SPPI)",
+                "Juste valeur 104 M via le résultat (FVTPL)",
                 "Minimum entre FV et coût (prudence) = 102 M"
               ],
               "answer": 1,
@@ -432,8 +432,8 @@
               "type": "mcq",
               "question": "ExportCorp SA couvre un contrat d'exportation futur 500'000 USD prévu dans 6 mois par un forward EUR/USD. Conditions : contrat hautement probable, efficacité 95-105 %. Application IFRS 9 hedge accounting ?",
               "options": [
-                "Cash Flow Hedge : variations FV du dérivé (partie effective) en OCI, recyclée en P&L lors de la réalisation du cash flow",
-                "Comptabilisation FVTPL du dérivé uniquement — pas de hedge accounting",
+                "CFH : partie efficace en OCI, recyclée à la réalisation",
+                "Comptabilisation FVTPL : toutes les variations du dérivé en résultat",
                 "Fair Value Hedge : variations en P&L immédiatement",
                 "Net Investment Hedge : uniquement si filiale étrangère"
               ],
@@ -458,10 +458,10 @@
               "type": "mcq",
               "question": "Pharma Alpine SA est engagée dans un procès en responsabilité produit. Évaluation mars 2025 (6 mois avant clôture 30.09.2024) : perte probable 60 %, montant entre 8-15 M (central 11 M). Jugement rendu 12.12.2024 condamnant à 13 M payables. Traitement comptable EF 30.09.2024 ?",
               "options": [
-                "Pas de provision (le jugement est postérieur à la clôture)",
+                "Pas de provision, le jugement étant postérieur à la date de clôture",
                 "Provision 11 M (meilleure estimation à la date de clôture)",
                 "Provision 8 M (principe du minimum — prudence)",
-                "Provision 13 M (événement POSTÉRIEUR Type I révélant la réalité existant au 30.09.2024)"
+                "Provision de 13 M (événement ajustant)"
               ],
               "answer": 3,
               "explanation": "**Réponse : D — Provision 13 M (événement postérieur Type I)**\n\n**IAS 10 + IAS 37 — Interaction entre PROVISIONS et ÉVÉNEMENTS POSTÉRIEURS** :\n\n**IAS 10 — Événements postérieurs** : 2 types\n\n**TYPE I — Événements AJUSTANT** :\n- Condition qui **existait DÉJÀ** à la date de clôture\n- Découverte après clôture\n- Traitement : **AJUSTEMENT des EF** (provisions, valorisations, etc.)\n- Exemples :\n  • Faillite client après clôture (situation financière dégradée déjà au 31.12)\n  • Jugement d'un litige préexistant\n  • Fraude découverte affectant les périodes antérieures\n\n**TYPE II — Événements NE DEVANT PAS AJUSTER** :\n- Condition **née APRÈS** la clôture\n- Traitement : **DIVULGATION en notes** seulement\n- Exemples :\n  • Incendie usine après clôture\n  • Nouveau litige né après clôture\n  • Fluctuations marché (cours bourse, taux de change)\n\n**Cas Pharma Alpine** :\n\nLe LITIGE existait **avant** la date de clôture (30.09.2024) :\n- Assignation en justice antérieure\n- Avocats évaluaient déjà la probabilité et les montants\n- Obligation actuelle = condition **préexistante**\n\nLe **JUGEMENT du 12.12.2024** (postérieur à la clôture 30.09.2024) :\n→ **RÉVÈLE** l'estimation fiable (13 M)\n→ **Événement Type I — AJUSTANT**\n→ **Ajuster la provision des EF 30.09.2024 à 13 M**\n\n**SANS événement ajustant** (scénario où pas de jugement avant clôture) :\n- Appliquer IAS 37 : probabilité 60 % > 50 % → provisionner\n- Meilleure estimation : 11 M (valeur centrale)\n- Provision : **11 M**\n\n**AVEC l'événement ajustant du 12.12.2024** :\n- Remplacer l'estimation 11 M par le **montant effectif 13 M**\n- **Provision ajustée : 13 M**\n\n**Écriture au 30.09.2024** (avec ajustement rétrospectif) :\n```\nDébit  : Charge exceptionnelle procès       13'000'000\nCrédit : Provision litiges (passif LT)      13'000'000\n```\n\n**PÉRIODE D'ÉVÉNEMENTS POSTÉRIEURS** :\n\n- **Du 30.09.2024** (date clôture) **au** ~30.01.2025 (date d'autorisation à publier les EF par le CA)\n- Tous les événements de cette période doivent être analysés\n\n**ACTION AUDITEUR** (ISA 560) :\n- Revue des événements postérieurs jusqu'à la date du rapport\n- Procédures : inquiries, revue minutes CA, revue budgets, lecture journaux\n- Demande lettre d'affirmation (ISA 580) couvrant événements post-clôture\n\n**Documentation EF** :\n\n**Notes** (§86 IAS 37) :\n> Dans ses EF 30.09.2024, la Société a comptabilisé une provision de 13 M pour un litige en responsabilité produit. Le jugement rendu en décembre 2024 a confirmé la condamnation.\n\n**Variations éventuelles à suivre** :\n- Si paiement effectif > 13 M : charge supplémentaire dans l'exercice suivant\n- Si appel par Pharma → toujours provisionner (jugement 1re instance)\n- Si accord transactionnel ultérieur : ajuster la provision\n\n**COMPARAISON avec RPC 23** :\n- Traitement quasi-identique (même logique IAS 37 / RPC 23)\n- RPC 31 (cotées) : événements postérieurs matériels = ajustement ou divulgation\n\n**CO 959a CO** :\n- Principe de la continuité d'exploitation\n- Principe de la prudence (art. 958c al. 1 ch. 5)\n- Provision pour risques à court et long terme\n\n**Piège A** : ignore l'événement postérieur Type I.\n**Piège B** : correct SANS information postérieure, mais on a mieux (jugement).\n**Piège C** : minimum 8 M sous-estime — principe de prudence INVERSE (ne pas sous-estimer pertes).",
@@ -471,9 +471,9 @@
               "type": "mcq",
               "question": "Technologie SA (IFRS) — contrat ONÉREUX avec fournisseur : obligation d'acheter 10'000 unités à 150 CHF/unité sur 3 ans. Prix marché actuel a chuté à 110 CHF/unité. Application IAS 37 ?",
               "options": [
-                "Provision = Min(coût résilier, perte si maintien) — \"test du moindre coût\"",
+                "Le moindre du coût de sortie et de la perte",
                 "Pas de provision (contrat futur, non exécuté)",
-                "Provision pour 10'000 × 40 = 400'000 CHF (perte future attendue)",
+                "Une provision égale à la totalité des engagements d'achat restants sur 3 ans",
                 "Provision pour 10'000 × (150 − 110) = 400'000 CHF si valeur attendue > 0"
               ],
               "answer": 0,
@@ -547,9 +547,9 @@
               "question": "Un avion est acheté CHF 80 M. La direction identifie : cellule (60 M, 25 ans), moteurs (15 M, 10 ans), aménagements cabine (5 M, 5 ans). Quel traitement ?",
               "options": [
                 "Un seul actif amorti sur 25 ans",
-                "Un seul actif amorti sur la moyenne pondérée",
+                "Un seul actif amorti sur la moyenne pondérée des durées d'utilité",
                 "Choix de méthode libre selon politique",
-                "Trois composants amortis séparément selon leur durée propre"
+                "Trois composants amortis séparément"
               ],
               "answer": 3,
               "explanation": "IAS 16.43 : chaque composant significatif avec durée d'utilité distincte est un actif séparé, amorti sur sa propre durée."
@@ -684,10 +684,10 @@
               "type": "mcq",
               "question": "Une entité veut amortir ses péages autoroutiers en fonction des revenus annuels générés. Est-ce admissible ?",
               "options": [
-                "Oui, méthode cohérente avec la consommation économique",
+                "Oui, la méthode reflétant la consommation économique des avantages",
                 "Oui, uniquement pour les incorporels",
                 "Seulement si la durée contractuelle est < 10 ans",
-                "Non, IAS 16.62A interdit l'amortissement basé sur le revenu"
+                "Non (IAS 16.62A l'interdit)"
               ],
               "answer": 3,
               "explanation": "IAS 16.62A (amendé en 2014) : interdit explicitement une méthode basée sur les revenus car elle reflète la génération d'avantages, pas leur consommation. Même règle en IAS 38 (avec exception rare)."
@@ -717,8 +717,8 @@
               "type": "mcq",
               "question": "Immeuble : VNC 800, réévalué à 1'000. Puis l'exercice suivant, nouvelle juste valeur 720. Écritures ?",
               "options": [
-                "+200 OCI ; puis −200 OCI + −80 résultat",
-                "+200 OCI ; puis −280 en résultat",
+                "+200 OCI ; puis −200 OCI et −80 résultat",
+                "+200 OCI ; puis −280 en résultat de l'exercice",
                 "+200 OCI ; puis −280 OCI",
                 "+200 résultat ; puis −280 résultat"
               ],
@@ -737,8 +737,8 @@
               "options": [
                 "Reclassée en résultat (recyclage)",
                 "Maintenue en OCI indéfiniment",
-                "Transférée en réserves distribuables (jamais en résultat)",
-                "Utilisée pour dividende exceptionnel obligatoire"
+                "Transférée en réserves (jamais en résultat)",
+                "Utilisée pour couvrir les pertes futures de l'entité"
               ],
               "answer": 2,
               "explanation": "IAS 16.41 : l'écart de réévaluation est transféré directement aux bénéfices non distribués (ou réserves), jamais par le résultat. Pas de recyclage."
@@ -749,8 +749,8 @@
               "options": [
                 "CHF 300 en résultat",
                 "CHF 300 en OCI",
-                "CHF 100 en OCI + CHF 200 en résultat",
-                "CHF 200 en OCI (reprise) + CHF 100 en résultat"
+                "100 en OCI et 200 en résultat de l'exercice",
+                "200 en OCI + 100 en résultat"
               ],
               "answer": 3,
               "explanation": "IAS 16.40 : la baisse s'impute d'abord sur l'écart de réévaluation en OCI (jusqu'à extinction = 200), puis le solde (100) en résultat. Symétrie obligatoire avec la hausse initiale."
@@ -795,8 +795,8 @@
               "type": "mcq",
               "question": "La capitalisation boursière d'une société cotée est inférieure à son actif net comptable. Quelle conséquence ?",
               "options": [
-                "Dépréciation automatique du goodwill",
-                "Indice externe de dépréciation → test complet",
+                "Une dépréciation automatique du goodwill",
+                "Un indice de dépréciation : test",
                 "Retraitement des capitaux propres",
                 "Aucune, c'est un phénomène de marché"
               ],
@@ -870,10 +870,10 @@
               "type": "mcq",
               "question": "La direction projette des flux post-impôt et les actualise avec un WACC après impôt. Conforme à IAS 36 ?",
               "options": [
-                "Oui, pratique usuelle",
+                "Oui, c'est la pratique usuelle des évaluateurs",
                 "Non, flux doivent être avant impôt",
-                "Non, taux doit être avant impôt",
-                "Non cohérent : les deux sont 'après impôt', or IAS 36 exige avant impôt"
+                "Non, le taux doit être avant impôt mais les flux aussi",
+                "Non : IAS 36 exige un taux avant impôt"
               ],
               "answer": 3,
               "explanation": "IAS 36.55 impose des flux et un taux AVANT impôt. En pratique, un calcul post-impôt cohérent donne un résultat voisin, mais la présentation formelle exige le pré-impôt."
@@ -934,8 +934,8 @@
               "question": "Le goodwill doit être alloué pour le test de dépréciation au niveau :",
               "options": [
                 "Au niveau consolidé uniquement",
-                "À chaque UGT/groupe d'UGT bénéficiant des synergies, dans la limite du secteur IFRS 8",
-                "Par actif acquis lors du regroupement",
+                "Aux UGT bénéficiant des synergies (≤ secteur)",
+                "Par actif acquis lors du regroupement d'entreprises",
                 "À la plus petite filiale juridique"
               ],
               "answer": 1,
@@ -946,8 +946,8 @@
               "question": "UGT avec goodwill 100, autres actifs 300 (total 400). Valeur recouvrable = 250. Comment imputer la perte de 150 ?",
               "options": [
                 "Prorata : goodwill 37.5 + autres 112.5",
-                "Autres actifs d'abord 150 (goodwill préservé)",
-                "Goodwill 100 en premier, puis autres actifs 50",
+                "Autres actifs d'abord 150, le goodwill étant préservé",
+                "Goodwill 100, puis autres actifs 50",
                 "Goodwill 100 + test ultérieur des autres"
               ],
               "answer": 2,
@@ -978,10 +978,10 @@
               "type": "mcq",
               "question": "Machine : coût 500, durée 10 ans, linéaire. Après 3 ans (VNC 350), dépréciation à 200. Deux ans plus tard, la valeur recouvrable remonte à 400. VNC après reprise ?",
               "options": [
-                "400, reprise libre",
+                "400 (reprise libre)",
                 "200 (pas de reprise possible)",
-                "300 (milieu)",
-                "250 (plafond VNC théorique sans dépréciation : 500 − 5×50)"
+                "300",
+                "250 (plafond)"
               ],
               "answer": 3,
               "explanation": "VNC théorique sans dépréciation après 5 ans = 500 − 5 × 50 = 250. La reprise est plafonnée à 250, pas à 400."
@@ -998,8 +998,8 @@
               "options": [
                 "Le nom du dirigeant responsable",
                 "La liste complète des actifs",
-                "Les hypothèses clés ET une analyse de sensibilité",
-                "Le détail des transactions intragroupe"
+                "Hypothèses clés et sensibilité",
+                "Le détail des transactions intragroupe de l'UGT"
               ],
               "answer": 2,
               "explanation": "IAS 36.134 : méthode (JVN−CV ou VU), hypothèses clés, taux d'actualisation, taux de croissance, période de projection, et sensibilité aux changements raisonnablement possibles."
@@ -1009,9 +1009,9 @@
               "question": "Une UGT contenant du goodwill a été dépréciée de 100 en N-1. En N, sa valeur recouvrable dépasse de 50 la VNC actuelle. Que faire ?",
               "options": [
                 "Reprise de 50 au prorata",
-                "Reprise de 50 affectée au goodwill d'abord",
+                "Une reprise de 50 affectée en priorité au goodwill déprécié",
                 "Reprise totale de 100",
-                "Aucune reprise sur le goodwill ; reprise sur autres actifs dans la limite du plafond"
+                "Pas de reprise sur le goodwill ; autres actifs plafonnés"
               ],
               "answer": 3,
               "explanation": "IAS 36.124 : la reprise sur GOODWILL est INTERDITE, toujours et définitivement. La reprise est possible sur les autres actifs de l'UGT, plafonnée à la VNC qu'ils auraient eue sans dépréciation (hors amortissement)."
@@ -1070,9 +1070,9 @@
               "question": "Une entreprise a publié dans son rapport ESG qu'elle remboursera spontanément tout client insatisfait au-delà de la garantie contractuelle. Cette politique est appliquée depuis 5 ans. Obligation ?",
               "options": [
                 "Aucune (rien de juridique)",
-                "Implicite (attente légitime ancrée dans les pratiques)",
-                "Juridique car contractuelle",
-                "Provision facultative selon politique interne"
+                "Implicite (attente légitime)",
+                "Juridique, car contractuelle",
+                "Une provision interdite, faute de contrat"
               ],
               "answer": 1,
               "explanation": "IAS 37.10 : pratique constante + communication publique = attente légitime → obligation implicite, même sans contrat. Provision à estimer sur base statistique des retours."
@@ -1088,8 +1088,8 @@
               "question": "La direction décide en décembre N de restructurer sa filiale allemande mais n'a encore ni annoncé, ni communiqué aux employés. Provision au 31.12.N ?",
               "options": [
                 "Oui, dès la décision du management",
-                "Oui si le plan est approuvé par le conseil",
-                "Non, pas d'obligation implicite tant que non annoncé",
+                "Oui, si le plan est approuvé par le conseil",
+                "Non, faute d'annonce",
                 "Oui si le coût est fiable"
               ],
               "answer": 2,
@@ -1116,10 +1116,10 @@
               "type": "mcq",
               "question": "Démantèlement estimé CHF 10 M à 20 ans. Taux pré-impôt 4 %. Provision initiale ?",
               "options": [
-                "10'000'000",
+                "10'000'000 (montant nominal)",
                 "2'000'000 (20 % du nominal)",
                 "Pas d'actualisation car incertain",
-                "≈ 4'564'000 (10 M actualisés à 20 ans à 4 %)"
+                "≈ 4'564'000"
               ],
               "answer": 3,
               "explanation": "10 M / 1.04^20 ≈ 4'564 k. Contrepartie : augmentation du coût de l'immobilisation (IAS 16.16c). Désactualisation annuelle ≈ 182 k la 1ʳᵉ année, en charges financières."
@@ -1129,9 +1129,9 @@
               "question": "Garantie constructeur : historique 60 % sans défaut, 30 % réparation mineure CHF 200, 10 % réparation majeure CHF 2'000. Provision par unité ?",
               "options": [
                 "CHF 200 (coût le plus fréquent)",
-                "CHF 2'000 (prudence : pire cas)",
+                "CHF 2'000 (pire cas, par prudence)",
                 "CHF 1'100 (moyenne simple)",
-                "CHF 260 (valeur attendue pondérée)"
+                "CHF 260"
               ],
               "answer": 3,
               "explanation": "Valeur attendue = 0.6×0 + 0.3×200 + 0.1×2'000 = 60 + 200 = CHF 260. Méthode IAS 37.39 pour population importante."
@@ -1146,10 +1146,10 @@
               "type": "mcq",
               "question": "Un plan de restructuration prévoit la fermeture d'un site et la vente de ses machines (plus-value attendue CHF 3 M). Traitement ?",
               "options": [
-                "Provision nette = coûts − plus-value de cession",
+                "Une provision nette des plus-values de cession attendues",
                 "Provision réduite du montant minimum probable de cession",
                 "Compensation obligatoire par actif net attendu",
-                "Provision = coûts bruts uniquement ; plus-value reconnue à la cession"
+                "Coûts bruts ; plus-value à la cession"
               ],
               "answer": 3,
               "explanation": "IAS 37.51 : interdiction de déduire des plus-values de cession futures. Provision sur coûts bruts ; gain comptabilisé à la décomptabilisation de l'actif."
@@ -1199,9 +1199,9 @@
               "type": "mcq",
               "question": "Provision de démantèlement initiale CHF 500k. Taux baisse, nouvelle estimation CHF 600k. Modèle du coût. Traitement ?",
               "options": [
-                "100k en charge",
+                "100k en charge de l'exercice",
                 "100k en OCI",
-                "100k augmente la VNC de l'actif (IFRIC 1)",
+                "+100k sur la VNC de l'actif",
                 "100k en produit (reprise partielle)"
               ],
               "answer": 2,
@@ -1264,9 +1264,9 @@
               "type": "mcq",
               "question": "Une action en justice contre un concurrent : issue favorable 'probable' (≈ 70 %), indemnité espérée CHF 500 k. Traitement ?",
               "options": [
-                "Mention uniquement en annexe, pas de comptabilisation",
+                "Mention en annexe uniquement",
                 "Comptabiliser CHF 500 k en actif",
-                "Comptabiliser CHF 350 k (70 %) en actif",
+                "Comptabiliser CHF 350k (70 %) en actif",
                 "Produit différé"
               ],
               "answer": 0,
@@ -1339,12 +1339,12 @@
               "question": "Lors d'un regroupement, l'acquéreur identifie : une marque 'Alpha' (valeur 10 M), des relations clients contractuelles (valeur 5 M), un fichier CRM non contractuel d'excellente qualité. Comptabilisation ?",
               "options": [
                 "Tout dans le goodwill",
+                "Marque et relations clients en incorporels, fichier CRM dans le goodwill",
                 "Les trois en incorporels distincts",
-                "Marque + relations clients en incorporels, CRM dans goodwill",
                 "Marque uniquement, le reste en goodwill"
               ],
               "answer": 2,
-              "explanation": "Marque et relations clients contractuelles = identifiables (séparabilité + droits). Un CRM non contractuel n'est généralement pas séparable de la base de clientèle générale → goodwill."
+              "explanation": "IFRS 3 (IE23-IE31) : la marque (droit légal) et les relations clients contractuelles sont identifiables. Un fichier clients, même non contractuel, satisfait en général le critère de séparabilité (il peut être vendu ou loué), sauf clause de confidentialité l'interdisant : il est donc comptabilisé séparément. Seuls des éléments non séparables, comme la main-d'œuvre en place, restent dans le goodwill."
             },
             {
               "type": "mcq",
@@ -1386,8 +1386,8 @@
               "question": "Labo pharma : phase I CHF 3 M, phase II CHF 4 M, phase III (AMM quasi-certaine) CHF 6 M. Capitalisation ?",
               "options": [
                 "13 M capitalisés (total projet)",
-                "10 M charges + 3 M capitalisés",
-                "7 M charges + 6 M capitalisés (AMM = critère de faisabilité)",
+                "10 M en charges et 3 M activés",
+                "7 M en charges, 6 M activés",
                 "Tout en charge (prudence pharma)"
               ],
               "answer": 2,
@@ -1403,10 +1403,10 @@
               "type": "mcq",
               "question": "Lequel des 6 critères de capitalisation est le plus souvent NON satisfait en phase précoce ?",
               "options": [
-                "Intention d'achever",
-                "Ressources disponibles",
-                "Technique de mesure fiable",
-                "Possibilité technique d'achever (faisabilité démontrée)"
+                "L'intention d'achever",
+                "Les ressources disponibles",
+                "Une technique de mesure fiable",
+                "La faisabilité technique"
               ],
               "answer": 3,
               "explanation": "La faisabilité technique est typiquement le verrou : avant preuve technique concluante (prototype fonctionnel, essai clinique concluant, AMM), la capitalisation est prématurée."
@@ -1418,7 +1418,7 @@
                 "Amorti à partir du début du projet",
                 "Amorti dès la capitalisation",
                 "Amorti sur une durée de sécurité de 10 ans",
-                "Non amorti + test de dépréciation ANNUEL (IAS 36.10)"
+                "Non amorti, test annuel"
               ],
               "answer": 3,
               "explanation": "Incorporel pas encore prêt à l'usage → aucun amortissement (IAS 38.97) mais test de dépréciation annuel obligatoire tant que non mis en service."
@@ -1480,9 +1480,9 @@
               "type": "mcq",
               "question": "Logiciel acquis (durée 5 ans) : amortir par la méthode des revenus projetés permis par l'éditeur ?",
               "options": [
-                "Oui, reflet direct des avantages",
-                "Non, méthode par les revenus interdite (IAS 38.98A) sauf exception étroite",
-                "Oui si cohérent avec le business plan",
+                "Oui, c'est le reflet direct des avantages consommés",
+                "Non, sauf exception étroite (IAS 38.98A)",
+                "Oui, si c'est cohérent avec le business plan",
                 "Oui si amortissement linéaire donnerait un résultat proche"
               ],
               "answer": 1,
@@ -1515,9 +1515,9 @@
               "type": "mcq",
               "question": "Un regroupement fait apparaître un projet de développement pharmaceutique (IPR&D) valorisé CHF 12 M, qui serait en charge chez l'acquis selon IAS 38. Comptabilisation chez l'acquéreur ?",
               "options": [
-                "Charge de 12 M à l'acquisition",
+                "Une charge de 12 M à l'acquisition",
                 "Goodwill",
-                "Incorporel distinct de 12 M (IAS 38.34)",
+                "Un incorporel distinct de 12 M",
                 "50/50 entre goodwill et charge"
               ],
               "answer": 2,
@@ -1533,9 +1533,9 @@
               "type": "mcq",
               "question": "Coûts de création d'un site web purement promotionnel (présentation de l'entreprise, sans fonction e-commerce). Traitement ?",
               "options": [
-                "Charge (SIC-32 : site promotionnel sans avantage mesurable)",
+                "En charges (site promotionnel)",
                 "Capitalisation intégrale",
-                "Capitalisation de l'infrastructure uniquement",
+                "Capitalisation de l'infrastructure technique uniquement",
                 "Traitement au choix"
               ],
               "answer": 0,
@@ -1545,8 +1545,8 @@
               "type": "mcq",
               "question": "Disclosure IAS 38 obligatoire pour un incorporel individuellement SIGNIFICATIF ?",
               "options": [
-                "Nom des dirigeants associés au projet",
-                "Nature, valeur comptable, durée résiduelle d'amortissement",
+                "Le nom des dirigeants associés au développement du projet",
+                "Nature, valeur comptable, durée résiduelle",
                 "Budget marketing associé",
                 "Valeur comptable uniquement"
               ],
@@ -1677,9 +1677,9 @@
               "question": "Un prêt comporte une clause de prolongation où le taux est divisé par 2 si les taux de marché baissent de plus de 200 bps. Test SPPI ?",
               "options": [
                 "Satisfait (clause classique)",
-                "Dépend de la probabilité d'exercice",
+                "Cela dépend de la probabilité d'exercice de la clause par l'emprunteur",
                 "Satisfait si actualisé",
-                "Non satisfait : risque non lié au principal/intérêts 'simples'"
+                "Non satisfait (flux non « basiques »)"
               ],
               "answer": 3,
               "explanation": "IFRS 9 B4.1.10-11 : un mécanisme qui modifie les flux de manière disproportionnée par rapport au principal/intérêts simples échoue au test SPPI. Classement → FVTPL."
@@ -1689,9 +1689,9 @@
               "question": "Une société met en place une option FVTPL pour éliminer un mismatch comptable. Quand peut-elle la désigner ?",
               "options": [
                 "À n'importe quel moment",
-                "Uniquement à la comptabilisation initiale, de façon irrévocable",
+                "À l'origine seulement, de façon irrévocable",
                 "Chaque année au 1er janvier",
-                "Jamais, option supprimée par IFRS 9"
+                "Jamais : cette option a été supprimée par IFRS 9 pour les passifs financiers"
               ],
               "answer": 1,
               "explanation": "IFRS 9.4.1.5 : désignation **irrévocable** à la comptabilisation initiale uniquement, pour éliminer un mismatch comptable de mesure ou de reconnaissance."
@@ -1726,15 +1726,15 @@
           "questions": [
             {
               "type": "mcq",
-              "question": "Une créance client de CHF 100k est en retard de 45 jours. Traitement ECL ?",
+              "question": "Un prêt (approche générale IFRS 9) de CHF 100k est en retard de 45 jours. Traitement ECL ?",
               "options": [
-                "Stage 2, ECL lifetime (présomption SICR > 30 j)",
-                "Stage 1, ECL 12 mois",
-                "Stage 3, intérêts nets",
+                "Stade 2 : ECL à vie (présomption > 30 jours)",
+                "Stade 1 : ECL à 12 mois, faute de défaut",
+                "Stade 3 : intérêts calculés sur le montant net",
                 "Passage direct en perte"
               ],
               "answer": 0,
-              "explanation": "IFRS 9 B5.5.19 : présomption réfutable de SICR dès > 30 jours → stage 2, ECL lifetime. Stage 3 nécessite > 90 jours ou autres indices de credit-impairment."
+              "explanation": "IFRS 9 B5.5.19 : présomption réfutable de SICR dès > 30 jours → stage 2, ECL lifetime. Stage 3 nécessite > 90 jours ou autres indices de credit-impairment. NB : pour les créances clients sans composante de financement importante, IFRS 9.5.5.15 impose l'approche simplifiée (ECL à vie dès l'origine, sans stades)."
             },
             {
               "type": "vrai_faux",
@@ -1768,15 +1768,15 @@
             },
             {
               "type": "mcq",
-              "question": "Une créance client n'est pas encore en retard mais le client vient d'annoncer des difficultés financières. Quel stage ECL ?",
+              "question": "Un prêt (approche générale IFRS 9) n'est pas encore en retard, mais l'emprunteur vient d'annoncer des difficultés financières. Quel stade ECL ?",
               "options": [
                 "Stage 1 (12 mois) car pas en retard > 30 jours",
                 "Stage 3 (impaired)",
-                "Stage 2 (lifetime) car SICR identifié par d'autres indicateurs",
-                "Matrice simplifiée"
+                "Stade 2 (ECL à vie) : hausse significative du risque",
+                "Matrice de provisionnement simplifiée, sans notion de stade"
               ],
               "answer": 2,
-              "explanation": "SICR peut être identifié par des indicateurs QUALITATIFS (dégradation rating, difficultés financières) avant 30 jours. Stage 2 = lifetime ECL. La présomption des 30 jours est réfutable dans les deux sens."
+              "explanation": "SICR peut être identifié par des indicateurs QUALITATIFS (dégradation rating, difficultés financières) avant 30 jours. Stage 2 = lifetime ECL. La présomption des 30 jours est réfutable dans les deux sens. NB : pour les créances clients sans composante de financement importante, IFRS 9.5.5.15 impose l'approche simplifiée (ECL à vie dès l'origine, sans stades)."
             }
           ]
         },
@@ -1798,9 +1798,9 @@
               "type": "mcq",
               "question": "Une société désigne un emprunt obligataire en option FVTPL. Sa note crédit se dégrade, la JV du passif baisse de 50. Où comptabiliser le gain de 50 ?",
               "options": [
-                "Totalement en OCI (own credit risk, sans recyclage)",
-                "Totalement en résultat",
-                "En capitaux propres directement",
+                "En OCI (risque de crédit propre)",
+                "Totalement en résultat de la période",
+                "En capitaux propres directement, sans passer par l'OCI",
                 "Réparti 50/50 résultat/OCI"
               ],
               "answer": 0,
@@ -1894,8 +1894,8 @@
               "question": "Achat d'une option de change. Valeur temps 20. La société peut-elle comptabiliser la valeur temps en OCI ?",
               "options": [
                 "Non, toujours en résultat",
-                "Oui, mais seulement à la maturité",
-                "Oui, 'cost of hedging' en OCI, recyclage au moment où l'élément couvert affecte le résultat",
+                "Oui, mais seulement à la maturité de l'option de change",
+                "Oui, « coût de couverture » en OCI, recyclé ensuite",
                 "Oui, sans recyclage"
               ],
               "answer": 2,
@@ -1905,8 +1905,8 @@
               "type": "mcq",
               "question": "Une couverture de flux de trésorerie (CFH) est efficace à 95 %. L'entité doit-elle cesser le hedge accounting ?",
               "options": [
-                "Non, IFRS 9 a supprimé le test quantitatif strict — évaluation qualitative",
-                "Oui, test strict 80-125 % toujours applicable",
+                "Non : plus de seuil 80-125 %, test qualitatif",
+                "Oui, le test strict de 80-125 % d'IAS 39 reste toujours applicable",
                 "Oui, efficacité doit être > 95 %",
                 "Non, seulement si < 50 %"
               ],
@@ -1942,8 +1942,8 @@
               "question": "Un client à risque crédit élevé signe un contrat. L'encaissement n'est pas probable. Traitement ?",
               "options": [
                 "Reconnaître le CA normalement",
-                "Reconnaître CA avec provision ECL totale",
-                "Ne pas reconnaître de CA ; encaissement reçu en dette",
+                "Reconnaître le CA avec une provision ECL couvrant la totalité de la créance",
+                "Pas de CA ; encaissements en dette",
                 "Reporter la décision à 12 mois"
               ],
               "answer": 2,
@@ -1960,9 +1960,9 @@
               "question": "IFRS 15 s'applique à :",
               "options": [
                 "Toutes les transactions de revenu",
-                "Tous les contrats clients sauf leasing IFRS 16, instruments financiers IFRS 9, assurance IFRS 17",
+                "Tous les contrats clients, sauf IFRS 16, 9 et 17",
                 "Uniquement aux ventes de biens",
-                "Uniquement aux prestations de services long terme"
+                "Uniquement aux prestations de services à long terme"
               ],
               "answer": 1,
               "explanation": "IFRS 15.5 : champ d'application par défaut, hors domaines couverts par des normes spécifiques (leases, instruments financiers, assurance, garanties IAS 37)."
@@ -1972,8 +1972,8 @@
               "question": "Un contrat avec un client nouveau ne remplit pas le critère d'encaissement probable. Quelle suite donner ?",
               "options": [
                 "Reconnaître le CA mais provisionner à 100 %",
-                "Reconnaître à l'encaissement (cash accounting)",
-                "Pas de contrat au sens d'IFRS 15 — encaissements en dette jusqu'au changement",
+                "Reconnaître le CA à l'encaissement (comptabilité de trésorerie), au fur et à mesure",
+                "Pas de contrat IFRS 15 : encaissements en dette",
                 "Ne rien faire jusqu'à la livraison"
               ],
               "answer": 2,
@@ -2005,10 +2005,10 @@
               "type": "mcq",
               "question": "Vente d'un logiciel + 1 an de mises à jour + 50 h de formation, prix global 100k. Nombre de PO ?",
               "options": [
-                "1 PO (offre commerciale unique)",
-                "2 PO (logiciel + services groupés)",
+                "1 seule OP (offre commerciale unique)",
+                "2 OP (logiciel + services groupés)",
                 "Dépend du prix relatif",
-                "3 PO distinctes (logiciel, mises à jour, formation)"
+                "3 obligations distinctes"
               ],
               "answer": 3,
               "explanation": "Chaque élément est utilisable indépendamment et distinct dans le contexte : 3 PO. Allocation du prix de 100k au prorata des SASP de chaque élément."
@@ -2024,9 +2024,9 @@
               "question": "Contrat de construction clé en main (terrassement, fondations, bâtiment, finitions), chaque étape dépend de la précédente. PO ?",
               "options": [
                 "4 PO (une par étape)",
-                "2 PO (gros œuvre et finitions)",
-                "1 PO (intégration significative)",
-                "Libre choix du management"
+                "2 OP (gros œuvre et finitions)",
+                "1 OP (intégration significative)",
+                "Libre choix du management selon le contrat"
               ],
               "answer": 2,
               "explanation": "IFRS 15.29 : une PO unique quand les biens/services sont fortement intégrés et interdépendants. Typique des contrats de construction clé en main."
@@ -2035,10 +2035,10 @@
               "type": "mcq",
               "question": "Un constructeur intègre conception, fabrication, installation d'une usine. Combien d'obligations de performance ?",
               "options": [
-                "3 PO distinctes (chaque étape)",
-                "2 PO (fabrication + installation)",
+                "3 OP distinctes (une par étape)",
+                "2 OP (fabrication et installation)",
                 "Dépend du prix unitaire",
-                "1 PO (intégration : service d'ensemble unique)"
+                "1 OP (service intégré)"
               ],
               "answer": 3,
               "explanation": "IFRS 15.29 : si le client reçoit un service combiné (les éléments sont hautement interdépendants, intégrés), c'est UNE seule PO. Le test de distinctivité dans le contexte prime sur la distinctivité intrinsèque."
@@ -2087,9 +2087,9 @@
               "type": "mcq",
               "question": "Vente d'un équipement industriel standard, livraison et installation chez le client. À quel moment reconnaître le CA ?",
               "options": [
-                "À la livraison / installation (transfert de contrôle — point in time)",
+                "À la livraison/installation (transfert du contrôle)",
                 "À la signature",
-                "Over time cost-to-cost",
+                "Progressivement selon la méthode cost-to-cost (over time)",
                 "À la réception du paiement"
               ],
               "answer": 0,
@@ -2099,10 +2099,10 @@
               "type": "mcq",
               "question": "Licence SaaS annuelle à CHF 120k. Client paie d'avance. Reconnaissance ?",
               "options": [
-                "120k à la signature",
-                "120k à la fin de l'année",
+                "120k à la signature du contrat",
+                "120k à la fin de l'année de licence",
                 "50/50 début/fin",
-                "10k/mois over time (service continu)"
+                "10k par mois (over time)"
               ],
               "answer": 3,
               "explanation": "SaaS = accès continu à un logiciel hébergé = service over time (critère (a) : bénéfices simultanés). Étalement linéaire typiquement sur la durée de service."
@@ -2111,8 +2111,8 @@
               "type": "mcq",
               "question": "Un logiciel est développé sur mesure pour un client, sans usage alternatif pour le vendeur, avec droit à paiement des travaux en cours en cas de résiliation. Reconnaissance ?",
               "options": [
-                "Over time (critère pas d'usage alternatif + droit au paiement)",
-                "Point in time à la livraison",
+                "Over time (pas d'usage alternatif + paiement)",
+                "Point in time, à la livraison du logiciel au client",
                 "Au paiement encaissé",
                 "Au prorata des heures facturées uniquement"
               ],
@@ -2139,10 +2139,10 @@
               "type": "mcq",
               "question": "Vente d'un appareil à 1'000 avec garantie constructeur 2 ans (défauts de fabrication). Traitement ?",
               "options": [
-                "PO distincte, étalement 2 ans",
+                "Une OP distincte, avec étalement du CA sur 2 ans",
                 "Report de 50 % du CA sur 2 ans",
                 "CA reconnu à la fin de la garantie",
-                "Garantie assurance-qualité → provision IAS 37, CA 1'000 immédiat"
+                "Garantie légale : provision IAS 37, CA de 1'000"
               ],
               "answer": 3,
               "explanation": "Garantie couvrant la conformité = assurance-qualité. Pas une PO distincte. Provision des coûts estimés de réparation selon IAS 37. Le CA complet est reconnu à la vente."
@@ -2157,10 +2157,10 @@
               "type": "mcq",
               "question": "Licence de franchise avec support continu, mises à jour, formations, publicité nationale. Reconnaissance ?",
               "options": [
-                "Point in time à la signature",
-                "Selon redevances uniquement",
+                "Point in time, à la signature",
+                "Selon les redevances perçues uniquement",
                 "Au choix",
-                "Over time (droit d'accès à une PI qui évolue)"
+                "Over time (droit d'accès)"
               ],
               "answer": 3,
               "explanation": "Licence dynamique (le franchiseur entretient la PI, la marque évolue, support continu) → over time. Souvent étalement linéaire sur la durée contractuelle."
@@ -2169,10 +2169,10 @@
               "type": "mcq",
               "question": "Commission de vente CHF 10'000 versée au closing d'un contrat de 4 ans. Traitement ?",
               "options": [
-                "Charge immédiate",
-                "Imputation sur le CA",
-                "Capitalisation en actif de contrat, amortissement sur 4 ans",
-                "Provision IAS 37"
+                "En charge immédiate",
+                "En diminution du chiffre d'affaires",
+                "Activée et amortie sur 4 ans",
+                "En provision IAS 37"
               ],
               "answer": 2,
               "explanation": "IFRS 15.91 : coût d'obtention du contrat récupérable et durée > 1 an → capitalisé. Amortissement sur 4 ans (ou sur le pattern de transfert des PO)."
@@ -2218,10 +2218,10 @@
               "type": "mcq",
               "question": "Contrat de location d'un local commercial où le bailleur a le droit de déplacer le locataire vers un local équivalent, sans coût significatif. Traitement ?",
               "options": [
-                "Location IFRS 16 classique",
-                "Location courte durée",
+                "Une location IFRS 16 classique, avec RoU et dette",
+                "Une location de courte durée",
                 "Location partielle",
-                "Pas d'actif identifié (droit de substitution substantiel) → pas de location"
+                "Pas d'actif identifié : pas de location"
               ],
               "answer": 3,
               "explanation": "Droit de substitution substantiel bénéficiant au bailleur avec coût faible → actif non identifié (IFRS 16.B14). Contrat de service, pas une location."
@@ -2236,10 +2236,10 @@
               "type": "mcq",
               "question": "Pour le bailleur, quelle est la principale différence IFRS 16 vs IAS 17 ?",
               "options": [
-                "Tout au bilan comme pour le locataire",
+                "Tout au bilan, comme pour le preneur",
                 "Suppression totale de la distinction",
-                "Maintien de la distinction financement / exploitation (peu de changement)",
-                "Passage au modèle de la juste valeur"
+                "La distinction financement/exploitation demeure",
+                "Le passage au modèle de la juste valeur"
               ],
               "answer": 2,
               "explanation": "IFRS 16.61 : côté bailleur, modèle dual maintenu. La révolution concerne uniquement le côté locataire (on-balance-sheet généralisé)."
@@ -2248,9 +2248,9 @@
               "type": "mcq",
               "question": "Un contrat de transport par camion donne au client le droit de décider des trajets ; le fournisseur peut remplacer le camion par n'importe quel autre de sa flotte. Bail au sens d'IFRS 16 ?",
               "options": [
-                "Oui, actif identifié (le camion)",
-                "Non, droit de substitution substantiel et bénéfique au fournisseur",
-                "Oui, si la durée > 12 mois",
+                "Oui, l'actif identifié étant le camion",
+                "Non : droit de substitution substantiel",
+                "Oui, si la durée du contrat dépasse 12 mois",
                 "Non, car c'est un service"
               ],
               "answer": 1,
@@ -2283,9 +2283,9 @@
               "question": "Loyer 50k/an payé fin d'année, 4 ans, IBR 4 %. Dette initiale ?",
               "options": [
                 "200'000 (nominal)",
-                "192'307",
-                "172'825",
-                "≈ 181'494 (50 × [(1−1.04⁻⁴)/0.04])"
+                "≈ 192'307",
+                "≈ 172'825",
+                "≈ 181'494"
               ],
               "answer": 3,
               "explanation": "50 × 3.6299 ≈ 181'494. Actualisation obligatoire de l'annuité échue à l'IBR lorsque le taux implicite n'est pas déterminable."
@@ -2312,10 +2312,10 @@
               "type": "mcq",
               "question": "Option d'achat à CHF 50k en fin de bail, valeur de marché estimée CHF 200k à la même date. Prix d'exercice dans la dette ?",
               "options": [
-                "Non, option exclue",
-                "Oui, 50k inclus (exercice raisonnablement certain)",
+                "Non, l'option est toujours exclue de la dette",
+                "Oui (exercice raisonnablement certain)",
                 "50 % inclus",
-                "Au choix du management"
+                "Au choix du management, selon sa politique"
               ],
               "answer": 1,
               "explanation": "Prix d'exercice très inférieur à la JV attendue → exercice raisonnablement certain (IFRS 16.27(d)). 50k inclus dans la dette. De plus, RoU amorti sur durée d'utilité de l'actif."
@@ -2353,8 +2353,8 @@
               "type": "mcq",
               "question": "Un bail lié à un indice CPI voit son loyer augmenter de 3 % au 1er janvier. Réestimation ?",
               "options": [
-                "Dette recalculée au taux initial",
-                "Dette recalculée au taux actuel",
+                "Dette réévaluée au taux initial",
+                "Dette recalculée au taux d'actualisation actuel",
                 "Charge de l'exercice uniquement",
                 "Pas d'ajustement"
               ],
@@ -2371,22 +2371,22 @@
               "type": "mcq",
               "question": "Un locataire réduit la surface louée de 1'000 m² à 600 m². Dette avant modification 500k, RoU 480k. Portion retirée 40 %. Écriture du gain/perte ?",
               "options": [
-                "Gain de 20 (500×40% − 480×40%)",
-                "Perte de 20",
-                "0 (pas d'impact résultat)",
-                "Étalement sur durée restante"
+                "Gain de 8 (200 − 192)",
+                "Perte de 8 (192 − 200)",
+                "0 (pas d'impact sur le résultat)",
+                "Étalement sur la durée restante"
               ],
               "answer": 0,
-              "explanation": "Sortie dette = 200 ; sortie RoU = 192 → différence 8 (et non 20). Correctif : 500×0.4 = 200, 480×0.4 = 192, gain = 200−192 = 8. L'option 'Gain de 20' est fausse ; le raisonnement exact donne +8. À l'examen, attention aux arrondis : l'essentiel est la **direction** (gain) et la méthode (différence des portions sorties)."
+              "explanation": "IFRS 16.46(a) : en cas de réduction du périmètre, le preneur diminue proportionnellement la dette (500 × 40 % = 200) et le droit d'utilisation (480 × 40 % = 192) ; la différence (+8) est un gain en résultat. La dette restante est ensuite réévaluée au taux révisé, avec un ajustement correspondant du RoU."
             },
             {
               "type": "mcq",
               "question": "Un sale-and-leaseback : vente 1'000, JV 1'200. Quel traitement ?",
               "options": [
-                "Excédent de JV (200) traité comme FINANCEMENT supplémentaire accordé par l'acheteur-bailleur",
-                "Gain de 200 car surévaluation du prix",
-                "L'écart est étalé sur la durée du bail",
-                "Rien — vente au prix contractuel fait foi"
+                "Écart de 200 = paiement anticipé de loyers",
+                "Gain de 200 car le prix est surévalué",
+                "L'écart est étalé en produit sur la durée du bail",
+                "Rien : le prix contractuel fait foi"
               ],
               "answer": 0,
               "explanation": "IFRS 16.101 : si prix < JV, la différence = LOYER PAYÉ D'AVANCE ; si prix > JV, différence = FINANCEMENT additionnel accordé par le bailleur. Ici prix < JV → loyer payé d'avance. Objectif : neutraliser la manipulation du prix."
@@ -2417,10 +2417,10 @@
               "type": "mcq",
               "question": "Location d'un équipement pendant 90 % de sa vie économique sans option d'achat, paiements représentant 95 % de la JV. Classification côté bailleur ?",
               "options": [
-                "Opérationnelle",
-                "Financement (majorité des risques/avantages transférés)",
-                "Sale-and-leaseback",
-                "Location mixte"
+                "Location simple (opérationnelle)",
+                "Location-financement",
+                "Une cession-bail (sale-and-leaseback)",
+                "Une location mixte"
               ],
               "answer": 1,
               "explanation": "Critères IFRS 16.63 remplis : durée = majeure partie de la vie économique + VP des paiements ≈ JV → location financement. Actif décomptabilisé, créance nette."
@@ -2435,10 +2435,10 @@
               "type": "mcq",
               "question": "Locataire applique l'exemption 'courte durée'. Charge à présenter ?",
               "options": [
-                "RoU simplifié sur 12 mois",
-                "Charge de 'location courte durée' en résultat, pas de RoU / dette",
+                "Un RoU simplifié calculé sur 12 mois",
+                "Une charge de location, sans RoU ni dette",
                 "Provision",
-                "Rien (hors bilan complet)"
+                "Rien : opération entièrement hors bilan et hors résultat"
               ],
               "answer": 1,
               "explanation": "IFRS 16.6 : charge linéaire (ou base plus représentative) en résultat, disclosure séparée. Pas d'impact bilan."
@@ -2447,10 +2447,10 @@
               "type": "mcq",
               "question": "Un sous-locataire (intermediate lessor) classe une sous-location : sur quelle base ?",
               "options": [
-                "Par référence à l'actif sous-jacent",
+                "Par référence à l'actif sous-jacent du bail principal",
                 "Toujours en opérationnel",
                 "Toujours en financement",
-                "Par référence au droit d'utilisation (RoU) du contrat principal"
+                "Par référence au RoU du bail principal"
               ],
               "answer": 3,
               "explanation": "IFRS 16.B58 : le sous-loueur évalue la sous-location par référence au RoU du bail principal, PAS à l'actif sous-jacent. Si la sous-location couvre la quasi-totalité du RoU → financement. Différence avec l'approche historique."
@@ -4451,9 +4451,9 @@
               "question": "Une société compense créances et dettes fiscales de juridictions différentes au bilan. Conforme ?",
               "options": [
                 "Oui, simplification acceptable",
-                "Oui si mentionné en annexe",
-                "Oui si montants similaires",
-                "Non, compensation autorisée uniquement si même autorité fiscale + intention régler net"
+                "Oui, si la compensation est mentionnée en annexe",
+                "Oui, si les montants concernés ne sont pas significatifs",
+                "Non : même autorité et règlement net requis"
               ],
               "answer": 3,
               "explanation": "IAS 12.71/74 : compensation seulement si droit légal + même autorité + intention. Interdit autrement."
@@ -4462,8 +4462,8 @@
               "type": "mcq",
               "question": "Une direction doute de la continuité mais estime qu'un refinancement est probable. Traitement ?",
               "options": [
-                "Continuité + disclosure des incertitudes significatives",
-                "Arrêt de l'exploitation, base liquidation",
+                "Continuité + information sur l'incertitude",
+                "Arrêt de l'exploitation et passage en base de liquidation",
                 "Pas de disclosure si probable",
                 "Provision pour liquidation"
               ],
@@ -4474,9 +4474,9 @@
               "type": "mcq",
               "question": "Quand un TROISIÈME bilan d'ouverture est-il requis ?",
               "options": [
-                "À chaque clôture",
-                "Lors d'un changement de méthode, correction d'erreur ou reclassement avec effet matériel rétroactif",
-                "Uniquement à la première adoption d'IFRS",
+                "À chaque clôture, systématiquement, pour toutes les entités cotées",
+                "En cas d'application rétrospective ou de reclassement significatif",
+                "Uniquement lors de la première adoption des IFRS (IFRS 1)",
                 "Jamais"
               ],
               "answer": 1,
@@ -4508,9 +4508,9 @@
               "type": "mcq",
               "question": "Emprunt bancaire à 5 ans avec covenant testé annuellement. Covenant respecté à la clôture. Présentation ?",
               "options": [
-                "Courant (proximité du test)",
+                "Courant, en raison de la proximité du prochain test",
                 "50/50",
-                "Non courant (droit différé > 12 mois à la clôture)",
+                "Non courant (droit de différer > 12 mois)",
                 "Hors bilan"
               ],
               "answer": 2,
@@ -4528,8 +4528,8 @@
               "options": [
                 "En passif",
                 "Hors bilan",
-                "Au choix",
-                "En capitaux propres, ligne distincte dans les fonds propres (pas part du groupe)"
+                "Au choix de l'entité",
+                "En capitaux propres, ligne distincte"
               ],
               "answer": 3,
               "explanation": "IAS 1.54(q) : intérêts minoritaires = composante des capitaux propres, présentés séparément de la part attribuable à la mère."
@@ -4538,8 +4538,8 @@
               "type": "mcq",
               "question": "Un emprunt à LT dont un covenant est enfreint à la clôture est :",
               "options": [
-                "Non courant (l'emprunt était initialement LT)",
-                "Courant si la banque renonce par écrit avant la clôture ; sinon courant",
+                "Non courant, l'emprunt ayant été conclu à long terme et le contrat restant en vigueur",
+                "Courant, sauf renonciation ≥ 12 mois obtenue avant la clôture",
                 "Courant : la banque peut exiger le remboursement immédiat",
                 "Dépend de l'intention de la direction"
               ],
@@ -4572,9 +4572,9 @@
               "type": "mcq",
               "question": "Élément d'OCI recyclable en résultat ?",
               "options": [
-                "Gains actuariels IAS 19",
-                "Écarts de conversion d'une filiale étrangère",
-                "Réévaluation IAS 16",
+                "Les gains actuariels (IAS 19)",
+                "Les écarts de conversion",
+                "La réévaluation IAS 16",
                 "Own credit risk"
               ],
               "answer": 1,
@@ -4591,8 +4591,8 @@
               "question": "Utilisation d'un APM 'Résultat opérationnel ajusté'. Conditions ?",
               "options": [
                 "Non autorisé en IFRS",
-                "Autorisé avec réconciliation au résultat IFRS le plus comparable",
-                "Remplace obligatoirement le résultat IFRS",
+                "Autorisé, avec rapprochement au résultat IFRS",
+                "Il remplace obligatoirement le résultat IFRS dans le compte de résultat",
                 "Interdit en annexe"
               ],
               "answer": 1,
@@ -4602,10 +4602,10 @@
               "type": "mcq",
               "question": "Quelle composante d'OCI est ultérieurement RECYCLÉE en résultat ?",
               "options": [
-                "Réévaluation IAS 16",
-                "Écarts de conversion (CTA) lors de la cession de filiale étrangère",
+                "La réévaluation IAS 16",
+                "Les écarts de conversion, à la cession",
                 "Gains/pertes actuariels IAS 19",
-                "FVOCI Equity (option irrévocable)"
+                "Les actions désignées à la FVOCI (option irrévocable)"
               ],
               "answer": 1,
               "explanation": "IAS 21.48 : CTA recyclé en résultat à la cession/perte de contrôle. Non recyclables : réévaluation IAS 16, actuariels, FVOCI KP, own credit risk. Distinction à connaître par cœur."
@@ -4642,9 +4642,9 @@
               "type": "mcq",
               "question": "Quel élément est OBLIGATOIREMENT à décrire en tant que 'source d'incertitude d'estimation' ?",
               "options": [
-                "Le nom du CFO",
-                "Les hypothèses clés sur la durée d'utilité et les taux d'actualisation avec sensibilités",
-                "Les dividendes historiques",
+                "Le nom du directeur financier",
+                "Les hypothèses clés et leur sensibilité",
+                "L'historique des dividendes versés",
                 "Le plan stratégique"
               ],
               "answer": 1,
@@ -4655,9 +4655,9 @@
               "question": "Une société doit-elle informer sur sa gestion du capital en IFRS ?",
               "options": [
                 "Non, confidentiel",
-                "Oui, objectifs, politique, processus + conformité aux exigences externes",
+                "Oui : objectifs, politique, conformité externe",
                 "Uniquement pour les banques",
-                "Uniquement pour les sociétés cotées"
+                "Uniquement pour les sociétés cotées, à titre facultatif"
               ],
               "answer": 1,
               "explanation": "IAS 1.134-136 : toutes les entités doivent communiquer sur la gestion du capital (objectifs, quantifs, conformité réglementaire). Pas limité aux financières."
@@ -4666,9 +4666,9 @@
               "type": "mcq",
               "question": "Depuis l'amendement 2023 de IAS 1, les \"accounting policies\" en annexe doivent être :",
               "options": [
-                "Toutes celles du manuel comptable",
+                "Toutes celles du manuel comptable du groupe",
                 "Un résumé des IFRS applicables",
-                "Seulement les méthodes MATÉRIELLES",
+                "Seulement les méthodes significatives",
                 "Supprimées"
               ],
               "answer": 2,
@@ -4708,10 +4708,10 @@
               "type": "mcq",
               "question": "Placement en actions cotées liquide. Équivalent de trésorerie ?",
               "options": [
-                "Oui si détenu < 3 mois",
-                "Non : volatilité → risque de changement de valeur",
+                "Oui, si elles sont détenues moins de 3 mois",
+                "Non : risque de variation de valeur",
                 "Oui si blue chip",
-                "Dépend de la politique"
+                "Cela dépend de la politique de trésorerie"
               ],
               "answer": 1,
               "explanation": "Actions = volatilité significative → ne satisfont pas la condition 'risque négligeable de changement de valeur'. Exclues des équivalents (IAS 7.7)."
@@ -4726,9 +4726,9 @@
               "type": "mcq",
               "question": "Découvert bancaire continu (toujours négatif). Classification ?",
               "options": [
-                "Trésorerie si remboursable à vue + intégré à gestion trésorerie ; sinon financement",
-                "Toujours trésorerie",
-                "Toujours financement",
+                "Trésorerie s'il fait partie de la gestion de trésorerie",
+                "Toujours en trésorerie, quelle que soit sa nature",
+                "Toujours en activités de financement",
                 "Hors tableau"
               ],
               "answer": 0,
@@ -4789,10 +4789,10 @@
               "type": "mcq",
               "question": "Une plus-value de cession d'immobilisation de 50 figure dans le résultat. Impact flux exploitation (indirecte) ?",
               "options": [
-                "Aucun",
-                "À soustraire (reclassement en flux d'investissement)",
-                "À ajouter",
-                "À doubler"
+                "Aucun impact",
+                "La soustraire (flux d'investissement)",
+                "L'ajouter au résultat",
+                "La doubler"
               ],
               "answer": 1,
               "explanation": "La plus-value est incluse dans le résultat net mais correspond à un flux d'investissement (prix de cession). Il faut la soustraire des flux d'exploitation et présenter le prix de cession entier en investissement."
@@ -4835,9 +4835,9 @@
               "type": "mcq",
               "question": "Acquisition filiale 1'000 cash. Filiale possède 200 trésorerie. Flux d'investissement à présenter ?",
               "options": [
-                "−1'000",
-                "+200",
-                "−800 (net de la trésorerie acquise)",
+                "−1'000 (prix payé)",
+                "+200 (trésorerie acquise)",
+                "−800",
                 "−1'200"
               ],
               "answer": 2,
@@ -4853,9 +4853,9 @@
               "type": "mcq",
               "question": "Le tableau de réconciliation des dettes de financement (IAS 7.44A) doit couvrir :",
               "options": [
-                "Uniquement la variation de la période",
-                "Ouverture + flux cash + variations non-cash + clôture",
-                "Uniquement les dettes bancaires",
+                "Uniquement la variation nette de la période",
+                "Ouverture, flux, non-cash, clôture",
+                "Uniquement les dettes bancaires à long terme",
                 "Non obligatoire"
               ],
               "answer": 1,
@@ -4865,8 +4865,8 @@
               "type": "mcq",
               "question": "Acquisition d'une filiale pour CHF 1'000 cash. La filiale apporte CHF 150 de trésorerie. Quel montant en flux d'investissement ?",
               "options": [
-                "850 (sortie nette de la trésorerie acquise)",
-                "1'000 (sortie)",
+                "850",
+                "1'000 (prix payé)",
                 "1'150",
                 "150 uniquement"
               ],
@@ -4899,8 +4899,8 @@
               "type": "mcq",
               "question": "Société affichant 100 de résultat net mais −30 de cash d'exploitation. Hypothèse probable ?",
               "options": [
-                "Qualité du résultat à investiguer (hausse BFR, non-cash importants, provisions)",
-                "Excellente performance opérationnelle",
+                "Qualité du résultat à investiguer (BFR, non-cash)",
+                "Une excellente performance opérationnelle de l'exercice",
                 "Aucune différence significative",
                 "Erreur obligatoire"
               ],
@@ -4917,9 +4917,9 @@
               "type": "mcq",
               "question": "Audit : la trésorerie au bilan clôture ne correspond pas au total des flux + ouverture. Cause fréquente ?",
               "options": [
-                "Erreur d'addition",
-                "Oubli de l'effet de change sur la trésorerie étrangère",
-                "Décalage d'un jour",
+                "Une simple erreur d'addition",
+                "L'effet de change sur la trésorerie",
+                "Un décalage d'un jour de valeur",
                 "Fraude obligatoire"
               ],
               "answer": 1,
@@ -4929,10 +4929,10 @@
               "type": "mcq",
               "question": "La réconciliation des dettes de financement (amendement IAS 7 de 2016) divulgue :",
               "options": [
-                "Uniquement le total des intérêts payés",
+                "Uniquement le total des intérêts payés dans l'exercice",
                 "Le détail par tranche d'échéance",
                 "Le plan de remboursement prévisionnel",
-                "Les variations des dettes : flux cash + non-cash (change, acquisitions, JV, autres)"
+                "Variations cash et non cash des dettes"
               ],
               "answer": 3,
               "explanation": "IAS 7.44A-E : réconciliation OUV → CLO des dettes de financement, distinguant flux cash et variations non-cash (effet de change, acquisitions/cessions, JV). Apporte de la transparence sur l'endettement réel."
@@ -4978,9 +4978,9 @@
               "question": "Différence entre méthode comptable et estimation ?",
               "options": [
                 "Aucune",
-                "Méthode = principe général (FIFO) ; estimation = chiffrage (durée d'utilité)",
+                "Méthode : principe (FIFO) ; estimation : chiffrage",
                 "Méthode = chiffre ; estimation = principe",
-                "Les deux exigent un retraitement rétrospectif"
+                "Les deux exigent toujours un retraitement rétrospectif des comparatifs"
               ],
               "answer": 1,
               "explanation": "Distinction cruciale car traitements différents : changement de méthode = rétrospectif ; changement d'estimation = prospectif."
@@ -4989,9 +4989,9 @@
               "type": "mcq",
               "question": "Une norme IFRS émise mais applicable dans 2 ans. Obligation de la société ?",
               "options": [
-                "Application immédiate",
-                "Ignorer jusqu'à l'échéance",
-                "Disclosure de l'impact attendu (quantifié si possible)",
+                "L'appliquer immédiatement",
+                "L'ignorer jusqu'à la date d'entrée en vigueur",
+                "Indiquer l'impact attendu",
                 "Provision"
               ],
               "answer": 2,
@@ -5001,9 +5001,9 @@
               "type": "mcq",
               "question": "En l'absence de norme IFRS spécifique, sur quelle base sélectionner une méthode ?",
               "options": [
-                "Liberté totale de la direction",
+                "Une liberté totale de la direction, sans autre contrainte que la cohérence",
                 "US GAAP par défaut",
-                "Jugement appuyé sur le Cadre conceptuel IFRS et standards couvrant des problèmes similaires",
+                "Le jugement, fondé sur le Cadre conceptuel et des normes analogues",
                 "Normes RPC si l'entité est suisse"
               ],
               "answer": 2,
@@ -5041,9 +5041,9 @@
               "type": "mcq",
               "question": "Changement volontaire FIFO → CMP. Impact comptable ?",
               "options": [
-                "Application prospective",
-                "Application rétrospective : retraitement comparatifs + 3e bilan",
-                "Charge exceptionnelle de la différence",
+                "Une application prospective",
+                "Application rétrospective",
+                "Une charge exceptionnelle égale à la différence",
                 "Note en annexe uniquement"
               ],
               "answer": 1,
@@ -5053,10 +5053,10 @@
               "type": "mcq",
               "question": "Une nouvelle norme IFRS prévoit une application 'modified retrospective' sans retraitement des comparatifs. Que fait la société ?",
               "options": [
-                "Ignorer la disposition et appliquer IAS 8 standard",
+                "Ignorer la disposition transitoire et appliquer IAS 8 standard",
                 "Choisir au cas par cas",
                 "Application prospective uniquement",
-                "Suivre les dispositions transitoires de la norme (prévalent sur IAS 8)"
+                "Suivre les dispositions transitoires"
               ],
               "answer": 3,
               "explanation": "Les dispositions transitoires spécifiques (cf. IFRS 9, 15, 16) prévalent sur IAS 8.19. Appliquer comme la norme l'indique (modified retrospective : effet cumulé à la date de transition)."
@@ -5067,8 +5067,8 @@
               "options": [
                 "Aucune condition",
                 "Accord préalable de l'auditeur",
-                "Changement autorisé uniquement tous les 5 ans",
-                "La nouvelle méthode doit fournir une information plus PERTINENTE et FIABLE"
+                "Un changement n'est autorisé qu'une fois tous les cinq ans",
+                "Une information plus fiable et pertinente"
               ],
               "answer": 3,
               "explanation": "IAS 8.14 : changement volontaire admissible uniquement si info plus pertinente ET fiable. Justification en annexe. Application rétrospective avec retraitement des comparatifs et 3e bilan d'ouverture."
@@ -5118,7 +5118,7 @@
               "question": "Une société passe d'un calcul d'ECL 'simple' à un modèle forward-looking sophistiqué. Traitement ?",
               "options": [
                 "Changement de méthode rétrospectif",
-                "Changement d'estimation prospectif (technique de mesure)",
+                "Changement d'estimation (prospectif)",
                 "Erreur à corriger",
                 "Retraitement obligatoire sur 5 ans"
               ],
@@ -5129,8 +5129,8 @@
               "type": "mcq",
               "question": "Révision de la durée d'utilité d'une machine de 10 à 7 ans (déjà amortie 3 ans). Traitement ?",
               "options": [
-                "Retraiter rétroactivement les 3 années passées",
-                "Application prospective : VNC amortie sur 4 ans restants",
+                "Retraiter rétroactivement les trois années passées",
+                "Prospectif : VNC sur les 4 ans restants",
                 "Correction d'erreur",
                 "Charge exceptionnelle"
               ],
@@ -5163,10 +5163,10 @@
               "type": "mcq",
               "question": "Découverte en N+1 que les stocks au 31.12.N avaient été surévalués de 500k (erreur de calcul, info disponible à l'époque). Matériel. Traitement ?",
               "options": [
-                "Ajustement en charge de N+1",
+                "Un ajustement en charges de l'exercice N+1",
                 "Provision en N+1",
                 "Ignorer",
-                "Retraitement rétrospectif : N corrigé, ouverture N+1 retraitée, 3e bilan si pertinent"
+                "Retraitement rétrospectif (correction d'erreur)"
               ],
               "answer": 3,
               "explanation": "Erreur matérielle d'une période antérieure → retraitement rétrospectif. Stocks et résultat N corrigés dans les comparatifs. Disclosure complet."
@@ -5181,10 +5181,10 @@
               "type": "mcq",
               "question": "Les méthodes comptables appliquées étaient correctes, mais une hypothèse utilisée (taux) a été révisée à cause d'évolutions économiques postérieures. S'agit-il d'une erreur ?",
               "options": [
-                "Non, changement d'estimation prospectif",
+                "Non : estimation, prospectif",
                 "Oui, retraitement rétrospectif",
                 "Oui si matériel",
-                "Non si mentionné en annexe"
+                "Non, s'il est mentionné en annexe"
               ],
               "answer": 0,
               "explanation": "Info nouvelle / évolution économique = changement d'estimation. Prospectif. Pas de retraitement."
@@ -5193,10 +5193,10 @@
               "type": "mcq",
               "question": "Découverte d'une erreur matérielle d'omission d'amortissement sur plusieurs exercices passés. Correction ?",
               "options": [
-                "Retraitement RÉTROSPECTIF + 3e bilan d'ouverture + disclosure",
+                "Retraitement rétrospectif + 3e bilan",
                 "Charge unique dans l'exercice de découverte",
                 "Prospectif sur la durée résiduelle",
-                "Application à la prochaine clôture uniquement"
+                "Une application prospective dès l'exercice suivant, sans retraitement"
               ],
               "answer": 0,
               "explanation": "IAS 8.42 : erreur matérielle = retraitement rétrospectif COMPLET des comparatifs + 3e bilan d'ouverture. Disclosure : nature, montant par poste, effet EPS. Distinction cruciale avec estimation (prospectif)."
@@ -5256,8 +5256,8 @@
               "options": [
                 "Payés dans les 3 mois",
                 "Pensions",
-                "Actions gratuites",
-                "Payés dans les 12 mois après service"
+                "Les actions gratuites attribuées",
+                "Réglés dans les 12 mois"
               ],
               "answer": 3,
               "explanation": "IAS 19.9 : règlement intégral attendu dans les 12 mois après la prestation. Au-delà → autres avantages long terme (actualisation obligatoire)."
@@ -5267,9 +5267,9 @@
               "question": "Bonus annuel payable si certaines conditions sont remplies. L'employé a déjà rendu le service. Traitement à la clôture ?",
               "options": [
                 "Rien jusqu'au paiement",
-                "Charge à constater uniquement si annoncé",
+                "Une charge à constater uniquement si le bonus a été annoncé",
                 "Provision pour 50 %",
-                "Provision pour bonus = meilleure estimation (accrual)"
+                "Provision (meilleure estimation)"
               ],
               "answer": 3,
               "explanation": "IAS 19.11 / court terme : accrual obligatoire dès que service rendu + obligation présente + estimation fiable. Pas d'actualisation (court terme < 12 mois). Piège : bonus discrétionnaire reste à provisionner si pratique établie."
@@ -5330,9 +5330,9 @@
               "type": "mcq",
               "question": "Un régime LPP suisse est-il typiquement classé en IFRS comme :",
               "options": [
-                "DB en raison des garanties légales (taux, conversion)",
-                "DC systématiquement",
-                "Hybride à 50/50",
+                "Prestations définies (garanties)",
+                "Cotisations définies, systématiquement",
+                "Un régime hybride à 50/50",
                 "Hors champ IAS 19"
               ],
               "answer": 0,
@@ -5364,10 +5364,10 @@
               "type": "mcq",
               "question": "Modification du régime : augmentation des prestations de 10 % pour les services passés. Traitement ?",
               "options": [
-                "Étalement sur la durée résiduelle",
+                "Un étalement sur la durée résiduelle d'emploi des bénéficiaires",
                 "OCI non recyclable",
                 "Provision IAS 37",
-                "Comptabilisation immédiate en résultat (past service cost)"
+                "Immédiatement en résultat"
               ],
               "answer": 3,
               "explanation": "Depuis IAS 19 révisée (2013) : past service cost immédiatement en résultat, plus d'étalement. Disclosure distincte des services courants."
@@ -5382,9 +5382,9 @@
               "type": "mcq",
               "question": "Analyse de sensibilité obligatoire IAS 19 doit couvrir au minimum :",
               "options": [
-                "Le taux d'actualisation uniquement",
+                "Le taux d'actualisation uniquement, à ± 0,5 point",
                 "Uniquement les salaires",
-                "Les hypothèses principales (taux, salaires, démographie) avec quantification",
+                "Les hypothèses principales, chiffrées",
                 "Aucune obligation"
               ],
               "answer": 2,
@@ -5394,10 +5394,10 @@
               "type": "mcq",
               "question": "Modification de régime entraînant CHF 500 de past service cost négatif (réduction de prestations). Traitement ?",
               "options": [
-                "IMMÉDIATEMENT en résultat (produit de 500)",
-                "Étalement sur durée résiduelle d'emploi",
+                "Immédiatement en résultat",
+                "Étalement sur la durée résiduelle d'emploi",
                 "En OCI",
-                "Reporté jusqu'au paiement"
+                "Reporté jusqu'au paiement des prestations"
               ],
               "answer": 0,
               "explanation": "IAS 19 révisé 2013 : past service cost (positif ou négatif) = IMMÉDIATEMENT en résultat. L'étalement antérieur a été supprimé. Liquidation : idem immédiat."
@@ -5428,10 +5428,10 @@
               "type": "mcq",
               "question": "Médaille d'ancienneté versée à 20 ans de service. Réévaluations actuarielles. Traitement ?",
               "options": [
-                "OCI non recyclable",
+                "En OCI non recyclable",
                 "Provision IAS 37",
-                "Résultat (autres avantages LT, pas d'OCI)",
-                "Capitaux propres"
+                "En résultat (pas d'OCI)",
+                "Directement en capitaux propres"
               ],
               "answer": 2,
               "explanation": "IAS 19.158 : autres avantages LT, TOUT en résultat (simplification). Contraste avec régimes de retraite (réévaluations en OCI)."
@@ -5446,10 +5446,10 @@
               "type": "mcq",
               "question": "Une entreprise propose un plan de départs volontaires de 6 mois à ses employés. 200 salariés probables. Indemnité moyenne 40k. Provision ?",
               "options": [
-                "Pas de provision (volontaire)",
+                "Aucune provision, le départ étant volontaire",
                 "Étalement sur 6 mois",
-                "Uniquement à la sortie effective",
-                "Provision = 200 × 40 = 8 M dès que l'offre devient irrévocable"
+                "Uniquement pour les départs déjà signés",
+                "8 M dès que l'offre est irrévocable"
               ],
               "answer": 3,
               "explanation": "IAS 19.165-168 : indemnités de fin comptabilisées dès que l'offre ne peut être retirée. 8 M en charge immédiate, actualisation si > 12 mois entre l'offre et le paiement."
@@ -5458,8 +5458,8 @@
               "type": "mcq",
               "question": "Stock options : condition de performance basée sur le cours de l'action (market condition). Traitement ?",
               "options": [
-                "Ajustement du nombre d'options au vesting (comme non-market)",
-                "Intégrée dans la JV à l'attribution ; aucun ajustement ultérieur si non atteinte",
+                "Un ajustement du nombre d'options au vesting, comme une condition hors marché",
+                "Intégrée dans la JV initiale, sans ajustement",
                 "Ignorée",
                 "Étalement sur la durée de vie contractuelle"
               ],
@@ -5501,10 +5501,10 @@
               "type": "mcq",
               "question": "Filiale française d'un groupe suisse. Ventes locales en EUR, coûts en EUR, financement mixte. Monnaie fonctionnelle ?",
               "options": [
-                "CHF (monnaie du groupe)",
-                "USD (monnaie forte)",
-                "EUR (environnement économique principal)",
-                "Choix libre"
+                "Le CHF (monnaie du groupe)",
+                "L'USD (monnaie forte)",
+                "L'EUR",
+                "Un choix libre"
               ],
               "answer": 2,
               "explanation": "IAS 21.9-11 : analyse économique, pas juridique. EUR = environnement principal des ventes et coûts. Présentation en CHF au niveau consolidé, fonctionnelle EUR au local."
@@ -5519,10 +5519,10 @@
               "type": "mcq",
               "question": "Indicateur PRIMAIRE de la monnaie fonctionnelle ?",
               "options": [
-                "Monnaie du siège juridique",
-                "Monnaie utilisée en trésorerie",
+                "La monnaie du siège juridique",
+                "La monnaie utilisée en trésorerie",
                 "Monnaie du rapport annuel",
-                "Monnaie qui influence les prix de vente"
+                "Celle qui influence les prix de vente"
               ],
               "answer": 3,
               "explanation": "IAS 21.9 : indicateur primaire = monnaie influençant les prix de vente et les coûts principaux. Les autres sont secondaires."
@@ -5531,10 +5531,10 @@
               "type": "mcq",
               "question": "Une filiale suisse facture en USD à un groupe US, s'approvisionne en USD, finance en USD. Monnaie fonctionnelle ?",
               "options": [
-                "CHF (siège légal)",
-                "EUR (par défaut)",
-                "USD (environnement économique principal)",
-                "Choix libre"
+                "Le CHF (siège légal)",
+                "L'EUR (par défaut)",
+                "L'USD",
+                "Un choix libre"
               ],
               "answer": 2,
               "explanation": "IAS 21.9 : monnaie fonctionnelle = environnement économique principal (ventes, coûts, financement). Le siège juridique est SECONDAIRE. Piège : identification stricte requise, peut différer de la monnaie \"locale\"."
@@ -5566,9 +5566,9 @@
               "question": "Créance client 50'000 EUR. Comptabilisée à 1 EUR = 0.95 CHF. Cours de clôture 0.98. Effet ?",
               "options": [
                 "Maintien à 47'500 CHF",
-                "Réévaluation en OCI",
-                "Provision pour risque",
-                "Réévaluation à 49'000 CHF, gain de change 1'500 en résultat"
+                "Réévaluation par l'OCI",
+                "Une provision pour risque de change",
+                "49'000 CHF, gain de change de 1'500"
               ],
               "answer": 3,
               "explanation": "Créance monétaire → cours de clôture. Gain de change 1'500 CHF en résultat (produits financiers ou autre selon présentation)."
@@ -5583,10 +5583,10 @@
               "type": "mcq",
               "question": "Élément NON monétaire ?",
               "options": [
-                "Créance client",
-                "Emprunt bancaire",
-                "Immobilisation corporelle",
-                "Trésorerie en USD"
+                "Une créance client",
+                "Un emprunt bancaire",
+                "Une immobilisation",
+                "De la trésorerie en USD"
               ],
               "answer": 2,
               "explanation": "Immobilisation = non monétaire (pas de montant déterminé de cash à recevoir/payer). Les 3 autres sont monétaires."
@@ -5647,10 +5647,10 @@
               "type": "mcq",
               "question": "Le compte de résultat d'une filiale étrangère est converti pour la consolidation au :",
               "options": [
-                "Cours de clôture",
-                "Cours historique",
-                "Cours moyen de la période (ou cours de transaction)",
-                "Cours spot du 1er janvier"
+                "Au cours de clôture",
+                "Au cours historique",
+                "Au cours moyen (ou de transaction)",
+                "Au cours spot du 1er janvier"
               ],
               "answer": 2,
               "explanation": "Idéalement cours de transaction, en pratique cours moyen si approximation raisonnable. Le cours de clôture ne s'applique qu'au bilan."

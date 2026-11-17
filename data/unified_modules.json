@@ -22889,9 +22889,9 @@
               "question": "Selon IAS 1.10, combien de composantes obligatoires comprend un jeu complet d'états financiers ?",
               "options": [
                 "A. 3 composantes (bilan, compte de résultat, notes)",
-                "B. 4 composantes (bilan, résultat, flux de trésorerie, notes)",
-                "C. 6 composantes (avec en plus un état des engagements)",
-                "D. 5 composantes (bilan, résultat global, variations capitaux propres, flux, notes)"
+                "B. 4 composantes (bilan, compte de résultat, tableau des flux de trésorerie, notes)",
+                "C. 6 composantes (les cinq états de base plus un rapport de gestion obligatoire)",
+                "D. 5 (bilan, résultat global, variation des FP, flux, notes)"
               ],
               "answer": 3,
               "explanation": "IAS 1.10 énumère 5 éléments obligatoires : (1) bilan, (2) état du résultat net et OCI, (3) état des variations des capitaux propres, (4) tableau des flux de trésorerie, (5) notes incluant un résumé des méthodes comptables significatives. Si l'entité applique rétrospectivement une méthode, un 3ᵉ bilan d'ouverture comparatif s'ajoute (IAS 1.40A).",
@@ -22914,8 +22914,8 @@
               "question": "Quels sont les deux postulats fondamentaux d'IAS 1 sur lesquels reposent les états financiers ?",
               "options": [
                 "A. Image fidèle et prudence",
-                "B. Continuité d'exploitation et comptabilité d'engagement",
-                "C. Permanence des méthodes et importance relative",
+                "B. Continuité et comptabilité d'engagement",
+                "C. La permanence des méthodes et l'importance relative",
                 "D. Coût historique et prudence"
               ],
               "answer": 1,
@@ -22979,9 +22979,9 @@
               "question": "Quand un troisième bilan (au début de la période comparative) doit-il être présenté selon IAS 1.40A ?",
               "options": [
                 "A. Systématiquement chaque année",
-                "B. Lors d'une application rétrospective d'une méthode comptable, d'un retraitement rétrospectif ou d'un reclassement",
-                "C. Uniquement si l'entité a un cycle d'exploitation > 12 mois",
-                "D. Uniquement si l'entité applique le modèle de la réévaluation"
+                "B. En cas de changement rétrospectif, retraitement ou reclassement significatif",
+                "C. Uniquement si l'entité a un cycle d'exploitation supérieur à douze mois",
+                "D. Uniquement lors de la première application des IFRS par l'entité (IFRS 1) chaque année"
               ],
               "answer": 1,
               "explanation": "IAS 1.40A impose un troisième bilan d'ouverture (au début de la période comparative la plus ancienne) lorsque l'entité applique rétrospectivement une méthode comptable, retraite rétrospectivement (correction d'erreur IAS 8) ou reclasse des éléments avec un effet significatif. C'est un des piliers de la traçabilité IAS 8.",
@@ -23223,9 +23223,9 @@
               "question": "Selon IAS 2.9, à quelle valeur les stocks doivent-ils être évalués au bilan ?",
               "options": [
                 "A. Au coût d'acquisition uniquement",
-                "B. À la juste valeur diminuée des coûts de vente",
+                "B. À la juste valeur diminuée des coûts de vente, à chaque clôture",
                 "C. À la valeur de remplacement",
-                "D. Au plus faible du coût et de la valeur nette de réalisation (VNR)"
+                "D. Au plus faible du coût et de la VNR"
               ],
               "answer": 3,
               "explanation": "IAS 2.9 pose la règle fondamentale : les stocks sont évalués au plus faible du coût (acquisition ou production) et de la valeur nette de réalisation (VNR). La VNR est le prix de vente estimé moins les coûts d'achèvement et les coûts de vente, spécifique à l'entité (à ne pas confondre avec la juste valeur IFRS 13).",
@@ -23302,8 +23302,8 @@
               "type": "mcq",
               "question": "Une matière première a un coût de CHF 80. Le produit fini correspondant a un coût total de CHF 180 et sera vendu CHF 200. Faut-il déprécier la matière première ?",
               "options": [
-                "A. Oui, à 80 % de son coût car prudence",
-                "B. Non, car le produit fini sera vendu au-dessus de son coût",
+                "A. Oui, à 80 % de son coût, par prudence sur les matières premières",
+                "B. Non : le produit fini se vend au-dessus du coût",
                 "C. Oui, à hauteur de la marge prévue",
                 "D. Oui, automatiquement à chaque clôture"
               ],
@@ -23450,9 +23450,9 @@
               "question": "Quelles sont les TROIS catégories de flux de trésorerie selon IAS 7.10 ?",
               "options": [
                 "A. Recettes, dépenses, soldes",
-                "B. Court terme, moyen terme, long terme",
+                "B. Court terme, moyen terme et long terme selon l'échéance des flux",
                 "C. Internes, externes, mixtes",
-                "D. Activités d'exploitation, d'investissement, de financement"
+                "D. Exploitation, investissement, financement"
               ],
               "answer": 3,
               "explanation": "IAS 7.10 distingue trois catégories : (1) activités d'exploitation (principales activités génératrices de produits), (2) activités d'investissement (acquisition/cession d'actifs LT et placements), (3) activités de financement (changements dans capitaux propres et emprunts).",
@@ -23475,12 +23475,12 @@
               "question": "Selon IAS 7, comment doit-on classer les intérêts payés ?",
               "options": [
                 "A. Toujours en activités de financement",
-                "B. Au choix : exploitation OU financement (politique comptable cohérente)",
+                "B. Au choix : exploitation ou financement",
                 "C. Toujours en activités d'exploitation",
-                "D. Toujours en activités d'investissement"
+                "D. Toujours en activités d'investissement, comme les intérêts reçus"
               ],
               "answer": 1,
-              "explanation": "IAS 7.31-33 laisse un choix de politique comptable pour les intérêts payés : exploitation ou financement. Idem pour les intérêts reçus (exploitation ou investissement) et les dividendes. Le choix doit être cohérent d'une période à l'autre. Les impôts sur le résultat vont normalement en exploitation.",
+              "explanation": "IAS 7.33 (version applicable jusqu'en 2026) : les intérêts payés peuvent être classés en activités d'exploitation ou de financement, selon une politique appliquée de façon constante. ⚠️ Dès les exercices ouverts au 1.1.2027, les amendements d'IAS 7 liés à IFRS 18 suppriment ce choix pour la plupart des entités : intérêts payés en financement, intérêts et dividendes reçus en investissement (sauf entités dont l'activité principale est d'investir ou de financer).",
               "difficulty": "medium",
               "section_id": "ias7_s3"
             },
@@ -23515,9 +23515,9 @@
               "question": "Depuis 2017, IAS 7.44A-E rend obligatoire un type d'information particulier. Lequel ?",
               "options": [
                 "A. La présentation simultanée des deux méthodes (directe et indirecte)",
-                "B. Une analyse de sensibilité aux taux d'intérêt",
-                "C. Un rapprochement entre soldes d'ouverture et clôture des passifs de financement",
-                "D. La ventilation par segment géographique"
+                "B. Une analyse de sensibilité des flux aux variations des taux d'intérêt",
+                "C. Le rapprochement des passifs issus du financement",
+                "D. Un tableau des flux prévisionnels sur trois ans, établi par la direction"
               ],
               "answer": 2,
               "explanation": "IAS 7.44A-E (depuis 2017) impose un rapprochement détaillé des passifs de financement entre l'ouverture et la clôture, distinguant les flux de trésorerie réels des variations non-cash (acquisitions, écarts de conversion, ajustements de JV, intérêts courus). C'est un outil clé pour les analystes pour comprendre la dynamique de l'endettement.",
@@ -23749,8 +23749,8 @@
               "question": "Quel est le traitement comptable d'un changement de méthode comptable selon IAS 8.19 ?",
               "options": [
                 "A. Application prospective (uniquement périodes futures)",
-                "B. Application rétrospective (retraitement des comparatifs + 3e bilan)",
-                "C. Application différée (transition sur 5 ans)",
+                "B. Application rétrospective (comparatifs retraités)",
+                "C. Une application différée, avec une transition étalée sur cinq ans",
                 "D. Application uniquement à la période en cours sans retraitement"
               ],
               "answer": 1,
@@ -23788,10 +23788,10 @@
               "type": "mcq",
               "question": "Une erreur significative est découverte en 2025 affectant les charges sociales de 2023 et 2024 (sous-évaluation). Quel traitement IAS 8 impose-t-il ?",
               "options": [
-                "A. Comptabiliser la totalité de la correction en charges 2025",
+                "A. Comptabiliser toute la correction en charges de l'exercice 2025, sans retraitement",
                 "B. Étaler la correction sur 5 ans à partir de 2025",
-                "C. Retraiter rétrospectivement les comparatifs 2024 et ajuster les résultats non distribués d'ouverture",
-                "D. Ignorer si l'erreur est inférieure à 1% du résultat"
+                "C. Retraiter les comparatifs et les résultats non distribués d'ouverture",
+                "D. Mentionner l'erreur en annexe uniquement, sans corriger les chiffres publiés"
               ],
               "answer": 2,
               "explanation": "IAS 8.42-43 impose la correction RÉTROSPECTIVE : retraiter les périodes comparatives présentées (2024) et ajuster les soldes d'ouverture des actifs/passifs/capitaux propres de la période la plus ancienne. Pour les périodes antérieures non présentées (2023 ici), l'effet cumulé est ajusté contre les résultats non distribués d'ouverture.",
@@ -23803,8 +23803,8 @@
               "type": "mcq",
               "question": "Selon IAS 16.61, un changement de méthode d'amortissement (linéaire vers dégressif) est traité comme :",
               "options": [
-                "A. Un changement d'estimation comptable (prospectif)",
-                "B. Un changement de méthode comptable rétrospectif",
+                "A. Un changement d'estimation",
+                "B. Un changement de méthode comptable, appliqué rétrospectivement",
                 "C. Une correction d'erreur",
                 "D. Un retraitement systématique sur 3 ans"
               ],
@@ -23999,9 +23999,9 @@
               "question": "Selon IAS 10, un événement postérieur AJUSTABLE est défini comme :",
               "options": [
                 "A. Un événement favorable survenu avant la clôture",
-                "B. Un événement reflétant des conditions apparues après la clôture",
-                "C. Un événement qui confirme des conditions qui existaient déjà à la date de clôture",
-                "D. Tout événement matériel postérieur à la clôture"
+                "B. Un événement reflétant des conditions apparues après la date de clôture",
+                "C. Il confirme une situation existant à la clôture",
+                "D. Tout événement significatif survenu avant la publication des comptes"
               ],
               "answer": 2,
               "explanation": "IAS 10.8 définit les événements ajustables (adjusting) comme ceux qui CONFIRMENT des conditions qui existaient déjà à la date de clôture. Les non-ajustables (IAS 10.10) reflètent des conditions APPARUES APRÈS. La question clé : la condition existait-elle déjà à la clôture ou est-elle apparue après ?",
@@ -24023,9 +24023,9 @@
               "type": "mcq",
               "question": "Le 15.02.2026, un incendie détruit l'usine principale (VC CHF 15M). La clôture est au 31.12.2025. Quel est le traitement ?",
               "options": [
-                "A. Non ajustable : pas d'ajustement, mention en annexe si significatif",
+                "A. Non ajustable : mention en annexe",
                 "B. Ajustable : déprécier l'usine au 31.12.2025",
-                "C. Provision IAS 37 à constituer rétroactivement",
+                "C. Une provision IAS 37 constituée rétroactivement",
                 "D. Ignorer car postérieur"
               ],
               "answer": 0,
@@ -24039,9 +24039,9 @@
               "question": "Selon IAS 10.12-13, comment traiter les dividendes proposés par le CA après la date de clôture mais avant l'autorisation de publication ?",
               "options": [
                 "A. Comptabiliser une dette au bilan de clôture",
-                "B. Imputer directement contre les résultats non distribués",
+                "B. Les imputer directement contre les résultats non distribués de clôture",
                 "C. Activer comme actif différé",
-                "D. Non ajustable : pas de dette au bilan, mention en annexe"
+                "D. Non ajustable : pas de dette"
               ],
               "answer": 3,
               "explanation": "IAS 10.12-13 : les dividendes déclarés/proposés après la clôture NE constituent PAS une dette au bilan car l'obligation naît seulement de l'approbation par l'AG. C'est un événement non ajustable, mention en annexe : montant et date de proposition. Le dividende sera comptabilisé comme dette dans la période suivante après l'AG.",
@@ -24063,7 +24063,7 @@
               "type": "mcq",
               "question": "À quelle date un événement cesse-t-il d'être dans le champ d'application d'IAS 10 ?",
               "options": [
-                "A. À la date d'autorisation de publication des états financiers (par le CA ou organe équivalent)",
+                "A. À l'autorisation de publication",
                 "B. À la date de clôture",
                 "C. À la date d'approbation par l'AG",
                 "D. À la date de dépôt au registre du commerce"
@@ -24078,9 +24078,9 @@
               "type": "mcq",
               "question": "Stock évalué à coût CHF 100 et VNR estimée CHF 95 au 31.12.2025. Le 10.01.2026, ces stocks sont vendus à CHF 80. Quel traitement ?",
               "options": [
-                "A. Non ajustable : l'événement de vente est postérieur",
-                "B. Activer la perte en charge financière 2026 uniquement",
-                "C. Ajustable : la vente confirme que la VNR au 31.12.2025 était de 80",
+                "A. Non ajustable, la vente étant postérieure à la date de clôture",
+                "B. Comptabiliser la perte en charges financières de l'exercice 2026",
+                "C. Ajustable : VNR de 80 au 31.12",
                 "D. Aucun traitement requis"
               ],
               "answer": 2,
@@ -24299,10 +24299,10 @@
               "type": "mcq",
               "question": "IAS 12 utilise quelle méthode pour calculer l'impôt différé ?",
               "options": [
-                "A. La méthode du report fixe (income statement method)",
+                "A. La méthode du report fixe, fondée sur le compte de résultat",
                 "B. La méthode des flux fiscaux actualisés",
                 "C. La méthode du taux moyen pondéré",
-                "D. La méthode du report variable basée sur le bilan (balance sheet liability method)"
+                "D. L'approche bilan (report variable)"
               ],
               "answer": 3,
               "explanation": "IAS 12 utilise la méthode du BILAN (balance sheet liability method) : on compare la valeur comptable IFRS et la base fiscale de chaque actif/passif. La différence × le taux d'impôt attendu = DTA ou DTL. C'est différent de l'ancienne méthode du compte de résultat (income statement method) qui se basait sur les différences temporaires de produits/charges.",
@@ -24341,8 +24341,8 @@
               "options": [
                 "A. Systématiquement, sans condition",
                 "B. Uniquement si l'entité est cotée",
-                "C. Uniquement si le taux d'impôt est supérieur à 20%",
-                "D. Uniquement si des bénéfices imposables futurs probables existent pour utiliser le DTA"
+                "C. Uniquement si le taux d'impôt applicable est supérieur à 20 %",
+                "D. Si des bénéfices imposables futurs sont probables"
               ],
               "answer": 3,
               "explanation": "IAS 12.24 conditionne la comptabilisation d'un DTA à la PROBABILITÉ que des bénéfices imposables futurs soient disponibles pour permettre son utilisation. Preuve possible : DTL suffisants se renversant dans la même période, projections de bénéfices fiables, opportunités de planification fiscale. Une réévaluation est exigée à chaque clôture (IAS 12.56).",
@@ -24364,9 +24364,9 @@
               "type": "mcq",
               "question": "Une entité a CHF 2M de pertes fiscales reportables (taux 20%). Quelle est la condition principale pour comptabiliser un DTA de 400k ?",
               "options": [
-                "A. Qu'il soit probable que des bénéfices imposables futurs suffisants permettent l'utilisation",
-                "B. Que la perte soit antérieure à 5 ans",
-                "C. Que l'entité soit en redressement",
+                "A. Des bénéfices imposables futurs probables",
+                "B. Que la perte fiscale soit antérieure à cinq ans au moins",
+                "C. Que l'entité soit en procédure de redressement judiciaire",
                 "D. Aucune condition spécifique"
               ],
               "answer": 0,
@@ -24605,9 +24605,9 @@
               "type": "mcq",
               "question": "Selon IAS 16.43, un actif dont les composants ont des durées d'utilité différentes doit être :",
               "options": [
-                "A. Amorti dans son ensemble selon la durée moyenne",
+                "A. Amorti dans son ensemble selon la durée moyenne des composants",
                 "B. Amorti uniquement sur la plus longue durée",
-                "C. Amorti par composants séparés (chacun selon sa durée d'utilité)",
+                "C. Amorti par composant",
                 "D. Amorti uniquement sur la plus courte durée"
               ],
               "answer": 2,
@@ -24630,10 +24630,10 @@
               "type": "mcq",
               "question": "Quels coûts doivent être EXCLUS du coût initial d'une IC selon IAS 16.19 ?",
               "options": [
-                "A. Les coûts de transport et d'installation",
+                "A. Les coûts de transport et d'installation sur le site",
                 "B. Les droits de douane non récupérables",
                 "C. Les tests de bon fonctionnement",
-                "D. Les coûts d'introduction d'un nouveau produit (publicité)"
+                "D. Le lancement d'un produit (publicité)"
               ],
               "answer": 3,
               "explanation": "IAS 16.19-20 exclut du coût des IC : coûts d'ouverture d'une nouvelle installation, coûts d'introduction d'un nouveau produit (publicité, formation), frais administratifs et généraux, pertes d'exploitation initiales. Ces coûts vont en charges de la période. Les coûts de transport, installation et tests de bon fonctionnement, eux, sont activables.",
@@ -24645,10 +24645,10 @@
               "type": "mcq",
               "question": "Sous le modèle de la réévaluation IAS 16, une plus-value de réévaluation est comptabilisée :",
               "options": [
-                "A. En OCI (réserve de réévaluation, non recyclable)",
+                "A. En OCI (réserve de réévaluation)",
                 "B. Au P&L (résultat net)",
                 "C. En diminution du goodwill",
-                "D. Directement contre les résultats non distribués"
+                "D. Directement contre les résultats non distribués, sans passer par l'OCI"
               ],
               "answer": 0,
               "explanation": "IAS 16.39 : la plus-value de réévaluation est portée en OCI dans la 'réserve de réévaluation', NON RECYCLABLE. À la cession ou décomptabilisation, la réserve est transférée directement aux résultats non distribués (sans passer par le P&L). En cas de baisse postérieure, on absorbe d'abord la réserve OCI, puis l'excédent va au P&L.",
@@ -24685,10 +24685,10 @@
               "type": "mcq",
               "question": "Le terrain sur lequel est construit un bâtiment industriel doit être :",
               "options": [
-                "A. Amorti sur 50 ans (durée du bâtiment)",
+                "A. Amorti sur 50 ans, comme le bâtiment",
                 "B. Amorti sur 30 ans (durée fiscale)",
-                "C. Amorti uniquement si réévalué",
-                "D. Pas amorti (durée d'utilité illimitée)"
+                "C. Amorti uniquement s'il est réévalué",
+                "D. Non amorti"
               ],
               "answer": 3,
               "explanation": "Les terrains ont une durée d'utilité illimitée et ne sont PAS amortis (IAS 16.58). Ils sont enregistrés et amortis séparément du bâtiment qui le surplombe. Exception : les carrières, sites d'enfouissement ou terrains soumis à un démantèlement où une fraction est consommée par l'activité.",
@@ -24912,10 +24912,10 @@
               "type": "mcq",
               "question": "Quelle méthode actuarielle IAS 19.67 impose-t-il pour calculer la PBO d'un régime à prestations définies ?",
               "options": [
-                "A. Méthode des cotisations dues",
+                "A. La méthode des cotisations dues",
                 "B. Méthode du coût moyen pondéré",
-                "C. Méthode des unités de crédit projetées (Projected Unit Credit)",
-                "D. Méthode des annuités constantes"
+                "C. Les unités de crédit projetées",
+                "D. La méthode des annuités constantes actualisées"
               ],
               "answer": 2,
               "explanation": "IAS 19.67-68 impose la méthode des unités de crédit projetées (Projected Unit Credit Method, PUCM). Elle considère chaque période de service comme générant une unité supplémentaire de droit à prestation, et évalue chaque unité séparément pour aboutir à la PBO totale. Hypothèses : taux d'actualisation (obligations corporates haute qualité), augmentations salariales, mortalité, rotation.",
@@ -24927,9 +24927,9 @@
               "type": "mcq",
               "question": "Le coût total d'un plan à prestations définies se décompose en 3 composantes. Laquelle va en OCI (non recyclable) ?",
               "options": [
-                "A. Réévaluations (écarts actuariels et rendement des actifs hors intérêts nets)",
+                "A. Les réévaluations (écarts actuariels)",
                 "B. Coût des services courants",
-                "C. Intérêts nets sur le passif net",
+                "C. Les intérêts nets sur le passif (actif) net au titre des prestations",
                 "D. Coût des services passés"
               ],
               "answer": 0,
@@ -24952,9 +24952,9 @@
               "type": "mcq",
               "question": "Si un régime à prestations définies est en EXCÉDENT (actifs > PBO), comment l'actif net est-il limité (IFRIC 14) ?",
               "options": [
-                "A. Pas de limite, l'excédent est entièrement reconnu",
-                "B. Limité à la valeur actuelle des avantages économiques disponibles (remboursements ou réductions de cotisations futures)",
-                "C. Limité à 50% de la PBO",
+                "A. Aucune limite : l'excédent est entièrement comptabilisé à l'actif",
+                "B. Au plafond des avantages économiques disponibles",
+                "C. Il est limité à 50 % de l'excédent, par prudence",
                 "D. Limité à 10% du total bilan"
               ],
               "answer": 1,
@@ -24967,8 +24967,8 @@
               "type": "mcq",
               "question": "Sous Swiss GAAP RPC 16, l'engagement de prévoyance est calculé :",
               "options": [
-                "A. Sur la base des comptes statutaires de la caisse de pension (excédent/découvert)",
-                "B. Avec un calcul actuariel indépendant similaire à IAS 19",
+                "A. D'après les comptes de la caisse (excédent/découvert)",
+                "B. Avec un calcul actuariel indépendant similaire à IAS 19 (unités de crédit projetées)",
                 "C. À la juste valeur des actifs uniquement",
                 "D. Au coût historique des cotisations versées"
               ],
@@ -25134,8 +25134,8 @@
               "type": "mcq",
               "question": "Selon IAS 20.7, quelles sont les deux conditions cumulatives pour comptabiliser une subvention publique ?",
               "options": [
-                "A. Assurance raisonnable du respect des conditions ET assurance raisonnable de la réception",
-                "B. Subvention reçue en cash ET conditions remplies",
+                "A. Respect des conditions et réception raisonnablement assurés",
+                "B. La subvention est reçue en trésorerie et toutes les conditions sont déjà remplies",
                 "C. Décaissement effectif ET certitude juridique",
                 "D. Approbation du conseil ET enregistrement fiscal"
               ],
@@ -25160,8 +25160,8 @@
               "question": "Subvention de CHF 200 reçue pour un équipement de CHF 1'000 amortissable sur 10 ans. Avec la méthode BRUTE, quel est l'impact net annuel sur le P&L ?",
               "options": [
                 "A. Charge nette de 100 (amortissement intégral)",
-                "B. Charge nette de 80 (100 amortissement - 20 reprise)",
-                "C. Charge nette de 120 (avec frais financiers)",
+                "B. Charge nette de 80 (100 − 20)",
+                "C. Charge nette de 120 (frais financiers inclus)",
                 "D. Aucune charge (compensation totale)"
               ],
               "answer": 1,
@@ -25184,8 +25184,8 @@
               "type": "mcq",
               "question": "Quelle est la philosophie de comptabilisation d'une subvention publique selon IAS 20 ?",
               "options": [
-                "A. Income approach : en produit sur les périodes où sont comptabilisés les coûts connexes",
-                "B. Capital approach : directement en capitaux propres",
+                "A. En produit au rythme des coûts qu'elle compense",
+                "B. Capital approach : directement en capitaux propres, sans passer par le résultat",
                 "C. Cash approach : produit lors de l'encaissement",
                 "D. Conservatism approach : différée jusqu'à la fin de la condition"
               ],
@@ -25201,8 +25201,8 @@
               "options": [
                 "A. En produit immédiat dès réception",
                 "B. En diminution directe des capitaux propres",
-                "C. En provision IAS 37 jusqu'à la fin du contrat",
-                "D. En produit sur les périodes où les charges salariales connexes sont comptabilisées"
+                "C. En provision IAS 37 jusqu'à la fin de la période couverte par la subvention",
+                "D. En produit avec les charges salariales liées"
               ],
               "answer": 3,
               "explanation": "Subvention liée au RÉSULTAT : reconnue en produit sur les mêmes périodes que les charges qu'elle compense (IAS 20.20). Présentation au CR : soit séparément en 'autres produits', soit en déduction des charges concernées. Le timing suit le matching avec les charges, pas la date de réception.",
@@ -25359,9 +25359,9 @@
               "question": "La monnaie fonctionnelle d'une entité, selon IAS 21.8 :",
               "options": [
                 "A. Est un choix libre de la direction",
-                "B. Est un FAIT déterminé par l'environnement économique principal",
+                "B. Un fait, selon l'environnement économique",
                 "C. Est obligatoirement la monnaie du pays du siège",
-                "D. Doit toujours être la même que la monnaie de présentation"
+                "D. Elle doit toujours être identique à la monnaie de présentation des états financiers"
               ],
               "answer": 1,
               "explanation": "IAS 21.9-14 : la monnaie fonctionnelle est un FAIT objectif, pas un choix. Elle est déterminée par les indicateurs de l'environnement économique principal : monnaie qui influence les prix de vente, monnaie des coûts de main-d'œuvre/matières, monnaie des financements. La monnaie de PRÉSENTATION (IAS 21.38), elle, est un choix libre de l'entité.",
@@ -25384,8 +25384,8 @@
               "question": "Lors de la conversion des états financiers d'une filiale étrangère, quel cours s'applique aux PRODUITS et CHARGES ?",
               "options": [
                 "A. Cours de clôture",
-                "B. Cours historique de chaque transaction",
-                "C. Cours moyen de la période (par simplification)",
+                "B. Le cours historique de chaque transaction individuelle",
+                "C. Le cours moyen (approximation)",
                 "D. Cours de la date d'arrêté"
               ],
               "answer": 2,
@@ -25411,7 +25411,7 @@
                 "A. Au cours de clôture",
                 "B. Au cours moyen de la période",
                 "C. Au cours moyen mobile",
-                "D. Au cours historique de la transaction"
+                "D. Au cours historique"
               ],
               "answer": 3,
               "explanation": "IAS 21.23(b) : les postes non monétaires au coût historique restent évalués au cours HISTORIQUE de la transaction d'origine. Pas de variation due aux fluctuations de change ultérieures. Cohérent avec l'évaluation au coût : ni le coût ni le cours ne sont réajustés.",
@@ -25637,10 +25637,10 @@
               "type": "mcq",
               "question": "Pour un emprunt SPÉCIFIQUE à un actif qualifié, quel est le montant à incorporer ?",
               "options": [
-                "A. Les intérêts réels MOINS les produits de placement temporaire des fonds non encore utilisés",
-                "B. La totalité des intérêts réels payés",
+                "A. Intérêts réels moins produits de placement",
+                "B. La totalité des intérêts réellement payés sur l'emprunt",
                 "C. Un taux moyen pondéré du marché",
-                "D. Aucun montant, on impute en charges"
+                "D. Aucun montant : on impute tout en charges financières de l'exercice"
               ],
               "answer": 0,
               "explanation": "IAS 23.12 : pour un emprunt spécifique, le montant à capitaliser = intérêts réels payés MOINS les produits de placement temporaire des fonds empruntés non encore utilisés. Logique : si l'argent dort temporairement et rapporte des intérêts, ces produits réduisent le coût net à capitaliser. Pour les emprunts généraux, on applique un taux de capitalisation à la dépense moyenne.",
@@ -25663,9 +25663,9 @@
               "question": "Pour des emprunts GÉNÉRAUX utilisés pour financer un actif qualifié, comment calculer le montant à capitaliser ?",
               "options": [
                 "A. Intérêts réels totaux des emprunts généraux",
-                "B. Coût d'emprunt du marché applicable à l'actif",
+                "B. Le coût d'emprunt du marché applicable à un emprunt de même durée",
                 "C. Taux fiscal multiplié par la VC de l'actif",
-                "D. Dépenses sur l'actif × taux de capitalisation (moyenne pondérée des coûts d'emprunt)"
+                "D. Dépenses × taux de capitalisation moyen"
               ],
               "answer": 3,
               "explanation": "IAS 23.14 : pour les emprunts généraux, le montant capitalisable = dépenses moyennes sur l'actif × TAUX DE CAPITALISATION (moyenne pondérée des coûts d'emprunt généraux de la période). Plafond : ne peut pas dépasser le total réel des coûts d'emprunt. Cela évite la sur-capitalisation quand les emprunts ne sont pas spécifiquement liés à l'actif.",
@@ -25843,9 +25843,9 @@
               "type": "mcq",
               "question": "Quelle catégorie de rémunération des principaux dirigeants doit obligatoirement être divulguée séparément selon IAS 24 ?",
               "options": [
-                "Avantages a court terme, post-emploi, long terme, indemnités de cessation et paiements en actions",
+                "Court terme, post-emploi, long terme, fin de contrat, actions",
                 "Uniquement les salaires fixes",
-                "Uniquement les bonus annuels en cash",
+                "Uniquement les bonus annuels en espèces versés aux dirigeants",
                 "Seulement les retraites complémentaires"
               ],
               "answer": 0,
@@ -25868,8 +25868,8 @@
               "type": "mcq",
               "question": "Quelles informations doivent être divulguées au titre d'IAS 24 pour les transactions avec parties liées ?",
               "options": [
-                "Uniquement le montant total des transactions",
-                "Nature de la relation, nature et montant des transactions, soldes, conditions et provisions sur créances",
+                "Uniquement le montant total des transactions de l'exercice",
+                "Relation, nature et montant, soldes, conditions",
                 "Uniquement les soldes au bilan",
                 "Aucune information n'est exigée si la transaction est inférieure a un seuil"
               ],
@@ -25884,9 +25884,9 @@
               "question": "Une entité doit divulguer la relation mère-filiale même en l'absence de transactions de l'exercice :",
               "options": [
                 "Faux, sans transaction aucune mention n'est requise",
-                "Vrai, IAS 24 exige la mention de la relation et le nom de la mère ultime",
+                "Vrai : relation et société mère ultime",
                 "Uniquement si la filiale est cotée",
-                "Uniquement pour les entités consolidées par intégration globale"
+                "Uniquement pour les filiales détenues à 100 % par une société cotée"
               ],
               "answer": 1,
               "explanation": "IAS 24.13-14 impose la mention des relations mère-filiale (nom de la mère directe et de la mère ultime) indépendamment de l'existence de transactions. Le simple lien de contrôle est une information exigée.",
@@ -26037,10 +26037,10 @@
               "type": "mcq",
               "question": "Selon IAS 32, le critère DÉCISIF pour classer un instrument financier en dette plutôt qu'en capitaux propres est :",
               "options": [
-                "La durée contractuelle",
-                "L'existence d'une obligation contractuelle de remettre de la trésorerie ou un autre actif financier",
-                "Le taux d'intérêt contractuel",
-                "Le montant nominal"
+                "La durée contractuelle de l'instrument financier",
+                "Remettre de la trésorerie (obligation)",
+                "Le taux d'intérêt contractuel prévu",
+                "Le montant nominal de l'émission"
               ],
               "answer": 1,
               "explanation": "IAS 32.16 : un instrument est une dette s'il existe une obligation contractuelle de remettre trésorerie/actif financier ou d'échanger dans des conditions potentiellement défavorables. C'est l'absence d'obligation qui caractérise les FP.",
@@ -26077,10 +26077,10 @@
               "type": "mcq",
               "question": "Pour une obligation convertible en actions émise au pair de 100M, IAS 32.28-32 impose :",
               "options": [
-                "Une séparation : composante dette = VA des flux au taux de marche sans conversion ; composante FP = résiduel",
+                "Séparer dette (VA au taux du marché) et fonds propres (résidu)",
                 "Un classement intégral en dette",
                 "Un classement intégral en FP",
-                "Une comptabilisation a la juste valeur par P&L globale"
+                "Une comptabilisation intégrale à la juste valeur par le résultat (FVTPL)"
               ],
               "answer": 0,
               "explanation": "IAS 32.31-32 exige la séparation OBLIGATOIRE de l'instrument compose : composante dette évaluée aux flux contractuels actualisés au taux d'emprunt sans option de conversion, composante FP = résiduel (prix d'émission - dette).",
@@ -26103,9 +26103,9 @@
               "question": "Selon IAS 32.42, deux conditions doivent être cumulativement remplies pour compenser un actif et un passif financiers. Lesquelles ?",
               "options": [
                 "Même contrepartie et même échéance",
-                "Identité du teneur de compte et identité des montants",
+                "L'identité du teneur de compte et l'inscription au même registre",
                 "Autorisation de l'auditeur et même devise",
-                "Droit juridiquement exécutoire de compenser ET intention de régler net ou simultanément"
+                "Droit exécutoire et intention de régler net"
               ],
               "answer": 3,
               "explanation": "IAS 32.42 : compensation possible UNIQUEMENT si (1) droit juridique inconditionnel et exécutoire de compenser et (2) intention de régler sur base nette ou simultanément. Les deux conditions sont cumulatives.",
@@ -26272,9 +26272,9 @@
               "question": "IAS 33 (résultat par action - BPA) est obligatoirement applicable au sein des états financiers IFRS pour quelle catégorie d'entités ?",
               "options": [
                 "Toutes les entités soumises aux IFRS, sans exception",
-                "Uniquement les sociétés anonymes suisses cotées au SIX",
+                "Uniquement les sociétés anonymes de droit suisse soumises au contrôle ordinaire",
                 "Uniquement les groupes cotes au SMI 20",
-                "Les sociétés cotées ou qui preparent leurs EF en vue d'une cotation"
+                "Les sociétés cotées ou en voie de cotation"
               ],
               "answer": 3,
               "explanation": "IAS 33.2 : champ d'application limite aux entités dont les actions ordinaires (ou potentielles) sont cotées, ou qui deposent leurs EF en vue d'une cotation. Les non cotées n'ont pas l'obligation mais peuvent publier volontairement un BPA, en respectant alors intégralement les règles d'IAS 33 pour éviter la confusion.",
@@ -26312,8 +26312,8 @@
               "question": "Sous IAS 33, le BPA dilue inclut un instrument financier convertible (option, warrant, obligation convertible) UNIQUEMENT s'il est :",
               "options": [
                 "Antidilutif",
-                "Dilutif (i.e. il fait baisser le BPA)",
-                "Cote en bourse",
+                "Dilutif",
+                "Coté en bourse",
                 "Détenu par les dirigeants"
               ],
               "answer": 1,
@@ -26327,9 +26327,9 @@
               "question": "Selon le treasury stock method d'IAS 33 pour les options/warrants, le nombre d'actions supplémentaires reconnu pour le BPA dilue est :",
               "options": [
                 "Le nombre total d'options en circulation",
-                "Le nombre d'actions au prix d'exercice",
+                "Le nombre d'actions au prix d'exercice, sans ajustement",
                 "Zero, les options sont toujours antidilutives",
-                "Nombre d'options exercees - nombre rachetable au cours moyen avec le produit d'exercice"
+                "Options exercées − actions rachetables au cours moyen"
               ],
               "answer": 3,
               "explanation": "IAS 33.45-47 : on suppose l'exercice des options, et le produit d'exercice est censé racheter des actions au cours moyen de la période. La dilution = options exercees - actions rachetées. Si options dans la monnaie -> dilutif.",
@@ -26646,8 +26646,8 @@
               "type": "mcq",
               "question": "Lorsqu'une perte de valeur est constatée au niveau d'une UGT contenant du goodwill, l'allocation est :",
               "options": [
-                "Proportionnelle a tous les actifs y compris goodwill",
-                "D'abord au goodwill, puis proportionnelle aux autres actifs de l'UGT",
+                "Proportionnellement à tous les actifs, goodwill compris",
+                "D'abord au goodwill, puis au prorata",
                 "D'abord aux autres actifs, puis au goodwill",
                 "Uniquement au goodwill, jamais aux autres actifs"
               ],
@@ -26688,8 +26688,8 @@
               "options": [
                 "Aucune disclosure spécifique",
                 "Uniquement le montant comptable",
-                "Hypothèses clés, taux d'actualisation, croissance terminale et analyse de sensibilité",
-                "Le ratio VC / chiffre d'affaires"
+                "Hypothèses clés, taux, croissance et sensibilité",
+                "Le ratio entre la valeur comptable et le chiffre d'affaires de l'UGT"
               ],
               "answer": 2,
               "explanation": "IAS 36.134 impose pour chaque UGT contenant goodwill ou incorporel a durée indéterminée significatif : VC, base de la valeur recouvrable (VIU vs FVLCD), hypothèses clés (croissance, marges), taux d'actualisation et analyse de sensibilité.",
@@ -26932,8 +26932,8 @@
               "type": "mcq",
               "question": "Quelles sont les 3 conditions cumulatives pour comptabiliser une provision selon IAS 37.14 ?",
               "options": [
-                "Obligation possible, sortie certaine, accord de l'auditeur",
-                "Obligation actuelle, sortie probable de ressources, estimation fiable",
+                "Une obligation possible, une sortie certaine et l'accord de l'auditeur externe",
+                "Obligation actuelle, sortie probable, estimation fiable",
                 "Approbation du CA, sortie probable, communication publique",
                 "Risque legal, jugement, montant fixe"
               ],
@@ -26957,8 +26957,8 @@
               "type": "mcq",
               "question": "Selon IAS 37.36-47, comment est evalue le montant d'une provision a la date de clôture, et quelle méthode est utilisée selon le type d'obligation ?",
               "options": [
-                "La meilleure estimation a la date de clôture, actualisée si l'effet du temps est significatif",
-                "La valeur maximale possible de la sortie de ressources future",
+                "Meilleure estimation, actualisée si significatif",
+                "La valeur maximale possible de la sortie de ressources future, par prudence",
                 "Le montant nominal sans actualisation systématique",
                 "Le montant minimum du litige potentiel"
               ],
@@ -26972,10 +26972,10 @@
               "type": "mcq",
               "question": "Le 15.12.N le CA decide a huis clos de fermer une branche. L'annonce publique aux salariés est faite le 20.01.N+1. La provision de restructuration au 31.12.N est :",
               "options": [
-                "Comptabilisée a la date de la décision du CA",
+                "Comptabilisée à la date de la décision du CA",
                 "Comptabilisée uniquement si plan detaille existe",
                 "Comptabilisée pour la moitié des coûts estimés",
-                "PAS comptabilisée : pas d'attente fondée créée chez les tiers"
+                "Non : aucune attente fondée chez les tiers"
               ],
               "answer": 3,
               "explanation": "IAS 37.72-83 : la décision du CA NE SUFFIT PAS. Il faut un plan detaille ET une attente fondée créée chez les personnes affectées (annonce publique ou début d'exécution). Sans annonce externe au 31.12.N, pas de provision.",
@@ -27012,10 +27012,10 @@
               "type": "mcq",
               "question": "Un procès en cours, risque de condamnation 600k, probabilité estimée 40%. Sous IAS 37 :",
               "options": [
-                "Provision de 600k au bilan",
-                "Provision de 240k (600 x 40%)",
-                "Pas de provision (probable signifie >50%) ; passif éventuel mentionne en annexe",
-                "Provision de 300k pour prudence"
+                "Une provision de 600k au bilan",
+                "Une provision de 240k (600 × 40 %)",
+                "Passif éventuel en annexe",
+                "Une provision de 300k par prudence"
               ],
               "answer": 2,
               "explanation": "Probable au sens IAS 37 = plus probable qu'improbable, soit > 50%. A 40%, le critère de probabilité n'est pas rempli. Pas de provision. Mention obligatoire en annexe comme passif éventuel (sauf si improbable au point d'être négligeable).",
@@ -27027,8 +27027,8 @@
               "type": "mcq",
               "question": "Pour une plateforme petroliere installee 20 ans avec coût de démantèlement estime a 10M dans 20 ans (taux 4%), la provision initiale sous IAS 37 et IAS 16 est :",
               "options": [
-                "Provision de ~4.56M (VA), contrepartie ajoutée au coût de l'actif IAS 16",
-                "Provision de 10M, contrepartie en charges immédiates",
+                "~4.56 M (VA), ajoutés au coût de l'actif",
+                "Une provision de 10 M, avec une contrepartie en charges immédiates",
                 "Aucune provision tant que le démantèlement n'est pas commence",
                 "Provision de 10M, contrepartie en OCI"
               ],
@@ -27270,7 +27270,7 @@
               "question": "Selon IAS 38.12, une immobilisation incorporelle est considérée comme identifiable - condition préalable a sa comptabilisation - si :",
               "options": [
                 "Elle est physiquement séparable du reste de l'entité",
-                "Elle est séparable OU résulte de droits contractuels/légaux",
+                "Séparable ou issue de droits contractuels",
                 "Elle est cotée sur un marche actif",
                 "Son coût d'acquisition est significatif"
               ],
@@ -27295,7 +27295,7 @@
               "question": "Le mnémonique FIACRE est utilise pour mémoriser les 6 conditions cumulatives d'activation des frais de développement (IAS 38.57). Que represente chacune des 6 lettres ?",
               "options": [
                 "Fiabilité, Identification, Actif, Coût, Résultat, Échéance",
-                "Faisabilité, Investissement, Actif, Cession, Reprise, Estimation",
+                "Faisabilité, Intérêt, Accord, Contrôle, Rentabilité et Estimation des coûts",
                 "Faisabilité, Intention, Aptitude, Capacité, Ressources, Évaluation",
                 "Forme, Intention, Apparence, Coût, Règlement, Évaluation"
               ],
@@ -27324,8 +27324,8 @@
               "type": "mcq",
               "question": "Quel est le traitement comptable applicable a une immobilisation incorporelle dont la durée d'utilité est qualifiée d'INDÉTERMINÉE selon IAS 38 ?",
               "options": [
-                "Pas d'amortissement, mais test de dépréciation annuel obligatoire et réévaluation annuelle de la nature indéterminée",
-                "Amortissement linéaire sur 20 ans par défaut",
+                "Pas d'amortissement, test annuel de dépréciation",
+                "Un amortissement linéaire sur 20 ans au maximum, comme en RPC",
                 "Amortissement sur 5 ans plafond, comme dans RPC 10",
                 "Charge immédiate au P&L de l'année d'acquisition"
               ],
@@ -27349,10 +27349,10 @@
               "type": "mcq",
               "question": "Lors d'un développement logiciel interne, quelle phase de coûts est ACTIVABLE sous IAS 38 ?",
               "options": [
-                "Phase de design/programmation après décision d'achever, si les 6 critères FIACRE sont remplis",
-                "Phase de recherche de concept",
-                "Formation des utilisateurs finaux",
-                "Documentation marketing du produit fini"
+                "Le développement (6 critères)",
+                "La phase de recherche de concept",
+                "La formation des utilisateurs finaux du logiciel",
+                "La documentation marketing du produit"
               ],
               "answer": 0,
               "explanation": "Recherche : charges immédiates. Développement (post-faisabilité) : activation si FIACRE. Formation utilisateurs finaux et marketing post-mise en service : charges (IAS 38.69-70). Seule la phase développement post-décision est activable. Les coûts de démarrage et de pre-exploitation sont également exclus.",
@@ -27374,10 +27374,10 @@
               "type": "mcq",
               "question": "Comment RPC 10 (Suisse) se compare-t-elle a IAS 38 quant a l'activation et l'amortissement des incorporelles ?",
               "options": [
-                "RPC 10 applique exactement les 6 critères FIACRE d'IAS 38",
+                "RPC 10 applique exactement les 6 critères FIACRE d'IAS 38, sans différence",
                 "RPC 10 interdit toute activation d'incorporel cree en interne",
                 "RPC 10 autorise les marques internes contrairement a IAS 38",
-                "RPC 10 a 4 conditions plus souples ; amortissement obligatoire 5 ans par défaut, max 20 ans, et 5 ans max pour les incorporels liés a des personnes"
+                "RPC 10 : critères plus souples, amortissement en règle 5 ans (max 20)"
               ],
               "answer": 3,
               "explanation": "RPC 10 prévoit 4 conditions (identifiable + pouvoir de disposition, profit mesurable sur plusieurs années, dépenses enregistrables séparément, fonds disponibles) - plus souples qu'IAS 38. L'amortissement est obligatoire : 5 ans par défaut, max 20 ans, et max 5 ans pour les incorporels liés a des personnes. Sous CO art. 960a, recherche en charges, développement non obligatoirement active.",
@@ -27569,8 +27569,8 @@
               "type": "mcq",
               "question": "Selon IAS 40.5, dans quel(s) but(s) un bien immobilier est-il qualifie d'immeuble de PLACEMENT et non d'immobilisation corporelle d'exploitation ?",
               "options": [
-                "Pour son occupation propre par l'entité ou ses salariés",
-                "Percevoir des loyers de tiers ET/OU bénéficier d'une appréciation du capital",
+                "Pour son occupation propre par l'entité ou par ses salariés",
+                "Pour des loyers et/ou une plus-value",
                 "Pour vente dans le cours normal d'activité (promotion immobilière)",
                 "Pour construction au compte de tiers en application d'IFRS 15"
               ],
@@ -27594,8 +27594,8 @@
               "type": "mcq",
               "question": "Sous le modèle de la juste valeur d'IAS 40, comment est determine l'amortissement annuel de l'immeuble de placement et quelle en est la conséquence ?",
               "options": [
-                "Calcule linéairement sur la durée d'utilité estimée comme sous IAS 16",
-                "Inexistant : aucun amortissement sous le modèle JV, la JV remesuree absorbe la variation de valeur",
+                "Calculé linéairement sur la durée d'utilité estimée de l'immeuble",
+                "Aucun : la variation de JV en tient lieu",
                 "Calcule sur 20 ans par défaut conformément a la regle générale",
                 "Calcule uniquement sur la durée économique résiduelle après réévaluation"
               ],
@@ -27609,8 +27609,8 @@
               "type": "mcq",
               "question": "Lors du transfert d'un actif d'IAS 16 vers IAS 40 (modèle de la juste valeur), comment est traitée la différence entre la valeur comptable et la juste valeur a la date du transfert ?",
               "options": [
-                "Comptabilisée directement au P&L de la période",
-                "Comptabilisée en OCI (comme une réévaluation IAS 16)",
+                "Directement au compte de résultat de la période",
+                "En OCI, comme une réévaluation",
                 "Imputée directement aux résultats reportés",
                 "Différée au bilan jusqu'a la cession future"
               ],
@@ -27624,8 +27624,8 @@
               "type": "mcq",
               "question": "Lors du transfert d'un immeuble d'IAS 40 (modèle JV) vers IAS 16 (commencement d'occupation propre), comment est utilisée la juste valeur a la date du transfert ?",
               "options": [
-                "Elle devient le nouveau coût presume (deemed cost) sous IAS 16, base de l'amortissement futur",
-                "Elle est ignoree et on conserve la VC initiale d'origine",
+                "Elle devient le coût présumé (deemed cost)",
+                "Elle est ignorée : on conserve la valeur comptable initiale d'origine",
                 "Elle est imputée directement au capital social",
                 "Elle genere systématiquement une perte au P&L"
               ],
@@ -27659,10 +27659,10 @@
               "type": "mcq",
               "question": "Une entité possède un bâtiment dont 80% est loue a des tiers et 20% occupe par ses propres bureaux, sans séparation légale possible. Sous IAS 40, le bâtiment est :",
               "options": [
-                "Intégralement IAS 40 si l'occupation propre est insignifiante",
-                "Intégralement IAS 16",
-                "Toujours separe en 2 lignes",
-                "Classe en stocks IAS 2"
+                "IAS 40 si l'usage propre est minime",
+                "Intégralement en IAS 16",
+                "Toujours séparé en deux lignes au bilan",
+                "Classé en stocks, l'immeuble étant destiné à la vente"
               ],
               "answer": 0,
               "explanation": "IAS 40.10 : si non séparable et occupation propre INSIGNIFIANTE -> intégralement IAS 40. Si occupation propre significative -> IAS 16. Si séparable physiquement/juridiquement -> IAS 40 + IAS 16 séparément.",
@@ -27821,9 +27821,9 @@
               "type": "mcq",
               "question": "Selon IFRS 2, un plan d'options sur actions equity-settled (regle en actions) est evalue a :",
               "options": [
-                "La JV au moment de l'exercice",
+                "La juste valeur au moment de l'exercice",
                 "Le prix d'exercice",
-                "La JV a la grant date (date d'attribution), sans réévaluation ultérieure",
+                "La JV à la date d'attribution",
                 "La valeur intrinsèque uniquement"
               ],
               "answer": 2,
@@ -27836,9 +27836,9 @@
               "type": "mcq",
               "question": "Sous IFRS 2, comment sont comptabilisés les Stock Appréciation Rights (SARs) règles en cash en fonction du cours de l'action ?",
               "options": [
-                "Equity-settled, JV figée a la grant date sans réévaluation",
+                "Equity-settled, avec une juste valeur figée à la date d'attribution",
                 "Hors champ d'IFRS 2 car non assimilable a un instrument de capital",
-                "Cash-settled : JV réévaluée a chaque clôture, contrepartie en passif",
+                "Cash-settled : JV réévaluée, au passif",
                 "Toujours en charges immédiates a l'attribution"
               ],
               "answer": 2,
@@ -27861,10 +27861,10 @@
               "type": "mcq",
               "question": "Pour un plan IFRS 2 equity-settled assorti d'une période de vesting de 4 ans (condition de service), comment est répartie la charge totale au compte de résultat ?",
               "options": [
-                "Comptabilisée intégralement a la date d'attribution (grant date)",
+                "Comptabilisée intégralement à la date d'attribution des options",
                 "Comptabilisée uniquement a la date d'exercice de l'option",
                 "Comptabilisée uniquement si et quand l'employé reste effectivement en poste",
-                "Étalée LINÉAIREMENT sur la période de vesting de 4 ans, ajustée du nombre attendu d'instruments acquis"
+                "Linéairement sur 4 ans, selon les droits attendus"
               ],
               "answer": 3,
               "explanation": "IFRS 2.14-15 : la charge correspondant a la JV grant date * nombre attendu d'instruments est étalée LINÉAIREMENT sur la période de vesting. Ajustement du nombre attendu en fonction des départs effectifs.",
@@ -28029,10 +28029,10 @@
               "type": "mcq",
               "question": "Pour qu'un actif soit classe 'held for sale' sous IFRS 5, deux conditions s'appliquent :",
               "options": [
-                "Vente décidée par le CA ET réalisée dans 24 mois",
+                "La vente est décidée par le CA et réalisée dans les 24 mois",
                 "Mise en vente publique ET cours boursier favorable",
                 "Aucune condition spécifique, simple intention suffit",
-                "Disponible pour vente immédiate dans son état actuel ET vente hautement probable"
+                "Disponible immédiatement et vente hautement probable"
               ],
               "answer": 3,
               "explanation": "IFRS 5.6-7 : deux conditions cumulatives - (1) l'actif (ou groupe destiné a être cede) est disponible pour vente immédiate dans son état actuel, (2) la vente est HAUTEMENT PROBABLE (engagement de la direction, plan actif de recherche d'acheteur, prix raisonnable, attente de vente dans les 12 mois, peu probable que des modifications significatives interviennent).",
@@ -28054,9 +28054,9 @@
               "type": "mcq",
               "question": "Au classement initial en 'held for sale' selon IFRS 5.15, comment evalue-t-on l'actif et que devient l'éventuelle perte de valeur degagee ?",
               "options": [
-                "Evalue a la juste valeur uniquement, sans perte au P&L",
+                "À la juste valeur uniquement, sans perte comptabilisée en résultat",
                 "Le plus eleve entre VC et JV nette de coûts, gain au P&L",
-                "Le plus faible entre VC (selon norme applicable, ex. IAS 16) et JV - coûts de vente, perte au P&L",
+                "Au plus bas de la VC et de la JV − coûts de vente",
                 "Au coût historique sans ajustement, transférable au prix de cession"
               ],
               "answer": 2,
@@ -28069,10 +28069,10 @@
               "type": "mcq",
               "question": "Selon IFRS 5.31-32, comment est définie une 'activité abandonnée' (discontinued operation) au sein des états financiers ?",
               "options": [
-                "Une composante de l'entité cédée/HFS qui represente une ligne d'activité/zone géographique distincte, ou un plan coordonné, ou une filiale acquise pour revente",
-                "Toute activité arrêtée dans l'exercice même partiellement",
-                "Une filiale dont la VC a baisse de plus de 50%",
-                "Tout actif simplement classe HFS sans condition supplémentaire"
+                "Une ligne d'activité ou une zone distincte cédée ou détenue en vue de la vente",
+                "Toute activité dont le chiffre d'affaires a baissé de plus de 50 % sur l'exercice",
+                "Toute filiale déficitaire depuis au moins deux exercices consécutifs",
+                "Toute activité arrêtée temporairement en raison d'une restructuration"
               ],
               "answer": 0,
               "explanation": "IFRS 5.31-32 : une activité abandonnée = composante de l'entité cédée/classe HFS, qui represente une ligne d'activité/zone géographique distincte, ou plan coordonné, ou filiale acquise pour revente. Pas tout HFS.",
@@ -28094,10 +28094,10 @@
               "type": "mcq",
               "question": "Après classement HFS, si la JV - coûts de vente remonte au-dessus de la VC initiale (avant HFS), la reprise de perte est :",
               "options": [
-                "Sans plafond",
+                "Sans aucun plafond",
                 "Toujours interdite",
-                "Plafonnée au coût historique brut",
-                "Limitée a la perte cumulée antérieurement comptabilisée"
+                "Plafonnée au coût historique brut de l'actif",
+                "Plafonnée aux pertes passées"
               ],
               "answer": 3,
               "explanation": "IFRS 5.21-22 : la reprise de perte de valeur est possible mais STRICTEMENT LIMITÉE au cumul des pertes antérieurement comptabilisées, qu'elles aient ete reconnues sous IFRS 5 (depuis le classement HFS) ou sous IAS 36 (avant classement). On ne reprend jamais au-dessus de la VC nette qui aurait existe sans dépréciation.",
@@ -28109,9 +28109,9 @@
               "type": "mcq",
               "question": "Si les critères HFS ne sont plus remplis (par ex. plan abandonne), l'actif est :",
               "options": [
-                "Maintenu en HFS sans changement",
+                "Maintenu en actif détenu en vue de la vente, sans aucun changement",
                 "Sortie immédiate du bilan",
-                "Reclasse en utilisation continue, evalue au plus faible de VC ajustée (comme s'il n'avait pas ete HFS) et valeur recouvrable",
+                "Reclassé au plus faible de la VC ajustée et de la VR",
                 "Toujours deprecie a zero"
               ],
               "answer": 2,
@@ -28271,9 +28271,9 @@
               "question": "Selon IFRS 7, les 3 grands risques a divulguer pour les instruments financiers sont :",
               "options": [
                 "Risque opérationnel, risque legal, risque réputation",
-                "Risque de change, risque pays, risque ESG",
+                "Le risque de change, le risque pays et le risque ESG de l'entité",
                 "Risque humain, risque IT, risque fraude",
-                "Risque de credit, risque de liquidité, risque de marche"
+                "Crédit, liquidité et marché"
               ],
               "answer": 3,
               "explanation": "IFRS 7.31-42 : trois grandes catégories de risques a divulguer pour les instruments financiers - (1) risque de credit (défaut de contrepartie, ECL), (2) risque de liquidité (échéances des passifs), (3) risque de marche (taux, change, prix). Les autres risques (opérationnel, réputation, ESG) sont hors champ d'IFRS 7 et relèvent d'autres normes ou du management commentary.",
@@ -28295,8 +28295,8 @@
               "type": "mcq",
               "question": "Pour la divulgation du risque de marche, qu'exige notamment IFRS 7.40-42 au-delà d'une simple description qualitative ?",
               "options": [
-                "Une simple description qualitative des risques encourus",
-                "Une analyse de sensibilité QUANTIFIÉE pour chaque type de risque (change, taux, prix)",
+                "Une simple description qualitative des risques auxquels l'entité est exposée",
+                "Une analyse de sensibilité chiffrée par type de risque",
                 "Uniquement le notionnel des dérivés",
                 "Le cours boursier de clôture"
               ],
@@ -28310,8 +28310,8 @@
               "type": "mcq",
               "question": "Pour les actifs et passifs evalues a la juste valeur de NIVEAU 3 selon IFRS 13, quelles informations spécifiques IFRS 7 (et IFRS 13.93) impose-t-il en annexe ?",
               "options": [
-                "Aucune information spécifique au-delà du total a la JV",
-                "Reconciliation des mouvements, technique d'évaluation, sensibilité aux inputs non observables, processus d'évaluation",
+                "Aucune information spécifique au-delà de celles exigées pour les niveaux 1 et 2",
+                "Rapprochement, techniques, sensibilité aux données non observables",
                 "Uniquement le total des montants a la juste valeur",
                 "Le prix de cotation observe sur le marche"
               ],
@@ -28335,9 +28335,9 @@
               "type": "mcq",
               "question": "Pour la comptabilité de couverture appliquée selon IFRS 9, quelles informations IFRS 7.21A-24G exige-t-il dans les notes annexes des états financiers ?",
               "options": [
-                "Aucune information spécifique au-delà du notionnel des dérivés",
+                "Aucune information particulière n'est exigée au-delà du montant de la réserve",
                 "Uniquement le notionnel des dérivés en circulation",
-                "Stratégie de gestion, nature des risques, instruments (notionnel, JV, variations), part inefficace, mouvement de la réserve OCI",
+                "Stratégie, risques couverts, instruments, inefficacité, réserve OCI",
                 "Le cours moyen de la devise sur l'année uniquement"
               ],
               "answer": 2,
@@ -28671,9 +28671,9 @@
               "type": "mcq",
               "question": "IFRS 9 classifie les actifs financiers selon DEUX tests cumulatifs. Lesquels déterminent la catégorie comptable (coût amorti, FVOCI, FVTPL) d'un actif ?",
               "options": [
-                "Test de durée et test de devise de denomination",
+                "Un test de durée résiduelle et un test de devise de dénomination",
                 "Test de cotation et test de liquidité",
-                "Test du business model et test SPPI (Solely Payments of Principal and Interest)",
+                "Business model et test SPPI",
                 "Test fiscal et test de comptabilité de couverture"
               ],
               "answer": 2,
@@ -28711,9 +28711,9 @@
               "type": "mcq",
               "question": "Le modèle ECL (Expected Credit Losses) d'IFRS 9 comporte 3 stades. Au STADE 2 (risque de credit significativement augmente depuis l'origine), quelle ECL est comptabilisée ?",
               "options": [
-                "ECL sur 12 mois (12-month expected credit losses)",
-                "ECL sur la durée de vie résiduelle (lifetime expected credit losses)",
-                "ECL nulle (zero) tant que le défaut n'est pas avere",
+                "Les ECL à 12 mois (12-month expected credit losses)",
+                "Les ECL sur la durée de vie",
+                "Aucune ECL (zéro) tant que la créance n'est pas en défaut",
                 "ECL au libre choix de l'entité parmi les options"
               ],
               "answer": 1,
@@ -28726,8 +28726,8 @@
               "type": "mcq",
               "question": "L'approche SIMPLIFIÉE de l'ECL d'IFRS 9 s'applique a quelles catégories d'actifs financiers, sans necessite de suivre les 3 stades ?",
               "options": [
-                "Créances clients (IFRS 15), actifs sur contrat, créances de location (IFRS 16)",
-                "Toutes les obligations cotées détenues par l'entité",
+                "Créances clients, actifs sur contrat, créances de location",
+                "Toutes les obligations cotées détenues par l'entité, quel que soit leur rating",
                 "Actions cotées détenues a court terme",
                 "Instruments dérivés de couverture"
               ],
@@ -28989,9 +28989,9 @@
               "type": "mcq",
               "question": "Selon la définition IFRS 13.9, la juste valeur est-elle un prix d'entrée ou de sortie, et selon quelle perspective est-elle déterminée ?",
               "options": [
-                "Le prix d'entrée paye lors de l'achat (entry price)",
+                "Le prix d'entrée payé lors de l'achat (entry price) par l'entité elle-même",
                 "Le coût amorti calcule au TIE",
-                "Le prix de SORTIE reçu (actif) ou paye (passif) dans une transaction normale entre intervenants de marche",
+                "Un prix de sortie, du point de vue des intervenants du marché",
                 "La valeur de remplacement a neuf"
               ],
               "answer": 2,
@@ -29004,8 +29004,8 @@
               "type": "mcq",
               "question": "Le NIVEAU 1 de la hiérarchie de juste valeur établie par IFRS 13.72-90 correspond a quel type de données d'entrée (inputs) ?",
               "options": [
-                "Données non observables fondées sur les meilleures informations disponibles",
-                "Prix cotes (non ajustés) sur un marche actif pour des actifs/passifs IDENTIQUES",
+                "Des données non observables, fondées sur les meilleures informations disponibles",
+                "Des prix cotés non ajustés (actifs identiques)",
                 "Prix cotes pour des actifs SIMILAIRES sur marche actif",
                 "Estimation interne sans référence de marche"
               ],
@@ -29029,9 +29029,9 @@
               "type": "mcq",
               "question": "Quelles sont les 3 approches d'évaluation de la juste valeur reconnues par IFRS 13.61-71 pour déterminer la JV d'un actif ou d'un passif ?",
               "options": [
-                "Coût historique, valeur d'usage, JV pure",
-                "Approche comparable, intrinsèque, regulee",
-                "Approche par le marche, par le résultat (income), par les coûts",
+                "Le coût historique, la valeur d'usage et la juste valeur pure de l'actif",
+                "Les approches comparable, intrinsèque et réglementaire selon le secteur",
+                "Marché, résultat (income), coût",
                 "Approche statique, dynamique, hybride"
               ],
               "answer": 2,
@@ -29044,8 +29044,8 @@
               "type": "mcq",
               "question": "Pour la détermination de la juste valeur d'un actif NON FINANCIER, quelle est la base de référence selon IFRS 13.27-33 ?",
               "options": [
-                "L'usage actuel et réel de l'actif par l'entité proprietaire",
-                "L'utilisation OPTIMALE (highest and best use) physiquement possible, légalement permise et financièrement faisable",
+                "L'usage actuel et réel de l'actif par l'entité qui en est propriétaire",
+                "L'utilisation optimale (highest and best use)",
                 "Le coût historique amorti net des dépréciations",
                 "Le prix de revient enregistre a l'origine"
               ],
@@ -29070,8 +29070,8 @@
               "question": "Un terrain est actuellement utilise comme parking, mais le zonage permet un usage residentiel (plus rentable). La JV est :",
               "options": [
                 "Basée sur la valeur du parking",
-                "Basée sur l'usage residentiel (highest and best use), même si l'entité n'a pas l'intention de changer",
-                "Égale a 0 puisque l'usage actuel est non rentable",
+                "Fondée sur l'usage résidentiel (utilisation optimale)",
+                "Égale à zéro, puisque l'usage résidentiel n'est pas prévu par l'entité",
                 "Égale au coût historique"
               ],
               "answer": 1,
@@ -29275,9 +29275,9 @@
               "question": "Le modèle de reconnaissance des revenus issu de contrats avec des clients selon IFRS 15.IN7 comporte combien d'étapes successives a appliquer ?",
               "options": [
                 "3 étapes : contrat, mesure, comptabilisation",
-                "7 étapes détaillées inspirees de l'ASC 606",
+                "7 étapes détaillées, inspirées de l'ancien IAS 18",
                 "Aucun nombre fixe d'étapes, modèle libre",
-                "5 étapes : contrat, OP distinctes, prix, répartition, reconnaissance"
+                "5 étapes"
               ],
               "answer": 3,
               "explanation": "IFRS 15.IN7 : modèle en 5 ÉTAPES : (1) identifier le contrat, (2) identifier les obligations de performance distinctes, (3) déterminer le prix de transaction, (4) repartir le prix entre les OP, (5) reconnaître le revenu quand chaque OP est satisfaite. S'applique a TOUS les contrats clients, du pain a la construction d'usine.",
@@ -29314,9 +29314,9 @@
               "type": "mcq",
               "question": "Selon IFRS 15.27, deux conditions cumulatives sont requises pour qu'une obligation de performance soit considérée comme DISTINCTE. Quelles sont-elles ?",
               "options": [
-                "Le bien est facturable séparément et a un prix unitaire fixe",
+                "Le bien est facturable séparément et a un prix de vente catalogue publié",
                 "Le client a paye d'avance et l'OP figure au bon de commande",
-                "Le client peut bénéficier de l'OP isolement ET l'engagement est distinct dans le contexte du contrat",
+                "Bénéfice isolé possible et engagement distinct dans le contrat",
                 "Le contrat le précise expressément par écrit"
               ],
               "answer": 2,
@@ -29329,9 +29329,9 @@
               "type": "mcq",
               "question": "Pour la détermination du prix de transaction selon IFRS 15.50-58, comment est intégrée la contrepartie variable (remises, bonus, retours, pénalités) attendue ?",
               "options": [
-                "Toujours intégrée en totalité des le contrat sans plafond",
+                "Toujours intégrée en totalité dès la conclusion du contrat, puis ajustée",
                 "Jamais intégrée avant la réalisation effective de la condition variable",
-                "A hauteur du montant tel qu'il est HAUTEMENT PROBABLE qu'il n'y aura pas de reprise significative",
+                "Dans la mesure où une reprise importante est hautement improbable",
                 "Uniquement si elle depasse un plancher de 100k CHF"
               ],
               "answer": 2,
@@ -29369,8 +29369,8 @@
               "type": "mcq",
               "question": "Comment RPC 22 (Suisse) traite-t-elle les contrats long terme et quelle est la différence principale avec IFRS 15 ?",
               "options": [
-                "Elle suit exactement le modèle a 5 étapes d'IFRS 15",
-                "Elle permet la POC (percentage of completion) si 4 conditions, sinon Completed Contract ou POC sans marge",
+                "Elle suit exactement le modèle en cinq étapes d'IFRS 15, sans aucune différence",
+                "POC si 4 conditions, sinon achèvement (ou POC sans marge)",
                 "Elle interdit toute méthode de reconnaissance progressive",
                 "Elle reconnaît toujours le revenu a la livraison/transfert"
               ],
@@ -29632,8 +29632,8 @@
               "type": "mcq",
               "question": "Sous IFRS 16, comment le PRENEUR (lessee) doit-il comptabiliser ses contrats de location, en comparaison avec l'ancien IAS 17 distinguant financier et opérationnel ?",
               "options": [
-                "Uniquement les leasings financiers comme sous IAS 17, le reste hors bilan",
-                "QUASI TOUS les contrats au bilan : un droit d'utilisation (ROU) et une dette de location",
+                "Uniquement les leasings financiers, comme sous IAS 17, le reste hors bilan",
+                "Presque tous les contrats au bilan (ROU + dette)",
                 "Aucun contrat, tout est en charges au P&L linéairement",
                 "Uniquement les contrats de plus de 5 ans, le reste reste hors bilan"
               ],
@@ -29647,8 +29647,8 @@
               "type": "mcq",
               "question": "Selon IFRS 16.9-11, dans quelles conditions un contrat est-il considere comme contenant ou étant une LOCATION au sens IFRS 16 ?",
               "options": [
-                "Il transfere le droit d'utiliser un actif IDENTIFIE pendant une durée, contre contrepartie, avec contrôle effectif par le preneur",
-                "Il mentionne explicitement le mot 'lease' ou 'location' dans son intitulé",
+                "Droit de contrôler l'usage d'un actif identifié, contre paiement",
+                "Il mentionne explicitement le mot « location » ou « leasing » dans son titre",
                 "Il concerne un actif d'une valeur supérieure a 100k CHF",
                 "Il a ete signe et notarise par un avocat agree"
               ],
@@ -29662,8 +29662,8 @@
               "type": "mcq",
               "question": "Selon IFRS 16.24, comment se compose l'évaluation initiale du droit d'utilisation (right-of-use asset, ROU) chez le preneur a la date de début de la location ?",
               "options": [
-                "VA des paiements de location + coûts directs initiaux + estimation coûts de démantèlement - avantages de location reçus",
-                "Uniquement la VA des paiements de location futurs",
+                "VA des loyers + coûts directs + démantèlement − avantages reçus",
+                "Uniquement la valeur actuelle des paiements de location futurs, sans ajustement",
                 "Le total nominal des loyers sans actualisation au taux du contrat",
                 "Le prix de marche du bien sous-jacent a la date du contrat"
               ],
@@ -29687,9 +29687,9 @@
               "type": "mcq",
               "question": "Sous IFRS 16, la charge totale au P&L (amortissement ROU + intérêts) presente quel profil ?",
               "options": [
-                "Frontloaded : plus eleve au début, plus faible a la fin",
+                "Dégressif (plus élevé au début)",
                 "Constant (linéaire)",
-                "Toujours croissant",
+                "Toujours croissant sur la durée",
                 "En cloche"
               ],
               "answer": 0,
@@ -29702,10 +29702,10 @@
               "type": "mcq",
               "question": "Les exemptions IFRS 16.5-8 permettent au PRENEUR de ne pas appliquer le modèle ROU/dette pour :",
               "options": [
-                "Les contrats > 12 mois",
+                "Les contrats d'une durée supérieure à 12 mois",
                 "Tous les contrats > 100k",
-                "Les contrats COURT TERME (<= 12 mois sans option d'achat) et les actifs de FAIBLE VALEUR (~5'000 USD neufs)",
-                "Aucun cas, tout doit être au bilan"
+                "Courte durée (≤ 12 mois) et faible valeur",
+                "Aucun cas : tous les contrats doivent être au bilan"
               ],
               "answer": 2,
               "explanation": "IFRS 16.5-8 : deux exemptions au choix - (1) contrats <= 12 mois sans option d'achat (par catégorie), (2) actifs de faible valeur (~5'000 USD a neuf, ex. laptops, mobilier de bureau) (par contrat). Charge linéaire en P&L.",
@@ -29727,9 +29727,9 @@
               "type": "mcq",
               "question": "Dans une operation de sale and leaseback (cession-bail) sous IFRS 16.98-103, si la vente est qualifiée de vraie vente selon IFRS 15 :",
               "options": [
-                "Le vendeur conserve l'actif a son bilan",
-                "Le vendeur decomptabilise l'actif et reconnaît un ROU égal a la part de VC correspondant au droit conserve ; gain limite a la portion non conservée",
-                "Aucun gain n'est jamais reconnu",
+                "Le vendeur maintient l'actif au bilan et comptabilise une dette financière",
+                "Décomptabiliser ; ROU pour le droit conservé ; gain partiel",
+                "Le vendeur comptabilise l'intégralité du gain de cession en résultat",
                 "Le bailleur doit comptabiliser l'actif au coût amorti"
               ],
               "answer": 1,
@@ -29965,8 +29965,8 @@
               "type": "mcq",
               "question": "Selon la définition IAS 1.7, comment se caracterisent les autres éléments du résultat global (OCI - Other Comprehensive Income) au sein de l'état du résultat global ?",
               "options": [
-                "Un simple sous-ensemble du résultat net classifie autrement",
-                "Des produits et charges comptabilisés directement en capitaux propres conformément a d'autres normes IFRS",
+                "Un simple sous-ensemble du résultat net, présenté séparément par choix",
+                "Produits et charges hors résultat net, selon d'autres IFRS",
                 "Le total des dividendes versés aux actionnaires de l'exercice",
                 "Une catégorie particulière de la trésorerie opérationnelle"
               ],
@@ -29981,8 +29981,8 @@
               "question": "Depuis l'amendement de 2012, IAS 1.82A exige de présenter les éléments OCI en les regroupant selon quel critère de classification fondamental ?",
               "options": [
                 "Éléments courants vs non courants",
-                "Éléments qui SERONT recyclables en P&L vs éléments NON recyclables",
-                "Éléments opérationnels vs financiers",
+                "Recyclables vs non recyclables",
+                "Éléments opérationnels vs éléments financiers",
                 "Éléments avec impôt differe vs sans impôt"
               ],
               "answer": 1,
@@ -30006,9 +30006,9 @@
               "question": "Dans une couverture de flux de trésorerie (CFH) IFRS 9.6.5.11, la réserve OCI est :",
               "options": [
                 "Non recyclable",
-                "Recyclée en P&L lors de la réalisation de l'élément couvert (ou ajoutée au coût de l'actif via basis adjustment)",
+                "Recyclée en résultat (ou ajustée au coût de l'actif)",
                 "Imputée directement au capital social",
-                "Toujours imputée aux intérêts"
+                "Toujours imputée aux résultats non distribués, sans recyclage"
               ],
               "answer": 1,
               "explanation": "IFRS 9.6.5.11 : la part efficace en OCI (CFH) est RECYCLÉE en P&L au moment de l'impact de l'élément couvert (achat realise, vente, charge financière). Pour les éléments non financiers, basis adjustment optionnel (coût de l'actif).",
@@ -30060,9 +30060,9 @@
               "type": "mcq",
               "question": "Selon IAS 12.61A, comment l'impôt courant et l'impôt differe relatifs aux éléments OCI doivent-ils être comptabilisés pour respecter la cohérence avec l'élément sous-jacent ?",
               "options": [
-                "Toujours imputés au P&L de la période",
-                "Comptabilisés en OCI (en montant net OU avec une ligne d'impôt séparée)",
-                "Toujours egaux a zero pour ces éléments",
+                "Toujours imputés au compte de résultat de la période",
+                "En OCI (net ou avec ligne d'impôt)",
+                "Toujours égaux à zéro par convention",
                 "Reportés au futur sans comptabilisation immédiate"
               ],
               "answer": 1,
