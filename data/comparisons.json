@@ -98,7 +98,7 @@
           "aspect": "Modèle de réévaluation",
           "ifrs": "Option : modèle de réévaluation à la juste valeur. Écart en OCI (IAS 16.31-42).",
           "rpc": "Interdit. Seul le modèle du coût est autorisé (RPC CC 8).",
-          "co": "Réévaluation possible uniquement pour supprimer un découvert (art. 670 CO) ou si la loi le prévoit.",
+          "co": "Réévaluation possible uniquement pour supprimer un découvert (art. 725c CO) ou si la loi le prévoit.",
           "piege": "⚠️ La réévaluation est une OPTION sous IFRS, INTERDITE sous RPC, et très limitée sous CO (seulement pour couvrir un découvert)."
         },
         {
@@ -167,7 +167,7 @@
           "aspect": "Réévaluation",
           "ifrs": "Option de réévaluation UNIQUEMENT s'il existe un marché actif (très rare en pratique) (IAS 38.75).",
           "rpc": "Interdite. Modèle du coût uniquement (RPC CC 8).",
-          "co": "Non prévue sauf art. 670 CO (découvert)."
+          "co": "Non prévue sauf art. 725c CO (découvert)."
         },
         {
           "aspect": "Logiciels acquis",

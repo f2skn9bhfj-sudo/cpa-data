@@ -539,6 +539,12 @@
             const items = [];
             const summary = {};
             const seenIds = new Set();
+            // Même énoncé présent à la fois dans un cours (trainer) et une leçon
+            // (modules) → une seule fois dans la banque de QCM.
+            const seenText = new Set();
+            const textKey = (t) => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                .toLowerCase().replace(/^\s*[a-d][.)]\s+/, '').replace(/[^a-z0-9]+/g, ' ').trim();
+            const isDupText = (t) => { const k = textKey(t); if (k.length > 25 && seenText.has(k)) return true; seenText.add(k); return false; };
 
             const inferDiff = (qtype, qtext, expl, explicit) => {
                 if (['easy', 'medium', 'hard'].includes(explicit)) return explicit;
@@ -568,7 +574,7 @@
                     for (const q of lesson.questions || []) {
                         if (!['mcq', 'vrai_faux'].includes(q.type)) { idx++; continue; }
                         const qid = q.id || `${mod}_${norm_code}_${lid}_${idx}`;
-                        if (seenIds.has(qid)) { idx++; continue; }
+                        if (seenIds.has(qid) || isDupText(q.question)) { idx++; continue; }
                         seenIds.add(qid);
                         const diff = inferDiff(q.type, q.question, q.explanation, q.difficulty);
                         items.push({
@@ -598,7 +604,7 @@
                     for (const q of lesson.questions || []) {
                         if (!['mcq', 'vrai_faux'].includes(q.type)) { idx++; continue; }
                         const qid = q.id || `${mod}_${lid}_q${idx}`;
-                        if (seenIds.has(qid)) { idx++; continue; }
+                        if (seenIds.has(qid) || isDupText(q.question)) { idx++; continue; }
                         seenIds.add(qid);
                         const diff = inferDiff(q.type, q.question, q.explanation, q.difficulty);
                         items.push({
@@ -623,7 +629,7 @@
                     for (const q of n.questions || []) {
                         if (!['mcq', 'vrai_faux'].includes(q.type)) { idx++; continue; }
                         const qid = q.id || `${mod}_${nid}_q${idx}`;
-                        if (seenIds.has(qid)) { idx++; continue; }
+                        if (seenIds.has(qid) || isDupText(q.question)) { idx++; continue; }
                         seenIds.add(qid);
                         const diff = inferDiff(q.type, q.question, q.explanation, q.difficulty);
                         items.push({
@@ -661,7 +667,7 @@
                     let idx = 0;
                     for (const q of mcqs) {
                         const qid = q.id || `AUDIT_${num}_q${idx}`;
-                        if (seenIds.has(qid)) { idx++; continue; }
+                        if (seenIds.has(qid) || isDupText(q.question)) { idx++; continue; }
                         seenIds.add(qid);
                         const diff = ['easy', 'medium', 'hard'].includes(q.difficulty)
                             ? q.difficulty : inferDiff('mcq', q.question, q.explanation, q.difficulty);

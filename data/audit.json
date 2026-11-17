@@ -17,7 +17,7 @@
   },
   "nas": {
     "_label": "NAS / ISA — Normes d'audit",
-    "_description": "Normes d'Audit Suisses (NAS / SA-CH, EXPERTsuisse) et leur équivalent ISA (IAASB). En Suisse, les NAS reprennent la numérotation ISA et l'adaptent au droit suisse (CO 727ss, LSR).",
+    "_description": "Normes d'audit suisses — NA-CH (édition 2022, anciennement NAS 2013 ; EXPERTsuisse) et leur équivalent ISA (IAASB). Les normes suisses reprennent la numérotation ISA et l'adaptent au droit suisse (CO 727 ss, LSR).",
     "_icon": "📐",
     "categories": [
       {
@@ -7250,7 +7250,7 @@
             "acronym": "Opting-out",
             "fr": "Opting-out",
             "en": "Opting-out (full waiver)",
-            "context": "CO 727a al.2 (<10 EPT + unanimité)"
+            "context": "CO 727a al.2 (≤ 10 EPT + unanimité)"
           },
           {
             "acronym": "Organe de révision",
@@ -10365,7 +10365,7 @@
           {
             "q": "L'opting-out est possible si :",
             "options": [
-              "< 10 EPT + unanimité actionnaires",
+              "≤ 10 EPT + unanimité actionnaires",
               "< 250 EPT",
               "société non cotée",
               "< 50 EPT + majorité"
@@ -11934,7 +11934,7 @@
               [
                 "Champ",
                 "Grandes entreprises / sociétés cotées",
-                "PME sous seuils ; opting-out si <10 EPT"
+                "PME sous seuils ; opting-out si ≤ 10 EPT"
               ]
             ]
           }

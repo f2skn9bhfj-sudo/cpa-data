@@ -2750,7 +2750,7 @@
     "type": "LFus"
   },
   {
-    "concept": "Art. 725 al. 1 : perte de la moitié du capital et des réserves légales → CA convoque AG",
+    "concept": "Art. 725a : perte de capital (actifs nets < moitié du capital et des réserves légales) → le CA prend des mesures d'assainissement et, si nécessaire, convoque l'AG",
     "year": "Année 2",
     "module": "M6 - Droit",
     "notes": "",
@@ -2860,7 +2860,7 @@
     "type": "LIFD"
   },
   {
-    "concept": "Art. 725 al. 2 : surendettement → CA avise juge sauf si créanciers subordonnent rang",
+    "concept": "Art. 725b : surendettement → le CA avise le juge, sauf postposition de créances suffisante ou perspective sérieuse d'assainissement (90 jours)",
     "year": "Année 2",
     "module": "M6 - Droit",
     "notes": "",

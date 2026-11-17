@@ -559,8 +559,8 @@ table.data caption{caption-side:top;text-align:left;font-family:"Space Mono",mon
     <caption>B · Actifs</caption>
     <thead><tr><th>Thème</th><th style="color:var(--brass)">CO</th><th style="color:var(--green)">Swiss GAAP RPC</th><th style="color:var(--slate)">IFRS</th></tr></thead>
     <tbody>
-      <tr><td><strong>Immo. corporelles</strong></td><td>Coût amorti ; pas de réévaluation au-dessus du coût (sauf art. 670)</td><td>Coût amorti (RPC 18)</td><td>Coût <em>ou</em> modèle de réévaluation ; <strong>approche par composants</strong> (IAS 16)</td></tr>
-      <tr><td>Réévaluation au-dessus du coût</td><td>Interdite, sauf <strong>art. 670</strong> (immeubles/participations, pour combler une perte de capital ; réviseur agréé) & art. 960b</td><td>Non (coût)</td><td>Oui, modèle de réévaluation → écart en <strong>OCI</strong> (IAS 16/38)</td></tr>
+      <tr><td><strong>Immo. corporelles</strong></td><td>Coût amorti ; pas de réévaluation au-dessus du coût (sauf art. 725c)</td><td>Coût amorti (RPC 18)</td><td>Coût <em>ou</em> modèle de réévaluation ; <strong>approche par composants</strong> (IAS 16)</td></tr>
+      <tr><td>Réévaluation au-dessus du coût</td><td>Interdite, sauf <strong>art. 725c</strong> (immeubles/participations, pour combler une perte de capital ; réviseur agréé) & art. 960b</td><td>Non (coût)</td><td>Oui, modèle de réévaluation → écart en <strong>OCI</strong> (IAS 16/38)</td></tr>
       <tr><td><strong>Stocks</strong></td><td>Plus bas du coût ou de la VNR (art. 960c) ; FIFO, CMP</td><td>Plus bas du coût ou VNR (RPC 17) ; <strong>LIFO interdit</strong></td><td>Plus bas du coût ou VNR (IAS 2) ; <strong>LIFO interdit</strong></td></tr>
       <tr><td><strong>Immeubles de placement</strong></td><td>Coût amorti</td><td>Coût (option)</td><td>Coût <em>ou</em> <strong>juste valeur par résultat</strong> ; pas d'amort. si JV (IAS 40)</td></tr>
       <tr><td><strong>Incorporels & R&D</strong></td><td>Recherche en charge ; dvpt activable possible ; goodwill interne interdit</td><td>RPC 10 : dvpt activable si critères</td><td>IAS 38 : recherche <strong>en charge obligatoire</strong> ; dvpt <strong>capitalisé obligatoire</strong> si 6 critères</td></tr>
@@ -629,7 +629,7 @@ table.data caption{caption-side:top;text-align:left;font-family:"Space Mono",mon
     <strong>Immeubles de placement à la juste valeur</strong> : seulement IFRS (IAS 40).<br>
     <strong>Développement (R&D)</strong> : capitalisation <em>obligatoire</em> si critères en IFRS (IAS 38) ; option/charge ailleurs.<br>
     <strong>Prévoyance</strong> : RPC 16 (comptes de l'institution) ≠ IAS 19 (unités de crédit projetées).<br>
-    <strong>Réévaluation &gt; coût</strong> : interdite CO (sauf art. 670 / 960b) · modèle de réévaluation IAS 16/38 (écart en OCI).<br>
+    <strong>Réévaluation &gt; coût</strong> : interdite CO (sauf art. 725c / 960b) · modèle de réévaluation IAS 16/38 (écart en OCI).<br>
     <strong>Reprise de dépréciation</strong> : possible sauf goodwill (IFRS).<br>
     <strong>LIFO</strong> : interdit partout (RPC 17, IAS 2).
   </p></div>
@@ -672,7 +672,7 @@ table.data caption{caption-side:top;text-align:left;font-family:"Space Mono",mon
 
   <details class="why"><summary><span>5 · Réévaluation au-dessus du coût <span class="tag">interdite CO (sauf 670/960b), permise IFRS</span></span></summary>
     <div class="body">
-      <div class="lg co"><b>Logique CO</b><p>Le coût d'acquisition est un <strong>plafond objectif et vérifiable</strong>. Réévaluer reviendrait à inscrire un gain <em>non réalisé</em> (le bien n'est pas vendu) — contraire à la prudence et au principe de réalisation. Les deux exceptions sont justement celles où le gain est fiable : <strong>art. 960b</strong> (titres cotés, prix de marché liquide et objectif) et <strong>art. 670</strong> (réévaluation de sauvetage pour éviter le surendettement, strictement encadrée par le réviseur).</p></div>
+      <div class="lg co"><b>Logique CO</b><p>Le coût d'acquisition est un <strong>plafond objectif et vérifiable</strong>. Réévaluer reviendrait à inscrire un gain <em>non réalisé</em> (le bien n'est pas vendu) — contraire à la prudence et au principe de réalisation. Les deux exceptions sont justement celles où le gain est fiable : <strong>art. 960b</strong> (titres cotés, prix de marché liquide et objectif) et <strong>art. 725c</strong> (réévaluation de sauvetage pour éviter le surendettement, strictement encadrée par le réviseur).</p></div>
       <div class="lg ifrs"><b>Logique IFRS</b><p>Au nom de la <strong>pertinence</strong> (relevance) : connaître la juste valeur actuelle d'un immeuble vaut mieux qu'un coût de 1995. IFRS accepte d'inscrire la plus-value latente (en OCI pour IAS 16, en résultat pour IAS 40 immeubles de placement) — quitte à sacrifier la prudence et un peu de fiabilité.</p></div>
       <div class="reveal"><b>Ce que ça révèle :</b> l'arbitrage fondamental du cadre conceptuel — <strong>fiabilité / prudence</strong> (coût historique) vs <strong>pertinence</strong> (juste valeur). Toute la divergence CO ↔ IFRS tient dans ce curseur.</div>
     </div>
@@ -1966,7 +1966,7 @@ const FLASH=[
 {r:"Frais de développement (R&D) ?",v:"IAS 38 : recherche toujours en charge ; développement capitalisé OBLIGATOIREMENT si les 6 critères sont remplis. CO/RPC : prudence, souvent en charge.",t:"Divergences"},
 {r:"Reprise d'une dépréciation sous IFRS ?",v:"Possible si la valeur recouvrable remonte (IAS 36) — SAUF pour le goodwill, dont la dépréciation est définitive.",t:"Divergences"},
 {r:"Prévoyance : RPC 16 vs IAS 19 ?",v:"RPC 16 : avantage/engagement économique lu dans les comptes de l'institution de prévoyance. IAS 19 : méthode actuarielle des unités de crédit projetées, écarts actuariels en OCI.",t:"Divergences"},
-{r:"Réévaluation au-dessus du coût sous CO ?",v:"Interdite, sauf art. 670 (immeubles/participations pour combler une perte de capital, attestation du réviseur) et art. 960b (titres cotés au cours du jour).",t:"Divergences"},
+{r:"Réévaluation au-dessus du coût sous CO ?",v:"Interdite, sauf art. 725c (immeubles/participations pour combler une perte de capital, attestation du réviseur) et art. 960b (titres cotés au cours du jour).",t:"Divergences"},
 {r:"Les 5 états financiers IFRS (IAS 1) ?",v:"Situation financière, résultat global (P&L + OCI), variation des capitaux propres, tableau des flux de trésorerie, notes.",t:"Divergences"},
 {r:"Tableau des flux de trésorerie — qui doit ?",v:"CO : entreprises soumises au contrôle ordinaire (art. 961). RPC : selon la taille. IFRS : toujours (IAS 7).",t:"Divergences"},
 {r:"Taux de TVA suisses (2024-2026) ?",v:"8.1 % normal, 2.6 % réduit, 3.8 % hébergement. Hausse votée par le Parlement (8.5/4.0) pour la 13e rente AVS : soumise à votation, au plus tôt 2028.",t:"Taux & seuils"},

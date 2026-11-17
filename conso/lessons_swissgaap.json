@@ -2301,7 +2301,7 @@
          "crit": "Immobilisations corporelles d'exploitation",
          "ifrs": "**Coût amorti OU modèle de réévaluation** (IAS 16)",
          "rpc": "**Coût amorti** (pas de réévaluation systématique)",
-         "co": "**Coût amorti** ; réévaluation très restreinte (immeubles/participations, art. 670)"
+         "co": "**Coût amorti** ; réévaluation très restreinte (immeubles/participations, art. 725c)"
         },
         {
          "crit": "Titres cotés / placements",
@@ -2325,7 +2325,7 @@
          "crit": "Réévaluation au-DESSUS du coût",
          "ifrs": "**Possible** (IAS 16 réévaluation en OCI ; IAS 40/IFRS 9 en résultat)",
          "rpc": "**Limitée** : titres cotés / immeubles de placement (au résultat)",
-         "co": "**Exceptionnelle** : immeubles & participations pour combler un découvert (art. 670), réserve de réévaluation"
+         "co": "**Exceptionnelle** : immeubles & participations pour combler un découvert (art. 725c), réserve de réévaluation"
         },
         {
          "crit": "Engagements de prévoyance",
@@ -2367,7 +2367,7 @@
          "items": [
           "**Réserves latentes** : permises (art. 960a al. 4)",
           "**Valeur actuelle** : plafond du coût ; cours admis pour titres cotés (960b) mais souvent coût",
-          "**Réévaluation au-dessus du coût** : exceptionnelle (art. 670, découvert)"
+          "**Réévaluation au-dessus du coût** : exceptionnelle (art. 725c, découvert)"
          ]
         },
         {
@@ -4955,7 +4955,7 @@
          "crit": "Immobilisations corporelles",
          "ifrs": "**Coût amorti OU modèle de réévaluation** (IAS 16, OCI)",
          "rpc": "**Coût amorti** (pas de réévaluation systématique)",
-         "co": "Coût amorti ; réévaluation très restreinte (art. 670)"
+         "co": "Coût amorti ; réévaluation très restreinte (art. 725c)"
         },
         {
          "crit": "Immeubles de placement",
@@ -4973,7 +4973,7 @@
          "crit": "Réévaluation AU-DESSUS du coût",
          "ifrs": "**Possible** (IAS 16 → OCI ; IAS 40 / IFRS 9 → résultat)",
          "rpc": "**Limitée** : titres cotés / immeubles de placement (résultat)",
-         "co": "**Exceptionnelle** (art. 670 : combler un découvert)"
+         "co": "**Exceptionnelle** (art. 725c : combler un découvert)"
         },
         {
          "crit": "Gains non réalisés",
