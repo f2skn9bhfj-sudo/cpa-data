@@ -4,10 +4,10 @@ Application web statique de révision du diplôme fédéral d'expert-comptable,
 publiée par GitHub Pages depuis la racine de la branche `main` :
 https://f2skn9bhfj-sudo.github.io/cpa-data/
 
-Contenu : 16 modules (M1–M16), ~3 290 QCM, ~1 500 flashcards, 80 normes
+Contenu : 16 modules (M1–M16), ~3 340 QCM (examen blanc noté sur 6), ~1 500 flashcards, 80 normes
 (CO, Swiss GAAP RPC, IFRS/IAS, ISA…), 47 normes ISA en cours complets, le
-Manuel suisse d'audit (54 fiches), Conso, Fusion, Social, Oral, Anglais, HEC,
-Grand Livre et 39 podcasts.
+Manuel suisse d'audit (54 fiches), Conso, Fusion, Social, Oral, Anglais, HEC
+et 39 podcasts.
 
 Ce dépôt est la source : on le modifie directement (il n'y a plus de build
 depuis un dépôt desktop). Un `push` sur `main` est en ligne en 1 à 2 minutes.
