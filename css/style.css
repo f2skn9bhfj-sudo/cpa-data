@@ -1648,25 +1648,33 @@ body.light-mode .tab.trainer-tab[style] {
     border-color: #a7f3d0 !important;
 }
 
-/* ── Sub-tabs ── */
+/* ── Sous-barre : pages de la rubrique active (collée sous la barre principale) ── */
 .sub-tab-bar {
     display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
+    flex-wrap: nowrap;
+    gap: 6px;
     background: var(--bg-secondary);
-    padding: 6px 16px;
+    padding: 7px 16px;
     border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: var(--tabbar-h, 52px);
+    z-index: 99;
+    overflow-x: auto;
+    scrollbar-width: none;
 }
+.sub-tab-bar::-webkit-scrollbar { height: 0; display: none; }
 .sub-tab {
     padding: 6px 14px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 12.5px;
     font-weight: 600;
     border: 1px solid var(--border);
     background: transparent;
     color: var(--text-secondary);
     cursor: pointer;
     transition: all 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 .sub-tab:hover { background: var(--bg-tertiary); color: var(--text-bright); }
 .sub-tab.active { background: var(--accent-blue); color: #fff; border-color: var(--accent-blue); }
@@ -3311,40 +3319,25 @@ body.light-mode .app-zoom-level:hover { background: rgba(15, 23, 42, .05); color
         background: var(--bg-primary);
     }
 
-    /* ── Barre mobile : logo + hamburger ; les onglets passent dans un
-       menu déroulant (fini le scroll horizontal). ── */
+    /* ── Barre mobile : les 4 rubriques restent visibles dans la barre ;
+       le menu ☰ ne contient que recherche, export PDF et thème. ── */
     .tab-bar {
-        padding: 8px 12px;
-        gap: 8px;
+        padding: 6px 8px;
+        gap: 6px;
         overflow: visible;
         flex-wrap: nowrap;
     }
-    .tab-bar .logo { font-size: 13px; padding-left: 13px; }
-    .nav-burger { display: flex; }
+    .tab-bar .logo { display: none; }
+    .nav-burger { display: flex; flex-shrink: 0; }
 
-    /* Conteneur repliable → panneau déroulant sous la barre */
-    .nav-menu {
-        position: absolute;
-        top: 100%; left: 0; right: 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-        padding: 10px;
-        background: var(--bg-primary);
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
-        max-height: 78vh;
-        overflow-y: auto;
-        display: none;
-    }
-    .tab-bar.menu-open .nav-menu { display: flex; }
+    .nav-menu { flex: 1; min-width: 0; gap: 0; }
 
-    /* Onglets en grille 2 colonnes dans le menu */
+    /* Rubriques : 4 boutons compacts (icône au-dessus du libellé) */
     .nav-scroll {
-        flex: none;
+        flex: 1;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 6px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4px;
         overflow: visible;
         -webkit-mask-image: none;
                 mask-image: none;
@@ -3352,37 +3345,42 @@ body.light-mode .app-zoom-level:hover { background: rgba(15, 23, 42, .05); color
     }
     .nav-scroll .tab {
         width: 100%;
-        justify-content: flex-start;
-        padding: 11px 12px;
-        font-size: 13.5px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2px;
+        padding: 6px 2px;
+        font-size: 11px;
         min-height: 46px;
-        border: 1px solid var(--border);
+        border: 1px solid transparent;
     }
+    .nav-scroll .tab .tab-emoji { font-size: 17px; }
     .nav-scroll .tab.active { border-color: color-mix(in oklch, var(--accent-blue) 40%, transparent); }
 
-    /* Actions (recherche + boutons) en pleine largeur sous les onglets */
+    /* Menu ☰ : panneau déroulant avec recherche + boutons */
     .nav-right {
-        flex: none;
-        width: 100%;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        width: auto;
         gap: 8px;
-        padding-top: 8px;
-        border-top: 1px solid var(--border);
+        padding: 10px;
+        background: var(--bg-primary);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+        display: none;
     }
+    .tab-bar.menu-open .nav-right { display: flex; }
     .nav-right .search-box { flex: 1; }
     .nav-right .search-box input,
-    .nav-right .search-box input:focus { width: 100%; font-size: 13px; }
+    .nav-right .search-box input:focus { width: 100%; font-size: 14px; }
 
-    /* ── Sub-tab bar (Références sub-tabs) ── */
+    /* ── Sous-barre de la rubrique ── */
     .sub-tab-bar {
-        padding: 4px 8px;
-        gap: 4px;
-        overflow-x: auto;
-        flex-wrap: nowrap;
+        padding: 6px 8px;
+        gap: 5px;
     }
     .sub-tab {
-        padding: 6px 10px;
-        font-size: 12px;
-        flex-shrink: 0;
+        padding: 7px 11px;
+        font-size: 12.5px;
     }
 
     /* ── Main content ── */

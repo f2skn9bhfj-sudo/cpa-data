@@ -4,39 +4,42 @@
    cartes vers chaque espace de l'app.
    ═══════════════════════════════════════════════ */
 
+// Mêmes rubriques, même ordre et mêmes noms que la barre de navigation
+// (NAV_GROUPS / TAB_META dans js/app.js). Le titre et l'icône d'une carte
+// viennent de TAB_META ; seule la description est propre à l'accueil.
+// Manuel EY masqué (voir HIDDEN_TABS dans js/app.js).
 const HUB_SECTIONS = [
     {
-        title: '🎓 Étudier',
+        title: '📚 Cours',
         cards: [
-            { tab: 'modules', ic: '📚', t: 'Modules', d: 'Les 16 modules du diplôme : cours, normes CO / RPC / IFRS, leçons et fiches.' },
-            { tab: 'grandlivre', ic: '📗', t: 'Grand Livre', d: "Le grand livre de la comptabilité suisse : théorie, écritures, TVA, cas." },
-            { tab: 'audit', ic: '🔍', t: 'Audit', d: "NAS/ISA, catalogue des tests, journée d'auditeur, Nestlé, journal client…" },
-            { tab: 'conso', ic: '📊', t: 'Conso', d: 'Consolidation, IFRS et Swiss GAAP pas à pas, avec fil rouge chiffré.' },
-            { tab: 'fusion', ic: '🔀', t: 'Fusion', d: "Fusions, apports partiels d'actif et scissions : parité, prime, mali, écritures." },
-            { tab: 'social', ic: '🤝', t: 'Social', d: 'Droit du travail, assurances sociales et paie suisse (calculateur inclus).' },
-            { tab: 'hec', ic: '🎓', t: 'HEC', d: 'Structure financière, M&A et ingénierie du capital.' },
-            { tab: 'english', ic: '🇬🇧', t: 'Anglais', d: 'Vocabulaire, meetings, TOEIC — prêt pour EY.' },
-            // Masqué (voir HIDDEN_TABS dans js/app.js) :
-            // { tab: 'eymanual', ic: '📕', t: 'Manuel EY', d: "Le field manual Staff 1 : réflexes terrain pour tes débuts chez EY." },
+            { tab: 'modules', d: 'Les 16 modules du diplôme : cours, normes CO / RPC / IFRS, leçons et fiches.' },
+            { tab: 'audit', d: "NAS/ISA, Manuel suisse d'audit, catalogue des tests, journée d'auditeur, Nestlé…" },
+            { tab: 'grandlivre', d: 'La comptabilité suisse de A à Z : écritures, TVA, bouclement, cas.' },
+            { tab: 'conso', d: 'Consolidation IFRS et Swiss GAAP pas à pas, avec fil rouge chiffré.' },
+            { tab: 'fusion', d: "Fusions, apports partiels d'actif et scissions : parité, prime, mali, écritures." },
+            { tab: 'social', d: 'Droit du travail, assurances sociales et paie suisse (calculateur inclus).' },
+            { tab: 'hec', d: 'Structure financière, M&A et ingénierie du capital.' },
+            { tab: 'english', d: 'Vocabulaire, meetings, TOEIC — prêt pour EY.' },
+            { tab: 'podcasts', d: 'Les cours en audio, à écouter en déplacement.' },
         ],
     },
     {
         title: "🎯 S'entraîner",
         cards: [
-            { tab: 'trainer', ic: '🎯', t: 'Entraînement', d: 'Sessions de révision espacée sur tes normes et cartes.' },
-            { tab: 'qcm', ic: '❓', t: 'QCM', d: 'Questionnaires corrigés, par module et par norme.' },
-            { tab: 'fcdb', ic: '🃏', t: 'Flashcards', d: 'Cartes recto-verso : mode libre, ciblé ou reprise des erreurs.' },
-            { tab: 'oral', ic: '🎤', t: 'Oral', d: "Préparation à l'examen oral, thème par thème." },
+            { tab: 'trainer', d: 'Sprints de flashcards en répétition espacée (SM-2) et cours guidés.' },
+            { tab: 'qcm', d: '3 290 questions corrigées, par module et par norme, mode examen.' },
+            { tab: 'fcdb', d: 'Toutes les cartes, filtrables ; révise une sélection en un clic.' },
+            { tab: 'oral', d: "Préparation à l'examen oral, thème par thème, avec simulateur." },
+            { tab: 'progress', d: 'Ta progression par module : normes revues, QCM, cartes.' },
         ],
     },
     {
-        title: '🧰 Outils & références',
+        title: '🧰 Ressources',
         cards: [
-            { tab: 'recherche', ic: '🔎', t: 'Recherche', d: "Trouve n'importe quoi dans toute l'app — avec l'IA en option." },
-            { tab: 'references', ic: '📖', t: 'Références', d: 'Mémos, seuils, cas chiffrés, arbres de décision, terrain.' },
-            { tab: 'compare', ic: '⚖️', t: 'Comparaisons', d: 'CO vs Swiss GAAP RPC vs IFRS, thème par thème.' },
-            { tab: 'fs', ic: '📑', t: 'États financiers', d: 'Explorateur des états et de leurs postes.' },
-            { tab: 'podcasts', ic: '🎧', t: 'Podcasts', d: 'Les cours en audio, à écouter en déplacement.' },
+            { tab: 'references', d: 'Mémos, seuils, cas chiffrés, arbres de décision, terrain.' },
+            { tab: 'compare', d: 'CO vs Swiss GAAP RPC vs IFRS, thème par thème.' },
+            { tab: 'fs', d: 'Explorateur des états financiers et de leurs postes.' },
+            { tab: 'recherche', d: "Trouve n'importe quoi dans toute l'app — avec l'IA en option." },
         ],
     },
 ];
@@ -103,8 +106,8 @@ async function renderDashboard(container) {
                 ${sec.cards.map(c => `
                 <div class="hub-card" role="button" tabindex="0" onclick="navigate('${c.tab}')"
                      onkeydown="if(event.key==='Enter')navigate('${c.tab}')">
-                    <div class="hub-ic">${c.ic}</div>
-                    <div><div class="hub-t">${c.t}</div><div class="hub-d">${c.d}</div></div>
+                    <div class="hub-ic">${c.ic || (TAB_META[c.tab] || {}).ic || ''}</div>
+                    <div><div class="hub-t">${c.t || (TAB_META[c.tab] || {}).label || c.tab}</div><div class="hub-d">${c.d}</div></div>
                 </div>`).join('')}
             </div>
         </div>`).join('')}

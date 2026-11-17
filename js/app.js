@@ -78,28 +78,102 @@ async function api(method, ...args) {
 
 // ── Navigation ──
 
+// ── Navigation en rubriques ──────────────────────────────────────────
+// La barre du haut ne montre que les RUBRIQUES ; la rubrique active affiche
+// ses pages dans la sous-barre (#subTabBar). Les identifiants de page
+// (navigate('qcm'), navigate('audit')…) sont inchangés.
+const TAB_META = {
+    dashboard:  { ic: '🏠', label: 'Accueil' },
+    modules:    { ic: '📚', label: 'Modules M1–M16' },
+    audit:      { ic: '🔍', label: 'Audit' },
+    grandlivre: { ic: '📗', label: 'Grand Livre' },
+    conso:      { ic: '📊', label: 'Consolidation' },
+    fusion:     { ic: '🔀', label: 'Fusions' },
+    social:     { ic: '🤝', label: 'Social & paie' },
+    hec:        { ic: '🎓', label: 'HEC' },
+    english:    { ic: '🇬🇧', label: 'Anglais' },
+    podcasts:   { ic: '🎧', label: 'Podcasts' },
+    trainer:    { ic: '⚡', label: 'Révision espacée' },
+    qcm:        { ic: '❓', label: 'QCM' },
+    fcdb:       { ic: '🃏', label: 'Flashcards' },
+    oral:       { ic: '🎤', label: 'Examen oral' },
+    progress:   { ic: '📈', label: 'Progression' },
+    references: { ic: '📖', label: 'Mémos & références' },
+    compare:    { ic: '⚖️', label: 'Comparaisons' },
+    fs:         { ic: '📑', label: 'États financiers' },
+    recherche:  { ic: '🔎', label: 'Recherche' },
+    eymanual:   { ic: '📕', label: 'Manuel EY' },
+    flashcards: { ic: '🃏', label: 'Flashcards — modes' },
+};
+const NAV_GROUPS = [
+    { id: 'accueil',      ic: '🏠', label: 'Accueil',      tabs: ['dashboard'] },
+    { id: 'cours',        ic: '📚', label: 'Cours',        tabs: ['modules', 'audit', 'grandlivre', 'conso', 'fusion', 'social', 'hec', 'english', 'podcasts'] },
+    { id: 'entrainement', ic: '🎯', label: "S'entraîner",  tabs: ['trainer', 'qcm', 'fcdb', 'oral', 'progress'] },
+    { id: 'ressources',   ic: '🧰', label: 'Ressources',   tabs: ['references', 'compare', 'fs', 'recherche'] },
+];
+// Pages sans entrée propre dans la sous-barre → entrée qu'on y surligne.
+const TAB_ALIAS = { flashcards: 'fcdb' };
+
 // Tab labels kept at module scope so both navigate() and the a11y
 // announcement helper can reuse them.
-const TAB_LABELS = {
-    dashboard: 'Accueil', recherche: '🔎 Recherche', modules: 'Modules', trainer: '🎯 Entraînement',
-    fcdb: '🃏 BDD Flashcards', qcm: '❓ QCM', compare: 'Comparaisons', progress: 'Stats',
-    fs: 'États Financiers', references: 'Références',
-    audit: '🔍 Audit',
-    english: '🇬🇧 Anglais',
-    podcasts: '🎧 Podcasts',
-    hec: '🎓 HEC',
-    oral: '🎤 Oral',
-    conso: '📊 Conso',
-    social: '🤝 Social',
-    fusion: '🔀 Fusion',
-    eymanual: '📕 Manuel EY',
-    grandlivre: '📗 Grand Livre',
-    flashcards: 'Flashcards' // legacy redirect
-};
+const TAB_LABELS = Object.fromEntries(Object.entries(TAB_META).map(([k, v]) => [k, v.ic + ' ' + v.label]));
 
 // Onglets masqués : plus de bouton ni de tuile d'accueil, et le bandeau
 // « Reprendre » ne les propose plus. Le code reste chargé (réactivation facile).
 const HIDDEN_TABS = ['eymanual'];
+
+function navGroupOf(tab) {
+    const t = TAB_ALIAS[tab] || tab;
+    return NAV_GROUPS.find(g => g.tabs.includes(t)) || null;
+}
+
+// Dernière page ouverte dans chaque rubrique (pour y revenir directement).
+const _navLastInGroup = {};
+function navigateGroup(groupId) {
+    const g = NAV_GROUPS.find(x => x.id === groupId);
+    if (!g) return;
+    let last = _navLastInGroup[groupId];
+    if (!last) { try { last = JSON.parse(localStorage.getItem('swisscpa_nav_last') || '{}')[groupId]; } catch (_) {} }
+    navigate(g.tabs.includes(last) ? last : g.tabs[0]);
+}
+
+function renderNavState(tab) {
+    const g = navGroupOf(tab);
+    const activeSub = TAB_ALIAS[tab] || tab;
+    document.querySelectorAll('.tab-bar .tab[data-group]').forEach(b => {
+        const on = !!g && b.dataset.group === g.id;
+        b.classList.toggle('active', on);
+        if (on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+    });
+    if (g) {
+        _navLastInGroup[g.id] = activeSub;
+        try {
+            const m = JSON.parse(localStorage.getItem('swisscpa_nav_last') || '{}');
+            m[g.id] = activeSub;
+            localStorage.setItem('swisscpa_nav_last', JSON.stringify(m));
+        } catch (_) {}
+    }
+    const bar = document.getElementById('subTabBar');
+    if (!bar) return;
+    if (!g || g.tabs.length < 2) { bar.classList.add('hidden'); bar.innerHTML = ''; return; }
+    bar.setAttribute('aria-label', g.label);
+    bar.innerHTML = g.tabs.map(t => {
+        const meta = TAB_META[t] || { ic: '', label: t };
+        const on = t === activeSub;
+        return `<button class="sub-tab${on ? ' active' : ''}" role="tab" aria-selected="${on}" data-sub="${t}" onclick="navigate('${t}')">`
+             + `<span aria-hidden="true">${meta.ic}</span> ${meta.label}</button>`;
+    }).join('');
+    bar.classList.remove('hidden');
+    const act = bar.querySelector('.sub-tab.active');
+    if (act) { try { act.scrollIntoView({ inline: 'center', block: 'nearest' }); } catch (_) {} }
+}
+
+// La sous-barre colle sous la barre principale, dont la hauteur varie (mobile).
+function _syncTabBarHeight() {
+    const bar = document.getElementById('tabBar');
+    if (bar) document.documentElement.style.setProperty('--tabbar-h', bar.offsetHeight + 'px');
+}
+window.addEventListener('resize', _syncTabBarHeight);
 
 function announce(msg) {
     const live = document.getElementById('srStatus');
@@ -124,22 +198,11 @@ function navigate(tab, subTab) {
     }
     if (typeof _pcRenderMini === 'function') _pcRenderMini();
 
-    // Update tab bar + ARIA state
-    document.querySelectorAll('.tab-bar .tab').forEach(t => {
-        const isActive = t.dataset.tab === tab;
-        t.classList.toggle('active', isActive);
-        if (isActive) t.setAttribute('aria-current', 'page');
-        else t.removeAttribute('aria-current');
-    });
-    // Referme le menu mobile et amène l'onglet actif dans la zone visible.
+    // Rubrique active (barre du haut) + pages de la rubrique (sous-barre).
+    renderNavState(tab);
+    // Referme le menu mobile.
     if (typeof closeNavMenu === 'function') closeNavMenu();
-    const _activeTab = document.querySelector('.tab-bar .tab.active');
-    if (_activeTab) { try { _activeTab.scrollIntoView({ inline: 'center', block: 'nearest' }); } catch (_) {} }
-
-    // Sub-tabs : tous les onglets à sous-sections (Références, Anglais…) les
-    // gèrent désormais DANS leur app iframe — la barre parent reste cachée.
-    const subBar = document.getElementById('subTabBar');
-    if (subBar) subBar.classList.add('hidden');
+    _syncTabBarHeight();
 
     // Render content
     const main = document.getElementById('mainContent');
@@ -151,8 +214,11 @@ function navigate(tab, subTab) {
     main.className = 'main-content fade-in' + widthClass;
     void main.offsetWidth;
 
-    // Move keyboard focus into the main region so screen readers land there.
-    try { main.focus({ preventScroll: false }); } catch (_) { main.focus(); }
+    // Nouvelle page : on repart du haut, et le focus clavier va dans la zone
+    // principale SANS faire défiler (sinon le haut de la page passait sous les
+    // barres collantes).
+    try { window.scrollTo(0, 0); } catch (_) {}
+    try { main.focus({ preventScroll: true }); } catch (_) {}
 
     // Announce the page change to assistive tech.
     announce('Page : ' + (TAB_LABELS[tab] || tab));

@@ -1,136 +1,55 @@
 /* ═══════════════════════════════════════════════
-   Global Search
+   Barre de recherche du haut → page Recherche complète
+   ───────────────────────────────────────────────
+   Un seul moteur dans l'app : celui de la page Recherche (js/search_tab.js),
+   qui indexe toutes les données. La barre du haut propose de lancer la
+   recherche (clic ou Entrée) et ouvre cette page avec la requête.
    ═══════════════════════════════════════════════ */
 
-let searchTimeout = null;
-
-function handleSearch(query) {
-    clearTimeout(searchTimeout);
-    if (!query || query.length < 2) {
-        hideSearchResults();
-        return;
-    }
-    searchTimeout = setTimeout(() => doSearch(query), 300);
+function openFullSearch(query) {
+    const q = String(query || '').trim();
+    hideSearchResults();
+    const input = document.getElementById('globalSearch');
+    if (input) { input.value = ''; input.blur(); }
+    if (typeof _stQuery !== 'undefined') _stQuery = q;   // repris par renderRechercheTab
+    navigate('recherche');
 }
 
-// Per-render store keyed by index — avoids embedding JSON into HTML attributes
-// where user-controlled strings could break out of the onclick context.
-let _lastSearchResults = [];
-
-async function doSearch(query) {
-    const results = await api('search_all', query);
+function handleSearch(query) {
     const container = document.getElementById('searchResults');
-    container.setAttribute('role', 'listbox');
-
-    // Clear existing nodes
-    while (container.firstChild) container.removeChild(container.firstChild);
-
-    if (!results || results.length === 0) {
-        const empty = document.createElement('div');
-        empty.style.cssText = 'padding:16px;color:#94a3b8;font-size:13px';
-        empty.textContent = 'Aucun résultat pour "' + query + '"';
-        container.appendChild(empty);
-        container.classList.add('visible');
-        _lastSearchResults = [];
-        return;
-    }
-
-    _lastSearchResults = results;
-
-    results.forEach((r, i) => {
-        const item = document.createElement('div');
-        item.className = 'search-result-item';
-        item.setAttribute('role', 'option');
-        item.tabIndex = 0;
-        item.dataset.idx = String(i);
-
-        const icon = document.createElement('span');
-        icon.className = 'search-result-icon';
-        icon.textContent = r.icon || '';
-        item.appendChild(icon);
-
-        const textWrap = document.createElement('div');
-        textWrap.className = 'search-result-text';
-
-        const title = document.createElement('div');
-        title.className = 'search-result-title';
-        title.textContent = r.title || '';
-        textWrap.appendChild(title);
-
-        const sub = document.createElement('div');
-        sub.className = 'search-result-sub';
-        sub.textContent = r.subtitle || '';
-        textWrap.appendChild(sub);
-
-        item.appendChild(textWrap);
-        container.appendChild(item);
-    });
-
+    if (!container) return;
+    const q = String(query || '').trim();
+    if (q.length < 2) { hideSearchResults(); return; }
+    container.innerHTML = '';
+    const item = document.createElement('div');
+    item.className = 'search-result-item';
+    item.setAttribute('role', 'option');
+    item.tabIndex = 0;
+    const icon = document.createElement('span');
+    icon.className = 'search-result-icon';
+    icon.textContent = '🔎';
+    const wrap = document.createElement('div');
+    wrap.className = 'search-result-text';
+    const title = document.createElement('div');
+    title.className = 'search-result-title';
+    title.textContent = 'Rechercher « ' + q + ' » partout';
+    const sub = document.createElement('div');
+    sub.className = 'search-result-sub';
+    sub.textContent = 'Normes, cours, flashcards, audit, seuils, anglais… — Entrée';
+    wrap.appendChild(title); wrap.appendChild(sub);
+    item.appendChild(icon); item.appendChild(wrap);
+    item.addEventListener('click', () => openFullSearch(q));
+    item.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFullSearch(q); } });
+    container.appendChild(item);
     container.classList.add('visible');
 }
 
-// Event delegation — one listener for all search results
-document.addEventListener('click', (e) => {
-    const item = e.target.closest && e.target.closest('#searchResults .search-result-item');
-    if (!item) return;
-    const idx = parseInt(item.dataset.idx, 10);
-    const result = _lastSearchResults[idx];
-    if (result) openSearchResult(result);
-});
-document.addEventListener('keydown', (e) => {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    const item = e.target.closest && e.target.closest('#searchResults .search-result-item');
-    if (!item) return;
-    e.preventDefault();
-    const idx = parseInt(item.dataset.idx, 10);
-    const result = _lastSearchResults[idx];
-    if (result) openSearchResult(result);
-});
-
 function showSearchResults() {
     const input = document.getElementById('globalSearch');
-    if (input.value.length >= 2) {
-        document.getElementById('searchResults').classList.add('visible');
-    }
+    if (input && input.value.trim().length >= 2) handleSearch(input.value);
 }
 
 function hideSearchResults() {
-    document.getElementById('searchResults').classList.remove('visible');
-}
-
-function openSearchResult(result) {
-    hideSearchResults();
-    document.getElementById('globalSearch').value = '';
-
-    switch (result.type) {
-        case 'norm':
-            navigate('modules');
-            setTimeout(() => modJumpToNorm(result.norm_code), 500);
-            break;
-        case 'flashcard':
-            navigate('flashcards');
-            break;
-        case 'reference':
-            const sectionMap = {
-                'memo_co': 'memos', 'memo_rpc': 'memos', 'memo_ifrs': 'memos',
-                'courses_ifrs': 'courses', 'courses_rpc': 'courses',
-                'anglais': 'glossary', 'seuils': 'seuils',
-                'consolidation': 'conso', 'cas_chiffres': 'cas',
-                'arbres_decision': 'arbres', 'restructuration': 'restruct',
-                'terrain': 'terrain'
-            };
-            navigate('references', sectionMap[result.section] || 'courses');
-            break;
-        case 'glossary':
-            navigate('references', 'glossary');
-            break;
-        case 'audit_nas':
-        case 'audit_cadre':
-        case 'audit_comparatif':
-        case 'audit_cycle':
-        case 'audit_finding':
-        case 'audit_wording':
-            navigate('audit', result.sub_tab || 'nas');
-            break;
-    }
+    const c = document.getElementById('searchResults');
+    if (c) c.classList.remove('visible');
 }

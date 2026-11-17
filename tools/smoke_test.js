@@ -37,7 +37,8 @@ const server = http.createServer((req, res) => {
 
   await page.goto(base, { waitUntil: 'load' });
   await page.waitForTimeout(2000);
-  const tabs = await page.$$eval('#navScroll .tab', bs => bs.map(b => b.dataset.tab));
+  // Toutes les pages de toutes les rubriques (NAV_GROUPS, js/app.js).
+  const tabs = await page.evaluate(() => NAV_GROUPS.flatMap(g => g.tabs));
   let bad = 0;
   for (const t of tabs) {
     errs = []; local404 = [];
@@ -62,6 +63,14 @@ const server = http.createServer((req, res) => {
       empty = n < 300;
       sub = ` iframe=${src.split('?')[0]} texte=${n}c${empty ? ' (VIDE)' : ''}`;
     }
+    // La navigation doit refléter la page : rubrique active + entrée active de la sous-barre.
+    const nav = await page.evaluate(t => {
+      const g = navGroupOf(t);
+      const gb = document.querySelector('.tab-bar .tab.active');
+      const sb = document.querySelector('#subTabBar .sub-tab.active');
+      return { ok: !!g && gb && gb.dataset.group === g.id && (g.tabs.length < 2 || (sb && sb.dataset.sub === t)) };
+    }, t);
+    if (!nav.ok) errs.push('navigation : rubrique / sous-barre non synchronisées');
     const ok = !errs.length && !local404.length && !empty;
     if (!ok) bad++;
     console.log(`${ok ? 'OK ' : 'ERR'} ${t.padEnd(11)} texte=${info.text}c${sub}`);
