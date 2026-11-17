@@ -12526,5 +12526,125 @@
     "d": "facile",
     "q": "**13e rente AVS** : quand et comment ?",
     "a": "Acceptée en votation le **3 mars 2024**. Versée **une fois par an**, pour la première fois en **décembre 2026** (montant = 1/12 de la rente annuelle). Son financement reste un enjeu politique (TVA / cotisations)."
+  },
+  {
+    "id": 2255,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 18 – Présentation (2027)",
+    "d": "moyen",
+    "q": "**IFRS 18** : quand et que remplace-t-elle ?",
+    "a": "Publiée en **avril 2024**, applicable aux exercices ouverts dès le **1.1.2027** (anticipation permise, comparatifs retraités).\n\n- Remplace **IAS 1**\n- IAS 8 devient « Base d'établissement des états financiers »\n- Amendements d'**IAS 7** et d'IAS 34"
+  },
+  {
+    "id": 2256,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 18 – Présentation (2027)",
+    "d": "moyen",
+    "q": "IFRS 18 : les **5 catégories** du compte de résultat ?",
+    "a": "1. **Exploitation** (catégorie résiduelle)\n2. **Investissement** (mises en équivalence, trésorerie, actifs à rendement indépendant)\n3. **Financement** (dettes de financement, intérêts sur autres passifs)\n4. **Impôts sur le résultat**\n5. **Activités abandonnées**"
+  },
+  {
+    "id": 2257,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 18 – Présentation (2027)",
+    "d": "moyen",
+    "q": "IFRS 18 : quels **sous-totaux obligatoires** ?",
+    "a": "- **Résultat d'exploitation** (operating profit or loss)\n- **Résultat avant financement et impôts**\n- (Résultat net, comme avant)\n\n⚠️ L'EBITDA n'est pas défini par IFRS 18."
+  },
+  {
+    "id": 2258,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 18 – Présentation (2027)",
+    "d": "difficile",
+    "q": "IFRS 18 : que faut-il publier pour les **MPM** (management-defined performance measures) ?",
+    "a": "Une **note unique** :\n- description de chaque MPM et de son utilité\n- **rapprochement** avec le sous-total IFRS le plus proche\n- **effet impôt** et part des **minoritaires** de chaque élément de rapprochement\n\nMPM = sous-total de produits/charges utilisé dans la communication publique **hors** états financiers."
+  },
+  {
+    "id": 2259,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 18 – Présentation (2027)",
+    "d": "piège",
+    "q": "Sous IFRS 18, où va la **quote-part du résultat des entreprises associées** ?",
+    "a": "En catégorie **investissement** (et non plus dans un « résultat opérationnel » libre), pour une entité dont l'activité principale n'est pas l'investissement."
+  },
+  {
+    "id": 2260,
+    "cat": "IFRS / IAS",
+    "sub": "IAS 7 – Flux (amendements 2027)",
+    "d": "piège",
+    "q": "Amendements d'**IAS 7** liés à IFRS 18 : classement des intérêts et dividendes ?",
+    "a": "Pour une entité sans activité principale de financement/investissement (dès 2027) :\n- **Intérêts payés** et **dividendes versés** → **financement**\n- **Intérêts reçus** et **dividendes reçus** → **investissement**\n- Point de départ de la méthode indirecte : **résultat d'exploitation**\n\nLe choix d'IAS 7.33 disparaît."
+  },
+  {
+    "id": 2261,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 19 – Filiales (2027)",
+    "d": "moyen",
+    "q": "**IFRS 19** : de quoi s'agit-il ?",
+    "a": "Norme **facultative** (mai 2024, applicable dès le **1.1.2027**) : une **filiale sans responsabilité publique** dont la mère publie des comptes consolidés IFRS peut appliquer les IFRS avec des **informations à fournir réduites**.\n\nComptabilisation et évaluation : **inchangées**."
+  },
+  {
+    "id": 2262,
+    "cat": "IFRS / IAS",
+    "sub": "IAS 21 – Monnaies",
+    "d": "difficile",
+    "q": "Amendement **IAS 21 « Absence de convertibilité »** (2025) : que faire si une monnaie n'est pas échangeable ?",
+    "a": "Depuis le **1.1.2025** : l'entité **estime le cours au comptant** à la date d'évaluation (cours auquel une transaction ordonnée aurait lieu) et publie la nature de la restriction, le cours retenu et les risques."
+  },
+  {
+    "id": 2263,
+    "cat": "IFRS / IAS",
+    "sub": "IAS 12 – Impôts",
+    "d": "piège",
+    "q": "**Pilier 2** (impôt minimum OCDE 15 %) : traitement des impôts différés selon IAS 12 ?",
+    "a": "**Exception temporaire obligatoire** (amendement mai 2023) : **aucun impôt différé** lié au Pilier 2.\n\nÀ publier : application de l'exception, **impôt courant** Pilier 2, exposition connue ou estimable.\n\n🇨🇭 Suisse : impôt complémentaire national (**QDMTT**) depuis le **1.1.2024** (groupes ≥ 750 M EUR de CA)."
+  },
+  {
+    "id": 2264,
+    "cat": "Fiscalité",
+    "sub": "Valeur locative – M7L5",
+    "d": "moyen",
+    "q": "**Suppression de la valeur locative** : date et conséquences ?",
+    "a": "Votation du **28.09.2025**, en vigueur le **1.1.2029** (Conseil fédéral, 1.4.2026).\n\nJusqu'au 31.12.2028 : régime actuel.\nEnsuite :\n- plus de valeur locative (résidences principales et secondaires)\n- plus de déduction des **frais d'entretien**\n- **intérêts passifs privés** déductibles seulement pour des immeubles loués\n- déduction dégressive pour **primo-acquéreurs**\n- les cantons peuvent introduire un impôt sur les **résidences secondaires**"
+  },
+  {
+    "id": 2265,
+    "cat": "Fiscalité",
+    "sub": "Imposition individuelle – M7L7",
+    "d": "moyen",
+    "q": "**Imposition individuelle** : où en est-on ?",
+    "a": "Acceptée en votation le **08.03.2026** (≈ 54 % de oui, contre-projet indirect).\n\nEntrée en vigueur **au plus tard le 1.1.2032** (adaptation des lois cantonales).\nD'ici là : **imposition commune** des époux (art. 9 LIFD).\nEnsuite : une déclaration par personne, quel que soit l'état civil."
+  },
+  {
+    "id": 2266,
+    "cat": "Fiscalité",
+    "sub": "Procédure – M7L11",
+    "d": "facile",
+    "q": "Taux de l'**intérêt moratoire** des impôts fédéraux en 2026-2027 ?",
+    "a": "**4 %** (ordonnance du DFF, RS 631.014 : taux unique pour IFD, TVA, impôt anticipé, droits de timbre).\n\nHistorique : 4,75 % (2024), 4,5 % (2025), 4 % (2026 et 2027). Intérêt rémunératoire sur paiements anticipés IFD : 0 %."
+  },
+  {
+    "id": 2267,
+    "cat": "Fiscalité",
+    "sub": "TVA plateformes – M8L2",
+    "d": "moyen",
+    "q": "TVA : **plateformes électroniques** (art. 20a LTVA) ?",
+    "a": "Depuis le **1.1.2025** : la plateforme qui facilite la vente de **biens** est **réputée fournisseur** (fiction de deux livraisons : vendeur → plateforme → client).\n\nInscription dès **CHF 100'000** de CA ; le vendeur est en principe libéré pour ces ventes."
+  },
+  {
+    "id": 2268,
+    "cat": "Fiscalité",
+    "sub": "TVA décompte – M8L8",
+    "d": "moyen",
+    "q": "TVA : qu'est-ce que le **décompte annuel** introduit en 2025 ?",
+    "a": "Option pour les assujettis dont le CA imposable ne dépasse pas **CHF 5,005 M** : un seul décompte par an, avec **acomptes** en cours d'année (sur demande à l'AFC).\n\nLe trimestriel (méthode effective) et le semestriel (TDFN) restent la règle."
+  },
+  {
+    "id": 2269,
+    "cat": "Fiscalité",
+    "sub": "TVA importation – M8L7",
+    "d": "piège",
+    "q": "**Franchise-valeur** voyageurs depuis 2025 ?",
+    "a": "**CHF 150** par personne et par jour (au lieu de 300 avant le 1.1.2025).\n\n⚠️ Ne pas confondre avec le **tax free** des touristes étrangers : achat ≥ **CHF 300** TTC, export dans les **90 jours**."
   }
 ]

@@ -22987,6 +22987,104 @@
               "explanation": "IAS 1.40A impose un troisième bilan d'ouverture (au début de la période comparative la plus ancienne) lorsque l'entité applique rétrospectivement une méthode comptable, retraite rétrospectivement (correction d'erreur IAS 8) ou reclasse des éléments avec un effet significatif. C'est un des piliers de la traçabilité IAS 8.",
               "difficulty": "hard",
               "section_id": "ias1_s2"
+            },
+            {
+              "id": "ias1_ifrs18_q1",
+              "type": "mcq",
+              "question": "IFRS 18 (Présentation et informations à fournir dans les états financiers) remplace IAS 1. Depuis quand s'applique-t-elle obligatoirement ?",
+              "options": [
+                "A. Aux exercices ouverts dès le 1er janvier 2025",
+                "B. Aux exercices ouverts dès le 1er janvier 2027",
+                "C. Aux exercices ouverts dès le 1er janvier 2029",
+                "D. Uniquement aux sociétés cotées aux États-Unis"
+              ],
+              "answer": 1,
+              "explanation": "IFRS 18, publiée par l'IASB en avril 2024, s'applique aux exercices ouverts à compter du 1er janvier 2027 (application anticipée permise), avec retraitement rétrospectif des comparatifs. Elle remplace IAS 1 ; IAS 8 est renommée « Base d'établissement des états financiers ».",
+              "difficulty": "medium"
+            },
+            {
+              "id": "ias1_ifrs18_q2",
+              "type": "mcq",
+              "question": "Sous IFRS 18, dans quelles catégories principales le compte de résultat classe-t-il les produits et les charges ?",
+              "options": [
+                "A. Courant, non courant et exceptionnel",
+                "B. Exploitation, investissement, financement, impôts, abandonnées",
+                "C. Ordinaire, extraordinaire et autres éléments du résultat global (OCI)",
+                "D. Par nature uniquement, sans aucune autre catégorie"
+              ],
+              "answer": 1,
+              "explanation": "IFRS 18 impose cinq catégories : exploitation (operating), investissement (investing), financement (financing), impôts sur le résultat et activités abandonnées. La catégorie exploitation est résiduelle : elle comprend tout ce qui ne va pas ailleurs.",
+              "difficulty": "medium"
+            },
+            {
+              "id": "ias1_ifrs18_q3",
+              "type": "mcq",
+              "question": "Quels sous-totaux IFRS 18 rend-elle obligatoires au compte de résultat ?",
+              "options": [
+                "A. L'EBITDA et l'EBIT, selon les définitions de la direction",
+                "B. Résultat d'exploitation ; résultat avant financement et impôts",
+                "C. La marge brute et la valeur ajoutée, pour toutes les entités",
+                "D. Aucun : la présentation des sous-totaux reste entièrement libre"
+              ],
+              "answer": 1,
+              "explanation": "Deux nouveaux sous-totaux sont obligatoires : « résultat d'exploitation » (operating profit or loss) et « résultat avant financement et impôts sur le résultat », en plus du résultat net. L'EBITDA n'est pas défini par IFRS 18 ; s'il est communiqué hors des états financiers, il peut constituer une MPM.",
+              "difficulty": "medium"
+            },
+            {
+              "id": "ias1_ifrs18_q4",
+              "type": "mcq",
+              "question": "Qu'est-ce qu'une MPM (management-defined performance measure) au sens d'IFRS 18 ?",
+              "options": [
+                "A. Tout ratio financier publié dans le rapport de gestion, quel qu'il soit",
+                "B. Un sous-total utilisé dans la communication publique hors EF",
+                "C. Un indicateur non financier de durabilité (ESG) publié par l'entité",
+                "D. Un indicateur imposé par la bourse pour toutes les sociétés cotées"
+              ],
+              "answer": 1,
+              "explanation": "Une MPM est un sous-total de produits et de charges que l'entité utilise dans sa communication publique hors des états financiers pour présenter sa performance (p. ex. « résultat opérationnel ajusté »). IFRS 18 exige une note unique : description, rapprochement avec le sous-total IFRS le plus proche, effet impôt et part des minoritaires pour chaque élément de rapprochement.",
+              "difficulty": "medium"
+            },
+            {
+              "id": "ias1_ifrs18_q5",
+              "type": "mcq",
+              "question": "Sous IFRS 18, dans quelle catégorie du compte de résultat présente-t-on la quote-part du résultat des entreprises associées (mise en équivalence) ?",
+              "options": [
+                "A. En catégorie exploitation, avec les autres produits",
+                "B. En catégorie investissement",
+                "C. En catégorie financement",
+                "D. Hors compte de résultat, en OCI"
+              ],
+              "answer": 1,
+              "explanation": "IFRS 18 classe la quote-part du résultat des entreprises associées et coentreprises mises en équivalence dans la catégorie investissement, au même titre que les produits de la trésorerie et des autres actifs générant des rendements de façon largement indépendante (pour une entité sans activité principale d'investissement).",
+              "difficulty": "medium"
+            },
+            {
+              "id": "ias1_ifrs19_q1",
+              "type": "mcq",
+              "question": "À quelles entités IFRS 19 (Filiales n'ayant pas d'obligation d'information du public, applicable dès 2027) permet-elle des informations allégées ?",
+              "options": [
+                "A. À toutes les PME suisses, même sans société mère",
+                "B. Filiales sans responsabilité publique, mère en IFRS",
+                "C. Aux sociétés cotées qui le décident en assemblée générale",
+                "D. Aux banques et assurances soumises à la FINMA"
+              ],
+              "answer": 1,
+              "explanation": "IFRS 19 (mai 2024, applicable dès le 1.1.2027) est facultative : une filiale sans responsabilité publique (titres non négociés sur un marché public, pas de détention d'actifs à titre fiduciaire pour des tiers) dont la société mère (ultime ou intermédiaire) publie des comptes consolidés IFRS peut appliquer les IFRS avec des informations à fournir réduites. Les règles de comptabilisation et d'évaluation restent inchangées.",
+              "difficulty": "medium"
+            },
+            {
+              "id": "ias1_p2_q1",
+              "type": "mcq",
+              "question": "Quel traitement IAS 12 prévoit-il pour les impôts différés liés à l'impôt complémentaire « Pilier 2 » (OCDE, minimum 15 %) ?",
+              "options": [
+                "A. Des impôts différés calculés au taux minimal de 15 %",
+                "B. Exception obligatoire : aucun impôt différé",
+                "C. Une provision IAS 37 couvrant l'impôt complémentaire futur",
+                "D. Un traitement au choix de l'entité, à documenter en annexe"
+              ],
+              "answer": 1,
+              "explanation": "Les amendements d'IAS 12 (mai 2023) introduisent une exception temporaire et obligatoire : l'entité ne comptabilise pas d'impôts différés liés aux impôts sur le résultat du Pilier 2 et ne fournit pas d'information à leur sujet, mais elle publie l'impôt courant Pilier 2 et l'exposition connue. En Suisse, l'impôt complémentaire national (QDMTT) s'applique depuis le 1.1.2024 aux groupes réalisant au moins 750 M EUR de chiffre d'affaires.",
+              "difficulty": "medium"
             }
           ],
           "mindmap_md": "# IAS 1\n## Présentation des états financiers\n\n### Cadre & champ\n- Norme **chapeau** : fixe la **forme**, pas le fond\n- Couvre comptes **annuels** à usage général (IFRS)\n- États **intermédiaires** → IAS 34\n- Comptabilité et évaluation → autres normes (IAS 16, IFRS 9, IFRS 15…)\n- Comparabilité **dans le temps** et **entre entités**\n\n### Les 5 états obligatoires — **B-R-V-F-N**\n- **B**ilan (situation financière)\n- **R**ésultat global = P&L + **OCI**\n- **V**ariation des capitaux propres\n- **F**lux de trésorerie (IAS 7)\n- **N**otes annexes\n- IAS 1.10 : absence d'un seul = **non conforme** IFRS\n- Identification visible : entité, date, monnaie, arrondi (IAS 1.51)\n\n### OCI — éléments hors P&L\n#### Recyclables (futurs P&L)\n- Conversion entités étrangères (**IAS 21**)\n- Couvertures flux de trésorerie (**IFRS 9**)\n- FVOCI **obligations**\n#### Non recyclables (jamais P&L)\n- Écarts actuariels **IAS 19**\n- Réévaluation **IAS 16 / IAS 38**\n- FVOCI **actions** (choix irrévocable)\n- Mnémo : **RACE** (Réévaluation, Actuariels, Conversion, Etc.)\n\n### Classement courant / non courant\n- Critère : **12 mois** ou cycle d'exploitation\n- Droit de **reporter** doit exister **à la date de clôture**\n- Amendement 2020 (covenants) : violation à clôture → **passif courant**\n- Refinancement signé **après** clôture = sans effet sur classement\n- Banques : présentation par **liquidité** autorisée\n\n### Compte de résultat\n- Par **nature** OU par **fonction**\n- Si fonction → info par nature obligatoire en **annexe**\n- Pas de catégorie **« éléments extraordinaires »** (IAS 1.87)\n- Compensation **interdite** (sauf normes spécifiques)\n\n### Bilan d'ouverture comparatif\n- **3e bilan obligatoire** si changement de méthode rétrospectif\n- Si correction d'erreur significative (**IAS 1.40A**)\n- Notes correspondantes **non requises** (IAS 1.40C)\n\n### Notes annexes\n- Déclaration **explicite** de conformité IFRS (pas de partielle)\n- Méthodes comptables **matérielles**\n- Jugements significatifs + sources d'incertitude\n- Continuité d'exploitation : évaluation + **publication si doute** (lien IAS 10)\n\n### IFRS 18 — remplacement 2027\n- 3 catégories P&L : **operating / investing / financing**\n- Sous-totaux normalisés (operating profit, profit before financing/tax)\n- **MPM** (Management Performance Measures) en annexe\n- Programme Swiss CPA 2026 = **IAS 1** (pas encore IFRS 18)\n\n### ⚠️ Pièges examen\n- **N°1** Passif courant si covenant violé à clôture **même** si waiver après\n- **N°2** OCI ne passe **JAMAIS** par le résultat net\n- **N°3** Pas de catégorie « extraordinaire » — interdite\n- **N°4** Conformité IFRS = **totale**, jamais partielle\n- **N°5** 3e bilan obligatoire si changement rétrospectif (mais pas ses notes)\n- **N°6** Cycle d'exploitation > 12 mois (vin, projets) → critère propre\n\n### 💡 Mnémoniques\n- **B-R-V-F-N** — les 5 états (Bilan, Résultat, Variation, Flux, Notes)\n- **RACE** — OCI non recyclable (Réévaluation, Actuariels, Conv. solde, Etc.)\n- **« Forme, pas fond »** — IAS 1 ne fixe que la présentation\n- **« 12 mois ou cycle »** — critère courant/non courant\n\n### 🔗 Normes liées\n- **IAS 7** — Flux de trésorerie (composante obligatoire)\n- **IAS 8** — Changements de méthodes (déclenche 3e bilan)\n- **IAS 10** — Continuité d'exploitation (post-clôture)\n- **IAS 34** — États intermédiaires\n- **IFRS 18** — Remplacement 2027\n- **RPC 3** — Équivalent suisse (sans OCI)\n- **CO art. 959-959c** — Structure minimale\n",
@@ -23523,6 +23621,20 @@
               "explanation": "IAS 7.44A-E (depuis 2017) impose un rapprochement détaillé des passifs de financement entre l'ouverture et la clôture, distinguant les flux de trésorerie réels des variations non-cash (acquisitions, écarts de conversion, ajustements de JV, intérêts courus). C'est un outil clé pour les analystes pour comprendre la dynamique de l'endettement.",
               "difficulty": "hard",
               "section_id": "ias7_s4"
+            },
+            {
+              "id": "ias7_ifrs18_q1",
+              "type": "mcq",
+              "question": "Avec les amendements d'IAS 7 liés à IFRS 18 (dès 2027), comment une entité industrielle classe-t-elle les intérêts payés et les dividendes reçus ?",
+              "options": [
+                "A. Intérêts payés en financement, dividendes reçus en investissement",
+                "B. Les deux restent au choix de l'entité, selon une politique constante",
+                "C. Les deux en exploitation, obligatoirement",
+                "D. Intérêts payés en investissement, dividendes reçus en financement"
+              ],
+              "answer": 0,
+              "explanation": "Les amendements d'IAS 7 suppriment le choix pour les entités sans activité principale de financement ou d'investissement : intérêts payés et dividendes versés en financement ; intérêts et dividendes reçus en investissement. Le résultat d'exploitation devient aussi le point de départ unique de la méthode indirecte.",
+              "difficulty": "medium"
             }
           ],
           "audio_files": [
@@ -35036,6 +35148,21 @@
               "explanation": "Vrai. Si le contribuable est qualifie de commerçant professionnel d'immeubles (critères : nombre de transactions, courte détention, fonds étrangers importants, profession immobilière, achat systématique pour revente), ses gains deviennent revenu d'activité indépendante (art. 18 LIFD) : imposés a IFD+ICC, soumis a l'AVS, mais pertes deviennent déductibles.",
               "difficulty": "medium",
               "section_id": "m7_L5_s6"
+            },
+            {
+              "id": "m7_L5_x1",
+              "type": "mcq",
+              "question": "La suppression de la valeur locative, acceptée en votation le 28 septembre 2025, entre en vigueur quand ?",
+              "options": [
+                "A. Le 1er janvier 2026, dès l'année suivant le vote",
+                "B. Le 1er janvier 2029",
+                "C. Le 1er janvier 2032, avec l'imposition individuelle",
+                "D. Elle n'entrera jamais en vigueur sans nouvelle votation"
+              ],
+              "answer": 1,
+              "explanation": "Le Conseil fédéral a fixé l'entrée en vigueur au 1.1.2029 (décision du 1.4.2026). Jusqu'au 31.12.2028, la valeur locative reste imposable et les frais d'entretien ainsi que les intérêts passifs privés restent déductibles selon le régime actuel. Ensuite : plus de valeur locative (résidences principales et secondaires), plus de déduction des frais d'entretien, intérêts passifs privés déductibles seulement en lien avec des immeubles loués, et déduction dégressive pour les primo-acquéreurs.",
+              "difficulty": "medium",
+              "section_id": "m7_L5_s6"
             }
           ],
           "mindmap_md": "# M7-L5\n## Fortune mobilière et immobilière\n\n### Pertinence examen\n- **Haute** — articulation art. 20-21 + impôt anticipé + IGI cantonal\n- Imposition partielle + valeur locative + RAC = pièges récurrents\n\n### Fortune mobilière — art. 20 LIFD\n- **Définition** : tout sauf immeubles\n  - Liquidités, comptes bancaires\n  - Titres (actions, obligations, parts de fonds)\n  - Créances, prêts\n  - Cryptomonnaies (Circ. AFC 36 — comme fortune mobilière)\n  - Œuvres d'art, collections\n- Soumise à l'**IA 35 %** pour rendements (dividendes, intérêts)\n\n### Revenus mobiliers — catalogue (art. 20 al. 1 LIFD)\n#### a. Intérêts sur avoirs\n- Bancaires, dépôts à terme, prêts privés\n- Obligations classiques (coupons)\n- **100 % imposables**\n#### b. Obligations à intérêt unique prédominant\n- **Zero coupon** ou intérêt minoritaire\n- Différence émission/remboursement = **imposable** (pas exonérée)\n- Anti-évasion : éviter requalification gain capital\n#### c. Dividendes, parts au bénéfice, excédents de liquidation\n- 100 % imposables (sauf participations qualifiées)\n- IA 35 % retenue à la source\n#### d. Produits sur cession/exercice d'**actions de jouissance**\n#### e. Participations à fonds de placement\n- Quote-part revenu + plus-values éventuelles\n\n### Dividendes — imposition partielle (art. 20 al. 1bis LIFD)\n- **Participation qualifiée** : ≥ **10 %** du capital\n- Détenue en **fortune PRIVÉE**\n- **Imposable à 60 %** du montant brut (40 % d'abattement)\n- Lutte contre **double imposition économique** (RIE II 2008)\n- ⚠️ **Fortune commerciale = 70 %** (art. 18b) — différence clé !\n- IFD = 60 % (privée) / 70 % (commerciale)\n- Cantons : 50-70 % selon canton (LHID art. 7 al. 1)\n\n### Excédent de liquidation — art. 20 al. 1 let. c\n- = Montant reçu − **valeur nominale** des actions\n- Imposable comme rendement de capital\n- IA 35 %\n- Imposition partielle possible si participation qualifiée\n- **Remboursement du capital nominal** : **NON imposable**\n\n### Principe de l'apport en capital (RAC) — art. 20 al. 3 LIFD\n- Depuis 01.01.2011 (RIE II)\n- Remboursement d'**apports/agios/versements supplémentaires** = **NON imposable**\n- Traité comme remboursement de capital\n- Conditions :\n  - Comptabilisé séparément\n  - **Déclaré à l'AFC**\n- Permet rapatriement de capitaux sans IA\n- ⚠️ Limitation post-2020 (CTV) : 50 % apports / 50 % réserves pour sociétés cotées\n\n### Fortune immobilière — art. 21 LIFD\n- Définition : terrains + bâtiments\n- **Revenus imposables** :\n  - **a.** Loyers et fermages\n  - **b.** **Valeur locative** (résidence principale ou secondaire occupée)\n  - **c.** Produits des **servitudes** (droits de superficie)\n  - **d.** Revenus de l'exploitation forestière\n\n### Valeur locative — clé de voûte\n- = **Loyer théorique** que le propriétaire toucherait s'il louait\n- **Imposable** même si propriétaire occupe son logement\n- Mesure : 60-70 % du loyer de marché (selon canton)\n- **Compensée** par :\n  - Déduction des **intérêts hypothécaires**\n  - Déduction des **frais d'entretien** (effectif ou forfait)\n- ⚠️ **Projet de SUPPRESSION** en discussion au Parlement (avec contrepartie)\n\n### Gains immobiliers — impôt cantonal distinct\n- Plus-value sur immeuble fortune **PRIVÉE** = **exonérée IFD** (art. 16 al. 3)\n- **Mais** : impôt cantonal sur gains immobiliers (IGI — art. 12 LHID)\n- Variable selon canton et durée détention\n- **Système moniste** : tous gains soumis IGI (BS, BE, ZH, etc.)\n- **Système dualiste** : seuls gains fortune privée soumis IGI (VS, NE, etc.)\n- Voir détails m7_L14\n\n### Frais d'entretien immeuble (art. 32 LIFD)\n- **Méthode effective** : sur justificatifs\n- **Méthode forfaitaire** (art. 32 al. 4) :\n  - **10 %** si immeuble < 10 ans\n  - **20 %** si immeuble ≥ 10 ans\n- Choix **annuel** (peut changer chaque année)\n- ⚠️ **Frais d'amélioration** (plus-value) = **NON déductibles** (impenses)\n\n### Intérêts passifs — plafond (art. 33 al. 1 let. a)\n- Plafond = **Revenus fortune + CHF 50'000**\n- Dettes privées (hypothèque, crédit perso, leasing privé)\n- Excédent : **non déductible**\n- ⚠️ Calcul après tous revenus fortune (mobilière + immobilière)\n\n### Impôt sur la fortune — LHID (cantonal uniquement)\n- **Pas d'impôt fédéral** sur fortune\n- Objet : **totalité actifs − dettes déductibles**\n- **Universalité** : tous éléments fortune (mobilière + immobilière)\n- Évaluation : **valeur vénale** (LHID art. 14)\n- Taux variables : 0.1 % - 1 % selon canton\n\n### ⚠️ Pièges examen\n- **N°1** **Imposition partielle 60 % privée / 70 % commerciale** (≥ 10 % capital)\n- **N°2** **Obligations zero coupon = imposables** (art. 20 al. 1 let. b), pas gain capital\n- **N°3** **Valeur locative = revenu imposable** même si propriétaire occupant\n- **N°4** Frais d'entretien forfait : **10 % < 10 ans / 20 % ≥ 10 ans**\n- **N°5** Intérêts passifs plafond = **revenus fortune + 50k**\n- **N°6** Gains immobiliers privés = **exonérés IFD** mais **IGI cantonal** (art. 12 LHID)\n- **N°7** **Excédent liquidation = rendement** (imposable), pas gain capital\n- **N°8** **RAC** (art. 20 al. 3) : remboursement apports = **NON imposable** (depuis 2011)\n\n### 💡 Mnémoniques\n- **« 60/70 »** — imposition partielle dividendes privée/commerciale\n- **« 10/20 »** — forfait entretien immeuble < 10 ans / ≥ 10 ans\n- **« Fortune + 50k »** — plafond intérêts passifs\n- **« 35 % »** — taux impôt anticipé (cf. m7_L15)\n- **« VL = revenu »** — valeur locative imposable\n- **« RAC 2011 »** — principe apport capital (RIE II)\n- **« Zero ≠ exo »** — obligations zero coupon imposables\n\n### 🔗 Renvois\n- **m7_L4** — Indépendant (dividendes art. 18b)\n- **m7_L6** — Prévoyance (déductions)\n- **m7_L7** — Calcul + déductions\n- **m7_L14** — Gains immobiliers détaillés\n- **m7_L15** — Impôt anticipé (LIA 35%)\n- **LIFD art. 20-21** — fortune mobilière et immobilière\n- **LIFD art. 32, 33** — déductions\n- **LHID art. 12, 13-14** — IGI + fortune\n",
@@ -35577,6 +35704,21 @@
               ],
               "answer": 1,
               "explanation": "Déduction sociale IFD 2025-2026 : CHF 6'800/enfant (6'600 en 2024) (art. 35 al. 1 let. a LIFD). Conditions : enfants mineurs ou en formation jusqu'a 25 ans, a charge. Distinction : la déduction sociale (art. 35) est NON cumulable avec la déduction de garde extra-familiale (art. 33 al. 3, jusqu'a 25'800). Couples maries : déduction art. 35 let. c = CHF 2'800.",
+              "difficulty": "medium",
+              "section_id": "m7_L7_s6"
+            },
+            {
+              "id": "m7_L7_x1",
+              "type": "mcq",
+              "question": "L'imposition individuelle des couples mariés a été acceptée en votation le 8 mars 2026. Quelle est la situation pour les périodes fiscales 2026 et 2027 ?",
+              "options": [
+                "A. Chaque conjoint dépose déjà sa propre déclaration",
+                "B. L'imposition commune des époux (art. 9 LIFD) s'applique encore",
+                "C. Les couples peuvent choisir chaque année le système qu'ils préfèrent",
+                "D. Seuls les couples sans enfants passent au nouveau système"
+              ],
+              "answer": 1,
+              "explanation": "La loi sur l'imposition individuelle (contre-projet indirect accepté par 54 % des votants) doit entrer en vigueur au plus tard le 1.1.2032, le temps que les cantons adaptent leurs lois. D'ici là, les revenus et la fortune des époux restent additionnés (art. 9 LIFD), avec le barème pour couples mariés et les déductions actuelles.",
               "difficulty": "medium",
               "section_id": "m7_L7_s6"
             }
@@ -38924,6 +39066,21 @@
               "explanation": "Art. 7 al. 3 let. b LTVA (regle 'Amazon' depuis 2019) : si CA annuel >= 100'000 CHF de petits envois (TVA <= 5 CHF par envoi), les livraisons sont reputees en CH. Le vendeur étranger doit s'enregistrer et facturer la TVA CH. Cible : Amazon, AliExpress, Wish, Temu - lutte contre la concurrence déloyale.",
               "difficulty": "hard",
               "section_id": "m8_L2_s5"
+            },
+            {
+              "id": "m8_L2_x1",
+              "type": "mcq",
+              "question": "Depuis la révision partielle de la LTVA (1er janvier 2025), qui est réputé fournisseur lorsqu'une plateforme électronique facilite la vente d'un bien entre un vendeur et un consommateur ?",
+              "options": [
+                "A. Le vendeur, seul responsable de la TVA",
+                "B. La plateforme (art. 20a LTVA)",
+                "C. Le consommateur, par auto-liquidation",
+                "D. Le prestataire de paiement de la transaction"
+              ],
+              "answer": 1,
+              "explanation": "Art. 20a LTVA (en vigueur depuis le 1.1.2025) : la plateforme qui facilite des livraisons de biens est réputée les avoir elle-même acquises puis fournies. Elle doit s'inscrire dès CHF 100'000 de chiffre d'affaires et facturer la TVA suisse ; le vendeur est en principe libéré pour ces ventes.",
+              "difficulty": "medium",
+              "section_id": "m8_L2_s5"
             }
           ],
           "mindmap_md": "# M8-L2\n## Lieu des opérations imposables (art. 7-8 LTVA)\n\n### Pertinence examen\n- **Haute** — verrou des cas pratiques internationaux\n\n### Pourquoi le lieu est crucial\n- Seules les prestations dont le **lieu = CH** sont soumises à la TVA CH\n- Lieu étranger → **hors champ CH** (pas de TVA CH, éventuelle TVA étrangère)\n- Bases : **art. 7** pour LB, **art. 8** pour PS\n- Distinguer lieu **fiscal** (TVA) du lieu **physique** (logistique)\n\n### Lieu de la livraison de biens (art. 7 LTVA)\n#### Règles principales\n- **Prise en charge** (vente sur place) → lieu du **bien lors du transfert**\n- **Transport / expédition** → lieu où le **transport commence**\n- **Travaux sur bien** → lieu où les **travaux sont exécutés**\n- **Location** d'un bien → lieu de **remise** au locataire\n- **Vente par correspondance** → lieu d'importation (depuis CH si seuil atteint)\n#### Cas spéciaux\n- **Électricité, gaz, chaleur, froid** par conduite → **lieu du DESTINATAIRE**\n- Si destinataire inconnu → lieu de **consommation effective**\n- **Déclaration d'engagement** (formulaire 1235/1236) → lieu = CH\n\n### Lieu de la prestation de services (art. 8 LTVA)\n#### 6 règles dans l'ordre d'examen\n- **①** PS liée à un **immeuble** → lieu de l'**immeuble** (al. 2 let. f)\n- **②** PS culturelles/artistiques/sportives/d'enseignement **en présentiel** → lieu d'**exercice** (al. 2 let. c)\n- **③** Transport de **passagers** → lieu du **trajet parcouru** (al. 2 let. e)\n- **④** PS **coopération internationale** (aide au développement) → lieu de **destination** (al. 2 let. g)\n- **⑤** PS de proximité personnelle (coiffeur, soins, conseil conjugal, agence voyage en revente) → lieu du **PRESTATAIRE** (al. 2 let. a-b)\n- **⑥** **DÉFAUT** : règle générale → lieu du **DESTINATAIRE** (al. 1)\n#### Règle générale = destinataire (B2B le plus souvent)\n- Domicile (PP) / siège (PM) / **établissement stable** destinataire\n- Conseils, IT, formation en ligne, traduction, publicité, télécoms, licences\n\n### Arbre décisionnel PS — 6 questions\n- 1) PS liée à un **immeuble** ? → lieu de l'immeuble\n- 2) Manifestation présentielle artistique/sportive/enseignement ? → lieu d'exercice\n- 3) Transport de **passagers** ? → lieu du trajet\n- 4) Coopération internationale ? → lieu de destination\n- 5) Soins, coiffeur, conseil conjugal, agence voyage revente ? → lieu du prestataire\n- 6) **Sinon** (cas général) → lieu du **destinataire**\n\n### Cas particuliers fréquents\n#### Transport passagers (al. 2 let. e)\n- Genève-Paris train : 20 % CH (TVA CH) / 80 % FR (hors champ)\n- Bus excursion : **par tronçon** parcouru\n#### Restauration (al. 2 let. d)\n- Lieu d'**exercice** = lieu de l'établissement\n- Restaurant à GE → CH ; à Évian → étranger\n#### Hébergement (al. 2 let. f via immeuble)\n- Hôtel à Lausanne : taux **spécial 3.8 %** + lieu CH\n\n### Vente par correspondance — règle 2019/2024\n- Seuil **CHF 100'000** de petits envois (TVA < 5 CHF) vers CH\n- Au-delà : entreprise étrangère **assujettie CH** → lieu CH (livraison réputée intérieure)\n- Plateformes électroniques (art. 20a, depuis 01.01.2025) : plateforme = vendeur fiscal\n\n### ⚠️ Pièges examen\n- **N°1** Règle générale PS = lieu **destinataire** (art. 8 al. 1), pas prestataire\n- **N°2** PS lieu prestataire = **liste fermée** (coiffeur, soins, conseil conj., agence vente)\n- **N°3** Transport passagers = **trajet** (≠ siège transporteur)\n- **N°4** Immeuble (al. 2 let. f) prime sur tout — même PS digitales (conseil immobilier)\n- **N°5** Énergie en réseau = lieu **destinataire** (≠ règle LB classique)\n- **N°6** Restauration / hébergement présentiels = lieu d'**exercice** (immeuble)\n- **N°7** Plateformes art. 20a (dès 2025) → la plateforme devient sujet TVA pour petits envois\n\n### 💡 Mnémoniques\n- **« D-D-D-D-P-P »** — Défaut Destinataire / Déplacement, Domicile, Présence Prestataire\n- **« I-MAS-T-C-P-D »** — Immeuble, Manif Artist/Sport, Transport, Coopération, Prestataire, Destinataire (ordre arbre)\n- **« Coif-Soins-Conj-Voy »** — les 4 PS au lieu prestataire\n- **« Énergie = destinataire »** — exception LB unique\n- **« Tronçon = trajet »** — passagers\n\n### 🔗 Renvois\n- **m8_L1** — Bases TVA (4 conditions)\n- **m8_L3** — Assujettissement (siège/ES déterminants)\n- **m8_L6** — Exonérations export (art. 23) liées au lieu\n- **m8_L7** — Acquisitions/importations (reverse charge)\n- **LTVA art. 7-8** — textes clés\n",
@@ -40167,6 +40324,21 @@
               "explanation": "**VRAI** (art. 55 LTVA). 2 conditions cumulatives pour la déduction IP a l'importation : (1) **DTe au nom de l'importateur** ; (2) **disposer économiquement** des biens (preuve : facture, contrat). Sans DTe nominative, pas de déduction possible. Chiffre 400 du décompte. Conservation des DTe électroniques signées obligatoire.",
               "difficulty": "medium",
               "section_id": "m8_L7_s8"
+            },
+            {
+              "id": "m8_L7_x1",
+              "type": "mcq",
+              "question": "Quelle franchise-valeur s'applique aux achats importés par un voyageur résidant en Suisse depuis le 1er janvier 2025 ?",
+              "options": [
+                "A. CHF 50 par personne et par jour",
+                "B. CHF 150 par personne et par jour",
+                "C. CHF 300 par personne et par jour",
+                "D. CHF 1'000 par personne et par voyage"
+              ],
+              "answer": 1,
+              "explanation": "Le Conseil fédéral a abaissé la franchise-valeur de CHF 300 à CHF 150 par personne et par jour dès le 1.1.2025. Au-delà, la TVA d'importation est due sur la valeur totale des marchandises (après les franchises quantitatives spécifiques, p. ex. viande, alcool). Ne pas confondre avec le régime « tax free » des touristes étrangers (achat ≥ CHF 300 TTC, export dans les 90 jours).",
+              "difficulty": "medium",
+              "section_id": "m8_L7_s8"
             }
           ],
           "mindmap_md": "# M8-L7\n## Impôt sur les acquisitions et importations\n\n### Pertinence examen\n- **Haute** — reverse charge + douane, omniprésent en pratique\n\n### Les 3 types d'impôt TVA en CH\n| Impôt | Objet | Sujet | Autorité |\n|---|---|---|---|\n| **Territoire suisse** | PS + LB en CH | Assujetti TVA | **AFC** |\n| **Acquisitions** | PS et certaines LB de l'étranger | **Destinataire CH** (reverse) | **AFC** |\n| **Importations** | Importation de biens | **Débiteur de la douane** | **OFDF** |\n\n### Impôt sur les acquisitions (art. 45-49) — reverse charge\n#### Principe\n- Entreprise **étrangère** non inscrite CH fournit une **PS** à destinataire CH\n- C'est le **DESTINATAIRE** qui paie la TVA à l'AFC (à la place du prestataire)\n- Évite la **distorsion** entre prestataires étrangers et suisses\n#### Objet — 5 catégories (art. 45 al. 1)\n- **①** PS au lieu du destinataire (art. 8 al. 1) fournies par étranger non inscrit\n- **②** Livraisons d'**immeubles** en CH par étranger non inscrit (montage, installation)\n- **③** Livraisons d'**électricité, gaz, chaleur** par étranger\n- **④** **Supports de données** sans valeur marchande (logiciels téléchargés, accès cloud)\n- **⑤** Émissions de **droits** (licences, brevets, marques) par étranger\n#### Exception — informatique/télécoms à non-assujettis\n- Si le destinataire est **non-assujetti**, le prestataire étranger doit s'**inscrire** lui-même en CH (art. 10)\n\n### Sujet (destinataire) et seuil 10'000\n- **Assujetti TVA** : déclare dans son décompte normal (ch. 380 / IP au ch. 405)\n- **Non-assujetti** : seulement si **CHF 10'000/an** d'acquisitions reçues\n- **⚠️** : seuil 10'000 n'est PAS une franchise — au-delà, **tout** est taxé (pas seulement excédent)\n- Annonce dans **60 jours** suivant la fin d'année\n\n### Calcul (art. 46)\n- Base = contre-prestation versée au prestataire étranger\n- **Conversion** : cours du jour de la prestation OU cours moyen mensuel AFC\n- Taux = **identique** au taux applicable si CH (**8.1 / 2.6 / 3.8 %**)\n- Naissance créance : **moment de la facturation** (mode convenu) ou paiement (mode reçu)\n\n### Impôt sur les importations (art. 50-64)\n#### Principe\n- Importation de **BIENS** sur territoire CH → TVA à la **douane (OFDF)**\n- **Sujet** = débiteur de la douane (art. 51 LTVA) : importateur, déclarant, mandataire\n- Solidarité possible\n#### Base de calcul (art. 54)\n- **Valeur du bien (transaction)** au lieu de destination CH\n- **+ frais de transport** jusqu'à destination CH\n- **+ frais d'assurance**\n- **+ droits de douane** et autres impôts (alcool, tabac)\n- **−** rabais accordés\n- Conversion en CHF au cours OFDF\n#### Taux\n- **8.1 %** standard / **2.6 %** denrées, livres / **3.8 %** N/A à l'import\n\n### Importations franches (art. 53) — liste exhaustive\n- Petites quantités et **valeurs minimes** :\n  - TVA calculée **≤ CHF 5** → franche\n  - Achats personnels voyageurs ≤ **CHF 300** total (par jour, par personne)\n- **Œuvres d'art** par leur créateur\n- Biens en **franchise quantitative** (1L > 18 % alcool, 250 cigarettes, 1 kg viande)\n- Biens **de déménagement** (changement de domicile en CH)\n- Biens **en transit** ou en dépôt franc\n- Cercueils et urnes funéraires\n- Décorations / médailles\n- Marchandises **réimportées** (retours)\n\n### Déduction de l'IP sur importations (art. 55)\n- Conditions :\n  - **Assujetti** TVA\n  - Biens importés pour **activité imposable**\n  - **Preuve d'importation** : **Décision de Taxation électronique (DTe)** OFDF\n- IP = TVA payée à l'OFDF\n- Comptabilisation : compte de report (neutre si tout déductible)\n\n### Procédure et paiement\n- Déclaration douanière électronique (e-Dec / Passar dès 2025)\n- Paiement direct à l'OFDF (ou compte PCD pour assujettis)\n- **Prescription** : 5 ans relative / 10 ans absolue (comme TVA intérieure)\n\n### ⚠️ Pièges examen\n- **N°1** Acquisitions = **reverse charge** : c'est le **DESTINATAIRE** qui paie l'AFC\n- **N°2** Seuil **10'000** non-assujetti = pas une franchise (15k → taxé 15k entier)\n- **N°3** **Logiciel téléchargé** = PS → acquisitions (≠ logiciel sur CD = importation)\n- **N°4** Importations = **OFDF** (≠ AFC pour acquisitions)\n- **N°5** Base import = valeur **+ transport + assurance + douane** (pas seulement prix achat)\n- **N°6** DTe (Décision de Taxation électronique) = preuve obligatoire pour l'IP\n- **N°7** Franchise import si TVA calculée ≤ **CHF 5** (≠ valeur du bien)\n\n### 💡 Mnémoniques\n- **« AFC pour PS étrangères, OFDF pour biens étrangers »**\n- **« Reverse charge = destinataire paye »**\n- **« 10k pour non-assujetti »** — seuil acquisitions\n- **« CHF 5 TVA = franche »** — importation\n- **« V-T-A-D »** — Valeur + Transport + Assurance + Douane (base import)\n- **« DTe = clé IP import »**\n\n### 🔗 Renvois\n- **m8_L2** — Lieu (détermine si acquisition ou non)\n- **m8_L3** — Assujettissement (sujet du reverse charge)\n- **m8_L6** — Exonérations exports (miroir des importations)\n- **m8_L10** — DIP sur importations\n- **LTVA art. 45-64, OFDF** — textes/autorité\n",
@@ -40414,6 +40586,21 @@
               "options": null,
               "answer": true,
               "explanation": "**VRAI** (art. 26 al. 3 LTVA). Pour les factures < CHF 400, les mentions obligatoires sont **simplifiées**, mais le **numéro TVA du fournisseur reste obligatoire** (format CHE-XXX.XXX.XXX TVA). Sans ce numéro, le client B2B ne peut pas déduire l'IP. Au-delà de 400 CHF : 7 mentions obligatoires (nom/adresse fournisseur+client, n TVA, date, nature, contre-prestation, taux+montant).",
+              "difficulty": "medium",
+              "section_id": "m8_L8_s8"
+            },
+            {
+              "id": "m8_L8_x1",
+              "type": "mcq",
+              "question": "Quelle nouveauté de la révision LTVA 2025 concerne la périodicité des décomptes ?",
+              "options": [
+                "A. Le décompte mensuel devient obligatoire pour toutes les entreprises",
+                "B. Un décompte annuel possible pour les PME (CA ≤ 5,005 M), avec acomptes",
+                "C. La suppression de la méthode des taux de la dette fiscale nette (TDFN)",
+                "D. Un décompte unique tous les trois ans pour les petites entreprises"
+              ],
+              "answer": 1,
+              "explanation": "Depuis le 1.1.2025, les assujettis dont le chiffre d'affaires imposable n'excède pas CHF 5,005 millions peuvent, sur demande, établir un décompte annuel ; ils versent alors des acomptes en cours d'année. Le décompte trimestriel (méthode effective) et semestriel (TDFN) restent la règle.",
               "difficulty": "medium",
               "section_id": "m8_L8_s8"
             }
