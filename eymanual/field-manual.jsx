@@ -1473,7 +1473,7 @@ const SECTIONS = [
         ["AC", "2.2 % paritaire (1.1 + 1.1)", "Jusqu'au gain assuré maximal (CHF 156'000)"],
         ["LAA — acc. professionnels", "Selon la branche", "À charge de l'employeur ; gain assuré max 156'000"],
         ["LAA — acc. non professionnels", "≈ 1–2 % selon assureur", "Généralement à charge de l'employé"],
-        ["LPP (bonifications)", "7 % (25–34) · 10 % (35–44) · 15 % (45–54) · 18 % (55–65)", "Sur le salaire coordonné ; seuil d'entrée 22'680, déduction de coordination 26'460 (état 2026 — vérifier l'indexation)"],
+        ["LPP (bonifications)", "7 % (25–34) · 10 % (35–44) · 15 % (45–54) · 18 % (55–65)", "Sur le salaire coordonné ; seuil d'entrée 23'040, déduction de coordination 26'880 (état 2027 — vérifier l'indexation)"],
         ["Allocations familiales", "Taux cantonal", "À charge de l'employeur"],
       ]}},
       { note: "C'est exactement avec ces taux que se construit ta procédure analytique paie (C.6 / I.3) : masse salariale AVS × taux attendus vs charges comptabilisées." },

@@ -813,7 +813,7 @@
     "sub": "LIFD – Prévoyance",
     "d": "piège",
     "q": "Maximum déductible pilier 3A ?",
-    "a": "Avec 2e pilier : 8% du max LPP = CHF 7'258 (2025-2026)\nSans 2e pilier : 20% du revenu, max 40% du max LPP = CHF 36'288\n\n⚠️ Déduction PRIVÉE, pas charge commerciale.\nPossible 5 ans après retraite AVS si activité lucrative.\n\n📖 art. 33 al. 1 lit. e LIFD ; art. 7 OPP 3"
+    "a": "Avec 2e pilier : 8% du max LPP = CHF 7'373 (2027)\nSans 2e pilier : 20% du revenu, max 40% du max LPP = CHF 36'864\n\n⚠️ Déduction PRIVÉE, pas charge commerciale.\nPossible 5 ans après retraite AVS si activité lucrative.\n\n📖 art. 33 al. 1 lit. e LIFD ; art. 7 OPP 3"
   },
   {
     "id": 162,
@@ -5404,8 +5404,8 @@
     "cat": "Fiscalité",
     "sub": "LIFD – Prévoyance",
     "d": "facile",
-    "q": "Cotisations 3a : montant maximum déductible (2024) ?",
-    "a": "1. **Avec caisse de pension** : CHF 7'258/an\n2. **Sans caisse de pension** : 20 % du revenu, max CHF 36'288\n\n⚠️ Déductible intégralement de l'impôt sur le revenu.\n\n📖 art. 33 al. 1 lit. e LIFD ; art. 7 OPP 3"
+    "q": "Cotisations 3a : montant maximum déductible (2027) ?",
+    "a": "1. **Avec caisse de pension** : CHF 7'373/an\n2. **Sans caisse de pension** : 20 % du revenu, max CHF 36'864\n\n⚠️ Déductible intégralement de l'impôt sur le revenu.\n\n📖 art. 33 al. 1 lit. e LIFD ; art. 7 OPP 3"
   },
   {
     "id": 1165,
@@ -6013,7 +6013,7 @@
     "sub": "Activité dépendante – L3",
     "d": "moyen",
     "q": "Qu'est-ce que la **procédure de décompte simplifié (PDS, art. 37a LIFD)** ?",
-    "a": "Mécanisme simplifié pour **petites rémunérations** :\n- Rémunération ≤ **CHF 22'680/an** par employé (2025-2026)\n- Masse salariale entreprise ≤ **CHF 60'480/an**\n- Impôt libératoire de **5 %** (taux unique)\n- Décompte simultané avec les cotisations AVS\n- **Aucune déclaration fiscale** à faire par l'employé\n\nCible : aides ménagères, gardes d'enfants, petits jobs."
+    "a": "Mécanisme simplifié pour **petites rémunérations** :\n- Rémunération ≤ **CHF 23'040/an** par employé (2027)\n- Masse salariale entreprise ≤ **CHF 61'440/an**\n- Impôt libératoire de **5 %** (taux unique)\n- Décompte simultané avec les cotisations AVS\n- **Aucune déclaration fiscale** à faire par l'employé\n\nCible : aides ménagères, gardes d'enfants, petits jobs."
   },
   {
     "id": 1266,
@@ -6492,8 +6492,8 @@
     "cat": "Fiscalité",
     "sub": "Prévoyance – L6",
     "d": "facile",
-    "q": "Quel est le **seuil d'entrée LPP** (2024) ?",
-    "a": "Salaire annuel minimum **CHF 22'680** (2025-2026) pour être obligatoirement assuré au 2e pilier.\n\n⚠️ Les personnes sous ce seuil ne sont pas obligatoirement LPP mais peuvent s'assurer volontairement.\n\n📖 art. 2 al. 1 LPP ; art. 7 OPP 2"
+    "q": "Quel est le **seuil d'entrée LPP** (2027) ?",
+    "a": "Salaire annuel minimum **CHF 23'040** (2027) pour être obligatoirement assuré au 2e pilier.\n\n⚠️ Les personnes sous ce seuil ne sont pas obligatoirement LPP mais peuvent s'assurer volontairement.\n\n📖 art. 2 al. 1 LPP ; art. 7 OPP 2"
   },
   {
     "id": 1328,
@@ -6501,7 +6501,7 @@
     "sub": "Prévoyance – L6",
     "d": "moyen",
     "q": "Quel est le **salaire coordonné** dans le 2e pilier ?",
-    "a": "**Salaire annuel compris entre CHF 26'460 et CHF 90'720** (bornes 2025-2026).\n\n- **Déduction de coordination** : CHF 26'460\n- **Plafond obligatoire** : CHF 90'720\n- **Salaire coordonné maximal** = 90'720 − 26'460 = **CHF 64'260**\n- **Salaire coordonné minimal** : CHF 3'780\n\nLe salaire > 90'720 peut être assuré en **sur-obligatoire** (facultatif)."
+    "a": "**Salaire annuel compris entre CHF 26'880 et CHF 92'160** (bornes 2027).\n\n- **Déduction de coordination** : CHF 26'880\n- **Plafond obligatoire** : CHF 92'160\n- **Salaire coordonné maximal** = 92'160 − 26'880 = **CHF 65'280**\n- **Salaire coordonné minimal** : CHF 3'840\n\nLe salaire > 92'160 peut être assuré en **sur-obligatoire** (facultatif)."
   },
   {
     "id": 1329,
@@ -6516,8 +6516,8 @@
     "cat": "Fiscalité",
     "sub": "Prévoyance – L6",
     "d": "moyen",
-    "q": "Plafonds 3a (2024) ?",
-    "a": "**Avec LPP (2e pilier)** : **CHF 7'258/an** (2025-2026)\n**Sans LPP (indépendants)** : **20 % du revenu net** avec plafond de **CHF 36'288**\n\nCotisations entièrement déductibles du revenu imposable (art. 33 al. 1 let. e LIFD)."
+    "q": "Plafonds 3a (2027) ?",
+    "a": "**Avec LPP (2e pilier)** : **CHF 7'373/an** (2027)\n**Sans LPP (indépendants)** : **20 % du revenu net** avec plafond de **CHF 36'864**\n\nCotisations entièrement déductibles du revenu imposable (art. 33 al. 1 let. e LIFD)."
   },
   {
     "id": 1331,
@@ -6564,8 +6564,8 @@
     "cat": "Fiscalité",
     "sub": "Prévoyance – L6",
     "d": "facile",
-    "q": "Quelles sont les **rentes vieillesse AVS** (2024) ?",
-    "a": "**Rente annuelle minimale** : **CHF 15'120** (CHF 1'260/mois, 2025-2026)\n**Rente annuelle maximale** : **CHF 30'240** (CHF 2'520/mois, 2025-2026)\n\nRente pour **couple marié** = rente simple majorée de **50 %** (plafond adapté).\n\n⚠️ 100 % imposable au revenu (art. 22 al. 1 LIFD)."
+    "q": "Quelles sont les **rentes vieillesse AVS** (2027) ?",
+    "a": "**Rente annuelle minimale** : **CHF 15'360** (CHF 1'280/mois, 2027)\n**Rente annuelle maximale** : **CHF 30'720** (CHF 2'560/mois, 2027)\n\nRente pour **couple marié** = rente simple majorée de **50 %** (plafond adapté).\n\n⚠️ 100 % imposable au revenu (art. 22 al. 1 LIFD)."
   },
   {
     "id": 1337,

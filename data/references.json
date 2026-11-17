@@ -2599,12 +2599,12 @@
       "items": [
         {
           "label": "3e pilier A — avec 2e pilier",
-          "val": "CHF 7'258 (8% de CHF 90'720)",
-          "extra": "Valeur 2025-2026 (2023-2024 : 7'056)"
+          "val": "CHF 7'373 (8% de CHF 92'160)",
+          "extra": "Valeur 2027 (2025-2026 : 7'258)"
         },
         {
           "label": "3e pilier A — sans 2e pilier",
-          "val": "20% du revenu, max CHF 36'288",
+          "val": "20% du revenu, max CHF 36'864",
           "extra": "40% du montant-limite supérieur LPP"
         },
         {
@@ -3070,15 +3070,15 @@
       "id": 8,
       "cat": "Prévoyance",
       "title": "Déduction pilier 3A",
-      "enonce": "Tiffanie est salariée affiliée à une CP (2e pilier).\nMontant-limite supérieur LPP : CHF 90'720.\n\nQuel est le montant maximum déductible pour le 3e pilier A ?",
+      "enonce": "Tiffanie est salariée affiliée à une CP (2e pilier).\nMontant-limite supérieur LPP : CHF 92'160.\n\nQuel est le montant maximum déductible pour le 3e pilier A ?",
       "fields": [
         {
           "label": "Maximum 3A (CHF)",
-          "answer": 7258,
+          "answer": 7373,
           "tolerance": 0
         }
       ],
-      "correction": "Avec 2e pilier : 8% du montant-limite supérieur LPP\n= 90'720 × 8% = CHF 7'258\n\n⚠️ Sans 2e pilier : 20% du revenu, max CHF 36'288 (40% × 90'720)."
+      "correction": "Avec 2e pilier : 8% du montant-limite supérieur LPP\n= 92'160 × 8% = CHF 7'373\n\n⚠️ Sans 2e pilier : 20% du revenu, max CHF 36'864 (40% × 92'160)."
     },
     {
       "id": 9,

@@ -1406,16 +1406,16 @@ table.data caption{caption-side:top;text-align:left;font-family:"Space Mono",mon
     <caption>Seuils LPP 2024</caption>
     <thead><tr><th>Paramètre</th><th class="num">Montant</th><th>Signification</th></tr></thead>
     <tbody>
-      <tr><td>Seuil d'entrée</td><td class="num">22 680</td><td>salaire AVS minimal pour être assuré</td></tr>
-      <tr><td>Déduction de coordination</td><td class="num">26 460</td><td>= 7/8 de la rente AVS max (part couverte par le 1<sup>er</sup> pilier)</td></tr>
-      <tr><td>Plafond du salaire coordonné (haut)</td><td class="num">90 720</td><td>= 3 × rente AVS max</td></tr>
-      <tr><td>Salaire coordonné maximal</td><td class="num">64 260</td><td>= 90 720 − 26 460</td></tr>
-      <tr><td>Salaire coordonné minimal</td><td class="num">3 780</td><td>plancher (zone 22 680–30 240)</td></tr>
+      <tr><td>Seuil d'entrée</td><td class="num">23 040</td><td>salaire AVS minimal pour être assuré</td></tr>
+      <tr><td>Déduction de coordination</td><td class="num">26 880</td><td>= 7/8 de la rente AVS max (part couverte par le 1<sup>er</sup> pilier)</td></tr>
+      <tr><td>Plafond du salaire coordonné (haut)</td><td class="num">92 160</td><td>= 3 × rente AVS max</td></tr>
+      <tr><td>Salaire coordonné maximal</td><td class="num">65 280</td><td>= 92 160 − 26 880</td></tr>
+      <tr><td>Salaire coordonné minimal</td><td class="num">3 840</td><td>plancher (zone 23 040–30 720)</td></tr>
       <tr><td>Taux de conversion</td><td class="num">6.8 %</td><td>rente = avoir de vieillesse × 6.8 %</td></tr>
     </tbody>
   </table></div>
-  <div class="formula"><span class="op">Salaire coordonné</span> = min(salaire ; 90 720) − 26 460 <span class="res">(plancher 3 780)</span><small>Seule cette tranche « coordonnée » est assurée par la LPP obligatoire — le 1<sup>er</sup> pilier couvre déjà la base.</small></div>
-  <div class="callout c-exam"><div class="ttl"><span class="ico">★</span>Millésime 2026 vérifié (OFAS)</div><p>Montants LPP <strong>2026 = 2025</strong> (adaptés au 1.1.2025 avec les rentes AVS, rente max 30 240) : seuil 22 680, coordination 26 460 (7/8), plafond 90 720 (3×), coordonné 3 780–64 260, conversion 6.8 %, intérêt minimal 1.25 %. Le support de cours 2024 indiquait 22 050 / 25 725 / 88 200 — connais les deux si l'énoncé date les faits. AVS/AI/APG 10.6 %, AC 2.2 % (plafond 148 200) et LAA : inchangés.</p></div>
+  <div class="formula"><span class="op">Salaire coordonné</span> = min(salaire ; 92 160) − 26 880 <span class="res">(plancher 3 840)</span><small>Seule cette tranche « coordonnée » est assurée par la LPP obligatoire — le 1<sup>er</sup> pilier couvre déjà la base.</small></div>
+  <div class="callout c-exam"><div class="ttl"><span class="ico">★</span>Millésime 2027 vérifié (OFAS)</div><p>Montants LPP <strong>2027</strong> (adaptés au 1.1.2027 avec les rentes AVS, rente max 30 720) : seuil 23 040, coordination 26 880 (7/8), plafond 92 160 (3×), coordonné 3 840–65 280, conversion 6.8 %, intérêt minimal 2 %. En 2025-2026 : 22 680 / 26 460 / 90 720 (intérêt 1.25 %) — connais les deux si l'énoncé date les faits. AVS/AI/APG 10.6 %, AC 2.2 % (plafond 148 200) et LAA : inchangés.</p></div>
   <div class="tbl-wrap"><table class="data">
     <caption>Bonifications de vieillesse (taux d'épargne LPP, sur salaire coordonné)</caption>
     <thead><tr><th>Âge</th><th class="num">Taux</th></tr></thead>
@@ -1974,7 +1974,7 @@ const FLASH=[
 {r:"TDFN — conditions (art. 37 LTVA) ?",v:"CA ≤ 5 024 000 ET impôt ≤ 108 000. Taux forfaitaire par branche appliqué au CA TTC, sans déduction de l'impôt préalable, décompte semestriel.",t:"Taux & seuils"},
 {r:"AVS/AI/APG — taux total ?",v:"10.6 % du salaire, paritaire : 5.3 % employeur + 5.3 % salarié. Pas de plafond.",t:"Taux & seuils"},
 {r:"AC — taux et plafond ?",v:"2.2 % (1.1 + 1.1) jusqu'à 148 200 de salaire annuel. Au-delà : plus de cotisation (le pour-cent de solidarité a été supprimé).",t:"Taux & seuils"},
-{r:"LPP 2026 — seuil / coordination / plafond ?",v:"Seuil d'entrée 22 680 · déduction de coordination 26 460 (7/8 de la rente AVS max) · limite supérieure 90 720 (3×). Salaire coordonné : min 3 780, max 64 260.",t:"Taux & seuils"},
+{r:"LPP 2027 — seuil / coordination / plafond ?",v:"Seuil d'entrée 23 040 · déduction de coordination 26 880 (7/8 de la rente AVS max) · limite supérieure 92 160 (3×). Salaire coordonné : min 3 840, max 65 280.",t:"Taux & seuils"},
 {r:"Impôt anticipé — taux, objet, compte ?",v:"35 % sur dividendes, intérêts obligataires et de banque, gains de loterie. Retenue à la source récupérable → créance 1176 (jamais une charge).",t:"Taux & seuils"},
 {r:"IFD sur le bénéfice des personnes morales ?",v:"8.5 % du bénéfice net (impôt fédéral direct). S'ajoutent les impôts cantonaux et communaux.",t:"Taux & seuils"},
 {r:"Droit de timbre d'émission ?",v:"1 % sur les émissions de droits de participation au-delà de 1 million de francs.",t:"Taux & seuils"},
@@ -2118,11 +2118,11 @@ function amortCalc(){
 /* LPP salaire coordonné */
 function lppCalc(){
   const sal=num('lpp-sal'), age=parseInt(document.getElementById('lpp-age').value)||40;
-  const SEUIL=22680, DED=26460, PLAF=90720, MIN=3780;
+  const SEUIL=23040, DED=26880, PLAF=92160, MIN=3840;
   let res='';
   if(sal<SEUIL){
     res=`<div class="row big"><span>Salaire coordonné</span><span class="v">0.00</span></div>
-         <div class="note">Salaire AVS &lt; seuil d'entrée LPP (CHF 22 680) → pas d'assurance obligatoire.</div>`;
+         <div class="note">Salaire AVS &lt; seuil d'entrée LPP (CHF 23 040) → pas d'assurance obligatoire.</div>`;
     document.getElementById('lpp-out').innerHTML=res; return;
   }
   const plafonne=Math.min(sal,PLAF);
@@ -2130,12 +2130,12 @@ function lppCalc(){
   if(coord<MIN) coord=MIN;
   let taux = age<25?0 : age<35?7 : age<45?10 : age<55?15 : age<=65?18 : 0;
   const cotis=coord*taux/100;
-  res=`<div class="row"><span>Salaire plafonné (max 90 720)</span><span class="v">${fmt(plafonne)}</span></div>
+  res=`<div class="row"><span>Salaire plafonné (max 92 160)</span><span class="v">${fmt(plafonne)}</span></div>
        <div class="row"><span>– Déduction de coordination</span><span class="v">${fmt(DED)}</span></div>
        <div class="row big"><span>Salaire coordonné</span><span class="v">${fmt(coord)}</span></div>
        <div class="row"><span>Bonification vieillesse (${age} ans)</span><span class="v">${taux}%</span></div>
        <div class="row"><span>Cotisation épargne annuelle</span><span class="v">${fmt(cotis)}</span></div>
-       <div class="note">Cotisation prise en charge par l'employeur pour ≥ 50 %. Salaire coordonné min. 3 780 / max. 64 260.</div>`;
+       <div class="note">Cotisation prise en charge par l'employeur pour ≥ 50 %. Salaire coordonné min. 3 840 / max. 65 280.</div>`;
   document.getElementById('lpp-out').innerHTML=res;
 }
 
@@ -2205,8 +2205,8 @@ const QUIZ=[{q:"Quel est le taux normal de la TVA suisse depuis le 1ᵉʳ janvie
 {q:"Des intérêts courus sur un emprunt, dus mais non encore payés au 31.12, donnent l'écriture :",o:["1300 / 6900","6900 / 2300","7500 / 2301","1301 / 6950"],a:1,e:"Charge consommée non payée = charge à payer (FNP) : on débite la charge d'intérêts 6900 et on crédite 2300. Extourne au 1.1.",topic:"Régularisations"},
 {q:"Le total des cotisations AVS + AI + APG en 2024 s'élève à :",o:["8.7 %","10.6 %","5.3 %","12.8 %"],a:1,e:"AVS 8.7 % + AI 1.4 % + APG 0.5 % = 10.6 %, partagé moitié-moitié entre employé et employeur.",topic:"Paie & social"},
 {q:"La part salariale (employé) des cotisations AVS/AI/APG est de :",o:["10.6 %","4.35 %","5.3 %","2.2 %"],a:2,e:"La moitié de 10.6 % = 5.3 % à la charge de l'employé (l'autre moitié pour l'employeur). C'est le calcul de base de toute fiche de paie.",topic:"Paie & social"},
-{q:"Le seuil d'entrée à la LPP (salaire AVS minimal pour être assuré) est en 2026 de :",o:["3 780","22 680","26 460","90 720"],a:1,e:"Seuil d'entrée LPP : 22 680. En dessous, pas d'assurance obligatoire au 2ᵉ pilier.",topic:"Paie & social"},
-{q:"La déduction de coordination LPP 2026 s'élève à :",o:["26 460","22 680","64 260","90 720"],a:0,e:"Déduction de coordination = 26 460 (soit 7/8 de la rente AVS maximale), retranchée du salaire pour obtenir le salaire coordonné.",topic:"Paie & social"},
+{q:"Le seuil d'entrée à la LPP (salaire AVS minimal pour être assuré) est en 2027 de :",o:["3 840","23 040","26 880","92 160"],a:1,e:"Seuil d'entrée LPP : 23 040. En dessous, pas d'assurance obligatoire au 2ᵉ pilier.",topic:"Paie & social"},
+{q:"La déduction de coordination LPP 2027 s'élève à :",o:["26 880","23 040","65 280","92 160"],a:0,e:"Déduction de coordination = 26 880 (soit 7/8 de la rente AVS maximale), retranchée du salaire pour obtenir le salaire coordonné.",topic:"Paie & social"},
 {q:"Le taux de conversion LPP (rente = avoir × taux) est de :",o:["5.3 %","6.8 %","8.1 %","10 %"],a:1,e:"Taux de conversion légal : 6.8 % de l'avoir de vieillesse accumulé donne la rente annuelle.",topic:"Paie & social"},
 {q:"Pour un assuré de 45 à 54 ans, la bonification de vieillesse LPP (taux d'épargne) est de :",o:["7 %","10 %","15 %","18 %"],a:2,e:"Bonifications : 7 % (25-34), 10 % (35-44), 15 % (45-54), 18 % (55-65). L'employeur en prend au moins la moitié.",topic:"Paie & social"},
 {q:"L'assurance contre les accidents non professionnels (AANP) est à la charge :",o:["De l'employeur","Du salarié (dès 8 h/semaine)","De l'AVS","Partagée 50/50"],a:1,e:"AANP = salarié (si au moins 8 h/semaine). L'accident professionnel (AAP) est lui à la charge de l'employeur.",topic:"Paie & social"},

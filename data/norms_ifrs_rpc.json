@@ -211,12 +211,12 @@
           "items": [
             {
               "label": "3e pilier A — avec 2e pilier",
-              "val": "CHF 7'258 (8% de CHF 90'720)",
-              "extra": "Valeur 2025-2026 (2023-2024 : 7'056)"
+              "val": "CHF 7'373 (8% de CHF 92'160)",
+              "extra": "Valeur 2027 (2025-2026 : 7'258)"
             },
             {
               "label": "3e pilier A — sans 2e pilier",
-              "val": "20% du revenu, max CHF 36'288",
+              "val": "20% du revenu, max CHF 36'864",
               "extra": "40% du montant-limite supérieur LPP"
             },
             {

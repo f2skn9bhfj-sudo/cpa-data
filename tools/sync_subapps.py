@@ -255,10 +255,11 @@ def sync(app, write):
                 raise SystemExit(f'{app}: début du segment {p} introuvable dans index.html — corriger à la main.')
             starts.append(pos)
             cur = pos + 1
-        tail = code.rfind('createRoot(')
         segs = []
         for k, p in enumerate(files):
-            bound = starts[k + 1] if k + 1 < len(files) else (tail if tail > starts[k] else len(code))
+            # Le dernier segment peut lui-même se terminer par createRoot(...) (social) :
+            # on cherche sa fin jusqu'au bout du script.
+            bound = starts[k + 1] if k + 1 < len(files) else len(code)
             end = None
             for v in vers[k]:
                 for n in (400, 200, 100, 60):

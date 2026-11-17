@@ -343,7 +343,7 @@ function QuizView({ quiz }) {
 function SocialApp() {
   const data = (typeof window !== "undefined" && window.__SOCIAL__) || {};
   const sections = data.sections || [];
-  const params = data.parametres_2026 || data.parametres_2024 || {};
+  const params = data.parametres_2027 || data.parametres_2026 || data.parametres_2024 || {};
   const quiz = data.quiz || [];
   const tabs = [
     ...sections.map((s) => ({ k: s.id, label: (s.icon ? s.icon + " " : "") + s.titre })),

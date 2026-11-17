@@ -106,12 +106,13 @@ Autres sources : `audit/manifest.json` + `audit/controle_{ordinaire,restreint}/*
 (54 fiches MSA/NCR, toutes « complet »), `hec/manifest.json` + `hec/cours_*/`,
 `conso/lessons_{ifrs,swissgaap}.json`, `fusion/lessons_fusion.json`.
 
-**Paramètres sociaux** : les valeurs de référence sont celles de **2025-2026**
-(rente AVS max 30'240 ; LPP seuil 22'680, coordination 26'460, plafond 90'720,
-coordonné 3'780–64'260 ; 3a 7'258 / 36'288 ; PDS 22'680 / 60'480 ; AVS
-indépendants min 530, dégressif < 60'500 ; AC/LAA 148'200 ; TVA 8,1/2,6/3,8 %).
-Les valeurs 2024 n'apparaissent qu'en rappel explicite (« 22'050 en 2024 »).
-Le calculateur du module Social utilise `parametres_2026`.
+**Paramètres sociaux** : les valeurs de référence sont celles de **2027**
+(rente AVS max 30'720 = 2'560/mois, min 15'360 ; LPP seuil 23'040, coordination
+26'880, plafond 92'160, coordonné 3'840–65'280, intérêt minimal 2 % ; 3a 7'373 /
+36'864 ; PDS 23'040 / 61'440 ; AVS indépendants et non-actifs min 541, dégressif
+10'300–61'500 ; AC/LAA 148'200 ; TVA 8,1/2,6/3,8 %). Les valeurs 2025-2026
+n'apparaissent qu'en rappel explicite (« 22'680 en 2025-2026 »). Le calculateur
+du module Social utilise `parametres_2027` (social/index.html, bloc sans source).
 
 Progression utilisateur : uniquement localStorage du navigateur (clés
 `swisscpa_*`), propre à chaque appareil.
