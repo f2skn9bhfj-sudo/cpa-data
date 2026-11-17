@@ -38505,9 +38505,9 @@
               "type": "mcq",
               "question": "Quelle est la base légale fédérale principale qui régit la TVA en Suisse depuis 2010 ?",
               "options": [
-                "A. LIFD (Loi fédérale sur l'impôt federal direct)",
+                "A. La LIFD (loi fédérale sur l'impôt fédéral direct)",
                 "B. LIA (Loi fédérale sur l'impôt anticipe)",
-                "C. LTVA (Loi fédérale sur la TVA, RS 641.20) du 12.06.2009",
+                "C. La LTVA du 12 juin 2009 (RS 641.20)",
                 "D. Code des obligations (art. 957-963)"
               ],
               "answer": 2,
@@ -38520,9 +38520,9 @@
               "type": "mcq",
               "question": "Quelles sont les deux autorités compétentes pour percevoir la TVA suisse selon le type d'operation ?",
               "options": [
-                "A. AFC pour tout (operations CH + importations)",
-                "B. OFDF pour tout (operations CH + importations)",
-                "C. AFC (operations sur le territoire CH + acquisitions étranger) et OFDF (importations de biens)",
+                "A. L'AFC seule, pour les opérations en Suisse comme pour les importations",
+                "B. L'OFDF seul, pour les opérations en Suisse comme pour les importations",
+                "C. L'AFC (opérations en Suisse) et l'OFDF (importations)",
                 "D. AFD et SECO conjointement"
               ],
               "answer": 2,
@@ -38585,9 +38585,9 @@
               "type": "mcq",
               "question": "Sur quels secteurs l'option pour l'imposition (art. 22 LTVA) est-elle INTERDITE ?",
               "options": [
-                "A. Operations financières, assurances, jeux de hasard, immeubles a fins privées",
-                "B. Santé, éducation, culture, sport",
-                "C. Exportations, importations, transport international",
+                "A. Finance, assurances, jeux d'argent, logement privé",
+                "B. Santé, éducation, culture et sport, sans aucune exception",
+                "C. Exportations, importations et transports internationaux de biens",
                 "D. Industrie, commerce de gros, agriculture"
               ],
               "answer": 0,
@@ -38625,8 +38625,8 @@
               "type": "mcq",
               "question": "Une nuitee dans un hôtel de Samnaun (vallee grisonne) est-elle soumise a la TVA suisse ?",
               "options": [
-                "A. Non, Samnaun est entièrement hors du territoire suisse",
-                "B. Oui, au taux 3.8% (PS hébergement = territoire CH pour les services)",
+                "A. Non, Samnaun est entièrement hors du territoire suisse pour la TVA, comme Büsingen",
+                "B. Oui, à 3,8 % : Samnaun fait partie du territoire pour les services",
                 "C. Oui, au taux 8.1% (régime special)",
                 "D. Exonérée (art. 23 LTVA)"
               ],
@@ -38740,8 +38740,8 @@
               "type": "mcq",
               "question": "Pourquoi le lieu de la prestation est-il une notion cruciale en TVA suisse ?",
               "options": [
-                "A. Il determine si la TVA suisse s'applique ou non a l'operation",
-                "B. Il determine le taux applicable (8.1% / 2.6% / 3.8%)",
+                "A. Il détermine si la TVA suisse s'applique",
+                "B. Il détermine le taux applicable à l'opération (8,1 %, 2,6 % ou 3,8 %)",
                 "C. Il determine la durée de conservation des justificatifs",
                 "D. Il determine la méthode de décompte (effective / TDFN)"
               ],
@@ -38766,8 +38766,8 @@
               "question": "Pour une LIVRAISON de biens avec prise en charge par l'acquéreur chez le fournisseur (sans transport), quel est le lieu d'imposition ?",
               "options": [
                 "A. Domicile de l'acquéreur",
-                "B. Lieu de destination finale du bien",
-                "C. Lieu ou se trouve le bien lors du transfert du pouvoir d'en disposer",
+                "B. Le lieu de destination finale du bien, indiqué par l'acquéreur au fournisseur",
+                "C. Là où se trouve le bien au transfert du pouvoir d'en disposer",
                 "D. Lieu du siège social du fournisseur"
               ],
               "answer": 2,
@@ -38780,9 +38780,9 @@
               "type": "mcq",
               "question": "Une usine genevoise vend des machines a un client parisien et se charge du transport jusqu'a Paris. Quel est le lieu d'imposition de la livraison ?",
               "options": [
-                "A. Paris (lieu de destination)",
-                "B. Domicile du fournisseur",
-                "C. Genève (lieu de début du transport)",
+                "A. Paris (lieu de destination du transport)",
+                "B. Le domicile ou siège du fournisseur",
+                "C. Genève (début du transport)",
                 "D. Frontière CH-FR"
               ],
               "answer": 2,
@@ -38805,10 +38805,10 @@
               "type": "mcq",
               "question": "Pour la livraison d'électricité, de gaz ou de chaleur par conduites, quelle est la regle générale du lieu d'imposition ?",
               "options": [
-                "A. Lieu du destinataire (domicile, siège ou ES)",
-                "B. Lieu de production",
-                "C. Lieu du fournisseur",
-                "D. Lieu de la frontière energetique"
+                "A. Lieu du destinataire",
+                "B. Lieu de production de l'énergie",
+                "C. Lieu du siège du fournisseur",
+                "D. Lieu de la frontière énergétique"
               ],
               "answer": 0,
               "explanation": "Art. 7 al. 2 let. a LTVA : pour l'énergie transportee par conduites (électricité, gaz, chaleur, froid), le lieu = lieu du DESTINATAIRE (domicile/siège/ES). Regle subsidiaire si destinataire inconnu : lieu de consommation. Motif : impossibilité de tracer l'origine physique des flux transfrontaliers.",
@@ -38820,9 +38820,9 @@
               "type": "mcq",
               "question": "Quelle est la regle GÉNÉRALE pour le lieu d'une PRESTATION DE SERVICES (art. 8 al. 1 LTVA) ?",
               "options": [
-                "A. Lieu du prestataire",
+                "A. Lieu du siège du prestataire",
                 "B. Lieu d'exécution matérielle",
-                "C. Lieu du destinataire (domicile, siège, ES)",
+                "C. Lieu du destinataire",
                 "D. Lieu de signature du contrat"
               ],
               "answer": 2,
@@ -38837,8 +38837,8 @@
               "options": [
                 "A. Genève (lieu du prestataire)",
                 "B. Frontière virtuelle (50/50)",
-                "C. Genève mais exonérée (art. 23 LTVA)",
-                "D. New York (lieu du destinataire) - donc PS exportee, pas de TVA CH"
+                "C. Genève, mais exonérée en vertu de l'art. 23 LTVA (exportation de services)",
+                "D. New York (destinataire) : pas de TVA suisse"
               ],
               "answer": 3,
               "explanation": "Pour une prestation de conseil juridique (PS), regle générale art. 8 al. 1 LTVA = lieu du destinataire. Le client US a son siège a NY, donc lieu = USA. Pas de TVA CH (export de PS). L'avocat conserve son IP sur ses charges car operation hors champ CH (analoge a une exonération via art. 29 al. 1 LTVA).",
@@ -38860,10 +38860,10 @@
               "type": "mcq",
               "question": "Une troupe theatrale genevoise donne un spectacle a Lausanne. Quel est le lieu d'imposition ?",
               "options": [
-                "A. Genève (siège de la troupe)",
-                "B. Domicile du chef de troupe",
+                "A. Genève (siège de la troupe théâtrale)",
+                "B. Le domicile du chef de troupe",
                 "C. Lieu de vente des billets",
-                "D. Lausanne (lieu d'exercice de l'activité artistique)"
+                "D. Lausanne (lieu de l'activité)"
               ],
               "answer": 3,
               "explanation": "Pour les prestations culturelles, artistiques, sportives, scientifiques, didactiques et de divertissement fournies en présentiel, le lieu = LIEU D'EXERCICE de l'activité (art. 8 al. 2 let. c LTVA). La troupe imposera donc a Lausanne (CH) au taux 2.6% si option ou exclu si pas option.",
@@ -38890,10 +38890,10 @@
               "type": "mcq",
               "question": "Pour un trajet en train Genève-Paris (20% en CH, 80% en France), comment se determine la TVA ?",
               "options": [
-                "A. 20% imposable en CH, 80% non imposable CH (lieu du trajet)",
+                "A. Imposable en CH pour la part suisse du trajet (20 %)",
                 "B. Tout en CH (lieu de départ)",
                 "C. Tout en France (lieu d'arrivée)",
-                "D. Tout exonere (transport international)"
+                "D. Tout est exonéré, s'agissant d'un transport international de voyageurs"
               ],
               "answer": 0,
               "explanation": "Art. 8 al. 2 let. e LTVA : pour le transport de PASSAGERS, le lieu = lieu du trajet. Répartition au prorata. Note : les transports ferroviaires INTERNATIONAUX sont en pratique exonérés (art. 23 al. 2 ch. 5/6 et régimes spécifiques) si conditions remplies (gare CH origine ou arrivée).",
@@ -38915,9 +38915,9 @@
               "type": "mcq",
               "question": "Une entreprise étrangère vend par correspondance des petits envois en CH pour un CA annuel de 150'000 CHF (envois TVA <= 5 CHF). Quelles conséquences ?",
               "options": [
-                "A. Aucune obligation TVA CH (chaque envoi < seuil)",
-                "B. Le client CH paie l'importation lui-même",
-                "C. Livraisons reputees EN CH, vendeur étranger doit s'enregistrer a la TVA CH",
+                "A. Aucune obligation TVA en Suisse, chaque envoi restant sous le seuil de CHF 5",
+                "B. Le client suisse paie lui-même la TVA à l'importation de chaque colis",
+                "C. Livraisons réputées en Suisse : inscription obligatoire",
                 "D. Exonération totale (export du pays étranger)"
               ],
               "answer": 2,
@@ -39029,10 +39029,10 @@
               "type": "mcq",
               "question": "Quel est le seuil GENERAL de chiffre d'affaires en dessous duquel un assujetti est libere de l'obligation TVA ?",
               "options": [
-                "A. CHF 50'000",
-                "B. CHF 250'000",
-                "C. CHF 1 million",
-                "D. CHF 100'000 (mondial, sur prestations non exclues)"
+                "A. CHF 50'000 (CA suisse)",
+                "B. CHF 250'000 (CA mondial)",
+                "C. CHF 1 million (CA suisse)",
+                "D. CHF 100'000 (CA mondial)"
               ],
               "answer": 3,
               "explanation": "Art. 10 al. 2 LTVA : seuil general = CHF 100'000 de CA mondial annuel calcule sur les prestations non exclues de l'art. 21. Le CA mondial compte (pas seulement le CA CH). Si en dessous du seuil, l'entreprise est LIBÉRÉE de l'assujettissement obligatoire mais peut renoncer a la libération (art. 11).",
@@ -39060,9 +39060,9 @@
               "question": "Une start-up genevoise sans CA mais en phase d'investissement (achats 200'000 CHF) souhaite récupérer la TVA sur ses dépenses. Quelle option ?",
               "options": [
                 "A. Impossible : pas d'assujettissement sans CA",
-                "B. Renonciation a la libération (assujettissement volontaire art. 11 LTVA)",
+                "B. Renoncer à la libération (art. 11 LTVA)",
                 "C. Imposition de groupe avec une autre société",
-                "D. Demande de remboursement direct sans inscription"
+                "D. Demander un remboursement direct de la TVA à l'AFC, sans inscription au registre"
               ],
               "answer": 1,
               "explanation": "Art. 11 LTVA permet la RENONCIATION A LA LIBÉRATION (assujettissement volontaire). Une start-up sans CA peut s'inscrire pour récupérer l'IP des sa création, optimisation clé des phases d'investissement (développement produit, R&D). Engagement de maintien minimum 1 période fiscale (année).",
@@ -39084,9 +39084,9 @@
               "type": "mcq",
               "question": "Une étude d'avocats parisienne (siège étranger) facture 110k CHF a des clients (20k CH + 90k FR). Est-elle assujettie a la TVA suisse ?",
               "options": [
-                "A. Oui, CA total > seuil 100k",
-                "B. Oui, sur la part CH uniquement",
-                "C. Non, car siège étranger et PS au destinataire art. 8 al. 1 - libération art. 10 al. 2 let. b",
+                "A. Oui, car son chiffre d'affaires mondial dépasse le seuil de CHF 100'000",
+                "B. Oui, mais uniquement sur la part du chiffre d'affaires réalisée en Suisse",
+                "C. Non : services B2B soumis à l'impôt sur les acquisitions",
                 "D. Oui, mais via imposition de groupe"
               ],
               "answer": 2,
@@ -39099,10 +39099,10 @@
               "type": "mcq",
               "question": "Quels éléments N'ENTRENT PAS dans le calcul du CA déterminant pour les seuils 100k/250k ?",
               "options": [
-                "A. Les operations exclues art. 21, dons, dividendes, subventions",
-                "B. Les exportations exonérées art. 23",
+                "A. Opérations exclues, dons, dividendes, subventions",
+                "B. Les exportations exonérées en vertu de l'art. 23 LTVA",
                 "C. Les PS sur CH",
-                "D. Les ventes de biens fabriqués en CH"
+                "D. Les ventes de biens fabriqués en Suisse et vendus sur le marché suisse"
               ],
               "answer": 0,
               "explanation": "CA NON déterminant pour les seuils : operations EXCLUES (art. 21), prestations a l'étranger qui seraient exclues en CH, dons, dividendes, subventions, salaires, ventes privées non commerciales. EN REVANCHE, les exportations exonérées, PS imposables CH, PS a l'étranger qui seraient imposables en CH SONT incluses.",
@@ -39115,9 +39115,9 @@
               "question": "Un traducteur depasse le seuil 100k pour la 1re fois en 2022 (CA 110k). Quand devient-il assujetti obligatoire ?",
               "options": [
                 "A. Rétroactivement au 01.01.2022",
-                "B. Au 01.01.2023 (début de la période fiscale suivant le dépassement)",
+                "B. Au 01.01.2023 (période fiscale suivante)",
                 "C. Au 01.07.2022 (milieu d'année)",
-                "D. Jamais s'il revient sous le seuil ensuite"
+                "D. Jamais, s'il repasse sous le seuil de CHF 100'000 l'année suivante"
               ],
               "answer": 1,
               "explanation": "Art. 14 LTVA : pour une entreprise existante déjà en activité qui depasse le seuil pour la 1re fois, l'assujettissement obligatoire commence a l'EXPIRATION de l'exercice du dépassement = au 01.01 de l'année suivante. Donc CA 110k en 2022 -> assujetti des le 01.01.2023.",
@@ -39139,10 +39139,10 @@
               "type": "mcq",
               "question": "Une PME suisse SA (CA < 100k) renonce à la libération de l'assujettissement. Pendant combien de temps au minimum reste-t-elle assujettie ?",
               "options": [
-                "A. Au moins 1 période fiscale (année civile)",
-                "B. Pas de durée minimum",
-                "C. Au moins 6 mois",
-                "D. Au moins 5 ans"
+                "A. Au moins 1 période fiscale",
+                "B. Aucune durée minimale n'est prévue",
+                "C. Au moins 6 mois dès l'inscription",
+                "D. Au moins 5 périodes fiscales"
               ],
               "answer": 0,
               "explanation": "Art. 11 LTVA : la renonciation a la libération engage l'assujetti pour au moins 1 PÉRIODE FISCALE (= année civile). Cette durée minimum évite les changements opportunistes (entrer/sortir selon les flux d'IP). Après, l'assujetti peut redemander la libération s'il reste sous le seuil.",
@@ -39154,9 +39154,9 @@
               "type": "mcq",
               "question": "Une société IT française vend des logiciels en ligne (SaaS) a des particuliers suisses pour 8'000 EUR + 100'000 EUR a des clients FR. Doit-elle s'enregistrer a la TVA CH ?",
               "options": [
-                "A. Non, CA CH < 100k",
-                "B. Oui, mais uniquement si elle a un ES en CH",
-                "C. Oui, régime special télécom/IT a non-assujettis CH (art. 10 al. 2 let. b ch. 2 LTVA)",
+                "A. Non, car le chiffre d'affaires réalisé en Suisse reste inférieur à CHF 100'000",
+                "B. Oui, mais uniquement si elle dispose d'un établissement stable en Suisse",
+                "C. Oui : prestations à des non-assujettis en Suisse, CA mondial ≥ 100k",
                 "D. Non, services hors champ TVA CH"
               ],
               "answer": 2,
@@ -39247,9 +39247,9 @@
               "type": "mcq",
               "question": "Quels sont les 4 éléments constitutifs d'un rapport de prestations imposable au sens de l'art. 18 al. 1 LTVA ?",
               "options": [
-                "A. Prestation - contre-prestation - rapport économique étroit - 2 parties",
+                "A. Prestation, contre-prestation, lien économique, 2 parties",
                 "B. Bien - prix - vendeur - acheteur",
-                "C. Contrat - facture - paiement - livraison",
+                "C. Un contrat écrit, une facture, un paiement effectif et une livraison physique",
                 "D. Forme écrite - durée - prix - lieu"
               ],
               "answer": 0,
@@ -39287,10 +39287,10 @@
               "type": "mcq",
               "question": "Lequel de ces éléments est hors champ de la TVA (art. 18 al. 2 LTVA) ?",
               "options": [
-                "A. Honoraires de conseil",
-                "B. Vente de biens neufs",
-                "C. Loyer commercial avec option",
-                "D. Subventions, dons, dividendes, dommages-intérêts"
+                "A. Les honoraires de conseil facturés",
+                "B. La vente de biens neufs",
+                "C. Un loyer commercial avec option",
+                "D. Les subventions et les dons"
               ],
               "answer": 3,
               "explanation": "Art. 18 al. 2 LTVA liste 10+ catégories d'éléments hors champ : subventions de droit public (a), taxes touristiques (b), dons (d), apports (e), dividendes (f), indemnités compensatoires (g), consignes (h), dommages-intérêts (i), honoraires CA (j), émoluments régaliens (l). Pas de rapport de prestations -> pas de TVA.",
@@ -39312,8 +39312,8 @@
               "type": "mcq",
               "question": "Un hôtel propose un forfait 1'580 CHF (formation 1'200 + repas 210 + nuit 170). Comment l'imposer si la prestation prepondrante = formation (exclue) ?",
               "options": [
-                "A. Repas + nuit imposables, formation exclue (3 prestations distinctes)",
-                "B. Regle des 70% : formation prepondrante (75.95%) -> tout le forfait EXCLU",
+                "A. Repas et nuitée imposables, formation exclue (trois prestations distinctes)",
+                "B. Règle des 70 % : tout le forfait est exclu",
                 "C. Tout au taux 8.1% (taux le plus eleve)",
                 "D. Tout au taux 3.8% (hébergement)"
               ],
@@ -39328,8 +39328,8 @@
               "question": "Quel est le traitement TVA d'une prestation ACCESSOIRE (art. 19 al. 4 LTVA) ?",
               "options": [
                 "A. Toujours imposée au taux normal 8.1%",
-                "B. Suit le sort fiscal de la prestation principale (lieu, taux, exclusion/exonération)",
-                "C. Imposée séparément a son propre taux",
+                "B. Elle suit le sort de la prestation principale",
+                "C. Elle est imposée séparément, à son propre taux et selon son propre lieu",
                 "D. Hors champ par défaut"
               ],
               "answer": 1,
@@ -39342,10 +39342,10 @@
               "type": "mcq",
               "question": "Une agence immobilière vend un immeuble AU NOM du proprietaire (representation directe). Qui est imposable et sur quoi ?",
               "options": [
-                "A. L'agence sur la totalité du prix (40k commission inclus)",
-                "B. L'agence sur la commission, le proprietaire rien",
+                "A. L'agence sur la totalité du prix de vente, commission de 40'000 incluse",
+                "B. L'agence sur sa commission ; le propriétaire n'a aucune obligation TVA",
                 "C. Personne, vente entre particuliers",
-                "D. Proprietaire imposable sur la vente (selon régime immobilier) + agence imposable sur sa commission uniquement"
+                "D. Le propriétaire sur la vente ; l'agence sur sa commission"
               ],
               "answer": 3,
               "explanation": "Representation DIRECTE (art. 20 al. 2 LTVA) : l'agence agit AU NOM du proprietaire, le client sait qu'il contracte avec le proprietaire. Le rapport de prestations principal = entre PROPRIETAIRE et acheteur. L'agence est imposable uniquement sur sa commission (PS). Conditions clés : facture au nom du proprietaire, mention explicite du mandat.",
@@ -39367,9 +39367,9 @@
               "type": "mcq",
               "question": "Depuis le 01.01.2025, quand une plateforme numérique (Amazon, Galaxus) facilite une livraison de biens entre vendeur et acheteur, qui est repute fournisseur TVA ?",
               "options": [
-                "A. Toujours le vendeur d'origine",
-                "B. La PLATEFORME elle-même (fiction art. 20a LTVA)",
-                "C. L'acheteur via auto-liquidation",
+                "A. Toujours le vendeur d'origine, seul propriétaire du bien",
+                "B. La plateforme elle-même (art. 20a)",
+                "C. L'acheteur, par auto-liquidation de l'impôt",
                 "D. La banque qui traite le paiement"
               ],
               "answer": 1,
@@ -39383,12 +39383,12 @@
               "question": "Une SA verse 20'000 CHF d'honoraires a un administrateur (PP). Comment qualifier ces honoraires en TVA ?",
               "options": [
                 "A. PS imposable 8.1% (rapport de prestations)",
-                "B. Hors champ TVA (honoraires d'organe, art. 18 al. 2 let. j LTVA)",
-                "C. Salaire imposable a la source uniquement",
+                "B. Hors champ : rémunération d'un organe",
+                "C. Un salaire soumis uniquement à l'impôt à la source, sans TVA",
                 "D. Don exonere"
               ],
               "answer": 1,
-              "explanation": "Art. 18 al. 2 let. j LTVA : les honoraires de membres de CA, fondations etc., reçus par la PP en tant qu'organe, sont HORS CHAMP TVA (pas de rapport de prestations). EXCEPTION : si versés a l'EMPLOYEUR de la PP (cabinet, fiduciaire) -> rapport entre SA et cabinet = PS imposable 8.1%.",
+              "explanation": "Les honoraires versés à un membre du conseil d'administration (ou d'un conseil de fondation) agissant en qualité d'organe sont, selon la pratique de l'AFC, une rémunération d'activité dépendante (soumise à l'AVS) : pas de rapport de prestations imposable, donc hors champ de la TVA. EXCEPTION : si les honoraires sont versés à l'employeur de l'administrateur (cabinet, fiduciaire), il y a une prestation de services de ce dernier, imposable à 8,1 %.",
               "difficulty": "medium",
               "section_id": "m8_L4_s3"
             },
@@ -39397,10 +39397,10 @@
               "type": "mcq",
               "question": "Amazon facilite la vente d'une tablette 200 CHF d'un marchand chinois a un client suisse. Quelle TVA est due ?",
               "options": [
-                "A. Aucune (petit envoi sous franchise)",
+                "A. Aucune TVA : petit envoi en franchise, l'impôt étant inférieur à CHF 5",
                 "B. Le client paie la TVA a la douane",
                 "C. Le marchand chinois facture directement",
-                "D. Amazon facture la TVA CH 8.1% au client (fiction art. 20a LTVA, plateforme = fournisseur)"
+                "D. Amazon facture 8,1 % au client (plateforme réputée fournisseur)"
               ],
               "answer": 3,
               "explanation": "Cas pratique combine art. 20a + art. 7 al. 3 (vente correspondance). Depuis le 01.01.2025 : Amazon = plateforme = fournisseur repute (fiction). Amazon facture TVA CH 8.1% au client suisse. 2 rapports fictifs : marchand CN -> Amazon (LB exonérée export depuis CN) + Amazon -> client CH (LB imposée CH). Marchand CN libere des obligations TVA CH.",
@@ -39499,10 +39499,10 @@
               "type": "mcq",
               "question": "Quelle est la conséquence d'une prestation EXCLUE du champ de la TVA (art. 21 LTVA) sur l'IP ?",
               "options": [
-                "A. IP intégralement déductible",
-                "B. IP déductible a 50%",
+                "A. IP intégralement déductible comme pour toute activité",
+                "B. IP déductible à 50 % de manière forfaitaire",
                 "C. IP rembourse par l'AFC",
-                "D. IP non déductible (taxe occulte) sauf option art. 22"
+                "D. IP non déductible (taxe occulte)"
               ],
               "answer": 3,
               "explanation": "Art. 29 al. 1 LTVA : pour les prestations EXCLUES (hors champ), l'IP n'est PAS déductible -> 'taxe occulte' (la TVA sur les charges devient un coût integre au prix). Sauf option art. 22 (qui transforme l'exclue en imposable et restaure l'IP). Distinction avec EXONÉRÉE (art. 23) : taux 0% mais IP conservée.",
@@ -39514,10 +39514,10 @@
               "type": "mcq",
               "question": "Combien de catégories de prestations exclues comporte la liste exhaustive de l'art. 21 al. 2 LTVA ?",
               "options": [
-                "A. 12",
-                "B. 21",
-                "C. 31 catégories (+ sous-catégories)",
-                "D. 50"
+                "A. 12 catégories",
+                "B. 21 catégories",
+                "C. 31 catégories",
+                "D. 50 catégories"
               ],
               "answer": 2,
               "explanation": "Art. 21 al. 2 LTVA liste 31 catégories EXHAUSTIVES (avec sous-cat. 3bis, 14bis, 28bis). Couvre santé (ch. 2-8), éducation/culture/sport (ch. 9-17), assurance/finance/immobilier (ch. 18-23), divers (ch. 24-31). Tout ce qui n'est pas dans la liste est potentiellement imposable. Ch. 25 abrogé.",
@@ -39549,10 +39549,10 @@
               "type": "mcq",
               "question": "Le transport de malades est exclu (art. 21 al. 2 ch. 7) UNIQUEMENT si effectue par :",
               "options": [
-                "A. Moyens spécialement amenages (ambulances, helicopteres sauvetage, luges)",
-                "B. N'importe quel véhicule (taxi, bus, train)",
+                "A. Des moyens de transport spécialement aménagés",
+                "B. N'importe quel véhicule (taxi, bus, train) transportant le malade",
                 "C. Véhicules de l'hopital uniquement",
-                "D. Tous transports a but médical"
+                "D. Tout transport à but médical, quel que soit le véhicule utilisé"
               ],
               "answer": 0,
               "explanation": "Art. 21 al. 2 ch. 7 LTVA : exclusion limitée aux moyens SPÉCIALEMENT AMENAGES pour le transport de malades (ambulances, helicopteres de sauvetage, luges de montagne). Le transport de malades en TAXI / BUS / TRAIN ordinaire reste IMPOSABLE même pour raison medicale.",
@@ -39564,10 +39564,10 @@
               "type": "mcq",
               "question": "La location d'un appartement d'habitation a un particulier est :",
               "options": [
-                "A. Imposable au taux 8.1%",
-                "B. Exclue (art. 21 al. 2 ch. 21) sans option possible",
-                "C. Imposable au taux réduit 2.6%",
-                "D. Exonérée (art. 23)"
+                "A. Imposable au taux normal de 8,1 %",
+                "B. Exclue, sans option possible",
+                "C. Imposable au taux réduit de 2,6 %",
+                "D. Exonérée (art. 23 LTVA)"
               ],
               "answer": 1,
               "explanation": "Art. 21 al. 2 ch. 21 LTVA : la location d'immeubles est exclue. Pour l'HABITATION privée, l'option art. 22 est INTERDITE (même alinéa 2). Donc taxe occulte sur la location residentielle. En revanche, locations COMMERCIALES (bureaux, magasins) peuvent être opt-in via art. 22 -> imposables 8.1%.",
@@ -39589,10 +39589,10 @@
               "type": "mcq",
               "question": "Sur quelles prestations exclues l'option art. 22 LTVA est-elle INTERDITE ?",
               "options": [
-                "A. Éducation, santé, culture, sport",
-                "B. Toutes les prestations exclues",
+                "A. Éducation, santé, culture et sport, sans exception",
+                "B. Toutes les prestations exclues de l'art. 21 al. 2 LTVA",
                 "C. Aucune restriction",
-                "D. Assurances (ch. 18), Marche monétaire (ch. 19), Jeux d'argent (ch. 23), Immobilier prive (ch. 20-21)"
+                "D. Assurances, crédit, jeux d'argent, logement privé"
               ],
               "answer": 3,
               "explanation": "Art. 22 al. 2 LTVA : option INTERDITE pour 4 catégories : (1) Assurances (ch. 18) - concurrence déloyale, (2) Marche monétaire/capitaux (ch. 19) - difficultés techniques, (3) Jeux d'argent (ch. 23) - régime impôt maisons jeu, (4) Immobilier a fins privées/habitation (ch. 20-21) - protection menages. Sur santé, éducation, culture, sport : option POSSIBLE.",
@@ -39604,10 +39604,10 @@
               "type": "mcq",
               "question": "Comment opter pour l'imposition d'une prestation normalement exclue (art. 22 LTVA) ?",
               "options": [
-                "A. Demande formelle a l'AFC obligatoire",
-                "B. Inscription au RC modifiée",
-                "C. Mention explicite 'TVA X%' sur la facture",
-                "D. Vote en assemblée générale"
+                "A. Demande formelle et préalable à l'AFC",
+                "B. Modification de l'inscription au RC",
+                "C. Indiquer la TVA sur la facture",
+                "D. Décision de l'assemblée générale"
               ],
               "answer": 2,
               "explanation": "Art. 22 al. 1 LTVA : option par MENTION EXPLICITE sur la facture ('TVA 8.1%' ou 'avec TVA'). Pas de demande formelle a l'AFC nécessaire. Option par prestation (pas globale), mais possible aussi globalement pour une catégorie. Délai : avant finalisation de la période fiscale (30.06 année suivante).",
@@ -39644,9 +39644,9 @@
               "type": "mcq",
               "question": "Une école privée opte art. 22 pour ses cours en 2020 puis abandonne en 2023. Quelles conséquences sur ses équipements ?",
               "options": [
-                "A. Aucune correction nécessaire",
-                "B. Revente immédiate obligatoire des équipements",
-                "C. Changement d'affectation art. 31 LTVA : reversement de l'IP au prorata de la durée d'utilisation restante",
+                "A. Aucune correction n'est nécessaire, l'option ayant été valablement exercée",
+                "B. Revente immédiate obligatoire de tous les équipements acquis avec IP",
+                "C. Consommation propre (art. 31) : IP reversé au prorata",
                 "D. Amende de l'AFC"
               ],
               "answer": 2,
@@ -39659,8 +39659,8 @@
               "type": "mcq",
               "question": "Une commune prête a une autre un employé AVEC un véhicule de deneigement. Cette mise a disposition de personnel est :",
               "options": [
-                "A. Exclue (ch. 28bis - prestations intra-public)",
-                "B. IMPOSABLE 8.1% car AVEC machines/outils/véhicules (condition cumulative non remplie)",
+                "A. Exclue (prestations entre collectivités publiques), quelle que soit la forme",
+                "B. Imposable à 8,1 % : personnel mis à disposition avec véhicule",
                 "C. Hors champ",
                 "D. Exonérée"
               ],
@@ -39751,9 +39751,9 @@
               "type": "mcq",
               "question": "Quelle est la principale différence entre une prestation EXONÉRÉE (art. 23) et une prestation EXCLUE (art. 21) ?",
               "options": [
-                "A. L'exonérée donne droit a la déduction de l'IP, l'exclue NON (sauf option)",
+                "A. L'exonérée ouvre droit à l'IP, l'exclue non",
                 "B. L'exonérée est imposée a 0%, l'exclue a 8.1%",
-                "C. L'exonérée est limitée aux PME, l'exclue aux grandes entreprises",
+                "C. L'exonérée est réservée aux PME, l'exclue concerne les grandes entreprises",
                 "D. Aucune différence de traitement"
               ],
               "answer": 0,
@@ -39766,9 +39766,9 @@
               "type": "mcq",
               "question": "Pourquoi les exportations sont-elles exonérées plutôt qu'exclues ?",
               "options": [
-                "A. Pour faciliter les contrôles douaniers",
-                "B. Principe de neutralité fiscale internationale : imposition dans le pays de consommation, preservation de la compétitivité via IP déductible",
-                "C. Pour des raisons historiques sans justification économique",
+                "A. Pour faciliter les contrôles douaniers à la frontière suisse",
+                "B. Imposer dans le pays de consommation, sans taxe occulte",
+                "C. Pour des raisons historiques, sans véritable justification économique",
                 "D. Décision politique récente (2024)"
               ],
               "answer": 1,
@@ -39791,10 +39791,10 @@
               "type": "mcq",
               "question": "Pour bénéficier de l'exonération sur une exportation de biens (art. 23 al. 2 ch. 1 LTVA), quelle preuve principale ?",
               "options": [
-                "A. Décision de Taxation électronique a l'exportation (DTe) ou document douanier timbre",
+                "A. La décision de taxation à l'exportation (document douanier)",
                 "B. Simple facture",
-                "C. Bon de livraison signe par le client",
-                "D. Aucune preuve nécessaire"
+                "C. Le bon de livraison signé par le client étranger à la réception",
+                "D. Aucune preuve n'est nécessaire si le client est domicilié à l'étranger"
               ],
               "answer": 0,
               "explanation": "Art. 81 al. 3 LTVA + pratique AFC : la preuve principale d'exportation est la DECISION DE TAXATION ELECTRONIQUE (DTe) ou le document d'exportation douanier dûment timbre. Pour le trafic touristique : formulaire 11.49 ou Global Blue. Conservation 10 ans (art. 70 al. 2 LTVA). Sans preuve = exoneration refusee.",
@@ -39831,10 +39831,10 @@
               "type": "mcq",
               "question": "Un vol Genève-New York en classe affaires est :",
               "options": [
-                "A. Imposable au taux normal 8.1%",
-                "B. Imposable au taux réduit 2.6%",
-                "C. Hors champ TVA",
-                "D. EXONERE art. 23 al. 2 (trafic aérien international)"
+                "A. Imposable au taux normal de 8,1 %",
+                "B. Imposable au taux réduit de 2,6 %",
+                "C. Hors du champ de la TVA suisse (transport aérien)",
+                "D. Exonéré (trafic aérien international)"
               ],
               "answer": 3,
               "explanation": "Art. 23 al. 2 LTVA + art. 41-43 OTVA : trafic aérien international = exonere si au moins UNE des conditions (non cumulatives) : (1) aéroport de départ OU d'arrivée en CH, (2) survol CH d'aéroport étranger a étranger, (3) escale technique entre 2 aéroports CH dans un vol international. Genève-NY remplit la condition 1.",
@@ -39846,9 +39846,9 @@
               "type": "mcq",
               "question": "Un vol interne Zurich-Berne (sans escale internationale) est-il exonere ?",
               "options": [
-                "A. Non, vol entièrement interne CH = imposable 8.1%",
-                "B. Oui, tous les vols sont exonérés",
-                "C. Oui, vol commercial",
+                "A. Non : vol interne, imposable à 8,1 %",
+                "B. Oui, tous les vols commerciaux sont exonérés",
+                "C. Oui, s'il est opéré par une compagnie suisse",
                 "D. Hors champ"
               ],
               "answer": 0,
@@ -39861,10 +39861,10 @@
               "type": "mcq",
               "question": "Le ravitaillement en carburant (kerosene) d'un Boeing Air France a Zurich est :",
               "options": [
-                "A. Exonere art. 23 al. 2 ch. 8 (prestations aux compagnies aériennes internationales)",
-                "B. Imposable 8.1% (vente en CH)",
-                "C. Imposable 2.6% (taux réduit énergie)",
-                "D. Hors champ"
+                "A. Exonéré (art. 23 al. 2 ch. 8 LTVA)",
+                "B. Imposable à 8,1 % (livraison en Suisse)",
+                "C. Imposable à 2,6 % (taux réduit énergie)",
+                "D. Hors du champ de la TVA"
               ],
               "answer": 0,
               "explanation": "Art. 23 al. 2 ch. 8 LTVA : exonération LARGE des prestations aux compagnies aériennes effectuant majoritairement des vols internationaux. Couvert : livraison/location aéronefs, transformations, réparations, catering, taxes de stationnement, AVITAILLEMENT (carburant), prestations sur objets incorporés. SWISS, Air France, Lufthansa = compagnies internationales éligibles.",
@@ -39886,10 +39886,10 @@
               "type": "mcq",
               "question": "La commission d'un garagiste suisse pour entremise (vente véhicule au nom d'un proprietaire CH a un acheteur français qui exporté) est :",
               "options": [
-                "A. Imposable 8.1% (PS en CH)",
-                "B. Exonérée art. 23 al. 2 ch. 9 (intermédiaire dans operation sous-jacente exonérée)",
+                "A. Imposable à 8,1 % (prestation en Suisse)",
+                "B. Exonérée (entremise d'une exportation)",
                 "C. Hors champ TVA",
-                "D. Imposable au taux réduit 2.6%"
+                "D. Imposable au taux réduit de 2,6 %"
               ],
               "answer": 1,
               "explanation": "Art. 23 al. 2 ch. 9 LTVA : prestations d'intermédiaires sont exonérées si l'OPERATION SOUS-JACENTE est exonérée ou réalisée a l'étranger, ET si l'intermédiaire agit au nom et pour le compte d'un tiers (representation directe). Vente véhicule en export (véhicule exporté) = exonérée -> commission garagiste exonérée aussi.",
@@ -39901,9 +39901,9 @@
               "type": "mcq",
               "question": "Quelles conditions cumulatives pour le 'tax refund' touristique (trafic des voyageurs, art. 23 al. 5) ?",
               "options": [
-                "A. Valeur min 300 CHF (TTC) + domicile étranger + usage privé + export dans les 90 jours + facture nominative",
-                "B. Valeur min 100 CHF + acheteur étranger + 60 jours d'export",
-                "C. Valeur min 1'000 CHF + carte bancaire étrangère uniquement",
+                "A. ≥ CHF 300, domicile étranger, usage privé, export en 90 jours",
+                "B. Valeur minimale de CHF 100, acheteur de nationalité étrangère et export dans les 60 jours",
+                "C. Valeur minimale de CHF 1'000 et paiement par carte bancaire étrangère uniquement",
                 "D. Aucune condition particulière"
               ],
               "answer": 0,
@@ -39916,10 +39916,10 @@
               "type": "mcq",
               "question": "Les prestations a une mission diplomatique ou organisation internationale (CICR, OMS) sur le territoire CH sont :",
               "options": [
-                "A. Imposables au taux normal",
-                "B. Exonérées (bénéficiaires institutionnels art. 107 al. 1 let. a LTVA + art. 143-150 OTVA)",
-                "C. Hors champ",
-                "D. Réduites de 50%"
+                "A. Imposables au taux normal de 8,1 %",
+                "B. Exonérées (bénéficiaires institutionnels)",
+                "C. Hors du champ de la TVA",
+                "D. Réduites de 50 % par l'AFC sur demande de l'organisation"
               ],
               "answer": 1,
               "explanation": "Art. 107 al. 1 let. a LTVA + art. 143-150 OTVA : prestations sur territoire CH a des bénéficiaires institutionnels (missions diplomatiques, organisations internationales ONU/OMS/OMC/CICR, consulats, personnel diplomatique sous conditions) sont EXONÉRÉES. Déclaration sous chiffre 220 du décompte TVA. Formulaires officiels : A (1070_02), AA (1076_02), A/OI (1078_02).",
@@ -40044,9 +40044,9 @@
               "question": "Une fondation genevoise (non-assujettie TVA) reçoit en oct. N une facture d'avocat parisien de 25'000 EUR (cours 0.95). Quel est l'impact ?",
               "options": [
                 "Aucun impact, la fondation n'est pas assujettie",
-                "Seuil 10'000 depasse : impôt du sur l'intégralité (23'750 CHF) au taux 8.1%",
-                "Seuil 10'000 atteint : impôt du sur le dépassement uniquement (15'250 CHF)",
-                "Impôt du uniquement si la fondation s'inscrit volontairement"
+                "Seuil de 10'000 dépassé : impôt sur 23'750 CHF",
+                "Seuil de 10'000 atteint : impôt dû uniquement sur l'excédent (13'750 CHF)",
+                "Impôt dû uniquement si la fondation s'inscrit volontairement au registre"
               ],
               "answer": 1,
               "explanation": "**Impôt intégral** = 23'750 x 8.1% = **1'923.75 CHF**. Le seuil 10'000 CHF (art. 45 LTVA) n'est PAS une franchise : si depasse, l'impôt porte sur **l'intégralité** des acquisitions, pas seulement le dépassement. La fondation doit annoncer par courrier a l'AFC dans les 60 jours suivant la fin de l'année civile.",
@@ -40108,10 +40108,10 @@
               "type": "mcq",
               "question": "Pour un assujetti TVA en méthode effective utilisant a 100% la prestation pour son activité imposable, l'impôt sur les acquisitions est :",
               "options": [
-                "Un coût net (non déductible)",
-                "Déductible a 50% seulement",
-                "Une operation économiquement neutre (TVA due + IP déductible = 0)",
-                "Reverse au prestataire étranger"
+                "Un coût net, l'impôt n'étant pas déductible",
+                "Déductible à 50 % seulement, l'autre moitié restant à charge",
+                "Neutre : impôt dû et IP déductible s'annulent",
+                "Un impôt reversé au prestataire étranger"
               ],
               "answer": 2,
               "explanation": "**Operation neutre**. L'assujetti declare l'impôt sur les acquisitions (chiffre 380 du décompte) et le déduit immédiatement comme IP (chiffre 381) dans le même décompte. Effet net = 0. C'est une pure formalité administrative. Pour les **non-assujettis**, l'impôt est un **coût définitif** (pas de déduction).",
@@ -40123,9 +40123,9 @@
               "type": "mcq",
               "question": "La base de calcul de l'impôt sur les **importations** (art. 54 LTVA) inclut :",
               "options": [
-                "Uniquement le prix d'achat hors frais",
-                "Prix + transport jusqu'a 1re destination CH + assurance + emballage + droits de douane",
-                "Prix d'achat + transport jusqu'a la frontière CH uniquement",
+                "Uniquement le prix d'achat facturé, hors tous frais",
+                "Prix + frais jusqu'au 1er lieu en CH + droits",
+                "Le prix d'achat et le transport jusqu'à la frontière suisse uniquement",
                 "Prix d'achat + TVA suisse au taux normal"
               ],
               "answer": 1,
@@ -40252,9 +40252,9 @@
               "type": "mcq",
               "question": "Lesquels de ces éléments RÉDUISENT la contre-prestation TVA (art. 24 LTVA) ?",
               "options": [
-                "Commissions sur cartes de credit et pertes de change",
+                "Commissions sur cartes de crédit et pertes de change",
                 "Frais de transport et droits de douane",
-                "Rabais, escomptes, ristournes et pertes sur débiteurs",
+                "Rabais, escomptes et pertes sur débiteurs",
                 "Frais de rappel et intérêts contractuels"
               ],
               "answer": 2,
@@ -40294,8 +40294,8 @@
               "options": [
                 "2'000 CHF (prix effectivement paye)",
                 "1'000 CHF (la différence)",
-                "3'000 CHF (valeur entre tiers indépendants - art. 24 al. 2)",
-                "0 CHF (transaction interne au groupe)"
+                "3'000 CHF (prix entre tiers, art. 24 al. 2)",
+                "0 CHF, la transaction étant interne entre la société et son actionnaire"
               ],
               "answer": 2,
               "explanation": "**3'000 CHF** (art. 24 al. 2 LTVA). M. Maurice est **personne étroitement liée** car >= 20% de participation (seuil art. 3 let. h). Pour éviter les ventes a prix minore, la base de calcul = **valeur entre tiers indépendants** (arm's length). Oscar SA declare 3'000 dans son décompte TVA, pas 2'000. Regle anti-abus essentielle.",
@@ -40319,8 +40319,8 @@
               "options": [
                 "40'000 CHF (cash uniquement)",
                 "10'000 CHF (valeur de la reprise)",
-                "60'000 CHF (cumul vente + reprise)",
-                "50'000 CHF (montant compense total - art. 24 al. 5)"
+                "60'000 CHF (cumul de la vente et de la valeur de reprise)",
+                "50'000 CHF (prix total, reprise comprise)"
               ],
               "answer": 3,
               "explanation": "**50'000 CHF** (art. 24 al. 5 LTVA). En cas de **prestation en paiement d'une dette** (reprise), la base = montant **compense total** (= prix complet de la voiture neuve), pas seulement le cash. TVA = 50'000 x 8.1/108.1 = 3'746.53 CHF (incluse dans le prix). La voiture reprise constitue une livraison distincte par le client.",
@@ -40397,8 +40397,8 @@
               "type": "mcq",
               "question": "Un particulier (non-assujetti TVA) vend sa voiture a un garage et indique sur la quittance 'TVA 8.1% incluse'. Conséquence ?",
               "options": [
-                "Le particulier doit reverser la TVA mentionnée a l'AFC (art. 27 LTVA)",
-                "Aucune conséquence, le particulier n'est pas assujetti",
+                "Il doit verser la TVA facturée (art. 27 al. 2)",
+                "Aucune conséquence, le particulier n'étant pas assujetti à la TVA",
                 "Le garage ne peut pas déduire l'IP",
                 "La quittance est nulle de plein droit"
               ],
@@ -40418,7 +40418,7 @@
               "section_id": "m8_L8_s8"
             }
           ],
-          "mindmap_md": "# M8-L8\n## Calcul et transfert de l'impôt (art. 24-26 LTVA)\n\n### Pertinence examen\n- **Haute** — base de tous les calculs en examen\n\n### Base de calcul — contre-prestation effective (art. 24)\n- **Formule** : **TVA = Contre-prestation × Taux**\n- Contre-prestation **effective** (ce que l'acheteur paie au final)\n- **TVA toujours INCLUSE** dans le prix sauf mention contraire (art. 24 al. 1)\n- Calcul HT → TVA : Brut × (taux / 100)\n- Calcul TTC → TVA : TTC × (taux / (100 + taux)) — ex. 108.1 → /108.1\n#### Diminutions de la contre-prestation\n- **Rabais, escomptes, ristournes** (avant ou après-coup)\n- **Pertes sur débiteurs**\n- Ajustements pour défauts / retours\n- Reprise d'emballages\n- → Décompte chiffre 235 (correction d'IP rétroactive)\n#### NE réduisent PAS la contre-prestation\n- Frais bancaires, commissions cartes\n- Pertes de change\n- Pénalités contractuelles\n\n### Monnaies étrangères et conversion\n- Conversion **au moment de la naissance** de la créance\n- 2 cours possibles :\n  - **Cours du jour** de la prestation (publié AFC)\n  - **Cours moyen mensuel** AFC (option pour l'année entière)\n- **Justificatifs en CHF** : pas de conversion si déjà en CHF\n- Système **deux colonnes** (CHF + étrangère) admis\n\n### Personnes étroitement liées (art. 3 let. h + 24 al. 2)\n#### Définition\n- Propriétaires d'une **participation déterminante** + leurs proches\n- **Seuils** (au moins un) :\n  - **≥ 20 %** au capital / capital social, OU\n  - **≥ 20 %** aux bénéfices / réserves, OU\n  - Droits de participation **valeur vénale ≥ CHF 1 million**\n- **Famille proche** : conjoint, enfants mineurs, parents\n- Fondations et leurs bénéficiaires\n#### Conséquence fiscale\n- Base de calcul = **valeur du marché** (dealing at arm's length)\n- Même si la prestation est gratuite ou sous-évaluée\n- **Exception** : prestations gratuites à fins entrepreneuriales (cadeaux d'usage)\n\n### Autres cas (art. 24 al. 3-5bis)\n#### Échanges de prestations (al. 3)\n- Base = **valeur du marché** de **chaque** prestation\n- Les 2 prestations imposées séparément\n- TVA mutuelle s'annule économiquement\n#### Reprises (al. 4)\n- Vente avec reprise d'un ancien bien → TVA sur prix de **vente brut**\n- Reprise = nouvelle transaction séparée\n\n### Imposition de la marge — pièces de collection (art. 24a)\n- Régime spécial pour **pièces de collection** (timbres, monnaies, antiquités, objets d'art)\n- **TVA = (Prix de vente − Prix d'achat) × Taux / 108.1**\n- Si **perte** : déductible des autres CA imposables (compensation interne)\n- **Conditions** : commerçant assujetti, marchandise revendable\n- Base : art. 24a LTVA + art. 48a-48e OTVA\n\n### Prestations au personnel (art. 24 al. 2 + notice N2)\n- Prestations figurant sur **certificat de salaire** = rapport de prestations → imposable\n- Base = montant du **certificat de salaire** (TVA incluse)\n- Prestations **hors certificat** = gratuites → pas de TVA, pas de correction IP\n#### Voiture de service privée\n- Forfait **0.9 % du prix d'achat** HT par mois (TVA : depuis 2018), min CHF 150\n- Inclut TVA 8.1 % → ressort sur certificat salaire\n- Calcul : prix achat × 0.9 % × 12 × 8.1/108.1 = TVA annuelle\n\n### Taux TVA (art. 25) — **depuis 01.01.2024**\n| Taux | Valeur | Avant 2024 |\n|---|---|---|\n| **Normal** | **8.1 %** | 7.7 % |\n| **Réduit** | **2.6 %** | 2.5 % |\n| **Spécial (hébergement)** | **3.8 %** | 3.7 % |\n#### Taux réduit 2.6 % — liste fermée\n- **Alimentation** humaine (sauf restauration)\n- **Animaux et leur nourriture**\n- **Plantes**, semences, fleurs coupées\n- **Médicaments**\n- **Livres, journaux, revues** (papier ET électroniques depuis 2018)\n- Œuvres de créateurs (en cas d'option art. 22)\n- Manifestations sport/culture (option art. 22)\n#### Taux spécial 3.8 % — hébergement\n- Hôtels, maisons/appart de vacances (avec petit-déjeuner facultatif)\n- **Limite temporelle** : jusqu'au **31.12.2027**\n- ≠ restauration (8.1 %) — distinction nuit / repas\n#### Taux normal 8.1 % — par défaut\n- Tout ce qui n'est pas 2.6 % ou 3.8 %\n- Restauration, services, biens manufacturés, transport, immobilier (option)\n\n### Facturation et mention TVA (art. 26)\n#### 7 mentions obligatoires (al. 2)\n- **①** Nom et adresse du **fournisseur**\n- **②** **Numéro TVA** (CHE-XXX.XXX.XXX TVA)\n- **③** Nom et adresse du **destinataire**\n- **④** **Date** ou période de la prestation\n- **⑤** **Nature, objet, étendue** de la prestation\n- **⑥** **Contre-prestation** (HT ou TTC)\n- **⑦** **Taux** et montant de TVA (ou mention « TVA incluse à X % »)\n#### Petites factures < CHF 400\n- Mention TVA simplifiée tolérée (sans toutes les mentions)\n- Facture de caisse / ticket\n\n### ⚠️ Pièges examen\n- **N°1** **TVA incluse par défaut** (art. 24 al. 1) sauf mention contraire\n- **N°2** Personnes étroitement liées : seuil **20 %** OU **1 mio valeur vénale**\n- **N°3** Frais bancaires/change = **PAS** de réduction de contre-prestation\n- **N°4** Voiture de service : forfait **0.9 % × prix achat × 12 mois**\n- **N°5** Taux **8.1 / 2.6 / 3.8 % depuis 01.01.2024** (avant 7.7 / 2.5 / 3.7 %)\n- **N°6** Taux spécial 3.8 % limité au **31.12.2027** (AVS 21)\n- **N°7** Marge collection : TVA = (vente − achat) × taux / 108.1 (perte compensable)\n\n### 💡 Mnémoniques\n- **« 8.1 / 2.6 / 3.8 »** — Normal / Réduit / Spécial (depuis 2024)\n- **« 20 % ou 1 mio »** — personnes étroitement liées\n- **« 0.9 % × 12 »** — voiture service annuel\n- **« 7 mentions facture »** — Fourn/N° TVA/Destin/Date/Nature/Contre-P/Taux\n- **« /108.1 »** — extraction TVA depuis montant TTC normal\n- **« 31.12.2027 »** — fin du taux spécial 3.8 %\n\n### 🔗 Renvois\n- **m8_L1** — Bases TVA\n- **m8_L4** — Objet (contre-prestation)\n- **m8_L10** — DIP (corrections rétroactives)\n- **m8_L11** — Décompte (chiffres 200-910)\n- **m1_L7** — Fiscalité suisse (taux)\n- **LTVA art. 24-26, OTVA 48a-48e, notice N2** — textes clés\n",
+          "mindmap_md": "# M8-L8\n## Calcul et transfert de l'impôt (art. 24-26 LTVA)\n\n### Pertinence examen\n- **Haute** — base de tous les calculs en examen\n\n### Base de calcul — contre-prestation effective (art. 24)\n- **Formule** : **TVA = Contre-prestation × Taux**\n- Contre-prestation **effective** (ce que l'acheteur paie au final)\n- **TVA toujours INCLUSE** dans le prix sauf mention contraire (art. 24 al. 1)\n- Calcul HT → TVA : Brut × (taux / 100)\n- Calcul TTC → TVA : TTC × (taux / (100 + taux)) — ex. 108.1 → /108.1\n#### Diminutions de la contre-prestation\n- **Rabais, escomptes, ristournes** (avant ou après-coup)\n- **Pertes sur débiteurs**\n- Ajustements pour défauts / retours\n- Reprise d'emballages\n- → Décompte chiffre 235 (correction d'IP rétroactive)\n#### NE réduisent PAS la contre-prestation\n- Frais bancaires, commissions cartes\n- Pertes de change\n- Pénalités contractuelles\n\n### Monnaies étrangères et conversion\n- Conversion **au moment de la naissance** de la créance\n- 2 cours possibles :\n  - **Cours du jour** de la prestation (publié AFC)\n  - **Cours moyen mensuel** AFC (option pour l'année entière)\n- **Justificatifs en CHF** : pas de conversion si déjà en CHF\n- Système **deux colonnes** (CHF + étrangère) admis\n\n### Personnes étroitement liées (art. 3 let. h + 24 al. 2)\n#### Définition\n- Propriétaires d'une **participation déterminante** + leurs proches\n- **Seuils** (au moins un) :\n  - **≥ 20 %** au capital / capital social, OU\n  - **≥ 20 %** aux bénéfices / réserves, OU\n  - Droits de participation **valeur vénale ≥ CHF 1 million**\n- **Famille proche** : conjoint, enfants mineurs, parents\n- Fondations et leurs bénéficiaires\n#### Conséquence fiscale\n- Base de calcul = **valeur du marché** (dealing at arm's length)\n- Même si la prestation est gratuite ou sous-évaluée\n- **Exception** : prestations gratuites à fins entrepreneuriales (cadeaux d'usage)\n\n### Autres cas (art. 24 al. 3-5bis)\n#### Échanges de prestations (al. 3)\n- Base = **valeur du marché** de **chaque** prestation\n- Les 2 prestations imposées séparément\n- TVA mutuelle s'annule économiquement\n#### Reprises (al. 4)\n- Vente avec reprise d'un ancien bien → TVA sur prix de **vente brut**\n- Reprise = nouvelle transaction séparée\n\n### Imposition de la marge — pièces de collection (art. 24a)\n- Régime spécial pour **pièces de collection** (timbres, monnaies, antiquités, objets d'art)\n- **TVA = (Prix de vente − Prix d'achat) × Taux / 108.1**\n- Si **perte** : déductible des autres CA imposables (compensation interne)\n- **Conditions** : commerçant assujetti, marchandise revendable\n- Base : art. 24a LTVA + art. 48a-48e OTVA\n\n### Prestations au personnel (art. 24 al. 2 + notice N2)\n- Prestations figurant sur **certificat de salaire** = rapport de prestations → imposable\n- Base = montant du **certificat de salaire** (TVA incluse)\n- Prestations **hors certificat** = gratuites → pas de TVA, pas de correction IP\n#### Voiture de service privée\n- Forfait **0.9 % du prix d'achat** HT par mois (TVA : depuis 2018), min CHF 150\n- Inclut TVA 8.1 % → ressort sur certificat salaire\n- Calcul : prix achat × 0.9 % × 12 × 8.1/108.1 = TVA annuelle\n\n### Taux TVA (art. 25) — **depuis 01.01.2024**\n| Taux | Valeur | Avant 2024 |\n|---|---|---|\n| **Normal** | **8.1 %** | 7.7 % |\n| **Réduit** | **2.6 %** | 2.5 % |\n| **Spécial (hébergement)** | **3.8 %** | 3.7 % |\n#### Taux réduit 2.6 % — liste fermée\n- **Alimentation** humaine (sauf restauration)\n- **Animaux et leur nourriture**\n- **Plantes**, semences, fleurs coupées\n- **Médicaments**\n- **Livres, journaux, revues** (papier ET électroniques depuis 2018)\n- Œuvres de créateurs (en cas d'option art. 22)\n- Manifestations sport/culture (option art. 22)\n#### Taux spécial 3.8 % — hébergement\n- Hôtels, maisons/appart de vacances (avec petit-déjeuner facultatif)\n- **Limite temporelle** : jusqu'au **31.12.2027**\n- ≠ restauration (8.1 %) — distinction nuit / repas\n#### Taux normal 8.1 % — par défaut\n- Tout ce qui n'est pas 2.6 % ou 3.8 %\n- Restauration, services, biens manufacturés, transport, immobilier (option)\n\n### Facturation et mention TVA (art. 26)\n#### 7 mentions obligatoires (al. 2)\n- **①** Nom et adresse du **fournisseur**\n- **②** **Numéro TVA** (CHE-XXX.XXX.XXX TVA)\n- **③** Nom et adresse du **destinataire**\n- **④** **Date** ou période de la prestation\n- **⑤** **Nature, objet, étendue** de la prestation\n- **⑥** **Contre-prestation** (HT ou TTC)\n- **⑦** **Taux** et montant de TVA (ou mention « TVA incluse à X % »)\n#### Petites factures < CHF 400\n- Mention TVA simplifiée tolérée (sans toutes les mentions)\n- Facture de caisse / ticket\n\n### ⚠️ Pièges examen\n- **N°1** **TVA incluse par défaut** (art. 24 al. 1) sauf mention contraire\n- **N°2** Personnes étroitement liées : participation d'au moins **20 %** (art. 3 let. h)\n- **N°3** Frais bancaires/change = **PAS** de réduction de contre-prestation\n- **N°4** Voiture de service : forfait **0.9 % × prix achat × 12 mois**\n- **N°5** Taux **8.1 / 2.6 / 3.8 % depuis 01.01.2024** (avant 7.7 / 2.5 / 3.7 %)\n- **N°6** Taux spécial 3.8 % limité au **31.12.2027** (AVS 21)\n- **N°7** Marge collection : TVA = (vente − achat) × taux / 108.1 (perte compensable)\n\n### 💡 Mnémoniques\n- **« 8.1 / 2.6 / 3.8 »** — Normal / Réduit / Spécial (depuis 2024)\n- **« 20 % »** — personnes étroitement liées\n- **« 0.9 % × 12 »** — voiture service annuel\n- **« 7 mentions facture »** — Fourn/N° TVA/Destin/Date/Nature/Contre-P/Taux\n- **« /108.1 »** — extraction TVA depuis montant TTC normal\n- **« 31.12.2027 »** — fin du taux spécial 3.8 %\n\n### 🔗 Renvois\n- **m8_L1** — Bases TVA\n- **m8_L4** — Objet (contre-prestation)\n- **m8_L10** — DIP (corrections rétroactives)\n- **m8_L11** — Décompte (chiffres 200-910)\n- **m1_L7** — Fiscalité suisse (taux)\n- **LTVA art. 24-26, OTVA 48a-48e, notice N2** — textes clés\n",
           "title_en": "L8 — Tax calculation and pass-through"
         },
         {
@@ -40681,9 +40681,9 @@
               "type": "mcq",
               "question": "Une place de parc est louée a un locataire d'un immeuble d'habitation **dans le même immeuble**. Régime TVA ?",
               "options": [
-                "Imposable 8.1% (place de parc généralement imposable)",
-                "Exclue (prestation accessoire a une location d'habitation exclue)",
-                "Imposable 3.8% (taux special hébergement)",
+                "Imposable à 8,1 % (place de parc généralement imposable)",
+                "Exclue (accessoire au logement)",
+                "Imposable à 3,8 % (taux spécial)",
                 "Exonérée (transport)"
               ],
               "answer": 1,
@@ -40706,10 +40706,10 @@
               "type": "mcq",
               "question": "Pourquoi la vente d'un terrain n'est-elle pas imposable a la TVA ?",
               "options": [
-                "Parce que le sol n'est pas consommable au sens de la LTVA (art. 24 al. 6 let. c)",
+                "Le sol n'est pas consommable (art. 24 al. 6 let. c)",
                 "Parce que les terrains sont exonérés par dérogation",
                 "Parce que les terrains sont exclus du champ TVA (art. 21)",
-                "Parce qu'il s'agit d'une operation entre tiers seulement"
+                "Parce qu'il s'agit d'une opération entre particuliers, hors de toute activité"
               ],
               "answer": 0,
               "explanation": "**Le sol n'est pas consommable** (art. 24 al. 6 let. c LTVA). La vente d'un terrain n'est ni imposable, ni exclue, ni exonérée : elle est **hors du champ TVA**. Pas d'option possible. La valeur du sol n'entre pas dans le calcul de l'impôt. Les bâtiments restent imposables (option) mais la part sol est séparée.",
@@ -40731,10 +40731,10 @@
               "type": "mcq",
               "question": "Un architecte suisse conçoit les plans d'un chalet a Chamonix (France). TVA suisse ?",
               "options": [
-                "Oui, l'architecte est en Suisse (lieu du prestataire)",
+                "Oui, l'architecte travaille en Suisse (lieu du prestataire)",
                 "Oui, mais au taux réduit 2.6%",
                 "Oui, au taux special 3.8%",
-                "Non, lieu = lieu de l'immeuble (Chamonix, France) - art. 8 al. 2 let. f"
+                "Non : lieu de l'immeuble (France)"
               ],
               "answer": 3,
               "explanation": "**Pas de TVA CH**. PS liée a un immeuble individuel (art. 8 al. 2 let. f LTVA) -> lieu = lieu de l'immeuble = **Chamonix (France)**. L'architecte peut avoir des obligations TVA en France. En CH, il peut récupérer son IP via art. 29 al. 1bis (comme si option exercée). Distinction : lien étroit avec immeuble défini = lieu immeuble.",
@@ -40747,8 +40747,8 @@
               "question": "Un bâtiment a 70% bureaux (option possible) + 30% appartements habitation. Quelle option TVA possible ?",
               "options": [
                 "100% du loyer optable car la majorité est commerciale",
-                "Option uniquement sur la part 70% bureaux (double affectation)",
-                "Option impossible car mélange residentiel/commercial",
+                "Option sur la seule part bureaux (70 %)",
+                "Option impossible, l'immeuble mélangeant logements et locaux commerciaux",
                 "Option uniquement si bureaux > 80%"
               ],
               "answer": 1,
@@ -40771,10 +40771,10 @@
               "type": "mcq",
               "question": "La procédure de déclaration (formulaire 764) lors du transfert d'un immeuble assujetti permet :",
               "options": [
-                "De facturer la TVA a un taux réduit de 2.6%",
-                "D'éviter complètement la TVA sur le terrain",
+                "Facturer la TVA au taux réduit de 2,6 %",
+                "Éviter totalement la TVA sur le terrain",
                 "De repartir la TVA sur 20 ans",
-                "Un transfert NEUTRE TVA si usage imposable continu"
+                "Un transfert sans TVA"
               ],
               "answer": 3,
               "explanation": "**Transfert neutre TVA**. Le formulaire 764 est une alternative a la facturation TVA : pas de TVA facturée, pas de correction d'IP cote vendeur, pas d'IP a récupérer cote acheteur. Conditions : 2 parties assujetties + usage imposable avant et après + formulaire signe (art. 38 LTVA). Avantage : trésorerie préservée.",
@@ -40812,8 +40812,8 @@
               "question": "Le 'pas-de-porte' verse par un nouveau locataire commercial (option location exercée) est :",
               "options": [
                 "Exonere (dommages-intérêts)",
-                "Exclu (suit le régime du loyer principal)",
-                "Imposable 8.1% (concession d'un droit commercial - PS)",
+                "Exclu, car il suit toujours le régime du loyer principal",
+                "Imposable à 8,1 % (cession d'un droit)",
                 "Imposable au taux réduit 2.6%"
               ],
               "answer": 2,
@@ -41185,10 +41185,10 @@
               "type": "mcq",
               "question": "Un garage rachete 5'000 CHF une voiture d'occasion a un particulier. IP fictif (art. 28a) récupérable ?",
               "options": [
-                "405 CHF (5'000 x 8.1%)",
-                "0 CHF (pas de TVA a l'achat)",
-                "130 CHF (5'000 x 2.6%)",
-                "374.65 CHF (5'000 x 8.1/108.1)"
+                "405.00 CHF",
+                "0 CHF",
+                "130.00 CHF",
+                "374.65 CHF"
               ],
               "answer": 3,
               "explanation": "**374.65 CHF** = 5'000 x 8.1/108.1. Le prix d'achat est considere **TVA incluse** (formule inverse). Taux = celui au moment de l'acquisition (8.1% actuel, peu importe l'année d'immatriculation). Bien mobilier identifiable = voiture avec numéro de chassis. Conditions cumulatives : aucune TVA mentionnée, pas pièce de collection, moyens de preuve.",
@@ -41235,10 +41235,10 @@
               "type": "mcq",
               "question": "Dans la méthode des 3 pots pour la double affectation, quel est le traitement des achats MIXTES (Pot 3) ?",
               "options": [
-                "100% déductibles",
-                "Déductibles au PRORATA selon clé (CA, surfaces, EPT, temps)",
-                "0% déductibles",
-                "Déductibles a 50% automatiquement"
+                "100 % déductibles",
+                "Au prorata d'une clé de répartition",
+                "0 % déductibles",
+                "Déductibles à 50 % automatiquement, sans clé"
               ],
               "answer": 1,
               "explanation": "**Pot 3 - Mixtes** : déduction **AU PRORATA** selon clé de répartition. Bases fréquentes : CA imposable/CA total (la plus courante), surfaces m2/m3, effectifs EPT, temps. Pot 1 (usage exclusivement imposable) = 100% DIP. Pot 2 (usage exclusivement non-imposable) = 0% DIP. Méthode souple pour optimiser la précision.",
@@ -41267,7 +41267,7 @@
               "options": [
                 "3 ans",
                 "10 ans",
-                "5 ans (20%/an)",
+                "5 ans",
                 "20 ans"
               ],
               "answer": 2,
@@ -41637,9 +41637,9 @@
               "type": "mcq",
               "question": "Quel est le mode de décompte par défaut en TVA suisse ?",
               "options": [
-                "Contre-prestations convenues (facturation)",
+                "Contre-prestations convenues",
                 "Contre-prestations reçues (encaissements)",
-                "Mode mixte selon les operations",
+                "Un mode mixte selon les opérations",
                 "Au choix libre sans demande"
               ],
               "answer": 0,
@@ -41687,10 +41687,10 @@
               "type": "mcq",
               "question": "Ou déclarer une SUBVENTION de 100'000 CHF reçue d'une commune dans le décompte TVA ?",
               "options": [
-                "Chiffre 200 (contre-prestation totale)",
-                "Chiffre 910 (dons, dividendes)",
-                "Chiffre 900 (subventions, taxes touristiques)",
-                "Chiffre 230 (operations exclues)"
+                "Chiffre 200",
+                "Chiffre 910",
+                "Chiffre 900",
+                "Chiffre 230"
               ],
               "answer": 2,
               "explanation": "**Chiffre 900** (art. 18 al. 2 let. a-c LTVA). Les **subventions de droit public** ne sont JAMAIS du CA -> pas au ch. 200. Elles vont au ch. 900 et **déclenchent une REDIP** (ch. 420). Different du ch. 910 qui concerne dons, dividendes, dommages-intérêts (let. d-l) -> neutres, pas de REDIP.",
@@ -41737,10 +41737,10 @@
               "type": "mcq",
               "question": "Un avocat (mode convenues) reçoit 5'000 CHF d'avance en décembre 2024 pour un recours a déposer en avril 2025. Naissance de la créance fiscale ?",
               "options": [
-                "Décembre 2024 (encaissement du paiement anticipe)",
-                "Avril 2025 (livraison de la prestation)",
+                "Décembre 2024 (encaissement)",
+                "Avril 2025 (exécution de la prestation)",
                 "A la facture finale (peu importe la date)",
-                "Répartie entre dec. 2024 et avr. 2025 au prorata"
+                "Répartie entre décembre 2024 et avril 2025 au prorata"
               ],
               "answer": 0,
               "explanation": "**Décembre 2024** (art. 40 al. 1 let. c LTVA). Regle : lorsqu'il y a **paiement anticipe ou prestation non facturée**, la dette d'impôt naît a l'**encaissement**, même en mode convenues. Le taux applicable = celui en vigueur en décembre 2024 (8.1%). L'avocat declare les 5'000 dans son décompte Q4 2024.",
@@ -42215,10 +42215,10 @@
               "type": "mcq",
               "question": "Dans quel cas l'AFC peut-elle NOUVELLEMENT (des 2025) demander des sûretés a un membre de la direction d'une PM ?",
               "options": [
-                "Des que la PM a plus de 3 mois de retard",
+                "Dès que la personne morale a plus de trois mois de retard dans ses paiements",
                 "Uniquement en cas de fraude avérée",
-                "Si le membre a ete dans la direction de 2+ autres PM en faillite récente + indices de comportement punissable",
-                "Uniquement si la PM a un CA > 5 mio CHF"
+                "S'il a dirigé au moins 2 PM récemment en faillite (indices)",
+                "Uniquement si la personne morale réalise un chiffre d'affaires supérieur à 5 mio"
               ],
               "answer": 2,
               "explanation": "**Art. 93 al. 1bis LTVA** (01.01.2025). Deux conditions cumulatives : (1) le membre a exerce ce role dans **au moins 2 autres personnes morales** déclarées en **faillite sur une brève période** ; (2) **indices** laissant penser un **comportement punissable** en lien avec ces faillites. Cible les 'dirigeants en série' multipliant les faillites suspectes.",
@@ -42266,8 +42266,8 @@
               "question": "Un assujetti envoie un décompte rectificatif AVANT tout contrôle AFC pour déclarer 100'000 CHF de recettes oubliees. Conséquences pénales ?",
               "options": [
                 "Amende automatique selon art. 96",
-                "Pas de poursuite pénale (dénonciation spontanée art. 102)",
-                "Poursuite pénale systématique mais amende réduite de 50%",
+                "Aucune poursuite pénale (art. 102)",
+                "Une poursuite pénale systématique, mais avec une amende réduite de 50 %",
                 "Privative de liberté minimum obligatoire"
               ],
               "answer": 1,
