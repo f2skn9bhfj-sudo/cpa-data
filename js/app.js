@@ -107,7 +107,7 @@ const TAB_META = {
 };
 const NAV_GROUPS = [
     { id: 'accueil',      ic: '🏠', label: 'Accueil',      tabs: ['dashboard'] },
-    { id: 'cours',        ic: '📚', label: 'Cours',        tabs: ['modules', 'audit', 'grandlivre', 'conso', 'fusion', 'social', 'hec', 'english', 'podcasts'] },
+    { id: 'cours',        ic: '📚', label: 'Cours',        tabs: ['modules', 'audit', 'conso', 'fusion', 'social', 'hec', 'english', 'podcasts'] },
     { id: 'entrainement', ic: '🎯', label: "S'entraîner",  tabs: ['trainer', 'qcm', 'fcdb', 'oral', 'progress'] },
     { id: 'ressources',   ic: '🧰', label: 'Ressources',   tabs: ['references', 'compare', 'fs', 'recherche'] },
 ];
@@ -120,7 +120,7 @@ const TAB_LABELS = Object.fromEntries(Object.entries(TAB_META).map(([k, v]) => [
 
 // Onglets masqués : plus de bouton ni de tuile d'accueil, et le bandeau
 // « Reprendre » ne les propose plus. Le code reste chargé (réactivation facile).
-const HIDDEN_TABS = ['eymanual'];
+const HIDDEN_TABS = ['eymanual', 'grandlivre'];
 
 function navGroupOf(tab) {
     const t = TAB_ALIAS[tab] || tab;

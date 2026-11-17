@@ -7,14 +7,14 @@
 // Mêmes rubriques, même ordre et mêmes noms que la barre de navigation
 // (NAV_GROUPS / TAB_META dans js/app.js). Le titre et l'icône d'une carte
 // viennent de TAB_META ; seule la description est propre à l'accueil.
-// Manuel EY masqué (voir HIDDEN_TABS dans js/app.js).
+// Manuel EY et Grand Livre masqués (voir HIDDEN_TABS dans js/app.js).
 const HUB_SECTIONS = [
     {
         title: '📚 Cours',
         cards: [
             { tab: 'modules', d: 'Les 16 modules du diplôme : cours, normes CO / RPC / IFRS, leçons et fiches.' },
             { tab: 'audit', d: "NAS/ISA, Manuel suisse d'audit, catalogue des tests, journée d'auditeur, Nestlé…" },
-            { tab: 'grandlivre', d: 'La comptabilité suisse de A à Z : écritures, TVA, bouclement, cas.' },
+            // Masqué (HIDDEN_TABS) : { tab: 'grandlivre', d: 'La comptabilité suisse de A à Z : écritures, TVA, bouclement, cas.' },
             { tab: 'conso', d: 'Consolidation IFRS et Swiss GAAP pas à pas, avec fil rouge chiffré.' },
             { tab: 'fusion', d: "Fusions, apports partiels d'actif et scissions : parité, prime, mali, écritures." },
             { tab: 'social', d: 'Droit du travail, assurances sociales et paie suisse (calculateur inclus).' },

@@ -52,7 +52,7 @@ restent dans la barre ; le menu ☰ ne contient que recherche, PDF et thème.
 | Rubrique | Pages (ordre de la sous-barre) |
 |---|---|
 | 🏠 Accueil | dashboard |
-| 📚 Cours | modules, audit, grandlivre, conso, fusion, social, hec, english, podcasts |
+| 📚 Cours | modules, audit, conso, fusion, social, hec, english, podcasts |
 | 🎯 S'entraîner | trainer (« Révision active »), qcm, fcdb, oral, progress |
 | 🧰 Ressources | references, compare, fs, recherche |
 
@@ -73,15 +73,15 @@ depuis la Révision active) est un alias de `fcdb` pour la navigation
 | fcdb | fcdb.js `renderFcdb` | natif | flashcards.json (**1512** cartes) ; « Réviser la sélection » → sprint |
 | compare | comparisons.js `renderComparisons` | natif | comparisons.json (25 thèmes) ; boutons « Normes liées » → `compGoNorm` |
 | progress | progress.js `renderProgress` | natif | stats |
-| fs, references, audit, english, oral, conso, hec, social, fusion, grandlivre | js/<app>.js → iframe `<app>/index.html` | sous-app | embarquées (voir plus bas) |
+| fs, references, audit, english, oral, conso, hec, social, fusion | js/<app>.js → iframe `<app>/index.html` | sous-app | embarquées (voir plus bas) |
 | podcasts | podcasts.js → iframe persistante dans `#podcastHost` (l'audio continue en changeant de page ; mini-lecteur `_pcRenderMini`) | sous-app | `__PODCASTS__` |
-| eymanual | **masqué** (voir ci-dessous) | sous-app | — |
+| eymanual, grandlivre | **masqués** (voir ci-dessous) | sous-app | — |
 
-**Page masquée** : `eymanual` (Manuel EY) n'est dans aucune rubrique ni dans
-`HUB_SECTIONS`, et figure dans `HIDDEN_TABS` (le bandeau « Reprendre »
-l'ignore). Code et dossier restent : `navigate('eymanual')` fonctionne.
-Réactiver = l'ajouter à une rubrique de `NAV_GROUPS` (+ carte d'accueil) et le
-retirer de `HIDDEN_TABS`.
+**Pages masquées** : `eymanual` (Manuel EY) et `grandlivre` (Grand Livre) ne
+sont dans aucune rubrique ni dans `HUB_SECTIONS`, et figurent dans
+`HIDDEN_TABS` (le bandeau « Reprendre » les ignore). Code et dossiers restent :
+`navigate('grandlivre')` fonctionne. Réactiver = l'ajouter à une rubrique de
+`NAV_GROUPS` (+ carte d'accueil) et le retirer de `HIDDEN_TABS`.
 
 ## Données (`data/`)
 
@@ -184,7 +184,7 @@ lignes d'un même `.jsx` entre deux synchronisations.
 
 ## Vérifications
 
-- `node tools/smoke_test.js` : serveur local + Chromium, parcourt les 19 pages
+- `node tools/smoke_test.js` : serveur local + Chromium, parcourt les 18 pages
   des rubriques (attend le rendu des iframes), vérifie que la navigation suit
   la page, signale erreurs JS, fichiers locaux
   manquants et sous-apps vides. Tout est vérifiable hors ligne (vendor/).

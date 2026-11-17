@@ -3477,6 +3477,8 @@ body.light-mode .app-zoom-level:hover { background: rgba(15, 23, 42, .05); color
     .mod-sb-item-label { font-size: 12.5px; }
 
     .mod-empty-state { padding: 30px 16px; }
+    /* Rien d'ouvert : l'accueil du module remplace la liste latérale. */
+    .mod-layout.mod-no-selection .mod-sidebar { display: none; }
 
     /* ── LIRE LES LEÇONS confortablement sur mobile ──
        Priorité absolue à la lisibilité du body :

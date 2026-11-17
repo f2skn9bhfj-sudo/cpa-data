@@ -304,7 +304,7 @@ function _qcmRenderSetup() {
             </button>
             <button class="qcm-special qcm-special-exam" onclick="_qcmStartExamBlanc()">
                 <div class="qcm-special-title">📝 Examen blanc</div>
-                <div class="qcm-special-desc">100 Q · 3h · pas de feedback · simulation réelle</div>
+                <div class="qcm-special-desc">100 Q sur les 4 domaines du diplôme · 3 h · note suisse 1–6</div>
             </button>
             <button class="qcm-special qcm-special-hist" onclick="_qcmShowHistory()">
                 <div class="qcm-special-title">🕐 Historique</div>
@@ -746,22 +746,52 @@ async function _qcmStartSpecial(kind) {
 }
 
 
+// ── Examen blanc « expert-comptable » ────────────────────────────────
+// 100 questions réparties sur les 4 grands domaines du diplôme fédéral
+// (répartition indicative, pas un barème officiel). Dans chaque domaine, les
+// modules sont tirés en proportion de leur banque de questions, avec un
+// minimum par module pour couvrir tout le programme.
+const QCM_EXAM_DOMAINS = [
+    { id: 'reporting', label: 'Comptabilité & reporting', ic: '📘', share: 30, modules: ['M3', 'M4', 'M11'] },
+    { id: 'audit',     label: 'Audit & assurance',       ic: '🔍', share: 30, modules: ['M2', 'M5', 'M10', 'M12', 'M14', 'AUDIT'] },
+    { id: 'fiscal',    label: 'Fiscalité & TVA',          ic: '🏛️', share: 20, modules: ['M7', 'M8'] },
+    { id: 'droit',     label: 'Droit, IT & pratique pro', ic: '⚖️', share: 20, modules: ['M1', 'M6', 'M9', 'M13', 'M15', 'M16'] },
+];
+function _qcmExamDomainOf(mod) { return QCM_EXAM_DOMAINS.find(d => d.modules.includes(mod)) || null; }
+// Échelle suisse : note = 1 + 5 × taux de réussite, arrondie au demi-point ; 4 = suffisant (60 %).
+function _qcmSwissGrade(correct, total) {
+    if (!total) return 1;
+    return Math.round((1 + 5 * correct / total) * 2) / 2;
+}
+
 function _qcmStartExamBlanc() {
-    // 100 questions pondérées : M8 x25 · M4 x25 · M3 x20 · M2 x15 · M7 x15
-    const weights = { M8: 25, M4: 25, M3: 20, M2: 15, M7: 15 };
+    const TOTAL = 100, MIN_PER_MODULE = 3;
     const picked = [];
-    for (const [mod, n] of Object.entries(weights)) {
-        const pool = qcm.catalog.filter(q => q.module === mod);
-        if (!pool.length) continue;
-        const shuffled = _qcmShuffle([...pool]);
-        picked.push(...shuffled.slice(0, n));
+    for (const d of QCM_EXAM_DOMAINS) {
+        const quota = Math.round(TOTAL * d.share / 100);
+        const pools = d.modules.map(m => _qcmShuffle(qcm.catalog.filter(q => q.module === m))).filter(p => p.length);
+        if (!pools.length) continue;
+        const size = pools.reduce((s, p) => s + p.length, 0);
+        // part proportionnelle (racine carrée pour ne pas écraser les petits modules) + plancher
+        const w = pools.map(p => Math.sqrt(p.length));
+        const wsum = w.reduce((a, b) => a + b, 0);
+        let alloc = pools.map((p, i) => Math.min(p.length, Math.max(MIN_PER_MODULE, Math.round(quota * w[i] / wsum))));
+        // ajuste au quota du domaine
+        let diff = Math.min(quota, size) - alloc.reduce((a, b) => a + b, 0);
+        for (let k = 0; diff !== 0 && k < 500; k++) {
+            const i = k % pools.length;
+            if (diff > 0 && alloc[i] < pools[i].length) { alloc[i]++; diff--; }
+            else if (diff < 0 && alloc[i] > Math.min(MIN_PER_MODULE, pools[i].length)) { alloc[i]--; diff++; }
+        }
+        pools.forEach((p, i) => picked.push(...p.slice(0, alloc[i])));
     }
     if (picked.length < 50) {
         alert('Pas assez de questions pour un examen blanc (min 50 exigées).');
         return;
     }
     const final = _qcmShuffle(picked);
-    if (!confirm(`📝 Examen blanc : ${final.length} questions · 3h chrono · aucun feedback pendant l'épreuve. Démarrer ?`)) return;
+    const parts = QCM_EXAM_DOMAINS.map(d => `${d.ic} ${d.label} : ${final.filter(q => d.modules.includes(q.module)).length}`).join('\n');
+    if (!confirm(`📝 Examen blanc — ${final.length} questions · 3 h · aucun feedback pendant l'épreuve.\n\n${parts}\n\nNote finale sur l'échelle suisse (1 à 6, 4 = suffisant). Démarrer ?`)) return;
     _qcmStartSession(final, {
         mode: 'exam_blind',
         shuffleOptions: true,
@@ -803,16 +833,54 @@ function _qcmShuffle(arr) {
 // SESSION (quiz en cours)
 // ══════════════════════════════════════════════════════════════
 
+// ── Mélange des options sans casser les renvois ─────────────────────
+// Les options peuvent porter leur propre lettre (« B. … ») et l'explication
+// citer des lettres (« Réponse : C », « Piège A »). On retire les lettres
+// intégrées (le badge affiché suffit), on renumérote les lettres citées, et on
+// ne mélange pas une question dont les options se réfèrent les unes aux autres
+// (« Toutes ces réponses », « A et C ») ou dont l'explication cite des lettres
+// d'une manière non reconnue. (Pas de lookbehind : compatibilité vieux Safari.)
+const _QCM_PREFIX = /^\s*([A-D])[.)]\s+/;
+const _QCM_SELF_REF = /toutes (ces|les) (r[ée]ponses|propositions)|aucune (de ces|des) |les deux|\b[A-D]\s*(et|\+|,|ou)\s*[A-D]\b|ci-dessus/i;
+const _QCM_LETTER_RX = [
+    /(\b(?:[Rr][ée]ponses?|[Pp]i[èe]ges?|[Oo]ptions?|[Pp]ropositions?)(?:\s+(?:correcte|juste|exacte))?\s*:?\s*\**\s*)([A-D])\b/g,
+    /(\bbonne\s+r[ée]ponse(?:\s+est)?\s*:?\s*\**\s*)([A-D])\b/g,
+    /(^\s*[-•]?\s*\**)([A-D])(\**\s*[:)–-]\s)/gm,
+];
+const _QCM_STANDALONE = /(^|[^\w&.'’\/-])([A-D])(?![\w&'’\/-])/;
+
+function _qcmStripPrefixes(options) {
+    const all = options.every((o, i) => { const m = String(o).match(_QCM_PREFIX); return m && m[1] === 'ABCD'[i]; });
+    return all ? options.map(o => String(o).replace(_QCM_PREFIX, '')) : options.slice();
+}
+function _qcmCanShuffle(q) {
+    if (_QCM_SELF_REF.test((q.options || []).join(' || '))) return false;
+    let rest = String(q.explanation || '');
+    for (const rx of _QCM_LETTER_RX) rest = rest.replace(rx, (m, a, l, c) => a + '#' + (typeof c === 'string' ? c : ''));
+    return !_QCM_STANDALONE.test(rest);
+}
+function _qcmRemapLetters(text, map) {
+    let out = String(text || '');
+    for (const rx of _QCM_LETTER_RX) {
+        out = out.replace(rx, (m, a, l, c) => a + 'ABCD'[map['ABCD'.indexOf(l)]] + (typeof c === 'string' ? c : ''));
+    }
+    return out;
+}
+
 async function _qcmStartSession(questions, opts) {
-    // Shuffle options per question if enabled
     const q2 = questions.map(q => {
         const clone = { ...q };
-        if (opts.shuffleOptions && q.type === 'mcq' && Array.isArray(q.options)) {
-            const indexed = q.options.map((opt, i) => ({ opt, i }));
-            const shuffled = _qcmShuffle([...indexed]);
-            clone.options = shuffled.map(s => s.opt);
-            // New index of the correct answer:
-            clone.answer = shuffled.findIndex(s => s.i === q.answer);
+        if (q.type === 'mcq' && Array.isArray(q.options)) {
+            clone.options = _qcmStripPrefixes(q.options);
+            if (opts.shuffleOptions && _qcmCanShuffle(q)) {
+                const indexed = clone.options.map((opt, i) => ({ opt, i }));
+                const shuffled = _qcmShuffle([...indexed]);
+                const map = {};                       // ancien index → nouvel index
+                shuffled.forEach((s, newIdx) => { map[s.i] = newIdx; });
+                clone.options = shuffled.map(s => s.opt);
+                clone.answer = map[q.answer];
+                clone.explanation = _qcmRemapLetters(q.explanation, map);
+            }
         }
         return clone;
     });
@@ -1389,6 +1457,38 @@ async function _qcmRenderResult() {
     let predicted = null;
     try { predicted = await api('qcm_get_predicted_exam_score'); } catch (e) {}
 
+    // Examen blanc : note suisse globale + par domaine du diplôme
+    let examBlock = '';
+    if (s.isExam) {
+        const g = _qcmSwissGrade(correct, total);
+        const gColor = g >= 4 ? '#16a34a' : g >= 3.5 ? '#d97706' : '#dc2626';
+        const rows = QCM_EXAM_DOMAINS.map(d => {
+            const idx = s.questions.map((q, i) => d.modules.includes(q.module) ? i : -1).filter(i => i >= 0);
+            if (!idx.length) return '';
+            const ok = idx.filter(i => s.answers[i] && s.answers[i].correct).length;
+            const dg = _qcmSwissGrade(ok, idx.length);
+            const c = dg >= 4 ? '#16a34a' : dg >= 3.5 ? '#d97706' : '#dc2626';
+            return `<div class="qcm-result-mod">
+                <div class="qcm-result-mod-head">
+                    <span>${d.ic} ${d.label}</span>
+                    <span style="color:${c};font-weight:800">${dg.toFixed(1)}</span>
+                </div>
+                <div class="qcm-result-mod-bar"><div class="qcm-result-mod-fill" style="width:${Math.round(ok / idx.length * 100)}%;background:${c}"></div></div>
+                <div style="font-size:11px;color:var(--text-muted)">${ok} / ${idx.length} · ${Math.round(ok / idx.length * 100)} %</div>
+            </div>`;
+        }).join('');
+        examBlock = `
+        <div class="qcm-section-title">🎓 Note d'examen (échelle suisse)</div>
+        <div class="qcm-result-cards">
+            <div class="qcm-result-card">
+                <div class="qcm-result-card-val" style="color:${gColor}">${g.toFixed(1)}<span style="font-size:14px;color:#64748b"> / 6</span></div>
+                <div class="qcm-result-card-lbl">${g >= 4 ? '✅ Suffisant (≥ 4)' : '❌ Insuffisant (< 4)'} · note = 1 + 5 × réussite</div>
+            </div>
+        </div>
+        <div class="qcm-result-modules">${rows}</div>
+        <div style="font-size:11px;color:var(--text-muted);margin:6px 0 18px">Répartition et barème indicatifs, pour situer ton niveau ; l'examen fédéral réel comporte surtout des études de cas.</div>`;
+    }
+
     qcm._container.innerHTML = `
         <div class="qcm-result-hero">
             <div class="qcm-result-grade">${grade}</div>
@@ -1419,6 +1519,7 @@ async function _qcmRenderResult() {
             </div>` : ''}
         </div>
 
+        ${examBlock}
         <div class="qcm-section-title">📊 Performance par module</div>
         <div class="qcm-result-modules">
             ${Object.entries(byModule).map(([m, v]) => {

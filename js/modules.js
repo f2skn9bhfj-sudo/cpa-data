@@ -76,7 +76,7 @@ async function renderModules(container) {
                 <div class="mod-reading" id="modReading">
                     <div class="mod-empty-state">
                         <div style="font-size:44px;opacity:.2;margin-bottom:10px">📖</div>
-                        <div>Selectionnez un element dans la barre laterale</div>
+                        <div>Sélectionnez un élément dans la liste</div>
                     </div>
                 </div>
                 <div class="mod-zoom" id="modZoom" role="group" aria-label="Zoom de la lecture">
@@ -96,6 +96,9 @@ async function renderModules(container) {
     // Doit venir APRÈS la mise en place du DOM pour que #modReading existe.
     if (_modPendingDeepLink) {
         _applyPendingDeepLink();
+    } else {
+        // Sinon : accueil du module (présentation, leçons, normes) plutôt qu'un écran vide.
+        modRenderEmpty();
     }
 }
 
@@ -164,6 +167,10 @@ function modSelectModule(id) {
 function modRenderSidebar() {
     const el = document.getElementById('modSidebar');
     if (!el) return;
+    // Sur mobile, la liste latérale est masquée tant que rien n'est ouvert :
+    // l'accueil du module (modRenderEmpty) présente déjà leçons et normes.
+    const layout = el.closest('.mod-layout');
+    if (layout) layout.classList.toggle('mod-no-selection', !modSelectedItem);
 
     const m = modData.find(x => x.id === modSelectedId);
     if (!m) { el.innerHTML = ''; return; }
@@ -344,6 +351,19 @@ function modRenderEmpty() {
         </div>
     </div>`;
 
+    if (lessonsIfp.length) {
+        html += `<div class="mod-home-lead">Leçons du module</div><div class="mod-home-group"><div class="mod-home-grid">`;
+        lessonsIfp.forEach(l => {
+            const title = _modCleanTitle(l.title || '', l.code || '');
+            html += `<div class="mod-home-card" style="--c:${color}" onclick="modSelectLessonIfp('${escapeAttr(l.id)}')" role="button" tabindex="0"
+                         onkeydown="if(event.key==='Enter')modSelectLessonIfp('${escapeAttr(l.id)}')">
+                <div class="mod-home-card-code" style="color:${color}">${escapeHtml(l.code || '')}</div>
+                <div class="mod-home-card-title">${escapeHtml(title)}</div>
+            </div>`;
+        });
+        html += `</div></div>`;
+    }
+
     if (norms.length) {
         html += `<div class="mod-home-lead">Explore les normes</div>`;
         catKeys.forEach(cat => {
@@ -367,12 +387,11 @@ function modRenderEmpty() {
     }
 
     const entries = [];
-    if (lessonsIfp.length) entries.push(`<button class="mod-home-entry" onclick="modSelectLessonIfp('${escapeAttr(lessonsIfp[0].id)}')">📖 Leçons (${lessonsIfp.length})</button>`);
     if (lessonsNotion.length) entries.push(`<button class="mod-home-entry" onclick="modSelectNotionLessons()">📝 Leçons Notion (${lessonsNotion.length})</button>`);
     if (fcCount) entries.push(`<button class="mod-home-entry" onclick="modSelectFlashcards()">🃏 Flashcards (${fcCount})</button>`);
     if (entries.length) html += `<div class="mod-home-lead" style="margin-top:8px">Réviser autrement</div><div class="mod-home-entries">${entries.join('')}</div>`;
 
-    if (!norms.length && !entries.length) {
+    if (!norms.length && !lessonsIfp.length && !entries.length) {
         html += `<div class="mod-empty-state"><div style="font-size:44px;opacity:.2;margin-bottom:10px">📖</div><div>Contenu en préparation pour ce module.</div></div>`;
     }
 
@@ -459,7 +478,14 @@ function _modScrollToReadingOnMobile() {
     if (window.innerWidth >= 769) return;
     const doScroll = () => {
         const reading = document.getElementById('modReading');
-        if (reading) reading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!reading) return;
+        // Décale sous les barres collantes (rubriques + sous-barre), sinon le titre est masqué.
+        const sticky = ['tabBar', 'subTabBar'].reduce((h, id) => {
+            const e = document.getElementById(id);
+            return h + (e && !e.classList.contains('hidden') ? e.offsetHeight : 0);
+        }, 0);
+        const y = reading.getBoundingClientRect().top + window.scrollY - sticky - 6;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
     };
     requestAnimationFrame(() => {
         doScroll();
@@ -954,7 +980,7 @@ async function modLoadNormQcms(norm, module) {
         list.forEach((q, i) => {
             const aId = 'mnqa_' + escapeAttr(norm.id) + '_' + i;
             const opts = Array.isArray(q.options) && q.options.length
-                ? `<div style="margin-top:6px;font-size:12px;color:#94a3b8">${q.options.map(o => escapeHtml(String(o))).join(' · ')}</div>`
+                ? `<div style="margin-top:6px;font-size:12px;color:#94a3b8">${q.options.map((o, oi) => escapeHtml(/^\s*[A-D][.)]\s/.test(String(o)) ? String(o) : 'ABCD'[oi] + '. ' + o)).join(' · ')}</div>`
                 : '';
             const explanation = q.explanation
                 ? `<div style="margin-top:8px;color:#cbd5e1;font-size:12px;line-height:1.6;white-space:pre-wrap">${formatAnswer(q.explanation)}</div>`
@@ -1509,7 +1535,7 @@ function modRenderLessonQuiz(l, color) {
         const opts = isVF ? ['Vrai', 'Faux'] : (q.options || []);
         const btns = opts.map((o, oi) =>
             `<button class="mq-opt" id="mq_${escapeAttr(l.id)}_${qi}_${oi}"
-                     onclick="modQuizAnswer('${escapeAttr(l.id)}',${qi},${oi})">${escapeHtml(o)}</button>`
+                     onclick="modQuizAnswer('${escapeAttr(l.id)}',${qi},${oi})">${escapeHtml(isVF || /^\s*[A-D][.)]\s/.test(o) ? o : 'ABCD'[oi] + '. ' + o)}</button>`
         ).join('');
         h += `<div class="mq-q">
             <div class="mq-prompt"><span class="mq-num">${qi + 1}</span><span>${escapeHtml(q.question)}</span></div>
@@ -1580,7 +1606,7 @@ async function modLoadLessonQcms(lesson, module) {
         list.forEach((q, i) => {
             const aId = 'mlqa_' + escapeAttr(lesson.id) + '_' + i;
             const opts = Array.isArray(q.options) && q.options.length
-                ? `<div class="u-text-muted u-mini-text u-mt-6">${q.options.map(o => escapeHtml(String(o))).join(' · ')}</div>`
+                ? `<div class="u-text-muted u-mini-text u-mt-6">${q.options.map((o, oi) => escapeHtml(/^\s*[A-D][.)]\s/.test(String(o)) ? String(o) : 'ABCD'[oi] + '. ' + o)).join(' · ')}</div>`
                 : '';
             const explanation = q.explanation
                 ? `<div class="u-text-secondary u-mini-text u-mt-8 u-prewrap">${formatAnswer(q.explanation)}</div>`

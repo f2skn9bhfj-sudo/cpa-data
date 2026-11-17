@@ -1503,7 +1503,7 @@ function renderLessonQuestion(q, qi, normCode, lessonId) {
                         onclick="lessonAnswerMCQ(${qi}, ${oi}, ${JSON.stringify(q.answer).replace(/"/g, '&quot;')}, ${JSON.stringify(q.explanation || '').replace(/"/g, '&quot;')})"
                         id="lessonOpt_${qi}_${oi}"
                         ${answered ? 'disabled' : ''}>
-                        ${trainerEscapeHtml(opt)}
+                        ${trainerEscapeHtml(/^\s*[A-D][.)]\s/.test(opt) ? opt : 'ABCD'[oi] + '. ' + opt)}
                     </button>
                 `).join('')}
             </div>
