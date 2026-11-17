@@ -12094,5 +12094,437 @@
     "d": "piège",
     "q": "Nouveau droit SA 2023 : menace d'insolvabilité et surendettement (art. 725/725a/725b CO) ?",
     "a": "**Réforme CO 01.01.2023** — 3 paliers de vigilance du CA :\n\n**1. Menace d'insolvabilité (art. 725 CO)**\n\nDéfinition : probabilité que la société ne puisse honorer ses engagements dans les 6 prochains mois.\n\nObligations du CA :\n- Plan de trésorerie à jour\n- Mesures d'assainissement\n- Convocation AG si nécessaire\n\n**2. Perte de capital (art. 725a CO)**\n\nSi actifs < capital-actions + réserve légale + réserve générale de capital (50% perdu) :\n- CA : annonce à l'AG + mesures d'assainissement (ajournement, augmentation capital, postposition de créances)\n- Reviseur obligatoire si pas de contrôle (sauf opting-out) — art. 725a al. 2 CO\n\n**3. Surendettement (art. 725b CO)**\n\nSi actifs < dettes :\n- Double bilan intermédiaire (valeurs d'exploitation + de liquidation), audité\n- AVIS AU JUGE (sauf postposition de créances couvrant le découvert)\n- Ajournement de faillite possible (art. 725b al. 4 CO)\n\n**Différence majeure vs ancien droit :**\n- Avant 2023 : seul le surendettement déclenchait obligations légales\n- Depuis 2023 : **gradation à 3 niveaux** → intervention plus précoce\n\n📖 Art. 725, 725a, 725b CO (nouveau) ; art. 820 CO pour SàRL\n\n⚠️ Responsabilité personnelle CA (art. 754 CO) en cas d'inaction → tendance jurisprudentielle à durcir."
+  },
+  {
+    "id": 2201,
+    "cat": "Expert suisse",
+    "sub": "Droit des sociétés – M6L2",
+    "d": "facile",
+    "q": "Capital minimum et libération : **SA** vs **Sàrl** ?",
+    "a": "**SA** : capital min. **CHF 100'000** (CO 621) ; libération **20 % par action**, au total **min. CHF 50'000** (CO 632).\n**Sàrl** : capital min. **CHF 20'000** (CO 773), **entièrement libéré** (CO 777c).\n⚠️ Depuis 2023 : capital possible en **monnaie étrangère** essentielle à l'activité (contre-valeur ≥ 100'000 CHF)."
+  },
+  {
+    "id": 2202,
+    "cat": "Expert suisse",
+    "sub": "Organes de la SA – M6L3",
+    "d": "moyen",
+    "q": "Citez 4 attributions **intransmissibles du CA** (CO 716a).",
+    "a": "1. **Haute direction** et instructions nécessaires\n2. Fixer l'**organisation**\n3. Organiser la **comptabilité**, le contrôle financier et le plan financier\n4. Nommer / révoquer les personnes chargées de la gestion\n5. **Haute surveillance** sur la gestion\n6. Établir le **rapport de gestion**, préparer l'AG et exécuter ses décisions\n7. Demande de **sursis concordataire** et **avis au juge** en cas de surendettement"
+  },
+  {
+    "id": 2203,
+    "cat": "Expert suisse",
+    "sub": "Droits des actionnaires – M6L4",
+    "d": "difficile",
+    "q": "Seuils des droits des minoritaires depuis 2023 (société **non cotée**) ?",
+    "a": "- **Inscription à l'ordre du jour** : **5 %** du capital ou des voix (CO 699b) — 0,5 % si cotée\n- **Convocation d'une AG** : **10 %** (CO 699) — 5 % si cotée\n- **Consultation des livres** : **5 %** (CO 697a)\n- **Renseignements écrits en tout temps** : **10 %** (CO 697 al. 2)\n- **Examen spécial** au juge : **10 %** (CO 697d) — 3 % si cotée"
+  },
+  {
+    "id": 2204,
+    "cat": "Expert suisse",
+    "sub": "Assainissement – M6L5",
+    "d": "difficile",
+    "q": "**725 / 725a / 725b CO** : quelle situation, quelle obligation ?",
+    "a": "- **725** : menace d'**insolvabilité** → le CA surveille la solvabilité et prend des mesures\n- **725a** : **perte de capital** (actifs nets < ½ capital + réserves légales non remboursables) → mesures d'assainissement ; sans organe de révision, comptes vérifiés par un **réviseur agréé**\n- **725b** : **surendettement** → comptes intermédiaires vérifiés ; **avis au juge** sauf postposition suffisante ou assainissement sérieux sous **90 jours**"
+  },
+  {
+    "id": 2205,
+    "cat": "Expert suisse",
+    "sub": "Poursuites – M6L7",
+    "d": "moyen",
+    "q": "Étapes clés d'une poursuite **LP** ?",
+    "a": "1. **Réquisition** de poursuite\n2. **Commandement de payer**\n3. **Opposition** dans les **10 jours** (art. 74) → suspend la poursuite\n4. **Mainlevée** : provisoire (reconnaissance de dette, art. 82) ou définitive (jugement, art. 80)\n5. **Continuation** : saisie (non inscrits au RC) ou **faillite** (inscrits au RC, art. 39)"
+  },
+  {
+    "id": 2206,
+    "cat": "Expert suisse",
+    "sub": "Responsabilité – M6L12",
+    "d": "difficile",
+    "q": "Responsabilité des organes : **articles clés** à citer ?",
+    "a": "- **CO 754** : CA et gestion (faute, dommage, causalité, violation des devoirs)\n- **CO 755** : organe de révision\n- **CO 759** : **solidarité différenciée** (dommage imputable à chacun)\n- **CO 758** : **décharge** (faits connus ; autres actionnaires : 12 mois)\n- **CO 760** : prescription **5 ans** (connaissance) / **10 ans** (absolu)\n- Pénal : **CP 158** gestion déloyale, **CP 251** faux dans les titres"
+  },
+  {
+    "id": 2207,
+    "cat": "Audit / ISA",
+    "sub": "IT & données – M9L1",
+    "d": "moyen",
+    "q": "Les **3 familles de contrôles généraux informatiques** (ITGC) ?",
+    "a": "1. **Accès** aux programmes et aux données (droits, super-utilisateurs, revues)\n2. **Gestion des changements** (développement, tests, mise en production)\n3. **Exploitation** (traitements, sauvegardes, incidents)\n\n⚠️ ITGC déficients → on ne peut pas s'appuyer sans autre sur les **contrôles automatisés** → plus de substance."
+  },
+  {
+    "id": 2208,
+    "cat": "Audit / ISA",
+    "sub": "IT & données – M9L1",
+    "d": "facile",
+    "q": "**Contrôle applicatif** vs **ITGC** : différence ?",
+    "a": "- **Applicatif** : intégré à une application, agit sur les **transactions** (contrôle de saisie, doublons, calcul automatique de TVA)\n- **ITGC** : agit sur l'**environnement** informatique et garantit que les contrôles applicatifs fonctionnent **de façon constante** dans le temps"
+  },
+  {
+    "id": 2209,
+    "cat": "Audit / ISA",
+    "sub": "IT & données – M9L2",
+    "d": "moyen",
+    "q": "Que vérifier avant d'utiliser un **rapport extrait de l'ERP** (IPE) ?",
+    "a": "ISA 500.9 : sa **fiabilité** —\n- **Exactitude** et **exhaustivité** (paramètres de la requête, source des données)\n- **Rapprochement** avec le grand livre / la balance\n- Précision suffisante pour l'usage prévu\n⚠️ Un rapport non testé ne fournit pas d'élément probant fiable."
+  },
+  {
+    "id": 2210,
+    "cat": "Audit / ISA",
+    "sub": "IT & données – M9L2",
+    "d": "moyen",
+    "q": "Exemples de **tests d'analyse de données** utiles à l'audit ?",
+    "a": "- **Doublons** (paiements, factures)\n- **Écritures inhabituelles** (week-end, montants ronds, utilisateurs non autorisés — ISA 240)\n- **Loi de Benford** (≈ 30 % de montants commençant par 1)\n- **Trous de séquence** (numéros de factures manquants)\n- **Séparation des fonctions** (même utilisateur crée et paie un fournisseur)"
+  },
+  {
+    "id": 2211,
+    "cat": "Audit / ISA",
+    "sub": "IT & données – M9L3",
+    "d": "moyen",
+    "q": "ERP en **cloud (SaaS)** : comment l'auditeur obtient-il une assurance sur le fournisseur ?",
+    "a": "Le fournisseur est une **société de services** (ISA 402) :\n- **Rapport ISAE 3402 / SOC 1 de type 2** sur la période\n- Tester les **CUEC** (contrôles attendus chez l'utilisateur)\n- Couvrir la période non couverte (bridge letter + procédures)\n⚠️ ISO 27001 ≠ assurance sur les contrôles pertinents pour les EF."
+  },
+  {
+    "id": 2212,
+    "cat": "Audit / ISA",
+    "sub": "IT & données – M9L3",
+    "d": "difficile",
+    "q": "Une **cyberattaque** a touché l'ERP : réflexes d'audit ?",
+    "a": "1. Comprendre l'incident et sa durée\n2. Évaluer l'**intégrité** des données (pertes, altérations)\n3. Tester les **procédures de secours** manuelles pendant l'incident\n4. Réévaluer les risques (ISA 315) et adapter la **substance** (ISA 330)\n5. Envisager les effets sur la **continuité** et les **provisions / passifs éventuels**"
+  },
+  {
+    "id": 2213,
+    "cat": "Audit / ISA",
+    "sub": "Rapport – M10L1",
+    "d": "facile",
+    "q": "Les **4 types d'opinion** et leur déclencheur ?",
+    "a": "| Situation | Non diffus | Diffus |\n|---|---|---|\n| **Anomalie** significative | Réserve | **Défavorable** |\n| **Limitation** de l'étendue | Réserve | **Impossibilité** d'exprimer une opinion |\n\nSans problème : opinion **non modifiée** (ISA 700)."
+  },
+  {
+    "id": 2214,
+    "cat": "Audit / ISA",
+    "sub": "Rapport – M10L1",
+    "d": "moyen",
+    "q": "**Paragraphe d'observation** (ISA 706) : 3 conditions ?",
+    "a": "1. Question **fondamentale** pour la compréhension des EF\n2. **Correctement présentée** dans les EF (sinon : anomalie → ISA 705)\n3. Pas d'opinion modifiée sur ce point\n⚠️ Il **ne modifie pas** l'opinion. Incertitude de continuité : section **ISA 570**, pas un EoM."
+  },
+  {
+    "id": 2215,
+    "cat": "Audit / ISA",
+    "sub": "Rapport – M10L2",
+    "d": "moyen",
+    "q": "Contrôle ordinaire : **rapport à l'AG** vs **rapport détaillé au CA** (CO 728b) ?",
+    "a": "- **AG** (résumé) : avis, **indépendance**, réviseur responsable et qualifications, **recommandation** d'approuver (avec / sans réserve) ou de refuser les comptes\n- **CA** (détaillé) : constatations sur les **comptes**, le **SCI**, l'exécution et le résultat de la révision\n- Les deux signés par la personne qui a **dirigé la révision**"
+  },
+  {
+    "id": 2216,
+    "cat": "Audit / ISA",
+    "sub": "Rapport – M10L2",
+    "d": "difficile",
+    "q": "Violation de la loi ou des statuts constatée : que fait l'organe de révision (CO 728c) ?",
+    "a": "1. Informe le **CA par écrit**\n2. Informe l'**AG** si la violation est **importante** ou si le CA ne réagit pas\n3. **Surendettement manifeste** non annoncé par le CA → **avise le juge** (al. 3)"
+  },
+  {
+    "id": 2217,
+    "cat": "Audit / ISA",
+    "sub": "Rapport – M10L3",
+    "d": "moyen",
+    "q": "**KAM** (ISA 701) : pour qui, et d'où viennent-elles ?",
+    "a": "- Obligatoires pour les **entités cotées** (ou si la loi / le mandat l'exige)\n- Choisies parmi les questions **communiquées à la gouvernance** (ISA 260), ayant demandé une **attention importante**\n- Décrites : **pourquoi** importantes, **comment** traitées, renvoi à l'annexe\n⚠️ Une KAM ne remplace **jamais** une opinion modifiée."
+  },
+  {
+    "id": 2218,
+    "cat": "Audit / ISA",
+    "sub": "Rapport – M10L3",
+    "d": "facile",
+    "q": "Date du rapport d'audit : règle ?",
+    "a": "**Pas avant** la date à laquelle l'auditeur a obtenu des éléments probants suffisants et appropriés, ce qui suppose des **EF établis** et **assumés** par les personnes habilitées (ISA 700). La lettre d'affirmation est datée **au plus près, mais pas après** (ISA 580)."
+  },
+  {
+    "id": 2219,
+    "cat": "IFRS / IAS",
+    "sub": "Consolidation – M11L1",
+    "d": "moyen",
+    "q": "**IFRS 10** : les 3 éléments du contrôle ?",
+    "a": "1. **Pouvoir** sur l'entité (droits qui permettent de diriger les activités pertinentes)\n2. **Exposition** ou droits à des **rendements variables**\n3. **Lien** : capacité d'utiliser ce pouvoir pour influer sur les rendements\n⚠️ La majorité des voix n'est qu'un **indice**."
+  },
+  {
+    "id": 2220,
+    "cat": "IFRS / IAS",
+    "sub": "Consolidation – M11L1",
+    "d": "moyen",
+    "q": "Méthodes selon le degré d'influence (IFRS) ?",
+    "a": "- **Contrôle** → intégration globale (IFRS 10)\n- **Contrôle conjoint** : coentreprise → **mise en équivalence** ; activité conjointe → quote-part des actifs/passifs (IFRS 11)\n- **Influence notable** (présumée dès **20 %**) → mise en équivalence (IAS 28)\n- Sinon → instrument financier (IFRS 9)"
+  },
+  {
+    "id": 2221,
+    "cat": "IFRS / IAS",
+    "sub": "Consolidation – M11L2",
+    "d": "difficile",
+    "q": "**Goodwill** : IFRS vs Swiss GAAP RPC ?",
+    "a": "- **IFRS 3 / IAS 36** : activé, **non amorti**, test de dépréciation **annuel** ; perte jamais reprise\n- **RPC 30** : activé et **amorti** (en règle générale 5 ans, max 20) **ou** compensé avec les **capitaux propres**, avec présentation en annexe d'une activation théorique\n- Goodwill négatif (IFRS) : réexamen, puis **produit** immédiat"
+  },
+  {
+    "id": 2222,
+    "cat": "IFRS / IAS",
+    "sub": "Consolidation – M11L2",
+    "d": "difficile",
+    "q": "Variation de pourcentage **sans perte de contrôle** vs **perte de contrôle** ?",
+    "a": "- **Sans perte** (ex. 70 % → 80 %) : transaction entre actionnaires, écart en **capitaux propres**, **pas de goodwill** (IFRS 10.23)\n- **Perte de contrôle** : déconsolidation ; participation résiduelle réévaluée à la **juste valeur**, profit/perte en **résultat** (IFRS 10.25)"
+  },
+  {
+    "id": 2223,
+    "cat": "IFRS / IAS",
+    "sub": "Consolidation – M11L3",
+    "d": "moyen",
+    "q": "Conversion d'une filiale étrangère (**IAS 21**, méthode du cours de clôture) ?",
+    "a": "- Actifs et passifs : **cours de clôture**\n- Produits et charges : cours de la transaction (**cours moyen** admis)\n- Écarts de conversion : **OCI** (réserve de conversion), recyclés en résultat à la cession\n- RPC 30 : même logique, écarts dans les **capitaux propres**"
+  },
+  {
+    "id": 2224,
+    "cat": "IFRS / IAS",
+    "sub": "Consolidation – M11L3",
+    "d": "moyen",
+    "q": "Obligation de consolider en Suisse (**CO 963 / 963a**) ?",
+    "a": "- **963** : toute personne morale tenue de tenir une comptabilité qui **contrôle** d'autres entreprises\n- **963a** dispenses : sous **2 des 3 seuils** (20 M bilan, 40 M CA, 250 EPT) deux exercices de suite ; contrôlée par une société qui consolide selon des normes équivalentes…\n- Consolidation exigée malgré tout si nécessaire à une appréciation fiable ou si **20 % du capital** le demandent"
+  },
+  {
+    "id": 2225,
+    "cat": "Audit / ISA",
+    "sub": "Contrôle restreint – M12L1",
+    "d": "facile",
+    "q": "Contrôle **ordinaire** ou **restreint** : critères (CO 727 / 727a) ?",
+    "a": "**Ordinaire** si : société **cotée** (ou emprunts cotés) ; **2 des 3** seuils (20 M bilan, 40 M CA, 250 EPT) deux exercices de suite ; obligation de **consolider** ; demande de **10 %** du capital ; statuts / AG (opting-up).\n**Restreint** : les autres. **Opting-out** : ≤ **10 EPT** + accord de **tous** les actionnaires."
+  },
+  {
+    "id": 2226,
+    "cat": "Audit / ISA",
+    "sub": "Contrôle restreint – M12L1",
+    "d": "moyen",
+    "q": "Procédures du **contrôle restreint** (CO 729a al. 2) ?",
+    "a": "1. **Auditions** (demandes d'informations)\n2. **Opérations de contrôle analytiques**\n3. **Vérifications détaillées appropriées**\n\nPas de test du SCI, pas d'inventaire ni de confirmations obligatoires. Norme : **NCR** (EXPERTsuisse / FIDUCIAIRE|SUISSE)."
+  },
+  {
+    "id": 2227,
+    "cat": "Audit / ISA",
+    "sub": "Contrôle restreint – M12L2",
+    "d": "moyen",
+    "q": "Formulation de la conclusion en **contrôle restreint** ?",
+    "a": "**Assurance limitée, formulation négative** : « … nous n'avons pas rencontré d'élément nous permettant de conclure que les comptes annuels ainsi que la proposition concernant l'emploi du bénéfice ne sont pas conformes à la loi et aux statuts. »\nUn seul rapport, **résumé**, à l'AG (CO 729b)."
+  },
+  {
+    "id": 2228,
+    "cat": "Audit / ISA",
+    "sub": "Contrôle restreint – M12L2",
+    "d": "difficile",
+    "q": "Le réviseur restreint peut-il **tenir la comptabilité** du client ?",
+    "a": "**Oui** (CO 729 al. 2), à condition de prendre des **mesures organisationnelles et en matière de personnel** pour éviter de contrôler son propre travail (équipes distinctes).\nEn contrôle **ordinaire** : **incompatible** (CO 728 al. 2 ch. 4)."
+  },
+  {
+    "id": 2229,
+    "cat": "Audit / ISA",
+    "sub": "Contrôle restreint – M12L3",
+    "d": "facile",
+    "q": "Agrément requis : contrôle **restreint** vs **ordinaire** ?",
+    "a": "- **Restreint** : **réviseur agréé** (CO 727c)\n- **Ordinaire** : **expert-réviseur agréé** (CO 727b al. 2)\n- Sociétés d'**intérêt public** : entreprise de révision **soumise à la surveillance de l'État** (CO 727b al. 1)\nAgrément délivré par l'**ASR**."
+  },
+  {
+    "id": 2230,
+    "cat": "Audit / ISA",
+    "sub": "Contrôle restreint – M12L3",
+    "d": "moyen",
+    "q": "Durée du mandat et date de l'AG ordinaire ?",
+    "a": "- Organe de révision élu pour **1 à 3 exercices** ; mandat jusqu'à l'AG qui approuve les derniers comptes (CO 730a al. 1)\n- **AG ordinaire** dans les **6 mois** suivant la clôture (CO 699 al. 2)\n- Rotation de la personne dirigeante : **7 ans + 3 ans** de carence (contrôle ordinaire)"
+  },
+  {
+    "id": 2231,
+    "cat": "Audit / ISA",
+    "sub": "Pratique pro – M13L1",
+    "d": "moyen",
+    "q": "Code IESBA : **5 principes fondamentaux** et **5 menaces** ?",
+    "a": "**Principes** : intégrité, objectivité, compétence et diligence, confidentialité, comportement professionnel.\n**Menaces** : intérêt personnel, **autorévision**, représentation (advocacy), **familiarité**, intimidation."
+  },
+  {
+    "id": 2232,
+    "cat": "Audit / ISA",
+    "sub": "Pratique pro – M13L1",
+    "d": "difficile",
+    "q": "Incompatibilités en **contrôle ordinaire** (CO 728 al. 2) — exemples ?",
+    "a": "- Être membre du **CA** ou employé du client\n- **Participation** directe ou indirecte importante\n- Lien étroit avec un membre du CA ou de la direction\n- **Collaborer à la comptabilité** / services entraînant une autorévision\n- Mandat entraînant une **dépendance économique**\n- Conditions non conformes au marché, cadeaux de valeur…"
+  },
+  {
+    "id": 2233,
+    "cat": "Audit / ISA",
+    "sub": "Pratique pro – M13L2",
+    "d": "moyen",
+    "q": "**Surveillance** des réviseurs en Suisse : qui fait quoi ?",
+    "a": "- **ASR** (Autorité fédérale de surveillance en matière de révision, LSR) : **agréments**, surveillance des entreprises qui révisent des sociétés d'intérêt public (contrôle **au moins tous les 3 ans**, LSR 16)\n- **EXPERTsuisse** : association professionnelle, normes **NA-CH** et **NCR** (avec FIDUCIAIRE|SUISSE)"
+  },
+  {
+    "id": 2234,
+    "cat": "Audit / ISA",
+    "sub": "Pratique pro – M13L2",
+    "d": "moyen",
+    "q": "**Secret** et **conservation** des documents de révision ?",
+    "a": "- Discrétion : **CO 730b al. 2** ; secret pénal : **CP 321** (les réviseurs sont visés)\n- Conservation des documents : **10 ans** (CO 730c)\n- Assemblage du dossier final : ≈ **60 jours** après le rapport (politique ISQM 1)"
+  },
+  {
+    "id": 2235,
+    "cat": "Audit / ISA",
+    "sub": "Pratique pro – M13L3",
+    "d": "difficile",
+    "q": "**ISQM 1 / ISA 220 / ISQM 2** : qui fait quoi ?",
+    "a": "- **ISQM 1** : système de gestion de la qualité du **cabinet** (approche par les risques, 8 composantes)\n- **ISA 220** (révisée) : qualité de **chaque mission**, implication de l'associé\n- **ISQM 2** : **revue de la qualité de la mission** (EQR) — éligibilité du réviseur, délai de carence **2 ans** pour un ancien associé responsable"
+  },
+  {
+    "id": 2236,
+    "cat": "Audit / ISA",
+    "sub": "Pratique pro – M13L3",
+    "d": "moyen",
+    "q": "Rotation en Suisse : **personne** ou **cabinet** ?",
+    "a": "**Personne** uniquement : la personne qui dirige un contrôle ordinaire change après **7 ans**, reprise possible après **3 ans** (CO 730a al. 2).\nPas de rotation obligatoire du **cabinet** (différence avec l'UE)."
+  },
+  {
+    "id": 2237,
+    "cat": "Audit / ISA",
+    "sub": "Missions d'assurance – M14L1",
+    "d": "facile",
+    "q": "Panorama des normes **ISA / ISRE / ISAE / ISRS** ?",
+    "a": "- **ISA** : audit d'informations financières historiques (assurance raisonnable)\n- **ISRE 2400 / 2410** : examen limité (assurance limitée)\n- **ISAE 3000** (+ 3402, 3410) : autres missions d'assurance ; **ISSA 5000** : durabilité\n- **ISRS 4400** : procédures convenues ; **ISRS 4410** : compilation (**aucune assurance**)"
+  },
+  {
+    "id": 2238,
+    "cat": "Audit / ISA",
+    "sub": "Missions d'assurance – M14L1",
+    "d": "moyen",
+    "q": "Les **5 éléments** d'une mission d'assurance ?",
+    "a": "1. **Relation tripartite** (praticien, partie responsable, utilisateurs visés)\n2. **Objet sous-jacent** approprié\n3. **Critères** appropriés (pertinents, exhaustifs, fiables, neutres, compréhensibles)\n4. **Éléments probants** suffisants et appropriés\n5. **Rapport** écrit (conclusion positive ou négative)"
+  },
+  {
+    "id": 2239,
+    "cat": "Audit / ISA",
+    "sub": "Missions d'assurance – M14L2",
+    "d": "moyen",
+    "q": "**Assurance raisonnable** vs **limitée** : formulation ?",
+    "a": "- **Raisonnable** : conclusion **positive** — « À notre avis, … est établi, dans tous ses aspects significatifs, conformément aux critères »\n- **Limitée** : conclusion **négative** — « Nous n'avons rien relevé qui nous porte à croire que … »\n- Procédures : corroboration étendue vs surtout **demandes** et **analyses**"
+  },
+  {
+    "id": 2240,
+    "cat": "Audit / ISA",
+    "sub": "Missions d'assurance – M14L2",
+    "d": "moyen",
+    "q": "**ISAE 3402** : type 1 vs type 2 ?",
+    "a": "- **Type 1** : description + **conception** des contrôles à une **date**\n- **Type 2** : en plus, **efficacité opérationnelle** sur une **période** (tests et résultats décrits)\nSeul le type 2 permet à l'auditeur de l'utilisateur de s'appuyer sur les contrôles (ISA 402)."
+  },
+  {
+    "id": 2241,
+    "cat": "Audit / ISA",
+    "sub": "Missions d'assurance – M14L3",
+    "d": "difficile",
+    "q": "Attestations « spéciales » du droit suisse lors d'opérations sur le capital ?",
+    "a": "- **Apports en nature** à la fondation : rapport de fondation + **attestation d'un réviseur agréé** (CO 635a)\n- **Augmentation de capital** (apports en nature, compensation…) : **rapport d'augmentation** vérifié par un réviseur agréé (CO 652f)\n- **Apports en espèces** : attestation de la **banque** (CO 633)"
+  },
+  {
+    "id": 2242,
+    "cat": "Audit / ISA",
+    "sub": "Missions d'assurance – M14L3",
+    "d": "moyen",
+    "q": "Assurance sur le **rapport de durabilité** : cadre ?",
+    "a": "- Rapport non financier : **CO 964a ss** (sociétés d'intérêt public ≥ 500 EPT et > 20 M bilan ou 40 M CA)\n- Climat : ordonnance (2024), **TCFD**\n- Assurance : **ISAE 3000** (+ **3410** pour les GES), puis **ISSA 5000** (périodes dès le 15.12.2026)\n- Pas d'obligation légale d'assurance en Suisse à ce jour"
+  },
+  {
+    "id": 2243,
+    "cat": "Audit / ISA",
+    "sub": "Jugement – M15L1",
+    "d": "moyen",
+    "q": "Les **biais cognitifs** classiques de l'auditeur ?",
+    "a": "- **Ancrage** : partir du chiffre de la direction\n- **Confirmation** : chercher ce qui confirme\n- **Disponibilité** : surpondérer un cas marquant\n- **Excès de confiance** : fourchettes trop étroites\n- **Automatisation** : se fier aux outils sans esprit critique\n- **Effet de groupe** : conformisme d'équipe"
+  },
+  {
+    "id": 2244,
+    "cat": "Audit / ISA",
+    "sub": "Jugement – M15L1",
+    "d": "facile",
+    "q": "**Esprit critique** (ISA 200) : définition ?",
+    "a": "Attitude faite d'un **esprit interrogateur**, de **vigilance** aux éléments contradictoires ou aux indices de fraude, et d'une **évaluation critique** des éléments probants.\nNi présomption de malhonnêteté, ni confiance aveugle — **maintenu** même avec un client de longue date (ISA 240)."
+  },
+  {
+    "id": 2245,
+    "cat": "Audit / ISA",
+    "sub": "Jugement – M15L2",
+    "d": "moyen",
+    "q": "Processus structuré de **jugement professionnel** ?",
+    "a": "1. **Définir** le problème et les objectifs\n2. Envisager les **alternatives**\n3. Réunir et **évaluer** l'information (y c. contradictoire)\n4. **Conclure**\n5. **Formuler et documenter** le raisonnement (ISA 230 : compréhensible par un auditeur expérimenté)"
+  },
+  {
+    "id": 2246,
+    "cat": "Audit / ISA",
+    "sub": "Jugement – M15L2",
+    "d": "difficile",
+    "q": "ISA 540 : estimation de la direction **hors** de la fourchette de l'auditeur ?",
+    "a": "Anomalie **au moins égale** à l'écart entre le point de la direction et le **point le plus proche** de la fourchette de l'auditeur.\nLa fourchette doit être **assez étroite** pour conclure ; des estimations toujours orientées dans le même sens sont un **indice de partialité**."
+  },
+  {
+    "id": 2247,
+    "cat": "Audit / ISA",
+    "sub": "Jugement – M15L3",
+    "d": "moyen",
+    "q": "Comment **atténuer les biais** dans une équipe d'audit ?",
+    "a": "- Planifier assez de **temps** (la pression favorise les raccourcis)\n- Développer une **estimation indépendante** (contre l'ancrage)\n- Chercher activement la **contradiction** (avocat du diable)\n- **Consulter** (ISA 220) et revue **EQR**\n- **Documenter** les jugements importants"
+  },
+  {
+    "id": 2248,
+    "cat": "Audit / ISA",
+    "sub": "Jugement – M15L3",
+    "d": "facile",
+    "q": "**Matérialité** : formule ou jugement ?",
+    "a": "**Jugement professionnel** (ISA 320.4) : les pourcentages usuels (≈ 5 % du résultat avant impôts, 1-2 % du CA ou du total du bilan) ne sont que des **points de départ**, à adapter aux besoins des utilisateurs et aux circonstances (résultat volatil → autre référence)."
+  },
+  {
+    "id": 2249,
+    "cat": "Expert suisse",
+    "sub": "Actualités – M16L1",
+    "d": "facile",
+    "q": "Chiffres **2027** des assurances sociales à connaître ?",
+    "a": "- Rente AVS max **30'720** (2'560/mois), min 15'360\n- LPP : seuil **23'040**, coordination **26'880**, plafond **92'160**, coordonné 3'840–65'280, intérêt minimal **2 %**\n- 3a : **7'373** / 36'864\n- AVS indépendants min **541**\n(2025-2026 : 22'680 / 26'460 / 90'720 ; 3a 7'258)"
+  },
+  {
+    "id": 2250,
+    "cat": "Expert suisse",
+    "sub": "Actualités – M16L1",
+    "d": "moyen",
+    "q": "Nouveautés du **droit de la SA (1.1.2023)** les plus testées ?",
+    "a": "- **Marge de fluctuation** du capital (5 ans, ½ à 1,5×)\n- Capital en **monnaie étrangère** ; valeur nominale > 0\n- **AG virtuelle** / hybride (CO 701a ss)\n- Seuils minoritaires abaissés (5 % / 10 %)\n- **725 / 725a / 725b** : insolvabilité, perte de capital, surendettement (délai 90 jours)\n- Dividendes intermédiaires"
+  },
+  {
+    "id": 2251,
+    "cat": "Expert suisse",
+    "sub": "Actualités – M16L2",
+    "d": "moyen",
+    "q": "Imposition minimale de l'OCDE (**pilier 2**) en Suisse ?",
+    "a": "- Groupes au CA consolidé ≥ **750 M EUR**\n- Taux effectif minimal **15 %**\n- **Impôt complémentaire national** en vigueur depuis le **1.1.2024** (QDMTT)\n- Les cantons à faible taux voient leurs recettes augmenter ; enjeu : promotion économique compatible"
+  },
+  {
+    "id": 2252,
+    "cat": "Expert suisse",
+    "sub": "Actualités – M16L2",
+    "d": "difficile",
+    "q": "Normes **IAASB récentes** à dater ?",
+    "a": "- **ISQM 1 / ISQM 2 / ISA 220 (R)** : **15.12.2022**\n- **ISA 600 (R)** audits de groupe : périodes dès le **15.12.2023**\n- **ISA 570 (R 2024)** continuité : périodes dès le **15.12.2026** (12 mois dès l'**approbation** des EF)\n- **ISSA 5000** durabilité : périodes dès le **15.12.2026**"
+  },
+  {
+    "id": 2253,
+    "cat": "Expert suisse",
+    "sub": "Actualités – M16L3",
+    "d": "moyen",
+    "q": "Reporting **non financier** et **devoirs de diligence** (CO 964a ss / 964j ss) ?",
+    "a": "- **964a-c** : rapport sur les questions non financières (environnement, social, personnel, droits de l'homme, corruption) — sociétés d'intérêt public ≥ **500 EPT** et > 20 M bilan ou 40 M CA\n- Climat : ordonnance **2024** (TCFD)\n- **964j-l** : minerais de zones de **conflit** et **travail des enfants** (depuis 2022)"
+  },
+  {
+    "id": 2254,
+    "cat": "Expert suisse",
+    "sub": "Actualités – M16L3",
+    "d": "facile",
+    "q": "**13e rente AVS** : quand et comment ?",
+    "a": "Acceptée en votation le **3 mars 2024**. Versée **une fois par an**, pour la première fois en **décembre 2026** (montant = 1/12 de la rente annuelle). Son financement reste un enjeu politique (TVA / cotisations)."
   }
 ]

@@ -71,8 +71,8 @@ depuis la Révision active) est un alias de `fcdb` pour la navigation
 | recherche | search_tab.js `renderRechercheTab` (reprend `_stQuery`) | natif | index plein-texte de 9 fichiers data/ + IA Mistral optionnelle (clé saisie par l'utilisateur, localStorage) |
 | modules | modules.js `renderModules` (~3000 l.) | natif | unified_modules, trainer_courses, norms_ifrs_rpc, notion_lessons, flashcards ; `navigateToNormByCode(code)` ouvre une norme |
 | trainer | trainer.js `renderTrainer` | natif | sprints SM-2 (flashcards) + cours (trainer_courses) ; `launchSprintFromIds` (sélection venue de Flashcards) |
-| qcm | qcm.js `renderQcm` | natif | `get_qcm_catalog` = trainer_courses + unified_modules + audit.json annuaire_cours → **3344 QCM** (dédoublonnés par texte ; M1–M16 tous couverts, examen blanc pondéré par domaine) |
-| fcdb | fcdb.js `renderFcdb` | natif | flashcards.json (**1512** cartes) ; « Réviser la sélection » → sprint |
+| qcm | qcm.js `renderQcm` | natif | `get_qcm_catalog` = trainer_courses + unified_modules + audit.json annuaire_cours → **3456 QCM** (dédoublonnés par texte ; M1–M16 tous couverts, examen blanc pondéré par domaine) |
+| fcdb | fcdb.js `renderFcdb` | natif | flashcards.json (**1566** cartes) ; « Réviser la sélection » → sprint |
 | compare | comparisons.js `renderComparisons` | natif | comparisons.json (25 thèmes) ; boutons « Normes liées » → `compGoNorm` |
 | progress | progress.js `renderProgress` | natif | `get_module_stats` (liste par module : flashcards, leçons de la Révision active, QCM réussis) + sauvegarde/restauration |
 | fs, references, audit, english, oral, conso, hec, social, fusion | js/<app>.js → iframe `<app>/index.html` | sous-app | embarquées (voir plus bas) |
@@ -92,7 +92,7 @@ sont dans aucune rubrique ni dans `HUB_SECTIONS`, et figurent dans
 | unified_modules.json (6,3 Mo) | modules, qcm, recherche, pdf_export, podcasts | `{modules:[16]}` M1–M16 ; module = `{code,name,norms[],lessons_ifp[],lessons_notion,flashcard_count,…}` ; leçon IFP = `{id,code,title,content[{title,body,section_id}],questions[],mindmap_md,title_en,content_en,…}` ; norme = `{code,title,id,sections,mindmap_md,questions,memo_items…}` ; question = `{id,type:"mcq"|"vrai_faux",question,options,answer,explanation,difficulty,section_id}` |
 | trainer_courses.json (2,7 Mo) | trainer, modules, qcm | `{courses:[119 {norm_code,norm_title,category,module,module_code,lessons[{id,title,duration_min,content,key_points,questions}]}]}` |
 | norms_ifrs_rpc.json (1,5 Mo) | modules (fiche norme) | `{norms:[80 {id,code,title,category,sections,key_rules,thresholds,cross_refs,flashcard_ids,comparisons,html_content,memo_items,course_items}]}` |
-| flashcards.json (1 Mo) | trainer, fcdb, dashboard, recherche | **liste** de `{id:int,cat,sub,d,q,a}` — ids uniques (max 2195) ; cat ∈ **Fiscalité, Swiss GAAP RPC, IFRS / IAS, Audit / ISA, Expert suisse** (M1) ; d ∈ facile, moyen, difficile, piège |
+| flashcards.json (1 Mo) | trainer, fcdb, dashboard, recherche | **liste** de `{id:int,cat,sub,d,q,a}` — ids uniques (max 2254) ; cat ∈ **Fiscalité, Swiss GAAP RPC, IFRS / IAS, Audit / ISA, Expert suisse** (M1) ; d ∈ facile, moyen, difficile, piège |
 | notion_lessons.json | modules, recherche | liste de 661 `{concept,year,module,notes,priority,section,status,type}` |
 | comparisons.json | compare, recherche | `{themes:[25 {…, norms:{ifrs,rpc,co}}]}` |
 | audit.json (3,9 Mo) | sous-app audit, qcm, recherche | sections `nas, cadre_legal, cycles, terrain, outils, quiz, comparatifs, lexique, annuaire{series[7]→standards[47]}, cas_pratiques, arbres, procedures_assertions, independance, modeles, examens_blancs, timeline, fraude, goingconcern, actualites, annuaire_cours{"200":{…,mcq[]}}` (47 ISA, 566 QCM) ; chaque section a `_label/_icon/_description` (affichés sur l'accueil Audit) |
@@ -180,7 +180,7 @@ lignes d'un même `.jsx` entre deux synchronisations.
   manuelle (remplacements ciblés uniquement) : audit/manifest.json,
   hec/manifest.json, data/{audit_amortissements, audit_metier, comparisons,
   podcasts_extra}.json, 2 fiches audit (03_planification, 07_communication).
-- Nouvelle flashcard : id entier unique (> 2195), champs `cat/sub/d/q/a`, `cat`
+- Nouvelle flashcard : id entier unique (> 2254), champs `cat/sub/d/q/a`, `cat`
   parmi les 5 catégories ci-dessus.
 - Nouveau QCM : `type` "mcq" (options[], answer = index) ou "vrai_faux"
   (answer booléen) ; `id` unique dans tout le catalogue.
