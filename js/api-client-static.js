@@ -527,7 +527,9 @@
         },
 
         async save_lesson_progress() { return true; },
-        async get_trainer_progress() { return {}; },
+        // Liste [{norm_code, lesson_id, completed}] comme l'API desktop ; en web la
+        // progression des leçons vit dans localStorage (swisscpa_trainer_progress).
+        async get_trainer_progress() { return []; },
 
         // ── QCM ──────────────────────────────────────────────
 

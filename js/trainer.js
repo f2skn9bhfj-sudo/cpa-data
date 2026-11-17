@@ -308,6 +308,18 @@ async function renderTrainer(main) {
         document.head.appendChild(style);
     }
 
+    // Arrivée depuis Flashcards → « Réviser la sélection » : sprint sur les cartes filtrées.
+    let fcdbIds = null;
+    try {
+        fcdbIds = JSON.parse(sessionStorage.getItem('fcdbReviewIds') || 'null');
+        sessionStorage.removeItem('fcdbReviewIds');
+        sessionStorage.removeItem('fcdbReviewLabel');
+    } catch (e) {}
+    if (Array.isArray(fcdbIds) && fcdbIds.length) {
+        await launchSprintFromIds(fcdbIds);
+        return;
+    }
+
     switch (trainerState.mode) {
         case 'sprint':      renderTrainerSprintActive(main); break;
         case 'cours':
@@ -644,6 +656,31 @@ async function launchSprintCategory(category) {
     }
 
     trainerState.sprintCards = allCards;
+    trainerState.sprintIndex = 0;
+    trainerState.sprintFlipped = false;
+    trainerState.sprintCorrect = 0;
+    trainerState.sprintWrong = 0;
+    trainerState.sprintFailed = [];
+    trainerState.sprintStartTime = Date.now();
+    renderTrainerSprintActive(main);
+}
+
+// Sprint sur une liste d'identifiants de cartes (sélection faite dans l'onglet Flashcards).
+const FCDB_SPRINT_MAX = 100;
+async function launchSprintFromIds(ids) {
+    const main = trainerState._container || document.getElementById('mainContent');
+    if (!main) return;
+    main.innerHTML = `<div style="text-align:center;padding:60px;color:#64748b">Chargement de ta sélection...</div>`;
+    const wanted = new Set(ids);
+    const all = await api('get_flashcards') || [];
+    const cards = trainerShuffleArray(all.filter(c => wanted.has(c.id))).slice(0, FCDB_SPRINT_MAX);
+    if (!cards.length) {
+        main.innerHTML = `<div style="text-align:center;padding:60px;color:#64748b">Aucune carte trouvée pour cette sélection.</div>`;
+        setTimeout(() => renderTrainerHome(main), 2000);
+        return;
+    }
+    trainerState.mode = 'sprint';
+    trainerState.sprintCards = cards;
     trainerState.sprintIndex = 0;
     trainerState.sprintFlipped = false;
     trainerState.sprintCorrect = 0;
@@ -1010,7 +1047,7 @@ async function showTrainerCours() {
 
     const coursData = (coursRaw && coursRaw.courses) ? coursRaw.courses : [];
     trainerState.coursData     = coursData;
-    trainerState.coursProgress = progressRaw || [];
+    trainerState.coursProgress = Array.isArray(progressRaw) ? progressRaw : [];
 
     renderCoursModulePicker(main);
 }
@@ -1548,7 +1585,7 @@ async function completeLesson(normCode, lessonId) {
     saveLocalLessonProgress(normCode, lessonId, true);
 
     // Update server progress cache
-    const arr = trainerState.coursProgress || [];
+    const arr = Array.isArray(trainerState.coursProgress) ? trainerState.coursProgress : [];
     const existing = arr.find(p => p.norm_code === normCode && p.lesson_id === lessonId);
     if (existing) { existing.completed = true; existing.completed_at = new Date().toISOString(); }
     else arr.push({ norm_code: normCode, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() });
@@ -1588,7 +1625,7 @@ async function completeLesson(normCode, lessonId) {
 
 function isLessonDone(normCode, lessonId) {
     // Check server progress first
-    const serverProgress = trainerState.coursProgress || [];
+    const serverProgress = Array.isArray(trainerState.coursProgress) ? trainerState.coursProgress : [];
     const serverRec = serverProgress.find(p => p.norm_code === normCode && p.lesson_id === lessonId);
     if (serverRec) return !!serverRec.completed;
     // Fallback to localStorage

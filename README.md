@@ -1,35 +1,45 @@
-# Swiss CPA — Mobile
+# Swiss CPA — application de révision
 
-Version mobile/web statique de l'app de révision Swiss CPA.
+Application web statique de révision du diplôme fédéral d'expert-comptable,
+publiée par GitHub Pages depuis la racine de la branche `main` :
+https://f2skn9bhfj-sudo.github.io/cpa-data/
 
-**Source** : générée automatiquement par `build_mobile.py` à partir du repo desktop principal. Ne pas éditer ce dossier directement — modifier la source desktop puis relancer le build.
+Contenu : 16 modules (M1–M16), ~3 290 QCM, ~1 500 flashcards, 80 normes
+(CO, Swiss GAAP RPC, IFRS/IAS, ISA…), 47 normes ISA en cours complets, le
+Manuel suisse d'audit (54 fiches), Conso, Fusion, Social, Oral, Anglais, HEC,
+Grand Livre et 39 podcasts.
 
-## Déploiement GitHub Pages
+Ce dépôt est la source : on le modifie directement (il n'y a plus de build
+depuis un dépôt desktop). Un `push` sur `main` est en ligne en 1 à 2 minutes.
+
+## Organisation
+
+- `index.html` + `js/` + `css/` : la coquille et les onglets natifs.
+- `data/` : les données JSON lues par les onglets natifs.
+- `<onglet>/index.html` : les sous-apps (Audit, Conso, Oral…), autonomes,
+  qui embarquent leurs données et leur code. On modifie leurs sources (`.jsx`,
+  JSON) puis on les régénère avec `python3 tools/sync_subapps.py --write`.
+- `vendor/` : React, Babel, Tailwind et les icônes, en copies locales figées
+  (aucune dépendance à un CDN).
+
+La carte détaillée (schémas des données, procédures de modification, pièges)
+est dans `CLAUDE.md`.
+
+## Vérifier avant de publier
 
 ```bash
-# Premier setup (une seule fois)
-cd dist_mobile
-git init
-git remote add origin git@github.com:<TON_USER>/swiss-cpa-mobile.git
-git branch -M main
-git add -A
-git commit -m "Initial mobile build"
-git push -u origin main
-
-# Active GitHub Pages dans : Settings → Pages → Source = main branch / root
-
-# À chaque update :
-cd <repo desktop>
-python build_mobile.py
-cd dist_mobile
-git add -A && git commit -m "update" && git push
+python3 tools/sync_subapps.py      # toutes les sous-apps « à jour »
+node tools/smoke_test.js           # les 18 onglets s'ouvrent sans erreur
 ```
 
-## Limitations connues (vs desktop)
+Après une modification de JS, CSS ou d'une sous-app, changer le numéro
+`?v=` dans `index.html` (même valeur partout) pour que les navigateurs
+rechargent les fichiers.
 
-- **AI désactivée** : le correcteur d'anglais et l'assistant IA (via Groq) ne tournent pas en mobile. Visible dans `static/js/api-client-static.js`.
-- **Pas d'export PDF** ni de templates Excel audit.
-- **Progression localStorage** : la progression sur le mobile est séparée de celle du desktop. Pas de sync automatique.
-- **Lecture seule des fichiers** : l'open externe et le file tree sont stub.
+## Limites de la version web
 
-Le reste (1200+ QCMs, 316 flashcards, leçons M1-M2-M6-M7-M8, normes M3/M4, module Anglais, recherche, dark/light mode) marche normalement.
+- Assistant IA, correcteur d'anglais, exports PDF/Excel : réservés à
+  l'ancienne version desktop (la Recherche propose une IA Mistral optionnelle,
+  avec une clé saisie par l'utilisateur).
+- Progression enregistrée dans le navigateur (localStorage), propre à chaque
+  appareil, sans synchronisation.

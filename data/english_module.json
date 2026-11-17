@@ -1680,20 +1680,6 @@
       ]
     },
     {
-      "id": "en_v_aud_040",
-      "domain": "audit",
-      "level": "B1",
-      "fr": "anomalie",
-      "en": "misstatement",
-      "notes": "Écart entre montant comptabilisé et montant correct selon le référentiel.",
-      "examples": [
-        {
-          "fr": "Nous avons identifié une anomalie de CHF 120'000 sur les stocks.",
-          "en": "We identified a misstatement of CHF 120,000 on inventories."
-        }
-      ]
-    },
-    {
       "id": "en_v_aud_041",
       "domain": "audit",
       "level": "B1",
@@ -2144,21 +2130,6 @@
       ]
     },
     {
-      "id": "en_v_aud_073",
-      "domain": "audit",
-      "level": "B2",
-      "fr": "continuité d'exploitation",
-      "en": "going concern",
-      "ipa": "ˌɡəʊɪŋ kənˈsɜːn",
-      "notes": "Hypothèse fondamentale des EF. Évaluation sur 12 mois minimum.",
-      "examples": [
-        {
-          "fr": "L'évaluation de la continuité d'exploitation est cruciale en période de crise.",
-          "en": "Going concern assessment is critical in times of crisis."
-        }
-      ]
-    },
-    {
       "id": "en_v_aud_074",
       "domain": "audit",
       "level": "B2",
@@ -2491,20 +2462,6 @@
         {
           "fr": "La phase de finalisation inclut la revue du partner.",
           "en": "The completion phase includes the partner review."
-        }
-      ]
-    },
-    {
-      "id": "en_v_aud_098",
-      "domain": "audit",
-      "level": "B2",
-      "fr": "élément probant",
-      "en": "audit evidence",
-      "notes": "Information sur laquelle l'auditeur fonde son opinion.",
-      "examples": [
-        {
-          "fr": "L'élément probant doit être suffisant et approprié.",
-          "en": "Audit evidence must be sufficient and appropriate."
         }
       ]
     },
@@ -4817,21 +4774,6 @@
       ]
     },
     {
-      "id": "en_v_biz_043",
-      "domain": "business",
-      "level": "B1",
-      "fr": "jalon",
-      "en": "milestone",
-      "ipa": "ˈmaɪlstəʊn",
-      "notes": "Étape clé du projet avec date butoir.",
-      "examples": [
-        {
-          "fr": "Le prochain jalon est la revue intermédiaire.",
-          "en": "The next milestone is the interim review."
-        }
-      ]
-    },
-    {
       "id": "en_v_biz_044",
       "domain": "business",
       "level": "B1",
@@ -5506,20 +5448,6 @@
         {
           "fr": "L'away day du département se tient à Montreux.",
           "en": "The department away day takes place in Montreux."
-        }
-      ]
-    },
-    {
-      "id": "en_v_day_062",
-      "domain": "daily",
-      "level": "A2",
-      "fr": "vacances",
-      "en": "holiday",
-      "notes": "UK English. US English : vacation.",
-      "examples": [
-        {
-          "fr": "Je suis en holiday la semaine prochaine.",
-          "en": "I'm on holiday next week."
         }
       ]
     },
@@ -6805,7 +6733,7 @@
       "id": "en_p_trn_003",
       "category": "transition",
       "level": "B1",
-      "fr": "D'autre part,",
+      "fr": "D'autre part, / En revanche,",
       "en": "On the other hand,",
       "context": "Présenter un point de vue différent ou complémentaire."
     },
@@ -6850,14 +6778,6 @@
       "context": "Pour interrompre poliment quelqu'un."
     },
     {
-      "id": "en_p_open_009",
-      "category": "email_opening",
-      "level": "B1",
-      "fr": "Cher Monsieur Smith,",
-      "en": "Dear Mr Smith,",
-      "context": "Email formel, première communication. Toujours 'Dear' + titre + nom de famille."
-    },
-    {
       "id": "en_p_open_010",
       "category": "email_opening",
       "level": "B1",
@@ -6872,14 +6792,6 @@
       "fr": "À qui de droit,",
       "en": "To whom it may concern,",
       "context": "Très formel, destinataire inconnu (lettre ouverte, certification)."
-    },
-    {
-      "id": "en_p_open_012",
-      "category": "email_opening",
-      "level": "B1",
-      "fr": "J'espère que vous allez bien.",
-      "en": "I hope this email finds you well.",
-      "context": "Phrase d'introduction standard en début d'email. Très utilisée en contexte client."
     },
     {
       "id": "en_p_open_013",
@@ -6938,14 +6850,6 @@
       "context": "Très utilisé en audit pour relancer un client sur des PBC en retard."
     },
     {
-      "id": "en_p_close_010",
-      "category": "email_closing",
-      "level": "B1",
-      "fr": "Cordialement,",
-      "en": "Kind regards,",
-      "context": "Légèrement plus chaleureux que 'Best regards'."
-    },
-    {
       "id": "en_p_close_012",
       "category": "email_closing",
       "level": "B2",
@@ -6976,14 +6880,6 @@
       "fr": "Restant à votre disposition,",
       "en": "I remain at your disposal,",
       "context": "Formule formelle de disponibilité."
-    },
-    {
-      "id": "en_p_close_016",
-      "category": "email_closing",
-      "level": "B2",
-      "fr": "Dans l'attente de votre retour,",
-      "en": "Looking forward to hearing from you,",
-      "context": "Très commune — incite à une réponse."
     },
     {
       "id": "en_p_close_017",
@@ -7154,14 +7050,6 @@
       "context": "Signaler un dérapage temporel."
     },
     {
-      "id": "en_p_mtg_028",
-      "category": "meeting",
-      "level": "B1",
-      "fr": "Récapitulons les points d'action.",
-      "en": "Let's recap the action items.",
-      "context": "Conclusion structurée de réunion. À faire systématiquement."
-    },
-    {
       "id": "en_p_mtg_029",
       "category": "meeting",
       "level": "B2",
@@ -7296,14 +7184,6 @@
       "fr": "Sur une note différente,",
       "en": "On a different note,",
       "context": "Changer de sujet poliment."
-    },
-    {
-      "id": "en_p_trn_008",
-      "category": "transition",
-      "level": "B1",
-      "fr": "En revanche,",
-      "en": "On the other hand,",
-      "context": "Présenter un contraste ou alternative."
     },
     {
       "id": "en_p_trn_009",
