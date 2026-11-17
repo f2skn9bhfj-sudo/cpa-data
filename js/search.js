@@ -124,9 +124,6 @@ function openSearchResult(result) {
         case 'glossary':
             navigate('references', 'glossary');
             break;
-        case 'file':
-            navigate('files');
-            break;
         case 'audit_nas':
         case 'audit_cadre':
         case 'audit_comparatif':

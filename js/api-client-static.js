@@ -457,11 +457,6 @@
             return n && n.html_content ? n.html_content : '';
         },
 
-        async get_norms_enrichment() {
-            const data = await _loadJson('norms_enrichment.json');
-            return data || { enrichments: {} };
-        },
-
         async update_norm(norm_code, category, confidence) {
             const p = _normProgress();
             const k = norm_code;
@@ -784,7 +779,6 @@
 
         async get_audit_data() { return await _loadJson('audit.json') || {}; },
         async get_oral_data() { return await _loadJson('oral.json') || {}; },
-        async get_ifrs_data() { return await _loadJson('ifrs.json') || {}; },
         async get_audit_seuils() { return await _loadJson('audit_seuils.json') || { categories: [] }; },
         async get_audit_section(section) {
             const d = await api.get_audit_data();
@@ -793,11 +787,9 @@
         async save_audit_progress() { return true; },
         async get_audit_progress() { return {}; },
 
-        async get_fiscalite() { return await _loadJson('fiscalite_modules.json') || { module: 'M7', tomes: [] }; },
         async get_comparisons() { return await _loadJson('comparisons.json') || { themes: [] }; },
         async get_financial_statements() { return await _loadJson('financial_statements.json') || { statements: [], notes: [] }; },
 
-        async get_notion_modules() { return await _loadJson('notion_modules.json') || []; },
         async get_notion_lessons() { return await _loadJson('notion_lessons.json') || []; },
 
         // ── Reference / search ───────────────────────────────

@@ -208,7 +208,6 @@ function showCrossRefPopover(event, normId, label) {
         { icon: '🃏', text: ' Flashcards liées', fn: navigateToFlashcards },
         { icon: '📘', text: ' Voir le mémo',     fn: navigateToMemo },
         { icon: '📚', text: ' Voir le cours',    fn: navigateToCourse },
-        { icon: '📖', text: ' Fichiers liés',    fn: navigateToFiles },
     ];
     for (const a of actions) {
         const link = document.createElement('a');
@@ -271,13 +270,5 @@ function navigateToMemo(normId) {
 }
 
 function navigateToCourse(normId) {
-    if (normId.startsWith('rpc')) {
-        navigate('references', 'courses');
-    } else {
-        navigate('references', 'courses');
-    }
-}
-
-function navigateToFiles(normId) {
-    navigate('files');
+    navigate('references', 'courses');
 }

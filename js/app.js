@@ -12,6 +12,7 @@ const COLORS = {
     "Swiss GAAP RPC": { bg: "#1a365d", light: "#ebf4ff", accent: "#3182ce", border: "#bee3f8" },
     "IFRS / IAS":     { bg: "#22543d", light: "#f0fff4", accent: "#38a169", border: "#c6f6d5" },
     "Audit / ISA":    { bg: "#553c9a", light: "#faf5ff", accent: "#805ad5", border: "#e9d8fd" },
+    "Expert suisse":  { bg: "#0f3d3e", light: "#ecfeff", accent: "#0e7490", border: "#a5f3fc" },
     "Fiscalité":      { bg: "#9c4221", light: "#fffaf0", accent: "#dd6b20", border: "#feebc8" },
     "CO":             { bg: "#78350f", light: "#fef3c7", accent: "#b45309", border: "#fef3c7" },
     "Consolidation":  { bg: "#1e3a5f", light: "#dbeafe", accent: "#3b82f6", border: "#dbeafe" },

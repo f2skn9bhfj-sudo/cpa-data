@@ -1620,7 +1620,7 @@ async function modLoadLessonFlashcards(lessonCodeShort, lesson, module) {
     if (!container) return;
     try {
         const cat = (module.code === 'M1') ? 'Expert suisse'
-                  : (module.code === 'M2') ? 'Audit'
+                  : (module.code === 'M2') ? 'Audit / ISA'
                   : null;
         const allCards = cat ? await api('get_flashcards', cat) : await api('get_flashcards');
         const matching = (allCards || []).filter(c => {

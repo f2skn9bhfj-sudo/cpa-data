@@ -196,9 +196,9 @@ function renderCompDetail(container) {
         <div class="comp-crossref">
             <div style="font-weight:600;margin-bottom:8px;color:var(--text-secondary)">📚 Normes liées</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px">
-                <button class="comp-xref-btn comp-xref-ifrs" onclick="navigate('norms')" title="Voir les normes IFRS">${escapeHtml(theme.norms.ifrs)}</button>
-                <button class="comp-xref-btn comp-xref-rpc" onclick="navigate('norms')" title="Voir les normes RPC">${escapeHtml(theme.norms.rpc)}</button>
-                <button class="comp-xref-btn comp-xref-co" onclick="navigate('norms')" title="Voir les normes CO">${escapeHtml(theme.norms.co)}</button>
+                <button class="comp-xref-btn comp-xref-ifrs" onclick="compGoNorm(this.textContent)" title="Ouvrir la norme dans Modules">${escapeHtml(theme.norms.ifrs)}</button>
+                <button class="comp-xref-btn comp-xref-rpc" onclick="compGoNorm(this.textContent)" title="Ouvrir la norme dans Modules">${escapeHtml(theme.norms.rpc)}</button>
+                <button class="comp-xref-btn comp-xref-co" onclick="compGoNorm(this.textContent)" title="Ouvrir la norme dans Modules">${escapeHtml(theme.norms.co)}</button>
             </div>
         </div>
 
@@ -339,6 +339,40 @@ function compBack() {
     selectedThemeId = null;
     const main = document.getElementById('mainContent');
     renderCompPage(main);
+}
+
+/* Ouvre dans Modules la norme citée par un bouton « Normes liées ».
+   « IFRS 9 / IAS 32 » → première norme trouvée ; « art. 960c CO » → la fiche
+   CO dont la plage d'articles contient 960c (la plus étroite). Sinon : Modules. */
+function _compArt(s) {
+    const m = String(s).match(/(\d+)([a-z]?)/i);
+    return m ? [parseInt(m[1], 10), (m[2] || '').toLowerCase()] : null;
+}
+function _compArtLe(a, b) { return a[0] < b[0] || (a[0] === b[0] && a[1] <= b[1]); }
+async function compGoNorm(label) {
+    const text = String(label || '');
+    const uni = await api('get_unified_modules');
+    const codes = [];
+    (uni && uni.modules || []).forEach(m => (m.norms || []).forEach(n => { if (n && n.code) codes.push(n.code); }));
+    const has = c => codes.find(x => x.toLowerCase() === c.toLowerCase());
+    for (const m of text.matchAll(/\b(IAS|IFRS|RPC)\s*(\d+)/gi)) {
+        const hit = has(m[1].toUpperCase() + ' ' + m[2]);
+        if (hit) return navigateToNormByCode(hit);
+    }
+    if (/\bCO\b/.test(text)) {
+        const art = _compArt(text.replace(/^[^\d]*/, ''));
+        if (art) {
+            let best = null, width = Infinity;
+            for (const c of codes) {
+                const r = c.match(/^CO (\d+[a-z]?)(?:-(\d+[a-z]?))?$/i);
+                if (!r) continue;
+                const lo = _compArt(r[1]), hi = _compArt(r[2] || r[1]);
+                if (_compArtLe(lo, art) && _compArtLe(art, hi) && hi[0] - lo[0] < width) { best = c; width = hi[0] - lo[0]; }
+            }
+            if (best) return navigateToNormByCode(best);
+        }
+    }
+    navigate('modules');
 }
 
 // ══════════════════════════════════════════════════

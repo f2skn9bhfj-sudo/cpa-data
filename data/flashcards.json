@@ -813,7 +813,7 @@
     "sub": "LIFD – Prévoyance",
     "d": "piège",
     "q": "Maximum déductible pilier 3A ?",
-    "a": "Avec 2e pilier : 8% du max LPP = CHF 7'056 (2023)\nSans 2e pilier : 20% du revenu, max 40% du max LPP = CHF 35'280\n\n⚠️ Déduction PRIVÉE, pas charge commerciale.\nPossible 5 ans après retraite AVS si activité lucrative.\n\n📖 art. 33 al. 1 lit. e LIFD ; art. 7 OPP 3"
+    "a": "Avec 2e pilier : 8% du max LPP = CHF 7'258 (2025-2026)\nSans 2e pilier : 20% du revenu, max 40% du max LPP = CHF 36'288\n\n⚠️ Déduction PRIVÉE, pas charge commerciale.\nPossible 5 ans après retraite AVS si activité lucrative.\n\n📖 art. 33 al. 1 lit. e LIFD ; art. 7 OPP 3"
   },
   {
     "id": 162,
@@ -5405,7 +5405,7 @@
     "sub": "LIFD – Prévoyance",
     "d": "facile",
     "q": "Cotisations 3a : montant maximum déductible (2024) ?",
-    "a": "1. **Avec caisse de pension** : CHF 7'056/an\n2. **Sans caisse de pension** : 20 % du revenu, max CHF 35'280\n\n⚠️ Déductible intégralement de l'impôt sur le revenu.\n\n📖 art. 33 al. 1 lit. e LIFD ; art. 7 OPP 3"
+    "a": "1. **Avec caisse de pension** : CHF 7'258/an\n2. **Sans caisse de pension** : 20 % du revenu, max CHF 36'288\n\n⚠️ Déductible intégralement de l'impôt sur le revenu.\n\n📖 art. 33 al. 1 lit. e LIFD ; art. 7 OPP 3"
   },
   {
     "id": 1165,
@@ -6013,7 +6013,7 @@
     "sub": "Activité dépendante – L3",
     "d": "moyen",
     "q": "Qu'est-ce que la **procédure de décompte simplifié (PDS, art. 37a LIFD)** ?",
-    "a": "Mécanisme simplifié pour **petites rémunérations** :\n- Rémunération ≤ **CHF 22'050/an** par employé (2024)\n- Masse salariale entreprise ≤ **CHF 58'800/an**\n- Impôt libératoire de **5 %** (taux unique)\n- Décompte simultané avec les cotisations AVS\n- **Aucune déclaration fiscale** à faire par l'employé\n\nCible : aides ménagères, gardes d'enfants, petits jobs."
+    "a": "Mécanisme simplifié pour **petites rémunérations** :\n- Rémunération ≤ **CHF 22'680/an** par employé (2025-2026)\n- Masse salariale entreprise ≤ **CHF 60'480/an**\n- Impôt libératoire de **5 %** (taux unique)\n- Décompte simultané avec les cotisations AVS\n- **Aucune déclaration fiscale** à faire par l'employé\n\nCible : aides ménagères, gardes d'enfants, petits jobs."
   },
   {
     "id": 1266,
@@ -6493,7 +6493,7 @@
     "sub": "Prévoyance – L6",
     "d": "facile",
     "q": "Quel est le **seuil d'entrée LPP** (2024) ?",
-    "a": "Salaire annuel minimum **CHF 22'050** pour être obligatoirement assuré au 2e pilier.\n\n⚠️ Les personnes sous ce seuil ne sont pas obligatoirement LPP mais peuvent s'assurer volontairement.\n\n📖 art. 2 al. 1 LPP ; art. 7 OPP 2"
+    "a": "Salaire annuel minimum **CHF 22'680** (2025-2026) pour être obligatoirement assuré au 2e pilier.\n\n⚠️ Les personnes sous ce seuil ne sont pas obligatoirement LPP mais peuvent s'assurer volontairement.\n\n📖 art. 2 al. 1 LPP ; art. 7 OPP 2"
   },
   {
     "id": 1328,
@@ -6501,7 +6501,7 @@
     "sub": "Prévoyance – L6",
     "d": "moyen",
     "q": "Quel est le **salaire coordonné** dans le 2e pilier ?",
-    "a": "**Salaire annuel compris entre CHF 25'725 et CHF 88'200** (bornes 2024).\n\n- **Déduction de coordination** : CHF 25'725\n- **Plafond obligatoire** : CHF 88'200\n- **Salaire coordonné maximal** = 88'200 − 25'725 = **CHF 62'475**\n- **Salaire coordonné minimal** : CHF 3'675\n\nLe salaire > 88'200 peut être assuré en **sur-obligatoire** (facultatif)."
+    "a": "**Salaire annuel compris entre CHF 26'460 et CHF 90'720** (bornes 2025-2026).\n\n- **Déduction de coordination** : CHF 26'460\n- **Plafond obligatoire** : CHF 90'720\n- **Salaire coordonné maximal** = 90'720 − 26'460 = **CHF 64'260**\n- **Salaire coordonné minimal** : CHF 3'780\n\nLe salaire > 90'720 peut être assuré en **sur-obligatoire** (facultatif)."
   },
   {
     "id": 1329,
@@ -6517,7 +6517,7 @@
     "sub": "Prévoyance – L6",
     "d": "moyen",
     "q": "Plafonds 3a (2024) ?",
-    "a": "**Avec LPP (2e pilier)** : **CHF 7'056/an**\n**Sans LPP (indépendants)** : **20 % du revenu net** avec plafond de **CHF 35'280**\n\nCotisations entièrement déductibles du revenu imposable (art. 33 al. 1 let. e LIFD)."
+    "a": "**Avec LPP (2e pilier)** : **CHF 7'258/an** (2025-2026)\n**Sans LPP (indépendants)** : **20 % du revenu net** avec plafond de **CHF 36'288**\n\nCotisations entièrement déductibles du revenu imposable (art. 33 al. 1 let. e LIFD)."
   },
   {
     "id": 1331,
@@ -6565,7 +6565,7 @@
     "sub": "Prévoyance – L6",
     "d": "facile",
     "q": "Quelles sont les **rentes vieillesse AVS** (2024) ?",
-    "a": "**Rente annuelle minimale** : **CHF 14'700** (CHF 1'225/mois)\n**Rente annuelle maximale** : **CHF 29'400** (CHF 2'450/mois)\n\nRente pour **couple marié** = rente simple majorée de **50 %** (plafond adapté).\n\n⚠️ 100 % imposable au revenu (art. 22 al. 1 LIFD)."
+    "a": "**Rente annuelle minimale** : **CHF 15'120** (CHF 1'260/mois, 2025-2026)\n**Rente annuelle maximale** : **CHF 30'240** (CHF 2'520/mois, 2025-2026)\n\nRente pour **couple marié** = rente simple majorée de **50 %** (plafond adapté).\n\n⚠️ 100 % imposable au revenu (art. 22 al. 1 LIFD)."
   },
   {
     "id": 1337,
@@ -8101,7 +8101,7 @@
     "sub": "Autres impôts – L14",
     "d": "moyen",
     "q": "Quel est le **capital propre imposable** d'une SA (art. 29 al. 2 LHID) ?",
-    "a": "**Capital propre = :\n- **Capital-actions** ou capital social libéré\n- **Réserves ouvertes** (légales, générales, statutaires)\n- **Réserves latentes** constituées au moyen de **bénéfices imposés**\n\n**+ Capital propre dissimulé** (art. 29a LHID) :\nPart de **fonds étrangers économiquement assimilable au capital propre** (prêt d'actionnaire excessif, etc.).\n\n⚠️ Les **pertes reportées** réduisent le capital propre imposable."
+    "a": "**Capital propre** = :\n- **Capital-actions** ou capital social libéré\n- **Réserves ouvertes** (légales, générales, statutaires)\n- **Réserves latentes** constituées au moyen de **bénéfices imposés**\n\n**+ Capital propre dissimulé** (art. 29a LHID) :\nPart de **fonds étrangers économiquement assimilable au capital propre** (prêt d'actionnaire excessif, etc.).\n\n⚠️ Les **pertes reportées** réduisent le capital propre imposable."
   },
   {
     "id": 1531,
@@ -8478,14 +8478,6 @@
     "d": "moyen",
     "q": "Quels sont les **5 principes fondamentaux** du code de déontologie IESBA/EXPERTsuisse ?",
     "a": "**1. INTÉGRITÉ** — loyauté, franchise, sincérité\n\n**2. OBJECTIVITÉ** — pas de préjugés ni conflits d'intérêts\n\n**3. COMPÉTENCE ET DILIGENCE** — maintenir les compétences (**CPD 120h/3 ans**), respecter les normes\n\n**4. CONFIDENTIALITÉ** — secret professionnel absolu (CO 321a al. 4 + CO 398 + CP 162)\n\n**5. COMPORTEMENT PROFESSIONNEL** — respect des lois, pas de discrédit à la profession\n\nLe code EXPERTsuisse est aligné sur le **Code IESBA** (International Ethics Standards Board for Accountants)."
-  },
-  {
-    "id": 1578,
-    "cat": "Expert suisse",
-    "sub": "Cursus – M1L1",
-    "d": "moyen",
-    "q": "Quelles sont les **5 menaces** à l'indépendance selon IESBA ?",
-    "a": "**1. Intérêt personnel** (self-interest) : participation financière, honoraires élevés\n\n**2. Auto-révision** (self-review) : réviser sa propre prestation (ex. : tenue de compta + audit)\n\n**3. Représentation** (advocacy) : promouvoir la position du client (lobbying, marketing)\n\n**4. Familiarité** (familiarity) : relation trop longue, amicale ou familiale avec le client\n\n**5. Intimidation** (intimidation) : pressions du client (menaces contractuelles, procès)\n\n**Parades** : rotation, équipes étanches, sauvegardes organisationnelles, refus du mandat."
   },
   {
     "id": 1579,
@@ -9137,7 +9129,7 @@
   },
   {
     "id": 1825,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "facile",
     "q": "Quels sont les **3 objectifs** d'un SCI selon COSO ?",
@@ -9145,7 +9137,7 @@
   },
   {
     "id": 1826,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "moyen",
     "q": "Quel article du CO impose la vérification de l'existence d'un SCI ?",
@@ -9153,7 +9145,7 @@
   },
   {
     "id": 1827,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "moyen",
     "q": "Quelles sont les **5 composantes** du cadre COSO 2013 ?",
@@ -9161,7 +9153,7 @@
   },
   {
     "id": 1828,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "moyen",
     "q": "Quelle est la différence entre COSO **Internal Control** et COSO **ERM** ?",
@@ -9169,7 +9161,7 @@
   },
   {
     "id": 1829,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "difficile",
     "q": "Qu'est-ce que l'**environnement de contrôle** et pourquoi est-il fondamental ?",
@@ -9177,7 +9169,7 @@
   },
   {
     "id": 1830,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "moyen",
     "q": "Que sont les **ITGC** (IT General Controls) ?",
@@ -9185,7 +9177,7 @@
   },
   {
     "id": 1831,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "difficile",
     "q": "Qu'est-ce que la **séparation des tâches** (SoD) et quelles 4 fonctions séparer ?",
@@ -9193,7 +9185,7 @@
   },
   {
     "id": 1832,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "moyen",
     "q": "Quels sont les **principaux cycles transactionnels** d'une entité ?",
@@ -9201,7 +9193,7 @@
   },
   {
     "id": 1833,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "difficile",
     "q": "Qu'est-ce que le **3-way matching** dans le cycle achats ?",
@@ -9209,7 +9201,7 @@
   },
   {
     "id": 1834,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "moyen",
     "q": "Quels sont les **3 lignes de défense** dans une organisation ?",
@@ -9217,7 +9209,7 @@
   },
   {
     "id": 1835,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "moyen",
     "q": "Quelles sont les **4 méthodes** de test des contrôles ?",
@@ -9225,7 +9217,7 @@
   },
   {
     "id": 1836,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "moyen",
     "q": "Quelles sont les **limites inhérentes** d'un SCI ?",
@@ -9233,7 +9225,7 @@
   },
   {
     "id": 1837,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "difficile",
     "q": "Quelle est la différence entre contrôles **préventifs** et **détectifs** ?",
@@ -9241,7 +9233,7 @@
   },
   {
     "id": 1838,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "moyen",
     "q": "Que contient un **walkthrough** ?",
@@ -9249,7 +9241,7 @@
   },
   {
     "id": 1839,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "piège",
     "q": "Une PME a 8 employés et un seul comptable qui fait tout. Comment auditer ?",
@@ -9257,7 +9249,7 @@
   },
   {
     "id": 1840,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "moyen",
     "q": "Quels sont les **risques typiques** du cycle ventes/créances ?",
@@ -9265,7 +9257,7 @@
   },
   {
     "id": 1841,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "difficile",
     "q": "Combien de **principes COSO 2013** y a-t-il et comment sont-ils répartis ?",
@@ -9273,7 +9265,7 @@
   },
   {
     "id": 1842,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "moyen",
     "q": "Quelle est la différence entre **monitoring continu** et **ponctuel** ?",
@@ -9281,7 +9273,7 @@
   },
   {
     "id": 1843,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "moyen",
     "q": "Quel est le rôle du **comité d'audit** dans le SCI ?",
@@ -9289,7 +9281,7 @@
   },
   {
     "id": 1844,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "SCI / COSO – M2L6",
     "d": "piège",
     "q": "L'auditeur peut-il s'appuyer à 100% sur le SCI pour réduire ses procédures substantives ?",
@@ -9297,7 +9289,7 @@
   },
   {
     "id": 1845,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "facile",
     "q": "Quels sont les **2 critères de qualité** des éléments probants (ISA 500) ?",
@@ -9305,7 +9297,7 @@
   },
   {
     "id": 1846,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "moyen",
     "q": "Quelles sont les **7 procédures d'audit** pour obtenir des preuves ?",
@@ -9313,7 +9305,7 @@
   },
   {
     "id": 1847,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "difficile",
     "q": "Quelle est la différence entre **confirmation positive** et **négative** ?",
@@ -9321,7 +9313,7 @@
   },
   {
     "id": 1848,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "moyen",
     "q": "Décris le processus d'envoi correct d'une **confirmation externe** (ISA 505).",
@@ -9329,7 +9321,7 @@
   },
   {
     "id": 1849,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "moyen",
     "q": "Quand les **procédures analytiques** sont-elles obligatoires (ISA 520) ?",
@@ -9337,7 +9329,7 @@
   },
   {
     "id": 1850,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "difficile",
     "q": "Quelles sont les **3 approches d'audit** pour une estimation comptable (ISA 540) ?",
@@ -9345,7 +9337,7 @@
   },
   {
     "id": 1851,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "moyen",
     "q": "Qu'est-ce que le **Going Concern** et quelle période minimale couvre-t-il ?",
@@ -9353,7 +9345,7 @@
   },
   {
     "id": 1852,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "difficile",
     "q": "Quel impact sur le rapport d'audit selon la situation Going Concern ?",
@@ -9361,7 +9353,7 @@
   },
   {
     "id": 1853,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "moyen",
     "q": "Quelle est la différence entre événement postérieur **ajustant** et **non-ajustant** ?",
@@ -9369,7 +9361,7 @@
   },
   {
     "id": 1854,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "moyen",
     "q": "Quelles sont les **3 périodes** d'événements postérieurs (ISA 560) ?",
@@ -9377,7 +9369,7 @@
   },
   {
     "id": 1855,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "moyen",
     "q": "Que doit contenir une **lettre d'affirmation** (ISA 580) ?",
@@ -9385,7 +9377,7 @@
   },
   {
     "id": 1856,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "piège",
     "q": "La direction refuse de signer la **lettre d'affirmation**. Conséquence ?",
@@ -9393,7 +9385,7 @@
   },
   {
     "id": 1857,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "difficile",
     "q": "Quel est le rôle du **scepticisme professionnel** lors de l'évaluation des estimations comptables ?",
@@ -9401,7 +9393,7 @@
   },
   {
     "id": 1858,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "moyen",
     "q": "Quelles **procédures d'audit obligatoires** pour les événements postérieurs ?",
@@ -9409,7 +9401,7 @@
   },
   {
     "id": 1859,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "moyen",
     "q": "Quels **ratios d'analyse** sont les plus utilisés dans les procédures analytiques ?",
@@ -9417,7 +9409,7 @@
   },
   {
     "id": 1860,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "piège",
     "q": "Une banque ne répond pas à la confirmation. Que faire ?",
@@ -9425,7 +9417,7 @@
   },
   {
     "id": 1861,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "difficile",
     "q": "Comment l'auditeur teste-t-il la **provision pour dépréciation des créances clients** ?",
@@ -9433,7 +9425,7 @@
   },
   {
     "id": 1862,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "moyen",
     "q": "Quels sont les **indicateurs de doute** pour le Going Concern ?",
@@ -9441,7 +9433,7 @@
   },
   {
     "id": 1863,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "moyen",
     "q": "Pourquoi les confirmations bancaires sont-elles **systématiques** ?",
@@ -9449,7 +9441,7 @@
   },
   {
     "id": 1864,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éléments probants – M2L7",
     "d": "difficile",
     "q": "Calcul — taille d'échantillon pour confirmer 200 créances clients (RAS moyen, tolérance 20k, 50k de matérialité). Approximatif ?",
@@ -9457,7 +9449,7 @@
   },
   {
     "id": 1865,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Matérialité – M2L8",
     "d": "facile",
     "q": "Qu'est-ce que la **matérialité** (ISA 320) ?",
@@ -9465,7 +9457,7 @@
   },
   {
     "id": 1866,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Matérialité – M2L8",
     "d": "moyen",
     "q": "Quels sont les **3 niveaux de matérialité** dans une mission d'audit ?",
@@ -9473,7 +9465,7 @@
   },
   {
     "id": 1867,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Matérialité – M2L8",
     "d": "moyen",
     "q": "Quels sont les **repères courants** pour calculer la matérialité globale ?",
@@ -9481,7 +9473,7 @@
   },
   {
     "id": 1868,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Matérialité – M2L8",
     "d": "difficile",
     "q": "Pourquoi utiliser une **performance materiality** inférieure à la matérialité globale ?",
@@ -9489,7 +9481,7 @@
   },
   {
     "id": 1869,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Matérialité – M2L8",
     "d": "moyen",
     "q": "Quels sont les **3 types d'anomalies** selon ISA 450 ?",
@@ -9497,7 +9489,7 @@
   },
   {
     "id": 1870,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Matérialité – M2L8",
     "d": "difficile",
     "q": "Calcul — total anomalies non corrigées 280k, PM 350k, matérialité globale 500k. Action ?",
@@ -9505,7 +9497,7 @@
   },
   {
     "id": 1871,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Échantillonnage – M2L8",
     "d": "moyen",
     "q": "Pourquoi **échantillonner** plutôt que tester 100 % de la population ?",
@@ -9513,7 +9505,7 @@
   },
   {
     "id": 1872,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Échantillonnage – M2L8",
     "d": "moyen",
     "q": "Quelle est la différence entre échantillonnage **statistique** et **non-statistique** ?",
@@ -9521,7 +9513,7 @@
   },
   {
     "id": 1873,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Échantillonnage – M2L8",
     "d": "difficile",
     "q": "Qu'est-ce que la méthode **MUS** (Monetary Unit Sampling) ?",
@@ -9529,7 +9521,7 @@
   },
   {
     "id": 1874,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Échantillonnage – M2L8",
     "d": "moyen",
     "q": "Taille d'échantillon pour **tests des contrôles** selon la fréquence ?",
@@ -9537,7 +9529,7 @@
   },
   {
     "id": 1875,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Échantillonnage – M2L8",
     "d": "moyen",
     "q": "Comment l'auditeur **projette** les résultats d'un échantillonnage ?",
@@ -9545,7 +9537,7 @@
   },
   {
     "id": 1876,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Échantillonnage – M2L8",
     "d": "piège",
     "q": "Une PME a 50 factures fournisseurs/mois. Quel échantillon pour tester le contrôle « approbation » ?",
@@ -9553,7 +9545,7 @@
   },
   {
     "id": 1877,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Échantillonnage – M2L8",
     "d": "moyen",
     "q": "Quelle est la différence entre risque d'échantillonnage **alpha** et **beta** ?",
@@ -9561,7 +9553,7 @@
   },
   {
     "id": 1878,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Échantillonnage – M2L8",
     "d": "difficile",
     "q": "Que sont les **audit data analytics** (ADA) et comment changent-ils l'échantillonnage ?",
@@ -9569,7 +9561,7 @@
   },
   {
     "id": 1879,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Matérialité – M2L8",
     "d": "moyen",
     "q": "Que sont des anomalies **qualitativement significatives** ?",
@@ -9577,7 +9569,7 @@
   },
   {
     "id": 1880,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Échantillonnage – M2L8",
     "d": "moyen",
     "q": "Quelles sont les **méthodes de SÉLECTION** d'échantillon ?",
@@ -9585,7 +9577,7 @@
   },
   {
     "id": 1881,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Matérialité – M2L8",
     "d": "piège",
     "q": "Société CA 100M, RN 8M, AT 60M. Matérialité globale ?",
@@ -9593,7 +9585,7 @@
   },
   {
     "id": 1882,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Matérialité – M2L8",
     "d": "difficile",
     "q": "Quand la matérialité doit-elle être **révisée** en cours d'audit ?",
@@ -9601,7 +9593,7 @@
   },
   {
     "id": 1883,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Échantillonnage – M2L8",
     "d": "moyen",
     "q": "Une exception est trouvée dans l'échantillon. Que faire ?",
@@ -9609,7 +9601,7 @@
   },
   {
     "id": 1884,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Matérialité – M2L8",
     "d": "moyen",
     "q": "Quelle matérialité pour un test sur les **comptes consolidés** d'un groupe ?",
@@ -9617,7 +9609,7 @@
   },
   {
     "id": 1885,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "facile",
     "q": "Combien de **sections obligatoires** dans un rapport d'audit ISA 700 ?",
@@ -9625,7 +9617,7 @@
   },
   {
     "id": 1886,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "facile",
     "q": "Comment se formule une **opinion non modifiée** standard ?",
@@ -9633,7 +9625,7 @@
   },
   {
     "id": 1887,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "moyen",
     "q": "Quels sont les **4 types d'opinion** possibles selon ISA 705 ?",
@@ -9641,7 +9633,7 @@
   },
   {
     "id": 1888,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "difficile",
     "q": "Que signifie « **omniprésent** » (pervasive) selon ISA 705 ?",
@@ -9649,7 +9641,7 @@
   },
   {
     "id": 1889,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "moyen",
     "q": "Que sont les **KAM** (Key Audit Matters) — ISA 701 ?",
@@ -9657,7 +9649,7 @@
   },
   {
     "id": 1890,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "difficile",
     "q": "Quelle est la différence entre **paragraphe d'observation** (EoM) et **autre point** (OM) ?",
@@ -9665,7 +9657,7 @@
   },
   {
     "id": 1891,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "moyen",
     "q": "Combien de rapports en contrôle **ordinaire** (CO 728b) ?",
@@ -9673,7 +9665,7 @@
   },
   {
     "id": 1892,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "difficile",
     "q": "Comment l'auditeur traite le **doute Going Concern** dans le rapport ?",
@@ -9681,7 +9673,7 @@
   },
   {
     "id": 1893,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "moyen",
     "q": "Quelle est la **date du rapport** d'audit ?",
@@ -9689,7 +9681,7 @@
   },
   {
     "id": 1894,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "moyen",
     "q": "Qui **signe** le rapport d'audit en Suisse ?",
@@ -9697,7 +9689,7 @@
   },
   {
     "id": 1895,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "piège",
     "q": "Une société a un litige fiscal de 5M (matérialité 500k), correctement divulgué dans l'annexe. Quel rapport ?",
@@ -9705,7 +9697,7 @@
   },
   {
     "id": 1896,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "moyen",
     "q": "Que doit faire l'auditeur pour les **autres informations** (ISA 720) ?",
@@ -9713,7 +9705,7 @@
   },
   {
     "id": 1897,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "difficile",
     "q": "Une SA refuse de constituer une provision pour litige de 800k (matérialité 500k). Opinion ?",
@@ -9721,7 +9713,7 @@
   },
   {
     "id": 1898,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "moyen",
     "q": "Quelles sont les **2 approches** pour les comparatifs (ISA 710) ?",
@@ -9729,7 +9721,7 @@
   },
   {
     "id": 1899,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "difficile",
     "q": "L'auditeur découvre une erreur 1 mois APRÈS publication des EF. Que faire ?",
@@ -9737,7 +9729,7 @@
   },
   {
     "id": 1900,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "moyen",
     "q": "Quelles sont les responsabilités décrites dans le rapport ISA 700 ?",
@@ -9745,7 +9737,7 @@
   },
   {
     "id": 1901,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "moyen",
     "q": "Que vérifie l'auditeur sur le **SCI** en contrôle ordinaire ?",
@@ -9753,7 +9745,7 @@
   },
   {
     "id": 1902,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "moyen",
     "q": "Pourquoi les KAM ont été introduits en 2015 ?",
@@ -9761,7 +9753,7 @@
   },
   {
     "id": 1903,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "moyen",
     "q": "Quels sont les **6 étapes critiques** avant de pouvoir DATER le rapport ?",
@@ -9769,7 +9761,7 @@
   },
   {
     "id": 1904,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Rapport audit – M2L9",
     "d": "piège",
     "q": "Un client refuse l'EQR. L'auditeur peut-il quand même émettre son rapport ?",
@@ -9777,7 +9769,7 @@
   },
   {
     "id": 1905,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "facile",
     "q": "Quelle est la différence entre **erreur** et **fraude** en audit ?",
@@ -9785,7 +9777,7 @@
   },
   {
     "id": 1906,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "moyen",
     "q": "Quel est le **Triangle de Cressey** (Fraud Triangle) ?",
@@ -9793,7 +9785,7 @@
   },
   {
     "id": 1907,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "difficile",
     "q": "Quels sont les **2 risques de fraude TOUJOURS présumés** par l'ISA 240 ?",
@@ -9801,7 +9793,7 @@
   },
   {
     "id": 1908,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "moyen",
     "q": "Qu'est-ce que le **Journal Entry Testing** (JET) et que cherche-t-on ?",
@@ -9809,7 +9801,7 @@
   },
   {
     "id": 1909,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "moyen",
     "q": "Qu'est-ce que le **NOCLAR** (ISA 250) ?",
@@ -9817,7 +9809,7 @@
   },
   {
     "id": 1910,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "facile",
     "q": "Quels sont les **5 principes** du Code IESBA ?",
@@ -9825,7 +9817,7 @@
   },
   {
     "id": 1911,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "moyen",
     "q": "Quelles sont les **5 menaces** à l'indépendance selon IESBA ?",
@@ -9833,7 +9825,7 @@
   },
   {
     "id": 1912,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "difficile",
     "q": "Que dit la **LBA** (Loi sur le blanchiment, RS 955.0) ?",
@@ -9841,7 +9833,7 @@
   },
   {
     "id": 1913,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "moyen",
     "q": "Quels sont les **4 types de responsabilité** d'un auditeur en Suisse ?",
@@ -9849,7 +9841,7 @@
   },
   {
     "id": 1914,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "moyen",
     "q": "L'auditeur découvre une **fraude majeure** par la direction. Que faire ?",
@@ -9857,7 +9849,7 @@
   },
   {
     "id": 1915,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "moyen",
     "q": "Quelle est la différence entre **fraude EF** et **détournement d'actifs** ?",
@@ -9865,7 +9857,7 @@
   },
   {
     "id": 1916,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "difficile",
     "q": "Quelles **sauvegardes** pour réduire les menaces à l'indépendance ?",
@@ -9873,7 +9865,7 @@
   },
   {
     "id": 1917,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "moyen",
     "q": "Que dit le **standard NOCLAR** de l'IESBA (2017) ?",
@@ -9881,7 +9873,7 @@
   },
   {
     "id": 1918,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "piège",
     "q": "L'auditeur découvre que le CFO modifie les écritures de fin de période. Catégorie de risque ?",
@@ -9889,7 +9881,7 @@
   },
   {
     "id": 1919,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "moyen",
     "q": "Que doit faire l'auditeur en cas de **soupçon fondé** de blanchiment ?",
@@ -9897,7 +9889,7 @@
   },
   {
     "id": 1920,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "moyen",
     "q": "Quelle est la **durée de prescription** de la responsabilité civile de l'organe de révision ?",
@@ -9905,7 +9897,7 @@
   },
   {
     "id": 1921,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "difficile",
     "q": "Quel est le risque **ALPHA** vs **BETA** appliqué à la fraude ?",
@@ -9913,7 +9905,7 @@
   },
   {
     "id": 1922,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "moyen",
     "q": "Combien d'heures de **formation continue** sont obligatoires (en Suisse) ?",
@@ -9921,7 +9913,7 @@
   },
   {
     "id": 1923,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "moyen",
     "q": "Quelle est la différence entre **levée du secret professionnel** par consentement et par obligation légale ?",
@@ -9929,7 +9921,7 @@
   },
   {
     "id": 1924,
-    "cat": "Audit",
+    "cat": "Audit / ISA",
     "sub": "Éthique & Fraude – M2L10",
     "d": "piège",
     "q": "Le client offre des places de finale UEFA à l'équipe d'audit. Acceptable ?",

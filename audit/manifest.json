@@ -1,9 +1,9 @@
 {
   "_meta": {
     "projet": "Base de cours Audit — Vincent Baldy",
-    "version": "0.1.0-structure",
+    "version": "1.0.0",
     "date": "2026-05-19",
-    "statut": "Structure seule — fiches a rediger",
+    "statut": "Complet — 54 fiches rédigées (MSA contrôle ordinaire + NCR contrôle restreint)",
     "ancres_standard": [
       "concept-cle", "importance", "cadre-legal", "demarche",
       "exemple", "pieges", "auto-test", "liens"

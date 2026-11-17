@@ -4,7 +4,7 @@ Plan **strictement identique** à la structure officielle du **MSA 2016**
 (Tome « Contrôle ordinaire », EXPERTsuisse — table des matières pp. 7–23).
 Toute la hiérarchie Parties → chapitres → sous-chapitres est reprise.
 Les liens pointent vers la fiche correspondante (les sous-chapitres sont
-des ancres à l'intérieur de la fiche). Statut : 🔴 à rédiger.
+des ancres à l'intérieur de la fiche). Statut : ✅ toutes les fiches sont rédigées.
 
 ---
 

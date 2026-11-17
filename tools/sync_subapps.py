@@ -17,8 +17,7 @@ Usage (depuis la racine du dépôt) :
   python3 tools/sync_subapps.py --write audit conso   # seulement ces apps
 
 Données SANS source dans le dépôt (éditer directement dans index.html) :
-  audit   : __PLAN_COMPTABLE__, __NESTLE__ (data/nestle_fs.json est une
-            ANCIENNE version à 5 états, l'app en a 23), __TESTS__, __JOURNAL__
+  audit   : __PLAN_COMPTABLE__, __NESTLE__ (23 états et notes), __TESTS__, __JOURNAL__
   podcasts: groupes M2 et M4 (seul le groupe ISA+ vient de data/podcasts_extra.json)
   social  : __SOCIAL__ entier
 L'outil conserve ces blocs tels quels.
