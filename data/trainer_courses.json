@@ -2238,7 +2238,7 @@
               "options": [
                 "Tout au bilan, comme pour le preneur",
                 "Suppression totale de la distinction",
-                "La distinction financement/exploitation demeure",
+                "La distinction demeure",
                 "Le passage au modèle de la juste valeur"
               ],
               "answer": 2,
@@ -4528,8 +4528,8 @@
               "options": [
                 "En passif",
                 "Hors bilan",
-                "Au choix de l'entité",
-                "En capitaux propres, ligne distincte"
+                "Au choix de l'entité, selon sa politique",
+                "En capitaux propres, à part"
               ],
               "answer": 3,
               "explanation": "IAS 1.54(q) : intérêts minoritaires = composante des capitaux propres, présentés séparément de la part attribuable à la mère."
@@ -4643,9 +4643,9 @@
               "question": "Quel élément est OBLIGATOIREMENT à décrire en tant que 'source d'incertitude d'estimation' ?",
               "options": [
                 "Le nom du directeur financier",
-                "Les hypothèses clés et leur sensibilité",
+                "Hypothèses clés et sensibilités",
                 "L'historique des dividendes versés",
-                "Le plan stratégique"
+                "Le plan stratégique à cinq ans du groupe"
               ],
               "answer": 1,
               "explanation": "IAS 1.125 : hypothèses majeures pouvant conduire à un ajustement matériel l'exercice suivant. Quantification et sensibilités encouragées."
@@ -4726,10 +4726,10 @@
               "type": "mcq",
               "question": "Découvert bancaire continu (toujours négatif). Classification ?",
               "options": [
-                "Trésorerie s'il fait partie de la gestion de trésorerie",
+                "Trésorerie si géré comme tel",
                 "Toujours en trésorerie, quelle que soit sa nature",
                 "Toujours en activités de financement",
-                "Hors tableau"
+                "Hors du tableau de flux"
               ],
               "answer": 0,
               "explanation": "IAS 7.8 : inclusion dans la trésorerie seulement si remboursable à vue ET fluctue entre positif et négatif (gestion intégrée). Si dette permanente → financement."
@@ -4789,8 +4789,8 @@
               "type": "mcq",
               "question": "Une plus-value de cession d'immobilisation de 50 figure dans le résultat. Impact flux exploitation (indirecte) ?",
               "options": [
-                "Aucun impact",
-                "La soustraire (flux d'investissement)",
+                "Aucun impact sur le flux",
+                "La soustraire",
                 "L'ajouter au résultat",
                 "La doubler"
               ],
@@ -4918,9 +4918,9 @@
               "question": "Audit : la trésorerie au bilan clôture ne correspond pas au total des flux + ouverture. Cause fréquente ?",
               "options": [
                 "Une simple erreur d'addition",
-                "L'effet de change sur la trésorerie",
+                "L'effet de change",
                 "Un décalage d'un jour de valeur",
-                "Fraude obligatoire"
+                "Une fraude, obligatoirement"
               ],
               "answer": 1,
               "explanation": "L'effet de change sur la trésorerie libellée en devises doit être présenté séparément. Oubli = décalage à l'arrivée. Cas classique en groupe multidevise."
@@ -5118,8 +5118,8 @@
               "question": "Une société passe d'un calcul d'ECL 'simple' à un modèle forward-looking sophistiqué. Traitement ?",
               "options": [
                 "Changement de méthode rétrospectif",
-                "Changement d'estimation (prospectif)",
-                "Erreur à corriger",
+                "Changement d'estimation",
+                "Une erreur à corriger rétrospectivement",
                 "Retraitement obligatoire sur 5 ans"
               ],
               "answer": 1,
@@ -5164,9 +5164,9 @@
               "question": "Découverte en N+1 que les stocks au 31.12.N avaient été surévalués de 500k (erreur de calcul, info disponible à l'époque). Matériel. Traitement ?",
               "options": [
                 "Un ajustement en charges de l'exercice N+1",
-                "Provision en N+1",
+                "Une provision pour stocks constituée en N+1",
                 "Ignorer",
-                "Retraitement rétrospectif (correction d'erreur)"
+                "Retraitement rétrospectif"
               ],
               "answer": 3,
               "explanation": "Erreur matérielle d'une période antérieure → retraitement rétrospectif. Stocks et résultat N corrigés dans les comparatifs. Disclosure complet."
@@ -5521,8 +5521,8 @@
               "options": [
                 "La monnaie du siège juridique",
                 "La monnaie utilisée en trésorerie",
-                "Monnaie du rapport annuel",
-                "Celle qui influence les prix de vente"
+                "La monnaie du rapport annuel du groupe",
+                "Celle des prix de vente"
               ],
               "answer": 3,
               "explanation": "IAS 21.9 : indicateur primaire = monnaie influençant les prix de vente et les coûts principaux. Les autres sont secondaires."
@@ -5649,8 +5649,8 @@
               "options": [
                 "Au cours de clôture",
                 "Au cours historique",
-                "Au cours moyen (ou de transaction)",
-                "Au cours spot du 1er janvier"
+                "Au cours moyen",
+                "Au cours spot du 1er janvier de l'exercice"
               ],
               "answer": 2,
               "explanation": "Idéalement cours de transaction, en pratique cours moyen si approximation raisonnable. Le cours de clôture ne s'applique qu'au bilan."
@@ -5659,8 +5659,8 @@
               "type": "mcq",
               "question": "Cession partielle d'une filiale étrangère SANS perte de contrôle (passage de 80 % à 70 %). CTA accumulé = CHF 500. Recyclage ?",
               "options": [
-                "Recyclage total de 500 en résultat",
-                "Aucun recyclage — le CTA reste en KP et est transféré aux NCI",
+                "Recyclage de 50 % du CTA en résultat au prorata de la cession",
+                "Pas de recyclage : CTA attribué aux NCI",
                 "Recyclage partiel au prorata (62.5)",
                 "Recyclage en OCI"
               ],
@@ -5671,10 +5671,10 @@
               "type": "mcq",
               "question": "Méthode de conversion du bilan d'une filiale étrangère pour la consolidation ?",
               "options": [
-                "Cours de clôture pour tous postes",
+                "Le cours de clôture pour tous les postes, y compris le compte de résultat",
                 "Cours moyen uniquement",
                 "Cours historique uniquement",
-                "Bilan au cours de CLÔTURE ; P&L au cours de TRANSACTION (ou moyen) ; capital/réserves historiques"
+                "Bilan au cours de clôture, résultat au cours moyen"
               ],
               "answer": 3,
               "explanation": "IAS 21.39 : méthode du cours de clôture. Bilan au cours de clôture. P&L au cours moyen (proxy cours de transaction). Capital/réserves au cours historique. Écarts → OCI (réserve de conversion)."
@@ -5700,8 +5700,8 @@
               "question": "Acompte versé à un fournisseur étranger 10'000 USD le 01.03 (cours 0.90 CHF/USD). Bien livré le 01.06 (cours 0.92), facturé 10'000 USD. Valeur du stock ?",
               "options": [
                 "9'200 CHF (cours de livraison)",
-                "9'100 CHF (moyenne)",
-                "9'000 CHF (cours d'acompte, IFRIC 22)",
+                "9'100 CHF (cours moyen)",
+                "9'000 CHF (IFRIC 22)",
                 "Selon la politique comptable"
               ],
               "answer": 2,
@@ -5717,10 +5717,10 @@
               "type": "mcq",
               "question": "Disclosure IAS 21 obligatoire ?",
               "options": [
-                "Identité de tous les salariés multi-pays",
+                "L'identité de tous les salariés travaillant dans plusieurs pays",
                 "Liste des opérations en devise",
                 "Cours historiques de chaque transaction",
-                "Montant des écarts de change en résultat + mouvements de la réserve de conversion"
+                "Écarts de change en résultat et réserve de conversion"
               ],
               "answer": 3,
               "explanation": "IAS 21.52 : montants des écarts en résultat et nets en OCI (mouvements de la réserve). Les autres ne sont pas requis au niveau individuel."
@@ -5730,8 +5730,8 @@
               "question": "Un acompte versé en USD le 01/03 (cours 0.90). Livraison le 01/09 (cours 0.95). Quel cours appliquer pour la transaction ?",
               "options": [
                 "0.95 (cours de livraison)",
-                "0.90 (cours de l'acompte — IFRIC 22)",
-                "Moyenne",
+                "0.90 (acompte, IFRIC 22)",
+                "Moyenne des deux cours",
                 "Cours de clôture"
               ],
               "answer": 1,
@@ -5772,8 +5772,8 @@
               "type": "mcq",
               "question": "Société détient un immeuble : 70 % loué à des tiers, 30 % occupé par ses services administratifs. Parties séparables juridiquement. Classification ?",
               "options": [
-                "Tout en IAS 40",
-                "Tout en IAS 16",
+                "Tout en IAS 16 (immeuble d'exploitation)",
+                "Tout en IAS 40 (majorité louée)",
                 "Scission : 70 % IAS 40, 30 % IAS 16",
                 "Au choix"
               ],
@@ -5790,10 +5790,10 @@
               "type": "mcq",
               "question": "Terrain acquis sans affectation précise. Classification IAS 40 ?",
               "options": [
-                "IAS 16",
-                "Oui, par défaut (potentielle plus-value)",
-                "Stock",
-                "Actif financier"
+                "Non, en IAS 16",
+                "Oui, par défaut",
+                "Non, en stocks",
+                "Non, en actif financier"
               ],
               "answer": 1,
               "explanation": "IAS 40.8(b) : terrain sans usage déterminé = présumé détenu pour plus-value → immeuble de placement. S'il devient destiné à un usage propre, reclassement IAS 16."
@@ -5802,10 +5802,10 @@
               "type": "mcq",
               "question": "Un immeuble loué à 70 % à des tiers (location) et 30 % occupé par l'entité. Classement ?",
               "options": [
-                "IAS 16 (usage de l'entité)",
-                "IAS 40 pour tout",
+                "Toujours en IAS 16, l'entité occupant une partie de l'immeuble",
+                "Toujours en IAS 40, la majorité de la surface étant louée à des tiers",
                 "Choix libre",
-                "Scinder si les parts sont séparément vendables ; sinon IAS 40 si usage propre insignifiant"
+                "Scinder si séparable, sinon IAS 40 si usage propre minime"
               ],
               "answer": 3,
               "explanation": "IAS 40.10 : scinder si les portions sont vendables séparément (ex : copropriété). Sinon, IAS 40 pour l'ensemble SAUF si la portion usage propre est significative. Jugement matériel attendu."
@@ -5854,21 +5854,21 @@
               "type": "mcq",
               "question": "Immeuble IAS 16 (VNC 8 M, réévalué auparavant avec écart 1 M en OCI) → IAS 40 modèle JV. JV à la date du transfert : 10 M. Traitement ?",
               "options": [
-                "+1 M en OCI (jusqu'à épuisement de la réserve), +1 M en résultat",
-                "+2 M en résultat",
                 "+2 M en OCI",
-                "Rien, transfert à la VNC"
+                "+2 M en résultat",
+                "+1 M en OCI, puis +1 M en résultat",
+                "Rien : le transfert se fait à la valeur comptable"
               ],
               "answer": 0,
-              "explanation": "IAS 40.61-62 : écart complète l'OCI existant, excès en résultat. OCI existait : +1 M complété en OCI. Au-delà : +1 M en résultat."
+              "explanation": "IAS 40.61-62 : lors du transfert d'un immeuble occupé (IAS 16) vers IAS 40 à la juste valeur, l'écart est traité comme une réévaluation IAS 16. Une HAUSSE va en résultat seulement dans la mesure où elle annule une perte de valeur antérieure, le solde en OCI (réserve de réévaluation). Ici, aucune dépréciation antérieure : +2 M en OCI. Une BAISSE irait en résultat, sauf à concurrence d'une réserve de réévaluation existante (imputée en OCI)."
             },
             {
               "type": "mcq",
               "question": "Modèle de la JV IAS 40 : variation de juste valeur de +500. Impact ?",
               "options": [
-                "OCI (comme IAS 16)",
-                "Capitaux propres directement",
-                "Résultat (différence clé avec IAS 16 modèle de réévaluation)",
+                "En OCI, comme une réévaluation IAS 16",
+                "Directement en capitaux propres",
+                "En résultat (contrairement à IAS 16)",
                 "Étalée sur la durée résiduelle"
               ],
               "answer": 2,
@@ -5900,9 +5900,9 @@
               "type": "mcq",
               "question": "Méthode principale d'évaluation d'un immeuble de placement en modèle JV ?",
               "options": [
-                "Capitalisation des flux futurs / comparables de marché (IFRS 13)",
+                "Revenus capitalisés ou comparables",
                 "Coût de remplacement",
-                "Valeur d'acquisition majorée de l'inflation",
+                "La valeur d'acquisition majorée de l'indice des prix à la construction",
                 "Au choix de la direction sans justification"
               ],
               "answer": 0,
@@ -5918,8 +5918,8 @@
               "type": "mcq",
               "question": "Un immeuble en cours de construction destiné à devenir immeuble de placement, JV non mesurable de façon fiable actuellement. Classification ?",
               "options": [
-                "IAS 40 avec modèle du coût jusqu'à ce que la JV devienne fiable",
-                "IAS 16 jusqu'à l'achèvement",
+                "IAS 40 au coût, jusqu'à ce que la JV soit fiable",
+                "IAS 16 jusqu'à l'achèvement, puis transfert à IAS 40 à la juste valeur",
                 "IAS 2",
                 "Hors bilan"
               ],
@@ -5937,8 +5937,8 @@
               "question": "Un immeuble de placement évalué au modèle JV subit-il un test de dépréciation IAS 36 séparé ?",
               "options": [
                 "Oui, comme tout actif",
-                "Test uniquement si indice majeur",
-                "Non, la variation de JV capte déjà toute dépréciation",
+                "Un test unique au niveau de l'ensemble du portefeuille",
+                "Non, la JV intègre toute baisse",
                 "Au choix"
               ],
               "answer": 2,
@@ -5994,10 +5994,10 @@
               "type": "mcq",
               "question": "Transfert d'un immeuble d'IAS 16 (usage propre) vers IAS 40 (modèle JV). Traitement de l'écart entre VNC et JV ?",
               "options": [
-                "En OCI (comme une réévaluation IAS 16) jusqu'à épuisement, puis résultat",
+                "Comme une réévaluation IAS 16 (hausse en OCI)",
                 "En résultat",
                 "Ignoré",
-                "Amortissement prospectif"
+                "Un amortissement prospectif de l'écart sur la durée résiduelle"
               ],
               "answer": 0,
               "explanation": "IAS 40.61 : transfert IAS 16 → IAS 40 (JV), l'écart = réévaluation IAS 16 traitée en OCI. Au moment du transfert, pas de recyclage. Par la suite, les variations futures passent en résultat (modèle JV)."
@@ -6006,9 +6006,9 @@
               "type": "mcq",
               "question": "Disclosure OBLIGATOIRE si l'entité utilise le modèle du COÛT pour ses immeubles de placement ?",
               "options": [
-                "Juste valeur divulguée en annexe + méthodes d'évaluation",
+                "La juste valeur en annexe et la méthode",
                 "Rien de spécial",
-                "Taux d'amortissement uniquement",
+                "Le taux d'amortissement fiscal admis par l'administration",
                 "Aucune disclosure"
               ],
               "answer": 0,
@@ -6043,9 +6043,9 @@
               "type": "mcq",
               "question": "Immeuble d'usage reclassé HFS fin N. L'entreprise souhaite le rénover avant de vendre. Conforme ?",
               "options": [
-                "Oui, classement HFS immédiat",
-                "Oui si rénovation < 6 mois",
-                "Non, l'actif n'est pas disponible dans son état actuel",
+                "Oui, classement HFS immédiat dès la décision",
+                "Oui, si la vente intervient dans les 12 mois",
+                "Non : pas disponible en l'état",
                 "HFS partiel"
               ],
               "answer": 2,
@@ -6061,10 +6061,10 @@
               "type": "mcq",
               "question": "Classement HFS abandonné car le marché s'est dégradé. Traitement ?",
               "options": [
-                "Reclassification à la catégorie d'origine, évaluée au plus bas de VNC ajustée et valeur recouvrable",
+                "Reclassé, au plus bas de la VNC ajustée et de la VR",
                 "Maintien en HFS",
                 "Charge totale",
-                "Profit immédiat"
+                "Une dépréciation intégrale de l'actif, le marché s'étant dégradé"
               ],
               "answer": 0,
               "explanation": "IFRS 5.26-28 : reclassification à l'origine. Si amortissement aurait continué, ajuster la VNC. Comparer à la valeur recouvrable IAS 36."
@@ -6108,9 +6108,9 @@
               "question": "Actif VNC 500 reclassé HFS. JVN−CV 450. Après 3 mois, JVN−CV remonte à 470. Évaluation à la clôture ?",
               "options": [
                 "500 (VNC)",
-                "450 (perte initiale seulement)",
-                "470 (reprise partielle plafonnée aux pertes antérieures)",
-                "480"
+                "450 (perte maintenue, sans reprise)",
+                "470 (reprise plafonnée)",
+                "500 (retour à la VNC initiale)"
               ],
               "answer": 2,
               "explanation": "IFRS 5.21 : reprise possible jusqu'à la VNC avant HFS. 500 − 450 = 50 de perte initiale. Reprise 20 (de 450 à 470). Plafonnée à 50 : OK, 470 reconnu."
@@ -6125,10 +6125,10 @@
               "type": "mcq",
               "question": "Groupe à céder : actifs 800, passifs 200, goodwill 50. JVN−CV 560. Traitement ?",
               "options": [
-                "Dépréciation 40 sur le goodwill, ajusté à 10",
-                "Dépréciation 90 imputée au prorata",
-                "Pas de dépréciation",
-                "Perte immédiate"
+                "Perte de 90 : goodwill à 0, puis 40",
+                "Perte de 90, répartie au prorata de tous les actifs",
+                "Aucune dépréciation n'est nécessaire, la JV couvrant le net",
+                "Perte de 40 imputée au goodwill (ramené à 10)"
               ],
               "answer": 0,
               "explanation": "VNC nette = 800 − 200 + 50 = 650. JVN−CV 560 → dépréciation 90. Imputation prioritaire sur goodwill : 50 absorbés, solde 40 au prorata sur les autres actifs. Goodwill à 0."
@@ -6171,9 +6171,9 @@
               "type": "mcq",
               "question": "Société cède sa division R&D en octobre N. Cette division représente 10 % du CA. Classement en activité abandonnée ?",
               "options": [
-                "Automatiquement",
-                "Uniquement si c'est une ligne d'activité majeure, un secteur géographique ou acquis pour revente",
-                "Jamais (trop petit)",
+                "Oui, dès que la division représente au moins 5 % du chiffre d'affaires",
+                "Si c'est une ligne d'activité majeure (ou zone, ou revente)",
+                "Non, jamais pour une division de recherche et développement interne",
                 "Au choix"
               ],
               "answer": 1,
@@ -6189,9 +6189,9 @@
               "type": "mcq",
               "question": "Présentation au P&L des activités abandonnées ?",
               "options": [
-                "Ventilation complète poste par poste",
+                "Une ventilation complète, poste par poste, dans le compte de résultat",
                 "Hors bilan",
-                "Une ligne unique (résultat net après impôt incluant gain/perte de cession)",
+                "Une ligne unique, après impôt",
                 "En OCI"
               ],
               "answer": 2,
@@ -6201,10 +6201,10 @@
               "type": "mcq",
               "question": "Quelle condition est requise pour qualifier une composante d'ACTIVITÉ ABANDONNÉE ?",
               "options": [
-                "Simple cession d'actif ≥ 10 % de l'ANC",
+                "Une simple cession d'actifs isolés, quel que soit leur montant",
                 "Cession > 50 % des revenus consolidés",
                 "Toutes les cessions HFS sont des activités abandonnées",
-                "Ligne d'activité majeure ou zone géographique MAJEURE, OU filiale acquise en vue d'une revente"
+                "Activité ou zone majeure, ou filiale acquise pour revente"
               ],
               "answer": 3,
               "explanation": "IFRS 5.32 : activité abandonnée = composante = ligne d'activité/zone géo MAJEURE OU filiale acquise en vue de revente. Tout HFS ≠ activité abandonnée. Piège fréquent : HFS matériel mais pas \"majeur\" reste dans les activités poursuivies."
@@ -6235,10 +6235,10 @@
               "type": "mcq",
               "question": "Disclosure OBLIGATOIRE pour activité abandonnée ?",
               "options": [
-                "Nom des dirigeants concernés",
-                "Liste exhaustive des employés",
+                "Le nom des dirigeants concernés",
+                "La liste exhaustive des employés transférés",
                 "Contrats clients détaillés",
-                "Décomposition du résultat (produits, charges, impôts) + flux de trésorerie nets"
+                "Analyse du résultat et flux nets"
               ],
               "answer": 3,
               "explanation": "IFRS 5.33-34 : décomposition du résultat et des flux. Permet aux utilisateurs de comprendre l'impact sur les activités poursuivies."
@@ -6253,8 +6253,8 @@
               "type": "mcq",
               "question": "Activité classée abandonnée en N. En N+1, le plan est abandonné. Traitement P&L N+1 ?",
               "options": [
-                "Maintien dans activités abandonnées",
-                "Reclassement en activités poursuivies + retraitement N pour cohérence comparative",
+                "Maintien dans les activités abandonnées jusqu'à la fin de l'exercice N+1",
+                "Reclassement en activités poursuivies (N retraité)",
                 "Profit exceptionnel unique",
                 "Ignorer"
               ],
@@ -6271,10 +6271,10 @@
               "type": "mcq",
               "question": "Quelle norme RPC est l'équivalent d'IFRS 5 ?",
               "options": [
-                "Aucune norme RPC dédiée ; traitement ad hoc",
-                "RPC 30",
-                "RPC 18",
-                "RPC 20"
+                "Aucune norme RPC dédiée",
+                "RPC 30 (consolidation)",
+                "RPC 18 (immobilisations)",
+                "RPC 20 (dépréciation)"
               ],
               "answer": 0,
               "explanation": "RPC n'a PAS de norme \"Held for Sale\" ni \"Activités abandonnées\". Pratique ad hoc : continuer amortissement, éventuelle dépréciation RPC 20, disclosure narratif. Divergence significative en cas de restructuration majeure."
@@ -6378,9 +6378,9 @@
               "type": "mcq",
               "question": "Définition correcte de la juste valeur IFRS 13 ?",
               "options": [
-                "Prix d'achat actuel",
+                "Le prix d'achat actuel payé par l'entité pour un actif identique",
                 "Valeur d'utilité",
-                "Prix reçu pour vendre / payé pour transférer dans une transaction ordonnée entre participants de marché à la date d'évaluation",
+                "Le prix de sortie entre intervenants du marché",
                 "Coût historique réévalué"
               ],
               "answer": 2,
@@ -6396,8 +6396,8 @@
               "type": "mcq",
               "question": "Terrain agricole aujourd'hui, zonage résidentiel possible dans 2 ans. Évaluation JV ?",
               "options": [
-                "Highest and best use (résidentiel si juridiquement permis + physiquement possible + financièrement faisable)",
-                "Usage agricole actuel",
+                "Utilisation optimale (résidentiel si permis et faisable)",
+                "L'usage agricole actuel, seul pertinent tant que le zonage n'a pas changé",
                 "Moyenne des deux",
                 "Coût historique"
               ],
@@ -6408,8 +6408,8 @@
               "type": "mcq",
               "question": "Définition clé de la juste valeur selon IFRS 13 ?",
               "options": [
-                "Prix de SORTIE (exit price) dans une transaction ordonnée entre participants de marché à la date d'évaluation",
-                "Prix d'achat (entry price) entre parties informées",
+                "Un prix de sortie (exit price)",
+                "Le prix d'achat (entry price) entre parties liées à la date d'évaluation",
                 "Valeur d'utilité pour l'entité",
                 "Valeur d'assurance"
               ],
@@ -6444,8 +6444,8 @@
               "options": [
                 "Niveau 1",
                 "Niveau 2",
-                "Niveau 3 (le plus bas input significatif)",
-                "Au choix"
+                "Niveau 3",
+                "Selon le choix de l'entité"
               ],
               "answer": 2,
               "explanation": "IFRS 13.73 : niveau global déterminé par l'input le plus bas des inputs significatifs. Spread non observable et significatif → niveau 3."
@@ -6461,8 +6461,8 @@
               "question": "Private equity (détention 25 %) — JV au bilan. Niveau de hiérarchie probable ?",
               "options": [
                 "Niveau 1",
-                "Niveau 2 (comparables listés)",
-                "Niveau 3 (DCF, comparables illiquides, hypothèses internes)",
+                "Niveau 2 (comparables cotés)",
+                "Niveau 3",
                 "Hors hiérarchie"
               ],
               "answer": 2,
@@ -6506,9 +6506,9 @@
               "type": "mcq",
               "question": "Approche appropriée pour évaluer une machine industrielle sur mesure, sans marché actif ni comparables ?",
               "options": [
-                "Approche des coûts (remplacement moins obsolescence)",
-                "Approche des revenus uniquement",
-                "Approche du marché",
+                "L'approche par les coûts",
+                "L'approche par les revenus uniquement",
+                "L'approche de marché par comparables",
                 "Pas de JV possible"
               ],
               "answer": 0,
@@ -6524,10 +6524,10 @@
               "type": "mcq",
               "question": "Comparables P/E = 15 ; cible a un endettement nettement plus élevé. Traitement ?",
               "options": [
-                "Appliquer P/E = 15 tel quel",
-                "Abandonner l'approche",
-                "Utiliser EV/EBITDA sans ajustement",
-                "Appliquer avec ajustement pour endettement différent"
+                "Appliquer le P/E de 15 tel quel",
+                "Abandonner l'approche de marché",
+                "Utiliser l'EV/EBITDA du secteur, sans aucun ajustement",
+                "L'appliquer en ajustant l'endettement"
               ],
               "answer": 3,
               "explanation": "Ajustement nécessaire pour structure financière différente. EV/EBITDA souvent plus neutre car élimine l'effet de l'endettement. Documentation des ajustements obligatoire."
@@ -6536,10 +6536,10 @@
               "type": "mcq",
               "question": "Highest and best use (HABU) s'applique à :",
               "options": [
-                "Actifs NON-FINANCIERS uniquement",
-                "Tous les actifs",
-                "Passifs financiers",
-                "Instruments dérivés"
+                "Aux actifs non financiers",
+                "À tous les actifs",
+                "Aux passifs financiers",
+                "Aux instruments dérivés et aux options"
               ],
               "answer": 0,
               "explanation": "IFRS 13.27 : HABU pour actifs NON-FINANCIERS uniquement. Physiquement possible, juridiquement admissible, financièrement faisable. Concept important pour immeubles (usage alternatif générant plus de valeur)."
@@ -6570,9 +6570,9 @@
               "type": "mcq",
               "question": "Élément OBLIGATOIRE pour une JV de niveau 3 ?",
               "options": [
-                "Réconciliation ouverture/clôture + hypothèses non observables + analyse de sensibilité",
-                "Nom de l'évaluateur uniquement",
-                "Liste des concurrents",
+                "Rapprochement, hypothèses, sensibilité",
+                "Le nom de l'évaluateur externe uniquement",
+                "La liste des concurrents",
                 "Historique des prix transactionnels"
               ],
               "answer": 0,
@@ -6589,8 +6589,8 @@
               "question": "Disclosure du transfert d'une valeur entre niveau 2 et 3 pendant l'exercice ?",
               "options": [
                 "Pas obligatoire",
-                "Uniquement pour niveau 1 vers 2",
-                "Obligatoire : montant + raisons + politique de date de transfert",
+                "Uniquement pour les transferts du niveau 1 vers le niveau 2",
+                "Montant, raisons et politique de transfert",
                 "Par groupe agrégé"
               ],
               "answer": 2,
@@ -6600,9 +6600,9 @@
               "type": "mcq",
               "question": "Disclosure spécifique pour les évaluations de Niveau 3 récurrentes ?",
               "options": [
-                "Réconciliation des mouvements, hypothèses non observables, analyse de sensibilité",
+                "Rapprochement, hypothèses, sensibilité",
                 "Uniquement le montant",
-                "Prix d'une transaction récente",
+                "Le prix d'une transaction récente sur un actif comparable",
                 "Simple classification en annexe"
               ],
               "answer": 0,
@@ -13470,10 +13470,10 @@
               "type": "mcq",
               "question": "Une usine produit à 60 % de sa capacité normale. Les frais généraux fixes sont-ils :",
               "options": [
-                "Intégralement imputés au stock",
+                "Intégralement imputés au stock produit dans la période",
                 "Exclus du stock",
                 "Amortis linéairement",
-                "Imputés sur base de la capacité normale, excédent en charge"
+                "Selon la capacité normale ; excédent en charges"
               ],
               "answer": 3,
               "explanation": "IAS 2.13 : capacité normale. Imputer à 60 % seulement ; les 40 % non absorbés sont une charge de la période."
@@ -13488,10 +13488,10 @@
               "type": "mcq",
               "question": "Lequel n'est PAS inclus dans le coût du stock ?",
               "options": [
-                "Frais de transport d'achat",
-                "Commissions commerciales sur ventes futures",
+                "Les frais de transport sur achats",
+                "Les commissions sur ventes",
                 "Main-d'œuvre directe de production",
-                "Droits de douane non récupérables"
+                "Les droits de douane non récupérables"
               ],
               "answer": 1,
               "explanation": "Les commissions de vente sont des frais de commercialisation, exclus du coût (IAS 2.16)."
@@ -13516,9 +13516,9 @@
               "question": "Stock 100 unités à CHF 10, puis achat 50 unités à CHF 14. CMP ?",
               "options": [
                 "CHF 11.33",
-                "CHF 10",
-                "CHF 12",
-                "CHF 14"
+                "CHF 10.00",
+                "CHF 12.00",
+                "CHF 14.00"
               ],
               "answer": 0,
               "explanation": "(100×10 + 50×14) / 150 = (1000 + 700) / 150 = 11.33."
@@ -13533,10 +13533,10 @@
               "type": "mcq",
               "question": "Une galerie d'art évalue ses œuvres. Méthode appropriée ?",
               "options": [
-                "FIFO",
-                "CMP",
+                "FIFO (premier entré)",
+                "Coût moyen pondéré (CMP)",
                 "Identification spécifique",
-                "LIFO"
+                "LIFO (dernier entré, interdit)"
               ],
               "answer": 2,
               "explanation": "Actifs non interchangeables → identification spécifique obligatoire (IAS 2.23)."
@@ -13551,8 +13551,8 @@
               "type": "mcq",
               "question": "En période d'inflation, FIFO conduit à :",
               "options": [
-                "Stock à coûts récents (élevés) et résultat plus élevé",
-                "Stock sous-évalué et résultat plus faible",
+                "Stock à coûts récents, résultat plus élevé",
+                "Un stock sous-évalué et un résultat plus faible qu'avec le CMP",
                 "Résultat neutre",
                 "Aucun effet"
               ],
@@ -13641,10 +13641,10 @@
               "type": "mcq",
               "question": "1 000 unités à coût 30. VNR globale 25. Mais contrat ferme pour 600 unités à 35. Dépréciation ?",
               "options": [
-                "1 000 × 5 = 5 000",
-                "600 × 5 = 3 000",
-                "400 × 5 = 2 000 (uniquement les unités non sous contrat)",
-                "Aucune"
+                "1'000 × 5 = 5'000",
+                "600 × 5 = 3'000",
+                "400 × 5 = 2'000",
+                "Aucune dépréciation (contrat bénéficiaire)"
               ],
               "answer": 2,
               "explanation": "Les 600 sous contrat ferme (35 > 30) ne sont pas dépréciées. Les 400 restantes : VNR 25 < 30 → 400 × 5 = 2 000."
@@ -13731,8 +13731,8 @@
               "type": "mcq",
               "question": "Un événement ajustant :",
               "options": [
-                "Survient après et doit être provisionné à 100 %",
-                "Confirme une situation qui existait à la clôture → ajuste les montants",
+                "Il survient après la clôture et doit être provisionné à 100 %",
+                "Il confirme une situation existant à la clôture",
                 "Est toujours défavorable",
                 "N'est jamais divulgué"
               ],
@@ -13751,8 +13751,8 @@
               "options": [
                 "La date de clôture",
                 "La date d'approbation par l'AG",
-                "La date d'autorisation de publication par le conseil d'administration",
-                "La date d'émission du rapport d'audit"
+                "L'autorisation de publication",
+                "La date de dépôt au registre du commerce"
               ],
               "answer": 2,
               "explanation": "IAS 10.4-6 : date d'autorisation de publication = fin de la fenêtre."
@@ -13794,9 +13794,9 @@
               "type": "mcq",
               "question": "Un client fait faillite le 10 janvier après un incendie majeur le 5 janvier. Traitement de la créance au 31.12 ?",
               "options": [
-                "Non ajustant, annexe (nouvel événement)",
-                "Ajustant, déprécier",
-                "Ajustant à 50 %",
+                "Non ajustant (fait nouveau)",
+                "Ajustant : déprécier la créance",
+                "Ajustant à 50 % par prudence",
                 "Aucun impact"
               ],
               "answer": 0,
@@ -13812,10 +13812,10 @@
               "type": "mcq",
               "question": "Bonus annuel dû aux employés, calculable définitivement après la clôture. Événement ajustant ?",
               "options": [
-                "Oui si obligation existait au 31.12",
-                "Non jamais",
+                "Oui, si l'obligation existait",
+                "Non, jamais",
                 "Oui mais maximum 50 %",
-                "Dépend de la date de paiement"
+                "Cela dépend de la date de versement du bonus"
               ],
               "answer": 0,
               "explanation": "Si l'obligation constructive existait (convention salariale, pratique établie) au 31.12, provision ajustée selon le calcul définitif."
@@ -13839,10 +13839,10 @@
               "type": "mcq",
               "question": "Le CA propose le 15 mars un dividende de CHF 1 M pour l'exercice clos au 31.12. Au bilan 31.12 :",
               "options": [
-                "Dette de 1 M",
-                "Aucune dette, annexe seulement",
-                "Réserve spéciale de 1 M",
-                "Amortissement du capital"
+                "Une dette de 1 M",
+                "Aucune dette (annexe)",
+                "Une réserve spéciale de 1 M",
+                "Un amortissement du dividende"
               ],
               "answer": 1,
               "explanation": "IAS 10.12 : dividendes proposés post-clôture ne constituent pas un passif (obligation absente au 31.12). Annexe obligatoire."
@@ -13858,8 +13858,8 @@
               "question": "Quel événement, bien que \"non ajustant\", peut forcer à revoir la base de préparation ?",
               "options": [
                 "Baisse des cours boursiers",
-                "Annonce d'un plan de restructuration",
-                "Atteinte majeure à la continuité d'exploitation",
+                "L'annonce d'un plan de restructuration d'une filiale secondaire",
+                "Une atteinte grave à la continuité",
                 "Changement de commissaire aux comptes"
               ],
               "answer": 2,
@@ -13903,8 +13903,8 @@
               "question": "Une société annonce une acquisition majeure le 10 mars, clôture 31.12. Divulgation IAS 10 ?",
               "options": [
                 "Aucune",
-                "Provisionner le coût d'acquisition",
-                "Nature + estimation de l'effet financier (ou non estimable)",
+                "Provisionner le coût d'acquisition au 31.12",
+                "Nature et effet financier estimé",
                 "Comptabiliser l'acquisition au 31.12"
               ],
               "answer": 2,
@@ -13920,10 +13920,10 @@
               "type": "mcq",
               "question": "Un dividende proposé de CHF 500 k le 20 février :",
               "options": [
-                "Passif de 500 k au 31.12",
-                "Réserve spéciale 500 k",
+                "Un passif de 500k au 31.12",
+                "Une réserve spéciale de 500k",
                 "Charge différée",
-                "Pas de passif ; divulgation annexe"
+                "Pas de passif ; annexe"
               ],
               "answer": 3,
               "explanation": "IAS 10.12 exclut la reconnaissance en passif avant approbation de l'AG."
@@ -13938,10 +13938,10 @@
               "type": "mcq",
               "question": "Différence clé ajustant vs non ajustant ?",
               "options": [
-                "L'existence de la condition à la clôture",
+                "La condition existait à la clôture",
                 "Le montant de l'impact",
                 "La date de survenance",
-                "La nature de l'entité"
+                "La nature juridique et la taille de l'entité concernée"
               ],
               "answer": 0,
               "explanation": "Critère unique : la condition existait-elle à la clôture ? Oui → ajustant. Non → non ajustant (condition nouvelle)."
@@ -14235,10 +14235,10 @@
               "type": "mcq",
               "question": "Un actif qualifié selon IAS 23 est un actif qui :",
               "options": [
-                "Exige une période substantielle pour être prêt à l'usage/vente",
+                "Exige une longue période de préparation",
                 "Coûte plus de CHF 1 M",
-                "Est amorti sur plus de 10 ans",
-                "Est détenu par une filiale"
+                "Est amorti sur plus de dix ans",
+                "Est détenu pour être vendu rapidement, sans transformation"
               ],
               "answer": 0,
               "explanation": "IAS 23.5 : critère fondé sur la durée de mise en état, typiquement ≥ 6-12 mois."
@@ -14316,10 +14316,10 @@
               "type": "mcq",
               "question": "Quelle est une condition de début de capitalisation ?",
               "options": [
-                "Que l'actif soit financé à 100 % par emprunt",
+                "Que l'actif soit financé à 100 % par un emprunt spécifique",
                 "Que l'actif dépasse CHF 10 M",
                 "Que le taux d'intérêt soit > 5 %",
-                "Que les dépenses soient engagées, coûts d'emprunt encourus et activités entreprises"
+                "Dépenses, coûts d'emprunt et activités en cours"
               ],
               "answer": 3,
               "explanation": "IAS 23.17 : 3 conditions cumulatives : dépenses engagées + coûts d'emprunt encourus + activités nécessaires entreprises."
@@ -14380,7 +14380,7 @@
               "question": "Les dépenses sur un actif qualifié sont de 6 M le 01.01 et 6 M le 01.07. Dépenses moyennes pondérées ?",
               "options": [
                 "12 M",
-                "9 M (6 × 12/12 + 6 × 6/12)",
+                "9 M",
                 "6 M",
                 "3 M"
               ],
@@ -14397,7 +14397,7 @@
               "type": "mcq",
               "question": "Dans le calcul du taux moyen, on exclut :",
               "options": [
-                "Les emprunts spécifiques déjà alloués à un actif",
+                "Les emprunts spécifiques",
                 "Les obligations convertibles",
                 "Les emprunts à court terme",
                 "Les crédits de trésorerie"
@@ -14443,7 +14443,7 @@
               "question": "IAS 23.26 exige de mentionner en notes :",
               "options": [
                 "Le nom des banques prêteuses",
-                "Le montant capitalisé et le taux utilisé",
+                "Le montant activé et le taux",
                 "Les projets futurs financés",
                 "Les engagements hors-bilan"
               ],
@@ -14460,13 +14460,13 @@
               "type": "mcq",
               "question": "Coûts capitalisés IFRS vs traitement fiscal suisse :",
               "options": [
-                "Identiques (déterminance)",
+                "Identiques : le fisc reprend les comptes consolidés IFRS",
                 "Jamais déductibles",
                 "Capitalisés à 50 % pour le fisc",
-                "Les coûts capitalisés en IFRS sont généralement passés en charges fiscalement"
+                "Sans lien direct : l'impôt suit les comptes CO"
               ],
               "answer": 3,
-              "explanation": "Le fisc suisse part du résultat commercial CO. La capitalisation IFRS n'y est pas obligatoire → retraitement fiscal pour passer en charges."
+              "explanation": "En Suisse, le bénéfice imposable découle des comptes annuels statutaires établis selon le CO (principe de déterminance, art. 58 LIFD), et non des comptes IFRS. La capitalisation d'un coût en IFRS n'a donc pas d'effet fiscal direct : seul compte le traitement retenu dans les comptes CO (activation possible si les conditions sont remplies, amortissements justifiés par l'usage commercial)."
             }
           ]
         }
@@ -14496,8 +14496,8 @@
               "type": "mcq",
               "question": "Le BPA de base se calcule avec :",
               "options": [
-                "Résultat net / nombre d'actions en fin d'exercice",
-                "Résultat net attribuable aux porteurs ordinaires / nombre moyen pondéré d'actions",
+                "Le résultat net divisé par le nombre d'actions à la fin de l'exercice",
+                "Résultat des porteurs ordinaires / nombre moyen pondéré",
                 "Résultat opérationnel / actions émises",
                 "Résultat consolidé / nombre d'actionnaires"
               ],
@@ -14514,10 +14514,10 @@
               "type": "mcq",
               "question": "Un split 2:1 au 01.07.N double les actions. Impact sur le BPA N-1 comparatif ?",
               "options": [
-                "Aucun",
-                "Ajustement linéaire",
-                "Retraitement rétroactif : comparatifs divisés par 2",
-                "Mention en note uniquement"
+                "Aucun impact",
+                "Un ajustement linéaire",
+                "Comparatifs retraités (divisés par 2)",
+                "Une simple mention en note, sans retraitement des chiffres"
               ],
               "answer": 2,
               "explanation": "IAS 33.28 : splits, regroupements, émissions gratuites sont traités rétroactivement. Tous les comparatifs sont retraités comme si l'événement était toujours intervenu."
@@ -14577,10 +14577,10 @@
               "type": "mcq",
               "question": "Pour une obligation convertible, la méthode if-converted ajoute au numérateur :",
               "options": [
-                "Le coupon brut",
-                "Les intérêts nets d'impôt évités si convertis",
+                "Le coupon brut versé aux porteurs",
+                "Les intérêts nets d'impôt",
                 "Rien",
-                "La juste valeur"
+                "La juste valeur de l'option"
               ],
               "answer": 1,
               "explanation": "If-converted : conversion simulée → les intérêts cessent. On rajoute au numérateur les intérêts nets d'impôt qui n'auraient pas été payés."
@@ -14595,10 +14595,10 @@
               "type": "mcq",
               "question": "L'ordre d'inclusion des instruments potentiels pour tester la dilution est :",
               "options": [
-                "Ordre alphabétique",
+                "Par ordre alphabétique",
                 "Par date d'émission",
-                "Montant nominal décroissant",
-                "Du plus dilutif au moins dilutif"
+                "Par montant nominal décroissant des instruments",
+                "Du plus au moins dilutif"
               ],
               "answer": 3,
               "explanation": "IAS 33.44 : tri par effet de dilution croissant pour détecter le moment où l'inclusion devient anti-dilutive."
@@ -14622,7 +14622,7 @@
               "type": "mcq",
               "question": "Une entité est en perte nette. Son BPA dilué sera :",
               "options": [
-                "Égal au BPA de base (tout est anti-dilutif)",
+                "Égal au BPA de base",
                 "Plus négatif que le BPA de base",
                 "Positif grâce aux conversions",
                 "Non applicable"
@@ -14640,13 +14640,13 @@
               "type": "mcq",
               "question": "Earnout : 50'000 actions à émettre si CA > 100 M en 2025. À la clôture 30.09.N, CA cumulé 95 M, tendance vers 110 M. BPA dilué inclut-il ces actions ?",
               "options": [
-                "Non car émission incertaine",
-                "Oui à 50 %",
-                "Oui, car condition serait remplie avec données actuelles",
+                "Oui, la tendance indiquant 110 M pour 2025",
+                "Oui, à 50 % par prudence",
+                "Non (95 M < 100 M à la clôture)",
                 "Seulement pour le BPA de base"
               ],
               "answer": 2,
-              "explanation": "IAS 33.52 : BPA dilué inclut les actions contingentes si les conditions SERAIENT remplies sur la base des données à la date de clôture."
+              "explanation": "IAS 33.52-53 : les actions à émettre sous condition sont incluses dans le BPA dilué si la condition est remplie à la date de clôture, en considérant que la fin de la période est la fin de la période de condition. Les projections ne comptent pas : au 30.09.N, le CA cumulé (95 M) n'atteint pas 100 M, donc les 50'000 actions sont exclues."
             },
             {
               "type": "vrai_faux",
@@ -14658,10 +14658,10 @@
               "type": "mcq",
               "question": "Présentation du BPA lorsqu'il y a des activités abandonnées :",
               "options": [
-                "Séparément pour activités poursuivies (obligatoire) et abandonnées (facultatif)",
-                "Uniquement pour le total",
+                "Séparément (activités poursuivies)",
+                "Uniquement pour le résultat total",
                 "Uniquement en note",
-                "Combiné en un seul chiffre"
+                "Combiné en un seul chiffre, sans distinction"
               ],
               "answer": 0,
               "explanation": "IAS 33.68 : BPA base et dilué pour activités poursuivies OBLIGATOIRES, pour activités abandonnées FACULTATIVES (au choix de l'entité)."
@@ -14685,8 +14685,8 @@
               "type": "mcq",
               "question": "Dans le cas d'un split 2:1 au 01.07, comment traiter les actions pour le calcul de la moyenne pondérée ?",
               "options": [
-                "Double la pondération après 01.07",
-                "Multiplie rétroactivement toutes les actions antérieures au 01.07 par 2",
+                "Doubler la pondération à partir de la date du split",
+                "Ajuster rétroactivement les actions avant le 01.07",
                 "Ignore le split",
                 "Ajuste seulement les comparatifs"
               ],
@@ -14723,8 +14723,8 @@
               "options": [
                 "Uniquement en notes",
                 "Dans le rapport de gestion",
-                "Dans le compte de résultat (ou état séparé)",
-                "Dans le tableau de flux de trésorerie"
+                "Au compte de résultat",
+                "Dans le tableau des flux de trésorerie"
               ],
               "answer": 2,
               "explanation": "IAS 33.66 : présentation dans le compte de résultat, pour le résultat global et les activités poursuivies."
@@ -14760,7 +14760,7 @@
                 "À la juste valeur à chaque clôture",
                 "Au prix d'exercice",
                 "Au cours du dernier jour",
-                "À la juste valeur à la date d'attribution (grant date), figée"
+                "À la JV à l'attribution, figée"
               ],
               "answer": 3,
               "explanation": "IFRS 2.11 : equity-settled → JV à la grant date. Pas de réévaluation ultérieure pour changement de cours."
@@ -14820,9 +14820,9 @@
               "type": "mcq",
               "question": "Une condition de cours d'action (TSR ≥ médiane) est :",
               "options": [
-                "Une condition de marché, intégrée dans la JV à grant date",
+                "Une condition de marché",
                 "Une condition de service",
-                "Une condition non-market",
+                "Une condition de performance hors marché",
                 "Une condition non-vesting"
               ],
               "answer": 0,
@@ -14838,10 +14838,10 @@
               "type": "mcq",
               "question": "Une condition d'EBITDA > 50 M en N+3 est :",
               "options": [
-                "Condition de marché",
-                "Condition non-market de performance, révisable",
-                "Condition de service",
-                "Condition non-vesting"
+                "Une condition de marché",
+                "Condition hors marché",
+                "Une condition de service",
+                "Une condition hors acquisition"
               ],
               "answer": 1,
               "explanation": "EBITDA est une mesure interne → non-market. Le nombre d'instruments espérés est révisé à chaque clôture selon la probabilité d'atteinte."
@@ -14856,9 +14856,9 @@
               "type": "mcq",
               "question": "Modèle utilisé pour valoriser une condition de marché (TSR) :",
               "options": [
-                "Black-Scholes standard",
-                "Actualisation des dividendes",
-                "Modèle Monte Carlo ou similaire",
+                "Le modèle Black-Scholes standard",
+                "L'actualisation des dividendes futurs",
+                "Une simulation Monte Carlo",
                 "DCF"
               ],
               "answer": 2,
@@ -14883,8 +14883,8 @@
               "type": "mcq",
               "question": "Une entité réduit le strike d'options existantes (re-pricing) car le cours a chuté. Traitement IFRS 2 ?",
               "options": [
-                "Nouvelle charge pour la JV incrémentale, étalée sur durée restante",
-                "Aucun impact : JV grant date reste",
+                "Charge de la JV incrémentale, étalée",
+                "Aucun impact : la JV à la date d'attribution reste figée",
                 "Reprise totale de la charge cumulée",
                 "Annulation et nouveau plan"
               ],
@@ -14901,10 +14901,10 @@
               "type": "mcq",
               "question": "Annulation volontaire d'un plan d'options par l'entité :",
               "options": [
-                "Acquisition accélérée : comptabilisation immédiate de la charge résiduelle",
-                "Reprise totale de la charge cumulée",
+                "Charge résiduelle immédiate",
+                "Une reprise totale de la charge cumulée",
                 "Aucun traitement",
-                "Amortissement prolongé"
+                "Un amortissement prolongé de la charge restante"
               ],
               "answer": 0,
               "explanation": "IFRS 2.28 : annulation par l'entité = acquisition accélérée. La totalité de la charge résiduelle est reconnue immédiatement."
@@ -14919,10 +14919,10 @@
               "type": "mcq",
               "question": "Une condition NON-vesting (ex. obligation de payer des cotisations) n'est pas remplie. Traitement ?",
               "options": [
-                "Reprise de la charge",
-                "Maintien de la charge",
-                "Accélération de la charge (IFRS 2.28A)",
-                "Amortissement étalé"
+                "Une reprise de la charge",
+                "Un maintien de la charge",
+                "Accélération de la charge",
+                "Un étalement de la charge sur la durée initiale"
               ],
               "answer": 2,
               "explanation": "IFRS 2.28A : non-satisfaction d'une non-vesting condition → traitée comme une annulation → accélération de la charge."
@@ -14982,9 +14982,9 @@
               "type": "mcq",
               "question": "À la fin du vesting, condition non-market non atteinte. Traitement du cumul de charges ?",
               "options": [
-                "Maintenu en CP",
+                "Maintenu en capitaux propres",
                 "Reclassé en prime d'émission",
-                "Reprise intégrale en résultat",
+                "Reprise en résultat",
                 "Crédité en dividende"
               ],
               "answer": 2,
@@ -15018,10 +15018,10 @@
               "type": "mcq",
               "question": "Une subvention de CHF 1 M est promise pour acquérir une machine (amort. 10 ans). Reconnaissance en résultat ?",
               "options": [
-                "1 M sur 10 ans (parallèle amortissement)",
+                "Sur 10 ans, avec l'amortissement",
                 "1 M immédiatement",
                 "Directement en capitaux propres",
-                "Au moment de la cession"
+                "Au moment de la cession future de la machine"
               ],
               "answer": 0,
               "explanation": "Subvention liée à un actif amortissable → reconnaissance étalée sur la durée de vie (IAS 20.17)."
@@ -15054,8 +15054,8 @@
               "type": "mcq",
               "question": "Subvention liée à une recherche (R&D) passée en charge :",
               "options": [
-                "Reconnue immédiatement en produit (ou en réduction de charge)",
-                "Capitalisée au bilan",
+                "En produit immédiatement",
+                "Capitalisée au bilan avec les frais de R&D",
                 "Différée sur 5 ans",
                 "En capitaux propres"
               ],
@@ -15081,10 +15081,10 @@
               "type": "mcq",
               "question": "Machine 2 000, subvention 400, durée 8 ans. Méthode produit différé. Impact annuel au résultat ?",
               "options": [
-                "(200) net = amort 250 − reprise 50",
-                "(250) net",
-                "(200) net",
-                "(300) net"
+                "(200)",
+                "(250)",
+                "(150)",
+                "(300)"
               ],
               "answer": 0,
               "explanation": "Amortissement 2 000/8 = 250. Reprise 400/8 = 50. Impact net = 250 − 50 = 200."
@@ -15144,10 +15144,10 @@
               "type": "mcq",
               "question": "Un prêt public de 2 000 à 0 % sur 4 ans, taux marché 4 %. JV du prêt environ ?",
               "options": [
-                "2 000",
-                "1 900",
-                "1 710 (actualisation)",
-                "2 080"
+                "2'000",
+                "≈ 1'900",
+                "≈ 1'710",
+                "≈ 2'080"
               ],
               "answer": 2,
               "explanation": "JV = 2 000 / (1.04)^4 ≈ 1 710. L'écart (290) est la subvention implicite."
@@ -15162,9 +15162,9 @@
               "type": "mcq",
               "question": "Terrain cédé gratuitement par la commune (JV 500). Option recommandée ?",
               "options": [
-                "Comptabilisation à la JV 500 avec subvention 500",
-                "Comptabilisation à 0 (gratuit)",
-                "Provision de 500",
+                "À la JV de 500, avec subvention",
+                "À zéro, le terrain étant gratuit",
+                "Une provision de 500",
                 "Hors bilan"
               ],
               "answer": 0,
@@ -15207,10 +15207,10 @@
               "type": "mcq",
               "question": "Une subvention peut-elle être comptabilisée directement en capitaux propres ?",
               "options": [
-                "Non, IAS 20 impose l'approche revenu (résultat)",
-                "Oui toujours",
-                "Oui si liée à un actif",
-                "Oui si permanente"
+                "Non (approche par le résultat)",
+                "Oui, toujours",
+                "Oui, si elle est liée à un actif",
+                "Oui, si elle est permanente"
               ],
               "answer": 0,
               "explanation": "IAS 20.12 exclut la comptabilisation en capitaux propres : toujours via le résultat."
@@ -15225,10 +15225,10 @@
               "type": "mcq",
               "question": "Une société reçoit CHF 400 pour un investissement de CHF 1 000 (amort. 5 ans). Combien reconnaître en résultat l'an 1 sous IAS 20 méthode déduction ?",
               "options": [
-                "(200) amortissement 1 000/5",
-                "(120) amortissement (1 000−400)/5 = 120",
+                "(200)",
+                "(120)",
                 "(80)",
-                "(40)"
+                "(280)"
               ],
               "answer": 1,
               "explanation": "Actif net 600, amortissement 600/5 = 120. Impact résultat (120)."
@@ -15243,8 +15243,8 @@
               "type": "mcq",
               "question": "Une société ne respecte plus les conditions d'emploi liées à une subvention reçue. Action ?",
               "options": [
-                "Ignorer",
-                "Remboursement partiel ou total + comptabilisation selon IAS 20.32",
+                "L'ignorer",
+                "Remboursement, selon IAS 20.32",
                 "Augmenter le produit différé",
                 "Comptabiliser en réserve distribuable"
               ],
@@ -15279,10 +15279,10 @@
               "type": "mcq",
               "question": "Deux sociétés ayant le même administrateur sans influence démontrée sont-elles parties liées ?",
               "options": [
-                "Oui automatiquement",
-                "Oui si CA supérieur à 10 M",
+                "Oui, automatiquement",
+                "Oui, si leur CA dépasse 10 M",
                 "Uniquement en consolidé",
-                "Non sauf influence significative démontrée"
+                "Non, sauf influence avérée"
               ],
               "answer": 3,
               "explanation": "IAS 24.11 : simple présence d'un administrateur commun ne suffit pas sans influence réelle."
@@ -15315,10 +15315,10 @@
               "type": "mcq",
               "question": "Une coentreprise (JV) contrôlée conjointement par A et B est partie liée :",
               "options": [
-                "De A uniquement",
-                "De B uniquement",
-                "Des deux (A et B)",
-                "D'aucune"
+                "De A seulement",
+                "De B seulement",
+                "De A et de B",
+                "D'aucune des deux"
               ],
               "answer": 2,
               "explanation": "IAS 24.9 : l'entité associée ou JV est partie liée pour chacun de ses partenaires/investisseurs significatifs."
@@ -15342,10 +15342,10 @@
               "type": "mcq",
               "question": "Une société vend à sa filiale à 30 % en dessous du marché. Divulgation ?",
               "options": [
-                "Non nécessaire car intra-groupe en consolidé",
+                "Non nécessaire, les opérations intra-groupe étant éliminées en consolidation",
                 "Seulement le montant",
                 "Cacher pour discrétion",
-                "Dans comptes individuels : nature, montant, conditions (non marché)"
+                "Oui (comptes individuels) : nature, montant, conditions"
               ],
               "answer": 3,
               "explanation": "IAS 24 s'applique aux comptes individuels. Conditions hors marché = information essentielle."
@@ -15360,10 +15360,10 @@
               "type": "mcq",
               "question": "Parmi ces transactions, laquelle NE doit PAS être divulguée en IAS 24 ?",
               "options": [
-                "Prêt accordé à un dirigeant",
-                "Achat auprès d'un fournisseur indépendant de même secteur",
-                "Vente à une associée",
-                "Garantie donnée à une filiale"
+                "Un prêt accordé à un dirigeant",
+                "Un achat à un tiers indépendant",
+                "Une vente à une entreprise associée",
+                "Une garantie donnée en faveur d'une filiale"
               ],
               "answer": 1,
               "explanation": "Fournisseur indépendant = relation commerciale sans lien, pas partie liée. Les 3 autres sont des parties liées."
@@ -15378,8 +15378,8 @@
               "type": "mcq",
               "question": "Une société accorde à son CEO un prêt de CHF 200 k à 1 % (taux marché 4 %). À divulguer :",
               "options": [
-                "Nature, montant, conditions (taux, échéance, garanties), relation avec CEO",
-                "Montant du prêt seulement",
+                "Nature, montant, conditions et relation",
+                "Le montant du prêt seulement",
                 "Rien, c'est un prêt privé",
                 "Seulement en annexe du rapport de gestion"
               ],
@@ -15405,10 +15405,10 @@
               "type": "mcq",
               "question": "Catégories obligatoires de rémunération KMP selon IAS 24 :",
               "options": [
-                "Court terme uniquement",
-                "Court terme + post-emploi + long terme + départ + share-based",
-                "Salaire et bonus seulement",
-                "Montant total global"
+                "Les avantages à court terme uniquement",
+                "Les 5 catégories d'avantages",
+                "Le salaire et le bonus seulement",
+                "Un montant total global, sans ventilation"
               ],
               "answer": 1,
               "explanation": "IAS 24.17 : 5 catégories distinctes pour transparence."
@@ -15423,10 +15423,10 @@
               "type": "mcq",
               "question": "Un stock-option plan pour dirigeants fait partie de :",
               "options": [
-                "Avantages court terme",
-                "Paiements fondés sur actions (share-based)",
-                "Indemnités de départ",
-                "Avantages post-emploi"
+                "Avantages à court terme",
+                "Paiements fondés sur des actions",
+                "Indemnités de fin de contrat",
+                "Avantages postérieurs à l'emploi"
               ],
               "answer": 1,
               "explanation": "Stock-options / actions gratuites = share-based payments (IFRS 2)."
@@ -15443,8 +15443,8 @@
               "options": [
                 "Agrégées uniquement",
                 "Confidentielles",
-                "Soumises au Conseil fédéral",
-                "Individualisées et approuvées en AG (CO 734 ss, ex-ORAb / initiative Minder)"
+                "Soumises à l'approbation préalable du Conseil fédéral",
+                "Individualisées et votées par l'AG"
               ],
               "answer": 3,
               "explanation": "Loi sur la rémunération : individualisation et vote d'approbation à l'AG ; IFRS complète sans contredire."
@@ -15468,8 +15468,8 @@
               "type": "mcq",
               "question": "Une société contrôlée par l'État réalise des transactions avec une autre société étatique. Régime applicable ?",
               "options": [
-                "Régime simplifié IAS 24.25 : lien État + transactions significatives individuellement",
-                "Divulgations complètes IAS 24",
+                "L'exemption partielle d'IAS 24.25",
+                "Le régime complet d'IAS 24, sans aucun allègement pour les entités publiques",
                 "Aucune divulgation",
                 "Divulgation uniquement en consolidé"
               ],
@@ -15486,9 +15486,9 @@
               "type": "mcq",
               "question": "Le frère du CEO est-il en famille proche au sens d'IAS 24 ?",
               "options": [
-                "Non sauf s'il est à la charge ou vit avec le CEO",
+                "Pas forcément (influence à apprécier)",
                 "Oui systématiquement",
-                "Uniquement si employé de la société",
+                "Uniquement s'il est employé de la société",
                 "Uniquement si actionnaire"
               ],
               "answer": 0,
@@ -15605,8 +15605,8 @@
               "type": "mcq",
               "question": "Le management approach d'IFRS 8 signifie :",
               "options": [
-                "Utiliser les chiffres IFRS pour présenter les segments",
-                "Refléter la vision interne du CODM, même si elle diffère des règles IFRS",
+                "Utiliser les chiffres IFRS consolidés pour présenter les secteurs",
+                "La vision interne du CODM, même non IFRS",
                 "Regrouper les segments par géographie",
                 "Présenter uniquement les segments profitables"
               ],
@@ -15624,8 +15624,8 @@
               "question": "Un secteur opérationnel doit notamment :",
               "options": [
                 "Être profitable",
-                "Représenter > 10 % du total",
-                "Être régulièrement examiné par le CODM",
+                "Représenter plus de 10 % du total",
+                "Être revu par le CODM",
                 "Avoir plus de 100 employés"
               ],
               "answer": 2,
@@ -15644,7 +15644,7 @@
                 "Le conseil d'administration",
                 "Le CFO",
                 "L'assemblée générale",
-                "Le CEO ou un comité exécutif"
+                "Le CEO ou la direction"
               ],
               "answer": 3,
               "explanation": "IFRS 8.7 : le CODM est une fonction, souvent assumée par le CEO seul ou par un comité exécutif. Identification factuelle par analyse du reporting interne."
@@ -15668,7 +15668,7 @@
               "type": "mcq",
               "question": "Quel est le seuil minimal (en produits) pour qu'un secteur soit obligatoirement présenté séparément ?",
               "options": [
-                "10 % des produits combinés de tous les secteurs",
+                "10 %",
                 "5 %",
                 "15 %",
                 "25 %"
@@ -15687,8 +15687,8 @@
               "question": "Si les secteurs présentés couvrent 70 % des produits externes :",
               "options": [
                 "C'est suffisant",
-                "Présenter tous les secteurs obligatoirement",
-                "Il faut ajouter des secteurs pour atteindre 75 %",
+                "Présenter obligatoirement tous les secteurs",
+                "Ajouter des secteurs (75 %)",
                 "Agréger tous en un seul"
               ],
               "answer": 2,
@@ -15704,10 +15704,10 @@
               "type": "mcq",
               "question": "Un secteur était reporté en N-1 mais n'atteint plus 10 % en N. Traitement en N ?",
               "options": [
-                "Continuer à le reporter pour comparabilité",
-                "Exclusion immédiate",
-                "Le regrouper en autres",
-                "Demander dérogation AFC"
+                "Le maintenir s'il reste significatif",
+                "L'exclure immédiatement",
+                "Le regrouper dans « autres »",
+                "Demander une dérogation à l'autorité de surveillance"
               ],
               "answer": 0,
               "explanation": "IFRS 8.17 : si la direction estime pertinent, on continue à reporter le secteur pour maintenir la comparabilité historique."
@@ -15731,9 +15731,9 @@
               "type": "mcq",
               "question": "Dans la mesure du résultat sectoriel selon IFRS 8 :",
               "options": [
-                "On doit utiliser le résultat IFRS",
-                "On utilise la mesure interne du CODM (peut être non-IFRS)",
-                "On utilise l'EBITDA standard",
+                "Le résultat IFRS consolidé",
+                "La mesure interne du CODM",
+                "L'EBITDA standardisé",
                 "On doit présenter les deux"
               ],
               "answer": 1,
@@ -15750,9 +15750,9 @@
               "question": "L'information géographique (entity-wide) exige :",
               "options": [
                 "Produits par continent",
-                "Produits du pays d'origine + pays étrangers significatifs + actifs non courants par pays",
-                "Uniquement le pays d'origine",
-                "Tous les pays"
+                "Produits et actifs non courants par pays",
+                "Uniquement le pays d'origine de l'entité",
+                "Tous les pays dans lesquels l'entité réalise des ventes"
               ],
               "answer": 1,
               "explanation": "IFRS 8.33 : pays d'origine (souvent celui du siège) + chaque pays étranger matériel + actifs non courants par implantation."
@@ -15768,9 +15768,9 @@
               "question": "Les réconciliations exigées par IFRS 8 incluent :",
               "options": [
                 "Uniquement le résultat",
-                "Le capital investi",
-                "Les flux de trésorerie",
-                "Produits, résultat, actifs, passifs (si reportés), et toute autre ligne matérielle"
+                "Le capital investi par secteur et par pays",
+                "Uniquement le chiffre d'affaires",
+                "Produits, résultat, actifs et passifs"
               ],
               "answer": 3,
               "explanation": "IFRS 8.28 : réconciliation de chaque total sectoriel aux montants IFRS correspondants, avec détail des ajustements (élimination, non-alloués, corporate)."
@@ -15796,7 +15796,7 @@
               "options": [
                 "Produits externes uniquement",
                 "Produits IFRS consolidés",
-                "Produits externes + intersegments combinés",
+                "Externes + intersectoriels",
                 "Produits par client"
               ],
               "answer": 2,
@@ -15812,10 +15812,10 @@
               "type": "mcq",
               "question": "Un secteur R&D interne sans produits externes mais avec une perte de 30 et un total de pertes sectorielles de 50 :",
               "options": [
-                "Non reportable (pas de produits)",
+                "Non reportable, faute de produits externes",
                 "Reportable uniquement si actifs > 10 %",
                 "Toujours reportable",
-                "Reportable si perte ≥ 10 % du plus grand des deux totaux"
+                "Reportable si sa perte ≥ 10 %"
               ],
               "answer": 3,
               "explanation": "IFRS 8.13(b) : test sur la valeur ABSOLUE du résultat, comparée au plus grand des totaux des bénéficiaires ou déficitaires."
@@ -15830,10 +15830,10 @@
               "type": "mcq",
               "question": "Un client représente 12 % du CA. Disclosure obligatoire ?",
               "options": [
-                "Oui : fait, montant, segment concerné (pas l'identité)",
+                "Oui : fait, montant, secteur",
                 "Non, trop petit",
-                "Oui : identité complète",
-                "Oui mais uniquement en note de bas de page"
+                "Oui : identité complète du client",
+                "Oui, mais uniquement en commentaire du rapport de gestion"
               ],
               "answer": 0,
               "explanation": "IFRS 8.34 : ≥ 10 % déclenche la divulgation. Montant et segment requis, identité facultative pour protéger la relation commerciale."
@@ -15902,10 +15902,10 @@
               "type": "mcq",
               "question": "Un dividende discrétionnaire sur actions ordinaires :",
               "options": [
-                "Obligation de paiement → passif",
+                "Une obligation de paiement : passif",
                 "Moitié dette, moitié capital",
                 "Produit financier",
-                "Aucune obligation → capitaux propres"
+                "Capitaux propres"
               ],
               "answer": 3,
               "explanation": "Sans obligation contractuelle → pas de passif. Le dividende est comptabilisé en CP quand déclaré."
@@ -15965,9 +15965,9 @@
               "type": "mcq",
               "question": "Instrument émis par une coopérative avec droit de rachat à valeur nominale. Classification par défaut ?",
               "options": [
-                "Passif financier (obligation de cash)",
-                "Capitaux propres",
-                "Actif financier",
+                "Un passif financier",
+                "Des capitaux propres",
+                "Un actif financier",
                 "Hors bilan"
               ],
               "answer": 0,
@@ -15992,9 +15992,9 @@
               "type": "mcq",
               "question": "Dividende versé sur actions privilégiées classées en dette. Comptabilisation ?",
               "options": [
-                "Prélèvement CP",
-                "Produit de placement",
-                "Charge d'intérêts en résultat",
+                "Un prélèvement sur les fonds propres",
+                "Un produit de placement",
+                "Une charge d'intérêts",
                 "Dette court terme"
               ],
               "answer": 2,
@@ -16028,10 +16028,10 @@
               "type": "mcq",
               "question": "Dividende annuel 100 sur actions ordinaires, déclaré mais non payé. Passage comptable ?",
               "options": [
-                "Réduction CP 100 + Dette 100",
-                "Charge 100",
+                "Fonds propres −100, dette +100",
+                "Une charge de 100",
                 "Produit 100",
-                "Aucune écriture"
+                "Aucune écriture avant le paiement"
               ],
               "answer": 0,
               "explanation": "Prélèvement sur CP (réserves distribuables) avec contrepartie dette à payer."
@@ -16055,9 +16055,9 @@
               "type": "mcq",
               "question": "Un contrat promet de livrer dans 1 an un nombre d'actions valant CHF 10 000 (nombre variable selon cours). Classification ?",
               "options": [
-                "Capitaux propres (fixed for fixed)",
-                "Actif financier",
-                "Passif financier (variable → non fixed for fixed)",
+                "Des capitaux propres (fixed for fixed)",
+                "Un instrument composé",
+                "Un passif financier",
                 "Instrument composé"
               ],
               "answer": 2,
@@ -16091,10 +16091,10 @@
               "type": "mcq",
               "question": "Coûts d'émission 10 sur obligation convertible de 500 (dette 420, capital 80). Répartition des coûts ?",
               "options": [
-                "10 en charge",
-                "10 entièrement sur dette",
-                "5 chaque",
-                "8.4 sur dette (TIE) + 1.6 sur capital (CP)"
+                "10 en charges de l'exercice",
+                "10 entièrement sur la dette",
+                "5 sur la dette et 5 sur les FP",
+                "8.4 dette, 1.6 FP"
               ],
               "answer": 3,
               "explanation": "Au prorata : 420/500 × 10 = 8.4 (intégré au TIE) ; 80/500 × 10 = 1.6 (déduit des CP)."
