@@ -60,7 +60,7 @@ async function renderProgress(container) {
                 </div>
             </div>
             <div class="pg-hero-right">
-                <button class="pg-hero-btn pg-hero-btn-primary" onclick="navigate('trainer')">🎯 Entraînement</button>
+                <button class="pg-hero-btn pg-hero-btn-primary" onclick="navigate('trainer')">⚡ Révision active</button>
                 <button class="pg-hero-btn" onclick="navigate('qcm')">❓ QCM</button>
                 <button class="pg-hero-btn" onclick="navigate('fcdb')">🃏 BDD Flashcards</button>
                 <button class="pg-hero-btn" onclick="navigate('modules')">📘 Modules</button>
@@ -776,7 +776,7 @@ async function showNormDetail(normCode) {
                         ${l.completed ? '✅' : '○'} ${escapeHtml(l.lesson_id)}
                         ${l.completed_at ? ` <span style="color:var(--text-muted)">(${new Date(l.completed_at).toLocaleDateString('fr-CH')})</span>` : ''}
                     </div>
-                `).join('') : '<div style="color:var(--text-muted);font-size:12px">Aucune leçon terminée. <a href="#" onclick="document.getElementById(\'normDetailModal\').remove();navigate(\'trainer\');return false" style="color:#3b82f6">Ouvrir Entraînement →</a></div>'}
+                `).join('') : '<div style="color:var(--text-muted);font-size:12px">Aucune leçon terminée. <a href="#" onclick="document.getElementById(\'normDetailModal\').remove();navigate(\'trainer\');return false" style="color:#3b82f6">Ouvrir Révision active →</a></div>'}
             </div>
 
             <div style="margin-bottom:16px">

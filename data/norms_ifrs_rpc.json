@@ -266,7 +266,7 @@
           "items": [
             {
               "label": "Perte de la moitié du capital (art. 725a CO)",
-              "val": "FP < 50% du capital-actions",
+              "val": "Actifs nets < 50 % du capital-actions + réserves légales (issues du capital et du bénéfice)",
               "extra": "CA doit prendre des mesures d'assainissement"
             },
             {
@@ -346,8 +346,8 @@
             },
             {
               "label": "Rotation associé d'audit (CH)",
-              "val": "7 ans max + cooling-off 2 ans",
-              "extra": "EXPERTsuisse / LSR"
+              "val": "7 ans max, puis 3 ans avant de reprendre le mandat",
+              "extra": "Art. 730a al. 2 CO (contrôle ordinaire)"
             }
           ]
         }
@@ -10827,7 +10827,7 @@
         }
       ],
       "key_rules": [
-        "Perte de capital (art. 725a) : FP < 50% du capital-actions → CA prend des mesures.",
+        "Perte de capital (art. 725a) : actifs nets < 50 % du capital-actions + réserves légales → CA prend des mesures.",
         "Surendettement (art. 725b) : dettes > actifs en continuation ET liquidation → aviser le juge.",
         "Double bilan obligatoire : valeurs de continuation + valeurs de liquidation.",
         "Exception postposition : créancier subordonné à hauteur du découvert → pas d'avis au juge.",
@@ -10878,7 +10878,7 @@
       "thresholds": [
         {
           "label": "Seuil perte de capital",
-          "value": "FP < 50% du capital-actions"
+          "value": "Actifs nets < 50 % du capital-actions + réserves légales (issues du capital et du bénéfice)"
         },
         {
           "label": "Surendettement",

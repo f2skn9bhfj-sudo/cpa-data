@@ -93,7 +93,7 @@ const TAB_META = {
     hec:        { ic: '🎓', label: 'HEC' },
     english:    { ic: '🇬🇧', label: 'Anglais' },
     podcasts:   { ic: '🎧', label: 'Podcasts' },
-    trainer:    { ic: '⚡', label: 'Révision espacée' },
+    trainer:    { ic: '⚡', label: 'Révision active' },
     qcm:        { ic: '❓', label: 'QCM' },
     fcdb:       { ic: '🃏', label: 'Flashcards' },
     oral:       { ic: '🎤', label: 'Examen oral' },

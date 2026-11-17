@@ -230,8 +230,12 @@ function PodcastsApp() {
       const ep = missing[i++];
       const a = new Audio();
       a.preload = "metadata";
-      a.onloadedmetadata = () => { if (isFinite(a.duration) && a.duration > 0) found[ep.id] = a.duration; a.removeAttribute("src"); step(); };
-      a.onerror = () => step();
+      // Libère vraiment le fichier : sans load(), le navigateur garde la
+      // connexion ouverte et continue à télécharger → après quelques épisodes,
+      // les autres chargements de l'app restaient bloqués.
+      const release = () => { a.onloadedmetadata = a.onerror = null; a.removeAttribute("src"); try { a.load(); } catch (e) {} };
+      a.onloadedmetadata = () => { if (isFinite(a.duration) && a.duration > 0) found[ep.id] = a.duration; release(); step(); };
+      a.onerror = () => { release(); step(); };
       a.src = P_PREFIX + ep.path;
     };
     step();

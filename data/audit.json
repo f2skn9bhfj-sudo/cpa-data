@@ -1924,7 +1924,7 @@
                 },
                 {
                   "term": "Perte de capital (CH, CO 725a)",
-                  "def": "FP < 50% du capital-actions + réserves légales. Déclenche convocation AG + mesures d'assainissement."
+                  "def": "Actifs nets < 50 % du capital-actions + réserves légales (issues du capital et du bénéfice). Déclenche convocation AG + mesures d'assainissement."
                 }
               ],
               "obligations": [
@@ -2972,7 +2972,7 @@
             "title": "Cooling-off period",
             "content": "Période d'interdiction d'exercer une fonction chez le client après avoir été l'auditeur (et inversement). Pour anciens auditeurs prenant un poste de direction financière chez un client d'audit : généralement 1-2 ans. Pour rotation associé : 3 ans avant reprise du même client.",
             "key_points": [
-              "Cooling-off rotation associé = 3 ans (CO 728)",
+              "Cooling-off rotation associé = 3 ans (CO 730a al. 2)",
               "Cooling-off CFO/CEO ex-auditeur = 1-2 ans selon code applicable",
               "Évite menace de familiarité"
             ]
@@ -4047,7 +4047,7 @@
               {
                 "t": "7 ans, avec interruption de 3 ans avant reprise",
                 "ok": true,
-                "x": "CO 728 al. 2 ch. 5 : rotation 7 ans + cooling-off 3 ans."
+                "x": "CO 730a al. 2 : rotation 7 ans + délai de 3 ans avant reprise."
               },
               {
                 "t": "10 ans",
@@ -4692,7 +4692,7 @@
               {
                 "t": "Vous ne pouvez plus être 'engagement partner' sur ce client → ROTATION + cooling-off de 3 ans avant reprise éventuelle",
                 "ok": true,
-                "x": "CO 728 al. 2 ch. 5 : rotation obligatoire après 7 ans."
+                "x": "CO 730a al. 2 : rotation obligatoire après 7 ans."
               },
               {
                 "t": "Démission immédiate du cabinet",

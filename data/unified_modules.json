@@ -9782,7 +9782,7 @@
               "items": [
                 {
                   "label": "Perte de la moitié du capital (art. 725a CO)",
-                  "val": "FP < 50% du capital-actions",
+                  "val": "Actifs nets < 50 % du capital-actions + réserves légales (issues du capital et du bénéfice)",
                   "extra": "CA doit prendre des mesures d'assainissement"
                 },
                 {
@@ -18909,7 +18909,7 @@
               "content": "**Conditions de l'opting-out :**\n1. Effectif ≤ 10 emplois à plein temps en moyenne annuelle\n2. Décision UNANIME de TOUS les actionnaires (pas seulement une majorité)\n3. Décision formelle inscrite dans les procès-verbaux\n\n**Qui peut demander la révision malgré l'opting-out ?**\nArt. 727a al. 4 : tout actionnaire peut demander la révision\n→ Droit individuel — prime sur la décision collective\n\n**Situations où l'opting-out est sans effet (réviseur obligatoire) :**\n1. Surendettement (art. 725b) → réviseur pour les bilans intermédiaires\n2. Perte de capital (art. 725a) → réviseur pour le bilan intermédiaire\n3. Un actionnaire le demande (art. 727a al. 4)\n4. Révision ordinaire requise (grande entreprise ou cotée)\n\n**PIÈGE EXAMEN — TRÈS FRÉQUENT :**\nSA avec opting-out + surendettement → DOIT quand même avoir un réviseur\npour certifier les bilans intermédiaires art. 725b\n\n**Opting-in :**\nUne SA qui avait fait opting-out peut à tout moment décider de nouveau d'avoir un réviseur (sans condition particulière)\n\n**Pratique :**\nL'opting-out est courant pour les petites SA familiales (< 3 actionnaires)\nÉconomie annuelle : coût du réviseur (2-10k CHF pour PME)",
               "section_id": "co_revision_s5",
               "key_point": "L'opting-out suppose un effectif ne dépassant pas 10 emplois à plein temps en moyenne annuelle ET le consentement de l'ensemble des actionnaires (art. 727a al. 2) ; il reste sans effet dès qu'un actionnaire exige un contrôle restreint ou en cas de perte de capital / surendettement nécessitant la vérification d'un bilan intermédiaire (art. 725a / 725b).",
-              "example": "Une petite SA en opting-out (moins de 10 emplois à plein temps) qui sombre dans le surendettement doit désigner un réviseur agréé pour vérifier le bilan intermédiaire au sens de l'art. 725b, avant tout avis au juge.",
+              "example": "Une petite SA en opting-out (10 emplois à plein temps au plus) qui sombre dans le surendettement doit désigner un réviseur agréé pour vérifier le bilan intermédiaire au sens de l'art. 725b, avant tout avis au juge.",
               "warning": "Piège très fréquent : l'opting-out n'éteint pas l'obligation de réviser le bilan intermédiaire en cas de surendettement (725b) ou de perte de capital (725a). Ne pas confondre non plus opting-out (renonciation, unanimité) et opting-in (réintroduction volontaire d'un réviseur, sans condition particulière)."
             },
             {

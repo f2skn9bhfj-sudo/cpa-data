@@ -406,7 +406,7 @@ async function renderTrainerHome(main) {
             <!-- Header -->
             <div style="margin-bottom:24px">
                 <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
-                    <span style="font-size:28px;font-weight:800;color:#f1f5f9">🎯 Entraînement</span>
+                    <span style="font-size:28px;font-weight:800;color:#f1f5f9">⚡ Révision active</span>
                 </div>
                 <div style="height:3px;width:60px;background:#10b981;border-radius:2px;margin-bottom:8px"></div>
                 <div style="font-size:14px;color:#64748b">Révision active • Méthode SM-2 • Cours intégrés</div>

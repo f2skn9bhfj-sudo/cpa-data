@@ -39,26 +39,49 @@ tools/                sync_subapps.py, build_vendor.sh, smoke_test.js
 la sous-app. Après une modification de JS/CSS/sous-app, **remplacer ce nombre
 partout dans `index.html`** (ex. `date +%s`).
 
-### Onglets
+### Navigation : 4 rubriques → pages
 
-| Onglet (data-tab) | Rendu | Type | Données |
+La barre du haut n'affiche que des **rubriques** (`NAV_GROUPS`, app.js) ; la
+rubrique active liste ses pages dans la sous-barre collante `#subTabBar`
+(`renderNavState`). Noms et icônes des pages : `TAB_META` (app.js), réutilisés
+par l'accueil (`HUB_SECTIONS`, dashboard.js, mêmes rubriques et même ordre).
+`navigate(page)` est inchangé ; `navigateGroup(id)` rouvre la dernière page de
+la rubrique (localStorage `swisscpa_nav_last`). Sur mobile, les 4 rubriques
+restent dans la barre ; le menu ☰ ne contient que recherche, PDF et thème.
+
+| Rubrique | Pages (ordre de la sous-barre) |
+|---|---|
+| 🏠 Accueil | dashboard |
+| 📚 Cours | modules, audit, grandlivre, conso, fusion, social, hec, english, podcasts |
+| 🎯 S'entraîner | trainer (« Révision active »), qcm, fcdb, oral, progress |
+| 🧰 Ressources | references, compare, fs, recherche |
+
+Ajouter une page : un `case` dans `navigate()`, une entrée `TAB_META`, sa place
+dans `NAV_GROUPS` (et une carte `HUB_SECTIONS` si elle doit être à l'accueil).
+`flashcards` (ancien écran des modes Libre/Quiz/Rappel/Examen blanc, atteint
+depuis la Révision active) est un alias de `fcdb` pour la navigation
+(`TAB_ALIAS`). La barre de recherche du haut ouvre la page `recherche`
+(`openFullSearch`, search.js) : un seul moteur dans l'app.
+
+| Page | Rendu | Type | Données |
 |---|---|---|---|
 | dashboard | dashboard.js `renderDashboard` (tuiles `HUB_SECTIONS`) | natif | flashcards (carte du jour) |
-| recherche | search_tab.js `renderRechercheTab` | natif | index plein-texte de 9 fichiers data/ + IA Mistral optionnelle (clé saisie par l'utilisateur, localStorage) |
+| recherche | search_tab.js `renderRechercheTab` (reprend `_stQuery`) | natif | index plein-texte de 9 fichiers data/ + IA Mistral optionnelle (clé saisie par l'utilisateur, localStorage) |
 | modules | modules.js `renderModules` (~3000 l.) | natif | unified_modules, trainer_courses, norms_ifrs_rpc, notion_lessons, flashcards ; `navigateToNormByCode(code)` ouvre une norme |
 | trainer | trainer.js `renderTrainer` | natif | sprints SM-2 (flashcards) + cours (trainer_courses) ; `launchSprintFromIds` (sélection venue de Flashcards) |
 | qcm | qcm.js `renderQcm` | natif | `get_qcm_catalog` = trainer_courses + unified_modules + audit.json annuaire_cours → **3290 QCM** |
 | fcdb | fcdb.js `renderFcdb` | natif | flashcards.json (**1512** cartes) ; « Réviser la sélection » → sprint |
 | compare | comparisons.js `renderComparisons` | natif | comparisons.json (25 thèmes) ; boutons « Normes liées » → `compGoNorm` |
-| progress | progress.js (pas de bouton, atteint via liens) | natif | stats |
+| progress | progress.js `renderProgress` | natif | stats |
 | fs, references, audit, english, oral, conso, hec, social, fusion, grandlivre | js/<app>.js → iframe `<app>/index.html` | sous-app | embarquées (voir plus bas) |
-| podcasts | podcasts.js → iframe persistante dans `#podcastHost` (l'audio continue en changeant d'onglet ; mini-lecteur `_pcRenderMini`) | sous-app | `__PODCASTS__` |
+| podcasts | podcasts.js → iframe persistante dans `#podcastHost` (l'audio continue en changeant de page ; mini-lecteur `_pcRenderMini`) | sous-app | `__PODCASTS__` |
 | eymanual | **masqué** (voir ci-dessous) | sous-app | — |
 
-**Onglets masqués** : `eymanual` (Manuel EY). Bouton commenté dans
-`index.html`, tuile commentée dans `HUB_SECTIONS` (dashboard.js), entrée dans
-`HIDDEN_TABS` (app.js, le bandeau « Reprendre » l'ignore). Code et dossier
-restent : `navigate('eymanual')` fonctionne. Réactiver = défaire ces 3 points.
+**Page masquée** : `eymanual` (Manuel EY) n'est dans aucune rubrique ni dans
+`HUB_SECTIONS`, et figure dans `HIDDEN_TABS` (le bandeau « Reprendre »
+l'ignore). Code et dossier restent : `navigate('eymanual')` fonctionne.
+Réactiver = l'ajouter à une rubrique de `NAV_GROUPS` (+ carte d'accueil) et le
+retirer de `HIDDEN_TABS`.
 
 ## Données (`data/`)
 
@@ -161,8 +184,9 @@ lignes d'un même `.jsx` entre deux synchronisations.
 
 ## Vérifications
 
-- `node tools/smoke_test.js` : serveur local + Chromium, parcourt les 18 onglets
-  visibles (attend le rendu des iframes), signale erreurs JS, fichiers locaux
+- `node tools/smoke_test.js` : serveur local + Chromium, parcourt les 19 pages
+  des rubriques (attend le rendu des iframes), vérifie que la navigation suit
+  la page, signale erreurs JS, fichiers locaux
   manquants et sous-apps vides. Tout est vérifiable hors ligne (vendor/).
 - `python3 tools/sync_subapps.py` doit répondre « à jour » partout avant commit.
 - `bash tools/build_vendor.sh` uniquement pour changer de version de React,
