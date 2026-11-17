@@ -6749,7 +6749,7 @@
     "sub": "Autres revenus & Calcul – L7",
     "d": "moyen",
     "q": "Plafond de déduction des **frais professionnels du salarié** (art. 26 LIFD) ?",
-    "a": "**Plafonds IFD 2024** :\n- **Déplacements domicile-travail** : max CHF 3'200/an\n- **Repas hors domicile** : forfait CHF 15/jour, max CHF 3'200/an\n- **Frais vestimentaires et autres** : forfait 3 % du salaire net, min CHF 2'000, max CHF 4'000\n\nChoix chaque année entre forfaits et frais effectifs justifiés."
+    "a": "**Plafonds IFD 2025-2026** :\n- **Déplacements domicile-travail** : max CHF 3'300/an\n- **Repas hors domicile** : forfait CHF 15/jour, max CHF 3'200/an\n- **Frais vestimentaires et autres** : forfait 3 % du salaire net, min CHF 2'000, max CHF 4'000\n\nChoix chaque année entre forfaits et frais effectifs justifiés."
   },
   {
     "id": 1360,
@@ -6765,7 +6765,7 @@
     "sub": "Autres revenus & Calcul – L7",
     "d": "moyen",
     "q": "Plafond de déduction pour **dons aux partis politiques** (IFD) ?",
-    "a": "**CHF 10'100 par an** (IFD 2024).\n\n⚠️ Plafonds cantonaux **différents** — certains cantons sont plus généreux (jusqu'à 20'000 CHF), d'autres moins.\n\nCondition : parti politique enregistré selon LF sur les droits politiques.\n\n📖 art. 33a LIFD"
+    "a": "**CHF 10'600 par an** (IFD 2025-2026).\n\n⚠️ Plafonds cantonaux **différents** — certains cantons sont plus généreux (jusqu'à 20'000 CHF), d'autres moins.\n\nCondition : parti politique enregistré selon LF sur les droits politiques.\n\n📖 art. 33a LIFD"
   },
   {
     "id": 1362,
@@ -6773,15 +6773,15 @@
     "sub": "Autres revenus & Calcul – L7",
     "d": "difficile",
     "q": "Plafond de déduction pour **garde extra-familiale d'enfants** (art. 33 al. 3 LIFD) ?",
-    "a": "**Jusqu'à CHF 25'000 par enfant** (IFD 2024).\n\n**Conditions** :\n- Enfant **< 14 ans**\n- Deux parents **actifs** (ou parent seul actif)\n- Frais **réellement encourus** (crèche, garderie, maman de jour, assistante maternelle)\n\n⚠️ Non cumulable avec la déduction sociale pour enfants à charge (art. 35 let. a — 6'600)."
+    "a": "**Jusqu'à CHF 25'800 par enfant** (IFD 2025-2026 ; 25'900 dès 2027).\n\n**Conditions** :\n- Enfant **< 14 ans**\n- Deux parents **actifs** (ou parent seul actif)\n- Frais **réellement encourus** (crèche, garderie, maman de jour, assistante maternelle)\n\n⚠️ Non cumulable avec la déduction sociale pour enfants à charge (art. 35 let. a — 6'800)."
   },
   {
     "id": 1363,
     "cat": "Fiscalité",
     "sub": "Autres revenus & Calcul – L7",
     "d": "moyen",
-    "q": "Déduction sociale pour **enfants à charge** (IFD 2024) ?",
-    "a": "**CHF 6'600 par enfant** (art. 35 al. 1 let. a LIFD).\n\n**Conditions** :\n- Enfant **mineur** OU en formation (jusqu'à ~25 ans)\n- **À charge** du contribuable (contribution d'entretien effective)\n\nChaque canton a ses propres montants (souvent plus élevés au niveau cantonal)."
+    "q": "Déduction sociale pour **enfants à charge** (IFD 2025-2026) ?",
+    "a": "**CHF 6'800 par enfant** (art. 35 al. 1 let. a LIFD).\n\n**Conditions** :\n- Enfant **mineur** OU en formation (jusqu'à ~25 ans)\n- **À charge** du contribuable (contribution d'entretien effective)\n\nChaque canton a ses propres montants (souvent plus élevés au niveau cantonal)."
   },
   {
     "id": 1364,
@@ -6821,7 +6821,7 @@
     "sub": "Autres revenus & Calcul – L7",
     "d": "moyen",
     "q": "Les **frais de formation continue** sont-ils déductibles ?",
-    "a": "**OUI, jusqu'à CHF 12'700/an** (art. 33 al. 1 let. j LIFD).\n\n**Conditions** :\n- **Formation continue** liée à l'activité actuelle\n- Frais de cours, examens, matériel pédagogique\n\n⚠️ **Formation initiale** ou pour **nouvelle profession** : NON déductible (frais préparatoires, art. 34 LIFD).\n\nÂge minimum : 20 ans (sauf si titre de base déjà acquis plus jeune)."
+    "a": "**OUI, jusqu'à CHF 13'000/an** (2025-2026 ; 13'100 dès 2027) (art. 33 al. 1 let. j LIFD).\n\n**Conditions** :\n- **Formation continue** liée à l'activité actuelle\n- Frais de cours, examens, matériel pédagogique\n\n⚠️ **Formation initiale** ou pour **nouvelle profession** : NON déductible (frais préparatoires, art. 34 LIFD).\n\nÂge minimum : 20 ans (sauf si titre de base déjà acquis plus jeune)."
   },
   {
     "id": 1369,
@@ -6853,7 +6853,7 @@
     "sub": "Autres revenus & Calcul – L7",
     "d": "moyen",
     "q": "La **déduction pour couple marié** (art. 33 al. 2 LIFD) : montant ?",
-    "a": "**50 % du revenu du conjoint le plus bas**, avec un maximum de **CHF 13'600** (IFD 2024).\n\nObjectif : compenser la progressivité due au cumul des revenus dans l'imposition commune du couple.\n\nCette déduction vient **en plus** de la déduction sociale pour couple mariés (art. 35 let. c — CHF 2'700)."
+    "a": "**50 % du revenu du conjoint le plus bas**, avec un maximum de **CHF 14'100** (IFD 2025-2026 ; minimum 8'600).\n\nObjectif : compenser la progressivité due au cumul des revenus dans l'imposition commune du couple.\n\nCette déduction vient **en plus** de la déduction sociale pour couple mariés (art. 35 let. c — CHF 2'800)."
   },
   {
     "id": 1373,
