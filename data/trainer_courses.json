@@ -2490,9 +2490,9 @@
               "type": "mcq",
               "question": "Une PME suisse développe en interne un logiciel de gestion. Phase de faisabilité clôturée positivement, budget approuvé, développement en cours. Traitement ?",
               "options": [
-                "Charge totale (RPC interdit la capitalisation)",
+                "Charge totale : les RPC interdisent toute activation de logiciel interne",
                 "Capitalisation obligatoire",
-                "Capitalisation possible si critères satisfaits (RPC 10 ~IAS 38)",
+                "Activation possible si critères remplis",
                 "Provision"
               ],
               "answer": 2,
@@ -2511,7 +2511,7 @@
                 "300k",
                 "340k",
                 "375k",
-                "360k (hors formation)"
+                "360k"
               ],
               "answer": 3,
               "explanation": "Coûts directement liés à la mise en service : prix + paramétrage + migration = 360k. Formation exclue (charge). Traitement cohérent avec IAS 38."
@@ -2554,8 +2554,8 @@
               "type": "mcq",
               "question": "Acquisition d'une filiale avec goodwill CHF 5 M. L'entité choisit la compensation directe avec les fonds propres. Information obligatoire ?",
               "options": [
-                "Information annexe 'shadow' comme si goodwill activé et amorti",
-                "Aucune, compensation définitive",
+                "L'effet théorique d'une activation",
+                "Aucune : la compensation est définitive et sans suite",
                 "Provision pour risques",
                 "Note sur les dividendes"
               ],
@@ -2573,8 +2573,8 @@
               "question": "Logiciel développé en interne. Salaires directs 200k, frais généraux attribuables 30k, administratif général 40k, frais de recherche initiale 50k, développement 150k. Montant capitalisable ?",
               "options": [
                 "470k (tout)",
-                "380k (hors admin et recherche)",
-                "230k (salaires + FG directs)",
+                "380k",
+                "230k (salaires + frais attribuables)",
                 "350k"
               ],
               "answer": 1,
@@ -2586,8 +2586,8 @@
               "options": [
                 "Rien : le goodwill est éliminé définitivement",
                 "Uniquement le prix d'acquisition initial",
-                "La JV à la clôture uniquement",
-                "Shadow accounting : goodwill comme s'il avait été activé et amorti, avec effet sur le résultat"
+                "La juste valeur du goodwill à la clôture uniquement, sans autre information",
+                "L'effet théorique d'une activation et d'un amortissement"
               ],
               "answer": 3,
               "explanation": "RPC 30 : compensation KP autorisée MAIS shadow accounting OBLIGATOIRE — présentation en annexe comme si activé/amorti + test sur indice. Spécificité 100 % suisse, non admise en IFRS."
@@ -2621,8 +2621,8 @@
               "options": [
                 "5 ans (présomption)",
                 "20 ans (max RPC)",
-                "15 ans (durée légale) sauf si durée économique plus courte",
-                "Durée indéterminée (brevet)"
+                "15 ans, sauf durée économique plus courte",
+                "Une durée indéterminée, le brevet étant renouvelable sans limite"
               ],
               "answer": 2,
               "explanation": "La durée économique est souvent alignée sur la protection légale si les avantages sont liés à cette protection. 5 ans = présomption par défaut mais peut être dépassée avec justification."
@@ -2649,9 +2649,9 @@
               "type": "mcq",
               "question": "Un logiciel interne a été amorti sur 5 ans. À la fin de l'année 3, la direction estime que sa durée résiduelle utile est de 4 ans supplémentaires (au lieu de 2). Traitement ?",
               "options": [
-                "Application prospective : VNC / 4 ans à partir de la clôture",
-                "Retraiter les 3 premières années",
-                "Charge exceptionnelle de l'écart",
+                "De façon prospective : VNC / 4 ans",
+                "Retraiter les trois premières années d'amortissement",
+                "Une charge exceptionnelle égale à l'écart",
                 "Impossible de changer la durée"
               ],
               "answer": 0,
@@ -2661,8 +2661,8 @@
               "type": "mcq",
               "question": "Un goodwill activé pour CHF 1 M amorti sur 10 ans présente des indices de dépréciation à l'an 4. VNC = 600, VR = 400. Comptabilisation ?",
               "options": [
-                "Dépréciation de 200, reprise possible si indice disparaît",
-                "Dépréciation de 200, JAMAIS reprise même si situation s'améliore",
+                "Dépréciation de 200, avec reprise possible si les indices disparaissent",
+                "Dépréciation de 200, sans reprise ultérieure",
                 "Dépréciation de 200 en OCI",
                 "Aucune dépréciation, continuer l'amortissement"
               ],
@@ -2690,9 +2690,9 @@
               "question": "Une entreprise migre vers un ERP en SaaS (abonnement annuel). Coûts d'implémentation 500k (dont 200k paramétrage du SaaS, 300k intégration avec systèmes internes). Traitement ?",
               "options": [
                 "500k capitalisés",
-                "200k charge, 300k capitalisable si actif distinct identifiable",
+                "200k en charge ; 300k activables si actif distinct",
                 "500k en charge",
-                "500k en provision de transition"
+                "500k en provision de transition, dissoute sur la durée de l'abonnement"
               ],
               "answer": 1,
               "explanation": "Paramétrage du SaaS = charge (indissociable du service). Intégration créant un actif contrôlable interne = capitalisable si critères remplis. Position cohérente avec IFRIC Agenda Decision 2021."
@@ -2707,10 +2707,10 @@
               "type": "mcq",
               "question": "Frais de lancement d'une nouvelle ligne de produits (pub, événements, PR) : CHF 1.2 M. Traitement RPC 10 ?",
               "options": [
-                "Capitalisables car contribuent à la notoriété",
+                "Capitalisables, car ils contribuent à la notoriété de la marque",
                 "Capitalisables et amortis sur 3 ans",
                 "Provision pour développement",
-                "Charge de l'exercice (frais de mise en route non reconnus)"
+                "En charges de l'exercice"
               ],
               "answer": 3,
               "explanation": "RPC 10/5 et cohérence IAS 38 : publicité, lancement, pré-exploitation = charge. Aucun actif identifiable distinct. Piège classique en examen."
@@ -2719,9 +2719,9 @@
               "type": "mcq",
               "question": "Une entité pharma engage CHF 5 M en R&D pour une molécule en phase II (résultats cliniques partiels, approbation incertaine). Traitement RPC 10 ?",
               "options": [
-                "Charge : phase II n'apporte pas d'assurance suffisante des avantages futurs",
-                "Capitalisation obligatoire",
-                "50 % capitalisé, 50 % charge",
+                "En charges (avantages futurs incertains)",
+                "Capitalisation obligatoire dès la phase clinique II",
+                "50 % capitalisés et 50 % en charges",
                 "Provision pour R&D"
               ],
               "answer": 0,
@@ -2753,20 +2753,20 @@
               "question": "Bâtipro SA (CA 2024 = 45.8 M, total bilan 28 M, ETP 180). Obligation d'établir des **états financiers consolidés** selon CO 963 ?",
               "options": [
                 "Non obligatoire (ne dépasse pas 2/3 seuils de 20/40/250)",
-                "Obligatoire si entité contrôle au moins une filiale, peu importe les seuils",
-                "Obligatoire — dépassement de 2/3 seuils sur 2 ans consécutifs",
+                "Oui s'il contrôle des filiales : 2 seuils sur 3 dépassés",
+                "Oui, dès le premier exercice où un seul des trois seuils est dépassé",
                 "Obligatoire uniquement si société cotée"
               ],
               "answer": 1,
-              "explanation": "**Réponse : B — Obligatoire dès qu'il y a contrôle (si seuils dépassés)**\n\n**Règle des états consolidés — art. 963 al. 1 CO** :\n> Toute personne morale tenue d'établir des comptes **contrôle une ou plusieurs entreprises** doit inclure celles-ci dans ses comptes consolidés.\n\n**Conditions CUMULATIVES pour la CONSOLIDATION (art. 963 al. 2)** :\n- **① Contrôle** (majorité voix, pouvoir nommer CA, ou accord contractuel)\n- **② NON dispensée** par art. 963a CO\n\n**DISPENSES** (art. 963a al. 1) — société mère dispensée si :\n- **a)** Contrôle lui-même par une entité qui consolide selon norme reconnue\n- **b)** **Deux des seuils suivants** NON dépassés sur 2 exercices :\n  • Bilan **≤ 20 M CHF**\n  • CA **≤ 40 M CHF**\n  • ETP **≤ 250**\n- **c)** Ou toutes filiales, individuellement et cumulées, d'importance mineure (PAB — principe aux actifs bilan)\n\n**Analyse Bâtipro SA** :\n- Bilan 28 M > 20 M → **dépasse 1er seuil** ❌\n- CA 45.8 M > 40 M → **dépasse 2e seuil** ❌\n- ETP 180 < 250 → seuil respecté ✓\n\n→ **2/3 seuils dépassés** → **pas de dispense** → **consolidation obligatoire**.\n\n**Éligibilité à la dispense** : il aurait fallu que 2/3 seuils soient **NON dépassés**. Ici 2/3 dépassés → consolidation obligatoire.\n\n**EXCEPTIONS (art. 963b CO)** — obligation **accrue** de consolider selon une **NORME RECONNUE** (RPC, IFRS, US GAAP) si :\n- Société **cotée**\n- **Association / fondation** avec ≥ 1 affiliée\n- Seuil spécifiques (emprunts obligataires)\n\n**Norme applicable** :\n- Si non cotée + non soumise art. 963b : **CO seulement** (minimum)\n- Si cotée ou sur demande 10 % actionnaires : RPC ou IFRS obligatoire\n\n**Piège A** : les seuils s'appliquent à la **dispense**, pas à l'obligation de base.\n**Piège C** : le critère est \"2/3 NON dépassés\" pour dispense, pas 2/3 dépassés.\n**Piège D** : cotation n'est pas condition de consolidation CO (c'est une condition d'application des normes RECONNUES art. 963b).",
+              "explanation": "**Réponse : B — Obligatoire : contrôle de filiales et 2 seuils sur 3 dépassés (pas de dispense)**\n\n**Règle des états consolidés — art. 963 al. 1 CO** :\n> Toute personne morale tenue d'établir des comptes **contrôle une ou plusieurs entreprises** doit inclure celles-ci dans ses comptes consolidés.\n\n**Conditions CUMULATIVES pour la CONSOLIDATION (art. 963 al. 2)** :\n- **① Contrôle** (majorité voix, pouvoir nommer CA, ou accord contractuel)\n- **② NON dispensée** par art. 963a CO\n\n**DISPENSES** (art. 963a al. 1) — société mère dispensée si :\n- **a)** Contrôle lui-même par une entité qui consolide selon norme reconnue\n- **b)** **Deux des seuils suivants** NON dépassés sur 2 exercices :\n  • Bilan **≤ 20 M CHF**\n  • CA **≤ 40 M CHF**\n  • ETP **≤ 250**\n- **c)** Ou toutes filiales, individuellement et cumulées, d'importance mineure (PAB — principe aux actifs bilan)\n\n**Analyse Bâtipro SA** :\n- Bilan 28 M > 20 M → **dépasse 1er seuil** ❌\n- CA 45.8 M > 40 M → **dépasse 2e seuil** ❌\n- ETP 180 < 250 → seuil respecté ✓\n\n→ **2/3 seuils dépassés** → **pas de dispense** → **consolidation obligatoire**.\n\n**Éligibilité à la dispense** : il aurait fallu que 2/3 seuils soient **NON dépassés**. Ici 2/3 dépassés → consolidation obligatoire.\n\n**EXCEPTIONS (art. 963b CO)** — obligation **accrue** de consolider selon une **NORME RECONNUE** (RPC, IFRS, US GAAP) si :\n- Société **cotée**\n- **Association / fondation** avec ≥ 1 affiliée\n- Seuil spécifiques (emprunts obligataires)\n\n**Norme applicable** :\n- Si non cotée + non soumise art. 963b : **CO seulement** (minimum)\n- Si cotée, ou sur demande d'associés représentant 20 % du capital (art. 963b al. 4) : norme reconnue (RPC, IFRS) obligatoire\n\n**Piège A** : les seuils s'appliquent à la **dispense**, pas à l'obligation de base.\n**Piège C** : un seul seuil dépassé ne suffit pas ; la dispense tombe lorsque 2 des 3 seuils sont dépassés durant 2 exercices consécutifs.\n**Piège D** : cotation n'est pas condition de consolidation CO (c'est une condition d'application des normes RECONNUES art. 963b).",
               "difficulty": "hard"
             },
             {
               "type": "mcq",
               "question": "Industrie Genève SA — exercice clos 31.12.2024. Constat en mars 2025 : un fournisseur clé a fait faillite le 15.02.2025, créance de 850'000 CHF devenue irrécouvrable. Traitement comptable 31.12.2024 selon CO 960-960e ?",
               "options": [
-                "Provision 850k au 31.12.2024 (principe de PRUDENCE art. 960 al. 2 CO)",
-                "Aucun impact (événement postérieur de 2025)",
+                "Ajuster : provision de 850k au 31.12.2024",
+                "Aucun impact, s'agissant d'un événement postérieur survenu en 2025",
                 "Divulgation uniquement en notes (non ajustable)",
                 "Ajustement du CA 2024 (reclassement)"
               ],
@@ -2778,9 +2778,9 @@
               "type": "mcq",
               "question": "Fabrique Mécanique SA (société non cotée, soumise à comptes individuels CO). Choix de la **norme comptable** : CO, RPC, IFRS. Différence majeure sur le **traitement des RÉSERVES LATENTES** ?",
               "options": [
-                "Les 3 référentiels interdisent les réserves latentes",
+                "Les trois référentiels interdisent les réserves latentes de la même manière",
                 "Seul l'IFRS interdit ; RPC et CO les autorisent",
-                "CO autorise les réserves latentes (art. 960a al. 4) ; RPC et IFRS les INTERDISENT (\"true and fair view\")",
+                "Le CO admet les réserves latentes ; RPC et IFRS non",
                 "RPC autorise les réserves latentes dans les comptes individuels uniquement"
               ],
               "answer": 2,
@@ -2791,7 +2791,7 @@
               "type": "mcq",
               "question": "Manufacture Juratoise SA (applique RPC) — stock matières premières au 31.12.2024 : 2'400 unités. Coût d'achat moyen = 185 CHF/unité. Cours actuel du marché (NRV) = 172 CHF/unité. Coûts directs de vente estimés = 8 CHF/unité. Évaluation au bilan selon RPC 17 ?",
               "options": [
-                "Min(coût, NRV) = Min(185, 164) = 164 × 2'400 = 393'600 CHF (NRV après coûts vente)",
+                "Min(185 ; 164) × 2'400 = 393'600 CHF",
                 "Coût 185 × 2'400 = 444'000 CHF (principe du coût historique)",
                 "Marché 172 × 2'400 = 412'800 CHF (juste valeur)",
                 "Max(coût, marché) = 185 × 2'400 = 444'000 CHF"
@@ -2824,7 +2824,7 @@
               "type": "mcq",
               "question": "Bâtiment Centre SA possède un immeuble de bureaux acquis en 2010 pour 15 M CHF (amorti 20 ans linéaire). VNC au 31.12.2024 = 3.75 M. Tests d'impairment (RPC 20) suite à la chute du marché locatif : valeur recoverable = 2.8 M. En 2025, le marché se redresse et la valeur recoverable remonte à 4.2 M. Traitements 2024 puis 2025 ?",
               "options": [
-                "2024 : perte impairment 950k ; 2025 : reprise limitée à la VNC hypothétique sans impairment antérieur (= 3.5 M), soit reprise 700k",
+                "Perte de 950k en 2024 ; reprise de 700k en 2025 (plafond)",
                 "2024 : perte impairment 950k ; 2025 : reprise intégrale 1'400k",
                 "2024 : pas de perte (plan d'amortissement inchangé) ; 2025 : pas d'impact",
                 "2024 : perte directe sur immobilisation ; 2025 : réévaluation au marché (4.2M)"
@@ -2837,8 +2837,8 @@
               "type": "mcq",
               "question": "Manufacturing Alpine SA : machine acquise en 2019 pour 1'200'000 CHF. Durée d'utilité initiale : 10 ans. Au 31.12.2024 (5 ans écoulés, VNC 600'000), l'entreprise révise sa durée d'utilité totale à **12 ans** (prolongation). Traitement 2025 ?",
               "options": [
-                "Amortissement rétroactif sur 12 ans au lieu de 10 ans",
-                "Changement d'estimation prospectif : 600'000 / 7 ans restants = 85'714/an",
+                "Un amortissement rétroactif sur 12 ans au lieu de 10, avec correction du passé",
+                "Prospectif : 600'000 / 7 ans = 85'714/an",
                 "Pas de modification (plan initial contractuel)",
                 "Correction d'erreur : réévaluation des exercices 2019-2024"
               ],
@@ -2850,9 +2850,9 @@
               "type": "mcq",
               "question": "TechStartup SA a investi 1.8 M CHF en **développement logiciel** sur 2024 (phase recherche 400k + phase développement 1.4M). Le projet est techniquement réalisable, le management a l'intention de le commercialiser et les ressources sont disponibles. Traitement RPC 10 ?",
               "options": [
-                "Charges intégrales de l'exercice (1.8 M) — pas de capitalisation en RPC",
+                "Charges intégrales de l'exercice (1.8 M), sans aucune capitalisation possible en RPC",
                 "Capitalisation intégrale : 1.8 M en immobilisation incorporelle",
-                "Recherche en charges (400k) + développement capitalisé (1.4M) si critères remplis",
+                "Recherche en charges, développement activable",
                 "Capitalisation 100 % avec amortissement linéaire 3 ans"
               ],
               "answer": 2,
@@ -2864,9 +2864,9 @@
               "question": "Acquisition Corp SA rachète Cible Sàrl pour 8 M CHF. Juste valeur des actifs nets identifiables = 5.3 M. Goodwill à traiter selon RPC 30 + RPC 20 ?",
               "options": [
                 "Goodwill 2.7M capitalisé, pas d'amortissement, test annuel impairment",
-                "Goodwill 2.7M directement passé en charges de l'exercice d'acquisition",
+                "Goodwill de 2.7 M directement passé en charges de l'exercice d'acquisition",
                 "Goodwill 2.7M déduit des capitaux propres (méthode hollandaise supprimée)",
-                "Goodwill 2.7M capitalisé + amortissement max 5 ans + test impairment si indicateurs"
+                "Activé et amorti (en règle 5 ans, max 20), test si indices"
               ],
               "answer": 3,
               "explanation": "**Réponse : D — Capitalisé + amortissement 5 ans + impairment**\n\n**GOODWILL en RPC** — traitement spécifique :\n\n**RPC 30 §17 — Reconnaissance** :\n> Le goodwill représente la différence **POSITIVE** entre :\n> - le **prix d'acquisition** payé pour l'investissement, et\n> - la part acquise de la **juste valeur** des actifs nets identifiables.\n\n**Calcul cas Acquisition Corp** :\n- Prix d'acquisition : **8'000'000**\n- Juste valeur actifs nets : **5'300'000**\n- **Goodwill** = 8'000 − 5'300 = **2'700'000 CHF**\n\n**TRAITEMENT RPC (3 options possibles)** :\n\n**Option A — Capitalisation avec amortissement** (majoritaire en pratique) :\n- Goodwill activé au bilan\n- **Amortissement LINÉAIRE sur maximum 5 ans** (peut être plus court si justifié)\n- Test d'impairment si indicateurs\n\n**Option B — Méthode HOLLANDAISE** (art. 963b CO) :\n- Compensation **directe** avec les capitaux propres lors de l'acquisition\n- **AUTORISÉE par RPC** pour comptes statutaires mais **DÉCONSEILLÉE**\n- **INTERDITE en IFRS** et dans les comptes consolidés transparents\n\n**Option D — Pas d'amortissement + impairment annuel** (approche IFRS) :\n- Goodwill activé sans amortissement\n- **Test d'impairment ANNUEL obligatoire** (RPC 20 §12)\n- Plus rare en RPC mais possible\n\n**Traitement standard RPC 30** (Option A) :\n\n**Au bilan** :\n```\nActif : Goodwill  2'700'000\nPassif : (effet sur caisse / emprunt pour financer l'acquisition)\n```\n\n**Amortissement annuel (5 ans)** :\n- 2'700'000 / 5 = **540'000 CHF/an** en charges\n- Période : 5 exercices suivant l'acquisition\n\n**COMPARAISON RPC vs IFRS** :\n\n| Aspect | RPC 30 | IFRS 3 / IAS 36 |\n|---|---|---|\n| Capitalisation | Oui | Oui |\n| Amortissement | **Oui (max 5 ans)** | **Non (jamais)** |\n| Test impairment | Si indicateurs | **Annuel OBLIGATOIRE** |\n| Reprise impairment goodwill | Non | Non |\n| Méthode hollandaise | Autorisée (déconseillée) | **INTERDITE** |\n\n**GOODWILL NÉGATIF (\"badwill\")** :\n- RPC 30 §18 : si prix d'acquisition **< juste valeur actifs nets**\n- Badwill = bonne affaire → **reconnu immédiatement en produit** de l'exercice\n- Avant : il faut revérifier si les JV ont été bien évaluées\n\n**IMPACT DE CHOIX DE MÉTHODE** sur les EF :\n\n**Option A (amortissement 5 ans)** :\n- Charges réparties\n- Résultat opérationnel réduit\n- Bilan plus \"plat\" dans le temps\n\n**Option B (hollandaise)** :\n- Pas d'impact P&L après l'acquisition\n- Réduction capitaux propres (1-off)\n- Goodwill \"caché\"\n\n**Option D (IFRS-like)** :\n- Résultat plus élevé année normale\n- Mais **risque de gros impairment** lors d'années difficiles\n\n**Piège A** : pas d'amortissement = traitement IFRS, pas RPC (option possible mais non standard).\n**Piège B** : passage direct en charges = pas conforme RPC.\n**Piège C** : méthode hollandaise = possible mais déconseillée et rare.",
@@ -2903,9 +2903,9 @@
               "question": "Division Textile de Conglomérat SA — chiffres 2024 : VNC actifs = 25 M (dont goodwill 8 M), cash flows futurs actualisés (5 ans horizon) = 18 M, JV diminuée des coûts de vente = 20 M. Calcul de l'impairment RPC 20 + allocation entre goodwill et autres actifs ?",
               "options": [
                 "Impairment 5 M (25 − 20) ; imputé d'abord aux autres actifs, goodwill inchangé",
-                "Impairment 7 M (25 − 18, valeur d'utilité) ; imputé d'abord au goodwill",
+                "Perte de 7 M (25 − 18), répartie au prorata entre le goodwill et les autres actifs",
                 "Pas d'impairment (VR = 20 M > coût des autres actifs)",
-                "Impairment 5 M (25 − 20) ; imputé d'abord au GOODWILL (8 M → 3 M), autres actifs inchangés"
+                "Perte de 5 M imputée d'abord au goodwill (8 → 3 M)"
               ],
               "answer": 3,
               "explanation": "**Réponse : D — Impairment 5 M ; imputé d'abord au goodwill**\n\n**RPC 20 — Unités productrices de trésorerie (CGU)** :\n\n**ÉTAPE 1 — Calcul de la valeur recouvrable (VR)** :\n\nVR = **Max**(Valeur d'utilité, JV − coûts de vente)\n\n- Valeur d'utilité (DCF) : **18 M**\n- JV − coûts vente : **20 M**\n- **VR** = **20 M** (le plus élevé)\n\n**ÉTAPE 2 — Comparaison VNC vs VR** :\n\n- VNC : 25 M\n- VR : 20 M\n- VNC > VR → **IMPAIRMENT de 5 M**\n\n**ALLOCATION de l'impairment** (RPC 20 §16) :\n\nSi impairment sur une CGU avec goodwill :\n\n**① D'ABORD** au goodwill alloué à la CGU\n**② ENSUITE** aux autres actifs au prorata de leur VNC\n\n**Cas Division Textile** :\n\n- Impairment total : 5 M\n- **Première allocation** : réduire le goodwill (8 M → capacité d'absorber 5 M) ✓\n- Nouveau goodwill : 8 − 5 = **3 M**\n- Autres actifs : **inchangés** (17 M)\n\n**Si l'impairment avait été de 10 M** :\n- Goodwill réduit à 0 (absorbe 8 M)\n- Reste 2 M à allouer aux autres actifs au **prorata de leur VNC**\n- Chaque actif : −(2 M × VNC actif / 17 M)\n\n**PLANCHER de l'impairment** (RPC 20 §17) :\n- Un actif ne peut pas être déprécié en dessous de sa **VR individuelle**\n- Si la JV d'un actif > VNC résiduelle après impairment → limiter l'impairment\n\n**IMPAIRMENT REVERSAL** :\n\n**GOODWILL** : **JAMAIS reprise** d'impairment (RPC 30 §27 + IFRS 3)\n- Une fois le goodwill déprécié, la perte est définitive\n- Justification : difficile de différencier goodwill \"rechargé\" d'un goodwill interne généré (interdit de comptabiliser)\n\n**Autres actifs** : reprise possible si circonstances inversées\n\n**Comptabilisation** :\n```\nDébit  : Perte de valeur Goodwill (charge)    5'000'000\nCrédit : Goodwill (réduction actif)            5'000'000\n```\n\n**TESTS d'IMPAIRMENT — fréquence** (RPC 20 §11-12) :\n\n**Annuel obligatoire** :\n- Goodwill\n- Immobilisations incorporelles non amortissables\n- Immobilisations en cours (WIP)\n\n**Si indicateurs** seulement :\n- Immobilisations corporelles amortissables\n- Actifs financiers à long terme\n- Stocks (NRV)\n\n**Indicateurs possibles** (RPC 20 §11) :\n- Baisse significative valeur marché\n- Changements défavorables (économique, juridique, technologique)\n- Obsolescence ou dommage physique\n- Performance économique inférieure aux prévisions\n- Plan de restructuration ou cession\n\n**Piège A** : imputer la perte aux autres actifs alors que le goodwill de l'UGT est déprécié en premier.\n**Piège B** : retenir la seule valeur d'utilité (18 M) — la VR est le MAX des deux.\n\n**Piège** : confondre VR (retenu comme MAX) avec valeur d'utilité seule.",
@@ -2928,10 +2928,10 @@
               "type": "mcq",
               "question": "Construction BTP SA (applique RPC) — contrat de 36 mois (début 2024) pour 15 M CHF. Au 31.12.2024 : coûts engagés 4.2 M ; coûts totaux estimés 12 M ; marge attendue 3 M (20 %). Méthode POC (percentage of completion) — revenus et marge à reconnaître 2024 ?",
               "options": [
-                "Revenus 15 M × (4.2 / 12) = 5.25 M ; marge 5.25 × 20 % = 1.05 M",
+                "Produit 5.25 M ; marge 1.05 M",
                 "Aucun revenu (contrat pas terminé)",
                 "Revenus 5.25 M ; marge 4.2 × 25 % = 1.05 M",
-                "Revenus = coûts engagés 4.2 M ; marge différée"
+                "Revenus égaux aux coûts engagés (4.2 M), sans aucune marge reconnue"
               ],
               "answer": 0,
               "explanation": "**Réponse : A — Revenus 5.25 M ; marge 1.05 M**\n\n**RPC 22 — Contrats à LONG TERME** :\n\n**Critères de RECONNAISSANCE par avancement (POC)** :\n\n**Conditions cumulatives** (RPC 22 §18) :\n✓ Le résultat final peut être **évalué de façon fiable**\n✓ **Avantages économiques** probablement obtenus\n✓ Le **degré d'avancement** peut être mesuré de façon fiable\n✓ Les **coûts** à engager peuvent être estimés de façon fiable\n\n**MÉTHODES DE MESURE DE L'AVANCEMENT** :\n\n**① Coûts engagés / coûts totaux estimés** (méthode la plus courante) :\n```\n% avancement = Coûts engagés à ce jour / Coûts totaux estimés\n```\n\n**② Unités produites** (projets répétitifs)\n**③ Étapes physiques** (milestones contractuels)\n**④ Degré d'avancement technique** (expertise)\n\n**Calcul cas Construction BTP** :\n\n**Avancement** = Coûts engagés / Coûts totaux estimés\n**Avancement** = 4.2 M / 12 M = **35 %**\n\n**Revenus à comptabiliser 2024** :\n= Valeur du contrat × Avancement\n= 15 M × 35 % = **5.25 M CHF**\n\n**Charges 2024** :\n= Coûts engagés = **4.2 M CHF**\n\n**Marge 2024** :\n= 5.25 − 4.2 = **1.05 M CHF** (représente 35 % de la marge totale 3 M) ✓\n\n**Vérification cohérence** :\n- Marge totale : 3 M\n- 35 % × 3 M = 1.05 M ✓\n\n**Écritures comptables 2024** :\n\n**① Revenus reconnus** :\n```\nDébit  : Créances clients (ou \"travaux en cours\")  5'250'000\nCrédit : Produits des ventes (revenue)               5'250'000\n```\n\n**② Charges reconnues** (déjà comptabilisées au fur et à mesure des coûts) :\nTotal : **4'200'000 CHF**\n\n**MÉTHODE À L'ACHÈVEMENT** (alternative — moins recommandée RPC) :\n- Pas de reconnaissance de revenu avant achèvement complet\n- **Autorisée** en RPC seulement si fiabilité incertaine\n- Interdite par IFRS 15 dès que POC applicable\n\n**CONTRATS DÉFICITAIRES (perte prévue)** :\n\nSi coûts totaux estimés > Revenus du contrat :\n→ **PROVISION IMMÉDIATE** pour la totalité de la perte prévue\n→ **Pas d'étalement** (principe de prudence)\n\n**Exemple** :\n- Revenu 15 M, coûts estimés 16 M\n- Perte attendue : 1 M\n- Provisionner 1 M IMMÉDIATEMENT\n\n**Bilan présentation** :\n\nTravaux en cours (work in progress) :\n= Coûts engagés + Marge reconnue − Paiements client\n= 4.2 M + 1.05 M − paiements reçus\n\n**Si client a déjà payé 6 M** :\n- Coûts engagés + marge : 5.25 M\n- Paiements : 6 M\n- **AVANCES CLIENTS** (passif) : 0.75 M\n\n**RETRAITEMENTS et RÉVISIONS** :\n\nSi les estimations sont révisées :\n- **Changement d'estimation** → traitement prospectif\n- Ajuster l'avancement pour la période en cours et futures\n- Pas de correction rétroactive\n\n**Piège B** : pas de revenu avant achèvement = méthode à l'achèvement (rare).\n**Piège C** : marge 25 % incorrecte (la marge du contrat est 20 %, pas 25 %).\n**Piège D** : revenus = coûts uniquement → méthode \"zero profit\" (quand fiabilité incertaine).",
@@ -2948,8 +2948,8 @@
               "type": "mcq",
               "question": "Groupe Alpha SA : prêt de 3.5 M consenti à M. Durand (actionnaire à 28 % + membre CA). Taux 0.5 %. Cours LIBOR-equivalent AFC : 3.2 %. Obligations RPC 15 + traitement fiscal ?",
               "options": [
-                "Pas besoin de divulgation (actionnaire minoritaire < 50 %)",
-                "Divulgation obligatoire RPC 15 + risque fiscal : prestation appréciable en argent (AFC circular 158)",
+                "Pas besoin de publication, l'actionnaire étant minoritaire (moins de 50 %)",
+                "Publication (RPC 15) et risque fiscal (prestation appréciable)",
                 "Divulgation uniquement si montant > 5 M",
                 "Fiscalement sans impact (prêt formel avec contrat écrit)"
               ],
@@ -2961,8 +2961,8 @@
               "type": "mcq",
               "question": "SwissGrowth SA (cotée SIX, applique RPC) — exercice 2024. Constate une erreur matérielle 1.2 M dans les créances 2023 non corrigée en clôture 2023. Comment traiter en 2024 ?",
               "options": [
-                "Reprise de 1.2 M en résultat 2024 (impact P&L 2024)",
-                "Retraitement rétrospectif 2023 + retraitement cumulatif fonds propres 1.1.2024 (RPC 31)",
+                "Reprise de 1.2 M en résultat 2024, avec un impact direct sur le compte de résultat",
+                "Correction rétrospective (comparatifs et fonds propres)",
                 "Divulgation simple en note, pas d'ajustement",
                 "Compensation avec un autre poste (effet nul)"
               ],
@@ -2974,10 +2974,10 @@
               "type": "mcq",
               "question": "Industrielle Pesticide SA est engagée dans un litige environnemental. Les avocats estiment 55 % de chances de devoir payer une amende de 2-4 M CHF (valeur centrale 3 M). Procès en 2026. Traitement RPC ?",
               "options": [
-                "Provision 3 M (valeur centrale attendue, car probabilité > 50 %)",
+                "Provision de 3 M (estimation la plus probable)",
                 "Pas de provision (incertitude trop forte)",
                 "Provision 2 M (borne inférieure, prudence inverse)",
-                "Divulgation note sans provision (passif conditionnel)"
+                "Une simple mention en annexe, l'issue du litige restant incertaine"
               ],
               "answer": 0,
               "explanation": "**Réponse : A — Provision 3 M (valeur centrale, probabilité > 50 %)**\n\n**RPC 23 — Provisions, passifs conditionnels, actifs conditionnels** :\n\n**Critères de RECONNAISSANCE d'une PROVISION** (§2) :\n\n**Conditions CUMULATIVES** :\n✓ **a) Obligation actuelle** (juridique ou implicite) résultant d'un événement passé\n✓ **b) Sortie de ressources PROBABLE** (> 50 %)\n✓ **c) Montant estimable de façon FIABLE**\n\n**Analyse cas Pesticide SA** :\n\n**a) Obligation actuelle** :\n- Litige engagé → événement passé caractérisé ✓\n\n**b) Probabilité > 50 %** :\n- Probabilité 55 % évaluée par avocats ✓\n- Seuil franchi (critère RPC 23 : \"probable\" = > 50 %)\n\n**c) Montant estimable** :\n- Fourchette 2-4 M\n- Valeur centrale 3 M estimable de façon raisonnable ✓\n\n→ **3 critères satisfaits** → **PROVISION obligatoire**.\n\n**MONTANT de la provision** (RPC 23 §10) :\n\n> La provision correspond à la **meilleure estimation** des dépenses nécessaires à l'extinction de l'obligation actuelle à la date de clôture.\n\n**Méthodes possibles** :\n\n**① Fourchette unique avec probabilité forte** :\n- Valeur centrale (ici 3 M)\n\n**② Espérance mathématique** (si plusieurs scénarios) :\n- Proba × Montant pour chaque scénario\n- Somme pondérée\n\n**③ Montant médian** si distribution asymétrique\n\n**Retenu ici** : **3 M CHF** (valeur centrale dans fourchette 2-4).\n\n**Comptabilisation** :\n```\nDébit  : Charge exceptionnelle environnement     3'000'000\nCrédit : Provision litiges (passif LT)           3'000'000\n```\n\n**ACTUALISATION** (§12) :\n\nSi échéance > 1 an → peut être actualisée si effet matériel.\n\nIci : procès 2026 → 2 ans → peu d'impact à taux normal (< 5 %)\nSi taux 3 % : VA = 3 M / 1.03² ≈ 2.83 M (économie 170k)\nSouvent négligé pour simplicité.\n\n**DISTINCTION 3 TYPES** (RPC 23) :\n\n| Type | Conditions | Traitement |\n|---|---|---|\n| **PROVISION** | Probable (>50 %) + estimable | Reconnaissance au bilan |\n| **PASSIF CONDITIONNEL** | < 50 % OU non estimable | Divulgation note seulement |\n| **PASSIF ÉVENTUEL ÉLOIGNÉ** | Très improbable | Pas de divulgation |\n\n**ACTIF CONDITIONNEL** (ex. gain probable de procès) :\n- Principe de **prudence** : reconnaissance **seulement** si **quasi certain**\n- Divulgation si probable\n\n**RÉVISION** (§13) :\n- Revoir la provision à chaque clôture\n- Ajuster selon nouveaux éléments (expertise, jurisprudence)\n- Libération si obligation éteinte\n- Augmentation si nouvel élément aggravant\n\n**DIVULGATIONS en notes** (§15) :\n- Description de l'obligation (litige environnemental)\n- Montant de la provision\n- Incertitudes estimées\n- Date prévue de règlement\n- Remboursements attendus (assurance)\n\n**Piège B** : probabilité 55 % est bien > 50 % → provision obligatoire.\n**Piège C** : borne inférieure sous-estime systématiquement (pas prudent).\n**Piège D** : passif conditionnel = probabilité < 50 %, pas notre cas.",
@@ -2987,10 +2987,10 @@
               "type": "mcq",
               "question": "Restructuring Suisse SA annonce publiquement le 15.11.2024 la fermeture de son usine de Bienne d'ici juin 2025. Coûts estimés : indemnités licenciement 1.8 M + démolition bâtiment 0.6 M + pertes d'exploitation 1.2 M (jusqu'à fermeture effective). Provision au 31.12.2024 selon RPC 23 ?",
               "options": [
-                "Provision 2.4 M (indemnités + démolition uniquement)",
+                "Provision de 2.4 M",
                 "Provision 3.6 M (tous les coûts annoncés)",
                 "Provision 1.8 M (indemnités licenciement seules)",
-                "Pas de provision (pas encore effectif)"
+                "Aucune provision, faute d'engagement juridique formel envers les tiers"
               ],
               "answer": 0,
               "explanation": "**Réponse : A — Provision 2.4 M (indemnités + démolition)**\n\n**RPC 23 §7 — Provisions de RESTRUCTURATION** :\n\n**Conditions pour reconnaître une provision de restructuration** :\n\n✓ Un **plan formel détaillé** identifiant :\n- Activité concernée\n- Site(s) affecté(s)\n- Nombre d'employés touchés\n- Échéancier\n- Coûts prévus\n\n✓ **ANNONCE publique** du plan aux parties concernées\n- Création d'une **attente légitime** que le plan sera exécuté\n- \"Constructive obligation\" (obligation implicite)\n\n✓ Coûts estimables\n\n**Cas Restructuring SA** — conditions remplies :\n- Plan détaillé : usine Bienne ✓\n- Annonce publique 15.11.2024 ✓\n- Coûts estimables ✓\n- → **Provision justifiée**\n\n**COÛTS à INCLURE** (RPC 23 §8) :\n\n**ÉLIGIBLES** :\n✓ **Indemnités de licenciement** (obligatoires)\n✓ **Démolition / démantèlement** (nécessité découlant de la fermeture)\n✓ Pertes **sur contrats onéreux** de loyer restants\n✓ Coûts de réinstallation du personnel retenu (ailleurs)\n\n**NON ÉLIGIBLES** :\n✗ **Pertes d'exploitation FUTURES** liées à la poursuite d'activité jusqu'à la fermeture\n  • Raison : ces pertes seront comptabilisées **au fur et à mesure** qu'elles surviennent\n  • Pas d'obligation actuelle pour les pertes futures\n  • Principe : les pertes suivent le principe d'accrual\n✗ Coûts de **relocalisation des activités poursuivies** (investissement futur)\n✗ Coûts de **formation / reconversion** du personnel restant\n✗ Coûts **marketing** liés à la nouvelle stratégie\n\n**Analyse cas** :\n\n| Poste | Montant | Provisionnable |\n|---|---|---|\n| Indemnités licenciement | 1.8 M | **OUI** ✓ |\n| Démolition bâtiment | 0.6 M | **OUI** ✓ |\n| Pertes exploitation 6 mois | 1.2 M | **NON** ❌ |\n\n**Provision 31.12.2024 : 1.8 + 0.6 = 2.4 M CHF**\n\n**Comptabilisation** :\n```\nDébit  : Charge exceptionnelle restructuration   2'400'000\nCrédit : Provision restructuration               2'400'000\n```\n\n**TRAITEMENT des PERTES d'EXPLOITATION FUTURES** :\n- Comptabilisées au **fur et à mesure** 2025 (janvier-juin)\n- Comme pertes opérationnelles normales\n- Donc impact P&L réparti\n\n**DIVULGATION EN NOTES** (§15) :\n\n> En novembre 2024, la Société a annoncé la fermeture de l'usine de Bienne, effective en juin 2025. Une provision de 2'400'000 CHF a été constituée au 31.12.2024 pour couvrir les indemnités de licenciement (1'800'000) et les coûts de démolition (600'000). Les pertes d'exploitation futures estimées à 1'200'000 seront comptabilisées au fur et à mesure de leur survenance.\n\n**QUESTION de TIMING** — quand provisionner ?\n\n**Reconnaissance** :\n- Date la plus précoce entre :\n  • Annonce publique formelle\n  • Contrats irréversibles engagés\n  • Obligation légale déclenchée\n\n**Cas Restructuring** :\n- Annonce 15.11.2024 → provision dès 31.12.2024 ✓\n- Pas d'attente jusqu'à l'exécution\n\n**IFRS équivalent** : **IAS 37** même traitement détaillé.\n\n**RÉVISION de la provision** :\n- Chaque clôture : ajustement si estimations changent\n- Si coûts réels < provision : reprise en résultat\n- Si coûts réels > provision : charge supplémentaire\n\n**Piège B** : inclure pertes futures → surestimation provision.\n**Piège C** : oublier démolition (coût directement lié à la décision).\n**Piège D** : si tous les critères sont satisfaits → obligation de provisionner maintenant.",
@@ -3111,8 +3111,8 @@
               "options": [
                 "Maintien de la dépréciation",
                 "Reprise partielle proportionnelle",
-                "Reprise intégrale + plus-value latente",
-                "Reprise intégrale jusqu'au coût historique (pas au-delà)"
+                "Reprise intégrale, augmentée de la plus-value latente de 10 %",
+                "Reprise jusqu'au coût historique"
               ],
               "answer": 3,
               "explanation": "Reprise possible jusqu'au coût historique si la cause de la dépréciation a disparu (RPC 17/9). Le plus-value au-delà est reconnue à la vente effective, pas avant."
@@ -3122,8 +3122,8 @@
               "question": "Matière première : coût 100, coût de remplacement 80. Le produit fini est toujours vendu avec marge positive. Test VNR ?",
               "options": [
                 "Provision de 20 (alignement au coût de remplacement)",
-                "Pas de provision : MP non dépréciée si produit fini vendu avec profit",
-                "Provision obligatoire quelle que soit la situation aval",
+                "Pas de dépréciation si le produit fini dégage une marge",
+                "Une provision obligatoire, quelle que soit la situation du produit fini en aval",
                 "Moyenne entre les deux"
               ],
               "answer": 1,
@@ -3155,10 +3155,10 @@
               "type": "mcq",
               "question": "Achats : 100u @ 8, 100u @ 10, 100u @ 12. Ventes : 150u. Stock final FIFO ?",
               "options": [
-                "50 u @ 10 + 100 u @ 12 = 1'700",
-                "150 × 10 = 1'500",
-                "150 × 12 = 1'800",
-                "150 × 8 = 1'200"
+                "1'700",
+                "1'500 (150 × 10)",
+                "1'800 (150 × 12)",
+                "1'200 (150 × 8)"
               ],
               "answer": 0,
               "explanation": "FIFO : les 150 unités vendues sont les plus anciennes (100@8 + 50@10). Stock final = 50 restants @10 + 100 @12 = 500 + 1'200 = 1'700."
@@ -3173,10 +3173,10 @@
               "type": "mcq",
               "question": "Concession automobile vend des véhicules neufs identifiés chacun par un VIN. Méthode adaptée ?",
               "options": [
-                "FIFO obligatoire",
-                "Identification spécifique (articles non interchangeables)",
-                "CMP préférable",
-                "LIFO avantageux"
+                "La méthode FIFO, obligatoire",
+                "L'identification spécifique",
+                "Le coût moyen pondéré, préférable",
+                "La méthode LIFO, fiscalement avantageuse"
               ],
               "answer": 1,
               "explanation": "Véhicules uniques (VIN, options spécifiques) = articles non interchangeables. Identification spécifique (IAS 2.23 / RPC 17/7)."
@@ -3238,9 +3238,9 @@
               "type": "mcq",
               "question": "Une usine tourne à 50 % de sa capacité normale. Les frais fixes absorbés doivent être calculés sur :",
               "options": [
-                "Production réelle",
-                "Capacité normale (standard de production attendu)",
-                "Capacité maximale théorique",
+                "La production réelle de la période",
+                "La capacité normale",
+                "La capacité maximale théorique de l'usine",
                 "Capacité budgétée"
               ],
               "answer": 1,
@@ -3256,9 +3256,9 @@
               "type": "mcq",
               "question": "Un stock en consignation chez un distributeur (propriété juridique du consignataire non transférée) est :",
               "options": [
-                "Stock du consignateur (propriétaire économique)",
-                "Stock du distributeur",
-                "Hors bilan de tous",
+                "Dans le stock du consignateur",
+                "Dans le stock du distributeur qui le détient",
+                "Hors bilan chez les deux parties",
                 "À 50/50"
               ],
               "answer": 0,
@@ -3294,9 +3294,9 @@
               "question": "Machine acquise 800k, transport 40k, installation 50k, formation opérateurs 20k, essais de production 30k. Coût à capitaliser ?",
               "options": [
                 "800k",
-                "920k (800 + 40 + 50 + 30)",
+                "920k",
                 "890k",
-                "940k (tout)"
+                "940k"
               ],
               "answer": 1,
               "explanation": "Prix + transport + installation + tests de production = 920k. Formation exclue (charge). Cohérence RPC 18 / IAS 16."
@@ -3311,9 +3311,9 @@
               "type": "mcq",
               "question": "Immeuble détenu pour générer des loyers uniquement (non utilisé par l'entité). Traitement RPC ?",
               "options": [
-                "Obligatoirement à la JV (comme IAS 40)",
+                "Obligatoirement à la juste valeur, comme sous IAS 40",
                 "Stock RPC 17",
-                "Immobilisation corporelle classique RPC 18, JV possible avec disclosure dédiée",
+                "Immobilisation (RPC 18), JV possible",
                 "Actif financier"
               ],
               "answer": 2,
@@ -3324,8 +3324,8 @@
               "question": "Différence principale entre RPC 18 et IAS 16 sur l'approche par composants ?",
               "options": [
                 "RPC 18 l'interdit",
-                "RPC 18 la recommande mais ne l'oblige pas ; IAS 16 l'impose",
-                "Identique dans les deux normes",
+                "RPC la recommande, IAS 16 l'impose",
+                "Le traitement est identique dans les deux normes",
                 "IAS 16 l'interdit"
               ],
               "answer": 1,

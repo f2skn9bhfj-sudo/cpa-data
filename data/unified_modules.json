@@ -9989,9 +9989,9 @@
               "question": "Beta SA passe pour la première fois aux Swiss GAAP RPC. Quel est le traitement correct ?",
               "options": [
                 "A. Application prospective uniquement, pas de retraitement",
-                "B. Retraiter rétrospectivement les 5 derniers exercices",
+                "B. Retraiter rétrospectivement les cinq derniers exercices publiés, avec un rapport spécial",
                 "C. Appliquer les RPC seulement à partir de l'exercice suivant la décision",
-                "D. Retraiter le bilan d'ouverture à la date de transition + comparatifs retraités + divulguer l'impact"
+                "D. Retraiter l'ouverture et les comparatifs, divulguer l'impact"
               ],
               "answer": 3,
               "explanation": "RPC 1 s7 : à la première application, déterminer la date de transition (début du premier exercice comparatif), retraiter le bilan d'ouverture aux RPC, présenter les comparatifs retraités et divulguer l'impact en annexe. C'est un retraitement rétrospectif, mais limité à 1 exercice de comparatif.",
@@ -10315,10 +10315,10 @@
               "type": "mcq",
               "question": "Quelle est la base d'évaluation principale retenue par RPC 2 pour les éléments du bilan ?",
               "options": [
-                "A. Le coût historique (prix d'acquisition ou coût de fabrication)",
-                "B. La juste valeur (fair value)",
-                "C. La valeur de marché systématique",
-                "D. La valeur de remplacement"
+                "A. Le coût historique",
+                "B. La juste valeur (fair value) à chaque clôture",
+                "C. La valeur de marché, de manière systématique",
+                "D. La valeur de remplacement actuelle"
               ],
               "answer": 0,
               "explanation": "RPC 2 retient le coût historique comme base : prix d'acquisition (achats) ou coût de fabrication (productions propres), moins corrections de valeur. Le principe du « plus bas » s'applique : si VNR < coût, on retient la VNR (prudence).",
@@ -10380,9 +10380,9 @@
               "type": "mcq",
               "question": "Quel est le traitement RPC 2 des gains de change LATENTS sur des créances en devises étrangères en fin d'exercice ?",
               "options": [
-                "A. Toujours comptabilisés en résultat (RPC fondamentales et complètes)",
+                "A. Toujours comptabilisés en résultat, en RPC fondamentales comme en RPC complètes",
                 "B. Toujours différés en passif",
-                "C. Fondamentales : non comptabilisés (prudence) ; Complètes : comptabilisés en résultat",
+                "C. Fondamentales : non comptabilisés ; complètes : en résultat",
                 "D. Comptabilisés directement en capitaux propres (OCI)"
               ],
               "answer": 2,
@@ -10395,10 +10395,10 @@
               "type": "mcq",
               "question": "Quelle est la différence majeure entre RPC 2 et IAS 36 concernant le goodwill ?",
               "options": [
-                "A. Aucune différence — les deux normes amortissent le goodwill",
-                "B. RPC amortit (max 20 ans) ou impute aux KP ; IFRS interdit l'amortissement et impose un test d'impairment annuel",
+                "A. Aucune différence : les deux référentiels amortissent le goodwill sur sa durée d'utilité",
+                "B. RPC : amortissement (≤ 20 ans) ou imputation ; IFRS : test annuel",
                 "C. RPC interdit l'amortissement comme IFRS",
-                "D. RPC capitalise sans amortissement ; IFRS amortit sur 10 ans"
+                "D. RPC capitalise le goodwill sans amortissement ; IFRS l'amortit sur 10 ans au maximum"
               ],
               "answer": 1,
               "explanation": "Question d'examen classique. RPC 2 : amortissement systématique (max 20 ans) OU imputation aux KP avec simulation. IFRS (IAS 36) : interdiction d'amortir le goodwill, test d'impairment annuel obligatoire (au minimum) avec dépréciation immédiate si nécessaire.",
@@ -10609,8 +10609,8 @@
               "question": "Selon RPC 3, comment doivent être classés les actifs et les dettes au bilan ?",
               "options": [
                 "A. Par ordre de liquidité décroissante uniquement",
-                "B. Distinction obligatoire courants / non courants pour les actifs ; CT / LT pour les dettes",
-                "C. Aucune obligation de classement, libre choix",
+                "B. Distinction court terme / long terme",
+                "C. Aucune obligation de classement : libre choix de l'entité",
                 "D. Par ordre alphabétique des postes"
               ],
               "answer": 1,
@@ -10688,9 +10688,9 @@
               "type": "mcq",
               "question": "Quel principe RPC 3 interdit la compensation entre actifs et passifs (netting) ?",
               "options": [
-                "A. Principe général : pas de compensation entre actifs/passifs ni entre produits/charges sauf exception",
-                "B. Le principe est interdit en RPC mais autorisé en IFRS",
-                "C. La compensation est libre tant qu'elle est divulguée",
+                "A. Pas de compensation, sauf exceptions prévues",
+                "B. La compensation est interdite en RPC mais toujours autorisée en IFRS",
+                "C. La compensation est libre tant qu'elle est divulguée en annexe",
                 "D. Interdiction absolue sans aucune exception"
               ],
               "answer": 0,
@@ -10868,9 +10868,9 @@
               "type": "mcq",
               "question": "Selon RPC 4, comment se définit la trésorerie (Geldmittel) figurant dans le tableau de flux ?",
               "options": [
-                "A. Caisse + dépôts à vue + équivalents de trésorerie de durée résiduelle ≤ 3 mois à la date de clôture",
+                "A. Caisse, dépôts à vue et équivalents (≤ 3 mois)",
                 "B. Caisse et banques uniquement",
-                "C. Tous les actifs liquides à moins de 12 mois",
+                "C. Tous les actifs liquides ou réalisables dans un délai inférieur à 12 mois",
                 "D. Caisse + dépôts à vue + dépôts à terme ≤ 6 mois"
               ],
               "answer": 0,
@@ -10933,10 +10933,10 @@
               "type": "mcq",
               "question": "Sous RPC 4, où classer les DIVIDENDES PAYÉS aux actionnaires (pratique courante suisse) ?",
               "options": [
-                "A. Activités opérationnelles obligatoirement",
+                "A. En activités opérationnelles, obligatoirement",
                 "B. Activités d'investissement",
-                "C. Hors tableau de flux, en KP uniquement",
-                "D. Activités de financement (pratique courante CH ; option opérationnel)"
+                "C. Hors du tableau de flux, en capitaux propres uniquement",
+                "D. En activités de financement"
               ],
               "answer": 3,
               "explanation": "RPC 4 offre une option : dividendes payés en financement OU en opérationnel. La pratique courante suisse les classe en FINANCEMENT (rétribution des apporteurs de capital). Le choix doit être appliqué de façon cohérente d'un exercice à l'autre et divulgué en méthodes comptables.",
@@ -11140,10 +11140,10 @@
               "type": "mcq",
               "question": "Quelle est la finalité principale de RPC 5 dans la présentation des comptes annuels ?",
               "options": [
-                "A. Comptabiliser au bilan les engagements futurs probables",
-                "B. Définir les règles d'évaluation des dettes financières",
+                "A. Comptabiliser au bilan les engagements futurs probables de l'entité",
+                "B. Définir les règles d'évaluation des dettes financières à long terme",
                 "C. Régir les paiements fondés sur des actions",
-                "D. Imposer la divulgation en annexe des engagements et risques HORS BILAN"
+                "D. Faire publier les engagements hors bilan"
               ],
               "answer": 3,
               "explanation": "RPC 5 impose la DIVULGATION EN ANNEXE de tous les engagements et risques qui ne figurent pas au bilan mais représentent un risque économique réel. Sans cela, le lecteur aurait une vision incomplète de l'entité. Distinct de RPC 23 (provisions au bilan).",
@@ -11165,10 +11165,10 @@
               "type": "mcq",
               "question": "Quelle est la différence MAJEURE entre RPC 5 et IFRS 16 concernant le leasing opérationnel ?",
               "options": [
-                "A. Aucune différence — les deux normes traitent identiquement",
-                "B. RPC 5 = engagement hors bilan, divulgué en annexe ; IFRS 16 = TOUT au bilan (droit d'utilisation + dette)",
+                "A. Aucune différence : les deux normes traitent le leasing opérationnel de façon identique",
+                "B. RPC 5 : hors bilan (annexe) ; IFRS 16 : au bilan",
                 "C. RPC 5 capitalise au bilan ; IFRS 16 reste hors bilan",
-                "D. RPC 5 et IFRS 16 imposent tous deux la capitalisation"
+                "D. RPC 5 et IFRS 16 imposent tous deux la capitalisation de tous les contrats de leasing"
               ],
               "answer": 1,
               "explanation": "Différence MAJEURE : RPC 13/5 maintient le leasing opérationnel hors bilan (loyers en charges, divulgation des engagements futurs en annexe via RPC 5). IFRS 16 (depuis 2019) impose la capitalisation de quasi tous les leasings au bilan : droit d'utilisation à l'actif + dette de loyer au passif. Question d'examen classique.",
@@ -11180,10 +11180,10 @@
               "type": "mcq",
               "question": "Le critère de distinction entre une provision (RPC 23, au bilan) et un engagement conditionnel (RPC 5, en annexe) repose sur :",
               "options": [
-                "A. La probabilité de la sortie : >50% probable = bilan ; ≤50% possible = annexe",
+                "A. La probabilité de la sortie de ressources",
                 "B. La nature juridique uniquement",
                 "C. Le montant : >100kCHF = bilan",
-                "D. La date d'échéance : court terme = bilan ; long terme = annexe"
+                "D. La date d'échéance : court terme au bilan, long terme en annexe uniquement"
               ],
               "answer": 0,
               "explanation": "Test critique : provision au bilan = obligation actuelle + sortie PROBABLE (>50%) + montant estimable (3 conditions cumulatives RPC 23/2). Engagement conditionnel = obligation possible mais non probable (≤50%) ou non estimable → annexe RPC 5 uniquement.",
@@ -11205,8 +11205,8 @@
               "type": "mcq",
               "question": "Le 31.12.N, le CA de Beta SA propose un dividende de 1 MCHF, voté par l'AG le 15.05.N+1. Au bilan du 31.12.N :",
               "options": [
-                "A. Comptabiliser une dette de 1 MCHF (engagement vis-à-vis des actionnaires)",
-                "B. Pas de dette (pas encore d'obligation), divulguer en événements postérieurs RPC 6",
+                "A. Comptabiliser une dette de 1 MCHF envers les actionnaires dès la proposition du CA",
+                "B. Pas de dette : événement postérieur à divulguer",
                 "C. Provision de 1 MCHF au bilan",
                 "D. Réserve spéciale en KP"
               ],
@@ -11221,7 +11221,7 @@
               "question": "Sous RPC 27 (complètes) et RPC 5, comment doivent être divulguées les valeurs de remplacement des instruments dérivés ?",
               "options": [
                 "A. Seulement les valeurs positives (gains potentiels)",
-                "B. Les valeurs positives ET négatives séparément en annexe",
+                "B. Valeurs positives et négatives séparément",
                 "C. Seulement les valeurs négatives (pertes potentielles)",
                 "D. Compensation au bilan en valeur nette"
               ],
@@ -11412,9 +11412,9 @@
               "question": "L'annexe (RPC 6) est obligatoire pour quelles entités appliquant les Swiss GAAP RPC ?",
               "options": [
                 "A. Uniquement les entités RPC complètes",
-                "B. TOUTES les entités RPC (fondamentales et complètes)",
+                "B. Toutes les entités appliquant les RPC",
                 "C. Uniquement les sociétés cotées",
-                "D. Uniquement si demandée par l'organe de révision"
+                "D. Uniquement si l'organe de révision la demande expressément"
               ],
               "answer": 1,
               "explanation": "L'annexe est obligatoire pour TOUTES les entités appliquant les RPC — c'est le 3ème pilier des états financiers (avec bilan et CR). Son contenu varie selon le référentiel : informations supplémentaires en complètes (issues des RPC 10-27) qui s'ajoutent au socle RPC 6.",
@@ -11436,10 +11436,10 @@
               "type": "mcq",
               "question": "Distinction entre événement post-clôture AJUSTABLE et NON AJUSTABLE selon RPC 6 :",
               "options": [
-                "A. Ajustable = grand impact ; Non ajustable = petit impact",
-                "B. Ajustable = confirme une situation EXISTANT à la clôture ; Non ajustable = situation née APRÈS la clôture",
+                "A. Ajustable : impact important ; non ajustable : impact faible sur les comptes",
+                "B. Ajustable : situation existant à la clôture",
                 "C. Ajustable = écrit ; Non ajustable = oral",
-                "D. Ajustable = déjà passé ; Non ajustable = futur"
+                "D. Ajustable : événement déjà passé ; non ajustable : événement futur incertain"
               ],
               "answer": 1,
               "explanation": "Test conceptuel : un événement est AJUSTABLE s'il confirme une situation qui EXISTAIT déjà à la clôture (ex: faillite d'un client confirmée après clôture mais la créance était déjà douteuse au 31.12 → ajuster). NON AJUSTABLE si la situation est née APRÈS (ex: incendie en janvier N+1 d'une usine intacte au 31.12.N → divulguer seulement).",
@@ -11451,8 +11451,8 @@
               "type": "mcq",
               "question": "Concernant les rémunérations des organes dirigeants, RPC 6 exige en RPC fondamentales :",
               "options": [
-                "A. Le montant TOTAL versé aux organes (pas de décomposition individuelle obligatoire)",
-                "B. Détail individuel par membre du CA et de la direction",
+                "A. Le montant total versé aux organes",
+                "B. Le détail individuel par membre du CA et de la direction générale",
                 "C. Aucune divulgation requise",
                 "D. Uniquement la rémunération du CEO"
               ],
@@ -11476,10 +11476,10 @@
               "type": "mcq",
               "question": "Pharma SA a imputé directement aux capitaux propres un goodwill d'acquisition de 5 MCHF (option RPC 2). Quelle obligation supplémentaire en annexe ?",
               "options": [
-                "A. Aucune — le choix d'imputation aux KP supprime toute obligation",
-                "B. Obligation de SIMULER l'amortissement annuel hypothétique en annexe (comme si capitalisé)",
+                "A. Aucune : le choix de l'imputation aux capitaux propres supprime toute obligation",
+                "B. Présenter l'effet théorique d'une activation et d'un amortissement",
                 "C. Mentionner uniquement le montant imputé",
-                "D. Provisionner 5 MCHF au passif"
+                "D. Constituer une provision de 5 MCHF au passif pour le goodwill imputé aux fonds propres"
               ],
               "answer": 1,
               "explanation": "Piège fréquent. Si goodwill imputé KP (option RPC 2) : obligation de simuler en annexe l'amortissement annuel comme si le goodwill avait été capitalisé (durée d'utilité, max 20 ans). Cela permet au lecteur de comparer les deux options et de mesurer l'impact sur le résultat hypothétique.",
@@ -11742,8 +11742,8 @@
               "question": "Quels sont les 3 critères cumulatifs de définition d'une valeur incorporelle selon RPC 10/1 ?",
               "options": [
                 "A. Tangible + identifiable + contrôle",
-                "B. Non monétaire + identifiable (contractuel ou séparable) + RPC CC/15 (contrôle, avantage futur, évaluation fiable)",
-                "C. Acquise à l'extérieur + amortissable + ≥ 1 MCHF",
+                "B. Non monétaire, identifiable, contrôlé et évaluable",
+                "C. Acquise à l'extérieur, amortissable et d'une valeur d'au moins 1 MCHF",
                 "D. Brevetable + revendable + sans risque"
               ],
               "answer": 1,
@@ -11766,9 +11766,9 @@
               "type": "mcq",
               "question": "Une entité avait passé en charges 2 MCHF de frais de développement en N-2 (faute de remplir les conditions). En N, les conditions sont désormais remplies. Quel est le traitement ?",
               "options": [
-                "A. Réactiver les 2 MCHF avec ajustement du report à nouveau",
-                "B. JAMAIS réactivable — la permanence (RPC 10/6) interdit toute réactivation de charges déjà passées",
-                "C. Réactiver 2 MCHF en charge en N (correction d'erreur)",
+                "A. Réactiver les 2 MCHF avec un ajustement du bénéfice reporté (report à nouveau)",
+                "B. Jamais : les charges passées ne sont pas réactivées",
+                "C. Réactiver les 2 MCHF en produit de l'exercice N (correction d'erreur)",
                 "D. Réactiver 2 MCHF en KP directement"
               ],
               "answer": 1,
@@ -11806,10 +11806,10 @@
               "type": "mcq",
               "question": "Une marque liée à la personnalité d'un dirigeant clé (« Studio Architecte X ») est acquise pour 3 MCHF. Quelle est la durée maximale d'amortissement ?",
               "options": [
-                "A. 5 ans MAXIMUM (règle des valeurs liées à des personnes)",
+                "A. 5 ans au maximum (valeur liée à une personne)",
                 "B. 20 ans (durée non déterminable maximale)",
-                "C. Durée d'utilisation économique estimée (ex: 15 ans)",
-                "D. Pas d'amortissement (test impairment uniquement)"
+                "C. La durée d'utilisation économique estimée (par exemple 15 ans)",
+                "D. Aucun amortissement : test de dépréciation annuel uniquement"
               ],
               "answer": 0,
               "explanation": "Piège. RPC 10/8 : valeurs incorporelles LIÉES À DES PERSONNES = max 5 ans d'amortissement TOUJOURS, sans exception, même si la durée d'utilisation estimée serait plus longue. Le risque attaché à la personne (départ, décès, perte de réputation) justifie cette prudence.",
@@ -11821,8 +11821,8 @@
               "type": "mcq",
               "question": "Selon RPC 10/16, les valeurs incorporelles destinées à la commercialisation (ex: logiciel développé pour être vendu) sont classées comme :",
               "options": [
-                "A. Actif circulant — STOCKS (RPC 17), pas d'amortissement systématique",
-                "B. Immobilisations incorporelles avec amortissement systématique",
+                "A. En stocks (actif circulant, RPC 17)",
+                "B. En immobilisations incorporelles, avec un amortissement systématique sur 5 ans",
                 "C. Charges immédiates",
                 "D. Capitaux propres"
               ],
@@ -12059,8 +12059,8 @@
               "type": "mcq",
               "question": "Quelle approche méthodologique RPC 11 retient-elle pour les impôts différés ?",
               "options": [
-                "A. Approche orientée résultat (timing differences)",
-                "B. Approche orientée bilan (balance sheet approach) — différences entre valeurs RPC et valeurs fiscales",
+                "A. L'approche orientée résultat (différences temporelles de type timing)",
+                "B. L'approche bilan (valeurs RPC vs fiscales)",
                 "C. Approche par le compte de résultat uniquement",
                 "D. Pas d'impôts différés en RPC"
               ],
@@ -12099,9 +12099,9 @@
               "type": "mcq",
               "question": "Au bilan, où classer les ID actifs et passifs selon RPC 11/9 ?",
               "options": [
-                "A. ID actifs = actifs courants ; ID passifs = dettes courantes",
+                "A. Actifs d'impôts différés en actifs courants, passifs en dettes courantes",
                 "B. Tous compensés en un poste net",
-                "C. ID actifs = immobilisations financières ; ID passifs = provisions pour impôts",
+                "C. Actifs : immo. financières ; passifs : provisions",
                 "D. Hors bilan (annexe uniquement)"
               ],
               "answer": 2,
@@ -12125,8 +12125,8 @@
               "question": "Quel taux d'imposition RPC 11/8 prévoit-il pour évaluer les impôts différés ?",
               "options": [
                 "A. Taux moyen historique",
-                "B. Taux futur attendu si voté ; sinon taux courant",
-                "C. Taux fixe de 20% défini par RPC 11",
+                "B. Le taux attendu s'il est voté, sinon actuel",
+                "C. Un taux fixe de 20 % défini par RPC 11 pour toutes les entités suisses",
                 "D. Taux marginal d'emprunt de l'entité"
               ],
               "answer": 1,
@@ -12139,10 +12139,10 @@
               "type": "mcq",
               "question": "L'impôt sur le capital (Kapitalsteuer) en Suisse doit-il être traité comme un impôt sur les bénéfices selon RPC 11 ?",
               "options": [
-                "A. Oui, c'est un impôt sur le bénéfice taxé sur le capital",
+                "A. Oui, c'est un impôt sur le bénéfice calculé sur la base du capital propre",
                 "B. Oui mais uniquement pour les sociétés cotées",
                 "C. Optionnel selon le canton",
-                "D. NON — RPC 11/14 exclut explicitement l'impôt sur le capital, qui est traité comme charge d'exploitation"
+                "D. Non : c'est une charge d'exploitation"
               ],
               "answer": 3,
               "explanation": "RPC 11/14 exclut explicitement de son champ : impôt sur le capital, TVA, droits de mutation. Ces impôts ne sont PAS des impôts sur les bénéfices et ne génèrent donc pas d'impôts différés. Ils sont traités séparément (charge d'exploitation pour l'impôt sur le capital). Exception : gain immobilier remplaçant l'impôt ordinaire = impôt courant.",
@@ -12390,9 +12390,9 @@
               "type": "mcq",
               "question": "Quel principe RPC 13 justifie l'inscription au bilan d'un actif sous leasing financier sans être propriétaire juridique ?",
               "options": [
-                "A. La substance over form (RPC 13/7)",
+                "A. La substance économique",
                 "B. Le principe de prudence",
-                "C. La permanence des méthodes",
+                "C. La permanence des méthodes comptables",
                 "D. La séparation des exercices"
               ],
               "answer": 0,
@@ -12405,9 +12405,9 @@
               "type": "mcq",
               "question": "À l'inscription initiale d'un leasing financier, comment évaluer l'actif et la dette selon RPC 13/10 ?",
               "options": [
-                "A. Actif = prix de catalogue ; Dette = somme des loyers nominaux",
-                "B. Actif = valeur de remplacement ; Dette = principal seul",
-                "C. Actif = MIN(valeur marché nette, VA paiements) ; Dette = VA paiements au taux du contrat",
+                "A. Actif au prix de catalogue ; dette égale à la somme des loyers nominaux",
+                "B. Actif à la valeur de remplacement ; dette égale au seul principal emprunté",
+                "C. Actif et dette au plus bas de la VA et de la valeur de marché",
                 "D. Actif = 0 (hors bilan) ; Dette = 0"
               ],
               "answer": 2,
@@ -12430,8 +12430,8 @@
               "type": "mcq",
               "question": "Sale and leaseback : Société Delta vend un immeuble 5 MCHF (VCN 4 MCHF) et le reprend en leasing financier. Quel traitement du gain de 1 MCHF sous RPC 13/6 ?",
               "options": [
-                "A. Comptabiliser immédiatement en résultat (1 MCHF de gain)",
-                "B. Différer au passif et libérer linéairement sur la durée du CONTRAT de leasing",
+                "A. Comptabiliser immédiatement le gain de 1 MCHF en résultat de l'exercice",
+                "B. Différer le gain et le libérer sur la durée du leasing",
                 "C. Imputer directement aux capitaux propres",
                 "D. Compenser avec la dette de leasing à l'origine"
               ],
@@ -12447,8 +12447,8 @@
               "options": [
                 "A. Aucune information requise (hors bilan)",
                 "B. Uniquement le total annuel",
-                "C. Seulement la VA des engagements",
-                "D. Total engagements résiduels + échéancier (<1 an, 1-5 ans, >5 ans) + conditions importantes"
+                "C. Seulement la valeur actuelle des engagements futurs de leasing",
+                "D. Engagements résiduels et échéancier (< 1, 1-5, > 5 ans)"
               ],
               "answer": 3,
               "explanation": "RPC 13/11 : le leasing opérationnel étant hors bilan, l'annexe doit fournir au lecteur de quoi mesurer l'engagement réel. Obligation : (1) total des engagements résiduels en CHF, (2) ventilation par échéance (≤ 1 an, 1-5 ans, > 5 ans), (3) conditions importantes (clauses de résiliation, options d'achat, indexations).",
@@ -12634,8 +12634,8 @@
               "type": "mcq",
               "question": "Selon RPC 15/2, qui est qualifié de partie liée au sens des Swiss GAAP RPC ?",
               "options": [
-                "A. Toute personne ou entité capable d'exercer une INFLUENCE NOTABLE sur les décisions financières ou opérationnelles",
-                "B. Toute personne ayant déjà fait une transaction avec l'entité",
+                "A. Toute personne pouvant exercer une influence notable",
+                "B. Toute personne ayant déjà effectué au moins une transaction avec l'entité",
                 "C. Uniquement les actionnaires majoritaires (>50%)",
                 "D. Uniquement les membres du CA en exercice"
               ],
@@ -12659,10 +12659,10 @@
               "type": "mcq",
               "question": "Un actionnaire détient 15% des droits de vote DIRECTEMENT et 8% INDIRECTEMENT (via une participation). Est-il une partie liée ?",
               "options": [
-                "A. Non, ni directement ni indirectement il n'atteint 20%",
-                "B. Oui, dès 10% direct seulement",
+                "A. Non, car il n'atteint 20 % ni directement ni indirectement",
+                "B. Oui, dès 10 % de droits de vote détenus directement",
                 "C. Cela dépend du canton",
-                "D. OUI : 15% + 8% = 23% (>20%) — la totalité des droits directs et indirects compte"
+                "D. Oui : 23 % au total (direct + indirect)"
               ],
               "answer": 3,
               "explanation": "RPC 15/7 cat. 4 : actionnaires détenant ≥20% des droits de vote DIRECTS ET INDIRECTS (cumulés). 15% + 8% = 23% → partie liée. Piège fréquent : oublier les participations indirectes (via filiales, fonds, fiduciaires).",
@@ -12676,8 +12676,8 @@
               "options": [
                 "A. Toujours obligatoire en détail",
                 "B. Toujours interdites de publication",
-                "C. Publiées seulement si > 1 MCHF par personne",
-                "D. EXCLUES si elles sont ordinaires en FORME et en MONTANT (RPC 15/10)"
+                "C. Publiées seulement si elles dépassent CHF 1 million par personne",
+                "D. Non, si ordinaires en forme et en montant"
               ],
               "answer": 3,
               "explanation": "RPC 15/10 : les rémunérations sont EXCLUES de la publication des transactions avec parties liées si elles sont ORDINAIRES en forme ET en montant (par rapport aux normes internes ou sectorielles). Si l'une des deux conditions diffère → publication obligatoire. La rémunération peut être élevée mais rester ordinaire.",
@@ -12700,8 +12700,8 @@
               "question": "Société Mu et Société Nu ont 2 administrateurs en commun (sur 5 chacune). Sont-elles des parties liées au sens de RPC 15 ?",
               "options": [
                 "A. Oui automatiquement, dès qu'un administrateur est commun",
-                "B. NON — les entités avec membres CA communs sont généralement NON liées (RPC 15/8)",
-                "C. Oui si les 2 administrateurs représentent la majorité du CA",
+                "B. Non : des administrateurs communs ne suffisent pas",
+                "C. Oui, si les deux administrateurs communs représentent la majorité du CA de l'une",
                 "D. Cela dépend de la taille des entités"
               ],
               "answer": 1,
@@ -12716,8 +12716,8 @@
               "options": [
                 "A. Le nom de la partie liée uniquement",
                 "B. Aucune obligation de divulgation",
-                "C. Description de la transaction + volume CHF + conditions significatives + identité si nécessaire à la compréhension",
-                "D. Uniquement le nom et le rôle de la personne"
+                "C. Nature, volume en CHF et conditions principales",
+                "D. Uniquement le nom et le rôle de la personne liée à l'entité"
               ],
               "answer": 2,
               "explanation": "RPC 15/11 : (1) description de la transaction (nature, objet), (2) volume en CHF, (3) conditions significatives (échéances, garanties, taux), (4) identité de la partie liée si nécessaire à la compréhension. Ne pas se limiter à « conditions habituelles du marché » qui est insuffisant.",
@@ -12953,8 +12953,8 @@
               "type": "mcq",
               "question": "Concernant les engagements de prévoyance professionnelle, RPC 16 s'applique du point de vue :",
               "options": [
-                "A. De l'EMPLOYEUR uniquement (les caisses de pension relèvent de RPC 26)",
-                "B. De la caisse de pension (IPP) elle-même",
+                "A. De l'employeur (les IPP relèvent de RPC 26)",
+                "B. De la caisse de pension (institution de prévoyance) elle-même",
                 "C. Des assurés uniquement",
                 "D. De l'autorité de surveillance"
               ],
@@ -12978,9 +12978,9 @@
               "type": "mcq",
               "question": "Pour activer un AVANTAGE économique au bilan de l'employeur (RPC 16/7), quelles conditions doivent être remplies ?",
               "options": [
-                "A. Une seule condition suffit (autorisation OU intention)",
-                "B. DEUX conditions cumulatives : autorisation légale ET intention/envisagement d'utiliser",
-                "C. Trois conditions : autorisation + intention + accord syndical",
+                "A. Une seule condition suffit : l'autorisation légale ou l'intention d'utiliser",
+                "B. Autorisation légale et intention de l'utiliser",
+                "C. Trois conditions : autorisation légale, intention d'utiliser et accord syndical",
                 "D. Aucune condition — automatique si excédent existe"
               ],
               "answer": 1,
@@ -12993,10 +12993,10 @@
               "type": "mcq",
               "question": "Société Sigma a une RCE (réserve de cotisations d'employeur) de 500 kCHF. Quelle écriture lors de la CONSTITUTION ?",
               "options": [
-                "A. RCE (actif) 500 / Trésorerie 500 — sans effet sur le résultat",
-                "B. Charge de personnel 500 / Trésorerie 500",
+                "A. RCE (actif) 500 / Trésorerie 500",
+                "B. Charges de personnel 500 / Trésorerie 500",
                 "C. RCE 500 / Réserves 500",
-                "D. Charge de personnel 500 / Provisions 500"
+                "D. Charges de personnel 500 / Provisions 500"
               ],
               "answer": 0,
               "explanation": "RPC 16/4 : la CONSTITUTION de la RCE est un échange ACTIF/TRÉSORERIE sans P&L (versement à l'IPP qui devient un actif futur). La RCE n'affecte le résultat QU'À L'UTILISATION (compensation avec cotisations courantes ou versement libératoire). Piège : ne pas confondre constitution (sans P&L) et utilisation (avec P&L).",
@@ -13034,9 +13034,9 @@
               "question": "Le tableau obligatoire de publication RPC 16/5 contient combien de catégories de situations IPP ?",
               "options": [
                 "A. 3 catégories",
-                "B. 5 catégories : Fonds patronaux / Zone intermédiaire / Excédent / Découvert / Assurance complète",
+                "B. 5 catégories",
                 "C. 7 catégories",
-                "D. Pas de tableau standardisé"
+                "D. Aucune catégorie standardisée"
               ],
               "answer": 1,
               "explanation": "RPC 16/5 impose un tableau de publication à 5 catégories : (a) Fonds patronaux, (b) Zone intermédiaire, (c) Excédent (avantage économique), (d) Découvert (engagement économique), (e) Assurance complète. Mnémonique : FZÉDA.",
@@ -13300,10 +13300,10 @@
               "type": "mcq",
               "question": "Quel est le principe central d'évaluation des stocks selon RPC 17/3 ?",
               "options": [
-                "A. Coût d'acquisition exclusivement",
+                "A. Le coût d'acquisition ou de fabrication, exclusivement",
                 "B. Valeur de marché actuelle",
-                "C. Lower of cost or NRV : la VALEUR LA PLUS BASSE entre coût et VMN (valeur nette de marché)",
-                "D. Valeur de remplacement"
+                "C. Le plus bas du coût et de la valeur nette de marché",
+                "D. La valeur de remplacement à la date de clôture"
               ],
               "answer": 2,
               "explanation": "RPC 17/3 (et IAS 2) : principe « lower of cost or net realisable value » — valeur la plus basse entre coût d'acquisition/revient et VMN. VMN = prix de vente attendu - coûts restants de fabrication - frais restants de distribution. Application individuelle (pas de compensation entre articles).",
@@ -13326,9 +13326,9 @@
               "question": "Pour une entreprise de TRANSFORMATION, comment évaluer les stocks de produits finis selon RPC 17 ?",
               "options": [
                 "A. Coût d'achat des matières uniquement",
-                "B. Coût de revient avec marge bénéficiaire",
-                "C. Prix de vente diminué d'une marge standard",
-                "D. Coût de revient COMPLET : charges directes ET indirectes, variables ET fixes, sur base capacité NORMALE"
+                "B. Le coût de revient majoré d'une marge bénéficiaire normale",
+                "C. Le prix de vente diminué d'une marge bénéficiaire standard",
+                "D. Coût de revient complet (capacité normale)"
               ],
               "answer": 3,
               "explanation": "RPC 17 §s3 : entreprises de transformation = coût de revient COMPLET (matières + main-d'œuvre directe + frais généraux de production directs ET indirects, variables ET fixes). Base = capacité NORMALE de production (pas réelle). Sous-utilisation = charge période, JAMAIS dans les stocks.",
@@ -13340,10 +13340,10 @@
               "type": "mcq",
               "question": "Pour une entreprise de SERVICES (cabinet de conseil), comment évaluer les services en cours selon RPC 17 ?",
               "options": [
-                "A. Au prix de vente facturé au client",
+                "A. Au prix de vente qui sera facturé au client",
                 "B. Coût direct uniquement (heures imputées)",
-                "C. Coût COMPLET sans marge bénéficiaire (jamais de profit anticipé)",
-                "D. À zéro (pas de stocks en services)"
+                "C. Au coût complet, sans marge bénéficiaire",
+                "D. À zéro, une société de services n'ayant pas de stocks"
               ],
               "answer": 2,
               "explanation": "RPC 17 §s4 : services en cours = coût COMPLET (charges directes + part frais généraux liés à la prestation) SANS marge bénéficiaire. Y incorporer une marge serait anticiper un profit non réalisé. Erreur grave en examen.",
@@ -13365,8 +13365,8 @@
               "type": "mcq",
               "question": "Article A : coût 100, VMN 80 (moins-value 20). Article B : coût 100, VMN 130 (plus-value 30). Quelle correction de valeur appliquer ?",
               "options": [
-                "A. Compensation : moins-value A (20) – plus-value B (30) = +10 (gain net)",
-                "B. Correction individuelle : article A à 80 (correction 20) ; article B reste à 100",
+                "A. Compensation : moins-value A (20) − plus-value B (30) = gain net de 10 à comptabiliser",
+                "B. Article par article : A à 80, B reste à 100",
                 "C. Moyenne : (80+100)/2 = 90 par article",
                 "D. Valeur de marché pour les deux : A=80, B=130"
               ],
@@ -13380,10 +13380,10 @@
               "type": "mcq",
               "question": "VMN d'un produit semi-fini se calcule comment selon RPC 17 ?",
               "options": [
-                "A. Prix de vente actuel sur le marché",
+                "A. Le prix de vente actuel du produit fini sur le marché, sans déduction",
                 "B. Coût d'acquisition - 20%",
-                "C. Prix de vente attendu - réductions - coûts RESTANTS de fabrication - frais RESTANTS de distribution",
-                "D. Valeur comptable - amortissements"
+                "C. Prix de vente − réductions − coûts restants (fabrication, vente)",
+                "D. La valeur comptable diminuée des amortissements cumulés"
               ],
               "answer": 2,
               "explanation": "Pour un produit non-fini, la VMN doit anticiper les coûts à engager pour amener à la vente : VMN = prix de vente attendu - réductions - coûts de fabrication RESTANTS - frais de distribution RESTANTS. Différence avec un produit fini où les coûts restants sont nuls.",
@@ -13656,9 +13656,9 @@
               "type": "mcq",
               "question": "Quelle est la distinction fondamentale opérée par RPC 18 ?",
               "options": [
-                "A. Immobilisations matérielles vs incorporelles",
+                "A. Immobilisations corporelles vs immobilisations incorporelles",
                 "B. Immobilisations courantes vs non courantes",
-                "C. Immobilisations d'EXPLOITATION (coût historique amorti) vs immobilisations de RENDEMENT (option JV ou coût)",
+                "C. Immobilisations d'exploitation vs de rendement",
                 "D. Immobilisations achetées vs construites"
               ],
               "answer": 2,
@@ -13722,9 +13722,9 @@
               "question": "Une société possède 2 immeubles de rendement. Peut-elle évaluer l'immeuble A à la juste valeur (option) et l'immeuble B au coût historique ?",
               "options": [
                 "A. Oui, libre choix par actif",
-                "B. NON — méthode UNIFORME obligatoire pour TOUTES les IC de rendement",
-                "C. Oui mais seulement pour les sociétés cotées",
-                "D. Oui si divulgué en annexe"
+                "B. Non : méthode uniforme pour tous",
+                "C. Oui, mais seulement pour les sociétés cotées en bourse",
+                "D. Oui, si le choix est divulgué en annexe"
               ],
               "answer": 1,
               "explanation": "RPC 18/14 : pour les IC de RENDEMENT (immeubles de placement), la méthode (juste valeur via P&L OU coût historique) doit être UNIFORME pour toutes les IC de rendement de l'entité. On ne peut pas mixer JV pour A et coût pour B. Variations de JV → toutes en P&L (pas d'OCI en RPC).",
@@ -13736,8 +13736,8 @@
               "type": "mcq",
               "question": "Une machine acquise 100 (durée 10 ans, linéaire). Après 4 ans (VCN 60), on révise la durée résiduelle à 4 ans (au lieu de 6). Quel est le nouvel amortissement annuel ?",
               "options": [
-                "A. 10 (inchangé — méthode et durée d'origine)",
-                "B. 15 (= VCN 60 / nouvelle durée résiduelle 4 ans, traitement PROSPECTIF)",
+                "A. 10 (inchangé : méthode et durée d'origine)",
+                "B. 15 (60 / 4, de façon prospective)",
                 "C. 25 (rattrapage rétroactif sur 2 ans)",
                 "D. 20 (taux dégressif)"
               ],
@@ -14006,10 +14006,10 @@
               "type": "mcq",
               "question": "Selon RPC 20/4, comment se calcule la valeur réalisable utilisée pour le test de dépréciation ?",
               "options": [
-                "A. MIN(VMN ; VU) — la valeur la plus basse",
-                "B. Moyenne arithmétique de VMN et VU",
+                "A. MIN(VMN ; VU), soit la valeur la plus basse",
+                "B. La moyenne arithmétique de la VMN et de la VU",
                 "C. VMN uniquement",
-                "D. MAX(VMN ; VU) — le MAXIMUM entre valeur nette de marché et valeur d'utilité"
+                "D. Le plus élevé de la VMN et de la VU"
               ],
               "answer": 3,
               "explanation": "RPC 20/4 (et IAS 36) : valeur réalisable = MAX(VMN ; VU). Si l'une des deux dépasse la VCN, il n'y a PAS de dépréciation. Logique : l'entité choisira la voie de récupération la plus favorable (vendre ou utiliser). Piège : ne pas prendre le MIN.",
@@ -14032,8 +14032,8 @@
               "question": "Quel taux d'actualisation utiliser pour calculer la VU (valeur d'utilité) selon RPC 20/7 ?",
               "options": [
                 "A. WACC de l'entité",
-                "B. Taux marginal d'emprunt après impôts",
-                "C. Taux APPROPRIÉ, reflétant les conditions actuelles du marché et le RISQUE SPÉCIFIQUE de l'actif",
+                "B. Le taux marginal d'emprunt de l'entité, après impôts",
+                "C. Un taux reflétant le marché et le risque de l'actif",
                 "D. Taux LIBOR + 200 bps"
               ],
               "answer": 2,
@@ -14057,9 +14057,9 @@
               "question": "Quelle différence majeure entre RPC 20 et IAS 36 concernant le test du goodwill ?",
               "options": [
                 "A. Aucune différence",
-                "B. RPC 20 = test annuel ; IAS 36 = test biennal",
-                "C. RPC 20 = pas de test ; IAS 36 = test mensuel",
-                "D. RPC 20 = test si indicateurs présents ; IAS 36 = test ANNUEL obligatoire (sans indicateur requis)"
+                "B. RPC 20 : test annuel obligatoire ; IAS 36 : test tous les deux ans",
+                "C. RPC 20 : aucun test ; IAS 36 : test mensuel du goodwill",
+                "D. RPC : test si indices ; IAS 36 : test annuel"
               ],
               "answer": 3,
               "explanation": "Différence d'examen : RPC 20 impose un test du goodwill UNIQUEMENT si des indicateurs de dépréciation sont présents. IAS 36 impose un test ANNUEL OBLIGATOIRE du goodwill et des incorporels à durée indéfinie, indépendamment des indicateurs (au minimum à la même date chaque année).",
@@ -14071,9 +14071,9 @@
               "type": "mcq",
               "question": "Brevet : VCN 1000, VMN 600, VU 800. Y a-t-il une dépréciation à comptabiliser ?",
               "options": [
-                "A. Oui, dépréciation de 200 (1000 - MAX(VMN, VU) = 1000 - 800)",
-                "B. Oui, dépréciation de 400 (1000 - 600)",
-                "C. Non, car VU < VCN suffit pour ne pas déprécier",
+                "A. Oui, de 200 (1000 − 800)",
+                "B. Oui, de 400 (1000 − 600, la VMN)",
+                "C. Non, la VU étant supérieure à la VMN",
                 "D. Oui, dépréciation de 600 (moyenne)"
               ],
               "answer": 0,
@@ -14086,9 +14086,9 @@
               "type": "mcq",
               "question": "Pour les immobilisations de rendement évaluées à la JUSTE VALEUR (RPC 18/14), comment sont traitées les dépréciations sous RPC 20 ?",
               "options": [
-                "A. Test RPC 20 séparé chaque année",
-                "B. Pas de RPC 20 — les variations de JV (positives ou négatives) passent directement par le résultat (P&L)",
-                "C. Test RPC 20 uniquement pour les immeubles >10 MCHF",
+                "A. Un test RPC 20 séparé chaque année, en plus de la juste valeur",
+                "B. Pas de RPC 20 : variations de JV en résultat",
+                "C. Un test RPC 20 uniquement pour les immeubles de plus de 10 MCHF",
                 "D. Imputation directe en KP"
               ],
               "answer": 1,
@@ -14393,8 +14393,8 @@
               "options": [
                 "A. Choix libre entre POCM et CCM",
                 "B. CCM toujours obligatoire en RPC",
-                "C. POCM obligatoire pour tous les contrats > 1 an",
-                "D. POCM obligatoire si les 4 conditions sont TOUTES remplies, sinon CCM obligatoire"
+                "C. POCM obligatoire pour tous les contrats d'une durée supérieure à un an",
+                "D. POCM si les conditions sont remplies, sinon CCM"
               ],
               "answer": 3,
               "explanation": "RPC 22/2 : la méthode N'EST PAS un choix libre. POCM (Percentage of Completion) est OBLIGATOIRE si les 4 conditions cumulatives sont toutes remplies (Contrat ferme / Résultat fiable / Degré mesurable / Attribution séparée — CRDA). Dès qu'une seule manque → CCM (Completed Contract) obligatoire.",
@@ -14417,9 +14417,9 @@
               "question": "Quelles sont les 3 méthodes de mesure du degré d'avancement autorisées par RPC 22/5 ?",
               "options": [
                 "A. Heures uniquement",
-                "B. Coûts engagés / livrables (jalons) / prestations (phases) — CLP",
-                "C. Pourcentage facturé",
-                "D. Estimation libre du chef de projet"
+                "B. Coûts engagés, jalons, prestations",
+                "C. Le pourcentage facturé au client",
+                "D. Une estimation libre du chef de projet"
               ],
               "answer": 1,
               "explanation": "RPC 22/5 : 3 méthodes autorisées = (1) par les COÛTS engagés / coûts totaux estimés, (2) par les LIVRABLES (jalons techniques validés), (3) par les PRESTATIONS (phases/phases physiques). Mnémonique CLP. Choisir la méthode la plus représentative et l'appliquer de manière cohérente.",
@@ -14433,8 +14433,8 @@
               "options": [
                 "A. Étaler la perte sur la durée résiduelle du contrat",
                 "B. Ignorer si < 5% du CA",
-                "C. Comptabiliser uniquement à la livraison finale",
-                "D. Provisionner IMMÉDIATEMENT la perte totale attendue (POCM ou CCM)"
+                "C. Comptabiliser la perte uniquement à la livraison finale",
+                "D. Provisionner immédiatement toute la perte"
               ],
               "answer": 3,
               "explanation": "RPC 22/8 + RPC 23 : pour un contrat déficitaire, provisionner IMMÉDIATEMENT la PERTE TOTALE attendue, indépendamment de la méthode (POCM ou CCM). Sous POCM, attention à ne pas double-compter : provisionner uniquement la perte résiduelle non encore passée.",
@@ -14457,9 +14457,9 @@
               "question": "Contrat A : WIP cumulé 800 kCHF, acomptes reçus 600 kCHF. Contrat B : WIP 300 kCHF, acomptes reçus 500 kCHF. Quelle présentation au bilan ?",
               "options": [
                 "A. Compensation globale : actif 0 (800-600+300-500 = 0)",
-                "B. Pas de compensation entre contrats : Contrat A actif net 200 ; Contrat B passif net 200",
+                "B. Sans compensation : A actif net 200 ; B passif net 200",
                 "C. Présentation en charges/produits",
-                "D. WIP cumulé total 1100 / acomptes 1100, sans compensation contrat"
+                "D. WIP cumulé total de 1100 et acomptes de 1100, présentés séparément au bilan"
               ],
               "answer": 1,
               "explanation": "Pas de compensation entre contrats DIFFÉRENTS. Pour chaque contrat individuellement : WIP > acomptes → ACTIF (Contrat A : 800-600 = 200) ; acomptes > WIP → PASSIF (Contrat B : 500-300 = 200). Présentation séparée à l'actif (200) et au passif (200) du bilan.",
@@ -14472,8 +14472,8 @@
               "question": "Différence majeure entre RPC 22 et IFRS 15 sur la reconnaissance du revenu pour les contrats à long terme :",
               "options": [
                 "A. Aucune différence",
-                "B. RPC 22 = POCM/CCM selon 4 conditions ; IFRS 15 = modèle 5 étapes (over time vs point in time selon transfert du contrôle)",
-                "C. RPC 22 = revenu à la livraison ; IFRS 15 = revenu à la commande",
+                "B. RPC 22 : POCM/CCM ; IFRS 15 : modèle en 5 étapes",
+                "C. RPC 22 : revenu à la livraison ; IFRS 15 : revenu dès la signature de la commande",
                 "D. Les deux normes interdisent la POCM"
               ],
               "answer": 1,
@@ -14691,9 +14691,9 @@
               "type": "mcq",
               "question": "Selon RPC 23/2, quelles sont les 3 conditions cumulatives pour comptabiliser une provision au bilan ?",
               "options": [
-                "A. Obligation actuelle (passé) + sortie probable (>50%) + montant estimable de manière fiable",
+                "A. Obligation actuelle, sortie probable, estimation fiable",
                 "B. Probabilité + montant + accord de la direction",
-                "C. Obligation future + montant exact + acceptation par le tiers",
+                "C. Une obligation future, un montant exact et l'acceptation formelle par le tiers",
                 "D. Litige en cours + jugement rendu + montant définitif"
               ],
               "answer": 0,
@@ -14718,8 +14718,8 @@
               "options": [
                 "A. Oui, dès la décision du CA",
                 "B. Oui, mais pour 50% du montant",
-                "C. Non, jamais provisionner une restructuration",
-                "D. NON — il faut un plan FORMALISÉ ET COMMUNIQUÉ aux parties concernées"
+                "C. Non, car une restructuration ne peut jamais être provisionnée en RPC",
+                "D. Non : plan formalisé et communiqué requis"
               ],
               "answer": 3,
               "explanation": "RPC 23 : pour une provision de restructuration, le plan doit être FORMALISÉ (détaillé : sites, postes, calendrier, coûts) ET COMMUNIQUÉ aux parties concernées (salariés, syndicats). Une décision interne du CA seule ne suffit pas : tant que la communication n'a pas eu lieu, l'entité peut renoncer → pas d'obligation de fait. Au 31.12.N, pas de provision.",
@@ -14731,10 +14731,10 @@
               "type": "mcq",
               "question": "Distinction RPC 23 entre provision (au bilan), passif éventuel (annexe RPC 5) et actif éventuel :",
               "options": [
-                "A. Tous au bilan",
-                "B. Tous en annexe",
-                "C. Selon le seuil de matérialité uniquement",
-                "D. Provision si >50% probable ; passif éventuel ≤50% en annexe ; actif éventuel JAMAIS au bilan (annexe seulement si probable)"
+                "A. Tous les trois sont comptabilisés au bilan, à la valeur estimée la plus probable",
+                "B. Tous les trois sont présentés en annexe uniquement, jamais au bilan de l'entité",
+                "C. La distinction dépend uniquement du seuil de matérialité retenu",
+                "D. Provision si probable ; passif éventuel en annexe ; actif éventuel hors bilan"
               ],
               "answer": 3,
               "explanation": "Asymétrie prudente. PROVISION = >50% probable, montant estimable → bilan. PASSIF ÉVENTUEL = ≤50% (possible mais pas probable) ou non estimable → annexe RPC 5 uniquement. ACTIF ÉVENTUEL = JAMAIS au bilan (asymétrie) ; annexe seulement si probable. Ne JAMAIS comptabiliser un gain anticipé.",
@@ -14757,8 +14757,8 @@
               "question": "Lors de l'acquisition d'une installation industrielle nécessitant un démantèlement futur estimé à 500 kCHF (VAN), quel est le traitement RPC 23 ?",
               "options": [
                 "A. Charge immédiate de 500 kCHF",
-                "B. Provision uniquement, sans impact sur l'actif",
-                "C. Provision au passif (VAN 500) + augmentation correspondante de la VALEUR DE L'IMMO (contrepartie à amortir)",
+                "B. Une provision uniquement, sans aucun impact sur la valeur de l'actif au bilan",
+                "C. Provision (VA 500) et activation dans le coût de l'installation",
                 "D. Engagement hors bilan en annexe"
               ],
               "answer": 2,
@@ -14771,10 +14771,10 @@
               "type": "mcq",
               "question": "L'actualisation de la provision est-elle obligatoire selon RPC 23 ?",
               "options": [
-                "A. Toujours obligatoire pour toute provision",
-                "B. OBLIGATOIRE si l'effet temporel est significatif (taux avant impôts, taux de marché)",
+                "A. Toujours obligatoire pour toute provision, quel que soit l'horizon",
+                "B. Oui, si l'effet temporel est significatif",
                 "C. Jamais autorisée",
-                "D. Uniquement pour les provisions > 1 MCHF"
+                "D. Uniquement pour les provisions supérieures à 1 MCHF"
               ],
               "answer": 1,
               "explanation": "RPC 23 : actualisation obligatoire si l'effet temporel est significatif (provisions à long terme : démantèlement, retraite, restructuration étalée). Taux : avant impôts, taux de marché reflétant le risque spécifique. Pour les provisions à court terme (≤ 1 an), généralement non significatif → pas d'actualisation.",
@@ -15015,9 +15015,9 @@
               "type": "mcq",
               "question": "Quel est le principe fondamental absolu de RPC 24 ?",
               "options": [
-                "A. Toute transaction avec les actionnaires en QUALITÉ d'actionnaires impacte uniquement les FONDS PROPRES — JAMAIS le P&L",
-                "B. Toute transaction sur capitaux propres impacte le résultat",
-                "C. Les transactions sur fonds propres sont toujours hors bilan",
+                "A. Opérations avec les actionnaires : fonds propres, jamais le résultat",
+                "B. Toute transaction sur capitaux propres doit impacter le compte de résultat",
+                "C. Les transactions sur fonds propres sont toujours présentées hors bilan",
                 "D. Les actions propres sont des actifs financiers"
               ],
               "answer": 0,
@@ -15040,10 +15040,10 @@
               "type": "mcq",
               "question": "Société Iota rachète 100 actions propres à 50 chacune (5'000 CHF) et les revend 60 chacune (6'000 CHF). Quel traitement du « gain » de 1'000 ?",
               "options": [
-                "A. Augmentation des RÉSERVES de fonds propres (jamais en P&L)",
-                "B. Produit financier en P&L (1'000)",
+                "A. En réserves (fonds propres), jamais en résultat",
+                "B. Un produit financier de 1'000 au compte de résultat",
                 "C. Dividende exceptionnel à distribuer",
-                "D. Capitalisation au compte de capital"
+                "D. Une capitalisation au compte de capital-actions"
               ],
               "answer": 0,
               "explanation": "RPC 24/7 : Vente AP > coût → augmentation des réserves FP (1'000 en réserve). Vente AP < coût → diminution des réserves FP. JAMAIS d'impact P&L. Piège majeur : ne pas comptabiliser un produit financier sur cession d'actions propres.",
@@ -15056,8 +15056,8 @@
               "question": "Société Kappa augmente son capital : 1'000 actions émises à 150 CHF, valeur nominale 100 CHF. Comment traiter l'agio de 50'000 ?",
               "options": [
                 "A. Capital-actions augmenté de 150'000",
-                "B. Capital-actions 100'000 + dividende 50'000",
-                "C. Capital-actions 100'000 (nominal) + RÉSERVE LÉGALE 50'000 (agio)",
+                "B. Capital-actions 100'000 + dividende extraordinaire de 50'000 aux souscripteurs",
+                "C. Capital 100'000 + réserve légale issue du capital 50'000",
                 "D. Tout en réserve facultative"
               ],
               "answer": 2,
@@ -15080,10 +15080,10 @@
               "type": "mcq",
               "question": "Émission d'une obligation convertible (OC). Comment la traiter selon RPC 24/6 ?",
               "options": [
-                "A. Tout en dette financière",
+                "A. Tout en dette financière, à la valeur nominale remboursable",
                 "B. Tout en capitaux propres",
-                "C. Comptabiliser à la juste valeur globale",
-                "D. SPLIT à l'émission : composante DETTE = VA flux au taux MARCHÉ (sans option) ; composante FP = résidu"
+                "C. Comptabiliser l'instrument à la juste valeur globale, sans séparation",
+                "D. Séparer dette (VA au taux du marché) et fonds propres (résidu)"
               ],
               "answer": 3,
               "explanation": "RPC 24/6 (méthode du split) : à l'émission, séparer (1) composante dette = valeur actuelle des flux (intérêts + remboursement principal) actualisée au taux DE MARCHÉ d'une dette équivalente SANS option de conversion ; (2) composante FP = résidu (prix d'émission - composante dette). Piège : utiliser le coupon de l'OC, pas le taux de marché.",
@@ -15096,8 +15096,8 @@
               "question": "Coûts d'émission d'actions de 200 kCHF (taux IS 20%). Comment les comptabiliser sous RPC 24 ?",
               "options": [
                 "A. Charges en P&L de 200",
-                "B. Déduction des FONDS PROPRES NETTE D'IMPÔTS = 200 × (1 - 0.20) = 160",
-                "C. Capitalisation à l'actif (frais d'établissement)",
+                "B. En déduction des fonds propres, net d'impôt (160)",
+                "C. Capitalisés à l'actif comme frais d'établissement, puis amortis sur 5 ans",
                 "D. Augmentation du capital-actions"
               ],
               "answer": 1,
@@ -15324,9 +15324,9 @@
               "question": "Quelles sont les 3 caractéristiques cumulatives d'un instrument dérivé selon RPC 27 ?",
               "options": [
                 "A. Liquide + coté + court terme",
-                "B. Sous-jacent variable + investissement initial nul/minimal + règlement à une date FUTURE",
+                "B. Sous-jacent, mise initiale faible, règlement futur",
                 "C. Garanti + assuré + transférable",
-                "D. International + notionnel élevé + à terme"
+                "D. Contrepartie internationale, notionnel élevé et échéance à terme"
               ],
               "answer": 1,
               "explanation": "RPC 27 : 3 conditions cumulatives = (1) valeur variable selon un SOUS-JACENT (taux, cours, indice), (2) investissement initial NUL ou MINIMAL (vs un investissement direct), (3) règlement à une DATE FUTURE. Mnémonique : 3S (Sous-jacent / Sans investissement / Settlement futur). Exemples : forwards, options, swaps.",
@@ -15348,10 +15348,10 @@
               "type": "mcq",
               "question": "Quel seuil d'efficacité chiffré RPC 27 impose-t-il pour qualifier la comptabilité de couverture ?",
               "options": [
-                "A. 80%-125%",
-                "B. 90%-110%",
-                "C. Aucun — RPC 27 ne fixe pas de seuil chiffré (le 80%-125% provient d'IAS 39)",
-                "D. 95%-105%"
+                "A. Entre 80 % et 125 %",
+                "B. Entre 90 % et 110 %",
+                "C. Aucun seuil chiffré",
+                "D. Entre 95 % et 105 %"
               ],
               "answer": 2,
               "explanation": "RPC 27 est une norme de principes : elle ne définit AUCUNE fourchette d'efficacité chiffrée ni tests prospectifs/rétrospectifs obligatoires. Le seuil 80%-125% est l'héritage d'IAS 39 (abandonné par IFRS 9 au profit de la « relation économique »). Sous RPC 27, la couverture permet d'évaluer le dérivé selon les mêmes principes que l'élément couvert, sans bascule automatique en trading à 78% ou 127%.",
@@ -15363,10 +15363,10 @@
               "type": "mcq",
               "question": "Cash flow hedge (CFH) : comment traiter la PARTIE EFFICACE des variations de juste valeur du dérivé ?",
               "options": [
-                "A. En RÉSERVE DE COUVERTURE en fonds propres (pas en P&L)",
-                "B. En P&L immédiat",
+                "A. En réserve de couverture",
+                "B. Immédiatement au compte de résultat",
                 "C. En charges financières uniquement",
-                "D. Hors bilan, en annexe"
+                "D. Hors bilan, avec une simple mention en annexe"
               ],
               "answer": 0,
               "explanation": "RPC 27 : CFH (cash flow hedge) — la PARTIE EFFICACE va en réserve de couverture dans les FP, ou (option RPC 27) est publiée en annexe jusqu'à la réalisation du flux — pas en P&L. La partie INEFFICACE (au-delà de l'efficacité) va immédiatement en P&L. Reclassement P&L lors de la réalisation du flux couvert. Piège : ne pas mettre la partie efficace en P&L.",
@@ -15388,10 +15388,10 @@
               "type": "mcq",
               "question": "Comment doivent être présentés les dérivés à JV positive et à JV négative au bilan ?",
               "options": [
-                "A. Compensation au bilan en valeur nette",
-                "B. Tous en hors bilan, annexe seulement",
-                "C. Tous en capitaux propres",
-                "D. JV positive = ACTIF financier ; JV négative = PASSIF financier (présentation séparée)"
+                "A. Compensés au bilan pour présenter une valeur nette unique",
+                "B. Tous hors bilan, avec une simple mention en annexe",
+                "C. Tous en capitaux propres, dans une réserve de juste valeur",
+                "D. Positive à l'actif, négative au passif"
               ],
               "answer": 3,
               "explanation": "Présentation distincte au bilan : dérivé à JV positive → actif financier (créance) ; JV négative → passif financier (dette). Pas de compensation, sauf master netting agreement valide ET intention de régler net (rare). RPC 5 + RPC 27 imposent la divulgation séparée des valeurs de remplacement.",
@@ -15404,9 +15404,9 @@
               "question": "Conditions cumulatives pour SÉPARER un dérivé incorporé du contrat hôte (test d'IAS 39 §11, non codifié par RPC 27) :",
               "options": [
                 "A. Aucune séparation requise",
-                "B. Uniquement si le notionnel > 10 MCHF",
-                "C. (1) Caractéristiques économiques du dérivé NON liées au hôte + (2) il serait un dérivé seul + (3) hôte non évalué à JV/P&L",
-                "D. Uniquement pour les contrats en devises"
+                "B. Uniquement si le montant notionnel dépasse 10 MCHF",
+                "C. Non lié au contrat hôte, dérivé autonome, hôte non à la JV",
+                "D. Uniquement pour les contrats conclus en monnaie étrangère avec une contrepartie non liée"
               ],
               "answer": 2,
               "explanation": "IAS 39 §11 (repris pour les passifs sous IFRS 9) — RPC 27 ne codifie pas ce test : 3 conditions cumulatives pour séparer un dérivé incorporé : (1) caractéristiques économiques et risques NON étroitement liés à ceux du contrat hôte, (2) un instrument séparé répondrait à la définition de dérivé, (3) le contrat hôte n'est pas évalué à la JV via P&L (sinon pas besoin de séparer). Si séparation : dérivé évalué à part en JV via P&L.",
@@ -15829,8 +15829,8 @@
               "type": "mcq",
               "question": "Quel est le champ d'application précis de RPC 28 (subventions) ?",
               "options": [
-                "A. Les subventions reçues entre entités privées",
-                "B. Les subventions PUBLIQUES (aides à l'investissement, subventions d'exploitation, monétaires ou non monétaires, directes ou indirectes)",
+                "A. Les subventions reçues d'autres entités privées ou de mécènes",
+                "B. Les subventions publiques (investissement ou exploitation)",
                 "C. Les transferts intra-groupe",
                 "D. Les opérations de mécénat"
               ],
@@ -15854,10 +15854,10 @@
               "type": "mcq",
               "question": "Quand comptabiliser une subvention publique selon RPC 28 ?",
               "options": [
-                "A. Lorsqu'il existe une assurance RAISONNABLE de l'OBTENTION ET du RESPECT DES CONDITIONS",
-                "B. Dès la demande de l'entité",
-                "C. À la signature de la convention",
-                "D. À la fin du projet uniquement"
+                "A. Assurance raisonnable d'obtention",
+                "B. Dès le dépôt de la demande par l'entité",
+                "C. À la signature de la convention de subvention",
+                "D. À la fin du projet subventionné uniquement"
               ],
               "answer": 0,
               "explanation": "RPC 28 : comptabilisation seulement quand il existe une assurance raisonnable que (1) la subvention sera OBTENUE (décision officielle, conditions remplies), ET (2) les conditions associées seront RESPECTÉES par l'entité (engagements de maintien d'emploi, performances, etc.). Avant : aucune comptabilisation, mention en annexe si significatif.",
@@ -15869,10 +15869,10 @@
               "type": "mcq",
               "question": "Une subvention publique reçue en N devient REMBOURSABLE en N+2 suite au non-respect d'une condition. Quel traitement RPC 28/6 ?",
               "options": [
-                "A. Correction d'erreur RÉTROACTIVE des comptes N",
-                "B. CHANGEMENT D'ESTIMATION (PROSPECTIF) — ajustement immédiat avec effet sur le résultat",
+                "A. Correction d'erreur rétroactive des comptes de l'exercice N",
+                "B. Changement d'estimation : effet immédiat en résultat",
                 "C. Imputation directe en KP",
-                "D. Capitalisation au passif sans impact résultat"
+                "D. Inscription au passif sans aucun impact sur le compte de résultat"
               ],
               "answer": 1,
               "explanation": "RPC 28/6 + RPC 28/21 : remboursement d'une subvention = CHANGEMENT D'ESTIMATION (traitement PROSPECTIF), pas une correction d'erreur (rétroactive). L'ajustement est fait IMMÉDIATEMENT avec effet sur le résultat de l'exercice de la révision (rattrapage). N et N+1 ne sont pas retraités.",
@@ -15894,7 +15894,7 @@
               "type": "mcq",
               "question": "Subvention non monétaire (terrain donné par un canton) liée à un actif : comment l'évaluer initialement selon RPC 28/4 ?",
               "options": [
-                "A. À la JUSTE VALEUR du terrain (obligatoire), même si déduction ensuite de l'actif financé",
+                "A. À la juste valeur du terrain",
                 "B. À la valeur fiscale du terrain",
                 "C. À 1 CHF symbolique",
                 "D. Hors bilan"
@@ -15909,10 +15909,10 @@
               "type": "mcq",
               "question": "Présentation des subventions liées au RÉSULTAT (compensation de charges courantes) au compte de résultat selon RPC 28 :",
               "options": [
-                "A. Toujours en produit séparé en haut du CR",
+                "A. Toujours en produit séparé, présenté en haut du compte de résultat",
                 "B. Toujours en hors résultat",
-                "C. En diminution des capitaux propres",
-                "D. CHOIX : présentation SÉPARÉE en produit OU déduction des charges correspondantes (méthode nette)"
+                "C. En diminution directe des capitaux propres",
+                "D. Au choix : produit séparé ou réduction des charges"
               ],
               "answer": 3,
               "explanation": "RPC 28/5 : choix de présentation pour les subventions liées au résultat = (1) présentation séparée en produit, OU (2) déduction des charges correspondantes (méthode nette). Si méthode nette : obligation de publier le brut en annexe (RPC 28/20).",
@@ -16285,9 +16285,9 @@
               "type": "mcq",
               "question": "À quelles entités appliquant les Swiss GAAP RPC s'applique RPC 31 (recommandation complémentaire) ?",
               "options": [
-                "A. Toute entité appliquant les RPC complètes",
+                "A. À toute entité appliquant les RPC complètes, cotée ou non",
                 "B. Aux fondations uniquement",
-                "C. Aux SOCIÉTÉS COTÉES (en bourse SIX Swiss Exchange) appliquant les Swiss GAAP RPC",
+                "C. Aux sociétés cotées appliquant les RPC",
                 "D. Aux entités publiques uniquement"
               ],
               "answer": 2,
@@ -16310,9 +16310,9 @@
               "type": "mcq",
               "question": "Quelles exigences supplémentaires RPC 31 impose-t-il par rapport aux RPC complètes ?",
               "options": [
-                "A. Aucune — RPC 31 est juste une formalité",
-                "B. Uniquement le rapport de gestion détaillé",
-                "C. Rapport semestriel + résultat par action + INFORMATION SECTORIELLE + JV des instruments financiers + paiements en actions",
+                "A. Aucune : RPC 31 n'est qu'une formalité pour les sociétés cotées",
+                "B. Uniquement un rapport de gestion détaillé selon le CO",
+                "C. Rapport semestriel, résultat par action, segments, etc.",
                 "D. Comptes consolidés uniquement"
               ],
               "answer": 2,
@@ -16326,9 +16326,9 @@
               "question": "L'information sectorielle exigée par RPC 31 doit couvrir au minimum :",
               "options": [
                 "A. Le chiffre d'affaires uniquement",
-                "B. Tous les postes du bilan par segment",
-                "C. Le CHIFFRE D'AFFAIRES et le RÉSULTAT par segment au minimum",
-                "D. Le nombre d'employés par pays"
+                "B. Tous les postes du bilan, ventilés par segment",
+                "C. Le CA et le résultat par segment",
+                "D. Le nombre d'employés par pays et par fonction"
               ],
               "answer": 2,
               "explanation": "RPC 31 : information sectorielle = CA et résultat par segment au minimum (segments opérationnels et/ou géographiques selon l'organisation interne du management). Optionnellement : actifs sectoriels. Approche moins prescriptive qu'IFRS 8 (management approach détaillé) mais même esprit.",
@@ -16350,9 +16350,9 @@
               "type": "mcq",
               "question": "Différence MAJEURE entre les exigences de transparence RPC 31 et IFRS pour les sociétés cotées :",
               "options": [
-                "A. RPC 31 plus strict qu'IFRS sur tous les points",
+                "A. RPC 31 est plus strict qu'IFRS sur tous les points de transparence",
                 "B. Aucune différence",
-                "C. RPC 31 généralement ALLÉGÉ vs IFRS (segmentation moins prescriptive, rapport intermédiaire abrégé, pas d'OCI distinct)",
+                "C. RPC 31 est généralement plus léger qu'IFRS",
                 "D. RPC 31 ne couvre que les banques"
               ],
               "answer": 2,
@@ -16365,10 +16365,10 @@
               "type": "mcq",
               "question": "Une société cotée évalue ses immeubles de placement au coût (option RPC 18/14). Que doit-elle divulguer en plus selon RPC 31 ?",
               "options": [
-                "A. La JUSTE VALEUR des immeubles en annexe (si significative et différente du coût)",
+                "A. La juste valeur des immeubles en annexe",
                 "B. Rien de plus",
-                "C. Doit obligatoirement basculer à la juste valeur",
-                "D. Doit consolider en méthode équivalence"
+                "C. Elle doit obligatoirement passer à la juste valeur au bilan",
+                "D. Elle doit consolider ses immeubles selon la méthode de mise en équivalence"
               ],
               "answer": 0,
               "explanation": "RPC 31 : pour une société cotée appliquant la méthode du coût pour les immeubles de placement, divulgation obligatoire de la JUSTE VALEUR en annexe (si différence significative). Cohérent avec l'objectif de transparence pour les investisseurs. Pas d'obligation de basculer à la JV (le choix de méthode reste libre conformément à RPC 18/14).",
@@ -16613,10 +16613,10 @@
               "type": "mcq",
               "question": "Lequel de ces six principes comptables fondamentaux NE figure PAS à l'art. 958c al. 1 CO ?",
               "options": [
-                "A. Clarté et intelligibilité",
-                "B. Image fidèle (true & fair view)",
-                "C. Prudence",
-                "D. Permanence des méthodes"
+                "A. La clarté et l'intelligibilité",
+                "B. L'image fidèle",
+                "C. La prudence",
+                "D. La permanence des méthodes"
               ],
               "answer": 1,
               "explanation": "L'art. 958c al. 1 CO énumère : clarté et intelligibilité, intégralité, fiabilité, importance relative, prudence, permanence de la présentation et des méthodes, interdiction de compensation (la continuité d'exploitation relève de l'art. 958a). Le principe de true & fair view est propre aux RPC et IFRS, pas au CO qui se limite à des règles minimales tolérant les réserves latentes.",
@@ -16628,10 +16628,10 @@
               "type": "mcq",
               "question": "Selon l'art. 958c al. 1 ch. 5 CO, le principe de prudence est dit asymétrique. Que signifie cette asymétrie ?",
               "options": [
-                "A. On comptabilise les bénéfices certains, pas les pertes possibles",
+                "A. On comptabilise les bénéfices certains, mais jamais les pertes seulement possibles",
                 "B. On compense les bénéfices avec les pertes",
-                "C. On évalue tous les actifs au coût historique",
-                "D. On ne comptabilise pas les bénéfices incertains, mais on provisionne les pertes probables"
+                "C. On évalue tous les actifs au coût de remplacement à la clôture",
+                "D. Pas de gains incertains, mais les pertes probables"
               ],
               "answer": 3,
               "explanation": "L'asymétrie de la prudence : ne pas anticiper les bénéfices incertains (pas de profit non réalisé) mais provisionner les pertes probables même non encore subies. Cette dissymétrie est fondamentale en CO et tolère la sous-évaluation, contrairement aux IFRS (juste valeur).",
@@ -16654,8 +16654,8 @@
               "question": "Selon l'art. 958 al. 3 CO, qui doit signer les comptes annuels d'une SA ?",
               "options": [
                 "A. Le directeur général (CEO)",
-                "B. Le président de l'organe supérieur de direction/administration et la personne responsable de l'établissement des comptes",
-                "C. Tous les membres du conseil d'administration",
+                "B. Le président du CA et le responsable des comptes",
+                "C. Tous les membres du conseil d'administration, individuellement",
                 "D. L'organe de révision"
               ],
               "answer": 1,
@@ -16693,10 +16693,10 @@
               "type": "mcq",
               "question": "Selon l'art. 957 al. 2 CO, qu'est-ce qui distingue la 'comptabilité simplifiée' de la comptabilité complète ?",
               "options": [
-                "A. Livre des recettes/dépenses + état du patrimoine, sans bilan formel ni CR ni annexe",
+                "A. Recettes, dépenses et situation patrimoniale",
                 "B. Pas de comptabilité du tout",
-                "C. Bilan et CR uniquement, sans annexe",
-                "D. Comptabilité tenue en devises uniquement"
+                "C. Un bilan et un compte de résultat uniquement, sans annexe",
+                "D. Une comptabilité tenue exclusivement en monnaie étrangère"
               ],
               "answer": 0,
               "explanation": "Art. 957 al. 2 CO : comptabilité simplifiée = livre recettes/dépenses (caisse) + état du patrimoine début/fin d'exercice. Pas de bilan formel, pas de CR structuré, pas d'annexe obligatoire. Réservée aux entreprises individuelles et sociétés de personnes dont le CA est inférieur à 500 000 CHF (jamais aux personnes morales).",
@@ -16860,8 +16860,8 @@
               "type": "mcq",
               "question": "Selon l'art. 959 al. 3 CO, quel est le critère qui distingue actif circulant et actif immobilisé ?",
               "options": [
-                "A. Le caractère réalisable ou consommable dans les 12 mois",
-                "B. La valeur nette comptable supérieure à 50 000 CHF",
+                "A. La réalisation dans les 12 mois (ou le cycle)",
+                "B. Une valeur nette comptable supérieure à CHF 50'000",
                 "C. La nature corporelle ou incorporelle de l'actif",
                 "D. La présence d'un amortissement"
               ],
@@ -16900,9 +16900,9 @@
               "type": "mcq",
               "question": "Selon l'art. 959b CO, si une entreprise présente son CR par fonction (Umsatzkostenverfahren), quelle obligation supplémentaire en découle ?",
               "options": [
-                "A. Indication en annexe d'une ventilation par nature (charges de personnel, amortissements)",
+                "A. Indiquer en annexe personnel et amortissements",
                 "B. Aucune, le choix est libre et sans contrainte",
-                "C. Obligation d'auditer le CR par un réviseur agréé",
+                "C. L'obligation de faire auditer le compte de résultat par un réviseur agréé",
                 "D. Obligation de publier les chiffres au RC"
               ],
               "answer": 0,
@@ -16915,8 +16915,8 @@
               "type": "mcq",
               "question": "Selon l'art. 959c al. 1 ch. 2 CO, lesquels de ces engagements doivent être divulgués en annexe en tant qu'engagements hors bilan ?",
               "options": [
-                "A. Les dettes financières à long terme",
-                "B. Les loyers de leasing opérationnel et les cautionnements donnés",
+                "A. Les dettes financières à long terme envers les banques",
+                "B. Leasing opérationnel et cautionnements",
                 "C. Les amortissements futurs",
                 "D. Les dividendes proposés"
               ],
@@ -16940,10 +16940,10 @@
               "type": "mcq",
               "question": "L'art. 958c al. 1 ch. 7 CO interdit la compensation. Laquelle de ces présentations EST néanmoins admise ?",
               "options": [
-                "A. Compenser créance sur filiale A et dette envers filiale A",
+                "A. Compenser une créance sur la filiale A avec une dette envers la filiale A",
                 "B. Compenser charges et produits d'intérêts",
                 "C. Compenser stocks et provisions sur stocks",
-                "D. Soustraire les amortissements cumulés de la valeur brute d'une immobilisation"
+                "D. Déduire les amortissements cumulés"
               ],
               "answer": 3,
               "explanation": "La présentation nette des immobilisations (valeur brute moins amortissements cumulés) est admise comme exception légale, tout comme les propres actions déduites des KP (art. 659a) et les pertes reportées. La compensation créance/dette intra-groupe ou charges/produits reste interdite.",
@@ -17123,8 +17123,8 @@
               "type": "mcq",
               "question": "Selon l'art. 960 al. 1 CO, quel est le plafond fondamental pour l'évaluation des actifs ?",
               "options": [
-                "A. Le coût d'acquisition ou de revient",
-                "B. La juste valeur (fair value)",
+                "A. Le coût d'acquisition",
+                "B. La juste valeur (fair value) à la clôture",
                 "C. La valeur de remplacement",
                 "D. La valeur d'expertise indépendante"
               ],
@@ -17148,9 +17148,9 @@
               "type": "mcq",
               "question": "Selon l'art. 960c CO, à quelle valeur les stocks doivent-ils être évalués à la clôture ?",
               "options": [
-                "A. Au coût d'acquisition uniquement",
+                "A. Au coût d'acquisition uniquement, sans test",
                 "B. À la valeur de remplacement",
-                "C. À la plus petite des deux valeurs : coût ou valeur nette de réalisation (LCM)",
+                "C. Le plus bas du coût et de la valeur nette",
                 "D. À la valeur de cours du marché à terme"
               ],
               "answer": 2,
@@ -17188,9 +17188,9 @@
               "type": "mcq",
               "question": "Selon l'art. 960b CO, à quelle condition une plus-value latente sur titres cotés peut-elle être comptabilisée ?",
               "options": [
-                "A. Jamais, les plus-values latentes sont interdites en CO",
-                "B. Si l'entreprise opte pour l'évaluation à la valeur de cours et applique la méthode de manière cohérente",
-                "C. Uniquement après autorisation de l'organe de révision",
+                "A. Jamais, les plus-values latentes étant toujours interdites en droit comptable suisse",
+                "B. Si l'entité opte pour la valeur de cours, de façon uniforme",
+                "C. Uniquement après une autorisation écrite de l'organe de révision",
                 "D. Si les titres représentent moins de 5 % du total bilan"
               ],
               "answer": 1,
@@ -17203,10 +17203,10 @@
               "type": "mcq",
               "question": "L'art. 960e al. 3 CO autorise des provisions supplémentaires non strictement nécessaires. Comment ces provisions sont-elles qualifiées ?",
               "options": [
-                "A. Provisions techniques",
-                "B. Réserves légales",
-                "C. Goodwill négatif",
-                "D. Réserves latentes (tolérées par le CO)"
+                "A. Des provisions techniques",
+                "B. Des réserves légales",
+                "C. Un goodwill négatif",
+                "D. Des réserves latentes"
               ],
               "answer": 3,
               "explanation": "L'art. 960e al. 3 ch. 4 CO autorise des provisions destinées à assurer la prospérité de l'entreprise à long terme (lissage des résultats). Elles constituent des réserves latentes légalement tolérées en CO — contrairement à IAS 37 § 14 qui les interdit (obligation actuelle requise).",
@@ -17229,9 +17229,9 @@
               "question": "Comment se constituent les réserves latentes selon les art. 960a al. 4 et 960e al. 3 ch. 4 CO ?",
               "options": [
                 "A. Par capitalisation systématique des dividendes",
-                "B. Par évaluation à la juste valeur des actifs immobilisés",
+                "B. Par l'évaluation à la juste valeur des actifs immobilisés corporels",
                 "C. Par compensation entre charges et produits",
-                "D. Par sous-évaluation d'actifs et/ou surévaluation de passifs (provisions au-delà de la nécessité)"
+                "D. Sous-évaluer des actifs ou surévaluer des passifs"
               ],
               "answer": 3,
               "explanation": "Réserves latentes = sous-évaluation d'actifs (art. 960a al. 4) et/ou provisions excessives (art. 960e al. 3 ch. 4). Tolérées par le CO et les RPC fondamentales. INTERDITES en IFRS. Limite : ne peuvent masquer perte de capital (725a) ni surendettement (725b).",
@@ -17434,10 +17434,10 @@
               "type": "mcq",
               "question": "Selon l'art. 961b CO, qu'est-ce que le tableau de flux de trésorerie doit décomposer ?",
               "options": [
-                "A. Charges et produits par fonction",
-                "B. Postes du bilan classés par échéance",
+                "A. Les charges et produits ventilés par fonction",
+                "B. Les postes du bilan classés par échéance résiduelle",
                 "C. Détail des amortissements par actif",
-                "D. Variation de la trésorerie en activités opérationnelles, d'investissement et de financement"
+                "D. Exploitation, investissement, financement"
               ],
               "answer": 3,
               "explanation": "Art. 961b CO impose le tableau des flux pour les grandes entreprises, structuré en trois activités : opérationnelles (méthode directe ou indirecte), investissement, financement. Trésorerie = liquidités + équivalents <= 3 mois.",
@@ -17465,8 +17465,8 @@
               "question": "Selon l'art. 963 CO, à quelle condition une entreprise doit-elle établir des comptes consolidés ?",
               "options": [
                 "A. Si elle est cotée en bourse uniquement",
-                "B. Si elle a au moins une filiale, peu importe sa taille",
-                "C. Si elle contrôle une ou plusieurs entités et que le groupe dépasse 2 des 3 seuils 20/40/250 sur 2 ans",
+                "B. Si elle détient au moins une filiale, peu importe la taille du groupe",
+                "C. Contrôle d'entités + 2 des 3 seuils (20/40/250)",
                 "D. Si le CA consolidé dépasse 100 MCHF"
               ],
               "answer": 2,
@@ -17489,9 +17489,9 @@
               "type": "mcq",
               "question": "Selon l'art. 961d CO, quelle est la conséquence si une entreprise applique une norme reconnue (IFRS, US GAAP, Swiss GAAP RPC) pour ses comptes ?",
               "options": [
-                "A. Elle doit cumuler les obligations CO et IFRS",
-                "B. Elle est exemptée des obligations supplémentaires des art. 961-961c (rapport annuel, tableau flux)",
-                "C. Elle perd l'obligation de tenir une comptabilité",
+                "A. Elle doit cumuler intégralement les obligations du CO et celles de la norme",
+                "B. Dispense des exigences des art. 961-961c",
+                "C. Elle perd l'obligation de tenir une comptabilité conforme au CO",
                 "D. Elle est dispensée de révision légale"
               ],
               "answer": 1,
@@ -17514,8 +17514,8 @@
               "type": "mcq",
               "question": "Selon l'art. 728b CO, quelles sont les principales modalités d'opinion d'un rapport de révision ordinaire ?",
               "options": [
-                "A. Conforme/non conforme uniquement",
-                "B. Sans réserve, avec réserve, opinion défavorable (refus), impossibilité d'exprimer une opinion",
+                "A. Conforme ou non conforme uniquement, sans autre nuance",
+                "B. Sans réserve, avec réserve, défavorable, impossibilité",
                 "C. Approuvé/rejeté",
                 "D. Validé/à corriger"
               ],
@@ -17663,10 +17663,10 @@
               "type": "mcq",
               "question": "Selon l'art. 962 al. 1 CO, lesquelles de ces entités sont OBLIGATOIREMENT tenues d'adopter une norme reconnue ?",
               "options": [
-                "A. Toutes les SA avec un CA > 10 MCHF",
-                "B. Toutes les grandes entreprises au sens de l'art. 961",
+                "A. Toutes les SA dont le chiffre d'affaires dépasse 10 MCHF, cotées ou non",
+                "B. Toutes les grandes entreprises au sens de l'art. 961 CO, cotées ou non",
                 "C. Toutes les Sàrl",
-                "D. Sociétés cotées en bourse, coopératives >= 2 000 associés, certaines fondations soumises à révision"
+                "D. Cotées (si exigé), coopératives ≥ 2000, certaines fondations"
               ],
               "answer": 3,
               "explanation": "Art. 962 al. 1 CO : trois catégories obligatoires — sociétés cotées, coopératives >= 2 000 associés, fondations soumises à révision en vertu de la loi. Les autres peuvent opter volontairement (al. 2). Être 'grande entreprise' (art. 961) ne déclenche pas l'obligation art. 962.",
@@ -17678,10 +17678,10 @@
               "type": "mcq",
               "question": "Selon l'art. 962a al. 5 CO et l'ONCR, lequel de ces référentiels n'est PAS qualifié de 'norme reconnue' ?",
               "options": [
-                "A. IFRS",
-                "B. US GAAP",
-                "C. Swiss GAAP RPC fondamentales (seules)",
-                "D. Swiss GAAP RPC complets"
+                "A. Les IFRS (IASB)",
+                "B. Les US GAAP (FASB)",
+                "C. Les RPC fondamentales seules",
+                "D. Les Swiss GAAP RPC complètes"
               ],
               "answer": 2,
               "explanation": "Les RPC fondamentales seules ne sont PAS une norme reconnue au sens du CO — donc pas d'exemption art. 961d. Seuls IFRS, US GAAP et Swiss GAAP RPC complets le sont (désignation par le Conseil fédéral en vertu de l'art. 962a al. 5 CO, ONCR). Piège examen classique : ne pas confondre les deux niveaux de Swiss GAAP RPC.",
@@ -17703,10 +17703,10 @@
               "type": "mcq",
               "question": "Quelle exigence l'art. 962a al. 2 CO impose-t-il en cas de changement de norme reconnue ?",
               "options": [
-                "A. Aucune, le changement est libre chaque année",
+                "A. Aucune exigence : le changement est libre chaque année",
                 "B. Approbation préalable de l'ASR",
                 "C. Augmentation de capital simultanée",
-                "D. Motif valable + retranscription rétrospective des comparatifs + explication en annexe"
+                "D. Motif valable, comparatifs retraités, explication"
               ],
               "answer": 3,
               "explanation": "Art. 962a al. 2 CO : permanence des méthodes. Changement uniquement si motif valable (ex : cotation), avec retranscription rétrospective des chiffres comparatifs et explication en annexe. Cohérent avec le principe général de permanence (art. 958c al. 1 ch. 6).",
@@ -17743,8 +17743,8 @@
               "type": "mcq",
               "question": "Lequel de ces traitements est UNIQUE au CO pur (et non admis en IFRS) ?",
               "options": [
-                "A. Évaluation des stocks au coût ou VNR",
-                "B. Constitution de provisions discrétionnaires pour 'prospérité durable' (art. 960e al. 4)",
+                "A. L'évaluation des stocks au plus bas du coût et de la VNR",
+                "B. Les provisions pour la prospérité durable (art. 960e)",
                 "C. Tableau de flux de trésorerie",
                 "D. Présentation par fonction du CR"
               ],
@@ -17960,10 +17960,10 @@
               "type": "mcq",
               "question": "Selon l'art. 632 al. 1 CO, quelle est la libération minimale exigée à la constitution d'une SA ?",
               "options": [
-                "A. 20 % par action et minimum 50 000 CHF total",
+                "A. 20 % par action, CHF 50'000 au total",
                 "B. 100 % du capital",
                 "C. 50 % du capital",
-                "D. Au moins 25 000 CHF"
+                "D. Au moins CHF 25'000, quel que soit le capital"
               ],
               "answer": 0,
               "explanation": "Art. 632 al. 1 CO : libération de 20 % minimum par action ET 50 000 CHF minimum total (deux conditions cumulatives). Versement sur compte bloqué attesté par la banque. Le solde reste à libérer ultérieurement à la demande du CA. Sàrl en revanche : libération à 100 %.",
@@ -17976,7 +17976,7 @@
               "question": "Depuis la réforme 2023, quel est le ratio maximum entre actions à droit de vote privilégié (art. 693 CO) et actions ordinaires ?",
               "options": [
                 "A. 1:5",
-                "B. 1:10 (inchangé par la réforme 2023)",
+                "B. 1:10",
                 "C. 1:100",
                 "D. Aucune limite"
               ],
@@ -17993,7 +17993,7 @@
                 "A. 1 an",
                 "B. 3 ans",
                 "C. 10 ans",
-                "D. 5 ans (renouvelable par l'AG)"
+                "D. 5 ans"
               ],
               "answer": 3,
               "explanation": "Art. 653s al. 2 CO : durée maximale de 5 ans, renouvelable. Plafond du capital max <= 1,5x le capital max au RC ; capital min >= moitié du capital max. La marge remplace la plupart des usages de l'ancien capital autorisé.",
@@ -18016,7 +18016,7 @@
               "question": "Selon l'art. 659 al. 1 CO, quelle est la limite normale de détention de propres actions par une SA ?",
               "options": [
                 "A. 5 % du capital-actions",
-                "B. 10 % du capital-actions (20 % temporaire si revente sous 2 ans)",
+                "B. 10 % du capital-actions",
                 "C. 25 % du capital-actions",
                 "D. 50 % du capital-actions"
               ],
@@ -18040,10 +18040,10 @@
               "type": "mcq",
               "question": "Selon l'art. 653k CO, quel est le délai accordé aux créanciers pour demander des sûretés lors d'une réduction ordinaire du capital ?",
               "options": [
-                "A. 30 jours (garantie des créances après publication FOSC)",
-                "B. Aucun délai n'est requis",
-                "C. 1 mois",
-                "D. 1 an"
+                "A. 30 jours après la publication",
+                "B. Aucun délai n'est requis par la loi",
+                "C. 3 mois après la décision de l'AG",
+                "D. 1 an après l'inscription"
               ],
               "answer": 0,
               "explanation": "Art. 653k CO : lors d'une réduction ordinaire, les créanciers peuvent exiger des sûretés dans les 30 jours suivant la publication ; la réduction ne peut être inscrite au RC qu'après satisfaction ou garantie des créances déclarées. Un expert-réviseur agréé atteste que les créances restent couvertes (art. 653l). Plancher du capital-actions : 100 000 CHF.",
@@ -18204,9 +18204,9 @@
               "type": "mcq",
               "question": "Selon l'art. 698 al. 2 CO, laquelle de ces compétences N'EST PAS inalienable de l'AG ?",
               "options": [
-                "A. Décisions opérationnelles courantes (achats, ventes)",
-                "B. Adoption et modification des statuts",
-                "C. Approbation des comptes annuels",
+                "A. Les décisions opérationnelles courantes",
+                "B. L'adoption et la modification des statuts",
+                "C. L'approbation des comptes annuels",
                 "D. Décharge des membres du CA"
               ],
               "answer": 0,
@@ -18244,10 +18244,10 @@
               "type": "mcq",
               "question": "Selon l'art. 704 al. 1 CO, quelle est la majorité requise pour modifier le but social, augmenter le capital ou supprimer le droit de souscription préférentiel ?",
               "options": [
-                "A. 2/3 des voix représentées + majorité absolue des valeurs nominales représentées (cumulatif)",
-                "B. Majorité simple des voix présentes",
+                "A. 2/3 des voix et majorité des nominaux représentés",
+                "B. La majorité simple des voix présentes à l'assemblée",
                 "C. Unanimité des actionnaires",
-                "D. Majorité simple des actions émises"
+                "D. La majorité simple de toutes les actions émises"
               ],
               "answer": 0,
               "explanation": "Art. 704 al. 1 CO : majorité qualifiée DOUBLE et CUMULATIVE — 2/3 des voix + majorité absolue des VN représentées. Piège examen majeur : ne pas oublier le critère VN. Statuts peuvent durcir mais pas alléger.",
@@ -18285,8 +18285,8 @@
               "question": "Selon les art. 706-706b CO, quelle est la différence majeure entre annulabilité et nullité d'une décision de l'AG ?",
               "options": [
                 "A. Aucune, ce sont des synonymes",
-                "B. Annulabilité = action dans les 2 mois ; nullité = sans délai (peut être invoquée à tout moment)",
-                "C. Annulabilité = nullité de plein droit ; nullité = action judiciaire requise",
+                "B. Annulabilité : action dans les 2 mois ; nullité : en tout temps",
+                "C. L'annulabilité opère de plein droit ; la nullité exige une action judiciaire préalable",
                 "D. Annulabilité = SA cotées ; nullité = SA non cotées"
               ],
               "answer": 1,
@@ -18465,9 +18465,9 @@
               "type": "mcq",
               "question": "Selon la réforme 2023, combien de situations distinctes le CO identifie-t-il dans les art. 725 à 725c ?",
               "options": [
-                "A. 2 situations (perte de capital + faillite)",
+                "A. 2 situations (perte de capital et faillite)",
                 "B. 3 situations",
-                "C. 4 situations : surveillance, perte de capital, surendettement, insolvabilité imminente",
+                "C. 4 situations (725 à 725c)",
                 "D. 5 situations"
               ],
               "answer": 2,
@@ -18480,10 +18480,10 @@
               "type": "mcq",
               "question": "Selon l'art. 725a CO, quand y a-t-il perte de capital ?",
               "options": [
-                "A. Lorsque la perte annuelle dépasse le bénéfice annuel",
+                "A. Lorsque la perte de l'exercice dépasse le bénéfice de l'exercice précédent",
                 "B. Lorsque les actifs sont inférieurs aux dettes",
                 "C. Lorsque le CA décide de réduire le capital",
-                "D. Lorsque les actifs nets sont inférieurs à la moitié du capital-actions + réserves légales"
+                "D. La moitié du capital et des réserves légales n'est plus couverte"
               ],
               "answer": 3,
               "explanation": "Art. 725a al. 1 CO : perte de capital si, selon les derniers comptes annuels, actifs nets (actif - dettes) < (capital-actions + réserves légales non remboursables aux actionnaires)/2. Obligations : mesures sans délai pour mettre fin à la perte de capital, propositions à l'AG au besoin, contrôle restreint des derniers comptes par un réviseur agréé si la société n'a pas d'organe de révision.",
@@ -18505,9 +18505,9 @@
               "type": "mcq",
               "question": "Selon l'art. 725b CO, en cas de surendettement, le CA doit établir combien de bilans intermédiaires et lesquels ?",
               "options": [
-                "A. Un seul bilan, à valeur de continuité",
+                "A. Un seul bilan, à la valeur de continuité",
                 "B. Un seul bilan, à valeur de liquidation",
-                "C. Deux bilans : à valeur de continuité ET à valeur de liquidation",
+                "C. Deux : continuité et liquidation",
                 "D. Trois bilans : continuité, liquidation et fiscal"
               ],
               "answer": 2,
@@ -18520,10 +18520,10 @@
               "type": "mcq",
               "question": "Selon l'art. 725b al. 4 CO, dans quel(s) cas l'avis immédiat au juge peut-il être différé ?",
               "options": [
-                "A. Jamais, l'avis est toujours immédiat",
+                "A. Jamais : l'avis au juge est toujours immédiat, sans exception légale",
                 "B. Si le CA décide unilatéralement",
-                "C. Si des créanciers acceptent de subordonner leurs créances à hauteur du surendettement, ou si l'assainissement est sérieusement probable",
-                "D. Si l'AG vote la décharge du CA"
+                "C. Postposition suffisante ou assainissement probable",
+                "D. Si l'assemblée générale vote la décharge des membres du CA"
               ],
               "answer": 2,
               "explanation": "Art. 725b al. 4 CO : différé possible (ch. 1) avec postposition de créances couvrant le découvert et les intérêts, ou (ch. 2) s'il existe des raisons sérieuses d'admettre que le surendettement peut être supprimé en temps utile — au plus 90 jours après l'établissement des comptes intermédiaires révisés, sans aggravation de la mise en danger des créanciers.",
@@ -18546,8 +18546,8 @@
               "question": "Selon l'art. 725 al. 1 CO (nouveau 2023), qu'est-ce que l'insolvabilité imminente ?",
               "options": [
                 "A. Un synonyme du surendettement",
-                "B. Une diminution de plus de 50 % du chiffre d'affaires",
-                "C. Un problème de liquidité : la SA risque de ne plus pouvoir payer ses dettes à leur échéance",
+                "B. Une diminution de plus de 50 % du chiffre d'affaires sur douze mois",
+                "C. Le risque de ne plus payer ses dettes à l'échéance",
                 "D. La cessation effective des paiements"
               ],
               "answer": 2,
@@ -18561,8 +18561,8 @@
               "question": "Quelle est la base légale de la responsabilité du CA en cas de retard à aviser le juge en situation de surendettement ?",
               "options": [
                 "A. Art. 716a CO uniquement",
-                "B. Art. 754 CO (responsabilité solidaire envers les créanciers pour le dommage causé)",
-                "C. Art. 752 CO (responsabilité pour le prospectus)",
+                "B. Art. 754 CO (responsabilité du CA)",
+                "C. Art. 752 CO (responsabilité pour le prospectus d'émission)",
                 "D. Art. 696 CO (consultation des comptes)"
               ],
               "answer": 1,
@@ -18576,9 +18576,9 @@
               "question": "Parmi ces techniques d'assainissement, laquelle est qualifiée de « coup d'accordéon » (réduction puis augmentation simultanées, art. 653q-653r CO) ?",
               "options": [
                 "A. Cession amiable d'actifs à un tiers",
-                "B. Réduction du capital à zéro suivie d'une augmentation simultanée (sans appel aux créanciers)",
+                "B. Réduire le capital (même à zéro) et l'augmenter aussitôt",
                 "C. Sursis concordataire LP",
-                "D. Conversion de dette en actions (debt-equity swap)"
+                "D. La conversion de dettes en actions (debt-equity swap) par les créanciers"
               ],
               "answer": 1,
               "explanation": "Coup d'accordéon (art. 653q-653r CO) : réduction du capital à zéro pour éliminer les pertes reportées + augmentation simultanée avec nouveaux fonds. L'augmentation simultanée protège les créanciers, donc pas d'appel aux créanciers requis. Technique classique d'assainissement.",
@@ -18791,9 +18791,9 @@
               "question": "Selon l'art. 786 CO, à quelle condition les parts sociales d'une Sàrl peuvent-elles être cédées ?",
               "options": [
                 "A. Cession libre comme les actions au porteur",
-                "B. Cession sans aucune formalité, par simple acte oral",
+                "B. Cession sans aucune formalité, par simple accord oral entre les parties",
                 "C. Cession nécessitant l'autorisation du juge",
-                "D. Cession écrite + agrément de l'assemblée des associés + mise à jour du RC"
+                "D. Cession écrite et approbation de l'assemblée"
               ],
               "answer": 3,
               "explanation": "Art. 785-786 CO : cession écrite (acte écrit minimum), agrément requis de l'assemblée des associés (sauf statuts en disposent autrement), mise à jour du RC pour opposabilité aux tiers. Restriction structurelle de la Sàrl, contrairement aux actions SA cessibles librement.",
@@ -18816,8 +18816,8 @@
               "question": "Selon l'art. 803 CO, quelle obligation spécifique pèse sur les associés d'une Sàrl mais pas sur les actionnaires d'une SA ?",
               "options": [
                 "A. Obligation de libérer 100 % du capital",
-                "B. Obligation de tenir une comptabilité personnelle",
-                "C. Devoir de fidélité et interdiction de concurrence (sauf autorisation)",
+                "B. L'obligation de tenir une comptabilité personnelle de ses parts",
+                "C. Un devoir de fidélité (prohibition de concurrence)",
                 "D. Obligation de déposer les parts en banque"
               ],
               "answer": 2,
@@ -18845,10 +18845,10 @@
               "type": "mcq",
               "question": "Selon les art. 808-810 CO, qui assure la gestion d'une Sàrl ?",
               "options": [
-                "A. Un conseil d'administration distinct des associés",
+                "A. Un conseil d'administration distinct des associés, élu par l'assemblée",
                 "B. L'assemblée des associés en personne",
                 "C. Un commissaire désigné par le tribunal",
-                "D. Les gérants (au moins un domicilié en Suisse), pas nécessairement associés"
+                "D. Les gérants (au moins un domicilié en Suisse)"
               ],
               "answer": 3,
               "explanation": "Art. 808-810 CO : gestion par les gérants — un au moins doit être domicilié en Suisse (exigence d'ancrage local). Les gérants ne sont pas forcément associés (peuvent être externes). Différence avec la SA : gérants Sàrl cumulent souvent rôle CA + direction.",
@@ -19032,9 +19032,9 @@
               "question": "Selon l'art. 727a al. 2 CO, quelles sont les conditions cumulatives de l'opting-out ?",
               "options": [
                 "A. CA < 5 MCHF et accord du CA",
-                "B. Effectif <= 10 emplois à plein temps (moyenne annuelle) et décision unanime",
+                "B. ≤ 10 EPT en moyenne et accord de tous",
                 "C. Société non cotée et accord majoritaire",
-                "D. Effectif <= 50 ETP et accord du réviseur"
+                "D. Effectif ≤ 50 EPT et accord écrit de l'organe de révision"
               ],
               "answer": 1,
               "explanation": "Opting-out art. 727a al. 2 CO : (1) effectif <= 10 emplois à plein temps en moyenne annuelle, (2) décision UNANIME (pas majoritaire). L'opting-out renonce uniquement au contrôle restreint — pas à la révision ordinaire si seuils dépassés. Tout actionnaire peut malgré tout demander une révision (art. 727a al. 4) : droit individuel.",
@@ -19072,9 +19072,9 @@
               "question": "Quelle est la différence essentielle entre le rapport de révision ordinaire (art. 728b) et celui du contrôle restreint (art. 729a) ?",
               "options": [
                 "A. Aucune, ils sont identiques",
-                "B. Ordinaire = opinion POSITIVE (vérification active) ; restreint = confirmation NÉGATIVE ('rien n'a attiré mon attention')",
+                "B. Ordinaire : opinion positive ; restreint : conclusion négative",
                 "C. Ordinaire = oral ; restreint = écrit",
-                "D. Ordinaire = annuel ; restreint = bisannuel"
+                "D. Le rapport ordinaire est annuel, alors que le rapport restreint est trisannuel"
               ],
               "answer": 1,
               "explanation": "Révision ordinaire : opinion positive d'assurance raisonnable (les comptes sont conformes). Contrôle restreint : confirmation négative ('aucun fait n'a attiré mon attention contraire à...'). Niveau d'assurance moindre, procédures réduites.",
@@ -19121,10 +19121,10 @@
               "type": "mcq",
               "question": "Selon l'art. 755 CO, qui peut être à l'origine d'une action en responsabilité contre l'organe de révision ?",
               "options": [
-                "A. La société, les actionnaires et les créanciers",
+                "A. La société, les actionnaires, les créanciers",
                 "B. Uniquement la société",
                 "C. Uniquement les actionnaires majoritaires",
-                "D. Uniquement les créanciers en cas de faillite"
+                "D. Uniquement les créanciers, et seulement en cas de faillite de la société"
               ],
               "answer": 0,
               "explanation": "Art. 755 CO : trois cercles de demandeurs — la société (via décision AG), les actionnaires (dommage direct), les créanciers (en faillite). Conditions : violation des devoirs de révision + faute (intentionnelle ou négligence) + dommage + causalité. Prescription : 5 ans / 10 ans absolus.",
@@ -19314,7 +19314,7 @@
                 "A. À l'actif circulant comme un placement",
                 "B. À l'actif immobilisé comme une participation",
                 "C. Hors bilan en annexe",
-                "D. En déduction des capitaux propres (jamais à l'actif)"
+                "D. En déduction des capitaux propres"
               ],
               "answer": 3,
               "explanation": "Art. 959a al. 2 ch. 3 let. e CO : déduction directe des capitaux propres (poste négatif à la valeur d'acquisition) — jamais inscription à l'actif. Depuis 2023, plus de réserve bloquée obligatoire (sauf détention par une filiale, art. 659b). Même règle en IFRS (IAS 32.33) et RPC 24 — convergence internationale.",
@@ -19336,10 +19336,10 @@
               "type": "mcq",
               "question": "Une SA détient 100 propres actions sur 1 000 émises. Comment se calcule la majorité des 2/3 à l'AG (art. 704) ?",
               "options": [
-                "A. Sur 1 000 actions émises (2/3 = 667)",
+                "A. Sur les 1'000 actions émises (2/3 = 667 voix)",
                 "B. Sur 100 propres actions",
-                "C. Sur 900 actions représentables (les propres actions ne comptent pas)",
-                "D. Au prorata du flottant boursier"
+                "C. Sur les actions représentées",
+                "D. Au prorata du flottant boursier de la société"
               ],
               "answer": 2,
               "explanation": "Les 100 propres actions sont neutralisées (art. 659a al. 1 CO). Base de calcul : 900 actions représentables. La majorité des 2/3 et l'éventuel quorum se calculent sur les voix réellement représentables et présentes/représentées à l'AG.",
@@ -19494,9 +19494,9 @@
               "type": "mcq",
               "question": "Selon l'art. 671 al. 1 CO, comment est traitée la prime d'émission (agio) lors d'une augmentation de capital ?",
               "options": [
-                "A. Distribuée immédiatement aux actionnaires",
+                "A. Distribuée immédiatement aux actionnaires sous forme de dividende",
                 "B. Inscrite au compte de résultat",
-                "C. Affectée intégralement à la réserve légale issue du capital",
+                "C. À la réserve légale issue du capital",
                 "D. Constituée en provision pour risques"
               ],
               "answer": 2,
@@ -19509,8 +19509,8 @@
               "type": "mcq",
               "question": "Selon le calcul du dividende distribuable (art. 675 CO), lequel de ces éléments PEUT être distribué ?",
               "options": [
-                "A. La réserve légale (en deçà du seuil minimum)",
-                "B. Le bénéfice de l'exercice et le bénéfice reporté des exercices antérieurs",
+                "A. La réserve légale issue du bénéfice, même en deçà du minimum légal",
+                "B. Le bénéfice de l'exercice et le bénéfice reporté",
                 "C. Le capital-actions",
                 "D. Le poste 'Frais d'émission'"
               ],
@@ -19534,9 +19534,9 @@
               "type": "mcq",
               "question": "Selon l'art. 675a CO (nouveau 2023), quelles sont les conditions cumulatives pour distribuer un dividende intermédiaire ?",
               "options": [
-                "A. Aucune condition particulière, le CA décide librement",
-                "B. Comptes intermédiaires + examen par le réviseur (sauf exceptions) + décision de l'organe compétent",
-                "C. Approbation des créanciers obligatoire",
+                "A. Aucune condition particulière : le conseil d'administration décide librement",
+                "B. Comptes intermédiaires, révisés (sauf exceptions), décision de l'AG",
+                "C. L'approbation préalable des créanciers, obligatoire dans tous les cas",
                 "D. Cotation en bourse de la SA"
               ],
               "answer": 1,
@@ -19549,10 +19549,10 @@
               "type": "mcq",
               "question": "Selon l'art. 674 CO, quel est l'ordre d'imputation des pertes ?",
               "options": [
-                "A. D'abord sur le bénéfice reporté, puis réserves facultatives, puis statutaires, puis légales (au-delà du minimum)",
-                "B. D'abord sur le capital-actions, puis les réserves",
+                "A. Bénéfice reporté, réserves facultatives, puis réserves légales",
+                "B. D'abord sur le capital-actions, ensuite seulement sur les réserves",
                 "C. Au choix du CA",
-                "D. D'abord sur la réserve légale issue du capital"
+                "D. D'abord sur la réserve légale issue du capital, puis sur le bénéfice reporté"
               ],
               "answer": 0,
               "explanation": "Art. 674 CO : ordre LÉGAL imposé — bénéfice reporté → réserves facultatives → réserves statutaires → réserve légale (uniquement la partie au-delà du minimum). Le CA ne peut pas modifier l'ordre. Protection du capital social.",
@@ -19711,7 +19711,7 @@
               "options": [
                 "A. 3 membres",
                 "B. 5 membres",
-                "C. 1 seul membre",
+                "C. 1 membre",
                 "D. 7 membres"
               ],
               "answer": 2,
@@ -19765,9 +19765,9 @@
               "question": "Selon l'art. 717 al. 1 CO, quel est le standard de diligence applicable aux membres du CA ?",
               "options": [
                 "A. Obligation de résultat (atteinte de bénéfices)",
-                "B. Standard subjectif (selon les capacités personnelles)",
-                "C. Standard objectif d'un administrateur prudent et averti, avec une obligation de moyens",
-                "D. Aucun standard légal — apprécié au cas par cas par le CA"
+                "B. Un standard subjectif, apprécié selon les capacités personnelles de chaque membre",
+                "C. Standard objectif d'un administrateur diligent (obligation de moyens)",
+                "D. Aucun standard légal : la diligence est appréciée au cas par cas par le juge"
               ],
               "answer": 2,
               "explanation": "Art. 717 al. 1 CO : standard objectif (administrateur prudent et averti), obligation de moyens (pas de résultat). La 'business judgment rule' protège les décisions prises avec diligence et en bonne foi, même si l'issue est défavorable.",
@@ -19791,8 +19791,8 @@
               "options": [
                 "A. Parité stricte 50/50 dans le CA",
                 "B. Aucune obligation",
-                "C. Quota 40 % strict avec sanction financière",
-                "D. CA : >= 30% de chaque sexe ; Direction : >= 20% de chaque sexe (comply or explain)"
+                "C. Un quota strict de 40 % dans le CA, assorti d'une sanction financière",
+                "D. CA ≥ 30 %, direction ≥ 20 % (comply or explain)"
               ],
               "answer": 3,
               "explanation": "Art. 734f CO (réforme 2023) : 30 % CA et 20 % direction de chaque sexe pour SA cotées de plus de 250 ETP. Régime 'comply or explain' : pas de sanction financière, mais obligation de transparence dans le rapport de rémunération.",
@@ -19804,9 +19804,9 @@
               "type": "mcq",
               "question": "Selon l'art. 718 CO, comment se règle la représentation de la SA vis-à-vis des tiers ?",
               "options": [
-                "A. Le CA représente la SA, qui peut déléguer à des directeurs ou mandataires (signature collective ou individuelle inscrite au RC)",
-                "B. Le président du CA seul peut signer pour la SA",
-                "C. Tout actionnaire peut représenter la SA jusqu'à concurrence de sa participation",
+                "A. Le CA, qui peut déléguer (signatures inscrites au RC)",
+                "B. Le président du conseil d'administration seul peut signer pour la SA",
+                "C. Tout actionnaire peut représenter la SA à concurrence de sa participation",
                 "D. Seul l'organe de révision peut représenter la SA"
               ],
               "answer": 0,
@@ -19964,8 +19964,8 @@
               "type": "mcq",
               "question": "En cas de distribution du solde de liquidation, quel élément est SOUMIS à l'impôt anticipé de 35 % ?",
               "options": [
-                "A. L'excédent au-delà de la valeur nominale et des réserves d'apport",
-                "B. Le remboursement de la valeur nominale du capital",
+                "A. L'excédent sur le nominal et les RAC",
+                "B. Le remboursement de la valeur nominale du capital-actions",
                 "C. Le remboursement des réserves d'apport (KER) reconnues par l'AFC",
                 "D. Aucun élément, la liquidation est exonérée"
               ],
@@ -19979,10 +19979,10 @@
               "type": "mcq",
               "question": "Selon la LP art. 219, quel est l'ordre des créanciers en cas de faillite (1ère classe) ?",
               "options": [
-                "A. Créances des travailleurs des 6 mois précédant la faillite + pensions alimentaires + cautions",
-                "B. Banques et créanciers chirographaires",
+                "A. Salaires des 6 derniers mois et pensions alimentaires",
+                "B. Les banques et les créanciers chirographaires ordinaires",
                 "C. Actionnaires",
-                "D. Créanciers gagistes"
+                "D. Les créanciers gagistes sur leurs gages"
               ],
               "answer": 0,
               "explanation": "LP art. 219 al. 4 : 1ère classe = créances des travailleurs nées dans les six mois précédant l'ouverture de la faillite (plafonnées au gain max. assuré LAA), pensions alimentaires, cautions. 2ème classe : dépôts bancaires protégés, cotisations AVS/AI. 3ème classe : chirographaires. Hors classe : créanciers gagistes (sur leurs objets grevés).",
@@ -20133,10 +20133,10 @@
               "type": "mcq",
               "question": "Selon l'art. 568 CO, comment se caractérise la responsabilité des associés d'une SNC ?",
               "options": [
-                "A. Limitée à l'apport (comme une SA)",
+                "A. Limitée à l'apport de chaque associé, comme dans une SA",
                 "B. Limitée à 10 % du capital",
-                "C. Solidaire et illimitée sur le patrimoine personnel, à titre subsidiaire",
-                "D. Limitée pour les associés silencieux"
+                "C. Solidaire, illimitée et subsidiaire",
+                "D. Limitée pour les associés qui ne participent pas à la gestion"
               ],
               "answer": 2,
               "explanation": "Art. 568 CO : responsabilité solidaire et illimitée des associés SNC sur leur patrimoine personnel, à titre subsidiaire (créancier doit d'abord poursuivre la société). Risque maximal — choix structurant pour les associés.",
@@ -20174,8 +20174,8 @@
               "question": "Selon l'art. 594 CO, quelle est la différence essentielle entre commandités et commanditaires dans une société en commandite ?",
               "options": [
                 "A. Aucune, ils ont les mêmes droits",
-                "B. Commandités sont les actionnaires ; commanditaires les directeurs",
-                "C. Commandités = responsabilité illimitée (PP uniquement) ; commanditaires = responsabilité limitée à leur commandite (PM possibles)",
+                "B. Les commandités sont les actionnaires, les commanditaires les administrateurs de la société",
+                "C. Commandités : responsabilité illimitée ; commanditaires : limitée",
                 "D. Commandités gèrent ; commanditaires votent"
               ],
               "answer": 2,
@@ -20198,10 +20198,10 @@
               "type": "mcq",
               "question": "Quelle est la conséquence fiscale principale du choix d'une SNC ou d'une SC plutôt que d'une SA ?",
               "options": [
-                "A. Transparence fiscale : les bénéfices sont imposés directement chez les associés (pas d'impôt distinct sur la société)",
+                "A. La transparence : imposition chez les associés",
                 "B. Aucune différence fiscale",
                 "C. Exonération totale des bénéfices",
-                "D. Imposition à un taux préférentiel de 5 %"
+                "D. Une imposition de la société à un taux préférentiel réservé aux sociétés de personnes"
               ],
               "answer": 0,
               "explanation": "SNC et SC sont fiscalement transparentes : le bénéfice est imposé directement chez les associés (revenu) au taux marginal de chacun. Évite la double imposition économique des SA (IS + IRPP sur dividendes). Avantage si taux marginaux des associés faibles.",
@@ -20333,9 +20333,9 @@
               "type": "mcq",
               "question": "Selon l'art. 60 CC, à quel moment une association acquiert-elle la personnalité juridique ?",
               "options": [
-                "A. À l'inscription au registre du commerce",
+                "A. À son inscription au registre du commerce, dans tous les cas",
                 "B. Lors de la première AG",
-                "C. Dès l'expression de la volonté de se constituer en corps organisé (adoption des statuts)",
+                "C. Dès l'adoption des statuts (volonté d'être un corps organisé)",
                 "D. À la signature du premier contrat"
               ],
               "answer": 2,
@@ -20408,9 +20408,9 @@
               "type": "mcq",
               "question": "Selon l'art. 69b CC, à quelle condition une association doit-elle être soumise à la révision ordinaire ?",
               "options": [
-                "A. Toujours, dès la première année",
-                "B. Jamais, l'opting-out est obligatoire",
-                "C. Si elle dépasse 2 des 3 seuils de l'art. 69b CC (bilan 10M, CA 20M, 50 EPT) sur deux exercices successifs",
+                "A. Toujours, dès le premier exercice, quelle que soit sa taille",
+                "B. Jamais : l'opting-out est obligatoire pour toutes les associations",
+                "C. Si 2 des 3 seuils (10 M / 20 M / 50 EPT) sont dépassés 2 ans",
                 "D. À la demande d'un membre"
               ],
               "answer": 2,
@@ -20529,8 +20529,8 @@
               "type": "mcq",
               "question": "Selon l'art. 3 al. 1 LFus, quelles sont les deux formes de fusion ?",
               "options": [
-                "A. Fusion verticale et fusion horizontale",
-                "B. Fusion par absorption et fusion par combinaison",
+                "A. La fusion verticale et la fusion horizontale",
+                "B. Par absorption ou par combinaison",
                 "C. Fusion partielle et fusion totale",
                 "D. Fusion ouverte et fusion fermée"
               ],
@@ -20569,10 +20569,10 @@
               "type": "mcq",
               "question": "Selon l'art. 18 LFus, quelle majorité l'AG doit-elle réunir pour approuver la fusion ?",
               "options": [
-                "A. 2/3 des voix représentées + majorité absolue des valeurs nominales",
-                "B. Majorité simple",
+                "A. 2/3 des voix et majorité des nominaux",
+                "B. La majorité simple des voix exprimées",
                 "C. Unanimité",
-                "D. 51 % du capital social"
+                "D. 51 % du capital social émis"
               ],
               "answer": 0,
               "explanation": "Art. 18 LFus + 704 CO : majorité qualifiée double — 2/3 voix + majorité absolue VN. Identique aux décisions d'augmentation de capital ou de modification fondamentale des statuts. Cette majorité renforcée protège les actionnaires minoritaires contre des opérations imposées.",
@@ -20584,10 +20584,10 @@
               "type": "mcq",
               "question": "Selon l'art. 29 LFus, qu'est-ce qu'une scission sans dissolution ?",
               "options": [
-                "A. Un spin-off : la société scindante subsiste et transfère une partie de son patrimoine à une nouvelle entité ou à une société existante",
+                "A. Un spin-off : la société scindante subsiste",
                 "B. Une fusion partielle",
-                "C. Une liquidation partielle des actifs",
-                "D. Un transfert temporaire d'actifs"
+                "C. Une liquidation partielle des actifs de la société",
+                "D. Un transfert temporaire d'actifs à une société sœur"
               ],
               "answer": 0,
               "explanation": "Art. 29 al. 1 ch. 2 LFus : scission sans dissolution = spin-off. La société scindante subsiste, transfère une partie de son patrimoine à une entité nouvelle ou existante. Responsabilité subsidiaire et solidaire des sociétés participant à la scission (art. 47 LFus) pour les dettes antérieures ; la responsabilité personnelle des associés se prescrit par 3 ans (art. 48/26 LFus).",
@@ -20609,9 +20609,9 @@
               "type": "mcq",
               "question": "Selon l'art. 69 LFus, qu'est-ce qu'un transfert de patrimoine et comment se distingue-t-il d'une fusion ?",
               "options": [
-                "A. La société cédante SUBSISTE après le transfert ; la contrepartie va à la société (pas aux actionnaires)",
+                "A. La cédante subsiste ; la contrepartie lui revient",
                 "B. Aucune différence avec la fusion",
-                "C. Le transfert de patrimoine concerne uniquement les biens immobiliers",
+                "C. Le transfert de patrimoine concerne uniquement les biens immobiliers inscrits au RF",
                 "D. Il s'agit d'un autre nom pour la scission"
               ],
               "answer": 0,
@@ -20625,8 +20625,8 @@
               "question": "Selon IFRS 3, comment le goodwill issu d'une fusion est-il traité après comptabilisation initiale ?",
               "options": [
                 "A. Amorti linéairement sur 5 ans",
-                "B. Non amorti — test d'impairment annuel obligatoire",
-                "C. Amorti sur durée d'utilité (max 20 ans en RPC)",
+                "B. Non amorti, test de dépréciation annuel",
+                "C. Amorti sur sa durée d'utilité, au maximum 20 ans comme en RPC",
                 "D. Imputé directement aux fonds propres"
               ],
               "answer": 1,
@@ -20639,7 +20639,7 @@
               "type": "mcq",
               "question": "Selon les art. 105-106 LFus, dans quel délai un actionnaire minoritaire peut-il saisir le tribunal pour contester un rapport d'échange jugé inéquitable ?",
               "options": [
-                "A. 2 mois après la publication de la fusion au RC",
+                "A. 2 mois",
                 "B. 1 mois",
                 "C. 6 mois",
                 "D. 1 an"
@@ -20753,10 +20753,10 @@
               "type": "mcq",
               "question": "Quelle innovation principale concerne le capital-actions dans la réforme 2023 du droit des SA ?",
               "options": [
-                "A. Possibilité de libeller le capital en devise étrangère si la devise est indispensable à l'exploitation",
-                "B. Augmentation du capital minimum à 200 000 CHF",
+                "A. Le capital peut être libellé en monnaie étrangère",
+                "B. L'augmentation du capital minimum de la SA à CHF 200'000",
                 "C. Suppression des actions nominatives",
-                "D. Suppression de l'obligation de libération minimum"
+                "D. La suppression de l'obligation de libérer au moins 20 % de chaque action"
               ],
               "answer": 0,
               "explanation": "Réforme 2023 — art. 621 al. 2 CO : capital en devise étrangère possible (USD, EUR, GBP, JPY, CHF). Condition : devise indispensable à l'exploitation. Innovation majeure pour les filiales de groupes internationaux. Conversion en CHF à indiquer dans les comptes.",
@@ -20779,8 +20779,8 @@
               "question": "Quel changement la réforme 2023 a-t-elle apporté concernant l'art. 699b CO (inscription de sujets à l'ordre du jour) ?",
               "options": [
                 "A. Suppression du droit",
-                "B. Seuil abaissé de 10 % à 0,5 % (sociétés cotées) / 5 % (autres sociétés) du capital ou des voix",
-                "C. Seuil maintenu à 10 % du capital",
+                "B. Seuil abaissé à 0,5 % (cotées) / 5 % (autres)",
+                "C. Le seuil est maintenu à 10 % du capital-actions ou des voix",
                 "D. Seuil porté à 25 %"
               ],
               "answer": 1,
@@ -20793,9 +20793,9 @@
               "type": "mcq",
               "question": "Combien d'articles distincts la réforme 2023 a-t-elle créés pour traiter les mesures de crise (perte de capital, surendettement, insolvabilité) ?",
               "options": [
-                "A. 1 article unique (comme avant)",
+                "A. 1 article unique, comme avant la réforme",
                 "B. 2 articles",
-                "C. 4 articles : 725, 725a, 725b, 725c",
+                "C. 4 articles (725 à 725c)",
                 "D. 3 articles"
               ],
               "answer": 2,
@@ -20818,8 +20818,8 @@
               "type": "mcq",
               "question": "Selon l'art. 735c CO (réforme 2023), laquelle de ces rémunérations EST INTERDITE pour les SA cotées ?",
               "options": [
-                "A. Salaire de base et primes annuelles liées à la performance",
-                "B. Primes à la signature, golden handshakes et deal fees (primes liées aux acquisitions)",
+                "A. Le salaire de base et les primes annuelles liées à la performance",
+                "B. Les indemnités de départ et les primes d'acquisition",
                 "C. Stock-options et RSU",
                 "D. Indemnités de représentation"
               ],
@@ -20833,9 +20833,9 @@
               "type": "mcq",
               "question": "Quelle date marque l'entrée en vigueur de la réforme 2023 du droit de la SA et quel délai d'adaptation des statuts a été accordé ?",
               "options": [
-                "A. 1er juillet 2023, sans délai",
-                "B. 1er janvier 2023, avec un délai d'adaptation de 2 ans",
-                "C. 1er janvier 2024, avec un délai de 5 ans",
+                "A. 1er juillet 2023, sans aucun délai d'adaptation",
+                "B. 1er janvier 2023, délai de 2 ans",
+                "C. 1er janvier 2024, avec un délai d'adaptation de 5 ans",
                 "D. 1er janvier 2022, sans délai"
               ],
               "answer": 1,
@@ -20959,10 +20959,10 @@
               "type": "mcq",
               "question": "Parmi les formes juridiques suisses, laquelle entraîne une responsabilité illimitée et solidaire des associés ?",
               "options": [
-                "A. Société en nom collectif (SNC)",
-                "B. SA",
-                "C. Sàrl",
-                "D. Coopérative"
+                "A. La société en nom collectif",
+                "B. La société anonyme (SA)",
+                "C. La Sàrl",
+                "D. La société coopérative"
               ],
               "answer": 0,
               "explanation": "Seules SNC (tous les associés) et commandités d'une SC ont une responsabilité illimitée et solidaire (art. 568 CO). SA, Sàrl, coopérative, association : responsabilité limitée à l'apport. Critère majeur de choix de la forme juridique au moment de la constitution.",
@@ -20975,8 +20975,8 @@
               "question": "À quel moment une association acquiert-elle la personnalité juridique selon le CC, et comment cela diffère-t-il d'une SA ?",
               "options": [
                 "A. Pour les deux : à l'inscription au RC",
-                "B. Association : dès l'adoption des statuts (art. 60 CC) ; SA : à l'inscription au RC (art. 643 CO)",
-                "C. Pour les deux : dès l'adoption des statuts",
+                "B. Association : statuts (60 CC) ; SA : inscription au RC",
+                "C. Pour les deux formes : dès l'adoption des statuts par les fondateurs",
                 "D. Pour les deux : à la première AG"
               ],
               "answer": 1,
@@ -20999,8 +20999,8 @@
               "type": "mcq",
               "question": "Depuis la réforme 2023, quelle règle s'applique à la valeur nominale minimale d'une action SA et d'une part Sàrl ?",
               "options": [
-                "A. Aucune VN minimale : la VN doit simplement être supérieure à zéro, pour les deux formes",
-                "B. SA : 1 centime ; Sàrl : 100 CHF (par part)",
+                "A. Aucun minimum : la VN doit être supérieure à zéro",
+                "B. SA : 1 centime ; Sàrl : CHF 100 par part sociale",
                 "C. SA : 100 CHF ; Sàrl : 1 centime",
                 "D. SA : 1 000 CHF ; Sàrl : 100 CHF"
               ],
@@ -21015,9 +21015,9 @@
               "question": "Pour une cession de parts, quelle est la procédure pour une Sàrl par rapport à une SA non cotée ?",
               "options": [
                 "A. Identique : libre cession sans formalité",
-                "B. SA : libre en principe ; Sàrl : cession écrite + agrément de l'assemblée des associés + RC",
+                "B. SA : libre en principe ; Sàrl : écrit + agrément",
                 "C. SA : agrément requis ; Sàrl : libre",
-                "D. Pour les deux : acte authentique requis"
+                "D. Pour les deux formes : un acte authentique devant notaire est requis"
               ],
               "answer": 1,
               "explanation": "SA : cession libre en principe (art. 622), restrictions possibles (clauses d'agrément art. 685a). Sàrl : cession écrite + agrément assemblée + RC obligatoire (art. 786). Différence structurelle majeure entre les deux formes.",
@@ -21040,8 +21040,8 @@
               "question": "Quel critère est DÉCISIF pour choisir une Sàrl plutôt qu'une SA ?",
               "options": [
                 "A. Volonté de cotation en bourse",
-                "B. Capital disponible inférieur à 100 000 CHF (Sàrl : minimum 20 000 CHF)",
-                "C. Désir d'avoir des actionnaires anonymes",
+                "B. Moins de CHF 100'000 de capital disponible",
+                "C. Le désir d'avoir des actionnaires anonymes vis-à-vis du registre",
                 "D. Volonté de fiscalité transparente"
               ],
               "answer": 1,
