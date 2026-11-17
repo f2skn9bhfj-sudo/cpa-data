@@ -42,4 +42,5 @@ rechargent les fichiers.
   l'ancienne version desktop (la Recherche propose une IA Mistral optionnelle,
   avec une clé saisie par l'utilisateur).
 - Progression enregistrée dans le navigateur (localStorage), propre à chaque
-  appareil, sans synchronisation.
+  appareil ; l'onglet Progression permet de la sauvegarder dans un fichier et
+  de la restaurer sur un autre appareil.

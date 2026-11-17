@@ -98,12 +98,97 @@ async function renderProgress(container) {
         <!-- Normes suivies (tracked avec étoiles ou révisions) -->
         <div class="pg-section-title">Normes suivies <span class="pg-section-subtitle">(clique pour voir le détail)</span></div>
         <div class="pg-card" id="pgNormProgress" style="padding:0;max-height:400px;overflow-y:auto"></div>
+
+        <!-- Sauvegarde : la progression vit dans ce navigateur uniquement -->
+        <div class="pg-section-title">Sauvegarde</div>
+        <div class="pg-card pg-backup">
+            <div class="pg-backup-text">
+                Ta progression (flashcards, QCM, leçons, Audit, Anglais, Podcasts…) est enregistrée
+                <b>dans ce navigateur seulement</b>. Télécharge une sauvegarde pour la garder ou la
+                transférer sur un autre appareil (envoie-toi le fichier, puis « Restaurer » là-bas).
+            </div>
+            <div class="pg-backup-actions">
+                <button class="pg-hero-btn pg-hero-btn-primary" onclick="progressExportBackup()">⬇️ Télécharger la sauvegarde</button>
+                <button class="pg-hero-btn" onclick="document.getElementById('pgBackupFile').click()">⬆️ Restaurer un fichier</button>
+                <input type="file" id="pgBackupFile" accept=".json,application/json" style="display:none" onchange="progressImportBackup(this)">
+            </div>
+            <div class="pg-backup-status" id="pgBackupStatus"></div>
+        </div>
     `;
 
     _renderModuleGrid(modStats);
     _renderHeatmap(sessList);
     _renderQuizHistoryCompact(hist);
     _renderTrackedNorms(norms || []);
+}
+
+
+// ══════════════════════════════════════════════════════════════
+// SAUVEGARDE / RESTAURATION (localStorage → fichier JSON)
+// ══════════════════════════════════════════════════════════════
+
+// Clés de l'app (onglets natifs + sous-apps, même origine). On écarte la clé API
+// Mistral (secret) et les caches recalculables (traduction, état de navigation).
+const PG_BACKUP_EXCLUDE = new Set(['swisscpa_mistral_key', 'swisscpa_last_ctx', 'swisscpa_nav_last']);
+function _pgBackupKeys() {
+    const keys = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && (k.startsWith('swisscpa') || k === 'cpa_audit_progress') && !PG_BACKUP_EXCLUDE.has(k)) keys.push(k);
+    }
+    return keys.sort();
+}
+
+function _pgBackupStatus(msg, ok) {
+    const el = document.getElementById('pgBackupStatus');
+    if (el) { el.textContent = msg; el.className = 'pg-backup-status ' + (ok ? 'ok' : 'err'); }
+}
+
+function progressExportBackup() {
+    try {
+        const data = {};
+        _pgBackupKeys().forEach(k => { data[k] = localStorage.getItem(k); });
+        const n = Object.keys(data).length;
+        if (!n) { _pgBackupStatus('Rien à sauvegarder pour l\'instant : aucune progression enregistrée dans ce navigateur.', false); return; }
+        const payload = { app: 'swisscpa', version: 1, exported_at: new Date().toISOString(), keys: data };
+        const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `swisscpa-progression-${new Date().toISOString().slice(0, 10)}.json`;
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+        _pgBackupStatus(`✅ Sauvegarde téléchargée (${n} élément${n > 1 ? 's' : ''}).`, true);
+    } catch (e) {
+        _pgBackupStatus('❌ Export impossible : ' + e.message, false);
+    }
+}
+
+function progressImportBackup(input) {
+    const file = input.files && input.files[0];
+    input.value = '';
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+        let payload;
+        try { payload = JSON.parse(reader.result); } catch (e) { payload = null; }
+        if (!payload || payload.app !== 'swisscpa' || !payload.keys || typeof payload.keys !== 'object') {
+            _pgBackupStatus('❌ Ce fichier n\'est pas une sauvegarde Swiss CPA.', false); return;
+        }
+        const entries = Object.entries(payload.keys).filter(([k, v]) =>
+            (k.startsWith('swisscpa') || k === 'cpa_audit_progress') && !PG_BACKUP_EXCLUDE.has(k) && typeof v === 'string');
+        const when = payload.exported_at ? new Date(payload.exported_at).toLocaleString('fr-CH') : 'date inconnue';
+        if (!confirm(`Restaurer la sauvegarde du ${when} (${entries.length} éléments) ?\n\nLa progression actuelle de ce navigateur sera remplacée.`)) return;
+        try {
+            _pgBackupKeys().forEach(k => localStorage.removeItem(k));
+            entries.forEach(([k, v]) => localStorage.setItem(k, v));
+        } catch (e) {
+            _pgBackupStatus('❌ Restauration interrompue : ' + e.message, false); return;
+        }
+        _pgBackupStatus(`✅ Progression restaurée (${entries.length} éléments). Rechargement…`, true);
+        setTimeout(() => location.reload(), 900);
+    };
+    reader.onerror = () => _pgBackupStatus('❌ Lecture du fichier impossible.', false);
+    reader.readAsText(file);
 }
 
 
@@ -600,6 +685,12 @@ function _progressStyles() {
         border-radius: 10px; padding: 14px 16px;
     }
     .pg-card-title { font-size: 13px; font-weight: 700; color: var(--text-bright); margin-bottom: 10px; }
+    .pg-backup { display: flex; flex-direction: column; gap: 12px; }
+    .pg-backup-text { font-size: 13px; line-height: 1.55; color: var(--text); }
+    .pg-backup-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pg-backup-status { font-size: 12.5px; min-height: 1em; }
+    .pg-backup-status.ok { color: #16a34a; }
+    .pg-backup-status.err { color: #dc2626; }
 
     /* ── Heatmap ── */
     .pg-heatmap { display: flex; flex-wrap: wrap; gap: 3px; }

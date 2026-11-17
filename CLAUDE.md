@@ -115,7 +115,10 @@ n'apparaissent qu'en rappel explicite (« 22'680 en 2025-2026 »). Le calculateu
 du module Social utilise `parametres_2027` (social/index.html, bloc sans source).
 
 Progression utilisateur : uniquement localStorage du navigateur (clés
-`swisscpa_*`), propre à chaque appareil.
+`swisscpa_*` + `cpa_audit_progress` de la sous-app Audit), propre à chaque
+appareil. Onglet Progression → « Sauvegarde » : export/import d'un fichier JSON
+(`progressExportBackup` / `progressImportBackup`, progress.js ; la clé Mistral
+n'est jamais exportée).
 
 ## Sous-apps
 
