@@ -1721,8 +1721,9 @@ function _qcmInjectStyles() {
     .qcm-preset-desc { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
 
     /* ── Filters / config ── */
-    .qcm-filters, .qcm-config { display: grid; gap: 14px; margin-bottom: 16px; }
+    .qcm-filters, .qcm-config { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-bottom: 16px; }
     .qcm-filter-group, .qcm-config-group {
+        min-width: 0;
         background: var(--bg-secondary); border: 1px solid var(--border);
         border-radius: 10px; padding: 12px 14px;
     }
@@ -1820,6 +1821,7 @@ function _qcmInjectStyles() {
     .qcm-progress { display: flex; align-items: center; gap: 12px; flex: 1; margin: 0 20px; }
     .qcm-progress > span:first-child { font-size: 14px; font-weight: 700; color: var(--text-bright); min-width: 60px; }
     .qcm-progressbar { flex: 1; height: 6px; background: #0f172a; border-radius: 3px; overflow: hidden; }
+    body.light-mode .qcm-progressbar, body.light-mode .qcm-result-mod-bar, body.light-mode .qcm-mastery-bar { background: #e5e7eb; }
     .qcm-progressbar-fill { height: 100%; background: linear-gradient(90deg, #3b82f6, #8b5cf6); transition: width .3s; }
     .qcm-score-mini { font-size: 13px; color: var(--text-secondary); min-width: 80px; text-align: right; }
     .qcm-timer {
@@ -1865,6 +1867,12 @@ function _qcmInjectStyles() {
     }
     .qcm-q-action:hover { color: var(--text-bright); border-color: #3b82f6; }
     .qcm-q-action.active { color: #fbbf24; border-color: #fbbf24; }
+    @media (max-width: 768px) {
+        /* téléphone : outils sous les badges (ils recouvraient badges et énoncé) */
+        .qcm-q-actions { float: none; margin-top: 10px; flex-wrap: wrap; }
+        .qcm-q-action { width: auto; min-width: 40px; height: auto; min-height: 40px; padding: 6px 10px; white-space: nowrap; }
+        .qcm-question { margin-top: 14px; }
+    }
 
     .qcm-question { font-size: 16px; color: var(--text-bright); line-height: 1.5; margin: 20px 0; font-weight: 500; }
     .qcm-options { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }

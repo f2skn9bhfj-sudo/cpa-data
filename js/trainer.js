@@ -193,6 +193,13 @@ async function renderTrainer(main) {
                 transition: transform 0.18s, box-shadow 0.18s;
                 border: 1px solid #334155;
             }
+            body.light-mode .trainer-mode-card {
+                background: #ffffff;
+                box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+            }
+            body.light-mode .trainer-mode-card:hover { box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12); }
+            body.light-mode .trainer-tag[style*="color:#93c5fd"] { color: #1d4ed8 !important; }
+            body.light-mode .trainer-tag[style*="color:#c4b5fd"] { color: #6d28d9 !important; background: #f5f3ff !important; }
             .trainer-mode-card:hover {
                 transform: translateY(-3px);
                 box-shadow: 0 8px 24px rgba(0,0,0,0.4);

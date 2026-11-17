@@ -346,19 +346,19 @@ function _moduleCard(m) {
                 </div>
             </button>
 
-            <!-- Normes -->
-            <button class="pg-mc-metric" data-action="open-module" data-mod="${escapeAttr(m.code)}" title="Ouvrir les normes du module">
+            <!-- QCM -->
+            <button class="pg-mc-metric" data-action="open-qcm" data-mod="${escapeAttr(m.code)}" title="S'entraîner sur les QCM du module">
                 <div class="pg-mc-metric-head">
-                    <span class="pg-mc-metric-icon">📚</span>
-                    <span class="pg-mc-metric-label">Normes</span>
-                    <span class="pg-mc-metric-value">${m.norms_filled}/${m.norms_total}</span>
+                    <span class="pg-mc-metric-icon">❓</span>
+                    <span class="pg-mc-metric-label">QCM réussis</span>
+                    <span class="pg-mc-metric-value">${m.qcm_correct || 0}/${m.qcm_total || 0}</span>
                 </div>
                 <div class="pg-mc-metric-bar">
-                    ${m.norms_total ? `
-                        <div class="pg-mc-seg" style="flex:${m.norms_revised};background:#10b981" title="Révisées: ${m.norms_revised}"></div>
-                        <div class="pg-mc-seg" style="flex:${m.norms_filled - m.norms_revised};background:#3b82f6" title="Remplies non révisées: ${m.norms_filled - m.norms_revised}"></div>
-                        <div class="pg-mc-seg" style="flex:${m.norms_total - m.norms_filled};background:#334155" title="À remplir: ${m.norms_total - m.norms_filled}"></div>
-                    ` : '<div class="pg-mc-empty-bar">aucune norme</div>'}
+                    ${m.qcm_total ? `
+                        <div class="pg-mc-seg" style="flex:${m.qcm_correct || 0};background:#10b981" title="Réussis au moins une fois : ${m.qcm_correct || 0}"></div>
+                        <div class="pg-mc-seg" style="flex:${m.qcm_wrong || 0};background:#ef4444" title="Ratés : ${m.qcm_wrong || 0}"></div>
+                        <div class="pg-mc-seg" style="flex:${m.qcm_total - (m.qcm_correct || 0) - (m.qcm_wrong || 0)};background:#334155" title="Pas encore vus"></div>
+                    ` : '<div class="pg-mc-empty-bar">aucun QCM</div>'}
                 </div>
             </button>
 
@@ -654,6 +654,9 @@ function _progressStyles() {
         display: flex; height: 5px; border-radius: 3px; overflow: hidden; gap: 1px; background: #0f172a;
     }
     .pg-mc-seg { min-width: 0; transition: flex .3s; }
+    body.light-mode .pg-mc-metric-bar { background: #e5e7eb; }
+    body.light-mode .pg-mc-bar, body.light-mode .pg-hero-bar { background: #e5e7eb; }
+    body.light-mode .pg-mc-seg[style*="#334155"] { background: #e5e7eb !important; }
     .pg-mc-empty-bar {
         font-size: 10px; color: var(--text-muted); padding: 0 6px;
         display: flex; align-items: center; font-style: italic;

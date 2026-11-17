@@ -71,6 +71,19 @@
         catch (e) { console.warn('[api-static] localStorage write failed:', e); }
     }
 
+    // Module d'une flashcard : « M2L7 » dans la sous-catégorie, sinon d'après la catégorie.
+    function _fcModuleOf(c) {
+        const cat = c.cat || c.category || '', sub = c.sub || c.subcategory || '';
+        const m = sub.match(/\bM(\d{1,2})L\d/);
+        if (m) return 'M' + m[1];
+        if (cat === 'Expert suisse') return 'M1';
+        if (cat === 'Fiscalité') return /TVA/.test(sub) ? 'M8' : 'M7';
+        if (cat === 'Swiss GAAP RPC') return /^RPC 30\b/.test(sub) ? 'M11' : 'M3';
+        if (cat === 'IFRS / IAS') return /^(IFRS (3|10|11|12)|IAS 28)\b/.test(sub) ? 'M11' : 'M4';
+        if (cat === 'Audit / ISA') return /\bISA (5[6-9]\d|7\d\d)\b/.test(sub) ? 'M10' : 'M5';
+        return '';
+    }
+
     function _flashcardsProgress() { return _lsGet('fc_progress', {}); }
     function _saveFlashcardsProgress(p) { _lsSet('fc_progress', p); }
 
@@ -164,6 +177,7 @@
                     difficulty: c.difficulty || c.d || 'moyen',
                     question: c.question || c.q || '',
                     answer: c.answer || c.a || '',
+                    module_code: c.module_code || _fcModuleOf(c),
                 });
             });
 
@@ -172,6 +186,7 @@
             if (subcategory) filtered = filtered.filter(c => c.subcategory === subcategory);
             if (difficulty) filtered = filtered.filter(c => c.difficulty === difficulty);
             if (mastery) filtered = filtered.filter(c => c.mastery === mastery);
+            if (module_code) filtered = filtered.filter(c => c.module_code === module_code);
             if (wrong_only) filtered = filtered.filter(c => (c.wrong_count || 0) > 0);
             if (never_seen) filtered = filtered.filter(c => (c.review_count || 0) === 0);
             if (due_only) {
@@ -896,24 +911,74 @@
             ) || null;
         },
 
+        // Progression par module (page Progression) : flashcards (module déduit de la
+        // catégorie), leçons du cours (Révision active), normes et QCM du module.
         async get_module_stats() {
-            const u = await api.get_unified_modules();
-            const out = {};
-            for (const m of u.modules || []) {
-                const lessons = m.lessons_ifp || [];
-                const norms = (m.norms || []).filter(n => typeof n === 'object');
-                const fc = m.flashcard_count || 0;
-                const qcms = lessons.reduce((s, l) => s + (l.questions || []).length, 0)
-                    + norms.reduce((s, n) => s + (n.questions || []).length, 0);
-                out[m.code] = {
-                    code: m.code, name: m.name || '',
-                    lessons_count: lessons.length,
-                    norms_count: norms.length,
-                    flashcards_count: fc,
-                    qcms_count: qcms,
-                };
+            const [u, fcs, tc, cat] = await Promise.all([
+                api.get_unified_modules(), api.get_flashcards(), api.get_trainer_courses(), api.get_qcm_catalog(),
+            ]);
+            const now = new Date();
+            const later = (a, b) => (!a ? b : (!b ? a : (new Date(b) > new Date(a) ? b : a)));
+            let tp = [];
+            try { tp = JSON.parse(localStorage.getItem('swisscpa_trainer_progress') || '[]') || []; } catch (_) {}
+            const doneAt = {};
+            tp.forEach(p => { if (p && p.completed) doneAt[p.norm_code + '|' + p.lesson_id] = p.completed_at || null; });
+            const qstats = (_qcmTracking().stats) || {};
+            const S = {};
+            const get = code => S[code] || (S[code] = {
+                fc_total: 0, fc_mastered: 0, fc_good: 0, fc_learning: 0, fc_again: 0, fc_not_started: 0, fc_due: 0,
+                sub_lessons_total: 0, sub_lessons_completed: 0, revised_norms: new Set(),
+                qcm_total: 0, qcm_correct: 0, qcm_wrong: 0, last_activity: null,
+            });
+            for (const c of fcs) {
+                if (!c.module_code) continue;
+                const s = get(c.module_code);
+                s.fc_total++;
+                const k = { mastered: 'fc_mastered', good: 'fc_good', learning: 'fc_learning', again: 'fc_again' }[c.mastery] || 'fc_not_started';
+                s[k]++;
+                if (c.next_review && new Date(c.next_review) <= now) s.fc_due++;
+                s.last_activity = later(s.last_activity, c.last_reviewed);
             }
-            return out;
+            for (const course of (tc && tc.courses) || []) {
+                const s = get(course.module_code || course.module || '');
+                for (const l of course.lessons || []) {
+                    s.sub_lessons_total++;
+                    const key = course.norm_code + '|' + l.id;
+                    if (key in doneAt) {
+                        s.sub_lessons_completed++; s.revised_norms.add(course.norm_code);
+                        s.last_activity = later(s.last_activity, doneAt[key]);
+                    }
+                }
+            }
+            for (const q of (cat && cat.questions) || []) {
+                const s = get(q.module || '');
+                s.qcm_total++;
+                const st = qstats[q.id];
+                if (st && st.attempts) {
+                    if (st.correct > 0) s.qcm_correct++; else s.qcm_wrong++;
+                    s.last_activity = later(s.last_activity, st.last_attempt);
+                }
+            }
+            const pct = (a, b) => (b ? a / b : null);
+            return (u.modules || []).map(m => {
+                const s = get(m.code);
+                const norms = (m.norms || []).filter(n => typeof n === 'object');
+                const parts = [pct(s.fc_mastered + s.fc_good, s.fc_total), pct(s.sub_lessons_completed, s.sub_lessons_total),
+                               pct(s.qcm_correct, s.qcm_total)].filter(x => x !== null);
+                return {
+                    id: m.id, code: m.code, name: m.name || '', year: m.year || '',
+                    hours_async: m.hours_async || 0, hours_sync: m.hours_sync || 0,
+                    fc_total: s.fc_total, fc_mastered: s.fc_mastered, fc_good: s.fc_good, fc_learning: s.fc_learning,
+                    fc_again: s.fc_again, fc_not_started: s.fc_not_started, fc_due: s.fc_due,
+                    sub_lessons_total: s.sub_lessons_total, sub_lessons_completed: s.sub_lessons_completed,
+                    norms_total: norms.length,
+                    norms_filled: norms.filter(n => (n.sections || []).length || n.html_content || (n.questions || []).length).length,
+                    norms_revised: norms.filter(n => s.revised_norms.has(n.code)).length,
+                    qcm_total: s.qcm_total, qcm_correct: s.qcm_correct, qcm_wrong: s.qcm_wrong,
+                    last_activity: s.last_activity,
+                    progress_percent: parts.length ? Math.round(parts.reduce((x, y) => x + y, 0) / parts.length * 1000) / 10 : 0,
+                };
+            });
         },
 
         async get_references(section) {

@@ -684,6 +684,8 @@ body.light-mode .st-mark { background: #fef08a; color: #713f12; }
 body.light-mode .st-card-full { border-color: #e2e8f0; }
 body.light-mode .st-full-text { color: #334155; }
 body.light-mode .st-ai { background: #fff; border-color: #e2e8f0; }
+body.light-mode .st-ai-toggle { color: #334155; }
+body.light-mode .st-ai-gear { background: #f8fafc; border-color: #e2e8f0; color: #475569; }
 body.light-mode .st-ai-input { background: #f8fafc; border-color: #e2e8f0; color: #0f172a; }
 body.light-mode .st-ai-answer { color: #1e293b; }
 body.light-mode .st-ai-answer strong { color: #0f172a; }

@@ -6,8 +6,8 @@
     <title>Swiss CPA — Mobile</title>
     <!-- Styles de la coquille et des onglets natifs. Les sous-apps (iframes)
          ont leurs propres styles (Tailwind local, vendor/tailwind.js). -->
-    <link rel="stylesheet" href="css/style.css?v=1794931247">
-    <link rel="stylesheet" href="css/pdf_export.css?v=1794931247">
+    <link rel="stylesheet" href="css/style.css?v=1794931794">
+    <link rel="stylesheet" href="css/pdf_export.css?v=1794931794">
 </head>
 <body>
     <!-- ARIA live region for page changes (assertive nav announcements) -->
@@ -36,6 +36,8 @@
                 </div>
                 <button class="theme-toggle" id="pdfExportBtn" onclick="pdfExportOpen()" aria-label="Exporter des cours en PDF" title="Exporter des cours en PDF"><span aria-hidden="true">📄</span></button>
                 <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Basculer thème clair/sombre" title="Basculer thème clair/sombre"><span aria-hidden="true">☀️</span></button>
+                <button class="theme-toggle nav-mobile-only" onclick="closeNavMenu();toggleMindDump()" aria-label="Décharge mentale" title="Décharge mentale"><span aria-hidden="true">💭</span></button>
+                <button class="theme-toggle nav-mobile-only" onclick="closeNavMenu();togglePomodoro()" aria-label="Pomodoro" title="Pomodoro"><span aria-hidden="true">🍅</span></button>
             </div>
         </div>
         <button class="nav-burger" id="navBurger" onclick="toggleNavMenu()" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
@@ -75,36 +77,36 @@
     <!-- Scripts -->
     <!-- api-client.js DOIT être chargé en premier : il installe window.pywebview.api
          en mode web (no-op en mode desktop). Cf. commentaire dans le fichier. -->
-    <script src="js/api-client-static.js?v=1794931247"></script>
-    <script src="js/crossref.js?v=1794931247"></script>
-    <script src="js/search.js?v=1794931247"></script>
-    <script src="js/search_tab.js?v=1794931247"></script>
-    <script src="js/dashboard.js?v=1794931247"></script>
-    <script src="js/translator.js?v=1794931247"></script>
-    <script src="js/modules.js?v=1794931247"></script>
-    <script src="js/flashcards.js?v=1794931247"></script>
-    <script src="js/fcdb.js?v=1794931247"></script>
-    <script src="js/free_recall.js?v=1794931247"></script>
-    <script src="js/exam_mode.js?v=1794931247"></script>
-    <script src="js/references.js?v=1794931247"></script>
-    <script src="js/comparisons.js?v=1794931247"></script>
-    <script src="js/fs_explorer.js?v=1794931247"></script>
-    <script src="js/progress.js?v=1794931247"></script>
-    <script src="js/qcm.js?v=1794931247"></script>
-    <script src="js/trainer.js?v=1794931247"></script>
-    <script src="js/audit.js?v=1794931247"></script>
-    <script src="js/hec.js?v=1794931247"></script>
-    <script src="js/social.js?v=1794931247"></script>
-    <script src="js/eymanual.js?v=1794931247"></script>
-    <script src="js/grandlivre.js?v=1794931247"></script>
-    <script src="js/oral.js?v=1794931247"></script>
-    <script src="js/conso.js?v=1794931247"></script>
-    <script src="js/fusion.js?v=1794931247"></script>
-    <script src="js/english.js?v=1794931247"></script>
-    <script src="js/podcasts.js?v=1794931247"></script>
-    <script src="js/ai_explain.js?v=1794931247"></script>
-    <script src="js/pdf_export.js?v=1794931247"></script>
-    <script src="js/mindmap.js?v=1794931247"></script>
-    <script src="js/app.js?v=1794931247"></script>
+    <script src="js/api-client-static.js?v=1794931794"></script>
+    <script src="js/crossref.js?v=1794931794"></script>
+    <script src="js/search.js?v=1794931794"></script>
+    <script src="js/search_tab.js?v=1794931794"></script>
+    <script src="js/dashboard.js?v=1794931794"></script>
+    <script src="js/translator.js?v=1794931794"></script>
+    <script src="js/modules.js?v=1794931794"></script>
+    <script src="js/flashcards.js?v=1794931794"></script>
+    <script src="js/fcdb.js?v=1794931794"></script>
+    <script src="js/free_recall.js?v=1794931794"></script>
+    <script src="js/exam_mode.js?v=1794931794"></script>
+    <script src="js/references.js?v=1794931794"></script>
+    <script src="js/comparisons.js?v=1794931794"></script>
+    <script src="js/fs_explorer.js?v=1794931794"></script>
+    <script src="js/progress.js?v=1794931794"></script>
+    <script src="js/qcm.js?v=1794931794"></script>
+    <script src="js/trainer.js?v=1794931794"></script>
+    <script src="js/audit.js?v=1794931794"></script>
+    <script src="js/hec.js?v=1794931794"></script>
+    <script src="js/social.js?v=1794931794"></script>
+    <script src="js/eymanual.js?v=1794931794"></script>
+    <script src="js/grandlivre.js?v=1794931794"></script>
+    <script src="js/oral.js?v=1794931794"></script>
+    <script src="js/conso.js?v=1794931794"></script>
+    <script src="js/fusion.js?v=1794931794"></script>
+    <script src="js/english.js?v=1794931794"></script>
+    <script src="js/podcasts.js?v=1794931794"></script>
+    <script src="js/ai_explain.js?v=1794931794"></script>
+    <script src="js/pdf_export.js?v=1794931794"></script>
+    <script src="js/mindmap.js?v=1794931794"></script>
+    <script src="js/app.js?v=1794931794"></script>
 </body>
 </html>

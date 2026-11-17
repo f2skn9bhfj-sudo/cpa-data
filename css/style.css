@@ -3371,7 +3371,7 @@ body.light-mode .app-zoom-level:hover { background: rgba(15, 23, 42, .05); color
     .tab-bar.menu-open .nav-right { display: flex; }
     .nav-right .search-box { flex: 1; }
     .nav-right .search-box input,
-    .nav-right .search-box input:focus { width: 100%; font-size: 14px; }
+    .nav-right .search-box input:focus { width: 100%; font-size: 14px; padding-left: 34px !important; }
 
     /* ── Sous-barre de la rubrique ── */
     .sub-tab-bar {
@@ -3675,15 +3675,21 @@ body.light-mode .app-zoom-level:hover { background: rgba(15, 23, 42, .05); color
         font-size: 14px;
         min-height: 48px;
     }
+    /* Sur téléphone, les outils passent sous les badges (en haut à droite, ils
+       recouvraient les badges et l'énoncé). */
     .qcm-q-actions {
+        float: none;
+        margin-top: 10px;
         flex-wrap: wrap;
         gap: 6px;
     }
     .qcm-q-action {
-        min-width: 44px;
-        min-height: 44px;
-        padding: 8px 12px;
+        min-width: 40px;
+        width: auto;
+        min-height: 40px;
+        padding: 6px 10px;
         font-size: 13px;
+        white-space: nowrap;
     }
     .qcm-nav {
         flex-direction: column;
@@ -3960,10 +3966,12 @@ body[data-tab="podcasts"] #mindDumpPanel { bottom: 150px !important; }
 
 /* Sur mobile, les bulles gênent vite (petit écran) : on les compacte et on
    les écarte du pouce. */
+/* Sur mobile, elles masquaient boutons et textes en bas d'écran : elles passent
+   dans le menu ☰ (boutons .nav-mobile-only). */
+.nav-mobile-only { display: none; }
 @media (max-width: 768px) {
-    #mindDumpBtn, #pomoBtn { width: 38px !important; height: 38px !important; font-size: 15px !important; opacity: 0.85; }
-    body[data-tab="podcasts"] #mindDumpBtn,
-    body[data-tab="podcasts"] #pomoBtn { bottom: 104px !important; }
+    #mindDumpBtn, #pomoBtn { display: none !important; }
+    .nav-right .nav-mobile-only { display: inline-flex; }
 }
 
 /* ── Mini-lecteur de podcasts global (visible sur les autres onglets) ──

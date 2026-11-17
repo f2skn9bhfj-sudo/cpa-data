@@ -47,7 +47,9 @@ rubrique active liste ses pages dans la sous-barre collante `#subTabBar`
 par l'accueil (`HUB_SECTIONS`, dashboard.js, mêmes rubriques et même ordre).
 `navigate(page)` est inchangé ; `navigateGroup(id)` rouvre la dernière page de
 la rubrique (localStorage `swisscpa_nav_last`). Sur mobile, les 4 rubriques
-restent dans la barre ; le menu ☰ ne contient que recherche, PDF et thème.
+restent dans la barre ; le menu ☰ contient recherche, PDF, thème, et les
+boutons 💭 (décharge mentale) / 🍅 (Pomodoro), qui ne flottent plus en bas
+d'écran sur téléphone (≤ 768 px).
 
 | Rubrique | Pages (ordre de la sous-barre) |
 |---|---|
@@ -72,7 +74,7 @@ depuis la Révision active) est un alias de `fcdb` pour la navigation
 | qcm | qcm.js `renderQcm` | natif | `get_qcm_catalog` = trainer_courses + unified_modules + audit.json annuaire_cours → **3344 QCM** (dédoublonnés par texte ; M1–M16 tous couverts, examen blanc pondéré par domaine) |
 | fcdb | fcdb.js `renderFcdb` | natif | flashcards.json (**1512** cartes) ; « Réviser la sélection » → sprint |
 | compare | comparisons.js `renderComparisons` | natif | comparisons.json (25 thèmes) ; boutons « Normes liées » → `compGoNorm` |
-| progress | progress.js `renderProgress` | natif | stats |
+| progress | progress.js `renderProgress` | natif | `get_module_stats` (liste par module : flashcards, leçons de la Révision active, QCM réussis) + sauvegarde/restauration |
 | fs, references, audit, english, oral, conso, hec, social, fusion | js/<app>.js → iframe `<app>/index.html` | sous-app | embarquées (voir plus bas) |
 | podcasts | podcasts.js → iframe persistante dans `#podcastHost` (l'audio continue en changeant de page ; mini-lecteur `_pcRenderMini`) | sous-app | `__PODCASTS__` |
 | eymanual, grandlivre | **masqués** (voir ci-dessous) | sous-app | — |
@@ -203,3 +205,8 @@ lignes d'un même `.jsx` entre deux synchronisations.
   (ex. `get_trainer_progress` → liste) : un objet à la place d'une liste a
   déjà bloqué l'onglet Entraînement.
 - `404.html` redirige vers `index.html`.
+- Les flashcards n'ont pas de module dans flashcards.json : `_fcModuleOf`
+  (api-client-static.js) le déduit de `sub` (« M2L7 ») ou de `cat` (Fiscalité →
+  M7, TVA → M8, RPC → M3, IFRS → M4, ISA → M5/M10, RPC 30/IFRS 3/IAS 28 → M11).
+- Les onglets natifs injectent leur `<style>` après style.css : une règle
+  mobile qui doit l'emporter va dans ce `<style>` (ex. qcm.js), pas dans style.css.

@@ -284,7 +284,7 @@ function PodcastsApp() {
                 <span className="font-bold text-[15px]">{g.name}</span>
                 <span className="text-xs text-slate-400 font-medium">{gDone}/{gAll.length} écoutés</span>
               </h2>
-              <div className="grid sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {g.items.map((ep) => {
                   const isCur = current && current.id === ep.id;
                   const playing = isCur && !paused;
