@@ -3357,10 +3357,10 @@
               "type": "mcq",
               "question": "Immeuble acheté 10 M (dont terrain estimé 3 M). Durée d'amortissement du bâtiment ?",
               "options": [
-                "10 M sur 40 ans",
+                "10 M (terrain compris) sur 40 ans",
                 "10 M sur 50 ans",
-                "7 M (hors terrain) sur ~40 ans",
-                "3 M sur durée terrain"
+                "7 M (sans le terrain), sur ~40 ans",
+                "3 M sur la durée de vie du terrain"
               ],
               "answer": 2,
               "explanation": "Séparer la composante terrain (3 M, non amortie) du bâtiment (7 M). Amortissement uniquement sur la valeur du bâti. Erreur courante : amortir le tout."
@@ -3375,10 +3375,10 @@
               "type": "mcq",
               "question": "Révision majeure d'une ligne de production : 300k, permet d'augmenter la capacité de 20 %. Traitement ?",
               "options": [
-                "Charge (maintenance)",
-                "Capitalisation (amélioration du rendement)",
-                "Provision RPC 23",
-                "50 % charge, 50 % capitalisation"
+                "Charge de l'exercice (simple entretien)",
+                "Activation (amélioration)",
+                "Provision pour révision (RPC 23)",
+                "50 % en charges, 50 % activés"
               ],
               "answer": 1,
               "explanation": "Augmentation de capacité = avantages économiques futurs accrus → capitalisation et amortissement sur la durée restante. Si remplacement d'un composant, sortie de la VNC ancienne."
@@ -3400,8 +3400,8 @@
               "question": "Un remplacement majeur d'un moteur d'une machine (composant significatif) coûte CHF 150'000. L'ancien moteur avait une VNC résiduelle estimée à CHF 20'000. Traitement ?",
               "options": [
                 "Charge de 150'000",
-                "Capitalisation 130'000 nette",
-                "Capitalisation 150'000 + sortie 20'000 (charge) de l'ancien",
+                "Activer 130'000 net (150'000 − 20'000 de l'ancien moteur)",
+                "Activer 150'000 et sortir l'ancien (20'000)",
                 "Provision"
               ],
               "answer": 2,
@@ -3427,10 +3427,10 @@
               "type": "mcq",
               "question": "Machine VNC 100k, indice de dépréciation avéré. JVN−CV = 60k, VU = 75k. Dépréciation à comptabiliser ?",
               "options": [
-                "100 − 60 = 40k",
-                "100 − 75 = 25k (max des deux)",
-                "100 − 68 (moyenne) = 32k",
-                "Pas de dépréciation"
+                "40k (100 − 60)",
+                "25k (100 − 75)",
+                "32k (100 − 68, moyenne)",
+                "Aucune dépréciation"
               ],
               "answer": 1,
               "explanation": "Valeur recouvrable = max(JVN−CV ; VU) = max(60 ; 75) = 75. Dépréciation = VNC − VR = 100 − 75 = 25k. Convergence RPC 20 / IAS 36."
@@ -3486,10 +3486,10 @@
               "type": "mcq",
               "question": "Obligation de disclosure RPC 18 non requise par défaut ?",
               "options": [
-                "Valeur d'acquisition de chaque machine individuellement",
+                "Le coût de chaque machine prise isolément",
                 "Tableau de mouvements par catégorie",
                 "Durées et méthodes d'amortissement",
-                "Actifs mis en gage"
+                "Les actifs mis en gage ou cédés à titre de garantie"
               ],
               "answer": 0,
               "explanation": "Disclosure par **catégorie** (pas actif par actif). Une disclosure individuelle n'est requise que pour des actifs individuellement significatifs ou atypiques."
@@ -3504,9 +3504,9 @@
               "type": "mcq",
               "question": "Différence structurelle principale entre RPC 18 et IAS 16 ?",
               "options": [
-                "RPC n'amortit pas les immobilisations",
+                "Les RPC n'amortissent pas les immobilisations corporelles",
                 "RPC rend les composants obligatoires, IAS 16 optionnels",
-                "RPC recommande (n'oblige pas) les composants ; IAS 16 les impose",
+                "RPC recommande les composants ; IAS 16 les impose",
                 "RPC permet le LIFO"
               ],
               "answer": 2,
@@ -3517,8 +3517,8 @@
               "question": "Un tableau de mouvements d'immobilisations en RPC 18 inclut typiquement :",
               "options": [
                 "Seulement les VNC finales",
-                "Entrées, sorties, amortissements, dépréciations, reprises par catégorie",
-                "Uniquement les acquisitions > 1 M CHF",
+                "Entrées, sorties, amortissements, dépréciations",
+                "Uniquement les acquisitions supérieures à CHF 1 million",
                 "Les mouvements de cash associés"
               ],
               "answer": 1,
@@ -3559,10 +3559,10 @@
               "type": "mcq",
               "question": "Différence entre RPC 20 et IAS 36 sur le test du goodwill ?",
               "options": [
-                "RPC 20 : test sur indice ; IAS 36 : test annuel obligatoire",
+                "RPC : test sur indices ; IAS 36 : test annuel",
                 "Aucune, procédures identiques",
-                "RPC 20 : test annuel ; IAS 36 : sur indice",
-                "RPC 20 ne permet pas la dépréciation du goodwill"
+                "RPC 20 : test annuel obligatoire ; IAS 36 : test sur indices",
+                "RPC 20 ne permet aucune dépréciation du goodwill, contrairement à IAS 36"
               ],
               "answer": 0,
               "explanation": "Point d'examen récurrent : IAS 36.10 impose un test annuel systématique du goodwill. RPC 20 est moins strict — test uniquement en présence d'indices. Risque de détection plus tardive."
@@ -3577,10 +3577,10 @@
               "type": "mcq",
               "question": "Les actifs EXCLUS du champ de RPC 20 sont :",
               "options": [
-                "Les stocks (règle spécifique RPC 17) et créances",
-                "Les immobilisations corporelles",
+                "Les stocks et les créances",
+                "Les immobilisations corporelles d'exploitation",
                 "Le goodwill",
-                "Les immeubles de placement"
+                "Les immeubles de placement à la valeur d'acquisition"
               ],
               "answer": 0,
               "explanation": "Stocks : règle du 'plus bas' RPC 17. Créances clients : tests spécifiques. RPC 20 s'applique aux autres actifs non courants."
@@ -3589,8 +3589,8 @@
               "type": "mcq",
               "question": "Différence clé entre RPC 20 et IAS 36 sur le GOODWILL ?",
               "options": [
-                "IAS 36 : test sur indice uniquement ; RPC 20 : test annuel",
-                "RPC 20 : test sur indice ; IAS 36 : test annuel obligatoire",
+                "IAS 36 : test sur indices uniquement ; RPC 20 : test annuel obligatoire",
+                "RPC : test sur indices ; IAS 36 : test annuel",
                 "Traitement identique",
                 "RPC 20 interdit la dépréciation du goodwill"
               ],
@@ -3641,10 +3641,10 @@
               "type": "mcq",
               "question": "Une PME peut-elle utiliser une estimation directe de la valeur recouvrable sans distinguer formellement JVN−CV et VU ?",
               "options": [
-                "Non, distinction obligatoire",
+                "Non, la distinction entre les deux valeurs est toujours obligatoire",
                 "Uniquement pour les stocks",
                 "Jamais",
-                "Oui, approche simplifiée admise si proportionnée à la matérialité"
+                "Oui, approche simplifiée si proportionnée"
               ],
               "answer": 3,
               "explanation": "RPC 20 admet une approche proportionnée pour les PME : estimation directe documentée, sans scission formelle. Philosophie pragmatique des RPC."
@@ -3653,10 +3653,10 @@
               "type": "mcq",
               "question": "RPC 20 autorise une approche simplifiée pour les PME. Cette souplesse concerne notamment :",
               "options": [
-                "Une analyse proportionnée (coûts/avantages) sans exigence de taux pre-impôt stricte",
+                "Une analyse proportionnée (coûts/avantages)",
                 "La possibilité de ne pas actualiser la VU",
                 "L'exemption totale de test",
-                "L'utilisation systématique de la valeur fiscale"
+                "L'utilisation systématique de la valeur fiscale comme valeur recouvrable"
               ],
               "answer": 0,
               "explanation": "RPC 20 : approche pragmatique pour PME — analyse proportionnée, taux après impôt toléré si cohérent, moins de formalisme. IAS 36 est beaucoup plus rigide (cohérence pré-impôt stricte)."
@@ -3693,10 +3693,10 @@
               "type": "mcq",
               "question": "Machine dépréciée de 100 à 60 en N. En N+2, la VR remonte à 95. VNC théorique sans dépréciation = 80 (à cause de l'amortissement normal). Reprise ?",
               "options": [
-                "Reprise totale à 95",
-                "Pas de reprise possible",
-                "Reprise plafonnée à 80 (VNC théorique)",
-                "Reprise à 60 uniquement"
+                "Reprise totale jusqu'à 95",
+                "Aucune reprise possible en RPC",
+                "Reprise plafonnée à 80",
+                "Maintien à 60, sans reprise"
               ],
               "answer": 2,
               "explanation": "Plafond de reprise = VNC théorique sans dépréciation (80). La VR à 95 excède le plafond, on ne peut pas aller au-dessus. La reprise est donc limitée à 80."
@@ -3705,9 +3705,9 @@
               "type": "mcq",
               "question": "UGT avec goodwill alloué : VNC 500 (dont goodwill 80), VR = 370. Imputation ?",
               "options": [
-                "130 au prorata sur tous les actifs",
+                "130 au prorata de la valeur de tous les actifs de l'UGT",
                 "130 sur goodwill uniquement",
-                "80 sur goodwill + 50 au prorata sur les autres",
+                "80 sur le goodwill, 50 au prorata",
                 "Annulation complète du goodwill"
               ],
               "answer": 2,
@@ -3746,9 +3746,9 @@
               "question": "Obligation minimale de disclosure RPC 20 pour une dépréciation matérielle ?",
               "options": [
                 "Mention du montant uniquement",
-                "Analyse détaillée de chaque hypothèse",
-                "Montant, nature des événements, méthode d'évaluation, actif concerné",
-                "Plan de redressement opérationnel"
+                "Une analyse détaillée de chaque hypothèse retenue, avec sensibilités",
+                "Montant, motifs, méthode et actif concerné",
+                "Un plan de redressement opérationnel de l'activité concernée"
               ],
               "answer": 2,
               "explanation": "RPC 20/17 : disclosure des montants, des événements déclencheurs, de la méthode et de l'actif. Le détail des hypothèses est encouragé pour les montants significatifs mais pas systématiquement exigé."
@@ -3763,10 +3763,10 @@
               "type": "mcq",
               "question": "Dans un dossier de test de dépréciation RPC, quel élément ne figure PAS nécessairement ?",
               "options": [
-                "Identification de l'UGT",
+                "L'identification de l'UGT",
                 "Taux d'actualisation",
-                "Calcul de la valeur recouvrable",
-                "Nom des auditeurs externes affectés"
+                "Le calcul détaillé de la valeur recouvrable",
+                "Le nom des auditeurs externes"
               ],
               "answer": 3,
               "explanation": "Le dossier de test documente les hypothèses et calculs. Les noms des auditeurs ne sont pas un élément du test lui-même, bien que l'audit puisse en revoir la qualité."
@@ -3777,8 +3777,8 @@
               "options": [
                 "Uniquement le résultat final",
                 "Prix d'offre d'un tiers",
-                "Indices, méthode, calculs détaillés, hypothèses et conclusion avec sensibilité",
-                "Attestation du management"
+                "Indices, méthode, calculs, hypothèses et conclusion",
+                "Une attestation écrite du management, qui remplace les calculs détaillés"
               ],
               "answer": 2,
               "explanation": "Dossier structuré attendu : identification des indices, méthode retenue (VU ou JVN-CV), calculs avec sources, hypothèses clés, conclusion + analyse de sensibilité. Audit : cohérence budget, cross-check marché, rétrospective."
@@ -3818,10 +3818,10 @@
               "type": "mcq",
               "question": "Contrat de construction d'un pont sur 3 ans à prix fixe. L'entreprise dispose de budgets détaillés et d'un historique solide. Méthode à appliquer ?",
               "options": [
-                "Achèvement (prudence)",
+                "Achèvement (par prudence)",
                 "Cost-plus",
-                "PoC (estimation fiable possible)",
-                "Méthode linéaire sur 3 ans"
+                "PoC (estimation fiable)",
+                "Une méthode linéaire sur 3 ans"
               ],
               "answer": 2,
               "explanation": "Si l'estimation fiable est possible (budgets, historique), la PoC est la méthode appropriée. Elle reflète l'avancement économique, meilleure image fidèle."
@@ -3882,10 +3882,10 @@
               "type": "mcq",
               "question": "Contrat 20 M, coûts totaux estimés 16 M. Coûts engagés 4 M. Produit à reconnaître (cost-to-cost) ?",
               "options": [
-                "4 M",
-                "16 M",
-                "20 M",
-                "5 M (20 × 4/16)"
+                "4 M (coûts engagés)",
+                "16 M (coûts totaux)",
+                "20 M (prix total)",
+                "5 M"
               ],
               "answer": 3,
               "explanation": "Avancement = 4/16 = 25 %. Produit = 20 × 25 % = 5 M. Marge reconnue = 5 − 4 = 1 M."
@@ -3900,10 +3900,10 @@
               "type": "mcq",
               "question": "Fin de N+1 : coûts cumulés 500k, marges reconnues 150k, facturations émises 720k. Présentation bilan ?",
               "options": [
-                "Actif de contrat 70k",
-                "Créance client 720k",
-                "Pas d'impact",
-                "Passif de contrat 70k (facturations > coûts + marges)"
+                "Actif de contrat de 70k",
+                "Créance client de 720k",
+                "Aucun impact au bilan de N+1",
+                "Passif de contrat (70k)"
               ],
               "answer": 3,
               "explanation": "Coûts + marges = 650k. Facturations = 720k. Facturations excèdent l'avancement de 70k → passif de contrat (paiement reçu/exigible supérieur à la valeur du travail réalisé)."
@@ -3912,10 +3912,10 @@
               "type": "mcq",
               "question": "Condition NON requise pour appliquer la PoC ?",
               "options": [
-                "Marge nette connue à l'avance dans le contrat",
-                "Prix total fiable",
-                "Coûts totaux fiables",
-                "Avancement mesurable"
+                "Une marge fixée d'avance",
+                "Un prix total fiable du contrat",
+                "Des coûts totaux fiables",
+                "Un avancement mesurable"
               ],
               "answer": 0,
               "explanation": "La marge se déduit du prix − coûts. Elle n'a pas besoin d'être connue à l'avance. Les trois autres sont des pré-requis pour une application fiable."
@@ -3954,9 +3954,9 @@
               "question": "Élément NON inclus dans les coûts d'un contrat long terme ?",
               "options": [
                 "Main-d'œuvre directe sur chantier",
-                "Frais généraux du siège non attribuables",
+                "Frais généraux du siège",
                 "Matériaux incorporés",
-                "Coûts de transport de matériel sur site"
+                "Les coûts de transport du matériel jusqu'au site de construction"
               ],
               "answer": 1,
               "explanation": "Frais administratifs généraux du siège = exclus (pas attribuables au contrat). Ils restent en charge de période. Les autres coûts sont directement liés ou attribuables."
@@ -3971,10 +3971,10 @@
               "type": "mcq",
               "question": "Coûts de soumission (tender) engagés avant signature d'un contrat jugé probable à 80 %. Traitement ?",
               "options": [
-                "Charge immédiate",
-                "Provision RPC 23",
-                "Capitalisés en coûts du contrat futur (si probable d'être obtenu) puis amortis",
-                "En fonds propres"
+                "En charges immédiatement",
+                "En provision selon RPC 23",
+                "Activés si le contrat est probable",
+                "Imputés aux fonds propres de l'entité"
               ],
               "answer": 2,
               "explanation": "Coûts pré-contractuels capitalisables si le contrat est probable et que les coûts sont récupérables. Amortis sur la durée du contrat une fois signé. Si contrat non obtenu → charge immédiate."
@@ -3983,10 +3983,10 @@
               "type": "mcq",
               "question": "Une réclamation (claim) est formulée au client pour CHF 200 mais encore en négociation. Impact sur le prix du contrat ?",
               "options": [
-                "Intégrée immédiatement au prix",
+                "Intégrée immédiatement au prix du contrat",
                 "Non intégrée jamais",
-                "Intégrée seulement si HAUTEMENT PROBABLE et FIABLEMENT évaluable",
-                "Intégrée à 50 % par prudence"
+                "Seulement si hautement probable et fiable",
+                "Intégrée à 50 % par prudence, en attendant l'issue"
               ],
               "answer": 2,
               "explanation": "RPC 22 (et IFRS 15 contrepartie variable) : réclamations intégrées UNIQUEMENT si hautement probables + fiables. Sinon, non intégrées au prix (disclosure possible). Application de la \"constraint\" sur contrepartie variable."
@@ -3996,9 +3996,9 @@
               "question": "Des coûts d'obtention (commissions commerciales) de CHF 100 ont été engagés pour remporter un contrat LT de 5 ans. Traitement RPC 22 ?",
               "options": [
                 "Charge immédiate",
-                "Dans le coût du contrat (CMV)",
-                "Capitalisables si contrat probable et récupérables, amortis sur la durée du contrat",
-                "Reportés en annexe uniquement"
+                "Inclus dans le coût des ventes de l'exercice",
+                "Activables si récupérables, amortis sur le contrat",
+                "Reportés uniquement en annexe, sans comptabilisation"
               ],
               "answer": 2,
               "explanation": "RPC 22 (convergent IFRS 15.91) : coûts d'obtention capitalisables si contrat probable + récupérables. Amortissement sur la durée du contrat/relation client. Exemption pratique : charge si durée < 1 an."
@@ -4023,9 +4023,9 @@
               "type": "mcq",
               "question": "Actif de contrat = ?",
               "options": [
-                "Facturations moins travaux réalisés",
-                "Coûts engagés moins cash reçu",
-                "Travaux réalisés (avancement × prix) moins facturations",
+                "Les facturations moins les travaux réalisés",
+                "Les coûts engagés moins les encaissements reçus",
+                "Travaux réalisés moins facturations",
                 "Marge cumulée"
               ],
               "answer": 2,
@@ -4041,10 +4041,10 @@
               "type": "mcq",
               "question": "Disclosure RPC 22 obligatoire ?",
               "options": [
-                "Nom des clients des contrats significatifs",
+                "Le nom des clients des contrats les plus significatifs",
                 "Coûts unitaires des ressources",
                 "Marge brute par sous-traitant",
-                "Méthode (achèvement ou PoC) + méthode de mesure de l'avancement"
+                "La méthode et la mesure de l'avancement"
               ],
               "answer": 3,
               "explanation": "RPC 22/13 : méthode retenue + mesure de l'avancement sont obligatoires en annexe. Les noms des clients relèvent de la confidentialité commerciale, pas d'obligation."
@@ -4053,10 +4053,10 @@
               "type": "mcq",
               "question": "Avancement cumulé = CHF 800 ; facturation cumulée = CHF 600. Quel poste au bilan ?",
               "options": [
-                "Passif de contrat 200",
+                "Passif de contrat de 200",
                 "Créance client 600",
-                "Produit à recevoir 800",
-                "Actif de contrat 200 (créance de travaux non facturés)"
+                "Produit à recevoir de 800",
+                "Actif de contrat de 200"
               ],
               "answer": 3,
               "explanation": "Avancement > facturation → ACTIF de contrat (travaux exécutés non encore facturés). Inversement, facturation > avancement = passif de contrat (avance client). Piège : ne pas confondre facturation et avancement (test POC)."
@@ -4096,10 +4096,10 @@
               "type": "mcq",
               "question": "Une société envisage de former ses employés à un nouvel outil en N+1. Budget 200k. Provision au 31.12.N ?",
               "options": [
-                "200k (obligation certaine)",
+                "200k (obligation certaine de former)",
                 "Provision partielle 50 %",
-                "Aucune (pas d'obligation actuelle, formation future)",
-                "Provision + actif différé"
+                "Aucune (pas d'obligation actuelle)",
+                "Une provision, avec un actif différé correspondant"
               ],
               "answer": 2,
               "explanation": "Aucune obligation actuelle : la société peut annuler la formation. Les coûts futurs d'exploitation (planifiés mais non engagés) ne sont pas des provisions (RPC 23/4)."
@@ -4126,7 +4126,7 @@
               "type": "mcq",
               "question": "Seuil de probabilité pour reconnaître une PROVISION (≠ simple disclosure) ?",
               "options": [
-                "> 50 % (probable)",
+                "> 50 %",
                 "> 10 %",
                 "> 25 %",
                 "> 90 %"
@@ -4179,10 +4179,10 @@
               "type": "mcq",
               "question": "Assurance couvre 70 % (quasi-certain) d'un litige 1 M. Présentation bilan ?",
               "options": [
-                "Passif net 300k",
-                "Passif 1 M uniquement",
-                "Passif 1 M + Actif 700k",
-                "Annexe seulement"
+                "Un passif net de 300k",
+                "Un passif de 1 M uniquement",
+                "Passif 1 M + actif 700k",
+                "Une mention en annexe seulement"
               ],
               "answer": 2,
               "explanation": "Pas de compensation au bilan : provision intégrale au passif, actif de remboursement séparé. Au résultat, présentation nette autorisée (charge nette 300k)."
@@ -4191,13 +4191,13 @@
               "type": "mcq",
               "question": "Une provision pour litige de CHF 1'000 est attendue dans 5 ans. Taux d'actualisation 3 %. Valeur actuelle ~ CHF 863. L'actualisation est-elle obligatoire ?",
               "options": [
-                "Oui, toujours",
+                "Oui, toujours, quel que soit l'horizon",
                 "Interdite en RPC",
-                "Uniquement pour les provisions > 10 M",
-                "Recommandée si l'effet est significatif"
+                "Uniquement pour les provisions supérieures à 10 M",
+                "Oui, si l'effet est significatif"
               ],
               "answer": 3,
-              "explanation": "RPC 23 : actualisation RECOMMANDÉE si effet significatif (pragmatisme). IAS 37 l'impose si effet matériel. Désactualisation = charge financière (unwinding) les années suivantes."
+              "explanation": "RPC 23 : lorsque l'effet temporel est significatif, la provision est actualisée (ici 1'000 / 1,03^5 ≈ 863). Si l'effet est négligeable, la valeur nominale peut être conservée. Le taux reflète les conditions du marché."
             },
             {
               "type": "vrai_faux",
@@ -4227,8 +4227,8 @@
               "type": "mcq",
               "question": "Plan de restructuration : indemnités 800, formation des employés conservés 150, pénalités rupture baux 100, investissement nouveau système 200. Provision ?",
               "options": [
-                "900 (indemnités + pénalités baux)",
-                "1'250 (tout)",
+                "900",
+                "1'250 (tout le plan)",
                 "800 (indemnités uniquement)",
                 "650"
               ],
@@ -4257,10 +4257,10 @@
               "type": "mcq",
               "question": "Plan de restructuration : quels coûts peut-on inclure dans la provision ?",
               "options": [
-                "Tous les coûts liés au plan, y compris reconversion et marketing",
+                "Tous les coûts liés au plan, y compris la reconversion du personnel et le marketing",
                 "Les coûts d'activité future uniquement",
                 "50 % des coûts estimés",
-                "Uniquement les coûts DIRECTEMENT liés à la restructuration (indemnités, contrats onéreux)"
+                "Seulement les coûts directs (indemnités, contrats onéreux)"
               ],
               "answer": 3,
               "explanation": "RPC 23 / IAS 37.80 : EXCLURE les coûts d'activité future (formation, reconversion, marketing, investissements). Inclure uniquement : indemnités de rupture, coûts de sortie d'engagements, dépréciation de contrats onéreux."
@@ -4269,10 +4269,10 @@
               "type": "mcq",
               "question": "Un litige environnemental : sortie possible 40 %, montant CHF 2 M. Traitement RPC 23 ?",
               "options": [
-                "Provision de 2 M (probable)",
-                "Pas de provision, disclosure en annexe (passif éventuel)",
-                "Provision de 800 K (40 %)",
-                "Rien"
+                "Une provision de 2 M (sortie probable)",
+                "Passif éventuel en annexe",
+                "Une provision de 800k (40 % de 2 M)",
+                "Rien du tout, ni au bilan ni en annexe"
               ],
               "answer": 1,
               "explanation": "40 % = non probable (< 50 %). RPC 23 : disclosure en annexe comme passif éventuel. Provision uniquement si probable > 50 %. Si > 10 % mais < 50 % : passif éventuel en annexe."
@@ -4298,10 +4298,10 @@
               "type": "mcq",
               "question": "Une société détient une provision pour litige 800. L'assurance couvre 600 (quasi-certain). Présentation bilan ?",
               "options": [
-                "Passif net 200",
-                "Passif 200 + actif 0",
-                "Passif 800 + actif 600",
-                "Annexe seulement"
+                "Un passif net de 200",
+                "Passif 200, actif 0",
+                "Passif 800, actif 600",
+                "Une mention en annexe seulement"
               ],
               "answer": 2,
               "explanation": "Pas de netting au bilan. Provision brute 800 en passif, actif de remboursement 600 séparé. Au résultat, charge nette possible (200)."
@@ -4316,9 +4316,9 @@
               "type": "mcq",
               "question": "Quel élément NE figure PAS obligatoirement en disclosure RPC 23 ?",
               "options": [
-                "Nom du cabinet d'avocats gérant les litiges",
-                "Tableau de mouvements par catégorie",
-                "Description narrative de chaque catégorie",
+                "Le nom des avocats",
+                "Le tableau des mouvements par catégorie",
+                "Une description de chaque catégorie de provision",
                 "Actifs de remboursement attendus"
               ],
               "answer": 0,
@@ -4334,10 +4334,10 @@
               "type": "mcq",
               "question": "Un remboursement d'assurance quasi-certain couvre 60 % d'une provision de CHF 1'000. Présentation au bilan ?",
               "options": [
-                "Provision 400 (nette)",
+                "Une provision nette de 400",
                 "Provision 1'000, remboursement en annexe uniquement",
-                "Provision 1'000 + Actif de remboursement 600 (pas de compensation)",
-                "Actif 1'000 - Passif 600"
+                "Provision 1'000 + actif 600",
+                "Actif 1'000 − passif 600"
               ],
               "answer": 2,
               "explanation": "Pas de NETTING au bilan (IAS 37.53, RPC 23 convergent) : provision brute au passif + actif de remboursement séparé (plafonné au montant de la provision). Compensation possible au P&L."
@@ -6643,10 +6643,10 @@
               "type": "mcq",
               "question": "Entité non cotée : bilan 8 M, CA 15 M, 40 ETP. RPC applicables ?",
               "options": [
-                "RPC complètes obligatoires",
-                "RPC 31",
-                "Aucune",
-                "RPC fondamentales possibles (3 seuils sous les limites)"
+                "Les RPC complètes sont obligatoires",
+                "RPC 31 (sociétés cotées)",
+                "Aucune norme applicable",
+                "RPC fondamentales possibles"
               ],
               "answer": 3,
               "explanation": "Seuils 10/20/50 respectés pour les 3 critères. Possibilité de se limiter aux RPC fondamentales (1, 2, 3, 4, 5, 6). Choix politique."
@@ -6661,10 +6661,10 @@
               "type": "mcq",
               "question": "Principe RPC NON listé dans RPC 1 ?",
               "options": [
-                "Image fidèle",
-                "Conservatisme absolu sans nuance",
-                "Interdiction de compensation",
-                "Continuité d'exploitation"
+                "L'image fidèle",
+                "Le conservatisme absolu",
+                "L'interdiction de compensation",
+                "La continuité d'exploitation"
               ],
               "answer": 1,
               "explanation": "Prudence (pas conservatisme absolu) : les RPC, comme IFRS, rejettent le conservatisme systématique qui créerait des réserves latentes. Image fidèle prime."
@@ -6673,10 +6673,10 @@
               "type": "mcq",
               "question": "Les Swiss GAAP RPC fondamentales (\"Kern-FER\") s'adressent à quelles entités ?",
               "options": [
-                "Toutes les entités",
-                "PME répondant à 2 des 3 critères : bilan ≤ 10 M, CA ≤ 20 M, ≤ 50 ETP",
-                "Uniquement les cotées",
-                "Fondations uniquement"
+                "Toutes les entités, sans aucune condition",
+                "Les petites entités (seuils 10 M / 20 M / 50 EPT)",
+                "Uniquement les sociétés cotées",
+                "Uniquement les fondations et associations à but non lucratif"
               ],
               "answer": 1,
               "explanation": "Structure RPC : fondamentales (petites entreprises, seuils 10/20/50) ; complètes (entités moyennes) ; RPC 30+31 pour groupes cotés. Cotées JAMAIS limitées aux fondamentales même si petites."
@@ -6709,9 +6709,9 @@
               "question": "Une société passe de la méthode FIFO au CMP pour évaluer ses stocks. Impact ?",
               "options": [
                 "Application prospective sans retraitement",
-                "Ajustement dans les capitaux propres uniquement",
+                "Un ajustement dans les capitaux propres uniquement, sans comparatifs",
                 "Charge de la période",
-                "Changement de méthode : application rétrospective avec retraitement des comparatifs"
+                "Application rétrospective (comparatifs retraités)"
               ],
               "answer": 3,
               "explanation": "Changement de méthode comptable (pas estimation). Application rétrospective, retraitement des comparatifs, ajustement des réserves d'ouverture, disclosure détaillé."
@@ -6726,10 +6726,10 @@
               "type": "mcq",
               "question": "Information comparative OBLIGATOIRE sous RPC 1 ?",
               "options": [
-                "3 exercices précédents",
-                "Aucune",
-                "Au choix",
-                "1 exercice précédent minimum"
+                "Les 3 exercices précédents",
+                "Aucune information",
+                "Au choix de l'entité",
+                "L'exercice précédent"
               ],
               "answer": 3,
               "explanation": "Comparatifs sur au moins 1 exercice précédent. Les cotées (RPC 31) peuvent exiger davantage selon les règles de cotation."
@@ -6739,9 +6739,9 @@
               "question": "Traitement d'un changement de méthode comptable en RPC ?",
               "options": [
                 "Prospectif uniquement",
-                "Charge exceptionnelle",
+                "Une charge exceptionnelle de l'exercice",
                 "Au choix",
-                "RÉTROSPECTIF avec retraitement des comparatifs (convergence IAS 8)"
+                "Rétrospectif (comparatifs retraités)"
               ],
               "answer": 3,
               "explanation": "RPC 1 (et IAS 8) : changement méthode = rétrospectif. Changement estimation = prospectif. Erreur matérielle = rétrospectif avec correction. Distinction identique à IFRS."
@@ -6791,8 +6791,8 @@
               "type": "mcq",
               "question": "Leasing financier : l'entité utilise l'actif durablement, assume les risques économiques, mais n'en est pas propriétaire juridique. Traitement RPC ?",
               "options": [
-                "Actif + dette au bilan (substance économique, RPC 13)",
-                "Charge de loyer uniquement (forme juridique)",
+                "Actif et dette au bilan (substance)",
+                "Une charge de loyer uniquement (forme juridique)",
                 "Hors bilan",
                 "Au choix"
               ],
@@ -6809,10 +6809,10 @@
               "type": "mcq",
               "question": "Principe de PRUDENCE en RPC 1 signifie :",
               "options": [
-                "Sous-évaluer systématiquement les actifs",
+                "Sous-évaluer systématiquement les actifs pour se protéger",
                 "Constituer des réserves latentes",
-                "Surévaluer les provisions",
-                "Équilibre — reconnaissance plus large des risques que des gains, SANS créer de réserves latentes"
+                "Surévaluer les provisions afin de lisser les résultats futurs",
+                "Plus de prudence pour les risques, sans réserves latentes"
               ],
               "answer": 3,
               "explanation": "RPC 1 : prudence = asymétrie raisonnable en faveur des risques, MAIS sans dévier de l'image fidèle. Les RPC sont SUPÉRIEURES au CO qui tolère les réserves latentes. Principe d'équilibre entre prudence et fidélité."
@@ -6867,8 +6867,8 @@
               "type": "mcq",
               "question": "Différence conceptuelle RPC vs IFRS ?",
               "options": [
-                "RPC = orientée PRINCIPES et pragmatique ; IFRS = règles plus détaillées et exhaustives",
-                "RPC = règles détaillées ; IFRS = principes",
+                "RPC : principes, pragmatisme ; IFRS : plus détaillé",
+                "RPC : règles détaillées et casuistiques ; IFRS : principes généraux uniquement",
                 "Identiques",
                 "RPC = fiscale ; IFRS = économique"
               ],
@@ -6912,7 +6912,7 @@
               "question": "Machine achetée CHF 200k, transport 10k, frais de montage 15k, formation des opérateurs 5k. Coût à capitaliser ?",
               "options": [
                 "200k",
-                "225k (hors formation)",
+                "225k",
                 "230k (tout)",
                 "215k"
               ],
@@ -6929,10 +6929,10 @@
               "type": "mcq",
               "question": "Créance client 100k, probabilité de défaut élevée estimée à 30 %. Traitement ?",
               "options": [
-                "Maintien à 100k",
-                "Sortie immédiate",
-                "Ducroire de 30k, créance nette 70k au bilan",
-                "Provision hors bilan"
+                "Maintien à 100k sans correction",
+                "Sortie immédiate de la créance",
+                "Ducroire de 30k (net 70k)",
+                "Une provision hors bilan"
               ],
               "answer": 2,
               "explanation": "Dépréciation en ducroire = 30 % × 100k = 30k. Créance présentée nette (70k au bilan). Prudence RPC convergente avec IFRS 9 ECL (logique différente en détail)."
@@ -6941,10 +6941,10 @@
               "type": "mcq",
               "question": "Base d'évaluation principale en RPC 2 ?",
               "options": [
-                "Juste valeur généralisée",
-                "Valeur nette de réalisation",
-                "Coût historique avec exceptions (titres cotés, immeubles de placement)",
-                "Choix libre"
+                "La juste valeur généralisée pour tous les postes",
+                "La valeur nette de réalisation",
+                "Le coût historique (exceptions)",
+                "Un choix libre selon l'entité"
               ],
               "answer": 2,
               "explanation": "RPC 2 : coût historique = BASE PRINCIPALE. JV pour cas spécifiques : titres cotés destinés à négoce, dérivés, certains immeubles de placement. Plus prudent qu'IFRS qui applique largement la JV."
@@ -7006,10 +7006,10 @@
               "type": "mcq",
               "question": "Un terrain à bâtir en Suisse dans les comptes RPC ?",
               "options": [
-                "Non amorti — durée d'utilité indéterminée",
+                "Non amorti",
                 "Amorti sur 50 ans",
-                "Amorti selon taux fiscal",
-                "Réévalué à la JV obligatoirement"
+                "Amorti selon le taux fiscal admis",
+                "Réévalué à la JV, obligatoirement"
               ],
               "answer": 0,
               "explanation": "RPC 2 : terrains NON amortis (convergent IAS 16). Test de dépréciation uniquement en cas d'indice. Les amortissements fiscaux sur terrain sont fiscaux uniquement (non comptables en RPC)."
@@ -7047,10 +7047,10 @@
               "type": "mcq",
               "question": "Titre acheté pour revente dans 2 mois. Valeur d'achat 50k, JV à la clôture 55k. Traitement ?",
               "options": [
-                "Maintien à 50k",
-                "Réévaluation en OCI",
-                "Réévaluation à 55k, gain de 5k en résultat",
-                "Provision pour volatilité"
+                "Maintien à 50k (coût)",
+                "Réévaluation par les fonds propres",
+                "Réévaluation à 55k, gain de 5k",
+                "Une provision pour volatilité"
               ],
               "answer": 2,
               "explanation": "Titre de négoce = JV à chaque clôture, variations en résultat. Convergence avec IFRS 9 FVTPL."
@@ -7065,10 +7065,10 @@
               "type": "mcq",
               "question": "Obligation convertible émise 1 M : dette 800, option de conversion 200. Présentation ?",
               "options": [
-                "800 en dette + 200 en capitaux propres (séparation composante)",
-                "1 M en dette",
+                "800 en dette, 200 en FP",
+                "1 M en dette financière",
                 "1 M en capitaux propres",
-                "Au choix"
+                "Au choix de l'émetteur, selon sa politique"
               ],
               "answer": 0,
               "explanation": "Instrument composé : séparation dette et KP. Principe convergent avec IAS 32. Écriture : 800 dette financière, 200 KP (composante optionnelle)."
@@ -7077,10 +7077,10 @@
               "type": "mcq",
               "question": "Titres de participations non cotés en RPC 2 ?",
               "options": [
-                "Coût d'acquisition - dépréciation éventuelle",
-                "JV obligatoire",
-                "Mise en équivalence",
-                "Valeur fiscale"
+                "Au coût, moins les dépréciations",
+                "À la juste valeur, obligatoirement",
+                "Par mise en équivalence",
+                "À la valeur fiscale"
               ],
               "answer": 0,
               "explanation": "RPC 2 : titres non cotés au COÛT - dépréciation. JV optionnelle si fiablement déterminable. Convergence IAS 28 (mise en équivalence consolidée) mais dans les comptes individuels RPC, coût prédomine."
@@ -7112,10 +7112,10 @@
               "type": "mcq",
               "question": "Rachat d'actions propres pour 500k. Traitement ?",
               "options": [
-                "Actif financier 500k",
-                "Diminution des capitaux propres de 500k",
-                "Charge de 500k",
-                "Provision"
+                "Un actif financier de 500k",
+                "Réduction des FP",
+                "Une charge de 500k",
+                "Une provision pour rachat"
               ],
               "answer": 1,
               "explanation": "Actions propres = diminution des KP (pas un actif). Cession ultérieure : différence imputée aux KP (pas au résultat). Convergence avec IAS 32."
@@ -7130,10 +7130,10 @@
               "type": "mcq",
               "question": "Dette long terme de 1 M dans 10 ans, taux de marché 4 %. Actualisation obligatoire ?",
               "options": [
-                "Recommandée si matériel (souplesse RPC)",
-                "Oui, strictement comme IFRS",
+                "Recommandée si significative",
+                "Oui, strictement comme en IFRS",
                 "Jamais",
-                "Seulement pour provisions"
+                "Seulement pour les provisions, jamais les dettes"
               ],
               "answer": 0,
               "explanation": "RPC 2 : actualisation recommandée pour LT matériel, moins prescriptive qu'IFRS. En pratique, les groupes suisses appliquent souvent l'actualisation pour cohérence."
@@ -7209,10 +7209,10 @@
               "type": "mcq",
               "question": "Les \"comptes de régularisation\" en RPC 3 ont pour objet :",
               "options": [
-                "Éliminer les erreurs comptables",
+                "Éliminer les erreurs comptables de l'exercice",
                 "Compenser les résultats positifs et négatifs",
                 "Ajuster la fiscalité",
-                "Appliquer le principe d'indépendance des exercices (accrual) : actifs/passifs de régularisation"
+                "Appliquer l'indépendance des exercices"
               ],
               "answer": 3,
               "explanation": "Spécificité suisse : poste bilan distinct (\"Aktive/Passive Rechnungsabgrenzungen\") pour charges constatées d'avance et produits à recevoir / produits constatés d'avance et charges à payer. Équivalent des prepaid/accrued IFRS."
@@ -7243,10 +7243,10 @@
               "type": "mcq",
               "question": "Une société présente son compte de résultat par fonction. Information additionnelle obligatoire en annexe ?",
               "options": [
-                "Aucune",
-                "Ventilation des charges par nature (personnel, amortissements, matières)",
-                "Liste des clients",
-                "Plan stratégique"
+                "Aucune information supplémentaire",
+                "Les charges par nature",
+                "La liste des principaux clients",
+                "Le plan stratégique à trois ans"
               ],
               "answer": 1,
               "explanation": "RPC 3 : par fonction → ventilation par nature en annexe (au moins charges de personnel et amortissements). Cohérent avec IAS 1.104."
@@ -7261,8 +7261,8 @@
               "type": "mcq",
               "question": "Format par nature : ordre typique des postes ?",
               "options": [
-                "CA → autres produits → matières → personnel → amortissements → autres",
-                "CA → coût des ventes → marge",
+                "CA, matières, personnel, amortissements",
+                "Chiffre d'affaires → coût des ventes → marge brute",
                 "Totaux uniquement",
                 "Au choix"
               ],
@@ -7273,10 +7273,10 @@
               "type": "mcq",
               "question": "Présentation du compte de résultat par FONCTION (CMV, ventes, admin...) en RPC 3 implique :",
               "options": [
-                "Disclosure par nature en ANNEXE (charges de personnel, amortissements, matières)",
+                "Une ventilation par nature en annexe",
                 "Rien de plus",
-                "Interdiction d'utiliser la nature ailleurs",
-                "Conversion obligatoire au format par nature"
+                "L'interdiction d'utiliser la nature des charges ailleurs",
+                "La conversion obligatoire au format par nature dans le compte de résultat"
               ],
               "answer": 0,
               "explanation": "RPC 3 (et IAS 1.104) : si par fonction, disclosure COMPLÉMENTAIRE par NATURE en annexe. L'inverse n'est pas exigé. Pragmatisme suisse : les deux formats admis."
@@ -7326,9 +7326,9 @@
               "type": "mcq",
               "question": "Événement post-clôture : litige perdu en février N+1 (procès initié en octobre N), condamnation 500k. Traitement dans les comptes N ?",
               "options": [
-                "Pas d'impact sur N, disclosure uniquement",
-                "Provision en N+1 uniquement",
-                "Ajustement des comptes N : provision 500k (événement ajustant)",
+                "Aucun impact sur N, une simple mention en annexe",
+                "Une provision en N+1 uniquement",
+                "Ajuster : provision de 500k en N",
                 "Au choix"
               ],
               "answer": 2,
@@ -7338,10 +7338,10 @@
               "type": "mcq",
               "question": "Un événement important survenu entre la clôture et la signature des comptes doit :",
               "options": [
-                "Être ignoré",
-                "Systématiquement ajusté",
+                "Être ignoré jusqu'à l'exercice suivant",
+                "Systématiquement ajusté dans les comptes",
                 "Reporté à l'exercice suivant",
-                "Être ajusté SI preuve de la situation à la clôture ; sinon disclosure"
+                "Ajusté si la situation existait"
               ],
               "answer": 3,
               "explanation": "RPC 3 (convergent IAS 10) : événements AJUSTANTS (preuve de condition à la clôture) → correction. Événements NON-AJUSTANTS (condition survenue après) → disclosure uniquement. Date limite = approbation formelle des comptes."
@@ -7373,10 +7373,10 @@
               "type": "mcq",
               "question": "Acquisition d'une filiale en février N+1 pour 20 M cash. Impact sur les comptes N ?",
               "options": [
-                "Ajustement des comptes N",
-                "Aucune mention",
-                "Disclosure en annexe N (événement non ajustant matériel)",
-                "Provision en N"
+                "Un ajustement des comptes N",
+                "Aucune mention requise dans les comptes N",
+                "Mention en annexe",
+                "Une provision en N"
               ],
               "answer": 2,
               "explanation": "Événement post-clôture non ajustant (l'acquisition est un fait nouveau, postérieur à la clôture). Disclosure obligatoire si matériel pour la compréhension des comptes."
@@ -7391,10 +7391,10 @@
               "type": "mcq",
               "question": "Changement de format de compte de résultat (par nature → par fonction). Impact ?",
               "options": [
-                "Aucun (simple rearrangement)",
-                "Impossible en RPC",
+                "Aucun, c'est un simple réarrangement",
+                "Impossible en RPC une fois le format choisi",
                 "Au choix",
-                "Retraitement des comparatifs + disclosure + justification"
+                "Comparatifs retraités"
               ],
               "answer": 3,
               "explanation": "Changement de présentation = retraitement comparatifs + disclosure. Justification que le nouveau format améliore la pertinence de l'information. Permanence à respecter ensuite."
@@ -7410,8 +7410,8 @@
               "question": "Un événement AJUSTANT post-clôture apporte la preuve d'une condition existant à la date du bilan. Exemple :",
               "options": [
                 "Incendie majeur après la clôture",
-                "Nouvelle acquisition annoncée après clôture",
-                "Faillite d'un client principal avec créance existante à la clôture",
+                "Une nouvelle acquisition annoncée après la clôture",
+                "La faillite d'un client déjà débiteur à la clôture",
                 "Changement de direction"
               ],
               "answer": 2,
@@ -7448,9 +7448,9 @@
               "question": "Contrat de leasing d'une machine : durée 10 ans, vie économique 12 ans, VA des paiements = 92 % de la JV. Classement RPC 13 ?",
               "options": [
                 "Opérationnel",
-                "Service contract",
-                "Au choix",
-                "Financier (majorité des critères satisfaits)"
+                "Contrat de service",
+                "Au choix de l'entité",
+                "Financier"
               ],
               "answer": 3,
               "explanation": "Durée > 75 % de la vie économique (83 %) + VA > 90 % de la JV = location financière. Transfert quasi-total des risques et avantages."
@@ -7467,8 +7467,8 @@
               "options": [
                 "Même traitement",
                 "RPC plus strict",
-                "IFRS 16 exclut les locations financières",
-                "IFRS 16 : RoU + dette au bilan pour toutes les locations (sauf courtes / faible valeur)"
+                "IFRS 16 exclut les locations financières de son champ",
+                "IFRS 16 : droit d'utilisation et dette au bilan"
               ],
               "answer": 3,
               "explanation": "IFRS 16 : modèle unique → toutes locations au bilan (sauf exemptions). Ratio d'endettement augmente, EBITDA augmente. Impact significatif sur les retailers et compagnies aériennes."
@@ -7478,8 +7478,8 @@
               "question": "Différence de philosophie RPC 13 vs IFRS 16 côté PRENEUR ?",
               "options": [
                 "Identique : tout au bilan",
-                "RPC 13 = modèle DUAL (financier au bilan, opérationnel hors bilan) ; IFRS 16 = modèle UNIQUE (tout au bilan)",
-                "RPC 13 met tout hors bilan",
+                "RPC : modèle dual ; IFRS 16 : modèle unique (bilan)",
+                "RPC 13 met toutes les locations hors bilan, y compris financières",
                 "IFRS 16 met tout hors bilan"
               ],
               "answer": 1,
@@ -7530,10 +7530,10 @@
               "type": "mcq",
               "question": "Option d'achat en fin de bail à 10k, JV attendue 50k. Exercice raisonnablement certain. Inclusion dans paiements minimums ?",
               "options": [
-                "Non",
-                "Oui, 10k actualisés à la date d'exercice",
+                "Non, jamais",
+                "Oui, 10k actualisés",
                 "10k en charge immédiate",
-                "Au choix"
+                "Au choix du preneur"
               ],
               "answer": 1,
               "explanation": "Prix d'option << JV attendue → exercice RC. 10k actualisés inclus dans les paiements minimums. Impact : dette initiale plus élevée, durée d'amortissement = vie économique."
@@ -7554,9 +7554,9 @@
               "type": "mcq",
               "question": "Leasing financier : loyer annuel 120, durée 5 ans, taux 5 %. VA ≈ 520. Valorisation initiale à l'actif ?",
               "options": [
-                "600 (total loyers)",
-                "Min(JV machine ; 520)",
-                "520 (VA)",
+                "600 (total des loyers)",
+                "Min(JV ; 520)",
+                "520 (VA), toujours",
                 "100 (premier loyer)"
               ],
               "answer": 1,
@@ -7583,9 +7583,9 @@
               "type": "mcq",
               "question": "Location opérationnelle d'un bureau 5 ans à 50k/an avec 2 mois de gratuité offerts. Charge annuelle ?",
               "options": [
-                "Lissage : (50k × 5 − 50k/12 × 2) / 5 = ~48.3k",
-                "50k tous les ans, y compris gratuité",
-                "Charge 0 pendant 2 mois",
+                "Lissée : ~48.3k par an",
+                "50k chaque année, y compris pendant la gratuité",
+                "Charge nulle pendant les 2 premiers mois",
                 "Charge variable"
               ],
               "answer": 0,
@@ -7601,10 +7601,10 @@
               "type": "mcq",
               "question": "Sale-and-leaseback : vente à 1.5 M (JV 1.3 M), VNC 1 M. Leaseback considéré comme op. Traitement du gain ?",
               "options": [
-                "500k en résultat immédiat",
-                "Étalement total de 500k",
-                "Plus-value liée à la 'vente normale' (300 = 1.3 − 1) immédiate ; excédent (200 = 1.5 − 1.3) étalé comme produit différé",
-                "Pas de gain reconnu"
+                "500k en résultat immédiatement",
+                "Étalement total des 500k sur la durée",
+                "300 immédiat ; 200 étalés",
+                "Aucun gain reconnu en résultat"
               ],
               "answer": 2,
               "explanation": "Prix de vente > JV = financement supplémentaire implicite. Plus-value 'normale' (vs JV) reconnue immédiatement ; excédent traité comme avantage financier à étaler."
@@ -7613,9 +7613,9 @@
               "type": "mcq",
               "question": "Engagements de leasing opérationnel en RPC 13 : présentation ?",
               "options": [
-                "Au bilan au total",
-                "HORS bilan en annexe, ventilés par échéance (< 1 an / 1-5 / > 5)",
-                "Dans le résultat global",
+                "Au bilan, pour le total des engagements futurs",
+                "En annexe, par échéance (< 1, 1-5, > 5 ans)",
+                "Dans le résultat global de l'exercice",
                 "Non divulgués"
               ],
               "answer": 1,
@@ -7625,10 +7625,10 @@
               "type": "mcq",
               "question": "Un bail OPÉRATIONNEL en RPC 13 génère :",
               "options": [
-                "Un actif au bilan",
-                "Une dette au bilan",
-                "Une provision",
-                "Des loyers linéaires en charge + engagements hors bilan en annexe"
+                "Un actif (droit d'utilisation) au bilan",
+                "Une dette de leasing au bilan",
+                "Une provision pour loyers futurs au passif du bilan",
+                "Des loyers en charges et une mention en annexe"
               ],
               "answer": 3,
               "explanation": "RPC 13 : bail opérationnel = loyer charge (linéaire si étalement incitations), engagements en annexe par bande d'échéance. Équivalent de l'ancien IAS 17. Divergence majeure avec IFRS 16 (tout au bilan)."
@@ -7654,10 +7654,10 @@
               "type": "mcq",
               "question": "Disclosure obligatoire pour un preneur en leasing opérationnel ?",
               "options": [
-                "Valeur de marché de l'actif sous-jacent",
-                "Nom du bailleur",
+                "La valeur de marché de l'actif sous-jacent loué",
+                "Le nom du bailleur",
                 "Contrats d'assurance",
-                "Paiements futurs non actualisés ventilés (< 1 an / 1-5 / > 5 ans)"
+                "Les paiements futurs par échéance"
               ],
               "answer": 3,
               "explanation": "RPC 13 : ventilation des engagements hors bilan par bande d'échéance. Permet aux utilisateurs d'évaluer les sorties de trésorerie futures."
@@ -7673,9 +7673,9 @@
               "question": "Principale différence RPC 13 / IFRS 16 côté preneur ?",
               "options": [
                 "Identique",
-                "IFRS 16 est plus simple",
-                "RPC 13 exige la JV",
-                "RPC 13 maintient la distinction financier/opérationnel (op hors bilan) ; IFRS 16 impose tout au bilan"
+                "IFRS 16 est plus simple à appliquer que RPC 13",
+                "RPC 13 exige l'évaluation à la juste valeur de tous les actifs loués",
+                "RPC : financier/opérationnel ; IFRS 16 : tout au bilan"
               ],
               "answer": 3,
               "explanation": "Différence majeure : modèle dual RPC vs modèle unique IFRS 16. Les locations op, hors bilan en RPC, deviennent RoU + dette en IFRS 16 (sauf exemptions)."
@@ -7739,10 +7739,10 @@
               "type": "mcq",
               "question": "La caisse de pension présente un excédent de couverture de 5 M, utilisable par l'entreprise. Traitement chez l'entreprise ?",
               "options": [
-                "Aucune reconnaissance",
+                "Aucune reconnaissance au bilan",
                 "Passif",
-                "En annexe uniquement",
-                "Actif économique au bilan"
+                "Une mention en annexe uniquement",
+                "Un actif économique"
               ],
               "answer": 3,
               "explanation": "RPC 16 : actif économique reconnu si excédent ET accès (remboursement ou réduction de cotisations). Usage économique démontrable."
@@ -7751,10 +7751,10 @@
               "type": "mcq",
               "question": "Approche RPC 16 pour le 2e pilier suisse ?",
               "options": [
-                "Actuarielle détaillée (identique IAS 19)",
+                "Actuarielle détaillée, identique à IAS 19 (méthode PUC)",
                 "Hors champ",
-                "Pas de comptabilisation",
-                "ÉCONOMIQUE SIMPLIFIÉE : actif ou passif économique, charge = cotisations ± variation"
+                "Aucune comptabilisation au bilan",
+                "Économique : actif ou passif économique"
               ],
               "answer": 3,
               "explanation": "RPC 16 : approche pragmatique basée sur le degré de couverture de la caisse (RPC 26). Actif économique si accès aux excédents, passif si obligation additionnelle hors cotisations. Nettement plus simple qu'IAS 19 actuariel."
@@ -7786,10 +7786,10 @@
               "type": "mcq",
               "question": "Cotisations versées 500k. Augmentation de l'actif économique 100k (excédent partiellement utilisable). Charge annuelle ?",
               "options": [
-                "500k",
-                "600k",
-                "100k",
-                "400k (500 − 100 comme avantage)"
+                "500k (cotisations)",
+                "600k (500 + 100)",
+                "100k (variation seule)",
+                "400k"
               ],
               "answer": 3,
               "explanation": "Charge = cotisations − augmentation d'actif économique. Si l'entreprise gagne 100k d'avantage économique, la charge nette est 400k. Symétrique à une hausse d'actif."
@@ -7804,8 +7804,8 @@
               "type": "mcq",
               "question": "En RPC 16, les gains/pertes actuariels significatifs de la caisse de pension sont reconnus :",
               "options": [
-                "En résultat uniquement s'ils créent un avantage ou une obligation économique pour l'entreprise",
-                "En OCI non recyclable (comme IAS 19)",
+                "En résultat, s'ils créent un avantage ou une obligation",
+                "En autres éléments du résultat global non recyclables, comme IAS 19",
                 "Toujours en résultat immédiatement",
                 "Jamais"
               ],
@@ -7816,9 +7816,9 @@
               "type": "mcq",
               "question": "La caisse de pension présente un découvert de CHF 10 M et un plan d'assainissement impose des cotisations supplémentaires à l'employeur. Impact RPC 16 ?",
               "options": [
-                "Rien — la caisse est une entité distincte",
+                "Rien : la caisse de pension est une entité juridiquement distincte",
                 "OCI comme IAS 19",
-                "Provision pour le passif économique (obligation d'assainissement)",
+                "Provision pour l'obligation d'assainissement",
                 "Charge étalée sur 10 ans"
               ],
               "answer": 2,
@@ -7851,10 +7851,10 @@
               "type": "mcq",
               "question": "Disclosure RPC 16 OBLIGATOIRE ?",
               "options": [
-                "Nom des bénéficiaires",
-                "Description du régime + actif/passif économique + degré de couverture caisse",
-                "Détail individuel des pensions",
-                "Plan d'investissement de la caisse"
+                "Le nom des bénéficiaires de rentes et leurs adresses respectives",
+                "Le régime, l'actif/passif économique, la couverture",
+                "Le détail individuel des pensions versées",
+                "Le plan d'investissement de la caisse de pension"
               ],
               "answer": 1,
               "explanation": "RPC 16 : description du régime, montants reconnus au bilan, charges, situation financière de la caisse (couverture, réserves)."
@@ -7870,9 +7870,9 @@
               "question": "L'entreprise octroie des stock options à ses dirigeants. Traitement RPC ?",
               "options": [
                 "Charge 0",
-                "Uniquement au dénouement",
-                "Réserve secrète",
-                "Charge sur la durée d'acquisition, JV des options (équivalent IFRS 2 pragmatique)"
+                "Une charge uniquement au dénouement des options",
+                "Une réserve latente",
+                "Charge sur la période d'acquisition des droits"
               ],
               "answer": 3,
               "explanation": "RPC n'a pas de norme formelle mais la pratique s'aligne sur IFRS 2. Charge étalée sur vesting, JV des options via Black-Scholes ou binomial."
@@ -7910,10 +7910,10 @@
               "type": "mcq",
               "question": "Excédent caisse 5 M, réalisation par réduction de cotisations future plafonnée à 2 M (accès contractuel). Actif économique ?",
               "options": [
-                "5 M (quote-part totale)",
-                "0",
-                "3.5 M",
-                "2 M (plus faible de l'excédent et de l'avantage réalisable)"
+                "5 M (excédent total)",
+                "0 (aucun actif)",
+                "3.5 M (moyenne)",
+                "2 M"
               ],
               "answer": 3,
               "explanation": "RPC 16 : actif = plus faible de la quote-part et de l'avantage réalisable. 2 M (plafond d'accès) = limite. Les 3 M restants ne génèrent pas d'actif."
@@ -7928,10 +7928,10 @@
               "type": "mcq",
               "question": "Groupe suisse + filiales étrangères IAS 19. Comptes consolidés sous RPC 30. Approche cohérente ?",
               "options": [
-                "Appliquer RPC 16 pour tout",
+                "Appliquer RPC 16 à toutes les entités, sans retraitement",
                 "Appliquer IAS 19 pour tout",
-                "Au choix par filiale",
-                "Politique cohérente pour le groupe avec ajustement éventuel au niveau consolidation"
+                "Au choix par filiale, sans harmonisation",
+                "Une politique de groupe uniforme"
               ],
               "answer": 3,
               "explanation": "Consolidation : politique unique cohérente. Ajustements possibles pour harmoniser. Si RPC pour le groupe, retraiter les filiales IAS 19 vers RPC 16 (ou documenter l'option)."
@@ -7941,9 +7941,9 @@
               "question": "Un excédent de fonds de CHF 5 M dans la caisse peut-il être reconnu à l'actif du bilan de l'employeur en RPC 16 ?",
               "options": [
                 "Jamais",
-                "Systématiquement au prorata",
-                "Oui, SI l'entité a un accès économique (remboursement ou réduction de cotisations futures)",
-                "Uniquement si > 10 M"
+                "Oui, systématiquement au prorata des cotisations versées",
+                "Oui, s'il existe un avantage économique utilisable",
+                "Uniquement si l'excédent dépasse 10 M"
               ],
               "answer": 2,
               "explanation": "RPC 16 : actif économique reconnu uniquement si accès ÉCONOMIQUE à l'excédent (remboursement ou réduction future de cotisations autorisée par le règlement de la caisse). Similaire à IFRIC 14 en IFRS mais approche simplifiée."
@@ -7972,7 +7972,7 @@
           "content": "**Objectif RPC 24** :\nRégir la structure des capitaux propres et les opérations avec les actionnaires (augmentations/réductions de capital, actions propres, distributions).\n\n**Composantes des capitaux propres** :\n\n**① Capital** :\n• Capital-actions ou capital social\n• Valeur nominale des titres émis\n• Regroupement possible en catégories (actions ordinaires / privilégiées)\n\n**② Prime d'émission / agio** :\n• Excédent sur la valeur nominale à l'émission\n• Alimente les réserves\n• Distribuable sous conditions (réserves libres)\n\n**③ Réserves** :\n• **Réserve légale** : constitution obligatoire selon CO\n• **Réserves statutaires** : définies par les statuts\n• **Réserves libres** : pour distribution ou réinvestissement\n• **Réserves de réévaluation** : CO 725c (rare en RPC)\n• **Réserves spécifiques** : conversion (consolidation), hedge, OCI\n\n**④ Résultats reportés** :\n• Cumul des résultats antérieurs non distribués\n\n**⑤ Résultat de l'exercice** :\n• Résultat net de la période\n\n**⑥ Actions propres** :\n• En **diminution** des capitaux propres (valeur d'acquisition)\n• Pas un actif\n\n**⑦ Intérêts minoritaires** (consolidation) :\n• Quote-part des minoritaires dans les filiales consolidées\n• Présentation séparée\n\n**Exemple de présentation** :\n| Composante | N | N−1 |\n|------------|---|-----|\n| Capital-actions | 1'000 | 1'000 |\n| Agio | 500 | 500 |\n| Réserve légale | 200 | 200 |\n| Réserves libres | 800 | 600 |\n| Résultats reportés | 2'000 | 1'500 |\n| Actions propres | (300) | (100) |\n| **Total part du groupe** | **4'200** | **3'700** |\n| Intérêts minoritaires | 150 | 120 |\n| **Total capitaux propres** | **4'350** | **3'820** |\n\n**Réserve légale selon le CO** :\n• 5 % du résultat annuel affecté à la réserve légale jusqu'à 20 % du capital-actions\n• 10 % de la distribution dépassant 5 % du capital-actions également\n• Réglementation détaillée (CO 671 ss)\n\n**Convergence avec IFRS** :\n• Composition similaire\n• RPC met davantage l'accent sur la terminologie et la logique suisse du CO\n• Actions propres : traitement identique (diminution des KP)",
           "key_points": [
             "Composantes : capital + agio + réserves + résultats + actions propres",
-            "Réserve légale selon CO 671 (5 % du résultat jusqu'à 20 % capital)",
+            "Réserve légale selon CO 672 (5 % du résultat jusqu'à 20 % du capital)",
             "Agio = prime d'émission",
             "Actions propres = diminution (pas actif)",
             "Minoritaires présentés séparément",
@@ -7984,10 +7984,10 @@
               "type": "mcq",
               "question": "Rachat d'actions propres pour 200k. Présentation ?",
               "options": [
-                "Actif financier 200k",
-                "Diminution des capitaux propres de 200k",
-                "Charge 200k",
-                "Provision"
+                "Un actif financier de 200k",
+                "Réduction des fonds propres",
+                "Une charge de 200k",
+                "Une provision pour rachat d'actions"
               ],
               "answer": 1,
               "explanation": "Actions propres = diminution des KP au coût d'acquisition. Pas un actif. Convergence avec IAS 32."
@@ -7996,31 +7996,31 @@
               "type": "vrai_faux",
               "question": "Le CO impose une affectation minimale à la réserve légale de 5 % du résultat jusqu'à 20 % du capital-actions.",
               "answer": true,
-              "explanation": "Art. 671 CO : 5 % du bénéfice annuel, jusqu'à 20 % du capital-actions libéré. Règle classique de renforcement des capitaux propres."
+              "explanation": "Art. 672 CO (art. 671 aCO) : 5 % du bénéfice annuel, jusqu'à 20 % du capital-actions libéré. Règle classique de renforcement des capitaux propres."
             },
             {
               "type": "mcq",
               "question": "Intérêts minoritaires dans un groupe consolidé. Présentation ?",
               "options": [
-                "Part distincte des capitaux propres",
-                "En passif",
+                "Dans les capitaux propres, séparément",
+                "Au passif, en dettes à long terme",
                 "Hors bilan",
-                "Consolidés avec la part du groupe"
+                "Confondus avec la part du groupe dans les capitaux propres"
               ],
               "answer": 0,
               "explanation": "RPC 30 (et convergence IFRS 10) : intérêts minoritaires = composante distincte des capitaux propres, présentée après la part du groupe."
             },
             {
               "type": "mcq",
-              "question": "Réserve légale générale selon CO 671 ?",
+              "question": "Attribution à la réserve légale issue du bénéfice (CO 672, droit 2023) ?",
               "options": [
-                "5 % du bénéfice jusqu'à 20 % du capital (seuil)",
-                "10 % du bénéfice jusqu'à 50 % du capital",
-                "Pas d'obligation",
-                "50 % du bénéfice"
+                "5 % du bénéfice jusqu'à 20 % du capital",
+                "10 % du bénéfice, jusqu'à 50 % du capital",
+                "Aucune obligation légale d'attribution",
+                "50 % du bénéfice chaque année"
               ],
               "answer": 0,
-              "explanation": "CO 671 (révisé 2023) : attribution de 5 % du bénéfice annuel à la réserve légale jusqu'à 20 % du capital-actions. Règles spécifiques pour agios et capital propre. Réforme 2023 a modifié certains seuils."
+              "explanation": "CO 672 (droit 2023, ancien art. 671) : 5 % du bénéfice annuel est attribué à la réserve légale issue du bénéfice jusqu'à ce que celle-ci atteigne 20 % du capital-actions libéré ; une perte reportée doit d'abord être compensée. Les réserves légales (issues du capital et du bénéfice) ne peuvent être remboursées aux actionnaires que dans la mesure où elles dépassent la moitié du capital-actions."
             },
             {
               "type": "vrai_faux",
@@ -8049,10 +8049,10 @@
               "type": "mcq",
               "question": "Cession d'actions propres coût 40k, prix de vente 55k. Impact résultat ?",
               "options": [
-                "0 (différence en KP / réserves libres)",
-                "+15k en résultat",
-                "+15k en OCI",
-                "Dividende reçu"
+                "Aucun (écart en fonds propres)",
+                "+15k en résultat financier",
+                "+15k en résultat global (OCI)",
+                "Un dividende reçu de 15k, comptabilisé en produit"
               ],
               "answer": 0,
               "explanation": "Actions propres = transactions sur KP. Aucun impact résultat (RPC 24 et IAS 32). Différence imputée aux réserves libres."
@@ -8067,10 +8067,10 @@
               "type": "mcq",
               "question": "Dividendes versés : 100k sur 1'000'000 actions, dont 100'000 détenues en propre. Combien sort effectivement ?",
               "options": [
-                "90k (sur les 900'000 actions hors auto-détention)",
+                "90k",
                 "100k",
                 "110k",
-                "0"
+                "0 (dividende sur propres actions)"
               ],
               "answer": 0,
               "explanation": "Les actions propres n'ont pas droit au dividende (auto-dividende éliminé). Distribution effective : 100 × 900/1'000 = 90k."
@@ -8079,10 +8079,10 @@
               "type": "mcq",
               "question": "Limite de détention d'actions propres selon le CO ?",
               "options": [
-                "5 %",
-                "10 % (ou 20 % si restrictions de transférabilité)",
-                "25 %",
-                "Aucune limite"
+                "5 % du capital-actions",
+                "10 % (20 % si actions liées)",
+                "25 % du capital-actions, sans autre condition",
+                "Aucune limite légale"
               ],
               "answer": 1,
               "explanation": "CO 659 : limite 10 % (20 % si restrictions). Réserves libres nécessaires à hauteur du coût d'acquisition. Au-delà : revendre dans un délai de 2 ans. Risque fiscal de requalification en distribution si conservées longtemps."
@@ -8114,7 +8114,7 @@
               "type": "mcq",
               "question": "Émission 5'000 actions VN 10 à 45. Frais d'émission 10'000. Agio final ?",
               "options": [
-                "165'000 (175'000 − 10'000 frais)",
+                "165'000",
                 "225'000 (5'000 × 45)",
                 "175'000 (5'000 × 35)",
                 "190'000"
@@ -8132,10 +8132,10 @@
               "type": "mcq",
               "question": "AG décide un dividende brut de 1 M. Impôt anticipé 35 %. Sortie de cash ?",
               "options": [
-                "1 M",
-                "Total 1 M (sortie = montant de la décision)",
-                "650k (net après IA) + 350k versé à l'AFC",
-                "Au choix"
+                "650k seulement (net de l'impôt anticipé)",
+                "1 M (650k aux actionnaires, 350k à l'AFC)",
+                "1.35 M (dividende + impôt anticipé de 35 %)",
+                "350k (impôt anticipé uniquement)"
               ],
               "answer": 1,
               "explanation": "Le dividende brut sort intégralement, 35 % vers l'AFC et 65 % vers les actionnaires (qui peuvent récupérer l'IA selon leur statut fiscal). Impact cash total = 1 M."
@@ -8144,9 +8144,9 @@
               "type": "mcq",
               "question": "Une augmentation de capital : prix d'émission 150, valeur nominale 100. Traitement des 50 d'agio ?",
               "options": [
-                "Ajouté à la réserve légale issue du capital (agio), net des frais d'émission",
-                "Produit en résultat",
-                "Dividende aux actionnaires",
+                "À la réserve légale issue du capital",
+                "En produit au compte de résultat",
+                "Distribués comme dividende aux actionnaires",
                 "Goodwill"
               ],
               "answer": 0,
@@ -8156,9 +8156,9 @@
               "type": "mcq",
               "question": "Les frais d'émission d'actions (avocats, banques) en RPC 24 sont :",
               "options": [
-                "Charges de l'exercice",
+                "Des charges de l'exercice",
                 "Capitalisés en incorporels",
-                "Déduits directement de l'agio (KP)",
+                "Imputés sur l'agio",
                 "Amortis sur 5 ans"
               ],
               "answer": 2,
@@ -8185,9 +8185,9 @@
               "type": "mcq",
               "question": "Action privilégiée avec rachat obligatoire à date fixe et dividende fixe. Classification ?",
               "options": [
-                "KP (c'est une action)",
-                "Instrument composé",
-                "Dette financière (substance économique)",
+                "Des capitaux propres (c'est une action)",
+                "Un instrument composé",
+                "Une dette financière",
                 "Hors bilan"
               ],
               "answer": 2,
@@ -8216,8 +8216,8 @@
               "question": "Une obligation convertible est émise pour 1'000. JV de la dette pure = 920. Traitement en RPC ?",
               "options": [
                 "Tout en dette (1'000)",
-                "Tout en KP",
-                "Séparation : dette 920 + KP (option de conversion) 80",
+                "Tout en capitaux propres (1'000)",
+                "Dette 920 + fonds propres 80",
                 "Au choix"
               ],
               "answer": 2,
@@ -8259,9 +8259,9 @@
               "type": "mcq",
               "question": "Société cotée SIX avec bilan 15 M. Peut-elle se limiter aux RPC fondamentales ?",
               "options": [
-                "Oui, seuil respecté",
-                "Oui si approuvé par l'AG",
-                "Non, les cotées doivent appliquer toutes les RPC + RPC 31",
+                "Oui, le seuil de taille est respecté",
+                "Oui, si l'assemblée générale l'approuve",
+                "Non : RPC complètes + RPC 31",
                 "Au choix"
               ],
               "answer": 2,
@@ -8278,9 +8278,9 @@
               "question": "Information supplémentaire OBLIGATOIRE sous RPC 31 ?",
               "options": [
                 "Liste des employés",
-                "BPA de base et dilué, segments, parties liées, rémunération des dirigeants",
+                "BPA, segments, parties liées, rémunérations",
                 "Plan marketing",
-                "Budget prévisionnel détaillé"
+                "Le budget prévisionnel détaillé de l'exercice suivant"
               ],
               "answer": 1,
               "explanation": "RPC 31 étoffe les exigences : BPA, segments (cohérent IFRS 8), parties liées, rémunération (convergence OaCD), gouvernance."
@@ -8289,10 +8289,10 @@
               "type": "mcq",
               "question": "RPC 31 s'applique à :",
               "options": [
-                "Toutes les entités suisses",
+                "À toutes les entités suisses appliquant les RPC",
                 "PME uniquement",
-                "Toutes les entités COTÉES (et autres soumises à RPC 31 contractuellement)",
-                "Fondations uniquement"
+                "Aux entités cotées",
+                "Aux fondations uniquement"
               ],
               "answer": 2,
               "explanation": "RPC 31 : exigences additionnelles pour cotées (actions ou dettes). Complète les autres normes RPC avec BPA, segments, rapport semestriel, rémunérations dirigeants, parties liées renforcées."
@@ -8324,9 +8324,9 @@
               "type": "mcq",
               "question": "Résultat 5 M. Actions 01.01 : 2'000'000. Émission 500'000 au 01.04. BPA de base ?",
               "options": [
-                "2.12 (5 / 2.375) avec pondération",
-                "2.0 (5 / 2.5)",
-                "2.5",
+                "2.11",
+                "2.00",
+                "2.50",
                 "1.67"
               ],
               "answer": 0,
@@ -8342,9 +8342,9 @@
               "type": "mcq",
               "question": "Segment avec CA externe de 8 % du total et résultat de 12 %. Reportable ?",
               "options": [
-                "Non (CA < 10 %)",
+                "Non (CA inférieur à 10 %)",
                 "Au choix",
-                "Oui (au moins un critère ≥ 10 %)",
+                "Oui (un critère ≥ 10 %)",
                 "Seulement après agrégation"
               ],
               "answer": 2,
@@ -8389,9 +8389,9 @@
               "type": "mcq",
               "question": "Prêt accordé au CEO à 1 % alors que le marché est à 5 %. Disclosure ?",
               "options": [
-                "Non nécessaire (rémunération en nature)",
-                "Obligatoire : nature, montant, taux, différence avec conditions de marché",
-                "Uniquement le montant",
+                "Non nécessaire, s'agissant d'une rémunération en nature",
+                "Obligatoire : nature, montant, conditions",
+                "Uniquement le montant du prêt",
                 "Annexe confidentielle"
               ],
               "answer": 1,
@@ -8407,10 +8407,10 @@
               "type": "mcq",
               "question": "Le disclosure individuel est OBLIGATOIRE pour :",
               "options": [
-                "Chaque membre de la direction",
+                "Chaque membre de la direction, individuellement",
                 "Aucun (agrégé uniquement)",
                 "Uniquement le CEO",
-                "Le plus haut rémunéré de la direction + chaque membre du CA (généralement)"
+                "Le plus haut rémunéré et chaque administrateur"
               ],
               "answer": 3,
               "explanation": "OaCD + RPC 31 : disclosure individuel CA (chaque membre) + plus haut rémunéré de la direction (souvent CEO). Reste de la direction peut être agrégé."
@@ -8466,10 +8466,10 @@
               "type": "mcq",
               "question": "Société suisse cotée à SIX et NYSE. Choix de référentiel ?",
               "options": [
-                "Obligatoirement RPC",
-                "Obligatoirement IFRS",
-                "RPC 31 uniquement",
-                "IFRS ou US GAAP acceptés (RPC possible mais rare pour double cotée US)"
+                "Obligatoirement les RPC",
+                "Obligatoirement les IFRS",
+                "Uniquement RPC 31, obligatoire pour toute société cotée",
+                "IFRS ou US GAAP (RPC rare)"
               ],
               "answer": 3,
               "explanation": "La double cotation SIX + NYSE implique généralement IFRS ou US GAAP pour la comparabilité internationale. RPC accepté par SIX mais rare en double cotation."
@@ -8478,9 +8478,9 @@
               "type": "mcq",
               "question": "Reporting extra-financier obligatoire en Suisse (CO 964a) concerne :",
               "options": [
-                "Entreprises d'intérêt public dépassant 500 ETP et certains seuils financiers",
-                "Uniquement les cotées",
-                "Toutes les entités",
+                "EIP ≥ 500 EPT et certains seuils",
+                "Uniquement les sociétés cotées en bourse",
+                "Toutes les entités suisses",
                 "Fondations uniquement"
               ],
               "answer": 0,
@@ -11120,9 +11120,9 @@
               "type": "mcq",
               "question": "Un paiement d'intérêts est classé en RPC 4 :",
               "options": [
-                "Obligatoirement en exploitation",
-                "Au choix (cohérent d'une période à l'autre)",
-                "Obligatoirement en financement",
+                "Obligatoirement en activités d'exploitation",
+                "Au choix, mais de façon constante",
+                "Obligatoirement en activités de financement",
                 "En investissement"
               ],
               "answer": 1,
@@ -11183,10 +11183,10 @@
               "type": "mcq",
               "question": "L'acquisition d'une immobilisation financée par emprunt pour CHF 500 apparaît au TFT comme :",
               "options": [
-                "Aucun flux (opération sans cash)",
+                "Aucun flux, s'agissant d'une opération sans trésorerie",
                 "Flux d'exploitation −500",
-                "Flux d'investissement net de −500",
-                "Flux d'investissement −500 + flux de financement +500"
+                "Un flux d'investissement net de −500 uniquement",
+                "Investissement −500, financement +500"
               ],
               "answer": 3,
               "explanation": "Double présentation brute : sortie en investissement et entrée en financement. L'information peut être détaillée en annexe pour transaction non monétaire."
@@ -11202,9 +11202,9 @@
               "question": "Une provision pour litige (+50) comptabilisée dans l'exercice est traitée en méthode indirecte :",
               "options": [
                 "Déduite du résultat",
-                "Reclassée en financement",
+                "Reclassée en activités de financement",
                 "Sans retraitement",
-                "Ajoutée au résultat (non-cash)"
+                "Ajoutée au résultat"
               ],
               "answer": 3,
               "explanation": "Dotation à provision = charge sans cash → rajoutée au résultat pour obtenir le flux d'exploitation."
@@ -11246,10 +11246,10 @@
               "type": "mcq",
               "question": "Un contrat de leasing financier pour un véhicule (CHF 60) est comptabilisé :",
               "options": [
-                "Aucun flux (transaction non monétaire) — annexe",
-                "Flux d'investissement (60)",
-                "Flux de financement +60",
-                "Flux d'exploitation"
+                "Aucun flux (opération non monétaire)",
+                "Un flux d'investissement de −60",
+                "Un flux de financement de +60",
+                "Un flux d'exploitation de −60 (charge de leasing)"
               ],
               "answer": 0,
               "explanation": "Pas de cash à la conclusion du leasing. Les loyers subséquents seront ventilés (intérêts / remboursement de dette)."
@@ -11292,9 +11292,9 @@
               "question": "Cession d'une machine pour CHF 300, VNC 200, plus-value 100. Impact correct au TFT ?",
               "options": [
                 "+300 en investissement seulement",
-                "+200 en investissement",
-                "+100 en exploitation",
-                "+300 en investissement et −100 en exploitation"
+                "+200 en investissement (VNC)",
+                "+100 en exploitation (plus-value encaissée)",
+                "+300 investissement, −100 exploitation"
               ],
               "answer": 3,
               "explanation": "Prix encaissé brut en investissement (+300) ; plus-value retirée du résultat en méthode indirecte (−100) pour éviter double compte."
@@ -11327,10 +11327,10 @@
               "type": "mcq",
               "question": "Différence de conversion sur les liquidités en devise : présentation ?",
               "options": [
-                "Ligne séparée entre variation nette et solde final",
-                "Section exploitation",
-                "Section financement",
-                "Diluée dans chaque section"
+                "Sur une ligne séparée",
+                "Dans la section exploitation",
+                "Dans la section financement",
+                "Répartie dans chaque section"
               ],
               "answer": 0,
               "explanation": "Présentation dédiée en bas du TFT pour réconcilier la variation arithmétique avec les soldes de bilan."
@@ -11886,9 +11886,9 @@
               "type": "mcq",
               "question": "Un cautionnement bancaire de CHF 1 M pour une filiale solvable est :",
               "options": [
-                "Une provision au passif",
+                "Une provision au passif du bilan",
                 "Un actif éventuel",
-                "Un engagement hors bilan (RPC 5)",
+                "Un engagement hors bilan",
                 "Aucun impact"
               ],
               "answer": 2,
@@ -11906,8 +11906,8 @@
               "options": [
                 "Un changement de méthode comptable",
                 "L'accord de l'assemblée générale",
-                "L'obligation devient probable et mesurable",
-                "Une décision du conseil d'administration"
+                "Une sortie devenue probable et mesurable",
+                "Une décision formelle du conseil d'administration de l'entité"
               ],
               "answer": 2,
               "explanation": "Critères RPC 23 : probabilité + mesurabilité fiable. Reclassement au bilan."
@@ -11949,10 +11949,10 @@
               "type": "mcq",
               "question": "Une lettre de confort \"forte\" (patronage) d'une mère envers une filiale doit être :",
               "options": [
-                "Divulguée en annexe RPC 5 (comptes individuels)",
-                "Enregistrée au passif",
+                "Mentionnée en annexe (RPC 5)",
+                "Enregistrée au passif du bilan",
                 "Ignorée",
-                "Provisionnée à 100 %"
+                "Provisionnée à 100 % de l'engagement"
               ],
               "answer": 0,
               "explanation": "Obligation juridique → engagement hors bilan divulgué. Provision seulement si sortie probable."
@@ -11985,10 +11985,10 @@
               "type": "mcq",
               "question": "Montant à divulguer pour une garantie bancaire de CHF 800 pour laquelle une contre-garantie de CHF 300 existe ?",
               "options": [
-                "500 (net)",
-                "300",
-                "800 (montant brut) avec mention de la contre-garantie",
-                "Aucun"
+                "500 (montant net)",
+                "300 (montant de la contre-garantie seulement)",
+                "800 (brut), contre-garantie mentionnée",
+                "Aucun montant"
               ],
               "answer": 2,
               "explanation": "Montant maximum appelable reste 800 ; la contre-garantie est divulguée séparément pour information."
@@ -12012,9 +12012,9 @@
               "type": "mcq",
               "question": "Un leasing opérationnel sur 4 ans à CHF 120/an. Comment le divulguer en Swiss GAAP RPC ?",
               "options": [
-                "Capitaliser 480 au bilan",
-                "Provision de 480",
-                "Loyers futurs en annexe : 120 à 1 an, 360 de 1-5 ans",
+                "Capitaliser 480 au bilan, comme un leasing financier",
+                "Une provision de 480",
+                "En annexe : 120 (< 1 an), 360 (1-5 ans)",
                 "Aucune divulgation"
               ],
               "answer": 2,
@@ -12048,9 +12048,9 @@
               "type": "mcq",
               "question": "Un engagement d'achat ferme d'une machine à CHF 500, livraison l'an prochain. Traitement ?",
               "options": [
-                "Provision de 500",
-                "Engagement hors bilan 500 en annexe",
-                "Immobilisation 500 + dette 500",
+                "Une provision de 500",
+                "Engagement de 500 en annexe",
+                "Immobilisation de 500 et dette de 500 au bilan",
                 "Aucun"
               ],
               "answer": 1,
@@ -12075,10 +12075,10 @@
               "type": "mcq",
               "question": "Un immeuble de CHF 8 M est hypothéqué pour garantir un emprunt de CHF 5 M. Traitement au bilan et en annexe ?",
               "options": [
-                "Sortir l'immeuble du bilan",
+                "Sortir l'immeuble du bilan tant qu'il est grevé d'hypothèque",
                 "Provisionner 5 M",
                 "Rien de particulier",
-                "Immeuble au bilan 8 M, emprunt au passif 5 M, annexe mentionne l'hypothèque"
+                "Bilan inchangé (8 M / 5 M), hypothèque en annexe"
               ],
               "answer": 3,
               "explanation": "L'immeuble reste au bilan ; la dette est inscrite ; l'annexe RPC 5 mentionne la restriction de disponibilité (gage)."
@@ -12111,10 +12111,10 @@
               "type": "mcq",
               "question": "Piège classique : confusion entre provision et engagement hors bilan. Quelle est la clé ?",
               "options": [
-                "La probabilité de sortie et la mesurabilité",
+                "La probabilité et la mesurabilité",
                 "Le montant",
                 "L'échéance",
-                "La nature du bénéficiaire"
+                "La nature et la qualité du bénéficiaire de l'engagement"
               ],
               "answer": 0,
               "explanation": "Probabilité + mesurabilité fiable → provision (RPC 23) ; sinon engagement hors bilan (RPC 5)."
@@ -12183,10 +12183,10 @@
               "type": "mcq",
               "question": "Qu'est-ce qui n'est PAS typiquement dans l'annexe RPC ?",
               "options": [
-                "Ventilation du CA par segment",
+                "La ventilation du CA par segment",
                 "Détail des provisions",
-                "Projections de résultats futurs",
-                "Transactions parties liées"
+                "Les projections de résultats",
+                "Les transactions avec parties liées"
               ],
               "answer": 2,
               "explanation": "Les projections prospectives ne font pas partie des états financiers RPC (information de gestion séparée)."
@@ -12211,9 +12211,9 @@
               "question": "Une entreprise change de méthode d'évaluation des stocks de FIFO à CUMP. Impact dans l'annexe ?",
               "options": [
                 "Aucune mention",
-                "Mention du changement + impact chiffré + retraitement comparatif",
-                "Mention seulement",
-                "Impact chiffré seulement"
+                "Changement, impact chiffré, comparatifs retraités",
+                "Une simple mention du changement, sans chiffres ni retraitement",
+                "L'impact chiffré seulement, sans autre mention"
               ],
               "answer": 1,
               "explanation": "RPC 3/13 : changement de méthode → 3 éléments obligatoires dans l'annexe."
@@ -12228,9 +12228,9 @@
               "type": "mcq",
               "question": "Pour les stocks, l'annexe indique généralement :",
               "options": [
-                "Méthode (FIFO/CUMP) + règle valeur la plus basse",
-                "Uniquement la valeur au bilan",
-                "Les fournisseurs principaux",
+                "La méthode et la règle de la valeur la plus basse",
+                "Uniquement la valeur au bilan des stocks",
+                "Les fournisseurs principaux et leurs conditions de paiement",
                 "Les délais de rotation"
               ],
               "answer": 0,
@@ -12291,9 +12291,9 @@
               "type": "mcq",
               "question": "Parties liées : seuil de divulgation ?",
               "options": [
-                "Principe de matérialité contextualisé",
-                "CHF 10 000",
-                "CHF 100 000",
+                "La matérialité",
+                "CHF 10'000",
+                "CHF 100'000",
                 "1 % du total du bilan"
               ],
               "answer": 0,
@@ -12310,8 +12310,8 @@
               "question": "Un groupe cède un actif à une filiale à un prix nettement inférieur au marché. Dans l'annexe :",
               "options": [
                 "Mentionner uniquement le montant",
-                "Mentionner la nature, le montant, les conditions NON standards",
-                "Rien à divulguer (intra-groupe)",
+                "Nature, montant et conditions non standards",
+                "Rien à divulguer, s'agissant d'une opération intra-groupe",
                 "Juste le nom de la partie liée"
               ],
               "answer": 1,
@@ -12336,10 +12336,10 @@
               "type": "mcq",
               "question": "Un client important fait faillite le 15 janvier ; sa situation était fragile au 31 décembre. Traitement ?",
               "options": [
-                "Événement ajustant, déprécier la créance au 31.12",
-                "Événement non ajustant, annexe",
+                "Ajustant : déprécier la créance",
+                "Non ajustant : une simple mention en annexe",
                 "Aucun traitement",
-                "Provision à 50 %"
+                "Une provision forfaitaire de 50 %"
               ],
               "answer": 0,
               "explanation": "Confirme une situation préexistante → ajustant : déprécier la créance dans les comptes du 31.12."
@@ -12354,10 +12354,10 @@
               "type": "mcq",
               "question": "La fenêtre de considération des événements post-clôture se termine :",
               "options": [
-                "Le 31 janvier",
+                "Le 31 janvier suivant la clôture",
                 "Le 30 juin",
                 "À la date de l'assemblée générale",
-                "À la date d'autorisation de publication des comptes"
+                "À l'autorisation de publication"
               ],
               "answer": 3,
               "explanation": "Généralement signature par le CA des comptes pour transmission à l'organe de révision et à l'AG."
@@ -12408,10 +12408,10 @@
               "type": "mcq",
               "question": "Une association sportive locale sans activité commerciale applique :",
               "options": [
-                "RPC 10 uniquement",
+                "RPC 10 uniquement (incorporels)",
                 "IFRS",
-                "RPC 21 si ses comptes sont publiés",
-                "Aucun référentiel"
+                "RPC 21 (si comptes publiés)",
+                "Aucun référentiel n'est applicable"
               ],
               "answer": 2,
               "explanation": "RPC 21 est le référentiel dédié aux OBNL suisses publiant des comptes (donateurs, ZEWO...)."
@@ -12444,9 +12444,9 @@
               "type": "mcq",
               "question": "La structure des comptes OBNL comprend obligatoirement (selon RPC 21) :",
               "options": [
-                "Bilan et compte de résultat seulement",
+                "Le bilan et le compte de résultat seulement, sans annexe",
                 "Uniquement un rapport d'activité",
-                "Bilan, compte d'exploitation, flux de trésorerie, variation du capital, annexe",
+                "Bilan, exploitation, flux, variation du capital, annexe",
                 "Bilan + annexe + inventaire"
               ],
               "answer": 2,
@@ -12471,10 +12471,10 @@
               "type": "mcq",
               "question": "Une OBNL reçoit CHF 50 000 pour \"projet école au Mali\" mais n'en utilise que CHF 30 000 dans l'année. Solde à la clôture ?",
               "options": [
-                "Résultat net +20 000",
-                "Fonds affecté \"projet école Mali\" de 20 000",
+                "Un résultat net de +20'000",
+                "Un fonds affecté de 20'000",
                 "Fonds libre de 20 000",
-                "Produit différé de 20 000"
+                "Un produit différé de 20'000 au passif"
               ],
               "answer": 1,
               "explanation": "Affectation imposée par le donateur → le solde non utilisé reste cantonné au passif en fonds affecté."
@@ -12507,9 +12507,9 @@
               "type": "mcq",
               "question": "Une OBNL utilise à d'autres fins un fonds affecté. Conséquences ?",
               "options": [
-                "Obligation de restitution ou reclassement + risque juridique",
-                "Aucune car la comptabilité enregistre",
-                "Résultat extraordinaire",
+                "Restitution ou réaffectation, risque juridique",
+                "Aucune, puisque la comptabilité enregistre l'opération",
+                "Un résultat extraordinaire",
                 "Impact sur la TVA uniquement"
               ],
               "answer": 0,
@@ -12552,10 +12552,10 @@
               "type": "mcq",
               "question": "Un don affecté de CHF 100 non utilisé dans l'année se retrouve :",
               "options": [
-                "En fonds affecté (attribution depuis le résultat)",
-                "Dans le résultat net positif",
+                "Dans un fonds affecté",
+                "Dans le résultat net positif de l'exercice",
                 "En capital libre",
-                "En produit constaté d'avance"
+                "En produit constaté d'avance au passif"
               ],
               "answer": 0,
               "explanation": "Le don entre en produits ; l'attribution au fonds neutralise le résultat et cantonne les 100 CHF pour usage futur."
@@ -12598,8 +12598,8 @@
               "question": "Une fondation applique :",
               "options": [
                 "Seulement RPC 21",
-                "RPC fondamentales + RPC 21 + additionnelles pertinentes",
-                "RPC 21 à la place des autres",
+                "Les RPC fondamentales + RPC 21",
+                "RPC 21 à la place de toutes les autres normes",
                 "IFRS obligatoire"
               ],
               "answer": 1,
@@ -13191,9 +13191,9 @@
               "type": "mcq",
               "question": "Quelle opération n'est PAS un dérivé au sens de RPC 27 ?",
               "options": [
-                "Contrat de livraison de marchandises à exécution physique normale",
-                "Swap de taux",
-                "Option d'achat sur action",
+                "Une livraison physique normale",
+                "Un swap de taux d'intérêt",
+                "Une option d'achat sur action cotée",
                 "Forward de change"
               ],
               "answer": 0,
@@ -13209,10 +13209,10 @@
               "type": "mcq",
               "question": "Un swap de taux (IRS) est typiquement utilisé pour :",
               "options": [
-                "Convertir un taux variable en taux fixe (ou inversement)",
+                "Passer d'un taux variable à fixe",
                 "Couvrir un risque de change",
                 "Spéculer sur une action",
-                "Investir à long terme"
+                "Investir à long terme en obligations"
               ],
               "answer": 0,
               "explanation": "IRS : échange d'un flux fixe contre un flux variable (ou inversement) sur un nominal."
@@ -13227,10 +13227,10 @@
               "type": "mcq",
               "question": "Finalité d'un dérivé utilisé sans qualification formelle de hedge mais à des fins économiques :",
               "options": [
-                "Trading",
-                "Adossement opérationnel",
-                "Couverture qualifiée",
-                "Placement"
+                "Du trading",
+                "Une couverture économique",
+                "Une couverture qualifiée",
+                "Un placement financier à long terme"
               ],
               "answer": 1,
               "explanation": "Adossement économique sans documentation formelle → traité comme trading (variations en résultat)."
@@ -13254,9 +13254,9 @@
               "type": "mcq",
               "question": "Une couverture de flux futurs (CF hedge) efficace. La variation de juste valeur de la partie efficace :",
               "options": [
-                "Va en résultat",
-                "Reste dans le bilan sans impact",
-                "Va en OCI / capitaux propres, recyclée plus tard en résultat",
+                "En résultat immédiatement",
+                "Au bilan, sans aucun impact sur les fonds propres",
+                "En fonds propres, recyclée ensuite",
                 "Va en réserves distribuables"
               ],
               "answer": 2,
@@ -13290,10 +13290,10 @@
               "type": "mcq",
               "question": "Un hedge de juste valeur est interrompu suite à la vente de l'instrument. Conséquence sur l'élément couvert ?",
               "options": [
-                "Continuation des ajustements de juste valeur",
-                "Retour à son évaluation normale (coût amorti)",
+                "La poursuite des ajustements de juste valeur",
+                "Retour à son évaluation normale",
                 "Dépréciation obligatoire",
-                "Reclassement en trading"
+                "Un reclassement en trading"
               ],
               "answer": 1,
               "explanation": "L'élément couvert retourne à son traitement normal ; les ajustements FV cumulés à date restent figés et sont amortis sur la vie restante de l'élément."
@@ -13353,9 +13353,9 @@
               "type": "mcq",
               "question": "Une prime d'option payée CHF 50 pour un call 3 mois. Traitement au jour 1 ?",
               "options": [
-                "Actif 50 (prime payée)",
-                "Charge 50",
-                "Passif 50",
+                "Un actif de 50",
+                "Une charge de 50",
+                "Un passif de 50",
                 "Aucune écriture"
               ],
               "answer": 0,
@@ -13380,9 +13380,9 @@
               "type": "mcq",
               "question": "Une entreprise veut appliquer le hedge accounting rétroactivement à un forward conclu il y a 3 mois mais non documenté. Possible ?",
               "options": [
-                "Oui si l'efficacité est démontrée",
-                "Non, application prospective uniquement dès documentation",
-                "Oui avec approbation de l'auditeur",
+                "Oui, si l'efficacité de la couverture est démontrée",
+                "Non, seulement de façon prospective",
+                "Oui, avec l'approbation de l'auditeur",
                 "Oui si le taux a bougé"
               ],
               "answer": 1,
@@ -13416,10 +13416,10 @@
               "type": "mcq",
               "question": "Une PME utilise des forwards pour couvrir des exports en EUR mais sans documentation. Impact :",
               "options": [
-                "Traité comme trading : variations JV en résultat immédiatement",
-                "CF hedge automatique",
+                "Traités comme trading (JV en résultat)",
+                "Une couverture de flux de trésorerie automatique",
                 "Aucun impact au bilan",
-                "Reporting différé obligatoire"
+                "Un reporting différé obligatoire"
               ],
               "answer": 0,
               "explanation": "Absence de documentation → pas de hedge accounting → variations de JV en résultat financier à chaque clôture."
