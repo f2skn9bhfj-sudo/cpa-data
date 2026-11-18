@@ -28,7 +28,7 @@ const HUB_SECTIONS = [
         title: "🎯 S'entraîner",
         cards: [
             { tab: 'trainer', d: 'Sprints de flashcards en répétition espacée (SM-2) et cours guidés.' },
-            { tab: 'qcm', d: '3 828 questions corrigées sur les 16 modules, examen blanc noté sur 6.' },
+            { tab: 'qcm', d: '3 831 questions corrigées sur les 16 modules, examen blanc noté sur 6.' },
             { tab: 'fcdb', d: 'Toutes les cartes, filtrables ; révise une sélection en un clic.' },
             { tab: 'oral', d: "Préparation à l'examen oral, thème par thème, avec simulateur." },
             { tab: 'progress', d: 'Ta progression par module : normes revues, QCM, cartes.' },
