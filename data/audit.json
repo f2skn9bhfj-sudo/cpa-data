@@ -22111,7 +22111,7 @@
             {
               "type": "warn",
               "label": "REFUS = LIMITATION",
-              "text": "Un **refus de la direction** de laisser l'auditeur contacter l'avocat est un **signal d'alarme** : il prive d'un élément probant clé et conduit, faute d'alternative, à une **opinion modifiée** — parfois à une **impossibilité d'exprimer une opinion**."
+              "text": "Un **refus de la direction** de laisser l'auditeur contacter l'avocat est un **signal d'alarme** : il privé d'un élément probant clé et conduit, faute d'alternative, à une **opinion modifiée** — parfois à une **impossibilité d'exprimer une opinion**."
             }
           ]
         },
@@ -24502,7 +24502,7 @@
         "Se contenter de l'**explication orale** de la direction face à un écart est une faute : le §7 exige de **corroborer** cette explication par des éléments probants ; à défaut, il peut d'ailleurs s'agir d'un signal de fraude (ISA 240).",
         "Travailler sur des **totaux agrégés** est dangereux : l'agrégation **masque les anomalies qui se compensent** ; il faut **désagréger** les données (par mois, par produit, par site) pour construire une attente précise (§5c).",
         "Fixer l'**écart acceptable après coup**, pour faire « passer » un écart constaté, est interdit : cet écart se détermine **à l'avance (ex ante)**, en lien avec la **matérialité** (§5d et ISA 320).",
-        "Comparer le réel à un **budget qui est en réalité un objectif commercial** gonflé, ou bâtir l'attente sur des données issues du **même système non contrôlé** que le poste audité, prive la procédure de toute valeur probante.",
+        "Comparer le réel à un **budget qui est en réalité un objectif commercial** gonflé, ou bâtir l'attente sur des données issues du **même système non contrôlé** que le poste audité, privé la procédure de toute valeur probante.",
         "Appliquer des analytiques de substance à des **estimations subjectives** ou à des postes **exceptionnels** est inadéquat : la relation n'y est pas prévisible ; il faut alors passer aux tests de détail ou appliquer ISA 540."
       ],
       "mcq": [
@@ -28429,7 +28429,7 @@
             "Opinion défavorable systématique, la continuité étant présumée compromise"
           ],
           "answer": 1,
-          "explanation": "§24 : un refus d'évaluer/d'étendre prive l'auditeur d'**éléments probants essentiels** : c'est une **limitation d'étendue** → **réserve ou impossibilité d'exprimer une opinion** selon l'ampleur, et **non** une opinion « défavorable ». Confondre les deux est un piège récurrent : défavorable = désaccord ; impossibilité = manque de preuve.",
+          "explanation": "§24 : un refus d'évaluer/d'étendre privé l'auditeur d'**éléments probants essentiels** : c'est une **limitation d'étendue** → **réserve ou impossibilité d'exprimer une opinion** selon l'ampleur, et **non** une opinion « défavorable ». Confondre les deux est un piège récurrent : défavorable = désaccord ; impossibilité = manque de preuve.",
           "difficulty": "hard"
         },
         {
@@ -39887,7 +39887,7 @@
         },
         {
           "titre": "Évaluation des anomalies & formation de la conclusion (§30-33)",
-          "body": "Au terme des travaux, l'auditeur **évalue** (*Evaluation of Misstatements*, **§30-33**) si quelque chose a attiré son attention le portant à croire que les informations intermédiaires **ne sont pas établies, dans tous leurs aspects significatifs**, conformément au référentiel applicable. Il considère les **anomalies non corrigées**, individuellement et **cumulées**, au regard du caractère significatif. Si des éléments laissent croire à une anomalie significative et que la direction **refuse de corriger**, ou si l'auditeur n'a pu obtenir des éléments **suffisants** (limitation), il **forme une conclusion modifiée**. Sinon, il exprime une **conclusion non modifiée**, en **forme négative** : « **sur la base de notre examen limité, nous n'avons pas relevé d'éléments nous portant à croire que les informations financières intermédiaires ci-jointes ne sont pas établies, dans tous leurs aspects significatifs, conformément à [référentiel]** » (*nothing has come to our attention*). La double négation est volontaire : elle traduit l'assurance **limitée**, à l'opposé de l'opinion **positive** d'un audit. La conclusion ne peut être datée **avant** l'obtention des éléments suffisants, déclarations écrites comprises.",
+          "body": "Au terme des travaux, l'auditeur **évalue** (*Évaluation of Misstatements*, **§30-33**) si quelque chose a attiré son attention le portant à croire que les informations intermédiaires **ne sont pas établies, dans tous leurs aspects significatifs**, conformément au référentiel applicable. Il considère les **anomalies non corrigées**, individuellement et **cumulées**, au regard du caractère significatif. Si des éléments laissent croire à une anomalie significative et que la direction **refuse de corriger**, ou si l'auditeur n'a pu obtenir des éléments **suffisants** (limitation), il **forme une conclusion modifiée**. Sinon, il exprime une **conclusion non modifiée**, en **forme négative** : « **sur la base de notre examen limité, nous n'avons pas relevé d'éléments nous portant à croire que les informations financières intermédiaires ci-jointes ne sont pas établies, dans tous leurs aspects significatifs, conformément à [référentiel]** » (*nothing has come to our attention*). La double négation est volontaire : elle traduit l'assurance **limitée**, à l'opposé de l'opinion **positive** d'un audit. La conclusion ne peut être datée **avant** l'obtention des éléments suffisants, déclarations écrites comprises.",
           "callouts": [
             {
               "type": "comp",
@@ -40655,7 +40655,7 @@
             {
               "type": "warn",
               "label": "PIÈGE",
-              "text": "**Pas de critères appropriés ⇒ pas de mission d'assurance.** De même, un **champ artificiellement restreint** prive la mission de **finalité rationnelle** : le praticien doit **refuser**. On n'accepte pas une mission juste pour apposer un sceau rassurant sur une information non vérifiable."
+              "text": "**Pas de critères appropriés ⇒ pas de mission d'assurance.** De même, un **champ artificiellement restreint** privé la mission de **finalité rationnelle** : le praticien doit **refuser**. On n'accepte pas une mission juste pour apposer un sceau rassurant sur une information non vérifiable."
             }
           ]
         },
@@ -41163,7 +41163,7 @@
             "Refuser : la mission n'a pas de finalité rationnelle (rational purpose)"
           ],
           "answer": 3,
-          "explanation": "La **finalité rationnelle** (§24) est une condition préalable d'acceptation. Un **champ artificiellement restreint** qui risque d'**induire en erreur** prive la mission de finalité rationnelle → le praticien doit **refuser**. De même, l'absence de **critères appropriés** interdit la mission. On n'appose pas un sceau rassurant sur une information non vérifiable.",
+          "explanation": "La **finalité rationnelle** (§24) est une condition préalable d'acceptation. Un **champ artificiellement restreint** qui risque d'**induire en erreur** privé la mission de finalité rationnelle → le praticien doit **refuser**. De même, l'absence de **critères appropriés** interdit la mission. On n'appose pas un sceau rassurant sur une information non vérifiable.",
           "difficulty": "hard"
         },
         {

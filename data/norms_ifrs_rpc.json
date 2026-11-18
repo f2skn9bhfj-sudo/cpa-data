@@ -368,7 +368,7 @@
     {
       "id": "rpc2",
       "code": "RPC 2",
-      "title": "RPC 2 — Evaluation",
+      "title": "RPC 2 — Évaluation",
       "category": "Swiss GAAP RPC",
       "sections": [
         {
@@ -1050,7 +1050,7 @@
     {
       "id": "rpc11",
       "code": "RPC 11",
-      "title": "RPC 11 — Impots sur les benefices",
+      "title": "RPC 11 — Impôts sur les bénéfices",
       "category": "Swiss GAAP RPC",
       "sections": [
         {
@@ -5968,11 +5968,11 @@
         },
         {
           "title": "1. CONDITIONS DE COMPTABILISATION (IAS 16.7)",
-          "content": "Une immobilisation corporelle est comptabilisée en tant qu'actif si et seulement si les DEUX conditions suivantes sont remplies :💡 ASTUCE EXAMEN : Ces deux conditions s'appliquent aussi bien lors de la comptabilisation initiale que pour les coûts ultérieurs (réparations majeures, composants de remplacement).⚠️ PIEGE : Les pièces de rechange majeures et le matériel d'entretien sont des immobilisations si leur durée d'utilisation > 1 exercice. Les pièces de rechange courantes restent en stocks (IAS 2).",
+          "content": "Une immobilisation corporelle est comptabilisée en tant qu'actif si et seulement si les DEUX conditions suivantes sont remplies :💡 ASTUCE EXAMEN : Ces deux conditions s'appliquent aussi bien lors de la comptabilisation initiale que pour les coûts ultérieurs (réparations majeures, composants de remplacement).⚠️ PIÈGE : Les pièces de rechange majeures et le matériel d'entretien sont des immobilisations si leur durée d'utilisation > 1 exercice. Les pièces de rechange courantes restent en stocks (IAS 2).",
           "key_points": [],
           "warnings": [
-            "⚠️ PIEGE : Les pièces de rechange majeures et le matériel d'entretien sont des immobilisations si leur durée d'utilisation > 1 exercice. Les pièces de rechange courantes restent en stocks (IAS 2).",
-            "Une immobilisation corporelle est comptabilisée en tant qu'actif si et seulement si les DEUX conditions suivantes sont remplies :💡 ASTUCE EXAMEN : Ces deux conditions s'appliquent aussi bien lors de la comptabilisation initiale que pour les coûts ultérieurs (réparations majeures, composants de remplacement).⚠️ PIEGE : Les pièces de rechange majeures et le matériel d'entretien sont des immobilisations si leur durée d'utilisation > 1 exercice. Les pièces de rechange courantes restent en stocks (IAS 2)."
+            "⚠️ PIÈGE : Les pièces de rechange majeures et le matériel d'entretien sont des immobilisations si leur durée d'utilisation > 1 exercice. Les pièces de rechange courantes restent en stocks (IAS 2).",
+            "Une immobilisation corporelle est comptabilisée en tant qu'actif si et seulement si les DEUX conditions suivantes sont remplies :💡 ASTUCE EXAMEN : Ces deux conditions s'appliquent aussi bien lors de la comptabilisation initiale que pour les coûts ultérieurs (réparations majeures, composants de remplacement).⚠️ PIÈGE : Les pièces de rechange majeures et le matériel d'entretien sont des immobilisations si leur durée d'utilisation > 1 exercice. Les pièces de rechange courantes restent en stocks (IAS 2)."
           ]
         },
         {
@@ -5983,10 +5983,10 @@
         },
         {
           "title": "Coûts EXCLUS du coût d'acquisition (IAS 16.19-20)",
-          "content": "⚠️ PIEGE : Les revenus générés par les tests de l'actif (avant mise en service) viennent en déduction du coût, mais les revenus générés pendant la phase de montée en charge NE viennent PAS en déduction. Piège classique d'examen !💡 ASTUCE EXAMEN : Le coût cesse d'être capitalisé lorsque l'actif est en état de fonctionner selon l'utilisation prévue par la direction (même s'il n'est pas encore utilisé).",
+          "content": "⚠️ PIÈGE : Les revenus générés par les tests de l'actif (avant mise en service) viennent en déduction du coût, mais les revenus générés pendant la phase de montée en charge NE viennent PAS en déduction. Piège classique d'examen !💡 ASTUCE EXAMEN : Le coût cesse d'être capitalisé lorsque l'actif est en état de fonctionner selon l'utilisation prévue par la direction (même s'il n'est pas encore utilisé).",
           "key_points": [],
           "warnings": [
-            "⚠️ PIEGE : Les revenus générés par les tests de l'actif (avant mise en service) viennent en déduction du coût, mais les revenus générés pendant la phase de montée en charge NE viennent PAS en déduction. Piège classique d'examen !💡 ASTUCE EXAMEN : Le coût cesse d'être capitalisé lorsque l'actif est en état de fonctionner selon l'utilisation prévue par la direction (même s'il n'est pas encore utilisé)."
+            "⚠️ PIÈGE : Les revenus générés par les tests de l'actif (avant mise en service) viennent en déduction du coût, mais les revenus générés pendant la phase de montée en charge NE viennent PAS en déduction. Piège classique d'examen !💡 ASTUCE EXAMEN : Le coût cesse d'être capitalisé lorsque l'actif est en état de fonctionner selon l'utilisation prévue par la direction (même s'il n'est pas encore utilisé)."
           ]
         },
         {
@@ -5997,11 +5997,11 @@
         },
         {
           "title": "Traitement comptable de la réévaluation — Règles détaillées",
-          "content": "Lors d'une réévaluation à la HAUSSE :Règle générale : L'augmentation est comptabilisée en OCI et cumulée en capitaux propres sous « Écart de réévaluation »Exception : Si l'actif avait précédemment subi une baisse comptabilisée en résultat, la hausse est d'abord reconnue en RÉSULTAT (reprise) jusqu'au montant de la baisse antérieure, puis le solde en OCILors d'une réévaluation à la BAISSE :Règle générale : La diminution est comptabilisée en RÉSULTAT (charge)Exception : Si un écart de réévaluation positif existe déjà pour cet actif, la baisse est d'abord imputée sur l'écart de réévaluation (OCI), puis l'excédent en résultat💡 ASTUCE EXAMEN : Retenez le principe du « miroir » : une hausse après une baisse repasse d'abord par le résultat, une baisse après une hausse passe d'abord par l'OCI. Chaque actif est traité individuellement !⚠️ PIEGE : L'écart de réévaluation peut être transféré directement en résultats non distribués (réserves) au fur et à mesure de l'utilisation de l'actif OU lors de la décomptabilisation. Ce transfert NE passe PAS par le résultat.",
+          "content": "Lors d'une réévaluation à la HAUSSE :Règle générale : L'augmentation est comptabilisée en OCI et cumulée en capitaux propres sous « Écart de réévaluation »Exception : Si l'actif avait précédemment subi une baisse comptabilisée en résultat, la hausse est d'abord reconnue en RÉSULTAT (reprise) jusqu'au montant de la baisse antérieure, puis le solde en OCILors d'une réévaluation à la BAISSE :Règle générale : La diminution est comptabilisée en RÉSULTAT (charge)Exception : Si un écart de réévaluation positif existe déjà pour cet actif, la baisse est d'abord imputée sur l'écart de réévaluation (OCI), puis l'excédent en résultat💡 ASTUCE EXAMEN : Retenez le principe du « miroir » : une hausse après une baisse repasse d'abord par le résultat, une baisse après une hausse passe d'abord par l'OCI. Chaque actif est traité individuellement !⚠️ PIÈGE : L'écart de réévaluation peut être transféré directement en résultats non distribués (réserves) au fur et à mesure de l'utilisation de l'actif OU lors de la décomptabilisation. Ce transfert NE passe PAS par le résultat.",
           "key_points": [],
           "warnings": [
-            "⚠️ PIEGE : L'écart de réévaluation peut être transféré directement en résultats non distribués (réserves) au fur et à mesure de l'utilisation de l'actif OU lors de la décomptabilisation. Ce transfert NE passe PAS par le résultat.",
-            "Lors d'une réévaluation à la HAUSSE :Règle générale : L'augmentation est comptabilisée en OCI et cumulée en capitaux propres sous « Écart de réévaluation »Exception : Si l'actif avait précédemment subi une baisse comptabilisée en résultat, la hausse est d'abord reconnue en RÉSULTAT (reprise) jusqu'au montant de la baisse antérieure, puis le solde en OCILors d'une réévaluation à la BAISSE :Règle générale : La diminution est comptabilisée en RÉSULTAT (charge)Exception : Si un écart de réévaluation positif existe déjà pour cet actif, la baisse est d'abord imputée sur l'écart de réévaluation (OCI), puis l'excédent en résultat💡 ASTUCE EXAMEN : Retenez le principe du « miroir » : une hausse après une baisse repasse d'abord par le résultat, une baisse après une hausse passe d'abord par l'OCI. Chaque actif est traité individuellement !⚠️ PIEGE : L'écart de réévaluation peut être transféré directement en résultats non distribués (réserves) au fur et à mesure de l'utilisation de l'actif OU lors de la décomptabilisation. Ce transfert NE passe PAS par le résultat."
+            "⚠️ PIÈGE : L'écart de réévaluation peut être transféré directement en résultats non distribués (réserves) au fur et à mesure de l'utilisation de l'actif OU lors de la décomptabilisation. Ce transfert NE passe PAS par le résultat.",
+            "Lors d'une réévaluation à la HAUSSE :Règle générale : L'augmentation est comptabilisée en OCI et cumulée en capitaux propres sous « Écart de réévaluation »Exception : Si l'actif avait précédemment subi une baisse comptabilisée en résultat, la hausse est d'abord reconnue en RÉSULTAT (reprise) jusqu'au montant de la baisse antérieure, puis le solde en OCILors d'une réévaluation à la BAISSE :Règle générale : La diminution est comptabilisée en RÉSULTAT (charge)Exception : Si un écart de réévaluation positif existe déjà pour cet actif, la baisse est d'abord imputée sur l'écart de réévaluation (OCI), puis l'excédent en résultat💡 ASTUCE EXAMEN : Retenez le principe du « miroir » : une hausse après une baisse repasse d'abord par le résultat, une baisse après une hausse passe d'abord par l'OCI. Chaque actif est traité individuellement !⚠️ PIÈGE : L'écart de réévaluation peut être transféré directement en résultats non distribués (réserves) au fur et à mesure de l'utilisation de l'actif OU lors de la décomptabilisation. Ce transfert NE passe PAS par le résultat."
           ]
         },
         {
@@ -6018,10 +6018,10 @@
         },
         {
           "title": "Méthodes d'amortissement acceptées",
-          "content": "⚠️ PIEGE : Une méthode d'amortissement fondée sur les revenus générés par l'actif N'EST PAS acceptable selon IAS 16 (IAS 16.62A). Piège fréquent aux examens !💡 ASTUCE EXAMEN : Si la valeur résiduelle dépasse la valeur comptable, l'amortissement est nul jusqu'à ce que la VR redevienne inférieure à la VC.",
+          "content": "⚠️ PIÈGE : Une méthode d'amortissement fondée sur les revenus générés par l'actif N'EST PAS acceptable selon IAS 16 (IAS 16.62A). Piège fréquent aux examens !💡 ASTUCE EXAMEN : Si la valeur résiduelle dépasse la valeur comptable, l'amortissement est nul jusqu'à ce que la VR redevienne inférieure à la VC.",
           "key_points": [],
           "warnings": [
-            "⚠️ PIEGE : Une méthode d'amortissement fondée sur les revenus générés par l'actif N'EST PAS acceptable selon IAS 16 (IAS 16.62A). Piège fréquent aux examens !💡 ASTUCE EXAMEN : Si la valeur résiduelle dépasse la valeur comptable, l'amortissement est nul jusqu'à ce que la VR redevienne inférieure à la VC."
+            "⚠️ PIÈGE : Une méthode d'amortissement fondée sur les revenus générés par l'actif N'EST PAS acceptable selon IAS 16 (IAS 16.62A). Piège fréquent aux examens !💡 ASTUCE EXAMEN : Si la valeur résiduelle dépasse la valeur comptable, l'amortissement est nul jusqu'à ce que la VR redevienne inférieure à la VC."
           ]
         },
         {
@@ -6038,11 +6038,11 @@
         },
         {
           "title": "7. DÉCOMPTABILISATION (IAS 16.67-72)",
-          "content": "Un élément d'immobilisation corporelle doit être décomptabilisé :Lors de sa sortie : (vente, don, mise au rebut)Lorsqu'aucun avantage économique futur : n'est attendu de son utilisation ou de sa sortieLe résultat de cession = Produit net de la sortie − Valeur comptable netteCe résultat est comptabilisé en résultat (et NON classé en produit des activités ordinaires).⚠️ PIEGE : Le produit de cession d'une immobilisation corporelle ne constitue PAS un produit des activités ordinaires (revenu) au sens d'IFRS 15. Même si la vente fait partie des activités récurrentes.",
+          "content": "Un élément d'immobilisation corporelle doit être décomptabilisé :Lors de sa sortie : (vente, don, mise au rebut)Lorsqu'aucun avantage économique futur : n'est attendu de son utilisation ou de sa sortieLe résultat de cession = Produit net de la sortie − Valeur comptable netteCe résultat est comptabilisé en résultat (et NON classé en produit des activités ordinaires).⚠️ PIÈGE : Le produit de cession d'une immobilisation corporelle ne constitue PAS un produit des activités ordinaires (revenu) au sens d'IFRS 15. Même si la vente fait partie des activités récurrentes.",
           "key_points": [],
           "warnings": [
-            "⚠️ PIEGE : Le produit de cession d'une immobilisation corporelle ne constitue PAS un produit des activités ordinaires (revenu) au sens d'IFRS 15. Même si la vente fait partie des activités récurrentes.",
-            "Un élément d'immobilisation corporelle doit être décomptabilisé :Lors de sa sortie : (vente, don, mise au rebut)Lorsqu'aucun avantage économique futur : n'est attendu de son utilisation ou de sa sortieLe résultat de cession = Produit net de la sortie − Valeur comptable netteCe résultat est comptabilisé en résultat (et NON classé en produit des activités ordinaires).⚠️ PIEGE : Le produit de cession d'une immobilisation corporelle ne constitue PAS un produit des activités ordinaires (revenu) au sens d'IFRS 15. Même si la vente fait partie des activités récurrentes."
+            "⚠️ PIÈGE : Le produit de cession d'une immobilisation corporelle ne constitue PAS un produit des activités ordinaires (revenu) au sens d'IFRS 15. Même si la vente fait partie des activités récurrentes.",
+            "Un élément d'immobilisation corporelle doit être décomptabilisé :Lors de sa sortie : (vente, don, mise au rebut)Lorsqu'aucun avantage économique futur : n'est attendu de son utilisation ou de sa sortieLe résultat de cession = Produit net de la sortie − Valeur comptable netteCe résultat est comptabilisé en résultat (et NON classé en produit des activités ordinaires).⚠️ PIÈGE : Le produit de cession d'une immobilisation corporelle ne constitue PAS un produit des activités ordinaires (revenu) au sens d'IFRS 15. Même si la vente fait partie des activités récurrentes."
           ]
         },
         {
@@ -7546,7 +7546,7 @@
     {
       "id": "ias37",
       "code": "IAS 37",
-      "title": "IAS 37 — Provisions, passifs eventuels et actifs eventuels",
+      "title": "IAS 37 — Provisions, passifs éventuels et actifs éventuels",
       "category": "IFRS / IAS",
       "sections": [
         {
@@ -8978,7 +8978,7 @@
     {
       "id": "ifrs13",
       "code": "IFRS 13",
-      "title": "IFRS 13 — Evaluation a la juste valeur",
+      "title": "IFRS 13 — Évaluation a la juste valeur",
       "category": "IFRS / IAS",
       "sections": [
         {
