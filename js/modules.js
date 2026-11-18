@@ -252,6 +252,7 @@ function modRenderSidebar() {
             <div class="mod-sb-item ${isSel ? 'mod-sb-item-sel' : ''}" onclick="modSelectLessonIfp('${escapeAttr(l.id)}')">
                 <span class="mod-sb-item-num">L${l.number}</span>
                 <span class="mod-sb-item-label">${escapeHtml(modTruncate(modStripLessonNumPrefix(l.title, l.number), 30))}</span>
+                ${modLessonBadge(l)}
             </div>`;
         });
         html += `</div>`;
@@ -359,6 +360,7 @@ function modRenderEmpty() {
                          onkeydown="if(event.key==='Enter')modSelectLessonIfp('${escapeAttr(l.id)}')">
                 <div class="mod-home-card-code" style="color:${color}">${escapeHtml(l.code || '')}</div>
                 <div class="mod-home-card-title">${escapeHtml(title)}</div>
+                ${modLessonBadge(l, true)}
             </div>`;
         });
         html += `</div></div>`;
@@ -1358,6 +1360,10 @@ function modRenderLessonIfpDetail(l, m) {
         </div>
     </div>`;
 
+    // ── Mode ludique : étapes, questions flash, progression ──
+    modPlayPrepare(l);
+    html += modPlayStrip(l, color);
+
     // ── Audio files (podcasts NotebookLM-style) ──
     if (Array.isArray(l.audio_files) && l.audio_files.length > 0) {
         for (const af of l.audio_files) {
@@ -1420,7 +1426,7 @@ function modRenderLessonIfpDetail(l, m) {
                     : '';
 
                 html += `
-                <div class="mod-card mod-card-rich" style="--mc:${color}">
+                <div class="mod-card mod-card-rich" id="modsec_${escapeAttr(secId)}" style="--mc:${color}">
                     ${headHtml}
                     <div class="mod-card-text">${formatAnswer(sec.body || '')}</div>
                     ${infoHtml}
@@ -1430,6 +1436,7 @@ function modRenderLessonIfpDetail(l, m) {
                     ${keyPointHtml}
                     ${tipHtml}
                     ${warningHtml}
+                    ${modPlaySectionFoot(l, secId)}
                 </div>`;
             }
         });
@@ -1488,7 +1495,9 @@ function modRenderLessonIfpDetail(l, m) {
     if (Array.isArray(l.questions) && l.questions.length > 0) {
         window._modQuiz = window._modQuiz || {};
         window._modQuiz[l.id] = l.questions;
-        html += modRenderLessonQuiz(l, color);
+        const play = (window._modPlay || {})[l.id];
+        if (!play || !play.secs.length) html += modRenderLessonQuiz(l, color);
+        else if (play.leftover.length) html += modRenderLessonQuiz(l, color, play.leftover, 'Encore quelques questions');
     } else {
         html += `<div class="mod-card" id="modLessonQcmCard">
             <div class="mod-card-label">🃏 QCM liés à cette leçon</div>
@@ -1496,9 +1505,11 @@ function modRenderLessonIfpDetail(l, m) {
         </div>`;
     }
 
+    html += modPlayEndCard(l, m, color);
     html += `</div>`;
     el.innerHTML = html;
     el.scrollTop = 0;
+    modPlayRefresh(l.id);
 
     // ── Active la traduction live (click-to-translate + selection) ──
     if (typeof window.Translator !== 'undefined') {
@@ -1518,33 +1529,220 @@ function modRenderLessonIfpDetail(l, m) {
 const _modQuizAnswered = {};   // clé `${lessonId}_${qi}` → true
 const _modQuizScore = {};      // lessonId → nb de bonnes réponses
 
-function modRenderLessonQuiz(l, color) {
-    const qs = l.questions || [];
-    // Reset état (le DOM est reconstruit à neuf à chaque ouverture de la leçon).
-    qs.forEach((_, qi) => { delete _modQuizAnswered[l.id + '_' + qi]; });
+function modQuizReset(l) {
+    (l.questions || []).forEach((_, qi) => { delete _modQuizAnswered[l.id + '_' + qi]; });
     _modQuizScore[l.id] = 0;
+}
+
+function modRenderQuizQ(l, qi, label) {
+    const q = (l.questions || [])[qi];
+    if (!q) return '';
+    const isVF = q.type === 'vrai_faux';
+    const opts = isVF ? ['Vrai', 'Faux'] : (q.options || []);
+    const btns = opts.map((o, oi) =>
+        `<button class="mq-opt" id="mq_${escapeAttr(l.id)}_${qi}_${oi}"
+                 onclick="modQuizAnswer('${escapeAttr(l.id)}',${qi},${oi})">${escapeHtml(isVF || /^\s*[A-D][.)]\s/.test(o) ? o : 'ABCD'[oi] + '. ' + o)}</button>`
+    ).join('');
+    return `<div class="mq-q">
+        <div class="mq-prompt"><span class="mq-num">${escapeHtml(String(label))}</span><span>${escapeHtml(q.question)}</span></div>
+        <div class="mq-opts">${btns}</div>
+        <div class="mq-exp" id="mq_exp_${escapeAttr(l.id)}_${qi}"></div>
+    </div>`;
+}
+
+// Quiz « Teste-toi » : toutes les questions (leçon sans étapes) ou seulement
+// celles qui ne sont rattachées à aucune section (idxs).
+function modRenderLessonQuiz(l, color, idxs, title) {
+    const qs = l.questions || [];
+    const list = idxs || qs.map((_, i) => i);
+    if (!idxs) modQuizReset(l);
     let h = `<div class="mod-quiz" style="--mc:${color}">
         <div class="mod-quiz-head">
             <span class="mod-quiz-badge" style="background:${color}1f;color:${color}">🎯</span>
-            <span class="mod-quiz-title">Teste-toi</span>
-            <span class="mod-quiz-meta">${qs.length} question${qs.length > 1 ? 's' : ''}</span>
-            <span class="mod-quiz-score" id="mq_score_${escapeAttr(l.id)}">0 / ${qs.length}</span>
+            <span class="mod-quiz-title">${escapeHtml(title || 'Teste-toi')}</span>
+            <span class="mod-quiz-meta">${list.length} question${list.length > 1 ? 's' : ''}</span>
+            ${idxs ? '' : `<span class="mod-quiz-score" id="mq_score_${escapeAttr(l.id)}">0 / ${qs.length}</span>`}
         </div>`;
-    qs.forEach((q, qi) => {
-        const isVF = q.type === 'vrai_faux';
-        const opts = isVF ? ['Vrai', 'Faux'] : (q.options || []);
-        const btns = opts.map((o, oi) =>
-            `<button class="mq-opt" id="mq_${escapeAttr(l.id)}_${qi}_${oi}"
-                     onclick="modQuizAnswer('${escapeAttr(l.id)}',${qi},${oi})">${escapeHtml(isVF || /^\s*[A-D][.)]\s/.test(o) ? o : 'ABCD'[oi] + '. ' + o)}</button>`
-        ).join('');
-        h += `<div class="mq-q">
-            <div class="mq-prompt"><span class="mq-num">${qi + 1}</span><span>${escapeHtml(q.question)}</span></div>
-            <div class="mq-opts">${btns}</div>
-            <div class="mq-exp" id="mq_exp_${escapeAttr(l.id)}_${qi}"></div>
-        </div>`;
-    });
+    list.forEach((qi, k) => { h += modRenderQuizQ(l, qi, k + 1); });
     h += `</div>`;
     return h;
+}
+
+// ══════════════════════════════════════════════════════════════
+// MODE LUDIQUE — étapes, questions flash, progression persistée
+// (localStorage swisscpa_mod_read : { lessonId: { s: [sectionIds], done } })
+// ══════════════════════════════════════════════════════════════
+const MOD_READ_KEY = 'swisscpa_mod_read';
+function _modReadAll() { try { return JSON.parse(localStorage.getItem(MOD_READ_KEY) || '{}') || {}; } catch (e) { return {}; } }
+function _modReadSave(all) { try { localStorage.setItem(MOD_READ_KEY, JSON.stringify(all)); } catch (e) {} }
+
+function _modLessonSecIds(l) {
+    return (l.content || []).map((sec, i) => (sec && typeof sec === 'object') ? (sec.section_id || `${l.id}_s${i + 1}`) : null).filter(Boolean);
+}
+
+function modLessonBadge(l, big) {
+    const r = _modReadAll()[l.id];
+    if (!r) return '';
+    const n = _modLessonSecIds(l).length;
+    if (r.done) return `<span class="mod-read-badge mod-read-done${big ? ' big' : ''}" title="Leçon terminée">✓${big ? ' Terminée' : ''}</span>`;
+    const k = (r.s || []).length;
+    return k && n ? `<span class="mod-read-badge${big ? ' big' : ''}" title="${k} étape(s) validée(s) sur ${n}">${k}/${n}</span>` : '';
+}
+
+function modPlayPrepare(l) {
+    window._modPlay = window._modPlay || {};
+    const secs = _modLessonSecIds(l);
+    const qBySec = {}, leftover = [];
+    (l.questions || []).forEach((q, qi) => {
+        if (q && secs.includes(q.section_id)) (qBySec[q.section_id] = qBySec[q.section_id] || []).push(qi);
+        else leftover.push(qi);
+    });
+    let words = 0;
+    (l.content || []).forEach(sec => {
+        const t = typeof sec === 'string' ? sec
+            : [sec.body, sec.info, sec.legal_quote, sec.example, sec.comparison, sec.key_point, sec.tip, sec.warning].filter(Boolean).join(' ');
+        words += String(t).split(/\s+/).filter(Boolean).length;
+    });
+    const p = { secs, qBySec, leftover, minutes: Math.max(1, Math.round(words / 200)), nq: (l.questions || []).length };
+    window._modPlay[l.id] = p;
+    modQuizReset(l);
+    return p;
+}
+
+function modPlayStrip(l, color) {
+    const p = (window._modPlay || {})[l.id];
+    if (!p || !p.secs.length) return '';
+    const n = p.secs.length, lid = escapeAttr(l.id);
+    const secObjs = (l.content || []).filter(sec => sec && typeof sec === 'object');
+    const pills = p.secs.map((sid, i) => {
+        const t = ((secObjs[i] && secObjs[i].title) || '').replace(/^\s*\d+[.)]\s*/, '');
+        return `<button class="mod-step" id="mpStep_${lid}_${i}" title="${escapeAttr(t)}" onclick="modPlayGoto('${escapeAttr(sid)}')">${i + 1}</button>`;
+    }).join('');
+    return `<div class="mod-play" style="--mc:${color}">
+        <div class="mod-play-top">
+            <span class="mod-play-chip">⏱ ~${p.minutes} min</span>
+            <span class="mod-play-chip">🧩 ${n} étape${n > 1 ? 's' : ''}</span>
+            ${p.nq ? `<span class="mod-play-chip">⚡ ${p.nq} question${p.nq > 1 ? 's' : ''} flash</span>` : ''}
+        </div>
+        <div class="mod-play-bar"><span id="mpBar_${lid}"></span></div>
+        <div class="mod-play-stats">
+            <span id="mpSteps_${lid}">0 / ${n} étapes validées</span>
+            ${p.nq ? `<span>⭐ <b id="mq_score_${lid}">0 / ${p.nq}</b> bonnes réponses</span>` : ''}
+        </div>
+        <div class="mod-steps" aria-label="Étapes de la leçon">${pills}</div>
+    </div>`;
+}
+
+function modPlaySectionFoot(l, secId) {
+    const p = (window._modPlay || {})[l.id];
+    if (!p) return '';
+    const i = p.secs.indexOf(secId);
+    if (i < 0) return '';
+    const qis = p.qBySec[secId] || [];
+    const flash = qis.length
+        ? `<div class="mod-flash"><div class="mod-flash-head">⚡ Question${qis.length > 1 ? 's' : ''} flash</div>${qis.map(qi => modRenderQuizQ(l, qi, qi + 1)).join('')}</div>`
+        : '';
+    return `${flash}<div class="mod-sec-foot">
+        <span class="mod-sec-step">Étape ${i + 1} / ${p.secs.length}</span>
+        <button class="mod-got" id="mpGot_${escapeAttr(l.id)}_${i}" onclick="modPlayToggle('${escapeAttr(l.id)}', ${i})">👍 J'ai compris</button>
+    </div>`;
+}
+
+function modPlayEndCard(l, m, color) {
+    const p = (window._modPlay || {})[l.id];
+    if (!p || !p.secs.length) return '';
+    const ls = m.lessons_ifp || [];
+    const k = ls.findIndex(x => x.id === l.id);
+    const next = k >= 0 ? ls[k + 1] : null;
+    const lid = escapeAttr(l.id);
+    return `<div class="mod-end" id="mpEnd_${lid}" style="--mc:${color}">
+        <div class="mod-end-emoji" id="mpEndEmoji_${lid}">🏁</div>
+        <div class="mod-end-title" id="mpEndTitle_${lid}">Bilan de la leçon</div>
+        <div class="mod-end-text" id="mpEndText_${lid}"></div>
+        <div class="mod-end-actions">
+            ${p.nq ? `<button class="btn btn-outline" onclick="modLaunchLessonQcm('${lid}')">🎯 Refaire en mode QCM</button>` : ''}
+            ${next ? `<button class="btn btn-primary" onclick="modSelectLessonIfp('${escapeAttr(next.id)}')">Leçon suivante →</button>` : ''}
+        </div>
+    </div>`;
+}
+
+function modPlayGoto(secId) {
+    const el = document.getElementById('modsec_' + secId);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function modPlayToggle(lid, i, forceOn) {
+    const p = (window._modPlay || {})[lid];
+    if (!p) return;
+    const all = _modReadAll();
+    const r = all[lid] || { s: [] };
+    const sid = p.secs[i];
+    const has = (r.s || []).includes(sid);
+    if (has && forceOn) return;
+    r.s = (has ? r.s.filter(x => x !== sid) : (r.s || []).concat([sid])).filter(x => p.secs.includes(x));
+    const complete = r.s.length === p.secs.length;
+    if (complete && !r.done) r.done = new Date().toISOString();
+    if (!complete) delete r.done;
+    all[lid] = r;
+    _modReadSave(all);
+    modPlayRefresh(lid, !has && complete);
+    try { modRenderSidebar(); } catch (e) {}
+}
+
+// Une étape est validée automatiquement quand toutes ses questions flash ont une réponse.
+function modPlayAfterAnswer(lid, qi) {
+    const p = (window._modPlay || {})[lid];
+    const qs = (window._modQuiz || {})[lid];
+    if (!p || !qs || !qs[qi]) return;
+    const sid = qs[qi].section_id;
+    const i = p.secs.indexOf(sid);
+    if (i >= 0 && (p.qBySec[sid] || []).every(k => _modQuizAnswered[lid + '_' + k])) modPlayToggle(lid, i, true);
+    else modPlayRefresh(lid);
+}
+
+function modPlayRefresh(lid, justFinished) {
+    const p = (window._modPlay || {})[lid];
+    if (!p || !p.secs.length) return;
+    const r = _modReadAll()[lid] || { s: [] };
+    const doneSet = new Set(r.s || []);
+    const n = p.secs.length, k = p.secs.filter(x => doneSet.has(x)).length;
+    p.secs.forEach((sid, i) => {
+        const ok = doneSet.has(sid);
+        const pill = document.getElementById(`mpStep_${lid}_${i}`);
+        if (pill) pill.classList.toggle('done', ok);
+        const btn = document.getElementById(`mpGot_${lid}_${i}`);
+        if (btn) { btn.classList.toggle('done', ok); btn.textContent = ok ? '✓ Étape validée' : "👍 J'ai compris"; }
+    });
+    const bar = document.getElementById('mpBar_' + lid);
+    if (bar) bar.style.width = Math.round(k / n * 100) + '%';
+    const st = document.getElementById('mpSteps_' + lid);
+    if (st) st.textContent = `${k} / ${n} étape${n > 1 ? 's validées' : ' validée'}`;
+    const score = _modQuizScore[lid] || 0;
+    const answered = Object.keys(_modQuizAnswered).filter(key => key.startsWith(lid + '_')).length;
+    const end = document.getElementById('mpEnd_' + lid);
+    if (end) {
+        const finished = k === n;
+        end.classList.toggle('mod-end-win', finished);
+        const em = document.getElementById('mpEndEmoji_' + lid);
+        const ti = document.getElementById('mpEndTitle_' + lid);
+        const tx = document.getElementById('mpEndText_' + lid);
+        if (em) em.textContent = finished ? '🏆' : '🏁';
+        if (ti) ti.textContent = finished ? 'Leçon terminée, bravo !' : 'Bilan de la leçon';
+        if (tx) tx.textContent = `${k} / ${n} étapes validées`
+            + (p.nq ? ` · ${score} / ${p.nq} bonnes réponses${answered < p.nq ? ` (${p.nq - answered} question${p.nq - answered > 1 ? 's' : ''} encore à faire)` : ''}` : '');
+        if (justFinished) {
+            end.classList.remove('mod-end-pop'); void end.offsetWidth; end.classList.add('mod-end-pop');
+            _modPlayToast('🎉 Leçon terminée !');
+        }
+    }
+}
+
+function _modPlayToast(msg) {
+    let t = document.getElementById('modPlayToast');
+    if (!t) { t = document.createElement('div'); t.id = 'modPlayToast'; t.className = 'mod-play-toast'; document.body.appendChild(t); }
+    t.textContent = msg;
+    t.classList.remove('show'); void t.offsetWidth; t.classList.add('show');
+    clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2600);
 }
 
 function modQuizAnswer(lessonId, qi, oi) {
@@ -1586,6 +1784,7 @@ function modQuizAnswer(lessonId, qi, oi) {
         const sc = document.getElementById('mq_score_' + lessonId);
         if (sc) sc.textContent = _modQuizScore[lessonId] + ' / ' + qs.length;
     }
+    modPlayAfterAnswer(lessonId, qi);
 }
 
 // Load QCMs matching this lesson via the api `get_qcm_for_lesson`
@@ -2987,5 +3186,90 @@ body.light-mode .mod-notion-type { background: #e2e8f0; color: #475569; }
 /* ── Animations ── */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 .mod-detail.fade-in { animation: fadeIn .2s ease-out; }
+/* ══ Mode ludique des leçons ══ */
+.mod-play {
+    margin: 0 0 16px; padding: 14px 16px 12px; border-radius: 14px;
+    border: 1px solid color-mix(in srgb, var(--mc) 30%, transparent);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--mc) 12%, transparent), color-mix(in srgb, var(--mc) 3%, transparent));
+}
+.mod-play-top { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.mod-play-chip {
+    font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px;
+    background: color-mix(in srgb, var(--mc) 16%, transparent); color: var(--text-bright, #f1f5f9);
+}
+.mod-play-bar { height: 8px; border-radius: 999px; background: rgba(148,163,184,.22); overflow: hidden; }
+.mod-play-bar > span {
+    display: block; height: 100%; width: 0; border-radius: 999px;
+    background: linear-gradient(90deg, var(--mc), color-mix(in srgb, var(--mc) 55%, #22c55e));
+    transition: width .5s cubic-bezier(.2,.8,.2,1);
+}
+.mod-play-stats { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; margin-top: 8px; font-size: 12.5px; color: var(--text-secondary); }
+.mod-play-stats b { color: var(--text-bright, #f1f5f9); }
+.mod-steps { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.mod-step {
+    width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-weight: 800; font-size: 12.5px;
+    border: 2px solid color-mix(in srgb, var(--mc) 45%, transparent); background: transparent; color: var(--text-secondary);
+    transition: transform .15s, background .2s, color .2s;
+}
+.mod-step:hover { transform: translateY(-2px); color: var(--text-bright, #f1f5f9); }
+.mod-step.done { background: var(--mc); border-color: var(--mc); color: #fff; }
+.mod-card-rich { scroll-margin-top: 120px; }
+/* Mots-clés surlignés façon marqueur, dans la couleur du module */
+.mod-card-rich .mod-card-text strong {
+    background: linear-gradient(transparent 64%, color-mix(in srgb, var(--mc) 24%, transparent) 64%);
+    border-radius: 2px; padding: 0 1px;
+}
+.mod-flash {
+    margin: 14px 0 4px; padding: 12px 14px; border-radius: 12px;
+    border: 1px dashed color-mix(in srgb, var(--mc) 55%, transparent);
+    background: color-mix(in srgb, var(--mc) 6%, transparent);
+}
+.mod-flash-head { font-size: 12px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; color: var(--mc); margin-bottom: 8px; }
+.mod-flash .mq-q { margin: 0 0 10px; }
+.mod-flash .mq-q:last-child { margin-bottom: 0; }
+.mod-sec-foot {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+    margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border);
+}
+.mod-sec-step { font-size: 12px; font-weight: 700; color: var(--text-secondary); }
+.mod-got {
+    border: 1.5px solid var(--mc); background: transparent; color: var(--mc);
+    font-weight: 700; font-size: 13px; padding: 7px 14px; border-radius: 999px; cursor: pointer;
+    transition: transform .12s, background .2s, color .2s;
+}
+.mod-got:hover { transform: translateY(-1px); }
+.mod-got.done { background: #16a34a; border-color: #16a34a; color: #fff; }
+.mod-end {
+    margin: 18px 0 8px; padding: 22px 18px; text-align: center; border-radius: 16px;
+    border: 1px solid color-mix(in srgb, var(--mc) 35%, transparent);
+    background: color-mix(in srgb, var(--mc) 8%, transparent);
+}
+.mod-end-emoji { font-size: 38px; line-height: 1; }
+.mod-end-title { font-size: 18px; font-weight: 800; margin-top: 8px; color: var(--text-bright, #f1f5f9); }
+.mod-end-text { font-size: 13.5px; color: var(--text-secondary); margin-top: 6px; }
+.mod-end-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.mod-end.mod-end-win { border-color: #16a34a; background: color-mix(in srgb, #22c55e 12%, transparent); }
+.mod-end-pop .mod-end-emoji { animation: modEndPop .9s cubic-bezier(.2,1.6,.4,1); }
+@keyframes modEndPop { 0% { transform: scale(.3) rotate(-25deg); } 60% { transform: scale(1.35) rotate(8deg); } 100% { transform: scale(1) rotate(0); } }
+.mod-read-badge {
+    margin-left: auto; flex-shrink: 0; font-size: 10.5px; font-weight: 800; padding: 1px 6px; border-radius: 999px;
+    background: rgba(148,163,184,.18); color: var(--text-secondary);
+}
+.mod-read-badge.mod-read-done { background: #16a34a; color: #fff; }
+.mod-read-badge.big { display: inline-block; margin-top: 8px; font-size: 11px; padding: 2px 8px; }
+.mod-play-toast {
+    position: fixed; left: 50%; top: 20%; transform: translate(-50%, -20px); opacity: 0; pointer-events: none;
+    background: #16a34a; color: #fff; font-weight: 800; padding: 10px 18px; border-radius: 999px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25); z-index: 9999; transition: transform .35s, opacity .35s;
+}
+.mod-play-toast.show { transform: translate(-50%, 0); opacity: 1; }
+body.light-mode .mod-play-chip, body.light-mode .mod-play-stats b, body.light-mode .mod-end-title { color: #0f172a; }
+body.light-mode .mod-step:hover { color: #0f172a; }
+@media (max-width: 768px) {
+    .mod-play { padding: 12px; }
+    .mod-step { width: 28px; height: 28px; font-size: 12px; }
+    .mod-got { width: 100%; }
+    .mod-sec-foot { flex-direction: column; align-items: stretch; text-align: center; }
+}
 </style>`;
 }

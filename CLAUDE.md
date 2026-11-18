@@ -116,6 +116,12 @@ Autres sources : `audit/manifest.json` + `audit/controle_{ordinaire,restreint}/*
 n'apparaissent qu'en rappel explicite (« 22'680 en 2025-2026 »). Le calculateur
 du module Social utilise `parametres_2027` (social/index.html, bloc sans source).
 
+Leçons des Modules en « mode ludique » (modules.js, `modPlay*`) : bandeau ⏱/étapes/questions
+flash, questions de chaque section affichées sous la section (`section_id`), bouton « J'ai
+compris », bilan + trophée ; progression dans `swisscpa_mod_read` ({lessonId:{s:[sections],done}}),
+badge ✓ sur les cartes et la barre latérale. Anglais : barre adaptative (5 rubriques les plus
+utilisées, `swisscpa_eng_usage` / `swisscpa_eng_pins`, reste dans « Plus » ; Écriture retirée).
+
 Progression utilisateur : uniquement localStorage du navigateur (clés
 `swisscpa_*` ; `cpa_audit_progress` ne sert plus depuis le retrait du
 catalogue des tests, mais reste sauvegardé s'il existe), propre à chaque
