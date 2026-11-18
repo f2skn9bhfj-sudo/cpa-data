@@ -12750,5 +12750,157 @@
     "d": "difficile",
     "q": "Exercice : 30 % acquis pour 400 (actifs nets à la JV 1'100, immeuble +100 sur 10 ans), bénéfice 200, dividende 50, marge interne en stock 40. Valeur de clôture ?",
     "a": "- Goodwill implicite : 400 − 330 = **70** (inclus, non amorti).\n- Quote-part : 60 − 3 (écart de JV de l'immeuble) − 12 (profit interne) = **45**.\n- Valeur : 400 + 45 − 15 (dividende) = **430**.\n\n⚠️ Le dividende réduit la participation ; il n'est pas un produit."
+  },
+  {
+    "id": 2283,
+    "cat": "Expert suisse",
+    "sub": "Droit des sociétés – M6L2",
+    "d": "moyen",
+    "q": "Depuis 2025, que vaut la vente des actions d'une **société coquille vide** ?",
+    "a": "**Nulle** (art. 684a CO pour la SA, 787a CO pour la Sàrl) si la société n'a **plus d'activité** et **plus d'actifs réalisables**.\n\n💡 But : lutter contre le commerce de manteaux ; il faut liquider la société ou en fonder une nouvelle."
+  },
+  {
+    "id": 2284,
+    "cat": "Expert suisse",
+    "sub": "Organes de la SA – M6L3",
+    "d": "moyen",
+    "q": "**Opting-out** : conditions et nouveauté 2025 ?",
+    "a": "Conditions (art. 727a al. 2 CO) : pas de contrôle ordinaire, **≤ 10 EPT** en moyenne annuelle, accord de **tous** les actionnaires.\n\n⚠️ Depuis le **1.1.2025** : effet **pour l'avenir seulement**, plus d'opting-out rétroactif pour un exercice clos."
+  },
+  {
+    "id": 2285,
+    "cat": "Expert suisse",
+    "sub": "Poursuites – M6L7",
+    "d": "difficile",
+    "q": "Depuis 2025, comment sont poursuivis les **impôts et cotisations AVS** dus par une SA ?",
+    "a": "Par **voie de faillite** : l'exception de l'**art. 43 LP** (créances de droit public poursuivies par saisie) a été supprimée pour les débiteurs inscrits au RC.\n\n💡 Une SA qui ne paie pas ses impôts peut être mise en faillite par le canton ou la caisse AVS."
+  },
+  {
+    "id": 2286,
+    "cat": "Expert suisse",
+    "sub": "Registre du commerce – M6L8",
+    "d": "moyen",
+    "q": "**LTPM** (registre de transparence) : l'essentiel ?",
+    "a": "- En vigueur le **1.10.2026**.\n- Annonce des **ayants droit économiques** : personnes physiques ≥ **25 %** du capital ou des voix, ou qui contrôlent autrement.\n- Registre **non public** (autorités, intermédiaires financiers).\n- Délais : 1 mois pour les changements ; 2 ans au plus pour les entités existantes.\n- Amende jusqu'à **CHF 500'000**."
+  },
+  {
+    "id": 2287,
+    "cat": "Expert suisse",
+    "sub": "Perte de capital – M6L5",
+    "d": "difficile",
+    "q": "Calcul de la **perte de capital** (art. 725a CO) ?",
+    "a": "Perte de capital si **actif − dettes < 50 %** × (capital-actions + réserve légale issue du capital + réserve légale issue du bénéfice).\n\nEx. : capital 300 + réserves 50 + 30 = 380 → seuil 190 ; fonds propres 120 → **perte de capital** → mesures d'assainissement, AG si nécessaire."
+  },
+  {
+    "id": 2288,
+    "cat": "Expert suisse",
+    "sub": "Droit du travail – M6L11",
+    "d": "moyen",
+    "q": "Délais de congé et protection en cas de maladie ?",
+    "a": "**Délais** (335c CO) : 1 mois (1re année), **2 mois** (2e-9e), 3 mois ensuite, pour la fin d'un mois.\n**Protection** (336c CO) : **30 / 90 / 180 jours** selon l'ancienneté ; congé donné pendant la période = **nul** ; donné avant = délai **suspendu** puis reporté à la fin du mois."
+  },
+  {
+    "id": 2289,
+    "cat": "Expert suisse",
+    "sub": "Contrats spéciaux – M6L13",
+    "d": "moyen",
+    "q": "Vente : obligations de l'acheteur en cas de **défaut** ?",
+    "a": "1. **Vérifier** la chose dès que possible et **aviser immédiatement** le vendeur (art. 201 CO) — défaut caché : dès sa découverte.\n2. Choisir : **résolution** ou **réduction du prix** (205 CO).\n3. **Prescription** : 2 ans dès la livraison (5 ans si intégrée dans un immeuble), art. 210 CO."
+  },
+  {
+    "id": 2290,
+    "cat": "Expert suisse",
+    "sub": "Contrats spéciaux – M6L13",
+    "d": "piège",
+    "q": "**Cautionnement** donné par une personne physique : formes ?",
+    "a": "- Déclaration **écrite** avec **montant maximal** (493 CO).\n- **Acte authentique** si le montant dépasse **CHF 2'000**.\n- **Consentement écrit du conjoint** (494 CO).\n- Durée max **20 ans** (509 al. 3 CO).\n\n⚠️ Sans ces formes : cautionnement **nul**."
+  },
+  {
+    "id": 2291,
+    "cat": "Expert suisse",
+    "sub": "Contrats spéciaux – M6L13",
+    "d": "moyen",
+    "q": "Bail d'habitation : 4 chiffres à connaître ?",
+    "a": "- Sûretés : **3 mois** de loyer max (257e CO).\n- Contestation du loyer initial : **30 jours** (270 CO).\n- Congé du bailleur : **formule officielle**, sinon nul (266l, 266o CO).\n- Délai de congé : **3 mois** (habitation), **6 mois** (locaux commerciaux)."
+  },
+  {
+    "id": 2292,
+    "cat": "Expert suisse",
+    "sub": "Responsabilité – M6L14",
+    "d": "moyen",
+    "q": "Art. 41 CO : quelles **conditions** ?",
+    "a": "1. **Dommage**\n2. **Acte illicite** (droit absolu ou norme de protection pour un dommage purement économique)\n3. **Causalité** naturelle et adéquate\n4. **Faute** (intention ou négligence)\n\nPreuve à charge du lésé (42 CO) ; réduction pour faute concomitante (44 CO)."
+  },
+  {
+    "id": 2293,
+    "cat": "Expert suisse",
+    "sub": "Responsabilité – M6L14",
+    "d": "piège",
+    "q": "Art. 55 CO vs art. 58 CO : différence ?",
+    "a": "**Art. 55** (employeur) : responsabilité causale **avec preuve libératoire** (choix, instruction, surveillance).\n**Art. 58** (propriétaire d'ouvrage) : responsabilité causale **sans preuve libératoire** : un défaut de construction ou d'entretien suffit."
+  },
+  {
+    "id": 2294,
+    "cat": "Expert suisse",
+    "sub": "Responsabilité – M6L14",
+    "d": "moyen",
+    "q": "Prescription de l'action en dommages-intérêts (depuis 2020) ?",
+    "a": "- **3 ans** dès la connaissance du dommage et du responsable (relatif).\n- **10 ans** dès le fait dommageable (absolu).\n- **20 ans** en cas de mort d'homme ou de lésions corporelles.\n- Prescription pénale plus longue si le fait est une infraction (60 al. 2 CO)."
+  },
+  {
+    "id": 2295,
+    "cat": "Expert suisse",
+    "sub": "Successions – M6L15",
+    "d": "difficile",
+    "q": "Réserves héréditaires depuis le **1.1.2023** ?",
+    "a": "- Descendants : **1/2** de leur part légale (3/4 avant).\n- Conjoint / partenaire : **1/2** (inchangé).\n- Parents : **plus de réserve** (1/2 avant).\n\n💡 Conjoint + enfants : quotité disponible **1/2** (3/8 avant)."
+  },
+  {
+    "id": 2296,
+    "cat": "Expert suisse",
+    "sub": "Successions – M6L15",
+    "d": "moyen",
+    "q": "Participation aux acquêts : que sont les **biens propres** ?",
+    "a": "Art. 198 CC : effets personnels, biens possédés avant le mariage, biens reçus par **succession** ou **donation**, réparation morale.\n\n**Acquêts** (197 CC) : biens acquis à titre onéreux pendant le mariage, dont le **produit du travail** et les **revenus des biens propres**.\nLiquidation : bénéfice de chacun partagé **par moitié** (215 CC)."
+  },
+  {
+    "id": 2297,
+    "cat": "Expert suisse",
+    "sub": "Successions – M6L15",
+    "d": "moyen",
+    "q": "Parts légales du **conjoint survivant** ?",
+    "a": "Art. 462 CC :\n- avec les **descendants** : **1/2** ;\n- avec la parentèle des **père et mère** : **3/4** ;\n- sinon : **la totalité**.\n\n⚠️ Le concubin n'est jamais héritier légal."
+  },
+  {
+    "id": 2298,
+    "cat": "Expert suisse",
+    "sub": "Successions – M6L15",
+    "d": "moyen",
+    "q": "Formes du testament et du pacte successoral ?",
+    "a": "- **Olographe** : entièrement manuscrit, daté, signé (505 CC).\n- **Public** : officier public + **2 témoins** (499 CC).\n- **Oral** : circonstances extraordinaires.\n- **Pacte successoral** : forme du testament **public** (512 CC)."
+  },
+  {
+    "id": 2299,
+    "cat": "Expert suisse",
+    "sub": "Sûretés – M6L16",
+    "d": "moyen",
+    "q": "Garantie (111 CO) ou cautionnement ?",
+    "a": "**Garantie** : engagement **indépendant** de la dette principale ; souvent « à première demande » ; formes libres.\n**Cautionnement** : **accessoire** à la dette ; formes strictes (écrit, montant max, acte authentique pour PP > 2'000, conjoint).\n\n💡 Test : l'engagement dépend-il de l'existence de la dette ?"
+  },
+  {
+    "id": 2300,
+    "cat": "Expert suisse",
+    "sub": "Sûretés – M6L16",
+    "d": "piège",
+    "q": "Gage sur un stock qui reste chez le débiteur : valable ?",
+    "a": "**Non** : le gage mobilier exige la **dépossession** (art. 884 CC). Solutions : remettre le stock à un tiers détenteur, ou choisir une autre sûreté (cession de créances, cédule hypothécaire).\n\n⚠️ Le **pacte commissoire** (le créancier devient propriétaire à défaut de paiement) est **nul** (894 CC)."
+  },
+  {
+    "id": 2301,
+    "cat": "Expert suisse",
+    "sub": "Sûretés – M6L16",
+    "d": "moyen",
+    "q": "Hypothèque légale des **artisans et entrepreneurs** ?",
+    "a": "Art. 837 ss CC : garantit les entrepreneurs qui ont fourni travail et matériaux pour un immeuble.\n- Inscription au **registre foncier** au plus tard **4 mois** après l'achèvement des travaux (839 CC).\n- Risque pour le maître : payer deux fois (entreprise générale + sous-traitant impayé)."
   }
 ]
