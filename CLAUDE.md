@@ -217,5 +217,9 @@ lignes d'un même `.jsx` entre deux synchronisations.
 - Les flashcards n'ont pas de module dans flashcards.json : `_fcModuleOf`
   (api-client-static.js) le déduit de `sub` (« M2L7 ») ou de `cat` (Fiscalité →
   M7, TVA → M8, RPC → M3, IFRS → M4, ISA → M5/M10, RPC 30/IFRS 3/IAS 28 → M11).
+- `formatAnswer` (crossref.js) : une ligne « ⚠️ … » / « 💡 … » d'un texte multiligne
+  devient un encadré `.cr-note` ; ailleurs, classes `.cr-hl-*` (le gras suit la couleur
+  de la ligne). Ne pas réintroduire de `style="color:…"` en ligne : les onglets
+  colorent `<strong>` et le texte devenait bicolore.
 - Les onglets natifs injectent leur `<style>` après style.css : une règle
   mobile qui doit l'emporter va dans ce `<style>` (ex. qcm.js), pas dans style.css.

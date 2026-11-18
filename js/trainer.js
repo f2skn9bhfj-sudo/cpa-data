@@ -199,6 +199,10 @@ async function renderTrainer(main) {
             }
             body.light-mode .trainer-mode-card:hover { box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12); }
             body.light-mode .trainer-tag[style*="color:#93c5fd"] { color: #1d4ed8 !important; }
+            /* Bandeau « fenêtre de révision » : fonds sombres codés en dur → teintes claires */
+            body.light-mode .trainer-rec-banner { background: #eff6ff !important; }
+            body.light-mode .trainer-rec-banner[data-window="optimal"] { background: #ecfdf5 !important; }
+            body.light-mode .trainer-rec-banner[data-window="degraded"] { background: #fef2f2 !important; }
             body.light-mode .trainer-tag[style*="color:#c4b5fd"] { color: #6d28d9 !important; background: #f5f3ff !important; }
             .trainer-mode-card:hover {
                 transform: translateY(-3px);
@@ -420,7 +424,7 @@ async function renderTrainerHome(main) {
             </div>
 
             <!-- Cognitive window banner -->
-            <div style="background:${recBg};border:1px solid ${recBorder};border-radius:12px;padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;gap:14px">
+            <div class="trainer-rec-banner" data-window="${trainerEscapeHtml(rec.window || '')}" style="background:${recBg};border:1px solid ${recBorder};border-radius:12px;padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;gap:14px">
                 <span style="font-size:28px">${trainerEscapeHtml(rec.icon || '📚')}</span>
                 <div>
                     <div style="font-size:13px;font-weight:700;color:#f1f5f9;margin-bottom:2px">${trainerEscapeHtml(rec.label || 'Session')}</div>

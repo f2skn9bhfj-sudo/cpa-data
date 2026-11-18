@@ -4118,3 +4118,19 @@ body[data-tab="podcasts"] #mindDumpPanel { bottom: 150px !important; }
 }
 .mq-exp-ok { background: rgba(16,185,129,.08); border: 1px solid rgba(16,185,129,.22); }
 .mq-exp-no { background: rgba(239,68,68,.07); border: 1px solid rgba(239,68,68,.2); }
+
+/* ── Lignes mises en évidence par formatAnswer (crossref.js) ──
+   ⚠️ / 💡 isolés → encadré ; dans une liste ou un tableau → couleur de ligne.
+   Le gras suit la couleur de la ligne (les onglets natifs colorent <strong>). */
+.cr-note {
+    display: block; margin: 8px 0; padding: 8px 12px; line-height: 1.6;
+    border-left: 3px solid; border-radius: 0 8px 8px 0;
+}
+.cr-note-warn { background: var(--cl-warn-bg); border-left-color: var(--cl-warn-accent, #f59e0b); }
+.cr-note-tip  { background: var(--cl-tip-bg);  border-left-color: var(--cl-tip-accent, #84cc16); }
+.cr-note .cr-hl { color: inherit !important; }
+.cr-hl-warn { color: var(--cl-warn-fg, #fcd34d); }
+.cr-hl-tip  { color: var(--cl-tip-fg, #d9f99d); }
+.cr-hl-step { color: var(--accent-blue, #60a5fa); }
+.cr-hl strong, .cr-hl b { color: inherit !important; }
+.callout-body .cr-note { background: none; border: 0; padding: 0; margin: 0 0 8px; }

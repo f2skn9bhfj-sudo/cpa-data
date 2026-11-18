@@ -72,9 +72,11 @@ document.addEventListener('keydown', (e) => {
 function _formatLine(line) {
     let html = addCrossRefs(line);
     html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-    if (html.includes('⚠️')) html = `<span style="color:#f59e0b">${html}</span>`;
-    if (html.includes('💡')) html = `<span style="color:#22c55e">${html}</span>`;
-    if (/^[①②③④⑤⑥⑦⑧⑨⑩🅰🅱🅲]/.test(html.trim())) html = `<span style="color:#60a5fa">${html}</span>`;
+    // Mise en évidence par classe (couleurs selon le thème, le gras suit la
+    // couleur de la ligne au lieu de rester blanc au milieu du texte orange).
+    if (html.includes('⚠️')) html = `<span class="cr-hl cr-hl-warn">${html}</span>`;
+    else if (html.includes('💡')) html = `<span class="cr-hl cr-hl-tip">${html}</span>`;
+    else if (/^[①②③④⑤⑥⑦⑧⑨⑩🅰🅱🅲]/.test(html.trim())) html = `<span class="cr-hl cr-hl-step">${html}</span>`;
     return html;
 }
 
@@ -153,6 +155,14 @@ function _formatLines(text) {
         }
         // Skip blank lines that would only add empty space after text/blocks
         if (line.trim() === '' && endsBlock()) { i++; continue; }
+        // Ligne isolée « ⚠️ … » / « 💡 … » → encadré (fond teinté + filet), texte
+        // dans la couleur normale : lisible en thème sombre comme clair.
+        if (lines.length > 1 && (line.includes('⚠️') || line.includes('💡'))) {
+            const kind = line.includes('⚠️') ? 'warn' : 'tip';
+            result += `<div class="cr-note cr-note-${kind}">${_formatLine(line)}</div>`;
+            i++;
+            continue;
+        }
         result += _formatLine(line) + '<br>';
         i++;
     }
