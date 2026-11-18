@@ -256,6 +256,7 @@ function _qcmRenderSetup() {
     const starredCount = Object.values(t.bookmarks).filter(b => b.starred).length;
     const dueCount = (t.due_ids || []).length;
     const weakCount = _qcmWeakCount();
+    const esCount = qcm.catalog.filter(_qcmIsEsStyle).length;
     const totalQuestionsSeen = countsTot.total_questions_seen || 0;
 
     el.innerHTML = `
@@ -304,6 +305,10 @@ function _qcmRenderSetup() {
             <button class="qcm-special qcm-special-star ${starredCount === 0 ? 'qcm-disabled' : ''}" onclick="_qcmStartSpecial('starred')" ${starredCount === 0 ? 'disabled' : ''}>
                 <div class="qcm-special-title">⭐ Mes favoris</div>
                 <div class="qcm-special-desc"><b>${starredCount}</b> questions marquées</div>
+            </button>
+            <button class="qcm-special qcm-special-es ${esCount === 0 ? 'qcm-disabled' : ''}" onclick="_qcmStartEsStyle()" ${esCount === 0 ? 'disabled' : ''}>
+                <div class="qcm-special-title">🎓 Format EXPERTsuisse</div>
+                <div class="qcm-special-desc"><b>${esCount}</b> questions « Identifiez la réponse correcte » · 20 au hasard</div>
             </button>
             <button class="qcm-special qcm-special-wrong" onclick="_qcmStartSpecial('recent_wrong')">
                 <div class="qcm-special-title">✗ Mes erreurs récentes</div>
@@ -731,6 +736,14 @@ async function _qcmStartQuiz() {
     qcm._speedMode = false;  // Reset
 }
 
+
+// ── Format de l'examen EXPERTsuisse : phrase à compléter + « (Identifiez la réponse correcte) » ──
+function _qcmIsEsStyle(q) { return /\(Identifiez la (?:réponse|les réponses) correcte/.test((q && q.question) || ''); }
+function _qcmStartEsStyle(n) {
+    const pool = _qcmShuffle(qcm.catalog.filter(_qcmIsEsStyle));
+    if (!pool.length) { alert('Aucune question au format EXPERTsuisse.'); return; }
+    _qcmStartSession(pool.slice(0, n || 20), { mode: 'training', specialSelection: null, shuffleOptions: qcm.shuffleOptions });
+}
 
 // ── Série du « Plan du jour » (accueil) ──
 // Priorité : questions à revoir (répétition espacée) → points faibles → erreurs
@@ -1740,6 +1753,7 @@ function _qcmInjectStyles() {
     .qcm-special-weak { border-left: 3px solid #ef4444; }
     .qcm-special-star { border-left: 3px solid #fbbf24; }
     .qcm-special-wrong { border-left: 3px solid #f97316; }
+    .qcm-special-es { border-left: 3px solid #0ea5e9; }
     .qcm-special-exam { border-left: 3px solid #8b5cf6; background: linear-gradient(90deg, rgba(139, 92, 246, 0.08), transparent); }
     .qcm-special-hist { border-left: 3px solid #64748b; }
 

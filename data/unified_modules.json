@@ -2286,6 +2286,36 @@
               "explanation": "L'emploi du bénéfice résultant du bilan relève de la compétence intransmissible de l'AG (CO 698 al. 2 ch. 4), sur proposition du CA.",
               "difficulty": "easy",
               "section_id": "m1_L9_s5"
+            },
+            {
+              "id": "m1_L9_q7",
+              "type": "mcq",
+              "question": "Le compte « Créances clients »\n(Identifiez la réponse correcte)",
+              "options": [
+                "est un compte d'actif dont le solde est normalement créditeur",
+                "est un compte d'actif dont le solde est normalement débiteur",
+                "est un compte de produits soldé dans le compte de résultat",
+                "est un compte de passif dont le solde est normalement créditeur"
+              ],
+              "answer": 1,
+              "explanation": "Les créances clients sont un actif circulant : elles augmentent au débit et présentent normalement un solde débiteur.",
+              "difficulty": "easy",
+              "section_id": "m1_L9_s3"
+            },
+            {
+              "id": "m1_L9_q8",
+              "type": "mcq",
+              "question": "Les fonds propres\n(Identifiez la réponse correcte)",
+              "options": [
+                "correspondent à la différence entre les actifs et les fonds étrangers",
+                "correspondent uniquement au bénéfice de l'exercice écoulé",
+                "correspondent au total du bilan de clôture",
+                "correspondent à la somme des actifs et des fonds étrangers figurant au bilan"
+              ],
+              "answer": 0,
+              "explanation": "Actif = fonds étrangers + fonds propres : les fonds propres sont la différence entre ce que l'entreprise possède et ce qu'elle doit à des tiers.",
+              "difficulty": "easy",
+              "section_id": "m1_L9_s1"
             }
           ]
         },
@@ -2622,6 +2652,36 @@
               "explanation": "Le grand livre ne contient que le compte collectif ; le détail par client est tenu en auxiliaire. Les deux doivent concorder à tout moment.",
               "difficulty": "easy",
               "section_id": "m1_L11_s5"
+            },
+            {
+              "id": "m1_L11_q7",
+              "type": "mcq",
+              "question": "Une charge payée d'avance au 31 décembre\n(Identifiez la réponse correcte)",
+              "options": [
+                "est portée à l'actif de régularisation",
+                "est portée au passif de régularisation",
+                "est portée en diminution du capital",
+                "reste en charges de l'exercice écoulé"
+              ],
+              "answer": 0,
+              "explanation": "La part d'une charge payée qui concerne l'exercice suivant est sortie des charges et inscrite à l'actif de régularisation, puis extournée à la réouverture.",
+              "difficulty": "easy",
+              "section_id": "m1_L11_s3"
+            },
+            {
+              "id": "m1_L11_q8",
+              "type": "mcq",
+              "question": "Un amortissement\n(Identifiez la réponse correcte)",
+              "options": [
+                "est un produit qui augmente la valeur de l'actif",
+                "est une charge qui ne provoque pas de sortie de liquidités",
+                "est une charge qui provoque une sortie de liquidités",
+                "est un remboursement d'une dette envers la banque prêteuse"
+              ],
+              "answer": 1,
+              "explanation": "L'amortissement répartit le coût d'un actif déjà payé sur sa durée d'utilisation : il réduit le bénéfice sans sortie de trésorerie.",
+              "difficulty": "easy",
+              "section_id": "m1_L11_s2"
             }
           ]
         },
@@ -3242,6 +3302,21 @@
               "explanation": "Le plan PME distingue l'impôt préalable sur matériel et marchandises (1170) de celui sur les investissements et autres charges d'exploitation (1171), ce qui correspond aux chiffres distincts du décompte TVA.",
               "difficulty": "medium",
               "section_id": "m1_L15_s1"
+            },
+            {
+              "id": "m1_L15_q7",
+              "type": "mcq",
+              "question": "La TVA facturée aux clients\n(Identifiez la réponse correcte)",
+              "options": [
+                "est enregistrée à l'actif, dans le compte impôt préalable",
+                "est enregistrée au passif, dans le compte TVA due",
+                "est enregistrée en produits, dans le chiffre d'affaires",
+                "est enregistrée en charges d'exploitation de la période"
+              ],
+              "answer": 1,
+              "explanation": "La TVA facturée est une dette envers l'AFC (2200 TVA due) ; l'impôt préalable payé aux fournisseurs est une créance (1170/1171).",
+              "difficulty": "easy",
+              "section_id": "m1_L15_s1"
             }
           ]
         },
@@ -3792,6 +3867,21 @@
               "explanation": "L'usage privé d'une partie de l'immeuble est une part privée : 2850 Privé / 7500 Produits d'immeuble, à la valeur locative, pour que le résultat d'immeuble soit correct.",
               "difficulty": "medium",
               "section_id": "m1_L19_s2"
+            },
+            {
+              "id": "m1_L19_q6",
+              "type": "mcq",
+              "question": "Dans une raison individuelle, le compte privé\n(Identifiez la réponse correcte)",
+              "options": [
+                "est soldé contre le compte capital à la clôture",
+                "est soldé contre le compte de résultat à la clôture",
+                "est reporté tel quel à l'exercice suivant",
+                "est soldé contre les dettes fournisseurs"
+              ],
+              "answer": 0,
+              "explanation": "Le compte privé, qui recueille les apports et prélèvements de l'exploitant, est viré au capital à la clôture, comme le bénéfice de l'exercice.",
+              "difficulty": "easy",
+              "section_id": "m1_L19_s1"
             }
           ]
         },
@@ -36477,6 +36567,51 @@
               "explanation": "Vrai. La période fiscale correspond à l'année civile et la taxation intervient après sa fin, sur les revenus effectivement réalisés pendant cette période.",
               "difficulty": "easy",
               "section_id": "m7_L1_s10"
+            },
+            {
+              "id": "m7_L1_q16",
+              "type": "mcq",
+              "question": "En termes de souveraineté fiscale\n(Identifiez la réponse correcte)",
+              "options": [
+                "la Confédération peut prélever tout impôt que la Constitution ne lui interdit pas expressément",
+                "les communes ecclésiastiques reconnues par l'État disposent d'une souveraineté fiscale dérivée",
+                "seules les communes jouissent d'une souveraineté fiscale originaire reconnue par la Constitution",
+                "seuls les cantons jouissent d'une souveraineté fiscale, la Confédération n'en ayant aucune"
+              ],
+              "answer": 1,
+              "explanation": "La Confédération et les cantons ont une souveraineté fiscale originaire ; les communes et les paroisses (communes ecclésiastiques reconnues) disposent d'une souveraineté dérivée, accordée par le canton. La Confédération ne peut prélever que les impôts que la Constitution lui attribue.",
+              "difficulty": "medium",
+              "section_id": "m7_L1_s10"
+            },
+            {
+              "id": "m7_L1_q17",
+              "type": "mcq",
+              "question": "La Confédération\n(Identifiez la réponse correcte)",
+              "options": [
+                "ne peut prélever que les impôts que la Constitution lui attribue expressément",
+                "peut prélever un impôt sur la fortune des personnes physiques depuis la réforme RFFA",
+                "peut prélever un impôt sur les successions en ligne directe depuis 2020",
+                "partage avec les communes une souveraineté fiscale originaire et illimitée"
+              ],
+              "answer": 0,
+              "explanation": "La compétence fiscale fédérale est limitée aux impôts énumérés par la Constitution (IFD, TVA, impôt anticipé, droits de timbre, droits de douane…). L'impôt sur la fortune et les impôts sur les successions sont cantonaux.",
+              "difficulty": "medium",
+              "section_id": "m7_L1_s10"
+            },
+            {
+              "id": "m7_L1_q18",
+              "type": "mcq",
+              "question": "Les cantons\n(Identifiez la réponse correcte)",
+              "options": [
+                "peuvent prélever tous les impôts que la Constitution ne réserve pas à la Confédération",
+                "fixent librement l'assiette de l'impôt sur le revenu, sans avoir à tenir compte de la LHID",
+                "ne peuvent pas prélever d'impôt sur le bénéfice des personnes morales",
+                "ne peuvent prélever que les impôts énumérés de manière exhaustive dans la LHID"
+              ],
+              "answer": 0,
+              "explanation": "Les cantons sont souverains (art. 3 Cst.) et peuvent prélever tout impôt non réservé à la Confédération. La LHID harmonise les impôts directs qu'ils doivent prélever (assiette, procédure), mais ils restent libres des barèmes et peuvent prélever d'autres impôts (successions, gains immobiliers…).",
+              "difficulty": "medium",
+              "section_id": "m7_L1_s10"
             }
           ],
           "mindmap_md": "# M7-L1\n## Système fiscal suisse\n\n### Pertinence examen\n- **Haute** — fondation pour TOUT le module M7/M8\n- Questions transversales chaque session\n- Lien étroit avec **m1_L7** (intro fiscalité)\n\n### Architecture fédéraliste — 3 souverainetés\n- **Confédération** : compétence **primaire** mais **limitée** (Cst. féd. art. 3 + 128)\n- **Cantons (26)** : compétence **subsidiaire** et **générale** (tout sauf interdit)\n- **Communes (~2'000)** : par délégation cantonale\n- ⚠️ Confédération **NE PEUT PAS** prélever : fortune PP, capital PM\n- Compétences fédérales : IFD, **TVA**, **IA**, droits de timbre\n- Compétences cantonales : revenu/fortune PP, bénéfice/capital PM, gains immobiliers, donations/successions\n\n### Contributions publiques — typologie\n#### Impôt vs taxe causale\n- **Impôt** : sans contre-prestation identifiable (IFD, ICC, TVA)\n- **Émolument** : contre-prestation **individuelle** (passeport CHF 150)\n- **Charge de préférence** : avantage **collectif** (raccordement égout)\n- **Cotisation** : assurances sociales (AVS, AC)\n#### 5 critères de classification\n- Incidence : **directs / indirects**\n- Base : **objet / personnels**\n- Calcul : **fixes / proportionnels / progressifs**\n- Dans le temps : **périodiques / uniques**\n- Souveraineté : **fédéraux / cantonaux / communaux**\n\n### Bases légales — Cst. féd. art. 127\n- **Légalité** (al. 1) : qualité, objet, calcul = par la **LOI**\n- **Universalité, égalité, capacité contributive** (al. 2)\n- **Interdiction double imposition intercantonale** (al. 3)\n- **Liberté économique** (Cst. 27) — ne pas étrangler l'activité\n- **Garantie propriété** (Cst. 26) — pas d'impôt confiscatoire\n- ⚠️ Barème **dégressif Obwald** jugé **INCONSTITUTIONNEL** (ATF 133 I 206)\n\n### Harmonisation LHID (en vigueur 01.01.2001)\n- **Harmonisation FORMELLE** : assiette, sujet, taxation, procédure, pénal\n- **PAS d'harmonisation** des **taux** (autonomie cantonale)\n- **LIFD** = impôt fédéral direct ; **LHID** = harmonisation cantonale\n- Délai cantons : 8 ans pour adapter législation\n- Maintien concurrence fiscale intercantonale = trait suisse\n\n### Optimisation vs évasion vs soustraction\n#### Optimisation — LÉGALE\n- Choix de la solution la moins onéreuse fiscalement\n- Ex. : déménager Genève → Zoug\n#### Évasion — ABUSIVE\n- Forme **insolite + inadaptée**\n- Motif **uniquement fiscal**\n- **Économie notable** si admise\n- Conséquence : requalification par fisc, **sans sanction pénale**\n- Ex. : Sàrl fictive au Panama avec facturations bidons\n#### Soustraction — PÉNALE (art. 175 LIFD)\n- **Dissimulation** d'éléments imposables\n- Sanction : amende + rappel + intérêts\n- Différence clé : **évasion ne cache rien**, soustraction **dissimule**\n\n### Imposition dans le temps — postnumerando annuel\n- **Période fiscale** = étendue assujettissement\n- **Période de calcul** = revenu pris en compte\n- **Période de taxation** = procédure\n- **Postnumerando** : période fiscale = période de calcul (année civile N)\n- Cas particulier : **mariage / divorce / décès** durant l'année\n\n### ⚠️ Pièges examen\n- **N°1** Confédération **n'impose PAS** fortune PP ni capital PM (Cst. 128)\n- **N°2** **Évasion ≠ soustraction** — évasion visible mais abusive, soustraction dissimulée\n- **N°3** Barème **dégressif INTERDIT** (Obwald) — viole capacité contributive\n- **N°4** LHID harmonise **forme, pas taux** — concurrence fiscale légale\n- **N°5** Impôt vs émolument : **contre-prestation individuelle = émolument**\n- **N°6** Système **postnumerando** depuis 2001 (avant : praenumerando bisannuel)\n\n### 💡 Mnémoniques\n- **« 3 niveaux »** — Confédération + Cantons + Communes\n- **« CAP-PROP-LIB-ÉGAL »** — Capacité + Propriété + Liberté éco + Égalité (les 4 garde-fous)\n- **« 127-128 Cst. »** — principes fiscaux + compétences confédérales\n- **« OPT-ÉVAS-SOUS »** — gradation : Légal → Abusif → Pénal\n- **« FFCC »** — Forme = harmonisée ; Calcul = libre cantonalement\n\n### 🔗 Renvois\n- **m1_L7** — Introduction fiscalité suisse (vue d'ensemble)\n- **m7_L2** — Assujettissement PP\n- **m7_L8** — Assujettissement PM\n- **m7_L11** — Droit procédural\n- **m7_L12** — Droit pénal fiscal (soustraction art. 175)\n- **m7_L13** — Intercantonal (double imposition)\n- **Cst. féd. art. 3, 127, 128** — bases constitutionnelles\n- **LIFD / LHID** — textes principaux\n",
@@ -36793,6 +36928,51 @@
               "explanation": "Faux. La propriété d'un immeuble en Suisse crée un rattachement économique et donc un assujettissement limité aux revenus et à la fortune de cet immeuble.",
               "difficulty": "easy",
               "section_id": "m7_L2_s9"
+            },
+            {
+              "id": "m7_L2_q16",
+              "type": "mcq",
+              "question": "En Suisse, les personnes physiques\n(Identifiez la réponse correcte)",
+              "options": [
+                "ne sont jamais imposées sur leurs revenus d'activités et leurs avoirs à l'étranger",
+                "sont assujetties à l'impôt sur la fortune aux plans communal, cantonal et fédéral",
+                "sont assujetties à l'impôt sur le revenu aux plans communal, cantonal et fédéral",
+                "sont assujetties à l'impôt sur le revenu et la fortune aux plans communal, cantonal et fédéral"
+              ],
+              "answer": 2,
+              "explanation": "Le revenu est imposé aux trois niveaux ; la fortune ne l'est qu'aux niveaux cantonal et communal (pas d'impôt fédéral sur la fortune). Un résident est imposé sur ses revenus mondiaux, à l'exception de ses entreprises, établissements stables et immeubles à l'étranger.",
+              "difficulty": "easy",
+              "section_id": "m7_L2_s9"
+            },
+            {
+              "id": "m7_L2_q17",
+              "type": "mcq",
+              "question": "Une personne physique domiciliée en Suisse\n(Identifiez la réponse correcte)",
+              "options": [
+                "est imposée en Suisse sur l'ensemble de ses revenus mondiaux, y compris ceux de ses immeubles situés à l'étranger",
+                "n'est imposée sur ses revenus mondiaux que si elle possède la nationalité suisse",
+                "n'est imposée en Suisse que sur ses revenus de source suisse, comme un contribuable étranger",
+                "est assujettie de manière illimitée, sauf pour ses entreprises, établissements stables et immeubles à l'étranger"
+              ],
+              "answer": 3,
+              "explanation": "Le domicile fonde un assujettissement illimité, qui ne s'étend toutefois pas aux entreprises, établissements stables et immeubles situés à l'étranger ; ces éléments sont seulement pris en compte pour le taux (art. 6 LIFD).",
+              "difficulty": "medium",
+              "section_id": "m7_L2_s9"
+            },
+            {
+              "id": "m7_L2_q18",
+              "type": "mcq",
+              "question": "Un ressortissant étranger qui séjourne en Suisse sans y exercer d'activité lucrative\n(Identifiez la réponse correcte)",
+              "options": [
+                "y a un séjour fiscal s'il y reste au moins 30 jours",
+                "y est assujetti dès le premier jour de sa présence",
+                "y a un séjour fiscal s'il y reste au moins 90 jours",
+                "n'y est jamais assujetti tant qu'il n'y prend pas domicile"
+              ],
+              "answer": 2,
+              "explanation": "Il y a séjour fiscal lorsqu'une personne réside en Suisse au moins 30 jours en y exerçant une activité lucrative, ou au moins 90 jours sans activité lucrative (art. 3 al. 3 LIFD).",
+              "difficulty": "easy",
+              "section_id": "m7_L2_s9"
             }
           ],
           "mindmap_md": "# M7-L2\n## Fiscalité PP — Assujettissement\n\n### Pertinence examen\n- **Haute** — première étape de tout cas PP\n- Méthode systématique en 2 temps (Suisse + canton)\n\n### Champ d'application\n- **LIFD** : impôt fédéral PP (revenu) + PM (bénéfice)\n- **LHID** : harmonise les **26 cantons**\n- Confédération : revenu PP + bénéfice PM + impôt à la source\n- Pas de fortune fédérale (compétence cantonale uniquement)\n\n### Rattachement — clé de tout le système\n#### Rattachement PERSONNEL — illimité (art. 3 LIFD)\n- **Domicile** (art. 3 al. 2) :\n  - **Objectif** : résidence effective + foyer\n  - **Subjectif** : intention de s'établir durablement\n  - Centre des **intérêts vitaux** (famille, école enfants)\n- **Séjour** (art. 3 al. 3) :\n  - ≥ **30 jours** avec activité lucrative, OU\n  - ≥ **90 jours** sans activité lucrative\n- **Étendue** : tous revenus **mondiaux** sauf 3 exceptions\n#### Rattachement ÉCONOMIQUE — limité (art. 4-5 LIFD)\n- Pas domicile/séjour CH mais lien éco avec CH\n- Cas typiques (art. 4) :\n  - Propriétaire d'**entreprise** CH ou associé\n  - **Établissement stable** en CH\n  - Propriétaire d'**immeubles** en CH\n  - Créancier **gagé sur immeuble** CH\n- Cas activités (art. 5) :\n  - Activité lucrative **exercée en CH**\n  - **Tantièmes** d'administrateur de PM CH\n  - Pensions de prévoyance **provenant de CH**\n\n### Étendue de l'assujettissement (art. 6 LIFD)\n- **Illimité = TOUT sauf 3 exceptions** :\n  - Entreprises à l'étranger\n  - Établissements stables à l'étranger\n  - Immeubles à l'étranger\n- **Asymétrie clé** (art. 6 al. 3) :\n  - Perte ES étranger = **déductible**\n  - Perte entreprise/immeuble étranger = **NON déductible**\n- **Méthode d'exonération avec réserve de progressivité** :\n  - Revenu exclu **pas imposé**, mais compté pour le **taux**\n\n### Cas Trudy & Raphaël (mémorables)\n- **Trudy** Fribourg + villa St-Tropez louée :\n  - Loyer FR exclu de base imposable\n  - Loyer FR inclus pour **taux**\n- **Raphaël** Chiasso + succursale italienne en perte :\n  - Perte ES Italie **déductible** en CH\n  - Si perte d'entreprise italienne (pas ES) → NON déductible\n\n### Début et fin (art. 8 LIFD)\n- **Début** : jour de prise de domicile / début séjour / acquisition élément CH\n- **Fin** : décès / départ effectif CH / fin élément imposable\n- **Inversion charge preuve** : contribuable doit prouver nouveau domicile à l'étranger\n- **CICR délégué** : reste assujetti CH si pas de nouveau domicile constitué\n\n### Règles particulières\n#### Époux et partenaires (art. 9 LIFD)\n- Revenus **additionnés** (couple = 1 contribuable)\n- Partenariat enregistré = couple marié\n- Revenus enfants mineurs ajoutés (sauf activité dépendante propre)\n- Splitting cantonal pour atténuer progressivité\n#### Hoiries (communautés héréditaires)\n- Imposées **séparément** chez chaque héritier (au prorata des parts)\n- Transparence fiscale\n#### Imposition d'après la dépense (forfait fiscal — art. 14 LIFD)\n- Étrangers, **pas d'activité lucrative en CH**, **première installation**\n- Base : **7×** loyer/valeur locative (min. IFD 400k indexé : 434'700 en 2025)\n- **Aboli** : ZH, BS, SH, AR, BL\n- Maintenu : VS, VD, GE, FR, NE, JU + IFD\n\n### Méthode d'analyse (2 ÉTAPES)\n- **Étape 1 — Niveau Suisse (LIFD)** :\n  - Rattachement personnel (art. 3) ?\n  - Rattachement économique (art. 4-5) ?\n  - Étendue (art. 6) ?\n- **Étape 2 — Niveau canton (LHID + loi cantonale)** :\n  - For principal vs for spécial\n  - Répartition intercantonale (cf. m7_L13)\n\n### ⚠️ Pièges examen\n- **N°1** **30 j AVEC** / **90 j SANS** activité = seuils séjour (art. 3 al. 3)\n- **N°2** Exceptions étendue = **3** : entreprise + ES + immeuble (étranger)\n- **N°3** Perte **ES étranger** déductible, perte **entreprise étrangère** NON\n- **N°4** Revenus exclus restent dans **calcul du taux** (réserve progressivité)\n- **N°5** Étudiant étranger pour études = **PAS** d'assujettissement (art. 3 al. 4)\n- **N°6** Forfait fiscal **aboli ZH/BS/SH/AR/BL** — maintenu Romandie + IFD\n- **N°7** Charge preuve : **contribuable** doit prouver nouveau domicile étranger\n\n### 💡 Mnémoniques\n- **« 30/90 »** — séjour avec/sans activité\n- **« 3 exceptions »** — Entreprise + ES + Immeuble à l'étranger\n- **« 3 PP »** — Personnel (illimité) + ProportionnEl (limité) + Pas-3-piliers (illimité étendu)\n- **« CIV »** — Centre Intérêts Vitaux (test domicile)\n- **« ROL »** — Rattachement Objectif (résidence) + Subjectif (intention) + Lien éco\n- **« 7× »** — multiplicateur forfait fiscal\n\n### 🔗 Renvois\n- **m7_L1** — Système fiscal (vue d'ensemble)\n- **m7_L7** — Calcul (barèmes, déductions)\n- **m7_L13** — Intercantonal (fors fiscaux)\n- **LIFD art. 3-8** — assujettissement PP\n- **LIFD art. 14** — forfait fiscal\n- **LHID art. 3-6** — versant cantonal\n",
@@ -37104,6 +37284,36 @@
               "options": null,
               "answer": true,
               "explanation": "Vrai. Depuis 2022, le forfait de 0,9 % par mois inclut l'usage pour le trajet domicile-travail ; le salarié ne peut en contrepartie pas déduire de frais de déplacement pour ce véhicule.",
+              "difficulty": "medium",
+              "section_id": "m7_L3_s10"
+            },
+            {
+              "id": "m7_L3_q16",
+              "type": "mcq",
+              "question": "Les options de collaborateur non cotées\n(Identifiez la réponse correcte)",
+              "options": [
+                "sont imposées au moment de leur exercice",
+                "ne sont jamais imposées, s'agissant de gains en capital",
+                "sont imposées lors de la vente des actions acquises",
+                "sont imposées au moment de leur attribution"
+              ],
+              "answer": 0,
+              "explanation": "Les options non cotées ou bloquées sont imposées lors de leur exercice ; l'avantage correspond à la différence entre la valeur vénale de l'action et le prix d'exercice.",
+              "difficulty": "medium",
+              "section_id": "m7_L3_s10"
+            },
+            {
+              "id": "m7_L3_q17",
+              "type": "mcq",
+              "question": "Les frais de déplacement entre le domicile et le lieu de travail\n(Identifiez la réponse correcte)",
+              "options": [
+                "ne sont déductibles qu'en cas d'utilisation exclusive des transports publics",
+                "sont déductibles à l'IFD dans la limite d'un plafond fixé par la loi",
+                "sont déductibles sans aucune limite à l'impôt fédéral direct",
+                "ne sont jamais déductibles à l'impôt fédéral direct"
+              ],
+              "answer": 1,
+              "explanation": "Les frais de déplacement nécessaires sont des frais professionnels déductibles, mais l'IFD les plafonne (art. 26 al. 1 let. a LIFD) ; les cantons fixent leurs propres limites.",
               "difficulty": "medium",
               "section_id": "m7_L3_s10"
             }
@@ -37427,6 +37637,36 @@
               "answer": false,
               "explanation": "Faux. Selon le critère de la prépondérance, un bien mixte est attribué entièrement à la fortune commerciale ou à la fortune privée selon son affectation prépondérante (ici commerciale).",
               "difficulty": "medium",
+              "section_id": "m7_L4_s10"
+            },
+            {
+              "id": "m7_L4_q16",
+              "type": "mcq",
+              "question": "Le gain réalisé par un indépendant sur un bien de sa fortune commerciale\n(Identifiez la réponse correcte)",
+              "options": [
+                "est imposable comme revenu de l'activité lucrative indépendante",
+                "n'est soumis qu'à l'impôt anticipé, au taux de 35 %",
+                "n'est imposable que s'il dépasse CHF 100'000 par période fiscale",
+                "est toujours exonéré, comme un gain réalisé sur la fortune privée"
+              ],
+              "answer": 0,
+              "explanation": "Les bénéfices en capital provenant de l'aliénation d'éléments de la fortune commerciale font partie du revenu de l'activité indépendante (art. 18 al. 2 LIFD) ; seuls les gains sur la fortune privée sont exonérés.",
+              "difficulty": "easy",
+              "section_id": "m7_L4_s10"
+            },
+            {
+              "id": "m7_L4_q17",
+              "type": "mcq",
+              "question": "Les pertes commerciales d'un indépendant\n(Identifiez la réponse correcte)",
+              "options": [
+                "ne peuvent être compensées qu'avec le revenu de l'année suivante",
+                "peuvent être reportées sur les sept périodes fiscales suivantes",
+                "peuvent être reportées sur les dix périodes fiscales suivantes",
+                "peuvent être reportées sans aucune limite de temps"
+              ],
+              "answer": 1,
+              "explanation": "Les pertes des sept exercices précédant la période fiscale sont déductibles si elles n'ont pas encore pu être prises en compte (art. 31 LIFD).",
+              "difficulty": "easy",
               "section_id": "m7_L4_s10"
             }
           ],
@@ -37753,6 +37993,36 @@
               "explanation": "Faux. Selon le principe de l'apport de capital, le remboursement d'apports confirmés par l'AFC n'est ni soumis à l'impôt anticipé ni imposable comme revenu chez l'actionnaire privé.",
               "difficulty": "easy",
               "section_id": "m7_L5_s10"
+            },
+            {
+              "id": "m7_L5_q16",
+              "type": "mcq",
+              "question": "Le gain réalisé par une personne physique sur la vente d'actions de sa fortune privée\n(Identifiez la réponse correcte)",
+              "options": [
+                "est imposé à 70 % s'il porte sur une participation d'au moins 10 %",
+                "est soumis à l'impôt anticipé de 35 % retenu par la banque",
+                "est en principe exonéré de l'impôt sur le revenu",
+                "est toujours imposé à l'IFD au taux réduit des gains"
+              ],
+              "answer": 2,
+              "explanation": "Les gains en capital sur la fortune mobilière privée sont exonérés (art. 16 al. 3 LIFD), sauf exceptions (commerce professionnel de titres, liquidation partielle indirecte, transposition). L'imposition partielle à 70 % concerne les dividendes.",
+              "difficulty": "medium",
+              "section_id": "m7_L5_s10"
+            },
+            {
+              "id": "m7_L5_q17",
+              "type": "mcq",
+              "question": "Les dividendes d'une participation d'au moins 10 % détenue dans la fortune privée\n(Identifiez la réponse correcte)",
+              "options": [
+                "sont imposés à 70 % à l'impôt fédéral direct",
+                "sont imposés à 50 % à l'impôt fédéral direct",
+                "sont imposés à 100 %, comme tous les autres dividendes",
+                "sont totalement exonérés à l'impôt fédéral direct"
+              ],
+              "answer": 0,
+              "explanation": "Depuis la RFFA (2020), l'IFD impose les dividendes de participations qualifiées (≥ 10 %) à hauteur de 70 % ; les cantons appliquent une imposition partielle d'au moins 50 %.",
+              "difficulty": "medium",
+              "section_id": "m7_L5_s10"
             }
           ],
           "mindmap_md": "# M7-L5\n## Fortune mobilière et immobilière\n\n### Pertinence examen\n- **Haute** — articulation art. 20-21 + impôt anticipé + IGI cantonal\n- Imposition partielle + valeur locative + RAC = pièges récurrents\n\n### Fortune mobilière — art. 20 LIFD\n- **Définition** : tout sauf immeubles\n  - Liquidités, comptes bancaires\n  - Titres (actions, obligations, parts de fonds)\n  - Créances, prêts\n  - Cryptomonnaies (Circ. AFC 36 — comme fortune mobilière)\n  - Œuvres d'art, collections\n- Soumise à l'**IA 35 %** pour rendements (dividendes, intérêts)\n\n### Revenus mobiliers — catalogue (art. 20 al. 1 LIFD)\n#### a. Intérêts sur avoirs\n- Bancaires, dépôts à terme, prêts privés\n- Obligations classiques (coupons)\n- **100 % imposables**\n#### b. Obligations à intérêt unique prédominant\n- **Zero coupon** ou intérêt minoritaire\n- Différence émission/remboursement = **imposable** (pas exonérée)\n- Anti-évasion : éviter requalification gain capital\n#### c. Dividendes, parts au bénéfice, excédents de liquidation\n- 100 % imposables (sauf participations qualifiées)\n- IA 35 % retenue à la source\n#### d. Produits sur cession/exercice d'**actions de jouissance**\n#### e. Participations à fonds de placement\n- Quote-part revenu + plus-values éventuelles\n\n### Dividendes — imposition partielle (art. 20 al. 1bis LIFD)\n- **Participation qualifiée** : ≥ **10 %** du capital\n- Détenue en **fortune PRIVÉE**\n- **Imposable à 60 %** du montant brut (40 % d'abattement)\n- Lutte contre **double imposition économique** (RIE II 2008)\n- ⚠️ **Fortune commerciale = 70 %** (art. 18b) — différence clé !\n- IFD = 60 % (privée) / 70 % (commerciale)\n- Cantons : 50-70 % selon canton (LHID art. 7 al. 1)\n\n### Excédent de liquidation — art. 20 al. 1 let. c\n- = Montant reçu − **valeur nominale** des actions\n- Imposable comme rendement de capital\n- IA 35 %\n- Imposition partielle possible si participation qualifiée\n- **Remboursement du capital nominal** : **NON imposable**\n\n### Principe de l'apport en capital (RAC) — art. 20 al. 3 LIFD\n- Depuis 01.01.2011 (RIE II)\n- Remboursement d'**apports/agios/versements supplémentaires** = **NON imposable**\n- Traité comme remboursement de capital\n- Conditions :\n  - Comptabilisé séparément\n  - **Déclaré à l'AFC**\n- Permet rapatriement de capitaux sans IA\n- ⚠️ Limitation post-2020 (CTV) : 50 % apports / 50 % réserves pour sociétés cotées\n\n### Fortune immobilière — art. 21 LIFD\n- Définition : terrains + bâtiments\n- **Revenus imposables** :\n  - **a.** Loyers et fermages\n  - **b.** **Valeur locative** (résidence principale ou secondaire occupée)\n  - **c.** Produits des **servitudes** (droits de superficie)\n  - **d.** Revenus de l'exploitation forestière\n\n### Valeur locative — clé de voûte\n- = **Loyer théorique** que le propriétaire toucherait s'il louait\n- **Imposable** même si propriétaire occupe son logement\n- Mesure : 60-70 % du loyer de marché (selon canton)\n- **Compensée** par :\n  - Déduction des **intérêts hypothécaires**\n  - Déduction des **frais d'entretien** (effectif ou forfait)\n- ⚠️ **Projet de SUPPRESSION** en discussion au Parlement (avec contrepartie)\n\n### Gains immobiliers — impôt cantonal distinct\n- Plus-value sur immeuble fortune **PRIVÉE** = **exonérée IFD** (art. 16 al. 3)\n- **Mais** : impôt cantonal sur gains immobiliers (IGI — art. 12 LHID)\n- Variable selon canton et durée détention\n- **Système moniste** : tous gains soumis IGI (BS, BE, ZH, etc.)\n- **Système dualiste** : seuls gains fortune privée soumis IGI (VS, NE, etc.)\n- Voir détails m7_L14\n\n### Frais d'entretien immeuble (art. 32 LIFD)\n- **Méthode effective** : sur justificatifs\n- **Méthode forfaitaire** (art. 32 al. 4) :\n  - **10 %** si immeuble < 10 ans\n  - **20 %** si immeuble ≥ 10 ans\n- Choix **annuel** (peut changer chaque année)\n- ⚠️ **Frais d'amélioration** (plus-value) = **NON déductibles** (impenses)\n\n### Intérêts passifs — plafond (art. 33 al. 1 let. a)\n- Plafond = **Revenus fortune + CHF 50'000**\n- Dettes privées (hypothèque, crédit perso, leasing privé)\n- Excédent : **non déductible**\n- ⚠️ Calcul après tous revenus fortune (mobilière + immobilière)\n\n### Impôt sur la fortune — LHID (cantonal uniquement)\n- **Pas d'impôt fédéral** sur fortune\n- Objet : **totalité actifs − dettes déductibles**\n- **Universalité** : tous éléments fortune (mobilière + immobilière)\n- Évaluation : **valeur vénale** (LHID art. 14)\n- Taux variables : 0.1 % - 1 % selon canton\n\n### ⚠️ Pièges examen\n- **N°1** **Imposition partielle 60 % privée / 70 % commerciale** (≥ 10 % capital)\n- **N°2** **Obligations zero coupon = imposables** (art. 20 al. 1 let. b), pas gain capital\n- **N°3** **Valeur locative = revenu imposable** même si propriétaire occupant\n- **N°4** Frais d'entretien forfait : **10 % < 10 ans / 20 % ≥ 10 ans**\n- **N°5** Intérêts passifs plafond = **revenus fortune + 50k**\n- **N°6** Gains immobiliers privés = **exonérés IFD** mais **IGI cantonal** (art. 12 LHID)\n- **N°7** **Excédent liquidation = rendement** (imposable), pas gain capital\n- **N°8** **RAC** (art. 20 al. 3) : remboursement apports = **NON imposable** (depuis 2011)\n\n### 💡 Mnémoniques\n- **« 60/70 »** — imposition partielle dividendes privée/commerciale\n- **« 10/20 »** — forfait entretien immeuble < 10 ans / ≥ 10 ans\n- **« Fortune + 50k »** — plafond intérêts passifs\n- **« 35 % »** — taux impôt anticipé (cf. m7_L15)\n- **« VL = revenu »** — valeur locative imposable\n- **« RAC 2011 »** — principe apport capital (RIE II)\n- **« Zero ≠ exo »** — obligations zero coupon imposables\n\n### 🔗 Renvois\n- **m7_L4** — Indépendant (dividendes art. 18b)\n- **m7_L6** — Prévoyance (déductions)\n- **m7_L7** — Calcul + déductions\n- **m7_L14** — Gains immobiliers détaillés\n- **m7_L15** — Impôt anticipé (LIA 35%)\n- **LIFD art. 20-21** — fortune mobilière et immobilière\n- **LIFD art. 32, 33** — déductions\n- **LHID art. 12, 13-14** — IGI + fortune\n",
@@ -38068,6 +38338,36 @@
               ],
               "answer": 3,
               "explanation": "Le plafond du pilier 3a est de CHF 7'373 pour les personnes affiliées au 2e pilier (CHF 36'864, au plus 20 % du revenu, sans 2e pilier) selon les valeurs 2027 retenues dans l'app.",
+              "difficulty": "easy",
+              "section_id": "m7_L6_s10"
+            },
+            {
+              "id": "m7_L6_q16",
+              "type": "mcq",
+              "question": "Les prestations en capital de la prévoyance professionnelle\n(Identifiez la réponse correcte)",
+              "options": [
+                "sont imposées à la source au taux unique de 35 % par l'institution de prévoyance",
+                "sont imposées séparément des autres revenus, au cinquième du barème à l'IFD",
+                "sont imposées avec les autres revenus de l'année, au barème ordinaire complet",
+                "sont exonérées lorsqu'elles sont versées après l'âge de référence de 65 ans"
+              ],
+              "answer": 1,
+              "explanation": "Les prestations en capital provenant de la prévoyance sont imposées séparément, à un taux égal au cinquième du barème ordinaire à l'IFD (art. 38 LIFD).",
+              "difficulty": "medium",
+              "section_id": "m7_L6_s10"
+            },
+            {
+              "id": "m7_L6_q17",
+              "type": "mcq",
+              "question": "Les cotisations versées au pilier 3a\n(Identifiez la réponse correcte)",
+              "options": [
+                "sont imposées comme revenu au moment de leur versement sur le compte",
+                "sont déductibles du revenu jusqu'à un plafond annuel fixé par la loi",
+                "sont déductibles du revenu sans aucune limite de montant",
+                "ne sont déductibles que pour les personnes exerçant une activité indépendante"
+              ],
+              "answer": 1,
+              "explanation": "Les cotisations à la prévoyance individuelle liée sont déductibles jusqu'au plafond légal (en 2027 : CHF 7'373 avec 2e pilier, CHF 36'864 et au plus 20 % du revenu sans 2e pilier).",
               "difficulty": "easy",
               "section_id": "m7_L6_s10"
             }
@@ -38418,6 +38718,36 @@
               "explanation": "Faux. Les gains en capital réalisés sur la fortune mobilière privée sont exonérés (art. 16 al. 3 LIFD), sauf requalification en commerce professionnel de titres.",
               "difficulty": "easy",
               "section_id": "m7_L7_s10"
+            },
+            {
+              "id": "m7_L7_q16",
+              "type": "mcq",
+              "question": "Les contributions d'entretien versées pour un enfant mineur\n(Identifiez la réponse correcte)",
+              "options": [
+                "sont déductibles chez le parent qui les reçoit",
+                "ne sont ni déductibles ni imposables",
+                "sont imposables chez l'enfant mineur lui-même",
+                "sont imposables chez le parent qui les reçoit"
+              ],
+              "answer": 3,
+              "explanation": "Elles sont déductibles chez le débiteur et imposables chez le parent qui les reçoit pour l'enfant mineur (art. 23 let. f et 33 al. 1 let. c LIFD).",
+              "difficulty": "medium",
+              "section_id": "m7_L7_s10"
+            },
+            {
+              "id": "m7_L7_q17",
+              "type": "mcq",
+              "question": "Les héritages reçus par une personne physique\n(Identifiez la réponse correcte)",
+              "options": [
+                "ne sont pas soumis à l'impôt fédéral direct",
+                "sont imposés à l'IFD avec les autres revenus de l'année",
+                "sont soumis à l'impôt anticipé de 35 % lors du partage",
+                "sont imposés à l'IFD au cinquième du barème ordinaire"
+              ],
+              "answer": 0,
+              "explanation": "Les dévolutions de fortune par succession, legs ou donation sont exonérées de l'IFD (art. 24 let. a LIFD) ; elles relèvent des impôts cantonaux sur les successions et donations.",
+              "difficulty": "easy",
+              "section_id": "m7_L7_s10"
             }
           ],
           "mindmap_md": "# M7-L7\n## Autres revenus + Frais d'acquisition + Calcul\n\n### Pertinence examen\n- **Haute** — finalisation calcul PP (étapes 1 à 5)\n- Barème + déductions sociales = chiffres à mémoriser\n\n### Autres revenus imposables — art. 23 LIFD\n- **a. Versements en capital remplaçant prestations périodiques**\n  - Indemnité de licenciement, rente capitalisée\n  - **Art. 37 LIFD** : imposition séparée au taux de la prestation annuelle équivalente\n- **b. Sommes ayant le caractère d'indemnité**\n  - Dommages-intérêts pour perte de revenu\n  - Subsides remplaçant revenu\n- **c. Gains de loterie et jeux d'argent** (sauf exonérés art. 24)\n- **d. Pensions alimentaires** versées au conjoint divorcé/séparé + enfants mineurs sous autorité parentale\n- **e. Revenus d'usufruit**\n- **f. Pensions et prestations de capital reçues**\n\n### Pensions alimentaires — régime symétrique\n- **Versées au conjoint** divorcé/séparé OU enfants mineurs sous autorité parentale :\n  - **Imposables** chez bénéficiaire (art. 23 let. f)\n  - **Déductibles** chez débiteur (art. 33 al. 1 let. c)\n  - Symétrie parfaite\n- **Versées enfants MAJEURS** :\n  - **NON imposables** chez bénéficiaire (art. 24 let. e)\n  - **NON déductibles** chez débiteur\n- ⚠️ Piège : changement régime au moment de la majorité\n\n### Revenus EXONÉRÉS — art. 24 LIFD (exhaustif)\n- **a. Dévolutions** : successions, legs, donations, liquidation régime matrimonial\n- **b. Versements en capital d'assurances de dommage**\n- **c. Versements indemnités intégrité physique** (LCA)\n- **d. Subsides versés sur fonds publics ou privés** d'assistance\n- **e. Prestations dues conventions de divorce** pour enfants majeurs\n- **f. Soldes des sapeurs-pompiers de milice** (jusqu'à CHF 5'000)\n- **g. Gains de jeux d'argent ≤ CHF 1 million** (LJAr depuis 2019)\n- **h. Gains de loteries internationales en ligne ≤ CHF 1 million**\n- **i. Prestations de l'AI et AVS** (rentes incluses dans art. 22, pas exo)\n\n### Frais d'acquisition — art. 26-32 LIFD\n#### Frais professionnels salarié (art. 26)\n- **Déplacement domicile-travail** : transports publics (effectif) OU forfait km\n- **Plafond IFD** : **CHF 3'300 / an** (2025-2026, indexé)\n- **Repas hors domicile** : forfait **CHF 3'200 / an** (CHF 15/jour)\n- **Autres frais professionnels** : forfait **3 %** du salaire net (min 2'000, max 4'000)\n- **Activité accessoire** : forfait 20 % min 800 max 2'400\n#### Frais d'indépendant (art. 27-31)\n- Cf. m7_L4 (déterminance, amortissements, provisions, pertes 7 ans)\n#### Frais immeuble (art. 32)\n- Cf. m7_L5 (effectif ou forfait 10/20 %)\n\n### Déductions générales — art. 33 LIFD\n- **a. Intérêts passifs** : revenus fortune **+ CHF 50'000** plafond\n- **b. Rentes viagères et charges durables**\n- **c. Pensions alimentaires** versées (cf. supra)\n- **d. Cotisations prévoyance** :\n  - AVS/AI/APG/AC\n  - LPP (obligatoires + sur-obligatoires)\n  - 3a (plafonné 7'373 / 36'864)\n  - Rachats LPP (intégral)\n- **e. Cotisations assurances vie/maladie/accidents** (plafonné selon situation)\n- **f. Cotisations partis politiques** : max **CHF 10'000**\n- **g. Dons** d'utilité publique : max **20 %** du revenu net\n- **h. Frais médicaux** : excédant **5 %** du revenu net\n- **h. bis Frais handicap** : intégral (pas de seuil)\n\n### Déductions générales — art. 33a (formation continue)\n- **Formation continue professionnelle** déductible\n- Plafond IFD : **CHF 13'000 / an** (2025-2026 ; 13'100 dès 2027)\n- Conditions :\n  - Liée à activité professionnelle\n  - Diplôme post-secondaire requis OU 20 ans\n- Inclut : MAS, MBA, EMBA, CAS, congrès, séminaires\n\n### Déductions sociales — art. 35 LIFD (2025-2026)\n- **a. Enfants à charge** : **CHF 6'800** / enfant (mineur ou en formation jusqu'à 25 ans)\n- **b. Personnes nécessiteuses** à charge : CHF 6'800\n- **c. Couple marié** : **CHF 2'800** (correction progressivité)\n- **d. Couple à 2 revenus** : 50 % du moindre revenu, max CHF 14'100\n- **e. Frais de garde enfants par tiers** : max **CHF 25'800** / enfant < 14 ans\n\n### Barème — art. 36 LIFD (taux progressifs)\n#### Barème de base — célibataire (al. 1)\n- **Exonéré** : revenu imposable ≤ **CHF 17'800** (2024)\n- Plafond marginal : **11.5 %**\n#### Barème pour couple (al. 2)\n- **Splitting** approximatif : taux plus bas que célibataire\n- Exonéré : ≤ CHF 30'800 (2024)\n#### Barème pour foyers monoparentaux (al. 2bis)\n- Idem couple\n\n### Méthode complète de calcul — 5 étapes\n- **Étape 1** : Revenus bruts (art. 16-23)\n- **Étape 2** : − Frais d'acquisition (art. 26-32) → **Revenu net**\n- **Étape 3** : − Déductions générales (art. 33-33a) → Revenu net II\n- **Étape 4** : − Déductions sociales (art. 35) → **Revenu imposable**\n- **Étape 5** : Application barème (art. 36) → **Impôt dû**\n\n### Cas Dupont (couple 2 enfants)\n- Revenus bruts 233'000 − frais → revenu net\n- − Déductions générales (3a, intérêts, assurances)\n- − Déductions sociales (2 enfants + couple)\n- → Revenu imposable → barème art. 36 al. 2 → impôt\n\n### Stratégies d'optimisation\n- **① Maximiser prévoyance** : 3a + rachats LPP (déduction immédiate + différé)\n- **② Échelonner retraits** capital (cf. m7_L6)\n- **③ Optimiser dons** : ≤ 20 % revenu net\n- **④ Frais médicaux** : regrouper sur 1 an (seuil 5 %)\n- **⑤ Formation continue** : jusqu'à 12k déductibles\n- **⑥ Choisir méthode frais immeuble** chaque année (forfait/effectif)\n\n### ⚠️ Pièges examen\n- **N°1** **Pension alimentaire enfant majeur = NI imposable NI déductible**\n- **N°2** **Plafond déplacement** = **CHF 3'300** IFD (2025-2026, indexé)\n- **N°3** **Dons max 20 %** revenu net\n- **N°4** **Frais médicaux** déductibles **au-delà 5 %** revenu net\n- **N°5** **Formation continue max CHF 13'000** (art. 33a)\n- **N°6** **Garde enfants max CHF 25'800** / enfant < 14 ans\n- **N°7** Exonération seuil **CHF 17'800 célibataire** / **CHF 30'800 couple** (2024)\n- **N°8** **Indemnité licenciement** = art. 37 (taux prestation annuelle équivalente)\n- **N°9** Gains loterie/jeux **≤ 1 M exonérés** (LJAr 2019)\n\n### 💡 Mnémoniques\n- **« 5 étapes »** — Bruts → Net → Net II → Imposable → Impôt\n- **« 17'800 / 30'800 »** — seuils exonération 2024\n- **« 11.5 %** » — plafond marginal IFD\n- **« 6'800 / enfant »** — déduction enfants\n- **« 3'300 dpcmt + 3'200 repas »** — forfaits salarié\n- **« 5 % / 20 % »** — seuil frais médicaux / plafond dons\n- **« 25'800 garde »** — max garde tiers / enfant\n- **« 13'000 formation »** — plafond art. 33a\n- **« Symétrie »** = pension alim. conjoint déduct./impos.\n\n### 🔗 Renvois\n- **m7_L3** — Activité dépendante (frais professionnels)\n- **m7_L5** — Fortune (intérêts passifs plafond + frais immeuble)\n- **m7_L6** — Prévoyance (cotisations + capital)\n- **m7_L11** — Procédure (déclaration)\n- **LIFD art. 23-37** — revenus + déductions + barème\n- **LJAr** (2019) — loi sur jeux d'argent\n",
@@ -38752,6 +39082,36 @@
               "explanation": "Vrai. Chez l'actionnaire, la distribution dissimulée est un rendement de sa participation (comme un dividende), avec imposition partielle si la participation atteint 10 %.",
               "difficulty": "easy",
               "section_id": "m7_L8_s10"
+            },
+            {
+              "id": "m7_L8_q17",
+              "type": "mcq",
+              "question": "Une société anonyme suisse\n(Identifiez la réponse correcte)",
+              "options": [
+                "est assujettie à l'impôt sur le bénéfice aux plans fédéral, cantonal et communal",
+                "est assujettie à l'impôt sur le capital propre aux plans fédéral, cantonal et communal",
+                "n'est imposée que par le canton de son siège, à l'exclusion de la Confédération",
+                "est assujettie à l'impôt sur la fortune comme une personne physique"
+              ],
+              "answer": 0,
+              "explanation": "Le bénéfice des personnes morales est imposé par la Confédération, les cantons et les communes ; l'impôt sur le capital n'est plus prélevé que par les cantons et les communes (aboli au niveau fédéral en 1998).",
+              "difficulty": "medium",
+              "section_id": "m7_L8_s10"
+            },
+            {
+              "id": "m7_L8_q18",
+              "type": "mcq",
+              "question": "Une prestation appréciable en argent accordée par une SA à son actionnaire\n(Identifiez la réponse correcte)",
+              "options": [
+                "n'est imposable que chez l'actionnaire qui en bénéficie",
+                "est réintégrée dans le bénéfice imposable de la société",
+                "est déductible comme charge justifiée par l'usage commercial",
+                "n'a de conséquence que pour l'impôt anticipé de la société"
+              ],
+              "answer": 1,
+              "explanation": "La prestation n'est pas justifiée par l'usage commercial : elle est reprise dans le bénéfice de la SA, soumise à l'impôt anticipé et imposée chez l'actionnaire comme rendement de participation.",
+              "difficulty": "easy",
+              "section_id": "m7_L8_s10"
             }
           ],
           "mindmap_md": "# M7-L8\n## Imposition des personnes morales\n\n### Pertinence examen\n- **Haute** — entrée du calcul PM (sujet, début/fin, lieu)\n- DDB + RFFA + arm's length = piliers d'examen\n\n### Définition PM — sujet fiscal distinct\n- **Personnalité juridique** = capacité d'être sujet de droit\n- **Acquisition** : inscription RC (SA, Sàrl), création (associations, fondations)\n- **Fin** : radiation RC après liquidation\n- Distinguer :\n  - **Sociétés de personnes** (SNC, SC) = **transparence fiscale** (associés imposés)\n  - **Sociétés de capitaux** (SA, Sàrl, SCA) = sujet fiscal distinct\n- ⚠️ **SC ≠ SCA** : SC en commandite = personnes ; SCA en commandite par actions = capitaux\n\n### Deux impôts des PM\n#### ① Impôt sur le BÉNÉFICE — 2 niveaux\n- **IFD** : **8.5 %** taux unique (art. 68 LIFD)\n- **ICC** : variable selon canton (~6-16 % bénéfice net)\n- **Total IFD + ICC** : 11.9-21 % effectif selon canton (post-RFFA)\n- Zoug ~11.85 % | Genève ~14 % | Berne ~21 %\n#### ② Impôt sur le CAPITAL — UNIQUEMENT cantonal\n- Pas d'impôt fédéral sur capital depuis 1998\n- Base : capital propre **fiscalement justifié**\n- Taux : 0.001-0.5 % selon canton (très bas)\n- Possibilité **imputation impôt bénéfice** (LHID art. 30 al. 2)\n\n### Bénéfice net imposable — art. 58 LIFD\n- **a.** Solde compte de résultat (avec report)\n- **b.** Tous prélèvements **avant calcul** non justifiés\n- **c.** Tous produits non comptabilisés\n- = **Principe de déterminance** : compta CO → fiscal (avec corrections)\n- ⚠️ Différence buts droit commercial / droit fiscal :\n  - **CO** : prudence + protection créanciers\n  - **Fiscal** : capacité contributive\n\n### Distributions dissimulées de bénéfice (DDB) — concept capital\n#### 4 critères cumulatifs (jurisprudence)\n- **① Prestation de la société**\n- **② À l'actionnaire** ou personne proche\n- **③ Disproportion** (pas conditions tiers indépendant)\n- **④ Reconnaissable** par les organes (\"arrosable\")\n#### Cas typiques\n- Salaire excessif dirigeant-actionnaire (Marc 450k vs 250k marché)\n- Prêt sans intérêts ou avec intérêts dérisoires\n- Vente d'actif à prix sous-évalué\n- Achat à prix surévalué (fournisseur lié)\n- Loyer non payé par actionnaire\n#### Conséquences\n- **① Niveau SA** : reprise au bénéfice imposable + impôt\n- **② Niveau actionnaire** : requalification dividende → revenu imposable\n- **③ Impôt anticipé** : 35 % sur DDB requalifiée\n- ⚠️ **Double imposition économique** classique\n\n### Assujettissement personnel — art. 50 LIFD\n- **Illimité** si :\n  - **Siège statutaire** en CH, OU\n  - **Administration effective** en CH\n- **Administration effective** = lieu de **direction réelle** (board, décisions stratégiques, CEO)\n- Cas Caïmans : SA aux Caïmans + CEO Zurich + board Zurich → **illimité CH**\n- Anti-évasion : ne suffit pas d'avoir siège statutaire à l'étranger\n\n### Assujettissement économique — art. 51 LIFD\n- Sans siège ni administration effective CH mais :\n  - **a.** Associée d'une entreprise CH\n  - **b.** **Établissement stable** en CH\n  - **c.** Propriétaire d'**immeubles** en CH\n  - **d.** Créancière **gagée** sur immeuble CH\n  - **e.** Tantièmes d'administrateur (PM CH)\n\n### RFFA — Réforme fiscale 2020 (19.05.2019, en vigueur 01.01.2020)\n- **Abolition** de 5 statuts privilégiés cantonaux :\n  - Holding (art. 28 al. 2 LHID)\n  - Société de domicile (al. 3)\n  - Société mixte (al. 4)\n  - Société principale (Circ. AFC 8)\n  - Swiss Finance Branch\n- **Compensations RFFA** :\n  - Patent box (art. 24a LHID) — taux réduit brevets\n  - Déduction R&D super (art. 25a LHID) — jusqu'à 50 % supplémentaire\n  - NID — déduction autofinancement (art. 25abis LHID)\n  - Step-up — révélation réserves latentes (transition)\n  - Réduction taux ordinaire (Genève 24% → 14%)\n- ⚠️ **Limite globale 70 %** (art. 25b) : cumul mesures ≤ 70 % bénéfice\n- Voir détails m7_L10\n\n### Double imposition économique — atténuation\n- Avant RIE II (2008) : taux cumulé ~60 % décourageait investissement\n- **Mécanisme 1** : Réduction pour participations (RPP — art. 69 LIFD) — au niveau SA\n- **Mécanisme 2** : Imposition partielle dividendes — au niveau actionnaire\n  - Privé : 60 % imposable (art. 20 al. 1bis)\n  - Commercial : 70 % imposable (art. 18b)\n- ⚠️ Conditions communes : participation ≥ **10 %**\n\n### Actes juridiques participants-société — arm's length\n- Principe du **tiers indépendant** (arm's length)\n- 4 types d'opérations :\n  - **① Salaires** dirigeants : marché comparable\n  - **② Loyers** : valeur marché\n  - **③ Prêts** : intérêts conformes (Circ. AFC annuelle)\n  - **④ Transactions commerciales** : prix marché\n- Vérification AFC + cantons systématique pour PME proches actionnaires\n\n### Début et fin assujettissement (art. 54 LIFD)\n- **Début** :\n  - Constitution (inscription RC pour SA/Sàrl)\n  - Transfert siège vers CH\n  - Acquisition élément imposable CH\n- **Fin** :\n  - **Liquidation effective** (pas dissolution)\n  - Transfert siège vers étranger → **réalisation réserves latentes**\n- ⚠️ Transfert siège international = **exit tax** (réalisation imposable)\n\n### ⚠️ Pièges examen\n- **N°1** **SC** = société personnes (transparence) ; **SCA** = société capitaux (PM)\n- **N°2** Pas d'**impôt fédéral capital** PM depuis 1998\n- **N°3** **DDB = 4 critères CUMULATIFS** (jurisprudence)\n- **N°4** Assujettissement = siège **OU** administration effective (alternativement)\n- **N°5** **RFFA entrée 01.01.2020** — statuts abolis depuis cette date\n- **N°6** **Holding** (mot du cas) post-2020 = taux ordinaires (mais RPP toujours possible)\n- **N°7** Transfert siège étranger = **exit tax** (réalisation latentes)\n- **N°8** Imposition partielle : **60 % privée / 70 % commerciale** (≥ 10 %)\n\n### 💡 Mnémoniques\n- **« 8.5 % »** — taux IFD bénéfice PM (art. 68)\n- **« 4 DDB »** — Société + Actionnaire + Disproportion + Reconnaissable\n- **« Siège OU adm. effective »** — assujettissement personnel\n- **« 19.05.2019 → 01.01.2020 »** — RFFA acceptation et entrée vigueur\n- **« 5 abolis »** — Holding + Domicile + Mixte + Principale + SFB\n- **« 70 % cap »** — limite globale RFFA (art. 25b LHID)\n- **« Caïmans = CH »** — admin. effective prime sur siège\n\n### 🔗 Renvois\n- **m7_L9** — Bénéfice détaillé (déterminance, taux)\n- **m7_L10** — Privilèges fiscaux (RFFA détaillée)\n- **m7_L13** — Intercantonal (siège vs ES)\n- **m7_L15** — Impôt anticipé (DDB → IA 35%)\n- **LIFD art. 49-54, 58, 68, 69** — PM\n- **LHID art. 24a, 25a, 25abis, 25b** — RFFA (compensations)\n- **CO 620ss** — sociétés capitaux\n",
@@ -39079,6 +39439,36 @@
               "explanation": "Vrai. Les pertes des sept exercices précédant la période fiscale sont déductibles si elles n'ont pas pu être prises en compte (art. 67 LIFD).",
               "difficulty": "easy",
               "section_id": "m7_L9_s10"
+            },
+            {
+              "id": "m7_L9_q17",
+              "type": "mcq",
+              "question": "L'impôt fédéral direct sur le bénéfice des sociétés de capitaux\n(Identifiez la réponse correcte)",
+              "options": [
+                "est perçu au taux proportionnel de 4,25 %",
+                "est perçu au taux proportionnel de 8,5 %",
+                "est perçu au taux proportionnel de 15 %",
+                "est perçu selon un barème progressif"
+              ],
+              "answer": 1,
+              "explanation": "L'IFD frappe le bénéfice net des sociétés de capitaux et des coopératives au taux proportionnel de 8,5 % (art. 68 LIFD) ; le taux de 4,25 % concerne les associations, fondations et autres personnes morales.",
+              "difficulty": "easy",
+              "section_id": "m7_L9_s10"
+            },
+            {
+              "id": "m7_L9_q18",
+              "type": "mcq",
+              "question": "La réduction pour participations\n(Identifiez la réponse correcte)",
+              "options": [
+                "s'applique dès que la participation atteint 5 % du capital de la société distributrice",
+                "exonère totalement les dividendes reçus, quelle que soit l'importance de la participation détenue",
+                "réduit le bénéfice imposable du montant brut des dividendes reçus durant l'exercice",
+                "réduit l'impôt dans la proportion du rendement net des participations au bénéfice net total"
+              ],
+              "answer": 3,
+              "explanation": "La réduction (art. 69-70 LIFD) diminue l'impôt, et non le bénéfice, dans le rapport entre le rendement net des participations qualifiées (≥ 10 % ou ≥ CHF 1 mio) et le bénéfice net total.",
+              "difficulty": "hard",
+              "section_id": "m7_L9_s10"
             }
           ],
           "mindmap_md": "# M7-L9\n## Impôt sur le bénéfice — détaillé\n\n### Pertinence examen\n- **Haute** — calcul PM cœur (déterminance + corrections)\n- DDB + RPP + pertes 7 ans = blocs récurrents\n\n### Bénéfice net imposable — art. 57-58 LIFD\n- Art. 57 : objet = **bénéfice net**\n- **Art. 58 al. 1** :\n  - **a.** Solde compte de résultat (avec report)\n  - **b.** Tous prélèvements opérés avant calcul du solde non justifiés\n  - **c.** Tous produits non comptabilisés\n- **Principe de déterminance** :\n  - Compta commerciale **opposable** au fisc\n  - Mais fisc peut corriger (rajouter charges non justifiées, produits manquants)\n\n### Taux — art. 68 LIFD\n- **PROPORTIONNEL** (linéaire, pas progressif)\n- **Sociétés de capitaux et coopératives** : **8.5 %**\n- **Associations, fondations, autres PM** : **4.25 %**\n- **Placements collectifs** : 4.25 %\n- Différence : protection coopératives + buts non lucratifs\n- Cantons : taux variables (cf. m7_L8)\n\n### Corrections fiscales — art. 58 al. 1 let. b\n- **Charges non admises (rajouts au bénéfice)** :\n  - **DDB** (cf. m7_L8)\n  - Amortissements excessifs\n  - Provisions injustifiées\n  - Charges privées de l'actionnaire\n  - Dons hors limite\n  - Impôts sur le **bénéfice et capital** (en aval, après calcul tarification)\n  - Amendes et sanctions\n  - Frais corruption (depuis 2022 — Convention OCDE)\n- **Produits non comptabilisés** :\n  - Recettes en noir\n  - Plus-values latentes réalisées (vente sous-estimée)\n  - Réserves latentes dissoutes via amortissement repris\n\n### Avantages occultes — 3 dénominations\n- **① DDB** (distributions dissimulées) — sens strict : charges excessives à actionnaire\n- **② PAA** (prestations appréciables en argent) — sens large\n- **③ Distributions cachées** — synonyme\n- **Traitement fiscal IDENTIQUE** :\n  - Niveau SA : reprise + impôt (taux ordinaire)\n  - Niveau actionnaire : revenu mobilier art. 20 al. 1 let. c\n  - Impôt anticipé : 35 % sur la PAA (théorie triangle)\n\n### Réduction pour participations (RPP) — art. 69-70 LIFD\n- **Mécanisme** : atténuer double imposition économique mère-fille\n- **Impôt PM réduit proportionnellement** :\n  - Numérateur : rendement net participations\n  - Dénominateur : bénéfice net total\n- Si 100 % bénéfice = participations → impôt = 0\n#### Conditions ELIGIBILITÉ\n- Société CH\n- **Dividendes** : participation **≥ 10 %** capital OU valeur **≥ 1 M CHF**\n- **Plus-values participations** : participation **≥ 10 %** ET détention **≥ 1 an**\n- **Rendement net** : dividende − frais administratifs (5 % forfait) − frais financement\n#### Effet\n- Bénéfice **non exonéré** mais impôt **réduit**\n- Différence avec ancien statut holding (qui exonérait totalement ICC bénéfice)\n- IFD + ICC RPP applicable\n\n### Bénéfice de liquidation — art. 80 LIFD\n- **Liquidation** → réalisation de toutes les **réserves latentes**\n- Compris : actifs immobilisés, stocks sous-évalués, participations\n- Bénéfice de liquidation = imposable au taux ordinaire\n- ⚠️ Transfert siège étranger = assimilé à liquidation (**exit tax**)\n- Imposition séparée possible pour PM ≥ 55 ans (anciens art. 37b LIFD pour indépendants — pas appli PM)\n\n### Charges déductibles — art. 59 LIFD\n- **a.** Impôts fédéraux, cantonaux, communaux\n  - ⚠️ PM : **déductibles** (contraste PP art. 34 let. e)\n- **b.** Versements bénévoles d'utilité publique :\n  - **Plafond 20 %** du bénéfice net (idem PP)\n- **c.** Rabais, ristournes, escomptes\n- **d.** Versements à institutions de prévoyance pour le personnel\n- **e.** Intérêts sur capital étranger\n- ⚠️ Pas déductibles :\n  - **Sanctions, amendes**\n  - Pots-de-vin / corruption (depuis 2022)\n  - Bénéfice distribué (dividendes — paiement bénéfice net)\n\n### Amortissements PM — art. 62 LIFD\n- Mêmes règles que indépendant (art. 28)\n- **Taux fiscaux admis** selon Instruction AFC :\n  - Immeubles industriels : 8 % dégressif (4 % terrain)\n  - Immeubles commerciaux : 4 % dégressif\n  - Machines : 25-30 %\n  - Mobilier : 25 %\n  - Informatique : 40 %\n  - Véhicules : 40 %\n  - Brevets/marques : 20 % (max 5 ans)\n- Méthode immédiate (mise en service) ou prorata\n- **Goodwill acquis** : amortissable max 20 ans (RPC 30)\n\n### Provisions PM — art. 63 LIFD\n- Justifiées par usage commercial\n- **Forfaits** (cantons) :\n  - Ducroire débiteurs CH : 5 % | étranger : 10 %\n  - Stock : 33 % (réserve marchandises)\n- Pour risques futurs : argumentation justifiée\n- Dissolution si motifs disparus → reprise au bénéfice\n\n### Report de pertes — 7 ans (art. 67 LIFD)\n- Identique indépendant\n- **7 exercices précédents** (pas N+7 mais 7 avant)\n- Compensation **ordre ancien → récent**\n- ⚠️ Assainissement : possible au-delà 7 ans (art. 67 al. 2)\n- Apport pour assainissement (Sanierungsbeitrag) : exonéré IA + déductible bénéfice\n- ⚠️ Transfer pricing : pertes étranger non transférables vers SA suisse\n\n### Fonds propres occultes — art. 75 LHID\n- = Dettes \"réelles\" requalifiées en capital propre\n- Critères :\n  - Endettement excessif au regard activité\n  - Conditions atypiques (intérêts non payés, durée indéterminée)\n  - Source actionnaire (lien personnel)\n- Conséquence :\n  - **Intérêts non déductibles**\n  - Ajout capital pour impôt sur le capital\n- Test : ratio capital propre / total bilan vs normes branche\n\n### Imposition dans le temps PM (art. 79)\n- Postnumerando annuel (comme PP)\n- **Période fiscale** = exercice comptable (généralement année civile)\n- Exercice **prolongé** ou **raccourci** possible si modification statut\n- Décompte fiscal pour intérimaires\n\n### ⚠️ Pièges examen\n- **N°1** Taux IFD bénéfice = **8.5 %** sociétés capitaux / **4.25 %** associations/fondations\n- **N°2** **Impôts déductibles** PM (art. 59 al. 1 let. a) — contraste PP\n- **N°3** **RPP ≥ 10 % participation** OU valeur ≥ 1 M (dividendes)\n- **N°4** Plus-values participations : 10 % + **1 an** détention\n- **N°5** **DDB / PAA / Distribution cachée** = même traitement\n- **N°6** Pertes report **7 ans** (assainissement = exception)\n- **N°7** **Pots-de-vin** non déductibles depuis 2022 (Convention OCDE)\n- **N°8** Liquidation = réalisation **toutes réserves latentes** (art. 80)\n- **N°9** **Goodwill amortissable 20 ans max** (RPC 30 / fiscal)\n\n### 💡 Mnémoniques\n- **« 8.5 / 4.25 »** — taux IFD capitaux / associations\n- **« 10 % + 1 M »** — seuils RPP dividendes\n- **« 10 % + 1 an »** — seuils RPP plus-values\n- **« 7 ans »** — report pertes\n- **« 20 % »** — plafond dons d'utilité publique\n- **« 25-30-40 »** — amortissements machines/info/véhicules\n- **« 4 %-8 % »** — amortissements immeubles\n- **« Théorie triangle »** — DDB : société → actionnaire → reprise IA\n\n### 🔗 Renvois\n- **m7_L4** — Indépendant (déterminance — concept commun)\n- **m7_L8** — PM assujettissement + DDB\n- **m7_L10** — Privilèges fiscaux (RFFA, patent box)\n- **m7_L11** — Procédure (taxation PM)\n- **m7_L15** — Impôt anticipé (théorie triangle)\n- **LIFD art. 57-80** — bénéfice PM\n- **CO 957ss** — comptabilité commerciale\n",
@@ -39390,6 +39780,36 @@
               "answer": false,
               "explanation": "Faux. La RFFA a supprimé les statuts cantonaux de holding, de société de domicile et de société mixte au 1er janvier 2020, avec des mesures transitoires (step-up).",
               "difficulty": "easy",
+              "section_id": "m7_L10_s10"
+            },
+            {
+              "id": "m7_L10_q16",
+              "type": "mcq",
+              "question": "Depuis l'entrée en vigueur de la RFFA\n(Identifiez la réponse correcte)",
+              "options": [
+                "les statuts fiscaux cantonaux de holding et de société mixte sont supprimés",
+                "les sociétés holding sont exonérées de l'impôt cantonal sur le bénéfice",
+                "la patent box s'applique également et de la même façon à l'impôt fédéral direct",
+                "les cantons ne peuvent plus accorder aucune déduction pour la R&D"
+              ],
+              "answer": 0,
+              "explanation": "Au 1er janvier 2020, la RFFA a supprimé les statuts cantonaux (holding, domicile, mixte) et introduit des mesures cantonales (patent box, déduction R&D, limitation à 70 %) qui ne s'appliquent pas à l'IFD.",
+              "difficulty": "easy",
+              "section_id": "m7_L10_s10"
+            },
+            {
+              "id": "m7_L10_q17",
+              "type": "mcq",
+              "question": "La patent box\n(Identifiez la réponse correcte)",
+              "options": [
+                "est une mesure facultative appliquée par la Confédération à l'IFD",
+                "s'applique à tous les bénéfices provenant de logiciels non brevetés",
+                "est une mesure obligatoire pour les cantons, limitée à 90 % de réduction",
+                "permet une réduction illimitée de l'ensemble du bénéfice provenant de brevets"
+              ],
+              "answer": 2,
+              "explanation": "Les cantons doivent prévoir une patent box (art. 24a LHID) ; la réduction du bénéfice provenant de brevets et droits comparables est d'au plus 90 %, dans la limite globale de 70 % du bénéfice imposable.",
+              "difficulty": "medium",
               "section_id": "m7_L10_s10"
             }
           ],
@@ -39726,6 +40146,36 @@
               ],
               "answer": 3,
               "explanation": "Le droit de procéder à la taxation se prescrit par 5 ans (délai interrompu par les actes de l'autorité), mais dans tous les cas 15 ans après la fin de la période fiscale (art. 120 LIFD).",
+              "difficulty": "medium",
+              "section_id": "m7_L11_s10"
+            },
+            {
+              "id": "m7_L11_q17",
+              "type": "mcq",
+              "question": "La réclamation contre une décision de taxation à l'IFD\n(Identifiez la réponse correcte)",
+              "options": [
+                "peut être déposée en tout temps jusqu'à la prescription",
+                "doit être déposée dans les 10 jours dès la notification",
+                "doit être adressée directement au Tribunal fédéral",
+                "doit être déposée dans les 30 jours dès la notification"
+              ],
+              "answer": 3,
+              "explanation": "La réclamation est adressée par écrit à l'autorité de taxation dans les 30 jours suivant la notification (art. 132 LIFD).",
+              "difficulty": "easy",
+              "section_id": "m7_L11_s10"
+            },
+            {
+              "id": "m7_L11_q18",
+              "type": "mcq",
+              "question": "Le droit de procéder à la taxation à l'IFD\n(Identifiez la réponse correcte)",
+              "options": [
+                "se prescrit par dix ans dès la fin de la période fiscale, sans aucune interruption possible",
+                "est imprescriptible pour les personnes morales soumises à révision ordinaire",
+                "se prescrit par trois ans dès la notification de la décision de taxation",
+                "se prescrit par cinq ans dès la fin de la période fiscale, au plus tard par quinze ans"
+              ],
+              "answer": 3,
+              "explanation": "Le droit de taxer se prescrit par cinq ans après la fin de la période fiscale ; la prescription est interrompue par les actes de l'autorité mais est acquise dans tous les cas quinze ans après (art. 120 LIFD).",
               "difficulty": "medium",
               "section_id": "m7_L11_s10"
             }
@@ -40077,6 +40527,36 @@
               "explanation": "Faux. L'usage de titres faux constitue une fraude fiscale (délit) punie d'une peine privative de liberté de trois ans au plus ou d'une peine pécuniaire (art. 186 LIFD), en plus de la répression de la soustraction.",
               "difficulty": "medium",
               "section_id": "m7_L12_s13"
+            },
+            {
+              "id": "m7_L12_q17",
+              "type": "mcq",
+              "question": "La soustraction d'impôt\n(Identifiez la réponse correcte)",
+              "options": [
+                "est un délit puni d'une peine privative de liberté",
+                "n'est punissable que si elle est commise intentionnellement",
+                "est remplacée par le rappel d'impôt, sans aucune amende",
+                "est réprimée par une amende qui s'ajoute au rappel d'impôt"
+              ],
+              "answer": 3,
+              "explanation": "La soustraction, intentionnelle ou par négligence, est une contravention punie d'une amende (en règle générale égale à l'impôt soustrait), en plus du rappel d'impôt et des intérêts (art. 175 LIFD). L'usage de faux est un délit distinct.",
+              "difficulty": "medium",
+              "section_id": "m7_L12_s13"
+            },
+            {
+              "id": "m7_L12_q18",
+              "type": "mcq",
+              "question": "La première dénonciation spontanée d'une soustraction d'impôt\n(Identifiez la réponse correcte)",
+              "options": [
+                "réduit l'amende de moitié, sans autre condition particulière",
+                "n'est possible que pour les personnes morales et leurs organes",
+                "supprime également le rappel d'impôt et les intérêts moratoires dus",
+                "permet de renoncer à l'amende lorsque les conditions sont remplies"
+              ],
+              "answer": 3,
+              "explanation": "Une première dénonciation spontanée, faite avant que l'autorité ait connaissance de la soustraction, avec collaboration et paiement, exclut l'amende ; le rappel d'impôt et les intérêts restent dus (art. 175 al. 3 LIFD).",
+              "difficulty": "easy",
+              "section_id": "m7_L12_s13"
             }
           ],
           "mindmap_md": "# M7-L12\n## Droit pénal fiscal\n\n### Pertinence examen\n- **Haute** — soustraction vs fraude + sanctions + prescription\n- Dénonciation spontanée = enjeu pratique majeur\n\n### Notion du droit pénal fiscal\n- Règles régissant :\n  - **Infractions** prévues par lois fiscales\n  - **Violations de procédure** fiscale\n- **Principe-clé** : économie d'impôt **licite** (optimisation) ≠ illicite (soustraction/délit)\n- Sources :\n  - **LIFD art. 174-195** (IFD)\n  - **LHID art. 55-61** (cantonal)\n  - **DPA** — Loi sur le droit pénal administratif (subsidiaire)\n  - **CP** — Code pénal (pour certaines infractions, ex. blanchiment)\n\n### Distinction soustractions / délits\n#### A. SOUSTRACTIONS = CONTRAVENTIONS (administratif)\n- Sanctions **administratives** (AFC ou cantons)\n- **Négligence punissable** (intention + négligence)\n- Pas de casier judiciaire\n- Cas :\n  - **Violations procédurales** (art. 174) : amende ≤ CHF 1'000 (max 10'000)\n  - **Soustraction consommée** (art. 175) : amende = montant soustrait (1/3 à 3×)\n  - **Tentative** (art. 176) : 2/3 amende complétée\n  - **Instigation, complicité** (art. 177)\n  - **Dissimulation biens successoraux** (art. 178)\n#### B. DÉLITS = CRIMES (juge pénal)\n- **Sanctions pénales** par juge pénal (tribunal)\n- Casier judiciaire\n- **Négligence NON punissable**\n- Cas :\n  - **Fraude fiscale / usage de faux** (art. 186) : amende **+ prison ≤ 3 ans**\n  - **Détournement impôt à la source** (art. 187) : amende **+ prison ≤ 3 ans**\n  - **Blanchiment** (CP 305bis) : prison ≤ 5 ans\n\n### Soustraction d'impôt consommée — art. 175 LIFD\n- **Définition** : tout acte illicite visant à provoquer (intentionnellement OU par négligence) **imposition insuffisante**\n- **3 cas visés** :\n  - **Taxation non effectuée** ou incomplète\n  - **Restitution** d'impôt **non justifiée**\n  - **Exonération/dégrèvement** indus\n- **Conditions** :\n  - Acte ou omission\n  - Imposition insuffisante (RÉSULTAT)\n  - Lien causal\n  - **Faute** (intention OU négligence)\n- **Sanction** : amende = **1/3 à 3× le montant soustrait** (généralement = 1×)\n- + Rappel d'impôt + intérêts moratoires\n\n### Tentative de soustraction — art. 176\n- Soustraction tentée mais NON consommée (autorité a découvert)\n- Amende = **2/3 amende complète**\n- ⚠️ Tentative SEULEMENT pour intention (pas négligence)\n\n### Responsabilité des époux et participation\n#### Époux (art. 180)\n- Chaque époux ne répond **que des éléments qui lui sont propres**\n- **Signer la déclaration commune** ne suffit pas pour soustraction\n- Sauf preuve participation active\n- Responsabilité individualisée\n#### Participation (art. 177)\n- **Instigateurs, complices**, conseillers : punis comme auteur\n- Conseiller fiscal complice : amende **CHF 10'000 - 50'000**\n- ⚠️ Cas typique : expert-comptable conseille fraude → complicité\n- Solidarité dans l'amende\n\n### Dissimulation de biens successoraux — art. 178\n- Héritiers ou exécuteur qui **dissimulent** biens dans inventaire successoral\n- Amende ≤ **CHF 10'000** (max 50'000 en cas grave)\n- Cumulable avec autres soustractions\n\n### Délits fiscaux — falsification de titres (art. 186 LIFD)\n- **Fraude fiscale = usage de FAUX** dans intention de soustraction\n- **Critère central** : **document fiscal falsifié** (bilan, déclaration, justificatif)\n- Sanction : **amende + emprisonnement jusqu'à 3 ans**\n- Distinguer de soustraction simple (qui ne demande pas faux)\n- ⚠️ **Négligence non punissable** (contraste soustraction)\n- Compétence : **juge pénal cantonal** (pas administration)\n\n### Détournement impôt à la source — art. 187 LIFD\n- Personne **tenue de percevoir** impôt à la source (employeur) qui **détourne**\n- Salaires étrangers permis B, G, L, F\n- Sanction : amende + prison ≤ 3 ans\n- Cumul possible avec art. 159 LIFD (recours en paiement)\n\n### Blanchiment d'argent (CP 305bis)\n- Acte d'entrave à l'identification, découverte ou confiscation de valeurs **issues d'un crime**\n- ⚠️ Soustraction consommée **N'EST PAS** un crime préalable au blanchiment (contravention)\n- **Mais** : **fraude fiscale qualifiée** (depuis 2016) :\n  - Falsification + soustraction > **CHF 300'000**\n  - **Crime préalable** au blanchiment\n- Conséquence : conseils financiers (LBA) impliqués\n\n### Dénonciation spontanée — art. 175 al. 3 + 181a LIFD\n- Mécanisme depuis 01.01.2010\n- **Évite** poursuites pénales soustraction\n- Conditions cumulatives :\n  - **① Première dénonciation** (1× par vie pour PP)\n  - **② Spontanée** (avant que fisc ne soit informé)\n  - **③ Aide pleine et entière** à l'autorité\n  - **④ Effort sérieux** pour payer impôt\n- **Conséquences** :\n  - **Pas d'amende** (sinon = montant soustrait)\n  - **Rappel d'impôt** + intérêts (5 % env.) pour **10 ans** seulement\n  - **Pas de casier**\n- PM : pas de limite 1× (mais conditions strictes)\n- Pour héritiers (art. 153a) : rappel **3 ans** seulement\n\n### Rappel d'impôt + intérêts moratoires (art. 151-153 LIFD)\n- En cas de soustraction : rappel pour **10 ans** maximum\n- Intérêts moratoires sur impôt soustrait\n- Auto-déclenchement à l'ouverture procédure pénale\n- Prescription rappel : **5 ans** relative + **15 ans** absolue\n- ⚠️ Délais rappel = délais taxation art. 120 (cf. m7_L11)\n\n### Prescription pénale (synthèse)\n#### Soustraction consommée (art. 184)\n- **10 ans** à compter de fin période fiscale\n- Allongée à 15 ans si poursuites en cours\n#### Tentative\n- **6 ans** dès commission\n#### Délit fiscal (art. 189)\n- **15 ans** dès commission\n- Cf. art. 97 CP (durée plus longue applicable)\n#### Suspension\n- Procédure de réclamation, recours, révision\n- Contribuable hors CH\n#### Interruption\n- Tout acte du fisc faisant suite à l'infraction\n\n### DAPE — enquêtes pénales graves\n- **Division Affaires Pénales et Enquêtes** (AFC)\n- Compétence : enquêtes pour soustractions importantes + délits\n- **Autorisation préalable** du chef DFF\n- **Conditions** :\n  - Soupçon fondé d'**infraction qualifiée**\n  - Enjeux fiscaux importants\n- Moyens d'enquête (LIFD art. 190-195) :\n  - Perquisitions\n  - Saisies\n  - Auditions sous serment\n  - **Détention provisoire** possible\n\n### ⚠️ Pièges examen\n- **N°1** **Soustraction = contravention** (administratif) ; **fraude = délit** (juge pénal)\n- **N°2** **Négligence** punissable pour soustraction mais **PAS pour délit**\n- **N°3** Amende soustraction = **1/3 à 3×** le montant soustrait (généralement 1×)\n- **N°4** Tentative = **2/3** amende complète (art. 176)\n- **N°5** **Dénonciation spontanée** : **1× par vie** PP + **conditions cumulatives**\n- **N°6** **Fraude qualifiée > 300k** = crime préalable blanchiment (depuis 2016)\n- **N°7** Prescription soustraction = **10 ans** | délit = **15 ans**\n- **N°8** Signer **déclaration commune** ≠ soustraction (art. 180) — propre éléments\n- **N°9** **DAPE** = autorisation **DFF** requise (cas graves)\n\n### 💡 Mnémoniques\n- **« 175-186-187 »** — soustraction / fraude (faux) / source détournée\n- **« 1/3 à 3× »** — amende soustraction\n- **« 2/3 »** — amende tentative\n- **« 1× par vie »** — dénonciation spontanée PP\n- **« 300k »** — seuil fraude qualifiée (blanchiment)\n- **« 10/15 »** — prescription soustraction/délit\n- **« CONS-NEG-DÉL »** — Contraventions (négligence ok) / Délits (intention seule)\n- **« DAPE = DFF »** — autorisation chef département\n\n### 🔗 Renvois\n- **m7_L1** — Optimisation vs évasion vs soustraction\n- **m7_L11** — Rappel d'impôt (procédure)\n- **m7_L13** — Intercantonal (compétence si plusieurs cantons)\n- **LIFD art. 174-195** — pénal fiscal IFD\n- **LHID art. 55-61** — pénal cantonal\n- **CP art. 305bis** — blanchiment\n- **DPA** — droit pénal administratif\n",
@@ -40398,6 +40878,36 @@
               "options": null,
               "answer": true,
               "explanation": "Vrai. L'art. 127 al. 3 Cst. interdit la double imposition intercantonale ; les règles de répartition ont été précisées par la jurisprudence du Tribunal fédéral.",
+              "difficulty": "easy",
+              "section_id": "m7_L13_s10"
+            },
+            {
+              "id": "m7_L13_q17",
+              "type": "mcq",
+              "question": "En cas de changement de domicile intercantonal en cours d'année, la personne physique\n(Identifiez la réponse correcte)",
+              "options": [
+                "choisit librement lequel des deux cantons l'imposera pour l'année",
+                "est imposée pour toute l'année par le canton qu'elle a quitté",
+                "est imposée pour toute l'année par le canton de domicile au 31 décembre",
+                "est imposée prorata temporis par chacun des deux cantons concernés par le déménagement"
+              ],
+              "answer": 2,
+              "explanation": "Le contribuable est assujetti pour toute la période fiscale dans le canton où il est domicilié à la fin de celle-ci (art. 68 LHID) ; immeubles et établissements stables restent imposés dans leur canton.",
+              "difficulty": "medium",
+              "section_id": "m7_L13_s10"
+            },
+            {
+              "id": "m7_L13_q18",
+              "type": "mcq",
+              "question": "L'interdiction de la double imposition intercantonale\n(Identifiez la réponse correcte)",
+              "options": [
+                "découle d'un concordat signé par tous les cantons",
+                "découle de la Constitution fédérale",
+                "ne s'applique qu'aux personnes morales",
+                "découle des conventions modèles de l'OCDE"
+              ],
+              "answer": 1,
+              "explanation": "L'art. 127 al. 3 Cst. interdit la double imposition intercantonale ; les règles de répartition ont été développées par la jurisprudence du Tribunal fédéral.",
               "difficulty": "easy",
               "section_id": "m7_L13_s10"
             }
@@ -40724,6 +41234,36 @@
               "answer": true,
               "explanation": "Vrai. Tous les cantons exonèrent le conjoint survivant ; l'exonération des descendants existe dans la plupart des cantons, mais pas dans tous.",
               "difficulty": "medium",
+              "section_id": "m7_L14_s9"
+            },
+            {
+              "id": "m7_L14_q17",
+              "type": "mcq",
+              "question": "L'impôt sur les gains immobiliers\n(Identifiez la réponse correcte)",
+              "options": [
+                "frappe chaque année la plus-value non réalisée de l'immeuble",
+                "est un impôt fédéral perçu par l'Administration fédérale des contributions",
+                "est un impôt cantonal, souvent dégressif selon la durée de possession",
+                "est un impôt cantonal dont le taux augmente avec la durée de possession"
+              ],
+              "answer": 2,
+              "explanation": "L'impôt sur les gains immobiliers est prélevé par les cantons (art. 12 LHID) ; la plupart prévoient une réduction du taux pour les longues durées de possession et une majoration pour les reventes rapides.",
+              "difficulty": "easy",
+              "section_id": "m7_L14_s9"
+            },
+            {
+              "id": "m7_L14_q18",
+              "type": "mcq",
+              "question": "L'impôt sur les successions\n(Identifiez la réponse correcte)",
+              "options": [
+                "est remplacé par l'impôt anticipé au moment du décès",
+                "est prélevé par la Confédération au taux uniforme de 7 %",
+                "est prélevé par les cantons, le conjoint survivant en étant exonéré",
+                "frappe le conjoint survivant dans la plupart des cantons qui la prélèvent"
+              ],
+              "answer": 2,
+              "explanation": "Il n'existe pas d'impôt fédéral sur les successions ; les cantons qui en prélèvent exonèrent tous le conjoint survivant, et la plupart les descendants.",
+              "difficulty": "easy",
               "section_id": "m7_L14_s9"
             }
           ],
@@ -41058,6 +41598,36 @@
               "answer": false,
               "explanation": "Faux. L'impôt reste dû ; le montant versé est alors considéré comme net et l'impôt se calcule sur le montant brut reconstitué (brutage : montant versé / 65 % × 35 %).",
               "difficulty": "medium",
+              "section_id": "m7_L15_s9"
+            },
+            {
+              "id": "m7_L15_q18",
+              "type": "mcq",
+              "question": "L'impôt anticipé\n(Identifiez la réponse correcte)",
+              "options": [
+                "est un impôt cantonal perçu à la source, au taux de 35 % sur les dividendes",
+                "est un impôt fédéral perçu par voie de taxation, au taux de 35 %",
+                "est un impôt fédéral perçu à la source, au taux de 25 % sur les dividendes",
+                "est un impôt fédéral perçu à la source, au taux de 35 % sur les dividendes"
+              ],
+              "answer": 3,
+              "explanation": "L'impôt anticipé est un impôt fédéral à la source, perçu par l'AFC auprès du débiteur de la prestation imposable, au taux de 35 % sur les rendements de capitaux mobiliers (dividendes, intérêts de comptes et d'obligations).",
+              "difficulty": "easy",
+              "section_id": "m7_L15_s9"
+            },
+            {
+              "id": "m7_L15_q19",
+              "type": "mcq",
+              "question": "Un contribuable domicilié en Suisse qui a subi l'impôt anticipé sur ses dividendes\n(Identifiez la réponse correcte)",
+              "options": [
+                "obtient le remboursement de l'impôt anticipé si elle déclare les revenus correspondants",
+                "ne peut jamais récupérer l'impôt anticipé retenu à la source sur ses revenus de capitaux mobiliers",
+                "récupère l'impôt anticipé auprès de la banque ou de la société qui l'a retenu",
+                "ne récupère l'impôt anticipé que sur les intérêts de ses comptes bancaires"
+              ],
+              "answer": 0,
+              "explanation": "Le remboursement (ou l'imputation) est accordé par le canton à la personne domiciliée en Suisse qui déclare régulièrement les revenus et la fortune concernés (art. 22 ss LIA).",
+              "difficulty": "easy",
               "section_id": "m7_L15_s9"
             }
           ],
@@ -41962,6 +42532,36 @@
               "explanation": "Faux. La livraison a lieu en Suisse (début du transport) mais elle est exonérée (art. 23 al. 2 ch. 1 LTVA), à condition de pouvoir prouver l'exportation par un document douanier. La menuiserie conserve la déduction de l'impôt préalable.",
               "difficulty": "easy",
               "section_id": "m8_L1_s9"
+            },
+            {
+              "id": "m8_L1_q16",
+              "type": "mcq",
+              "question": "La TVA suisse\n(Identifiez la réponse correcte)",
+              "options": [
+                "est un impôt général sur la consommation perçu à tous les stades de production et de distribution",
+                "est un impôt direct prélevé par les cantons sur le chiffre d'affaires réalisé par les entreprises",
+                "n'est perçue qu'au dernier stade, lors de la vente au consommateur final",
+                "est un impôt fédéral perçu uniquement sur les biens importés en Suisse"
+              ],
+              "answer": 0,
+              "explanation": "La TVA est un impôt fédéral général sur la consommation, perçu selon le système de la taxe multiphase nette : chaque stade paie l'impôt sur son chiffre d'affaires et déduit l'impôt préalable (art. 1 LTVA).",
+              "difficulty": "easy",
+              "section_id": "m8_L1_s9"
+            },
+            {
+              "id": "m8_L1_q17",
+              "type": "mcq",
+              "question": "Les taux de TVA en vigueur\n(Identifiez la réponse correcte)",
+              "options": [
+                "sont de 7,7 % (normal), 2,5 % (réduit) et 3,7 % (hébergement)",
+                "sont de 8,1 % (normal), 2,6 % (réduit) et 3,8 % (hébergement)",
+                "sont de 8,1 % (normal), 3,8 % (réduit) et 2,6 % (hébergement)",
+                "sont de 8,0 % (normal), 2,5 % (réduit) et 3,5 % (hébergement)"
+              ],
+              "answer": 1,
+              "explanation": "Depuis le 1er janvier 2024 : 8,1 % (taux normal), 2,6 % (taux réduit : alimentation, médicaments, livres…) et 3,8 % (taux spécial pour l'hébergement). 7,7 / 2,5 / 3,7 étaient les taux de 2018 à 2023.",
+              "difficulty": "easy",
+              "section_id": "m8_L1_s9"
             }
           ],
           "mindmap_md": "# M8-L1\n## Bases et dispositions générales TVA\n\n### Pertinence examen\n- **Haute** — fondations à toujours rappeler en début d'analyse\n\n### Bases légales — hiérarchie\n- **Cst. art. 130** — base constitutionnelle TVA\n- **Cst. art. 196** — dispositions transitoires (taux et hausses AVS)\n- **LTVA** du 12.06.2009 — **RS 641.20**\n- **OTVA** du 27.11.2009 — **RS 641.201**\n- Ordonnance DFF — exonération trafic touristique\n- Pratique AFC : Info TVA, brochures sectorielles (Forum SuisseTAX)\n\n### Principes fondamentaux (art. 1 LTVA)\n#### Caractéristiques\n- Impôt **général** sur la consommation (tout sauf exclusions/exonérations)\n- Impôt **indirect** : payé par l'assujetti, supporté par le consommateur final\n- Impôt **multi-stade** avec **déduction de l'impôt préalable** (DIP)\n- Imposition de la consommation **finale non entrepreneuriale** sur sol CH\n#### 3 principes directeurs (art. 1 al. 3)\n- **Neutralité concurrentielle** — pas de distorsion entre acteurs\n- **Transfert** — impôt transférable au client (économiquement neutre pour assujetti)\n- **Efficacité** — auto-déclaration, simplification PME (TDFN)\n\n### Les 4 conditions cumulatives d'imposition\n- **①** Une **PRESTATION** (LB ou PS, art. 3 let. c)\n- **②** Une **CONTRE-PRESTATION** (valeur patrimoniale, art. 3 let. f)\n- **③** Fournie par un **ASSUJETTI** (art. 10-14)\n- **④** Sur le **TERRITOIRE SUISSE** (art. 7-8)\n- Toutes remplies → **imposable** ; **une seule absente** → hors champ\n\n### Champ TVA — 4 catégories à ne JAMAIS confondre\n- **Imposable** (8.1 / 2.6 / 3.8 %) → dans le champ + **IP OUI**\n- **Exonérée** (art. 23, taux 0 %) → dans le champ + **IP OUI** (export)\n- **Exclue** (art. 21) → hors champ + **IP NON** (sauf option art. 22)\n- **Non-prestation** (art. 18 al. 2) → hors champ + REDIP si subvention\n\n### Mécanisme multi-stade\n- TVA perçue à **chaque transaction** entre assujettis\n- Impôt **net** versé = TVA brute due − IP déductible\n- Total versé à l'AFC = **8.1 % × prix final HT** (somme converge)\n- Exemple chaîne papier : forestier 8.10 + fabricant 16.20 + grossiste 8.10 + détaillant 16.20 = **48.60 = 8.1 % × 600**\n\n### Territoire suisse (art. 3 let. a + 4 LTVA)\n- Territoire de la **Confédération** SAUF dépôts/ports francs\n- **Principauté du Liechtenstein** (traité 28.11.1994)\n- **Büsingen** (D) et **Campione d'Italia** (I) — enclaves incorporées\n- Vallées de Samnaun et Sampuoir : régime spécial\n\n### Livraison vs prestation de services (art. 3)\n- **LB** (let. d) : pouvoir de disposer + travaux sur bien + mise à disposition\n- **PS** (let. e) : tout ce qui n'est pas LB (engagement, tolérance, droits)\n- Cas-piège : engagement de **ne pas faire** = PS (Pet Food : 500k dédommagement = PS)\n- Cas-piège : **logiciel sur support** = LB ; **logiciel téléchargé** = PS\n\n### ⚠️ Pièges examen\n- **N°1** **Exonéré ≠ Exclu** — art. 23 garde l'IP, art. 21 le perd (sauf option)\n- **N°2** Les **4 conditions** sont **cumulatives** — toujours énoncer les 4\n- **N°3** Liechtenstein = territoire CH au sens LTVA (≠ douane EU)\n- **N°4** Dépôts francs **HORS** territoire — entrée = importation\n- **N°5** Logiciel téléchargé = **PS** (pas LB) → règle art. 8 lieu destinataire\n- **N°6** Engagement de tolérance/ne pas faire = **PS** imposable\n- **N°7** TVA = **impôt général** — sauf 31 catégories art. 21 + exonérés art. 23\n\n### 💡 Mnémoniques\n- **« P-C-A-T »** — Prestation + Contre-prestation + Assujetti + Territoire\n- **« I-Ex-Excl-NP »** — Imposable / Exonéré / Exclu / Non-prestation\n- **« 130 Cst → 641.20 LTVA → 641.201 OTVA »** — hiérarchie\n- **« Liechtenstein dedans, Büsingen dedans, dépôts francs dehors »**\n- **« 8.1 % × prix final »** — somme nette TVA multi-stade\n\n### 🔗 Renvois\n- **m8_L2** — Lieu des prestations (art. 7-8)\n- **m8_L3** — Assujettissement (art. 10-14)\n- **m8_L4** — Objet de l'impôt (art. 18-22)\n- **m8_L6** — Exonérations (art. 23)\n- **m1_L7** — Introduction fiscalité suisse\n- **LTVA / OTVA / Cst. 130** — textes légaux\n",
@@ -42293,6 +42893,36 @@
               "explanation": "Faux. On vérifie d'abord si l'une des exceptions de l'art. 8 al. 2 LTVA s'applique (activité culturelle ou d'enseignement, restauration, transport, immeuble…), quel que soit le destinataire. La règle du destinataire (art. 8 al. 1) ne s'applique qu'à défaut.",
               "difficulty": "medium",
               "section_id": "m8_L2_s9"
+            },
+            {
+              "id": "m8_L2_q18",
+              "type": "mcq",
+              "question": "Le lieu d'une prestation de services\n(Identifiez la réponse correcte)",
+              "options": [
+                "se situe au lieu où la facture est établie",
+                "se situe en principe au lieu du siège du destinataire",
+                "se situe toujours au lieu du siège du prestataire",
+                "se situe toujours au lieu où la prestation est exécutée"
+              ],
+              "answer": 1,
+              "explanation": "Règle générale de l'art. 8 al. 1 LTVA : lieu du siège (ou du domicile) du destinataire, sous réserve des exceptions de l'art. 8 al. 2 (immeubles, restauration, activités culturelles, transport…).",
+              "difficulty": "easy",
+              "section_id": "m8_L2_s9"
+            },
+            {
+              "id": "m8_L2_q19",
+              "type": "mcq",
+              "question": "Le lieu d'une livraison d'un bien transporté par le fournisseur\n(Identifiez la réponse correcte)",
+              "options": [
+                "est le lieu où le transport se termine",
+                "est le lieu du siège du destinataire",
+                "est le lieu où le contrat a été conclu",
+                "est le lieu où le transport commence"
+              ],
+              "answer": 3,
+              "explanation": "Lorsque le bien est transporté ou expédié, la livraison est réputée effectuée au lieu où commence le transport (art. 7 al. 1 let. b LTVA).",
+              "difficulty": "easy",
+              "section_id": "m8_L2_s9"
             }
           ],
           "mindmap_md": "# M8-L2\n## Lieu des opérations imposables (art. 7-8 LTVA)\n\n### Pertinence examen\n- **Haute** — verrou des cas pratiques internationaux\n\n### Pourquoi le lieu est crucial\n- Seules les prestations dont le **lieu = CH** sont soumises à la TVA CH\n- Lieu étranger → **hors champ CH** (pas de TVA CH, éventuelle TVA étrangère)\n- Bases : **art. 7** pour LB, **art. 8** pour PS\n- Distinguer lieu **fiscal** (TVA) du lieu **physique** (logistique)\n\n### Lieu de la livraison de biens (art. 7 LTVA)\n#### Règles principales\n- **Prise en charge** (vente sur place) → lieu du **bien lors du transfert**\n- **Transport / expédition** → lieu où le **transport commence**\n- **Travaux sur bien** → lieu où les **travaux sont exécutés**\n- **Location** d'un bien → lieu de **remise** au locataire\n- **Vente par correspondance** → lieu d'importation (depuis CH si seuil atteint)\n#### Cas spéciaux\n- **Électricité, gaz, chaleur, froid** par conduite → **lieu du DESTINATAIRE**\n- Si destinataire inconnu → lieu de **consommation effective**\n- **Déclaration d'engagement** (formulaire 1235/1236) → lieu = CH\n\n### Lieu de la prestation de services (art. 8 LTVA)\n#### 6 règles dans l'ordre d'examen\n- **①** PS liée à un **immeuble** → lieu de l'**immeuble** (al. 2 let. f)\n- **②** PS culturelles/artistiques/sportives/d'enseignement **en présentiel** → lieu d'**exercice** (al. 2 let. c)\n- **③** Transport de **passagers** → lieu du **trajet parcouru** (al. 2 let. e)\n- **④** PS **coopération internationale** (aide au développement) → lieu de **destination** (al. 2 let. g)\n- **⑤** PS de proximité personnelle (coiffeur, soins, conseil conjugal, agence voyage en revente) → lieu du **PRESTATAIRE** (al. 2 let. a-b)\n- **⑥** **DÉFAUT** : règle générale → lieu du **DESTINATAIRE** (al. 1)\n#### Règle générale = destinataire (B2B le plus souvent)\n- Domicile (PP) / siège (PM) / **établissement stable** destinataire\n- Conseils, IT, formation en ligne, traduction, publicité, télécoms, licences\n\n### Arbre décisionnel PS — 6 questions\n- 1) PS liée à un **immeuble** ? → lieu de l'immeuble\n- 2) Manifestation présentielle artistique/sportive/enseignement ? → lieu d'exercice\n- 3) Transport de **passagers** ? → lieu du trajet\n- 4) Coopération internationale ? → lieu de destination\n- 5) Soins, coiffeur, conseil conjugal, agence voyage revente ? → lieu du prestataire\n- 6) **Sinon** (cas général) → lieu du **destinataire**\n\n### Cas particuliers fréquents\n#### Transport passagers (al. 2 let. e)\n- Genève-Paris train : 20 % CH (TVA CH) / 80 % FR (hors champ)\n- Bus excursion : **par tronçon** parcouru\n#### Restauration (al. 2 let. d)\n- Lieu d'**exercice** = lieu de l'établissement\n- Restaurant à GE → CH ; à Évian → étranger\n#### Hébergement (al. 2 let. f via immeuble)\n- Hôtel à Lausanne : taux **spécial 3.8 %** + lieu CH\n\n### Vente par correspondance — règle 2019/2024\n- Seuil **CHF 100'000** de petits envois (TVA < 5 CHF) vers CH\n- Au-delà : entreprise étrangère **assujettie CH** → lieu CH (livraison réputée intérieure)\n- Plateformes électroniques (art. 20a, depuis 01.01.2025) : plateforme = vendeur fiscal\n\n### ⚠️ Pièges examen\n- **N°1** Règle générale PS = lieu **destinataire** (art. 8 al. 1), pas prestataire\n- **N°2** PS lieu prestataire = **liste fermée** (coiffeur, soins, conseil conj., agence vente)\n- **N°3** Transport passagers = **trajet** (≠ siège transporteur)\n- **N°4** Immeuble (al. 2 let. f) prime sur tout — même PS digitales (conseil immobilier)\n- **N°5** Énergie en réseau = lieu **destinataire** (≠ règle LB classique)\n- **N°6** Restauration / hébergement présentiels = lieu d'**exercice** (immeuble)\n- **N°7** Plateformes art. 20a (dès 2025) → la plateforme devient sujet TVA pour petits envois\n\n### 💡 Mnémoniques\n- **« D-D-D-D-P-P »** — Défaut Destinataire / Déplacement, Domicile, Présence Prestataire\n- **« I-MAS-T-C-P-D »** — Immeuble, Manif Artist/Sport, Transport, Coopération, Prestataire, Destinataire (ordre arbre)\n- **« Coif-Soins-Conj-Voy »** — les 4 PS au lieu prestataire\n- **« Énergie = destinataire »** — exception LB unique\n- **« Tronçon = trajet »** — passagers\n\n### 🔗 Renvois\n- **m8_L1** — Bases TVA (4 conditions)\n- **m8_L3** — Assujettissement (siège/ES déterminants)\n- **m8_L6** — Exonérations export (art. 23) liées au lieu\n- **m8_L7** — Acquisitions/importations (reverse charge)\n- **LTVA art. 7-8** — textes clés\n",
@@ -42582,6 +43212,36 @@
               "answer": false,
               "explanation": "Faux. Pour les associations sportives ou culturelles sans but lucratif gérées bénévolement et les institutions d'utilité publique, le seuil est de CHF 250'000 (art. 10 al. 2 let. c LTVA). Elle peut cependant renoncer à la libération.",
               "difficulty": "easy",
+              "section_id": "m8_L3_s9"
+            },
+            {
+              "id": "m8_L3_q16",
+              "type": "mcq",
+              "question": "Une entreprise dont le chiffre d'affaires annuel est inférieur à CHF 100'000\n(Identifiez la réponse correcte)",
+              "options": [
+                "ne peut en aucun cas s'inscrire au registre des assujettis",
+                "est assujettie si elle exporte la majorité de ses biens",
+                "est libérée de l'assujettissement, mais peut y renoncer",
+                "est obligatoirement assujettie dès le premier franc"
+              ],
+              "answer": 2,
+              "explanation": "Sous le seuil de CHF 100'000 (prestations non exclues, en Suisse et à l'étranger), l'entreprise est libérée de l'assujettissement (art. 10 al. 2 LTVA), mais elle peut renoncer à la libération (assujettissement volontaire).",
+              "difficulty": "easy",
+              "section_id": "m8_L3_s9"
+            },
+            {
+              "id": "m8_L3_q17",
+              "type": "mcq",
+              "question": "Une association sportive sans but lucratif gérée bénévolement\n(Identifiez la réponse correcte)",
+              "options": [
+                "est assujettie dès CHF 100'000, comme n'importe quelle autre entreprise",
+                "n'est jamais assujettie à la TVA, quel que soit son chiffre d'affaires",
+                "est libérée tant que son chiffre d'affaires reste inférieur à CHF 250'000",
+                "est libérée tant que son chiffre d'affaires reste inférieur à CHF 150'000"
+              ],
+              "answer": 2,
+              "explanation": "Pour les associations sportives ou culturelles sans but lucratif gérées bénévolement et les institutions d'utilité publique, le seuil de libération est de CHF 250'000 (art. 10 al. 2 let. c LTVA).",
+              "difficulty": "medium",
               "section_id": "m8_L3_s9"
             }
           ],
@@ -42887,6 +43547,36 @@
               "explanation": "Faux. Les subventions et autres contributions de droit public ne sont pas des contre-prestations (art. 18 al. 2 let. a LTVA) ; elles entraînent en revanche une réduction proportionnelle de la déduction de l'impôt préalable (art. 33 al. 2 LTVA).",
               "difficulty": "easy",
               "section_id": "m8_L4_s9"
+            },
+            {
+              "id": "m8_L4_q17",
+              "type": "mcq",
+              "question": "Une subvention reçue d'une collectivité publique\n(Identifiez la réponse correcte)",
+              "options": [
+                "constitue une contre-prestation imposable au taux réduit de 2,6 %",
+                "ne constitue pas une contre-prestation, mais réduit la déduction de l'impôt préalable",
+                "constitue une contre-prestation imposable au taux normal, comme toute recette de l'entreprise",
+                "n'a aucune incidence sur la TVA de l'entreprise assujettie"
+              ],
+              "answer": 1,
+              "explanation": "Les subventions ne sont pas des contre-prestations (art. 18 al. 2 let. a LTVA) mais entraînent une réduction proportionnelle de la déduction de l'impôt préalable (art. 33 al. 2 LTVA).",
+              "difficulty": "medium",
+              "section_id": "m8_L4_s9"
+            },
+            {
+              "id": "m8_L4_q18",
+              "type": "mcq",
+              "question": "En cas de représentation indirecte\n(Identifiez la réponse correcte)",
+              "options": [
+                "seule la commission de l'intermédiaire est soumise à la TVA",
+                "aucune TVA n'est due par l'intermédiaire, qui n'est qu'un mandataire",
+                "l'intermédiaire est réputé fournir lui-même la prestation au client",
+                "le représenté facture directement la prestation au client final"
+              ],
+              "answer": 2,
+              "explanation": "Quand l'intermédiaire agit en son propre nom, on admet deux prestations : du représenté à l'intermédiaire, puis de l'intermédiaire au client (art. 20 al. 3 LTVA). Seule la représentation directe limite l'imposition à la commission.",
+              "difficulty": "medium",
+              "section_id": "m8_L4_s9"
             }
           ],
           "mindmap_md": "# M8-L4\n## Objet de l'impôt (art. 18-23 LTVA)\n\n### Pertinence examen\n- **Haute** — savoir qualifier la prestation, sa base et son attribution\n\n### Rapport de prestations (art. 18 al. 1)\n- **4 éléments** :\n  - **①** Une **prestation** fournie\n  - **②** Une **contre-prestation** (valeur patrimoniale)\n  - **③** Un rapport **économique ÉTROIT** entre les deux\n  - **④** Au moins **deux parties**\n- La **prestation** = OBJET de l'impôt ; la **contre-prestation** = BASE de calcul (art. 24)\n\n### Contre-prestation (art. 3 let. f + art. 24)\n- **Valeur effective** versée (espèces, échange, dation en paiement, troc)\n- Caractère **onéreux** = condition préalable\n- TVA toujours **incluse** dans le prix sauf mention contraire (art. 24 al. 1)\n- **Réductions** : rabais, escomptes, ristournes, pertes/débiteurs, reprises emballages\n- **PAS de réduction** : frais bancaires, commissions cartes, pertes de change\n\n### Éléments NON contre-prestation (art. 18 al. 2) — **10 catégories**\n- **a)** Subventions et contributions droit public → **REDIP** (art. 33)\n- **b)** Dons → pas de REDIP\n- **c)** Apports d'associés / fondateurs\n- **d)** Versements à fonds propres\n- **e)** Dividendes\n- **f)** Dommages-intérêts (compensation lésion, pas prestation)\n- **g)** Taxes touristiques perçues pour collectivité → REDIP\n- **h)** Fonds de prévention / dépollution → REDIP\n- **i)** Émoluments **régaliens** → REDIP\n- **j)** Garanties remboursables\n- Distinguer ce qui **réduit l'IP (REDIP)** vs ce qui ne réduit rien\n\n### Pluralité de prestations (art. 19)\n#### ① Prestations indépendantes (al. 1)\n- Chacune son taux propre — **facturation séparée** requise\n- Ex. : pain (2.6 %) + vin (8.1 %) au même ticket — chiffrer séparément\n#### ② Combinaison globale (al. 2 — règle des 70 %)\n- Pack à prix unique → taux de la prestation **principale** si elle ≥ **70 %** de la valeur\n- Sinon, **ventilation** des taux\n#### ③ Unité de prestation (al. 3)\n- Prestations formant économiquement un **TOUT indissociable** → **UN seul taux**\n- Logiciel + installation + formation = unité\n#### ④ Prestation accessoire (al. 4)\n- Partage le **sort fiscal** de la prestation principale\n- Ex. : frais d'expédition d'un livre → suit le taux du livre (2.6 %)\n\n### Attribution — représentation (art. 20)\n#### Représentation DIRECTE (al. 2)\n- Intermédiaire agit **au nom ET pour le compte** d'un tiers\n- Prestation attribuée au **représenté** (mandant)\n- **Conditions** : (1) explicitement au nom du représenté, (2) tiers le sait, (3) facture en bonne et due forme\n- L'intermédiaire facture une **commission** distincte\n#### Représentation INDIRECTE (al. 3)\n- Intermédiaire agit **en son propre nom** (pour compte d'un tiers)\n- **Fiction fiscale** : **2 rapports de prestations** consécutifs\n- Mandant → Intermédiaire (achat) → Client final (revente)\n#### Plateformes numériques (art. 20a, depuis 01.01.2025)\n- Plateformes facilitant livraison → **réputées vendeur** (représentation indirecte forcée)\n- Élimine la fraude des petits envois étrangers (Amazon, Aliexpress…)\n\n### Distinction prestation imposable / exclue / exonérée\n- **Imposable** : 4 conditions remplies + dans le champ\n- **Exonérée** (art. 23) : dans le champ, taux 0 %, IP conservé\n- **Exclue** (art. 21) : hors champ, IP perdu (sauf option art. 22)\n\n### ⚠️ Pièges examen\n- **N°1** **REDIP** s'applique aux subventions, taxes touristiques, fonds dépollution, émoluments régaliens — **PAS aux dons/dividendes/dommages-intérêts**\n- **N°2** Règle des **70 %** : combinaison globale → taux de la prestation dominante si ≥ 70 %\n- **N°3** Accessoire **suit le sort** du principal (port d'un livre = 2.6 %, pas 8.1 %)\n- **N°4** Représentation **directe vs indirecte** : conditions de **forme strictes** (mention au nom du représenté)\n- **N°5** Plateformes art. 20a → fiction de représentation indirecte (Amazon = vendeur fiscal)\n- **N°6** Frais bancaires/change : **PAS** une réduction de contre-prestation\n- **N°7** Dommages-intérêts pour engagement de tolérance = **PS imposable** (Pet Food 500k)\n\n### 💡 Mnémoniques\n- **« P-C-E-2 »** — Prestation + Contre-prestation + Économique étroit + 2 parties\n- **« Subv-Tour-Fonds-Régal = REDIP »** — éléments qui réduisent l'IP\n- **« 70 % = principale »** — combinaison globale\n- **« Direct au nom / Indirect en son nom »** — représentation\n- **« Accessoire suit principal »** — port d'un livre = 2.6 %\n- **« 20a = plateforme = vendeur »** — depuis 2025\n\n### 🔗 Renvois\n- **m8_L1** — Bases (4 conditions)\n- **m8_L5** — Prestations exclues + Option (art. 21-22)\n- **m8_L6** — Exonérations (art. 23)\n- **m8_L8** — Calcul (art. 24)\n- **m8_L10** — DIP / REDIP\n- **LTVA art. 18-20a** — textes clés\n",
@@ -43189,6 +43879,36 @@
               "answer": false,
               "explanation": "Faux. Les traitements médicaux sont exclus (art. 21 al. 2 ch. 3 LTVA), mais la vente de médicaments qui n'est pas fournie dans le cadre d'un traitement est imposable au taux réduit de 2,6 %.",
               "difficulty": "medium",
+              "section_id": "m8_L5_s9"
+            },
+            {
+              "id": "m8_L5_q17",
+              "type": "mcq",
+              "question": "La location d'un appartement utilisé exclusivement pour l'habitation\n(Identifiez la réponse correcte)",
+              "options": [
+                "est imposable au taux réduit de 2,6 %",
+                "est imposable au taux spécial de 3,8 %",
+                "est exclue du champ de l'impôt, avec possibilité d'option",
+                "est exclue du champ de l'impôt, sans possibilité d'option"
+              ],
+              "answer": 3,
+              "explanation": "La location immobilière est exclue (art. 21 al. 2 ch. 21 LTVA) et l'option n'est pas possible pour les biens utilisés exclusivement à des fins d'habitation par le destinataire (art. 22 al. 2 let. b LTVA).",
+              "difficulty": "medium",
+              "section_id": "m8_L5_s9"
+            },
+            {
+              "id": "m8_L5_q18",
+              "type": "mcq",
+              "question": "Les prestations exclues du champ de l'impôt\n(Identifiez la réponse correcte)",
+              "options": [
+                "sont imposées au taux de 0 %, avec déduction intégrale de l'impôt préalable",
+                "donnent toujours droit à la déduction de l'impôt préalable payé",
+                "ne peuvent jamais faire l'objet d'une option volontaire",
+                "ne donnent pas droit à la déduction de l'impôt préalable, sauf option"
+              ],
+              "answer": 3,
+              "explanation": "Une prestation exclue n'est pas imposée, mais l'impôt préalable sur les dépenses qui s'y rapportent n'est pas déductible (art. 29 LTVA), sauf option pour son imposition (art. 22 LTVA), possible pour la plupart d'entre elles.",
+              "difficulty": "easy",
               "section_id": "m8_L5_s9"
             }
           ],
@@ -43508,6 +44228,36 @@
               "explanation": "Faux. L'exonération des livraisons dans le trafic touristique suppose un achat d'au moins CHF 300 TVA comprise sur un même justificatif, une exportation dans les 90 jours et le visa de la douane.",
               "difficulty": "easy",
               "section_id": "m8_L6_s9"
+            },
+            {
+              "id": "m8_L6_q18",
+              "type": "mcq",
+              "question": "Les exportations de biens\n(Identifiez la réponse correcte)",
+              "options": [
+                "sont exonérées et donnent droit à la déduction de l'impôt préalable",
+                "sont imposables au taux réduit de 2,6 % dans tous les cas",
+                "sont exonérées, mais sans droit à la déduction de l'impôt préalable",
+                "sont exclues du champ de l'impôt, sans droit à la déduction"
+              ],
+              "answer": 0,
+              "explanation": "Les livraisons de biens transportés directement à l'étranger sont exonérées (art. 23 al. 2 ch. 1 LTVA) ; l'exportateur conserve le droit de déduire l'impôt préalable, à condition de prouver l'exportation.",
+              "difficulty": "easy",
+              "section_id": "m8_L6_s9"
+            },
+            {
+              "id": "m8_L6_q19",
+              "type": "mcq",
+              "question": "Un vol de Zurich à Lugano\n(Identifiez la réponse correcte)",
+              "options": [
+                "est exclu du champ de l'impôt, comme les transports publics",
+                "est un transport exonéré, comme tout transport aérien",
+                "est imposable au taux réduit de 2,6 %",
+                "est un transport intérieur imposable au taux normal"
+              ],
+              "answer": 3,
+              "explanation": "Seul le transport international de personnes par air est exonéré ; un vol intérieur, sans prolongement international, est imposable au taux normal.",
+              "difficulty": "medium",
+              "section_id": "m8_L6_s9"
             }
           ],
           "mindmap_md": "# M8-L6\n## Prestations exonérées (art. 23 LTVA)\n\n### Pertinence examen\n- **Haute** — pilier des opérations internationales et l'or\n\n### Principe pays de consommation\n- Impôt prélevé dans le **pays de consommation** (≠ pays d'origine)\n- Exonération CH = mécanisme pour ne pas imposer ce qui sera consommé hors CH\n- Le **lieu** de la prestation reste **CH** (art. 7-8) → **dans le champ**\n- **MAIS** taux **0 %** + **IP intégral** conservé (≠ exclusion)\n- Preuve d'exonération **obligatoire** (justificatifs douaniers, contrats)\n\n### Exonération vs exclusion — distinction reine\n| Critère | Exonérée (art. 23) | Exclue (art. 21) |\n|---|---|---|\n| Champ | DANS | HORS |\n| Taux | 0 % | — |\n| IP | **CONSERVÉ** | **PERDU** (sauf option) |\n| Typologie | Exports, international | Santé, formation, immo. habitation |\n| Mention facture | « exonéré art. 23 » | « hors champ art. 21 » |\n\n### Catégories d'exonération (art. 23 al. 2)\n#### Ch. 1 — Exportations de biens\n- LB transportées/expédiées **directement à l'étranger**\n- Preuve : décision de taxation à l'export OFDF\n- **Délai** : preuve sous 60 jours après livraison\n#### Ch. 2 — Location de biens utilisés > 50 % à l'étranger\n- Train CFF loué à SNCF (Genève-Lyon) > 50 % FR → exonéré\n#### Ch. 3-7 — Transit, surveillance douanière\n- Biens sous régime de transit, entreposage en dépôt franc\n- Prestations sur biens en transit\n#### Ch. 8 — Aéronefs et compagnies aériennes internationales\n- Livraison, transformation, entretien d'**aéronefs** (> 60 % vols internationaux)\n- **Avitaillement** (carburant, provisions)\n- PS pour besoins directs des aéronefs\n#### Ch. 9 — Intermédiaires (représentation directe)\n- Si opération sous-jacente exonérée OU exclusivement à l'étranger\n- L'intermédiaire agit au nom du tiers\n#### Ch. 10 — Prestations à des bénéficiaires institutionnels\n- ONU, organisations internationales (sur certificat)\n- Ambassades, consulats (sur conditions de réciprocité)\n#### Ch. 11 — Or monétaire à banques centrales\n#### Ch. 12 — **Or fin et or d'investissement** ⭐\n- **Monnaies d'or** émises par États (Napoléon, Krugerrand, Maple Leaf, Vreneli)\n- **Or d'investissement** au titre minimal de **995 ‰** (99.5 %)\n  - Lingots coulés (forme reconnue)\n  - Plaquettes / barres standard\n- **Marché de gros** : or fin / argent fin (poudre, granules) > 99.5 ‰\n#### Ch. 13 — Plateformes numériques (art. 20a)\n- Livraison vendeur → plateforme exonérée\n- Plateforme → client final imposable\n\n### Transport international de personnes (art. 23 al. 4 + OTVA 41-43)\n#### Trafic aérien international — conditions NON cumulatives\n- **①** Aéroport départ OU arrivée en CH\n- **②** Survol CH d'un aéroport étranger à un autre étranger\n- **③** Partie d'un vol international entre 2 aéroports CH\n#### Trafic ferroviaire / routier\n- Partie en CH = imposable ; partie étrangère = exonérée\n- Possible **forfait** pour répartition (autocars)\n#### Trafic maritime / fluvial\n- International = exonéré\n\n### Trafic des voyageurs — tax refund (al. 5)\n- Conditions cumulatives :\n  - **①** Valeur minimale **CHF 300** (TVA incluse)\n  - **②** Acheteur **domicilié à l'étranger**\n  - **③** Export dans les **90 jours**\n  - **④** Bien pour **usage privé**\n  - **⑤** Preuve de l'exportation (formulaire visé douane)\n\n### Conséquences de l'exonération\n- **Taux 0 %** sur la prestation\n- **IP intégral** conservé (DIP normale)\n- Décompte ch. 220 (exonérations art. 23)\n- **Comptabilité** : preuve d'exonération à conserver **20 ans** (immo) ou **10 ans** standard\n- **Avantage** structurel pour exportateurs (récup IP sans TVA collectée → crédit AFC)\n\n### ⚠️ Pièges examen\n- **N°1** Exonéré (art. 23) ≠ Exclu (art. 21) — exonéré **conserve l'IP**\n- **N°2** Or fin **≥ 995 ‰** = exonéré (or 750 / bijoux = imposable)\n- **N°3** Tax refund touriste : **300 CHF** minimum + export **90 jours** + privé\n- **N°4** Aéronefs : compagnie internationale **> 60 %** vols internationaux\n- **N°5** Intermédiaire : exonéré seulement si opération sous-jacente exonérée OU étrangère\n- **N°6** Preuve d'exportation **obligatoire** (DTe OFDF) — délai 60 jours\n- **N°7** Plateformes : vendeur → plateforme = exonéré (art. 23 ch. 13) ; plateforme → client = imposable\n\n### 💡 Mnémoniques\n- **« 0 % + IP conservé »** — formule exonération\n- **« 995 ‰ »** — or d'investissement (Vreneli, Krugerrand, lingots)\n- **« 300 / 30 / privé »** — tax refund (montant / délai / usage)\n- **« Pays de consommation »** — principe directeur\n- **« Exo dans champ, Excl hors champ »** — moyen mnémo distinction\n- **« Aéronef 60 % international »** — seuil compagnie aérienne\n\n### 🔗 Renvois\n- **m8_L2** — Lieu (art. 7-8) précède toujours art. 23\n- **m8_L5** — Exclusion (à ne pas confondre)\n- **m8_L7** — Importations (autre côté du commerce international)\n- **m8_L10** — DIP (l'exonéré garde l'IP)\n- **m1_L7** — Fiscalité suisse\n- **LTVA art. 23 + OTVA 41-43** — textes clés\n",
@@ -43809,6 +44559,36 @@
               ],
               "answer": 1,
               "explanation": "Selon l'art. 54 LTVA, l'impôt sur les importations se calcule sur la contre-prestation, augmentée notamment des impôts, droits et taxes dus hors de Suisse et à l'importation et des frais accessoires (transport, assurance) jusqu'au lieu de destination.",
+              "difficulty": "medium",
+              "section_id": "m8_L7_s9"
+            },
+            {
+              "id": "m8_L7_q16",
+              "type": "mcq",
+              "question": "L'impôt sur les acquisitions\n(Identifiez la réponse correcte)",
+              "options": [
+                "est dû par l'entreprise étrangère qui fournit la prestation de services en Suisse",
+                "ne concerne que les livraisons de biens importés par des particuliers",
+                "est perçu par l'OFDF lors du passage des marchandises à la frontière suisse, à l'importation",
+                "est dû par le destinataire de services fournis par des entreprises étrangères non inscrites"
+              ],
+              "answer": 3,
+              "explanation": "L'impôt sur les acquisitions (art. 45 ss LTVA) est une autoliquidation : le destinataire en Suisse déclare l'impôt sur les prestations acquises auprès d'entreprises étrangères non inscrites au registre des assujettis.",
+              "difficulty": "medium",
+              "section_id": "m8_L7_s9"
+            },
+            {
+              "id": "m8_L7_q17",
+              "type": "mcq",
+              "question": "Une personne non assujettie qui acquiert des services d'entreprises étrangères\n(Identifiez la réponse correcte)",
+              "options": [
+                "doit les déclarer dès le premier franc, comme une personne assujettie",
+                "n'a jamais à les déclarer, l'impôt n'étant dû que par les assujettis",
+                "doit les déclarer si leur montant dépasse CHF 10'000 par année civile",
+                "doit les déclarer si leur montant dépasse CHF 100'000 par année civile"
+              ],
+              "answer": 2,
+              "explanation": "Les non-assujettis ne sont redevables de l'impôt sur les acquisitions que si le montant des prestations acquises dépasse CHF 10'000 par année civile (art. 45 al. 2 let. b LTVA).",
               "difficulty": "medium",
               "section_id": "m8_L7_s9"
             }
@@ -44124,6 +44904,36 @@
               "options": null,
               "answer": false,
               "explanation": "Faux. L'impôt mentionné sur une facture est dû même s'il l'a été à tort (art. 27 al. 2 LTVA), sauf si la facture est corrigée ou s'il est démontré que la Confédération ne subit aucune perte fiscale.",
+              "difficulty": "medium",
+              "section_id": "m8_L8_s9"
+            },
+            {
+              "id": "m8_L8_q17",
+              "type": "mcq",
+              "question": "Pour une prestation fournie à une personne étroitement liée\n(Identifiez la réponse correcte)",
+              "options": [
+                "la contre-prestation correspond à la valeur convenue entre tiers indépendants",
+                "la contre-prestation correspond au prix effectivement payé par le bénéficiaire",
+                "la prestation est exclue du champ de l'impôt, faute de marché",
+                "la prestation est exonérée de l'impôt avec droit à la déduction"
+              ],
+              "answer": 0,
+              "explanation": "Selon l'art. 24 al. 2 LTVA, la contre-prestation d'une prestation à une personne étroitement liée est la valeur qui serait convenue entre tiers indépendants.",
+              "difficulty": "medium",
+              "section_id": "m8_L8_s9"
+            },
+            {
+              "id": "m8_L8_q18",
+              "type": "mcq",
+              "question": "Une TVA mentionnée à tort sur une facture\n(Identifiez la réponse correcte)",
+              "options": [
+                "n'est jamais due, la prestation n'étant pas imposable",
+                "n'est due que si le client l'a effectivement payée",
+                "est remboursée d'office par l'AFC au client",
+                "est due à l'AFC, sauf correction de la facture"
+              ],
+              "answer": 3,
+              "explanation": "L'impôt mentionné sur une facture est dû même s'il l'a été à tort (art. 27 al. 2 LTVA), sauf correction de la facture ou absence de perte fiscale pour la Confédération.",
               "difficulty": "medium",
               "section_id": "m8_L8_s9"
             }
@@ -44589,6 +45399,21 @@
               "options": null,
               "answer": false,
               "explanation": "Faux. La procédure de déclaration remplace le paiement de l'impôt par une simple annonce (formulaire 764) : aucune TVA n'est facturée ni payée, et l'acquéreur reprend la valeur d'acquisition et l'affectation fiscale du vendeur.",
+              "difficulty": "medium",
+              "section_id": "m8_L9_s9"
+            },
+            {
+              "id": "m8_L9_q17",
+              "type": "mcq",
+              "question": "La vente d'un immeuble\n(Identifiez la réponse correcte)",
+              "options": [
+                "est exonérée de l'impôt et donne droit à la déduction de l'impôt préalable",
+                "est imposable au taux réduit de 2,6 % lorsqu'il s'agit d'un logement",
+                "est exclue du champ de l'impôt, l'option étant possible sauf pour l'habitation",
+                "est imposable au taux normal de 8,1 %, y compris sur la valeur du terrain bâti"
+              ],
+              "answer": 2,
+              "explanation": "La vente d'un immeuble est exclue (art. 21 al. 2 ch. 20 LTVA) ; l'option est possible, sauf pour les immeubles destinés exclusivement à l'habitation, et la valeur du terrain n'est jamais imposée.",
               "difficulty": "medium",
               "section_id": "m8_L9_s9"
             }
@@ -45120,6 +45945,21 @@
               "answer": true,
               "explanation": "Vrai. L'art. 30 LTVA impose la correction de la déduction en fonction de l'utilisation ; l'AFC admet notamment la répartition selon l'affectation effective, des forfaits par branche ou des clés (chiffre d'affaires, surfaces, temps).",
               "difficulty": "easy",
+              "section_id": "m8_L10_s9"
+            },
+            {
+              "id": "m8_L10_q18",
+              "type": "mcq",
+              "question": "Le droit à la déduction de l'impôt préalable\n(Identifiez la réponse correcte)",
+              "options": [
+                "suppose que la dépense soit affectée à une activité entrepreneuriale imposable",
+                "est réservé aux seules entreprises qui exportent leurs produits",
+                "existe aussi pour les dépenses liées à des prestations exclues sans option",
+                "est accordé à toute personne qui détient une facture mentionnant clairement la TVA"
+              ],
+              "answer": 0,
+              "explanation": "L'assujetti peut déduire l'impôt préalable dans le cadre de son activité entrepreneuriale, pour des dépenses affectées à des prestations imposables ou exonérées (art. 28 LTVA) ; il est exclu pour les prestations exclues sans option (art. 29).",
+              "difficulty": "medium",
               "section_id": "m8_L10_s9"
             }
           ],
@@ -45653,6 +46493,36 @@
               "answer": 1,
               "explanation": "En cas de dépassement des limites durant trois années consécutives, l'assujetti doit établir ses décomptes selon la méthode effective dès le 1er janvier de la quatrième année.",
               "difficulty": "hard",
+              "section_id": "m8_L11_s9"
+            },
+            {
+              "id": "m8_L11_q18",
+              "type": "mcq",
+              "question": "La méthode des taux de la dette fiscale nette\n(Identifiez la réponse correcte)",
+              "options": [
+                "impose de mentionner le TDFN sur les factures adressées aux clients",
+                "est réservée aux assujettis dont le chiffre d'affaires ne dépasse pas CHF 5'024'000",
+                "permet de déduire l'impôt préalable effectif en plus du taux accordé",
+                "est ouverte à toutes les entreprises, sans limite de chiffre d'affaires ni de dette"
+              ],
+              "answer": 1,
+              "explanation": "La méthode TDFN est ouverte aux assujettis dont le chiffre d'affaires imposable n'excède pas CHF 5'024'000 et dont la dette fiscale n'excède pas CHF 108'000 ; l'impôt préalable est compris dans le taux et les factures mentionnent le taux légal.",
+              "difficulty": "medium",
+              "section_id": "m8_L11_s9"
+            },
+            {
+              "id": "m8_L11_q19",
+              "type": "mcq",
+              "question": "Selon les contre-prestations convenues, la créance fiscale\n(Identifiez la réponse correcte)",
+              "options": [
+                "naît à la fin de la période fiscale",
+                "naît au moment de la facturation",
+                "naît lors de la livraison seulement",
+                "naît au moment de l'encaissement"
+              ],
+              "answer": 1,
+              "explanation": "En mode « convenues », la créance fiscale naît avec la facturation (art. 40 al. 1 let. a LTVA) ; en mode « reçues », lors de l'encaissement.",
+              "difficulty": "easy",
               "section_id": "m8_L11_s9"
             }
           ],
@@ -46206,6 +47076,36 @@
               ],
               "answer": 1,
               "explanation": "La réclamation doit être déposée par écrit et motivée dans les 30 jours qui suivent la notification de la décision (art. 83 LTVA).",
+              "difficulty": "easy",
+              "section_id": "m8_L12_s9"
+            },
+            {
+              "id": "m8_L12_q20",
+              "type": "mcq",
+              "question": "Une décision de l'AFC en matière de TVA\n(Identifiez la réponse correcte)",
+              "options": [
+                "peut faire l'objet d'une réclamation dans les 10 jours",
+                "est définitive et ne peut pas être contestée",
+                "peut faire l'objet d'une réclamation dans les 30 jours",
+                "doit être contestée directement devant le Tribunal fédéral"
+              ],
+              "answer": 2,
+              "explanation": "La réclamation doit être formée par écrit dans les 30 jours suivant la notification (art. 83 LTVA) ; la décision sur réclamation peut ensuite être portée devant le Tribunal administratif fédéral.",
+              "difficulty": "easy",
+              "section_id": "m8_L12_s9"
+            },
+            {
+              "id": "m8_L12_q21",
+              "type": "mcq",
+              "question": "Les livres et pièces justificatives d'un assujetti\n(Identifiez la réponse correcte)",
+              "options": [
+                "doivent être conservés jusqu'à la fin de l'assujettissement",
+                "peuvent être détruits dès la remise du décompte",
+                "doivent être conservés pendant 5 ans au maximum",
+                "doivent en principe être conservés pendant 10 ans"
+              ],
+              "answer": 3,
+              "explanation": "Les livres comptables, pièces justificatives et documents d'affaires doivent être conservés selon les règles du CO, soit 10 ans (art. 70 al. 2 LTVA et 958f CO), des durées plus longues s'appliquant aux pièces relatives aux immeubles.",
               "difficulty": "easy",
               "section_id": "m8_L12_s9"
             }
