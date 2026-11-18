@@ -74,7 +74,7 @@ depuis la Révision active) est un alias de `fcdb` pour la navigation
 | recherche | search_tab.js `renderRechercheTab` (reprend `_stQuery`) | natif | index plein-texte de 9 fichiers data/ + IA Mistral optionnelle (clé saisie par l'utilisateur, localStorage) |
 | modules | modules.js `renderModules` (~3000 l.) | natif | unified_modules, trainer_courses, norms_ifrs_rpc, notion_lessons, flashcards ; `navigateToNormByCode(code)` ouvre une norme |
 | trainer | trainer.js `renderTrainer` | natif | sprints SM-2 (flashcards) + cours (trainer_courses) ; `launchSprintFromIds` (sélection venue de Flashcards ou du Plan du jour, via sessionStorage `fcdbReviewIds`) |
-| qcm | qcm.js `renderQcm` | natif | `get_qcm_catalog` → **data/qcm_catalog.json** (pré-calculé à partir de trainer_courses + unified_modules + audit.json annuaire_cours) → **3762 QCM** (dédoublonnés par texte ; M1–M16 tous couverts, examen blanc pondéré par domaine) |
+| qcm | qcm.js `renderQcm` | natif | `get_qcm_catalog` → **data/qcm_catalog.json** (pré-calculé à partir de trainer_courses + unified_modules + audit.json annuaire_cours) → **3828 QCM** (dédoublonnés par texte ; M1–M16 tous couverts, examen blanc pondéré par domaine) |
 | fcdb | fcdb.js `renderFcdb` | natif | flashcards.json (**1581** cartes) ; « Réviser la sélection » → sprint |
 | compare | comparisons.js `renderComparisons` | natif | comparisons.json (25 thèmes) ; boutons « Normes liées » → `compGoNorm` |
 | progress | progress.js `renderProgress` | natif | `get_module_stats` (liste par module : flashcards, leçons de la Révision active, QCM réussis) + sauvegarde/restauration |

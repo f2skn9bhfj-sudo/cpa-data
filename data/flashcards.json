@@ -6580,8 +6580,8 @@
     "cat": "Fiscalité",
     "sub": "Prévoyance – L6",
     "d": "difficile",
-    "q": "Les **rentes viagères 3b** sont imposables à combien % ?",
-    "a": "**40 %** (art. 22 al. 3 LIFD).\n\n**Justification** : les 60 % restants représentent un **remboursement fictif** du capital investi (prime payée par le rentier).\n\nCe régime de faveur s'applique aux rentes viagères issues de contrats d'assurance-vie (3e pilier B) à prime unique ou périodique."
+    "q": "Quelle part des **rentes viagères 3b** est imposable ?",
+    "a": "Seule la **part de rendement** (art. 22 al. 3 LIFD).\n\n**Depuis le 1er janvier 2025**, elle n'est plus forfaitaire (**40 %** jusqu'en 2024) : elle dépend du **taux d'intérêt technique maximal** pour les assurances suisses (excédents imposés à **70 %**) et du rendement des **obligations de la Confédération** pour les assurances étrangères et les contrats de rente viagère.\n\nLe reste de la rente est un **remboursement** du capital investi (prime payée par le rentier), non imposable."
   },
   {
     "id": 1339,
