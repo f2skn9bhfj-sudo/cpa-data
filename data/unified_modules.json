@@ -42330,6 +42330,17 @@
               ],
               "questions": null,
               "section_id": "m8_L1_s9"
+            },
+            {
+              "title": "10. 📘 Compléments du classeur — neutralité, café au restaurant ou à l'emporter, dédommagements",
+              "body": "**La TVA vue par le consommateur.** Chacun paie la TVA incluse dans ses achats : un café est majoré de **8,1 %** s'il est **consommé au restaurant** (restauration) et de **2,6 %** s'il est **emporté** (denrée alimentaire). Les **opérations exclues** et les **taux réduit (2,6 %) et spécial (3,8 %)** nuancent l'idée d'une « même taxe pour tous ».\n\n**Neutralité pour l'entreprise** : l'assujetti encaisse la TVA pour le compte de la Confédération et récupère celle qu'il paie ; seul le **consommateur final** la supporte.\n\n**Pas de prestation = pas de TVA** : un **dédommagement** reçu à la suite d'un litige (ex. CHF 500'000 versés par un concurrent pour une imitation d'emballage) n'est pas la contrepartie d'une prestation → **non-contre-prestation**, hors du champ de la TVA.\n\n**Imposition de la marge** (pièces de collection — objets d'art, antiquités, véhicules de collection…) : conditions **cumulatives** — (1) pièce de collection au sens de l'OTVA (art. 48a), (2) **aucune déduction** de l'impôt préalable sur le prix d'achat, (3) **aucune mention de TVA** sur la facture de vente. La TVA est alors calculée sur la **marge** (prix de vente − prix d'achat), TVA incluse.",
+              "key_points": [
+                "Café sur place 8,1 %, à l'emporter 2,6 %",
+                "Dédommagement : non-contre-prestation",
+                "Marge : 3 conditions cumulatives"
+              ],
+              "questions": null,
+              "section_id": "m8_L1_s10"
             }
           ],
           "questions": [
@@ -42562,6 +42573,31 @@
               "explanation": "Depuis le 1er janvier 2024 : 8,1 % (taux normal), 2,6 % (taux réduit : alimentation, médicaments, livres…) et 3,8 % (taux spécial pour l'hébergement). 7,7 / 2,5 / 3,7 étaient les taux de 2018 à 2023.",
               "difficulty": "easy",
               "section_id": "m8_L1_s9"
+            },
+            {
+              "id": "m8_L1_q18",
+              "type": "mcq",
+              "question": "Un café est servi à une table du restaurant ; le même café est vendu à l'emporter. Quels taux s'appliquent ?",
+              "options": [
+                "8,1 % sur place (restauration) et 2,6 % à l'emporter",
+                "2,6 % dans les deux cas, s'agissant d'une boisson",
+                "8,1 % dans les deux cas, le café étant le même produit",
+                "3,8 % sur place et 2,6 % à l'emporter selon le lieu"
+              ],
+              "answer": 0,
+              "explanation": "La consommation sur place est une prestation de restauration imposée au taux normal ; la vente à l'emporter d'une denrée alimentaire relève du taux réduit (sauf boissons alcooliques).",
+              "difficulty": "easy",
+              "section_id": "m8_L1_s10"
+            },
+            {
+              "id": "m8_L1_q19",
+              "type": "vrai_faux",
+              "question": "Un dédommagement de CHF 500'000 reçu d'un concurrent à la suite d'un litige est soumis à la TVA au taux normal.",
+              "options": null,
+              "answer": false,
+              "explanation": "Faux. Un dédommagement n'est pas la contrepartie d'une prestation : c'est une non-contre-prestation (art. 18 al. 2 LTVA), hors du champ de la TVA.",
+              "difficulty": "easy",
+              "section_id": "m8_L1_s10"
             }
           ],
           "mindmap_md": "# M8-L1\n## Bases et dispositions générales TVA\n\n### Pertinence examen\n- **Haute** — fondations à toujours rappeler en début d'analyse\n\n### Bases légales — hiérarchie\n- **Cst. art. 130** — base constitutionnelle TVA\n- **Cst. art. 196** — dispositions transitoires (taux et hausses AVS)\n- **LTVA** du 12.06.2009 — **RS 641.20**\n- **OTVA** du 27.11.2009 — **RS 641.201**\n- Ordonnance DFF — exonération trafic touristique\n- Pratique AFC : Info TVA, brochures sectorielles (Forum SuisseTAX)\n\n### Principes fondamentaux (art. 1 LTVA)\n#### Caractéristiques\n- Impôt **général** sur la consommation (tout sauf exclusions/exonérations)\n- Impôt **indirect** : payé par l'assujetti, supporté par le consommateur final\n- Impôt **multi-stade** avec **déduction de l'impôt préalable** (DIP)\n- Imposition de la consommation **finale non entrepreneuriale** sur sol CH\n#### 3 principes directeurs (art. 1 al. 3)\n- **Neutralité concurrentielle** — pas de distorsion entre acteurs\n- **Transfert** — impôt transférable au client (économiquement neutre pour assujetti)\n- **Efficacité** — auto-déclaration, simplification PME (TDFN)\n\n### Les 4 conditions cumulatives d'imposition\n- **①** Une **PRESTATION** (LB ou PS, art. 3 let. c)\n- **②** Une **CONTRE-PRESTATION** (valeur patrimoniale, art. 3 let. f)\n- **③** Fournie par un **ASSUJETTI** (art. 10-14)\n- **④** Sur le **TERRITOIRE SUISSE** (art. 7-8)\n- Toutes remplies → **imposable** ; **une seule absente** → hors champ\n\n### Champ TVA — 4 catégories à ne JAMAIS confondre\n- **Imposable** (8.1 / 2.6 / 3.8 %) → dans le champ + **IP OUI**\n- **Exonérée** (art. 23, taux 0 %) → dans le champ + **IP OUI** (export)\n- **Exclue** (art. 21) → hors champ + **IP NON** (sauf option art. 22)\n- **Non-prestation** (art. 18 al. 2) → hors champ + REDIP si subvention\n\n### Mécanisme multi-stade\n- TVA perçue à **chaque transaction** entre assujettis\n- Impôt **net** versé = TVA brute due − IP déductible\n- Total versé à l'AFC = **8.1 % × prix final HT** (somme converge)\n- Exemple chaîne papier : forestier 8.10 + fabricant 16.20 + grossiste 8.10 + détaillant 16.20 = **48.60 = 8.1 % × 600**\n\n### Territoire suisse (art. 3 let. a + 4 LTVA)\n- Territoire de la **Confédération** SAUF dépôts/ports francs\n- **Principauté du Liechtenstein** (traité 28.11.1994)\n- **Büsingen** (D) et **Campione d'Italia** (I) — enclaves incorporées\n- Vallées de Samnaun et Sampuoir : régime spécial\n\n### Livraison vs prestation de services (art. 3)\n- **LB** (let. d) : pouvoir de disposer + travaux sur bien + mise à disposition\n- **PS** (let. e) : tout ce qui n'est pas LB (engagement, tolérance, droits)\n- Cas-piège : engagement de **ne pas faire** = PS (Pet Food : 500k dédommagement = PS)\n- Cas-piège : **logiciel sur support** = LB ; **logiciel téléchargé** = PS\n\n### ⚠️ Pièges examen\n- **N°1** **Exonéré ≠ Exclu** — art. 23 garde l'IP, art. 21 le perd (sauf option)\n- **N°2** Les **4 conditions** sont **cumulatives** — toujours énoncer les 4\n- **N°3** Liechtenstein = territoire CH au sens LTVA (≠ douane EU)\n- **N°4** Dépôts francs **HORS** territoire — entrée = importation\n- **N°5** Logiciel téléchargé = **PS** (pas LB) → règle art. 8 lieu destinataire\n- **N°6** Engagement de tolérance/ne pas faire = **PS** imposable\n- **N°7** TVA = **impôt général** — sauf 31 catégories art. 21 + exonérés art. 23\n\n### 💡 Mnémoniques\n- **« P-C-A-T »** — Prestation + Contre-prestation + Assujetti + Territoire\n- **« I-Ex-Excl-NP »** — Imposable / Exonéré / Exclu / Non-prestation\n- **« 130 Cst → 641.20 LTVA → 641.201 OTVA »** — hiérarchie\n- **« Liechtenstein dedans, Büsingen dedans, dépôts francs dehors »**\n- **« 8.1 % × prix final »** — somme nette TVA multi-stade\n\n### 🔗 Renvois\n- **m8_L2** — Lieu des prestations (art. 7-8)\n- **m8_L3** — Assujettissement (art. 10-14)\n- **m8_L4** — Objet de l'impôt (art. 18-22)\n- **m8_L6** — Exonérations (art. 23)\n- **m1_L7** — Introduction fiscalité suisse\n- **LTVA / OTVA / Cst. 130** — textes légaux\n",
@@ -43006,6 +43042,17 @@
               ],
               "questions": null,
               "section_id": "m8_L3_s9"
+            },
+            {
+              "title": "10. 📘 Compléments du classeur — vente par correspondance, représentant fiscal, radiation, collectivités",
+              "body": "**Vente par correspondance (depuis 2019).** Une entreprise qui expédie en Suisse des **« petits envois »** — dont la TVA à l'importation serait de **CHF 5 au plus**, soit une valeur jusqu'à **CHF 61.70** au taux de 8,1 % ou **CHF 192.30** au taux de 2,6 % — devient **assujettie** dès que ces envois atteignent **CHF 100'000** par an. Le lieu de livraison est alors **en Suisse** : elle facture la TVA suisse et devient **importatrice** (déclaration d'engagement). Sous ce seuil, la livraison reste localisée à l'étranger et les petits envois entrent en franchise.\n\n**Entreprise étrangère de services numériques.** Seules les prestations à des **clients non assujettis** suisses la contraignent à s'inscrire (si le chiffre d'affaires **mondial** atteint le seuil) ; si tous ses clients suisses étaient assujettis, elle resterait libérée, car eux paieraient l'**impôt sur les acquisitions**.\n\n**Représentant fiscal (art. 67 LTVA).** Une entreprise **sans siège ni domicile** en Suisse doit désigner un représentant domicilié en Suisse ; l'AFC peut y renoncer si l'exécution de la loi est garantie autrement (al. 1bis).\n**Numéro TVA** : numéro IDE suivi de « TVA », « MWST » ou « IVA » (ex. CHE-123.456.789 TVA) — l'abréviation anglaise « VAT » n'est **pas admise**.\n\n**Radiation**\n- **Cessation d'activité** : demande écrite dans les **30 jours** suivant la fin de l'activité, au plus tard à la fin de la liquidation (art. 66 al. 2).\n- **Chiffre d'affaires durablement sous le seuil** : demande au plus tard **60 jours** après la fin de la période fiscale où le seuil n'est plus atteint ; sans démarche, l'entreprise **reste assujettie volontairement** (et doit continuer à facturer la TVA).\n\n**Collectivités publiques.** Chaque **service autonome** est examiné séparément. Les prestations fournies à **d'autres collectivités publiques** ne comptent pas pour le seuil, et celles **entre services d'une même collectivité** sont exclues. *Exemple* : 550'000 de recettes dont 450'000 avec le canton et la ville → chiffre d'affaires déterminant **100'000** → assujettissement.",
+              "key_points": [
+                "Petits envois : TVA ≤ CHF 5 ; seuil 100'000",
+                "Représentant fiscal pour les entreprises étrangères",
+                "Radiation : 30 jours (cessation) / 60 jours (seuil)"
+              ],
+              "questions": null,
+              "section_id": "m8_L3_s10"
             }
           ],
           "questions": [
@@ -43243,6 +43290,36 @@
               "explanation": "Pour les associations sportives ou culturelles sans but lucratif gérées bénévolement et les institutions d'utilité publique, le seuil de libération est de CHF 250'000 (art. 10 al. 2 let. c LTVA).",
               "difficulty": "medium",
               "section_id": "m8_L3_s9"
+            },
+            {
+              "id": "m8_L3_q18",
+              "type": "mcq",
+              "question": "Une entreprise cesse définitivement son activité. Dans quel délai doit-elle demander sa radiation du registre des assujettis ?",
+              "options": [
+                "Dans les 6 mois suivant la publication de la dissolution au registre",
+                "Aucun délai : l'AFC procède d'office à la radiation de l'entreprise",
+                "Dans les 30 jours suivant la fin de son activité entrepreneuriale",
+                "Dans les 60 jours suivant la fin de l'exercice commercial en cours"
+              ],
+              "answer": 2,
+              "explanation": "En cas de cessation de l'activité, la radiation doit être demandée par écrit dans les 30 jours suivant la fin de l'activité, au plus tard à la fin de la liquidation (art. 66 al. 2 LTVA).",
+              "difficulty": "medium",
+              "section_id": "m8_L3_s10"
+            },
+            {
+              "id": "m8_L3_q19",
+              "type": "mcq",
+              "question": "Quelle mention est admise après le numéro IDE pour former le numéro TVA d'une entreprise ?",
+              "options": [
+                "VAT, TVA ou MWST",
+                "Aucune mention n'est prévue",
+                "TVA, MWST ou IVA",
+                "Uniquement l'abréviation VAT"
+              ],
+              "answer": 2,
+              "explanation": "Le numéro TVA est composé du numéro IDE suivi de « TVA », « MWST » ou « IVA » ; l'abréviation anglaise « VAT » n'est pas autorisée.",
+              "difficulty": "medium",
+              "section_id": "m8_L3_s10"
             }
           ],
           "mindmap_md": "# M8-L3\n## Assujettissement (art. 10-14 LTVA)\n\n### Pertinence examen\n- **Haute** — pivot de tout dossier TVA pratique\n\n### Sujet fiscal — qui peut être assujetti ?\n- **PP** (entreprise individuelle, indépendant)\n- **PM** de droit privé (SA, Sàrl, coopérative, association, fondation)\n- **Société de personnes** (société simple, SNC, SC)\n- **Collectivité publique** = **services autonomes** (art. 12 LTVA)\n- Sociétés étrangères avec **ES en CH** ou avec **livraisons CH**\n\n### Les 3 critères cumulatifs (art. 10 LTVA)\n- **①** Exploitation d'une **ENTREPRISE** (activité indépendante, durable, recettes)\n- **②** Fourniture de **PRESTATIONS sur territoire CH**\n- **③** **SIÈGE, domicile ou ÉS** sur territoire CH (ou livraisons CH si étranger)\n#### Critère « entreprise »\n- Activité **indépendante** (≠ salariée) à titre professionnel/commercial\n- **Durable** (excluant opérations ponctuelles)\n- Visant à **réaliser des recettes** (pas l'intention de bénéfice obligatoire)\n- **Holding pure** : exclue (pas d'activité économique externe — sauf options)\n\n### Seuils de libération (art. 10 al. 2)\n#### Seuil général — **CHF 100'000**\n- CA annuel **mondial** des prestations **non exclues** art. 21\n- < 100k → **libéré** (peut renoncer à la libération = assujettissement volontaire)\n- ≥ 100k → **assujettissement obligatoire**\n#### Seuil spécial — **CHF 250'000**\n- **Associations sportives/culturelles** sans but lucratif gérées bénévolement\n- **Institutions d'utilité publique** (sans but lucratif)\n#### Calcul du seuil\n- Sur 12 mois glissants (atteint en cours d'année → assujetti dès **1er janvier suivant**)\n- CA mondial, **prestations non exclues**, hors TVA\n\n### Renonciation à la libération (art. 11)\n- Choix volontaire d'être assujetti (même si < 100k)\n- **Motif** : neutralité concurrentielle (art. 1 al. 3 let. a)\n- **Pourquoi** :\n  - Récupérer l'IP sur investissements de démarrage\n  - Image professionnelle (numéro CHE-XXX TVA)\n  - Anticiper le passage du seuil\n- **Durée minimale** : 1 période fiscale entière\n\n### CA déterminant — ce qui compte\n- LB imposables CH (art. 7) — même si exportées (art. 23)\n- LB à l'étranger qui auraient été imposables CH\n- PS imposables CH (art. 8)\n- PS sur CH **exonérées** (transport international p.ex.)\n- PS fournies à l'étranger qui auraient été imposables CH\n- **EXCLUS** : prestations art. 21 (sans option), non-prestations art. 18 al. 2\n\n### Début / fin de l'assujettissement (art. 14)\n#### Début\n- **Volontaire** CH : **début de l'activité entrepreneuriale**\n- **Obligatoire** (seuil atteint) : **1er janvier de l'année suivante** (sauf dès origine si prévisible)\n- Étranger livrant CH : **1re prestation** en CH\n- Vente par correspondance : autorisation AFC (formulaire 1235)\n#### Fin\n- **Cessation** activité ou descente sous seuil + renoncement\n- Délai d'annonce : **30 jours** par écrit à l'AFC\n- Décompte de cessation + IP de **PASM** (art. 31) sur biens conservés\n\n### Collectivités publiques (art. 12)\n- Sujet = **services autonomes** (pas la collectivité dans son ensemble)\n- Concerne corporations, établissements, fondations de droit public\n- **Seuils spéciaux** : 100k CA + au moins 100k issu de **tiers non publics**\n- Activités souveraines (régaliennes) : pas TVA (exclues art. 18 al. 2 let. l)\n\n### ⚠️ Pièges examen\n- **N°1** Seuil **100k** = CA **mondial**, pas seulement CH (piège classique)\n- **N°2** Holding pure = **pas assujettie** (option possible si déduction IP voulue)\n- **N°3** Assujettissement débute **1.1 de l'année suivante** (sauf opting volontaire dès origine)\n- **N°4** Associations sportives/culturelles = seuil **250k** (≠ 100k)\n- **N°5** PS exonérées (transport international) **comptent** dans le CA déterminant\n- **N°6** Prestations exclues art. 21 (sans option) ne **comptent PAS** dans le seuil\n- **N°7** Fin = annonce sous **30 jours** + décompte PASM\n\n### 💡 Mnémoniques\n- **« E-P-S »** — Entreprise / Prestations CH / Siège ou ES CH\n- **« 100k mondial »** — seuil général TVA\n- **« 250k associations »** — seuil sport/culture/utilité publique\n- **« 1.1 année N+1 »** — début obligatoire après dépassement\n- **« 30 jours »** — annonce début / fin\n- **« Mondial moins art. 21 »** — calcul CA déterminant\n\n### 🔗 Renvois\n- **m8_L1** — Bases TVA (4 conditions)\n- **m8_L2** — Lieu des prestations (siège/ES)\n- **m8_L4** — Objet de l'impôt (ce qui rentre dans le CA)\n- **m8_L11** — Méthodes (effective / TDFN / TaF)\n- **LTVA art. 10-14, art. 12** — textes clés\n",
@@ -43330,6 +43407,17 @@
               ],
               "questions": null,
               "section_id": "m8_L4_s9"
+            },
+            {
+              "title": "10. 📘 Compléments du classeur — forfaits de voyage (70 %), consignes, train de nuit, intermédiaires, plateformes",
+              "body": "**Forfaits touristiques et règle des 70 %.** Pour un voyage vendu à prix global, on regarde d'abord **où** sont fournies les prestations :\n- *Circuit de CHF 3'900 dont 75,6 % à l'étranger* → la part étrangère atteint **70 %** : tout le forfait est réputé fourni **à l'étranger** (pas de TVA suisse).\n- *Circuit de CHF 4'000 dont 67,5 % à l'étranger* → la règle ne joue pas pour le lieu : les parts **suisses** sont imposées. Si, parmi elles, l'**hébergement** représente au moins 70 %, l'ensemble des prestations suisses (transport, repas compris) peut suivre le **taux spécial de 3,8 %**.\n\n**Prestations indépendantes ou accessoires ?**\n- **Restauration** et **hébergement** sont toujours des prestations **indépendantes** l'une de l'autre (sauf le petit-déjeuner, inclus dans l'hébergement à 3,8 %).\n- **Exception transport** : dans un **train de nuit** Berne–Berlin, la nuit en couchette et le petit-déjeuner sont **accessoires** au transport international, exonéré (l'OTVA permet d'exonérer aussi la part du trajet en Suisse).\n- **Consigne** d'emballages : un maraîcher facture des salades (2,6 %) et une consigne de CHF 15 par caissette ; la consigne remboursable n'entre pas dans la contre-prestation imposable.\n\n**Représentation directe — exemple complet.** Une société vend 20 armoires **au nom et pour le compte** de Möbel AG (Coire) à un magasin lausannois pour CHF 50'000 et touche CHF 2'500 de commission :\n- l'intermédiaire impose seulement sa **commission** (2'500, service localisé au siège du destinataire) ;\n- **Möbel AG** impose la **livraison de 50'000** ;\n- pour récupérer l'impôt, Möbel AG peut établir une **note de crédit** de la commission mentionnant les numéros TVA des deux parties.\n\n**Plateformes de livraison de repas (depuis 2025).** La plateforme est réputée fournisseur (art. 20a) et s'assujettit dès **CHF 100'000** de livraisons de repas ; ses **frais de livraison** suivent le repas, au **taux réduit de 2,6 %** (prestation accessoire). Les restaurateurs partenaires lui livrent alors en **exonération**.",
+              "key_points": [
+                "Forfait ≥ 70 % à l'étranger : tout à l'étranger",
+                "Restauration et hébergement : indépendants",
+                "Représentation directe : seule la commission est imposée"
+              ],
+              "questions": null,
+              "section_id": "m8_L4_s10"
             }
           ],
           "questions": [
@@ -43577,6 +43665,36 @@
               "explanation": "Quand l'intermédiaire agit en son propre nom, on admet deux prestations : du représenté à l'intermédiaire, puis de l'intermédiaire au client (art. 20 al. 3 LTVA). Seule la représentation directe limite l'imposition à la commission.",
               "difficulty": "medium",
               "section_id": "m8_L4_s9"
+            },
+            {
+              "id": "m8_L4_q19",
+              "type": "mcq",
+              "question": "Un circuit de 3'900 CHF comprend 75 % de prestations fournies à l'étranger. Comment est-il traité en Suisse ?",
+              "options": [
+                "Tout le forfait est réputé fourni à l'étranger : pas de TVA suisse",
+                "Seule la part suisse (25 %) est imposée au taux normal de 8,1 %",
+                "Tout le forfait est imposé au taux normal, le vendeur étant suisse",
+                "Tout le forfait est imposé au taux spécial de 3,8 % en Suisse"
+              ],
+              "answer": 0,
+              "explanation": "Lorsque les prestations fournies à l'étranger représentent au moins 70 % de la contre-prestation globale, l'ensemble du forfait est réputé fourni à l'étranger.",
+              "difficulty": "medium",
+              "section_id": "m8_L4_s10"
+            },
+            {
+              "id": "m8_L4_q20",
+              "type": "mcq",
+              "question": "Une plateforme numérique assujettie livre des repas à domicile et facture des frais de livraison. À quel taux sont-ils imposés ?",
+              "options": [
+                "2,6 %, comme prestation accessoire aux repas livrés",
+                "8,1 %, comme toute prestation de transport de biens",
+                "0 %, la livraison étant exonérée de la TVA",
+                "3,8 %, comme prestation de l'hôtellerie-restauration"
+              ],
+              "answer": 0,
+              "explanation": "Les frais de livraison suivent le sort de la prestation principale (art. 19 al. 4 LTVA) : les repas livrés relèvent du taux réduit, donc aussi la livraison.",
+              "difficulty": "medium",
+              "section_id": "m8_L4_s10"
             }
           ],
           "mindmap_md": "# M8-L4\n## Objet de l'impôt (art. 18-23 LTVA)\n\n### Pertinence examen\n- **Haute** — savoir qualifier la prestation, sa base et son attribution\n\n### Rapport de prestations (art. 18 al. 1)\n- **4 éléments** :\n  - **①** Une **prestation** fournie\n  - **②** Une **contre-prestation** (valeur patrimoniale)\n  - **③** Un rapport **économique ÉTROIT** entre les deux\n  - **④** Au moins **deux parties**\n- La **prestation** = OBJET de l'impôt ; la **contre-prestation** = BASE de calcul (art. 24)\n\n### Contre-prestation (art. 3 let. f + art. 24)\n- **Valeur effective** versée (espèces, échange, dation en paiement, troc)\n- Caractère **onéreux** = condition préalable\n- TVA toujours **incluse** dans le prix sauf mention contraire (art. 24 al. 1)\n- **Réductions** : rabais, escomptes, ristournes, pertes/débiteurs, reprises emballages\n- **PAS de réduction** : frais bancaires, commissions cartes, pertes de change\n\n### Éléments NON contre-prestation (art. 18 al. 2) — **10 catégories**\n- **a)** Subventions et contributions droit public → **REDIP** (art. 33)\n- **b)** Dons → pas de REDIP\n- **c)** Apports d'associés / fondateurs\n- **d)** Versements à fonds propres\n- **e)** Dividendes\n- **f)** Dommages-intérêts (compensation lésion, pas prestation)\n- **g)** Taxes touristiques perçues pour collectivité → REDIP\n- **h)** Fonds de prévention / dépollution → REDIP\n- **i)** Émoluments **régaliens** → REDIP\n- **j)** Garanties remboursables\n- Distinguer ce qui **réduit l'IP (REDIP)** vs ce qui ne réduit rien\n\n### Pluralité de prestations (art. 19)\n#### ① Prestations indépendantes (al. 1)\n- Chacune son taux propre — **facturation séparée** requise\n- Ex. : pain (2.6 %) + vin (8.1 %) au même ticket — chiffrer séparément\n#### ② Combinaison globale (al. 2 — règle des 70 %)\n- Pack à prix unique → taux de la prestation **principale** si elle ≥ **70 %** de la valeur\n- Sinon, **ventilation** des taux\n#### ③ Unité de prestation (al. 3)\n- Prestations formant économiquement un **TOUT indissociable** → **UN seul taux**\n- Logiciel + installation + formation = unité\n#### ④ Prestation accessoire (al. 4)\n- Partage le **sort fiscal** de la prestation principale\n- Ex. : frais d'expédition d'un livre → suit le taux du livre (2.6 %)\n\n### Attribution — représentation (art. 20)\n#### Représentation DIRECTE (al. 2)\n- Intermédiaire agit **au nom ET pour le compte** d'un tiers\n- Prestation attribuée au **représenté** (mandant)\n- **Conditions** : (1) explicitement au nom du représenté, (2) tiers le sait, (3) facture en bonne et due forme\n- L'intermédiaire facture une **commission** distincte\n#### Représentation INDIRECTE (al. 3)\n- Intermédiaire agit **en son propre nom** (pour compte d'un tiers)\n- **Fiction fiscale** : **2 rapports de prestations** consécutifs\n- Mandant → Intermédiaire (achat) → Client final (revente)\n#### Plateformes numériques (art. 20a, depuis 01.01.2025)\n- Plateformes facilitant livraison → **réputées vendeur** (représentation indirecte forcée)\n- Élimine la fraude des petits envois étrangers (Amazon, Aliexpress…)\n\n### Distinction prestation imposable / exclue / exonérée\n- **Imposable** : 4 conditions remplies + dans le champ\n- **Exonérée** (art. 23) : dans le champ, taux 0 %, IP conservé\n- **Exclue** (art. 21) : hors champ, IP perdu (sauf option art. 22)\n\n### ⚠️ Pièges examen\n- **N°1** **REDIP** s'applique aux subventions, taxes touristiques, fonds dépollution, émoluments régaliens — **PAS aux dons/dividendes/dommages-intérêts**\n- **N°2** Règle des **70 %** : combinaison globale → taux de la prestation dominante si ≥ 70 %\n- **N°3** Accessoire **suit le sort** du principal (port d'un livre = 2.6 %, pas 8.1 %)\n- **N°4** Représentation **directe vs indirecte** : conditions de **forme strictes** (mention au nom du représenté)\n- **N°5** Plateformes art. 20a → fiction de représentation indirecte (Amazon = vendeur fiscal)\n- **N°6** Frais bancaires/change : **PAS** une réduction de contre-prestation\n- **N°7** Dommages-intérêts pour engagement de tolérance = **PS imposable** (Pet Food 500k)\n\n### 💡 Mnémoniques\n- **« P-C-E-2 »** — Prestation + Contre-prestation + Économique étroit + 2 parties\n- **« Subv-Tour-Fonds-Régal = REDIP »** — éléments qui réduisent l'IP\n- **« 70 % = principale »** — combinaison globale\n- **« Direct au nom / Indirect en son nom »** — représentation\n- **« Accessoire suit principal »** — port d'un livre = 2.6 %\n- **« 20a = plateforme = vendeur »** — depuis 2025\n\n### 🔗 Renvois\n- **m8_L1** — Bases (4 conditions)\n- **m8_L5** — Prestations exclues + Option (art. 21-22)\n- **m8_L6** — Exonérations (art. 23)\n- **m8_L8** — Calcul (art. 24)\n- **m8_L10** — DIP / REDIP\n- **LTVA art. 18-20a** — textes clés\n",
@@ -43663,6 +43781,17 @@
               ],
               "questions": null,
               "section_id": "m8_L5_s9"
+            },
+            {
+              "title": "10. 📘 Compléments du classeur — dons et timbres, option pour la culture, abandon de l'option chiffré",
+              "body": "**Timbres « Pro Juventute ».** Un carnet de 12 timbres vendu CHF 19.80 contient des timbres d'une valeur faciale de CHF 1.– et 1.20 (prestations postales **exclues**) plus un supplément de CHF 0.50 ou 0.60 par timbre, qui est un **don** (non-contre-prestation, non imposable).\n\n**Option pour la culture et le sport.** Un exploitant de cinéma peut opter pour imposer ses **entrées** (normalement exclues) : elles sont alors imposées au **taux réduit** (2,6 % aujourd'hui), et il récupère l'impôt préalable sur la **construction** des salles, les **droits de films** et les charges. Le bar, lui, reste imposable au taux normal.\n\n**Abandon de l'option — calcul de la prestation à soi-même (PASM).** *Immobilier SA louait avec option (100 %) un bâtiment construit en 2017 (TVA déduite 400'000), équipé d'une climatisation en 2020 (TVA déduite 38'500), avec un stock de mazout (TVA déduite 183). Dès 2023, elle loue sans option.*\n\n| Élément | Années écoulées | Valeur résiduelle | Correction |\n|---|---|---|---|\n| Bâtiment (immeuble : 5 %/an) | 5 ans | 75 % | 300'000 |\n| Climatisation (partie de l'immeuble : 5 %/an) | 2 ans | 90 % | 34'650 |\n| Stock de mazout (non amorti) | — | 100 % | 183 |\n| **PASM totale** | | | **334'833** |\n\nDans le sens inverse (passage à l'option), le **dégrèvement ultérieur** (DUIP) se calcule de la même manière et se déduit dans la **période de décompte** au cours de laquelle les conditions sont remplies (art. 32 LTVA).",
+              "key_points": [
+                "Supplément de timbre = don",
+                "Culture/sport avec option : taux réduit",
+                "PASM : valeur résiduelle 5 %/an (immeuble)"
+              ],
+              "questions": null,
+              "section_id": "m8_L5_s10"
             }
           ],
           "questions": [
@@ -43910,6 +44039,36 @@
               "explanation": "Une prestation exclue n'est pas imposée, mais l'impôt préalable sur les dépenses qui s'y rapportent n'est pas déductible (art. 29 LTVA), sauf option pour son imposition (art. 22 LTVA), possible pour la plupart d'entre elles.",
               "difficulty": "easy",
               "section_id": "m8_L5_s9"
+            },
+            {
+              "id": "m8_L5_q19",
+              "type": "mcq",
+              "question": "Un exploitant de cinéma opte pour l'imposition de ses billets d'entrée. À quel taux sont-ils imposés ?",
+              "options": [
+                "Au taux spécial de 3,8 %",
+                "Au taux réduit de 2,6 %",
+                "Au taux de 0 % avec droit à déduction",
+                "Au taux normal de 8,1 %"
+              ],
+              "answer": 1,
+              "explanation": "Les prestations culturelles et sportives exclues (art. 21 al. 2 ch. 14 à 16 LTVA) imposées par option bénéficient du taux réduit (art. 25 al. 2 LTVA).",
+              "difficulty": "medium",
+              "section_id": "m8_L5_s10"
+            },
+            {
+              "id": "m8_L5_q20",
+              "type": "mcq",
+              "question": "Un bâtiment loué avec option (TVA déduite 400'000 CHF) passe à une location sans option après 5 années complètes. Quelle correction ?",
+              "options": [
+                "300'000 CHF de prestation à soi-même (75 % de valeur résiduelle)",
+                "Aucune correction, la location restant une prestation exclue",
+                "100'000 CHF, soit 25 % de la TVA déduite à la construction",
+                "400'000 CHF, soit la totalité de la TVA déduite à la construction"
+              ],
+              "answer": 0,
+              "explanation": "L'abandon de l'option est un changement d'affectation : pour un immeuble, la valeur résiduelle diminue de 5 % par année écoulée (5 ans → 75 %) ; 400'000 × 75 % = 300'000 CHF.",
+              "difficulty": "hard",
+              "section_id": "m8_L5_s10"
             }
           ],
           "mindmap_md": "# M8-L5\n## Prestations exclues + Option (art. 21-22 LTVA)\n\n### Pertinence examen\n- **Haute** — distinction exclu/exonéré + maîtrise de l'option\n\n### Principe des prestations exclues (art. 21)\n- **HORS du champ** de la TVA\n- **Pas de TVA** facturée\n- **Pas d'IP déductible** sur charges liées (art. 29 al. 1) → **TAXE OCCULTE**\n- **31 catégories** (art. 21 al. 2 ch. 1 à 31)\n- L'IP devient un coût intégré au prix (consommateur paie indirectement)\n\n### Catégories majeures à connaître\n#### Santé (ch. 2-8)\n- Hôpitaux, cliniques, traitements médicaux\n- Médecins, dentistes, physios, psys, chiros (avec autorisation)\n- Soins à domicile / EMS\n- Médecines complémentaires reconnues\n- Transports de malades\n#### Éducation, culture, sport (ch. 9-17)\n- **Éducation et formation** (ch. 11) — cours privés, formation continue, conférences\n- **Manifestations culturelles** (ch. 14) — concerts, théâtre, musées\n- **Manifestations sportives** (ch. 15) — billets matchs, entrées clubs\n- Œuvres d'art par créateurs originaux (ch. 16)\n- Protection enfance/jeunesse (ch. 9)\n#### Finance, assurance (ch. 18-19)\n- **Assurances et réassurances** (ch. 18) — y compris courtiers\n- **Crédits, dépôts, garanties** (ch. 19 let. a-b)\n- **Opérations sur titres / parts** (ch. 19 let. e)\n- Gestion de fortune par institution\n- **EXCEPTION** : conseil financier hors gestion = **imposable**\n#### Immobilier (ch. 20-21)\n- **Vente d'immeubles** sans option (ch. 20)\n- **Droits réels** (servitudes, superficie, usufruit)\n- **Location** d'immeubles (ch. 21)\n- Sauf : hôtellerie, locaux commerciaux courts, parking, salles, coffres-forts\n#### Loteries et jeux d'argent (ch. 23)\n- Gains et mises de loteries, casinos, paris\n- Pas d'IP sur charges liées (taxe occulte intégrale)\n#### Ventes agricoles brutes (ch. 26)\n- Vente directe par exploitant de sa propre production\n#### Autres (ch. 24, 27-31)\n- Biens d'occasion utilisés exclusivement pour activité exclue\n- Prestations entre institutions sociales/utilité publique\n\n### Option pour l'imposition (art. 22)\n#### Principe\n- L'assujetti peut choisir d'**imposer volontairement** une prestation exclue\n- **Avantages** : récupérer l'IP, supprimer la taxe occulte, simplifier décomptes\n- **Inconvénient** : facturer la TVA au client (client non assujetti la subit)\n#### Modalités\n- Option **par prestation** (ou par opération immobilière individuelle)\n- **Forme** : indication ouverte de l'impôt sur facture (mention TVA)\n- **Sans demande préalable** depuis 2018 (≠ ancien régime)\n#### 4 exceptions — **option INTERDITE**\n- **①** Assurances et réassurances (ch. 18)\n- **②** Marché monétaire / opérations sur capitaux / titres (ch. 19)\n- **③** Loteries et jeux d'argent (ch. 23)\n- **④** Vente / location **immeubles à usage exclusif d'HABITATION** du destinataire\n\n### Conséquences fiscales de l'option\n- **Recettes** : prestation traitée comme imposable, taux selon nature\n- **IP** : **récupération intégrale** sur dépenses affectées à la prestation optée\n- **Comptabilité** : séparation des flux optés / non optés\n- **DUIP** possible (art. 32) : rétroactif sur biens existants au moment de l'option\n\n### Taux en cas d'option\n- **Formation, conférences** (ch. 11) → **2.6 %**\n- **Manifestations culturelles** (ch. 14) → **2.6 %**\n- **Manifestations sportives** (ch. 15) → **2.6 %**\n- **Entrées musées, zoos, jardins botaniques** → **2.6 %**\n- **Œuvres d'art créateurs originaux** (ch. 16) → **2.6 %**\n- **Locations commerciales** (ch. 21) → **8.1 %**\n- **Vente d'immeubles commerciaux** (ch. 20) → **8.1 %**\n- **Ventes agricoles** (ch. 26) → **2.6 %**\n\n### TDFN et option\n- Sous TDFN : **option exclue** pour locations / ventes immobilières (art. 77 al. 3 OTVA)\n- Option possible pour autres prestations exclues, avec adaptation des TDFN\n- Souvent : pour optimiser, passer à la méthode **effective** avant d'opter\n\n### ⚠️ Pièges examen\n- **N°1** **Exclu = pas d'IP** (taxe occulte), **exonéré = IP conservé** (art. 23)\n- **N°2** Option **interdite** : assurances, finance/titres, jeux, **immeuble habitation exclusive**\n- **N°3** Location **commerciale** = optable ; location **habitation** = INTERDIT d'opter\n- **N°4** Formation/culture/sport optées = **taux réduit 2.6 %** (pas 8.1 %)\n- **N°5** Hôtellerie, parking, salles, coffres = **imposables d'office** (exception art. 21 ch. 21)\n- **N°6** Option = mention TVA ouverte sur facture (forme simplifiée depuis 2018)\n- **N°7** Sous TDFN : **pas d'option immobilière** (art. 77 al. 3 OTVA)\n\n### 💡 Mnémoniques\n- **« 31 exclusions, 4 sans option »** — Assurances / Finance / Jeux / Habitation\n- **« A-F-J-H »** — les 4 interdits d'option\n- **« Exclu = pas d'IP / Exonéré = IP conservé »** — distinction reine\n- **« Option = 2.6 % culturel-sport-formation ; 8.1 % immobilier commercial »**\n- **« Taxe occulte »** — coût caché des prestations exclues\n- **« Option facture = mention TVA ouverte »**\n\n### 🔗 Renvois\n- **m8_L1** — Bases (champ vs hors champ)\n- **m8_L4** — Objet (rapport de prestations)\n- **m8_L6** — Exonérations (à ne pas confondre)\n- **m8_L9** — TVA immobilier (option ch. 20-21)\n- **m8_L10** — DIP / IP fictif / REDIP\n- **LTVA art. 21-22, art. 29** — textes clés\n",
@@ -43996,6 +44155,17 @@
               ],
               "questions": null,
               "section_id": "m8_L6_s9"
+            },
+            {
+              "title": "10. 📘 Compléments du classeur — transporteurs, exportation par l'acheteur",
+              "body": "**Prestations de transport liées à l'exportation.** Un transitaire suisse qui organise l'acheminement de marchandises vers l'étranger pour une entreprise suisse (ex. honoraires de CHF 4'000) fournit une prestation **exonérée** (prestation liée à l'exportation, art. 23 al. 2 LTVA) — sa note ne contient pas de TVA mais il garde le droit à la déduction de l'impôt préalable.\n\n**Exportation réalisée par l'acheteur.** Quand c'est le **client** qui emporte le bien à l'étranger, l'exonération reste possible si l'exportation intervient rapidement après l'achat (le classeur retient **30 jours**) et si le fournisseur détient la **preuve douanière** (décision de taxation à l'exportation). Sans cette preuve, la vente est imposée en Suisse.\n\n**Intermédiaires** : la commission d'un intermédiaire qui entremet une livraison exonérée (exportation) est elle aussi **exonérée** (art. 23 al. 2 ch. 9).",
+              "key_points": [
+                "Transport à l'exportation : exonéré",
+                "Export par l'acheteur : preuve douanière",
+                "Commission sur export : exonérée"
+              ],
+              "questions": null,
+              "section_id": "m8_L6_s10"
             }
           ],
           "questions": [
@@ -44258,6 +44428,16 @@
               "explanation": "Seul le transport international de personnes par air est exonéré ; un vol intérieur, sans prolongement international, est imposable au taux normal.",
               "difficulty": "medium",
               "section_id": "m8_L6_s9"
+            },
+            {
+              "id": "m8_L6_q20",
+              "type": "vrai_faux",
+              "question": "La commission d'un intermédiaire suisse qui entremet une exportation de biens est exonérée de TVA.",
+              "options": null,
+              "answer": true,
+              "explanation": "Vrai. L'entremise de prestations exonérées, comme une exportation, est elle-même exonérée (art. 23 al. 2 ch. 9 LTVA).",
+              "difficulty": "medium",
+              "section_id": "m8_L6_s10"
             }
           ],
           "mindmap_md": "# M8-L6\n## Prestations exonérées (art. 23 LTVA)\n\n### Pertinence examen\n- **Haute** — pilier des opérations internationales et l'or\n\n### Principe pays de consommation\n- Impôt prélevé dans le **pays de consommation** (≠ pays d'origine)\n- Exonération CH = mécanisme pour ne pas imposer ce qui sera consommé hors CH\n- Le **lieu** de la prestation reste **CH** (art. 7-8) → **dans le champ**\n- **MAIS** taux **0 %** + **IP intégral** conservé (≠ exclusion)\n- Preuve d'exonération **obligatoire** (justificatifs douaniers, contrats)\n\n### Exonération vs exclusion — distinction reine\n| Critère | Exonérée (art. 23) | Exclue (art. 21) |\n|---|---|---|\n| Champ | DANS | HORS |\n| Taux | 0 % | — |\n| IP | **CONSERVÉ** | **PERDU** (sauf option) |\n| Typologie | Exports, international | Santé, formation, immo. habitation |\n| Mention facture | « exonéré art. 23 » | « hors champ art. 21 » |\n\n### Catégories d'exonération (art. 23 al. 2)\n#### Ch. 1 — Exportations de biens\n- LB transportées/expédiées **directement à l'étranger**\n- Preuve : décision de taxation à l'export OFDF\n- **Délai** : preuve sous 60 jours après livraison\n#### Ch. 2 — Location de biens utilisés > 50 % à l'étranger\n- Train CFF loué à SNCF (Genève-Lyon) > 50 % FR → exonéré\n#### Ch. 3-7 — Transit, surveillance douanière\n- Biens sous régime de transit, entreposage en dépôt franc\n- Prestations sur biens en transit\n#### Ch. 8 — Aéronefs et compagnies aériennes internationales\n- Livraison, transformation, entretien d'**aéronefs** (> 60 % vols internationaux)\n- **Avitaillement** (carburant, provisions)\n- PS pour besoins directs des aéronefs\n#### Ch. 9 — Intermédiaires (représentation directe)\n- Si opération sous-jacente exonérée OU exclusivement à l'étranger\n- L'intermédiaire agit au nom du tiers\n#### Ch. 10 — Prestations à des bénéficiaires institutionnels\n- ONU, organisations internationales (sur certificat)\n- Ambassades, consulats (sur conditions de réciprocité)\n#### Ch. 11 — Or monétaire à banques centrales\n#### Ch. 12 — **Or fin et or d'investissement** ⭐\n- **Monnaies d'or** émises par États (Napoléon, Krugerrand, Maple Leaf, Vreneli)\n- **Or d'investissement** au titre minimal de **995 ‰** (99.5 %)\n  - Lingots coulés (forme reconnue)\n  - Plaquettes / barres standard\n- **Marché de gros** : or fin / argent fin (poudre, granules) > 99.5 ‰\n#### Ch. 13 — Plateformes numériques (art. 20a)\n- Livraison vendeur → plateforme exonérée\n- Plateforme → client final imposable\n\n### Transport international de personnes (art. 23 al. 4 + OTVA 41-43)\n#### Trafic aérien international — conditions NON cumulatives\n- **①** Aéroport départ OU arrivée en CH\n- **②** Survol CH d'un aéroport étranger à un autre étranger\n- **③** Partie d'un vol international entre 2 aéroports CH\n#### Trafic ferroviaire / routier\n- Partie en CH = imposable ; partie étrangère = exonérée\n- Possible **forfait** pour répartition (autocars)\n#### Trafic maritime / fluvial\n- International = exonéré\n\n### Trafic des voyageurs — tax refund (al. 5)\n- Conditions cumulatives :\n  - **①** Valeur minimale **CHF 300** (TVA incluse)\n  - **②** Acheteur **domicilié à l'étranger**\n  - **③** Export dans les **90 jours**\n  - **④** Bien pour **usage privé**\n  - **⑤** Preuve de l'exportation (formulaire visé douane)\n\n### Conséquences de l'exonération\n- **Taux 0 %** sur la prestation\n- **IP intégral** conservé (DIP normale)\n- Décompte ch. 220 (exonérations art. 23)\n- **Comptabilité** : preuve d'exonération à conserver **20 ans** (immo) ou **10 ans** standard\n- **Avantage** structurel pour exportateurs (récup IP sans TVA collectée → crédit AFC)\n\n### ⚠️ Pièges examen\n- **N°1** Exonéré (art. 23) ≠ Exclu (art. 21) — exonéré **conserve l'IP**\n- **N°2** Or fin **≥ 995 ‰** = exonéré (or 750 / bijoux = imposable)\n- **N°3** Tax refund touriste : **300 CHF** minimum + export **90 jours** + privé\n- **N°4** Aéronefs : compagnie internationale **> 60 %** vols internationaux\n- **N°5** Intermédiaire : exonéré seulement si opération sous-jacente exonérée OU étrangère\n- **N°6** Preuve d'exportation **obligatoire** (DTe OFDF) — délai 60 jours\n- **N°7** Plateformes : vendeur → plateforme = exonéré (art. 23 ch. 13) ; plateforme → client = imposable\n\n### 💡 Mnémoniques\n- **« 0 % + IP conservé »** — formule exonération\n- **« 995 ‰ »** — or d'investissement (Vreneli, Krugerrand, lingots)\n- **« 300 / 30 / privé »** — tax refund (montant / délai / usage)\n- **« Pays de consommation »** — principe directeur\n- **« Exo dans champ, Excl hors champ »** — moyen mnémo distinction\n- **« Aéronef 60 % international »** — seuil compagnie aérienne\n\n### 🔗 Renvois\n- **m8_L2** — Lieu (art. 7-8) précède toujours art. 23\n- **m8_L5** — Exclusion (à ne pas confondre)\n- **m8_L7** — Importations (autre côté du commerce international)\n- **m8_L10** — DIP (l'exonéré garde l'IP)\n- **m1_L7** — Fiscalité suisse\n- **LTVA art. 23 + OTVA 41-43** — textes clés\n",
@@ -44344,6 +44524,17 @@
               ],
               "questions": null,
               "section_id": "m8_L7_s9"
+            },
+            {
+              "title": "10. 📘 Compléments du classeur — exemples d'acquisitions, double affectation, report du paiement à l'importation",
+              "body": "**Annonces publicitaires à l'étranger.** Deux entreprises font paraître pour CHF 8'000 d'annonces dans un journal étranger :\n- l'une, **entièrement imposable** : elle déclare l'impôt sur les acquisitions (même **sous** CHF 10'000, car elle est assujettie) et le **déduit** aussitôt → effet nul ;\n- l'autre organise des **formations exclues** financées en partie par du **sponsoring imposable** : c'est une **double affectation**, elle ne déduit qu'**une partie** de l'impôt → **coût** réel.\n\n**Autres acquisitions typiques** : redevances de licence ou de marque versées à l'étranger (ex. 5 % des loyers nets reversés à un donneur de licence), **personnel détaché** par une société étrangère du groupe et refacturé au prix coûtant (CHF 48'000) — la base est la **contre-prestation effective** (art. 24 LTVA).\n\n**Importations**\n- **Sujet** : les **débiteurs de la dette douanière** (art. 51 LTVA, art. 70 LD), qu'ils soient fournisseurs ou acheteurs ;\n- **exigibilité** : dès la **naissance** de la dette (passage de la frontière / acceptation de la déclaration) ;\n- **report du paiement (art. 63 LTVA)** : un assujetti selon la méthode **effective** qui importe régulièrement peut, sur autorisation, **déclarer l'impôt à l'importation dans son décompte TVA** au lieu de le payer à l'OFDF — et le déduire dans le même décompte ;\n- **boutiques hors taxes** : les biens qu'elles achètent sont soumis à l'impôt à l'importation, puisque leurs ventes aux voyageurs sont exonérées.\n\nPrescription et entrée en force : les art. 42 et 43 LTVA s'appliquent par analogie aux acquisitions.",
+              "key_points": [
+                "Assujetti : acquisitions déclarées même < 10'000",
+                "Double affectation : acquisitions = coût partiel",
+                "Report du paiement : import déclaré au décompte"
+              ],
+              "questions": null,
+              "section_id": "m8_L7_s10"
             }
           ],
           "questions": [
@@ -44591,6 +44782,36 @@
               "explanation": "Les non-assujettis ne sont redevables de l'impôt sur les acquisitions que si le montant des prestations acquises dépasse CHF 10'000 par année civile (art. 45 al. 2 let. b LTVA).",
               "difficulty": "medium",
               "section_id": "m8_L7_s9"
+            },
+            {
+              "id": "m8_L7_q18",
+              "type": "mcq",
+              "question": "Une entreprise assujettie achète pour 8'000 CHF d'annonces à un journal étranger. Doit-elle déclarer l'impôt sur les acquisitions ?",
+              "options": [
+                "Non, la publicité étrangère n'est jamais soumise à la TVA suisse",
+                "Oui, un assujetti déclare ses acquisitions dès le premier franc",
+                "Oui, mais seulement si le journal est distribué en Suisse",
+                "Non, le seuil de CHF 10'000 par année n'est pas atteint"
+              ],
+              "answer": 1,
+              "explanation": "Le seuil de CHF 10'000 ne concerne que les non-assujettis ; l'assujetti déclare toutes ses acquisitions et peut déduire l'impôt dans la mesure de son activité imposable.",
+              "difficulty": "medium",
+              "section_id": "m8_L7_s10"
+            },
+            {
+              "id": "m8_L7_q19",
+              "type": "mcq",
+              "question": "Que permet la procédure de report du paiement de l'impôt à l'importation (art. 63 LTVA) ?",
+              "options": [
+                "Payer l'impôt à l'importation au taux réduit de 2,6 % en cas d'urgence",
+                "Différer de 12 mois le paiement de l'impôt dû à l'OFDF, sans aucun intérêt moratoire",
+                "Déclarer l'impôt à l'importation dans le décompte TVA au lieu de le payer à l'OFDF",
+                "Importer des biens en franchise d'impôt jusqu'à leur revente en Suisse"
+              ],
+              "answer": 2,
+              "explanation": "Les assujettis autorisés (méthode effective, importations régulières) déclarent l'impôt sur les importations directement dans leur décompte TVA et le déduisent simultanément comme impôt préalable.",
+              "difficulty": "hard",
+              "section_id": "m8_L7_s10"
             }
           ],
           "mindmap_md": "# M8-L7\n## Impôt sur les acquisitions et importations\n\n### Pertinence examen\n- **Haute** — reverse charge + douane, omniprésent en pratique\n\n### Les 3 types d'impôt TVA en CH\n| Impôt | Objet | Sujet | Autorité |\n|---|---|---|---|\n| **Territoire suisse** | PS + LB en CH | Assujetti TVA | **AFC** |\n| **Acquisitions** | PS et certaines LB de l'étranger | **Destinataire CH** (reverse) | **AFC** |\n| **Importations** | Importation de biens | **Débiteur de la douane** | **OFDF** |\n\n### Impôt sur les acquisitions (art. 45-49) — reverse charge\n#### Principe\n- Entreprise **étrangère** non inscrite CH fournit une **PS** à destinataire CH\n- C'est le **DESTINATAIRE** qui paie la TVA à l'AFC (à la place du prestataire)\n- Évite la **distorsion** entre prestataires étrangers et suisses\n#### Objet — 5 catégories (art. 45 al. 1)\n- **①** PS au lieu du destinataire (art. 8 al. 1) fournies par étranger non inscrit\n- **②** Livraisons d'**immeubles** en CH par étranger non inscrit (montage, installation)\n- **③** Livraisons d'**électricité, gaz, chaleur** par étranger\n- **④** **Supports de données** sans valeur marchande (logiciels téléchargés, accès cloud)\n- **⑤** Émissions de **droits** (licences, brevets, marques) par étranger\n#### Exception — informatique/télécoms à non-assujettis\n- Si le destinataire est **non-assujetti**, le prestataire étranger doit s'**inscrire** lui-même en CH (art. 10)\n\n### Sujet (destinataire) et seuil 10'000\n- **Assujetti TVA** : déclare dans son décompte normal (ch. 380 / IP au ch. 405)\n- **Non-assujetti** : seulement si **CHF 10'000/an** d'acquisitions reçues\n- **⚠️** : seuil 10'000 n'est PAS une franchise — au-delà, **tout** est taxé (pas seulement excédent)\n- Annonce dans **60 jours** suivant la fin d'année\n\n### Calcul (art. 46)\n- Base = contre-prestation versée au prestataire étranger\n- **Conversion** : cours du jour de la prestation OU cours moyen mensuel AFC\n- Taux = **identique** au taux applicable si CH (**8.1 / 2.6 / 3.8 %**)\n- Naissance créance : **moment de la facturation** (mode convenu) ou paiement (mode reçu)\n\n### Impôt sur les importations (art. 50-64)\n#### Principe\n- Importation de **BIENS** sur territoire CH → TVA à la **douane (OFDF)**\n- **Sujet** = débiteur de la douane (art. 51 LTVA) : importateur, déclarant, mandataire\n- Solidarité possible\n#### Base de calcul (art. 54)\n- **Valeur du bien (transaction)** au lieu de destination CH\n- **+ frais de transport** jusqu'à destination CH\n- **+ frais d'assurance**\n- **+ droits de douane** et autres impôts (alcool, tabac)\n- **−** rabais accordés\n- Conversion en CHF au cours OFDF\n#### Taux\n- **8.1 %** standard / **2.6 %** denrées, livres / **3.8 %** N/A à l'import\n\n### Importations franches (art. 53) — liste exhaustive\n- Petites quantités et **valeurs minimes** :\n  - TVA calculée **≤ CHF 5** → franche\n  - Achats personnels voyageurs ≤ **CHF 300** total (par jour, par personne)\n- **Œuvres d'art** par leur créateur\n- Biens en **franchise quantitative** (1L > 18 % alcool, 250 cigarettes, 1 kg viande)\n- Biens **de déménagement** (changement de domicile en CH)\n- Biens **en transit** ou en dépôt franc\n- Cercueils et urnes funéraires\n- Décorations / médailles\n- Marchandises **réimportées** (retours)\n\n### Déduction de l'IP sur importations (art. 55)\n- Conditions :\n  - **Assujetti** TVA\n  - Biens importés pour **activité imposable**\n  - **Preuve d'importation** : **Décision de Taxation électronique (DTe)** OFDF\n- IP = TVA payée à l'OFDF\n- Comptabilisation : compte de report (neutre si tout déductible)\n\n### Procédure et paiement\n- Déclaration douanière électronique (e-Dec / Passar dès 2025)\n- Paiement direct à l'OFDF (ou compte PCD pour assujettis)\n- **Prescription** : 5 ans relative / 10 ans absolue (comme TVA intérieure)\n\n### ⚠️ Pièges examen\n- **N°1** Acquisitions = **reverse charge** : c'est le **DESTINATAIRE** qui paie l'AFC\n- **N°2** Seuil **10'000** non-assujetti = pas une franchise (15k → taxé 15k entier)\n- **N°3** **Logiciel téléchargé** = PS → acquisitions (≠ logiciel sur CD = importation)\n- **N°4** Importations = **OFDF** (≠ AFC pour acquisitions)\n- **N°5** Base import = valeur **+ transport + assurance + douane** (pas seulement prix achat)\n- **N°6** DTe (Décision de Taxation électronique) = preuve obligatoire pour l'IP\n- **N°7** Franchise import si TVA calculée ≤ **CHF 5** (≠ valeur du bien)\n\n### 💡 Mnémoniques\n- **« AFC pour PS étrangères, OFDF pour biens étrangers »**\n- **« Reverse charge = destinataire paye »**\n- **« 10k pour non-assujetti »** — seuil acquisitions\n- **« CHF 5 TVA = franche »** — importation\n- **« V-T-A-D »** — Valeur + Transport + Assurance + Douane (base import)\n- **« DTe = clé IP import »**\n\n### 🔗 Renvois\n- **m8_L2** — Lieu (détermine si acquisition ou non)\n- **m8_L3** — Assujettissement (sujet du reverse charge)\n- **m8_L6** — Exonérations exports (miroir des importations)\n- **m8_L10** — DIP sur importations\n- **LTVA art. 45-64, OFDF** — textes/autorité\n",
@@ -44679,6 +44900,17 @@
               ],
               "questions": null,
               "section_id": "m8_L8_s9"
+            },
+            {
+              "title": "10. 📘 Compléments du classeur — facture d'hôtel en devises, restauration, alcool, leasing, e-facture",
+              "body": "**Facture d'hôtel en devises** (client européen, montants convertis) :\n\n| Poste | Taux |\n|---|---|\n| Nuitée avec petit-déjeuner | **3,8 %** |\n| Repas du soir | **8,1 %** |\n| Taxe de séjour | **hors champ** (taxe publique, 0 %) |\n\n**Restauration (art. 53 OTVA).** Est de la restauration la **préparation** (cuire, chauffer, éplucher, mixer) ou le **service** (présenter, dresser un buffet, servir) **chez le client** → **8,1 %**. Les **boissons alcooliques** (plus de **0,5 %** vol.) et le **tabac** sont **toujours** au taux normal, même à l'emporter.\n\n**Véhicule en leasing mis à disposition d'un employé** : la part privée (0,9 % par mois, TVA incluse) se calcule sur la **valeur hors TVA inscrite dans le contrat de leasing** (équipements compris) ; cette valeur reste la base **après** le rachat du véhicule. *Ex.* 39'483.75 × 0,9 % = 355.35 par mois → TVA 26.65.\n\n**Factures électroniques** : leur tenue et leur conservation suivent le CO (art. 957 à 958f) et l'ordonnance sur la tenue des livres (Olico).\n\n**Mention indue** : un **non-assujetti**, ou une entreprise qui applique la **procédure de déclaration** (art. 38), ne doit pas mentionner de TVA ; si elle le fait, l'impôt est **dû** (art. 27).",
+              "key_points": [
+                "Taxe de séjour : hors champ",
+                "Alcool > 0,5 % et tabac : toujours 8,1 %",
+                "Leasing : base = valeur du contrat HT"
+              ],
+              "questions": null,
+              "section_id": "m8_L8_s10"
             }
           ],
           "questions": [
@@ -44936,6 +45168,36 @@
               "explanation": "L'impôt mentionné sur une facture est dû même s'il l'a été à tort (art. 27 al. 2 LTVA), sauf correction de la facture ou absence de perte fiscale pour la Confédération.",
               "difficulty": "medium",
               "section_id": "m8_L8_s9"
+            },
+            {
+              "id": "m8_L8_q19",
+              "type": "mcq",
+              "question": "Sur la facture d'un hôtel, comment traiter la taxe de séjour perçue pour la commune ?",
+              "options": [
+                "Hors champ de la TVA (0 %), c'est une taxe publique",
+                "Au taux réduit de 2,6 %, comme le petit-déjeuner",
+                "Au taux spécial de 3,8 %, comme la nuitée d'hôtel",
+                "Au taux normal de 8,1 %, comme les autres suppléments"
+              ],
+              "answer": 0,
+              "explanation": "La taxe de séjour est une contribution publique perçue pour le compte de la collectivité : elle ne fait pas partie de la contre-prestation imposable.",
+              "difficulty": "easy",
+              "section_id": "m8_L8_s10"
+            },
+            {
+              "id": "m8_L8_q20",
+              "type": "mcq",
+              "question": "Un traiteur prépare et sert un repas au domicile de son client. Quel taux de TVA ?",
+              "options": [
+                "3,8 %, comme une prestation de l'hôtellerie",
+                "8,1 %, car il s'agit d'une prestation de restauration",
+                "0 %, la prestation étant fournie chez un client particulier",
+                "2,6 %, car il s'agit de denrées alimentaires livrées"
+              ],
+              "answer": 1,
+              "explanation": "La préparation ou le service de repas chez le client constitue une prestation de restauration (art. 53 OTVA), imposée au taux normal.",
+              "difficulty": "medium",
+              "section_id": "m8_L8_s10"
             }
           ],
           "mindmap_md": "# M8-L8\n## Calcul et transfert de l'impôt (art. 24-26 LTVA)\n\n### Pertinence examen\n- **Haute** — base de tous les calculs en examen\n\n### Base de calcul — contre-prestation effective (art. 24)\n- **Formule** : **TVA = Contre-prestation × Taux**\n- Contre-prestation **effective** (ce que l'acheteur paie au final)\n- **TVA toujours INCLUSE** dans le prix sauf mention contraire (art. 24 al. 1)\n- Calcul HT → TVA : Brut × (taux / 100)\n- Calcul TTC → TVA : TTC × (taux / (100 + taux)) — ex. 108.1 → /108.1\n#### Diminutions de la contre-prestation\n- **Rabais, escomptes, ristournes** (avant ou après-coup)\n- **Pertes sur débiteurs**\n- Ajustements pour défauts / retours\n- Reprise d'emballages\n- → Décompte chiffre 235 (correction d'IP rétroactive)\n#### NE réduisent PAS la contre-prestation\n- Frais bancaires, commissions cartes\n- Pertes de change\n- Pénalités contractuelles\n\n### Monnaies étrangères et conversion\n- Conversion **au moment de la naissance** de la créance\n- 2 cours possibles :\n  - **Cours du jour** de la prestation (publié AFC)\n  - **Cours moyen mensuel** AFC (option pour l'année entière)\n- **Justificatifs en CHF** : pas de conversion si déjà en CHF\n- Système **deux colonnes** (CHF + étrangère) admis\n\n### Personnes étroitement liées (art. 3 let. h + 24 al. 2)\n#### Définition\n- Propriétaires d'une **participation déterminante** + leurs proches\n- **Seuils** (au moins un) :\n  - **≥ 20 %** au capital / capital social, OU\n  - **≥ 20 %** aux bénéfices / réserves, OU\n  - Droits de participation **valeur vénale ≥ CHF 1 million**\n- **Famille proche** : conjoint, enfants mineurs, parents\n- Fondations et leurs bénéficiaires\n#### Conséquence fiscale\n- Base de calcul = **valeur du marché** (dealing at arm's length)\n- Même si la prestation est gratuite ou sous-évaluée\n- **Exception** : prestations gratuites à fins entrepreneuriales (cadeaux d'usage)\n\n### Autres cas (art. 24 al. 3-5bis)\n#### Échanges de prestations (al. 3)\n- Base = **valeur du marché** de **chaque** prestation\n- Les 2 prestations imposées séparément\n- TVA mutuelle s'annule économiquement\n#### Reprises (al. 4)\n- Vente avec reprise d'un ancien bien → TVA sur prix de **vente brut**\n- Reprise = nouvelle transaction séparée\n\n### Imposition de la marge — pièces de collection (art. 24a)\n- Régime spécial pour **pièces de collection** (timbres, monnaies, antiquités, objets d'art)\n- **TVA = (Prix de vente − Prix d'achat) × Taux / 108.1**\n- Si **perte** : déductible des autres CA imposables (compensation interne)\n- **Conditions** : commerçant assujetti, marchandise revendable\n- Base : art. 24a LTVA + art. 48a-48e OTVA\n\n### Prestations au personnel (art. 24 al. 2 + notice N2)\n- Prestations figurant sur **certificat de salaire** = rapport de prestations → imposable\n- Base = montant du **certificat de salaire** (TVA incluse)\n- Prestations **hors certificat** = gratuites → pas de TVA, pas de correction IP\n#### Voiture de service privée\n- Forfait **0.9 % du prix d'achat** HT par mois (TVA : depuis 2018), min CHF 150\n- Inclut TVA 8.1 % → ressort sur certificat salaire\n- Calcul : prix achat × 0.9 % × 12 × 8.1/108.1 = TVA annuelle\n\n### Taux TVA (art. 25) — **depuis 01.01.2024**\n| Taux | Valeur | Avant 2024 |\n|---|---|---|\n| **Normal** | **8.1 %** | 7.7 % |\n| **Réduit** | **2.6 %** | 2.5 % |\n| **Spécial (hébergement)** | **3.8 %** | 3.7 % |\n#### Taux réduit 2.6 % — liste fermée\n- **Alimentation** humaine (sauf restauration)\n- **Animaux et leur nourriture**\n- **Plantes**, semences, fleurs coupées\n- **Médicaments**\n- **Livres, journaux, revues** (papier ET électroniques depuis 2018)\n- Œuvres de créateurs (en cas d'option art. 22)\n- Manifestations sport/culture (option art. 22)\n#### Taux spécial 3.8 % — hébergement\n- Hôtels, maisons/appart de vacances (avec petit-déjeuner facultatif)\n- **Limite temporelle** : jusqu'au **31.12.2027**\n- ≠ restauration (8.1 %) — distinction nuit / repas\n#### Taux normal 8.1 % — par défaut\n- Tout ce qui n'est pas 2.6 % ou 3.8 %\n- Restauration, services, biens manufacturés, transport, immobilier (option)\n\n### Facturation et mention TVA (art. 26)\n#### 7 mentions obligatoires (al. 2)\n- **①** Nom et adresse du **fournisseur**\n- **②** **Numéro TVA** (CHE-XXX.XXX.XXX TVA)\n- **③** Nom et adresse du **destinataire**\n- **④** **Date** ou période de la prestation\n- **⑤** **Nature, objet, étendue** de la prestation\n- **⑥** **Contre-prestation** (HT ou TTC)\n- **⑦** **Taux** et montant de TVA (ou mention « TVA incluse à X % »)\n#### Petites factures < CHF 400\n- Mention TVA simplifiée tolérée (sans toutes les mentions)\n- Facture de caisse / ticket\n\n### ⚠️ Pièges examen\n- **N°1** **TVA incluse par défaut** (art. 24 al. 1) sauf mention contraire\n- **N°2** Personnes étroitement liées : participation d'au moins **20 %** (art. 3 let. h)\n- **N°3** Frais bancaires/change = **PAS** de réduction de contre-prestation\n- **N°4** Voiture de service : forfait **0.9 % × prix achat × 12 mois**\n- **N°5** Taux **8.1 / 2.6 / 3.8 % depuis 01.01.2024** (avant 7.7 / 2.5 / 3.7 %)\n- **N°6** Taux spécial 3.8 % limité au **31.12.2027** (AVS 21)\n- **N°7** Marge collection : TVA = (vente − achat) × taux / 108.1 (perte compensable)\n\n### 💡 Mnémoniques\n- **« 8.1 / 2.6 / 3.8 »** — Normal / Réduit / Spécial (depuis 2024)\n- **« 20 % »** — personnes étroitement liées\n- **« 0.9 % × 12 »** — voiture service annuel\n- **« 7 mentions facture »** — Fourn/N° TVA/Destin/Date/Nature/Contre-P/Taux\n- **« /108.1 »** — extraction TVA depuis montant TTC normal\n- **« 31.12.2027 »** — fin du taux spécial 3.8 %\n\n### 🔗 Renvois\n- **m8_L1** — Bases TVA\n- **m8_L4** — Objet (contre-prestation)\n- **m8_L10** — DIP (corrections rétroactives)\n- **m8_L11** — Décompte (chiffres 200-910)\n- **m1_L7** — Fiscalité suisse (taux)\n- **LTVA art. 24-26, OTVA 48a-48e, notice N2** — textes clés\n",
@@ -45189,6 +45451,17 @@
               ],
               "questions": null,
               "section_id": "m8_L9_s9"
+            },
+            {
+              "title": "10. 📘 Compléments du classeur — courtage, procédure de déclaration facultative, intérêt moratoire",
+              "body": "**Courtage immobilier pour un client étranger.** La recherche d'une maison de vacances dans les Grisons (≈ CHF 800'000) pour une personne domiciliée à Milan est un service **lié à un immeuble** : il est localisé au **lieu de situation** de l'immeuble (Suisse) et imposable — contrairement au conseil général, localisé au domicile du destinataire.\n\n**Procédure de déclaration lors de la vente d'un immeuble** (formulaire n° **764**) : facultative selon l'OTVA (art. 104 let. a) ; le vendeur **déclare** la TVA sans la payer et l'acte de vente **ne mentionne pas de TVA**. L'acquéreur reprend la base de calcul et l'affectation du vendeur.\n\n**Valeur vénale** retenue pour les corrections : la **valeur comptable** admise si elle est conforme aux principes de l'impôt fédéral direct (art. 19 ou 61 LIFD).\n\n**Déduction à tort** : l'impôt préalable déduit sans droit doit être restitué avec un **intérêt moratoire** (4,5 % en 2025 ; le taux est fixé chaque année par le DFF).\n\nRappel des corrections : **PASM** et **DUIP** se calculent avec un amortissement de **5 % par année écoulée** pour les immeubles (art. 31 al. 3 et 32 al. 2 LTVA). Les loyers encaissés sont réputés **TVA incluse** lorsque l'option est exercée par déclaration au décompte.",
+              "key_points": [
+                "Courtage immobilier : lieu de l'immeuble",
+                "Formulaire 764 : pas de TVA sur l'acte",
+                "IP déduit à tort : intérêt moratoire"
+              ],
+              "questions": null,
+              "section_id": "m8_L9_s10"
             }
           ],
           "questions": [
@@ -45416,6 +45689,21 @@
               "explanation": "La vente d'un immeuble est exclue (art. 21 al. 2 ch. 20 LTVA) ; l'option est possible, sauf pour les immeubles destinés exclusivement à l'habitation, et la valeur du terrain n'est jamais imposée.",
               "difficulty": "medium",
               "section_id": "m8_L9_s9"
+            },
+            {
+              "id": "m8_L9_q18",
+              "type": "mcq",
+              "question": "Un courtier suisse cherche une maison dans les Grisons pour un client domicilié à Milan. Où la prestation est-elle localisée ?",
+              "options": [
+                "En Suisse, au siège du courtier prestataire",
+                "En Italie, au domicile du client destinataire",
+                "En Suisse, au lieu de situation de l'immeuble",
+                "Hors de tout territoire fiscal, s'agissant d'un service"
+              ],
+              "answer": 2,
+              "explanation": "Les prestations de services en rapport avec un immeuble, y compris le courtage, sont localisées au lieu de situation de l'immeuble (art. 8 al. 2 let. f LTVA).",
+              "difficulty": "medium",
+              "section_id": "m8_L9_s10"
             }
           ],
           "mindmap_md": "# M8-L9\n## TVA dans le domaine de l'immobilier\n\n### Pertinence examen\n- **Haute** — secteur transversal, traps fréquents\n\n### Vue d'ensemble — 3 régimes immobiliers\n| Type | Régime TVA | Taux |\n|---|---|---|\n| **Vente immeuble** | Exclue (ch. 20) — **option** possible | 0 % / 8.1 % |\n| **Location habitation** | Exclue (ch. 21) — option **INTERDITE** | 0 % |\n| **Location commerciale** | Exclue (ch. 21) — **option** possible | 0 % / 8.1 % |\n| **Hôtellerie/hébergement** | **Imposable d'office** | **3.8 %** |\n| **Salles, parking, coffres** | **Imposable d'office** | 8.1 % |\n| **Terrain (valeur sol)** | **Hors prestation** (art. 24 al. 6 let. c) | — |\n\n### Prestations immobilières imposables\n- **Hébergement** d'hôtes (hôtels, vacances) → **3.8 %** jusqu'au 31.12.2027\n- **Camping** et emplacements caravanes\n- **Locations courts séjours** < 3 mois en hôtellerie/restauration → 8.1 %\n- **Places de PARC** publiques (au public) → 8.1 %\n- **Salles, stands, coffres-forts** → 8.1 %\n- **Vente / location AVEC OPTION** → 8.1 %\n- **Construction** pour compte de tiers → 8.1 %\n\n### Prestations immobilières EXCLUES (art. 21 ch. 20-21)\n- **Vente d'immeubles** sans option (ch. 20)\n- **Droits réels** : servitudes, droit de superficie, usufruit, droit d'habitation\n- **Droit de préemption** inscrit au RF\n- **Location** d'immeubles (ch. 21) — **par défaut** :\n  - Habitation **toujours** (option INTERDITE)\n  - Commerciale (sauf option)\n  - **Exception** : hôtellerie, salles, parking, coffres — imposables\n\n### Terrain — régime particulier (art. 24 al. 6 let. c)\n- **Sol = NON consommable** au sens LTVA\n- Vente d'un terrain seul = **PAS une prestation** au sens TVA\n- Ni imposable, ni exclue, **pas d'option possible**\n- Pas de TVA sur le prix du terrain\n#### Conséquences IP\n- **Vendeur** : pas d'effet (sol n'a jamais ouvert l'IP)\n- **Acquéreur** : pas d'IP à récupérer (pas de TVA sur le sol)\n#### Décomposition vente immeuble bâti\n- Prix total = **valeur sol** (hors TVA) + **valeur bâtiment** (TVA si option)\n- À ventiler explicitement dans le contrat / facture\n\n### Lieu de la prestation immobilière\n- **Livraison (art. 7)** : lieu **où se trouve l'immeuble** au moment du transfert\n- **PS liée immeuble (art. 8 al. 2 let. f)** : lieu de l'immeuble\n- → Seul un immeuble **en CH** entre dans le champ TVA CH\n#### PS liées à immeuble (lieu immeuble)\n- Travaux de construction, rénovation, démolition\n- Expertises immobilières\n- Architectes, ingénieurs, géomètres\n- Conseil sur transaction d'un immeuble précis\n- Courtage immobilier\n\n### Option (art. 22) dans l'immobilier\n- **Possible** pour vente / location **commerciale** (8.1 %)\n- **INTERDITE** :\n  - Locaux à **HABITATION exclusive** (art. 22 al. 2 let. b)\n  - Méthodes **TDFN** et **TaF** (art. 77 al. 3 + 97 al. 3 OTVA)\n- **Avantage** : récupération de l'IP sur dépenses (construction, entretien)\n- **Inconvénient** : facturer 8.1 % au locataire/acquéreur (qui doit pouvoir récupérer)\n#### Double affectation immobilier\n- Immeuble mixte (habitation + commerce) → ventilation IP par surfaces\n- Méthode **forfait sectoriel** AFC (cf. info TVA 17)\n\n### Construction d'un bâtiment et IP\n- IP **dès la planification** si option ou affectation imposable prévue\n- **PAS d'IP** si :\n  - Pas d'option, OU\n  - Destination habitation\n- Dépenses non attribuables directement → **clé de répartition** (m² / locaux)\n\n### PASM et DUIP — changements d'affectation\n#### PASM (art. 31) — correction négative\n- Sortie du cycle entrepreneurial vers usage privé / exclu\n- Ex. : vente immeuble **sans option** après usage commercial avec IP\n- **Base** : valeur résiduelle ; **délai** : 20 ans pour immeubles\n- Amortissement linéaire 5 % / an\n#### DUIP (art. 32) — correction positive\n- Entrée dans le cycle imposable après période sans IP\n- Ex. : appart privé loué ensuite avec option commerciale\n- IP rétroactif sur valeur résiduelle dans la limite des **20 ans** (immeubles)\n\n### Locations — paiements multiples\n- **Unité de prestation** : loyer + charges + assurances refacturées = **même taux**\n- Si option : tout à 8.1 % (même les charges qui seraient 2.6 % isolément)\n- **Pas-de-porte / droit d'entrée** : taux du contrat principal\n- **Indemnités résiliation** : suivent le contrat (taxe d'option si louée optée)\n#### Places de parc\n- **Lié à location habitation** (même bail) → exclu (ch. 21)\n- **Loué séparément ou public** → imposable 8.1 %\n\n### ⚠️ Pièges examen\n- **N°1** **Terrain = hors TVA** (art. 24 al. 6 let. c) — ventiler sol/bâtiment\n- **N°2** Option **INTERDITE** pour habitation exclusive (piège classique)\n- **N°3** Place de parc isolée ou publique = **imposable 8.1 %** (≠ liée à habitation)\n- **N°4** Hôtellerie = **3.8 %** (taux spécial), pas 8.1 %\n- **N°5** TDFN / TaF : **pas d'option immobilière** (art. 77/97 OTVA)\n- **N°6** PASM/DUIP immobilier : période d'amortissement **20 ans** (5 % par an)\n- **N°7** Lieu immeuble (art. 8 al. 2 let. f) prime sur règle générale même pour conseils\n\n### 💡 Mnémoniques\n- **« Sol jamais, bâtiment peut-être »**\n- **« Hab interdit, Comm option »** — règle d'option immobilière\n- **« Parc lié = exclu, Parc seul = 8.1 % »**\n- **« Hôtel 3.8 / Resto 8.1 »** — distinction nuit vs repas\n- **« 20 ans / 5 % »** — amortissement immobilier (PASM/DUIP)\n- **« Unité : loyer + charges = même taux »**\n\n### 🔗 Renvois\n- **m8_L2** — Lieu (immeuble — art. 7 et 8 al. 2 let. f)\n- **m8_L5** — Exclusions ch. 20-21 + option art. 22\n- **m8_L8** — Calcul (taux 3.8 % hébergement)\n- **m8_L10** — DIP / PASM / DUIP / double affectation\n- **LTVA art. 21 ch. 20-21, art. 22, art. 24 al. 6, art. 31-32** — textes clés\n",
@@ -45724,6 +46012,17 @@
               ],
               "questions": null,
               "section_id": "m8_L10_s9"
+            },
+            {
+              "title": "10. 📘 Compléments du classeur — produits naturels, participations, forfaits d'activités accessoires, imposition tacite",
+              "body": "**Impôt préalable sur les produits naturels.** L'assujetti qui achète des **produits agricoles, sylvicoles, horticoles** ou du bétail à un **producteur non assujetti** peut déduire **2,6 %** du montant facturé (considéré comme hors taxe), si : le producteur et son exploitation sont **en Suisse**, la facture ne mentionne **pas de TVA** et l'achat sert à une activité donnant droit à la déduction. *Ex.* une laiterie déduit 2,6 % du lait livré par un paysan non assujetti.\n\n**Impôt préalable fictif** : il se calcule au **taux en vigueur au moment de l'achat** (8,1 %), même si le bien d'occasion date d'une époque à 7,7 %.\n\n**Participations** : acquérir ou détenir une participation d'**au moins 10 %** est une activité entrepreneuriale → l'impôt sur les **frais d'acquisition** (ex. honoraires de CHF 10'000 TTC → IP CHF 749.30) est déductible si l'activité principale est imposable.\n\n**Ristourne reçue après coup** (ex. 5 % sur les achats de l'année précédente) : elle **réduit** la déduction d'impôt préalable déjà opérée (art. 41 al. 2).\n\n**Activité exclue réalisée à l'étranger** : des entrées de spectacle encaissées en France ouvrent droit à la déduction si elles seraient imposables (ou imposables par option) en Suisse. *Ex.* CA 50'000 imposable + 100'000 d'entrées exclues en Suisse → déduction **33,33 %** seulement.\n\n**Forfaits AFC pour les activités accessoires** (double affectation de l'infrastructure administrative) :\n| Activité exclue | Seuil | Correction forfaitaire |\n|---|---|---|\n| Intérêts, négoce de titres (produit des ventes) | > CHF 10'000 **et** > 5 % du CA | **0,02 %** des produits financiers |\n| Gestion de ses propres immeubles sans option | loyers > CHF 10'000 | **0,07 %** des loyers bruts (charges comprises) |\n| Conférences (honoraires) | > CHF 5'000 | **1,0 %** des honoraires, frais compris (pas pour les formations) |\n\n*Ex.* intérêts 40'000 sur 1 mio de recettes (4 %) → pas de correction ; 100'000 → 0,02 % = **CHF 20**.\n\n**Imposition tacite** : pour le **logement du concierge** (option impossible), on peut corriger l'impôt préalable en déclarant le loyer comme s'il contenait la TVA : 33'600 × 8,1 / 108,1 = **CHF 2'517.65**, sans mention de TVA dans le bail ; méthode applicable sans autorisation, au moins une période fiscale.\n\nLa méthode de correction choisie (affectation effective, forfaits, propres calculs) doit être **appropriée** et maintenue **au moins une période fiscale** (art. 65 OTVA).",
+              "key_points": [
+                "Produits naturels : IP 2,6 % sans facture TVA",
+                "Forfaits : 0,02 % intérêts, 0,07 % loyers, 1 % conférences",
+                "Concierge : imposition tacite"
+              ],
+              "questions": null,
+              "section_id": "m8_L10_s10"
             }
           ],
           "questions": [
@@ -45961,6 +46260,36 @@
               "explanation": "L'assujetti peut déduire l'impôt préalable dans le cadre de son activité entrepreneuriale, pour des dépenses affectées à des prestations imposables ou exonérées (art. 28 LTVA) ; il est exclu pour les prestations exclues sans option (art. 29).",
               "difficulty": "medium",
               "section_id": "m8_L10_s9"
+            },
+            {
+              "id": "m8_L10_q19",
+              "type": "mcq",
+              "question": "Une laiterie assujettie achète du lait à un paysan non assujetti, sans TVA facturée. Peut-elle déduire un impôt préalable ?",
+              "options": [
+                "Oui, 8,1 % du montant facturé, comme pour tout autre achat",
+                "Oui, mais seulement si le paysan s'inscrit ensuite",
+                "Oui, 2,6 % du montant facturé, considéré comme hors taxe",
+                "Non, aucune TVA n'ayant été facturée par le producteur"
+              ],
+              "answer": 2,
+              "explanation": "L'assujetti qui acquiert des produits naturels auprès d'un producteur non assujetti en Suisse peut déduire 2,6 % du montant facturé, pour éviter une taxe occulte.",
+              "difficulty": "medium",
+              "section_id": "m8_L10_s10"
+            },
+            {
+              "id": "m8_L10_q20",
+              "type": "mcq",
+              "question": "Une entreprise réalise 10 % de ses recettes en produits d'intérêts (100'000 CHF sur 1 mio). Quelle correction forfaitaire de l'impôt préalable peut-elle appliquer ?",
+              "options": [
+                "Aucune, les intérêts étant toujours sans incidence",
+                "0,07 % des produits financiers, soit CHF 70",
+                "1 % des produits financiers, soit CHF 1'000",
+                "0,02 % des produits financiers, soit CHF 20"
+              ],
+              "answer": 3,
+              "explanation": "Si les intérêts et produits de titres dépassent CHF 10'000 et 5 % du chiffre d'affaires, la double affectation de l'infrastructure peut être corrigée forfaitairement à 0,02 % de ces produits.",
+              "difficulty": "hard",
+              "section_id": "m8_L10_s10"
             }
           ],
           "mindmap_md": "# M8-L10\n## Déduction de l'impôt préalable (DIP)\n\n### Pertinence examen\n- **Haute** — cœur de la TVA effective\n\n### Principe DIP (art. 28 LTVA)\n- L'**assujetti** peut déduire la TVA payée sur ses achats si **affectés à activité entrepreneuriale imposable**\n- Condition : **prouver le paiement** de la TVA\n- TVA **facturée** par le prestataire de manière reconnaissable (art. 59 OTVA)\n- **Aucune DIP** pour activités non-entrepreneuriales (privé, holding pure)\n\n### Les 5 catégories d'IP (art. 28 al. 1)\n- **①** IP sur opérations **réalisées sur territoire CH** (factures fournisseurs CH)\n- **②** IP sur **acquisitions** de PS étrangères (reverse charge, art. 45)\n- **③** IP sur **importations** (TVA OFDF — DTe)\n- **④** IP **fictif** sur biens mobiliers identifiables (art. 28a)\n- **⑤** IP sur **PASM** (art. 31) — récupération en cas changement d'affectation\n- Chaque catégorie a son chiffre au décompte (400 à 415)\n\n### IP fictif (art. 28a) — biens mobiliers identifiables\n#### Principe\n- TVA **fictive déductible** sur achat d'un **bien mobilier d'occasion identifiable** sans TVA (typiquement chez particulier)\n- Motif : éviter la **taxe occulte** pour commerçants d'occasion\n#### Bien mobilier identifiable\n- Bien **identifiable individuellement** (n° série, plaque, immatriculation, certificat)\n- Ex. : véhicules, machines, montres, instruments musicaux, œuvres d'art\n- **Exclus** : marchandises de série non individualisables, denrées\n#### Calcul\n- IP fictif = **prix d'achat × taux / (100 + taux)**\n- Ex. : achat voiture occasion 21'620 CHF → IP fictif = 21'620 × 8.1 / 108.1 = **1'620 CHF**\n- À déduire au chiffre 410 du décompte\n- Conditions : achat documenté + revente prévue\n\n### Exclusion de la DIP (art. 29 LTVA)\n- **Pas de DIP** sur dépenses affectées à **prestations exclues** (art. 21) — sauf option\n- Conséquence : **TAXE OCCULTE** (IP devient un coût caché intégré au prix)\n- **Exemple** : garage Touroule (8.1 %) + auto-école (exclue) → IP de l'auto-école perdu\n- Solution : **option art. 22** si applicable\n\n### Double affectation (art. 30 LTVA + OTVA 69-74)\n#### Définition\n- Bien/PS utilisé **à la fois** pour activité donnant droit à DIP ET activité n'y donnant pas droit\n- → **IP au prorata** de l'usage imposable\n#### 3 méthodes de correction\n- **①** Méthode **EFFECTIVE** (clé objective : surface, temps, CA, quantité)\n- **②** **Forfaits AFC** : forfaits sectoriels (banques, restaurants, etc.)\n- **③** Méthode propre **approuvée** par l'AFC (clé interne justifiée)\n#### Méthode des « 3 pots »\n- **Pot 1** — Usage **100 % imposable** → IP 100 %\n- **Pot 2** — Usage **100 % exclu/privé** → IP 0 %\n- **Pot 3** — Usage **mixte** → IP au prorata (clé de répartition)\n\n### Changements d'affectation\n#### PASM — Prestation À Soi-Même (art. 31)\n- Bien ayant bénéficié de l'IP **sort** du cycle entrepreneurial\n- → Correction **NÉGATIVE** (rendre IP à l'AFC)\n- **Cas typiques** : retrait privé, affectation à activité exclue, cessation\n- **Base** : valeur résiduelle\n  - Biens mobiliers : amortissement **20 % / an** (linéaire 5 ans)\n  - Biens immobiliers : amortissement **5 % / an** (linéaire 20 ans)\n- Déclaré au ch. 415 du décompte\n#### DUIP — Dégrèvement Ultérieur de l'IP (art. 32)\n- Bien **entre** dans le cycle entrepreneurial imposable\n- → Correction **POSITIVE** (AFC rembourse IP rétroactif)\n- **Cas typiques** :\n  - PP non-assujettie devient assujettie + immeuble passé à usage commercial\n  - Conversion activité exclue → imposable (option art. 22)\n- Base : valeur résiduelle au moment du changement\n- Délais d'amortissement identiques à PASM (5 ans mobilier / 20 ans immo)\n\n### REDIP — Réduction de la DIP (art. 33)\n#### Principe\n- Certains éléments **hors contre-prestation** (art. 18 al. 2) imposent une **réduction proportionnelle** de la DIP\n- Logique : éléments financent l'activité sans être de vraies recettes\n#### Éléments DÉCLENCHANT une REDIP\n- **a)** Subventions et contributions droit public\n- **g)** Taxes touristiques\n- **h)** Fonds de prévention / dépollution\n- **i)** Émoluments **régaliens**\n#### Éléments SANS REDIP\n- **b)** Dons (mécénat)\n- **c)** Apports d'associés\n- **e)** Dividendes\n- **f)** Dommages-intérêts\n#### Calcul\n- **REDIP = IP total × (subventions / total ressources)**\n- Application sur **frais généraux** (overhead)\n- Pas sur achats directement affectés à activité imposable\n\n### ⚠️ Pièges examen\n- **N°1** Activité exclue (art. 21) sans option → **IP perdu** (taxe occulte)\n- **N°2** IP fictif (art. 28a) : seulement **biens mobiliers identifiables** d'occasion\n- **N°3** PASM **mobilier 5 ans / immobilier 20 ans** d'amortissement\n- **N°4** DUIP = miroir positif de PASM (récupération rétroactive)\n- **N°5** REDIP : **subventions/tour/fonds/régaliens** seulement (≠ dons/dividendes)\n- **N°6** Double affectation = **3 méthodes** (effective / forfait AFC / propre approuvée)\n- **N°7** Méthode des « 3 pots » : 100 % imposable / 100 % exclu / mixte au prorata\n\n### 💡 Mnémoniques\n- **« 5 catégories d'IP »** — CH / Acquisitions / Imports / Fictif / PASM\n- **« 5 ans mob, 20 ans immo »** — amortissement PASM/DUIP\n- **« PASM −, DUIP + »** — corrections symétriques\n- **« A-G-H-I = REDIP »** — Subventions / Taxes touristiques / Fonds / Émoluments régaliens\n- **« 3 pots »** — Imposable / Exclu / Mixte\n- **« IP fictif = × taux / 108.1 »** — formule occasion\n\n### 🔗 Renvois\n- **m8_L4** — Objet (hors contre-prestation déclencheurs REDIP)\n- **m8_L5** — Exclusions (art. 21) → taxe occulte sans option\n- **m8_L9** — Immobilier (PASM/DUIP 20 ans, double affectation)\n- **m8_L11** — Décompte (chiffres 400-415)\n- **LTVA art. 28-33 + OTVA 60-75** — textes clés\n",
@@ -46267,6 +46596,17 @@
               ],
               "questions": null,
               "section_id": "m8_L11_s9"
+            },
+            {
+              "title": "10. 📘 Compléments du classeur — plusieurs TDFN, TaF, formulaires, finalisation",
+              "body": "**Plusieurs activités en méthode TDFN.** Un assujetti peut utiliser plusieurs taux si **chaque activité dépasse 10 %** de son chiffre d'affaires ; les activités plus petites sont décomptées au **taux autorisé immédiatement supérieur**.\n*Ex. boulangerie-tea-room* : fabrication 46 % (0,1 %), commerce au taux normal 14 % (2,1 %), alcools 7 % + articles pour fumeurs 6 % = 13 % (1,3 %), tea-room 16 % (5,3 %) → ces taux sont admis ; le commerce de biens au taux réduit (8 %, 0,6 %) passe au taux supérieur admis (**1,3 %**).\n\nRepères de TDFN par branche (0,1 % à 6,8 %) : 0,1 % fromagerie, boucherie ; 0,6 % pharmacie, boulangerie ; 1,3 % informatique, pneus ; 2,1 % fleuriste, hôtellerie ; 3,0 % antiquités ; 3,7 % charpenterie, opticien ; 4,5 % maçonnerie, **bijoux (dès 2025)** ; 5,3 % taxi, restaurant, nettoyage ; 6,2 % fiduciaire, avocat, architecte ; 6,8 % location de personnel, traduction. Les taux sont réexaminés environ **tous les 7 ans**.\n\n**Prestations à soi-même** : comprises dans le TDFN (art. 92 OTVA). Si un assujetti TDFN **reprend un patrimoine** par procédure de déclaration, une correction peut être due, sauf si le vendeur l'utilisait pour une activité sans droit à déduction.\n\n**Taux forfaitaires (TaF)** — réservés à la liste de l'OTVA (collectivités, associations, fondations, écoles, cliniques…) ; exemples : 0,1 % eau potable ; 0,6 % prêt de livres, livraison de repas ; 2,1 % bazar, excursions ; 3,7 % entrées de foires ; 4,5 % travaux forestiers ; 5,3 % entretien de tombes ; 6,8 % ramassage de papier.\n\n**Formulaires** : adhésion TDFN **n° 1198**, adhésion TaF **n° 759**, à envoyer dans les **60 jours** (début d'assujettissement ou début de la période fiscale du changement).\n\n**Finalisation** : les corrections de la période fiscale passent **toujours par un décompte rectificatif** (concordance annuelle), jamais par les décomptes ordinaires (art. 72 al. 3) ; un complément d'impôt porte **intérêt moratoire** (4,5 % en 2025 ; 4,75 % en 2024).",
+              "key_points": [
+                "TDFN multiples : chaque activité > 10 %",
+                "Formulaires 1198 (TDFN) et 759 (TaF), 60 jours",
+                "Corrections : décompte rectificatif"
+              ],
+              "questions": null,
+              "section_id": "m8_L11_s10"
             }
           ],
           "questions": [
@@ -46524,6 +46864,36 @@
               "explanation": "En mode « convenues », la créance fiscale naît avec la facturation (art. 40 al. 1 let. a LTVA) ; en mode « reçues », lors de l'encaissement.",
               "difficulty": "easy",
               "section_id": "m8_L11_s9"
+            },
+            {
+              "id": "m8_L11_q20",
+              "type": "mcq",
+              "question": "En méthode TDFN, une activité représente 8 % du chiffre d'affaires. Comment est-elle décomptée ?",
+              "options": [
+                "Selon la méthode effective, à titre exceptionnel",
+                "Au TDFN le plus bas autorisé à l'entreprise",
+                "Au TDFN autorisé immédiatement supérieur",
+                "À son propre TDFN, quel que soit son poids"
+              ],
+              "answer": 2,
+              "explanation": "Un TDFN propre n'est accordé que pour une activité dépassant 10 % du chiffre d'affaires ; les activités plus petites sont décomptées au taux autorisé immédiatement supérieur.",
+              "difficulty": "hard",
+              "section_id": "m8_L11_s10"
+            },
+            {
+              "id": "m8_L11_q21",
+              "type": "mcq",
+              "question": "Par quel document l'assujetti corrige-t-il les erreurs constatées lors de la finalisation annuelle ?",
+              "options": [
+                "Une nouvelle déclaration d'assujettissement",
+                "Une simple lettre explicative et motivée adressée à l'AFC",
+                "Le décompte ordinaire du trimestre suivant",
+                "Un décompte rectificatif (concordance annuelle)"
+              ],
+              "answer": 3,
+              "explanation": "Selon l'art. 72 al. 3 LTVA, les corrections de la finalisation doivent être faites par un décompte rectificatif et non dans les décomptes ordinaires.",
+              "difficulty": "medium",
+              "section_id": "m8_L11_s10"
             }
           ],
           "mindmap_md": "# M8-L11\n## Détermination, naissance et prescription de la créance\n\n### Pertinence examen\n- **Haute** — verrou temporel et méthodes\n\n### Les 3 périodes TVA (art. 34, 35, 72)\n| Période | Définition | Durée typique |\n|---|---|---|\n| **Décompte** (art. 35) | Période où l'assujetti décompte avec l'AFC | **Trimestre** (effective/TaF) ou **semestre** (TDFN) ou mois |\n| **Fiscale** (art. 34) | Période pour fixation **définitive** | **Année civile** (en général) |\n| **Finalisation** (art. 72) | Concordance annuelle + corrections | **180 jours** après clôture |\n#### Période de décompte (art. 35)\n- **Trimestrielle** par défaut (effective + TaF)\n- **Semestrielle** : méthode TDFN\n- **Mensuelle** : sur demande (crédit IP régulier, ex. exportateurs)\n- **Annuelle** : sur demande, conditions strictes\n#### Période fiscale (art. 34)\n- **Année civile** par défaut\n- Possibilité d'**exercice commercial** sur demande (concordance comptable)\n- Fixation définitive de la créance = à la fin de la période\n\n### Modes de décompte (art. 39)\n#### ① Contre-prestations CONVENUES — mode de base\n- Déclaration au moment de la **FACTURATION**\n- Encaissements sans facture → période d'encaissement\n- **Règle par défaut** : pas de demande à faire\n#### ② Contre-prestations REÇUES — sur demande\n- Formulaire **1100_1** à l'AFC\n- Déclaration au moment de l'**ENCAISSEMENT** (cash-basis)\n- Simplifie pour TPE sans compta de créances\n- **Cohérence** : doit s'appliquer à TOUTES les opérations\n\n### Les 3 méthodes de décompte (art. 36-37)\n#### ① Méthode EFFECTIVE (art. 36)\n- TVA = **Impôt sur CA + Acquisitions − IP déductible**\n- Décompte **trimestriel**\n- **Aucune limite** de CA\n- Calcul **exact** → nécessite compta TVA précise\n#### ② TDFN — Taux de la Dette Fiscale Nette (art. 37 al. 1-4)\n- **Forfait** : multiplie le CA TTC par un **TDFN sectoriel** (publié AFC)\n- Pas de déduction d'IP à part (le TDFN intègre forfaitairement)\n- **Conditions** :\n  - CA imposable ≤ **CHF 5'024'000** (mondial)\n  - Impôt dû ≤ **CHF 108'000** par an\n- Décompte **semestriel**\n- **Maximum 2 TDFN** appliqués si CA mixte\n- **Engagement de 3 ans** (TDFN) puis 1 an (sortie volontaire)\n#### ③ TaF — Taux Forfaitaires (art. 37 al. 5)\n- Pour **collectivités publiques** et **institutions d'utilité publique**\n- Décompte **trimestriel**\n- Taux par activité (publiés AFC)\n- Pas de limite de CA\n\n### Décompte TVA — chiffres 200-910 (depuis 2025 en ligne ePortal)\n#### I. Chiffre d'affaires (200-299)\n- **200** : total contre-prestations (CA mondial)\n- **205** : opérations avec option art. 22 (info, non déductible)\n- **220** : exonérées (exports art. 23, services à l'étranger)\n- **221** : prestations à l'étranger (hors champ CH)\n- **225** : non-prestations (art. 18 al. 2)\n- **230** : exclues (art. 21)\n- **235** : diminutions de contre-prestation\n- **299** : total imposable (en CH)\n#### II. Calcul de l'impôt (300-399)\n- **301-303** : CA × taux (8.1 / 2.6 / 3.8)\n- **380** : impôt sur acquisitions (reverse charge)\n- **399** : TVA brute due\n#### III. Déduction IP (400-499)\n- **400** : IP sur matières/biens\n- **405** : IP sur acquisitions\n- **410** : IP fictif (art. 28a)\n- **415** : corrections PASM/DUIP/REDIP\n- **479** : total IP déduit\n#### IV. Solde et corrections (500-910)\n- **500** : TVA nette due (399 − 479)\n- **910** : annonces concordance / rectifications\n\n### Procédure de déclaration (art. 38 LTVA — formulaire 764)\n- Lors d'un **transfert de patrimoine** entre **2 assujettis** (fusion, scission, restructuration)\n- Effet : **transfert NEUTRE** fiscalement\n- **Cédant** : pas de TVA facturée, pas correction IP\n- **Reprenant** : pas de TVA à récupérer\n- **Formulaire 764** à déposer sous **30 jours**\n- Délai d'option facultatif : 60 jours\n\n### Naissance de la créance (art. 40)\n#### Mode convenu (al. 1)\n- **Dette TVA** : moment de la **FACTURATION**\n- Facturation partielle / encaissement partiel : chaque tranche\n- **Droit DIP** : moment de la **réception de la facture fournisseur**\n#### Mode reçu (al. 2)\n- **Dette TVA** : moment de l'**ENCAISSEMENT**\n- **Droit DIP** : moment du **PAIEMENT** au fournisseur\n\n### Modification de la créance (art. 41)\n- Ajustements **après** la naissance : escomptes accordés, retours, rabais a posteriori\n- **Cédant** : peut réduire la TVA due (chiffre 235)\n- **Reprenant** : doit réduire son IP en miroir\n- Comptabilisation au moment de la **correction** ou de l'**encaissement** ajusté\n\n### Prescription (art. 42 + 91)\n| Article | Type | Base | Maximum |\n|---|---|---|---|\n| **Art. 42** | Droit de **TAXATION** | **5 ans** | **10 ans** |\n| **Art. 91** | Droit d'**EXIGER PAIEMENT** | **5 ans** | **10 ans** |\n#### Prescription de taxation (art. 42)\n- Début : 1er jour après la fin de la **période fiscale**\n- Interruption : tout acte de l'AFC (sommation, contrôle, décision)\n- **Prescription absolue** : **10 ans** dès fin de période fiscale\n- Suspension : procédure de recours, négociation\n#### Prescription du paiement (art. 91)\n- 5 ans dès **entrée en force** de la décision\n- 10 ans absolu\n\n### ⚠️ Pièges examen\n- **N°1** TDFN : CA ≤ **5.024 mio** + impôt ≤ **108k** + engagement **3 ans**\n- **N°2** Mode **convenu = facturation** ; mode **reçu = encaissement**\n- **N°3** Finalisation : **180 jours** après clôture exercice\n- **N°4** Prescription : **5 / 10 ans** (relative / absolue) — taxation art. 42\n- **N°5** Décompte 100 % en ligne **dès 01.01.2025** (ePortal AFC)\n- **N°6** Procédure déclaration art. 38 (formulaire 764) = transfert NEUTRE\n- **N°7** TDFN : **pas d'option immobilière** ni IP fictif (forfait intègre tout)\n\n### 💡 Mnémoniques\n- **« 3 périodes »** — Décompte / Fiscale / Finalisation (180j)\n- **« 3 méthodes »** — Effective / TDFN / TaF\n- **« 5'024k / 108k / 3 ans »** — limites TDFN\n- **« Convenu = facture, Reçu = cash »**\n- **« 5/10 ans »** — prescription relative/absolue\n- **« 200 → 299 → 399 → 479 → 500 »** — chaîne décompte\n- **« 764 = neutre »** — procédure déclaration art. 38\n\n### 🔗 Renvois\n- **m8_L4** — Objet (CA déterminant)\n- **m8_L9** — Immobilier (PASM/DUIP imputés)\n- **m8_L10** — DIP (chiffres 400-415)\n- **m8_L12** — Procédural (contrôle, réclamation, sanctions)\n- **LTVA art. 34-42, 91 + OTVA 76-129** — textes clés\n",
@@ -46831,6 +47201,17 @@
               ],
               "questions": null,
               "section_id": "m8_L12_s9"
+            },
+            {
+              "title": "10. 📘 Compléments du classeur — comptabilité obligatoire, périodes, concordance chiffrée, plausibilité TDFN",
+              "body": "**Tenue des livres.** Les **raisons individuelles et sociétés de personnes** dont le chiffre d'affaires dépasse **CHF 500'000** doivent tenir une **comptabilité commerciale complète** (CO 957) ; en dessous, une comptabilité **recettes-dépenses** (« comptabilité de caisse ») suffit, mais la TVA exige des enregistrements permettant de vérifier les chiffres déclarés.\n\n**Périodes** : la **période de décompte** (trimestre, semestre, mois sur demande en cas d'excédents réguliers d'impôt préalable, année depuis 2025) ; la **période fiscale** = année civile (art. 34 al. 2), ou exceptionnellement l'**exercice commercial** (al. 3) dès que le Conseil fédéral l'aura mis en vigueur.\n\n**Concordance annuelle** : on rapproche le chiffre d'affaires comptable (par taux) et le chiffre d'affaires déclaré, puis l'impôt préalable comptabilisé et l'impôt préalable déduit. La différence fait l'objet d'un **décompte rectificatif** en faveur de l'AFC ou de l'assujetti ; une dette complémentaire porte **intérêt moratoire** (4 % avant 2024, 4,75 % en 2024, 4,5 % en 2025).\n\n**Contrôle de plausibilité de l'impôt préalable** — *Resto SA* : recettes 2'162'000 TTC, TVA due 162'000, IP déduit 63'200 → TVA nette **98'800**. Avec le TDFN de la branche (5,3 %), on attendrait **114'586** : écart de 15'786, expliqué par une **rénovation** de 216'200 TTC (IP 16'200) → écart résiduel de 414, plausible.\n\n**Mesures particulières** : l'AFC peut interdire l'importation de petits envois d'une entreprise de vente par correspondance qui ne respecte pas ses obligations (mesure administrative, art. 79a).\n\n**Infractions** : la soustraction couvre aussi le fait de **gonfler des recettes exonérées** et d'obtenir un **remboursement indu** ; les infractions graves peuvent relever du droit pénal administratif (DPA, art. 14 al. 4 : escroquerie en matière de contributions, crime au sens du CP).",
+              "key_points": [
+                "CA > 500'000 : comptabilité complète",
+                "Concordance : CA et IP comptables vs déclarés",
+                "Plausibilité : comparer au TDFN de la branche"
+              ],
+              "questions": null,
+              "section_id": "m8_L12_s10"
             }
           ],
           "questions": [
@@ -47108,6 +47489,36 @@
               "explanation": "Les livres comptables, pièces justificatives et documents d'affaires doivent être conservés selon les règles du CO, soit 10 ans (art. 70 al. 2 LTVA et 958f CO), des durées plus longues s'appliquant aux pièces relatives aux immeubles.",
               "difficulty": "easy",
               "section_id": "m8_L12_s9"
+            },
+            {
+              "id": "m8_L12_q22",
+              "type": "mcq",
+              "question": "À partir de quel chiffre d'affaires une raison individuelle doit-elle tenir une comptabilité commerciale complète ?",
+              "options": [
+                "Dès le premier franc de chiffre d'affaires",
+                "Plus de CHF 100'000 lors du dernier exercice",
+                "Plus de CHF 500'000 lors du dernier exercice",
+                "Plus de CHF 250'000 lors du dernier exercice"
+              ],
+              "answer": 2,
+              "explanation": "Selon CO 957 al. 2, les raisons individuelles et sociétés de personnes dont le chiffre d'affaires du dernier exercice est inférieur à CHF 500'000 peuvent se limiter à une comptabilité des recettes et des dépenses et du patrimoine.",
+              "difficulty": "medium",
+              "section_id": "m8_L12_s10"
+            },
+            {
+              "id": "m8_L12_q23",
+              "type": "mcq",
+              "question": "Comment l'AFC vérifie-t-elle la plausibilité de l'impôt préalable déduit par un restaurant en méthode effective ?",
+              "options": [
+                "En comparant le chiffre d'affaires avec celui de l'année précédente",
+                "En comparant la TVA nette déclarée au résultat du TDFN de la branche",
+                "En appliquant d'office le taux normal à tout le chiffre d'affaires",
+                "En exigeant systématiquement toutes les factures d'achat de chaque trimestre"
+              ],
+              "answer": 1,
+              "explanation": "La TVA nette déclarée (TVA due − IP) est comparée au produit chiffre d'affaires TTC × TDFN de la branche ; les écarts importants doivent s'expliquer (investissements, stocks…).",
+              "difficulty": "medium",
+              "section_id": "m8_L12_s10"
             }
           ],
           "mindmap_md": "# M8-L12\n## Droit procédural TVA (contrôle, réclamation, recours, pénal)\n\n### Pertinence examen\n- **Haute** — procédure + sanctions = questions transversales\n\n### Principe — autotaxation (art. 66 LTVA)\n- L'assujetti **déclare et paie** l'impôt **spontanément**\n- Pas de taxation d'office préalable (sauf défaillance art. 79)\n- Annonce d'assujettissement (début ET fin) sous **30 jours par écrit**\n- Sanctions si omission (amende art. 98)\n\n### Conservation des pièces (art. 70 LTVA)\n- **Règle générale** : minimum **10 ans** après fin de l'exercice\n- OU jusqu'à expiration de la **prescription absolue** (15 ans)\n- **Biens immobiliers** (art. 70 al. 3) : **26 ans**\n  - = 20 ans (PASM/DUIP) + 5 ans (prescription art. 42) + 1 an en cours\n- Conservation **électronique** admise (avec signature qualifiée si exigée)\n- Obligation comptable selon CO 957 (compta complète si CA ≥ 500k)\n\n### Finalisation et corrections (art. 72)\n- Concordance annuelle CA et IP entre décomptes TVA et compta\n- **Quand** : à l'établissement des comptes annuels\n- **Délai** : **180 jours** après clôture exercice\n- **Forme** : décompte **rectificatif** séparé (art. 129 OTVA)\n- 4 types de corrections :\n  - **DC** : Décompte Complémentaire (TVA en plus due)\n  - **AC** : Avis de Crédit (TVA en moins)\n  - **NE** : Note d'Estimation (taxation par l'AFC)\n  - Concordance annuelle (correction globale)\n\n### Procédures de décision et recours\n#### Principe — liberté des moyens de preuve (art. 81)\n- L'AFC établit d'office les faits avec **collaboration** de l'assujetti\n- Toute preuve équivalente acceptée\n#### ① Décision de l'AFC (art. 82)\n- Sur demande de l'assujetti ou d'office\n- Motivée + indication des voies de recours\n#### ② Réclamation (art. 83)\n- **Délai : 30 jours** dès notification de la décision\n- Adressée à l'AFC (instance qui a rendu la décision)\n- Effet suspensif (pas d'exécution pendant)\n- Décision sur réclamation = nouvelle décision motivée\n#### ③ Recours TAF (art. 81 al. 4 + LTAF)\n- **Tribunal Administratif Fédéral** (St-Gall)\n- Délai : **30 jours** après décision sur réclamation\n- **Omisso medio** : recours direct au TAF si l'AFC accepte (art. 83 al. 4)\n- Effet suspensif partiel\n#### ④ Recours TF (LTF)\n- **Tribunal Fédéral** (Lausanne)\n- Délai : **30 jours** après arrêt TAF\n- Recours en matière de droit public\n- Examen limité à la **violation du droit**\n\n### Paiement, intérêts, remboursement (art. 86-88)\n#### Paiement (art. 86)\n- **Délai** : **60 jours** après fin période de décompte (= délai du décompte)\n- Défaut → **sommation** AFC → **poursuites**\n- Décompte absent → **estimation** par AFC (art. 79)\n#### Intérêts moratoires (art. 87)\n- **Taux 2026** : **4.75 %** annuel (publié AFC)\n- Court dès le 61e jour après fin période de décompte\n- Pas d'intérêts si < CHF 100\n#### Intérêts rémunératoires (art. 88)\n- En faveur de l'assujetti si trop-versé / DIP en attente\n- Taux identique (4.75 % en 2026)\n- Court dès la **demande de remboursement**\n\n### Sûretés et remise (art. 92-94)\n#### Remise de l'impôt (art. 92)\n- L'AFC peut accorder une remise totale/partielle si décision **en force**\n- **3 motifs** :\n  - **①** Motif excusable (omission de facturer + transfert ultérieur impossible + conséquences lourdes)\n  - **②** Exigences de forme non respectées\n  - **③** Charge **excessive** au regard de la situation\n#### Sûretés (art. 93)\n- L'AFC peut exiger sûretés si paiement **menacé** (insolvabilité, fuite)\n- Forme : caution, dépôt, gage\n#### Mesures conservatoires (art. 94)\n- Séquestre sur biens en cas de risque sérieux\n- Procédure : décision motivée + voies de recours\n\n### Soustraction d'impôt (art. 96-97)\n#### Soustraction simple (art. 96) — délit\n- Peine : **amende jusqu'à CHF 400'000** (intentionnelle) ou 50 % du montant (négligence)\n- Compétence : **AFC** seule\n- Forme :\n  - **a)** Omettre de déclarer\n  - **b)** Sous-déclarer\n  - **c)** Déclaration inexacte\n  - **d)** Aide ou incitation\n#### Soustraction QUALIFIÉE (art. 97) — crime\n- Peine : privative de liberté **jusqu'à 2 ans** + amende\n- Compétence : **Ministère public cantonal + tribunal** (transmission DFF)\n- Aggravantes :\n  - Profit supérieur à **CHF 1 million**\n  - Membre d'une **bande organisée**\n  - Usage de **documents faux**\n  - Activité professionnelle de soustraction\n\n### Violation d'obligations de procédure (art. 98)\n- **Amende** (intentionnelle ou négligence) pour :\n  - a) Ne pas s'**annoncer** (assujettissement)\n  - b) Ne pas remettre **décompte** dans délais malgré sommation\n  - c) Ne pas déclarer dans la **période de naissance**\n  - d) Ne pas fournir **sûretés**\n  - e) Ne pas tenir **comptabilité** conforme\n  - f) Ne pas conserver pièces (10 ans / 26 ans)\n\n### Dénonciation spontanée (art. 102)\n- **Auto-dénonciation** d'erreurs/omissions à l'AFC\n- Avantages :\n  - **Pas de peine** si 1re fois + correction intégrale + paiement complet\n  - Réduction substantielle si récidive\n- Conditions :\n  - Aucune autorité n'a connaissance préalable\n  - Coopération complète\n  - Paiement intégral incluant intérêts moratoires\n\n### Prescription action pénale (art. 105)\n- **Soustraction simple** (art. 96) : **7 ans**\n- **Soustraction qualifiée** (art. 97) : **15 ans**\n- **Violation de procédure** (art. 98) : **4 ans**\n- Suspension : recours, négociations\n- Prescription **absolue** = 1.5 × prescription relative\n\n### ⚠️ Pièges examen\n- **N°1** Délais : **30 jours réclamation / 30 jours TAF / 30 jours TF / 60 jours paiement**\n- **N°2** Conservation pièces : **10 ans standard, 26 ans immobilier**\n- **N°3** Intérêts moratoires **4.75 % en 2026** (publié AFC, varie chaque année)\n- **N°4** Finalisation = **180 jours** après clôture exercice\n- **N°5** Soustraction qualifiée (art. 97) = **crime** → tribunal pénal (pas AFC)\n- **N°6** Dénonciation spontanée 1re fois + correction intégrale = **pas de peine**\n- **N°7** Prescription pénale : **7 / 15 ans** (soustraction simple / qualifiée)\n\n### 💡 Mnémoniques\n- **« 30-30-30-60 »** — réclamation / TAF / TF / paiement\n- **« 10 / 26 »** — conservation standard / immobilier\n- **« 180 jours finalisation »**\n- **« DC-AC-NE »** — types de corrections (Décompte Compl / Avis Crédit / Note Estim)\n- **« 7 / 15 ans »** — prescription pénale simple / qualifiée\n- **« 1 mio / bande / faux / pro »** — aggravantes art. 97\n- **« 4.75 % »** — intérêts moratoires 2026\n\n### 🔗 Renvois\n- **m8_L1** — Bases TVA (autorité AFC)\n- **m8_L11** — Détermination/prescription créance (art. 42 / 91)\n- **m8_L10** — DIP (corrections au décompte)\n- **m1_L7** — Fiscalité suisse (organisation autorités)\n- **LTVA art. 66-105 + OTVA 101-129** — textes clés\n",
