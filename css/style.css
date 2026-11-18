@@ -4049,6 +4049,11 @@ body[data-tab="podcasts"] #mindDumpPanel { bottom: 150px !important; }
 }
 .cr-table tr:nth-child(even) td { background: rgba(148,163,184,.05); }
 .cr-table tr:hover td { background: rgba(99,102,241,.06); }
+@media (max-width: 768px) {
+    .cr-table { font-size: 12.5px; }
+    .cr-table th, .cr-table td { padding: 6px 8px; }
+    .cr-table th { white-space: normal; }
+}
 
 /* ── Listes markdown (formatAnswer) : puces / numéros accentués, aérés ──
    Classes uniques → aucun conflit. Marqueurs via ::before pour un rendu

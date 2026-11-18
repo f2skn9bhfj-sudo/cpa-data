@@ -69,9 +69,16 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Format answer text with cross-refs, bold, colors, and line breaks
+// **gras** puis *italique* (astérisque simple collé au texte, bornes strictes :
+// « 2 * 3 » ou une puce « * item » ne sont jamais pris pour de l'italique).
+function _mdEmphasis(html) {
+    return html
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/(^|[\s(«>\/])\*([^*\s](?:[^*\n]*?[^*\s])?)\*(?=[\s).,;:!?»<\/]|$)/g, '$1<em>$2</em>');
+}
+
 function _formatLine(line) {
-    let html = addCrossRefs(line);
-    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    let html = _mdEmphasis(addCrossRefs(line));
     // Mise en évidence par classe (couleurs selon le thème, le gras suit la
     // couleur de la ligne au lieu de rester blanc au milieu du texte orange).
     if (html.includes('⚠️')) html = `<span class="cr-hl cr-hl-warn">${html}</span>`;
@@ -85,7 +92,7 @@ function _formatLine(line) {
 // be overkill. XSS-safe because addCrossRefs() escapes HTML first.
 function formatInline(text) {
     if (!text) return '';
-    return addCrossRefs(text).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    return _mdEmphasis(addCrossRefs(text));
 }
 
 function _renderPipeTable(lines) {

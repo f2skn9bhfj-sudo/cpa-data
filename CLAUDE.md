@@ -74,7 +74,7 @@ depuis la Révision active) est un alias de `fcdb` pour la navigation
 | recherche | search_tab.js `renderRechercheTab` (reprend `_stQuery`) | natif | index plein-texte de 9 fichiers data/ + IA Mistral optionnelle (clé saisie par l'utilisateur, localStorage) |
 | modules | modules.js `renderModules` (~3000 l.) | natif | unified_modules, trainer_courses, norms_ifrs_rpc, notion_lessons, flashcards ; `navigateToNormByCode(code)` ouvre une norme |
 | trainer | trainer.js `renderTrainer` | natif | sprints SM-2 (flashcards) + cours (trainer_courses) ; `launchSprintFromIds` (sélection venue de Flashcards ou du Plan du jour, via sessionStorage `fcdbReviewIds`) |
-| qcm | qcm.js `renderQcm` | natif | `get_qcm_catalog` → **data/qcm_catalog.json** (pré-calculé à partir de trainer_courses + unified_modules + audit.json annuaire_cours) → **3550 QCM** (dédoublonnés par texte ; M1–M16 tous couverts, examen blanc pondéré par domaine) |
+| qcm | qcm.js `renderQcm` | natif | `get_qcm_catalog` → **data/qcm_catalog.json** (pré-calculé à partir de trainer_courses + unified_modules + audit.json annuaire_cours) → **3657 QCM** (dédoublonnés par texte ; M1–M16 tous couverts, examen blanc pondéré par domaine) |
 | fcdb | fcdb.js `renderFcdb` | natif | flashcards.json (**1581** cartes) ; « Réviser la sélection » → sprint |
 | compare | comparisons.js `renderComparisons` | natif | comparisons.json (25 thèmes) ; boutons « Normes liées » → `compGoNorm` |
 | progress | progress.js `renderProgress` | natif | `get_module_stats` (liste par module : flashcards, leçons de la Révision active, QCM réussis) + sauvegarde/restauration |
@@ -129,6 +129,13 @@ vues), objectif quotidien (`swisscpa_daily_goal`, 15/30/50) et série 🔥. Jour
 la série de la Révision active (`getStreak`) en est dérivée. QCM : répétition espacée
 (`next_review` : ratée → 1 j, réussie → 4/10/30/90 j), `due_ids` calculé à la lecture ;
 `qcm_get_selection` renvoie des **identifiants** (point faible = ≥ 2 essais et < 60 %).
+
+**Comptabilité générale** : M1-L9 à M1-L21 (« Compta 1 » à « Compta 13 », rédigées d'après les
+classeurs ComptaLearn : bilan, débit/crédit, bouclement, plan comptable PME, principes, marchandises,
+TVA en comptabilité, résultat financier, liquidités, titres, compte privé, immeubles, provisions).
+Les leçons TVA (M8-L1 à L12) ont chacune une section « 🧩 Cas pratique » en fin de leçon. Contenu
+écrit en mots propres (le site est public) : ne pas recopier les classeurs fournis par l'utilisateur.
+Mise en forme des textes (crossref.js `_mdEmphasis`) : `**gras**` et `*italique*`.
 
 Leçons des Modules en « mode ludique » (modules.js, `modPlay*`) : bandeau ⏱/étapes/questions
 flash, questions de chaque section affichées sous la section (`section_id`), bouton « J'ai
