@@ -300,7 +300,7 @@ const MODULE_INTROS = {
     M1: "Le vocabulaire et les repères de base de l'expertise comptable : référentiels, acteurs et cadre légal. Le point de départ de tout le cursus.",
     M2: "Premiers pas dans l'audit : à quoi il sert, comment une mission s'organise, et les normes qui l'encadrent.",
     M3: "Le socle comptable et juridique suisse : tenir, présenter et faire réviser les comptes, et le droit des sociétés (CO + Swiss GAAP RPC).",
-    M4: "Le référentiel international norme par norme : reconnaissance, évaluation et présentation selon les IFRS / IAS.",
+    M4: "Le référentiel international, rangé en 6 thèmes. Commence par les incontournables 🔥, entraîne-toi norme par norme et regarde ta progression monter : chaque carte montre tes QCM vus et réussis.",
     M5: "Comment on prépare un audit : comprendre l'entité, évaluer les risques et bâtir la stratégie de mission.",
     M6: "Le droit utile à l'expert-comptable : contrats, sociétés, poursuites et responsabilités.",
     M7: "La fiscalité des entreprises : impôt sur le bénéfice et le capital, et leurs pièges récurrents.",
@@ -352,7 +352,7 @@ function modRenderEmpty() {
         </div>
     </div>`;
 
-    if (lessonsIfp.length) {
+    if (lessonsIfp.length && !(m.code === 'M4' && norms.length)) {
         html += `<div class="mod-home-lead">Leçons du module</div><div class="mod-home-group"><div class="mod-home-grid">`;
         lessonsIfp.forEach(l => {
             const title = _modCleanTitle(l.title || '', l.code || '');
@@ -366,7 +366,9 @@ function modRenderEmpty() {
         html += `</div></div>`;
     }
 
-    if (norms.length) {
+    if (m.code === 'M4' && norms.length) {
+        html += _modIfrsHomeHtml(m);
+    } else if (norms.length) {
         html += `<div class="mod-home-lead">Explore les normes</div>`;
         catKeys.forEach(cat => {
             const cc = getColor(cat) || {};
@@ -401,6 +403,127 @@ function modRenderEmpty() {
     el.innerHTML = html;
     el.scrollTop = 0;
     modLsHide();
+    if (m.code === 'M4') _modIfrsFillProgress();
+}
+
+// ── Page d'accueil IFRS (M4) : parcours par thème, normes prioritaires, progression ──
+// Les normes de consolidation vivent dans le M11 : leurs cartes ouvrent la fiche du M11.
+const IFRS_THEMES = [
+    { ic: '🧱', t: 'Présentation des comptes', d: 'Structure des états financiers, flux de trésorerie, méthodes et événements postérieurs.', codes: ['IFRS 18', 'IAS 1', 'IAS 7', 'IAS 8', 'IAS 10', 'IAS 24', 'IAS 33', 'OCI'] },
+    { ic: '🏭', t: 'Actifs non financiers', d: 'Stocks, immobilisations, immeubles de placement, dépréciation et actifs destinés à la vente.', codes: ['IAS 2', 'IAS 16', 'IAS 38', 'IAS 40', 'IAS 36', 'IFRS 5', 'IAS 23', 'IAS 20'] },
+    { ic: '💰', t: "Chiffre d'affaires & locations", d: 'Le modèle en 5 étapes et le droit d\'utilisation au bilan du preneur.', codes: ['IFRS 15', 'IFRS 16'] },
+    { ic: '📈', t: 'Instruments financiers, juste valeur & change', d: 'Classement et dépréciation (ECL), dettes ou capitaux propres, juste valeur, monnaies étrangères.', codes: ['IFRS 9', 'IAS 32', 'IFRS 7', 'IFRS 13', 'IAS 21'] },
+    { ic: '🧾', t: 'Passifs, personnel & impôts', d: 'Provisions, prévoyance (IAS 19), impôts différés et paiements en actions.', codes: ['IAS 37', 'IAS 19', 'IAS 12', 'IFRS 2'] },
+    { ic: '🏢', t: 'Groupes & consolidation', d: 'Contrôle, regroupements et goodwill, partenariats, mise en équivalence (fiches du M11).', codes: ['IFRS 10', 'IFRS 3', 'IFRS 11', 'IAS 28'], ext: 'M11' },
+];
+const IFRS_PRIORITY = ['IFRS 15', 'IFRS 16', 'IFRS 9', 'IAS 36', 'IAS 12', 'IAS 19', 'IAS 37', 'IFRS 3', 'IFRS 10', 'IAS 16', 'IAS 21', 'IFRS 18'];
+const IFRS_NEW = { 'IFRS 18': 'Dès 2027' };
+
+function _modIfrsFind(code) {
+    for (const mm of modData || []) {
+        const n = (mm.norms || []).find(x => x.code === code);
+        if (n) return { n, m: mm };
+    }
+    return null;
+}
+function modOpenNormAnywhere(code) {
+    const f = _modIfrsFind(code);
+    if (!f) return;
+    if (f.m.id === modSelectedId) { modSelectNorm(f.n.id); return; }
+    navigateToNormByCode(code);
+}
+function _modIfrsCard(code, accent) {
+    const f = _modIfrsFind(code);
+    if (!f) return '';
+    const n = f.n;
+    const title = _modCleanTitle((window._coursNormMap && window._coursNormMap[n.code]) || n.title || '', n.code);
+    const teaser = n.summary ? _modStripMd(n.summary).slice(0, 110) : '';
+    const prio = IFRS_PRIORITY.includes(code);
+    const badges = [
+        IFRS_NEW[code] ? `<span class="ifrs-badge ifrs-badge-new">🆕 ${IFRS_NEW[code]}</span>` : '',
+        prio ? '<span class="ifrs-badge ifrs-badge-hot">🔥 Incontournable</span>' : '',
+        (n.revision_count || 0) > 0 ? '<span class="ifrs-badge ifrs-badge-done">✓ Révisée</span>' : '',
+    ].join('');
+    const q = (n.questions || []).length;
+    const c = escapeAttr(code);
+    return `<div class="mod-home-card ifrs-card${prio ? ' ifrs-card-hot' : ''}" style="--c:${accent}" onclick="modOpenNormAnywhere('${c}')" role="button" tabindex="0"
+                 onkeydown="if(event.key==='Enter')modOpenNormAnywhere('${c}')">
+        <div class="ifrs-card-top"><span class="mod-home-card-code" style="color:${accent}">${escapeHtml(code)}</span>${badges}</div>
+        <div class="mod-home-card-title">${escapeHtml(title)}</div>
+        ${teaser ? `<div class="mod-home-card-teaser">${escapeHtml(teaser)}${n.summary.length > 110 ? '…' : ''}</div>` : ''}
+        <div class="ifrs-card-prog" data-ifrs-code="${c}"><span class="ifrs-prog-bar"><span style="width:0%"></span></span><span class="ifrs-prog-txt">${q ? q + ' QCM' : ''}</span></div>
+        <div class="ifrs-card-actions">
+            <button class="ifrs-mini" onclick="event.stopPropagation();modOpenNormAnywhere('${c}')">📖 Fiche</button>
+            <button class="ifrs-mini ifrs-mini-go" onclick="event.stopPropagation();qcmFocusStart({ codes: ['${c}'], n: 15 })">✏️ 15 QCM</button>
+        </div>
+    </div>`;
+}
+function _modIfrsHomeHtml(m) {
+    const accent = (getColor('IFRS / IAS') || {}).accent || m.color || '#10b981';
+    const known = new Set(IFRS_THEMES.flatMap(t => t.codes));
+    const others = (m.norms || []).filter(n => !known.has(n.code) && (n.sections || []).length).map(n => n.code);
+    const themes = others.length ? IFRS_THEMES.concat([{ ic: '📚', t: 'Autres normes', d: '', codes: others }]) : IFRS_THEMES;
+    const comp = (m.norms || []).find(n => n.code === 'Comparaison');
+    const rev = (m.lessons_ifp || [])[0];
+    let h = `<div class="ifrs-cta">
+        <button class="ifrs-cta-main" onclick="qcmFocusStart({ n: 20 })"><span class="ifrs-cta-ic">🎯</span><span><b>Focus IFRS</b><small>20 QCM ciblés : à revoir, ratés, puis nouveaux</small></span></button>
+        <button class="ifrs-cta-alt" onclick="modOpenNormAnywhere('IFRS 18')"><span class="ifrs-cta-ic">🆕</span><span><b>IFRS 18</b><small>Le nouveau compte de résultat dès 2027</small></span></button>
+        <button class="ifrs-cta-alt" onclick="modOpenNormAnywhere('IFRS 3')"><span class="ifrs-cta-ic">🏢</span><span><b>Consolidation</b><small>Goodwill, minoritaires, cas chiffrés</small></span></button>
+        ${rev ? `<button class="ifrs-cta-alt" onclick="modSelectLessonIfp('${escapeAttr(rev.id)}')"><span class="ifrs-cta-ic">📋</span><span><b>Fiche révision</b><small>Tout le module en une page</small></span></button>` : ''}
+    </div>
+    <div class="ifrs-stats" id="ifrsStats"><span>Ta progression IFRS se calcule…</span></div>
+    <div class="mod-home-lead">🔥 Par où commencer — les incontournables de l'examen</div>
+    <div class="ifrs-prio">${IFRS_PRIORITY.map(c => `<button class="ifrs-chip" onclick="modOpenNormAnywhere('${escapeAttr(c)}')">${escapeHtml(c)}</button>`).join('')}</div>
+    <div class="mod-home-lead" style="margin-top:18px">Le parcours, thème par thème</div>`;
+    themes.forEach((t, i) => {
+        h += `<section class="ifrs-theme">
+            <div class="ifrs-theme-head"><span class="ifrs-theme-num">${i + 1}</span><span class="ifrs-theme-ic">${t.ic}</span>
+                <div><div class="ifrs-theme-title">${escapeHtml(t.t)}${t.ext ? ` <span class="ifrs-theme-ext">fiches ${escapeHtml(t.ext)}</span>` : ''}</div>
+                ${t.d ? `<div class="ifrs-theme-desc">${escapeHtml(t.d)}</div>` : ''}</div>
+                <span class="ifrs-theme-count" data-ifrs-theme="${i}"></span></div>
+            <div class="mod-home-grid">${t.codes.map(c => _modIfrsCard(c, accent)).join('')}</div>
+        </section>`;
+    });
+    if (comp) h += `<div class="mod-home-entries" style="margin:4px 0 18px"><button class="mod-home-entry" onclick="modSelectNorm('${escapeAttr(comp.id)}')">⚖️ Tableau comparatif IFRS / Swiss GAAP RPC / CO</button></div>`;
+    window._ifrsThemes = themes;
+    return h;
+}
+// Progression par norme : questions vues / réussies (données QCM du navigateur), remplie après l'affichage.
+async function _modIfrsFillProgress() {
+    let cat, tr;
+    try { [cat, tr] = await Promise.all([api('get_qcm_catalog'), api('get_qcm_tracking_data')]); } catch (e) { return; }
+    const stats = (tr && tr.stats) || {};
+    const per = {};
+    let T = 0, S = 0, O = 0;   // même périmètre que le « Focus IFRS » de l'onglet QCM
+    for (const q of (cat && cat.questions) || []) {
+        if (q.module !== 'M4' && q.module !== 'M11') continue;
+        const k = q.norm_code || '';
+        const p = per[k] || (per[k] = { total: 0, seen: 0, ok: 0 });
+        const st = stats[q.id];
+        const seen = !!(st && st.attempts), ok = seen && !!st.last_was_correct;
+        p.total++; if (seen) p.seen++; if (ok) p.ok++;
+        if (q.module === 'M4' || /^(IAS|IFRS)\s?\d/.test(k)) { T++; if (seen) S++; if (ok) O++; }
+    }
+    document.querySelectorAll('[data-ifrs-code]').forEach(el => {
+        const p = per[el.getAttribute('data-ifrs-code')];
+        if (!p || !p.total) return;
+        const pct = Math.round(p.seen / p.total * 100);
+        const rate = p.seen ? Math.round(p.ok / p.seen * 100) : null;
+        const col = rate === null ? '#64748b' : rate >= 80 ? '#22c55e' : rate >= 60 ? '#f59e0b' : '#ef4444';
+        el.querySelector('.ifrs-prog-bar > span').style.cssText = `width:${pct}%;background:${col}`;
+        el.querySelector('.ifrs-prog-txt').textContent = p.seen ? `${p.seen}/${p.total} vues · ${rate} % réussies` : `${p.total} QCM à découvrir`;
+    });
+    (window._ifrsThemes || []).forEach((t, i) => {
+        let tt = 0, ss = 0;
+        t.codes.forEach(c => { const p = per[c]; if (p) { tt += p.total; ss += p.seen; } });
+        const el = document.querySelector(`[data-ifrs-theme="${i}"]`);
+        if (el && ss) el.textContent = `${Math.max(1, Math.round(ss / tt * 100))} % vu`;
+    });
+    const box = document.getElementById('ifrsStats');
+    if (box && T) {
+        const rate = S ? Math.round(O / S * 100) : 0;
+        box.innerHTML = `<span><b>${T}</b> QCM IFRS</span><span><b>${S}</b> déjà travaillés (${Math.round(S / T * 100)} %)</span>${S ? `<span><b>${rate} %</b> de réussite</span>` : '<span>Commence par le Focus IFRS 👆</span>'}`;
+    }
 }
 
 function modSelectNorm(normId) {
@@ -654,7 +777,7 @@ function modRenderNormDetail(n, m) {
     const meaningful = (n.sections || []).filter(_isMeaningful);
     const _secId = (sec, i) => sec.section_id || `${n.id}_s${i + 1}`;
     const _artM = String(n.code || '').match(/(\d+[a-z]?(?:-\d+[a-z]?)?)/);
-    const artLabel = _artM ? 'art. ' + _artM[1] : '';
+    const artLabel = _artM && !/^(IAS|IFRS|RPC|ISA|OCI|NAS|SER|NCR)\b/i.test(String(n.code || '')) ? 'art. ' + _artM[1] : '';
     const _fact = (t) => `<span class="mod-fact">${t}</span>`;
     const facts = [
         artLabel ? _fact('§ ' + artLabel) : '',
@@ -977,7 +1100,7 @@ async function modLoadNormQcms(norm, module) {
         }
         let html = `<div style="margin-bottom:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
             <span style="font-size:13px;color:#94a3b8">${list.length} QCM</span>
-            <button class="btn btn-primary" style="padding:4px 12px;font-size:12px" onclick="modLaunchLessonQcm('${escapeAttr(norm.id)}')">▶ Lancer cette série dans l'onglet QCM</button>
+            <button class="btn btn-primary" style="padding:4px 12px;font-size:12px" onclick="qcmFocusStart({ codes: ['${escapeAttr(norm.code)}'], n: 30 })">▶ S'entraîner sur cette norme dans l'onglet QCM</button>
         </div>`;
         list.forEach((q, i) => {
             const aId = 'mnqa_' + escapeAttr(norm.id) + '_' + i;
@@ -2961,6 +3084,65 @@ body.light-mode .mod-home-card-title { color: #0f172a; }
 body.light-mode .mod-home-card-teaser { color: #64748b; }
 body.light-mode .mod-home-entry { background: #fff; border-color: #e2e8f0; color: #475569; }
 body.light-mode .mod-home-entry:hover { color: #0f172a; }
+
+/* ── Accueil IFRS (M4) ── */
+.ifrs-cta { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 12px; margin: -6px 0 14px; }
+@media (max-width: 1180px) { .ifrs-cta { grid-template-columns: 1fr 1fr; } }
+.ifrs-cta button { display: flex; align-items: center; gap: 12px; text-align: left; cursor: pointer; border-radius: 14px; padding: 14px 16px; border: 1px solid #334155; background: #1e293b; color: #e2e8f0; transition: transform .12s, border-color .15s; }
+.ifrs-cta button:hover { transform: translateY(-2px); border-color: #10b981; }
+.ifrs-cta b { display: block; font-size: 15px; }
+.ifrs-cta small { display: block; font-size: 12px; color: #94a3b8; margin-top: 2px; line-height: 1.35; }
+.ifrs-cta-ic { font-size: 24px; }
+.ifrs-cta-main { background: linear-gradient(135deg, #059669, #0d9488) !important; border-color: transparent !important; }
+.ifrs-cta-main small { color: #d1fae5 !important; }
+.ifrs-stats { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: #94a3b8; background: rgba(16,185,129,.07); border: 1px solid rgba(16,185,129,.22); border-radius: 12px; padding: 10px 14px; margin-bottom: 20px; }
+.ifrs-stats b { color: #e2e8f0; }
+.ifrs-prio { display: flex; flex-wrap: wrap; gap: 8px; }
+.ifrs-chip { font-size: 13px; font-weight: 800; color: #fcd34d; background: rgba(245,158,11,.1); border: 1px solid rgba(245,158,11,.35); border-radius: 999px; padding: 6px 13px; cursor: pointer; }
+.ifrs-chip:hover { background: rgba(245,158,11,.2); }
+.ifrs-theme { margin: 0 0 22px; }
+.ifrs-theme-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+.ifrs-theme-num { flex: 0 0 auto; width: 24px; height: 24px; border-radius: 50%; background: #10b981; color: #fff; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+.ifrs-theme-ic { font-size: 20px; line-height: 1.2; }
+.ifrs-theme-title { font-size: 16px; font-weight: 800; color: #e2e8f0; }
+.ifrs-theme-ext { font-size: 11px; font-weight: 700; color: #94a3b8; border: 1px solid #475569; border-radius: 6px; padding: 1px 6px; margin-left: 4px; vertical-align: middle; }
+.ifrs-theme-desc { font-size: 13px; color: #94a3b8; margin-top: 2px; line-height: 1.45; }
+.ifrs-theme-count { margin-left: auto; flex: 0 0 auto; font-size: 12px; font-weight: 700; color: #10b981; white-space: nowrap; }
+.ifrs-card { display: flex; flex-direction: column; }
+.ifrs-card-hot { border-color: rgba(245,158,11,.45); }
+.ifrs-card-top { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 4px; }
+.ifrs-card-top .mod-home-card-code { margin: 0 4px 0 0; font-size: 13px; }
+.ifrs-badge { font-size: 10.5px; font-weight: 800; border-radius: 6px; padding: 2px 6px; }
+.ifrs-badge-hot { color: #fbbf24; background: rgba(245,158,11,.14); }
+.ifrs-badge-new { color: #38bdf8; background: rgba(14,165,233,.15); }
+.ifrs-badge-done { color: #4ade80; background: rgba(34,197,94,.14); }
+.ifrs-card-prog { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 10px; font-size: 11.5px; color: #94a3b8; }
+.ifrs-prog-bar { flex: 1 1 auto; height: 5px; background: rgba(148,163,184,.2); border-radius: 999px; overflow: hidden; max-width: 110px; }
+.ifrs-prog-bar > span { display: block; height: 100%; border-radius: 999px; }
+.ifrs-card-actions { display: flex; gap: 8px; margin-top: 10px; }
+.ifrs-mini { flex: 1; font-size: 12px; font-weight: 700; color: #cbd5e1; background: rgba(148,163,184,.1); border: 1px solid rgba(148,163,184,.25); border-radius: 8px; padding: 6px 8px; cursor: pointer; }
+.ifrs-mini:hover { border-color: #10b981; color: #fff; }
+.ifrs-mini-go { color: #6ee7b7; border-color: rgba(16,185,129,.4); }
+@media (max-width: 760px) {
+    .ifrs-cta { grid-template-columns: 1fr; }
+    .ifrs-theme-count { display: none; }
+}
+body.light-mode .ifrs-cta button { background: #fff; border-color: #e2e8f0; color: #0f172a; }
+body.light-mode .ifrs-cta small { color: #64748b; }
+body.light-mode .ifrs-cta-main { color: #fff !important; }
+body.light-mode .ifrs-stats { background: #ecfdf5; border-color: #a7f3d0; color: #475569; }
+body.light-mode .ifrs-stats b { color: #0f172a; }
+body.light-mode .ifrs-chip { color: #b45309; background: #fffbeb; border-color: #fcd34d; }
+body.light-mode .ifrs-theme-title { color: #0f172a; }
+body.light-mode .ifrs-theme-desc { color: #64748b; }
+body.light-mode .ifrs-theme-count { color: #047857; }
+body.light-mode .ifrs-card-hot { border-color: #fcd34d; }
+body.light-mode .ifrs-badge-hot { color: #b45309; background: #fef3c7; }
+body.light-mode .ifrs-badge-new { color: #0369a1; background: #e0f2fe; }
+body.light-mode .ifrs-badge-done { color: #15803d; background: #dcfce7; }
+body.light-mode .ifrs-mini { color: #334155; background: #f8fafc; border-color: #e2e8f0; }
+body.light-mode .ifrs-mini:hover { color: #0f172a; }
+body.light-mode .ifrs-mini-go { color: #047857; border-color: #a7f3d0; }
 
 /* ── « L'essentiel » + repli « Approfondir » ── */
 .mod-essentiel { background: rgba(99,102,241,.07); border: 1px solid rgba(99,102,241,.2); border-radius: 14px; padding: 16px 18px; margin-bottom: 16px; }

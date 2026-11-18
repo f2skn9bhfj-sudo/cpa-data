@@ -12662,5 +12662,93 @@
     "d": "difficile",
     "q": "**Imposition minimale de l'OCDE (pilier 2)** : qui est visé et comment la Suisse l'applique-t-elle ?",
     "a": "**Visés** : groupes multinationaux au **chiffre d'affaires consolidé ≥ EUR 750 millions** → taux effectif minimal de **15 %** par juridiction.\n\n**Suisse** (art. 129a Cst., votation du 18.06.2023 ; ordonnance OIMin) :\n1. **Impôt complémentaire suisse** (QDMTT) dès le **1.1.2024** ;\n2. **Règle IIR** (société mère suisse, filiales étrangères sous-imposées) dès le **1.1.2025** ;\n3. **UTPR** : pas mise en vigueur.\n\n**Recettes** : 75 % cantons, 25 % Confédération.\n\n⚠️ Les PME ne sont pas concernées."
+  },
+  {
+    "id": 2272,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 18 – Présentation (2027)",
+    "d": "difficile",
+    "q": "IFRS 18 : que publier si les charges sont présentées **par fonction** ?",
+    "a": "Une note qui indique, pour chaque ligne du compte de résultat, les montants de :\n1. **amortissements** des immobilisations corporelles ;\n2. **amortissements** des immobilisations incorporelles ;\n3. **avantages du personnel** ;\n4. **pertes de valeur** (et reprises) ;\n5. **dépréciations de stocks** (et reprises).\n\n💡 Moyen mnémotechnique : « 2 amortissements + personnel + pertes de valeur + stocks »."
+  },
+  {
+    "id": 2273,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 18 – Présentation (2027)",
+    "d": "piège",
+    "q": "IFRS 18 : la **marge brute** ou le **free cash-flow** sont-ils des MPM ?",
+    "a": "**Non.**\n- La **marge brute** et le résultat d'exploitation avant amortissements et pertes de valeur sont des sous-totaux **exclus** par la norme.\n- Le **free cash-flow** n'est pas un sous-total de produits et charges.\n- Un **ratio** (marge en %) ou un indicateur non financier n'est pas un MPM.\n\n✅ Exemple de MPM : un « EBIT ajusté » publié dans les communiqués."
+  },
+  {
+    "id": 2274,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 18 – Présentation (2027)",
+    "d": "moyen",
+    "q": "IFRS 18 : comment classer les produits d'une **banque** ou d'une **foncière** ?",
+    "a": "Entités à **activité principale spécifique** (investir dans des actifs ou financer des clients) : les produits et charges de cette activité, normalement en investissement ou financement, vont en **exploitation**.\n- Banque : intérêts sur les prêts aux clients → exploitation.\n- Foncière : loyers et variations de JV des immeubles → exploitation.\n\n⚠️ La quote-part des entités mises en équivalence reste **toujours** en investissement."
+  },
+  {
+    "id": 2275,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 18 – Présentation (2027)",
+    "d": "moyen",
+    "q": "IFRS 18 : quelles règles de **première application** ?",
+    "a": "- Exercices ouverts dès le **1.1.2027** (anticipation permise).\n- Application **rétrospective** : comparatifs **retraités**.\n- Rapprochement, pour chaque ligne du compte de résultat comparatif, entre la présentation **IAS 1** et la présentation **IFRS 18**.\n- Les comptes intermédiaires (IAS 34) de la première année appliquent aussi la norme."
+  },
+  {
+    "id": 2276,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 3 – Regroupements",
+    "d": "moyen",
+    "q": "Exercice : 80 % acquis pour 800, actifs nets à la JV 700, JV des minoritaires 180. Goodwill complet et partiel ?",
+    "a": "**Complet** (minoritaires à la JV) : 800 + 180 − 700 = **280**.\n**Partiel** (minoritaires à la quote-part : 20 % × 700 = 140) : 800 + 140 − 700 = **240**.\n\n💡 L'écart (40) est le goodwill attribuable aux minoritaires. Choix possible **à chaque regroupement**."
+  },
+  {
+    "id": 2277,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 3 – Regroupements",
+    "d": "difficile",
+    "q": "**Earn-out** classé en dette : que faire des variations de juste valeur après l'acquisition ?",
+    "a": "- Variation due à des **faits postérieurs** (performance de la cible) → **résultat** ; le goodwill ne change pas.\n- Variation due à une information sur la **date d'acquisition**, connue pendant la **période d'évaluation** (12 mois au plus) → ajustement du **goodwill**.\n- Earn-out classé en **capitaux propres** → pas de réévaluation."
+  },
+  {
+    "id": 2278,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 10 – Consolidation",
+    "d": "moyen",
+    "q": "Passage de **80 % à 90 %** d'une filiale : traitement ?",
+    "a": "Pas de perte de contrôle → **transaction entre actionnaires** (IFRS 10.23).\n- Écart entre le prix payé et la valeur des minoritaires acquis → **capitaux propres** du groupe.\n- **Aucun** goodwill supplémentaire, **aucun** résultat.\n\n⚠️ À l'inverse, une **perte de contrôle** donne un résultat de cession et la part conservée est réévaluée à la JV."
+  },
+  {
+    "id": 2279,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 10 – Consolidation",
+    "d": "difficile",
+    "q": "Profit interne en stock : vente **descendante** ou **ascendante**, qui supporte l'élimination ?",
+    "a": "**Descendante** (mère → filiale) : profit réalisé par la mère → élimination **100 % à charge du groupe**.\n**Ascendante** (filiale → mère) : profit réalisé par la filiale → élimination répartie entre **groupe** et **minoritaires** selon leurs pourcentages.\n\nEx. : profit en stock 20, minoritaires 20 % → ascendante : 16 groupe / 4 minoritaires."
+  },
+  {
+    "id": 2280,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 10 – Consolidation",
+    "d": "difficile",
+    "q": "**Perte de contrôle** d'une filiale : étapes de comptabilisation ?",
+    "a": "1. Décomptabiliser actifs, passifs, **goodwill** et **minoritaires**.\n2. Comptabiliser le prix reçu et la **part conservée à la JV**.\n3. **Recycler** en résultat les OCI recyclables (écarts de conversion, couvertures de flux).\n4. Écart = **résultat de cession**.\n\nEx. : prix 900 + JV conservée 600 − (actifs nets 1'200 + goodwill 100) + 30 d'écarts de conversion = **230**."
+  },
+  {
+    "id": 2281,
+    "cat": "IFRS / IAS",
+    "sub": "IFRS 11 – Partenariats",
+    "d": "moyen",
+    "q": "SA détenue à 50/50 sous contrôle conjoint : toujours une coentreprise ?",
+    "a": "**Non** : la forme d'une SA crée seulement une **présomption** de coentreprise.\nElle devient une **activité conjointe** si le contrat ou les autres faits donnent aux partenaires des droits sur les **actifs** et des obligations au titre des **passifs** (ex. production entièrement achetée par les partenaires, qui couvrent les dettes).\n\nActivité conjointe → quote-part **ligne par ligne** ; coentreprise → **mise en équivalence**."
+  },
+  {
+    "id": 2282,
+    "cat": "IFRS / IAS",
+    "sub": "IAS 28 – Mise en équivalence",
+    "d": "difficile",
+    "q": "Exercice : 30 % acquis pour 400 (actifs nets à la JV 1'100, immeuble +100 sur 10 ans), bénéfice 200, dividende 50, marge interne en stock 40. Valeur de clôture ?",
+    "a": "- Goodwill implicite : 400 − 330 = **70** (inclus, non amorti).\n- Quote-part : 60 − 3 (écart de JV de l'immeuble) − 12 (profit interne) = **45**.\n- Valeur : 400 + 45 − 15 (dividende) = **430**.\n\n⚠️ Le dividende réduit la participation ; il n'est pas un produit."
   }
 ]

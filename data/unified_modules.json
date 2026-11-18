@@ -25259,7 +25259,7 @@
               "section_id": "ias1_s1",
               "title": "1. Objectif et champ d'application",
               "content": "**IAS 1** prescrit la **base de présentation** des états financiers à usage général. Objectif : assurer la **comparabilité** dans le temps (entre périodes d'une même entité) et dans l'espace (entre entités différentes).\n\n**Champ couvert** :\n- États financiers annuels à usage général conformes IFRS\n- Exigences générales de **présentation**, **structure** et **contenu minimum**\n- Applicable aussi bien aux comptes individuels qu'aux comptes consolidés\n\n**Hors champ** :\n- États financiers **intermédiaires** → couverts par **IAS 34**\n- Informations financières **résumées** ou pro forma\n- Comptabilisation et évaluation : traitées dans les autres normes IFRS (IAS 16, IAS 38, IFRS 9, IFRS 15, etc.)\n\nIAS 1 fixe la **forme**, pas le **fond** : elle dit *comment* présenter, pas *quand* comptabiliser ni *combien* évaluer.",
-              "info": "**Projet IFRS 18** (publié avril 2024, applicable 2027) : remplacera IAS 1. Nouveautés majeures :\n- 3 catégories obligatoires au compte de résultat : **operating / investing / financing**\n- Sous-totaux normalisés : **operating profit** et **profit before financing and income tax**\n- **MPM** (*Management Performance Measures*) : disclosure formel des indicateurs non-GAAP (EBITDA ajusté, etc.) dans une note dédiée\n- IAS 1 reste en vigueur jusqu'à l'application d'IFRS 18 — programme d'examen Swiss CPA 2026 = **IAS 1**.",
+              "info": "**IFRS 18** (publiée en avril 2024) **remplace IAS 1** pour les exercices ouverts dès le **1.1.2027** — voir la fiche **IFRS 18**. Nouveautés majeures :\n- 5 catégories au compte de résultat : **exploitation / investissement / financement**, plus impôts sur le résultat et activités abandonnées\n- Sous-totaux normalisés : **operating profit** et **profit before financing and income tax**\n- **MPM** (*Management Performance Measures*) : disclosure formel des indicateurs non-GAAP (EBITDA ajusté, etc.) dans une note dédiée\n- IAS 1 reste applicable aux exercices ouverts avant le 1.1.2027 (sauf application anticipée d'IFRS 18) : vérifier quelle norme vise l'énoncé.",
               "tip": "**Stratégie examen** : IAS 1 est une norme \"chapeau\". Les sujets pratiques (amortissements, JV, provisions) sont traités ailleurs. Concentrer la préparation IAS 1 sur :\n1. Les **5 états obligatoires**\n2. Le **classement courant / non courant** (amendement 2020 sur les covenants)\n3. La règle de **non-compensation**\n4. L'hypothèse de **continuité d'exploitation** (lien IAS 10)\n5. La **matérialité** des informations en annexe",
               "key_point": "IAS 1 fixe uniquement la FORME des états financiers à usage général (présentation, structure, contenu minimum) pour assurer la comparabilité dans le temps et entre entités ; elle ne traite ni de la comptabilisation ni de l'évaluation, renvoyées aux normes spécifiques.",
               "warning": "Ne pas confondre IAS 1 (états annuels) avec IAS 34 (états intermédiaires) : un examen aime tester que les comptes intermédiaires sortent du champ d'IAS 1."
@@ -25977,6 +25977,21 @@
               "explanation": "IAS 2.32 prévoit que les matières premières ne sont PAS dépréciées sous le coût si le produit fini dans lequel elles seront incorporées sera vendu au coût ou au-dessus (ici 200 > 180). En revanche, si le produit fini doit être vendu en dessous du coût, la matière première doit être ramenée à sa VNR.",
               "difficulty": "hard",
               "section_id": "ias2_s6"
+            },
+            {
+              "id": "ias2_es1",
+              "type": "mcq",
+              "question": "Selon IAS 2, les stocks sont évalués\n(Identifiez la réponse correcte)",
+              "options": [
+                "au plus élevé du coût et de la valeur nette de réalisation",
+                "au plus faible du coût et de la valeur de remplacement",
+                "au plus faible du coût et de la valeur nette de réalisation",
+                "au coût, la méthode LIFO étant admise pour les marchandises"
+              ],
+              "answer": 2,
+              "explanation": "IAS 2.9 : coût ou valeur nette de réalisation si elle est inférieure ; la méthode LIFO est interdite (IAS 2.25).",
+              "difficulty": "easy",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -26203,6 +26218,21 @@
               "answer": 0,
               "explanation": "Les amendements d'IAS 7 suppriment le choix pour les entités sans activité principale de financement ou d'investissement : intérêts payés et dividendes versés en financement ; intérêts et dividendes reçus en investissement. Le résultat d'exploitation devient aussi le point de départ unique de la méthode indirecte.",
               "difficulty": "medium"
+            },
+            {
+              "id": "ias7_es1",
+              "type": "mcq",
+              "question": "Selon IAS 7, un découvert bancaire remboursable à vue qui fait partie intégrante de la gestion de trésorerie\n(Identifiez la réponse correcte)",
+              "options": [
+                "est exclu du tableau des flux et mentionné uniquement en annexe",
+                "est présenté parmi les flux d'investissement de l'exercice",
+                "est inclus dans la trésorerie et les équivalents de trésorerie",
+                "est présenté parmi les flux de financement de l'exercice"
+              ],
+              "answer": 2,
+              "explanation": "IAS 7.8 : les découverts bancaires remboursables à vue qui font partie intégrante de la gestion de trésorerie sont une composante de la trésorerie et des équivalents de trésorerie.",
+              "difficulty": "medium",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -26492,6 +26522,21 @@
               "explanation": "Exception importante : IAS 16.61 (cohérent avec IAS 8.35) considère le changement de méthode d'amortissement comme un changement d'ESTIMATION car il reflète le rythme de consommation des avantages économiques. Donc PROSPECTIF, pas rétrospectif. C'est un piège classique d'examen.",
               "difficulty": "hard",
               "section_id": "ias8_s7"
+            },
+            {
+              "id": "ias8_es1",
+              "type": "mcq",
+              "question": "Selon IAS 8, l'effet d'un changement d'estimation comptable est comptabilisé\n(Identifiez la réponse correcte)",
+              "options": [
+                "uniquement dans les comptes de l'exercice suivant la publication",
+                "de manière rétrospective, par ajustement des réserves à l'ouverture",
+                "de manière rétrospective, avec retraitement de toutes les périodes comparatives",
+                "de manière prospective, sur la période en cours et les périodes futures"
+              ],
+              "answer": 3,
+              "explanation": "IAS 8.36 : un changement d'estimation est appliqué prospectivement ; un changement de méthode et une correction d'erreur sont rétrospectifs.",
+              "difficulty": "easy",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -27063,6 +27108,36 @@
               "explanation": "Vrai. L'IASB a introduit en 2023 une exception temporaire (IAS 12.4A) excluant la comptabilisation de DTA/DTL liés au Pilier 2 (15% minimum OCDE pour groupes > 750M€ CA consolidé). En revanche, l'entité doit divulguer si elle est dans le champ et la charge d'impôt exigible Pilier 2 séparément (IAS 12.88A-D).",
               "difficulty": "hard",
               "section_id": "ias12_s7"
+            },
+            {
+              "id": "ias12_es1",
+              "type": "mcq",
+              "question": "Selon IAS 12, une différence temporelle imposable donne naissance\n(Identifiez la réponse correcte)",
+              "options": [
+                "à un actif d'impôt différé",
+                "à une différence permanente",
+                "à un passif d'impôt différé",
+                "à une charge d'impôt exigible"
+              ],
+              "answer": 2,
+              "explanation": "IAS 12.15 : une différence temporelle imposable (valeur comptable d'un actif supérieure à sa base fiscale) entraîne un passif d'impôt différé, sauf exceptions.",
+              "difficulty": "easy",
+              "section_id": null
+            },
+            {
+              "id": "ias12_es2",
+              "type": "mcq",
+              "question": "Selon IAS 12, la comptabilisation initiale d'un goodwill\n(Identifiez la réponse correcte)",
+              "options": [
+                "donne lieu à un passif d'impôt différé au taux en vigueur",
+                "donne lieu à un impôt différé porté en capitaux propres",
+                "donne lieu à un actif d'impôt différé amorti sur 5 ans",
+                "ne donne pas lieu à un passif d'impôt différé"
+              ],
+              "answer": 3,
+              "explanation": "IAS 12.15(a) : aucun passif d'impôt différé n'est comptabilisé sur la comptabilisation initiale du goodwill.",
+              "difficulty": "medium",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -27374,6 +27449,21 @@
               "explanation": "Les terrains ont une durée d'utilité illimitée et ne sont PAS amortis (IAS 16.58). Ils sont enregistrés et amortis séparément du bâtiment qui le surplombe. Exception : les carrières, sites d'enfouissement ou terrains soumis à un démantèlement où une fraction est consommée par l'activité.",
               "difficulty": "easy",
               "section_id": "ias16_s4"
+            },
+            {
+              "id": "ias16_es1",
+              "type": "mcq",
+              "question": "Selon IAS 16, l'écart positif de réévaluation d'une immobilisation corporelle (sans perte de valeur antérieure)\n(Identifiez la réponse correcte)",
+              "options": [
+                "est porté en déduction des amortissements cumulés, sans autre effet",
+                "est porté directement au résultat net de l'exercice, comme un produit d'exploitation",
+                "est porté en autres éléments du résultat global, dans l'écart de réévaluation",
+                "n'est jamais comptabilisé, le modèle du coût étant obligatoire en IFRS"
+              ],
+              "answer": 2,
+              "explanation": "IAS 16.39 : une augmentation de valeur résultant d'une réévaluation est comptabilisée en OCI (écart de réévaluation), sauf reprise d'une baisse antérieure comptabilisée en résultat.",
+              "difficulty": "medium",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -27656,6 +27746,21 @@
               "explanation": "Différence fondamentale : RPC 16 utilise une approche ÉCONOMIQUE pragmatique basée sur les COMPTES STATUTAIRES de la CP. Pas de calcul actuariel indépendant. Engagement économique = excédent ou découvert ressortant du bilan de la CP. Beaucoup plus simple qu'IAS 19 qui exige PBO actuarielle, JV des actifs, etc. Piège classique d'examen.",
               "difficulty": "medium",
               "section_id": "ias19_s8"
+            },
+            {
+              "id": "ias19_es1",
+              "type": "mcq",
+              "question": "Selon IAS 19, les réévaluations du passif net au titre des prestations définies (écarts actuariels)\n(Identifiez la réponse correcte)",
+              "options": [
+                "sont comptabilisées en autres éléments du résultat global, puis recyclées en résultat",
+                "sont étalées sur la durée résiduelle moyenne d'activité (méthode du corridor)",
+                "sont comptabilisées immédiatement dans le résultat net de la période concernée",
+                "sont comptabilisées en autres éléments du résultat global, sans recyclage ultérieur"
+              ],
+              "answer": 3,
+              "explanation": "IAS 19.120 et 122 : les réévaluations sont comptabilisées en OCI et ne sont jamais recyclées ; le corridor a été supprimé en 2013.",
+              "difficulty": "medium",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -28112,6 +28217,21 @@
               "explanation": "IAS 21.38 : la monnaie de présentation est un CHOIX LIBRE de l'entité, indépendant de la monnaie fonctionnelle. La conversion fonctionnelle → présentation suit la méthode du cours de clôture (IAS 21.39). Cas typique : entité suisse avec monnaie fonctionnelle EUR qui présente en CHF pour ses parties prenantes locales.",
               "difficulty": "medium",
               "section_id": "ias21_s1"
+            },
+            {
+              "id": "ias21_es1",
+              "type": "mcq",
+              "question": "Selon IAS 21, à la clôture, les éléments monétaires libellés en monnaie étrangère sont convertis\n(Identifiez la réponse correcte)",
+              "options": [
+                "au cours de clôture, l'écart de change étant porté en capitaux propres",
+                "au cours historique de la date de la transaction initiale, sans écart",
+                "au cours moyen de l'exercice, l'écart de change étant porté en OCI",
+                "au cours de clôture, l'écart de change étant comptabilisé en résultat"
+              ],
+              "answer": 3,
+              "explanation": "IAS 21.23 et 28 : éléments monétaires au cours de clôture ; les écarts de change sont comptabilisés en résultat (sauf investissement net dans une activité à l'étranger en consolidation).",
+              "difficulty": "medium",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -29385,6 +29505,36 @@
               "explanation": "RPC 20 demande un test de dépréciation UNIQUEMENT s'il existe des INDICES (externes ou internes) de dépréciation. Pas de test annuel obligatoire pour le goodwill ou les incorporelles a durée indéterminée, contrairement a IAS 36.10. C'est une différence d'examen classique IFRS vs Swiss GAAP RPC, fréquente sur les questions Big 4.",
               "difficulty": "hard",
               "section_id": "ias36_s7"
+            },
+            {
+              "id": "ias36_es1",
+              "type": "mcq",
+              "question": "Selon IAS 36, la valeur recouvrable d'un actif correspond\n(Identifiez la réponse correcte)",
+              "options": [
+                "à la plus faible de sa juste valeur diminuée des coûts de sortie et de sa valeur d'utilité",
+                "à la moyenne de sa juste valeur diminuée des coûts de sortie et de sa valeur d'utilité",
+                "à sa valeur d'utilité, la juste valeur n'étant retenue qu'en l'absence de flux futurs",
+                "à la plus élevée de sa juste valeur diminuée des coûts de sortie et de sa valeur d'utilité"
+              ],
+              "answer": 3,
+              "explanation": "IAS 36.18 : la valeur recouvrable est la plus élevée de la juste valeur diminuée des coûts de sortie et de la valeur d'utilité.",
+              "difficulty": "easy",
+              "section_id": null
+            },
+            {
+              "id": "ias36_es2",
+              "type": "mcq",
+              "question": "Une perte de valeur comptabilisée sur un goodwill selon IAS 36\n(Identifiez la réponse correcte)",
+              "options": [
+                "peut être reprise si la valeur recouvrable de l'UGT augmente",
+                "est reprise par les autres éléments du résultat global",
+                "ne peut jamais être reprise lors d'un exercice ultérieur",
+                "doit être reprise dès que l'UGT redevient bénéficiaire"
+              ],
+              "answer": 2,
+              "explanation": "IAS 36.124 : une perte de valeur du goodwill ne peut pas être reprise.",
+              "difficulty": "medium",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -29726,6 +29876,21 @@
               "explanation": "IAS 37.86 : un passif éventuel n'est PAS comptabilise au bilan (probabilité < 50% ou montant non fiable) mais doit être mentionne en annexe : nature, estimation de l'effet financier (ou impraticable), incertitudes, possibilites de remboursement. Exception : aucune mention si la sortie est improbable au point d'être négligeable.",
               "difficulty": "medium",
               "section_id": "ias37_s6"
+            },
+            {
+              "id": "ias37_es1",
+              "type": "mcq",
+              "question": "Selon IAS 37, une provision n'est comptabilisée que si la sortie de ressources est\n(Identifiez la réponse correcte)",
+              "options": [
+                "probable, c'est-à-dire plus probable qu'improbable",
+                "certaine, tant dans son montant que dans son échéance",
+                "hautement probable, c'est-à-dire pratiquement certaine",
+                "possible, même si elle n'est pas plus probable qu'improbable"
+              ],
+              "answer": 0,
+              "explanation": "IAS 37.14 et 23 : il faut une obligation actuelle, une sortie de ressources probable (plus probable qu'improbable) et une estimation fiable.",
+              "difficulty": "easy",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -30063,6 +30228,21 @@
               "explanation": "RPC 10 prévoit 4 conditions (identifiable + pouvoir de disposition, profit mesurable sur plusieurs années, dépenses enregistrables séparément, fonds disponibles) - plus souples qu'IAS 38. L'amortissement est obligatoire : 5 ans par défaut, max 20 ans, et max 5 ans pour les incorporels liés a des personnes. Sous CO art. 960a, recherche en charges, développement non obligatoirement active.",
               "difficulty": "hard",
               "section_id": "ias38_s7"
+            },
+            {
+              "id": "ias38_es1",
+              "type": "mcq",
+              "question": "Selon IAS 38, les dépenses de la phase de recherche\n(Identifiez la réponse correcte)",
+              "options": [
+                "sont activées si les six critères d'IAS 38.57 sont remplis",
+                "sont activées puis amorties sur une durée maximale de 5 ans",
+                "sont comptabilisées en charges lorsqu'elles sont engagées",
+                "sont activées uniquement si le projet aboutit à un brevet"
+              ],
+              "answer": 2,
+              "explanation": "IAS 38.54 : aucune immobilisation incorporelle ne résulte de la recherche ; les dépenses sont des charges. Les six critères d'IAS 38.57 concernent la phase de développement.",
+              "difficulty": "easy",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -30348,6 +30528,21 @@
               "explanation": "IAS 40.10 : si non séparable et occupation propre INSIGNIFIANTE -> intégralement IAS 40. Si occupation propre significative -> IAS 16. Si séparable physiquement/juridiquement -> IAS 40 + IAS 16 séparément.",
               "difficulty": "hard",
               "section_id": "ias40_s1"
+            },
+            {
+              "id": "ias40_es1",
+              "type": "mcq",
+              "question": "Selon IAS 40, au modèle de la juste valeur, les variations de juste valeur d'un immeuble de placement\n(Identifiez la réponse correcte)",
+              "options": [
+                "sont comptabilisées dans les autres éléments du résultat global",
+                "ne sont comptabilisées qu'en cas de baisse de valeur",
+                "sont comptabilisées dans le résultat net",
+                "sont amorties sur la durée d'utilité restante"
+              ],
+              "answer": 2,
+              "explanation": "IAS 40.35 : les profits et pertes résultant des variations de juste valeur sont comptabilisés en résultat ; l'immeuble n'est pas amorti.",
+              "difficulty": "easy",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -30798,6 +30993,21 @@
               "explanation": "IFRS 5.26-29 : reclassement obligatoire en utilisation continue. Réévaluation au plus faible de la VC qu'aurait eue l'actif sans HFS (donc reintegrant l'amortissement non comptabilise) et de la valeur recouvrable IAS 36.",
               "difficulty": "hard",
               "section_id": "ifrs5_s1"
+            },
+            {
+              "id": "ifrs5_es1",
+              "type": "mcq",
+              "question": "Selon IFRS 5, un actif non courant classé comme détenu en vue de la vente\n(Identifiez la réponse correcte)",
+              "options": [
+                "est évalué à sa juste valeur moins les coûts de la vente, l'écart avec la valeur comptable étant porté en capitaux propres",
+                "est évalué au plus haut de sa valeur comptable et de sa juste valeur moins les coûts de la vente, sans amortissement",
+                "est évalué au plus bas de sa valeur comptable et de sa juste valeur moins les coûts de la vente, l'amortissement continuant",
+                "est évalué au plus bas de sa valeur comptable et de sa juste valeur moins les coûts de la vente, sans amortissement"
+              ],
+              "answer": 3,
+              "explanation": "IFRS 5.15 et 25 : évaluation au plus bas de la valeur comptable et de la juste valeur diminuée des coûts de la vente ; l'amortissement cesse.",
+              "difficulty": "medium",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -31440,6 +31650,36 @@
               "explanation": "IFRS 9.4.1.4 : si le test SPPI echoue, classement en JVTPL OBLIGATOIRE (il est impossible de retenir coût amorti ou FVOCI). Les rendements indexés sur prix d'une commodite, action ou profit du débiteur échouent le test SPPI car les flux ne sont plus réduits a principal + intérêts sur le principal résiduel.",
               "difficulty": "hard",
               "section_id": "ifrs9_s2"
+            },
+            {
+              "id": "ifrs9_es1",
+              "type": "mcq",
+              "question": "Selon IFRS 9, pour un actif financier dont le risque de crédit a augmenté de manière importante depuis l'origine (stade 2), la correction de valeur correspond\n(Identifiez la réponse correcte)",
+              "options": [
+                "aux pertes de crédit déjà subies et constatées à la date de clôture",
+                "aux pertes de crédit attendues sur toute la durée de vie de l'actif",
+                "aux pertes de crédit attendues sur les 12 mois suivant la clôture",
+                "à une provision forfaitaire de 5 % de la valeur comptable brute"
+              ],
+              "answer": 1,
+              "explanation": "IFRS 9.5.5.3 : en cas d'augmentation importante du risque de crédit, la correction de valeur est évaluée au montant des pertes attendues sur la durée de vie.",
+              "difficulty": "medium",
+              "section_id": null
+            },
+            {
+              "id": "ifrs9_es2",
+              "type": "mcq",
+              "question": "Selon IFRS 9, un actif financier dont les flux sont uniquement du principal et des intérêts, détenu pour encaisser les flux contractuels, est évalué\n(Identifiez la réponse correcte)",
+              "options": [
+                "à la juste valeur par le résultat",
+                "à la juste valeur par les autres éléments du résultat global",
+                "au coût amorti",
+                "au coût historique, sans actualisation"
+              ],
+              "answer": 2,
+              "explanation": "IFRS 9.4.1.2 : modèle « détenir pour encaisser » + flux SPPI → coût amorti.",
+              "difficulty": "easy",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -31758,6 +31998,21 @@
               "explanation": "IFRS 13.29-30 : la JV part de l'usage optimal du point de vue d'intervenants de marche. Si zonage residentiel possible et plus rentable -> JV basée sur cet usage, même si l'entité continue le parking.",
               "difficulty": "hard",
               "section_id": "ifrs13_s4"
+            },
+            {
+              "id": "ifrs13_es1",
+              "type": "mcq",
+              "question": "Selon IFRS 13, une donnée d'entrée de niveau 1 est\n(Identifiez la réponse correcte)",
+              "options": [
+                "une donnée observable autre qu'un prix coté, par exemple une courbe de taux",
+                "une donnée non observable, fondée sur les propres hypothèses de l'entité",
+                "un prix coté, non ajusté, sur un marché actif pour des actifs identiques",
+                "un prix coté, ajusté, sur un marché actif pour des actifs seulement similaires"
+              ],
+              "answer": 2,
+              "explanation": "IFRS 13.76 : niveau 1 = prix cotés (non ajustés) sur des marchés actifs pour des actifs ou passifs identiques.",
+              "difficulty": "easy",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -32058,6 +32313,36 @@
               "explanation": "RPC 22 : POC autorisée si 4 conditions (base contractuelle, haute probabilité, organisation appropriée, détermination fiable). Sinon Completed Contract ou POC modifiée sans marge. Différence notable avec IFRS 15.",
               "difficulty": "hard",
               "section_id": "ifrs15_s6"
+            },
+            {
+              "id": "ifrs15_es1",
+              "type": "mcq",
+              "question": "Selon IFRS 15, une obligation de prestation remplie progressivement\n(Identifiez la réponse correcte)",
+              "options": [
+                "donne lieu à un produit comptabilisé au fur et à mesure de l'avancement",
+                "donne lieu à un produit comptabilisé dès la signature du contrat",
+                "donne lieu à un produit comptabilisé lors de l'encaissement du prix",
+                "donne lieu à un produit comptabilisé à la livraison finale du bien uniquement"
+              ],
+              "answer": 0,
+              "explanation": "IFRS 15.39 : pour une obligation remplie progressivement (critères d'IFRS 15.35), le produit est comptabilisé en fonction de l'avancement (méthode fondée sur les extrants ou les intrants).",
+              "difficulty": "medium",
+              "section_id": null
+            },
+            {
+              "id": "ifrs15_es2",
+              "type": "mcq",
+              "question": "Selon IFRS 15, une contrepartie variable est incluse dans le prix de transaction\n(Identifiez la réponse correcte)",
+              "options": [
+                "uniquement lorsque l'incertitude qui y est liée a été définitivement levée à la clôture",
+                "pour le montant maximal prévu au contrat, sauf preuve contraire apportée par le client",
+                "dans la mesure où il est plus probable qu'improbable qu'elle sera finalement reçue par l'entité",
+                "dans la mesure où il est hautement probable qu'aucun ajustement à la baisse important ne suivra"
+              ],
+              "answer": 3,
+              "explanation": "IFRS 15.56 : la contrepartie variable n'est incluse que dans la mesure où il est hautement probable que son inclusion ne donnera pas lieu à un ajustement à la baisse important du produit cumulé.",
+              "difficulty": "hard",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -32426,6 +32711,36 @@
               "explanation": "RPC 13 conserve la distinction historique : leasing financier (4 critères qualitatifs) au bilan ; leasing opérationnel hors bilan avec simple mention en annexe. Sous CO art. 959c al. 2 ch. 5, mention en annexe du montant des dettes de leasing non inscrites. Le piège classique : sous IFRS 16, presque tout est au bilan ; sous RPC 13, seuls les financiers.",
               "difficulty": "medium",
               "section_id": "ifrs16_s8"
+            },
+            {
+              "id": "ifrs16_es1",
+              "type": "mcq",
+              "question": "Chez le preneur, selon IFRS 16, la dette locative est évaluée initialement\n(Identifiez la réponse correcte)",
+              "options": [
+                "à la somme non actualisée de tous les loyers prévus par le contrat",
+                "à la valeur actualisée des paiements de loyers non encore versés",
+                "à la juste valeur de l'actif sous-jacent à la date de début",
+                "à la valeur actualisée des loyers, coûts directs initiaux inclus"
+              ],
+              "answer": 1,
+              "explanation": "IFRS 16.26 : la dette est la valeur actualisée des paiements non encore versés ; les coûts directs initiaux augmentent le droit d'utilisation, pas la dette.",
+              "difficulty": "medium",
+              "section_id": null
+            },
+            {
+              "id": "ifrs16_es2",
+              "type": "mcq",
+              "question": "L'exemption d'IFRS 16 pour les contrats de courte durée vise les contrats\n(Identifiez la réponse correcte)",
+              "options": [
+                "d'une durée inférieure à la durée de vie de l'actif loué",
+                "d'une durée de 24 mois au plus, sans option d'achat",
+                "d'une durée de 12 mois au plus, même avec option d'achat",
+                "d'une durée de 12 mois au plus, sans option d'achat"
+              ],
+              "answer": 3,
+              "explanation": "IFRS 16.5 et annexe A : un contrat de courte durée a une durée de 12 mois au plus à la date de début et ne comporte pas d'option d'achat.",
+              "difficulty": "medium",
+              "section_id": null
             }
           ],
           "audio_files": [
@@ -32444,6 +32759,392 @@
               "title": "Comptabilité du preneur",
               "caption": "droit d'utilisation + dette de location",
               "svg": "<svg viewBox='0 0 690 258' xmlns='http://www.w3.org/2000/svg' role='img'><defs><marker id='ah' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 Z' fill='#64748b'/></marker></defs><rect x='40' y='14' width='290' height='62' rx='12' fill='#dbeafe' stroke='#2563eb' stroke-width='1.6'/><text x='185' y='36' text-anchor='middle' dominant-baseline='middle' font-size='13.5' font-weight='800' fill='#2563eb' font-family='system-ui,-apple-system,Segoe UI,sans-serif'>ACTIF — droit d'utilisation</text><text x='185' y='54' text-anchor='middle' dominant-baseline='middle' font-size='12' font-weight='600' fill='#1e293b' font-family='system-ui,-apple-system,Segoe UI,sans-serif'>= dette + paiements d'avance + coûts directs + démantèlement</text><rect x='360' y='14' width='290' height='62' rx='12' fill='#fef3c7' stroke='#d97706' stroke-width='1.6'/><text x='505' y='36' text-anchor='middle' dominant-baseline='middle' font-size='13.5' font-weight='800' fill='#d97706' font-family='system-ui,-apple-system,Segoe UI,sans-serif'>PASSIF — dette de location</text><text x='505' y='54' text-anchor='middle' dominant-baseline='middle' font-size='12' font-weight='600' fill='#1e293b' font-family='system-ui,-apple-system,Segoe UI,sans-serif'>= valeur actualisée des loyers (taux implicite, sinon marginal)</text><text x='345' y='45' text-anchor='middle' dominant-baseline='middle' font-size='22' font-weight='800' fill='#475569' font-family='system-ui,-apple-system,Segoe UI,sans-serif'>=</text><line x1='185' y1='76' x2='185' y2='102' stroke='#64748b' stroke-width='2.2' marker-end='url(#ah)'/><line x1='505' y1='76' x2='505' y2='102' stroke='#64748b' stroke-width='2.2' marker-end='url(#ah)'/><rect x='40' y='102' width='290' height='62' rx='12' fill='#dcfce7' stroke='#16a34a' stroke-width='1.6'/><text x='185' y='124' text-anchor='middle' dominant-baseline='middle' font-size='13.5' font-weight='800' fill='#16a34a' font-family='system-ui,-apple-system,Segoe UI,sans-serif'>Amortissement</text><text x='185' y='142' text-anchor='middle' dominant-baseline='middle' font-size='12' font-weight='600' fill='#1e293b' font-family='system-ui,-apple-system,Segoe UI,sans-serif'>souvent linéaire, sur la durée de location</text><rect x='360' y='102' width='290' height='62' rx='12' fill='#ffedd5' stroke='#ea580c' stroke-width='1.6'/><text x='505' y='124' text-anchor='middle' dominant-baseline='middle' font-size='13.5' font-weight='800' fill='#ea580c' font-family='system-ui,-apple-system,Segoe UI,sans-serif'>Charge d'intérêts + remboursement</text><text x='505' y='142' text-anchor='middle' dominant-baseline='middle' font-size='12' font-weight='600' fill='#1e293b' font-family='system-ui,-apple-system,Segoe UI,sans-serif'>la charge décroît dans le temps</text><rect x='40' y='180' width='610' height='62' rx='12' fill='#eff6ff' stroke='#0ea5e9' stroke-width='1.6'/><text x='345' y='202' text-anchor='middle' dominant-baseline='middle' font-size='13.5' font-weight='800' fill='#0ea5e9' font-family='system-ui,-apple-system,Segoe UI,sans-serif'>Exemptions (option) : location ≤ 12 mois OU actif de faible valeur</text><text x='345' y='220' text-anchor='middle' dominant-baseline='middle' font-size='12' font-weight='600' fill='#1e293b' font-family='system-ui,-apple-system,Segoe UI,sans-serif'>→ charges reconnues linéairement, sans ROU ni dette</text></svg>"
+            }
+          ]
+        },
+        {
+          "id": "ifrs18",
+          "code": "IFRS 18",
+          "title": "IFRS 18 — Présentation et informations à fournir dans les états financiers",
+          "category": "IFRS / IAS",
+          "summary": "IFRS 18 **remplace IAS 1** pour les exercices ouverts **dès le 1er janvier 2027**. Le compte de résultat est structuré en **5 catégories** (exploitation, investissement, financement, impôts sur le résultat, activités abandonnées) avec **2 nouveaux sous-totaux obligatoires** (résultat d'exploitation ; résultat avant financement et impôts). Les **indicateurs de performance définis par la direction (MPM)** utilisés dans la communication publique doivent être expliqués et **rapprochés** dans une note auditée. La norme renforce aussi l'**agrégation / désagrégation** et modifie **IAS 7** (point de départ du tableau des flux, classement des intérêts et dividendes).",
+          "key_rules": [
+            "Applicable aux exercices ouverts dès le 1.1.2027 (application anticipée permise), rétrospectivement avec comparatifs retraités",
+            "Compte de résultat : 5 catégories — exploitation (résiduelle), investissement, financement, impôts sur le résultat, activités abandonnées",
+            "Sous-totaux obligatoires : résultat d'exploitation ; résultat avant financement et impôts sur le résultat ; résultat net",
+            "Quote-part du résultat des entités mises en équivalence : toujours dans la catégorie investissement",
+            "Intérêts sur emprunts (financement pur) : catégorie financement",
+            "MPM : sous-total utilisé hors des états financiers pour communiquer la vue de la direction → note unique avec rapprochement, effet d'impôt et effet sur les minoritaires",
+            "Charges présentées par fonction → note obligatoire : amortissements des corporelles, des incorporelles, avantages du personnel, pertes de valeur, dépréciations de stocks",
+            "IAS 7 : méthode indirecte à partir du résultat d'exploitation ; intérêts et dividendes versés en financement, reçus en investissement"
+          ],
+          "thresholds": [],
+          "cross_refs": [
+            "IAS 1",
+            "IAS 7",
+            "IAS 8",
+            "IAS 33",
+            "IAS 34",
+            "IAS 28",
+            "IFRS 5",
+            "IFRS 7",
+            "IFRS 19",
+            "RPC 3",
+            "art. 959b CO"
+          ],
+          "flashcard_ids": [
+            2255,
+            2256,
+            2257,
+            2258,
+            2259,
+            2260,
+            2261,
+            2272,
+            2273,
+            2274,
+            2275
+          ],
+          "comparisons": {
+            "ifrs": "IFRS 18",
+            "rpc": "RPC 3",
+            "co": "art. 959b CO"
+          },
+          "memo_items": [],
+          "course_items": [],
+          "exam_tips": [
+            "⚠️ **Date** : exercices ouverts **dès le 1.1.2027** — les comparatifs 2026 sont **retraités** selon IFRS 18",
+            "⚠️ **Équivalence (MEE)** : quote-part du résultat des associées et coentreprises = **toujours investissement**, jamais exploitation",
+            "⚠️ La catégorie **exploitation** est **résiduelle** : tout ce qui n'est pas classé ailleurs y tombe (y compris les éléments inhabituels ou volatils)",
+            "💡 **MPM** = sous-total de produits et charges + communication publique + vue de la direction. Un ratio, un flux de trésorerie (free cash-flow) ou un indicateur non financier n'est **pas** un MPM",
+            "💡 Charges **par fonction** → publier en note **5 natures** : amortissements corporels, amortissements incorporels, avantages du personnel, pertes de valeur, dépréciations de stocks",
+            "⚠️ **IAS 7 modifiée** : point de départ = **résultat d'exploitation** ; intérêts/dividendes **versés → financement**, **reçus → investissement** (entités sans activité principale spécifique)",
+            "💡 Banques, assureurs, sociétés d'investissement (**activité principale spécifique**) : certains produits et charges d'investissement ou de financement passent en **exploitation**"
+          ],
+          "key_differences": {
+            "ifrs": "IFRS 18 : 5 catégories, 2 sous-totaux obligatoires, MPM rapprochés et audités, règles d'agrégation renforcées.",
+            "rpc": "RPC 3 : compte de résultat par nature ou par fonction, structure minimale ; aucune notion de MPM ni de catégories imposées.",
+            "co": "Art. 959b CO : structure minimale par nature ou par fonction (méthode du coût de production ou des ventes) ; pas de sous-totaux d'exploitation imposés au sens d'IFRS 18."
+          },
+          "mnemonics": "**IFRS 18 = « 5-2-1 »** : **5** catégories, **2** nouveaux sous-totaux, **1** note MPM. « **E-I-F-I-A** » : Exploitation, Investissement, Financement, Impôts, Abandonnées.",
+          "related_topics": [
+            "IAS 1 (remplacée)",
+            "IAS 7 amendée",
+            "IAS 8 renommée",
+            "IFRS 19",
+            "Indicateurs alternatifs de performance (APM)"
+          ],
+          "title_en": "IFRS 18 — Presentation and Disclosure in Financial Statements",
+          "summary_en": "IFRS 18 replaces IAS 1 for annual periods beginning on or after 1 January 2027. The statement of profit or loss is structured into five categories (operating, investing, financing, income taxes, discontinued operations) with two new required subtotals. Management-defined performance measures must be disclosed and reconciled in a single note.",
+          "sections": [
+            {
+              "section_id": "ifrs18_s1",
+              "title": "1. Pourquoi IFRS 18 ? Calendrier et champ",
+              "content": "**Objectif** : rendre les comptes de résultat **comparables** entre entreprises. Sous IAS 1, chaque groupe définissait librement son « résultat opérationnel », souvent avec des retraitements maison (EBIT ajusté, résultat courant…).\n\n**Calendrier**\n- Publiée par l'IASB le **9 avril 2024**.\n- Obligatoire pour les exercices ouverts **à partir du 1er janvier 2027** ; application anticipée permise (à mentionner).\n- Application **rétrospective** : les comparatifs sont **retraités**.\n\n**Ce qui change par rapport à IAS 1**\n- Structure imposée du **compte de résultat** (catégories et sous-totaux).\n- Information sur les **indicateurs de performance définis par la direction** (MPM).\n- Principes renforcés d'**agrégation et de désagrégation**.\n\n**Ce qui ne change pas** : l'essentiel des exigences d'IAS 1 sur le bilan, l'état du résultat global, l'état des variations des capitaux propres, la continuité d'exploitation et la comptabilité d'engagement est **repris** ; une partie est transférée dans **IAS 8** (renommée « Base d'établissement des états financiers ») et dans IFRS 7.",
+              "key_point": "IFRS 18 ne change ni la comptabilisation ni l'évaluation : elle change la **présentation** et les **informations à fournir**.",
+              "warning": "Le résultat net ne change pas : seule sa décomposition est imposée.",
+              "example": "Un groupe suisse coté (SIX, IFRS) clôturant au 31.12 applique IFRS 18 pour la première fois dans ses comptes 2027 et présente un compte de résultat 2026 retraité.",
+              "tip": "À l'examen, commencer par vérifier la date d'ouverture de l'exercice : avant 2027, IAS 1 s'applique (sauf application anticipée)."
+            },
+            {
+              "section_id": "ifrs18_s2",
+              "title": "2. Les 5 catégories du compte de résultat",
+              "content": "Chaque produit et chaque charge est classé dans **une** des cinq catégories :\n\n| Catégorie | Contenu typique |\n|---|---|\n| **Exploitation** | catégorie **résiduelle** : tout ce qui n'est pas classé ailleurs (ventes, coût des ventes, charges de personnel, amortissements, pertes de valeur, éléments inhabituels…) |\n| **Investissement** | résultat des **entités mises en équivalence**, produits de la **trésorerie** et équivalents, produits et charges d'actifs qui génèrent un rendement **individuellement et largement indépendamment** des autres ressources (immeubles de placement, titres, prêts accordés) |\n| **Financement** | produits et charges des passifs issus d'opérations de **financement pur** (emprunts bancaires, obligations) ; **intérêts** et effets de variation de taux sur les autres passifs (désactualisation des provisions, dette de prévoyance, dette locative) |\n| **Impôts sur le résultat** | charge ou produit d'impôt selon IAS 12 |\n| **Activités abandonnées** | selon IFRS 5 |\n\n**Écarts de change** : classés dans la catégorie de l'élément qui les a générés (ex. créance client → exploitation ; emprunt → financement).",
+              "key_point": "Exploitation = catégorie par défaut ; investissement et financement sont définis précisément.",
+              "warning": "La quote-part du résultat des associées et coentreprises est **toujours** en investissement, même si l'activité de l'associée est proche de celle du groupe.",
+              "example": "Loyers encaissés sur un immeuble de placement → investissement. Intérêts d'un emprunt obligataire → financement. Désactualisation d'une provision pour démantèlement → financement (intérêt). Dépréciation d'un goodwill → exploitation.",
+              "tip": "Méthode d'examen : pour chaque ligne, se demander (1) impôt ou activité abandonnée ? (2) actif d'investissement ? (3) passif de financement ou intérêt ? Sinon → exploitation."
+            },
+            {
+              "section_id": "ifrs18_s3",
+              "title": "3. Les sous-totaux obligatoires",
+              "content": "IFRS 18 impose trois sous-totaux :\n1. **Résultat d'exploitation** (*operating profit or loss*) ;\n2. **Résultat avant financement et impôts sur le résultat** (*profit or loss before financing and income taxes*) = résultat d'exploitation + catégorie investissement ;\n3. **Résultat net** (*profit or loss*).\n\n**Présentation type**\n| | CHF mio |\n|---|---|\n| Chiffre d'affaires | 1'000 |\n| Charges d'exploitation | (820) |\n| **Résultat d'exploitation** | **180** |\n| Quote-part du résultat des associées | 15 |\n| Produits d'intérêts sur la trésorerie | 5 |\n| **Résultat avant financement et impôts** | **200** |\n| Charges d'intérêts sur emprunts | (30) |\n| Désactualisation des provisions | (4) |\n| **Résultat avant impôts** | **166** |\n| Impôts sur le résultat | (36) |\n| **Résultat des activités poursuivies** | **130** |\n| Résultat des activités abandonnées | (10) |\n| **Résultat net** | **120** |",
+              "key_point": "Le nouveau sous-total « résultat avant financement et impôts » ressemble à un EBIT standardisé.",
+              "warning": "Une entité dont l'activité principale est de financer des clients (banque) peut être dispensée de présenter le sous-total « avant financement et impôts » selon ses choix de classement.",
+              "example": "Dans l'exemple, la quote-part des associées (15) ne fait pas partie du résultat d'exploitation (180).",
+              "tip": "Retenir l'ordre : exploitation → + investissement → résultat avant financement et impôts → − financement → − impôts → ± abandonnées."
+            },
+            {
+              "section_id": "ifrs18_s4",
+              "title": "4. Entités ayant une activité principale spécifique",
+              "content": "Certaines entités ont pour **activité principale** d'**investir dans des actifs** (sociétés d'investissement, assureurs, sociétés immobilières) ou de **financer des clients** (banques, sociétés de leasing, filiales de financement de constructeurs automobiles).\n\nPour elles, les produits et charges qui seraient normalement en **investissement** ou **financement** sont classés en **exploitation** lorsqu'ils proviennent de cette activité principale :\n- une **banque** classe en exploitation les intérêts reçus des prêts aux clients et, selon son choix de méthode, les intérêts sur les dépôts ;\n- une **société immobilière** classe en exploitation les loyers et variations de juste valeur de ses immeubles de placement.\n\nL'évaluation de l'activité principale est un **fait** (pas un choix) et elle est réexaminée si les circonstances changent.",
+              "key_point": "Le résultat d'exploitation reflète ainsi l'activité réelle de l'entité.",
+              "warning": "La quote-part des entités mises en équivalence reste en investissement, même pour ces entités.",
+              "example": "Un constructeur automobile dont la filiale de financement accorde des crédits aux acheteurs classe les intérêts reçus de ces crédits en exploitation.",
+              "tip": "Si l'énoncé décrit une banque ou une foncière, penser immédiatement à cette exception."
+            },
+            {
+              "section_id": "ifrs18_s5",
+              "title": "5. Indicateurs de performance définis par la direction (MPM)",
+              "content": "**Définition** — un MPM est un **sous-total de produits et de charges** qui :\n1. est utilisé dans la **communication publique hors des états financiers** (communiqués, rapport de gestion, présentations aux investisseurs) ;\n2. sert à communiquer la **vue de la direction** sur un aspect de la performance de l'entité dans son ensemble ;\n3. n'est **ni** un sous-total listé par IFRS 18, **ni** un total exigé par une autre norme.\n\n**Ne sont pas des MPM** : marge brute, résultat d'exploitation avant amortissements et pertes de valeur, ratios (marge en %), flux de trésorerie (free cash-flow), indicateurs non financiers (nombre de clients).\n\n**Informations à fournir — dans une note unique**\n- description de l'indicateur et des raisons de son utilité ;\n- méthode de calcul et changements éventuels ;\n- **rapprochement** avec le sous-total IFRS le plus directement comparable ;\n- pour chaque élément de rapprochement : **effet d'impôt** et **effet sur les intérêts minoritaires**.\n\n**Conséquence** : l'« EBIT ajusté » ou le « résultat opérationnel courant » publié par un groupe entre dans les états financiers **audités**.",
+              "key_point": "MPM = sous-total + communication publique + vue de la direction.",
+              "warning": "Les MPM ne figurent pas au compte de résultat : ils sont expliqués dans une note.",
+              "example": "Un groupe publie un « EBIT avant coûts de restructuration » de 210 alors que le résultat d'exploitation IFRS est de 180 : la note rapproche 180 + 30 de restructuration = 210 et indique l'effet d'impôt (ex. 6) et la part des minoritaires (ex. 2).",
+              "tip": "Piège classique : le free cash-flow n'est pas un MPM, car ce n'est pas un sous-total de produits et de charges."
+            },
+            {
+              "section_id": "ifrs18_s6",
+              "title": "6. Agrégation, désagrégation et charges par nature",
+              "content": "**Principe** : les états financiers primaires donnent un **résumé structuré** ; les notes fournissent le détail. On regroupe les éléments qui partagent des **caractéristiques** communes et on sépare ceux qui diffèrent, pour que l'information significative ne soit pas **masquée**.\n- Le libellé « **autres** » n'est admis que faute de libellé plus précis, avec des informations sur son contenu.\n\n**Présentation des charges d'exploitation** : par **nature**, par **fonction** ou **mixte**, selon ce qui donne le résumé le plus utile.\n\nSi des charges sont présentées **par fonction**, une note doit indiquer, pour chaque ligne concernée, les montants de :\n1. **amortissements** des immobilisations corporelles ;\n2. **amortissements** des immobilisations incorporelles ;\n3. **avantages du personnel** ;\n4. **pertes de valeur** (et reprises) ;\n5. **dépréciations de stocks** (et reprises).",
+              "key_point": "Par fonction → 5 natures obligatoires en note.",
+              "warning": "Le choix nature / fonction doit être justifié par l'utilité, pas par la commodité.",
+              "example": "Un industriel présente coût des ventes, frais commerciaux et frais administratifs : il indique en note quelle part des charges de personnel (ex. 240) figure dans chacune de ces lignes.",
+              "tip": "Retenir « 2 amortissements + personnel + pertes de valeur + stocks »."
+            },
+            {
+              "section_id": "ifrs18_s7",
+              "title": "7. Bilan, tableau des flux (IAS 7) et autres normes modifiées",
+              "content": "**Bilan** : exigences d'IAS 1 reprises ; le **goodwill** devient une ligne obligatoire distincte.\n\n**Tableau des flux de trésorerie (IAS 7 modifiée)**\n- Méthode indirecte : le point de départ devient le **résultat d'exploitation** (et non plus le résultat net).\n- Suppression des options de classement pour la plupart des entités :\n  - **intérêts et dividendes versés → financement** ;\n  - **intérêts et dividendes reçus → investissement**.\n- Les entités ayant une activité principale spécifique suivent le classement de leur compte de résultat.\n\n**Autres modifications** : **IAS 8** renommée « Base d'établissement des états financiers » ; **IAS 33** n'autorise un résultat par action supplémentaire que sur la base d'un sous-total IFRS ou d'un MPM ; **IAS 34** : les comptes intermédiaires reprennent les nouveaux sous-totaux et les informations sur les MPM.",
+              "key_point": "Fin des options IAS 7 sur les intérêts et dividendes.",
+              "warning": "Les dividendes reçus d'une associée sont des flux d'investissement.",
+              "example": "Intérêts payés de 30 sur un emprunt bancaire : flux de financement (sous IAS 7 ancienne, l'entité pouvait les classer en exploitation).",
+              "tip": "Lier IFRS 18 et IAS 7 : même logique de catégories dans les deux états."
+            },
+            {
+              "section_id": "ifrs18_s8",
+              "title": "8. Première application et lien avec la Suisse",
+              "content": "**Transition**\n- Application **rétrospective** : la période comparative est retraitée.\n- L'année de première application, l'entité présente un **rapprochement** entre la présentation IAS 1 et la présentation IFRS 18 pour chaque ligne du compte de résultat de la période comparative.\n- Les comptes intermédiaires de la première année appliquent aussi les nouvelles exigences.\n\n**Suisse**\n- Concerne les sociétés **cotées** qui établissent leurs comptes selon les IFRS (exigence de la SIX pour le Main Standard) et les groupes qui appliquent les IFRS volontairement.\n- **Swiss GAAP RPC** et **CO** ne connaissent ni catégories imposées ni MPM : RPC 3 et l'art. 959b CO admettent la présentation par nature ou par fonction.\n\n**IFRS 19** (publiée en mai 2024, également applicable dès 2027) : une **filiale sans obligation d'information du public** dont la société mère publie des comptes consolidés IFRS peut appliquer les IFRS avec des **informations réduites** ; elle reste soumise à IFRS 18 pour la présentation.",
+              "key_point": "Comparatifs retraités + rapprochement IAS 1 → IFRS 18 la première année.",
+              "warning": "IFRS 19 allège les informations à fournir, pas la comptabilisation ni l'évaluation.",
+              "example": "Un groupe coté retraite son compte de résultat 2026 et explique en note le passage de l'ancien « résultat opérationnel » au nouveau résultat d'exploitation.",
+              "tip": "À l'oral, savoir comparer IFRS 18 avec RPC 3 et l'art. 959b CO."
+            }
+          ],
+          "questions": [
+            {
+              "id": "ifrs18_q1",
+              "type": "mcq",
+              "question": "À partir de quand IFRS 18 est-elle obligatoire ?",
+              "options": [
+                "Pour les exercices ouverts à partir du 1er janvier 2025",
+                "Pour les exercices ouverts à partir du 1er janvier 2026",
+                "Pour les exercices ouverts à partir du 1er janvier 2029",
+                "Pour les exercices ouverts à partir du 1er janvier 2027"
+              ],
+              "answer": 3,
+              "explanation": "IFRS 18, publiée en avril 2024, s'applique aux exercices ouverts dès le 1er janvier 2027, avec application anticipée permise et retraitement des comparatifs.",
+              "difficulty": "easy",
+              "section_id": "ifrs18_s1"
+            },
+            {
+              "id": "ifrs18_q2",
+              "type": "mcq",
+              "question": "Combien de catégories IFRS 18 impose-t-elle au compte de résultat ?",
+              "options": [
+                "Deux : activités poursuivies et activités abandonnées, sans autre subdivision imposée par la norme",
+                "Cinq : exploitation, investissement, financement, impôts sur le résultat, activités abandonnées",
+                "Trois : exploitation, investissement et financement, les impôts étant présentés seulement en annexe",
+                "Quatre : exploitation, résultat financier, résultat exceptionnel et impôts sur le résultat net"
+              ],
+              "answer": 1,
+              "explanation": "Les cinq catégories sont : exploitation, investissement, financement, impôts sur le résultat et activités abandonnées.",
+              "difficulty": "easy",
+              "section_id": "ifrs18_s2"
+            },
+            {
+              "id": "ifrs18_q3",
+              "type": "mcq",
+              "question": "Selon IFRS 18, quelle est la catégorie « résiduelle » du compte de résultat ?",
+              "options": [
+                "La catégorie investissement",
+                "La catégorie exploitation",
+                "La catégorie des autres produits et charges",
+                "La catégorie financement"
+              ],
+              "answer": 1,
+              "explanation": "Les produits et charges qui ne relèvent ni de l'investissement, ni du financement, ni des impôts, ni des activités abandonnées sont classés en exploitation.",
+              "difficulty": "medium",
+              "section_id": "ifrs18_s2"
+            },
+            {
+              "id": "ifrs18_q4",
+              "type": "mcq",
+              "question": "Une société industrielle perçoit des loyers d'un immeuble de placement. Où les classe-t-elle selon IFRS 18 ?",
+              "options": [
+                "Hors du compte de résultat, en OCI",
+                "Dans la catégorie financement",
+                "Dans la catégorie exploitation",
+                "Dans la catégorie investissement"
+              ],
+              "answer": 3,
+              "explanation": "Un immeuble de placement génère un rendement individuellement et largement indépendamment des autres ressources : ses produits relèvent de l'investissement, sauf pour une entité dont c'est l'activité principale.",
+              "difficulty": "medium",
+              "section_id": "ifrs18_s2"
+            },
+            {
+              "id": "ifrs18_q5",
+              "type": "mcq",
+              "question": "Où une entité commerciale classe-t-elle les intérêts d'un emprunt bancaire selon IFRS 18 ?",
+              "options": [
+                "Dans la catégorie exploitation",
+                "Dans la catégorie des impôts sur le résultat",
+                "Dans la catégorie financement",
+                "Dans la catégorie investissement"
+              ],
+              "answer": 2,
+              "explanation": "Un emprunt bancaire est un passif issu d'une opération de financement pur : ses intérêts sont classés en financement.",
+              "difficulty": "easy",
+              "section_id": "ifrs18_s2"
+            },
+            {
+              "id": "ifrs18_q6",
+              "type": "mcq",
+              "question": "Quels sous-totaux IFRS 18 rend-elle obligatoires au compte de résultat (outre le résultat net) ?",
+              "options": [
+                "L'EBITDA et le résultat opérationnel courant avant éléments exceptionnels",
+                "Le résultat financier net et le résultat des activités ordinaires",
+                "La marge brute et le résultat avant éléments inhabituels et impôts",
+                "Le résultat d'exploitation et le résultat avant financement et impôts"
+              ],
+              "answer": 3,
+              "explanation": "IFRS 18 impose le résultat d'exploitation et le résultat avant financement et impôts sur le résultat, en plus du résultat net.",
+              "difficulty": "medium",
+              "section_id": "ifrs18_s3"
+            },
+            {
+              "id": "ifrs18_q7",
+              "type": "mcq",
+              "question": "Lequel de ces indicateurs peut être un MPM au sens d'IFRS 18 ?",
+              "options": [
+                "Le free cash-flow publié dans le rapport de gestion",
+                "Un « EBIT ajusté » publié dans les communiqués de presse",
+                "La marge d'exploitation exprimée en pourcentage",
+                "La marge brute (chiffre d'affaires moins coût des ventes)"
+              ],
+              "answer": 1,
+              "explanation": "Un MPM est un sous-total de produits et charges utilisé dans la communication publique pour exprimer la vue de la direction. La marge brute est exclue par la norme ; un flux de trésorerie ou un ratio n'est pas un sous-total de produits et charges.",
+              "difficulty": "hard",
+              "section_id": "ifrs18_s5"
+            },
+            {
+              "id": "ifrs18_q8",
+              "type": "mcq",
+              "question": "Pour chaque élément de rapprochement d'un MPM, quelles informations IFRS 18 exige-t-elle ?",
+              "options": [
+                "L'effet d'impôt sur le résultat et l'effet sur les intérêts minoritaires",
+                "L'effet sur la juste valeur et l'effet sur les covenants bancaires",
+                "L'effet sur la trésorerie de l'exercice et l'effet sur le résultat par action dilué",
+                "L'avis de l'organe de révision et l'effet sur les capitaux propres"
+              ],
+              "answer": 0,
+              "explanation": "La note sur les MPM rapproche chaque indicateur du sous-total IFRS le plus comparable et donne, pour chaque élément de rapprochement, l'effet d'impôt et l'effet sur les intérêts minoritaires.",
+              "difficulty": "hard",
+              "section_id": "ifrs18_s5"
+            },
+            {
+              "id": "ifrs18_q9",
+              "type": "mcq",
+              "question": "Une entité présente ses charges par fonction. Que doit-elle publier en note selon IFRS 18 ?",
+              "options": [
+                "Rien de plus : la présentation par fonction suffit et dispense de toute information par nature",
+                "Uniquement le montant total des charges de personnel et des cotisations sociales de la période",
+                "Le détail complet de toutes ses charges par nature, ligne par ligne, sans aucune exception possible",
+                "Les amortissements, les avantages du personnel, les pertes de valeur et les dépréciations de stocks"
+              ],
+              "answer": 3,
+              "explanation": "En cas de présentation par fonction, IFRS 18 exige en note les amortissements (corporels et incorporels), les avantages du personnel, les pertes de valeur et les dépréciations de stocks inclus dans chaque ligne.",
+              "difficulty": "hard",
+              "section_id": "ifrs18_s6"
+            },
+            {
+              "id": "ifrs18_q10",
+              "type": "mcq",
+              "question": "Selon IAS 7 modifiée par IFRS 18, quel est le point de départ de la méthode indirecte ?",
+              "options": [
+                "Le résultat d'exploitation",
+                "Le résultat net de l'exercice",
+                "Le résultat avant impôts",
+                "Le chiffre d'affaires encaissé"
+              ],
+              "answer": 0,
+              "explanation": "IFRS 18 modifie IAS 7 : la méthode indirecte part désormais du résultat d'exploitation.",
+              "difficulty": "medium",
+              "section_id": "ifrs18_s7"
+            },
+            {
+              "id": "ifrs18_q11",
+              "type": "mcq",
+              "question": "Selon IAS 7 modifiée (entité sans activité principale spécifique), où classe-t-on les dividendes versés aux actionnaires ?",
+              "options": [
+                "En flux d'investissement",
+                "En flux d'exploitation",
+                "En flux de financement",
+                "Au choix de l'entité"
+              ],
+              "answer": 2,
+              "explanation": "Les options sont supprimées : intérêts et dividendes versés vont en financement, intérêts et dividendes reçus en investissement.",
+              "difficulty": "medium",
+              "section_id": "ifrs18_s7"
+            },
+            {
+              "id": "ifrs18_q12",
+              "type": "mcq",
+              "question": "Comment IFRS 18 s'applique-t-elle lors de sa première application ?",
+              "options": [
+                "Prospectivement, sans retraitement de la période comparative",
+                "Rétrospectivement, mais sans aucune information sur l'ancienne présentation",
+                "Rétrospectivement, avec comparatifs retraités et rapprochement avec IAS 1",
+                "Prospectivement, avec un ajustement des réserves d'ouverture"
+              ],
+              "answer": 2,
+              "explanation": "IFRS 18 s'applique rétrospectivement ; l'année de première application, l'entité rapproche la présentation IAS 1 et la présentation IFRS 18 du compte de résultat comparatif.",
+              "difficulty": "medium",
+              "section_id": "ifrs18_s8"
+            },
+            {
+              "id": "ifrs18_q13",
+              "type": "mcq",
+              "question": "Une banque perçoit des intérêts sur les prêts accordés à ses clients. Où les classe-t-elle selon IFRS 18 ?",
+              "options": [
+                "Hors du compte de résultat, directement dans les capitaux propres de la banque",
+                "Dans la catégorie financement, avec les intérêts payés sur ses propres dettes",
+                "Dans la catégorie exploitation, car financer des clients est son activité principale",
+                "Dans la catégorie investissement, comme pour toute entité qui accorde des prêts à des tiers"
+              ],
+              "answer": 2,
+              "explanation": "Pour une entité dont l'activité principale est de financer des clients, ces produits relèvent de l'exploitation.",
+              "difficulty": "hard",
+              "section_id": "ifrs18_s4"
+            },
+            {
+              "id": "ifrs18_q14",
+              "type": "mcq",
+              "question": "Selon IFRS 18, la quote-part du résultat des entités mises en équivalence\n(Identifiez la réponse correcte)",
+              "options": [
+                "est présentée hors du compte de résultat, dans les OCI",
+                "est toujours classée dans la catégorie investissement",
+                "est classée en exploitation si l'activité de l'associée est proche",
+                "est classée dans la catégorie financement avec les intérêts"
+              ],
+              "answer": 1,
+              "explanation": "IFRS 18 classe toujours la quote-part du résultat des associées et coentreprises en investissement, sans exception liée à l'activité de l'associée.",
+              "difficulty": "medium",
+              "section_id": "ifrs18_s2"
+            },
+            {
+              "id": "ifrs18_q15",
+              "type": "mcq",
+              "question": "Un indicateur de performance défini par la direction (MPM) au sens d'IFRS 18\n(Identifiez la réponse correcte)",
+              "options": [
+                "doit être présenté au compte de résultat, juste sous le résultat d'exploitation IFRS",
+                "est un sous-total de produits et charges utilisé dans la communication publique",
+                "n'est soumis à aucune exigence d'information dans les notes aux comptes",
+                "est tout ratio financier publié par la direction dans son rapport de gestion"
+              ],
+              "answer": 1,
+              "explanation": "Un MPM est un sous-total de produits et charges utilisé hors des états financiers pour communiquer la vue de la direction ; il est expliqué et rapproché dans une note.",
+              "difficulty": "medium",
+              "section_id": "ifrs18_s5"
+            },
+            {
+              "id": "ifrs18_q16",
+              "type": "vrai_faux",
+              "question": "IFRS 18 modifie les règles de comptabilisation et d'évaluation des produits et des charges.",
+              "options": null,
+              "answer": false,
+              "explanation": "Faux. IFRS 18 porte sur la présentation et les informations à fournir ; la comptabilisation et l'évaluation restent régies par les autres normes (IFRS 15, IAS 16, IFRS 9…).",
+              "difficulty": "easy",
+              "section_id": "ifrs18_s1"
             }
           ]
         },
@@ -51403,6 +52104,15 @@
             {
               "title": "Perte d'influence notable (IAS 28.22)",
               "content": "Quand l'entité perd l'influence notable :\n\n① **Décomptabiliser** la participation\n② Reconnaître la **participation résiduelle à la JV** (devient IFRS 9)\n③ **Gain/perte** = (Contrepartie + JV résiduelle) − VC de la participation\n④ Les **OCI accumulés** sont **recyclés au P&L** (ou transférés aux résultats non distribués selon la source)"
+            },
+            {
+              "section_id": "ias28_x1",
+              "title": "🧮 Cas chiffré d'examen — mise en équivalence pas à pas",
+              "content": "**Énoncé** : le 1.1.N, I SA acquiert **30 %** d'A SA pour **CHF 400**. Actifs nets d'A à la JV : **1'100** (dont un immeuble réévalué de **+100** par rapport à sa valeur comptable, durée résiduelle **10 ans**). En N, A réalise un bénéfice de **200** et verse un dividende de **50**. En décembre N, I vend à A des marchandises avec une marge de **40**, toujours en stock chez A au 31.12.N.\n\n**1. Goodwill implicite** = 400 − 30 % × 1'100 = 400 − 330 = **70** (inclus dans la participation, non amorti).\n\n**2. Quote-part du résultat**\n| | CHF |\n|---|---|\n| 30 % × 200 | 60 |\n| − amortissement de l'écart de JV de l'immeuble : 30 % × 100 / 10 | (3) |\n| − profit interne en stock (vente descendante) : 30 % × 40 | (12) |\n| **= quote-part du résultat** | **45** |\n\n**3. Valeur de la participation au 31.12.N** = 400 + 45 − 30 % × 50 (dividende 15) = **430**.\n\n**Écritures chez I** : Participation / Quote-part du résultat des associées **45** ; Trésorerie / Participation **15**.",
+              "key_point": "Dividende : il réduit la participation, le produit ayant déjà été pris via la quote-part du résultat.",
+              "warning": "Le profit interne est éliminé à hauteur de 30 % seulement, que la vente soit ascendante ou descendante.",
+              "example": "Si A subit l'année suivante une perte de 1'600, la quote-part (480) dépasse la valeur de 430 : I arrête à zéro et suit hors bilan les 50 non comptabilisés.",
+              "tip": "Présenter le calcul en trois blocs : goodwill implicite, quote-part du résultat ajustée, valeur de clôture."
             }
           ],
           "key_rules": [
@@ -51425,7 +52135,8 @@
           ],
           "flashcard_ids": [
             505,
-            506
+            506,
+            2282
           ],
           "comparisons": {
             "ifrs": "IAS 28",
@@ -51470,7 +52181,9 @@
             "⚠️ **Dividendes reçus = réduction VC, PAS un produit** ! Piège classique",
             "⚠️ **Consolidation proportionnelle INTERDITE** sous IFRS (joint ventures = MEE obligatoire)",
             "💡 **20% = présomption** d'influence notable, réfutable",
-            "💡 **Goodwill implicite** inclus dans la VC, test de dépréciation sur la VC totale"
+            "💡 **Goodwill implicite** inclus dans la VC, test de dépréciation sur la VC totale",
+            "⚠️ **Profits internes** (amont ou aval) : on élimine seulement la **quote-part** de l'investisseur",
+            "⚠️ **Pertes** : arrêt à **zéro** (participation + intérêts à long terme), sauf obligation légale ou implicite"
           ],
           "key_differences": {
             "ifrs": "IAS 28 : MEE obligatoire. Proportionnelle interdite. Dividendes = réduction VC.",
@@ -51486,7 +52199,114 @@
           ],
           "mindmap_md": "# IAS 28\n## Participations dans entreprises associées et coentreprises — MEE\n\n### Champ d'application\n- **Entreprises associées** (influence notable, sans contrôle)\n- **Coentreprises** (joint ventures sous IFRS 11) avec droits sur l'**actif net**\n- Méthode imposée : **mise en équivalence (MEE / equity method)**\n- ≠ Joint operations (IFRS 11) : comptabilisation directe quote-part actifs/passifs\n\n### Influence notable — définition\n- **Pouvoir de participer** aux décisions financières et opérationnelles\n- **SANS contrôle** ni contrôle conjoint\n- Présomption (réfutable) : **≥ 20%** des droits de vote\n- Indicateurs additionnels :\n  - Représentation au **CA**\n  - Participation aux **décisions stratégiques** (dividendes, politique)\n  - **Transactions significatives** entre entités\n  - **Échange de personnel dirigeant**\n  - Fournitures d'**informations techniques** essentielles\n\n### Mise en équivalence — étapes\n#### Étape 1 — Comptabilisation initiale\n- Au **COÛT** d'acquisition\n- Coût inclut les coûts directement attribuables\n#### Étape 2 — Ajustements à chaque clôture\n- **+ Quote-part du RÉSULTAT** de l'associée → **P&L** (ligne séparée)\n- **+ Quote-part des OCI** de l'associée → **OCI**\n- **− Dividendes reçus** → **réduit la VC** (PAS un produit !)\n- Test **dépréciation IAS 36** sur indices\n#### Goodwill implicite\n- Différence coût − part JV actifs nets identifiables = goodwill **INCLUS dans la VC**\n- **Pas de test séparé** — test global sur la VC de la participation\n- Pas d'amortissement (comme goodwill IFRS 3)\n\n### Ajustements à l'acquisition (JV)\n- Identification des actifs/passifs à la **JV** de l'associée\n- Amortissement complémentaire → réduit la **quote-part du résultat**\n- Ex : immobilisation sous-évaluée chez l'associée → amortissement supplémentaire au prorata\n- Logique : la quote-part reflète la JV, pas la VC historique de l'associée\n\n### Profits intra-groupe (associée ↔ investisseur)\n- **Élimination de la quote-part** du profit non réalisé\n- Aval (downstream, investisseur → associée) : élimination\n- Amont (upstream, associée → investisseur) : élimination\n- ≠ Consolidation intégrale (élimination totale)\n\n### Pertes de l'associée — plancher zéro (IAS 28.38-39)\n- MEE jusqu'à ce que **VC + prêts LT = 0**\n- Au-delà : **arrêt** de la MEE\n- Reprise possible quand l'associée redevient profitable\n- **Sauf obligation formelle/légale** de l'investisseur (continue à reconnaître pertes)\n\n### Perte d'influence notable (IAS 28.22)\n- **Décomptabiliser** la participation\n- Reconnaître la **JV** de la participation résiduelle → IFRS 9\n- **Gain/perte = (Contrepartie + JV résiduelle) − VC participation** → P&L\n- OCI accumulés : **recyclage P&L** (ou transfert au résultat reporté selon origine)\n\n### Cas particuliers\n- **Coentreprises** (IFRS 11.24) : droits sur actif net → MEE obligatoire\n- **Investissements détenus par des entités de capital-risque, fonds, OPC** : option JVPL (IFRS 9)\n- **Filiale d'une filiale** : MEE peut s'appliquer si l'investisseur est ultime\n\n### Vs RPC 30 & CO\n#### RPC 30\n- MEE OU intégration **proportionnelle** pour les joint ventures (choix)\n- Influence notable : MEE également imposée\n- Dividendes reçus : également réduction VC\n#### CO (art. 963a)\n- Méthode selon la norme appliquée\n\n### ⚠️ Pièges examen\n- **N°1** Dividendes reçus = **réduction VC**, **PAS un produit** au P&L\n- **N°2** Consolidation **proportionnelle INTERDITE** sous IFRS (joint ventures = MEE)\n- **N°3** **20% = présomption** réfutable d'influence notable\n- **N°4** Goodwill implicite inclus dans la VC → **test global** IAS 36\n- **N°5** Pertes : **plancher zéro** sauf obligation formelle\n- **N°6** Perte d'influence : JV résiduelle à reconnaître → **basculement IFRS 9**\n- **N°7** Ajustements JV à l'acquisition → réduisent la quote-part résultat (pas le goodwill)\n\n### 💡 Mnémoniques\n- **« Coût + Quote-part − Dividendes »** — formule MEE\n- **« Dividende = pas un produit »** — réduit la VC\n- **« 20% = présomption »** — pas une règle absolue\n- **« Goodwill implicite »** — dans la VC, pas séparé\n- **« Plancher zéro »** — MEE s'arrête à VC = 0\n- **« Joint Venture IFRS = MEE seule »** — proportionnelle interdite\n\n### 🔗 Normes liées\n- **IFRS 10** — Contrôle (distinction influence vs contrôle)\n- **IFRS 11** — Partenariats (Joint Operations vs Joint Ventures)\n- **IFRS 3** — Goodwill (logique implicite IAS 28)\n- **IFRS 9** — JV résiduelle après perte d'influence\n- **IAS 36** — Dépréciation (test global sur VC)\n- **RPC 30** — Consolidation (MEE OU proportionnelle pour JV)\n",
           "title_en": "IAS 28 — Investments in Associates and Joint Ventures",
-          "summary_en": "IAS 28 governs the accounting of investments in associates (significant influence, typically 20-50%) and joint ventures, by the equity method. Equity method: initial recognition at cost, then adjusted to share of profit/loss + share of OCI of investee - dividends received. Impairment test under IAS 36 if indicators exist. Significant influence presumption ≥ 20% voting rights (rebuttable). Difference vs RPC 30 which allows choice between equity and proportional for joint ventures."
+          "summary_en": "IAS 28 governs the accounting of investments in associates (significant influence, typically 20-50%) and joint ventures, by the equity method. Equity method: initial recognition at cost, then adjusted to share of profit/loss + share of OCI of investee - dividends received. Impairment test under IAS 36 if indicators exist. Significant influence presumption ≥ 20% voting rights (rebuttable). Difference vs RPC 30 which allows choice between equity and proportional for joint ventures.",
+          "questions": [
+            {
+              "id": "m11_ias28_q1",
+              "type": "mcq",
+              "question": "I acquiert 30 % d'A pour 400. A réalise un bénéfice de 200 et verse un dividende de 50 (sans autre ajustement). Quelle est la valeur de la participation à la clôture ?",
+              "options": [
+                "385",
+                "460",
+                "400",
+                "445"
+              ],
+              "answer": 3,
+              "explanation": "400 + 30 % × 200 (60) − 30 % × 50 (15) = 445.",
+              "difficulty": "medium",
+              "section_id": "ias28_x1"
+            },
+            {
+              "id": "m11_ias28_q2",
+              "type": "mcq",
+              "question": "Comment l'investisseur comptabilise-t-il un dividende reçu d'une entreprise associée mise en équivalence ?",
+              "options": [
+                "En augmentation des autres éléments du résultat global",
+                "En produit financier dans le compte de résultat de l'exercice",
+                "En diminution de la valeur comptable de la participation",
+                "En produit différé, étalé sur la durée de détention prévue"
+              ],
+              "answer": 2,
+              "explanation": "IAS 28.10 : les distributions reçues réduisent la valeur comptable de la participation ; le résultat a déjà été pris en compte par la quote-part.",
+              "difficulty": "easy",
+              "section_id": null
+            },
+            {
+              "id": "m11_ias28_q3",
+              "type": "mcq",
+              "question": "Lors de l'acquisition de 30 % d'une associée, un immeuble est réévalué de +100 (durée résiduelle 10 ans). Quel est l'effet annuel sur la quote-part du résultat ?",
+              "options": [
+                "Aucun effet, l'écart restant dans le goodwill",
+                "Augmentation de 3 par an, en produit",
+                "Diminution de 3 par an (30 % × 100 / 10)",
+                "Diminution de 10 par an (100 / 10)"
+              ],
+              "answer": 2,
+              "explanation": "Les ajustements de juste valeur identifiés à l'acquisition sont amortis : la quote-part du résultat est réduite de 30 % × 100 / 10 = 3 par an.",
+              "difficulty": "hard",
+              "section_id": "ias28_x1"
+            },
+            {
+              "id": "m11_ias28_q4",
+              "type": "mcq",
+              "question": "I (30 % d'A) vend à A des marchandises avec une marge de 40, toujours en stock chez A à la clôture. Quel profit I doit-elle éliminer ?",
+              "options": [
+                "28, soit la part des autres actionnaires",
+                "12, soit sa quote-part de 30 %",
+                "Aucun, car la vente est descendante",
+                "40, soit la totalité de la marge"
+              ],
+              "answer": 1,
+              "explanation": "IAS 28.28 : les profits des transactions ascendantes et descendantes sont éliminés à hauteur de la quote-part de l'investisseur, soit 30 % × 40 = 12.",
+              "difficulty": "medium",
+              "section_id": "ias28_x1"
+            },
+            {
+              "id": "m11_ias28_q5",
+              "type": "mcq",
+              "question": "Les pertes d'une associée ramènent la participation de l'investisseur à zéro. Que prévoit IAS 28 ?",
+              "options": [
+                "L'investisseur cesse de comptabiliser sa quote-part, sauf obligation légale ou implicite",
+                "L'investisseur comptabilise une dette pour toute la quote-part des pertes futures",
+                "L'investisseur déduit les pertes excédentaires de son propre goodwill dans les comptes consolidés",
+                "L'investisseur reprend immédiatement la participation à sa valeur d'origine"
+              ],
+              "answer": 0,
+              "explanation": "IAS 28.38-39 : au-delà de zéro (participation et intérêts à long terme compris), les pertes ne sont plus comptabilisées, sauf obligation légale ou implicite ou paiements pour le compte de l'associée.",
+              "difficulty": "medium",
+              "section_id": null
+            },
+            {
+              "id": "m11_ias28_q6",
+              "type": "mcq",
+              "question": "Comment teste-t-on la dépréciation du goodwill implicite inclus dans une participation mise en équivalence ?",
+              "options": [
+                "On teste le goodwill séparément chaque année, dans une UGT du groupe investisseur",
+                "On teste l'ensemble de la participation comme un seul actif selon IAS 36",
+                "On ne le teste jamais, la mise en équivalence l'interdisant",
+                "On amortit le goodwill sur 5 ans au lieu de le tester annuellement"
+              ],
+              "answer": 1,
+              "explanation": "IAS 28.42 : le goodwill inclus dans la valeur comptable n'est pas comptabilisé séparément ; la participation entière est testée comme un actif unique lorsqu'il existe un indice de perte de valeur.",
+              "difficulty": "hard",
+              "section_id": null
+            },
+            {
+              "id": "m11_ias28_q7",
+              "type": "mcq",
+              "question": "Selon IAS 28, l'influence notable est présumée lorsque l'investisseur détient\n(Identifiez la réponse correcte)",
+              "options": [
+                "au moins 10 % des droits de vote, sauf preuve contraire",
+                "au moins 20 % du capital, sans preuve contraire possible",
+                "plus de 50 % des droits de vote, sauf preuve contraire",
+                "au moins 20 % des droits de vote, sauf preuve contraire"
+              ],
+              "answer": 3,
+              "explanation": "IAS 28.5 : une détention directe ou indirecte d'au moins 20 % des droits de vote fait présumer l'influence notable ; cette présomption est réfutable.",
+              "difficulty": "easy",
+              "section_id": null
+            }
+          ]
         },
         {
           "id": "ifrs3",
@@ -51525,6 +52345,24 @@
             {
               "title": "Comparaison IFRS 3 vs RPC 30",
               "content": "**IFRS 3** :\n- Coûts de transaction = **CHARGES**\n- Goodwill **JAMAIS amorti**, test annuel (IAS 36)\n- Goodwill **négatif** = gain immédiat P&L\n- Choix full/partial goodwill par regroupement\n\n**RPC 30** :\n- Coûts de transaction **INCLUS dans le goodwill**\n- Goodwill amorti 5-20 ans OU compensé avec FP\n- Goodwill négatif = même traitement que positif\n- Si compensation FP : **recyclage du goodwill à la cession**"
+            },
+            {
+              "section_id": "ifrs3_x1",
+              "title": "🧮 Cas chiffré d'examen — goodwill complet et partiel",
+              "content": "**Énoncé** : M SA acquiert **80 %** de F SA pour **CHF 800**. À la date d'acquisition, les actifs nets identifiables de F à la **juste valeur** s'élèvent à **CHF 700** (dont une relation clientèle de 60 non comptabilisée chez F). La juste valeur des 20 % minoritaires est estimée à **CHF 180**. Frais d'avocats : CHF 25.\n\n| | Goodwill complet (minoritaires à la JV) | Goodwill partiel (minoritaires à la quote-part) |\n|---|---|---|\n| Contrepartie | 800 | 800 |\n| + Minoritaires | 180 | 20 % × 700 = 140 |\n| − Actifs nets à la JV | (700) | (700) |\n| **= Goodwill** | **280** | **240** |\n\n**Écriture de consolidation (goodwill partiel)**\n| Compte | Débit | Crédit |\n|---|---|---|\n| Actifs nets de F (dont relation clientèle 60) | 700 | |\n| Goodwill | 240 | |\n| Participation dans F (comptes de M) | | 800 |\n| Intérêts minoritaires (capitaux propres) | | 140 |\n\nLes **frais d'avocats (25)** sont comptabilisés en **charges** dans le compte de résultat consolidé.",
+              "key_point": "La différence entre les deux méthodes (40) correspond au goodwill attribuable aux minoritaires.",
+              "warning": "La relation clientèle (60) est reconnue séparément même si F ne l'avait pas au bilan.",
+              "example": "Sous RPC 30, les frais de 25 auraient été ajoutés au coût d'acquisition et donc au goodwill.",
+              "tip": "Toujours présenter le calcul sous forme de tableau : contrepartie, minoritaires, actifs nets, goodwill."
+            },
+            {
+              "section_id": "ifrs3_x2",
+              "title": "🧮 Cas chiffré — prise de contrôle par étapes et earn-out",
+              "content": "**Énoncé** : M détient depuis 3 ans **30 %** de F (mise en équivalence, valeur comptable **300**). Elle achète **40 %** supplémentaires pour **520** comptant et obtient le contrôle. À cette date : JV de la participation antérieure de 30 % = **360** ; JV des 30 % minoritaires = **390** ; actifs nets identifiables à la JV = **1'000**.\n\n**1. Réévaluation de la participation antérieure** : 360 − 300 = **gain de 60 en résultat** (et recyclage des éventuels OCI de l'associée comme en cas de cession).\n\n**2. Goodwill (minoritaires à la JV)** = 520 + 360 + 390 − 1'000 = **270**.\n\n**Earn-out** : si le contrat prévoit en plus un paiement de 50 (JV à la date d'acquisition) en cas d'atteinte d'un EBITDA cible, la contrepartie transférée inclut ces **50** (goodwill 320). Si un an plus tard la JV de la dette d'earn-out passe à 80 en raison de la performance après l'acquisition, la différence de **30** est une **charge** : le goodwill ne change pas.",
+              "key_point": "La prise de contrôle est traitée comme si l'ancienne participation était cédée puis rachetée à la JV.",
+              "warning": "Seules des informations sur des faits existant à la date d'acquisition, obtenues pendant la période d'évaluation (12 mois au plus), ajustent le goodwill.",
+              "example": "Une révision de l'évaluation d'un terrain fondée sur une expertise relative à la date d'acquisition, reçue au 8e mois : ajustement rétrospectif du goodwill.",
+              "tip": "Formule à mémoriser : Goodwill = contrepartie (earn-out compris) + minoritaires + JV de la participation antérieure − actifs nets."
             }
           ],
           "key_rules": [
@@ -51551,7 +52389,9 @@
             230,
             330,
             344,
-            423
+            423,
+            2276,
+            2277
           ],
           "comparisons": {
             "ifrs": "IFRS 3",
@@ -51617,7 +52457,9 @@
             "⚠️ **Goodwill négatif** = gain IMMÉDIAT P&L (après re-vérification)",
             "💡 **Full vs Partial goodwill** : choix PAR regroupement, pas politique uniforme",
             "⚠️ **Acquisition par étapes** : réévaluer la participation antérieure à JV (gain P&L)",
-            "💡 **Période d'évaluation** = 12 mois max pour ajustements rétrospectifs du goodwill"
+            "💡 **Période d'évaluation** = 12 mois max pour ajustements rétrospectifs du goodwill",
+            "⚠️ **Earn-out classé en dette** : variations ultérieures de JV en **résultat**, le goodwill ne bouge plus (sauf ajustement de la période d'évaluation)",
+            "💡 **Passifs éventuels** de l'acquise : comptabilisés s'il s'agit d'une obligation actuelle évaluable de façon fiable, même si la sortie n'est pas probable (exception à IAS 37)"
           ],
           "key_differences": {
             "ifrs": "IFRS 3 : coûts transaction = charges. Goodwill jamais amorti. Négatif = gain immédiat. Full ou partial goodwill.",
@@ -51633,7 +52475,159 @@
           ],
           "mindmap_md": "# IFRS 3\n## Regroupements d'entreprises — méthode de l'acquisition\n\n### Principe & champ\n- **Méthode de l'acquisition** (purchase method) — obligatoire\n- Pooling of interests **interdit** depuis 2004\n- Regroupement = obtention du **contrôle** d'une « **business** »\n- Définition business : input + process + capacité à produire des outputs\n- ≠ Acquisition d'actifs isolés → hors champ IFRS 3\n\n### Les 5 étapes (IFRS 3.4-5)\n- **① Identifier l'ACQUÉREUR** (celui qui prend le contrôle, IFRS 10)\n- **② Date d'acquisition** = date de prise de contrôle\n- **③ Évaluer la CONTREPARTIE TRANSFÉRÉE** à la JV\n- **④ Comptabiliser les ACTIFS NETS IDENTIFIABLES** à la JV\n- **⑤ Calculer le GOODWILL** (ou gain bargain purchase)\n\n### Contrepartie transférée (IFRS 3.37-40)\n- À la **JV à la date d'acquisition**\n- Inclut : trésorerie, actions émises (JV au cours), earn-out à JV estimée, règlements de relations préexistantes\n- ⚠️ **Coûts de transaction EN CHARGES** (IFRS 3.53) : due diligence, avocats, audit → **P&L**\n- **Pas inclus dans le goodwill** (≠ RPC 30)\n#### Earn-out (contrepartie conditionnelle)\n- Classification dette/FP selon IAS 32\n- Si **dette** → réévaluation à chaque clôture, variations en **P&L**\n- Si **FP** → pas de réévaluation après\n\n### Actifs nets identifiables (IFRS 3.10-23)\n- TOUS actifs/passifs à la **JV** à la date d'acquisition\n- **Incorporels non comptabilisés** chez la cible → **reconnaître séparément**\n  - Marques, fichiers clients, technologie, carnet de commandes\n  - Critère : identifiable (séparable OU droits contractuels)\n- **Passifs éventuels** comptabilisés si JV mesurable (même sans provision IAS 37)\n- **R&D** activable (IAS 38.34) ; **impôts différés** sur réévaluations (IAS 12)\n\n### Goodwill — formule & 2 méthodes\n- **Goodwill = (Contrepartie + Minoritaires) − JV actifs nets identifiables**\n- **Full goodwill** : minoritaires à la **JV** → goodwill total sur 100%\n- **Partial goodwill** : minoritaires = **quote-part actifs nets** (sans goodwill) → part acquéreur seule\n- ⚠️ Choix **PAR REGROUPEMENT** (pas politique uniforme obligatoire)\n- Ex : 800 pour 80%, JV actifs nets 900, JV minoritaires 190\n  - Full : (800+190) − 900 = **90** ; Partial : 800 − (80%×900) = **80**\n\n### Goodwill — comptabilisation ultérieure\n- **JAMAIS amorti** (IFRS 3.B63a)\n- Test **annuel** de dépréciation (IAS 36) au niveau **CGU**\n- Dépréciation **irréversible** (pas de reprise)\n\n### Goodwill négatif — bargain purchase (IFRS 3.34-36)\n- Si JV actifs nets > contrepartie + minoritaires\n- **Revoir** les évaluations (vraie aubaine ou erreur ?)\n- Si confirmé : **gain immédiat au P&L**\n- ⚠️ Radicalement différent de RPC 30 (même traitement que positif)\n\n### Période d'évaluation (IFRS 3.45-50)\n- **12 mois maximum** après l'acquisition\n- Ajustements **rétrospectifs** sur informations relatives à des faits **existants** à la date\n- Ajustent rétrospectivement le goodwill\n- Après 12 mois → ajustements en **P&L**\n\n### Acquisition par étapes (IFRS 3.41-42)\n- Passer de 30% à 60% = prise de contrôle\n- **Réévaluation de la part antérieure à la JV** → **gain/perte P&L**\n- Contrepartie totale = JV ancienne part + nouveau prix\n- ⚠️ Différence clé RPC 30 (ancienne part → FP)\n\n### Vs RPC 30 & CO\n- **RPC 30** : coûts transaction **inclus** dans goodwill (≠ IFRS = charges)\n- **RPC 30** : goodwill **amorti 5-20 ans** OU compensation FP (≠ IFRS jamais amorti)\n- **RPC 30** : badwill = même traitement que positif (≠ IFRS gain P&L)\n- **RPC 30** : acquisition par étapes → FP (≠ IFRS P&L)\n- **CO 963b** : selon norme choisie\n\n### ⚠️ Pièges examen\n- **N°1** Coûts transaction **EN CHARGES** (≠ RPC 30 inclus au goodwill)\n- **N°2** Goodwill négatif = **gain immédiat P&L** (≠ RPC traitement uniforme)\n- **N°3** Full vs partial = choix **PAR regroupement** (pas politique uniforme)\n- **N°4** Acquisition par étapes = **réévaluation à JV** → P&L (≠ RPC → FP)\n- **N°5** Goodwill **JAMAIS amorti** (≠ RPC 5-20 ans)\n- **N°6** Période d'évaluation = **12 mois max** pour ajustements rétrospectifs\n- **N°7** Incorporels non activés chez la cible → reconnaître **séparément** à la JV\n\n### 💡 Mnémoniques\n- **« C.A.R.G.O. »** — Contrepartie + minoritaires − Actifs nets JV = Goodwill (RPC inverse, négatif = P&L)\n- **« 5 étapes »** — Acquéreur / Date / Contrepartie / Actifs nets / Goodwill\n- **« Coûts = charges »** — IFRS 3 (≠ RPC)\n- **« Full ou Partial »** — choix par deal (pas politique uniforme)\n- **« 12 mois »** — fenêtre d'ajustements rétrospectifs\n- **« Step-up à JV »** — acquisition par étapes → P&L\n\n### 🔗 Normes liées\n- **IFRS 10** — Définition du contrôle (étape 1)\n- **IFRS 11** — Partenariats (joint operations = pas de regroupement)\n- **IFRS 13** — Évaluation à la juste valeur\n- **IAS 36** — Test annuel de dépréciation du goodwill\n- **IAS 38** — Incorporels reconnus séparément (R&D, marques)\n- **IAS 12** — Impôts différés sur réévaluations\n- **IAS 32** — Classification dette/FP de l'earn-out\n- **RPC 30** — Référentiel suisse (multiples différences)\n",
           "title_en": "IFRS 3 — Business Combinations",
-          "summary_en": "IFRS 3 governs the accounting of business combinations (acquisitions). Mandatory acquisition method (purchase method): identify acquirer, determine acquisition date, recognise identifiable assets/liabilities at FAIR VALUE, calculate goodwill (excess of consideration over net FV identifiable assets). Goodwill NEVER amortised but mandatory annual impairment test (IAS 36). Bargain purchase gain: direct P&L recognition. Acquisition costs expensed (NOT capitalised). Difference vs RPC 30 (goodwill amortised)."
+          "summary_en": "IFRS 3 governs the accounting of business combinations (acquisitions). Mandatory acquisition method (purchase method): identify acquirer, determine acquisition date, recognise identifiable assets/liabilities at FAIR VALUE, calculate goodwill (excess of consideration over net FV identifiable assets). Goodwill NEVER amortised but mandatory annual impairment test (IAS 36). Bargain purchase gain: direct P&L recognition. Acquisition costs expensed (NOT capitalised). Difference vs RPC 30 (goodwill amortised).",
+          "questions": [
+            {
+              "id": "m11_ifrs3_q1",
+              "type": "mcq",
+              "question": "M acquiert 80 % de F pour 800. Actifs nets identifiables à la JV : 700 ; JV des minoritaires : 180. Quel est le goodwill complet (full goodwill) ?",
+              "options": [
+                "320",
+                "240",
+                "100",
+                "280"
+              ],
+              "answer": 3,
+              "explanation": "Goodwill complet = 800 + 180 − 700 = 280 (minoritaires évalués à leur juste valeur).",
+              "difficulty": "medium",
+              "section_id": "ifrs3_x1"
+            },
+            {
+              "id": "m11_ifrs3_q2",
+              "type": "mcq",
+              "question": "Même cas (80 % pour 800, actifs nets à la JV 700) avec les minoritaires évalués à leur quote-part des actifs nets : quel est le goodwill ?",
+              "options": [
+                "280",
+                "100",
+                "140",
+                "240"
+              ],
+              "answer": 3,
+              "explanation": "Minoritaires = 20 % × 700 = 140 ; goodwill partiel = 800 + 140 − 700 = 240.",
+              "difficulty": "medium",
+              "section_id": "ifrs3_x1"
+            },
+            {
+              "id": "m11_ifrs3_q3",
+              "type": "mcq",
+              "question": "Comment IFRS 3 traite-t-elle les honoraires d'avocats et de due diligence liés à une acquisition ?",
+              "options": [
+                "En augmentation du goodwill comptabilisé lors du regroupement",
+                "En immobilisation incorporelle amortie sur la durée du contrat",
+                "En charges de la période au cours de laquelle ils sont engagés",
+                "En diminution des capitaux propres, comme des coûts d'émission"
+              ],
+              "answer": 2,
+              "explanation": "IFRS 3.53 : les coûts liés à l'acquisition sont comptabilisés en charges ; seuls les coûts d'émission de titres de dette ou de capitaux propres suivent IFRS 9 / IAS 32.",
+              "difficulty": "easy",
+              "section_id": null
+            },
+            {
+              "id": "m11_ifrs3_q4",
+              "type": "mcq",
+              "question": "M détenait 30 % de F (valeur comptable 300, JV 360) et en achète 40 % de plus pour 520. Minoritaires à la JV : 390 ; actifs nets à la JV : 1'000. Quel goodwill comptabilise-t-elle ?",
+              "options": [
+                "270",
+                "210",
+                "390",
+                "330"
+              ],
+              "answer": 0,
+              "explanation": "Goodwill = 520 + 360 (JV de la participation antérieure) + 390 − 1'000 = 270 ; la réévaluation de 300 à 360 donne un gain de 60 en résultat.",
+              "difficulty": "hard",
+              "section_id": "ifrs3_x2"
+            },
+            {
+              "id": "m11_ifrs3_q5",
+              "type": "mcq",
+              "question": "Lors d'une prise de contrôle par étapes, comment est traitée la participation détenue auparavant ?",
+              "options": [
+                "Elle est déduite du goodwill pour sa valeur comptable historique d'origine",
+                "Elle est maintenue à sa valeur comptable, sans aucun effet sur le résultat",
+                "Elle est réévaluée à la juste valeur, l'écart étant porté en résultat",
+                "Elle est réévaluée à la juste valeur, l'écart étant porté en capitaux propres"
+              ],
+              "answer": 2,
+              "explanation": "IFRS 3.42 : la participation antérieure est réévaluée à la juste valeur à la date d'acquisition et le gain ou la perte est comptabilisé en résultat.",
+              "difficulty": "medium",
+              "section_id": "ifrs3_x2"
+            },
+            {
+              "id": "m11_ifrs3_q6",
+              "type": "mcq",
+              "question": "Une contrepartie éventuelle (earn-out) classée en dette voit sa juste valeur augmenter après l'acquisition en raison des bonnes performances de la cible. Comment comptabiliser l'écart ?",
+              "options": [
+                "En autres éléments du résultat global, avec recyclage",
+                "En charge dans le résultat, sans modifier le goodwill",
+                "En augmentation du goodwill, quelle que soit la date",
+                "En diminution des capitaux propres du groupe consolidé"
+              ],
+              "answer": 1,
+              "explanation": "Les variations de juste valeur d'un earn-out classé en dette qui ne résultent pas d'informations sur la date d'acquisition sont comptabilisées en résultat (IFRS 3.58).",
+              "difficulty": "hard",
+              "section_id": "ifrs3_x2"
+            },
+            {
+              "id": "m11_ifrs3_q7",
+              "type": "mcq",
+              "question": "Quelle est la durée maximale de la période d'évaluation selon IFRS 3 ?",
+              "options": [
+                "24 mois à compter de la date d'acquisition",
+                "6 mois à compter de la date d'acquisition",
+                "Jusqu'à la clôture de l'exercice d'acquisition",
+                "12 mois à compter de la date d'acquisition"
+              ],
+              "answer": 3,
+              "explanation": "IFRS 3.45 : la période d'évaluation ne peut pas dépasser un an à compter de la date d'acquisition ; les ajustements sont rétrospectifs.",
+              "difficulty": "easy",
+              "section_id": null
+            },
+            {
+              "id": "m11_ifrs3_q8",
+              "type": "mcq",
+              "question": "L'acquise fait l'objet d'un litige : l'obligation existe mais la sortie de ressources n'est pas probable ; sa juste valeur est estimée de façon fiable à 40. Que fait l'acquéreur selon IFRS 3 ?",
+              "options": [
+                "Il mentionne seulement le passif éventuel en annexe, comme sous IAS 37",
+                "Il ne fait rien, car la sortie de ressources n'est pas probable",
+                "Il comptabilise un passif de 40 dans l'allocation du prix d'acquisition",
+                "Il réduit la contrepartie transférée de 40 au lieu de constater un passif"
+              ],
+              "answer": 2,
+              "explanation": "IFRS 3.23 déroge à IAS 37 : un passif éventuel de l'acquise est comptabilisé s'il s'agit d'une obligation actuelle dont la juste valeur peut être évaluée de façon fiable.",
+              "difficulty": "hard",
+              "section_id": null
+            },
+            {
+              "id": "m11_ifrs3_q9",
+              "type": "mcq",
+              "question": "Selon IFRS 3, le goodwill comptabilisé lors d'un regroupement d'entreprises\n(Identifiez la réponse correcte)",
+              "options": [
+                "est amorti linéairement sur 5 ans, sauf justification d'une durée plus longue",
+                "est amorti sur sa durée d'utilité, au plus sur 20 ans, puis testé",
+                "n'est pas amorti mais fait l'objet d'un test de dépréciation au moins annuel",
+                "est compensé avec les capitaux propres et présenté seulement en annexe"
+              ],
+              "answer": 2,
+              "explanation": "Sous IFRS, le goodwill n'est jamais amorti ; il est affecté à des UGT et testé au moins une fois par an (IAS 36). L'amortissement et la compensation relèvent de RPC 30.",
+              "difficulty": "medium",
+              "section_id": null
+            },
+            {
+              "id": "m11_ifrs3_q10",
+              "type": "mcq",
+              "question": "En cas d'acquisition à des conditions avantageuses (goodwill négatif) selon IFRS 3, l'acquéreur\n(Identifiez la réponse correcte)",
+              "options": [
+                "comptabilise immédiatement le solde en produit, sans réexaminer les évaluations",
+                "revoit ses évaluations puis comptabilise le solde en produit dans le résultat",
+                "étale le solde en produits sur la durée d'utilité des actifs non courants acquis",
+                "comptabilise le solde en réserves consolidées, directement en capitaux propres"
+              ],
+              "answer": 1,
+              "explanation": "IFRS 3.34-36 : l'acquéreur réexamine l'identification et l'évaluation des actifs, passifs et de la contrepartie, puis comptabilise le gain restant en résultat à la date d'acquisition.",
+              "difficulty": "medium",
+              "section_id": null
+            }
+          ]
         },
         {
           "id": "ifrs10",
@@ -51664,6 +52658,24 @@
             {
               "title": "Comparaison IFRS 10 vs RPC 30 vs CO",
               "content": "**IFRS 10** : 3 éléments (pouvoir + rendements + capacité). Contrôle de fait possible.\n\n**RPC 30** :\n- > 50% droits de vote → intégration globale\n- Contrôle de fait reconnu\n- **Consolidation proportionnelle AUTORISÉE** pour joint ventures (interdite sous IFRS)\n\n**CO (art. 963)** : comptes consolidés obligatoires si contrôle d'une ou plusieurs autres entreprises. Exemption si groupe ne dépasse pas 2/3 des seuils du contrôle ordinaire."
+            },
+            {
+              "section_id": "ifrs10_x1",
+              "title": "🧮 Cas chiffré d'examen — profits internes et minoritaires",
+              "content": "**Énoncé** : M détient **80 %** de F.\n\n**A. Vente descendante (mère → filiale)** : M vend à F des marchandises coûtant 100 pour **150**. À la clôture, **40 %** sont encore en stock chez F.\n- Profit interne en stock = (150 − 100) × 40 % = **20**.\n\n| Compte | Débit | Crédit |\n|---|---|---|\n| Chiffre d'affaires | 150 | |\n| Coût des ventes | | 130 |\n| Stocks | | 20 |\n\nL'élimination est **entièrement** à charge de la part du groupe (le profit a été réalisé par M).\n\n**B. Vente ascendante (filiale → mère)** : mêmes chiffres, mais c'est F qui vend à M. L'élimination de 20 réduit le résultat de F : **16** à charge du groupe (80 %) et **4** à charge des **minoritaires** (20 %).\n\n**C. Impôts différés** : l'élimination crée une différence temporelle déductible (stocks consolidés inférieurs à leur base fiscale) → actif d'impôt différé (ex. 20 × 20 % = 4).",
+              "key_point": "Vente descendante : 100 % au groupe ; vente ascendante : répartition groupe / minoritaires.",
+              "warning": "On élimine le chiffre d'affaires et le coût des ventes **interne** dans leur totalité, et seulement le profit encore en stock.",
+              "example": "Si tout le stock avait été revendu à des tiers avant la clôture, il n'y aurait pas de profit interne à éliminer (seulement le CA et le coût des ventes internes).",
+              "tip": "Toujours se demander : qui a réalisé le profit ? C'est ce qui détermine la part des minoritaires."
+            },
+            {
+              "section_id": "ifrs10_x2",
+              "title": "🧮 Cas chiffré — variation de pourcentage et perte de contrôle",
+              "content": "**A. Achat complémentaire sans changement de contrôle** : M passe de **80 % à 90 %** de F pour **CHF 130**. Les minoritaires figurent pour **1'000** (20 %), soit 500 pour 10 %.\n- Écriture : Minoritaires **500** au débit, Trésorerie 130 au crédit, **Capitaux propres du groupe (réserves) 370** au crédit.\n- Ni goodwill supplémentaire, ni résultat.\n\n**B. Perte de contrôle** : M cède 60 % de F (elle détenait 100 %) pour **900** et conserve 40 % (influence notable) d'une juste valeur de **600**. Actifs nets de F dans les comptes consolidés : **1'200**, goodwill **100**, écarts de conversion cumulés en OCI : gain de **30**.\n- Résultat de cession = (900 + 600) − (1'200 + 100) + 30 (recyclage des OCI) = **230** en résultat.\n- La participation de 40 % est désormais mise en équivalence (IAS 28) avec un coût initial de **600**.",
+              "key_point": "Sans perte de contrôle → capitaux propres ; avec perte de contrôle → résultat.",
+              "warning": "Les réserves de réévaluation d'IAS 16 et les écarts actuariels d'IAS 19 ne sont pas recyclés : ils sont transférés dans les réserves.",
+              "example": "Une cession de 10 % (de 90 % à 80 %) pour un prix supérieur à la valeur des minoritaires dégage un écart en capitaux propres, pas un gain.",
+              "tip": "Repère d'examen : « le contrôle est-il conservé ? » décide entre capitaux propres et résultat."
             }
           ],
           "key_rules": [
@@ -51686,7 +52698,10 @@
           ],
           "flashcard_ids": [
             82,
-            331
+            331,
+            2278,
+            2279,
+            2280
           ],
           "comparisons": {
             "ifrs": "IFRS 10",
@@ -51703,7 +52718,10 @@
             "⚠️ **Contrôle peut exister SANS majorité de vote** (contrôle de fait, droits potentiels, SPV)",
             "💡 **Principal vs Agent** : agent = consolide pas. Indicateurs : révocabilité, rémunération fixe, faible exposition",
             "⚠️ **Perte de contrôle** : décomptabiliser tout + JV résiduelle + recycler OCI = GAIN/PERTE AU P&L",
-            "💡 **Harmonisation dates clôture** : max 3 mois d'écart"
+            "💡 **Harmonisation dates clôture** : max 3 mois d'écart",
+            "⚠️ **80 % → 90 %** (sans perte de contrôle) : aucune variation du goodwill, aucun résultat — l'écart va en **capitaux propres**",
+            "💡 **Profit interne en stock** : vente **descendante** (mère → filiale) → élimination intégrale à charge du groupe ; vente **ascendante** (filiale → mère) → élimination répartie entre groupe et **minoritaires**",
+            "💡 Les minoritaires supportent leur part des pertes **même si** leur solde devient négatif"
           ],
           "key_differences": {
             "ifrs": "IFRS 10 : 3 éléments. Contrôle sans majorité possible. SPV consolidables. Principal vs agent.",
@@ -51719,7 +52737,129 @@
           ],
           "mindmap_md": "# IFRS 10\n## États financiers consolidés — modèle du contrôle\n\n### Principe\n- IFRS 10 = **définition unique du contrôle** pour tous types d'entités\n- Remplace IAS 27 (2013) + SIC-12 (SPV)\n- Contrôle → **intégration globale** obligatoire\n- S'applique aux entités opérationnelles **ET** structurées (SPV)\n\n### Le contrôle — 3 éléments cumulatifs (IFRS 10.6-7)\n- **① POUVOIR** sur l'entité\n- **② EXPOSITION** à des rendements variables\n- **③ CAPACITÉ** d'utiliser le pouvoir pour influer sur les rendements\n- ⚠️ **CUMULATIFS** : un manque → pas de contrôle → pas de consolidation\n\n### ① Pouvoir\n- Droits **EXISTANTS** donnant capacité actuelle de **diriger les activités pertinentes**\n- **Activités pertinentes** = celles qui affectent significativement les rendements\n- Sources : droits de **vote**, droits **contractuels**, droits **potentiels** (s'ils sont substantifs)\n- ⚠️ **Droits protectifs** ≠ pouvoir (veto sur changements statutaires seulement)\n\n### ② Exposition à des rendements variables\n- Dividendes, distributions, JV, redevances, économies d'échelle\n- Rendements **variables** selon performances (≠ fixes)\n\n### ③ Capacité d'influer sur les rendements\n- Lien entre pouvoir et rendements\n- Distingue **PRINCIPAL** (consolide) vs **AGENT** (ne consolide pas)\n- Indicateurs AGENT : pouvoir limité/révocable, rémunération fixe, faible exposition\n- Ex : gérant de fonds 2% fee + pas de capital = AGENT\n\n### Contrôle SANS majorité de vote\n- **Contrôle de FAIT** : 30-49% + actionnariat dispersé (majorité en AG en pratique)\n- **Droits de vote POTENTIELS** : options, convertibles si **substantifs** (exerçables, prix raisonnable)\n- **Accords contractuels** : droits de veto **actifs** (≠ purement protectifs)\n- **Entités ad hoc (SPV)** : design + accords plutôt que vote, consolidation possible sans détention\n\n### Procédures de consolidation (IFRS 10.B86-B93)\n- **Combiner** actifs/passifs/produits/charges mère + filiales\n- **Éliminer** VC participation contre FP filiale (→ goodwill IFRS 3)\n- **Éliminer** transactions intragroupes + bénéfices internes non réalisés\n- **Harmoniser** méthodes comptables (toutes filiales)\n- **Harmoniser** dates de clôture (max **3 mois** d'écart)\n\n### Intérêts minoritaires (NCI)\n- Dans les **FP consolidés** (pas un passif)\n- Part au résultat **séparée** au CR\n- Variation **sans perte** de contrôle = transaction entre actionnaires → **FP**\n- Variation **avec** perte de contrôle = opération de **P&L**\n\n### Perte de contrôle (IFRS 10.25, B97-B99)\n- Décomptabiliser actifs/passifs filiale + VC minoritaires\n- Reconnaître **JV de la participation résiduelle** → IAS 28 ou IFRS 9\n- **Recycler en P&L** les OCI accumulés\n- **P&L = (Contrepartie + JV résiduelle) − Actifs nets décomptabilisés**\n- ⚠️ Opération de P&L, pas en FP\n\n### Exemption & cas particuliers\n- **Exemption** (IFRS 10.4) : filiale détenue à 100% + mère ultime publie IFRS + instruments non cotés\n- Pas de seuils de taille (≠ RPC 30)\n- **Entités d'investissement** (IFRS 10.27-33) : fonds, holdings → filiales à **JVPL** (pas consolidées)\n\n### Vs RPC 30 & CO\n- **RPC 30** : > 50% ou contrôle de fait (modèle moins formalisé)\n- **RPC 30** : intégration proportionnelle **autorisée** pour JV (≠ IFRS 11)\n- **RPC 30** : exemption par **seuils** 20M/40M/250 (≠ IFRS 10)\n- **CO 963** : obligation, exemption 963a, pas d'exemption pour cotées\n\n### ⚠️ Pièges examen\n- **N°1** Contrôle = **3 éléments CUMULATIFS** (pouvoir + exposition + capacité)\n- **N°2** Contrôle peut exister **SANS majorité** de vote\n- **N°3** **Principal vs Agent** : agent **ne consolide PAS**\n- **N°4** Perte de contrôle : recyclage OCI + JV résiduelle = **gain/perte au P&L**\n- **N°5** Variation intérêt **sans perte** de contrôle = **FP** (transaction entre actionnaires)\n- **N°6** Harmonisation dates : max **3 mois** d'écart\n- **N°7** SPV consolidables **sans détention** de capital (design + contractuel)\n\n### 💡 Mnémoniques\n- **« P.E.C. »** — Pouvoir + Exposition + Capacité = contrôle\n- **« 3 cumulatifs »** — un manque → pas de contrôle\n- **« Principal ≠ Agent »** — agent ne consolide pas\n- **« De facto + Potentiel + Contractuel + SPV »** — 4 voies de contrôle sans majorité\n- **« 3 mois max »** — écart clôture\n- **« OCI recyclé »** — à la perte de contrôle vers le P&L\n\n### 🔗 Normes liées\n- **IFRS 3** — Comptabilisation du regroupement (étape post-contrôle)\n- **IFRS 11** — Partenariats (contrôle conjoint, pas contrôle exclusif)\n- **IFRS 12** — Disclosures sur intérêts dans autres entités\n- **IAS 28** — Influence notable (sans contrôle)\n- **IAS 27** — États financiers individuels (résiduel)\n- **IFRS 9** — Participation résiduelle après perte de contrôle\n- **RPC 30** — Référentiel suisse (proportionnelle autorisée, seuils d'exemption)\n- **CO 963** — Obligation suisse de consolidation\n",
           "title_en": "IFRS 10 — Consolidated Financial Statements",
-          "summary_en": "IFRS 10 defines a single CONTROL model: an investor controls an investee if and only if it simultaneously has (1) POWER over relevant activities, (2) EXPOSURE/right to variable returns, (3) ABILITY to use power to affect returns. Replaces previous control criterion (>50% voting rights). Full consolidation of controlled entities. Continuous reassessment of control if facts/circumstances change. Important for structured entities (SPEs)."
+          "summary_en": "IFRS 10 defines a single CONTROL model: an investor controls an investee if and only if it simultaneously has (1) POWER over relevant activities, (2) EXPOSURE/right to variable returns, (3) ABILITY to use power to affect returns. Replaces previous control criterion (>50% voting rights). Full consolidation of controlled entities. Continuous reassessment of control if facts/circumstances change. Important for structured entities (SPEs).",
+          "questions": [
+            {
+              "id": "m11_ifrs10_q1",
+              "type": "mcq",
+              "question": "Selon IFRS 10, quels éléments doivent être réunis pour qu'un investisseur contrôle une entité ?",
+              "options": [
+                "Pouvoir, exposition aux rendements variables et capacité d'utiliser ce pouvoir",
+                "Détention de plus de 50 % du capital et de la majorité des sièges au conseil d'administration",
+                "Pouvoir sur l'entité et détention d'au moins 20 % des droits de vote",
+                "Exposition aux rendements variables et présence d'un contrat de gestion"
+              ],
+              "answer": 0,
+              "explanation": "IFRS 10.7 : le contrôle exige les trois éléments cumulatifs — pouvoir, exposition aux rendements variables, lien entre pouvoir et rendements.",
+              "difficulty": "easy",
+              "section_id": null
+            },
+            {
+              "id": "m11_ifrs10_q2",
+              "type": "mcq",
+              "question": "M détient 45 % des droits de vote de F ; les 55 % restants sont répartis entre des milliers de petits actionnaires qui ne se coordonnent pas. Que conclure ?",
+              "options": [
+                "M peut contrôler F de fait et doit alors la consolider",
+                "M ne peut jamais contrôler F sans détenir plus de 50 %",
+                "F est une coentreprise à comptabiliser par équivalence",
+                "M exerce seulement une influence notable sur F (IAS 28)"
+              ],
+              "answer": 0,
+              "explanation": "IFRS 10.B41-B42 : des droits de vote inférieurs à 50 % peuvent donner le pouvoir lorsque les autres détenteurs sont nombreux et dispersés (contrôle de fait).",
+              "difficulty": "medium",
+              "section_id": null
+            },
+            {
+              "id": "m11_ifrs10_q3",
+              "type": "mcq",
+              "question": "M passe de 80 % à 90 % de sa filiale F. Comment comptabilise-t-elle l'écart entre le prix payé et la valeur des minoritaires acquis ?",
+              "options": [
+                "En charge ou en produit dans le résultat consolidé de l'exercice",
+                "En autres éléments du résultat global, recyclés lors de la cession",
+                "En augmentation du goodwill de F, comme lors d'une nouvelle acquisition d'actions",
+                "En capitaux propres du groupe, sans effet sur le résultat ni le goodwill"
+              ],
+              "answer": 3,
+              "explanation": "IFRS 10.23 : les variations du pourcentage d'intérêt sans perte de contrôle sont des transactions entre actionnaires, comptabilisées en capitaux propres.",
+              "difficulty": "medium",
+              "section_id": "ifrs10_x2"
+            },
+            {
+              "id": "m11_ifrs10_q4",
+              "type": "mcq",
+              "question": "M vend à sa filiale (80 %) des marchandises coûtant 100 pour 150 ; 40 % sont en stock chez la filiale à la clôture. Quel profit interne faut-il éliminer des stocks ?",
+              "options": [
+                "20, entièrement à charge de la part du groupe",
+                "16, soit 80 % du profit encore en stock",
+                "20, dont 4 à charge des intérêts minoritaires",
+                "50, soit la totalité de la marge réalisée"
+              ],
+              "answer": 0,
+              "explanation": "Profit en stock = 50 × 40 % = 20. Dans une vente descendante, le profit a été réalisé par la mère : l'élimination est entièrement à charge du groupe.",
+              "difficulty": "hard",
+              "section_id": "ifrs10_x1"
+            },
+            {
+              "id": "m11_ifrs10_q5",
+              "type": "mcq",
+              "question": "Même opération (profit interne de 20 en stock), mais c'est la filiale détenue à 80 % qui a vendu à la mère. Comment répartir l'élimination ?",
+              "options": [
+                "20 entièrement à charge des intérêts minoritaires",
+                "20 entièrement à charge de la part du groupe consolidé",
+                "Aucune élimination, la vente étant ascendante",
+                "16 à charge du groupe et 4 à charge des minoritaires"
+              ],
+              "answer": 3,
+              "explanation": "Dans une vente ascendante, le profit a été réalisé par la filiale : l'élimination réduit son résultat, réparti entre le groupe (80 %) et les minoritaires (20 %).",
+              "difficulty": "hard",
+              "section_id": "ifrs10_x1"
+            },
+            {
+              "id": "m11_ifrs10_q6",
+              "type": "mcq",
+              "question": "M cède 60 % de F pour 900 et conserve 40 % (JV 600). Actifs nets consolidés de F : 1'200 ; goodwill : 100 ; écarts de conversion cumulés (gain) : 30. Quel résultat de cession M comptabilise-t-elle ?",
+              "options": [
+                "200",
+                "170",
+                "300",
+                "230"
+              ],
+              "answer": 3,
+              "explanation": "Résultat = (900 + 600) − (1'200 + 100) + 30 de recyclage des écarts de conversion = 230.",
+              "difficulty": "hard",
+              "section_id": "ifrs10_x2"
+            },
+            {
+              "id": "m11_ifrs10_q7",
+              "type": "mcq",
+              "question": "Selon IFRS 10, lorsque la part des pertes revenant aux intérêts minoritaires dépasse leur quote-part des capitaux propres de la filiale\n(Identifiez la réponse correcte)",
+              "options": [
+                "elle leur est attribuée même si leur solde devient négatif",
+                "elle est imputée sur la part du groupe au-delà de zéro",
+                "elle cesse d'être comptabilisée jusqu'au retour des bénéfices",
+                "elle est présentée en dette envers les actionnaires minoritaires"
+              ],
+              "answer": 0,
+              "explanation": "IFRS 10.B94 : le résultat et chaque composante des OCI sont attribués aux propriétaires de la mère et aux minoritaires, même si cela rend le solde des minoritaires négatif.",
+              "difficulty": "medium",
+              "section_id": null
+            },
+            {
+              "id": "m11_ifrs10_q8",
+              "type": "mcq",
+              "question": "Une filiale clôture au 30 septembre et la mère au 31 décembre. Selon IFRS 10, l'écart entre les dates de clôture\n(Identifiez la réponse correcte)",
+              "options": [
+                "n'a aucune limite, pourvu que la date soit appliquée de façon constante",
+                "ne peut dépasser six mois, sans ajustement des transactions importantes",
+                "doit être nul : la filiale doit toujours établir des comptes au 31 décembre",
+                "ne peut dépasser trois mois, les transactions importantes étant ajustées"
+              ],
+              "answer": 3,
+              "explanation": "IFRS 10.B92-B93 : à défaut de comptes intermédiaires, l'écart ne doit pas dépasser trois mois et les effets des transactions ou événements importants sont ajustés.",
+              "difficulty": "medium",
+              "section_id": null
+            }
+          ]
         },
         {
           "id": "ifrs11",
@@ -51734,6 +52874,15 @@
             {
               "title": "Distinction Joint Operation vs Joint Venture",
               "content": "**Analyse séquentielle** (IFRS 11.14-20) :\n\n**Étape 1** : Structure juridique du partenariat ?\n- **Pas de véhicule séparé** → toujours **Joint Operation**\n- **Véhicule séparé** → analyser plus loin\n\n**Étape 2** (si véhicule séparé) : analyse des :\n① Forme juridique du véhicule\n② Conditions de l'accord contractuel\n③ Autres faits et circonstances\n\nSi tout converge vers des **droits sur actifs / obligations sur passifs** (ex: garanties aux créanciers) → Joint Operation.\nSinon → Joint Venture.\n\n**Exemple — Joint Venture** : Création d'une SA commune avec partage 50/50. Chaque partie a des parts de la SA.\n**Exemple — Joint Operation** : Exploitation commune d'un gisement pétrolier avec partage des actifs et des coûts directs."
+            },
+            {
+              "section_id": "ifrs11_x1",
+              "title": "🧮 Cas chiffré d'examen — activité conjointe ou coentreprise ?",
+              "content": "**Énoncé** : A et B créent **Pipeline SA** (50 / 50) pour exploiter un oléoduc. Les décisions importantes exigent l'accord des deux. Pipeline SA a des actifs de **2'000**, des dettes de **1'200** et un résultat de **100**.\n\n**Cas 1 — coentreprise** (la SA a sa propre clientèle et A et B n'ont droit qu'au dividende) : chaque partenaire comptabilise une **participation** par mise en équivalence : 50 % × (2'000 − 1'200) = **400** au bilan et **50** de quote-part de résultat (catégorie investissement sous IFRS 18).\n\n**Cas 2 — activité conjointe** (le contrat prévoit que A et B achètent toute la capacité et couvrent les dettes de la SA) : chaque partenaire comptabilise **ligne par ligne** sa quote-part : actifs **1'000**, dettes **600**, produits et charges à 50 %.",
+              "key_point": "Même société à 50/50, deux traitements possibles selon les droits réels des partenaires.",
+              "warning": "La forme d'une SA crée une présomption de coentreprise, que le contrat ou les autres faits peuvent renverser.",
+              "example": "Deux sociétés pharmaceutiques qui développent ensemble un médicament sans créer d'entité : activité conjointe.",
+              "tip": "Suivre la grille : véhicule distinct ? → forme juridique → contrat → autres faits et circonstances."
             }
           ],
           "key_rules": [
@@ -51754,7 +52903,8 @@
             "RPC 30"
           ],
           "flashcard_ids": [
-            507
+            507,
+            2281
           ],
           "comparisons": {
             "ifrs": "IFRS 11",
@@ -51770,7 +52920,8 @@
             "⚠️ **Consolidation PROPORTIONNELLE INTERDITE** sous IFRS (autorisée sous RPC 30)",
             "💡 **Joint Operation** = part des actifs/passifs/produits/charges. **Joint Venture** = MEE",
             "⚠️ Contrôle conjoint = **consentement UNANIME** des parties contrôlantes",
-            "💡 **Pas de véhicule séparé** = toujours Joint Operation"
+            "💡 **Pas de véhicule séparé** = toujours Joint Operation",
+            "⚠️ **Véhicule distinct** : examiner la forme juridique, le contrat **et** les autres faits (ex. production vendue intégralement aux partenaires → activité conjointe)"
           ],
           "key_differences": {
             "ifrs": "IFRS 11 : Joint Operations (part actifs/passifs) OU Joint Ventures (MEE). Proportionnelle INTERDITE.",
@@ -51786,7 +52937,69 @@
           ],
           "mindmap_md": "# IFRS 11\n## Partenariats (joint arrangements) — contrôle conjoint\n\n### Principe & champ\n- Régit les arrangements **contractuels** entre 2+ parties à **contrôle conjoint**\n- Remplace **IAS 31** depuis 2013\n- ⚠️ **Consolidation proportionnelle INTERDITE** (option IAS 31 abrogée)\n- 2 types : **Joint Operations** (JO) vs **Joint Ventures** (JV)\n- Disclosures : IFRS 12\n\n### Contrôle conjoint — définition (IFRS 11.7-13)\n- Partage du contrôle **contractuellement convenu**\n- Décisions sur **activités pertinentes** exigent le **consentement unanime** des parties partageant le contrôle\n- ≠ Contrôle exclusif IFRS 10 (pouvoir unilatéral)\n- ≠ Influence notable IAS 28 (pas de contrôle)\n- Possible à 2, 3 parties ou plus\n\n### Joint Operation (activité conjointe) — IFRS 11.15-17\n- Parties ont des **droits directs sur les actifs**\n- Parties ont des **obligations directes sur les passifs**\n- Comptabilisation de **sa part** :\n  - Actifs (y c. part des actifs conjoints)\n  - Passifs (y c. part des passifs)\n  - Produits & charges (sa part + part des produits/charges communs)\n- Comptabilisation **ligne par ligne directe**\n- Identique en états individuels ET consolidés\n- Ex : exploitation commune d'un gisement pétrolier, partage actifs/coûts\n\n### Joint Venture (coentreprise) — IFRS 11.24-25\n- Parties ont des **droits sur l'actif NET**\n- Structure séparée détient les actifs/passifs\n- **Mise en équivalence (IAS 28)** OBLIGATOIRE\n- VC = coût + quote-part résultat − dividendes\n- Goodwill implicite dans la VC ; dividendes reçus = réduction VC\n- Plancher zéro pour les pertes\n- Ex : SA commune 50/50\n\n### Distinction JO vs JV — analyse séquentielle (IFRS 11.14-20)\n#### Étape 1 — Structure juridique\n- **PAS de véhicule séparé** → **toujours JO**\n- **Véhicule séparé** (SA, SARL) → analyser plus loin\n#### Étape 2 — Si véhicule séparé\n- ① Forme juridique du véhicule\n- ② Conditions de l'accord contractuel\n- ③ Autres faits et circonstances\n- Si convergence vers **droits sur actifs / obligations sur passifs** (garanties aux créanciers, accès direct) → **JO**\n- Sinon → **JV**\n\n### Acquisition d'intérêt dans une JO « business »\n- Appliquer **IFRS 3** à la quote-part acquise (amendement 2015)\n- Identifier acquéreur, contrepartie, JV actifs nets, **goodwill** sur quote-part\n- Coûts transaction → **charges**\n\n### Évolution d'un partenariat\n- Si pouvoir devient **exclusif** → **IFRS 10** (consolidation intégrale)\n- Si perte de contrôle conjoint, influence notable maintenue → **IAS 28** (MEE)\n- Si perte totale → **IFRS 9**\n\n### Vs RPC 30 & CO\n- **RPC 30** : contrôle conjoint → **choix** proportionnelle OU MEE\n- Pas de distinction formalisée JO vs JV en RPC\n- Avantage RPC : flexibilité ; désavantage : comparabilité réduite\n- **CO 963a** : selon norme choisie\n\n### ⚠️ Pièges examen\n- **N°1** **Consolidation proportionnelle INTERDITE** sous IFRS (≠ RPC autorisée)\n- **N°2** Joint Operation = comptabilisation **directe** des actifs/passifs\n- **N°3** Joint Venture = **MEE obligatoire** (pas de choix)\n- **N°4** Contrôle conjoint = **unanimité** sur activités pertinentes\n- **N°5** **Pas de véhicule séparé** = toujours **JO**\n- **N°6** Acquisition JO « business » = appliquer **IFRS 3** sur la quote-part\n- **N°7** SA 50/50 = présomption JV (sauf accord donnant droits sur actifs individuels)\n\n### 💡 Mnémoniques\n- **« JO = part actifs/passifs »** (ligne par ligne)\n- **« JV = MEE »** (mise en équivalence obligatoire)\n- **« Proportionnelle = INTERDITE IFRS »**\n- **« Unanimité »** = contrôle conjoint\n- **« Pas de véhicule = JO »** (raccourci décisionnel)\n- **« Step 1 + Step 2 »** — forme juridique puis faits/circonstances\n\n### 🔗 Normes liées\n- **IFRS 10** — Contrôle exclusif (sortie d'IFRS 11)\n- **IFRS 3** — Acquisition d'une JO « business »\n- **IAS 28** — Méthode MEE pour les JV\n- **IFRS 12** — Disclosures intérêts dans autres entités\n- **IFRS 9** — JV résiduelle après perte de contrôle conjoint\n- **RPC 30** — Référentiel suisse (proportionnelle autorisée)\n- **CO 963a** — Renvoi à la norme choisie\n",
           "title_en": "IFRS 11 — Joint Arrangements",
-          "summary_en": "IFRS 11 distinguishes two types of joint arrangements: (1) JOINT OPERATIONS — parties have direct rights to assets and liabilities → each party recognises its share of assets, liabilities, income, expenses, (2) JOINT VENTURES — parties have rights to net assets → MANDATORY EQUITY METHOD (IAS 28). Replaces previous IAS 31. Removes proportional integration option for joint ventures (still allowed under RPC 30)."
+          "summary_en": "IFRS 11 distinguishes two types of joint arrangements: (1) JOINT OPERATIONS — parties have direct rights to assets and liabilities → each party recognises its share of assets, liabilities, income, expenses, (2) JOINT VENTURES — parties have rights to net assets → MANDATORY EQUITY METHOD (IAS 28). Replaces previous IAS 31. Removes proportional integration option for joint ventures (still allowed under RPC 30).",
+          "questions": [
+            {
+              "id": "m11_ifrs11_q1",
+              "type": "mcq",
+              "question": "Quand existe-t-il un contrôle conjoint selon IFRS 11 ?",
+              "options": [
+                "Lorsqu'un partenaire détient au moins 20 % des droits de vote et siège au conseil",
+                "Lorsque les partenaires signent un pacte d'actionnaires quelconque",
+                "Lorsque les décisions sur les activités pertinentes exigent l'unanimité des parties",
+                "Lorsque deux partenaires détiennent chacun exactement 50 % du capital et des droits de vote"
+              ],
+              "answer": 2,
+              "explanation": "IFRS 11.7 : le contrôle conjoint n'existe que si les décisions concernant les activités pertinentes requièrent le consentement unanime des parties qui partagent le contrôle.",
+              "difficulty": "easy",
+              "section_id": null
+            },
+            {
+              "id": "m11_ifrs11_q2",
+              "type": "mcq",
+              "question": "Deux entreprises développent ensemble un produit sans créer de société, en partageant les coûts et les ventes. Comment chacune comptabilise-t-elle l'accord ?",
+              "options": [
+                "Comme une activité conjointe : sa quote-part des actifs, passifs, produits et charges",
+                "Comme un instrument financier évalué à la juste valeur par le résultat",
+                "Comme une filiale : par intégration globale, avec présentation d'intérêts minoritaires",
+                "Comme une coentreprise : par mise en équivalence de sa participation dans le projet"
+              ],
+              "answer": 0,
+              "explanation": "Sans véhicule distinct, un partenariat est toujours une activité conjointe (IFRS 11.B16).",
+              "difficulty": "medium",
+              "section_id": "ifrs11_x1"
+            },
+            {
+              "id": "m11_ifrs11_q3",
+              "type": "mcq",
+              "question": "Une coentreprise au sens d'IFRS 11 est comptabilisée dans les comptes consolidés d'un partenaire\n(Identifiez la réponse correcte)",
+              "options": [
+                "selon la méthode de la mise en équivalence uniquement",
+                "à la juste valeur par le résultat, sans exception",
+                "selon l'intégration proportionnelle ou l'équivalence",
+                "selon l'intégration globale avec des intérêts minoritaires"
+              ],
+              "answer": 0,
+              "explanation": "IFRS 11.24 renvoie à IAS 28 : la mise en équivalence est obligatoire ; l'intégration proportionnelle est interdite (elle reste permise par RPC 30).",
+              "difficulty": "medium",
+              "section_id": null
+            },
+            {
+              "id": "m11_ifrs11_q4",
+              "type": "mcq",
+              "question": "Pipeline SA (50/50, contrôle conjoint) vend toute sa production à ses deux partenaires, qui couvrent ses dettes. Comment la classer selon IFRS 11 ?",
+              "options": [
+                "En activité conjointe, malgré l'existence d'une SA distincte",
+                "En entreprise associée, faute de contrôle par un seul partenaire",
+                "En filiale de chacun des deux partenaires, consolidée à 50 %",
+                "En coentreprise, car elle est constituée sous forme de SA"
+              ],
+              "answer": 0,
+              "explanation": "Les autres faits et circonstances (production entièrement achetée, dettes couvertes par les partenaires) donnent aux partenaires des droits sur les actifs et des obligations au titre des passifs : activité conjointe (IFRS 11.B29-B32).",
+              "difficulty": "hard",
+              "section_id": "ifrs11_x1"
+            }
+          ]
         }
       ],
       "lessons_ifp": [

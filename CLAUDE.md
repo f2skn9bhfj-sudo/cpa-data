@@ -72,10 +72,10 @@ depuis la Révision active) est un alias de `fcdb` pour la navigation
 |---|---|---|---|
 | dashboard | dashboard.js `renderDashboard` : « Plan du jour » (`renderDashPlan`) + question du jour + tuiles `HUB_SECTIONS` | natif | flashcards, suivi QCM, journal quotidien |
 | recherche | search_tab.js `renderRechercheTab` (reprend `_stQuery`) | natif | index plein-texte de 9 fichiers data/ + IA Mistral optionnelle (clé saisie par l'utilisateur, localStorage) |
-| modules | modules.js `renderModules` (~3000 l.) | natif | unified_modules, trainer_courses, norms_ifrs_rpc, notion_lessons, flashcards ; `navigateToNormByCode(code)` ouvre une norme |
+| modules | modules.js `renderModules` (~3000 l.) | natif | unified_modules, trainer_courses, norms_ifrs_rpc, notion_lessons, flashcards ; `navigateToNormByCode(code)` ouvre une norme ; l'accueil du **M4** est une page IFRS (`_modIfrsHomeHtml` : 4 boutons d'action, progression, `IFRS_PRIORITY` « incontournables », 6 thèmes `IFRS_THEMES` dont « Groupes » = fiches du M11, cartes avec QCM vus/réussis remplies par `_modIfrsFillProgress`) |
 | trainer | trainer.js `renderTrainer` | natif | sprints SM-2 (flashcards) + cours (trainer_courses) ; `launchSprintFromIds` (sélection venue de Flashcards ou du Plan du jour, via sessionStorage `fcdbReviewIds`) |
-| qcm | qcm.js `renderQcm` | natif | `get_qcm_catalog` → **data/qcm_catalog.json** (pré-calculé à partir de trainer_courses + unified_modules + audit.json annuaire_cours) → **3831 QCM** (dédoublonnés par texte ; M1–M16 tous couverts, examen blanc pondéré par domaine) |
-| fcdb | fcdb.js `renderFcdb` | natif | flashcards.json (**1583** cartes) ; « Réviser la sélection » → sprint |
+| qcm | qcm.js `renderQcm` | natif | `get_qcm_catalog` → **data/qcm_catalog.json** (pré-calculé à partir de trainer_courses + unified_modules + audit.json annuaire_cours) → **3897 QCM** (dédoublonnés par texte ; M1–M16 tous couverts, examen blanc pondéré par domaine : reporting 35 % avec M4/M11 ×1,6, audit 25, fiscal 20, droit 20) ; « 🌍 Focus IFRS » = `_qcmStartFocus` (20 Q : à revoir → ratées → nouvelles, 3 par norme max) ; `qcmFocusStart({codes|lessonId|∅, n})` ouvre l'onglet sur une série (fiches de normes, page IFRS, « Lancer cette série » des leçons via sessionStorage `qcmLessonFilter`) |
+| fcdb | fcdb.js `renderFcdb` | natif | flashcards.json (**1594** cartes) ; « Réviser la sélection » → sprint |
 | compare | comparisons.js `renderComparisons` | natif | comparisons.json (25 thèmes) ; boutons « Normes liées » → `compGoNorm` |
 | progress | progress.js `renderProgress` | natif | `get_module_stats` (liste par module : flashcards, leçons de la Révision active, QCM réussis) + sauvegarde/restauration |
 | fs, references, audit, english, oral, conso, hec, social, fusion | js/<app>.js → iframe `<app>/index.html` | sous-app | embarquées (voir plus bas) |
@@ -95,7 +95,7 @@ sont dans aucune rubrique ni dans `HUB_SECTIONS`, et figurent dans
 | unified_modules.json (6,3 Mo) | modules, qcm, recherche, pdf_export, podcasts | `{modules:[16]}` M1–M16 ; module = `{code,name,norms[],lessons_ifp[],lessons_notion,flashcard_count,…}` ; leçon IFP = `{id,code,title,content[{title,body,section_id}],questions[],mindmap_md,title_en,content_en,…}` ; norme = `{code,title,id,sections,mindmap_md,questions,memo_items…}` ; question = `{id,type:"mcq"|"vrai_faux",question,options,answer,explanation,difficulty,section_id}` |
 | trainer_courses.json (2,7 Mo) | trainer, modules, qcm | `{courses:[119 {norm_code,norm_title,category,module,module_code,lessons[{id,title,duration_min,content,key_points,questions}]}]}` |
 | norms_ifrs_rpc.json (1,5 Mo) | modules (fiche norme) | `{norms:[80 {id,code,title,category,sections,key_rules,thresholds,cross_refs,flashcard_ids,comparisons,html_content,memo_items,course_items}]}` |
-| flashcards.json (1 Mo) | trainer, fcdb, dashboard, recherche | **liste** de `{id:int,cat,sub,d,q,a}` — ids uniques (max 2271) ; cat ∈ **Fiscalité, Swiss GAAP RPC, IFRS / IAS, Audit / ISA, Expert suisse** (M1) ; d ∈ facile, moyen, difficile, piège |
+| flashcards.json (1 Mo) | trainer, fcdb, dashboard, recherche | **liste** de `{id:int,cat,sub,d,q,a}` — ids uniques (max 2282) ; cat ∈ **Fiscalité, Swiss GAAP RPC, IFRS / IAS, Audit / ISA, Expert suisse** (M1) ; d ∈ facile, moyen, difficile, piège |
 | notion_lessons.json | modules, recherche | liste de 661 `{concept,year,module,notes,priority,section,status,type}` |
 | qcm_catalog.json (3,4 Mo) | qcm, progression, plan du jour | **GÉNÉRÉ** par `sync_subapps.py` (tools/build_qcm_catalog.js exécute `_build_qcm_catalog` d'api-client-static.js) : ne pas éditer, relancer `sync_subapps.py --write qcm` après toute modification d'un QCM |
 | comparisons.json | compare, recherche | `{themes:[25 {…, norms:{ifrs,rpc,co}}]}` |
@@ -136,7 +136,8 @@ TVA en comptabilité, résultat financier, liquidités, titres, compte privé, i
 Les leçons TVA (M8-L1 à L12) et de fiscalité directe (M7-L1 à L15) ont chacune une section « 🧩 Cas pratique » en fin de leçon. Contenu
 écrit en mots propres (le site est public) : ne pas recopier les classeurs fournis par l'utilisateur.
 Mise en forme des textes (crossref.js `_mdEmphasis`) : `**gras**` et `*italique*`.
-**Format EXPERTsuisse** : 60 QCM (M7, M8, M1) reprennent la forme de l'examen — début de phrase
+**IFRS** : 28 fiches M4 (dont **IFRS 18**, applicable dès 2027 : 8 sections, 16 QCM) ; fiches de consolidation du M11 (IFRS 3, 10, 11, IAS 28) avec sections « 🧮 Cas chiffré d'examen » et QCM (`m11_<id>_qN`).
+**Format EXPERTsuisse** : 60 QCM (M7, M8, M1) + 29 QCM IFRS (fiches M4 et M11, dont `<norme>_esN`) reprennent la forme de l'examen — début de phrase
 à compléter + `\n(Identifiez la réponse correcte)`, options qui complètent la phrase, pièges sur un
 mot. Détectés par ce libellé (`_qcmIsEsStyle`, qcm.js) → bouton « 🎓 Format EXPERTsuisse » (20 au
 hasard). Énoncés uniques obligatoires (le catalogue dédoublonne par texte).
@@ -226,7 +227,7 @@ Icônes : `vendor/lucide-react.js` ne contient que les icônes importées (en-t�
   manuelle (remplacements ciblés uniquement) : audit/manifest.json,
   hec/manifest.json, data/{audit_amortissements, comparisons,
   podcasts_extra}.json, 2 fiches audit (03_planification, 07_communication).
-- Nouvelle flashcard : id entier unique (> 2271), champs `cat/sub/d/q/a`, `cat`
+- Nouvelle flashcard : id entier unique (> 2282), champs `cat/sub/d/q/a`, `cat`
   parmi les 5 catégories ci-dessus.
 - Nouveau QCM : `type` "mcq" (options[], answer = index) ou "vrai_faux"
   (answer booléen) ; `id` unique dans tout le catalogue ; puis

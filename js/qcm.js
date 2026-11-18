@@ -202,6 +202,16 @@ async function renderQcm(container) {
         window._qcmPlanPending = null;
         if (await _qcmStartPlan(p)) return;
     }
+    // Arrivée depuis les Modules (page IFRS, fiche d'une norme ou « Lancer cette série » d'une leçon).
+    let focus = window._qcmFocusPending || null;
+    window._qcmFocusPending = null;
+    if (!focus) {
+        try {
+            const raw = sessionStorage.getItem('qcmLessonFilter');
+            if (raw) { sessionStorage.removeItem('qcmLessonFilter'); focus = Object.assign({ n: 30 }, JSON.parse(raw)); }
+        } catch (e) { /* stockage indisponible */ }
+    }
+    if (focus && _qcmStartFocus(focus)) return;
 
     // Bannière "↩ Reprendre la session QCM ?" si état présent et < 24 h.
     const saved = _qcmLoadState();
@@ -257,6 +267,7 @@ function _qcmRenderSetup() {
     const dueCount = (t.due_ids || []).length;
     const weakCount = _qcmWeakCount();
     const esCount = qcm.catalog.filter(_qcmIsEsStyle).length;
+    const ifrsCount = qcm.catalog.filter(_qcmIsIfrs).length;
     const totalQuestionsSeen = countsTot.total_questions_seen || 0;
 
     el.innerHTML = `
@@ -294,6 +305,10 @@ function _qcmRenderSetup() {
         <!-- Sélections spéciales (sessions intelligentes) -->
         <div class="qcm-section-title">🎯 Sessions intelligentes</div>
         <div class="qcm-special-row">
+            <button class="qcm-special qcm-special-ifrs ${ifrsCount === 0 ? 'qcm-disabled' : ''}" onclick="_qcmStartFocus({ n: 20 })" ${ifrsCount === 0 ? 'disabled' : ''}>
+                <div class="qcm-special-title">🌍 Focus IFRS</div>
+                <div class="qcm-special-desc"><b>20</b> questions ciblées parmi <b>${ifrsCount}</b> : à revoir, ratées, puis nouvelles</div>
+            </button>
             <button class="qcm-special qcm-special-due ${dueCount === 0 ? 'qcm-disabled' : ''}" onclick="_qcmStartSpecial('due')" ${dueCount === 0 ? 'disabled' : ''}>
                 <div class="qcm-special-title">🔁 Révision espacée (SR)</div>
                 <div class="qcm-special-desc"><b>${dueCount}</b> questions dues — ancrage mémoire long terme</div>
@@ -745,6 +760,50 @@ function _qcmStartEsStyle(n) {
     _qcmStartSession(pool.slice(0, n || 20), { mode: 'training', specialSelection: null, shuffleOptions: qcm.shuffleOptions });
 }
 
+// ── Focus IFRS / série d'une norme (onglet QCM, page IFRS des Modules) ──
+// opts : { n, codes: ['IFRS 16', …] } pour une ou plusieurs normes, { lessonId } pour une leçon,
+// rien pour toute la matière IFRS (M4 + normes IFRS/IAS du M11).
+// Priorité : à revoir (répétition espacée) → ratées → jamais vues → déjà réussies ; au plus 3 par norme.
+const QCM_IFRS_CODE = /^(IAS|IFRS)\s?\d/;
+function _qcmIsIfrs(q) { return !!q && (q.module === 'M4' || (q.module === 'M11' && QCM_IFRS_CODE.test(q.norm_code || ''))); }
+function qcmFocusStart(opts) {
+    window._qcmFocusPending = Object.assign({ n: 20 }, opts || {});
+    navigate('qcm');
+}
+function _qcmStartFocus(p) {
+    p = p || {};
+    const n = p.n || 20;
+    let pool;
+    if (p.lessonId) pool = qcm.catalog.filter(q => q.lesson_id === p.lessonId);
+    else if (p.codes && p.codes.length) { const want = new Set(p.codes); pool = qcm.catalog.filter(q => want.has(q.norm_code)); }
+    else pool = qcm.catalog.filter(_qcmIsIfrs);
+    if (!pool.length) { alert('Aucune question pour cette sélection.'); return false; }
+    const stats = (qcm.tracking && qcm.tracking.stats) || {};
+    const due = new Set((qcm.tracking && qcm.tracking.due_ids) || []);
+    const rank = q => {
+        const st = stats[q.id];
+        if (due.has(q.id)) return 0;
+        if (st && st.attempts && st.last_was_correct === false) return 1;
+        if (!st || !st.attempts) return 2;
+        return 3;
+    };
+    const buckets = [[], [], [], []];
+    _qcmShuffle(pool).forEach(q => buckets[rank(q)].push(q));
+    const ordered = buckets.flat();
+    const cap = (p.codes || p.lessonId) ? Infinity : 3;
+    const perNorm = {}, picked = [];
+    for (const q of ordered) {
+        if (picked.length >= n) break;
+        const k = q.norm_code || '';
+        if ((perNorm[k] || 0) >= cap) continue;
+        perNorm[k] = (perNorm[k] || 0) + 1;
+        picked.push(q);
+    }
+    for (const q of ordered) { if (picked.length >= n) break; if (!picked.includes(q)) picked.push(q); }
+    _qcmStartSession(_qcmShuffle(picked), { mode: 'training', specialSelection: null, shuffleOptions: qcm.shuffleOptions });
+    return true;
+}
+
 // ── Série du « Plan du jour » (accueil) ──
 // Priorité : questions à revoir (répétition espacée) → points faibles → erreurs
 // récentes → questions jamais vues, tirées au hasard dans tous les modules.
@@ -801,8 +860,9 @@ async function _qcmStartSpecial(kind) {
 // modules sont tirés en proportion de leur banque de questions, avec un
 // minimum par module pour couvrir tout le programme.
 const QCM_EXAM_DOMAINS = [
-    { id: 'reporting', label: 'Comptabilité & reporting', ic: '📘', share: 30, modules: ['M3', 'M4', 'M11'] },
-    { id: 'audit',     label: 'Audit & assurance',       ic: '🔍', share: 30, modules: ['M2', 'M5', 'M10', 'M12', 'M14', 'AUDIT'] },
+    // IFRS renforcé : M4 et M11 pèsent 1,6 fois plus que leur banque de questions dans le domaine reporting.
+    { id: 'reporting', label: 'Comptabilité & reporting', ic: '📘', share: 35, modules: ['M3', 'M4', 'M11'], boost: { M4: 1.6, M11: 1.6 } },
+    { id: 'audit',     label: 'Audit & assurance',       ic: '🔍', share: 25, modules: ['M2', 'M5', 'M10', 'M12', 'M14', 'AUDIT'] },
     { id: 'fiscal',    label: 'Fiscalité & TVA',          ic: '🏛️', share: 20, modules: ['M7', 'M8'] },
     { id: 'droit',     label: 'Droit, IT & pratique pro', ic: '⚖️', share: 20, modules: ['M1', 'M6', 'M9', 'M13', 'M15', 'M16'] },
 ];
@@ -818,11 +878,12 @@ function _qcmStartExamBlanc() {
     const picked = [];
     for (const d of QCM_EXAM_DOMAINS) {
         const quota = Math.round(TOTAL * d.share / 100);
-        const pools = d.modules.map(m => _qcmShuffle(qcm.catalog.filter(q => q.module === m))).filter(p => p.length);
+        const mods = d.modules.filter(m => qcm.catalog.some(q => q.module === m));
+        const pools = mods.map(m => _qcmShuffle(qcm.catalog.filter(q => q.module === m)));
         if (!pools.length) continue;
         const size = pools.reduce((s, p) => s + p.length, 0);
         // part proportionnelle (racine carrée pour ne pas écraser les petits modules) + plancher
-        const w = pools.map(p => Math.sqrt(p.length));
+        const w = pools.map((p, i) => Math.sqrt(p.length) * ((d.boost && d.boost[mods[i]]) || 1));
         const wsum = w.reduce((a, b) => a + b, 0);
         let alloc = pools.map((p, i) => Math.min(p.length, Math.max(MIN_PER_MODULE, Math.round(quota * w[i] / wsum))));
         // ajuste au quota du domaine
@@ -1754,6 +1815,7 @@ function _qcmInjectStyles() {
     .qcm-special-star { border-left: 3px solid #fbbf24; }
     .qcm-special-wrong { border-left: 3px solid #f97316; }
     .qcm-special-es { border-left: 3px solid #0ea5e9; }
+    .qcm-special-ifrs { border-left: 3px solid #10b981; background: linear-gradient(90deg, rgba(16, 185, 129, 0.10), transparent); }
     .qcm-special-exam { border-left: 3px solid #8b5cf6; background: linear-gradient(90deg, rgba(139, 92, 246, 0.08), transparent); }
     .qcm-special-hist { border-left: 3px solid #64748b; }
 
