@@ -52,15 +52,17 @@ const server = http.createServer((req, res) => {
     let sub = '', empty = false;
     const src = info.iframe || (t === 'podcasts' ? 'podcasts/index.html' : null);
     if (src) {
-      // Les sous-apps compilent leur JSX au chargement (Babel) : on attend que
-      // le contenu réel remplace « Chargement… » (jusqu'à 20 s).
-      let n = 0;
+      // On attend que le contenu réel remplace « Chargement… » (jusqu'à 20 s).
+      let n = 0, head = '';
       for (let k = 0; k < 40 && n < 300; k++) {
         await page.waitForTimeout(500);
         const frame = page.frames().find(fr => fr.url().includes(src.split('?')[0]));
-        n = frame ? await frame.evaluate(() => (document.body.innerText || '').trim().length).catch(() => 0) : 0;
+        [n, head] = frame ? await frame.evaluate(() => { const t = (document.body.innerText || '').trim(); return [t.length, t.slice(0, 400)]; }).catch(() => [0, '']) : [0, ''];
       }
       empty = n < 300;
+      // Message d'erreur affiché par la page (ex. icône lucide absente de vendor/)
+      const m = head.match(/Erreur[^\n]*:[^\n]*/);
+      if (m) errs.push('sous-app : ' + m[0].slice(0, 200));
       sub = ` iframe=${src.split('?')[0]} texte=${n}c${empty ? ' (VIDE)' : ''}`;
     }
     // La navigation doit refléter la page : rubrique active + entrée active de la sous-barre.

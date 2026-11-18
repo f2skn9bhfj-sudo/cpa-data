@@ -31,30 +31,31 @@
     // Cache des fichiers data
     // ========================================================
 
+    // Cache de PROMESSES : deux appels simultanés au même fichier = un seul téléchargement.
     const _dataCache = {};
 
-    async function _loadJson(filename) {
-        if (_dataCache[filename] !== undefined) return _dataCache[filename];
-        try {
-            const r = await fetch('data/' + filename, { cache: 'no-cache' });
-            if (!r.ok) {
-                console.warn('[api-static] HTTP', r.status, 'on', filename);
-                _dataCache[filename] = null;
+    function _loadJson(filename) {
+        if (!_dataCache[filename]) _dataCache[filename] = (async () => {
+            try {
+                const r = await fetch('data/' + filename, { cache: 'no-cache' });
+                if (!r.ok) {
+                    console.warn('[api-static] HTTP', r.status, 'on', filename);
+                    return null;
+                }
+                return await r.json();
+            } catch (e) {
+                console.error('[api-static] fetch failed:', filename, e);
                 return null;
             }
-            const j = await r.json();
-            _dataCache[filename] = j;
-            return j;
-        } catch (e) {
-            console.error('[api-static] fetch failed:', filename, e);
-            _dataCache[filename] = null;
-            return null;
-        }
+        })();
+        return _dataCache[filename];
     }
 
     // ========================================================
     // Helpers localStorage (progression utilisateur)
     // ========================================================
+
+    let _qcmCatalogP = null;
 
     const LS_PREFIX = 'swisscpa_static_';
 
@@ -88,9 +89,80 @@
     function _saveFlashcardsProgress(p) { _lsSet('fc_progress', p); }
 
     function _qcmTracking() {
-        return _lsGet('qcm_tracking', { stats: {}, bookmarks: {}, sessions: [], notes: {} });
+        const t = _lsGet('qcm_tracking', null) || {};
+        t.stats = t.stats || {}; t.bookmarks = t.bookmarks || {}; t.sessions = t.sessions || []; t.notes = t.notes || {};
+        delete t.due_ids;  // calculé à la lecture, jamais stocké
+        return t;
     }
-    function _saveQcmTracking(t) { _lsSet('qcm_tracking', t); }
+    function _saveQcmTracking(t) { const c = Object.assign({}, t); delete c.due_ids; _lsSet('qcm_tracking', c); }
+    // « Point faible » : au moins 2 essais et moins de 60 % de réussite (même règle que qcm.js).
+    function _qcmIsWeak(s) { return !!s && s.attempts >= 2 && s.accuracy < 60; }
+    // Questions à revoir : date de révision atteinte ; ancien suivi sans date → dernière réponse fausse.
+    function _qcmDueIds(t) {
+        const now = Date.now();
+        return Object.keys(t.stats || {}).filter(id => {
+            const s = t.stats[id];
+            if (!s) return false;
+            if (s.next_review) return new Date(s.next_review).getTime() <= now;
+            return s.last_was_correct === false;
+        });
+    }
+
+    // ── Journal d'activité quotidien (Plan du jour, série 🔥) ──
+    // localStorage swisscpa_daily = { "AAAA-MM-JJ": { fc, q, l } } — 120 derniers jours.
+    // fc = flashcards notées, q = QCM répondus, l = étapes / questions de leçon.
+    const DAILY_KEY = 'swisscpa_daily';
+    function _dayKey(d) {
+        d = d || new Date();
+        return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    }
+    function _dailyAll() {
+        try { return JSON.parse(localStorage.getItem(DAILY_KEY) || '{}') || {}; } catch (_) { return {}; }
+    }
+    function _logDaily(kind, n) {
+        try {
+            const all = _dailyAll();
+            const k = _dayKey();
+            const day = all[k] = all[k] || {};
+            day[kind] = (day[kind] || 0) + (n || 1);
+            const keys = Object.keys(all).sort();
+            while (keys.length > 120) delete all[keys.shift()];
+            localStorage.setItem(DAILY_KEY, JSON.stringify(all));
+            window.dispatchEvent(new CustomEvent('swisscpa-activity', { detail: { kind } }));
+        } catch (_) { /* stockage plein ou bloqué : on ignore */ }
+    }
+    function _dailyTotal(d) { return d ? (d.fc || 0) + (d.q || 0) + (d.l || 0) + (d.seed || 0) : 0; }
+    // Série 🔥 : jours consécutifs avec au moins une activité, jusqu'à aujourd'hui
+    // (ou hier si rien n'a encore été fait aujourd'hui : la série n'est pas perdue avant minuit).
+    function _dailyStreak() {
+        const all = _dailyAll();
+        const d = new Date(); d.setHours(12, 0, 0, 0);
+        if (!_dailyTotal(all[_dayKey(d)])) d.setDate(d.getDate() - 1);
+        let n = 0;
+        while (_dailyTotal(all[_dayKey(d)]) > 0 && n < 400) { n++; d.setDate(d.getDate() - 1); }
+        return n;
+    }
+    const GOAL_KEY = 'swisscpa_daily_goal';
+    function _dailyGoal() { const g = parseInt(localStorage.getItem(GOAL_KEY) || '', 10); return g > 0 ? g : 30; }
+    function _setDailyGoal(g) { try { localStorage.setItem(GOAL_KEY, String(g)); } catch (_) {} }
+    // Migration unique : l'ancienne série (visites de la Révision active, swisscpa_streak)
+    // est reportée dans le journal pour ne pas repartir de zéro.
+    (function _dailySeed() {
+        try {
+            if (localStorage.getItem(DAILY_KEY)) return;
+            const old = JSON.parse(localStorage.getItem('swisscpa_streak') || 'null');
+            const all = {};
+            if (old && old.streak > 0 && old.lastActive) {
+                const d = new Date(old.lastActive + 'T12:00:00');
+                if ((Date.now() - d.getTime()) / 86400000 <= 2) {
+                    for (let i = 0; i < Math.min(old.streak, 120); i++) { all[_dayKey(d)] = { seed: 1 }; d.setDate(d.getDate() - 1); }
+                }
+            }
+            localStorage.setItem(DAILY_KEY, JSON.stringify(all));
+        } catch (_) { /* stockage indisponible */ }
+    })();
+    window.swisscpaDaily = { log: _logDaily, all: _dailyAll, dayKey: _dayKey, total: _dailyTotal,
+                             streak: _dailyStreak, goal: _dailyGoal, setGoal: _setDailyGoal };
 
     function _normProgress() { return _lsGet('norm_progress', {}); }
     function _saveNormProgress(p) { _lsSet('norm_progress', p); }
@@ -285,6 +357,7 @@
             const r = (typeof rating === 'number') ? rating : (correct ? 2 : 0);
             progress[card_id] = _sm2Update(card, r);
             _saveFlashcardsProgress(progress);
+            _logDaily('fc');
             return true;
         },
 
@@ -541,16 +614,28 @@
             return { total, done, in_progress: inProgress, by_module: byModule };
         },
 
-        async save_lesson_progress() { return true; },
+        async save_lesson_progress() { _logDaily('l'); return true; },
         // Liste [{norm_code, lesson_id, completed}] comme l'API desktop ; en web la
         // progression des leçons vit dans localStorage (swisscpa_trainer_progress).
         async get_trainer_progress() { return []; },
 
         // ── QCM ──────────────────────────────────────────────
 
+        // Banque de QCM : data/qcm_catalog.json, PRÉ-CALCULÉ par tools/build_qcm_catalog.js
+        // (lancé par sync_subapps.py) avec _build_qcm_catalog ci-dessous → la page QCM
+        // charge ~1 Mo au lieu de trainer_courses + unified_modules + audit.json (12 Mo).
+        // Repli : reconstruction à partir des sources si le fichier manque.
         async get_qcm_catalog() {
-            const tc = await api.get_trainer_courses();
-            const unified = await api.get_unified_modules();
+            if (!_qcmCatalogP) _qcmCatalogP = (async () => {
+                const pre = await _loadJson('qcm_catalog.json');
+                if (pre && Array.isArray(pre.questions) && pre.questions.length) return pre;
+                return api._build_qcm_catalog();
+            })();
+            return _qcmCatalogP;
+        },
+
+        async _build_qcm_catalog() {
+            const [tc, unified] = await Promise.all([api.get_trainer_courses(), api.get_unified_modules()]);
             const items = [];
             const summary = {};
             const seenIds = new Set();
@@ -726,13 +811,20 @@
             stats.accuracy = Math.round(stats.correct / stats.attempts * 100);
             stats.last_attempt = new Date().toISOString();
             stats.last_was_correct = was_correct;
+            // Répétition espacée : ratée → à revoir demain ; réussie → 4, 10, 30 puis 90 jours.
+            stats.streak = was_correct ? (stats.streak || 0) + 1 : 0;
+            const days = was_correct ? [4, 10, 30, 90][Math.min(stats.streak, 4) - 1] : 1;
+            stats.next_review = new Date(Date.now() + days * 86400000).toISOString();
             t.stats[question_id] = stats;
             _saveQcmTracking(t);
+            _logDaily('q');
             return true;
         },
 
         async get_qcm_tracking_data() {
-            return _qcmTracking();
+            const t = _qcmTracking();
+            t.due_ids = _qcmDueIds(t);
+            return t;
         },
 
         async qcm_toggle_bookmark(question_id) {
@@ -751,27 +843,30 @@
             return true;
         },
 
+        // Renvoie des IDENTIFIANTS de questions (qcm.js filtre son catalogue avec).
         async qcm_get_selection(kind, limit) {
             const t = _qcmTracking();
             const cat = await api.get_qcm_catalog();
             const all = cat.questions || [];
             const lim = limit || 50;
-            if (kind === 'bookmarks') {
-                return all.filter(q => t.bookmarks[q.id] && t.bookmarks[q.id].starred).slice(0, lim);
+            const st = (q) => t.stats[q.id];
+            let pick;
+            if (kind === 'bookmarks' || kind === 'starred') {
+                pick = all.filter(q => t.bookmarks[q.id] && t.bookmarks[q.id].starred);
+            } else if (kind === 'wrong' || kind === 'recent_wrong') {
+                pick = all.filter(q => st(q) && st(q).last_was_correct === false)
+                    .sort((a, b) => String(st(b).last_attempt || '').localeCompare(String(st(a).last_attempt || '')));
+            } else if (kind === 'weak') {
+                pick = all.filter(q => _qcmIsWeak(st(q)))
+                    .sort((a, b) => st(a).accuracy - st(b).accuracy || st(b).attempts - st(a).attempts);
+            } else if (kind === 'due') {
+                const due = new Set(_qcmDueIds(t));
+                pick = all.filter(q => due.has(q.id))
+                    .sort((a, b) => String(st(a).next_review || '').localeCompare(String(st(b).next_review || '')));
+            } else {
+                pick = all;
             }
-            if (kind === 'wrong' || kind === 'recent_wrong') {
-                return all.filter(q => {
-                    const s = t.stats[q.id];
-                    return s && s.last_was_correct === false;
-                }).slice(0, lim);
-            }
-            if (kind === 'weak') {
-                return all.filter(q => {
-                    const s = t.stats[q.id];
-                    return s && s.attempts >= 2 && s.accuracy < 70;
-                }).slice(0, lim);
-            }
-            return all.slice(0, lim);
+            return pick.slice(0, lim).map(q => q.id);
         },
 
         async qcm_create_session(...args) {

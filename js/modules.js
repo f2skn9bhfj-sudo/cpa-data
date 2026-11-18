@@ -1606,7 +1606,24 @@ function modPlayPrepare(l) {
     const p = { secs, qBySec, leftover, minutes: Math.max(1, Math.round(words / 200)), nq: (l.questions || []).length };
     window._modPlay[l.id] = p;
     modQuizReset(l);
+    _modSetLast(l, p);
     return p;
+}
+
+// Dernière leçon ouverte (+ la suivante du module) → carte « Plan du jour » de l'accueil.
+const MOD_LAST_KEY = 'swisscpa_mod_last';
+function _modSetLast(l, p) {
+    try {
+        const m = (modData || []).find(x => (x.lessons_ifp || []).some(y => y.id === l.id));
+        if (!m) return;
+        const ls = m.lessons_ifp || [];
+        const i = ls.findIndex(y => y.id === l.id);
+        const nx = ls[i + 1] || null;
+        localStorage.setItem(MOD_LAST_KEY, JSON.stringify({
+            lid: l.id, title: l.title || '', mid: m.id, mcode: m.code || '', n: p.secs.length,
+            min: p.minutes, next: nx ? { lid: nx.id, title: nx.title || '' } : null, ts: Date.now(),
+        }));
+    } catch (e) { /* stockage indisponible */ }
 }
 
 function modPlayStrip(l, color) {
@@ -1680,6 +1697,7 @@ function modPlayToggle(lid, i, forceOn) {
     const has = (r.s || []).includes(sid);
     if (has && forceOn) return;
     r.s = (has ? r.s.filter(x => x !== sid) : (r.s || []).concat([sid])).filter(x => p.secs.includes(x));
+    if (!has && window.swisscpaDaily) swisscpaDaily.log('l');
     const complete = r.s.length === p.secs.length;
     if (complete && !r.done) r.done = new Date().toISOString();
     if (!complete) delete r.done;
@@ -1772,6 +1790,7 @@ function modQuizAnswer(lessonId, qi, oi) {
         else b.classList.add('mq-dim');
     }
     const ok = oi === correctIdx;
+    if (window.swisscpaDaily) swisscpaDaily.log('l');
     const exp = document.getElementById('mq_exp_' + lessonId + '_' + qi);
     if (exp) {
         exp.className = 'mq-exp ' + (ok ? 'mq-exp-ok' : 'mq-exp-no');

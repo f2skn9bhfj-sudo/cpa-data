@@ -4,7 +4,7 @@ Application web statique de révision du diplôme fédéral d'expert-comptable,
 publiée par GitHub Pages depuis la racine de la branche `main` :
 https://f2skn9bhfj-sudo.github.io/cpa-data/
 
-Contenu : 16 modules (M1–M16), ~3 450 QCM (examen blanc noté sur 6), ~1 550 flashcards, 80 normes
+Contenu : 16 modules (M1–M16), ~3 550 QCM (examen blanc noté sur 6), ~1 580 flashcards, 80 normes
 (CO, Swiss GAAP RPC, IFRS/IAS, ISA…), 47 normes ISA en cours complets, le
 Manuel suisse d'audit (54 fiches), Conso, Fusion, Social, Oral, Anglais, HEC
 et 39 podcasts.
@@ -17,10 +17,12 @@ depuis un dépôt desktop). Un `push` sur `main` est en ligne en 1 à 2 minutes.
 - `index.html` + `js/` + `css/` : la coquille et les onglets natifs.
 - `data/` : les données JSON lues par les onglets natifs.
 - `<onglet>/index.html` : les sous-apps (Audit, Conso, Oral…), autonomes,
-  qui embarquent leurs données et leur code. On modifie leurs sources (`.jsx`,
-  JSON) puis on les régénère avec `python3 tools/sync_subapps.py --write`.
-- `vendor/` : React, Babel, Tailwind et les icônes, en copies locales figées
-  (aucune dépendance à un CDN).
+  qui embarquent leurs données et leur code déjà compilé. On modifie leurs
+  sources (`.jsx`, JSON) puis on les régénère avec
+  `python3 tools/sync_subapps.py --write` (node requis : il compile le JSX et
+  recalcule aussi la banque de QCM `data/qcm_catalog.json`).
+- `vendor/` : React, Tailwind et les icônes utilisées, en copies locales figées
+  (aucune dépendance à un CDN) ; Babel n'y sert qu'à la compilation.
 
 La carte détaillée (schémas des données, procédures de modification, pièges)
 est dans `CLAUDE.md`.
@@ -28,7 +30,7 @@ est dans `CLAUDE.md`.
 ## Vérifier avant de publier
 
 ```bash
-python3 tools/sync_subapps.py      # toutes les sous-apps « à jour »
+python3 tools/sync_subapps.py      # sous-apps et banque de QCM « à jour »
 node tools/smoke_test.js           # les 18 pages s'ouvrent sans erreur
 ```
 

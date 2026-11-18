@@ -16,7 +16,6 @@
   }
 }
 </script>
-<script src="../vendor/babel.min.js"></script>
 <style>
   html,body{margin:0;padding:0;background:#f8fafc}
   #cw-loading{font-family:system-ui,-apple-system,sans-serif;color:#64748b;padding:48px;text-align:center;font-size:14px}
@@ -34,1012 +33,1732 @@
     if (el) { el.hidden = false; el.textContent = 'Erreur : ' + (e.message || e); }
   });
 </script>
-<script type="text/babel" data-type="module" data-presets="react">
+<script type="module" id="app-code">
+// Généré par tools/sync_subapps.py depuis conso/lesson_engine.jsx, fs/fs_app.jsx : modifier ces fichiers, pas cette page.
 import React from "react";
 import { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { Info, AlertTriangle, CheckCircle2, ArrowRight, ArrowLeft, ChevronDown, Calculator, GraduationCap, Search } from "lucide-react";
-const fmt = (n) => { if (n === null || n === undefined || isNaN(n)) return '–'; return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'"); };
-
-/* ===================== Lesson engine (IFRS / Swiss GAAP) =====================
-   Moteur data-driven rendu dans le style du wizard (Tailwind, light).
-   Le contenu (window.__CONSO_LESSONS__) est une donnée pure → robuste.
-   Interactif : quiz cliquables + score, exemples à corrigé masqué,
-   sections repliables. ========================================================= */
-
-/* Renvois cliquables : un code de norme dans le texte → ouvre la leçon. */
+const fmt = n => {
+  if (n === null || n === undefined || isNaN(n)) return '–';
+  return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+};
 const NORM_CODE_RE = /(IAS 27|IAS 28|IFRS 10|IFRS 11|IFRS 12|IFRS 3|RPC 30)(?![\d/])/g;
-function NormLinks({ text, kb }) {
+function NormLinks({
+  text,
+  kb
+}) {
   const segs = String(text).split(NORM_CODE_RE);
   return segs.map((s, j) => {
     if (/^(IAS 27|IAS 28|IFRS 10|IFRS 11|IFRS 12|IFRS 3|RPC 30)$/.test(s)) {
-      return (
-        <span key={kb + "_" + j} role="link" tabIndex={0}
-          onClick={(e) => { e.stopPropagation(); if (typeof window !== "undefined" && window.__consoGoToLesson) window.__consoGoToLesson(s); }}
-          className="text-indigo-600 font-semibold cursor-pointer underline decoration-dotted decoration-indigo-300 underline-offset-2 hover:text-indigo-800">{s}</span>
-      );
+      return React.createElement("span", {
+        key: kb + "_" + j,
+        role: "link",
+        tabIndex: 0,
+        onClick: e => {
+          e.stopPropagation();
+          if (typeof window !== "undefined" && window.__consoGoToLesson) window.__consoGoToLesson(s);
+        },
+        className: "text-indigo-600 font-semibold cursor-pointer underline decoration-dotted decoration-indigo-300 underline-offset-2 hover:text-indigo-800"
+      }, s);
     }
-    return <React.Fragment key={kb + "_" + j}>{s}</React.Fragment>;
+    return React.createElement(React.Fragment, {
+      key: kb + "_" + j
+    }, s);
   });
 }
-
-function MdInline({ text }) {
+function MdInline({
+  text
+}) {
   if (text == null) return null;
   const parts = String(text).split(/(\*\*[^*]+\*\*|\*[^*\n]+\*|`[^`]+`)/g);
   return parts.map((p, i) => {
-    if (/^\*\*[\s\S]+\*\*$/.test(p)) return <strong key={i} className="font-semibold text-slate-800"><NormLinks text={p.slice(2, -2)} kb={i} /></strong>;
-    if (/^\*[^*][\s\S]*\*$/.test(p)) return <em key={i} className="italic"><NormLinks text={p.slice(1, -1)} kb={i} /></em>;
-    if (/^`[\s\S]+`$/.test(p)) return <code key={i} className="px-1 py-0.5 rounded bg-slate-100 text-indigo-700 text-[0.85em]">{p.slice(1, -1)}</code>;
-    return <NormLinks key={i} text={p} kb={i} />;
+    if (/^\*\*[\s\S]+\*\*$/.test(p)) return React.createElement("strong", {
+      key: i,
+      className: "font-semibold text-slate-800"
+    }, React.createElement(NormLinks, {
+      text: p.slice(2, -2),
+      kb: i
+    }));
+    if (/^\*[^*][\s\S]*\*$/.test(p)) return React.createElement("em", {
+      key: i,
+      className: "italic"
+    }, React.createElement(NormLinks, {
+      text: p.slice(1, -1),
+      kb: i
+    }));
+    if (/^`[\s\S]+`$/.test(p)) return React.createElement("code", {
+      key: i,
+      className: "px-1 py-0.5 rounded bg-slate-100 text-indigo-700 text-[0.85em]"
+    }, p.slice(1, -1));
+    return React.createElement(NormLinks, {
+      key: i,
+      text: p,
+      kb: i
+    });
   });
 }
-
-function MdBlock({ text, className = "" }) {
+function MdBlock({
+  text,
+  className = ""
+}) {
   if (!text) return null;
   const lines = String(text).split("\n");
-  const out = []; let list = null;
-  const flush = (k) => { if (list) { out.push(<ul key={"u" + k} className="list-disc ml-5 space-y-1 my-2">{list.map((li, j) => <li key={j}><MdInline text={li} /></li>)}</ul>); list = null; } };
+  const out = [];
+  let list = null;
+  const flush = k => {
+    if (list) {
+      out.push(React.createElement("ul", {
+        key: "u" + k,
+        className: "list-disc ml-5 space-y-1 my-2"
+      }, list.map((li, j) => React.createElement("li", {
+        key: j
+      }, React.createElement(MdInline, {
+        text: li
+      })))));
+      list = null;
+    }
+  };
   lines.forEach((ln, i) => {
     const t = ln.trim();
-    if (/^[-•]\s+/.test(t)) { (list = list || []).push(t.replace(/^[-•]\s+/, "")); }
-    else { flush(i); if (t) out.push(<p key={"p" + i} className="my-2 leading-relaxed"><MdInline text={t} /></p>); }
+    if (/^[-•]\s+/.test(t)) {
+      (list = list || []).push(t.replace(/^[-•]\s+/, ""));
+    } else {
+      flush(i);
+      if (t) out.push(React.createElement("p", {
+        key: "p" + i,
+        className: "my-2 leading-relaxed"
+      }, React.createElement(MdInline, {
+        text: t
+      })));
+    }
   });
   flush("end");
-  return <div className={className}>{out}</div>;
+  return React.createElement("div", {
+    className: className
+  }, out);
 }
-
 const L_ACCENT = {
-  indigo:  { bar: "bg-indigo-600",  text: "text-indigo-700",  soft: "bg-indigo-50",  ring: "border-indigo-200" },
-  cyan:    { bar: "bg-cyan-600",    text: "text-cyan-700",    soft: "bg-cyan-50",    ring: "border-cyan-200" },
-  emerald: { bar: "bg-emerald-600", text: "text-emerald-700", soft: "bg-emerald-50", ring: "border-emerald-200" },
-  amber:   { bar: "bg-amber-500",   text: "text-amber-700",   soft: "bg-amber-50",   ring: "border-amber-200" },
-  violet:  { bar: "bg-violet-600",  text: "text-violet-700",  soft: "bg-violet-50",  ring: "border-violet-200" },
-  rose:    { bar: "bg-rose-600",    text: "text-rose-700",    soft: "bg-rose-50",    ring: "border-rose-200" },
-  blue:    { bar: "bg-blue-600",    text: "text-blue-700",    soft: "bg-blue-50",    ring: "border-blue-200" },
-  teal:    { bar: "bg-teal-600",    text: "text-teal-700",    soft: "bg-teal-50",    ring: "border-teal-200" },
-  slate:   { bar: "bg-slate-700",   text: "text-slate-700",   soft: "bg-slate-50",   ring: "border-slate-200" },
+  indigo: {
+    bar: "bg-indigo-600",
+    text: "text-indigo-700",
+    soft: "bg-indigo-50",
+    ring: "border-indigo-200"
+  },
+  cyan: {
+    bar: "bg-cyan-600",
+    text: "text-cyan-700",
+    soft: "bg-cyan-50",
+    ring: "border-cyan-200"
+  },
+  emerald: {
+    bar: "bg-emerald-600",
+    text: "text-emerald-700",
+    soft: "bg-emerald-50",
+    ring: "border-emerald-200"
+  },
+  amber: {
+    bar: "bg-amber-500",
+    text: "text-amber-700",
+    soft: "bg-amber-50",
+    ring: "border-amber-200"
+  },
+  violet: {
+    bar: "bg-violet-600",
+    text: "text-violet-700",
+    soft: "bg-violet-50",
+    ring: "border-violet-200"
+  },
+  rose: {
+    bar: "bg-rose-600",
+    text: "text-rose-700",
+    soft: "bg-rose-50",
+    ring: "border-rose-200"
+  },
+  blue: {
+    bar: "bg-blue-600",
+    text: "text-blue-700",
+    soft: "bg-blue-50",
+    ring: "border-blue-200"
+  },
+  teal: {
+    bar: "bg-teal-600",
+    text: "text-teal-700",
+    soft: "bg-teal-50",
+    ring: "border-teal-200"
+  },
+  slate: {
+    bar: "bg-slate-700",
+    text: "text-slate-700",
+    soft: "bg-slate-50",
+    ring: "border-slate-200"
+  }
 };
-const lacc = (c) => L_ACCENT[c] || L_ACCENT.indigo;
-
-function LCallout({ tone = "info", title, text }) {
+const lacc = c => L_ACCENT[c] || L_ACCENT.indigo;
+function LCallout({
+  tone = "info",
+  title,
+  text
+}) {
   const map = {
-    info: ["bg-slate-50 border-slate-200", <Info size={17} className="shrink-0 mt-0.5 text-slate-400" />, "text-slate-700"],
-    tip:  ["bg-indigo-50 border-indigo-200", <ArrowRight size={17} className="shrink-0 mt-0.5 text-indigo-500" />, "text-indigo-800"],
-    warn: ["bg-amber-50 border-amber-200", <AlertTriangle size={17} className="shrink-0 mt-0.5 text-amber-500" />, "text-amber-800"],
-    key:  ["bg-emerald-50 border-emerald-200", <CheckCircle2 size={17} className="shrink-0 mt-0.5 text-emerald-500" />, "text-emerald-800"],
+    info: ["bg-slate-50 border-slate-200", React.createElement(Info, {
+      size: 17,
+      className: "shrink-0 mt-0.5 text-slate-400"
+    }), "text-slate-700"],
+    tip: ["bg-indigo-50 border-indigo-200", React.createElement(ArrowRight, {
+      size: 17,
+      className: "shrink-0 mt-0.5 text-indigo-500"
+    }), "text-indigo-800"],
+    warn: ["bg-amber-50 border-amber-200", React.createElement(AlertTriangle, {
+      size: 17,
+      className: "shrink-0 mt-0.5 text-amber-500"
+    }), "text-amber-800"],
+    key: ["bg-emerald-50 border-emerald-200", React.createElement(CheckCircle2, {
+      size: 17,
+      className: "shrink-0 mt-0.5 text-emerald-500"
+    }), "text-emerald-800"]
   };
   const m = map[tone] || map.info;
-  return (
-    <div className={`flex items-start gap-2.5 border rounded-xl p-3.5 my-3 text-sm ${m[0]}`}>
-      {m[1]}
-      <div className="min-w-0">
-        {title && <div className={`font-semibold mb-0.5 ${m[2]}`}>{title}</div>}
-        <div className="text-slate-600"><MdBlock text={text} /></div>
-      </div>
-    </div>
-  );
+  return React.createElement("div", {
+    className: `flex items-start gap-2.5 border rounded-xl p-3.5 my-3 text-sm ${m[0]}`
+  }, m[1], React.createElement("div", {
+    className: "min-w-0"
+  }, title && React.createElement("div", {
+    className: `font-semibold mb-0.5 ${m[2]}`
+  }, title), React.createElement("div", {
+    className: "text-slate-600"
+  }, React.createElement(MdBlock, {
+    text: text
+  }))));
 }
-
-function LTable({ title, headers = [], rows = [] }) {
-  return (
-    <div className="my-3">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-1.5">{title}</div>}
-      <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
-        <table className="w-full text-sm border-collapse">
-          {headers.length > 0 && <thead><tr className="bg-violet-50 text-violet-700 text-xs">
-            {headers.map((h, i) => <th key={i} className={`text-left px-3 py-2.5 font-bold ${i > 0 ? "border-l border-white" : ""}`}><MdInline text={h} /></th>)}
-          </tr></thead>}
-          <tbody>
-            {rows.map((r, i) => (
-              <tr key={i} className={`align-top ${i % 2 ? "bg-slate-50/50" : "bg-white"}`}>
-                {r.map((c, j) => <td key={j} className={`px-3 py-2.5 border-t border-slate-100 ${j > 0 ? "border-l" : ""} ${j === 0 ? "font-semibold text-slate-700" : "text-slate-600"}`}><MdInline text={c} /></td>)}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
+function LTable({
+  title,
+  headers = [],
+  rows = []
+}) {
+  return React.createElement("div", {
+    className: "my-3"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-1.5"
+  }, title), React.createElement("div", {
+    className: "overflow-x-auto rounded-xl border border-slate-200 shadow-sm"
+  }, React.createElement("table", {
+    className: "w-full text-sm border-collapse"
+  }, headers.length > 0 && React.createElement("thead", null, React.createElement("tr", {
+    className: "bg-violet-50 text-violet-700 text-xs"
+  }, headers.map((h, i) => React.createElement("th", {
+    key: i,
+    className: `text-left px-3 py-2.5 font-bold ${i > 0 ? "border-l border-white" : ""}`
+  }, React.createElement(MdInline, {
+    text: h
+  }))))), React.createElement("tbody", null, rows.map((r, i) => React.createElement("tr", {
+    key: i,
+    className: `align-top ${i % 2 ? "bg-slate-50/50" : "bg-white"}`
+  }, r.map((c, j) => React.createElement("td", {
+    key: j,
+    className: `px-3 py-2.5 border-t border-slate-100 ${j > 0 ? "border-l" : ""} ${j === 0 ? "font-semibold text-slate-700" : "text-slate-600"}`
+  }, React.createElement(MdInline, {
+    text: c
+  })))))))));
 }
-
-function LCompare({ title = "IFRS vs Swiss GAAP RPC vs CO", rows = [] }) {
-  return (
-    <div className="my-3">
-      <div className="text-sm font-semibold text-slate-700 mb-1.5">{title}</div>
-      <div className="overflow-x-auto rounded-lg border border-slate-200">
-        <table className="w-full text-sm">
-          <thead><tr className="bg-slate-50 text-xs">
-            <th className="text-left px-3 py-2 font-medium text-slate-500">Critère</th>
-            <th className="text-left px-3 py-2 font-semibold text-indigo-700">IFRS</th>
-            <th className="text-left px-3 py-2 font-semibold text-emerald-700">Swiss GAAP RPC</th>
-            <th className="text-left px-3 py-2 font-semibold text-amber-700">CO</th>
-          </tr></thead>
-          <tbody>
-            {rows.map((r, i) => (
-              <tr key={i} className="border-t border-slate-100 align-top">
-                <td className="px-3 py-2 font-medium text-slate-700"><MdInline text={r.crit} /></td>
-                <td className="px-3 py-2 text-slate-600"><MdInline text={r.ifrs} /></td>
-                <td className="px-3 py-2 text-slate-600"><MdInline text={r.rpc} /></td>
-                <td className="px-3 py-2 text-slate-600"><MdInline text={r.co} /></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
+function LCompare({
+  title = "IFRS vs Swiss GAAP RPC vs CO",
+  rows = []
+}) {
+  return React.createElement("div", {
+    className: "my-3"
+  }, React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-1.5"
+  }, title), React.createElement("div", {
+    className: "overflow-x-auto rounded-lg border border-slate-200"
+  }, React.createElement("table", {
+    className: "w-full text-sm"
+  }, React.createElement("thead", null, React.createElement("tr", {
+    className: "bg-slate-50 text-xs"
+  }, React.createElement("th", {
+    className: "text-left px-3 py-2 font-medium text-slate-500"
+  }, "Crit\xE8re"), React.createElement("th", {
+    className: "text-left px-3 py-2 font-semibold text-indigo-700"
+  }, "IFRS"), React.createElement("th", {
+    className: "text-left px-3 py-2 font-semibold text-emerald-700"
+  }, "Swiss GAAP RPC"), React.createElement("th", {
+    className: "text-left px-3 py-2 font-semibold text-amber-700"
+  }, "CO"))), React.createElement("tbody", null, rows.map((r, i) => React.createElement("tr", {
+    key: i,
+    className: "border-t border-slate-100 align-top"
+  }, React.createElement("td", {
+    className: "px-3 py-2 font-medium text-slate-700"
+  }, React.createElement(MdInline, {
+    text: r.crit
+  })), React.createElement("td", {
+    className: "px-3 py-2 text-slate-600"
+  }, React.createElement(MdInline, {
+    text: r.ifrs
+  })), React.createElement("td", {
+    className: "px-3 py-2 text-slate-600"
+  }, React.createElement(MdInline, {
+    text: r.rpc
+  })), React.createElement("td", {
+    className: "px-3 py-2 text-slate-600"
+  }, React.createElement(MdInline, {
+    text: r.co
+  }))))))));
 }
-
-function LSteps({ title, steps = [], accent = "indigo" }) {
+function LSteps({
+  title,
+  steps = [],
+  accent = "indigo"
+}) {
   const a = lacc(accent);
-  return (
-    <div className="my-3">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
-      <div className="space-y-2">
-        {steps.map((s, i) => (
-          <div key={i} className="flex items-start gap-3">
-            <span className={`shrink-0 w-6 h-6 rounded-full ${a.bar} text-white text-xs font-bold flex items-center justify-center mt-0.5`}>{i + 1}</span>
-            <div className="text-sm">
-              {s.t && <span className="font-semibold text-slate-800"><MdInline text={s.t} /></span>}
-              {s.d && <span className="text-slate-600"> — <MdInline text={s.d} /></span>}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-3"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-2"
+  }, title), React.createElement("div", {
+    className: "space-y-2"
+  }, steps.map((s, i) => React.createElement("div", {
+    key: i,
+    className: "flex items-start gap-3"
+  }, React.createElement("span", {
+    className: `shrink-0 w-6 h-6 rounded-full ${a.bar} text-white text-xs font-bold flex items-center justify-center mt-0.5`
+  }, i + 1), React.createElement("div", {
+    className: "text-sm"
+  }, s.t && React.createElement("span", {
+    className: "font-semibold text-slate-800"
+  }, React.createElement(MdInline, {
+    text: s.t
+  })), s.d && React.createElement("span", {
+    className: "text-slate-600"
+  }, " \u2014 ", React.createElement(MdInline, {
+    text: s.d
+  })))))));
 }
-
-function LKeypoints({ title = "À retenir", items = [], accent = "emerald" }) {
+function LKeypoints({
+  title = "À retenir",
+  items = [],
+  accent = "emerald"
+}) {
   const a = lacc(accent);
-  return (
-    <div className={`my-3 rounded-xl border ${a.ring} ${a.soft} p-4`}>
-      <div className={`text-sm font-semibold mb-2 ${a.text}`}>{title}</div>
-      <ul className="space-y-1.5">
-        {items.map((it, i) => (
-          <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
-            <CheckCircle2 size={15} className={`shrink-0 mt-0.5 ${a.text}`} />
-            <span><MdInline text={it} /></span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+  return React.createElement("div", {
+    className: `my-3 rounded-xl border ${a.ring} ${a.soft} p-4`
+  }, React.createElement("div", {
+    className: `text-sm font-semibold mb-2 ${a.text}`
+  }, title), React.createElement("ul", {
+    className: "space-y-1.5"
+  }, items.map((it, i) => React.createElement("li", {
+    key: i,
+    className: "flex items-start gap-2 text-sm text-slate-700"
+  }, React.createElement(CheckCircle2, {
+    size: 15,
+    className: `shrink-0 mt-0.5 ${a.text}`
+  }), React.createElement("span", null, React.createElement(MdInline, {
+    text: it
+  }))))));
 }
-
-function LJournal({ title, note, lines = [] }) {
-  const norm = lines.map((l) => ({ compte: l.compte, debit: l.debit || 0, credit: l.credit || 0 }));
-  return <div className="my-3"><Journal n={"✍"} title={title || "Écriture comptable"} note={note} lines={norm} /></div>;
+function LJournal({
+  title,
+  note,
+  lines = []
+}) {
+  const norm = lines.map(l => ({
+    compte: l.compte,
+    debit: l.debit || 0,
+    credit: l.credit || 0
+  }));
+  return React.createElement("div", {
+    className: "my-3"
+  }, React.createElement(Journal, {
+    n: "✍",
+    title: title || "Écriture comptable",
+    note: note,
+    lines: norm
+  }));
 }
-
-function LExample({ title = "Exemple chiffré", statement, solution }) {
+function LExample({
+  title = "Exemple chiffré",
+  statement,
+  solution
+}) {
   const [show, setShow] = useState(false);
-  return (
-    <div className="my-3 rounded-xl border border-slate-200 bg-white overflow-hidden">
-      <div className="bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 flex items-center gap-2 border-b border-slate-100">
-        <Calculator size={15} className="text-indigo-500" />{title}
-      </div>
-      <div className="p-4">
-        <div className="text-sm text-slate-700"><MdBlock text={statement} /></div>
-        {solution && (
-          <div className="mt-3">
-            <button onClick={() => setShow(!show)} className="flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:text-indigo-800">
-              <ChevronDown size={14} className={`transition-transform ${show ? "rotate-180" : ""}`} />{show ? "Masquer le corrigé" : "Voir le corrigé"}
-            </button>
-            {show && <div className="mt-2 pt-3 border-t border-dashed border-slate-200 text-sm text-slate-700"><MdBlock text={solution} /></div>}
-          </div>
-        )}
-      </div>
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-3 rounded-xl border border-slate-200 bg-white overflow-hidden"
+  }, React.createElement("div", {
+    className: "bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 flex items-center gap-2 border-b border-slate-100"
+  }, React.createElement(Calculator, {
+    size: 15,
+    className: "text-indigo-500"
+  }), title), React.createElement("div", {
+    className: "p-4"
+  }, React.createElement("div", {
+    className: "text-sm text-slate-700"
+  }, React.createElement(MdBlock, {
+    text: statement
+  })), solution && React.createElement("div", {
+    className: "mt-3"
+  }, React.createElement("button", {
+    onClick: () => setShow(!show),
+    className: "flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:text-indigo-800"
+  }, React.createElement(ChevronDown, {
+    size: 14,
+    className: `transition-transform ${show ? "rotate-180" : ""}`
+  }), show ? "Masquer le corrigé" : "Voir le corrigé"), show && React.createElement("div", {
+    className: "mt-2 pt-3 border-t border-dashed border-slate-200 text-sm text-slate-700"
+  }, React.createElement(MdBlock, {
+    text: solution
+  })))));
 }
-
-function LQuiz({ title = "Quiz express", questions = [] }) {
+function LQuiz({
+  title = "Quiz express",
+  questions = []
+}) {
   const [ans, setAns] = useState({});
   const answered = Object.keys(ans).length;
   const score = questions.reduce((s, q, i) => s + (ans[i] === q.answer ? 1 : 0), 0);
-  return (
-    <div className="my-3 rounded-xl border border-slate-200 bg-white">
-      <div className="bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 flex items-center justify-between border-b border-slate-100">
-        <span className="flex items-center gap-2"><GraduationCap size={15} className="text-indigo-500" />{title}</span>
-        {answered > 0 && <span className="text-xs font-medium text-slate-500">Score {score}/{questions.length}</span>}
-      </div>
-      <div className="p-4 space-y-4">
-        {questions.map((q, qi) => {
-          const chosen = ans[qi]; const done = chosen != null;
-          return (
-            <div key={qi}>
-              <div className="text-sm font-medium text-slate-800 mb-2">{qi + 1}. <MdInline text={q.q} /></div>
-              <div className="grid gap-1.5">
-                {q.options.map((opt, oi) => {
-                  let cls = "border-slate-200 hover:border-indigo-300 text-slate-700";
-                  if (done) {
-                    if (oi === q.answer) cls = "border-emerald-300 bg-emerald-50 text-emerald-800";
-                    else if (oi === chosen) cls = "border-rose-300 bg-rose-50 text-rose-700";
-                    else cls = "border-slate-200 text-slate-400";
-                  }
-                  return (
-                    <button key={oi} disabled={done} onClick={() => setAns((p) => ({ ...p, [qi]: oi }))}
-                      className={`text-left text-sm border rounded-lg px-3 py-2 transition-colors flex items-center gap-2 ${cls}`}>
-                      <span className="shrink-0 w-5 h-5 rounded-full border border-slate-300 text-xs flex items-center justify-center font-medium">{"ABCD"[oi]}</span>
-                      <span className="flex-1"><MdInline text={opt} /></span>
-                      {done && oi === q.answer && <CheckCircle2 size={15} className="text-emerald-500" />}
-                    </button>
-                  );
-                })}
-              </div>
-              {done && q.explain && <div className="mt-2 text-xs text-slate-500 bg-slate-50 rounded-lg px-3 py-2"><MdInline text={q.explain} /></div>}
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-3 rounded-xl border border-slate-200 bg-white"
+  }, React.createElement("div", {
+    className: "bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 flex items-center justify-between border-b border-slate-100"
+  }, React.createElement("span", {
+    className: "flex items-center gap-2"
+  }, React.createElement(GraduationCap, {
+    size: 15,
+    className: "text-indigo-500"
+  }), title), answered > 0 && React.createElement("span", {
+    className: "text-xs font-medium text-slate-500"
+  }, "Score ", score, "/", questions.length)), React.createElement("div", {
+    className: "p-4 space-y-4"
+  }, questions.map((q, qi) => {
+    const chosen = ans[qi];
+    const done = chosen != null;
+    return React.createElement("div", {
+      key: qi
+    }, React.createElement("div", {
+      className: "text-sm font-medium text-slate-800 mb-2"
+    }, qi + 1, ". ", React.createElement(MdInline, {
+      text: q.q
+    })), React.createElement("div", {
+      className: "grid gap-1.5"
+    }, q.options.map((opt, oi) => {
+      let cls = "border-slate-200 hover:border-indigo-300 text-slate-700";
+      if (done) {
+        if (oi === q.answer) cls = "border-emerald-300 bg-emerald-50 text-emerald-800";else if (oi === chosen) cls = "border-rose-300 bg-rose-50 text-rose-700";else cls = "border-slate-200 text-slate-400";
+      }
+      return React.createElement("button", {
+        key: oi,
+        disabled: done,
+        onClick: () => setAns(p => ({
+          ...p,
+          [qi]: oi
+        })),
+        className: `text-left text-sm border rounded-lg px-3 py-2 transition-colors flex items-center gap-2 ${cls}`
+      }, React.createElement("span", {
+        className: "shrink-0 w-5 h-5 rounded-full border border-slate-300 text-xs flex items-center justify-center font-medium"
+      }, "ABCD"[oi]), React.createElement("span", {
+        className: "flex-1"
+      }, React.createElement(MdInline, {
+        text: opt
+      })), done && oi === q.answer && React.createElement(CheckCircle2, {
+        size: 15,
+        className: "text-emerald-500"
+      }));
+    })), done && q.explain && React.createElement("div", {
+      className: "mt-2 text-xs text-slate-500 bg-slate-50 rounded-lg px-3 py-2"
+    }, React.createElement(MdInline, {
+      text: q.explain
+    })));
+  })));
 }
-
-function LMnemo({ code, items = [], phrase }) {
-  return (
-    <div className="my-3 rounded-xl border border-violet-200 bg-violet-50 p-4">
-      <div className="text-sm font-bold text-violet-700 mb-2">🧠 Mnémotechnique — {code}</div>
-      <ul className="space-y-1">
-        {items.map((it, i) => (
-          <li key={i} className="text-sm text-slate-700"><span className="font-bold text-violet-700">{it.l}</span> — <MdInline text={it.t} /></li>
-        ))}
-      </ul>
-      {phrase && <div className="mt-2 text-xs italic text-violet-600">« {phrase} »</div>}
-    </div>
-  );
+function LMnemo({
+  code,
+  items = [],
+  phrase
+}) {
+  return React.createElement("div", {
+    className: "my-3 rounded-xl border border-violet-200 bg-violet-50 p-4"
+  }, React.createElement("div", {
+    className: "text-sm font-bold text-violet-700 mb-2"
+  }, "\uD83E\uDDE0 Mn\xE9motechnique \u2014 ", code), React.createElement("ul", {
+    className: "space-y-1"
+  }, items.map((it, i) => React.createElement("li", {
+    key: i,
+    className: "text-sm text-slate-700"
+  }, React.createElement("span", {
+    className: "font-bold text-violet-700"
+  }, it.l), " \u2014 ", React.createElement(MdInline, {
+    text: it.t
+  })))), phrase && React.createElement("div", {
+    className: "mt-2 text-xs italic text-violet-600"
+  }, "\xAB ", phrase, " \xBB"));
 }
-
-/* ===================== Schémas / graphiques ===================== */
 const DHEX = {
-  slate: "#94a3b8", gray: "#9ca3af", indigo: "#6366f1", violet: "#8b5cf6", blue: "#3b82f6",
-  cyan: "#06b6d4", teal: "#14b8a6", emerald: "#10b981", green: "#22c55e", amber: "#f59e0b",
-  orange: "#f97316", rose: "#f43f5e", red: "#ef4444",
+  slate: "#94a3b8",
+  gray: "#9ca3af",
+  indigo: "#6366f1",
+  violet: "#8b5cf6",
+  blue: "#3b82f6",
+  cyan: "#06b6d4",
+  teal: "#14b8a6",
+  emerald: "#10b981",
+  green: "#22c55e",
+  amber: "#f59e0b",
+  orange: "#f97316",
+  rose: "#f43f5e",
+  red: "#ef4444"
 };
-const dhex = (c) => DHEX[c] || DHEX.indigo;
-
-function DCaption({ text }) {
+const dhex = c => DHEX[c] || DHEX.indigo;
+function DCaption({
+  text
+}) {
   if (!text) return null;
-  return <div className="text-xs text-slate-400 mt-2 text-center italic"><MdInline text={text} /></div>;
+  return React.createElement("div", {
+    className: "text-xs text-slate-400 mt-2 text-center italic"
+  }, React.createElement(MdInline, {
+    text: text
+  }));
 }
-
-/* Spectre 0→100 % avec bandes colorées + légende — LE visuel contrôle/influence */
-function DSpectrum({ title, bands = [], caption }) {
-  const ticks = Array.from(new Set([0, 100, ...bands.flatMap((b) => [b.from, b.to])])).sort((a, b) => a - b);
-  return (
-    <div className="my-4">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
-      <div className="flex h-10 rounded-xl overflow-hidden shadow-inner">
-        {bands.map((b, i) => (
-          <div key={i} style={{ width: `${b.to - b.from}%`, background: dhex(b.color) }}
-            className="h-full flex items-center justify-center text-[10px] font-bold text-white text-center px-1 leading-tight">
-            {b.short || ""}
-          </div>
-        ))}
-      </div>
-      <div className="relative h-4 mt-1">
-        {ticks.map((p) => (
-          <span key={p} style={{ left: `${p}%` }} className="absolute -translate-x-1/2 text-[10px] font-medium text-slate-400">{p}%</span>
-        ))}
-      </div>
-      <div className="grid sm:grid-cols-3 gap-2 mt-2">
-        {bands.map((b, i) => (
-          <div key={i} className="flex items-start gap-2 text-xs">
-            <span className="w-3 h-3 rounded mt-0.5 shrink-0" style={{ background: dhex(b.color) }}></span>
-            <span className="text-slate-600 leading-snug"><MdInline text={b.label} /></span>
-          </div>
-        ))}
-      </div>
-      <DCaption text={caption} />
-    </div>
-  );
+function DSpectrum({
+  title,
+  bands = [],
+  caption
+}) {
+  const ticks = Array.from(new Set([0, 100, ...bands.flatMap(b => [b.from, b.to])])).sort((a, b) => a - b);
+  return React.createElement("div", {
+    className: "my-4"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-2"
+  }, title), React.createElement("div", {
+    className: "flex h-10 rounded-xl overflow-hidden shadow-inner"
+  }, bands.map((b, i) => React.createElement("div", {
+    key: i,
+    style: {
+      width: `${b.to - b.from}%`,
+      background: dhex(b.color)
+    },
+    className: "h-full flex items-center justify-center text-[10px] font-bold text-white text-center px-1 leading-tight"
+  }, b.short || ""))), React.createElement("div", {
+    className: "relative h-4 mt-1"
+  }, ticks.map(p => React.createElement("span", {
+    key: p,
+    style: {
+      left: `${p}%`
+    },
+    className: "absolute -translate-x-1/2 text-[10px] font-medium text-slate-400"
+  }, p, "%"))), React.createElement("div", {
+    className: "grid sm:grid-cols-3 gap-2 mt-2"
+  }, bands.map((b, i) => React.createElement("div", {
+    key: i,
+    className: "flex items-start gap-2 text-xs"
+  }, React.createElement("span", {
+    className: "w-3 h-3 rounded mt-0.5 shrink-0",
+    style: {
+      background: dhex(b.color)
+    }
+  }), React.createElement("span", {
+    className: "text-slate-600 leading-snug"
+  }, React.createElement(MdInline, {
+    text: b.label
+  }))))), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-/* Cascade (goodwill bridge) : + / − / = avec barres proportionnelles */
-function DWaterfall({ title, items = [], caption }) {
-  const max = Math.max(1, ...items.map((i) => Math.abs(i.value || 0)));
-  const col = { add: "#6366f1", sub: "#f43f5e", total: "#10b981" };
-  const sign = { add: "+", sub: "−", total: "=" };
-  return (
-    <div className="my-4">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
-      <div className="space-y-1.5">
-        {items.map((it, i) => (
-          <div key={i} className="flex items-center gap-2">
-            <div className="w-36 sm:w-44 text-xs text-slate-600 text-right shrink-0 leading-snug"><MdInline text={it.label} /></div>
-            <div className="flex-1 h-7 bg-slate-50 rounded-md overflow-hidden">
-              <div style={{ width: `${(Math.abs(it.value) / max) * 100}%`, background: col[it.kind] || col.add }}
-                className={`h-full ${it.kind === "total" ? "rounded-md" : ""}`}></div>
-            </div>
-            <div className={`w-20 text-sm font-bold text-right shrink-0 tabular-nums ${it.kind === "total" ? "text-emerald-700" : it.kind === "sub" ? "text-rose-600" : "text-indigo-700"}`}>
-              {sign[it.kind] || ""}{fmt(Math.abs(it.value))}
-            </div>
-          </div>
-        ))}
-      </div>
-      <DCaption text={caption} />
-    </div>
-  );
+function DWaterfall({
+  title,
+  items = [],
+  caption
+}) {
+  const max = Math.max(1, ...items.map(i => Math.abs(i.value || 0)));
+  const col = {
+    add: "#6366f1",
+    sub: "#f43f5e",
+    total: "#10b981"
+  };
+  const sign = {
+    add: "+",
+    sub: "−",
+    total: "="
+  };
+  return React.createElement("div", {
+    className: "my-4"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-2"
+  }, title), React.createElement("div", {
+    className: "space-y-1.5"
+  }, items.map((it, i) => React.createElement("div", {
+    key: i,
+    className: "flex items-center gap-2"
+  }, React.createElement("div", {
+    className: "w-36 sm:w-44 text-xs text-slate-600 text-right shrink-0 leading-snug"
+  }, React.createElement(MdInline, {
+    text: it.label
+  })), React.createElement("div", {
+    className: "flex-1 h-7 bg-slate-50 rounded-md overflow-hidden"
+  }, React.createElement("div", {
+    style: {
+      width: `${Math.abs(it.value) / max * 100}%`,
+      background: col[it.kind] || col.add
+    },
+    className: `h-full ${it.kind === "total" ? "rounded-md" : ""}`
+  })), React.createElement("div", {
+    className: `w-20 text-sm font-bold text-right shrink-0 tabular-nums ${it.kind === "total" ? "text-emerald-700" : it.kind === "sub" ? "text-rose-600" : "text-indigo-700"}`
+  }, sign[it.kind] || "", fmt(Math.abs(it.value)))))), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-/* Structure de groupe (mère → filiale %, + minoritaires) en SVG */
-function DGroup({ parent = {}, pct = 100, child = {}, nci, method, caption }) {
-  const minor = nci != null ? nci : (100 - pct);
+function DGroup({
+  parent = {},
+  pct = 100,
+  child = {},
+  nci,
+  method,
+  caption
+}) {
+  const minor = nci != null ? nci : 100 - pct;
   const pcol = dhex(parent.color || "indigo");
   const ccol = dhex(child.color || "slate");
-  return (
-    <div className="my-4">
-      <svg viewBox="0 0 440 220" className="w-full max-w-md mx-auto">
-        <rect x="160" y="8" width="120" height="48" rx="10" fill={pcol} />
-        <text x="220" y="30" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="700">{parent.label || "Société mère"}</text>
-        <text x="220" y="46" textAnchor="middle" fill="#e0e7ff" fontSize="10">{parent.sub || "Consolidante"}</text>
-        <line x1="220" y1="56" x2="220" y2="150" stroke="#cbd5e1" strokeWidth="2" />
-        <rect x="186" y="92" width="68" height="22" rx="6" fill="#fff" stroke={pcol} />
-        <text x="220" y="107" textAnchor="middle" fill={pcol} fontSize="12" fontWeight="800">{pct} %</text>
-        <rect x="160" y="150" width="120" height="56" rx="10" fill={ccol} />
-        <text x="220" y="173" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="700">{child.label || "Filiale"}</text>
-        <text x="220" y="190" textAnchor="middle" fill="#e2e8f0" fontSize="9.5">{method || child.sub || ""}</text>
-        {minor > 0 && (<>
-          <rect x="312" y="150" width="118" height="56" rx="10" fill="#fffbeb" stroke="#fcd34d" strokeDasharray="4" />
-          <text x="371" y="173" textAnchor="middle" fill="#92400e" fontSize="11" fontWeight="700">Minoritaires</text>
-          <text x="371" y="190" textAnchor="middle" fill="#b45309" fontSize="12" fontWeight="800">{minor} %</text>
-          <line x1="312" y1="178" x2="280" y2="178" stroke="#fbbf24" strokeWidth="2" strokeDasharray="4" />
-        </>)}
-      </svg>
-      <DCaption text={caption} />
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-4"
+  }, React.createElement("svg", {
+    viewBox: "0 0 440 220",
+    className: "w-full max-w-md mx-auto"
+  }, React.createElement("rect", {
+    x: "160",
+    y: "8",
+    width: "120",
+    height: "48",
+    rx: "10",
+    fill: pcol
+  }), React.createElement("text", {
+    x: "220",
+    y: "30",
+    textAnchor: "middle",
+    fill: "#fff",
+    fontSize: "13",
+    fontWeight: "700"
+  }, parent.label || "Société mère"), React.createElement("text", {
+    x: "220",
+    y: "46",
+    textAnchor: "middle",
+    fill: "#e0e7ff",
+    fontSize: "10"
+  }, parent.sub || "Consolidante"), React.createElement("line", {
+    x1: "220",
+    y1: "56",
+    x2: "220",
+    y2: "150",
+    stroke: "#cbd5e1",
+    strokeWidth: "2"
+  }), React.createElement("rect", {
+    x: "186",
+    y: "92",
+    width: "68",
+    height: "22",
+    rx: "6",
+    fill: "#fff",
+    stroke: pcol
+  }), React.createElement("text", {
+    x: "220",
+    y: "107",
+    textAnchor: "middle",
+    fill: pcol,
+    fontSize: "12",
+    fontWeight: "800"
+  }, pct, " %"), React.createElement("rect", {
+    x: "160",
+    y: "150",
+    width: "120",
+    height: "56",
+    rx: "10",
+    fill: ccol
+  }), React.createElement("text", {
+    x: "220",
+    y: "173",
+    textAnchor: "middle",
+    fill: "#fff",
+    fontSize: "13",
+    fontWeight: "700"
+  }, child.label || "Filiale"), React.createElement("text", {
+    x: "220",
+    y: "190",
+    textAnchor: "middle",
+    fill: "#e2e8f0",
+    fontSize: "9.5"
+  }, method || child.sub || ""), minor > 0 && React.createElement(React.Fragment, null, React.createElement("rect", {
+    x: "312",
+    y: "150",
+    width: "118",
+    height: "56",
+    rx: "10",
+    fill: "#fffbeb",
+    stroke: "#fcd34d",
+    strokeDasharray: "4"
+  }), React.createElement("text", {
+    x: "371",
+    y: "173",
+    textAnchor: "middle",
+    fill: "#92400e",
+    fontSize: "11",
+    fontWeight: "700"
+  }, "Minoritaires"), React.createElement("text", {
+    x: "371",
+    y: "190",
+    textAnchor: "middle",
+    fill: "#b45309",
+    fontSize: "12",
+    fontWeight: "800"
+  }, minor, " %"), React.createElement("line", {
+    x1: "312",
+    y1: "178",
+    x2: "280",
+    y2: "178",
+    stroke: "#fbbf24",
+    strokeWidth: "2",
+    strokeDasharray: "4"
+  }))), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-/* Colonnes IFRS / RPC / CO (ou n colonnes) — comparatif visuel */
-function DColumns({ cols = [], caption }) {
-  return (
-    <div className="my-4">
-      <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(${Math.min(cols.length, 3)}, minmax(0,1fr))` }}>
-        {cols.map((c, i) => {
-          const a = lacc(c.color);
-          return (
-            <div key={i} className={`rounded-xl border ${a.ring} overflow-hidden`}>
-              <div className={`${a.bar} text-white text-sm font-bold px-3 py-2 text-center`}>{c.title}</div>
-              <ul className={`${a.soft} p-3 space-y-1.5`}>
-                {(c.items || []).map((it, j) => (
-                  <li key={j} className="text-xs text-slate-700 flex gap-1.5 leading-snug"><span className={`${a.text} font-bold`}>›</span><span><MdInline text={it} /></span></li>
-                ))}
-              </ul>
-            </div>
-          );
-        })}
-      </div>
-      <DCaption text={caption} />
-    </div>
-  );
+function DColumns({
+  cols = [],
+  caption
+}) {
+  return React.createElement("div", {
+    className: "my-4"
+  }, React.createElement("div", {
+    className: "grid gap-2",
+    style: {
+      gridTemplateColumns: `repeat(${Math.min(cols.length, 3)}, minmax(0,1fr))`
+    }
+  }, cols.map((c, i) => {
+    const a = lacc(c.color);
+    return React.createElement("div", {
+      key: i,
+      className: `rounded-xl border ${a.ring} overflow-hidden`
+    }, React.createElement("div", {
+      className: `${a.bar} text-white text-sm font-bold px-3 py-2 text-center`
+    }, c.title), React.createElement("ul", {
+      className: `${a.soft} p-3 space-y-1.5`
+    }, (c.items || []).map((it, j) => React.createElement("li", {
+      key: j,
+      className: "text-xs text-slate-700 flex gap-1.5 leading-snug"
+    }, React.createElement("span", {
+      className: `${a.text} font-bold`
+    }, "\u203A"), React.createElement("span", null, React.createElement(MdInline, {
+      text: it
+    }))))));
+  })), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-/* Flux d'étapes : boîtes + flèches */
-function DFlow({ title, steps = [], accent = "indigo", caption }) {
+function DFlow({
+  title,
+  steps = [],
+  accent = "indigo",
+  caption
+}) {
   const a = lacc(accent);
-  return (
-    <div className="my-4">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
-      <div className="flex items-stretch gap-1 overflow-x-auto pb-1">
-        {steps.map((s, i) => (
-          <React.Fragment key={i}>
-            <div className={`shrink-0 rounded-xl border ${a.ring} ${a.soft} p-3 w-40`}>
-              <div className={`text-xs font-bold ${a.text} mb-0.5`}>{i + 1}. <MdInline text={s.label} /></div>
-              {s.sub && <div className="text-[11px] text-slate-500 leading-snug"><MdInline text={s.sub} /></div>}
-            </div>
-            {i < steps.length - 1 && <div className="flex items-center text-slate-300 shrink-0"><ArrowRight size={18} /></div>}
-          </React.Fragment>
-        ))}
-      </div>
-      <DCaption text={caption} />
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-4"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-2"
+  }, title), React.createElement("div", {
+    className: "flex items-stretch gap-1 overflow-x-auto pb-1"
+  }, steps.map((s, i) => React.createElement(React.Fragment, {
+    key: i
+  }, React.createElement("div", {
+    className: `shrink-0 rounded-xl border ${a.ring} ${a.soft} p-3 w-40`
+  }, React.createElement("div", {
+    className: `text-xs font-bold ${a.text} mb-0.5`
+  }, i + 1, ". ", React.createElement(MdInline, {
+    text: s.label
+  })), s.sub && React.createElement("div", {
+    className: "text-[11px] text-slate-500 leading-snug"
+  }, React.createElement(MdInline, {
+    text: s.sub
+  }))), i < steps.length - 1 && React.createElement("div", {
+    className: "flex items-center text-slate-300 shrink-0"
+  }, React.createElement(ArrowRight, {
+    size: 18
+  }))))), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-/* Pyramide (niveaux décroissants) */
-function DPyramid({ title, levels = [], accent = "indigo", caption }) {
+function DPyramid({
+  title,
+  levels = [],
+  accent = "indigo",
+  caption
+}) {
   const base = dhex(accent);
-  return (
-    <div className="my-4">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-2 text-center">{title}</div>}
-      <div className="flex flex-col items-center gap-1">
-        {levels.map((l, i) => {
-          const w = 100 - i * (55 / Math.max(levels.length - 1, 1));
-          return (
-            <div key={i} style={{ width: `${w}%`, background: base, opacity: 1 - i * 0.13 }}
-              className="rounded-lg text-white text-center px-3 py-2 shadow-sm">
-              <div className="text-xs font-bold"><MdInline text={l.t} /></div>
-              {l.d && <div className="text-[10px] opacity-90 leading-snug"><MdInline text={l.d} /></div>}
-            </div>
-          );
-        })}
-      </div>
-      <DCaption text={caption} />
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-4"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-2 text-center"
+  }, title), React.createElement("div", {
+    className: "flex flex-col items-center gap-1"
+  }, levels.map((l, i) => {
+    const w = 100 - i * (55 / Math.max(levels.length - 1, 1));
+    return React.createElement("div", {
+      key: i,
+      style: {
+        width: `${w}%`,
+        background: base,
+        opacity: 1 - i * 0.13
+      },
+      className: "rounded-lg text-white text-center px-3 py-2 shadow-sm"
+    }, React.createElement("div", {
+      className: "text-xs font-bold"
+    }, React.createElement(MdInline, {
+      text: l.t
+    })), l.d && React.createElement("div", {
+      className: "text-[10px] opacity-90 leading-snug"
+    }, React.createElement(MdInline, {
+      text: l.d
+    })));
+  })), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-/* Répartition (barre %) — ex. groupe vs minoritaires */
-function DSplit({ title, parts = [], caption }) {
+function DSplit({
+  title,
+  parts = [],
+  caption
+}) {
   const tot = parts.reduce((s, p) => s + (p.value || 0), 0) || 1;
-  return (
-    <div className="my-4">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
-      <div className="flex h-10 rounded-lg overflow-hidden">
-        {parts.map((p, i) => (
-          <div key={i} style={{ width: `${(p.value / tot) * 100}%`, background: dhex(p.color) }}
-            className="flex items-center justify-center text-white text-xs font-bold">{p.value}%</div>
-        ))}
-      </div>
-      <div className="flex flex-wrap gap-3 mt-2 text-xs">
-        {parts.map((p, i) => (
-          <span key={i} className="flex items-center gap-1.5 text-slate-600"><span className="w-3 h-3 rounded" style={{ background: dhex(p.color) }}></span><MdInline text={p.label} /></span>
-        ))}
-      </div>
-      <DCaption text={caption} />
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-4"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-2"
+  }, title), React.createElement("div", {
+    className: "flex h-10 rounded-lg overflow-hidden"
+  }, parts.map((p, i) => React.createElement("div", {
+    key: i,
+    style: {
+      width: `${p.value / tot * 100}%`,
+      background: dhex(p.color)
+    },
+    className: "flex items-center justify-center text-white text-xs font-bold"
+  }, p.value, "%"))), React.createElement("div", {
+    className: "flex flex-wrap gap-3 mt-2 text-xs"
+  }, parts.map((p, i) => React.createElement("span", {
+    key: i,
+    className: "flex items-center gap-1.5 text-slate-600"
+  }, React.createElement("span", {
+    className: "w-3 h-3 rounded",
+    style: {
+      background: dhex(p.color)
+    }
+  }), React.createElement(MdInline, {
+    text: p.label
+  })))), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-function LDiagram({ b }) {
+function LDiagram({
+  b
+}) {
   switch (b.kind) {
-    case "spectrum": return <DSpectrum title={b.title} bands={b.bands} caption={b.caption} />;
-    case "waterfall": return <DWaterfall title={b.title} items={b.items} caption={b.caption} />;
-    case "group": return <DGroup parent={b.parent} pct={b.pct} child={b.child} nci={b.nci} method={b.method} caption={b.caption} />;
-    case "columns": return <DColumns cols={b.cols} caption={b.caption} />;
-    case "flow": return <DFlow title={b.title} steps={b.steps} accent={b.accent} caption={b.caption} />;
-    case "pyramid": return <DPyramid title={b.title} levels={b.levels} accent={b.accent} caption={b.caption} />;
-    case "split": return <DSplit title={b.title} parts={b.parts} caption={b.caption} />;
-    default: return null;
+    case "spectrum":
+      return React.createElement(DSpectrum, {
+        title: b.title,
+        bands: b.bands,
+        caption: b.caption
+      });
+    case "waterfall":
+      return React.createElement(DWaterfall, {
+        title: b.title,
+        items: b.items,
+        caption: b.caption
+      });
+    case "group":
+      return React.createElement(DGroup, {
+        parent: b.parent,
+        pct: b.pct,
+        child: b.child,
+        nci: b.nci,
+        method: b.method,
+        caption: b.caption
+      });
+    case "columns":
+      return React.createElement(DColumns, {
+        cols: b.cols,
+        caption: b.caption
+      });
+    case "flow":
+      return React.createElement(DFlow, {
+        title: b.title,
+        steps: b.steps,
+        accent: b.accent,
+        caption: b.caption
+      });
+    case "pyramid":
+      return React.createElement(DPyramid, {
+        title: b.title,
+        levels: b.levels,
+        accent: b.accent,
+        caption: b.caption
+      });
+    case "split":
+      return React.createElement(DSplit, {
+        title: b.title,
+        parts: b.parts,
+        caption: b.caption
+      });
+    default:
+      return null;
   }
 }
-
-function LessonBlock({ b }) {
+function LessonBlock({
+  b
+}) {
   if (!b || !b.type) return null;
   switch (b.type) {
-    case "intro": return <div className="text-[15px] text-slate-700 my-2"><MdBlock text={b.text} /></div>;
-    case "heading": return <h3 className="text-base font-bold text-slate-800 mt-5 mb-1"><MdInline text={b.text} /></h3>;
-    case "keypoints": return <LKeypoints title={b.title} items={b.items} accent={b.accent} />;
-    case "callout": return <LCallout tone={b.tone} title={b.title} text={b.text} />;
-    case "table": return <LTable title={b.title} headers={b.headers} rows={b.rows} />;
-    case "compare": return <LCompare title={b.title} rows={b.rows} />;
-    case "steps": return <LSteps title={b.title} steps={b.steps} accent={b.accent} />;
-    case "journal": return <LJournal title={b.title} note={b.note} lines={b.lines} />;
-    case "example": return <LExample title={b.title} statement={b.statement} solution={b.solution} />;
-    case "quiz": return <LQuiz title={b.title} questions={b.questions} />;
-    case "mnemo": return <LMnemo code={b.code} items={b.items} phrase={b.phrase} />;
-    case "diagram": return <LDiagram b={b} />;
-    default: return null;
+    case "intro":
+      return React.createElement("div", {
+        className: "text-[15px] text-slate-700 my-2"
+      }, React.createElement(MdBlock, {
+        text: b.text
+      }));
+    case "heading":
+      return React.createElement("h3", {
+        className: "text-base font-bold text-slate-800 mt-5 mb-1"
+      }, React.createElement(MdInline, {
+        text: b.text
+      }));
+    case "keypoints":
+      return React.createElement(LKeypoints, {
+        title: b.title,
+        items: b.items,
+        accent: b.accent
+      });
+    case "callout":
+      return React.createElement(LCallout, {
+        tone: b.tone,
+        title: b.title,
+        text: b.text
+      });
+    case "table":
+      return React.createElement(LTable, {
+        title: b.title,
+        headers: b.headers,
+        rows: b.rows
+      });
+    case "compare":
+      return React.createElement(LCompare, {
+        title: b.title,
+        rows: b.rows
+      });
+    case "steps":
+      return React.createElement(LSteps, {
+        title: b.title,
+        steps: b.steps,
+        accent: b.accent
+      });
+    case "journal":
+      return React.createElement(LJournal, {
+        title: b.title,
+        note: b.note,
+        lines: b.lines
+      });
+    case "example":
+      return React.createElement(LExample, {
+        title: b.title,
+        statement: b.statement,
+        solution: b.solution
+      });
+    case "quiz":
+      return React.createElement(LQuiz, {
+        title: b.title,
+        questions: b.questions
+      });
+    case "mnemo":
+      return React.createElement(LMnemo, {
+        code: b.code,
+        items: b.items,
+        phrase: b.phrase
+      });
+    case "diagram":
+      return React.createElement(LDiagram, {
+        b: b
+      });
+    default:
+      return null;
   }
 }
-
-function LessonSection({ sec, accent = "indigo", defaultOpen = false }) {
+function LessonSection({
+  sec,
+  accent = "indigo",
+  defaultOpen = false
+}) {
   const [open, setOpen] = useState(defaultOpen);
   const a = lacc(accent);
-  if (!sec.title) return <div className="mb-2">{(sec.blocks || []).map((b, i) => <LessonBlock key={i} b={b} />)}</div>;
-  return (
-    <div className="mb-3 rounded-xl border border-slate-200 bg-white overflow-hidden">
-      <button onClick={() => setOpen(!open)} className="w-full flex items-center gap-2.5 px-4 py-3 text-left hover:bg-slate-50">
-        <span className={`w-1.5 h-5 rounded ${a.bar}`}></span>
-        <span className="font-semibold text-slate-800 flex-1">{sec.title}</span>
-        <ChevronDown size={17} className={`text-slate-400 transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-      {open && <div className="px-4 pb-4 pt-1">{(sec.blocks || []).map((b, i) => <LessonBlock key={i} b={b} />)}</div>}
-    </div>
-  );
+  if (!sec.title) return React.createElement("div", {
+    className: "mb-2"
+  }, (sec.blocks || []).map((b, i) => React.createElement(LessonBlock, {
+    key: i,
+    b: b
+  })));
+  return React.createElement("div", {
+    className: "mb-3 rounded-xl border border-slate-200 bg-white overflow-hidden"
+  }, React.createElement("button", {
+    onClick: () => setOpen(!open),
+    className: "w-full flex items-center gap-2.5 px-4 py-3 text-left hover:bg-slate-50"
+  }, React.createElement("span", {
+    className: `w-1.5 h-5 rounded ${a.bar}`
+  }), React.createElement("span", {
+    className: "font-semibold text-slate-800 flex-1"
+  }, sec.title), React.createElement(ChevronDown, {
+    size: 17,
+    className: `text-slate-400 transition-transform ${open ? "rotate-180" : ""}`
+  })), open && React.createElement("div", {
+    className: "px-4 pb-4 pt-1"
+  }, (sec.blocks || []).map((b, i) => React.createElement(LessonBlock, {
+    key: i,
+    b: b
+  }))));
 }
-
-function LessonView({ lesson, accent = "indigo", onBack }) {
+function LessonView({
+  lesson,
+  accent = "indigo",
+  onBack
+}) {
   const a = lacc(lesson.color || accent);
-  const secs = lesson.sections || [{ title: null, blocks: lesson.blocks || [] }];
-  return (
-    <div>
-      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Retour à la liste</button>
-      <div className={`rounded-2xl border ${a.ring} ${a.soft} p-5 mb-4`}>
-        <div className="flex items-center gap-2 mb-1">
-          <span className="text-2xl">{lesson.icon}</span>
-          <span className={`text-lg font-bold ${a.text}`}>{lesson.code}</span>
-        </div>
-        <h2 className="text-xl font-bold text-slate-800">{lesson.title}</h2>
-        {lesson.tagline && <p className="text-sm text-slate-600 mt-1"><MdInline text={lesson.tagline} /></p>}
-      </div>
-      {secs.map((s, si) => <LessonSection key={si} sec={s} accent={lesson.color || accent} defaultOpen={si === 0} />)}
-      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mt-4"><ArrowLeft size={15} /> Retour à la liste</button>
-    </div>
-  );
+  const secs = lesson.sections || [{
+    title: null,
+    blocks: lesson.blocks || []
+  }];
+  return React.createElement("div", null, React.createElement("button", {
+    onClick: onBack,
+    className: "flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"
+  }, React.createElement(ArrowLeft, {
+    size: 15
+  }), " Retour \xE0 la liste"), React.createElement("div", {
+    className: `rounded-2xl border ${a.ring} ${a.soft} p-5 mb-4`
+  }, React.createElement("div", {
+    className: "flex items-center gap-2 mb-1"
+  }, React.createElement("span", {
+    className: "text-2xl"
+  }, lesson.icon), React.createElement("span", {
+    className: `text-lg font-bold ${a.text}`
+  }, lesson.code)), React.createElement("h2", {
+    className: "text-xl font-bold text-slate-800"
+  }, lesson.title), lesson.tagline && React.createElement("p", {
+    className: "text-sm text-slate-600 mt-1"
+  }, React.createElement(MdInline, {
+    text: lesson.tagline
+  }))), secs.map((s, si) => React.createElement(LessonSection, {
+    key: si,
+    sec: s,
+    accent: lesson.color || accent,
+    defaultOpen: si === 0
+  })), React.createElement("button", {
+    onClick: onBack,
+    className: "flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mt-4"
+  }, React.createElement(ArrowLeft, {
+    size: 15
+  }), " Retour \xE0 la liste"));
 }
-
-function LessonHub({ pack = {}, domain = "", accent = "indigo", open = null, onOpen }) {
+function LessonHub({
+  pack = {},
+  domain = "",
+  accent = "indigo",
+  open = null,
+  onOpen
+}) {
   const setOpen = onOpen || (() => {});
   const lessons = pack.lessons || [];
-  if (!lessons.length) return <div className="text-sm text-slate-500 p-8 text-center">Contenu {domain} en préparation…</div>;
+  if (!lessons.length) return React.createElement("div", {
+    className: "text-sm text-slate-500 p-8 text-center"
+  }, "Contenu ", domain, " en pr\xE9paration\u2026");
   if (open != null) {
-    const lesson = lessons.find((l) => l.code === open);
-    if (lesson) return <LessonView lesson={lesson} accent={accent} onBack={() => setOpen(null)} />;
+    const lesson = lessons.find(l => l.code === open);
+    if (lesson) return React.createElement(LessonView, {
+      lesson: lesson,
+      accent: accent,
+      onBack: () => setOpen(null)
+    });
   }
-  return (
-    <div>
-      {pack.overview && (
-        <div className={`rounded-2xl border ${lacc(accent).ring} ${lacc(accent).soft} p-5 mb-5`}>
-          {pack.overview.title && <h2 className="text-lg font-bold text-slate-800 mb-1">{pack.overview.title}</h2>}
-          {pack.overview.intro && <div className="text-sm text-slate-600"><MdBlock text={pack.overview.intro} /></div>}
-        </div>
-      )}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {lessons.map((l) => {
-          const a = lacc(l.color || accent);
-          return (
-            <button key={l.code} onClick={() => setOpen(l.code)}
-              className="text-left bg-white border border-slate-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <span className="text-xl">{l.icon}</span>
-                <span className={`font-bold text-sm ${a.text}`}>{l.code}</span>
-              </div>
-              <div className="font-semibold text-sm text-slate-800 leading-snug">{l.title}</div>
-              {l.tagline && <div className="text-xs text-slate-500 leading-relaxed"><MdInline text={l.tagline} /></div>}
-              <span className={`mt-auto text-xs font-semibold ${a.text} flex items-center gap-1 pt-1`}>Ouvrir le cours <ArrowRight size={13} /></span>
-            </button>
-          );
-        })}
-      </div>
-    </div>
-  );
+  return React.createElement("div", null, pack.overview && React.createElement("div", {
+    className: `rounded-2xl border ${lacc(accent).ring} ${lacc(accent).soft} p-5 mb-5`
+  }, pack.overview.title && React.createElement("h2", {
+    className: "text-lg font-bold text-slate-800 mb-1"
+  }, pack.overview.title), pack.overview.intro && React.createElement("div", {
+    className: "text-sm text-slate-600"
+  }, React.createElement(MdBlock, {
+    text: pack.overview.intro
+  }))), React.createElement("div", {
+    className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-3"
+  }, lessons.map(l => {
+    const a = lacc(l.color || accent);
+    return React.createElement("button", {
+      key: l.code,
+      onClick: () => setOpen(l.code),
+      className: "text-left bg-white border border-slate-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-2"
+    }, React.createElement("div", {
+      className: "flex items-center gap-2"
+    }, React.createElement("span", {
+      className: "text-xl"
+    }, l.icon), React.createElement("span", {
+      className: `font-bold text-sm ${a.text}`
+    }, l.code)), React.createElement("div", {
+      className: "font-semibold text-sm text-slate-800 leading-snug"
+    }, l.title), l.tagline && React.createElement("div", {
+      className: "text-xs text-slate-500 leading-relaxed"
+    }, React.createElement(MdInline, {
+      text: l.tagline
+    })), React.createElement("span", {
+      className: `mt-auto text-xs font-semibold ${a.text} flex items-center gap-1 pt-1`
+    }, "Ouvrir le cours ", React.createElement(ArrowRight, {
+      size: 13
+    })));
+  })));
 }
-
-/* ===================== Recherche globale dans les cours ===================== */
-function LessonSearch({ lessons = {}, onOpen }) {
+function LessonSearch({
+  lessons = {},
+  onOpen
+}) {
   const [q, setQ] = useState("");
-  const all = [
-    ...(((lessons.ifrs || {}).lessons) || []).map((l) => ({ ...l, domain: "IFRS" })),
-    ...(((lessons.swissgaap || {}).lessons) || []).map((l) => ({ ...l, domain: "Swiss GAAP" })),
-  ];
+  const all = [...((lessons.ifrs || {}).lessons || []).map(l => ({
+    ...l,
+    domain: "IFRS"
+  })), ...((lessons.swissgaap || {}).lessons || []).map(l => ({
+    ...l,
+    domain: "Swiss GAAP"
+  }))];
   const query = q.trim().toLowerCase();
   let results = [];
   if (query.length >= 2) {
-    all.forEach((l) => {
-      const secHits = (l.sections || []).filter((s) => {
+    all.forEach(l => {
+      const secHits = (l.sections || []).filter(s => {
         const txt = (s.title || "") + " " + JSON.stringify(s.blocks || "");
         return txt.toLowerCase().includes(query);
-      }).map((s) => s.title);
+      }).map(s => s.title);
       const titleHit = ((l.code || "") + " " + (l.title || "") + " " + (l.tagline || "")).toLowerCase().includes(query);
-      if (titleHit || secHits.length) results.push({ l, secHits: secHits.slice(0, 3) });
+      if (titleHit || secHits.length) results.push({
+        l,
+        secHits: secHits.slice(0, 3)
+      });
     });
   }
-  return (
-    <div>
-      <div className="relative">
-        <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-        <input value={q} onChange={(e) => setQ(e.target.value)}
-          placeholder="Rechercher dans les cours IFRS & Swiss GAAP (goodwill, NCI, mise en équivalence…)"
-          className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none" />
-        {q && <button onClick={() => setQ("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-sm">✕</button>}
-      </div>
-      {query.length >= 2 && (
-        <div className="mt-2 rounded-xl border border-slate-200 bg-white divide-y divide-slate-100 max-h-80 overflow-auto shadow-sm">
-          {results.length === 0 && <div className="p-3 text-sm text-slate-400">Aucun résultat pour « {q} ».</div>}
-          {results.map(({ l, secHits }) => (
-            <button key={l.domain + l.code} onClick={() => onOpen && onOpen(l.code)} className="w-full text-left p-3 hover:bg-slate-50 flex items-start gap-2.5">
-              <span className="text-lg shrink-0">{l.icon}</span>
-              <div className="min-w-0">
-                <div className="text-sm font-semibold text-slate-800">{l.code} — {l.title}</div>
-                {secHits.length > 0 && <div className="text-xs text-slate-500 truncate">↳ {secHits.join(" · ")}</div>}
-                <div className="text-[10px] uppercase tracking-wide text-slate-400 mt-0.5">{l.domain}</div>
-              </div>
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
+  return React.createElement("div", null, React.createElement("div", {
+    className: "relative"
+  }, React.createElement(Search, {
+    size: 16,
+    className: "absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+  }), React.createElement("input", {
+    value: q,
+    onChange: e => setQ(e.target.value),
+    placeholder: "Rechercher dans les cours IFRS & Swiss GAAP (goodwill, NCI, mise en \xE9quivalence\u2026)",
+    className: "w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none"
+  }), q && React.createElement("button", {
+    onClick: () => setQ(""),
+    className: "absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-sm"
+  }, "\u2715")), query.length >= 2 && React.createElement("div", {
+    className: "mt-2 rounded-xl border border-slate-200 bg-white divide-y divide-slate-100 max-h-80 overflow-auto shadow-sm"
+  }, results.length === 0 && React.createElement("div", {
+    className: "p-3 text-sm text-slate-400"
+  }, "Aucun r\xE9sultat pour \xAB ", q, " \xBB."), results.map(({
+    l,
+    secHits
+  }) => React.createElement("button", {
+    key: l.domain + l.code,
+    onClick: () => onOpen && onOpen(l.code),
+    className: "w-full text-left p-3 hover:bg-slate-50 flex items-start gap-2.5"
+  }, React.createElement("span", {
+    className: "text-lg shrink-0"
+  }, l.icon), React.createElement("div", {
+    className: "min-w-0"
+  }, React.createElement("div", {
+    className: "text-sm font-semibold text-slate-800"
+  }, l.code, " \u2014 ", l.title), secHits.length > 0 && React.createElement("div", {
+    className: "text-xs text-slate-500 truncate"
+  }, "\u21B3 ", secHits.join(" · ")), React.createElement("div", {
+    className: "text-[10px] uppercase tracking-wide text-slate-400 mt-0.5"
+  }, l.domain))))));
 }
-
-/* ===================== Accueil Conso (hub par catégories) ===================== */
-function ConsoHome({ onGo, lessons, onOpenLesson }) {
-  const groups = [
-    { t: "📚 Apprendre", color: "indigo", items: [
-      { id: "cours", label: "Cours complet de consolidation", sub: "Théorie A→Z, 14 chapitres" },
-      { id: "ifrs", label: "Normes IFRS", sub: "IAS 27/28 · IFRS 3/10/11/12 — interactif" },
-      { id: "swissgaap", label: "Swiss GAAP RPC", sub: "Cadre · RPC 30 · évaluation… — interactif" },
-      { id: "chain", label: "Contrôle vs intérêt", sub: "Chaînes de participation" },
-      { id: "wizard", label: "Assistant pas à pas", sub: "Dérouler une consolidation guidée" },
-    ] },
-    { t: "🧮 Calculer & outils", color: "emerald", items: [
-      { id: "goodwill", label: "Calculateur Goodwill" },
-      { id: "feuille", label: "Feuille de conso" },
-      { id: "resultat", label: "Résultat consolidé" },
-      { id: "conversion", label: "Conversion devises" },
-      { id: "perimetrebuilder", label: "Mon périmètre" },
-      { id: "multi", label: "Groupe multi-sociétés" },
-      { id: "process", label: "Process (8 étapes)" },
-    ] },
-    { t: "📖 Approfondir", color: "violet", items: [
-      { id: "glossary", label: "Glossaire" },
-      { id: "compare", label: "IFRS vs Swiss GAAP" },
-      { id: "perimetre", label: "Vie du périmètre" },
-      { id: "impairment", label: "Dépréciation (IAS 36)" },
-      { id: "casparticuliers", label: "Cas particuliers" },
-    ] },
-    { t: "🎯 S'entraîner", color: "rose", items: [
-      { id: "quiz", label: "Quiz consolidation" },
-    ] },
-  ];
-  return (
-    <div className="space-y-5 mb-2">
-      <div className="rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white p-5 shadow">
-        <h2 className="text-xl font-bold">Consolidation · IFRS · Swiss GAAP</h2>
-        <p className="text-sm text-indigo-100 mt-1">Théorie, calculs, écritures, normes interactives et entraînement — tout pour l'examen, au même endroit.</p>
-      </div>
-      <LessonSearch lessons={lessons} onOpen={onOpenLesson} />
-      {groups.map((g) => (
-        <div key={g.t}>
-          <div className="text-sm font-bold text-slate-700 mb-2">{g.t}</div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-            {g.items.map((it) => {
-              const a = lacc(g.color);
-              return (
-                <button key={it.id} onClick={() => onGo(it.id)}
-                  className="text-left bg-white border border-slate-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col">
-                  <div className="font-semibold text-sm text-slate-800">{it.label}</div>
-                  {it.sub && <div className="text-xs text-slate-500 mt-0.5 leading-snug">{it.sub}</div>}
-                  <span className={`text-xs font-semibold ${a.text} flex items-center gap-1 mt-1.5`}>Ouvrir <ArrowRight size={12} /></span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
+function ConsoHome({
+  onGo,
+  lessons,
+  onOpenLesson
+}) {
+  const groups = [{
+    t: "📚 Apprendre",
+    color: "indigo",
+    items: [{
+      id: "cours",
+      label: "Cours complet de consolidation",
+      sub: "Théorie A→Z, 14 chapitres"
+    }, {
+      id: "ifrs",
+      label: "Normes IFRS",
+      sub: "IAS 27/28 · IFRS 3/10/11/12 — interactif"
+    }, {
+      id: "swissgaap",
+      label: "Swiss GAAP RPC",
+      sub: "Cadre · RPC 30 · évaluation… — interactif"
+    }, {
+      id: "chain",
+      label: "Contrôle vs intérêt",
+      sub: "Chaînes de participation"
+    }, {
+      id: "wizard",
+      label: "Assistant pas à pas",
+      sub: "Dérouler une consolidation guidée"
+    }]
+  }, {
+    t: "🧮 Calculer & outils",
+    color: "emerald",
+    items: [{
+      id: "goodwill",
+      label: "Calculateur Goodwill"
+    }, {
+      id: "feuille",
+      label: "Feuille de conso"
+    }, {
+      id: "resultat",
+      label: "Résultat consolidé"
+    }, {
+      id: "conversion",
+      label: "Conversion devises"
+    }, {
+      id: "perimetrebuilder",
+      label: "Mon périmètre"
+    }, {
+      id: "multi",
+      label: "Groupe multi-sociétés"
+    }, {
+      id: "process",
+      label: "Process (8 étapes)"
+    }]
+  }, {
+    t: "📖 Approfondir",
+    color: "violet",
+    items: [{
+      id: "glossary",
+      label: "Glossaire"
+    }, {
+      id: "compare",
+      label: "IFRS vs Swiss GAAP"
+    }, {
+      id: "perimetre",
+      label: "Vie du périmètre"
+    }, {
+      id: "impairment",
+      label: "Dépréciation (IAS 36)"
+    }, {
+      id: "casparticuliers",
+      label: "Cas particuliers"
+    }]
+  }, {
+    t: "🎯 S'entraîner",
+    color: "rose",
+    items: [{
+      id: "quiz",
+      label: "Quiz consolidation"
+    }]
+  }];
+  return React.createElement("div", {
+    className: "space-y-5 mb-2"
+  }, React.createElement("div", {
+    className: "rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white p-5 shadow"
+  }, React.createElement("h2", {
+    className: "text-xl font-bold"
+  }, "Consolidation \xB7 IFRS \xB7 Swiss GAAP"), React.createElement("p", {
+    className: "text-sm text-indigo-100 mt-1"
+  }, "Th\xE9orie, calculs, \xE9critures, normes interactives et entra\xEEnement \u2014 tout pour l'examen, au m\xEAme endroit.")), React.createElement(LessonSearch, {
+    lessons: lessons,
+    onOpen: onOpenLesson
+  }), groups.map(g => React.createElement("div", {
+    key: g.t
+  }, React.createElement("div", {
+    className: "text-sm font-bold text-slate-700 mb-2"
+  }, g.t), React.createElement("div", {
+    className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5"
+  }, g.items.map(it => {
+    const a = lacc(g.color);
+    return React.createElement("button", {
+      key: it.id,
+      onClick: () => onGo(it.id),
+      className: "text-left bg-white border border-slate-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col"
+    }, React.createElement("div", {
+      className: "font-semibold text-sm text-slate-800"
+    }, it.label), it.sub && React.createElement("div", {
+      className: "text-xs text-slate-500 mt-0.5 leading-snug"
+    }, it.sub), React.createElement("span", {
+      className: `text-xs font-semibold ${a.text} flex items-center gap-1 mt-1.5`
+    }, "Ouvrir ", React.createElement(ArrowRight, {
+      size: 12
+    })));
+  })))));
 }
-
-
-/* ============================================================
-   États financiers — explorateur IFRS interactif (thème clair).
-   Port du fs_explorer.js natif : parité champ par champ.
-   Données inlinées : window.__FS__ = { statements, notes }.
-   ============================================================ */
-
-/* Navigation croisée vers un onglet de l'app parente (même origine) */
 function fsNavParent(tab) {
   try {
     const p = window.parent;
-    if (p && p !== window && typeof p.navigate === "function") { p.navigate(tab); return true; }
+    if (p && p !== window && typeof p.navigate === "function") {
+      p.navigate(tab);
+      return true;
+    }
   } catch (e) {}
   return false;
 }
 function fsRefLabel(r) {
   const m = String(r).match(/^([a-z]+)\s*(\d+[a-z]?)$/i);
-  return m ? (m[1].toUpperCase() + " " + m[2].toUpperCase()) : String(r).toUpperCase();
+  return m ? m[1].toUpperCase() + " " + m[2].toUpperCase() : String(r).toUpperCase();
 }
-function fsIsNeg(a) { const s = String(a == null ? "" : a); return s.includes("(") || s.trim().startsWith("-"); }
-function fsIsSubtotal(item) { return item.is_subtotal === true || /^total/i.test(item.label || ""); }
-
-/* ── Briques locales ── */
-function FsCard({ label, tint = "white", children }) {
+function fsIsNeg(a) {
+  const s = String(a == null ? "" : a);
+  return s.includes("(") || s.trim().startsWith("-");
+}
+function fsIsSubtotal(item) {
+  return item.is_subtotal === true || /^total/i.test(item.label || "");
+}
+function FsCard({
+  label,
+  tint = "white",
+  children
+}) {
   const tints = {
     white: "bg-white border-slate-200",
     teal: "bg-teal-50/60 border-teal-100",
     amber: "bg-amber-50/60 border-amber-100",
-    violet: "bg-violet-50/60 border-violet-100",
+    violet: "bg-violet-50/60 border-violet-100"
   };
-  return (
-    <div className={`rounded-xl border p-4 mb-3 ${tints[tint] || tints.white}`}>
-      {label && <div className="text-xs font-bold text-slate-700 mb-2">{label}</div>}
-      {children}
-    </div>
-  );
+  return React.createElement("div", {
+    className: `rounded-xl border p-4 mb-3 ${tints[tint] || tints.white}`
+  }, label && React.createElement("div", {
+    className: "text-xs font-bold text-slate-700 mb-2"
+  }, label), children);
 }
-function FsCollapse({ title, defaultOpen = false, children }) {
+function FsCollapse({
+  title,
+  defaultOpen = false,
+  children
+}) {
   const [open, setOpen] = useState(defaultOpen);
-  return (
-    <div className="rounded-xl border border-slate-200 bg-white mb-3 overflow-hidden">
-      <button onClick={() => setOpen(!open)} className="w-full flex items-center gap-2.5 px-4 py-3 text-left hover:bg-slate-50">
-        <span className="text-xs font-bold text-slate-700 flex-1">{title}</span>
-        <ChevronDown size={16} className={`text-slate-400 transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-      {open && <div className="px-4 pb-4 pt-0.5">{children}</div>}
-    </div>
-  );
+  return React.createElement("div", {
+    className: "rounded-xl border border-slate-200 bg-white mb-3 overflow-hidden"
+  }, React.createElement("button", {
+    onClick: () => setOpen(!open),
+    className: "w-full flex items-center gap-2.5 px-4 py-3 text-left hover:bg-slate-50"
+  }, React.createElement("span", {
+    className: "text-xs font-bold text-slate-700 flex-1"
+  }, title), React.createElement(ChevronDown, {
+    size: 16,
+    className: `text-slate-400 transition-transform ${open ? "rotate-180" : ""}`
+  })), open && React.createElement("div", {
+    className: "px-4 pb-4 pt-0.5"
+  }, children));
 }
-
-/* ── Arbre : un état financier (sections → lignes) ── */
-function FsTree({ stmt, selectedId, onSelect }) {
-  if (!stmt) return <div className="text-sm text-slate-400 p-6 text-center">Aucun état sélectionné.</div>;
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
-      <div className="px-4 py-3 border-b border-slate-100 bg-gradient-to-r from-teal-50/80 to-transparent">
-        <div className="font-bold text-sm text-slate-800">{stmt.icon || "📄"} {stmt.title}</div>
-        <div className="text-[10px] text-slate-400 mt-0.5">Groupe Helvetia Industries SA · en milliers de CHF</div>
-      </div>
-      <div className="grid grid-cols-[1fr,5.2rem,5.2rem] gap-2 px-4 py-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-wider border-b border-slate-100 bg-slate-50/60">
-        <span></span><span className="text-right">2025</span><span className="text-right">2024</span>
-      </div>
-      {(stmt.sections || []).map((sec, si) => (
-        <div key={sec.id || si}>
-          <div className="px-4 pt-3 pb-1 text-[10px] font-bold text-teal-600 uppercase tracking-widest">{sec.title}</div>
-          {(sec.items || []).map((item) => {
-            const sel = selectedId === item.id;
-            const sub = fsIsSubtotal(item);
-            return (
-              <button key={item.id} onClick={() => onSelect(sec, item)}
-                className={`w-full grid grid-cols-[1fr,5.2rem,5.2rem] gap-2 px-4 py-2 text-left items-baseline transition-colors
-                  ${sel ? "bg-teal-50" : "hover:bg-slate-50"} ${sub ? "border-t border-slate-200 bg-slate-50/50" : ""}`}>
-                <span className={`text-[13px] leading-snug ${sub ? "font-bold text-slate-800" : sel ? "font-semibold text-teal-800" : "text-slate-700"}`}>{item.label}</span>
-                <span className={`text-[12.5px] text-right tabular-nums ${fsIsNeg(item.amount_2025) ? "text-rose-600" : sub ? "font-bold text-slate-800" : "text-slate-600"}`}>{item.amount_2025 || "–"}</span>
-                <span className={`text-[12.5px] text-right tabular-nums ${fsIsNeg(item.amount_2024) ? "text-rose-500" : sub ? "font-semibold text-slate-500" : "text-slate-400"}`}>{item.amount_2024 || "–"}</span>
-              </button>
-            );
-          })}
-        </div>
-      ))}
-      <div className="h-2"></div>
-    </div>
-  );
+function FsTree({
+  stmt,
+  selectedId,
+  onSelect
+}) {
+  if (!stmt) return React.createElement("div", {
+    className: "text-sm text-slate-400 p-6 text-center"
+  }, "Aucun \xE9tat s\xE9lectionn\xE9.");
+  return React.createElement("div", {
+    className: "rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm"
+  }, React.createElement("div", {
+    className: "px-4 py-3 border-b border-slate-100 bg-gradient-to-r from-teal-50/80 to-transparent"
+  }, React.createElement("div", {
+    className: "font-bold text-sm text-slate-800"
+  }, stmt.icon || "📄", " ", stmt.title), React.createElement("div", {
+    className: "text-[10px] text-slate-400 mt-0.5"
+  }, "Groupe Helvetia Industries SA \xB7 en milliers de CHF")), React.createElement("div", {
+    className: "grid grid-cols-[1fr,5.2rem,5.2rem] gap-2 px-4 py-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-wider border-b border-slate-100 bg-slate-50/60"
+  }, React.createElement("span", null), React.createElement("span", {
+    className: "text-right"
+  }, "2025"), React.createElement("span", {
+    className: "text-right"
+  }, "2024")), (stmt.sections || []).map((sec, si) => React.createElement("div", {
+    key: sec.id || si
+  }, React.createElement("div", {
+    className: "px-4 pt-3 pb-1 text-[10px] font-bold text-teal-600 uppercase tracking-widest"
+  }, sec.title), (sec.items || []).map(item => {
+    const sel = selectedId === item.id;
+    const sub = fsIsSubtotal(item);
+    return React.createElement("button", {
+      key: item.id,
+      onClick: () => onSelect(sec, item),
+      className: `w-full grid grid-cols-[1fr,5.2rem,5.2rem] gap-2 px-4 py-2 text-left items-baseline transition-colors
+                  ${sel ? "bg-teal-50" : "hover:bg-slate-50"} ${sub ? "border-t border-slate-200 bg-slate-50/50" : ""}`
+    }, React.createElement("span", {
+      className: `text-[13px] leading-snug ${sub ? "font-bold text-slate-800" : sel ? "font-semibold text-teal-800" : "text-slate-700"}`
+    }, item.label), React.createElement("span", {
+      className: `text-[12.5px] text-right tabular-nums ${fsIsNeg(item.amount_2025) ? "text-rose-600" : sub ? "font-bold text-slate-800" : "text-slate-600"}`
+    }, item.amount_2025 || "–"), React.createElement("span", {
+      className: `text-[12.5px] text-right tabular-nums ${fsIsNeg(item.amount_2024) ? "text-rose-500" : sub ? "font-semibold text-slate-500" : "text-slate-400"}`
+    }, item.amount_2024 || "–"));
+  }))), React.createElement("div", {
+    className: "h-2"
+  }));
 }
-
-/* ── Liste des notes annexes ── */
-function FsNotesList({ notes, selectedId, onSelect }) {
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
-      <div className="px-4 py-3 border-b border-slate-100 bg-gradient-to-r from-teal-50/80 to-transparent">
-        <div className="font-bold text-sm text-slate-800">📝 Notes aux états financiers</div>
-        <div className="text-[10px] text-slate-400 mt-0.5">{notes.length} notes annexes</div>
-      </div>
-      {notes.map((n) => (
-        <button key={n.id} onClick={() => onSelect(n)}
-          className={`w-full flex items-start gap-3 px-4 py-2.5 text-left border-b border-slate-50 last:border-0 transition-colors ${selectedId === n.id ? "bg-teal-50" : "hover:bg-slate-50"}`}>
-          <span className="text-[10px] font-bold text-white bg-teal-600 rounded-md px-1.5 py-0.5 mt-0.5 shrink-0 tabular-nums">N{n.number}</span>
-          <span className={`text-[13px] leading-snug ${selectedId === n.id ? "font-semibold text-teal-800" : "text-slate-700"}`}>{n.title}</span>
-        </button>
-      ))}
-    </div>
-  );
+function FsNotesList({
+  notes,
+  selectedId,
+  onSelect
+}) {
+  return React.createElement("div", {
+    className: "rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm"
+  }, React.createElement("div", {
+    className: "px-4 py-3 border-b border-slate-100 bg-gradient-to-r from-teal-50/80 to-transparent"
+  }, React.createElement("div", {
+    className: "font-bold text-sm text-slate-800"
+  }, "\uD83D\uDCDD Notes aux \xE9tats financiers"), React.createElement("div", {
+    className: "text-[10px] text-slate-400 mt-0.5"
+  }, notes.length, " notes annexes")), notes.map(n => React.createElement("button", {
+    key: n.id,
+    onClick: () => onSelect(n),
+    className: `w-full flex items-start gap-3 px-4 py-2.5 text-left border-b border-slate-50 last:border-0 transition-colors ${selectedId === n.id ? "bg-teal-50" : "hover:bg-slate-50"}`
+  }, React.createElement("span", {
+    className: "text-[10px] font-bold text-white bg-teal-600 rounded-md px-1.5 py-0.5 mt-0.5 shrink-0 tabular-nums"
+  }, "N", n.number), React.createElement("span", {
+    className: `text-[13px] leading-snug ${selectedId === n.id ? "font-semibold text-teal-800" : "text-slate-700"}`
+  }, n.title))));
 }
-
-/* ── Détail d'un poste ── */
-function KeyPointLine({ text }) {
+function KeyPointLine({
+  text
+}) {
   const warn = text.startsWith("⚠️");
   const tip = text.startsWith("💡");
   const cls = warn ? "bg-amber-50 border border-amber-100 text-amber-900" : tip ? "bg-violet-50 border border-violet-100 text-violet-900" : "bg-slate-50 text-slate-700";
-  return <li className={`rounded-lg px-3 py-2 text-sm leading-relaxed ${cls}`}><MdInline text={text} /></li>;
+  return React.createElement("li", {
+    className: `rounded-lg px-3 py-2 text-sm leading-relaxed ${cls}`
+  }, React.createElement(MdInline, {
+    text: text
+  }));
 }
-function FsItemDetail({ item, onJumpNote }) {
+function FsItemDetail({
+  item,
+  onJumpNote
+}) {
   const comp = item.comparison || {};
   const hasComp = comp.ifrs || comp.rpc || comp.co;
-  return (
-    <div>
-      <div className="rounded-2xl border border-teal-200 bg-white p-5 mb-4 shadow-sm">
-        <div className="flex items-start justify-between gap-3 flex-wrap">
-          <h2 className="text-xl font-bold text-slate-800 leading-tight">{item.label}</h2>
-          {item.note_ref && <button onClick={() => onJumpNote(item.note_ref)} title="Voir la note annexe"
-            className="text-[11px] font-semibold text-teal-700 bg-teal-50 border border-teal-200 px-2.5 py-1 rounded-full hover:bg-teal-100 shrink-0">{item.note_ref} →</button>}
-        </div>
-        <div className="flex gap-2.5 mt-3">
-          {[["2025", item.amount_2025], ["2024", item.amount_2024]].map(([y, a]) => (
-            <div key={y} className="rounded-xl border border-slate-200 bg-slate-50/60 px-4 py-2 min-w-[7rem]">
-              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{y}</div>
-              <div className={`text-lg font-bold tabular-nums ${fsIsNeg(a) ? "text-rose-600" : "text-slate-800"}`}>{a || "–"}</div>
-            </div>
-          ))}
-        </div>
-        {(item.norms || []).length > 0 && <div className="flex flex-wrap gap-1.5 mt-3">
-          {item.norms.map((n, i) => <span key={i} className="text-[11px] font-semibold text-teal-700 bg-teal-50 border border-teal-100 px-2 py-0.5 rounded">{n}</span>)}
-        </div>}
-      </div>
-
-      {item.definition && <FsCard label="📖 Définition" tint="teal"><div className="text-sm text-slate-700 leading-relaxed"><MdBlock text={item.definition} /></div></FsCard>}
-      {item.accounting_method && <FsCard label="📐 Méthode comptable IFRS"><div className="text-sm text-slate-700 leading-relaxed"><MdBlock text={item.accounting_method} /></div></FsCard>}
-
-      {(item.key_points || []).length > 0 && (
-        <FsCard label="🔑 Points clés">
-          <ul className="space-y-1.5">{item.key_points.map((p, i) => <KeyPointLine key={i} text={p} />)}</ul>
-        </FsCard>
-      )}
-
-      {hasComp && (
-        <FsCard label="⚖️ Comparaison IFRS / RPC / CO">
-          <div className="grid sm:grid-cols-3 gap-2">
-            {[["IFRS", comp.ifrs, "bg-emerald-50 text-emerald-700 border-emerald-100"],
-              ["Swiss GAAP RPC", comp.rpc, "bg-blue-50 text-blue-700 border-blue-100"],
-              ["CO", comp.co, "bg-amber-50 text-amber-700 border-amber-100"]].map(([h, body, cls]) => (
-              <div key={h} className="rounded-xl border border-slate-200 overflow-hidden">
-                <div className={`px-3 py-1.5 text-[11px] font-bold border-b ${cls}`}>{h}</div>
-                <div className="px-3 py-2.5 text-[13px] text-slate-600 leading-relaxed">{body ? <MdBlock text={body} /> : <span className="text-slate-300">–</span>}</div>
-              </div>
-            ))}
-          </div>
-        </FsCard>
-      )}
-
-      {(item.exam_tips || []).length > 0 && (
-        <FsCard label="🎯 Astuces d'examen" tint="amber">
-          <div className="space-y-1.5">{item.exam_tips.map((t, i) => (
-            <div key={i} className={`rounded-lg px-3 py-2 text-sm leading-relaxed ${t.startsWith("⚠️") ? "bg-white border border-amber-200 text-amber-900" : "bg-white/70 text-slate-700"}`}><MdInline text={t} /></div>
-          ))}</div>
-        </FsCard>
-      )}
-
-      {item.note_content && (
-        <FsCollapse title={`📋 Résumé de la note ${item.note_ref ? "(" + item.note_ref + ")" : ""}`}>
-          <div className="text-sm text-slate-700 leading-relaxed"><MdBlock text={item.note_content} /></div>
-          {item.note_ref && <button onClick={() => onJumpNote(item.note_ref)} className="mt-2 text-xs font-semibold text-teal-700 hover:underline">Ouvrir la note complète →</button>}
-        </FsCollapse>
-      )}
-
-      {(item.cross_refs || []).length > 0 && (
-        <FsCard label="📚 Références croisées">
-          <div className="flex flex-wrap gap-1.5">
-            {item.cross_refs.map((r, i) => (
-              <button key={i} onClick={() => fsNavParent("references")} title="Voir dans l'onglet Références"
-                className="text-[11px] font-semibold text-slate-600 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-lg hover:border-teal-300 hover:text-teal-700">{fsRefLabel(r)} ↗</button>
-            ))}
-          </div>
-        </FsCard>
-      )}
-    </div>
-  );
+  return React.createElement("div", null, React.createElement("div", {
+    className: "rounded-2xl border border-teal-200 bg-white p-5 mb-4 shadow-sm"
+  }, React.createElement("div", {
+    className: "flex items-start justify-between gap-3 flex-wrap"
+  }, React.createElement("h2", {
+    className: "text-xl font-bold text-slate-800 leading-tight"
+  }, item.label), item.note_ref && React.createElement("button", {
+    onClick: () => onJumpNote(item.note_ref),
+    title: "Voir la note annexe",
+    className: "text-[11px] font-semibold text-teal-700 bg-teal-50 border border-teal-200 px-2.5 py-1 rounded-full hover:bg-teal-100 shrink-0"
+  }, item.note_ref, " \u2192")), React.createElement("div", {
+    className: "flex gap-2.5 mt-3"
+  }, [["2025", item.amount_2025], ["2024", item.amount_2024]].map(([y, a]) => React.createElement("div", {
+    key: y,
+    className: "rounded-xl border border-slate-200 bg-slate-50/60 px-4 py-2 min-w-[7rem]"
+  }, React.createElement("div", {
+    className: "text-[10px] font-bold text-slate-400 uppercase tracking-wider"
+  }, y), React.createElement("div", {
+    className: `text-lg font-bold tabular-nums ${fsIsNeg(a) ? "text-rose-600" : "text-slate-800"}`
+  }, a || "–")))), (item.norms || []).length > 0 && React.createElement("div", {
+    className: "flex flex-wrap gap-1.5 mt-3"
+  }, item.norms.map((n, i) => React.createElement("span", {
+    key: i,
+    className: "text-[11px] font-semibold text-teal-700 bg-teal-50 border border-teal-100 px-2 py-0.5 rounded"
+  }, n)))), item.definition && React.createElement(FsCard, {
+    label: "\uD83D\uDCD6 D\xE9finition",
+    tint: "teal"
+  }, React.createElement("div", {
+    className: "text-sm text-slate-700 leading-relaxed"
+  }, React.createElement(MdBlock, {
+    text: item.definition
+  }))), item.accounting_method && React.createElement(FsCard, {
+    label: "\uD83D\uDCD0 M\xE9thode comptable IFRS"
+  }, React.createElement("div", {
+    className: "text-sm text-slate-700 leading-relaxed"
+  }, React.createElement(MdBlock, {
+    text: item.accounting_method
+  }))), (item.key_points || []).length > 0 && React.createElement(FsCard, {
+    label: "\uD83D\uDD11 Points cl\xE9s"
+  }, React.createElement("ul", {
+    className: "space-y-1.5"
+  }, item.key_points.map((p, i) => React.createElement(KeyPointLine, {
+    key: i,
+    text: p
+  })))), hasComp && React.createElement(FsCard, {
+    label: "\u2696\uFE0F Comparaison IFRS / RPC / CO"
+  }, React.createElement("div", {
+    className: "grid sm:grid-cols-3 gap-2"
+  }, [["IFRS", comp.ifrs, "bg-emerald-50 text-emerald-700 border-emerald-100"], ["Swiss GAAP RPC", comp.rpc, "bg-blue-50 text-blue-700 border-blue-100"], ["CO", comp.co, "bg-amber-50 text-amber-700 border-amber-100"]].map(([h, body, cls]) => React.createElement("div", {
+    key: h,
+    className: "rounded-xl border border-slate-200 overflow-hidden"
+  }, React.createElement("div", {
+    className: `px-3 py-1.5 text-[11px] font-bold border-b ${cls}`
+  }, h), React.createElement("div", {
+    className: "px-3 py-2.5 text-[13px] text-slate-600 leading-relaxed"
+  }, body ? React.createElement(MdBlock, {
+    text: body
+  }) : React.createElement("span", {
+    className: "text-slate-300"
+  }, "\u2013")))))), (item.exam_tips || []).length > 0 && React.createElement(FsCard, {
+    label: "\uD83C\uDFAF Astuces d'examen",
+    tint: "amber"
+  }, React.createElement("div", {
+    className: "space-y-1.5"
+  }, item.exam_tips.map((t, i) => React.createElement("div", {
+    key: i,
+    className: `rounded-lg px-3 py-2 text-sm leading-relaxed ${t.startsWith("⚠️") ? "bg-white border border-amber-200 text-amber-900" : "bg-white/70 text-slate-700"}`
+  }, React.createElement(MdInline, {
+    text: t
+  }))))), item.note_content && React.createElement(FsCollapse, {
+    title: `📋 Résumé de la note ${item.note_ref ? "(" + item.note_ref + ")" : ""}`
+  }, React.createElement("div", {
+    className: "text-sm text-slate-700 leading-relaxed"
+  }, React.createElement(MdBlock, {
+    text: item.note_content
+  })), item.note_ref && React.createElement("button", {
+    onClick: () => onJumpNote(item.note_ref),
+    className: "mt-2 text-xs font-semibold text-teal-700 hover:underline"
+  }, "Ouvrir la note compl\xE8te \u2192")), (item.cross_refs || []).length > 0 && React.createElement(FsCard, {
+    label: "\uD83D\uDCDA R\xE9f\xE9rences crois\xE9es"
+  }, React.createElement("div", {
+    className: "flex flex-wrap gap-1.5"
+  }, item.cross_refs.map((r, i) => React.createElement("button", {
+    key: i,
+    onClick: () => fsNavParent("references"),
+    title: "Voir dans l'onglet R\xE9f\xE9rences",
+    className: "text-[11px] font-semibold text-slate-600 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-lg hover:border-teal-300 hover:text-teal-700"
+  }, fsRefLabel(r), " \u2197")))));
 }
-
-/* ── Détail d'une note annexe ── */
-function FsNoteDetail({ note }) {
+function FsNoteDetail({
+  note
+}) {
   const subs = note.subsections || [];
-  return (
-    <div>
-      <div className="rounded-2xl border border-teal-200 bg-white p-5 mb-4 shadow-sm">
-        <div className="flex items-center gap-2.5">
-          <span className="text-xs font-bold text-white bg-teal-600 rounded-lg px-2 py-1 tabular-nums shrink-0">Note {note.number}</span>
-          <h2 className="text-lg font-bold text-slate-800 leading-tight">{note.title}</h2>
-        </div>
-      </div>
-      {note.content && <FsCard><div className="text-sm text-slate-700 leading-relaxed"><MdBlock text={note.content} /></div></FsCard>}
-      {subs.map((sub, i) => (
-        <FsCard key={i} label={sub.title || null}>
-          <div className="text-sm text-slate-700 leading-relaxed"><MdBlock text={sub.content || ""} /></div>
-        </FsCard>
-      ))}
-      {!note.content && !subs.length && <FsCard><div className="text-sm text-slate-400">Contenu de la note non disponible.</div></FsCard>}
-    </div>
-  );
+  return React.createElement("div", null, React.createElement("div", {
+    className: "rounded-2xl border border-teal-200 bg-white p-5 mb-4 shadow-sm"
+  }, React.createElement("div", {
+    className: "flex items-center gap-2.5"
+  }, React.createElement("span", {
+    className: "text-xs font-bold text-white bg-teal-600 rounded-lg px-2 py-1 tabular-nums shrink-0"
+  }, "Note ", note.number), React.createElement("h2", {
+    className: "text-lg font-bold text-slate-800 leading-tight"
+  }, note.title))), note.content && React.createElement(FsCard, null, React.createElement("div", {
+    className: "text-sm text-slate-700 leading-relaxed"
+  }, React.createElement(MdBlock, {
+    text: note.content
+  }))), subs.map((sub, i) => React.createElement(FsCard, {
+    key: i,
+    label: sub.title || null
+  }, React.createElement("div", {
+    className: "text-sm text-slate-700 leading-relaxed"
+  }, React.createElement(MdBlock, {
+    text: sub.content || ""
+  })))), !note.content && !subs.length && React.createElement(FsCard, null, React.createElement("div", {
+    className: "text-sm text-slate-400"
+  }, "Contenu de la note non disponible.")));
 }
-
-/* ── Recherche globale (postes + notes) ── */
-function FsSearch({ data, onPick }) {
+function FsSearch({
+  data,
+  onPick
+}) {
   const [q, setQ] = useState("");
   const query = q.trim().toLowerCase();
   let hits = [];
   if (query.length >= 2) {
-    (data.statements || []).forEach((st) => (st.sections || []).forEach((sec) => (sec.items || []).forEach((it) => {
+    (data.statements || []).forEach(st => (st.sections || []).forEach(sec => (sec.items || []).forEach(it => {
       const hay = (it.label + " " + (it.definition || "") + " " + (it.norms || []).join(" ")).toLowerCase();
-      if (hay.includes(query)) hits.push({ kind: "item", st, sec, it });
+      if (hay.includes(query)) hits.push({
+        kind: "item",
+        st,
+        sec,
+        it
+      });
     })));
-    (data.notes || []).forEach((n) => {
+    (data.notes || []).forEach(n => {
       const hay = ("note " + n.number + " " + n.title + " " + (n.content || "")).toLowerCase();
-      if (hay.includes(query)) hits.push({ kind: "note", n });
+      if (hay.includes(query)) hits.push({
+        kind: "note",
+        n
+      });
     });
   }
-  return (
-    <div className="mb-4">
-      <div className="relative">
-        <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher un poste ou une note (goodwill, leasing, impôts différés…)"
-          className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none bg-white" />
-      </div>
-      {query.length >= 2 && (
-        <div className="mt-2 rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-          {hits.length === 0 && <div className="px-4 py-3 text-sm text-slate-400">Aucun résultat.</div>}
-          {hits.slice(0, 12).map((h, i) => (
-            <button key={i} onClick={() => { onPick(h); setQ(""); }} className="w-full flex items-center gap-2.5 px-4 py-2.5 text-left hover:bg-teal-50/60 border-b border-slate-50 last:border-0">
-              <span className="shrink-0 text-sm">{h.kind === "item" ? (h.st.icon || "📄") : "📝"}</span>
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm font-medium text-slate-800 truncate">{h.kind === "item" ? h.it.label : `Note ${h.n.number} — ${h.n.title}`}</span>
-                <span className="block text-[11px] text-slate-400 truncate">{h.kind === "item" ? h.st.title : "Notes annexes"}</span>
-              </span>
-              <ArrowRight size={14} className="text-slate-300 shrink-0" />
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
+  return React.createElement("div", {
+    className: "mb-4"
+  }, React.createElement("div", {
+    className: "relative"
+  }, React.createElement(Search, {
+    size: 15,
+    className: "absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+  }), React.createElement("input", {
+    value: q,
+    onChange: e => setQ(e.target.value),
+    placeholder: "Rechercher un poste ou une note (goodwill, leasing, imp\xF4ts diff\xE9r\xE9s\u2026)",
+    className: "w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none bg-white"
+  })), query.length >= 2 && React.createElement("div", {
+    className: "mt-2 rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden"
+  }, hits.length === 0 && React.createElement("div", {
+    className: "px-4 py-3 text-sm text-slate-400"
+  }, "Aucun r\xE9sultat."), hits.slice(0, 12).map((h, i) => React.createElement("button", {
+    key: i,
+    onClick: () => {
+      onPick(h);
+      setQ("");
+    },
+    className: "w-full flex items-center gap-2.5 px-4 py-2.5 text-left hover:bg-teal-50/60 border-b border-slate-50 last:border-0"
+  }, React.createElement("span", {
+    className: "shrink-0 text-sm"
+  }, h.kind === "item" ? h.st.icon || "📄" : "📝"), React.createElement("span", {
+    className: "min-w-0 flex-1"
+  }, React.createElement("span", {
+    className: "block text-sm font-medium text-slate-800 truncate"
+  }, h.kind === "item" ? h.it.label : `Note ${h.n.number} — ${h.n.title}`), React.createElement("span", {
+    className: "block text-[11px] text-slate-400 truncate"
+  }, h.kind === "item" ? h.st.title : "Notes annexes")), React.createElement(ArrowRight, {
+    size: 14,
+    className: "text-slate-300 shrink-0"
+  })))));
 }
-
-/* ── App ── */
 function FsApp() {
-  const data = (typeof window !== "undefined" && window.__FS__) || { statements: [], notes: [] };
+  const data = typeof window !== "undefined" && window.__FS__ || {
+    statements: [],
+    notes: []
+  };
   const statements = data.statements || [];
   const notes = data.notes || [];
   const [stmtId, setStmtId] = useState(statements.length ? statements[0].id : null);
   const [showNotes, setShowNotes] = useState(false);
   const [item, setItem] = useState(null);
   const [note, setNote] = useState(null);
-  const [narrow, setNarrow] = useState(() => { try { return window.matchMedia("(max-width: 1023px)").matches; } catch (e) { return false; } });
+  const [narrow, setNarrow] = useState(() => {
+    try {
+      return window.matchMedia("(max-width: 1023px)").matches;
+    } catch (e) {
+      return false;
+    }
+  });
   const [pane, setPane] = useState("tree");
   useEffect(() => {
     try {
       const mq = window.matchMedia("(max-width: 1023px)");
-      const fn = (e) => setNarrow(e.matches);
+      const fn = e => setNarrow(e.matches);
       mq.addEventListener ? mq.addEventListener("change", fn) : mq.addListener(fn);
-      return () => { mq.removeEventListener ? mq.removeEventListener("change", fn) : mq.removeListener(fn); };
+      return () => {
+        mq.removeEventListener ? mq.removeEventListener("change", fn) : mq.removeListener(fn);
+      };
     } catch (e) {}
   }, []);
-  const stmt = statements.find((s) => s.id === stmtId);
-
-  const jumpToNote = (ref) => {
+  const stmt = statements.find(s => s.id === stmtId);
+  const jumpToNote = ref => {
     const m = String(ref || "").match(/(\d+)/);
     if (!m) return;
-    const n = notes.find((x) => x.number === parseInt(m[1], 10));
-    if (n) { setShowNotes(true); setNote(n); setItem(null); setPane("detail"); try { window.scrollTo(0, 0); } catch (e) {} }
+    const n = notes.find(x => x.number === parseInt(m[1], 10));
+    if (n) {
+      setShowNotes(true);
+      setNote(n);
+      setItem(null);
+      setPane("detail");
+      try {
+        window.scrollTo(0, 0);
+      } catch (e) {}
+    }
   };
-  const pickSearch = (h) => {
-    if (h.kind === "item") { setShowNotes(false); setStmtId(h.st.id); setItem(h.it); setNote(null); }
-    else { setShowNotes(true); setNote(h.n); setItem(null); }
-    setPane("detail"); try { window.scrollTo(0, 0); } catch (e) {}
+  const pickSearch = h => {
+    if (h.kind === "item") {
+      setShowNotes(false);
+      setStmtId(h.st.id);
+      setItem(h.it);
+      setNote(null);
+    } else {
+      setShowNotes(true);
+      setNote(h.n);
+      setItem(null);
+    }
+    setPane("detail");
+    try {
+      window.scrollTo(0, 0);
+    } catch (e) {}
   };
-
-  const detail = showNotes && note ? <FsNoteDetail note={note} />
-    : item ? <FsItemDetail item={item} onJumpNote={jumpToNote} />
-    : (
-      <div className="rounded-2xl border border-dashed border-slate-200 bg-white/60 p-10 text-center">
-        <div className="text-4xl opacity-30 mb-2">📊</div>
-        <div className="text-sm text-slate-500">Sélectionne un poste dans les états financiers</div>
-        <div className="text-xs text-slate-400 mt-1">Chaque ligne ouvre le détail IFRS : définition, méthode, comparaison RPC/CO, astuces d'examen.</div>
-      </div>
-    );
-
-  const tree = (
-    <div>
-      <div className="flex flex-wrap gap-1.5 mb-3">
-        {statements.map((s) => (
-          <button key={s.id} onClick={() => { setStmtId(s.id); setShowNotes(false); setNote(null); }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${!showNotes && stmtId === s.id ? "bg-teal-600 text-white border-teal-600" : "bg-white text-slate-600 border-slate-200 hover:border-teal-300"}`}
-            title={s.title}>{s.icon} {s.short || s.title.replace(/^(État consolidé|Tableau consolidé) (de la|du|des)?\s*/i, "").replace(/^./, (c) => c.toUpperCase())}</button>
-        ))}
-        <button onClick={() => { setShowNotes(true); setItem(null); }}
-          className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${showNotes ? "bg-teal-600 text-white border-teal-600" : "bg-white text-slate-600 border-slate-200 hover:border-teal-300"}`}>📝 Notes ({notes.length})</button>
-      </div>
-      {showNotes
-        ? <FsNotesList notes={notes} selectedId={note && note.id} onSelect={(n) => { setNote(n); setItem(null); setPane("detail"); try { window.scrollTo(0, 0); } catch (e) {} }} />
-        : <FsTree stmt={stmt} selectedId={item && item.id} onSelect={(sec, it) => { setItem(it); setNote(null); setPane("detail"); try { window.scrollTo(0, 0); } catch (e) {} }} />}
-    </div>
-  );
-
-  return (
-    <div className="min-h-screen bg-slate-100 text-slate-900">
-      <header className="bg-gradient-to-r from-slate-900 to-teal-900 text-white">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-3">
-          <Calculator size={22} className="text-teal-300" />
-          <div>
-            <h1 className="text-lg font-bold">États financiers — explorateur IFRS</h1>
-            <p className="text-xs text-teal-200">Bilan · Résultat · OCI · Flux de trésorerie · {notes.length} notes annexes · comparaisons RPC / CO</p>
-          </div>
-        </div>
-      </header>
-      <main className="max-w-5xl mx-auto px-4 py-6">
-        <FsSearch data={data} onPick={pickSearch} />
-        {narrow ? (
-          pane === "detail" && (item || (showNotes && note)) ? (
-            <div>
-              <button onClick={() => setPane("tree")} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-teal-700 mb-3"><ArrowLeft size={15} /> {showNotes ? "Toutes les notes" : "Retour à l'état"}</button>
-              {detail}
-            </div>
-          ) : tree
-        ) : (
-          <div className="grid grid-cols-12 gap-5 items-start">
-            <div className="col-span-5">{tree}</div>
-            <div className="col-span-7">{detail}</div>
-          </div>
-        )}
-      </main>
-      <footer className="max-w-5xl mx-auto px-4 py-6 text-center text-xs text-slate-400">Outil pédagogique — états financiers consolidés fictifs (IFRS), montants en milliers de CHF.</footer>
-    </div>
-  );
+  const detail = showNotes && note ? React.createElement(FsNoteDetail, {
+    note: note
+  }) : item ? React.createElement(FsItemDetail, {
+    item: item,
+    onJumpNote: jumpToNote
+  }) : React.createElement("div", {
+    className: "rounded-2xl border border-dashed border-slate-200 bg-white/60 p-10 text-center"
+  }, React.createElement("div", {
+    className: "text-4xl opacity-30 mb-2"
+  }, "\uD83D\uDCCA"), React.createElement("div", {
+    className: "text-sm text-slate-500"
+  }, "S\xE9lectionne un poste dans les \xE9tats financiers"), React.createElement("div", {
+    className: "text-xs text-slate-400 mt-1"
+  }, "Chaque ligne ouvre le d\xE9tail IFRS : d\xE9finition, m\xE9thode, comparaison RPC/CO, astuces d'examen."));
+  const tree = React.createElement("div", null, React.createElement("div", {
+    className: "flex flex-wrap gap-1.5 mb-3"
+  }, statements.map(s => React.createElement("button", {
+    key: s.id,
+    onClick: () => {
+      setStmtId(s.id);
+      setShowNotes(false);
+      setNote(null);
+    },
+    className: `px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${!showNotes && stmtId === s.id ? "bg-teal-600 text-white border-teal-600" : "bg-white text-slate-600 border-slate-200 hover:border-teal-300"}`,
+    title: s.title
+  }, s.icon, " ", s.short || s.title.replace(/^(État consolidé|Tableau consolidé) (de la|du|des)?\s*/i, "").replace(/^./, c => c.toUpperCase()))), React.createElement("button", {
+    onClick: () => {
+      setShowNotes(true);
+      setItem(null);
+    },
+    className: `px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${showNotes ? "bg-teal-600 text-white border-teal-600" : "bg-white text-slate-600 border-slate-200 hover:border-teal-300"}`
+  }, "\uD83D\uDCDD Notes (", notes.length, ")")), showNotes ? React.createElement(FsNotesList, {
+    notes: notes,
+    selectedId: note && note.id,
+    onSelect: n => {
+      setNote(n);
+      setItem(null);
+      setPane("detail");
+      try {
+        window.scrollTo(0, 0);
+      } catch (e) {}
+    }
+  }) : React.createElement(FsTree, {
+    stmt: stmt,
+    selectedId: item && item.id,
+    onSelect: (sec, it) => {
+      setItem(it);
+      setNote(null);
+      setPane("detail");
+      try {
+        window.scrollTo(0, 0);
+      } catch (e) {}
+    }
+  }));
+  return React.createElement("div", {
+    className: "min-h-screen bg-slate-100 text-slate-900"
+  }, React.createElement("header", {
+    className: "bg-gradient-to-r from-slate-900 to-teal-900 text-white"
+  }, React.createElement("div", {
+    className: "max-w-5xl mx-auto px-4 py-4 flex items-center gap-3"
+  }, React.createElement(Calculator, {
+    size: 22,
+    className: "text-teal-300"
+  }), React.createElement("div", null, React.createElement("h1", {
+    className: "text-lg font-bold"
+  }, "\xC9tats financiers \u2014 explorateur IFRS"), React.createElement("p", {
+    className: "text-xs text-teal-200"
+  }, "Bilan \xB7 R\xE9sultat \xB7 OCI \xB7 Flux de tr\xE9sorerie \xB7 ", notes.length, " notes annexes \xB7 comparaisons RPC / CO")))), React.createElement("main", {
+    className: "max-w-5xl mx-auto px-4 py-6"
+  }, React.createElement(FsSearch, {
+    data: data,
+    onPick: pickSearch
+  }), narrow ? pane === "detail" && (item || showNotes && note) ? React.createElement("div", null, React.createElement("button", {
+    onClick: () => setPane("tree"),
+    className: "flex items-center gap-1.5 text-sm text-slate-500 hover:text-teal-700 mb-3"
+  }, React.createElement(ArrowLeft, {
+    size: 15
+  }), " ", showNotes ? "Toutes les notes" : "Retour à l'état"), detail) : tree : React.createElement("div", {
+    className: "grid grid-cols-12 gap-5 items-start"
+  }, React.createElement("div", {
+    className: "col-span-5"
+  }, tree), React.createElement("div", {
+    className: "col-span-7"
+  }, detail))), React.createElement("footer", {
+    className: "max-w-5xl mx-auto px-4 py-6 text-center text-xs text-slate-400"
+  }, "Outil p\xE9dagogique \u2014 \xE9tats financiers consolid\xE9s fictifs (IFRS), montants en milliers de CHF."));
 }
-
-
-createRoot(document.getElementById("root")).render(<FsApp />);
-
+createRoot(document.getElementById("root")).render(React.createElement(FsApp, null));
 </script>
 </body>
 </html>

@@ -196,6 +196,13 @@ async function renderQcm(container) {
 
     _qcmBindKeys();
 
+    // Arrivée depuis l'accueil (« Plan du jour ») : la série démarre directement.
+    if (window._qcmPlanPending) {
+        const p = window._qcmPlanPending;
+        window._qcmPlanPending = null;
+        if (await _qcmStartPlan(p)) return;
+    }
+
     // Bannière "↩ Reprendre la session QCM ?" si état présent et < 24 h.
     const saved = _qcmLoadState();
     if (saved) {
@@ -675,7 +682,7 @@ function _qcmFilteredQuestions() {
 
 function _qcmWeakCount() {
     const stats = qcm.tracking.stats || {};
-    return Object.values(stats).filter(s => s.attempts >= 2 && s.accuracy < 50).length;
+    return Object.values(stats).filter(s => s.attempts >= 2 && s.accuracy < 60).length;  // même règle que _qcmIsWeak (api)
 }
 
 
@@ -724,6 +731,35 @@ async function _qcmStartQuiz() {
     qcm._speedMode = false;  // Reset
 }
 
+
+// ── Série du « Plan du jour » (accueil) ──
+// Priorité : questions à revoir (répétition espacée) → points faibles → erreurs
+// récentes → questions jamais vues, tirées au hasard dans tous les modules.
+function qcmPlanStart(n) {
+    window._qcmPlanPending = { n: n || 10 };
+    navigate('qcm');
+}
+async function _qcmStartPlan(p) {
+    const n = p.n || 10;
+    let ids = [];
+    for (const kind of ['due', 'weak', 'recent_wrong']) {
+        if (ids.length >= n) break;
+        try {
+            const more = await api('qcm_get_selection', kind, n * 3);
+            (more || []).forEach(id => { if (!ids.includes(id)) ids.push(id); });
+        } catch (e) { /* sélection indisponible : on complète au hasard */ }
+    }
+    const want = new Set(_qcmShuffle(ids.slice(0, n * 2)).slice(0, n));
+    let selected = qcm.catalog.filter(q => want.has(q.id));
+    if (selected.length < n) {
+        const seen = (qcm.tracking && qcm.tracking.stats) || {};
+        const fresh = _qcmShuffle(qcm.catalog.filter(q => !seen[q.id] && !want.has(q.id)));
+        selected = selected.concat(fresh.slice(0, n - selected.length));
+    }
+    if (!selected.length) return false;
+    _qcmStartSession(_qcmShuffle(selected), { mode: 'training', specialSelection: null, shuffleOptions: qcm.shuffleOptions });
+    return true;
+}
 
 async function _qcmStartSpecial(kind) {
     let ids = [];

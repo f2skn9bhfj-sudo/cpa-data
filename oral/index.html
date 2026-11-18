@@ -16,7 +16,6 @@
   }
 }
 </script>
-<script src="../vendor/babel.min.js"></script>
 <style>
   html,body{margin:0;padding:0;background:#f8fafc}
   #cw-loading{font-family:system-ui,-apple-system,sans-serif;color:#64748b;padding:48px;text-align:center;font-size:14px}
@@ -34,979 +33,1938 @@
     if (el) { el.hidden = false; el.textContent = 'Erreur : ' + (e.message || e); }
   });
 </script>
-<script type="text/babel" data-type="module" data-presets="react">
+<script type="module" id="app-code">
+// Généré par tools/sync_subapps.py depuis conso/lesson_engine.jsx, oral/oral_app.jsx : modifier ces fichiers, pas cette page.
 import React from "react";
 import { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { Info, AlertTriangle, CheckCircle2, ArrowRight, ArrowLeft, ChevronDown, Calculator, GraduationCap, Search, Mic, Clock, RotateCcw, Shuffle } from "lucide-react";
-const fmt = (n) => { if (n === null || n === undefined || isNaN(n)) return '–'; return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'"); };
-
-/* ===================== Lesson engine (IFRS / Swiss GAAP) =====================
-   Moteur data-driven rendu dans le style du wizard (Tailwind, light).
-   Le contenu (window.__CONSO_LESSONS__) est une donnée pure → robuste.
-   Interactif : quiz cliquables + score, exemples à corrigé masqué,
-   sections repliables. ========================================================= */
-
-/* Renvois cliquables : un code de norme dans le texte → ouvre la leçon. */
+const fmt = n => {
+  if (n === null || n === undefined || isNaN(n)) return '–';
+  return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+};
 const NORM_CODE_RE = /(IAS 27|IAS 28|IFRS 10|IFRS 11|IFRS 12|IFRS 3|RPC 30)(?![\d/])/g;
-function NormLinks({ text, kb }) {
+function NormLinks({
+  text,
+  kb
+}) {
   const segs = String(text).split(NORM_CODE_RE);
   return segs.map((s, j) => {
     if (/^(IAS 27|IAS 28|IFRS 10|IFRS 11|IFRS 12|IFRS 3|RPC 30)$/.test(s)) {
-      return (
-        <span key={kb + "_" + j} role="link" tabIndex={0}
-          onClick={(e) => { e.stopPropagation(); if (typeof window !== "undefined" && window.__consoGoToLesson) window.__consoGoToLesson(s); }}
-          className="text-indigo-600 font-semibold cursor-pointer underline decoration-dotted decoration-indigo-300 underline-offset-2 hover:text-indigo-800">{s}</span>
-      );
+      return React.createElement("span", {
+        key: kb + "_" + j,
+        role: "link",
+        tabIndex: 0,
+        onClick: e => {
+          e.stopPropagation();
+          if (typeof window !== "undefined" && window.__consoGoToLesson) window.__consoGoToLesson(s);
+        },
+        className: "text-indigo-600 font-semibold cursor-pointer underline decoration-dotted decoration-indigo-300 underline-offset-2 hover:text-indigo-800"
+      }, s);
     }
-    return <React.Fragment key={kb + "_" + j}>{s}</React.Fragment>;
+    return React.createElement(React.Fragment, {
+      key: kb + "_" + j
+    }, s);
   });
 }
-
-function MdInline({ text }) {
+function MdInline({
+  text
+}) {
   if (text == null) return null;
   const parts = String(text).split(/(\*\*[^*]+\*\*|\*[^*\n]+\*|`[^`]+`)/g);
   return parts.map((p, i) => {
-    if (/^\*\*[\s\S]+\*\*$/.test(p)) return <strong key={i} className="font-semibold text-slate-800"><NormLinks text={p.slice(2, -2)} kb={i} /></strong>;
-    if (/^\*[^*][\s\S]*\*$/.test(p)) return <em key={i} className="italic"><NormLinks text={p.slice(1, -1)} kb={i} /></em>;
-    if (/^`[\s\S]+`$/.test(p)) return <code key={i} className="px-1 py-0.5 rounded bg-slate-100 text-indigo-700 text-[0.85em]">{p.slice(1, -1)}</code>;
-    return <NormLinks key={i} text={p} kb={i} />;
+    if (/^\*\*[\s\S]+\*\*$/.test(p)) return React.createElement("strong", {
+      key: i,
+      className: "font-semibold text-slate-800"
+    }, React.createElement(NormLinks, {
+      text: p.slice(2, -2),
+      kb: i
+    }));
+    if (/^\*[^*][\s\S]*\*$/.test(p)) return React.createElement("em", {
+      key: i,
+      className: "italic"
+    }, React.createElement(NormLinks, {
+      text: p.slice(1, -1),
+      kb: i
+    }));
+    if (/^`[\s\S]+`$/.test(p)) return React.createElement("code", {
+      key: i,
+      className: "px-1 py-0.5 rounded bg-slate-100 text-indigo-700 text-[0.85em]"
+    }, p.slice(1, -1));
+    return React.createElement(NormLinks, {
+      key: i,
+      text: p,
+      kb: i
+    });
   });
 }
-
-function MdBlock({ text, className = "" }) {
+function MdBlock({
+  text,
+  className = ""
+}) {
   if (!text) return null;
   const lines = String(text).split("\n");
-  const out = []; let list = null;
-  const flush = (k) => { if (list) { out.push(<ul key={"u" + k} className="list-disc ml-5 space-y-1 my-2">{list.map((li, j) => <li key={j}><MdInline text={li} /></li>)}</ul>); list = null; } };
+  const out = [];
+  let list = null;
+  const flush = k => {
+    if (list) {
+      out.push(React.createElement("ul", {
+        key: "u" + k,
+        className: "list-disc ml-5 space-y-1 my-2"
+      }, list.map((li, j) => React.createElement("li", {
+        key: j
+      }, React.createElement(MdInline, {
+        text: li
+      })))));
+      list = null;
+    }
+  };
   lines.forEach((ln, i) => {
     const t = ln.trim();
-    if (/^[-•]\s+/.test(t)) { (list = list || []).push(t.replace(/^[-•]\s+/, "")); }
-    else { flush(i); if (t) out.push(<p key={"p" + i} className="my-2 leading-relaxed"><MdInline text={t} /></p>); }
+    if (/^[-•]\s+/.test(t)) {
+      (list = list || []).push(t.replace(/^[-•]\s+/, ""));
+    } else {
+      flush(i);
+      if (t) out.push(React.createElement("p", {
+        key: "p" + i,
+        className: "my-2 leading-relaxed"
+      }, React.createElement(MdInline, {
+        text: t
+      })));
+    }
   });
   flush("end");
-  return <div className={className}>{out}</div>;
+  return React.createElement("div", {
+    className: className
+  }, out);
 }
-
 const L_ACCENT = {
-  indigo:  { bar: "bg-indigo-600",  text: "text-indigo-700",  soft: "bg-indigo-50",  ring: "border-indigo-200" },
-  cyan:    { bar: "bg-cyan-600",    text: "text-cyan-700",    soft: "bg-cyan-50",    ring: "border-cyan-200" },
-  emerald: { bar: "bg-emerald-600", text: "text-emerald-700", soft: "bg-emerald-50", ring: "border-emerald-200" },
-  amber:   { bar: "bg-amber-500",   text: "text-amber-700",   soft: "bg-amber-50",   ring: "border-amber-200" },
-  violet:  { bar: "bg-violet-600",  text: "text-violet-700",  soft: "bg-violet-50",  ring: "border-violet-200" },
-  rose:    { bar: "bg-rose-600",    text: "text-rose-700",    soft: "bg-rose-50",    ring: "border-rose-200" },
-  blue:    { bar: "bg-blue-600",    text: "text-blue-700",    soft: "bg-blue-50",    ring: "border-blue-200" },
-  teal:    { bar: "bg-teal-600",    text: "text-teal-700",    soft: "bg-teal-50",    ring: "border-teal-200" },
-  slate:   { bar: "bg-slate-700",   text: "text-slate-700",   soft: "bg-slate-50",   ring: "border-slate-200" },
+  indigo: {
+    bar: "bg-indigo-600",
+    text: "text-indigo-700",
+    soft: "bg-indigo-50",
+    ring: "border-indigo-200"
+  },
+  cyan: {
+    bar: "bg-cyan-600",
+    text: "text-cyan-700",
+    soft: "bg-cyan-50",
+    ring: "border-cyan-200"
+  },
+  emerald: {
+    bar: "bg-emerald-600",
+    text: "text-emerald-700",
+    soft: "bg-emerald-50",
+    ring: "border-emerald-200"
+  },
+  amber: {
+    bar: "bg-amber-500",
+    text: "text-amber-700",
+    soft: "bg-amber-50",
+    ring: "border-amber-200"
+  },
+  violet: {
+    bar: "bg-violet-600",
+    text: "text-violet-700",
+    soft: "bg-violet-50",
+    ring: "border-violet-200"
+  },
+  rose: {
+    bar: "bg-rose-600",
+    text: "text-rose-700",
+    soft: "bg-rose-50",
+    ring: "border-rose-200"
+  },
+  blue: {
+    bar: "bg-blue-600",
+    text: "text-blue-700",
+    soft: "bg-blue-50",
+    ring: "border-blue-200"
+  },
+  teal: {
+    bar: "bg-teal-600",
+    text: "text-teal-700",
+    soft: "bg-teal-50",
+    ring: "border-teal-200"
+  },
+  slate: {
+    bar: "bg-slate-700",
+    text: "text-slate-700",
+    soft: "bg-slate-50",
+    ring: "border-slate-200"
+  }
 };
-const lacc = (c) => L_ACCENT[c] || L_ACCENT.indigo;
-
-function LCallout({ tone = "info", title, text }) {
+const lacc = c => L_ACCENT[c] || L_ACCENT.indigo;
+function LCallout({
+  tone = "info",
+  title,
+  text
+}) {
   const map = {
-    info: ["bg-slate-50 border-slate-200", <Info size={17} className="shrink-0 mt-0.5 text-slate-400" />, "text-slate-700"],
-    tip:  ["bg-indigo-50 border-indigo-200", <ArrowRight size={17} className="shrink-0 mt-0.5 text-indigo-500" />, "text-indigo-800"],
-    warn: ["bg-amber-50 border-amber-200", <AlertTriangle size={17} className="shrink-0 mt-0.5 text-amber-500" />, "text-amber-800"],
-    key:  ["bg-emerald-50 border-emerald-200", <CheckCircle2 size={17} className="shrink-0 mt-0.5 text-emerald-500" />, "text-emerald-800"],
+    info: ["bg-slate-50 border-slate-200", React.createElement(Info, {
+      size: 17,
+      className: "shrink-0 mt-0.5 text-slate-400"
+    }), "text-slate-700"],
+    tip: ["bg-indigo-50 border-indigo-200", React.createElement(ArrowRight, {
+      size: 17,
+      className: "shrink-0 mt-0.5 text-indigo-500"
+    }), "text-indigo-800"],
+    warn: ["bg-amber-50 border-amber-200", React.createElement(AlertTriangle, {
+      size: 17,
+      className: "shrink-0 mt-0.5 text-amber-500"
+    }), "text-amber-800"],
+    key: ["bg-emerald-50 border-emerald-200", React.createElement(CheckCircle2, {
+      size: 17,
+      className: "shrink-0 mt-0.5 text-emerald-500"
+    }), "text-emerald-800"]
   };
   const m = map[tone] || map.info;
-  return (
-    <div className={`flex items-start gap-2.5 border rounded-xl p-3.5 my-3 text-sm ${m[0]}`}>
-      {m[1]}
-      <div className="min-w-0">
-        {title && <div className={`font-semibold mb-0.5 ${m[2]}`}>{title}</div>}
-        <div className="text-slate-600"><MdBlock text={text} /></div>
-      </div>
-    </div>
-  );
+  return React.createElement("div", {
+    className: `flex items-start gap-2.5 border rounded-xl p-3.5 my-3 text-sm ${m[0]}`
+  }, m[1], React.createElement("div", {
+    className: "min-w-0"
+  }, title && React.createElement("div", {
+    className: `font-semibold mb-0.5 ${m[2]}`
+  }, title), React.createElement("div", {
+    className: "text-slate-600"
+  }, React.createElement(MdBlock, {
+    text: text
+  }))));
 }
-
-function LTable({ title, headers = [], rows = [] }) {
-  return (
-    <div className="my-3">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-1.5">{title}</div>}
-      <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
-        <table className="w-full text-sm border-collapse">
-          {headers.length > 0 && <thead><tr className="bg-violet-50 text-violet-700 text-xs">
-            {headers.map((h, i) => <th key={i} className={`text-left px-3 py-2.5 font-bold ${i > 0 ? "border-l border-white" : ""}`}><MdInline text={h} /></th>)}
-          </tr></thead>}
-          <tbody>
-            {rows.map((r, i) => (
-              <tr key={i} className={`align-top ${i % 2 ? "bg-slate-50/50" : "bg-white"}`}>
-                {r.map((c, j) => <td key={j} className={`px-3 py-2.5 border-t border-slate-100 ${j > 0 ? "border-l" : ""} ${j === 0 ? "font-semibold text-slate-700" : "text-slate-600"}`}><MdInline text={c} /></td>)}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
+function LTable({
+  title,
+  headers = [],
+  rows = []
+}) {
+  return React.createElement("div", {
+    className: "my-3"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-1.5"
+  }, title), React.createElement("div", {
+    className: "overflow-x-auto rounded-xl border border-slate-200 shadow-sm"
+  }, React.createElement("table", {
+    className: "w-full text-sm border-collapse"
+  }, headers.length > 0 && React.createElement("thead", null, React.createElement("tr", {
+    className: "bg-violet-50 text-violet-700 text-xs"
+  }, headers.map((h, i) => React.createElement("th", {
+    key: i,
+    className: `text-left px-3 py-2.5 font-bold ${i > 0 ? "border-l border-white" : ""}`
+  }, React.createElement(MdInline, {
+    text: h
+  }))))), React.createElement("tbody", null, rows.map((r, i) => React.createElement("tr", {
+    key: i,
+    className: `align-top ${i % 2 ? "bg-slate-50/50" : "bg-white"}`
+  }, r.map((c, j) => React.createElement("td", {
+    key: j,
+    className: `px-3 py-2.5 border-t border-slate-100 ${j > 0 ? "border-l" : ""} ${j === 0 ? "font-semibold text-slate-700" : "text-slate-600"}`
+  }, React.createElement(MdInline, {
+    text: c
+  })))))))));
 }
-
-function LCompare({ title = "IFRS vs Swiss GAAP RPC vs CO", rows = [] }) {
-  return (
-    <div className="my-3">
-      <div className="text-sm font-semibold text-slate-700 mb-1.5">{title}</div>
-      <div className="overflow-x-auto rounded-lg border border-slate-200">
-        <table className="w-full text-sm">
-          <thead><tr className="bg-slate-50 text-xs">
-            <th className="text-left px-3 py-2 font-medium text-slate-500">Critère</th>
-            <th className="text-left px-3 py-2 font-semibold text-indigo-700">IFRS</th>
-            <th className="text-left px-3 py-2 font-semibold text-emerald-700">Swiss GAAP RPC</th>
-            <th className="text-left px-3 py-2 font-semibold text-amber-700">CO</th>
-          </tr></thead>
-          <tbody>
-            {rows.map((r, i) => (
-              <tr key={i} className="border-t border-slate-100 align-top">
-                <td className="px-3 py-2 font-medium text-slate-700"><MdInline text={r.crit} /></td>
-                <td className="px-3 py-2 text-slate-600"><MdInline text={r.ifrs} /></td>
-                <td className="px-3 py-2 text-slate-600"><MdInline text={r.rpc} /></td>
-                <td className="px-3 py-2 text-slate-600"><MdInline text={r.co} /></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
+function LCompare({
+  title = "IFRS vs Swiss GAAP RPC vs CO",
+  rows = []
+}) {
+  return React.createElement("div", {
+    className: "my-3"
+  }, React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-1.5"
+  }, title), React.createElement("div", {
+    className: "overflow-x-auto rounded-lg border border-slate-200"
+  }, React.createElement("table", {
+    className: "w-full text-sm"
+  }, React.createElement("thead", null, React.createElement("tr", {
+    className: "bg-slate-50 text-xs"
+  }, React.createElement("th", {
+    className: "text-left px-3 py-2 font-medium text-slate-500"
+  }, "Crit\xE8re"), React.createElement("th", {
+    className: "text-left px-3 py-2 font-semibold text-indigo-700"
+  }, "IFRS"), React.createElement("th", {
+    className: "text-left px-3 py-2 font-semibold text-emerald-700"
+  }, "Swiss GAAP RPC"), React.createElement("th", {
+    className: "text-left px-3 py-2 font-semibold text-amber-700"
+  }, "CO"))), React.createElement("tbody", null, rows.map((r, i) => React.createElement("tr", {
+    key: i,
+    className: "border-t border-slate-100 align-top"
+  }, React.createElement("td", {
+    className: "px-3 py-2 font-medium text-slate-700"
+  }, React.createElement(MdInline, {
+    text: r.crit
+  })), React.createElement("td", {
+    className: "px-3 py-2 text-slate-600"
+  }, React.createElement(MdInline, {
+    text: r.ifrs
+  })), React.createElement("td", {
+    className: "px-3 py-2 text-slate-600"
+  }, React.createElement(MdInline, {
+    text: r.rpc
+  })), React.createElement("td", {
+    className: "px-3 py-2 text-slate-600"
+  }, React.createElement(MdInline, {
+    text: r.co
+  }))))))));
 }
-
-function LSteps({ title, steps = [], accent = "indigo" }) {
+function LSteps({
+  title,
+  steps = [],
+  accent = "indigo"
+}) {
   const a = lacc(accent);
-  return (
-    <div className="my-3">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
-      <div className="space-y-2">
-        {steps.map((s, i) => (
-          <div key={i} className="flex items-start gap-3">
-            <span className={`shrink-0 w-6 h-6 rounded-full ${a.bar} text-white text-xs font-bold flex items-center justify-center mt-0.5`}>{i + 1}</span>
-            <div className="text-sm">
-              {s.t && <span className="font-semibold text-slate-800"><MdInline text={s.t} /></span>}
-              {s.d && <span className="text-slate-600"> — <MdInline text={s.d} /></span>}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-3"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-2"
+  }, title), React.createElement("div", {
+    className: "space-y-2"
+  }, steps.map((s, i) => React.createElement("div", {
+    key: i,
+    className: "flex items-start gap-3"
+  }, React.createElement("span", {
+    className: `shrink-0 w-6 h-6 rounded-full ${a.bar} text-white text-xs font-bold flex items-center justify-center mt-0.5`
+  }, i + 1), React.createElement("div", {
+    className: "text-sm"
+  }, s.t && React.createElement("span", {
+    className: "font-semibold text-slate-800"
+  }, React.createElement(MdInline, {
+    text: s.t
+  })), s.d && React.createElement("span", {
+    className: "text-slate-600"
+  }, " \u2014 ", React.createElement(MdInline, {
+    text: s.d
+  })))))));
 }
-
-function LKeypoints({ title = "À retenir", items = [], accent = "emerald" }) {
+function LKeypoints({
+  title = "À retenir",
+  items = [],
+  accent = "emerald"
+}) {
   const a = lacc(accent);
-  return (
-    <div className={`my-3 rounded-xl border ${a.ring} ${a.soft} p-4`}>
-      <div className={`text-sm font-semibold mb-2 ${a.text}`}>{title}</div>
-      <ul className="space-y-1.5">
-        {items.map((it, i) => (
-          <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
-            <CheckCircle2 size={15} className={`shrink-0 mt-0.5 ${a.text}`} />
-            <span><MdInline text={it} /></span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+  return React.createElement("div", {
+    className: `my-3 rounded-xl border ${a.ring} ${a.soft} p-4`
+  }, React.createElement("div", {
+    className: `text-sm font-semibold mb-2 ${a.text}`
+  }, title), React.createElement("ul", {
+    className: "space-y-1.5"
+  }, items.map((it, i) => React.createElement("li", {
+    key: i,
+    className: "flex items-start gap-2 text-sm text-slate-700"
+  }, React.createElement(CheckCircle2, {
+    size: 15,
+    className: `shrink-0 mt-0.5 ${a.text}`
+  }), React.createElement("span", null, React.createElement(MdInline, {
+    text: it
+  }))))));
 }
-
-function LJournal({ title, note, lines = [] }) {
-  const norm = lines.map((l) => ({ compte: l.compte, debit: l.debit || 0, credit: l.credit || 0 }));
-  return <div className="my-3"><Journal n={"✍"} title={title || "Écriture comptable"} note={note} lines={norm} /></div>;
+function LJournal({
+  title,
+  note,
+  lines = []
+}) {
+  const norm = lines.map(l => ({
+    compte: l.compte,
+    debit: l.debit || 0,
+    credit: l.credit || 0
+  }));
+  return React.createElement("div", {
+    className: "my-3"
+  }, React.createElement(Journal, {
+    n: "✍",
+    title: title || "Écriture comptable",
+    note: note,
+    lines: norm
+  }));
 }
-
-function LExample({ title = "Exemple chiffré", statement, solution }) {
+function LExample({
+  title = "Exemple chiffré",
+  statement,
+  solution
+}) {
   const [show, setShow] = useState(false);
-  return (
-    <div className="my-3 rounded-xl border border-slate-200 bg-white overflow-hidden">
-      <div className="bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 flex items-center gap-2 border-b border-slate-100">
-        <Calculator size={15} className="text-indigo-500" />{title}
-      </div>
-      <div className="p-4">
-        <div className="text-sm text-slate-700"><MdBlock text={statement} /></div>
-        {solution && (
-          <div className="mt-3">
-            <button onClick={() => setShow(!show)} className="flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:text-indigo-800">
-              <ChevronDown size={14} className={`transition-transform ${show ? "rotate-180" : ""}`} />{show ? "Masquer le corrigé" : "Voir le corrigé"}
-            </button>
-            {show && <div className="mt-2 pt-3 border-t border-dashed border-slate-200 text-sm text-slate-700"><MdBlock text={solution} /></div>}
-          </div>
-        )}
-      </div>
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-3 rounded-xl border border-slate-200 bg-white overflow-hidden"
+  }, React.createElement("div", {
+    className: "bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 flex items-center gap-2 border-b border-slate-100"
+  }, React.createElement(Calculator, {
+    size: 15,
+    className: "text-indigo-500"
+  }), title), React.createElement("div", {
+    className: "p-4"
+  }, React.createElement("div", {
+    className: "text-sm text-slate-700"
+  }, React.createElement(MdBlock, {
+    text: statement
+  })), solution && React.createElement("div", {
+    className: "mt-3"
+  }, React.createElement("button", {
+    onClick: () => setShow(!show),
+    className: "flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:text-indigo-800"
+  }, React.createElement(ChevronDown, {
+    size: 14,
+    className: `transition-transform ${show ? "rotate-180" : ""}`
+  }), show ? "Masquer le corrigé" : "Voir le corrigé"), show && React.createElement("div", {
+    className: "mt-2 pt-3 border-t border-dashed border-slate-200 text-sm text-slate-700"
+  }, React.createElement(MdBlock, {
+    text: solution
+  })))));
 }
-
-function LQuiz({ title = "Quiz express", questions = [] }) {
+function LQuiz({
+  title = "Quiz express",
+  questions = []
+}) {
   const [ans, setAns] = useState({});
   const answered = Object.keys(ans).length;
   const score = questions.reduce((s, q, i) => s + (ans[i] === q.answer ? 1 : 0), 0);
-  return (
-    <div className="my-3 rounded-xl border border-slate-200 bg-white">
-      <div className="bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 flex items-center justify-between border-b border-slate-100">
-        <span className="flex items-center gap-2"><GraduationCap size={15} className="text-indigo-500" />{title}</span>
-        {answered > 0 && <span className="text-xs font-medium text-slate-500">Score {score}/{questions.length}</span>}
-      </div>
-      <div className="p-4 space-y-4">
-        {questions.map((q, qi) => {
-          const chosen = ans[qi]; const done = chosen != null;
-          return (
-            <div key={qi}>
-              <div className="text-sm font-medium text-slate-800 mb-2">{qi + 1}. <MdInline text={q.q} /></div>
-              <div className="grid gap-1.5">
-                {q.options.map((opt, oi) => {
-                  let cls = "border-slate-200 hover:border-indigo-300 text-slate-700";
-                  if (done) {
-                    if (oi === q.answer) cls = "border-emerald-300 bg-emerald-50 text-emerald-800";
-                    else if (oi === chosen) cls = "border-rose-300 bg-rose-50 text-rose-700";
-                    else cls = "border-slate-200 text-slate-400";
-                  }
-                  return (
-                    <button key={oi} disabled={done} onClick={() => setAns((p) => ({ ...p, [qi]: oi }))}
-                      className={`text-left text-sm border rounded-lg px-3 py-2 transition-colors flex items-center gap-2 ${cls}`}>
-                      <span className="shrink-0 w-5 h-5 rounded-full border border-slate-300 text-xs flex items-center justify-center font-medium">{"ABCD"[oi]}</span>
-                      <span className="flex-1"><MdInline text={opt} /></span>
-                      {done && oi === q.answer && <CheckCircle2 size={15} className="text-emerald-500" />}
-                    </button>
-                  );
-                })}
-              </div>
-              {done && q.explain && <div className="mt-2 text-xs text-slate-500 bg-slate-50 rounded-lg px-3 py-2"><MdInline text={q.explain} /></div>}
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-3 rounded-xl border border-slate-200 bg-white"
+  }, React.createElement("div", {
+    className: "bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 flex items-center justify-between border-b border-slate-100"
+  }, React.createElement("span", {
+    className: "flex items-center gap-2"
+  }, React.createElement(GraduationCap, {
+    size: 15,
+    className: "text-indigo-500"
+  }), title), answered > 0 && React.createElement("span", {
+    className: "text-xs font-medium text-slate-500"
+  }, "Score ", score, "/", questions.length)), React.createElement("div", {
+    className: "p-4 space-y-4"
+  }, questions.map((q, qi) => {
+    const chosen = ans[qi];
+    const done = chosen != null;
+    return React.createElement("div", {
+      key: qi
+    }, React.createElement("div", {
+      className: "text-sm font-medium text-slate-800 mb-2"
+    }, qi + 1, ". ", React.createElement(MdInline, {
+      text: q.q
+    })), React.createElement("div", {
+      className: "grid gap-1.5"
+    }, q.options.map((opt, oi) => {
+      let cls = "border-slate-200 hover:border-indigo-300 text-slate-700";
+      if (done) {
+        if (oi === q.answer) cls = "border-emerald-300 bg-emerald-50 text-emerald-800";else if (oi === chosen) cls = "border-rose-300 bg-rose-50 text-rose-700";else cls = "border-slate-200 text-slate-400";
+      }
+      return React.createElement("button", {
+        key: oi,
+        disabled: done,
+        onClick: () => setAns(p => ({
+          ...p,
+          [qi]: oi
+        })),
+        className: `text-left text-sm border rounded-lg px-3 py-2 transition-colors flex items-center gap-2 ${cls}`
+      }, React.createElement("span", {
+        className: "shrink-0 w-5 h-5 rounded-full border border-slate-300 text-xs flex items-center justify-center font-medium"
+      }, "ABCD"[oi]), React.createElement("span", {
+        className: "flex-1"
+      }, React.createElement(MdInline, {
+        text: opt
+      })), done && oi === q.answer && React.createElement(CheckCircle2, {
+        size: 15,
+        className: "text-emerald-500"
+      }));
+    })), done && q.explain && React.createElement("div", {
+      className: "mt-2 text-xs text-slate-500 bg-slate-50 rounded-lg px-3 py-2"
+    }, React.createElement(MdInline, {
+      text: q.explain
+    })));
+  })));
 }
-
-function LMnemo({ code, items = [], phrase }) {
-  return (
-    <div className="my-3 rounded-xl border border-violet-200 bg-violet-50 p-4">
-      <div className="text-sm font-bold text-violet-700 mb-2">🧠 Mnémotechnique — {code}</div>
-      <ul className="space-y-1">
-        {items.map((it, i) => (
-          <li key={i} className="text-sm text-slate-700"><span className="font-bold text-violet-700">{it.l}</span> — <MdInline text={it.t} /></li>
-        ))}
-      </ul>
-      {phrase && <div className="mt-2 text-xs italic text-violet-600">« {phrase} »</div>}
-    </div>
-  );
+function LMnemo({
+  code,
+  items = [],
+  phrase
+}) {
+  return React.createElement("div", {
+    className: "my-3 rounded-xl border border-violet-200 bg-violet-50 p-4"
+  }, React.createElement("div", {
+    className: "text-sm font-bold text-violet-700 mb-2"
+  }, "\uD83E\uDDE0 Mn\xE9motechnique \u2014 ", code), React.createElement("ul", {
+    className: "space-y-1"
+  }, items.map((it, i) => React.createElement("li", {
+    key: i,
+    className: "text-sm text-slate-700"
+  }, React.createElement("span", {
+    className: "font-bold text-violet-700"
+  }, it.l), " \u2014 ", React.createElement(MdInline, {
+    text: it.t
+  })))), phrase && React.createElement("div", {
+    className: "mt-2 text-xs italic text-violet-600"
+  }, "\xAB ", phrase, " \xBB"));
 }
-
-/* ===================== Schémas / graphiques ===================== */
 const DHEX = {
-  slate: "#94a3b8", gray: "#9ca3af", indigo: "#6366f1", violet: "#8b5cf6", blue: "#3b82f6",
-  cyan: "#06b6d4", teal: "#14b8a6", emerald: "#10b981", green: "#22c55e", amber: "#f59e0b",
-  orange: "#f97316", rose: "#f43f5e", red: "#ef4444",
+  slate: "#94a3b8",
+  gray: "#9ca3af",
+  indigo: "#6366f1",
+  violet: "#8b5cf6",
+  blue: "#3b82f6",
+  cyan: "#06b6d4",
+  teal: "#14b8a6",
+  emerald: "#10b981",
+  green: "#22c55e",
+  amber: "#f59e0b",
+  orange: "#f97316",
+  rose: "#f43f5e",
+  red: "#ef4444"
 };
-const dhex = (c) => DHEX[c] || DHEX.indigo;
-
-function DCaption({ text }) {
+const dhex = c => DHEX[c] || DHEX.indigo;
+function DCaption({
+  text
+}) {
   if (!text) return null;
-  return <div className="text-xs text-slate-400 mt-2 text-center italic"><MdInline text={text} /></div>;
+  return React.createElement("div", {
+    className: "text-xs text-slate-400 mt-2 text-center italic"
+  }, React.createElement(MdInline, {
+    text: text
+  }));
 }
-
-/* Spectre 0→100 % avec bandes colorées + légende — LE visuel contrôle/influence */
-function DSpectrum({ title, bands = [], caption }) {
-  const ticks = Array.from(new Set([0, 100, ...bands.flatMap((b) => [b.from, b.to])])).sort((a, b) => a - b);
-  return (
-    <div className="my-4">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
-      <div className="flex h-10 rounded-xl overflow-hidden shadow-inner">
-        {bands.map((b, i) => (
-          <div key={i} style={{ width: `${b.to - b.from}%`, background: dhex(b.color) }}
-            className="h-full flex items-center justify-center text-[10px] font-bold text-white text-center px-1 leading-tight">
-            {b.short || ""}
-          </div>
-        ))}
-      </div>
-      <div className="relative h-4 mt-1">
-        {ticks.map((p) => (
-          <span key={p} style={{ left: `${p}%` }} className="absolute -translate-x-1/2 text-[10px] font-medium text-slate-400">{p}%</span>
-        ))}
-      </div>
-      <div className="grid sm:grid-cols-3 gap-2 mt-2">
-        {bands.map((b, i) => (
-          <div key={i} className="flex items-start gap-2 text-xs">
-            <span className="w-3 h-3 rounded mt-0.5 shrink-0" style={{ background: dhex(b.color) }}></span>
-            <span className="text-slate-600 leading-snug"><MdInline text={b.label} /></span>
-          </div>
-        ))}
-      </div>
-      <DCaption text={caption} />
-    </div>
-  );
+function DSpectrum({
+  title,
+  bands = [],
+  caption
+}) {
+  const ticks = Array.from(new Set([0, 100, ...bands.flatMap(b => [b.from, b.to])])).sort((a, b) => a - b);
+  return React.createElement("div", {
+    className: "my-4"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-2"
+  }, title), React.createElement("div", {
+    className: "flex h-10 rounded-xl overflow-hidden shadow-inner"
+  }, bands.map((b, i) => React.createElement("div", {
+    key: i,
+    style: {
+      width: `${b.to - b.from}%`,
+      background: dhex(b.color)
+    },
+    className: "h-full flex items-center justify-center text-[10px] font-bold text-white text-center px-1 leading-tight"
+  }, b.short || ""))), React.createElement("div", {
+    className: "relative h-4 mt-1"
+  }, ticks.map(p => React.createElement("span", {
+    key: p,
+    style: {
+      left: `${p}%`
+    },
+    className: "absolute -translate-x-1/2 text-[10px] font-medium text-slate-400"
+  }, p, "%"))), React.createElement("div", {
+    className: "grid sm:grid-cols-3 gap-2 mt-2"
+  }, bands.map((b, i) => React.createElement("div", {
+    key: i,
+    className: "flex items-start gap-2 text-xs"
+  }, React.createElement("span", {
+    className: "w-3 h-3 rounded mt-0.5 shrink-0",
+    style: {
+      background: dhex(b.color)
+    }
+  }), React.createElement("span", {
+    className: "text-slate-600 leading-snug"
+  }, React.createElement(MdInline, {
+    text: b.label
+  }))))), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-/* Cascade (goodwill bridge) : + / − / = avec barres proportionnelles */
-function DWaterfall({ title, items = [], caption }) {
-  const max = Math.max(1, ...items.map((i) => Math.abs(i.value || 0)));
-  const col = { add: "#6366f1", sub: "#f43f5e", total: "#10b981" };
-  const sign = { add: "+", sub: "−", total: "=" };
-  return (
-    <div className="my-4">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
-      <div className="space-y-1.5">
-        {items.map((it, i) => (
-          <div key={i} className="flex items-center gap-2">
-            <div className="w-36 sm:w-44 text-xs text-slate-600 text-right shrink-0 leading-snug"><MdInline text={it.label} /></div>
-            <div className="flex-1 h-7 bg-slate-50 rounded-md overflow-hidden">
-              <div style={{ width: `${(Math.abs(it.value) / max) * 100}%`, background: col[it.kind] || col.add }}
-                className={`h-full ${it.kind === "total" ? "rounded-md" : ""}`}></div>
-            </div>
-            <div className={`w-20 text-sm font-bold text-right shrink-0 tabular-nums ${it.kind === "total" ? "text-emerald-700" : it.kind === "sub" ? "text-rose-600" : "text-indigo-700"}`}>
-              {sign[it.kind] || ""}{fmt(Math.abs(it.value))}
-            </div>
-          </div>
-        ))}
-      </div>
-      <DCaption text={caption} />
-    </div>
-  );
+function DWaterfall({
+  title,
+  items = [],
+  caption
+}) {
+  const max = Math.max(1, ...items.map(i => Math.abs(i.value || 0)));
+  const col = {
+    add: "#6366f1",
+    sub: "#f43f5e",
+    total: "#10b981"
+  };
+  const sign = {
+    add: "+",
+    sub: "−",
+    total: "="
+  };
+  return React.createElement("div", {
+    className: "my-4"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-2"
+  }, title), React.createElement("div", {
+    className: "space-y-1.5"
+  }, items.map((it, i) => React.createElement("div", {
+    key: i,
+    className: "flex items-center gap-2"
+  }, React.createElement("div", {
+    className: "w-36 sm:w-44 text-xs text-slate-600 text-right shrink-0 leading-snug"
+  }, React.createElement(MdInline, {
+    text: it.label
+  })), React.createElement("div", {
+    className: "flex-1 h-7 bg-slate-50 rounded-md overflow-hidden"
+  }, React.createElement("div", {
+    style: {
+      width: `${Math.abs(it.value) / max * 100}%`,
+      background: col[it.kind] || col.add
+    },
+    className: `h-full ${it.kind === "total" ? "rounded-md" : ""}`
+  })), React.createElement("div", {
+    className: `w-20 text-sm font-bold text-right shrink-0 tabular-nums ${it.kind === "total" ? "text-emerald-700" : it.kind === "sub" ? "text-rose-600" : "text-indigo-700"}`
+  }, sign[it.kind] || "", fmt(Math.abs(it.value)))))), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-/* Structure de groupe (mère → filiale %, + minoritaires) en SVG */
-function DGroup({ parent = {}, pct = 100, child = {}, nci, method, caption }) {
-  const minor = nci != null ? nci : (100 - pct);
+function DGroup({
+  parent = {},
+  pct = 100,
+  child = {},
+  nci,
+  method,
+  caption
+}) {
+  const minor = nci != null ? nci : 100 - pct;
   const pcol = dhex(parent.color || "indigo");
   const ccol = dhex(child.color || "slate");
-  return (
-    <div className="my-4">
-      <svg viewBox="0 0 440 220" className="w-full max-w-md mx-auto">
-        <rect x="160" y="8" width="120" height="48" rx="10" fill={pcol} />
-        <text x="220" y="30" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="700">{parent.label || "Société mère"}</text>
-        <text x="220" y="46" textAnchor="middle" fill="#e0e7ff" fontSize="10">{parent.sub || "Consolidante"}</text>
-        <line x1="220" y1="56" x2="220" y2="150" stroke="#cbd5e1" strokeWidth="2" />
-        <rect x="186" y="92" width="68" height="22" rx="6" fill="#fff" stroke={pcol} />
-        <text x="220" y="107" textAnchor="middle" fill={pcol} fontSize="12" fontWeight="800">{pct} %</text>
-        <rect x="160" y="150" width="120" height="56" rx="10" fill={ccol} />
-        <text x="220" y="173" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="700">{child.label || "Filiale"}</text>
-        <text x="220" y="190" textAnchor="middle" fill="#e2e8f0" fontSize="9.5">{method || child.sub || ""}</text>
-        {minor > 0 && (<>
-          <rect x="312" y="150" width="118" height="56" rx="10" fill="#fffbeb" stroke="#fcd34d" strokeDasharray="4" />
-          <text x="371" y="173" textAnchor="middle" fill="#92400e" fontSize="11" fontWeight="700">Minoritaires</text>
-          <text x="371" y="190" textAnchor="middle" fill="#b45309" fontSize="12" fontWeight="800">{minor} %</text>
-          <line x1="312" y1="178" x2="280" y2="178" stroke="#fbbf24" strokeWidth="2" strokeDasharray="4" />
-        </>)}
-      </svg>
-      <DCaption text={caption} />
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-4"
+  }, React.createElement("svg", {
+    viewBox: "0 0 440 220",
+    className: "w-full max-w-md mx-auto"
+  }, React.createElement("rect", {
+    x: "160",
+    y: "8",
+    width: "120",
+    height: "48",
+    rx: "10",
+    fill: pcol
+  }), React.createElement("text", {
+    x: "220",
+    y: "30",
+    textAnchor: "middle",
+    fill: "#fff",
+    fontSize: "13",
+    fontWeight: "700"
+  }, parent.label || "Société mère"), React.createElement("text", {
+    x: "220",
+    y: "46",
+    textAnchor: "middle",
+    fill: "#e0e7ff",
+    fontSize: "10"
+  }, parent.sub || "Consolidante"), React.createElement("line", {
+    x1: "220",
+    y1: "56",
+    x2: "220",
+    y2: "150",
+    stroke: "#cbd5e1",
+    strokeWidth: "2"
+  }), React.createElement("rect", {
+    x: "186",
+    y: "92",
+    width: "68",
+    height: "22",
+    rx: "6",
+    fill: "#fff",
+    stroke: pcol
+  }), React.createElement("text", {
+    x: "220",
+    y: "107",
+    textAnchor: "middle",
+    fill: pcol,
+    fontSize: "12",
+    fontWeight: "800"
+  }, pct, " %"), React.createElement("rect", {
+    x: "160",
+    y: "150",
+    width: "120",
+    height: "56",
+    rx: "10",
+    fill: ccol
+  }), React.createElement("text", {
+    x: "220",
+    y: "173",
+    textAnchor: "middle",
+    fill: "#fff",
+    fontSize: "13",
+    fontWeight: "700"
+  }, child.label || "Filiale"), React.createElement("text", {
+    x: "220",
+    y: "190",
+    textAnchor: "middle",
+    fill: "#e2e8f0",
+    fontSize: "9.5"
+  }, method || child.sub || ""), minor > 0 && React.createElement(React.Fragment, null, React.createElement("rect", {
+    x: "312",
+    y: "150",
+    width: "118",
+    height: "56",
+    rx: "10",
+    fill: "#fffbeb",
+    stroke: "#fcd34d",
+    strokeDasharray: "4"
+  }), React.createElement("text", {
+    x: "371",
+    y: "173",
+    textAnchor: "middle",
+    fill: "#92400e",
+    fontSize: "11",
+    fontWeight: "700"
+  }, "Minoritaires"), React.createElement("text", {
+    x: "371",
+    y: "190",
+    textAnchor: "middle",
+    fill: "#b45309",
+    fontSize: "12",
+    fontWeight: "800"
+  }, minor, " %"), React.createElement("line", {
+    x1: "312",
+    y1: "178",
+    x2: "280",
+    y2: "178",
+    stroke: "#fbbf24",
+    strokeWidth: "2",
+    strokeDasharray: "4"
+  }))), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-/* Colonnes IFRS / RPC / CO (ou n colonnes) — comparatif visuel */
-function DColumns({ cols = [], caption }) {
-  return (
-    <div className="my-4">
-      <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(${Math.min(cols.length, 3)}, minmax(0,1fr))` }}>
-        {cols.map((c, i) => {
-          const a = lacc(c.color);
-          return (
-            <div key={i} className={`rounded-xl border ${a.ring} overflow-hidden`}>
-              <div className={`${a.bar} text-white text-sm font-bold px-3 py-2 text-center`}>{c.title}</div>
-              <ul className={`${a.soft} p-3 space-y-1.5`}>
-                {(c.items || []).map((it, j) => (
-                  <li key={j} className="text-xs text-slate-700 flex gap-1.5 leading-snug"><span className={`${a.text} font-bold`}>›</span><span><MdInline text={it} /></span></li>
-                ))}
-              </ul>
-            </div>
-          );
-        })}
-      </div>
-      <DCaption text={caption} />
-    </div>
-  );
+function DColumns({
+  cols = [],
+  caption
+}) {
+  return React.createElement("div", {
+    className: "my-4"
+  }, React.createElement("div", {
+    className: "grid gap-2",
+    style: {
+      gridTemplateColumns: `repeat(${Math.min(cols.length, 3)}, minmax(0,1fr))`
+    }
+  }, cols.map((c, i) => {
+    const a = lacc(c.color);
+    return React.createElement("div", {
+      key: i,
+      className: `rounded-xl border ${a.ring} overflow-hidden`
+    }, React.createElement("div", {
+      className: `${a.bar} text-white text-sm font-bold px-3 py-2 text-center`
+    }, c.title), React.createElement("ul", {
+      className: `${a.soft} p-3 space-y-1.5`
+    }, (c.items || []).map((it, j) => React.createElement("li", {
+      key: j,
+      className: "text-xs text-slate-700 flex gap-1.5 leading-snug"
+    }, React.createElement("span", {
+      className: `${a.text} font-bold`
+    }, "\u203A"), React.createElement("span", null, React.createElement(MdInline, {
+      text: it
+    }))))));
+  })), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-/* Flux d'étapes : boîtes + flèches */
-function DFlow({ title, steps = [], accent = "indigo", caption }) {
+function DFlow({
+  title,
+  steps = [],
+  accent = "indigo",
+  caption
+}) {
   const a = lacc(accent);
-  return (
-    <div className="my-4">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
-      <div className="flex items-stretch gap-1 overflow-x-auto pb-1">
-        {steps.map((s, i) => (
-          <React.Fragment key={i}>
-            <div className={`shrink-0 rounded-xl border ${a.ring} ${a.soft} p-3 w-40`}>
-              <div className={`text-xs font-bold ${a.text} mb-0.5`}>{i + 1}. <MdInline text={s.label} /></div>
-              {s.sub && <div className="text-[11px] text-slate-500 leading-snug"><MdInline text={s.sub} /></div>}
-            </div>
-            {i < steps.length - 1 && <div className="flex items-center text-slate-300 shrink-0"><ArrowRight size={18} /></div>}
-          </React.Fragment>
-        ))}
-      </div>
-      <DCaption text={caption} />
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-4"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-2"
+  }, title), React.createElement("div", {
+    className: "flex items-stretch gap-1 overflow-x-auto pb-1"
+  }, steps.map((s, i) => React.createElement(React.Fragment, {
+    key: i
+  }, React.createElement("div", {
+    className: `shrink-0 rounded-xl border ${a.ring} ${a.soft} p-3 w-40`
+  }, React.createElement("div", {
+    className: `text-xs font-bold ${a.text} mb-0.5`
+  }, i + 1, ". ", React.createElement(MdInline, {
+    text: s.label
+  })), s.sub && React.createElement("div", {
+    className: "text-[11px] text-slate-500 leading-snug"
+  }, React.createElement(MdInline, {
+    text: s.sub
+  }))), i < steps.length - 1 && React.createElement("div", {
+    className: "flex items-center text-slate-300 shrink-0"
+  }, React.createElement(ArrowRight, {
+    size: 18
+  }))))), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-/* Pyramide (niveaux décroissants) */
-function DPyramid({ title, levels = [], accent = "indigo", caption }) {
+function DPyramid({
+  title,
+  levels = [],
+  accent = "indigo",
+  caption
+}) {
   const base = dhex(accent);
-  return (
-    <div className="my-4">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-2 text-center">{title}</div>}
-      <div className="flex flex-col items-center gap-1">
-        {levels.map((l, i) => {
-          const w = 100 - i * (55 / Math.max(levels.length - 1, 1));
-          return (
-            <div key={i} style={{ width: `${w}%`, background: base, opacity: 1 - i * 0.13 }}
-              className="rounded-lg text-white text-center px-3 py-2 shadow-sm">
-              <div className="text-xs font-bold"><MdInline text={l.t} /></div>
-              {l.d && <div className="text-[10px] opacity-90 leading-snug"><MdInline text={l.d} /></div>}
-            </div>
-          );
-        })}
-      </div>
-      <DCaption text={caption} />
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-4"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-2 text-center"
+  }, title), React.createElement("div", {
+    className: "flex flex-col items-center gap-1"
+  }, levels.map((l, i) => {
+    const w = 100 - i * (55 / Math.max(levels.length - 1, 1));
+    return React.createElement("div", {
+      key: i,
+      style: {
+        width: `${w}%`,
+        background: base,
+        opacity: 1 - i * 0.13
+      },
+      className: "rounded-lg text-white text-center px-3 py-2 shadow-sm"
+    }, React.createElement("div", {
+      className: "text-xs font-bold"
+    }, React.createElement(MdInline, {
+      text: l.t
+    })), l.d && React.createElement("div", {
+      className: "text-[10px] opacity-90 leading-snug"
+    }, React.createElement(MdInline, {
+      text: l.d
+    })));
+  })), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-/* Répartition (barre %) — ex. groupe vs minoritaires */
-function DSplit({ title, parts = [], caption }) {
+function DSplit({
+  title,
+  parts = [],
+  caption
+}) {
   const tot = parts.reduce((s, p) => s + (p.value || 0), 0) || 1;
-  return (
-    <div className="my-4">
-      {title && <div className="text-sm font-semibold text-slate-700 mb-2">{title}</div>}
-      <div className="flex h-10 rounded-lg overflow-hidden">
-        {parts.map((p, i) => (
-          <div key={i} style={{ width: `${(p.value / tot) * 100}%`, background: dhex(p.color) }}
-            className="flex items-center justify-center text-white text-xs font-bold">{p.value}%</div>
-        ))}
-      </div>
-      <div className="flex flex-wrap gap-3 mt-2 text-xs">
-        {parts.map((p, i) => (
-          <span key={i} className="flex items-center gap-1.5 text-slate-600"><span className="w-3 h-3 rounded" style={{ background: dhex(p.color) }}></span><MdInline text={p.label} /></span>
-        ))}
-      </div>
-      <DCaption text={caption} />
-    </div>
-  );
+  return React.createElement("div", {
+    className: "my-4"
+  }, title && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-700 mb-2"
+  }, title), React.createElement("div", {
+    className: "flex h-10 rounded-lg overflow-hidden"
+  }, parts.map((p, i) => React.createElement("div", {
+    key: i,
+    style: {
+      width: `${p.value / tot * 100}%`,
+      background: dhex(p.color)
+    },
+    className: "flex items-center justify-center text-white text-xs font-bold"
+  }, p.value, "%"))), React.createElement("div", {
+    className: "flex flex-wrap gap-3 mt-2 text-xs"
+  }, parts.map((p, i) => React.createElement("span", {
+    key: i,
+    className: "flex items-center gap-1.5 text-slate-600"
+  }, React.createElement("span", {
+    className: "w-3 h-3 rounded",
+    style: {
+      background: dhex(p.color)
+    }
+  }), React.createElement(MdInline, {
+    text: p.label
+  })))), React.createElement(DCaption, {
+    text: caption
+  }));
 }
-
-function LDiagram({ b }) {
+function LDiagram({
+  b
+}) {
   switch (b.kind) {
-    case "spectrum": return <DSpectrum title={b.title} bands={b.bands} caption={b.caption} />;
-    case "waterfall": return <DWaterfall title={b.title} items={b.items} caption={b.caption} />;
-    case "group": return <DGroup parent={b.parent} pct={b.pct} child={b.child} nci={b.nci} method={b.method} caption={b.caption} />;
-    case "columns": return <DColumns cols={b.cols} caption={b.caption} />;
-    case "flow": return <DFlow title={b.title} steps={b.steps} accent={b.accent} caption={b.caption} />;
-    case "pyramid": return <DPyramid title={b.title} levels={b.levels} accent={b.accent} caption={b.caption} />;
-    case "split": return <DSplit title={b.title} parts={b.parts} caption={b.caption} />;
-    default: return null;
+    case "spectrum":
+      return React.createElement(DSpectrum, {
+        title: b.title,
+        bands: b.bands,
+        caption: b.caption
+      });
+    case "waterfall":
+      return React.createElement(DWaterfall, {
+        title: b.title,
+        items: b.items,
+        caption: b.caption
+      });
+    case "group":
+      return React.createElement(DGroup, {
+        parent: b.parent,
+        pct: b.pct,
+        child: b.child,
+        nci: b.nci,
+        method: b.method,
+        caption: b.caption
+      });
+    case "columns":
+      return React.createElement(DColumns, {
+        cols: b.cols,
+        caption: b.caption
+      });
+    case "flow":
+      return React.createElement(DFlow, {
+        title: b.title,
+        steps: b.steps,
+        accent: b.accent,
+        caption: b.caption
+      });
+    case "pyramid":
+      return React.createElement(DPyramid, {
+        title: b.title,
+        levels: b.levels,
+        accent: b.accent,
+        caption: b.caption
+      });
+    case "split":
+      return React.createElement(DSplit, {
+        title: b.title,
+        parts: b.parts,
+        caption: b.caption
+      });
+    default:
+      return null;
   }
 }
-
-function LessonBlock({ b }) {
+function LessonBlock({
+  b
+}) {
   if (!b || !b.type) return null;
   switch (b.type) {
-    case "intro": return <div className="text-[15px] text-slate-700 my-2"><MdBlock text={b.text} /></div>;
-    case "heading": return <h3 className="text-base font-bold text-slate-800 mt-5 mb-1"><MdInline text={b.text} /></h3>;
-    case "keypoints": return <LKeypoints title={b.title} items={b.items} accent={b.accent} />;
-    case "callout": return <LCallout tone={b.tone} title={b.title} text={b.text} />;
-    case "table": return <LTable title={b.title} headers={b.headers} rows={b.rows} />;
-    case "compare": return <LCompare title={b.title} rows={b.rows} />;
-    case "steps": return <LSteps title={b.title} steps={b.steps} accent={b.accent} />;
-    case "journal": return <LJournal title={b.title} note={b.note} lines={b.lines} />;
-    case "example": return <LExample title={b.title} statement={b.statement} solution={b.solution} />;
-    case "quiz": return <LQuiz title={b.title} questions={b.questions} />;
-    case "mnemo": return <LMnemo code={b.code} items={b.items} phrase={b.phrase} />;
-    case "diagram": return <LDiagram b={b} />;
-    default: return null;
+    case "intro":
+      return React.createElement("div", {
+        className: "text-[15px] text-slate-700 my-2"
+      }, React.createElement(MdBlock, {
+        text: b.text
+      }));
+    case "heading":
+      return React.createElement("h3", {
+        className: "text-base font-bold text-slate-800 mt-5 mb-1"
+      }, React.createElement(MdInline, {
+        text: b.text
+      }));
+    case "keypoints":
+      return React.createElement(LKeypoints, {
+        title: b.title,
+        items: b.items,
+        accent: b.accent
+      });
+    case "callout":
+      return React.createElement(LCallout, {
+        tone: b.tone,
+        title: b.title,
+        text: b.text
+      });
+    case "table":
+      return React.createElement(LTable, {
+        title: b.title,
+        headers: b.headers,
+        rows: b.rows
+      });
+    case "compare":
+      return React.createElement(LCompare, {
+        title: b.title,
+        rows: b.rows
+      });
+    case "steps":
+      return React.createElement(LSteps, {
+        title: b.title,
+        steps: b.steps,
+        accent: b.accent
+      });
+    case "journal":
+      return React.createElement(LJournal, {
+        title: b.title,
+        note: b.note,
+        lines: b.lines
+      });
+    case "example":
+      return React.createElement(LExample, {
+        title: b.title,
+        statement: b.statement,
+        solution: b.solution
+      });
+    case "quiz":
+      return React.createElement(LQuiz, {
+        title: b.title,
+        questions: b.questions
+      });
+    case "mnemo":
+      return React.createElement(LMnemo, {
+        code: b.code,
+        items: b.items,
+        phrase: b.phrase
+      });
+    case "diagram":
+      return React.createElement(LDiagram, {
+        b: b
+      });
+    default:
+      return null;
   }
 }
-
-function LessonSection({ sec, accent = "indigo", defaultOpen = false }) {
+function LessonSection({
+  sec,
+  accent = "indigo",
+  defaultOpen = false
+}) {
   const [open, setOpen] = useState(defaultOpen);
   const a = lacc(accent);
-  if (!sec.title) return <div className="mb-2">{(sec.blocks || []).map((b, i) => <LessonBlock key={i} b={b} />)}</div>;
-  return (
-    <div className="mb-3 rounded-xl border border-slate-200 bg-white overflow-hidden">
-      <button onClick={() => setOpen(!open)} className="w-full flex items-center gap-2.5 px-4 py-3 text-left hover:bg-slate-50">
-        <span className={`w-1.5 h-5 rounded ${a.bar}`}></span>
-        <span className="font-semibold text-slate-800 flex-1">{sec.title}</span>
-        <ChevronDown size={17} className={`text-slate-400 transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-      {open && <div className="px-4 pb-4 pt-1">{(sec.blocks || []).map((b, i) => <LessonBlock key={i} b={b} />)}</div>}
-    </div>
-  );
+  if (!sec.title) return React.createElement("div", {
+    className: "mb-2"
+  }, (sec.blocks || []).map((b, i) => React.createElement(LessonBlock, {
+    key: i,
+    b: b
+  })));
+  return React.createElement("div", {
+    className: "mb-3 rounded-xl border border-slate-200 bg-white overflow-hidden"
+  }, React.createElement("button", {
+    onClick: () => setOpen(!open),
+    className: "w-full flex items-center gap-2.5 px-4 py-3 text-left hover:bg-slate-50"
+  }, React.createElement("span", {
+    className: `w-1.5 h-5 rounded ${a.bar}`
+  }), React.createElement("span", {
+    className: "font-semibold text-slate-800 flex-1"
+  }, sec.title), React.createElement(ChevronDown, {
+    size: 17,
+    className: `text-slate-400 transition-transform ${open ? "rotate-180" : ""}`
+  })), open && React.createElement("div", {
+    className: "px-4 pb-4 pt-1"
+  }, (sec.blocks || []).map((b, i) => React.createElement(LessonBlock, {
+    key: i,
+    b: b
+  }))));
 }
-
-function LessonView({ lesson, accent = "indigo", onBack }) {
+function LessonView({
+  lesson,
+  accent = "indigo",
+  onBack
+}) {
   const a = lacc(lesson.color || accent);
-  const secs = lesson.sections || [{ title: null, blocks: lesson.blocks || [] }];
-  return (
-    <div>
-      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Retour à la liste</button>
-      <div className={`rounded-2xl border ${a.ring} ${a.soft} p-5 mb-4`}>
-        <div className="flex items-center gap-2 mb-1">
-          <span className="text-2xl">{lesson.icon}</span>
-          <span className={`text-lg font-bold ${a.text}`}>{lesson.code}</span>
-        </div>
-        <h2 className="text-xl font-bold text-slate-800">{lesson.title}</h2>
-        {lesson.tagline && <p className="text-sm text-slate-600 mt-1"><MdInline text={lesson.tagline} /></p>}
-      </div>
-      {secs.map((s, si) => <LessonSection key={si} sec={s} accent={lesson.color || accent} defaultOpen={si === 0} />)}
-      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mt-4"><ArrowLeft size={15} /> Retour à la liste</button>
-    </div>
-  );
+  const secs = lesson.sections || [{
+    title: null,
+    blocks: lesson.blocks || []
+  }];
+  return React.createElement("div", null, React.createElement("button", {
+    onClick: onBack,
+    className: "flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"
+  }, React.createElement(ArrowLeft, {
+    size: 15
+  }), " Retour \xE0 la liste"), React.createElement("div", {
+    className: `rounded-2xl border ${a.ring} ${a.soft} p-5 mb-4`
+  }, React.createElement("div", {
+    className: "flex items-center gap-2 mb-1"
+  }, React.createElement("span", {
+    className: "text-2xl"
+  }, lesson.icon), React.createElement("span", {
+    className: `text-lg font-bold ${a.text}`
+  }, lesson.code)), React.createElement("h2", {
+    className: "text-xl font-bold text-slate-800"
+  }, lesson.title), lesson.tagline && React.createElement("p", {
+    className: "text-sm text-slate-600 mt-1"
+  }, React.createElement(MdInline, {
+    text: lesson.tagline
+  }))), secs.map((s, si) => React.createElement(LessonSection, {
+    key: si,
+    sec: s,
+    accent: lesson.color || accent,
+    defaultOpen: si === 0
+  })), React.createElement("button", {
+    onClick: onBack,
+    className: "flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mt-4"
+  }, React.createElement(ArrowLeft, {
+    size: 15
+  }), " Retour \xE0 la liste"));
 }
-
-function LessonHub({ pack = {}, domain = "", accent = "indigo", open = null, onOpen }) {
+function LessonHub({
+  pack = {},
+  domain = "",
+  accent = "indigo",
+  open = null,
+  onOpen
+}) {
   const setOpen = onOpen || (() => {});
   const lessons = pack.lessons || [];
-  if (!lessons.length) return <div className="text-sm text-slate-500 p-8 text-center">Contenu {domain} en préparation…</div>;
+  if (!lessons.length) return React.createElement("div", {
+    className: "text-sm text-slate-500 p-8 text-center"
+  }, "Contenu ", domain, " en pr\xE9paration\u2026");
   if (open != null) {
-    const lesson = lessons.find((l) => l.code === open);
-    if (lesson) return <LessonView lesson={lesson} accent={accent} onBack={() => setOpen(null)} />;
+    const lesson = lessons.find(l => l.code === open);
+    if (lesson) return React.createElement(LessonView, {
+      lesson: lesson,
+      accent: accent,
+      onBack: () => setOpen(null)
+    });
   }
-  return (
-    <div>
-      {pack.overview && (
-        <div className={`rounded-2xl border ${lacc(accent).ring} ${lacc(accent).soft} p-5 mb-5`}>
-          {pack.overview.title && <h2 className="text-lg font-bold text-slate-800 mb-1">{pack.overview.title}</h2>}
-          {pack.overview.intro && <div className="text-sm text-slate-600"><MdBlock text={pack.overview.intro} /></div>}
-        </div>
-      )}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {lessons.map((l) => {
-          const a = lacc(l.color || accent);
-          return (
-            <button key={l.code} onClick={() => setOpen(l.code)}
-              className="text-left bg-white border border-slate-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <span className="text-xl">{l.icon}</span>
-                <span className={`font-bold text-sm ${a.text}`}>{l.code}</span>
-              </div>
-              <div className="font-semibold text-sm text-slate-800 leading-snug">{l.title}</div>
-              {l.tagline && <div className="text-xs text-slate-500 leading-relaxed"><MdInline text={l.tagline} /></div>}
-              <span className={`mt-auto text-xs font-semibold ${a.text} flex items-center gap-1 pt-1`}>Ouvrir le cours <ArrowRight size={13} /></span>
-            </button>
-          );
-        })}
-      </div>
-    </div>
-  );
+  return React.createElement("div", null, pack.overview && React.createElement("div", {
+    className: `rounded-2xl border ${lacc(accent).ring} ${lacc(accent).soft} p-5 mb-5`
+  }, pack.overview.title && React.createElement("h2", {
+    className: "text-lg font-bold text-slate-800 mb-1"
+  }, pack.overview.title), pack.overview.intro && React.createElement("div", {
+    className: "text-sm text-slate-600"
+  }, React.createElement(MdBlock, {
+    text: pack.overview.intro
+  }))), React.createElement("div", {
+    className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-3"
+  }, lessons.map(l => {
+    const a = lacc(l.color || accent);
+    return React.createElement("button", {
+      key: l.code,
+      onClick: () => setOpen(l.code),
+      className: "text-left bg-white border border-slate-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-2"
+    }, React.createElement("div", {
+      className: "flex items-center gap-2"
+    }, React.createElement("span", {
+      className: "text-xl"
+    }, l.icon), React.createElement("span", {
+      className: `font-bold text-sm ${a.text}`
+    }, l.code)), React.createElement("div", {
+      className: "font-semibold text-sm text-slate-800 leading-snug"
+    }, l.title), l.tagline && React.createElement("div", {
+      className: "text-xs text-slate-500 leading-relaxed"
+    }, React.createElement(MdInline, {
+      text: l.tagline
+    })), React.createElement("span", {
+      className: `mt-auto text-xs font-semibold ${a.text} flex items-center gap-1 pt-1`
+    }, "Ouvrir le cours ", React.createElement(ArrowRight, {
+      size: 13
+    })));
+  })));
 }
-
-/* ===================== Recherche globale dans les cours ===================== */
-function LessonSearch({ lessons = {}, onOpen }) {
+function LessonSearch({
+  lessons = {},
+  onOpen
+}) {
   const [q, setQ] = useState("");
-  const all = [
-    ...(((lessons.ifrs || {}).lessons) || []).map((l) => ({ ...l, domain: "IFRS" })),
-    ...(((lessons.swissgaap || {}).lessons) || []).map((l) => ({ ...l, domain: "Swiss GAAP" })),
-  ];
+  const all = [...((lessons.ifrs || {}).lessons || []).map(l => ({
+    ...l,
+    domain: "IFRS"
+  })), ...((lessons.swissgaap || {}).lessons || []).map(l => ({
+    ...l,
+    domain: "Swiss GAAP"
+  }))];
   const query = q.trim().toLowerCase();
   let results = [];
   if (query.length >= 2) {
-    all.forEach((l) => {
-      const secHits = (l.sections || []).filter((s) => {
+    all.forEach(l => {
+      const secHits = (l.sections || []).filter(s => {
         const txt = (s.title || "") + " " + JSON.stringify(s.blocks || "");
         return txt.toLowerCase().includes(query);
-      }).map((s) => s.title);
+      }).map(s => s.title);
       const titleHit = ((l.code || "") + " " + (l.title || "") + " " + (l.tagline || "")).toLowerCase().includes(query);
-      if (titleHit || secHits.length) results.push({ l, secHits: secHits.slice(0, 3) });
+      if (titleHit || secHits.length) results.push({
+        l,
+        secHits: secHits.slice(0, 3)
+      });
     });
   }
-  return (
-    <div>
-      <div className="relative">
-        <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-        <input value={q} onChange={(e) => setQ(e.target.value)}
-          placeholder="Rechercher dans les cours IFRS & Swiss GAAP (goodwill, NCI, mise en équivalence…)"
-          className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none" />
-        {q && <button onClick={() => setQ("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-sm">✕</button>}
-      </div>
-      {query.length >= 2 && (
-        <div className="mt-2 rounded-xl border border-slate-200 bg-white divide-y divide-slate-100 max-h-80 overflow-auto shadow-sm">
-          {results.length === 0 && <div className="p-3 text-sm text-slate-400">Aucun résultat pour « {q} ».</div>}
-          {results.map(({ l, secHits }) => (
-            <button key={l.domain + l.code} onClick={() => onOpen && onOpen(l.code)} className="w-full text-left p-3 hover:bg-slate-50 flex items-start gap-2.5">
-              <span className="text-lg shrink-0">{l.icon}</span>
-              <div className="min-w-0">
-                <div className="text-sm font-semibold text-slate-800">{l.code} — {l.title}</div>
-                {secHits.length > 0 && <div className="text-xs text-slate-500 truncate">↳ {secHits.join(" · ")}</div>}
-                <div className="text-[10px] uppercase tracking-wide text-slate-400 mt-0.5">{l.domain}</div>
-              </div>
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
+  return React.createElement("div", null, React.createElement("div", {
+    className: "relative"
+  }, React.createElement(Search, {
+    size: 16,
+    className: "absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+  }), React.createElement("input", {
+    value: q,
+    onChange: e => setQ(e.target.value),
+    placeholder: "Rechercher dans les cours IFRS & Swiss GAAP (goodwill, NCI, mise en \xE9quivalence\u2026)",
+    className: "w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none"
+  }), q && React.createElement("button", {
+    onClick: () => setQ(""),
+    className: "absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-sm"
+  }, "\u2715")), query.length >= 2 && React.createElement("div", {
+    className: "mt-2 rounded-xl border border-slate-200 bg-white divide-y divide-slate-100 max-h-80 overflow-auto shadow-sm"
+  }, results.length === 0 && React.createElement("div", {
+    className: "p-3 text-sm text-slate-400"
+  }, "Aucun r\xE9sultat pour \xAB ", q, " \xBB."), results.map(({
+    l,
+    secHits
+  }) => React.createElement("button", {
+    key: l.domain + l.code,
+    onClick: () => onOpen && onOpen(l.code),
+    className: "w-full text-left p-3 hover:bg-slate-50 flex items-start gap-2.5"
+  }, React.createElement("span", {
+    className: "text-lg shrink-0"
+  }, l.icon), React.createElement("div", {
+    className: "min-w-0"
+  }, React.createElement("div", {
+    className: "text-sm font-semibold text-slate-800"
+  }, l.code, " \u2014 ", l.title), secHits.length > 0 && React.createElement("div", {
+    className: "text-xs text-slate-500 truncate"
+  }, "\u21B3 ", secHits.join(" · ")), React.createElement("div", {
+    className: "text-[10px] uppercase tracking-wide text-slate-400 mt-0.5"
+  }, l.domain))))));
 }
-
-/* ===================== Accueil Conso (hub par catégories) ===================== */
-function ConsoHome({ onGo, lessons, onOpenLesson }) {
-  const groups = [
-    { t: "📚 Apprendre", color: "indigo", items: [
-      { id: "cours", label: "Cours complet de consolidation", sub: "Théorie A→Z, 14 chapitres" },
-      { id: "ifrs", label: "Normes IFRS", sub: "IAS 27/28 · IFRS 3/10/11/12 — interactif" },
-      { id: "swissgaap", label: "Swiss GAAP RPC", sub: "Cadre · RPC 30 · évaluation… — interactif" },
-      { id: "chain", label: "Contrôle vs intérêt", sub: "Chaînes de participation" },
-      { id: "wizard", label: "Assistant pas à pas", sub: "Dérouler une consolidation guidée" },
-    ] },
-    { t: "🧮 Calculer & outils", color: "emerald", items: [
-      { id: "goodwill", label: "Calculateur Goodwill" },
-      { id: "feuille", label: "Feuille de conso" },
-      { id: "resultat", label: "Résultat consolidé" },
-      { id: "conversion", label: "Conversion devises" },
-      { id: "perimetrebuilder", label: "Mon périmètre" },
-      { id: "multi", label: "Groupe multi-sociétés" },
-      { id: "process", label: "Process (8 étapes)" },
-    ] },
-    { t: "📖 Approfondir", color: "violet", items: [
-      { id: "glossary", label: "Glossaire" },
-      { id: "compare", label: "IFRS vs Swiss GAAP" },
-      { id: "perimetre", label: "Vie du périmètre" },
-      { id: "impairment", label: "Dépréciation (IAS 36)" },
-      { id: "casparticuliers", label: "Cas particuliers" },
-    ] },
-    { t: "🎯 S'entraîner", color: "rose", items: [
-      { id: "quiz", label: "Quiz consolidation" },
-    ] },
-  ];
-  return (
-    <div className="space-y-5 mb-2">
-      <div className="rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white p-5 shadow">
-        <h2 className="text-xl font-bold">Consolidation · IFRS · Swiss GAAP</h2>
-        <p className="text-sm text-indigo-100 mt-1">Théorie, calculs, écritures, normes interactives et entraînement — tout pour l'examen, au même endroit.</p>
-      </div>
-      <LessonSearch lessons={lessons} onOpen={onOpenLesson} />
-      {groups.map((g) => (
-        <div key={g.t}>
-          <div className="text-sm font-bold text-slate-700 mb-2">{g.t}</div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-            {g.items.map((it) => {
-              const a = lacc(g.color);
-              return (
-                <button key={it.id} onClick={() => onGo(it.id)}
-                  className="text-left bg-white border border-slate-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col">
-                  <div className="font-semibold text-sm text-slate-800">{it.label}</div>
-                  {it.sub && <div className="text-xs text-slate-500 mt-0.5 leading-snug">{it.sub}</div>}
-                  <span className={`text-xs font-semibold ${a.text} flex items-center gap-1 mt-1.5`}>Ouvrir <ArrowRight size={12} /></span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
+function ConsoHome({
+  onGo,
+  lessons,
+  onOpenLesson
+}) {
+  const groups = [{
+    t: "📚 Apprendre",
+    color: "indigo",
+    items: [{
+      id: "cours",
+      label: "Cours complet de consolidation",
+      sub: "Théorie A→Z, 14 chapitres"
+    }, {
+      id: "ifrs",
+      label: "Normes IFRS",
+      sub: "IAS 27/28 · IFRS 3/10/11/12 — interactif"
+    }, {
+      id: "swissgaap",
+      label: "Swiss GAAP RPC",
+      sub: "Cadre · RPC 30 · évaluation… — interactif"
+    }, {
+      id: "chain",
+      label: "Contrôle vs intérêt",
+      sub: "Chaînes de participation"
+    }, {
+      id: "wizard",
+      label: "Assistant pas à pas",
+      sub: "Dérouler une consolidation guidée"
+    }]
+  }, {
+    t: "🧮 Calculer & outils",
+    color: "emerald",
+    items: [{
+      id: "goodwill",
+      label: "Calculateur Goodwill"
+    }, {
+      id: "feuille",
+      label: "Feuille de conso"
+    }, {
+      id: "resultat",
+      label: "Résultat consolidé"
+    }, {
+      id: "conversion",
+      label: "Conversion devises"
+    }, {
+      id: "perimetrebuilder",
+      label: "Mon périmètre"
+    }, {
+      id: "multi",
+      label: "Groupe multi-sociétés"
+    }, {
+      id: "process",
+      label: "Process (8 étapes)"
+    }]
+  }, {
+    t: "📖 Approfondir",
+    color: "violet",
+    items: [{
+      id: "glossary",
+      label: "Glossaire"
+    }, {
+      id: "compare",
+      label: "IFRS vs Swiss GAAP"
+    }, {
+      id: "perimetre",
+      label: "Vie du périmètre"
+    }, {
+      id: "impairment",
+      label: "Dépréciation (IAS 36)"
+    }, {
+      id: "casparticuliers",
+      label: "Cas particuliers"
+    }]
+  }, {
+    t: "🎯 S'entraîner",
+    color: "rose",
+    items: [{
+      id: "quiz",
+      label: "Quiz consolidation"
+    }]
+  }];
+  return React.createElement("div", {
+    className: "space-y-5 mb-2"
+  }, React.createElement("div", {
+    className: "rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white p-5 shadow"
+  }, React.createElement("h2", {
+    className: "text-xl font-bold"
+  }, "Consolidation \xB7 IFRS \xB7 Swiss GAAP"), React.createElement("p", {
+    className: "text-sm text-indigo-100 mt-1"
+  }, "Th\xE9orie, calculs, \xE9critures, normes interactives et entra\xEEnement \u2014 tout pour l'examen, au m\xEAme endroit.")), React.createElement(LessonSearch, {
+    lessons: lessons,
+    onOpen: onOpenLesson
+  }), groups.map(g => React.createElement("div", {
+    key: g.t
+  }, React.createElement("div", {
+    className: "text-sm font-bold text-slate-700 mb-2"
+  }, g.t), React.createElement("div", {
+    className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5"
+  }, g.items.map(it => {
+    const a = lacc(g.color);
+    return React.createElement("button", {
+      key: it.id,
+      onClick: () => onGo(it.id),
+      className: "text-left bg-white border border-slate-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col"
+    }, React.createElement("div", {
+      className: "font-semibold text-sm text-slate-800"
+    }, it.label), it.sub && React.createElement("div", {
+      className: "text-xs text-slate-500 mt-0.5 leading-snug"
+    }, it.sub), React.createElement("span", {
+      className: `text-xs font-semibold ${a.text} flex items-center gap-1 mt-1.5`
+    }, "Ouvrir ", React.createElement(ArrowRight, {
+      size: 12
+    })));
+  })))));
 }
-
-
-/* ============================================================
-   Oral — app React (même thème que Conso). Lit window.__ORAL__
-   (= data/oral.json) et le rend avec le moteur de leçon partagé
-   (lesson_engine.jsx) + composants spécifiques (flashcards,
-   comportements, scénarios, simulateur).
-   ============================================================ */
-
-const ORAL_TONE = { key: "key", warn: "warn", tip: "tip", info: "info", example: "tip", legal: "info" };
-const hx = (c) => (typeof c === "string" && c[0] === "#") ? c : "#6366f1";
-
-/* Rendu générique pour les sous-objets de forme variable (déroulement,
-   présentation, repères, angle oral…). */
-function AnyContent({ data }) {
+const ORAL_TONE = {
+  key: "key",
+  warn: "warn",
+  tip: "tip",
+  info: "info",
+  example: "tip",
+  legal: "info"
+};
+const hx = c => typeof c === "string" && c[0] === "#" ? c : "#6366f1";
+function AnyContent({
+  data
+}) {
   if (data == null) return null;
-  if (typeof data === "string") return <MdBlock text={data} className="text-sm text-slate-700" />;
+  if (typeof data === "string") return React.createElement(MdBlock, {
+    text: data,
+    className: "text-sm text-slate-700"
+  });
   if (Array.isArray(data)) {
-    if (data.every((x) => typeof x === "string"))
-      return <ul className="list-disc ml-5 space-y-1 my-2 text-sm text-slate-700">{data.map((x, i) => <li key={i}><MdInline text={x} /></li>)}</ul>;
-    return <div className="space-y-2 my-2">{data.map((x, i) => <div key={i} className="rounded-xl border border-slate-200 bg-white p-3.5">{(x && x.nom) || (x && x.titre) || (x && x.role) ? <div className="text-sm font-semibold text-slate-800 mb-1">{x.nom || x.titre || x.role}</div> : null}<AnyContent data={objWithout(x, ["nom", "titre", "role"])} /></div>)}</div>;
+    if (data.every(x => typeof x === "string")) return React.createElement("ul", {
+      className: "list-disc ml-5 space-y-1 my-2 text-sm text-slate-700"
+    }, data.map((x, i) => React.createElement("li", {
+      key: i
+    }, React.createElement(MdInline, {
+      text: x
+    }))));
+    return React.createElement("div", {
+      className: "space-y-2 my-2"
+    }, data.map((x, i) => React.createElement("div", {
+      key: i,
+      className: "rounded-xl border border-slate-200 bg-white p-3.5"
+    }, x && x.nom || x && x.titre || x && x.role ? React.createElement("div", {
+      className: "text-sm font-semibold text-slate-800 mb-1"
+    }, x.nom || x.titre || x.role) : null, React.createElement(AnyContent, {
+      data: objWithout(x, ["nom", "titre", "role"])
+    }))));
   }
-  return <div className="space-y-2.5">{Object.entries(data).map(([k, v]) => (
-    <div key={k}><div className="text-[11px] font-bold text-indigo-500 uppercase tracking-wide mb-1">{k.replace(/_/g, " ")}</div><AnyContent data={v} /></div>
-  ))}</div>;
+  return React.createElement("div", {
+    className: "space-y-2.5"
+  }, Object.entries(data).map(([k, v]) => React.createElement("div", {
+    key: k
+  }, React.createElement("div", {
+    className: "text-[11px] font-bold text-indigo-500 uppercase tracking-wide mb-1"
+  }, k.replace(/_/g, " ")), React.createElement(AnyContent, {
+    data: v
+  }))));
 }
-function objWithout(o, keys) { if (!o || typeof o !== "object" || Array.isArray(o)) return o; const r = {}; Object.keys(o).forEach((k) => { if (keys.indexOf(k) < 0) r[k] = o[k]; }); return r; }
-
-/* Flashcards : carte qui se retourne au clic + précédent/suivant/hasard */
-function FlashDeck({ cards = [] }) {
+function objWithout(o, keys) {
+  if (!o || typeof o !== "object" || Array.isArray(o)) return o;
+  const r = {};
+  Object.keys(o).forEach(k => {
+    if (keys.indexOf(k) < 0) r[k] = o[k];
+  });
+  return r;
+}
+function FlashDeck({
+  cards = []
+}) {
   const [i, setI] = useState(0);
   const [flip, setFlip] = useState(false);
   if (!cards.length) return null;
   const c = cards[i];
-  const go = (d) => { setI((x) => (x + d + cards.length) % cards.length); setFlip(false); };
-  return (
-    <div className="my-2">
-      <div onClick={() => setFlip(!flip)}
-        className={`cursor-pointer select-none rounded-2xl border p-6 min-h-[150px] flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all ${flip ? "border-emerald-200 bg-emerald-50/40" : "border-indigo-200 bg-white"}`}>
-        <div className={`text-[11px] uppercase tracking-wide font-bold mb-2 ${flip ? "text-emerald-500" : "text-indigo-400"}`}>{flip ? "Réponse" : "Question"} · {i + 1}/{cards.length}</div>
-        <div className="text-sm text-slate-800 leading-relaxed"><MdInline text={flip ? c.a : c.q} /></div>
-        <div className="text-[11px] text-slate-400 mt-3">↻ cliquer pour {flip ? "la question" : "la réponse"}</div>
-      </div>
-      <div className="flex items-center justify-between mt-2 text-sm">
-        <button onClick={() => go(-1)} className="flex items-center gap-1 text-slate-500 hover:text-indigo-600"><ArrowLeft size={15} /> Précédent</button>
-        <button onClick={() => { setI(Math.floor(Math.random() * cards.length)); setFlip(false); }} className="flex items-center gap-1 text-xs text-slate-400 hover:text-indigo-600"><Shuffle size={13} /> Au hasard</button>
-        <button onClick={() => go(1)} className="flex items-center gap-1 text-slate-500 hover:text-indigo-600">Suivant <ArrowRight size={15} /></button>
-      </div>
-    </div>
-  );
+  const go = d => {
+    setI(x => (x + d + cards.length) % cards.length);
+    setFlip(false);
+  };
+  return React.createElement("div", {
+    className: "my-2"
+  }, React.createElement("div", {
+    onClick: () => setFlip(!flip),
+    className: `cursor-pointer select-none rounded-2xl border p-6 min-h-[150px] flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all ${flip ? "border-emerald-200 bg-emerald-50/40" : "border-indigo-200 bg-white"}`
+  }, React.createElement("div", {
+    className: `text-[11px] uppercase tracking-wide font-bold mb-2 ${flip ? "text-emerald-500" : "text-indigo-400"}`
+  }, flip ? "Réponse" : "Question", " \xB7 ", i + 1, "/", cards.length), React.createElement("div", {
+    className: "text-sm text-slate-800 leading-relaxed"
+  }, React.createElement(MdInline, {
+    text: flip ? c.a : c.q
+  })), React.createElement("div", {
+    className: "text-[11px] text-slate-400 mt-3"
+  }, "\u21BB cliquer pour ", flip ? "la question" : "la réponse")), React.createElement("div", {
+    className: "flex items-center justify-between mt-2 text-sm"
+  }, React.createElement("button", {
+    onClick: () => go(-1),
+    className: "flex items-center gap-1 text-slate-500 hover:text-indigo-600"
+  }, React.createElement(ArrowLeft, {
+    size: 15
+  }), " Pr\xE9c\xE9dent"), React.createElement("button", {
+    onClick: () => {
+      setI(Math.floor(Math.random() * cards.length));
+      setFlip(false);
+    },
+    className: "flex items-center gap-1 text-xs text-slate-400 hover:text-indigo-600"
+  }, React.createElement(Shuffle, {
+    size: 13
+  }), " Au hasard"), React.createElement("button", {
+    onClick: () => go(1),
+    className: "flex items-center gap-1 text-slate-500 hover:text-indigo-600"
+  }, "Suivant ", React.createElement(ArrowRight, {
+    size: 15
+  }))));
 }
-
-/* Bloc repliable générique (titre + contenu libre) */
-function Collapse({ title, accent = "indigo", defaultOpen = false, children }) {
+function Collapse({
+  title,
+  accent = "indigo",
+  defaultOpen = false,
+  children
+}) {
   const [open, setOpen] = useState(defaultOpen);
   const a = lacc(accent);
-  return (
-    <div className="mb-3 rounded-xl border border-slate-200 bg-white overflow-hidden">
-      <button onClick={() => setOpen(!open)} className="w-full flex items-center gap-2.5 px-4 py-3 text-left hover:bg-slate-50">
-        <span className={`w-1.5 h-5 rounded ${a.bar}`}></span>
-        <span className="font-semibold text-slate-800 flex-1">{title}</span>
-        <ChevronDown size={17} className={`text-slate-400 transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-      {open && <div className="px-4 pb-4 pt-1">{children}</div>}
-    </div>
-  );
+  return React.createElement("div", {
+    className: "mb-3 rounded-xl border border-slate-200 bg-white overflow-hidden"
+  }, React.createElement("button", {
+    onClick: () => setOpen(!open),
+    className: "w-full flex items-center gap-2.5 px-4 py-3 text-left hover:bg-slate-50"
+  }, React.createElement("span", {
+    className: `w-1.5 h-5 rounded ${a.bar}`
+  }), React.createElement("span", {
+    className: "font-semibold text-slate-800 flex-1"
+  }, title), React.createElement(ChevronDown, {
+    size: 17,
+    className: `text-slate-400 transition-transform ${open ? "rotate-180" : ""}`
+  })), open && React.createElement("div", {
+    className: "px-4 pb-4 pt-1"
+  }, children));
 }
-
-/* Carte « discussion d'experts » avec réponse-modèle révélable */
-function ScenarioCard({ s }) {
+function ScenarioCard({
+  s
+}) {
   const [show, setShow] = useState(false);
-  return (
-    <div className="rounded-xl border border-slate-200 bg-white p-4 mb-2.5">
-      <div className="text-[11px] uppercase tracking-wide font-bold text-violet-500 mb-1">🎭 {s.role}</div>
-      {s.contexte && <div className="text-sm text-slate-600 mb-2"><MdBlock text={s.contexte} /></div>}
-      {s.question && <div className="text-sm font-semibold text-slate-800 mb-2 bg-slate-50 rounded-lg px-3 py-2"><MdInline text={s.question} /></div>}
-      {s.reponse_modele && (
-        <div>
-          <button onClick={() => setShow(!show)} className="flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:text-indigo-800"><ChevronDown size={14} className={`transition-transform ${show ? "rotate-180" : ""}`} />{show ? "Masquer la réponse-modèle" : "Voir la réponse-modèle"}</button>
-          {show && <div className="mt-2 pt-2 border-t border-dashed border-slate-200 text-sm text-slate-700"><MdBlock text={s.reponse_modele} /></div>}
-        </div>
-      )}
-      {show && s.points_cles?.length > 0 && <LKeypoints title="Points clés à mentionner" items={s.points_cles} accent="emerald" />}
-      {show && s.pieges?.length > 0 && <LKeypoints title="À éviter" items={s.pieges} accent="amber" />}
-    </div>
-  );
+  return React.createElement("div", {
+    className: "rounded-xl border border-slate-200 bg-white p-4 mb-2.5"
+  }, React.createElement("div", {
+    className: "text-[11px] uppercase tracking-wide font-bold text-violet-500 mb-1"
+  }, "\uD83C\uDFAD ", s.role), s.contexte && React.createElement("div", {
+    className: "text-sm text-slate-600 mb-2"
+  }, React.createElement(MdBlock, {
+    text: s.contexte
+  })), s.question && React.createElement("div", {
+    className: "text-sm font-semibold text-slate-800 mb-2 bg-slate-50 rounded-lg px-3 py-2"
+  }, React.createElement(MdInline, {
+    text: s.question
+  })), s.reponse_modele && React.createElement("div", null, React.createElement("button", {
+    onClick: () => setShow(!show),
+    className: "flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:text-indigo-800"
+  }, React.createElement(ChevronDown, {
+    size: 14,
+    className: `transition-transform ${show ? "rotate-180" : ""}`
+  }), show ? "Masquer la réponse-modèle" : "Voir la réponse-modèle"), show && React.createElement("div", {
+    className: "mt-2 pt-2 border-t border-dashed border-slate-200 text-sm text-slate-700"
+  }, React.createElement(MdBlock, {
+    text: s.reponse_modele
+  }))), show && s.points_cles?.length > 0 && React.createElement(LKeypoints, {
+    title: "Points cl\xE9s \xE0 mentionner",
+    items: s.points_cles,
+    accent: "emerald"
+  }), show && s.pieges?.length > 0 && React.createElement(LKeypoints, {
+    title: "\xC0 \xE9viter",
+    items: s.pieges,
+    accent: "amber"
+  }));
 }
-
-/* Cas chiffré type examen */
-function CasCard({ c }) {
-  return <LExample title={`${c.niveau || ""} ${c.titre || "Cas"}`.trim()} statement={c.enonce} solution={c.resolution} />;
+function CasCard({
+  c
+}) {
+  return React.createElement(LExample, {
+    title: `${c.niveau || ""} ${c.titre || "Cas"}`.trim(),
+    statement: c.enonce,
+    solution: c.resolution
+  });
 }
-
-/* ── Vue : cours ── */
-function OralCourse({ course, color, onBack }) {
-  return (
-    <div>
-      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Retour au thème</button>
-      <div className="rounded-2xl border p-5 mb-4" style={{ borderColor: color + "55", background: color + "12" }}>
-        <h2 className="text-xl font-bold text-slate-800">{course.title}</h2>
-        {course.tagline && <p className="text-sm text-slate-600 mt-1"><MdInline text={course.tagline} /></p>}
-      </div>
-      {course.objectifs?.length > 0 && <LKeypoints title="🎯 Objectifs" items={course.objectifs} accent="indigo" />}
-      {(course.sections || []).map((s, i) => (
-        <LessonSection key={i} accent="indigo" defaultOpen={i === 0} sec={{
-          title: s.titre, blocks: [
-            ...(s.body ? [{ type: "intro", text: s.body }] : []),
-            ...((s.callouts || []).map((co) => ({ type: "callout", tone: ORAL_TONE[co.type] || "info", title: co.label, text: co.text }))),
-            ...(s.compare ? [{ type: "table", title: s.compare.title, headers: s.compare.headers, rows: s.compare.rows }] : []),
-          ]
-        }} />
-      ))}
-      {course.bases?.length > 0 && <Collapse title="⚖️ Bases normatives"><LTable headers={["Référence", "Détail"]} rows={course.bases.map((b) => [b.ref, b.detail])} /></Collapse>}
-      {course.exemples?.length > 0 && <Collapse title={`🔢 Exemples chiffrés (${course.exemples.length})`}>{course.exemples.map((e, i) => <LExample key={i} title={e.titre} statement={e.enonce} solution={e.resolution} />)}</Collapse>}
-      {course.pieges?.length > 0 && <Collapse title="⚠️ Pièges"><LKeypoints title="À éviter" items={course.pieges} accent="amber" /></Collapse>}
-      {course.flashcards?.length > 0 && <Collapse title={`🃏 Flashcards (${course.flashcards.length})`} defaultOpen={false}><FlashDeck cards={course.flashcards} /></Collapse>}
-      {course.liens?.length > 0 && <Collapse title="🔗 Liens interdisciplinaires"><ul className="space-y-1.5">{course.liens.map((l, i) => <li key={i} className="text-sm text-slate-700"><span className="font-semibold text-indigo-600">{l.theme}</span> — <MdInline text={l.lien} /></li>)}</ul></Collapse>}
-    </div>
-  );
+function OralCourse({
+  course,
+  color,
+  onBack
+}) {
+  return React.createElement("div", null, React.createElement("button", {
+    onClick: onBack,
+    className: "flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"
+  }, React.createElement(ArrowLeft, {
+    size: 15
+  }), " Retour au th\xE8me"), React.createElement("div", {
+    className: "rounded-2xl border p-5 mb-4",
+    style: {
+      borderColor: color + "55",
+      background: color + "12"
+    }
+  }, React.createElement("h2", {
+    className: "text-xl font-bold text-slate-800"
+  }, course.title), course.tagline && React.createElement("p", {
+    className: "text-sm text-slate-600 mt-1"
+  }, React.createElement(MdInline, {
+    text: course.tagline
+  }))), course.objectifs?.length > 0 && React.createElement(LKeypoints, {
+    title: "\uD83C\uDFAF Objectifs",
+    items: course.objectifs,
+    accent: "indigo"
+  }), (course.sections || []).map((s, i) => React.createElement(LessonSection, {
+    key: i,
+    accent: "indigo",
+    defaultOpen: i === 0,
+    sec: {
+      title: s.titre,
+      blocks: [...(s.body ? [{
+        type: "intro",
+        text: s.body
+      }] : []), ...(s.callouts || []).map(co => ({
+        type: "callout",
+        tone: ORAL_TONE[co.type] || "info",
+        title: co.label,
+        text: co.text
+      })), ...(s.compare ? [{
+        type: "table",
+        title: s.compare.title,
+        headers: s.compare.headers,
+        rows: s.compare.rows
+      }] : [])]
+    }
+  })), course.bases?.length > 0 && React.createElement(Collapse, {
+    title: "\u2696\uFE0F Bases normatives"
+  }, React.createElement(LTable, {
+    headers: ["Référence", "Détail"],
+    rows: course.bases.map(b => [b.ref, b.detail])
+  })), course.exemples?.length > 0 && React.createElement(Collapse, {
+    title: `🔢 Exemples chiffrés (${course.exemples.length})`
+  }, course.exemples.map((e, i) => React.createElement(LExample, {
+    key: i,
+    title: e.titre,
+    statement: e.enonce,
+    solution: e.resolution
+  }))), course.pieges?.length > 0 && React.createElement(Collapse, {
+    title: "\u26A0\uFE0F Pi\xE8ges"
+  }, React.createElement(LKeypoints, {
+    title: "\xC0 \xE9viter",
+    items: course.pieges,
+    accent: "amber"
+  })), course.flashcards?.length > 0 && React.createElement(Collapse, {
+    title: `🃏 Flashcards (${course.flashcards.length})`,
+    defaultOpen: false
+  }, React.createElement(FlashDeck, {
+    cards: course.flashcards
+  })), course.liens?.length > 0 && React.createElement(Collapse, {
+    title: "\uD83D\uDD17 Liens interdisciplinaires"
+  }, React.createElement("ul", {
+    className: "space-y-1.5"
+  }, course.liens.map((l, i) => React.createElement("li", {
+    key: i,
+    className: "text-sm text-slate-700"
+  }, React.createElement("span", {
+    className: "font-semibold text-indigo-600"
+  }, l.theme), " \u2014 ", React.createElement(MdInline, {
+    text: l.lien
+  }))))));
 }
-
-/* ── Vue : thème (aperçu + cours + scénarios + cas) ── */
-function OralTheme({ theme, onCourse, onBack }) {
+function OralTheme({
+  theme,
+  onCourse,
+  onBack
+}) {
   const color = hx(theme.color);
-  return (
-    <div>
-      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Tous les thèmes</button>
-      <div className="rounded-2xl border p-5 mb-4" style={{ borderColor: color + "55", background: color + "12" }}>
-        <div className="flex items-center gap-2 mb-1"><span className="text-2xl">{theme.icon}</span><span className="text-xs font-bold uppercase tracking-wide" style={{ color }}>Thème {theme.num}</span></div>
-        <h2 className="text-xl font-bold text-slate-800">{theme.title}</h2>
-        {theme.tagline && <p className="text-sm text-slate-600 mt-1"><MdInline text={theme.tagline} /></p>}
-      </div>
-      {theme.apercu && <Collapse title="👁️ Aperçu du thème" defaultOpen={true}><MdBlock text={theme.apercu} className="text-sm text-slate-700" /></Collapse>}
-      {theme.angle_oral && <Collapse title="🎤 Angle oral — comment aborder ce thème"><AnyContent data={theme.angle_oral} /></Collapse>}
-      <div className="text-sm font-bold text-slate-700 mt-5 mb-2">📚 Cours ({(theme.courses || []).length})</div>
-      <div className="grid sm:grid-cols-2 gap-2.5">
-        {(theme.courses || []).map((c) => (
-          <button key={c.id} onClick={() => onCourse(c)} className="text-left bg-white border border-slate-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all">
-            <div className="font-semibold text-sm text-slate-800 leading-snug">{c.title}</div>
-            {c.tagline && <div className="text-xs text-slate-500 mt-0.5 leading-snug"><MdInline text={c.tagline} /></div>}
-            <div className="text-xs text-slate-400 mt-1.5">{(c.flashcards || []).length} flashcards · {(c.exemples || []).length} exemples</div>
-          </button>
-        ))}
-      </div>
-      {theme.scenarios?.length > 0 && <><div className="text-sm font-bold text-slate-700 mt-5 mb-2">🎭 Discussions d'experts ({theme.scenarios.length})</div>{theme.scenarios.map((s, i) => <ScenarioCard key={i} s={s} />)}</>}
-      {theme.cas_examen?.length > 0 && <><div className="text-sm font-bold text-slate-700 mt-5 mb-2">🧮 Cas chiffrés ({theme.cas_examen.length})</div>{theme.cas_examen.map((c, i) => <CasCard key={i} c={c} />)}</>}
-    </div>
-  );
+  return React.createElement("div", null, React.createElement("button", {
+    onClick: onBack,
+    className: "flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"
+  }, React.createElement(ArrowLeft, {
+    size: 15
+  }), " Tous les th\xE8mes"), React.createElement("div", {
+    className: "rounded-2xl border p-5 mb-4",
+    style: {
+      borderColor: color + "55",
+      background: color + "12"
+    }
+  }, React.createElement("div", {
+    className: "flex items-center gap-2 mb-1"
+  }, React.createElement("span", {
+    className: "text-2xl"
+  }, theme.icon), React.createElement("span", {
+    className: "text-xs font-bold uppercase tracking-wide",
+    style: {
+      color
+    }
+  }, "Th\xE8me ", theme.num)), React.createElement("h2", {
+    className: "text-xl font-bold text-slate-800"
+  }, theme.title), theme.tagline && React.createElement("p", {
+    className: "text-sm text-slate-600 mt-1"
+  }, React.createElement(MdInline, {
+    text: theme.tagline
+  }))), theme.apercu && React.createElement(Collapse, {
+    title: "\uD83D\uDC41\uFE0F Aper\xE7u du th\xE8me",
+    defaultOpen: true
+  }, React.createElement(MdBlock, {
+    text: theme.apercu,
+    className: "text-sm text-slate-700"
+  })), theme.angle_oral && React.createElement(Collapse, {
+    title: "\uD83C\uDFA4 Angle oral \u2014 comment aborder ce th\xE8me"
+  }, React.createElement(AnyContent, {
+    data: theme.angle_oral
+  })), React.createElement("div", {
+    className: "text-sm font-bold text-slate-700 mt-5 mb-2"
+  }, "\uD83D\uDCDA Cours (", (theme.courses || []).length, ")"), React.createElement("div", {
+    className: "grid sm:grid-cols-2 gap-2.5"
+  }, (theme.courses || []).map(c => React.createElement("button", {
+    key: c.id,
+    onClick: () => onCourse(c),
+    className: "text-left bg-white border border-slate-200 rounded-xl p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all"
+  }, React.createElement("div", {
+    className: "font-semibold text-sm text-slate-800 leading-snug"
+  }, c.title), c.tagline && React.createElement("div", {
+    className: "text-xs text-slate-500 mt-0.5 leading-snug"
+  }, React.createElement(MdInline, {
+    text: c.tagline
+  })), React.createElement("div", {
+    className: "text-xs text-slate-400 mt-1.5"
+  }, (c.flashcards || []).length, " flashcards \xB7 ", (c.exemples || []).length, " exemples")))), theme.scenarios?.length > 0 && React.createElement(React.Fragment, null, React.createElement("div", {
+    className: "text-sm font-bold text-slate-700 mt-5 mb-2"
+  }, "\uD83C\uDFAD Discussions d'experts (", theme.scenarios.length, ")"), theme.scenarios.map((s, i) => React.createElement(ScenarioCard, {
+    key: i,
+    s: s
+  }))), theme.cas_examen?.length > 0 && React.createElement(React.Fragment, null, React.createElement("div", {
+    className: "text-sm font-bold text-slate-700 mt-5 mb-2"
+  }, "\uD83E\uDDEE Cas chiffr\xE9s (", theme.cas_examen.length, ")"), theme.cas_examen.map((c, i) => React.createElement(CasCard, {
+    key: i,
+    c: c
+  }))));
 }
-
-/* ── Vue : examen (déroulement, présentation, comportements, transversal, repères) ── */
-function OralExamen({ examen, onBack }) {
+function OralExamen({
+  examen,
+  onBack
+}) {
   const comps = examen.comportements || [];
-  return (
-    <div>
-      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Accueil</button>
-      <div className="rounded-2xl border border-rose-200 bg-rose-50/50 p-5 mb-4">
-        <h2 className="text-xl font-bold text-slate-800">🎤 Réussir l'examen oral</h2>
-        <p className="text-sm text-slate-600 mt-1">Déroulement, présentation du comportement, et les 19 comportements possibles.</p>
-      </div>
-      {examen.deroulement && <Collapse title="🗺️ Déroulement de l'oral" defaultOpen={true}><AnyContent data={examen.deroulement} /></Collapse>}
-      {examen.presentation && <Collapse title="🗣️ La présentation du comportement"><AnyContent data={examen.presentation} /></Collapse>}
-      {comps.length > 0 && (
-        <Collapse title={`🧠 Les ${comps.length} comportements`} defaultOpen={true}>
-          <div className="grid sm:grid-cols-2 gap-2">
-            {comps.map((c, i) => <ComportementCard key={i} c={c} />)}
-          </div>
-        </Collapse>
-      )}
-      {examen.scenarios_transversaux && <Collapse title="🔀 Scénarios transversaux"><AnyContent data={examen.scenarios_transversaux} /></Collapse>}
-      {examen.reperes && <Collapse title="📌 Repères & conseils"><AnyContent data={examen.reperes} /></Collapse>}
-    </div>
-  );
+  return React.createElement("div", null, React.createElement("button", {
+    onClick: onBack,
+    className: "flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"
+  }, React.createElement(ArrowLeft, {
+    size: 15
+  }), " Accueil"), React.createElement("div", {
+    className: "rounded-2xl border border-rose-200 bg-rose-50/50 p-5 mb-4"
+  }, React.createElement("h2", {
+    className: "text-xl font-bold text-slate-800"
+  }, "\uD83C\uDFA4 R\xE9ussir l'examen oral"), React.createElement("p", {
+    className: "text-sm text-slate-600 mt-1"
+  }, "D\xE9roulement, pr\xE9sentation du comportement, et les 19 comportements possibles.")), examen.deroulement && React.createElement(Collapse, {
+    title: "\uD83D\uDDFA\uFE0F D\xE9roulement de l'oral",
+    defaultOpen: true
+  }, React.createElement(AnyContent, {
+    data: examen.deroulement
+  })), examen.presentation && React.createElement(Collapse, {
+    title: "\uD83D\uDDE3\uFE0F La pr\xE9sentation du comportement"
+  }, React.createElement(AnyContent, {
+    data: examen.presentation
+  })), comps.length > 0 && React.createElement(Collapse, {
+    title: `🧠 Les ${comps.length} comportements`,
+    defaultOpen: true
+  }, React.createElement("div", {
+    className: "grid sm:grid-cols-2 gap-2"
+  }, comps.map((c, i) => React.createElement(ComportementCard, {
+    key: i,
+    c: c
+  })))), examen.scenarios_transversaux && React.createElement(Collapse, {
+    title: "\uD83D\uDD00 Sc\xE9narios transversaux"
+  }, React.createElement(AnyContent, {
+    data: examen.scenarios_transversaux
+  })), examen.reperes && React.createElement(Collapse, {
+    title: "\uD83D\uDCCC Rep\xE8res & conseils"
+  }, React.createElement(AnyContent, {
+    data: examen.reperes
+  })));
 }
-function ComportementCard({ c }) {
+function ComportementCard({
+  c
+}) {
   const [open, setOpen] = useState(false);
-  return (
-    <div className="rounded-xl border border-slate-200 bg-white overflow-hidden">
-      <button onClick={() => setOpen(!open)} className="w-full text-left px-3.5 py-3 hover:bg-slate-50 flex items-center gap-2">
-        <span className="font-semibold text-sm text-slate-800 flex-1">{c.nom}</span>
-        <ChevronDown size={16} className={`text-slate-400 transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-      {open && (
-        <div className="px-3.5 pb-3.5 text-sm space-y-2">
-          {c.definition && <div className="text-slate-600"><MdInline text={c.definition} /></div>}
-          {c.contexte && <div><div className="text-[11px] font-bold text-indigo-500 uppercase mb-0.5">Dans le métier</div><div className="text-slate-600"><MdBlock text={c.contexte} /></div></div>}
-          {c.situation_modele && <LCallout tone="tip" title="Situation-type à présenter" text={c.situation_modele} />}
-          {c.conseils?.length > 0 && <LKeypoints title="Conseils" items={c.conseils} accent="emerald" />}
-          {c.pieges?.length > 0 && <LKeypoints title="Pièges" items={c.pieges} accent="amber" />}
-          {c.phrases?.length > 0 && <div><div className="text-[11px] font-bold text-violet-500 uppercase mb-1">Formulations prêtes</div><ul className="space-y-1">{c.phrases.map((p, i) => <li key={i} className="text-slate-700 italic text-xs">« <MdInline text={p} /> »</li>)}</ul></div>}
-        </div>
-      )}
-    </div>
-  );
+  return React.createElement("div", {
+    className: "rounded-xl border border-slate-200 bg-white overflow-hidden"
+  }, React.createElement("button", {
+    onClick: () => setOpen(!open),
+    className: "w-full text-left px-3.5 py-3 hover:bg-slate-50 flex items-center gap-2"
+  }, React.createElement("span", {
+    className: "font-semibold text-sm text-slate-800 flex-1"
+  }, c.nom), React.createElement(ChevronDown, {
+    size: 16,
+    className: `text-slate-400 transition-transform ${open ? "rotate-180" : ""}`
+  })), open && React.createElement("div", {
+    className: "px-3.5 pb-3.5 text-sm space-y-2"
+  }, c.definition && React.createElement("div", {
+    className: "text-slate-600"
+  }, React.createElement(MdInline, {
+    text: c.definition
+  })), c.contexte && React.createElement("div", null, React.createElement("div", {
+    className: "text-[11px] font-bold text-indigo-500 uppercase mb-0.5"
+  }, "Dans le m\xE9tier"), React.createElement("div", {
+    className: "text-slate-600"
+  }, React.createElement(MdBlock, {
+    text: c.contexte
+  }))), c.situation_modele && React.createElement(LCallout, {
+    tone: "tip",
+    title: "Situation-type \xE0 pr\xE9senter",
+    text: c.situation_modele
+  }), c.conseils?.length > 0 && React.createElement(LKeypoints, {
+    title: "Conseils",
+    items: c.conseils,
+    accent: "emerald"
+  }), c.pieges?.length > 0 && React.createElement(LKeypoints, {
+    title: "Pi\xE8ges",
+    items: c.pieges,
+    accent: "amber"
+  }), c.phrases?.length > 0 && React.createElement("div", null, React.createElement("div", {
+    className: "text-[11px] font-bold text-violet-500 uppercase mb-1"
+  }, "Formulations pr\xEAtes"), React.createElement("ul", {
+    className: "space-y-1"
+  }, c.phrases.map((p, i) => React.createElement("li", {
+    key: i,
+    className: "text-slate-700 italic text-xs"
+  }, "\xAB ", React.createElement(MdInline, {
+    text: p
+  }), " \xBB"))))));
 }
-
-/* ── Simulateur : tire un item au hasard, chrono, réponse révélable ── */
-function OralSim({ themes, examen, onBack }) {
-  const flash = [], scen = [];
-  (themes || []).forEach((t) => (t.courses || []).forEach((c) => (c.flashcards || []).forEach((f) => flash.push({ ...f, src: t.title }))));
-  (themes || []).forEach((t) => (t.scenarios || []).forEach((s) => scen.push({ ...s, src: t.title })));
-  const comps = (examen && examen.comportements) || [];
-  const pools = { flash, scen, comp: comps };
+function OralSim({
+  themes,
+  examen,
+  onBack
+}) {
+  const flash = [],
+    scen = [];
+  (themes || []).forEach(t => (t.courses || []).forEach(c => (c.flashcards || []).forEach(f => flash.push({
+    ...f,
+    src: t.title
+  }))));
+  (themes || []).forEach(t => (t.scenarios || []).forEach(s => scen.push({
+    ...s,
+    src: t.title
+  })));
+  const comps = examen && examen.comportements || [];
+  const pools = {
+    flash,
+    scen,
+    comp: comps
+  };
   const [mode, setMode] = useState("flash");
   const [item, setItem] = useState(null);
   const [reveal, setReveal] = useState(false);
   const [sec, setSec] = useState(0);
   const [running, setRunning] = useState(false);
-  useEffect(() => { if (!running) return; const id = setInterval(() => setSec((s) => s + 1), 1000); return () => clearInterval(id); }, [running]);
-  const draw = (m) => { const p = pools[m] || []; if (!p.length) return; setItem(p[Math.floor(Math.random() * p.length)]); setReveal(false); setSec(0); setRunning(true); };
-  const mm = String(Math.floor(sec / 60)).padStart(2, "0"), ss = String(sec % 60).padStart(2, "0");
-  return (
-    <div>
-      <button onClick={onBack} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"><ArrowLeft size={15} /> Accueil</button>
-      <div className="rounded-2xl border border-indigo-200 bg-indigo-50/50 p-5 mb-4">
-        <h2 className="text-xl font-bold text-slate-800">⏱️ Simulateur d'oral</h2>
-        <p className="text-sm text-slate-600 mt-1">Tire une question au hasard, réponds à voix haute, puis révèle le modèle. Le chrono t'aide à tenir le rythme.</p>
-      </div>
-      <div className="flex flex-wrap gap-2 mb-3">
-        {[["flash", "🃏 Flashcards"], ["scen", "🎭 Discussions"], ["comp", "🧠 Comportements"]].map(([m, l]) => (
-          <button key={m} onClick={() => { setMode(m); draw(m); }} className={`px-3 py-2 rounded-lg text-sm font-medium border transition-colors ${mode === m ? "bg-indigo-600 text-white border-indigo-600" : "bg-white text-slate-600 border-slate-200 hover:border-indigo-300"}`}>{l}</button>
-        ))}
-      </div>
-      {!item && <div className="text-sm text-slate-400 p-8 text-center rounded-xl border border-dashed border-slate-200">Choisis un mode pour tirer une première question.</div>}
-      {item && (
-        <div className="rounded-2xl border border-slate-200 bg-white p-5">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-[11px] uppercase tracking-wide font-bold text-indigo-400">{item.src || "Examen"}</span>
-            <span className="flex items-center gap-1.5 text-sm font-mono font-semibold text-slate-500"><Clock size={15} /> {mm}:{ss}</span>
-          </div>
-          <div className="text-base font-semibold text-slate-800 mb-3">
-            {mode === "flash" && <MdInline text={item.q} />}
-            {mode === "scen" && <span><span className="text-violet-600">{item.role} : </span><MdInline text={item.question || item.contexte} /></span>}
-            {mode === "comp" && <span>Présente une situation où tu as fait preuve de : <span className="text-rose-600">{item.nom}</span></span>}
-          </div>
-          {!reveal ? (
-            <button onClick={() => { setReveal(true); setRunning(false); }} className="rounded-lg bg-indigo-600 text-white text-sm font-medium px-4 py-2 hover:bg-indigo-700">Révéler le modèle</button>
-          ) : (
-            <div className="pt-3 border-t border-dashed border-slate-200 text-sm text-slate-700">
-              {mode === "flash" && <MdBlock text={item.a} />}
-              {mode === "scen" && <><MdBlock text={item.reponse_modele} />{item.points_cles?.length > 0 && <LKeypoints title="Points clés" items={item.points_cles} accent="emerald" />}</>}
-              {mode === "comp" && <><MdBlock text={item.situation_modele || item.definition} />{item.conseils?.length > 0 && <LKeypoints title="Conseils" items={item.conseils} accent="emerald" />}</>}
-            </div>
-          )}
-          <div className="mt-4 flex justify-end"><button onClick={() => draw(mode)} className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600"><RotateCcw size={14} /> Question suivante</button></div>
-        </div>
-      )}
-    </div>
-  );
+  useEffect(() => {
+    if (!running) return;
+    const id = setInterval(() => setSec(s => s + 1), 1000);
+    return () => clearInterval(id);
+  }, [running]);
+  const draw = m => {
+    const p = pools[m] || [];
+    if (!p.length) return;
+    setItem(p[Math.floor(Math.random() * p.length)]);
+    setReveal(false);
+    setSec(0);
+    setRunning(true);
+  };
+  const mm = String(Math.floor(sec / 60)).padStart(2, "0"),
+    ss = String(sec % 60).padStart(2, "0");
+  return React.createElement("div", null, React.createElement("button", {
+    onClick: onBack,
+    className: "flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 mb-3"
+  }, React.createElement(ArrowLeft, {
+    size: 15
+  }), " Accueil"), React.createElement("div", {
+    className: "rounded-2xl border border-indigo-200 bg-indigo-50/50 p-5 mb-4"
+  }, React.createElement("h2", {
+    className: "text-xl font-bold text-slate-800"
+  }, "\u23F1\uFE0F Simulateur d'oral"), React.createElement("p", {
+    className: "text-sm text-slate-600 mt-1"
+  }, "Tire une question au hasard, r\xE9ponds \xE0 voix haute, puis r\xE9v\xE8le le mod\xE8le. Le chrono t'aide \xE0 tenir le rythme.")), React.createElement("div", {
+    className: "flex flex-wrap gap-2 mb-3"
+  }, [["flash", "🃏 Flashcards"], ["scen", "🎭 Discussions"], ["comp", "🧠 Comportements"]].map(([m, l]) => React.createElement("button", {
+    key: m,
+    onClick: () => {
+      setMode(m);
+      draw(m);
+    },
+    className: `px-3 py-2 rounded-lg text-sm font-medium border transition-colors ${mode === m ? "bg-indigo-600 text-white border-indigo-600" : "bg-white text-slate-600 border-slate-200 hover:border-indigo-300"}`
+  }, l))), !item && React.createElement("div", {
+    className: "text-sm text-slate-400 p-8 text-center rounded-xl border border-dashed border-slate-200"
+  }, "Choisis un mode pour tirer une premi\xE8re question."), item && React.createElement("div", {
+    className: "rounded-2xl border border-slate-200 bg-white p-5"
+  }, React.createElement("div", {
+    className: "flex items-center justify-between mb-3"
+  }, React.createElement("span", {
+    className: "text-[11px] uppercase tracking-wide font-bold text-indigo-400"
+  }, item.src || "Examen"), React.createElement("span", {
+    className: "flex items-center gap-1.5 text-sm font-mono font-semibold text-slate-500"
+  }, React.createElement(Clock, {
+    size: 15
+  }), " ", mm, ":", ss)), React.createElement("div", {
+    className: "text-base font-semibold text-slate-800 mb-3"
+  }, mode === "flash" && React.createElement(MdInline, {
+    text: item.q
+  }), mode === "scen" && React.createElement("span", null, React.createElement("span", {
+    className: "text-violet-600"
+  }, item.role, " : "), React.createElement(MdInline, {
+    text: item.question || item.contexte
+  })), mode === "comp" && React.createElement("span", null, "Pr\xE9sente une situation o\xF9 tu as fait preuve de : ", React.createElement("span", {
+    className: "text-rose-600"
+  }, item.nom))), !reveal ? React.createElement("button", {
+    onClick: () => {
+      setReveal(true);
+      setRunning(false);
+    },
+    className: "rounded-lg bg-indigo-600 text-white text-sm font-medium px-4 py-2 hover:bg-indigo-700"
+  }, "R\xE9v\xE9ler le mod\xE8le") : React.createElement("div", {
+    className: "pt-3 border-t border-dashed border-slate-200 text-sm text-slate-700"
+  }, mode === "flash" && React.createElement(MdBlock, {
+    text: item.a
+  }), mode === "scen" && React.createElement(React.Fragment, null, React.createElement(MdBlock, {
+    text: item.reponse_modele
+  }), item.points_cles?.length > 0 && React.createElement(LKeypoints, {
+    title: "Points cl\xE9s",
+    items: item.points_cles,
+    accent: "emerald"
+  })), mode === "comp" && React.createElement(React.Fragment, null, React.createElement(MdBlock, {
+    text: item.situation_modele || item.definition
+  }), item.conseils?.length > 0 && React.createElement(LKeypoints, {
+    title: "Conseils",
+    items: item.conseils,
+    accent: "emerald"
+  }))), React.createElement("div", {
+    className: "mt-4 flex justify-end"
+  }, React.createElement("button", {
+    onClick: () => draw(mode),
+    className: "flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600"
+  }, React.createElement(RotateCcw, {
+    size: 14
+  }), " Question suivante"))));
 }
-
-/* ── Accueil ── */
-function OralHome({ data, onTheme, onExamen, onSim }) {
+function OralHome({
+  data,
+  onTheme,
+  onExamen,
+  onSim
+}) {
   const themes = data.themes || [];
   const intro = data.intro || {};
-  return (
-    <div className="space-y-5">
-      <div className="rounded-2xl bg-gradient-to-r from-rose-500 to-violet-600 text-white p-5 shadow">
-        <h2 className="text-xl font-bold">Préparer l'examen oral</h2>
-        <p className="text-sm text-rose-50 mt-1">{intro.duree ? intro.duree + " · " : ""}{intro.poids ? intro.poids + " · " : ""}{intro.format || "8 thèmes, discussion technique & discussion d'experts."}</p>
-      </div>
-      <div className="grid sm:grid-cols-2 gap-2.5">
-        <button onClick={onExamen} className="text-left rounded-2xl border border-rose-200 bg-rose-50/60 p-4 hover:shadow-md hover:-translate-y-0.5 transition-all">
-          <div className="flex items-center gap-2"><span className="text-xl">🎤</span><span className="font-bold text-sm text-rose-700">Réussir l'oral</span></div>
-          <div className="text-xs text-slate-600 mt-1">Déroulement, présentation, les 19 comportements.</div>
-        </button>
-        <button onClick={onSim} className="text-left rounded-2xl border border-indigo-200 bg-indigo-50/60 p-4 hover:shadow-md hover:-translate-y-0.5 transition-all">
-          <div className="flex items-center gap-2"><span className="text-xl">⏱️</span><span className="font-bold text-sm text-indigo-700">Simulateur</span></div>
-          <div className="text-xs text-slate-600 mt-1">Tire une question au hasard, chrono, réponse-modèle.</div>
-        </button>
-      </div>
-      <div className="text-sm font-bold text-slate-700">📚 Les thèmes</div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-        {themes.map((t) => { const color = hx(t.color); return (
-          <button key={t.id} onClick={() => onTheme(t)} className="text-left bg-white border border-slate-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-1.5" style={{ borderTop: "3px solid " + color }}>
-            <div className="flex items-center gap-2"><span className="text-xl">{t.icon}</span><span className="text-xs font-bold uppercase tracking-wide" style={{ color }}>Thème {t.num}</span></div>
-            <div className="font-semibold text-sm text-slate-800 leading-snug">{t.title}</div>
-            {t.tagline && <div className="text-xs text-slate-500 leading-snug"><MdInline text={t.tagline} /></div>}
-            <div className="text-xs text-slate-400 mt-auto pt-1">{(t.courses || []).length} cours · {(t.scenarios || []).length} discussions</div>
-          </button>
-        ); })}
-      </div>
-    </div>
-  );
+  return React.createElement("div", {
+    className: "space-y-5"
+  }, React.createElement("div", {
+    className: "rounded-2xl bg-gradient-to-r from-rose-500 to-violet-600 text-white p-5 shadow"
+  }, React.createElement("h2", {
+    className: "text-xl font-bold"
+  }, "Pr\xE9parer l'examen oral"), React.createElement("p", {
+    className: "text-sm text-rose-50 mt-1"
+  }, intro.duree ? intro.duree + " · " : "", intro.poids ? intro.poids + " · " : "", intro.format || "8 thèmes, discussion technique & discussion d'experts.")), React.createElement("div", {
+    className: "grid sm:grid-cols-2 gap-2.5"
+  }, React.createElement("button", {
+    onClick: onExamen,
+    className: "text-left rounded-2xl border border-rose-200 bg-rose-50/60 p-4 hover:shadow-md hover:-translate-y-0.5 transition-all"
+  }, React.createElement("div", {
+    className: "flex items-center gap-2"
+  }, React.createElement("span", {
+    className: "text-xl"
+  }, "\uD83C\uDFA4"), React.createElement("span", {
+    className: "font-bold text-sm text-rose-700"
+  }, "R\xE9ussir l'oral")), React.createElement("div", {
+    className: "text-xs text-slate-600 mt-1"
+  }, "D\xE9roulement, pr\xE9sentation, les 19 comportements.")), React.createElement("button", {
+    onClick: onSim,
+    className: "text-left rounded-2xl border border-indigo-200 bg-indigo-50/60 p-4 hover:shadow-md hover:-translate-y-0.5 transition-all"
+  }, React.createElement("div", {
+    className: "flex items-center gap-2"
+  }, React.createElement("span", {
+    className: "text-xl"
+  }, "\u23F1\uFE0F"), React.createElement("span", {
+    className: "font-bold text-sm text-indigo-700"
+  }, "Simulateur")), React.createElement("div", {
+    className: "text-xs text-slate-600 mt-1"
+  }, "Tire une question au hasard, chrono, r\xE9ponse-mod\xE8le."))), React.createElement("div", {
+    className: "text-sm font-bold text-slate-700"
+  }, "\uD83D\uDCDA Les th\xE8mes"), React.createElement("div", {
+    className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5"
+  }, themes.map(t => {
+    const color = hx(t.color);
+    return React.createElement("button", {
+      key: t.id,
+      onClick: () => onTheme(t),
+      className: "text-left bg-white border border-slate-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-1.5",
+      style: {
+        borderTop: "3px solid " + color
+      }
+    }, React.createElement("div", {
+      className: "flex items-center gap-2"
+    }, React.createElement("span", {
+      className: "text-xl"
+    }, t.icon), React.createElement("span", {
+      className: "text-xs font-bold uppercase tracking-wide",
+      style: {
+        color
+      }
+    }, "Th\xE8me ", t.num)), React.createElement("div", {
+      className: "font-semibold text-sm text-slate-800 leading-snug"
+    }, t.title), t.tagline && React.createElement("div", {
+      className: "text-xs text-slate-500 leading-snug"
+    }, React.createElement(MdInline, {
+      text: t.tagline
+    })), React.createElement("div", {
+      className: "text-xs text-slate-400 mt-auto pt-1"
+    }, (t.courses || []).length, " cours \xB7 ", (t.scenarios || []).length, " discussions"));
+  })));
 }
-
 function OralApp() {
-  const O = (typeof window !== "undefined" && window.__ORAL__) || {};
-  const [view, setView] = useState({ k: "home" });
-  const go = (v) => { setView(v); try { window.scrollTo(0, 0); } catch (e) {} };
-  return (
-    <div className="min-h-screen bg-slate-100 text-slate-900">
-      <header className="bg-gradient-to-r from-slate-900 to-rose-900 text-white">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-3">
-          <Mic size={24} className="text-rose-300" />
-          <div><h1 className="text-lg font-bold">Oral — préparation à l'examen</h1><p className="text-xs text-rose-200">70 min · 50 % de la note · discussion technique & d'experts</p></div>
-        </div>
-      </header>
-      <main className="max-w-5xl mx-auto px-4 py-6">
-        {view.k === "home" && <OralHome data={O} onTheme={(t) => go({ k: "theme", theme: t })} onExamen={() => go({ k: "examen" })} onSim={() => go({ k: "sim" })} />}
-        {view.k === "theme" && <OralTheme theme={view.theme} onCourse={(c) => go({ k: "course", course: c, color: hx(view.theme.color) })} onBack={() => go({ k: "home" })} />}
-        {view.k === "course" && <OralCourse course={view.course} color={view.color} onBack={() => go({ k: "theme", theme: view._theme || findThemeOf(O, view.course) })} />}
-        {view.k === "examen" && <OralExamen examen={O.examen || {}} onBack={() => go({ k: "home" })} />}
-        {view.k === "sim" && <OralSim themes={O.themes || []} examen={O.examen || {}} onBack={() => go({ k: "home" })} />}
-      </main>
-      <footer className="max-w-5xl mx-auto px-4 py-6 text-center text-xs text-slate-400">Outil pédagogique — prépare l'oral en t'exerçant à voix haute.</footer>
-    </div>
-  );
+  const O = typeof window !== "undefined" && window.__ORAL__ || {};
+  const [view, setView] = useState({
+    k: "home"
+  });
+  const go = v => {
+    setView(v);
+    try {
+      window.scrollTo(0, 0);
+    } catch (e) {}
+  };
+  return React.createElement("div", {
+    className: "min-h-screen bg-slate-100 text-slate-900"
+  }, React.createElement("header", {
+    className: "bg-gradient-to-r from-slate-900 to-rose-900 text-white"
+  }, React.createElement("div", {
+    className: "max-w-5xl mx-auto px-4 py-4 flex items-center gap-3"
+  }, React.createElement(Mic, {
+    size: 24,
+    className: "text-rose-300"
+  }), React.createElement("div", null, React.createElement("h1", {
+    className: "text-lg font-bold"
+  }, "Oral \u2014 pr\xE9paration \xE0 l'examen"), React.createElement("p", {
+    className: "text-xs text-rose-200"
+  }, "70 min \xB7 50 % de la note \xB7 discussion technique & d'experts")))), React.createElement("main", {
+    className: "max-w-5xl mx-auto px-4 py-6"
+  }, view.k === "home" && React.createElement(OralHome, {
+    data: O,
+    onTheme: t => go({
+      k: "theme",
+      theme: t
+    }),
+    onExamen: () => go({
+      k: "examen"
+    }),
+    onSim: () => go({
+      k: "sim"
+    })
+  }), view.k === "theme" && React.createElement(OralTheme, {
+    theme: view.theme,
+    onCourse: c => go({
+      k: "course",
+      course: c,
+      color: hx(view.theme.color)
+    }),
+    onBack: () => go({
+      k: "home"
+    })
+  }), view.k === "course" && React.createElement(OralCourse, {
+    course: view.course,
+    color: view.color,
+    onBack: () => go({
+      k: "theme",
+      theme: view._theme || findThemeOf(O, view.course)
+    })
+  }), view.k === "examen" && React.createElement(OralExamen, {
+    examen: O.examen || {},
+    onBack: () => go({
+      k: "home"
+    })
+  }), view.k === "sim" && React.createElement(OralSim, {
+    themes: O.themes || [],
+    examen: O.examen || {},
+    onBack: () => go({
+      k: "home"
+    })
+  })), React.createElement("footer", {
+    className: "max-w-5xl mx-auto px-4 py-6 text-center text-xs text-slate-400"
+  }, "Outil p\xE9dagogique \u2014 pr\xE9pare l'oral en t'exer\xE7ant \xE0 voix haute."));
 }
-function findThemeOf(O, course) { return (O.themes || []).find((t) => (t.courses || []).some((c) => c.id === course.id)) || (O.themes || [])[0]; }
-
-
-createRoot(document.getElementById("root")).render(<OralApp />);
-
+function findThemeOf(O, course) {
+  return (O.themes || []).find(t => (t.courses || []).some(c => c.id === course.id)) || (O.themes || [])[0];
+}
+createRoot(document.getElementById("root")).render(React.createElement(OralApp, null));
 </script>
 </body>
 </html>

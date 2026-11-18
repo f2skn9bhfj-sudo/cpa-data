@@ -34,24 +34,12 @@ let trainerState = {
 };
 
 // ── Streak logic ──
+// Série 🔥 : jours consécutifs avec au moins une activité (cartes, QCM, leçons),
+// calculée depuis le journal quotidien commun (swisscpaDaily, api-client-static.js)
+// — la même que sur la carte « Plan du jour » de l'accueil.
 function getStreak() {
-    const today = new Date().toISOString().slice(0, 10);
-    let s = JSON.parse(localStorage.getItem('swisscpa_streak') || '{"streak":0,"lastActive":null,"graceUsed":false}');
-    if (s.lastActive === today) return s;
-    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
-    if (s.lastActive === yesterday) {
-        s.streak++;
-        s.graceUsed = false;
-    } else if (s.lastActive && !s.graceUsed && (new Date(today) - new Date(s.lastActive)) / 86400000 <= 2) {
-        s.streak++;
-        s.graceUsed = true;
-    } else {
-        s.streak = Math.max(1, s.streak > 0 ? Math.floor(s.streak * 0.3) : 1);
-        s.graceUsed = false;
-    }
-    s.lastActive = today;
-    localStorage.setItem('swisscpa_streak', JSON.stringify(s));
-    return s;
+    const n = (window.swisscpaDaily && swisscpaDaily.streak) ? swisscpaDaily.streak() : 0;
+    return { streak: n };
 }
 
 // ── Helpers ──
@@ -354,14 +342,13 @@ async function renderTrainerHome(main) {
     trainerState.mode = 'home';
     main.innerHTML = `<div style="text-align:center;padding:60px;color:#64748b">Chargement...</div>`;
 
-    let statsRaw, recRaw, modulesRaw, normProgressRaw;
+    let statsRaw, recRaw;
     try {
-        // Load data in parallel
-        [statsRaw, recRaw, modulesRaw, normProgressRaw] = await Promise.all([
+        // Données légères seulement (flashcards déjà en cache) : pas de unified_modules (6 Mo).
+        // L'ancien bloc « 0/N normes étudiées » (toujours 0 en web : get_norms → []) est retiré.
+        [statsRaw, recRaw] = await Promise.all([
             api('get_review_stats'),
             api('get_session_recommendation'),
-            api('get_unified_modules'),
-            api('get_norms'),
         ]);
     } catch (err) {
         console.error('renderTrainerHome load error:', err);
@@ -374,42 +361,18 @@ async function renderTrainerHome(main) {
             </div>`;
         return;
     }
-    const normProgressMap = {};
-    (normProgressRaw || []).forEach(n => { normProgressMap[n.norm_code] = n; });
-
     const stats = statsRaw || { due: 0, total: 0, mastered: 0, learning: 0, good: 0, pct_mastered: 0, pct_due: 0 };
     const rec   = recRaw   || { window: 'medium', icon: '📚', label: 'Révision', message: 'Bonne chance pour ta session !', color: '#3b82f6', suggested_mode: 'sprint' };
     trainerState.stats = stats;
     trainerState.recommendation = rec;
 
     const streak = getStreak();
-    const modules = (modulesRaw && modulesRaw.modules) ? modulesRaw.modules : [];
 
     // Recommendation banner color
     const recBg = rec.window === 'optimal'  ? '#064e3b' :
                   rec.window === 'degraded' ? '#450a0a' : '#1e3a5f';
     const recBorder = rec.window === 'optimal'  ? '#10b981' :
                       rec.window === 'degraded' ? '#ef4444' : '#3b82f6';
-
-    // Compact global progress summary (detailed view is in Stats tab to avoid duplication)
-    const studiedCount = (normProgressMap ? Object.values(normProgressMap) : []).filter(
-        np => np && ((np.confidence_level || 0) > 0 || (np.revision_count || 0) > 0)
-    ).length;
-    const totalNorms = modules.reduce((s, m) => s + ((m.norms || []).length), 0);
-    const studiedPct = totalNorms > 0 ? Math.round((studiedCount / totalNorms) * 100) : 0;
-
-    const moduleProgressHtml = totalNorms > 0 ? `
-        <div style="background:#1e293b;border:1px solid #334155;border-radius:10px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-            <div style="flex:1;min-width:220px">
-                <div style="font-size:13px;font-weight:700;color:#f1f5f9;margin-bottom:4px">
-                    📊 ${studiedCount}/${totalNorms} normes étudiées (${studiedPct}%)
-                </div>
-                <div class="trainer-progress-bar" style="height:5px">
-                    <div class="trainer-progress-fill" style="width:${studiedPct}%"></div>
-                </div>
-            </div>
-        </div>
-    ` : '';
 
     main.innerHTML = `
         <div style="max-width:860px;margin:0 auto;padding:8px 0 40px">
@@ -492,9 +455,6 @@ async function renderTrainerHome(main) {
                     </div>
                 </div>
             </div>
-
-            <!-- Module progress -->
-            ${moduleProgressHtml}
 
             <!-- Back link -->
             <div style="margin-top:24px;text-align:center">

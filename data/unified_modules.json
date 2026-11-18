@@ -31313,6 +31313,36 @@
               "explanation": "Le TF n'établit pas de hiérarchie entre les méthodes : il combine les éléments littéral, systématique, historique et téléologique pour dégager le sens de la norme (« pluralisme pragmatique »).",
               "difficulty": "medium",
               "section_id": "m6_L1_s6"
+            },
+            {
+              "id": "m6_L1_q5",
+              "type": "mcq",
+              "question": "En cas de conflit entre une ordonnance du Conseil fédéral et une loi fédérale, laquelle prime ?",
+              "options": [
+                "Celle que le juge estime la plus équitable",
+                "L'ordonnance, plus récente et plus précise",
+                "La loi fédérale, de rang supérieur",
+                "Celle qui a été publiée en premier"
+              ],
+              "answer": 2,
+              "explanation": "Hiérarchie des normes : Constitution fédérale > lois fédérales > ordonnances. Une ordonnance doit respecter la loi sur laquelle elle se fonde ; en cas de conflit, la loi l'emporte.",
+              "difficulty": "easy",
+              "section_id": "m6_L1_s2"
+            },
+            {
+              "id": "m6_L1_q6",
+              "type": "mcq",
+              "question": "Quelle loi fédérale fixe les conditions d'agrément des réviseurs et institue l'ASR ?",
+              "options": [
+                "La loi fédérale sur l'impôt fédéral direct (LIFD)",
+                "Le Code des obligations, titre trente-deuxième",
+                "La loi sur la fusion (LFus)",
+                "La loi sur la surveillance de la révision (LSR)"
+              ],
+              "answer": 3,
+              "explanation": "La LSR (avec l'OSRev) règle l'agrément et la surveillance des personnes et entreprises qui fournissent des prestations de révision, et institue l'Autorité fédérale de surveillance en matière de révision (ASR). Le CO fixe, lui, les obligations de révision (art. 727 ss).",
+              "difficulty": "easy",
+              "section_id": "m6_L1_s4"
             }
           ],
           "mindmap_md": "# M6-L1\n## Cadre du droit suisse pour l'auditeur\n\n### Pertinence examen\n- **Haute** — grammaire juridique transversale, mobilisée par tous les modules\n\n### Hiérarchie des normes — pyramide suisse\n| Niveau | Émetteur | Exemple auditeur |\n|---|---|---|\n| **Constitution** | Peuple + cantons | Liberté économique (art. 27 Cst.) |\n| **Loi fédérale** | Parlement (+ référendum) | CO, LP, LSR, LIFD |\n| **Ordonnance** | Conseil fédéral | OSRev, OLT |\n| **Droit cantonal** | Cantons | Fiscalité cantonale, RF |\n| **Soft law** | Autorités (ASR, FINMA) | Circulaires, guides |\n\n### Droit public vs droit privé\n- **Public** : rapport autorité-citoyen, action d'office, juge admin/TAF/TF\n- **Privé** : égalité des parties, sur saisine, juge civil/commerce\n- ⚠️ **LSR** = droit public (ASR agit d'autorité) MAIS **mandat d'audit** = droit privé (CO 394)\n- Soft law ASR : pas une loi, mais force pratique majeure pour la profession\n\n### Lois clés pour l'auditeur — grille « C-P-S »\n#### Codes\n- **CC** — règles fondatrices, bonne foi (art. 2), interprétation (art. 1)\n- **CO** — sociétés (620-771), comptabilité (957-963b), révision (727-731a)\n- **CP** — infractions économiques (158, 165, 251, 305bis)\n#### Procédures\n- **LP/SchKG** — poursuites, mainlevée, faillite, concordat\n- **CPC** — procédure civile (juridictions commerce/prud'hommes)\n- **CPP** — procédure pénale\n#### Sectoriels\n- **LSR + OSRev** — surveillance révision (ASR)\n- **LFus** — fusions, scissions, transformations\n- **LBA** — blanchiment d'argent\n- **LIFD / LTVA / LIA** — fiscalité fédérale\n\n### Sources du droit — ordre « LJDC »\n- **L**oi fédérale (primaire) — art. 1 al. 1 CC\n- **J**urisprudence — TF (ATF publiés > arrêts non publiés)\n- **D**octrine — CR (Commentaire romand), BSK (Basler Kommentar)\n- **C**outume — subsidiaire (art. 1 al. 2 CC), rare aujourd'hui\n- ⚠️ Si lacune → juge tranche **modo legislatoris** (art. 1 al. 2 CC)\n\n### Méthodes d'interprétation — méthode pluraliste TF\n- **Littérale** — texte de la loi\n- **Systématique** — place dans le code\n- **Téléologique** — but de la norme\n- **Historique** — message du Conseil fédéral\n- **Conforme** — droit international, Constitution\n- Aucune ne prime ex ante — pondération contextuelle (ATF 131 II 697)\n- À l'examen : citer **2-3 méthodes** + conclure prudemment\n\n### Articulation avec autres modules\n- **M2** — révision (CO 727-731a, indépendance CO 728)\n- **M3** — comptabilité (CO 957-963b, RPC, IFRS)\n- **M7** — fiscalité (LIFD, LTVA, LIA)\n- **M11** — consolidation (CO 963, LFus)\n- M6 = grammaire juridique partagée\n\n### ⚠️ Pièges examen\n- **N°1** Confondre 754 (CA) et 755 (OR) — articles distincts, prescriptions distinctes\n- **N°2** LSR = droit public, mais mandat audit = droit privé (régimes parallèles)\n- **N°3** Une seule méthode d'interprétation n'est jamais suffisante — citer plusieurs\n- **N°4** Coutume **subsidiaire** uniquement (art. 1 al. 2 CC) — pas de coutume contra legem\n- **N°5** Art. 190 Cst. — TF lié par lois fédérales (pas de contrôle constitutionnel direct)\n- **N°6** Erreur de droit ne sauve pas la validité (« nemo censetur ignorare legem »)\n\n### 💡 Mnémoniques\n- **« C-P-S »** — Codes / Procédures / Sectoriels (cartographie lois auditeur)\n- **« 5C-LP »** — Constitution sociétés / Capital / Contrats / Collaborateurs / Crimes / LP / Poursuites\n- **« LJDC »** — Loi / Jurisprudence / Doctrine / Coutume (ordre des sources)\n- **« art. 2 CC = bonne foi »** — norme transversale, écarte les constructions abusives\n- **« ISA 250 = NOCLAR »** — devoir d'identifier le cadre légal en audit\n\n### 🔗 Renvois\n- **M2-L1** — Cadre légal audit (CO 727-731a, LSR)\n- **M2-L14** — Rapport CA vs AG (spécificité suisse)\n- **M2-L15** — Communication & devoir d'avis au juge\n- **M3-RPC** — Comptabilité et normes suisses\n- **CC art. 1-2** — Sources et bonne foi\n- **Cst. art. 27, 190** — Liberté économique, force de la loi fédérale\n",
@@ -31481,6 +31511,36 @@
               "explanation": "Le capital conditionnel permet d'émettre des actions au fur et à mesure que des créanciers (obligations convertibles) ou des collaborateurs exercent leurs droits de conversion ou d'option. La marge de fluctuation (CO 653s) est l'outil qui autorise le CA à modifier le capital pendant 5 ans.",
               "difficulty": "hard",
               "section_id": "m6_L2_s5"
+            },
+            {
+              "id": "m6_L2_q5",
+              "type": "mcq",
+              "question": "Quel est le capital-actions minimal d'une SA et dans quelle mesure doit-il être libéré lors de la fondation ?",
+              "options": [
+                "CHF 20'000, entièrement libéré comme pour une Sàrl",
+                "CHF 50'000, libéré à 50 % au moins et à hauteur d'au moins CHF 25'000",
+                "CHF 100'000, entièrement libéré dès l'inscription au registre du commerce",
+                "CHF 100'000, libéré à 20 % au moins et à hauteur d'au moins CHF 50'000"
+              ],
+              "answer": 3,
+              "explanation": "CO 621 : capital-actions minimal de CHF 100'000. CO 632 : chaque action doit être libérée à 20 % au moins et les apports doivent atteindre au moins CHF 50'000. La Sàrl exige CHF 20'000 entièrement libérés.",
+              "difficulty": "medium",
+              "section_id": "m6_L2_s3"
+            },
+            {
+              "id": "m6_L2_q6",
+              "type": "mcq",
+              "question": "Pour combien de temps et dans quelles limites l'AG peut-elle accorder au CA une marge de fluctuation du capital (CO 653s) ?",
+              "options": [
+                "5 ans au plus, entre la moitié et une fois et demie le capital inscrit",
+                "2 ans au plus, dans une limite de 20 % du capital-actions inscrit au registre",
+                "10 ans au plus, sans limite de montant fixée par la loi",
+                "Pour une durée illimitée, mais uniquement à la hausse"
+              ],
+              "answer": 0,
+              "explanation": "La marge de fluctuation du capital (droit de la SA en vigueur depuis le 1.1.2023) autorise le CA, pendant 5 ans au plus, à augmenter ou réduire le capital ; la limite supérieure ne peut dépasser 150 % et la limite inférieure ne peut être inférieure à 50 % du capital inscrit.",
+              "difficulty": "hard",
+              "section_id": "m6_L2_s5"
             }
           ],
           "mindmap_md": "# M6-L2\n## La SA — constitution, capital, structure (CO 620-672)\n\n### Pertinence examen\n- **Haute** — questions techniques chaque session, base de M6 et M11\n\n### Définition et piliers\n- **3 piliers** : Capital + Responsabilité limitée + 3 organes (AG/CA/OR)\n- **Art. 620 CO** : société de capitaux, dettes garanties par l'**actif social uniquement**\n- Actionnaires tenus **uniquement** des prestations statutaires (libération apport)\n- Personnalité juridique acquise **par l'inscription au RC** (art. 643 al. 1 CO)\n\n### Constitution — 6 étapes formelles\n- **1.** Acte constitutif **authentique** (notaire) — art. 629 CO\n- **2.** Statuts (raison sociale, siège, but, capital, organes)\n- **3.** Souscription du capital (intégrale, en CHF ou devise étrangère depuis 2023)\n- **4.** Libération minimum :\n  - **20%** par action ET\n  - **≥ CHF 50'000** au total (le plancher prime)\n- **5.** Nomination CA + OR (sauf opting-out déclaré ultérieurement)\n- **6.** Inscription RC — naissance de la personnalité morale\n\n### Capital — la règle « 100-50-20 »\n- **Capital nominal min** : **CHF 100'000** (art. 621 CO)\n- **Libération min constitution** : **CHF 50'000 ET 20%** (art. 632 CO)\n- Valeur nominale ≥ **CHF 0.01** depuis 2008 (art. 622 CO)\n- Capital en **devise étrangère** possible si pertinent (USD, EUR, GBP, JPY) — réforme 2023\n- Solde non libéré = **dette des actionnaires** envers la SA\n\n### Types d'actions et bons\n| Titre | Vote AG | Dividende | Boni liquidation |\n|---|:-:|:-:|:-:|\n| Action ordinaire | ✅ | ✅ | ✅ |\n| Action privilégiée | ✅ (priv.) | ✅ priv. | ✅ |\n| Action priv. vote | ✅✅ | ✅ | ✅ |\n| **Bon de participation** | ❌ | ✅ | ✅ |\n| Bon de jouissance | ❌ | ✅ | ❌ |\n- Actions **au porteur INTERDITES depuis 2019** (LF abus blanchiment), sauf cotées\n- **BP limité à 2× capital-actions** (art. 656b CO) si bilan SA\n- BP = capital sans voix — règle d'or « **Bénéfice mais Bâillonné** »\n\n### Apports en nature et reprise de biens (réforme 2023)\n- **Art. 634 CO** (réformé 2023) : apport en nature = **rapport de fondation obligatoire** par réviseur agréé\n- 4 conditions cumulatives : contrat écrit + activable au bilan + transférable + disponible\n- Catégorie « **reprise de biens** » abrogée 1.1.2023 → désormais via 717a (conflits)\n- Au-delà de 2 ans : opération en cours de vie, vérifier art. 717a CO\n\n### Réforme 2023 — capital flexible (art. 653s-653v CO)\n#### Marge de fluctuation (Kapitalband)\n- AG fixe une **fourchette** dans les statuts (haute et basse)\n- **Plafond : ±50%** du capital ordinaire\n- **Durée max : 5 ans**\n- CA actionne hausses ET baisses dans la fourchette\n#### Capital conditionnel (art. 653 CO)\n- Augmentation à l'exercice de droits (options, obligations convertibles)\n- Plafond **+50%** du capital\n- Pas de date limite\n- ⚠️ Ancien « capital autorisé » (651 ancien) supprimé → délai transitoire **5 ans (jusqu'en 2028)** pour adapter statuts\n\n### Inscription RC — effets\n- **Constitutive** pour la SA (art. 643 al. 1 CO)\n- **Opposabilité tiers** 15 jours après publication FOSC (art. 933 al. 2 CO)\n- Vérifications systématiques sur **zefix.ch** : siège, IDE, capital, signatures, but, OR\n- Modifications capital = constitutives → effectives à l'inscription\n\n### ⚠️ Pièges examen\n- **N°1** Capital SA = **100k**, libération min = **50k ET 20%** (plancher 50k prime)\n- **N°2** Sàrl = **20k intégralement libéré** ≠ SA libération partielle\n- **N°3** Réforme SA en vigueur **1.1.2023** (pas 2024)\n- **N°4** Actions au porteur **interdites depuis 2019** (sauf cotées)\n- **N°5** Marge de fluctuation : **5 ans max, ±50%** (pas 10 ans, pas illimité)\n- **N°6** BP plafonné à **2× capital-actions** (656b CO)\n- **N°7** Apport en nature : **rapport réviseur sans seuil monétaire**\n- **N°8** Capital flexible **n'existait pas** avant 2023 — ancien « autorisé » supprimé\n\n### 💡 Mnémoniques\n- **« 100-50-20 »** — Capital nominal / libération mini / pourcentage par action\n- **« 5-50-50 »** — Marge fluctuation 5 ans / ±50% / capital conditionnel +50%\n- **« CCAA-BJ »** — Catégories titres : Certificat porteur (rare), Action nominative, Action priv. vote, BP, Bon Jouissance\n- **« 3B = Bénéfice mais Bâillonné »** — bon de participation\n- **« 643 = naissance »** — l'inscription RC fait naître la SA\n\n### 🔗 Renvois\n- **M6-L3** — Organes (AG, CA, OR)\n- **M6-L4** — Droits des actionnaires (annulation, contrôle spécial)\n- **M6-L5** — Perte de capital et surendettement (725-725c)\n- **M6-L6** — Autres formes (Sàrl, SNC, Coop)\n- **M6-L8** — RC et FOSC (inscription constitutive)\n- **M3 — CO comptabilité** — Réforme 2023, capital, dividende intermédiaire\n- **CO 620-672, 731** — Articles centraux SA\n",
@@ -31643,6 +31703,36 @@
               "explanation": "CO 717a (2023) : le membre du CA ou de la direction en conflit d'intérêts en informe le CA sans retard et de manière complète ; le CA prend les mesures nécessaires à la sauvegarde des intérêts de la société.",
               "difficulty": "medium",
               "section_id": "m6_L3_s7"
+            },
+            {
+              "id": "m6_L3_q5",
+              "type": "mcq",
+              "question": "Laquelle de ces attributions relève de la compétence intransmissible de l'assemblée générale (CO 698) ?",
+              "options": [
+                "Nommer et révoquer les personnes chargées de la gestion",
+                "Fixer l'organisation et établir le règlement d'organisation",
+                "Exercer la haute direction et donner les instructions nécessaires",
+                "Approuver les comptes annuels et décider de l'emploi du bénéfice"
+              ],
+              "answer": 3,
+              "explanation": "CO 698 réserve notamment à l'AG l'adoption et la modification des statuts, l'élection des administrateurs et de l'organe de révision, l'approbation des comptes annuels et la décision sur l'emploi du bénéfice. Les trois autres attributions sont intransmissibles au CA (CO 716a).",
+              "difficulty": "medium",
+              "section_id": "m6_L3_s2"
+            },
+            {
+              "id": "m6_L3_q6",
+              "type": "mcq",
+              "question": "Quelle exigence de domicile s'applique à la représentation d'une SA (CO 718 al. 4) ?",
+              "options": [
+                "La majorité des administrateurs doit être de nationalité suisse",
+                "Tous les administrateurs doivent être domiciliés dans le canton du siège social de la société",
+                "Aucune : la loi n'impose plus d'exigence de domicile depuis 2023",
+                "Une personne au moins, habilitée à la représenter, doit être domiciliée en Suisse"
+              ],
+              "answer": 3,
+              "explanation": "La SA doit pouvoir être représentée par une personne domiciliée en Suisse (administrateur ou directeur). Les exigences de nationalité pour les administrateurs ont été supprimées depuis la révision de 2008.",
+              "difficulty": "medium",
+              "section_id": "m6_L3_s7"
             }
           ],
           "mindmap_md": "# M6-L3\n## La SA — organes et gouvernance (CO 698-731a)\n\n### Pertinence examen\n- **Haute** — gouvernance suisse, attributions inaliénables fréquentes\n\n### Les 3 organes obligatoires\n| Organe | Rôle | Élu par | Article responsabilité |\n|---|---|---|---|\n| **AG** | Stratégie + élit CA/OR | Actionnaires | — |\n| **CA** | Direction supérieure | AG | **CO 754** |\n| **OR** | Contrôle externe | AG | **CO 755** |\n- Séparation des pouvoirs = protection des parties prenantes\n- Direction (déléguée par CA) = organe **non obligatoire**\n\n### AG — 8 compétences inaliénables (art. 698 al. 2 CO)\n- **1.** Adopter / modifier les **statuts**\n- **2.** Nommer **CA et OR**\n- **3.** Approuver **rapport annuel** et comptes consolidés\n- **4.** Approuver **comptes annuels** + emploi du bénéfice (dividende)\n- **5.** Voter la **décharge** des organes\n- **6.** Fixer les **rémunérations** (Minder 2014 — cotées)\n- **7.** Dissolution de la société\n- **8.** Toutes autres décisions réservées par loi ou statuts\n- ⚠️ **Décharge** ne libère que des faits **connus** au moment du vote\n\n### CA — 7 attributions inaliénables (art. 716a CO)\n- **1. Haute direction** (stratégie, instructions)\n- **2. Organisation** (statuts, règlement, comités)\n- **3. Comptabilité + contrôle financier + planification**\n- **4. Nomination + révocation** des dirigeants\n- **5. Surveillance** des dirigeants (conformité loi/statuts)\n- **6. Rapport de gestion** + préparation AG\n- **7. Avis au juge en cas de surendettement** (725b CO)\n- ⚠️ **Toute clause de délégation contraire = NULLE**\n- Composition : ≥ 1 membre, ≥ 1 **domicilié en Suisse** (art. 718 al. 4)\n\n### Délégation à la direction (art. 716b CO)\n- **3 conditions cumulatives** :\n  - Clause statutaire **autorisant** la délégation\n  - **Règlement d'organisation** écrit\n  - **Liste des délégataires** au RC + pouvoirs de signature\n- Sans règlement → CA reste **collectivement responsable** de toute la gestion\n- 7 attributions 716a **JAMAIS délégables**, même avec règlement\n\n### Organe de révision — 3 régimes\n| Régime | Référentiel | Cotées | Décision |\n|---|---|:-:|---|\n| **Ordinaire** | NAS/ISA | ✅ obligatoire | Légal (seuils 20-40-250) |\n| **Restreint** | NCR | ❌ interdit | Légal défaut |\n| **Opting-out** | — | ❌ interdit | AG **unanime**, ≤ 10 ETP |\n- Cotées : ordinaire **toujours**, peu importe la taille\n- Opting-out **interdit** si obligation de consolider\n- Si surendettement : OR **obligatoirement désigné** même si opting-out\n\n### Signature sociale et représentation\n- Signature **individuelle** ou **collective à 2** (la + courante)\n- Pouvoirs inscrits au RC = opposables aux tiers (art. 933 CO)\n- ≥ 1 personne au RC ayant qualité de signer doit être **domiciliée en Suisse** (art. 718 al. 4)\n- Représentation extérieure conforme au but social\n- Tiers de bonne foi protégé même si pouvoir interne dépassé\n\n### Conflits d'intérêts — art. 717a CO (réforme 2023)\n- **NOUVEAUTÉ 2023** — codification de jurisprudence préexistante\n- Mécanisme « **DAR** » :\n  - **D**éclaration au CA sans délai et de manière complète\n  - **A**bstention au vote sur l'objet\n  - **R**ecord (PV traçant déclaration et récusation)\n- Non-déclaration = violation directe de 717a = élément concret pour 754 CO\n- S'applique aussi à la **direction** (membres exécutifs)\n\n### ⚠️ Pièges examen\n- **N°1** **716a = 7 attributions** CA inaliénables, jamais délégables (clause nulle)\n- **N°2** **698 al. 2 = 8 compétences AG** inaliénables (cf. SOMÉL-DRD)\n- **N°3** Décharge ne libère que des faits **connus de l'AG** (faits dissimulés = action ouverte)\n- **N°4** Opting-out : **unanimité + ≤ 10 ETP** + interdit si consolidation/cotée\n- **N°5** Délégation = **3 conditions cumulatives** (statuts + règlement + RC)\n- **N°6** ≥ **1 membre CA domicilié CH** (718 al. 4) — pas tout CA\n- **N°7** **717a = réforme 2023** — non-déclaration = violation directe\n- **N°8** Réforme Minder 2014 = vote annuel rémunérations **cotées** uniquement\n\n### 💡 Mnémoniques\n- **« AG-CA-OR »** — 3 organes obligatoires\n- **« SOMÉL-DRD »** — 8 compétences AG (Statuts/Organes/Mémoire/Études fin/Libéralités/Décharge/Rémunérations/Dissolution)\n- **« DOCNS-RA »** — 7 attributions CA (Direction/Organisation/Comptabilité/Nomination/Surveillance/Rapport/Avis juge)\n- **« 717a-DAR »** — Conflit : Déclaration / Abstention / Record\n- **« 20-40-250 »** — Seuils contrôle ordinaire (bilan/CA/ETP)\n\n### 🔗 Renvois\n- **M6-L2** — SA constitution\n- **M6-L4** — Droits actionnaires (annulation 706, responsabilité 756)\n- **M6-L5** — Avis au juge surendettement (725b + 728c)\n- **M6-L12** — Responsabilité civile et pénale\n- **M2-L1** — Cadre légal audit\n- **M2-L14** — Rapport CA vs AG (CO 728a, 728b)\n- **CO 698-731a** — Articles gouvernance SA\n",
@@ -31794,6 +31884,36 @@
               "explanation": "CO 706a al. 1 : le droit d'action s'éteint si l'action n'est pas intentée dans les deux mois qui suivent l'AG. La nullité (CO 706b) peut, elle, être constatée en tout temps.",
               "difficulty": "easy",
               "section_id": "m6_L4_s5"
+            },
+            {
+              "id": "m6_L4_q5",
+              "type": "mcq",
+              "question": "Dans une SA non cotée, quelle participation permet d'exiger la convocation d'une assemblée générale (CO 699) ?",
+              "options": [
+                "0,5 % du capital-actions ou des voix",
+                "33 % du capital-actions ou des voix",
+                "10 % du capital-actions ou des voix",
+                "5 % du capital-actions ou des voix"
+              ],
+              "answer": 2,
+              "explanation": "Depuis le 1.1.2023, CO 699 al. 3 : 5 % dans les sociétés cotées, 10 % dans les autres. Pour faire inscrire un objet à l'ordre du jour (CO 699b) : 0,5 % (cotées) ou 5 % (non cotées).",
+              "difficulty": "medium",
+              "section_id": "m6_L4_s7"
+            },
+            {
+              "id": "m6_L4_q6",
+              "type": "mcq",
+              "question": "Dans une SA non cotée, quelle participation permet de faire inscrire un objet à l'ordre du jour de l'AG (CO 699b) ?",
+              "options": [
+                "Une seule action suffit",
+                "5 % du capital-actions ou des voix",
+                "10 % du capital-actions ou des voix",
+                "0,5 % du capital-actions ou des voix"
+              ],
+              "answer": 1,
+              "explanation": "CO 699b al. 1 : 0,5 % du capital ou des voix dans les sociétés cotées, 5 % dans les autres sociétés. Le seuil de 10 % concerne la convocation de l'AG dans une société non cotée.",
+              "difficulty": "medium",
+              "section_id": "m6_L4_s7"
             }
           ],
           "mindmap_md": "# M6-L4\n## Droits des actionnaires (CO 660-697hbis)\n\n### Pertinence examen\n- **Haute** — protection des minoritaires, réforme 2023 abaisse seuils\n\n### Deux familles de droits\n| Famille | Exemples | Logique |\n|---|---|---|\n| **Patrimoniaux** | Dividende (660), boni liquidation (745), droit préférentiel (652b) | Valeur économique |\n| **Sociaux** | Vote (692), info (696-697), convocation (699), contrôle spécial (697c) | Pouvoir / influence |\n- Règle d'or : **BP = capital SANS voix** (dissociation capital/contrôle)\n- 3 catégories pratiques : majoritaire (>50%), bloquant (>33%), minoritaire (<5%)\n\n### Droit à l'information — réforme 2023 abaisse seuils\n#### En AG (art. 697 CO)\n- Tout actionnaire peut demander des **renseignements** au CA\n- CA peut refuser pour secret commercial / intérêts dignes de protection\n#### Hors AG (réforme 2023)\n- **Demande écrite** possible (nouveau)\n- Seuils :\n  - **5%** capital ou voix pour société **cotée**\n  - **10%** pour société **non cotée**\n- CA répond dans **4 mois** (697 al. 4 CO)\n- Refus motivé → recours au juge possible\n#### Consultation\n- Rapport gestion + rapport OR mis à dispo **20 jours avant AG** (art. 696 al. 1 CO)\n- Procès-verbaux et inscriptions accessibles\n\n### Contrôle spécial (art. 697c-697hbis CO)\n- **Arme ultime** des minoritaires si refus d'info\n- Étapes :\n  - **1.** Demande renseignements en AG → refus\n  - **2.** Demande écrite hors AG → refus / réponse insuffisante\n  - **3.** Saisine du juge civil\n- Seuils saisine juge :\n  - **5%** capital cotée / **10%** non cotée OU\n  - Valeur nominale ≥ **CHF 1M cotée / 2M non cotée**\n- Expertise sur **faits précis**, pas un audit général\n- Coût : CHF 50-200k typique → à charge société si fondé\n- ⚠️ < 10 cas/an en Suisse — dissuasif\n\n### Droit de vote et conventions\n- Principe : **1 action = 1 voix** (art. 692 al. 1 CO)\n- Exception : actions à droit de vote privilégié (max **10:1**, art. 693)\n- Coopérative : **1 membre = 1 voix** (exception mutualiste)\n- **Pactes d'actionnaires** = contrats hors statuts, opposables seulement aux signataires\n- Mécanismes courants :\n  - **Préemption** — droit d'achat prioritaire\n  - **Drag-along** — majoritaires forcent minoritaires à vendre\n  - **Tag-along** — minoritaires se joignent à la vente\n  - **Non-concurrence** — 2 ans typique\n\n### Action en annulation (706 CO) vs nullité (706b CO)\n| Critère | Annulation (706) | Nullité (706b) |\n|---|---|---|\n| Vice | Illégal mais récupérable | Gravement illégal |\n| Délai | **2 mois** péremption (706a) | **Aucun** (imprescriptible) |\n| Légitimation | Actionnaire / CA | **Tout intéressé** |\n| Effet | Ex tunc, erga omnes | Décision réputée jamais prise |\n- Cas nullité (706b) : violation droits inaliénables, atteinte aux fondements de la SA\n- ⚠️ Ne pas confondre avec **action en responsabilité 754** (dommages-intérêts)\n\n### Action en responsabilité — 754, 756, 757 CO\n| Action | Qui agit | Bénéficiaire | Contexte |\n|---|---|---|---|\n| **754 individuelle** | Société elle-même | Société | Avant faillite |\n| **756 actionnaire** | Actionnaire (**1 action suffit**) | **Société** | Avant faillite |\n| **757 faillite** | Masse en faillite | Masse | Pendant faillite |\n- **ATF 132 III 758** : 1 action suffit pour agir 756, honoraires récupérables si succès\n- **Arme nucléaire** des minoritaires — dissuade plus que ne sanctionne\n- Délais (art. 760) : **5 ans connaissance / 10 ans absolu** ; délai pénal plus long réservé (al. 2, depuis 2020)\n\n### Réforme 2023 — renforcement minoritaires\n- Seuils info **abaissés** (10% → 5% cotée, contrôle spécial moins lourd)\n- **Voie écrite hors AG** créée (697 al. 4)\n- Droits **action en restitution** prestations indues (678 CO réformé)\n- AG **virtuelle** et **hybride** autorisées (art. 701c-701f)\n\n### ⚠️ Pièges examen\n- **N°1** Action annulation 706 = **2 mois** péremption (pas 5 ans !)\n- **N°2** Action nullité 706b = **imprescriptible** (faute grave aux fondements)\n- **N°3** Action 756 = **1 action suffit** (ATF 132 III 758)\n- **N°4** Réforme 2023 : seuils info = **5% cotée / 10% non cotée** (abaissés)\n- **N°5** Contrôle spécial **≠ contrôle ordinaire OR** (ad hoc vs annuel)\n- **N°6** BP **ZÉRO contrôle** — purement financier (pas de droit de convocation)\n- **N°7** Décharge 758 = effet **relatif** (ne lie pas nouveaux actionnaires + créanciers)\n- **N°8** Pacte d'actionnaires = **opposable aux signataires seuls** (pas erga omnes)\n\n### 💡 Mnémoniques\n- **« 2-5-10 »** — 2 mois annulation / 5% cotée / 10% non cotée\n- **« 3-10-20 »** — Prescription RC : connaissance / absolue / dommages corporels\n- **« 1 action suffit »** — Action 756 (arme nucléaire)\n- **« P-D-T-N »** — Pactes : Préemption / Drag-along / Tag-along / Non-concurrence\n- **« I-I-E-A »** — 4 piliers protection minoritaires : Info / Initiative / Enquête / Action\n\n### 🔗 Renvois\n- **M6-L3** — Organes et gouvernance (AG, conflits 717a)\n- **M6-L12** — Responsabilité civile et pénale (MFDC)\n- **M2-L15** — Communication OR, devoir d'avis\n- **CO 696-697hbis** — Droit à l'information et contrôle spécial\n- **CO 706-706b** — Action en annulation / nullité\n- **CO 754-760** — Responsabilité et prescription\n",
@@ -31965,6 +32085,36 @@
               "explanation": "La réduction absorbe la perte (sans appel aux créanciers lorsque le capital est reconstitué), puis l'augmentation simultanée apporte des fonds frais : le capital revient au moins à son montant antérieur.",
               "difficulty": "hard",
               "section_id": "m6_L5_s5"
+            },
+            {
+              "id": "m6_L5_q5",
+              "type": "mcq",
+              "question": "Une SA ayant renoncé à la révision (opting-out) constate une perte de capital (CO 725a). Quelle obligation particulière s'impose ?",
+              "options": [
+                "Faire auditer ses comptes selon le contrôle ordinaire pendant les trois exercices suivants",
+                "Soumettre ses derniers comptes annuels à un contrôle restreint avant leur approbation",
+                "Aviser immédiatement le juge de la faillite",
+                "Réduire le capital-actions dans un délai de 30 jours"
+              ],
+              "answer": 1,
+              "explanation": "CO 725a al. 2 : si la société n'a pas d'organe de révision, ses derniers comptes annuels doivent être soumis à un contrôle restreint par un réviseur agréé désigné par le CA avant leur approbation par l'AG. Le CA doit par ailleurs prendre des mesures d'assainissement.",
+              "difficulty": "hard",
+              "section_id": "m6_L5_s3"
+            },
+            {
+              "id": "m6_L5_q6",
+              "type": "mcq",
+              "question": "Le CA peut renoncer à aviser le juge d'un surendettement s'il existe des perspectives concrètes de l'éliminer. Dans quel délai au plus tard (CO 725b al. 4) ?",
+              "options": [
+                "90 jours après la date des comptes intermédiaires vérifiés",
+                "6 mois après la clôture de l'exercice concerné",
+                "30 jours après la date des comptes intermédiaires vérifiés",
+                "Jusqu'à la prochaine assemblée générale ordinaire"
+              ],
+              "answer": 0,
+              "explanation": "CO 725b al. 4 ch. 2 : l'avis peut être différé s'il existe des raisons de penser que le surendettement pourra être supprimé dans un délai raisonnable, au plus tard 90 jours après la date des comptes intermédiaires vérifiés, et que la situation des créanciers ne sera pas aggravée.",
+              "difficulty": "hard",
+              "section_id": "m6_L5_s4"
             }
           ],
           "mindmap_md": "# M6-L5\n## SA — perte de capital et surendettement (réforme CO 2023)\n\n### Pertinence examen\n- **Haute** — réforme 1.1.2023, sujet pivot, jurisprudence Swissair\n\n### Réforme 2023 — pourquoi 4 articles ?\n| Critère | Ancien art. 725 (≤ 2022) | Nouveau 725-725c (≥ 2023) |\n|---|---|---|\n| Articles | 1 article, 2 al. | **4 articles distincts** |\n| Insolvabilité prospective | Non codifiée | **Art. 725 (NOUVEAU)** |\n| Perte capital | 725 al. 1 | **Art. 725a** |\n| Surendettement | 725 al. 2 | **Art. 725b** |\n| Réévaluation | Pratique | **Art. 725c** (codifiée) |\n- Logique : **du devoir de réagir au bilan** vers **devoir de piloter la trésorerie**\n- Inspiration : Swissair 2001 + UBS 2008, alignement ISA 570 et RPC 41\n\n### Art. 725 CO — devoir de surveiller la solvabilité (nouveauté)\n- CA **surveille la solvabilité** de la société\n- En cas de **risque d'insolvabilité** → prend des mesures (cash management)\n- Au besoin → mesures d'assainissement supplémentaires\n- ⚠️ **Pas de sanction directe** — mais inaction = violation 717 + 754 (responsabilité)\n- Bonne pratique : **rolling cash flow 13 semaines** scénario base + stressé (-20% CA)\n- Convergence ISA 570 R2024 (going concern) et CP 165 (gestion fautive)\n\n### Art. 725a CO — perte de capital\n- **Seuil** : Actifs nets < (Capital-actions + Réserves légales) / **2**\n- ⚠️ Réserves **légales SEULES** au dénominateur (issues capital + bénéfice) — pas libres\n- Constatation : **derniers comptes annuels** approuvés\n- Si OR : CA convoque AG → mesures dans **délai raisonnable**\n- Si **opting-out** : CA doit **mandater contrôle restreint** des comptes intermédiaires\n- Si 725a déclenché → AG vote mesures (réduction capital, apport, etc.)\n\n### Art. 725b CO — surendettement\n- **Test à double bilan** :\n  - Bilan continuation (going concern)\n  - Bilan **liquidation** (valeurs forcées)\n- Surendettement = **dettes > actifs** **aux DEUX** bilans\n- OR vérifie les comptes intermédiaires\n- CA avise **immédiatement le juge** sauf :\n  - **Postposition** suffisante (créanciers acceptent rang subordonné couvrant exactement le surendettement)\n  - **Assainissement réalisable** sous court délai (perspective concrète)\n- Si OR constate surendettement manifeste et CA inactif → **OR avise juge** (728c al. 3 ord. / 729c rest.)\n\n### Art. 725c CO — réévaluation (nouvelle codification)\n- Pour mettre fin à **perte capital** ou **surendettement** :\n  - **Immeubles** et **participations**\n  - Réévaluables au plus jusqu'à la **valeur réelle** (max)\n- Réserve de réévaluation au passif, **non distribuable**\n- ⚠️ **N'apporte pas de cash** — résolution **comptable** d'une perte technique seulement\n- Confirmation par **réviseur agréé** obligatoire\n\n### Mesures d'assainissement — leviers\n| Levier | Cash ? | Effet capital | Effet dettes | OR requis ? |\n|---|:-:|---|---|:-:|\n| Réduction capital | Non | ↓ | — | ✅ rapport |\n| Augmentation capital | ✅ | ↑ | — | ✅ rapport |\n| **Postposition** | Non | — | Reclasse | À mentionner |\n| Réévaluation 725c | Non | ↑ réserves | — | ✅ |\n| Abandon créance | Non | ↑ résultat | ↓ | À mentionner |\n| Apport à fonds perdu | ✅ | ↑ réserves | — | À mentionner |\n\n### Rôle de l'OR — séquence rigide\n- **1.** Détection (revue analytique, ISA 570)\n- **2.** Avis au CA (note écrite, délai raisonnable)\n- **3.** Si CA inactif → **OR avise juge** (728c al. 3 / 729c)\n- ⚠️ OR **ne saute pas** l'étape CA (sauf surendettement manifeste flagrant)\n- **Swissair 2001** = jurisprudence fondatrice — alerte tardive, KPMG mise en cause\n\n### Jurisprudence Swissair — dommage de continuation indue\n- **ATF 132 III 758 (2006)** — pilier du contentieux 725b\n- Continuation au-delà du moment où l'avis aurait dû être donné = responsabilité solidaire CA\n- **Méthode de calcul** : différence entre masse pivot (au moment où dépôt aurait dû être fait) et masse réelle (à la faillite effective)\n- Coût final Swissair ≈ **CHF 4-5 milliards**\n\n### ⚠️ Pièges examen\n- **N°1** Seuil 725a = **(Capital + RL) / 2** — RL seulement, pas libres\n- **N°2** 725b = **2 bilans** (continuation ET liquidation), pas un seul\n- **N°3** 725 (devoir solvabilité) = **aucune sanction directe** — passe par 754/CP 165\n- **N°4** Réforme entrée en vigueur **1.1.2023**, délai transitoire 5 ans\n- **N°5** Postposition doit couvrir **exactement** le surendettement (pas plus, pas moins)\n- **N°6** 725c **n'apporte pas de cash** — résolution comptable uniquement\n- **N°7** Opting-out **n'épargne pas** 725b → CA doit **désigner réviseur agréé** si surendettement\n- **N°8** OR n'avise juge qu'**APRÈS** CA (sauf flagrant) — séquence rigide\n\n### 💡 Mnémoniques\n- **« 725-CIPS »** — Continuation/Liquidation / Information OR→CA→Juge / Postposition / Surveillance solvabilité\n- **« (Capital + RL) / 2 »** — Seuil perte capital (sans réserves libres)\n- **« 2 bilans »** — Surendettement = continuation + liquidation\n- **« 725 = pas de sanction directe »** — passe par 754 + CP 165\n- **« Swissair = continuation indue »** — ATF 132 III 758\n\n### 🔗 Renvois\n- **M6-L3** — Organes (716a ch. 7 = avis juge)\n- **M6-L7** — LP/SchKG (faillite, concordat, action paulienne)\n- **M6-L12** — Responsabilité (754 / 755 / CP 165)\n- **M2-L1** — Cadre légal révision (opting-out)\n- **M2-L15** — Communication OR & devoir d'avis (728c, 729c)\n- **M2-L16** — Surendettement et going concern (ISA 570)\n- **CO 725-725c, 728c, 729c, 754, 760** — Articles clés\n- **CP 165** — Gestion fautive (sanction pénale liée)\n",
@@ -32114,6 +32264,36 @@
               ],
               "answer": 3,
               "explanation": "Art. 83b CC : l'organe suprême désigne un organe de révision ; l'autorité de surveillance peut dispenser la fondation de cette obligation (ordonnance), notamment pour les petites fondations.",
+              "difficulty": "medium",
+              "section_id": "m6_L6_s5"
+            },
+            {
+              "id": "m6_L6_q5",
+              "type": "mcq",
+              "question": "Quel est le capital social minimal d'une Sàrl et comment doit-il être libéré ?",
+              "options": [
+                "CHF 100'000, entièrement libéré",
+                "CHF 20'000, libéré à 50 % au moins",
+                "CHF 50'000, libéré à 20 % au moins",
+                "CHF 20'000, entièrement libéré"
+              ],
+              "answer": 3,
+              "explanation": "CO 773 : capital social minimal de CHF 20'000 ; CO 777c : chaque part doit être entièrement libérée lors de la fondation. La SA exige CHF 100'000, libéré à 20 % au moins (minimum CHF 50'000).",
+              "difficulty": "easy",
+              "section_id": "m6_L6_s2"
+            },
+            {
+              "id": "m6_L6_q6",
+              "type": "mcq",
+              "question": "Une association doit-elle s'inscrire au registre du commerce (CC 61) ?",
+              "options": [
+                "Oui, toujours, car seule l'inscription lui confère la personnalité juridique",
+                "Oui si elle exerce une activité commerciale ou est soumise à la révision",
+                "Non, sauf si elle compte plus de 250 membres",
+                "Non, jamais : elle n'est inscrite qu'au registre foncier"
+              ],
+              "answer": 1,
+              "explanation": "L'association acquiert la personnalité dès que la volonté d'être une corporation ressort des statuts (CC 60). Elle doit s'inscrire au RC si elle exerce une industrie en la forme commerciale pour atteindre son but ou si elle est tenue de faire réviser ses comptes (CC 61 al. 2).",
               "difficulty": "medium",
               "section_id": "m6_L6_s5"
             }
@@ -32289,6 +32469,36 @@
               "explanation": "Art. 288 LP : sont révocables les actes faits dans les cinq ans précédant la saisie ou la faillite dans l'intention reconnaissable de nuire aux créanciers. Les actes à titre gratuit (art. 286) et ceux du débiteur surendetté (art. 287) se limitent à l'année précédente.",
               "difficulty": "hard",
               "section_id": "m6_L7_s7"
+            },
+            {
+              "id": "m6_L7_q5",
+              "type": "mcq",
+              "question": "Dans quel délai le débiteur peut-il former opposition au commandement de payer (art. 74 LP) ?",
+              "options": [
+                "10 jours dès la notification",
+                "20 jours dès la notification",
+                "5 jours dès la notification",
+                "30 jours dès la notification"
+              ],
+              "answer": 0,
+              "explanation": "LP 74 : l'opposition se forme verbalement ou par écrit dans les 10 jours dès la notification du commandement de payer, sans motivation. Elle suspend la poursuite (LP 78).",
+              "difficulty": "easy",
+              "section_id": "m6_L7_s3"
+            },
+            {
+              "id": "m6_L7_q6",
+              "type": "mcq",
+              "question": "Le créancier dispose d'une reconnaissance de dette signée par le débiteur. Quelle mainlevée peut-il demander ?",
+              "options": [
+                "La mainlevée provisoire (art. 82 LP)",
+                "Aucune : il doit d'abord saisir le juge du fond",
+                "La faillite sans poursuite préalable",
+                "La mainlevée définitive (art. 80 LP)"
+              ],
+              "answer": 0,
+              "explanation": "Une reconnaissance de dette constatée par acte authentique ou sous seing privé permet la mainlevée provisoire (LP 82). Le débiteur peut alors intenter une action en libération de dette. La mainlevée définitive suppose un jugement exécutoire ou un titre assimilé (LP 80).",
+              "difficulty": "medium",
+              "section_id": "m6_L7_s4"
             }
           ],
           "mindmap_md": "# M6-L7\n## LP / SchKG — poursuites, mainlevée, faillite, concordat\n\n### Pertinence examen\n- **Haute** — going concern + détection fraude, délais souvent piégeux\n\n### Vue d'ensemble — 3 modes de poursuite (art. 38 LP)\n| Mode | Débiteur typique | Étendue | Article |\n|---|---|---|---|\n| **Saisie** | PP non commerçant | Biens individuels | art. 89 ss |\n| **Faillite** | PM, PP inscrite RC | Tout patrimoine | art. 191 ss |\n| **Réalisation gage** | Tout débiteur avec gage | Bien grevé | art. 151 ss |\n- Voie **imposée par la loi** (art. 39 LP) — pas de choix du créancier pour les PM\n- LP = procédure **purement formelle** au départ (toute créance, même fantaisiste, peut être lancée)\n\n### Institutions\n- **Office des poursuites** (cantonal) — notifie, tient le registre (visible 5 ans)\n- **Office des faillites** (cantonal) — administre les faillites ordinaires\n- **Juge de la poursuite** — autorité judiciaire pour mainlevée, faillite, concordat\n- **Registre des poursuites** (art. 8a LP) — extrait CHF 17, **réflexe Big 4 systématique** au début de mandat\n\n### Séquence type — mémo « C-O-M-F-C-R »\n- **C**ommandement de payer — opposition possible **10 j** (art. 74 LP)\n- **O**pposition — totale ou partielle, **sans motivation**, suspend la poursuite\n- **M**ainlevée — provisoire (art. 82, **20 j action**) ou définitive (art. 80)\n- **F**aillite — commination (20 j) → ouverture → masse → liquidation\n- **C**oncordat — alternative à la faillite\n- **R**évocatoire — actions pauliennes (art. 285-292)\n\n### Mainlevée — provisoire vs définitive\n| Critère | Provisoire (82 LP) | Définitive (80 LP) |\n|---|---|---|\n| Titre requis | **Reconnaissance de dette** signée | **Jugement** / sentence arbitrale |\n| Charge preuve | Inversée — débiteur agit | Acquise — créancier a déjà le titre |\n| Action en libération | **20 j** (art. 83 al. 2) | Pas d'action en libération |\n| Effet | Saisie/faillite si silence | Saisie/faillite immédiate |\n- Mémo : **« SiJu-Po-Dé »** — Signature → Provisoire / Jugement → Définitive\n\n### Faillite (art. 191-220 LP)\n- Ouverture : **dessaisissement** (art. 197) — société perd toute capacité de disposer\n- Tous actes du dirigeant après jugement = **inopposables à la masse**\n- Constitution de la **masse** : actifs saisissables au jour de l'ouverture\n- Publication FOSC + délai de **production des créances** (~ 1 mois, art. 232)\n- Tableau de distribution → liquidation → clôture\n- Pour l'auditeur : fin du **going concern** → passage aux **valeurs de liquidation**\n\n### Concordat (art. 293-336 LP)\n| Type | Articles | Continuité société | Effet patrimoine |\n|---|---|---|---|\n| **Concordat-dividende** | 314 LP | ✅ — restructuration | Reste au débiteur |\n| **Abandon d'actifs** | 317 LP | ❌ — dissolution | Transfert liquidateur |\n| **Concordat amiable** | 333-336 | Convention privée | Pas d'effet erga omnes |\n- Acceptation : **2/3 créanciers + 2/3 créances** OU **1/4 + 3/4** (art. 305)\n- Sursis concordataire : protection contre poursuites pendant négociation\n- **Swissair (2001)** = **abandon d'actifs** classique (art. 317) — précédent emblématique\n- Pour l'auditeur en sursis : going concern **conditionnel** (probabilité réalisation concordat)\n\n### Action révocatoire / paulienne (art. 285-292 LP)\n| Catégorie | Article | Délai d'arrière-plan | Élément subjectif |\n|---|---|---|---|\n| **Libéralité** | 286 LP | **1 an** | Aucun (objectif) |\n| **Surendettement** | 287 LP | **1 an** | Bénéficiaire savait |\n| **Intention dolosive** | 288 LP | **5 ans** | Intention démontrée |\n- But : reconstituer la masse en récupérant biens transférés indûment\n- Cible courante : ventes à prix vil aux actionnaires, gages tardifs aux proches\n- Pour l'auditeur : revue **paiements parties liées 12-24 mois** = signal d'alerte\n\n### Délais clés à mémoriser\n| Acte / Étape | Délai | Article |\n|---|---|---|\n| Opposition commandement | **10 j** | LP 74 |\n| Action en libération (post-prov.) | **20 j** | LP 83 al. 2 |\n| Commination de faillite | **20 j** | LP 159 |\n| Production créances (faillite) | ~ 1 mois | LP 232 |\n| Inscription registre poursuites | **5 ans** | LP 8a |\n| Action paulienne libéralité | 1 an | LP 286 |\n| Action paulienne dolus | 5 ans | LP 288 |\n\n### Implications going concern (ISA 570)\n- Poursuites en cours = **indicateur** going concern\n- Sursis concordataire = base de continuité **incertaine** (paragraphe d'observation)\n- Faillite = **valeurs de liquidation** obligatoires (≠ continuation)\n- Réflexe EY : extrait poursuites + FOSC + revue parties liées en planification\n\n### ⚠️ Pièges examen\n- **N°1** Opposition commandement = **10 j** (pas 30, pas dès réception postale)\n- **N°2** Action libération post-mainlevée provisoire = **20 j** (LP 83 al. 2)\n- **N°3** Mainlevée **provisoire = signature**, **définitive = jugement** (SiJu-Po-Dé)\n- **N°4** SA poursuivie **par faillite** obligatoirement (art. 39 LP) — pas saisie\n- **N°5** Concordat **2/3-2/3 OU 1/4-3/4** (LP 305) — double seuil alternatif\n- **N°6** Paulienne : **1 an** (286/287) vs **5 ans** (288 dolus)\n- **N°7** Registre poursuites visible **5 ans** (art. 8a) même si payé\n- **N°8** Dessaisissement (LP 197) = actes du failli **inopposables à la masse**\n\n### 💡 Mnémoniques\n- **« C-O-M-F-C-R »** — Commandement / Opposition / Mainlevée / Faillite / Concordat / Révocatoire\n- **« SiJu-Po-Dé »** — Signature→Provisoire / Jugement→Définitive\n- **« 10-20-20 »** — Opposition / Libération / Commination\n- **« 1-1-5 »** — Paulienne : Libéralité (1) / Surendettement (1) / Dolus (5)\n- **« 2/3 + 2/3 ou 1/4 + 3/4 »** — Concordat (305 LP)\n\n### 🔗 Renvois\n- **M6-L5** — Surendettement & avis juge (725b CO)\n- **M6-L8** — FOSC / RC (publication faillite et concordat)\n- **M6-L12** — Responsabilité civile et pénale (CP 165 gestion fautive)\n- **M2-L16** — Going concern (ISA 570)\n- **LP/SchKG art. 38, 67-79, 80-84, 191-220, 285-292, 293-336**\n- **Swissair (ATF 132 III 758)** — Continuation indue + concordat abandon d'actifs\n",
@@ -32439,6 +32649,36 @@
               "explanation": "L'extrait renseigne sur la raison sociale, le siège, le but, le capital, les organes et les pouvoirs de signature. Il ne contient ni les comptes ni la liste des actionnaires (tenue par la société, registre des actions).",
               "difficulty": "easy",
               "section_id": "m6_L8_s5"
+            },
+            {
+              "id": "m6_L8_q5",
+              "type": "mcq",
+              "question": "Un tiers peut-il se prévaloir de son ignorance d'une inscription au registre du commerce devenue opposable ?",
+              "options": [
+                "Oui, tant que l'inscription n'a pas été envoyée personnellement",
+                "Oui, s'il prouve sa bonne foi pendant toute la durée de validité de l'inscription",
+                "Non, sauf si l'inscription concerne une entreprise individuelle",
+                "Non : l'ignorance d'une inscription opposable ne peut pas être invoquée"
+              ],
+              "answer": 3,
+              "explanation": "Effet positif de la publicité (CO 936b) : une fois l'inscription opposable (jour ouvrable suivant sa publication dans la FOSC, sous réserve du délai de 15 jours pendant lequel un tiers peut prouver qu'il ne pouvait pas la connaître), nul ne peut se prévaloir de l'avoir ignorée.",
+              "difficulty": "hard",
+              "section_id": "m6_L8_s4"
+            },
+            {
+              "id": "m6_L8_q6",
+              "type": "mcq",
+              "question": "Quel portail public permet de consulter gratuitement les inscriptions au registre du commerce de toute la Suisse ?",
+              "options": [
+                "Zefix, l'index central des raisons de commerce",
+                "Le registre foncier fédéral en ligne",
+                "Le portail de l'ASR consacré aux réviseurs",
+                "Le site de l'Administration fédérale des contributions"
+              ],
+              "answer": 0,
+              "explanation": "Zefix (index central des raisons de commerce) renvoie aux extraits des registres cantonaux. L'auditeur y vérifie la raison sociale, le siège, le capital, les organes et les pouvoirs de signature. L'ASR tient un registre public des réviseurs agréés.",
+              "difficulty": "easy",
+              "section_id": "m6_L8_s5"
             }
           ],
           "mindmap_md": "# M6-L8\n## Registre du commerce et publications FOSC (CO 927-943)\n\n### Pertinence examen\n- **Moyenne** — opposabilité 15 j classique, IDE, inscriptions constitutives vs déclaratives\n\n### Architecture institutionnelle\n| Niveau | Acteur | Rôle |\n|---|---|---|\n| **Cantonal** | Office cantonal RC | Réquisitions, vérification, inscription, publication |\n| **Fédéral** | OFRC | Surveillance, zefix.ch, shab.ch, upreg.ch (IDE) |\n| **Judiciaire** | Tribunaux cantonaux | Sanctions, contestations, contrôle |\n- **Outils gratuits** : **zefix.ch** (recherche), **shab.ch** (FOSC), **upreg.ch** (IDE)\n- IDE format **CHE-XXX.XXX.XXX** — clé primaire pour toute la vie de l'entité\n\n### Qui doit s'inscrire ? (art. 931 CO)\n- **PP** : si activité commerciale ET chiffre d'affaires **≥ CHF 100'000**\n- ⚠️ Seuil = **CA**, pas bénéfice ni fonds propres\n- **PM** : toutes (SA, Sàrl, Coop, fondation) — inscription **constitutive**\n- **SNC** : inscriptible (effets de personnalité partielle)\n- **Association** : si activité commerciale (interprétation : CA significatif)\n\n### Mentions obligatoires\n| Mention | SA | Sàrl | Coopérative | SNC |\n|---|:-:|:-:|:-:|:-:|\n| Raison sociale | ✅ | ✅ | ✅ | ✅ |\n| Siège | ✅ | ✅ | ✅ | ✅ |\n| Capital | C-actions | C-social | Parts sociales | — |\n| Organes (CA + OR) | ✅ | Gérants | Administration | Associés |\n| Signatures + pouvoirs | ✅ | ✅ | ✅ | ✅ |\n| But social | ✅ | ✅ | ✅ | ✅ |\n| Date statuts | ✅ | ✅ | ✅ | — |\n| IDE | ✅ | ✅ | ✅ | ✅ |\n\n### Inscription constitutive vs déclarative\n| Acte | Effet | Exemples |\n|---|---|---|\n| **Constitutif** | RC fait naître / modifie | Création SA/Sàrl, modif. statuts, ↑↓ capital, **fusion/scission/transformation** |\n| **Déclaratif** | Opposabilité tiers seulement | Nomination/démission CA, signatures, succursales, OR |\n- Logique : actes **structurants** = constitutifs ; mouvements de **personnes** = déclaratifs\n- ⚠️ Nomination d'un membre CA = **déclaratif** (élu dès AG, RC le rend opposable)\n\n### Effet de l'inscription envers les tiers (art. 933 al. 2 CO)\n- Opposabilité aux tiers = **dès le jour ouvrable suivant publication FOSC**\n- ⚠️ Mais **tiers de bonne foi** peut se prévaloir de l'ancienne situation pendant **15 jours** après publication\n- Trois délais à distinguer absolument :\n  - **15 j** — opposabilité tiers (933 al. 2 CO)\n  - **30 j** — opposition créanciers réduction de capital (653k CO)\n  - **3 mois** — opposition créanciers fusion (25 LFus)\n\n### Diligence auditeur (NAS 240, NAS 250)\n- **Extrait RC à jour** au début de chaque mandat (CHF 17-30, instantané)\n- Vérifier :\n  - Raison sociale + siège + IDE\n  - Administrateurs et signatures (cohérence avec contrats audités)\n  - Capital (constitution / libération / modifications)\n  - But social (cohérence avec activité réelle)\n  - OR inscrit (cohérence avec mandat signé)\n  - Historique FOSC sur **12 mois** (changements, alertes)\n- **Toute incohérence** organes inscrits / signatures effectives = signal **faux dans les titres** (CP 251)\n\n### FOSC — Feuille Officielle Suisse du Commerce\n- Publication électronique obligatoire (**shab.ch**, gratuit)\n- Abonnement aux **alertes par société** possible\n- Source de vérité publique → opposabilité erga omnes\n- Délai de publication court (quelques jours après inscription RC)\n- Effet : « ce qui est public est opposable » + « les tiers peuvent s'en prévaloir »\n\n### Réquisition au RC — procédure\n- Forme écrite, signature légalisée\n- Documents joints (statuts, PV AG, rapport apports, etc.)\n- Délai de traitement : ~ 2-3 semaines selon canton\n- Rejet si pièce manquante / non-conformité → renvoi au déclarant\n- **Recours** au tribunal cantonal si refus contesté\n\n### ⚠️ Pièges examen\n- **N°1** Opposabilité tiers **15 j** (933 al. 2) — pas 30, pas 1 mois\n- **N°2** Seuil inscription PP = **CHF 100'000 de CA** (pas bénéfice)\n- **N°3** Création SA = **constitutif** (643 al. 1 CO) — pas seulement déclaratif\n- **N°4** Nomination CA = **déclaratif** (effective dès AG, RC opposabilité)\n- **N°5** Délais voisins : **15 j** (FOSC) / **30 j** (réduction capital) / **3 mois** (fusion)\n- **N°6** IDE attribué **une fois pour toutes** — survit aux changements de raison sociale\n- **N°7** Modifications capital SA = **constitutives** (642, 650, 653 CO)\n- **N°8** Tiers de bonne foi peut **invoquer l'ancienne situation** pendant 15 j\n\n### 💡 Mnémoniques\n- **« C-D-15 »** — Constitutif (création/structure) / Déclaratif (personnes) / 15 j opposabilité\n- **« 15-30-90 »** — FOSC / Réduction capital / Fusion (3 délais à ne pas confondre)\n- **« ZeFix réflexe »** — auditeur consulte systématiquement\n- **« CHE-XXX = IDE »** — identifiant unique perpétuel\n- **« 100k CA »** — seuil inscription PP\n\n### 🔗 Renvois\n- **M6-L2** — Constitution SA (RC constitutif, art. 643)\n- **M6-L6** — Autres formes (inscriptions par forme)\n- **M6-L9** — LFus (effets RC fusion/scission/transformation)\n- **M2-L1** — Vérifications RC en audit\n- **CO 927-943** — Articles RC (réforme 2021)\n- **CO 933 al. 2** — Opposabilité 15 jours\n- **CO 643, 936b** — Effets constitutifs\n",
@@ -32585,6 +32825,36 @@
               ],
               "answer": 3,
               "explanation": "LFus 11 al. 1 : bilan intermédiaire si la date de clôture du bilan précède de plus de six mois la conclusion du contrat de fusion ou si des modifications importantes de la situation patrimoniale sont intervenues.",
+              "difficulty": "medium",
+              "section_id": "m6_L9_s6"
+            },
+            {
+              "id": "m6_L9_q5",
+              "type": "mcq",
+              "question": "Quel document fixe le rapport d'échange des parts sociales lors d'une fusion (LFus 13) ?",
+              "options": [
+                "La décision préalable de l'AFC sur la neutralité fiscale de l'opération",
+                "Le rapport de l'organe de révision de la société absorbante",
+                "Le contrat de fusion conclu par les organes supérieurs de direction",
+                "Le bilan de fusion approuvé par le registre du commerce"
+              ],
+              "answer": 2,
+              "explanation": "LFus 12-13 : le contrat de fusion, conclu par les organes supérieurs de direction et soumis à l'approbation de l'AG, fixe notamment le rapport d'échange et, le cas échéant, le montant de la soulte. Le rapport de fusion l'explique ; un expert-réviseur agréé le vérifie.",
+              "difficulty": "medium",
+              "section_id": "m6_L9_s2"
+            },
+            {
+              "id": "m6_L9_q6",
+              "type": "mcq",
+              "question": "Une PME peut-elle renoncer au rapport de fusion et à sa vérification par un expert-réviseur ?",
+              "options": [
+                "Non, ces deux documents restent obligatoires pour toutes les sociétés",
+                "Oui, sur simple décision du conseil d'administration",
+                "Oui, mais seulement si la fusion est fiscalement neutre",
+                "Oui, avec l'accord de tous les associés (LFus 14 al. 2 et 15 al. 2)"
+              ],
+              "answer": 3,
+              "explanation": "Les PME (au sens de LFus 2 let. e) peuvent renoncer à l'établissement du rapport de fusion et à sa vérification si tous les associés y consentent.",
               "difficulty": "medium",
               "section_id": "m6_L9_s6"
             }
@@ -32760,6 +33030,36 @@
               "explanation": "Art. 404 CO : le mandat peut être révoqué ou répudié en tout temps par chacune des parties ; celle qui le fait en temps inopportun doit indemniser l'autre du dommage causé (al. 2). Le TF juge cette règle impérative.",
               "difficulty": "medium",
               "section_id": "m6_L10_s7"
+            },
+            {
+              "id": "m6_L10_q5",
+              "type": "mcq",
+              "question": "Quel est le délai de prescription ordinaire des créances selon l'art. 127 CO ?",
+              "options": [
+                "20 ans",
+                "10 ans",
+                "3 ans",
+                "5 ans"
+              ],
+              "answer": 1,
+              "explanation": "CO 127 : 10 ans, sauf disposition contraire. CO 128 : 5 ans pour les créances périodiques (loyers, intérêts), les fournitures de vivres et les créances des travailleurs, notamment.",
+              "difficulty": "easy",
+              "section_id": "m6_L10_s6"
+            },
+            {
+              "id": "m6_L10_q6",
+              "type": "mcq",
+              "question": "Quel est le taux de l'intérêt moratoire dû par un débiteur en demeure dans une dette d'argent, à défaut de convention (CO 104) ?",
+              "options": [
+                "5 % l'an",
+                "Le taux directeur de la BNS",
+                "Le taux minimal LPP",
+                "3 % l'an"
+              ],
+              "answer": 0,
+              "explanation": "CO 104 al. 1 : le débiteur en demeure pour le paiement d'une somme d'argent doit l'intérêt moratoire à 5 % l'an, même si un taux inférieur avait été stipulé pour l'intérêt conventionnel.",
+              "difficulty": "medium",
+              "section_id": "m6_L10_s5"
             }
           ],
           "mindmap_md": "# M6-L10\n## Droit des contrats — CO partie générale (CO 1-183)\n\n### Pertinence examen\n- **Haute** — base transversale, vices du consentement et prescription souvent piégés\n\n### Formation du contrat (art. 1-10 CO)\n- **3 conditions cumulatives** :\n  - Volontés **concordantes** (offre + acceptation)\n  - Sur les **points essentiels** (objet, prix, parties)\n  - **Animus contrahendi** (volonté de s'obliger)\n- Manifestation **expresse ou tacite** (art. 1 al. 2)\n- **Contre-offre** = acceptation modifiée = nouvelle offre (art. 5)\n- Vitrine / catalogue / e-commerce = **invitation à offrir** (sauf indication contraire)\n- ⚠️ Le client met au panier = il **offre** ; le marchand confirme = il **accepte**\n\n### Forme du contrat (art. 11-16 CO)\n| Forme | Cas typique | Sanction non-respect |\n|---|---|---|\n| **Authentique** (notaire) | Vente immobilière (216), pacte successoral, fondation, **constitution SA** | Nullité absolue |\n| **Écrite qualifiée** (signature) | Cautionnement (493), reprise dette (175-176) | Nullité |\n| **Écrite simple** | Bail à durée déterminée, certains contrats | Forme probatoire |\n| **Forme libre** | Vente mobilière, mandat, travail | Aucune (oral suffit) |\n- Forme **conventionnelle** : présumée constitutive (art. 16 al. 1) sauf preuve contraire\n- ⚠️ Promesse de vente immobilière sous seing privé = **nulle** (216 al. 2)\n\n### Objet du contrat — illicéité et impossibilité (art. 19-20)\n- Objet doit être : **possible, licite, déterminé**\n- Causes de nullité (art. 20) :\n  - Objet illicite (contrat de blanchiment, corruption)\n  - Objet contraire aux **bonnes mœurs**\n  - Objet **impossible** ab initio\n- ⚠️ Clause excluant la responsabilité pour **faute grave** = nulle (art. 100 al. 1)\n- Nullité (art. 20) = **absolue**, d'office, en tout temps\n- ≠ Invalidation (vices consentement) = **relative**, sur demande, **1 an**\n\n### Vices du consentement (art. 23-31 CO)\n| Vice | Article | Définition |\n|---|---|---|\n| **Erreur essentielle** | 24 al. 1 | Élément nécessaire du contrat, reconnaissable |\n| **Dol** | 28 | Tromperie intentionnelle |\n| **Crainte fondée** | 29-30 | Menace illicite |\n- **Délai 1 an** dès **découverte** (erreur/dol) ou **cessation** (crainte) — art. 31\n- ⚠️ Délai = **péremption** (pas prescription) — pas interruptible\n- Sanction : **invalidation** du contrat → effet rétroactif (ex tunc)\n- Erreur sur **motifs** (24 al. 2) = pas suffisante si privée\n\n### Inexécution et demeure (art. 97-109)\n- **Inexécution simple** = pas de retard → DI (97)\n- **Demeure** = retard caractérisé après **interpellation** (102 al. 1)\n  - Exception : terme fixe (« dies interpellat pro homine »)\n- Effets demeure :\n  - **Intérêts moratoires 5%** (104 CO)\n  - **DI** pour retard\n  - Possibilité de **résoudre** le contrat (107) avec délai supplémentaire\n- 3 options du créancier (107 al. 2) :\n  - Exiger l'exécution + DI retard\n  - **Renoncer** à l'exécution + DI positifs (intérêt positif)\n  - **Résoudre** + DI négatifs (intérêt négatif)\n\n### Prescription (art. 127-142, réforme 2020)\n| Type | Délai | Article |\n|---|---|---|\n| **Délai ordinaire** | **10 ans** | 127 |\n| **Délai court** (loyer, salaire, factures pros.) | **5 ans** | 128 |\n| **RC délictuelle (réforme 2020)** | **3 ans** connaissance / **10 ans** absolu | 60 |\n| **Dommages corporels graves** (nouveau 2020) | **20 ans** absolu | 60 al. 1bis |\n| **Reconnaissance dette** | Recommence à courir | 135 |\n- Différence **prescription vs péremption** :\n  - **Prescription** = éteint l'action (pas le droit), invoquée par débiteur, interruptible\n  - **Péremption** = éteint le droit lui-même, d'office, non interruptible\n- ⚠️ Réforme 2020 : prolongement de 1 à 3 ans pour RC simple, 20 ans dommages corporels\n\n### Mandat (art. 394-406) — révocabilité art. 404\n- Définition (394) : prestation **sans obligation de résultat**\n- ≠ Contrat de travail (319) : rapport de subordination\n- ≠ Contrat d'entreprise (363) : obligation de résultat\n- **Art. 404 CO — règle d'or** :\n  - Mandat **révocable en tout temps**, par les 2 parties\n  - **Toute clause contraire = NULLE** (durée minimale, indemnité forfaitaire, préavis)\n  - MAIS : résiliation **en temps inopportun** → DI possible\n- ⚠️ Test HISO pour qualifier : **H**oraires / **I**nstructions / **S**ubstitution / **O**utils\n\n### Cession de créance et reprise de dette (art. 164-183)\n| Opération | Accord requis | Effet | Article |\n|---|---|---|---|\n| **Cession créance** | Pas d'accord débiteur | Cessionnaire = nouveau créancier | 164 |\n| **Reprise de dette interne** | Pas d'accord créancier | Ancien débiteur reste tenu | 175 |\n| **Reprise de dette externe** | **Accord du créancier** requis | Libération ancien débiteur | 176 |\n| **Reprise patrimoine** | Universel | Solidarité **3 ans** | 181 CO + LFus 69-76 |\n- Mémo : « **Cède SANS, Prend AVEC** »\n- ⚠️ Reprise patrimoine 181 CO + 75-76 LFus = **piège M&A** (passifs cachés)\n\n### ⚠️ Pièges examen\n- **N°1** Délai vices consentement = **1 an péremption** (31 CO), pas prescription\n- **N°2** Vente immobilière sans acte authentique = **NULLE** (216 al. 2)\n- **N°3** Art. 404 CO : clause de durée mandat = **NULLE** (mais DI possibles)\n- **N°4** Prescription ordinaire **10 ans** / délictuelle **3 ans connaissance** (réforme 2020)\n- **N°5** Cession créance **sans accord débiteur** vs reprise externe **avec accord créancier**\n- **N°6** Demeure = interpellation **sauf terme fixe** (dies interpellat pro homine)\n- **N°7** Clause exonération **faute grave** = nulle (100 al. 1)\n- **N°8** Nullité (20) ≠ invalidation (23-31) — absolue vs relative\n\n### 💡 Mnémoniques\n- **« E-D-C × 1 an »** — Erreur / Dol / Crainte, péremption 1 an\n- **« HISO »** — Horaires / Instructions / Substitution / Outils (qualification CIT)\n- **« MAINS LIBRES »** — Art. 404 mandat révocable en tout temps\n- **« Cède SANS, Prend AVEC »** — Cession 164 / reprise 176\n- **« 3-10-20 »** — RC : connaissance / absolu / dommages corporels (réforme 2020)\n- **« 5-10 »** — Prescription courte (128) / ordinaire (127)\n\n### 🔗 Renvois\n- **M6-L11** — Droit du travail (CIT vs mandat, art. 319 ss)\n- **M6-L12** — Responsabilité civile (RC 41 CO + 60 prescription)\n- **M3 — comptabilité** — Provisions pour litiges, créances douteuses\n- **CO 1-10, 11-16, 19-20, 23-31, 97-109, 127-142, 164-183, 394-406**\n- **Réforme 2020** — Prescription RC (3 ans connaissance, 20 ans dommages corporels)\n",
@@ -32915,6 +33215,36 @@
               "explanation": "Art. 333 al. 1 CO : les rapports de travail passent à l'acquéreur avec tous les droits et obligations, à moins que le travailleur ne s'y oppose. L'ancien et le nouvel employeur répondent solidairement des créances échues (al. 3).",
               "difficulty": "medium",
               "section_id": "m6_L11_s6"
+            },
+            {
+              "id": "m6_L11_q5",
+              "type": "mcq",
+              "question": "Quelle est la durée maximale du temps d'essai dans un contrat de travail de durée indéterminée (CO 335b) ?",
+              "options": [
+                "1 mois",
+                "3 mois",
+                "12 mois",
+                "6 mois"
+              ],
+              "answer": 1,
+              "explanation": "CO 335b : le premier mois est considéré comme temps d'essai ; il peut être prolongé par écrit jusqu'à 3 mois au maximum. Pendant ce temps, le délai de congé est de 7 jours.",
+              "difficulty": "easy",
+              "section_id": "m6_L11_s5"
+            },
+            {
+              "id": "m6_L11_q6",
+              "type": "mcq",
+              "question": "Pendant la première année de service, combien de temps l'employeur doit-il au minimum verser le salaire d'un travailleur malade (CO 324a) ?",
+              "options": [
+                "3 semaines",
+                "2 mois",
+                "2 semaines",
+                "720 jours"
+              ],
+              "answer": 0,
+              "explanation": "CO 324a al. 2 : au moins 3 semaines durant la première année de service, puis une durée plus longue selon les échelles cantonales (bernoise, zurichoise, bâloise). 720 jours est la durée usuelle d'une assurance perte de gain qui remplace cette obligation.",
+              "difficulty": "medium",
+              "section_id": "m6_L11_s3"
             }
           ],
           "mindmap_md": "# M6-L11\n## Droit du travail (CO 319-362 + LTr)\n\n### Pertinence examen\n- **Haute** — qualification CIT, 336c congé inopportun, transfert d'entreprise récurrents\n\n### Qualification CIT (art. 319 CO)\n- **Critère décisif** : rapport de **subordination**\n- ≠ Mandat (394) : indépendance, pas de subordination\n- ≠ Contrat d'entreprise (363) : obligation de résultat\n- Test **HISO** :\n  - **H**oraires imposés\n  - **I**nstructions reçues\n  - **S**ubstitution interdite\n  - **O**utils fournis par l'employeur\n- HISO ≥ 3 → c'est un CIT\n- ⚠️ **Faux indépendants** = risque MAJEUR : requalification AVS/SUVA → charges sociales rétroactives **5 ans** + intérêts\n\n### Caractère semi-impératif et impératif\n- **Art. 361 CO** — dispositions impératives (jamais dérogeables)\n- **Art. 362 CO** — semi-impératives (dérogeables seulement **en faveur du travailleur**)\n- Logique : protection du **contractant faible**\n- ⚠️ Une clause défavorable au travailleur sur ces points = **NULLE** (CO 20)\n\n### Obligations du travailleur (art. 321-321e)\n- Devoir de **fidélité** (321a) : préserver intérêts légitimes employeur\n- **Non-concurrence pendant CIT** (321a al. 4) : pas de travail concurrent rémunéré\n- **Responsabilité 321e** : tient compte **risque professionnel** — souvent fortement réduite\n- **Clause de non-concurrence post-CIT** (340-340c) :\n  - Forme écrite obligatoire\n  - **Lieu, temps, genre** limités (typique : 2 ans, canton, mêmes activités)\n  - **Indemnité de carence** souvent requise (jurisprudence)\n  - ⚠️ **Caducité automatique** (340c al. 2) si **employeur licencie sans motif imputable** au travailleur\n  - Réduction par le juge si excessive (340a al. 2)\n\n### Salaire et empêchement (art. 324a)\n- Empêchement non fautif (maladie, accident, obligation légale) → salaire pour **temps limité**\n- Échelles cantonales (toutes valables) :\n  - **Bernoise** : 3 sem 1re année, +1 par 2-4 ans, max ~ 4 mois\n  - **Bâloise** : abondante (jusqu'à 6 mois 25e année)\n  - **Zurichoise** : nuancée\n- Échelle = règle supplétive — convention peut prévoir mieux (semi-impératif 362)\n- Assurance **PGM 80% / 720-730 j** courante en CCT/usage\n\n### Vacances (art. 329a-329d)\n- **Min légal** :\n  - **5 semaines** jusqu'à 20 ans révolus\n  - **4 semaines** au-delà\n- **6 semaines** fréquentes par CCT / convention\n- ⚠️ **Conversion en argent pendant CIT = NULLE** (329d al. 2)\n- Conversion possible **uniquement à la fin** du CIT\n- Clause « salaire global incluant vacances » : très restrictive (jurisprudence sévère)\n\n### Délais de résiliation (art. 335c)\n| Ancienneté | Délai |\n|---|---|\n| Temps d'essai (≤ 3 mois) | **7 jours** |\n| 1re année | **1 mois** |\n| 2-9 ans | **2 mois** |\n| Au-delà 9 ans | **3 mois** |\n- Pour la **fin d'un mois** (sauf temps d'essai)\n- CCT/contrat peuvent prévoir délais plus longs — pas plus courts (sauf temps d'essai)\n\n### Congé en temps inopportun (art. 336c) — protection\n- Périodes de **protection légale** :\n  - Maladie / accident non fautif (30 j 1re année, 90 j 2-5 ans, 180 j 6+ ans)\n  - **Grossesse + 16 semaines** post-accouchement\n  - Service militaire (avant + pendant + 4 sem. après)\n  - Aide étranger sur ordre autorité fédérale\n- **Effets** :\n  - Congé **donné PENDANT** la période protégée → **NUL** (rapport continue)\n  - Congé donné **AVANT** mais expirant pendant → **délai suspendu**, reprend à la fin de protection\n- ⚠️ **PAS BESOIN** de protestation préalable (différence avec 336)\n\n### Congé abusif (art. 336)\n- Motifs proscrits (liste exemplative) :\n  - Caractéristique personnelle (origine, religion, sexe, orientation, âge)\n  - Exercice d'un droit constitutionnel\n  - Appartenance syndicale\n  - Whistleblowing (dénonciation bonne foi)\n- **Effet** : contrat **prend fin** quand même, mais **indemnité** jusqu'à **6 mois de salaire** (336a)\n- ⚠️ **Protestation écrite OBLIGATOIRE** avant fin du contrat (336b al. 1) — péremption\n- Distinct du congé **nul** (336c) qui prolonge le contrat\n\n### Transfert d'entreprise (art. 333-333a)\n- **Transfert automatique** des CIT à l'acquéreur avec tous droits et obligations\n- Travailleur peut **s'opposer** au transfert → CIT prend fin légalement\n- **Responsabilité solidaire 2 ans** entre cédant et cessionnaire pour créances échues / à échoir\n- **Art. 333a CO** — information préalable :\n  - Information écrite aux travailleurs / commission du personnel\n  - **6 semaines avant** transfert (jurisprudence)\n  - Consultation si **mesures** envisagées\n- ⚠️ À combiner avec **335d-335g** (licenciements collectifs > 10% sur 30 j)\n- Lien avec **LFus 69-76** (transfert patrimoine) et **CO 181** (reprise patrimoine)\n\n### LTr — Loi sur le Travail (durée, sécurité)\n- Durée hebdo : **45 h** (industrie, vente, bureau) ou **50 h** (autres)\n- Heures supplémentaires : majoration **25%** (art. 13 LTr) + récupération en temps possible\n- Travail de **nuit** (23h-06h) : majoration et restrictions\n- **Repos quotidien 11 h** entre 2 journées\n- Repos hebdo : **dimanche** sauf exception (LTr 18)\n- Cadres supérieurs : exempts de la LTr (art. 3 al. 1 let. d) — mais soumis CO\n\n### ⚠️ Pièges examen\n- **N°1** Congé inopportun (336c) = **NUL** (sans protestation), abusif (336) = valide mais **indemnité** (protestation)\n- **N°2** Faux indépendants : **5 ans rétro** charges sociales (AVS/SUVA/LPP)\n- **N°3** Clause non-concurrence **caduque** si employeur licencie sans motif imputable (340c al. 2)\n- **N°4** Conversion vacances en argent **pendant CIT = NULLE** (329d al. 2)\n- **N°5** Information transfert **6 semaines avant** (333a) — pas après\n- **N°6** Délais résiliation : **1-2-3 mois** selon ancienneté, **fin de mois**\n- **N°7** Vacances min = **4 sem adulte / 5 sem < 20 ans / 6 sem usage CCT**\n- **N°8** Protection 336c : maladie **30-90-180 j** selon ancienneté\n\n### 💡 Mnémoniques\n- **« HISO »** — Test CIT vs indépendant (Horaires/Instructions/Substitution/Outils)\n- **« 4-5-6 »** — Vacances : adulte / < 20 ans / usage CCT\n- **« 1-2-3 »** — Délais résiliation : 1re année / 2-9 ans / au-delà 9 ans\n- **« 30-90-180 »** — Protection maladie : 1re / 2-5 / 6+ ans\n- **« Auto-Op-Solid-Info »** — Art. 333 transfert : Automatique / Opposition / Solidarité 2 ans / Info 6 sem\n- **« Nul vs Indemnité »** — 336c (nul, contrat continue) vs 336 (valide + indemnité)\n\n### 🔗 Renvois\n- **M6-L9** — LFus (transfert patrimoine vs transfert entreprise 333)\n- **M6-L10** — CO général (mandat vs CIT, qualification)\n- **M6-L12** — Responsabilité civile (faute, art. 41 + 60)\n- **M7** — Charges sociales (LIFD, LAVS, LPP)\n- **CO 319-362** — Articles CIT\n- **LTr** — Durée du travail et protection\n- **CO 335d-335g** — Licenciements collectifs (M&A)\n",
@@ -33068,6 +33398,36 @@
               "explanation": "CO 755 : l'organe de révision répond du dommage causé en manquant intentionnellement ou par négligence à ses devoirs. CO 759 : solidarité différenciée (et plafonnée pour le réviseur en cas de simple négligence, al. 1bis).",
               "difficulty": "hard",
               "section_id": "m6_L12_s4"
+            },
+            {
+              "id": "m6_L12_q5",
+              "type": "mcq",
+              "question": "Quelles conditions cumulatives fondent la responsabilité d'un administrateur envers la société (CO 754) ?",
+              "options": [
+                "Un dommage, une violation des devoirs, une causalité adéquate et une faute",
+                "La seule violation des devoirs, sans qu'un dommage ou une faute soient nécessaires",
+                "Une plainte pénale, un dommage et la décharge refusée par l'AG",
+                "Un dommage supérieur à 10 % du capital et une faute grave"
+              ],
+              "answer": 0,
+              "explanation": "La responsabilité des organes suppose quatre conditions cumulatives : un dommage, une violation (intentionnelle ou par négligence) des devoirs, un lien de causalité adéquate et une faute. La négligence légère suffit.",
+              "difficulty": "medium",
+              "section_id": "m6_L12_s1"
+            },
+            {
+              "id": "m6_L12_q6",
+              "type": "mcq",
+              "question": "À quelle autorité un intermédiaire financier adresse-t-il une communication de soupçons de blanchiment (LBA) ?",
+              "options": [
+                "À l'Autorité fédérale de surveillance en matière de révision (ASR) à Berne",
+                "Au Ministère public de la Confédération, à la place de la FINMA",
+                "Au Bureau de communication en matière de blanchiment d'argent (MROS)",
+                "À l'Administration fédérale des contributions (AFC)"
+              ],
+              "answer": 2,
+              "explanation": "LBA 9 : l'intermédiaire financier communique sans délai ses soupçons fondés au MROS (Money Laundering Reporting Office Switzerland), rattaché à fedpol, qui analyse et transmet le cas échéant aux autorités de poursuite pénale.",
+              "difficulty": "medium",
+              "section_id": "m6_L12_s6"
             }
           ],
           "mindmap_md": "# M6-L12\n## Responsabilité civile et pénale des organes (CO 754-759, CP 158/165/251)\n\n### Pertinence examen\n- **Haute** — pivot du droit suisse de la SA, risque personnel auditeur, Swissair\n\n### Art. 754 CO — RC civile des organes (pivot)\n- **4 conditions cumulatives — mémo MFDC** :\n  - **M**anquement (violation devoir loi/statuts/diligence)\n  - **F**aute (intention ou négligence — art. 754 al. 1)\n  - **D**ommage (matériel, certain, chiffré)\n  - **C**ausalité (naturelle ET adéquate entre manquement et dommage)\n- Une seule condition manquante = pas de responsabilité\n- Solidarité possible entre administrateurs et OR (art. 759)\n- Personnes visées : membres CA + **toutes personnes s'occupant de la gestion** (CEO, CFO, directeurs)\n\n### Devoirs des organes (art. 717 CO)\n- **Diligence nécessaire** — celle d'un homme d'affaires expérimenté\n- **Fidélité** — veillance aux intérêts de la société\n- **Business judgment rule** (jurisprudence) — protection si :\n  - Décision **éclairée** (information adéquate récoltée)\n  - **Pas de conflit d'intérêts** (cf. 717a)\n  - Décision **dans l'intérêt social** (raisonnable a priori)\n- Sans BJR, plus personne ne deviendrait administrateur d'une société à risque\n- ⚠️ BJR **ne protège pas** contre la violation d'un devoir légal explicite (725b, 728, etc.)\n\n### Actions en responsabilité — 754, 756, 757\n| Action | Qui agit | Bénéficiaire | Contexte |\n|---|---|---|---|\n| **754 sociale** | Société (CA / nouvelle direction) | **Société** | Avant faillite |\n| **756 sociale par actionnaire** | Actionnaire (**1 action suffit**) | **Société** | Avant faillite |\n| **757 en faillite** | Masse en faillite (cession 260 LP possible) | Masse | Pendant faillite |\n| **Créanciers indiv.** | Créancier | Lui-même | Faillite ou hors faillite |\n- **ATF 132 III 758** — 1 action suffit (756), honoraires récupérables si succès\n- Action 756 = **arme nucléaire** des minoritaires — dissuasif\n\n### Décharge — art. 758 CO\n- Vote de l'AG libérant les organes de leur responsabilité\n- **Effet relatif** :\n  - Ne lie que **actionnaires ayant voté** ou voté favorablement\n  - **PAS opposable** aux nouveaux actionnaires (acquérant après vote)\n  - **PAS opposable** aux **créanciers sociaux**\n  - **PAS d'effet** sur les faits **dissimulés** au moment du vote\n- Délai pour agir post-décharge : **6 mois** pour actionnaire qui n'a pas voté décharge\n- ⚠️ La décharge n'est PAS une protection absolue — souvent surévaluée à l'examen\n\n### Délais de prescription (art. 760 CO)\n| Délai | Durée | Point de départ |\n|---|---|---|\n| **Relatif** | **5 ans** | Connaissance du dommage et de la personne |\n| **Absolu** | **10 ans** | Acte ou cessation de l'acte |\n| **Infraction pénale** (al. 2, depuis 2020) | au moins le délai pénal | Acte |\n- Réforme 2020 : l'art. 60 CO passe à 3 ans, **pas** l'art. 760 (toujours 5 ans)\n- ⚠️ **5 ans depuis la CONNAISSANCE**, pas depuis le manquement\n- Une fraude cachée pendant 8 ans, découverte aujourd'hui : le délai absolu de 10 ans dès l'acte ne laisse que 2 ans, sauf prolongation pénale (al. 2)\n\n### Art. 755 CO — responsabilité OR\n- Mêmes conditions que 754 (MFDC) appliquées à l'auditeur\n- Solidarité avec administrateurs (art. 759)\n- Sources de manquement OR :\n  - Violation des **NAS/ISA** (règles de l'art)\n  - Manquement à l'**indépendance** (728)\n  - Défaut **avis au juge** en surendettement (728c / 729c)\n  - Rapport **inexact / incomplet** (728b)\n- **Assurance RC obligatoire** pour OR agréés\n- **ATF 132 III 758** : devoir de **détecter anomalies significatives même cachées** (pas surface seulement)\n- Swissair (2001) — KPMG mise en cause, jurisprudence fondatrice\n\n### Responsabilité pénale — pénal commercial\n| Infraction | Article | Peine max | Élément clé |\n|---|---|---|---|\n| **Gestion déloyale** | **CP 158** | 3 ans / **5 ans aggravé** | Lésion volontaire intérêts confiés |\n| **Faux dans les titres** | **CP 251** | 5 ans | Document falsifié (comptes !) |\n| **Gestion fautive** | **CP 165** | 5 ans | Négligence ayant causé l'insolvabilité |\n| **Banqueroute frauduleuse** | **CP 163** | 5 ans | Dissimulation actifs en faillite |\n| **Diminution effective patrimoine** | **CP 164** | 5 ans | Diminution actifs préjudiciable créanciers |\n| **Blanchiment d'argent** | **CP 305bis** | 3 ans / 5 ans (cas grave) | Provenance criminelle |\n| **Corruption privée** | **CP 322octies / novies** | 3 ans | Avantage indu (réforme 2016) |\n- ⚠️ Comptes **falsifiés** = CP 251 (faux dans les titres) — risque OR + CFO direct\n\n### LBA — Loi anti-blanchiment\n- **Devoir de vigilance** intermédiaires financiers (banques, fiduciaires, audit financier)\n- **KYC** : identification cocontractant + ADE (ayant droit économique)\n- **Documentation** des contrôles (10 ans conservation)\n- **Communication MROS** si **soupçon fondé** (LBA 9)\n- Violations : pénal (CP 305ter défaut de vigilance, CP 305bis blanchiment) + sanctions FINMA\n- MROS : ~ 8000 communications / an depuis 2020\n- ⚠️ Sujet **central** pour OR de banques, fiduciaires, gestionnaires de fortune\n\n### Convergence civile / pénale / disciplinaire\n- Même fait peut entraîner **plusieurs sanctions** :\n  - Civile (754/755) → DI\n  - Pénale (CP 158, 251, 165, 305bis) → peine privative liberté + amende\n  - Disciplinaire (ASR) → suspension / retrait agrément\n  - Fiscale (LIFD 175-176) → soustraction, fraude\n- Auditeur en faute = risque **personnel ET professionnel** majeur\n\n### ⚠️ Pièges examen\n- **N°1** Conditions 754 = **MFDC** cumulatives — une seule manquante = pas de RC\n- **N°2** Délais réforme 2020 : **3-10-20** (connaissance / absolu / dommages corporels)\n- **N°3** Décharge **n'efface pas** les faits dissimulés (effet limité)\n- **N°4** Action 756 : **1 action suffit** (ATF 132 III 758)\n- **N°5** Business judgment rule **ne protège pas** contre violation devoir explicite (725b)\n- **N°6** CP 158 = gestion **déloyale**, CP 165 = gestion **fautive**, CP 251 = **faux titres**\n- **N°7** Délai 3 ans = **depuis connaissance** (pas depuis manquement)\n- **N°8** LBA : **communication MROS** = obligation, pas faculté (LBA 9)\n\n### 💡 Mnémoniques\n- **« MFDC »** — 4 conditions art. 754 (Manquement / Faute / Dommage / Causalité)\n- **« 3-10-20 »** — Prescription : connaissance / absolue / dommages corporels (réforme 2020)\n- **« 158-251-165 »** — 3 piliers pénal commercial (déloyale / faux titres / fautive)\n- **« 1 action suffit »** — Action 756 (ATF 132 III 758)\n- **« BJR ≠ devoir explicite »** — Business judgment ne couvre pas la violation directe de la loi\n- **« KYC + MROS »** — LBA : identification + communication\n\n### 🔗 Renvois\n- **M6-L3** — Organes (716a, 717a conflits)\n- **M6-L4** — Droits actionnaires (action 756)\n- **M6-L5** — Surendettement (725b + 728c → 754/755)\n- **M6-L7** — LP/SchKG (faillite, action paulienne, CP 163-165)\n- **M2-L1** — Cadre légal audit, indépendance (728)\n- **M2-L14** — Rapport CA vs AG (728a, 728b)\n- **M2-L15** — Communication OR, devoir d'avis\n- **CO 717, 717a, 754-760** — Responsabilité civile\n- **CP 158, 163-165, 251, 305bis, 322octies** — Pénal commercial\n- **LBA** — Blanchiment et vigilance\n",
@@ -43374,6 +43734,151 @@
               "explanation": "L'analyse exhaustive identifie les éléments atypiques ; mais les exceptions doivent être investiguées et l'analyse ne fournit pas, à elle seule, des éléments probants suffisants sur toutes les assertions.",
               "difficulty": "medium",
               "section_id": "m9_REV_s5"
+            },
+            {
+              "id": "m9_REV_nq1",
+              "type": "mcq",
+              "question": "Un contrôle manuel est exécuté chaque jour. Quelle taille d'échantillon retient-on couramment pour tester son efficacité ?",
+              "options": [
+                "1 seul élément, comme pour un contrôle annuel",
+                "Environ 25 éléments (fourchette usuelle 15 à 40)",
+                "2 à 5 éléments, comme pour un contrôle mensuel",
+                "La totalité des occurrences de l'exercice (100 %)"
+              ],
+              "answer": 1,
+              "explanation": "Les tailles indicatives dépendent de la fréquence du contrôle : annuel → 1, trimestriel → 2, mensuel → 2 à 5, hebdomadaire → 5 à 15, quotidien → 15 à 40 (souvent 25). Tester 100 % n'est pas requis pour un test de contrôle.",
+              "difficulty": "medium",
+              "section_id": "m9_REV_s3"
+            },
+            {
+              "id": "m9_REV_nq2",
+              "type": "mcq",
+              "question": "Quand la loi fédérale révisée sur la protection des données (nLPD) est-elle entrée en vigueur ?",
+              "options": [
+                "Le 1er septembre 2023",
+                "Le 25 mai 2018",
+                "Le 1er septembre 2025",
+                "Le 1er janvier 2020"
+              ],
+              "answer": 0,
+              "explanation": "La nLPD est en vigueur depuis le 1.9.2023. Le 25.5.2018 est la date d'application du RGPD européen. La nLPD prévoit des amendes pénales jusqu'à CHF 250'000, visant en principe la personne physique responsable.",
+              "difficulty": "medium",
+              "section_id": "m9_REV_s3"
+            },
+            {
+              "id": "m9_REV_nq3",
+              "type": "mcq",
+              "question": "Sous la nLPD, qui est en principe visé par l'amende pénale pouvant atteindre CHF 250'000 ?",
+              "options": [
+                "L'entreprise, à hauteur de 4 % de son chiffre d'affaires",
+                "L'organe de révision qui n'a pas signalé la violation",
+                "La personne physique responsable de la violation",
+                "Le préposé fédéral à la protection des données"
+              ],
+              "answer": 2,
+              "explanation": "Contrairement au RGPD (amendes administratives contre l'entreprise, jusqu'à 20 M€ ou 4 % du CA mondial), la nLPD sanctionne pénalement la personne physique responsable (amende jusqu'à CHF 250'000).",
+              "difficulty": "hard",
+              "section_id": "m9_REV_s3"
+            },
+            {
+              "id": "m9_REV_nq4",
+              "type": "mcq",
+              "question": "Quel rapport de l'organisation de services l'auditeur financier exploite-t-il en priorité (ISA 402) ?",
+              "options": [
+                "N'importe lequel des deux, car ils couvrent exactement les mêmes contrôles",
+                "Aucun des deux : il doit toujours tester lui-même le prestataire",
+                "Le rapport SOC 1, consacré aux contrôles touchant l'information financière",
+                "Le rapport SOC 2, consacré à la sécurité et à la disponibilité des systèmes"
+              ],
+              "answer": 2,
+              "explanation": "Le SOC 1 (ISAE 3402) porte sur les contrôles pertinents pour l'information financière des clients : c'est lui qui sert à l'auditeur de l'entité utilisatrice. Le SOC 2 (sécurité, disponibilité, confidentialité…) est une information complémentaire qui ne le remplace pas.",
+              "difficulty": "medium",
+              "section_id": "m9_REV_s8"
+            },
+            {
+              "id": "m9_REV_nq5",
+              "type": "vrai_faux",
+              "question": "Lorsque l'auditeur analyse 100 % d'une population avec un outil d'analyse de données, il n'a plus à exercer son jugement sur les exceptions relevées.",
+              "options": null,
+              "answer": false,
+              "explanation": "Faux. Tester toute la population ne supprime ni le jugement ni les procédures de substance : chaque exception doit être investiguée avant d'être qualifiée d'anomalie.",
+              "difficulty": "easy",
+              "section_id": "m9_REV_s8"
+            },
+            {
+              "id": "m9_REV_nq6",
+              "type": "mcq",
+              "question": "Avant d'analyser une extraction de données de l'ERP, quelle étape est indispensable ?",
+              "options": [
+                "Convertir le fichier en PDF afin d'en garantir l'inaltérabilité",
+                "La faire valider par écrit par le président du conseil d'administration",
+                "Limiter l'extraction aux écritures supérieures au seuil de signification",
+                "La rapprocher de l'ERP pour vérifier sa complétude et son exactitude"
+              ],
+              "answer": 3,
+              "explanation": "Une analyse ne vaut que si les données sont fiables : l'auditeur réconcilie l'extraction avec la source (totaux, nombre d'enregistrements, période) pour en vérifier la complétude et l'exactitude (ISA 500).",
+              "difficulty": "medium",
+              "section_id": "m9_REV_s8"
+            },
+            {
+              "id": "m9_REV_nq7",
+              "type": "mcq",
+              "question": "Pourquoi les outils « EUC » (End-User Computing : Excel, Access…) présentent-ils un risque particulier ?",
+              "options": [
+                "Ils sont interdits pour la tenue de la comptabilité depuis la réforme du droit comptable",
+                "Ils ne peuvent pas être archivés pendant les 10 ans exigés par l'art. 958f CO",
+                "Ils échappent souvent à la gouvernance IT : versions, formules et accès non contrôlés",
+                "Ils sont automatiquement couverts par les ITGC de l'ERP principal de l'entité"
+              ],
+              "answer": 2,
+              "explanation": "Les fichiers EUC sont développés par les utilisateurs, hors des contrôles généraux (gestion des changements, accès). Erreurs de formule et modifications non tracées sont fréquentes : l'auditeur doit les identifier et tester les contrôles qui les entourent.",
+              "difficulty": "medium",
+              "section_id": "m9_REV_s8"
+            },
+            {
+              "id": "m9_REV_nq8",
+              "type": "mcq",
+              "question": "Dans un test des écritures de journal (ISA 240), laquelle de ces écritures est typiquement retenue comme « à risque » ?",
+              "options": [
+                "L'import mensuel des salaires depuis le logiciel de paie",
+                "Une écriture manuelle passée un dimanche par un utilisateur inhabituel",
+                "L'écriture d'amortissement générée automatiquement chaque mois par l'ERP",
+                "L'écriture de réouverture des comptes au début de l'exercice"
+              ],
+              "answer": 1,
+              "explanation": "Les filtres usuels ciblent les écritures manuelles, passées hors des heures ou des jours ouvrables, par des utilisateurs inhabituels, avec des montants ronds ou des comptes rarement utilisés : autant d'indices d'un contournement des contrôles par la direction.",
+              "difficulty": "medium",
+              "section_id": "m9_REV_s5"
+            },
+            {
+              "id": "m9_REV_nq9",
+              "type": "mcq",
+              "question": "Quelle affirmation sur les CAAT et l'ADA (audit data analytics) est correcte ?",
+              "options": [
+                "Les CAAT sont réservées aux grandes entreprises, l'ADA aux PME",
+                "Les deux termes sont synonymes et désignent les tests de contrôles automatisés",
+                "Les CAAT sont des outils et techniques ; l'ADA est la démarche qui les mobilise",
+                "L'ADA est un logiciel ; les CAAT désignent la démarche méthodologique d'ensemble"
+              ],
+              "answer": 2,
+              "explanation": "Les CAAT (Computer-Assisted Audit Techniques) sont les techniques et outils assistés par ordinateur ; l'ADA est la méthodologie d'ensemble (planification, extraction, analyse, investigation) qui les englobe.",
+              "difficulty": "hard",
+              "section_id": "m9_REV_s8"
+            },
+            {
+              "id": "m9_REV_nq10",
+              "type": "mcq",
+              "question": "Les ITGC d'une application sont efficaces. Que permet ce constat pour un contrôle automatisé de cette application ?",
+              "options": [
+                "Un test d'un seul cas par type de transaction peut suffire pour l'exercice",
+                "Le contrôle automatisé devient inutile et peut être supprimé par l'entité",
+                "L'auditeur doit tout de même tester 25 occurrences de ce contrôle automatisé",
+                "L'auditeur peut renoncer à toute procédure de substance sur le cycle"
+              ],
+              "answer": 0,
+              "explanation": "Un contrôle automatisé fonctionne de manière constante tant que le programme n'est pas modifié : si les ITGC (en particulier la gestion des changements) sont efficaces, un test d'un cas par type de transaction (« test of one ») peut suffire. Des procédures de substance restent nécessaires sur les postes significatifs.",
+              "difficulty": "medium",
+              "section_id": "m9_REV_s7"
             }
           ]
         }
@@ -43854,12 +44359,12 @@
             {
               "section_id": "m10_REV_s1",
               "title": "🎯 Fil rouge — ce qu'il faut absolument maîtriser",
-              "body": "**M10 = la phase finale de l'audit : conclure les travaux, former l'opinion, rédiger le rapport.** C'est l'aboutissement de tout l'audit : tout ce qui précède (planification, risques, contrôles, substance) converge ici vers **un seul produit : l'opinion de l'organe de révision**.\n\n**Tu dois savoir :**\n\n1. **Dérouler les 6 étapes de la conclusion** : évaluer les anomalies (**ISA 450**) → réévaluer la matérialité (**ISA 320**) → procédures de fin de mission (revue analytique finale, **ISA 520**) → événements postérieurs (**ISA 560**) → continuité d'exploitation (**ISA 570**) → déclarations écrites (**ISA 580**) → opinion & rapport.\n2. **Identifier le bon type d'opinion** — c'est LA question récurrente : matrice **ISA 705** croisant la **nature** (anomalie vs limitation d'étendue) et l'**étendue** (significatif mais **non généralisé** vs **généralisé/pervasive**).\n3. **Connaître par cœur l'architecture du rapport ISA 700** : l'**Opinion en PREMIER**, le **Fondement de l'opinion**, l'incertitude going concern, les **KAM**, les **autres informations**, les responsabilités, la signature datée.\n4. **Maîtriser les KAM (ISA 701)** : obligatoires pour les **entités cotées**, sélection en entonnoir depuis les points communiqués à la gouvernance ; les KAM **ne modifient JAMAIS** l'opinion.\n5. **Distinguer les paragraphes qui NE modifient pas l'opinion** : **observation (EOM)** et **autres points** (**ISA 706**), section **incertitude significative going concern** (**ISA 570**) — aucun n'altère l'opinion.\n6. **Traiter le going concern (ISA 570)** selon 4 scénarios (base appropriée + info adéquate / inadéquate ; base inappropriée).\n7. **Gérer les comparatifs (ISA 710)**, les **autres informations / rapport de gestion (ISA 720)**, et **communiquer** à la gouvernance (**ISA 260**) et sur les **déficiences du contrôle interne** (**ISA 265**).\n8. **Adapter au droit suisse** : rapport **détaillé** au CA (**CO 728b**) en contrôle **ordinaire**, rapport **succinct** en contrôle **restreint** (**CO 729b**), avec **recommandation d'approbation des comptes** à l'assemblée générale.\n\n**Réflexe central :** *opinion = produit final*. Le piège tombe presque toujours sur la nuance **significatif (réserve) vs généralisé (défavorable / impossibilité)**."
+              "body": "**M10 = la phase finale de l'audit : conclure les travaux, former l'opinion, rédiger le rapport.** C'est l'aboutissement de tout l'audit : tout ce qui précède (planification, risques, contrôles, substance) converge ici vers **un seul produit : l'opinion de l'organe de révision**.\n\n**Tu dois savoir :**\n\n1. **Dérouler les 6 étapes de la conclusion** : évaluer les anomalies (**ISA 450**) → réévaluer la matérialité (**ISA 320**) → procédures de fin de mission (revue analytique finale, **ISA 520**) → événements postérieurs (**ISA 560**) → continuité d'exploitation (**ISA 570**) → déclarations écrites (**ISA 580**) → opinion & rapport.\n2. **Identifier le bon type d'opinion** — c'est LA question récurrente : matrice **ISA 705** croisant la **nature** (anomalie vs limitation d'étendue) et l'**étendue** (significatif mais **non généralisé** vs **généralisé/pervasive**).\n3. **Connaître par cœur l'architecture du rapport ISA 700** : l'**Opinion en PREMIER**, le **Fondement de l'opinion**, l'incertitude going concern, les **KAM**, les **autres informations**, les responsabilités, la signature datée.\n4. **Maîtriser les KAM (ISA 701)** : obligatoires pour les **entités cotées**, sélection en entonnoir depuis les points communiqués à la gouvernance ; les KAM **ne modifient JAMAIS** l'opinion.\n5. **Distinguer les paragraphes qui NE modifient pas l'opinion** : **observation (EOM)** et **autres points** (**ISA 706**), section **incertitude significative going concern** (**ISA 570**) — aucun n'altère l'opinion.\n6. **Traiter le going concern (ISA 570)** selon 4 scénarios (base appropriée + info adéquate / inadéquate ; base inappropriée).\n7. **Gérer les comparatifs (ISA 710)**, les **autres informations / rapport de gestion (ISA 720)**, et **communiquer** à la gouvernance (**ISA 260**) et sur les **déficiences du contrôle interne** (**ISA 265**).\n8. **Adapter au droit suisse** : rapport **détaillé** au CA (**CO 728b**) en contrôle **ordinaire**, rapport **succinct** en contrôle **restreint** (**CO 729b**, assurance négative, **sans** recommandation) ; la **recommandation d'approbation des comptes** à l'assemblée générale est propre au contrôle **ordinaire** (**CO 728b al. 2**).\n\n**Réflexe central :** *opinion = produit final*. Le piège tombe presque toujours sur la nuance **significatif (réserve) vs généralisé (défavorable / impossibilité)**."
             },
             {
               "section_id": "m10_REV_s2",
               "title": "🗺️ Carte du module — tout ce qui doit être couvert",
-              "body": "Chaque ligne = une norme du module + le réflexe clé. **Garde-fou d'exhaustivité.**\n\n| # | Norme | Objet | Réflexe clé |\n|---|---|---|---|\n| 1 | **ISA 450** | Évaluation des anomalies relevées | Cumuler les anomalies **non corrigées**, comparer au seuil ; demander corrections |\n| 2 | **ISA 320** (rappel) | Caractère significatif | **Réévaluer** la matérialité en fin de mission si le réel diffère de l'estimation |\n| 3 | **ISA 520** | Procédures analytiques finales | **Revue analytique globale** obligatoire en fin d'audit (cohérence d'ensemble) |\n| 4 | **ISA 560** | Événements postérieurs à la clôture | **3 périodes** ; ajustement vs simple mention ; obligation **active** avant la date du rapport |\n| 5 | **ISA 570** | Continuité d'exploitation (going concern) | **4 scénarios** ; horizon **≥ 12 mois** ; section dédiée d'incertitude significative |\n| 6 | **ISA 580** | Déclarations écrites de la direction | **Lettre d'affirmation** ; date proche du rapport ; un **refus** = limitation d'étendue |\n| 7 | **ISA 700** | Opinion & rapport standard | **Opinion en premier** ; rapport non modifié ; référentiel précisé |\n| 8 | **ISA 701** | Questions clés de l'audit (KAM) | **Cotées obligatoire** ; entonnoir depuis la gouvernance ; **ne modifie pas** l'opinion |\n| 9 | **ISA 705** | Opinion modifiée | **Réserve / défavorable / impossibilité** ; matrice nature × étendue |\n| 10 | **ISA 706** | Paragraphes d'observation / autres points | **EOM** (info présentée) vs **autres points** ; **n'altèrent pas** l'opinion |\n| 11 | **ISA 710** | Informations comparatives | **Chiffres correspondants** vs **EF comparatifs** ; mention du **rapport du prédécesseur** |\n| 12 | **ISA 720** | Autres informations (rapport de gestion) | **Lire** pour incohérences ; **paragraphe « Autres informations »** ; pas d'assurance dessus |\n| 13 | **ISA 260** | Communication avec la gouvernance | Étendue/calendrier prévus, **constatations significatives**, indépendance (cotées) |\n| 14 | **ISA 265** | Déficiences du contrôle interne | Communiquer **par écrit** les **déficiences importantes** à la gouvernance |\n| 15 | **CO 728b** | Rapport détaillé (contrôle ordinaire) | Rapport **au conseil d'administration** : constatations sur compta, SCI, déroulement |\n| 16 | **CO 728a** | Rapport succinct à l'AG (ordinaire) | Recommandation d'**approbation** (avec/sans réserve) ; existence d'un **SCI** |\n| 17 | **CO 729b** | Rapport (contrôle restreint) | Rapport **succinct** à l'AG ; **revue limitée** ; pas d'avis sur le SCI |\n"
+              "body": "Chaque ligne = une norme du module + le réflexe clé. **Garde-fou d'exhaustivité.**\n\n| # | Norme | Objet | Réflexe clé |\n|---|---|---|---|\n| 1 | **ISA 450** | Évaluation des anomalies relevées | Cumuler les anomalies **non corrigées**, comparer au seuil ; demander corrections |\n| 2 | **ISA 320** (rappel) | Caractère significatif | **Réévaluer** la matérialité en fin de mission si le réel diffère de l'estimation |\n| 3 | **ISA 520** | Procédures analytiques finales | **Revue analytique globale** obligatoire en fin d'audit (cohérence d'ensemble) |\n| 4 | **ISA 560** | Événements postérieurs à la clôture | **3 périodes** ; ajustement vs simple mention ; obligation **active** avant la date du rapport |\n| 5 | **ISA 570** | Continuité d'exploitation (going concern) | **4 scénarios** ; horizon **≥ 12 mois** ; section dédiée d'incertitude significative |\n| 6 | **ISA 580** | Déclarations écrites de la direction | **Lettre d'affirmation** ; date proche du rapport ; un **refus** = limitation d'étendue |\n| 7 | **ISA 700** | Opinion & rapport standard | **Opinion en premier** ; rapport non modifié ; référentiel précisé |\n| 8 | **ISA 701** | Questions clés de l'audit (KAM) | **Cotées obligatoire** ; entonnoir depuis la gouvernance ; **ne modifie pas** l'opinion |\n| 9 | **ISA 705** | Opinion modifiée | **Réserve / défavorable / impossibilité** ; matrice nature × étendue |\n| 10 | **ISA 706** | Paragraphes d'observation / autres points | **EOM** (info présentée) vs **autres points** ; **n'altèrent pas** l'opinion |\n| 11 | **ISA 710** | Informations comparatives | **Chiffres correspondants** vs **EF comparatifs** ; mention du **rapport du prédécesseur** |\n| 12 | **ISA 720** | Autres informations (rapport de gestion) | **Lire** pour incohérences ; **paragraphe « Autres informations »** ; pas d'assurance dessus |\n| 13 | **ISA 260** | Communication avec la gouvernance | Étendue/calendrier prévus, **constatations significatives**, indépendance (cotées) |\n| 14 | **ISA 265** | Déficiences du contrôle interne | Communiquer **par écrit** les **déficiences importantes** à la gouvernance |\n| 15 | **CO 728b** | Rapport détaillé (contrôle ordinaire) | Rapport **au conseil d'administration** : constatations sur compta, SCI, déroulement |\n| 16 | **CO 728a / 728b** | Étendue (728a) et rapport succinct à l'AG (728b al. 2, ordinaire) | Recommandation d'**approbation** (avec/sans réserve) ; existence d'un **SCI** |\n| 17 | **CO 729b** | Rapport (contrôle restreint) | Rapport **succinct** à l'AG ; **revue limitée** ; pas d'avis sur le SCI |\n"
             },
             {
               "section_id": "m10_REV_s3",
@@ -43869,7 +44374,7 @@
             {
               "section_id": "m10_REV_s4",
               "title": "⚖️ Bases légales & normatives",
-              "body": "| Norme / Article | Objet | Réflexe-examen |\n|---|---|---|\n| **ISA 450** | Évaluation des anomalies relevées au cours de l'audit | Cumuler les **anomalies non corrigées**, les comparer au **seuil de signification**, demander la **correction** |\n| **ISA 520** | Procédures analytiques | Une **revue analytique globale** est **obligatoire en fin** d'audit pour conclure |\n| **ISA 560** | Événements postérieurs à la date de clôture | Distinguer **ajustement** (conditions existant à la clôture) vs **mention** (conditions nées après) |\n| **ISA 570** | Continuité d'exploitation | Apprécier le caractère **approprié** de l'hypothèse ; **section dédiée** si incertitude significative |\n| **ISA 580** | Déclarations écrites | **Lettre d'affirmation** : responsabilités + exhaustivité de l'information ; un **refus** = limitation |\n| **ISA 700** | Opinion & forme du rapport (EF complets, présentation fidèle) | **Opinion en premier** ; structure standardisée ; référentiel **explicite** |\n| **ISA 701** | Communication des **questions clés de l'audit** (KAM) | **Obligatoire pour les cotées** ; entonnoir depuis l'**ISA 260** ; **ne remplace ni ne modifie** l'opinion |\n| **ISA 705** | **Opinions modifiées** | **Réserve** / **défavorable** / **impossibilité d'exprimer** ; matrice **nature × étendue** |\n| **ISA 706** | Paragraphes d'**observation** et d'**autres points** | **N'altèrent PAS** l'opinion ; EOM = attirer l'attention sur une info **présentée** |\n| **ISA 710** | **Informations comparatives** | **Chiffres correspondants** (1 opinion) vs **EF comparatifs** (opinion sur chaque période) |\n| **ISA 720** | **Autres informations** (rapport de gestion / annuel) | **Lire** pour incohérences significatives ; **paragraphe dédié** ; **aucune assurance** exprimée |\n| **ISA 260** | Communication avec les **responsables de la gouvernance** | Étendue/calendrier, **constatations significatives**, déclaration d'**indépendance** (cotées) |\n| **ISA 265** | Communication des **déficiences du contrôle interne** | **Par écrit**, en temps voulu, les **déficiences importantes** à la gouvernance |\n| **ISA 230** | Documentation | Constituer le **dossier final** ; assemblage dans les **60 jours** suivant la date du rapport |\n| **ISA 220 / ISQM 1-2** | Qualité de la mission | **Revue de qualité (EQR)** obligatoire pour les **EIP/cotées** avant datation du rapport |\n| **Art. 728a CO** | Contrôle ordinaire — étendue & rapport succinct à l'AG | Recommandation d'**approbation** ; constat de l'**existence d'un SCI** |\n| **Art. 728b CO** | **Rapport détaillé** au conseil d'administration | Constatations sur la **comptabilité**, le **SCI**, le **déroulement** et le **résultat** de la révision |\n| **Art. 728c CO** | Avis obligatoires (ordinaire) | **Aviser** le CA / l'AG / le **juge** (violations de la loi/statuts, **surendettement art. 725b**) |\n| **Art. 729a CO** | Contrôle restreint — étendue (review) | **Audit de revue** : entretiens + procédures analytiques + contrôles **détaillés appropriés** |\n| **Art. 729b CO** | **Rapport** du contrôle restreint à l'AG | Rapport **succinct** ; **pas** d'avis sur le SCI ; recommandation d'approbation |\n| **Art. 729c CO** | Avis obligatoires (restreint) | Aviser en cas de **surendettement manifeste** |\n| **Art. 730 CO / LSR** | Indépendance & **agrément** (ASR) | Mention de l'agrément ; signature du **réviseur responsable** |\n"
+              "body": "| Norme / Article | Objet | Réflexe-examen |\n|---|---|---|\n| **ISA 450** | Évaluation des anomalies relevées au cours de l'audit | Cumuler les **anomalies non corrigées**, les comparer au **seuil de signification**, demander la **correction** |\n| **ISA 520** | Procédures analytiques | Une **revue analytique globale** est **obligatoire en fin** d'audit pour conclure |\n| **ISA 560** | Événements postérieurs à la date de clôture | Distinguer **ajustement** (conditions existant à la clôture) vs **mention** (conditions nées après) |\n| **ISA 570** | Continuité d'exploitation | Apprécier le caractère **approprié** de l'hypothèse ; **section dédiée** si incertitude significative |\n| **ISA 580** | Déclarations écrites | **Lettre d'affirmation** : responsabilités + exhaustivité de l'information ; un **refus** = limitation |\n| **ISA 700** | Opinion & forme du rapport (EF complets, présentation fidèle) | **Opinion en premier** ; structure standardisée ; référentiel **explicite** |\n| **ISA 701** | Communication des **questions clés de l'audit** (KAM) | **Obligatoire pour les cotées** ; entonnoir depuis l'**ISA 260** ; **ne remplace ni ne modifie** l'opinion |\n| **ISA 705** | **Opinions modifiées** | **Réserve** / **défavorable** / **impossibilité d'exprimer** ; matrice **nature × étendue** |\n| **ISA 706** | Paragraphes d'**observation** et d'**autres points** | **N'altèrent PAS** l'opinion ; EOM = attirer l'attention sur une info **présentée** |\n| **ISA 710** | **Informations comparatives** | **Chiffres correspondants** (1 opinion) vs **EF comparatifs** (opinion sur chaque période) |\n| **ISA 720** | **Autres informations** (rapport de gestion / annuel) | **Lire** pour incohérences significatives ; **paragraphe dédié** ; **aucune assurance** exprimée |\n| **ISA 260** | Communication avec les **responsables de la gouvernance** | Étendue/calendrier, **constatations significatives**, déclaration d'**indépendance** (cotées) |\n| **ISA 265** | Communication des **déficiences du contrôle interne** | **Par écrit**, en temps voulu, les **déficiences importantes** à la gouvernance |\n| **ISA 230** | Documentation | Constituer le **dossier final** ; assemblage dans les **60 jours** suivant la date du rapport |\n| **ISA 220 / ISQM 1-2** | Qualité de la mission | **Revue de qualité (EQR)** obligatoire pour les **EIP/cotées** avant datation du rapport |\n| **Art. 728a CO** | Contrôle ordinaire — étendue & rapport succinct à l'AG | Recommandation d'**approbation** ; constat de l'**existence d'un SCI** |\n| **Art. 728b CO** | **Rapport détaillé** au conseil d'administration | Constatations sur la **comptabilité**, le **SCI**, le **déroulement** et le **résultat** de la révision |\n| **Art. 728c CO** | Avis obligatoires (ordinaire) | **Aviser** le CA / l'AG / le **juge** (violations de la loi/statuts, **surendettement art. 725b**) |\n| **Art. 729a CO** | Contrôle restreint — étendue (review) | **Audit de revue** : entretiens + procédures analytiques + contrôles **détaillés appropriés** |\n| **Art. 729b CO** | **Rapport** du contrôle restreint à l'AG | Rapport **succinct** ; **pas** d'avis sur le SCI ; **pas** de recommandation d'approbation (propre à l'ordinaire, CO 728b al. 2) |\n| **Art. 729c CO** | Avis obligatoires (restreint) | Aviser en cas de **surendettement manifeste** |\n| **Art. 730 CO / LSR** | Indépendance & **agrément** (ASR) | Mention de l'agrément ; signature du **réviseur responsable** |\n"
             },
             {
               "section_id": "m10_REV_s5",
@@ -43884,7 +44389,7 @@
             {
               "section_id": "m10_REV_s7",
               "title": "🗂️ Tableaux comparatifs",
-              "body": "**1 — Matrice des types d'opinion (ISA 705) — nature (lignes) × étendue (colonnes) :**\n\n| **Nature ↓ / Étendue →** | **Significatif mais NON généralisé** | **Significatif ET généralisé (pervasive)** |\n|---|---|---|\n| **Anomalie** (les EF sont erronés) | **Opinion AVEC RÉSERVE** (« à l'exception de… ») | **Opinion DÉFAVORABLE** (les EF **ne donnent pas** une image fidèle) |\n| **Limitation d'étendue** (probants insuffisants) | **Opinion AVEC RÉSERVE** (« à l'exception de… ») | **IMPOSSIBILITÉ d'exprimer une opinion** (refus d'opinion) |\n| **Aucune des deux** | Opinion **NON modifiée** | Opinion **NON modifiée** |\n\n> Mémo : *anomalie généralisée → **défavorable** ; limitation généralisée → **impossibilité**.* Une limitation ne devient **jamais** « défavorable » ; une anomalie ne devient **jamais** « impossibilité ».\n\n---\n\n**2 — Paragraphes & sections qui NE modifient PAS l'opinion :**\n\n| Élément | Norme | Quand | Position |\n|---|---|---|---|\n| **Observation (EOM)** | ISA 706 | Info **présentée** & fondamentale | après l'opinion |\n| **Autres points** | ISA 706 | Info **non présentée** mais utile | après l'opinion / les KAM |\n| **Incertitude significative going concern** | ISA 570 | Doute important **bien décrit** | après le fondement, **avant** les KAM |\n| **Questions clés (KAM)** | ISA 701 | Cotées (ou volontaire) | section dédiée |\n| **Autres informations** | ISA 720 | Toujours (si autres infos existent) | section dédiée |\n\n---\n\n**3 — Going concern (ISA 570) — 4 scénarios :**\n\n| Scénario | Hypothèse de continuité | Information en annexe | Opinion / effet |\n|---|---|---|---|\n| **1** | Appropriée, **pas** d'incertitude significative | — | **Non modifiée** (clean) |\n| **2** | Appropriée **mais** incertitude significative, **bien décrite** | **Adéquate** | **Non modifiée** + **section incertitude significative** |\n| **3** | Appropriée, incertitude significative, **mal/non décrite** | **Inadéquate** | **Réserve** ou **défavorable** (anomalie d'information) |\n| **4** | **Inappropriée** (l'entité ne peut pas poursuivre) | — | **Défavorable** (si EF établis en continuité) |\n\n---\n\n**4 — Événements postérieurs (ISA 560) — 3 périodes :**\n\n| Période | Bornes | Obligation de l'auditeur | Si fait significatif |\n|---|---|---|---|\n| **1** | Clôture → **date du rapport** | **Active** (procédures de recherche) | Ajuster les EF **ou** modifier l'opinion |\n| **2** | Date du rapport → **publication** des EF | **Passive** : réagir aux faits **connus** | Discuter, faire **amender** les EF / nouveau rapport |\n| **3** | **Après** publication | **Passive** : réagir aux faits **connus** | Faire **rectifier** ; informer la gouvernance ; envisager le retrait |\n\n---\n\n**5 — Informations comparatives (ISA 710) :**\n\n| | **Chiffres correspondants** (corresponding figures) | **États financiers comparatifs** |\n|---|---|---|\n| **Statut du comparatif** | partie **intégrante** des EF de l'exercice | période **à part entière** |\n| **Opinion** | porte sur la **période courante** uniquement | porte sur **chaque** période présentée |\n| **Cas usuel** | référentiel **CO / RPC / IFRS** (par défaut) | exigé par certains référentiels/juridictions |\n| **Prédécesseur** | mention en **autres points** (ISA 706) si N-1 audité par un autre | opinion possible sur N-1 |\n\n---\n\n**6 — Rapport suisse : ordinaire vs restreint :**\n\n| Aspect | **Contrôle ordinaire** | **Contrôle restreint (review)** |\n|---|---|---|\n| **Niveau d'assurance** | **Raisonnable** (positive) | **Limitée** (négative) |\n| **Rapport à l'AG** | succinct, recommandation d'approbation (**CO 728a**) | succinct (**CO 729b**) |\n| **Rapport détaillé** | **OUI**, au CA (**CO 728b**) | **NON** |\n| **Avis sur le SCI** | **OUI** (existence d'un SCI) | **NON** |\n| **Formulation type** | « les comptes annuels **sont conformes**… » | « nous n'avons **pas rencontré d'élément** nous laissant à penser que les comptes ne sont pas conformes » |\n| **KAM (ISA 701)** | possibles (cotées) | non |\n| **Indépendance / agrément** | expert-réviseur agréé | réviseur agréé |\n\n---\n\n**7 — Rapport détaillé CO 728b vs rapport succinct CO 728a :**\n\n| | **CO 728a — succinct (AG)** | **CO 728b — détaillé (CA)** |\n|---|---|---|\n| **Destinataire** | **Assemblée générale** (public) | **Conseil d'administration** (interne) |\n| **Contenu** | opinion + recommandation d'approbation | constatations sur **compta, SCI, déroulement et résultat** de la révision |\n| **Confidentialité** | publié / déposé | **confidentiel** |\n| **Détail** | quelques pages | détaillé |\n"
+              "body": "**1 — Matrice des types d'opinion (ISA 705) — nature (lignes) × étendue (colonnes) :**\n\n| **Nature ↓ / Étendue →** | **Significatif mais NON généralisé** | **Significatif ET généralisé (pervasive)** |\n|---|---|---|\n| **Anomalie** (les EF sont erronés) | **Opinion AVEC RÉSERVE** (« à l'exception de… ») | **Opinion DÉFAVORABLE** (les EF **ne donnent pas** une image fidèle) |\n| **Limitation d'étendue** (probants insuffisants) | **Opinion AVEC RÉSERVE** (« à l'exception de… ») | **IMPOSSIBILITÉ d'exprimer une opinion** (refus d'opinion) |\n| **Aucune des deux** | Opinion **NON modifiée** | Opinion **NON modifiée** |\n\n> Mémo : *anomalie généralisée → **défavorable** ; limitation généralisée → **impossibilité**.* Une limitation ne devient **jamais** « défavorable » ; une anomalie ne devient **jamais** « impossibilité ».\n\n---\n\n**2 — Paragraphes & sections qui NE modifient PAS l'opinion :**\n\n| Élément | Norme | Quand | Position |\n|---|---|---|---|\n| **Observation (EOM)** | ISA 706 | Info **présentée** & fondamentale | après l'opinion |\n| **Autres points** | ISA 706 | Info **non présentée** mais utile | après l'opinion / les KAM |\n| **Incertitude significative going concern** | ISA 570 | Doute important **bien décrit** | après le fondement, **avant** les KAM |\n| **Questions clés (KAM)** | ISA 701 | Cotées (ou volontaire) | section dédiée |\n| **Autres informations** | ISA 720 | Toujours (si autres infos existent) | section dédiée |\n\n---\n\n**3 — Going concern (ISA 570) — 4 scénarios :**\n\n| Scénario | Hypothèse de continuité | Information en annexe | Opinion / effet |\n|---|---|---|---|\n| **1** | Appropriée, **pas** d'incertitude significative | — | **Non modifiée** (clean) |\n| **2** | Appropriée **mais** incertitude significative, **bien décrite** | **Adéquate** | **Non modifiée** + **section incertitude significative** |\n| **3** | Appropriée, incertitude significative, **mal/non décrite** | **Inadéquate** | **Réserve** ou **défavorable** (anomalie d'information) |\n| **4** | **Inappropriée** (l'entité ne peut pas poursuivre) | — | **Défavorable** (si EF établis en continuité) |\n\n---\n\n**4 — Événements postérieurs (ISA 560) — 3 périodes :**\n\n| Période | Bornes | Obligation de l'auditeur | Si fait significatif |\n|---|---|---|---|\n| **1** | Clôture → **date du rapport** | **Active** (procédures de recherche) | Ajuster les EF **ou** modifier l'opinion |\n| **2** | Date du rapport → **publication** des EF | **Passive** : réagir aux faits **connus** | Discuter, faire **amender** les EF / nouveau rapport |\n| **3** | **Après** publication | **Passive** : réagir aux faits **connus** | Faire **rectifier** ; informer la gouvernance ; envisager le retrait |\n\n---\n\n**5 — Informations comparatives (ISA 710) :**\n\n| | **Chiffres correspondants** (corresponding figures) | **États financiers comparatifs** |\n|---|---|---|\n| **Statut du comparatif** | partie **intégrante** des EF de l'exercice | période **à part entière** |\n| **Opinion** | porte sur la **période courante** uniquement | porte sur **chaque** période présentée |\n| **Cas usuel** | référentiel **CO / RPC / IFRS** (par défaut) | exigé par certains référentiels/juridictions |\n| **Prédécesseur** | mention en **autres points** (ISA 706) si N-1 audité par un autre | opinion possible sur N-1 |\n\n---\n\n**6 — Rapport suisse : ordinaire vs restreint :**\n\n| Aspect | **Contrôle ordinaire** | **Contrôle restreint (review)** |\n|---|---|---|\n| **Niveau d'assurance** | **Raisonnable** (positive) | **Limitée** (négative) |\n| **Rapport à l'AG** | succinct, recommandation d'approbation (**CO 728b al. 2**) | succinct, sans recommandation (**CO 729b**) |\n| **Rapport détaillé** | **OUI**, au CA (**CO 728b**) | **NON** |\n| **Avis sur le SCI** | **OUI** (existence d'un SCI) | **NON** |\n| **Formulation type** | « les comptes annuels **sont conformes**… » | « nous n'avons **pas rencontré d'élément** nous laissant à penser que les comptes ne sont pas conformes » |\n| **KAM (ISA 701)** | possibles (cotées) | non |\n| **Indépendance / agrément** | expert-réviseur agréé | réviseur agréé |\n\n---\n\n**7 — Rapport détaillé CO 728b vs rapport succinct CO 728a :**\n\n| | **CO 728a — succinct (AG)** | **CO 728b — détaillé (CA)** |\n|---|---|---|\n| **Destinataire** | **Assemblée générale** (public) | **Conseil d'administration** (interne) |\n| **Contenu** | opinion + recommandation d'approbation | constatations sur **compta, SCI, déroulement et résultat** de la révision |\n| **Confidentialité** | publié / déposé | **confidentiel** |\n| **Détail** | quelques pages | détaillé |\n"
             },
             {
               "section_id": "m10_REV_s8",
@@ -44146,6 +44651,116 @@
               "explanation": "CO 728c al. 3 (contrôle ordinaire) et 729c (contrôle restreint) : si la société est manifestement surendettée et que le CA omet d'aviser le tribunal, l'organe de révision le fait.",
               "difficulty": "easy",
               "section_id": "m10_REV_s5"
+            },
+            {
+              "id": "m10_REV_nq1",
+              "type": "mcq",
+              "question": "Comment doit être datée la lettre d'affirmation de la direction (ISA 580) ?",
+              "options": [
+                "Le jour de l'assemblée générale qui approuve les comptes annuels",
+                "À la date de clôture de l'exercice audité, pour couvrir tout l'exercice",
+                "Au plus tard 60 jours après la date du rapport de l'auditeur",
+                "Aussi près que possible de la date du rapport, mais pas après celle-ci"
+              ],
+              "answer": 3,
+              "explanation": "ISA 580.14 : la date de la lettre d'affirmation doit être aussi proche que possible de la date du rapport d'audit, sans lui être postérieure. Sans elle, l'auditeur ne peut pas dater son rapport.",
+              "difficulty": "medium",
+              "section_id": "m10_REV_s3"
+            },
+            {
+              "id": "m10_REV_nq2",
+              "type": "mcq",
+              "question": "Pendant quelle période l'auditeur doit-il rechercher ACTIVEMENT les événements postérieurs à la clôture (ISA 560) ?",
+              "options": [
+                "Jusqu'à la publication des états financiers audités",
+                "De la date de clôture jusqu'à la date de son rapport",
+                "Jusqu'à l'approbation des comptes par l'assemblée générale",
+                "Pendant les 12 mois qui suivent la date de clôture"
+              ],
+              "answer": 1,
+              "explanation": "ISA 560 distingue trois périodes : jusqu'à la date du rapport (procédures actives obligatoires), puis jusqu'à la publication et après la publication (pas d'obligation de recherche, mais réaction aux faits portés à la connaissance de l'auditeur).",
+              "difficulty": "medium",
+              "section_id": "m10_REV_s3"
+            },
+            {
+              "id": "m10_REV_nq3",
+              "type": "mcq",
+              "question": "Qu'est-ce qui distingue une opinion défavorable d'une impossibilité d'exprimer une opinion (ISA 705) ?",
+              "options": [
+                "Les deux relèvent de la même situation et peuvent être utilisées au choix",
+                "Défavorable : limitation généralisée ; impossibilité : anomalies généralisées",
+                "Défavorable : anomalie isolée ; impossibilité : anomalie significative",
+                "Défavorable : anomalies généralisées ; impossibilité : limitation généralisée"
+              ],
+              "answer": 3,
+              "explanation": "Avec une opinion défavorable, l'auditeur a une opinion (négative) : les anomalies sont significatives et généralisées. Avec une impossibilité d'exprimer une opinion, il n'a pas pu obtenir d'éléments probants suffisants et l'effet possible est significatif et généralisé.",
+              "difficulty": "medium",
+              "section_id": "m10_REV_s8"
+            },
+            {
+              "id": "m10_REV_nq4",
+              "type": "vrai_faux",
+              "question": "Un même sujet peut figurer à la fois dans un paragraphe d'observation et dans les points clés de l'audit.",
+              "options": null,
+              "answer": false,
+              "explanation": "Faux. Un paragraphe d'observation (ISA 706) n'est utilisé que pour un point qui n'a pas été retenu comme point clé de l'audit (ISA 701). Un sujet figure soit en point clé, soit en observation.",
+              "difficulty": "easy",
+              "section_id": "m10_REV_s8"
+            },
+            {
+              "id": "m10_REV_nq5",
+              "type": "mcq",
+              "question": "En février, l'auditeur apprend la faillite d'un client important, dont la situation était déjà compromise au 31 décembre. Traitement dans les comptes de l'exercice ?",
+              "options": [
+                "Aucun traitement : l'exercice est clos et les comptes sont arrêtés",
+                "Ajustement de la créance, car la situation existait déjà à la clôture",
+                "Mention dans le rapport d'audit, sans modification des comptes annuels",
+                "Simple mention en annexe, car la faillite est survenue après la clôture"
+              ],
+              "answer": 1,
+              "explanation": "Un événement postérieur qui apporte des informations sur une situation existant à la date de clôture est un événement « ajustant » (IAS 10, ISA 560) : la créance doit être dépréciée. Un événement né après la clôture donne lieu à une simple mention s'il est significatif.",
+              "difficulty": "medium",
+              "section_id": "m10_REV_s8"
+            },
+            {
+              "id": "m10_REV_nq6",
+              "type": "mcq",
+              "question": "La direction refuse de fournir la lettre d'affirmation sur ses responsabilités (ISA 580). Conséquence sur l'opinion ?",
+              "options": [
+                "Opinion avec réserve, limitée aux postes non confirmés",
+                "Aucune : la lettre n'est qu'une formalité administrative",
+                "Impossibilité d'exprimer une opinion",
+                "Opinion non modifiée avec un paragraphe d'observation"
+              ],
+              "answer": 2,
+              "explanation": "Les déclarations écrites sur les responsabilités de la direction sont indispensables. Leur refus est une limitation dont l'effet possible est généralisé : ISA 580.20 impose l'impossibilité d'exprimer une opinion. La lettre est nécessaire mais ne remplace jamais les procédures.",
+              "difficulty": "hard",
+              "section_id": "m10_REV_s8"
+            },
+            {
+              "id": "m10_REV_nq7",
+              "type": "mcq",
+              "question": "Comment l'auditeur traite-t-il les anomalies « manifestement insignifiantes » (clearly trivial, ISA 450) ?",
+              "options": [
+                "Il les mentionne une à une dans le rapport à l'AG",
+                "Il les additionne au seuil de signification global",
+                "Il les fait toutes corriger avant de signer son rapport d'audit",
+                "Il ne les cumule pas dans le récapitulatif des anomalies"
+              ],
+              "answer": 3,
+              "explanation": "En deçà du seuil des anomalies manifestement insignifiantes (souvent ~5 % de la matérialité), les écarts ne sont pas accumulés. Les autres anomalies relevées sont cumulées et communiquées à la direction, qui est invitée à les corriger.",
+              "difficulty": "medium",
+              "section_id": "m10_REV_s3"
+            },
+            {
+              "id": "m10_REV_nq8",
+              "type": "vrai_faux",
+              "question": "Communiquer des points clés de l'audit (ISA 701) dans le rapport équivaut à émettre une réserve.",
+              "options": null,
+              "answer": false,
+              "explanation": "Faux. Les points clés de l'audit décrivent les sujets ayant exigé le plus d'attention ; ils ne modifient pas l'opinion. Une opinion avec réserve peut d'ailleurs coexister avec des points clés.",
+              "difficulty": "easy",
+              "section_id": "m10_REV_s8"
             }
           ]
         }
@@ -45804,6 +46419,121 @@
               "explanation": "IFRS 11 impose la mise en équivalence des coentreprises (la consolidation proportionnelle de l'ancienne IAS 31 a disparu). Swiss GAAP RPC 30 permet encore l'intégration proportionnelle des coentreprises.",
               "difficulty": "hard",
               "section_id": "m11_REV_s5"
+            },
+            {
+              "id": "m11_REV_nq1",
+              "type": "mcq",
+              "question": "Pendant combien de temps l'acquéreur peut-il ajuster rétrospectivement les montants provisoires d'un regroupement d'entreprises (IFRS 3) ?",
+              "options": [
+                "Jusqu'à la clôture de l'exercice au cours duquel a lieu l'acquisition",
+                "12 mois au plus à compter de la date d'acquisition",
+                "Sans limite, tant que l'information est nouvelle",
+                "3 ans, durée de la garantie usuelle du vendeur"
+              ],
+              "answer": 1,
+              "explanation": "La période d'évaluation (IFRS 3.45) ne peut excéder un an après la date d'acquisition. Au-delà, les corrections relèvent d'IAS 8 (erreur) ou du résultat.",
+              "difficulty": "medium",
+              "section_id": "m11_REV_s3"
+            },
+            {
+              "id": "m11_REV_nq2",
+              "type": "mcq",
+              "question": "Comment l'investisseur comptabilise-t-il les dividendes reçus d'une entreprise associée mise en équivalence (IAS 28) ?",
+              "options": [
+                "En produit financier dans le compte de résultat de l'investisseur",
+                "Directement en augmentation des capitaux propres",
+                "En réduction du goodwill implicite de l'associée",
+                "En diminution de la valeur comptable de la participation"
+              ],
+              "answer": 3,
+              "explanation": "Selon la mise en équivalence, la participation augmente de la quote-part du résultat ; le dividende reçu n'est pas un produit mais une distribution qui réduit la valeur comptable (IAS 28.10).",
+              "difficulty": "medium",
+              "section_id": "m11_REV_s8"
+            },
+            {
+              "id": "m11_REV_nq3",
+              "type": "mcq",
+              "question": "Comment traiter les frais de conseil et de due diligence liés à une acquisition sous IFRS 3 ?",
+              "options": [
+                "En immobilisation incorporelle amortie sur cinq ans",
+                "En charges de la période au cours de laquelle ils sont engagés",
+                "En diminution du prix d'acquisition payé aux vendeurs",
+                "En augmentation du goodwill comptabilisé lors de l'acquisition"
+              ],
+              "answer": 1,
+              "explanation": "IFRS 3.53 : les coûts liés à l'acquisition sont comptabilisés en charges (sauf coûts d'émission de titres de dette ou de capitaux propres, traités selon IAS 32 / IFRS 9). Sous Swiss GAAP RPC 30, ils font partie du coût d'acquisition.",
+              "difficulty": "medium",
+              "section_id": "m11_REV_s8"
+            },
+            {
+              "id": "m11_REV_nq4",
+              "type": "mcq",
+              "question": "Une société détenant 25 % d'une associée (mise en équivalence) en acquiert 55 % de plus et en obtient le contrôle. Que fait-elle de sa participation antérieure (IFRS 3) ?",
+              "options": [
+                "Elle la réévalue à la juste valeur et impute l'écart directement aux réserves",
+                "Elle la sort du bilan et la remplace par le prix des 55 % acquis",
+                "Elle la réévalue à la juste valeur et comptabilise l'écart en résultat",
+                "Elle la conserve à sa valeur de mise en équivalence dans le goodwill"
+              ],
+              "answer": 2,
+              "explanation": "Lors d'une acquisition par étapes, la participation antérieure est réévaluée à sa juste valeur à la date de prise de contrôle ; le gain ou la perte est comptabilisé en résultat (IFRS 3.42), puis le goodwill est calculé sur l'ensemble.",
+              "difficulty": "hard",
+              "section_id": "m11_REV_s8"
+            },
+            {
+              "id": "m11_REV_nq5",
+              "type": "mcq",
+              "question": "Deux sociétés exploitent un pipeline sans structure distincte : chacune a des droits sur les actifs et des obligations au titre des passifs. Classification selon IFRS 11 ?",
+              "options": [
+                "Filiale commune : intégration globale par le plus grand partenaire",
+                "Activité conjointe : chacun comptabilise sa part des actifs et passifs",
+                "Simple placement financier évalué selon IFRS 9",
+                "Coentreprise : mise en équivalence obligatoire chez chacun des partenaires"
+              ],
+              "answer": 1,
+              "explanation": "Sans véhicule distinct, un partenariat est toujours une activité conjointe (joint operation) : chaque partie comptabilise ses actifs, passifs, produits et charges. La coentreprise (droits sur l'actif net) est mise en équivalence.",
+              "difficulty": "medium",
+              "section_id": "m11_REV_s8"
+            },
+            {
+              "id": "m11_REV_nq6",
+              "type": "vrai_faux",
+              "question": "Sous IFRS, une perte de valeur comptabilisée sur un goodwill peut être reprise si la valeur recouvrable remonte.",
+              "options": null,
+              "answer": false,
+              "explanation": "Faux. IAS 36.124 interdit toute reprise de dépréciation du goodwill. Pour les autres actifs (hors goodwill), une reprise est possible dans certaines limites.",
+              "difficulty": "easy",
+              "section_id": "m11_REV_s8"
+            },
+            {
+              "id": "m11_REV_nq7",
+              "type": "mcq",
+              "question": "Une société détient 45 % des droits de vote d'une entité dont le reste du capital est très dispersé entre des milliers de petits actionnaires passifs. Selon IFRS 10 :",
+              "options": [
+                "Elle peut détenir le contrôle de fait et devoir consolider l'entité",
+                "Elle ne peut jamais consolider l'entité sans détenir plus de 50 % des voix",
+                "Elle doit consolider proportionnellement à hauteur de 45 %",
+                "Elle doit obligatoirement appliquer la mise en équivalence"
+              ],
+              "answer": 0,
+              "explanation": "Le contrôle s'apprécie selon les trois éléments d'IFRS 10 (pouvoir, rendements variables, lien entre les deux). Une participation inférieure à 50 % peut conférer le pouvoir lorsque les autres droits de vote sont très dispersés (IFRS 10.B41-B42).",
+              "difficulty": "hard",
+              "section_id": "m11_REV_s5"
+            },
+            {
+              "id": "m11_REV_nq8",
+              "type": "mcq",
+              "question": "À partir de quand une filiale est-elle intégrée dans les comptes consolidés ?",
+              "options": [
+                "Dès le 1er janvier de l'exercice au cours duquel elle est acquise",
+                "Dès la date à laquelle le groupe en obtient le contrôle",
+                "Dès le paiement de la totalité du prix d'acquisition",
+                "Dès la signature d'une lettre d'intention avec le vendeur"
+              ],
+              "answer": 1,
+              "explanation": "IFRS 10.20 : la consolidation commence à la date d'obtention du contrôle et cesse à la date de sa perte. Les produits et charges de la filiale ne sont repris qu'à partir de cette date.",
+              "difficulty": "easy",
+              "section_id": "m11_REV_s5"
             }
           ]
         }
@@ -46239,12 +46969,12 @@
             {
               "section_id": "m12_REV_s1",
               "title": "🎯 Fil rouge — ce qu'il faut absolument maîtriser",
-              "body": "**M12 = la révision allégée des PME suisses : le contrôle restreint (review légale), CO 729 à 729c.** C'est une **spécificité suisse** (droit de la révision de 2008, dans le droit SA révisé en vigueur **1.1.2023**), à ne jamais confondre avec le contrôle ordinaire.\n\nTu dois savoir, à l'examen :\n\n1. **Situer les 3 régimes** : **opting-out** (aucune révision) → **contrôle restreint** (assurance limitée) → **contrôle ordinaire** (assurance raisonnable), et dire **qui relève de quoi** via les seuils.\n2. Énoncer la **définition / le but** du contrôle restreint (**CO 729a**) : émettre une **assurance limitée (négative)** — *« aucun fait ne permet de conclure que les comptes ne sont pas conformes à la loi et aux statuts »*.\n3. Distinguer **assurance limitée (négative)** ↔ **assurance raisonnable (positive)** de l'ordinaire, et savoir **pourquoi** (proportionnalité PME / coût).\n4. Citer les **procédures typiques** (**CO 729a al. 2**) : **auditions (demandes d'informations) + procédures analytiques + vérifications détaillées appropriées** — **pas** de test du SCI, **pas** de tests systématiques d'observation/confirmation, **pas** de procédures de détection de fraude.\n5. Maîtriser **l'indépendance allégée (CO 729)** : la **collaboration à la tenue de la comptabilité** et la fourniture d'autres prestations **sont ADMISES** sous conditions (mesures de sauvegarde si risque d'auto-révision) — **distinction-clé** avec l'ordinaire où c'est **interdit (CO 728 al. 2 ch. 4)**.\n6. Restituer le **contenu du rapport (CO 729b)** : ses **4 indications obligatoires** + la **recommandation** d'approuver ou de refuser les comptes (1 seul rapport, à l'AG).\n7. Comparer **ordinaire vs restreint** (assurance, normes, rapports, indépendance, procédures, agrément) **de tête**.\n8. Connaître l'**agrément requis** : **réviseur agréé** suffit pour le restreint ; l'**expert-réviseur** n'est exigé que pour l'ordinaire / les sociétés d'intérêt public.\n\n> **Définition (CO 729a al. 1)** : *« L'organe de révision vérifie s'il existe des faits dont il résulte que les comptes annuels ne sont pas conformes aux dispositions légales et aux statuts. »* — Le contrôle restreint **ne procure pas la même sécurité** que le contrôle ordinaire (formulation **négative** = assurance limitée)."
+              "body": "**M12 = la révision allégée des PME suisses : le contrôle restreint (review légale), CO 729 à 729c.** C'est une **spécificité suisse** (droit de la révision de 2008, dans le droit SA révisé en vigueur **1.1.2023**), à ne jamais confondre avec le contrôle ordinaire.\n\nTu dois savoir, à l'examen :\n\n1. **Situer les 3 régimes** : **opting-out** (aucune révision) → **contrôle restreint** (assurance limitée) → **contrôle ordinaire** (assurance raisonnable), et dire **qui relève de quoi** via les seuils.\n2. Énoncer la **définition / le but** du contrôle restreint (**CO 729a**) : émettre une **assurance limitée (négative)** — *« aucun fait ne permet de conclure que les comptes ne sont pas conformes à la loi et aux statuts »*.\n3. Distinguer **assurance limitée (négative)** ↔ **assurance raisonnable (positive)** de l'ordinaire, et savoir **pourquoi** (proportionnalité PME / coût).\n4. Citer les **procédures typiques** (**CO 729a al. 2**) : **auditions (demandes d'informations) + procédures analytiques + vérifications détaillées appropriées** — **pas** de test du SCI, **pas** de tests systématiques d'observation/confirmation, **pas** de procédures de détection de fraude.\n5. Maîtriser **l'indépendance allégée (CO 729)** : la **collaboration à la tenue de la comptabilité** et la fourniture d'autres prestations **sont ADMISES** sous conditions (mesures de sauvegarde si risque d'auto-révision) — **distinction-clé** avec l'ordinaire où c'est **interdit (CO 728 al. 2 ch. 4)**.\n6. Restituer le **contenu du rapport (CO 729b)** : ses **4 indications obligatoires** (nature restreinte · appréciation du résultat · indépendance et collaboration à la comptabilité · personne qui a dirigé la révision) — 1 seul rapport, à l'AG, **sans** la recommandation d'approbation propre à l'ordinaire (CO 728b al. 2).\n7. Comparer **ordinaire vs restreint** (assurance, normes, rapports, indépendance, procédures, agrément) **de tête**.\n8. Connaître l'**agrément requis** : **réviseur agréé** suffit pour le restreint ; l'**expert-réviseur** n'est exigé que pour l'ordinaire / les sociétés d'intérêt public.\n\n> **Définition (CO 729a al. 1)** : *« L'organe de révision vérifie s'il existe des faits dont il résulte que les comptes annuels ne sont pas conformes aux dispositions légales et aux statuts. »* — Le contrôle restreint **ne procure pas la même sécurité** que le contrôle ordinaire (formulation **négative** = assurance limitée)."
             },
             {
               "section_id": "m12_REV_s2",
               "title": "🗺️ Carte du module — tout le contrôle restreint en une page",
-              "body": "Garde-fou d'exhaustivité : chaque brique du module, **une ligne**, avec le réflexe-clé.\n\n| Brique | Objet | Réflexe-clé |\n|---|---|---|\n| **3 régimes (OOR)** | Opting-out / Ordinaire / Restreint | Mesurer les seuils → choisir le régime |\n| **CO 727** | Seuils du contrôle **ordinaire** | **20 / 40 / 250**, 2 critères sur 3, **2 exercices** |\n| **CO 727a al. 1** | Champ du **restreint** | Régime **par défaut** des sociétés sous les seuils |\n| **CO 727a al. 2** | **Opting-out** | **≤ 10 EPT** + **accord unanime** des actionnaires |\n| **CO 729** | **Indépendance** du réviseur restreint | Collaboration à la **compta ADMISE** sous conditions ; **réviseur agréé** suffit |\n| **CO 729a** | **Objet & étendue** | But (assurance négative) + **auditions + analytique + vérifs détaillées** |\n| **CO 729b** | **Rapport** | **1 seul** rapport à l'AG, **4 indications** + recommandation |\n| **CO 729c** | **Avis obligatoires** | Surendettement / perte de capital → **aviser le juge** si CA inactif |\n| **NCR (SER)** | Norme suisse rel. au contrôle restreint | Norme d'exécution suisse (EXPERTsuisse) |\n| **ISRE 2400** | Équivalent international (review) | « Limited assurance engagement » |\n| **LSR / OSRev** | Surveillance & agrément (ASR / FAOA) | Réviseur agréé vs expert-réviseur |\n| **Assurance limitée** | Niveau de sécurité | Formulation **négative** |\n| **Ordinaire vs restreint** | La grande comparaison | Tableau à connaître par cœur |\n\n**Mnémo régime — « OOR »** : **O**pting-out → **O**rdinaire → **R**estreint."
+              "body": "Garde-fou d'exhaustivité : chaque brique du module, **une ligne**, avec le réflexe-clé.\n\n| Brique | Objet | Réflexe-clé |\n|---|---|---|\n| **3 régimes (OOR)** | Opting-out / Ordinaire / Restreint | Mesurer les seuils → choisir le régime |\n| **CO 727** | Seuils du contrôle **ordinaire** | **20 / 40 / 250**, 2 critères sur 3, **2 exercices** |\n| **CO 727a al. 1** | Champ du **restreint** | Régime **par défaut** des sociétés sous les seuils |\n| **CO 727a al. 2** | **Opting-out** | **≤ 10 EPT** + **accord unanime** des actionnaires |\n| **CO 729** | **Indépendance** du réviseur restreint | Collaboration à la **compta ADMISE** sous conditions ; **réviseur agréé** suffit |\n| **CO 729a** | **Objet & étendue** | But (assurance négative) + **auditions + analytique + vérifs détaillées** |\n| **CO 729b** | **Rapport** | **1 seul** rapport à l'AG, **4 indications** (pas de recommandation d'approbation) |\n| **CO 729c** | **Avis obligatoires** | Surendettement / perte de capital → **aviser le juge** si CA inactif |\n| **NCR (SER)** | Norme suisse rel. au contrôle restreint | Norme d'exécution suisse (EXPERTsuisse) |\n| **ISRE 2400** | Équivalent international (review) | « Limited assurance engagement » |\n| **LSR / OSRev** | Surveillance & agrément (ASR / FAOA) | Réviseur agréé vs expert-réviseur |\n| **Assurance limitée** | Niveau de sécurité | Formulation **négative** |\n| **Ordinaire vs restreint** | La grande comparaison | Tableau à connaître par cœur |\n\n**Mnémo régime — « OOR »** : **O**pting-out → **O**rdinaire → **R**estreint."
             },
             {
               "section_id": "m12_REV_s3",
@@ -46254,7 +46984,7 @@
             {
               "section_id": "m12_REV_s4",
               "title": "⚖️ Bases légales & normatives",
-              "body": "**Code des obligations — cœur du module (contrôle restreint) :**\n\n| Article | Objet | Réflexe-examen |\n|---|---|---|\n| **CO 727 al. 1** | Seuils du contrôle **ordinaire** | 20 / 40 / 250, 2/3, 2 ans |\n| **CO 727a al. 1** | Sociétés relevant du **contrôle restreint** | Régime **par défaut** sous les seuils |\n| **CO 727a al. 2** | **Opting-out** | ≤ 10 EPT + **unanimité** |\n| **CO 729** | **Indépendance** de l'organe de révision (restreint) | Collaboration à la **compta admise** ; **réviseur agréé** suffit (al. 3) |\n| **CO 729a** | **Objet et étendue** du contrôle | But (négatif) + **auditions / analytique / vérifs détaillées** ; exclusions |\n| **CO 729b** | **Rapport** de l'organe de révision | **1** rapport, **4 indications** + recommandation, signé |\n| **CO 729c** | **Avis obligatoires** (surendettement, perte de capital) | Si CA n'agit pas → **avis au juge** |\n\n**Contexte (renvois) — à citer pour cadrer :**\n\n| Article / texte | Objet |\n|---|---|\n| **CO 728 / 728a / 728b / 728c** | Contrôle **ordinaire** : indépendance, objet, rapports, avis |\n| **CO 730 / 730a / 730b** | Dispositions **communes** : désignation, durée du mandat, infos & rapports |\n| **CO 731 / 731a** | Approbation des comptes ; clauses statutaires / conflits |\n| **CO 957–963b** | Droit comptable (objet du contrôle) |\n| **LSR** (loi sur la surveillance de la révision) | Agrément **réviseur / expert-réviseur** ; surveillance **ASR (FAOA)** |\n| **OSRev** | Conditions d'agrément (titres, expérience, formation continue) |\n\n**Normes professionnelles :**\n\n| Norme | Émetteur | Application |\n|---|---|---|\n| **NCR — Norme suisse relative au contrôle restreint (SER)** | EXPERTsuisse | **Norme d'exécution** du contrôle restreint suisse |\n| **ISRE 2400** (Engagements to Review Historical Financial Statements) | IAASB | Équivalent **international** (review / assurance limitée) |\n| **NAS / ISA** | EXPERTsuisse / IAASB | Pour le contrôle **ordinaire** (≠ restreint) |"
+              "body": "**Code des obligations — cœur du module (contrôle restreint) :**\n\n| Article | Objet | Réflexe-examen |\n|---|---|---|\n| **CO 727 al. 1** | Seuils du contrôle **ordinaire** | 20 / 40 / 250, 2/3, 2 ans |\n| **CO 727a al. 1** | Sociétés relevant du **contrôle restreint** | Régime **par défaut** sous les seuils |\n| **CO 727a al. 2** | **Opting-out** | ≤ 10 EPT + **unanimité** |\n| **CO 729** | **Indépendance** de l'organe de révision (restreint) | Collaboration à la **compta admise** ; **réviseur agréé** suffit (al. 3) |\n| **CO 729a** | **Objet et étendue** du contrôle | But (négatif) + **auditions / analytique / vérifs détaillées** ; exclusions |\n| **CO 729b** | **Rapport** de l'organe de révision | **1** rapport, **4 indications**, signé par la personne qui a dirigé la révision |\n| **CO 729c** | **Avis obligatoires** (surendettement, perte de capital) | Si CA n'agit pas → **avis au juge** |\n\n**Contexte (renvois) — à citer pour cadrer :**\n\n| Article / texte | Objet |\n|---|---|\n| **CO 728 / 728a / 728b / 728c** | Contrôle **ordinaire** : indépendance, objet, rapports, avis |\n| **CO 730 / 730a / 730b** | Dispositions **communes** : désignation, durée du mandat, infos & rapports |\n| **CO 731 / 731a** | Approbation des comptes ; clauses statutaires / conflits |\n| **CO 957–963b** | Droit comptable (objet du contrôle) |\n| **LSR** (loi sur la surveillance de la révision) | Agrément **réviseur / expert-réviseur** ; surveillance **ASR (FAOA)** |\n| **OSRev** | Conditions d'agrément (titres, expérience, formation continue) |\n\n**Normes professionnelles :**\n\n| Norme | Émetteur | Application |\n|---|---|---|\n| **NCR — Norme suisse relative au contrôle restreint (SER)** | EXPERTsuisse | **Norme d'exécution** du contrôle restreint suisse |\n| **ISRE 2400** (Engagements to Review Historical Financial Statements) | IAASB | Équivalent **international** (review / assurance limitée) |\n| **NAS / ISA** | EXPERTsuisse / IAASB | Pour le contrôle **ordinaire** (≠ restreint) |"
             },
             {
               "section_id": "m12_REV_s5",
@@ -46264,7 +46994,7 @@
             {
               "section_id": "m12_REV_s6",
               "title": "🧮 Démarche & rapport-type (modèle CO 729b / NCR)",
-              "body": "**Arbre de décision — quel régime ?**\n\n```\n1) Mesurer la taille sur 2 exercices : 20 mio bilan / 40 mio CA / 250 EPT\n   ├─ 2 critères sur 3 dépassés (2 ans) ──────────► CONTRÔLE ORDINAIRE (CO 727)\n   └─ Sous les seuils ─────────────────────────────►\n        ├─ ≤ 10 EPT ET accord unanime des actionnaires ─► OPTING-OUT (CO 727a al. 2) : aucune révision\n        └─ Sinon ───────────────────────────────────────► CONTRÔLE RESTREINT (CO 729 ss)\n```\n*Remarque : une société sous les seuils peut **volontairement** opter pour le contrôle ordinaire (opting-up).*\n\n---\n\n**Déroulé d'une mission de contrôle restreint :**\n1. **Acceptation / indépendance** : vérifier l'agrément (**réviseur agréé**) et l'indépendance (**CO 729**) ; si collaboration à la compta → **mesures de sauvegarde** documentées.\n2. **Planification** : compréhension **légère** de l'entité ; identification des postes à risque.\n3. **Exécution (CO 729a al. 2)** : **auditions** de la direction + **procédures analytiques** + **vérifications détaillées appropriées** (existence, exhaustivité, évaluation, délimitation, présentation).\n4. **Évaluation** : y a-t-il un **fait** indiquant une **non-conformité** à la loi/aux statuts ?\n5. **Rapport (CO 729b)** : avis + indépendance + personne/qualif + **recommandation** ; signature.\n6. **Avis (CO 729c)** : en cas de surendettement non traité par le CA → **aviser le juge**.\n\n---\n\n**Rapport-type — contrôle restreint (modèle EXPERTsuisse / NCR), formulation NÉGATIVE :**\n\n```\nRAPPORT DE L'ORGANE DE RÉVISION SUR LE CONTRÔLE RESTREINT\nÀ l'assemblée générale de [Société], [lieu]\n\nEn notre qualité d'organe de révision, nous avons effectué le contrôle restreint des\ncomptes annuels (bilan, compte de résultat et annexe) de [Société] pour l'exercice\narrêté au [date].\n\nLa responsabilité de l'établissement des comptes annuels incombe au conseil\nd'administration alors que notre mission consiste à contrôler ces comptes. Nous\nattestons que nous remplissons les exigences légales d'agrément (LSR) et\nd'indépendance (art. 729 CO).\n\nNotre contrôle a été effectué selon la Norme suisse relative au contrôle restreint.\nCette norme requiert de planifier et de réaliser le contrôle de manière telle que\ndes anomalies significatives dans les comptes annuels puissent être constatées. Un\ncontrôle restreint englobe principalement des auditions, des opérations de contrôle\nanalytiques ainsi que des vérifications détaillées appropriées des documents\ndisponibles dans l'entreprise contrôlée. En revanche, des vérifications des flux\nd'exploitation et du système de contrôle interne ainsi que des auditions et d'autres\nopérations de contrôle destinées à détecter des fraudes ou d'autres violations de la\nloi ne font pas partie de ce contrôle.\n\nLors de notre contrôle, nous n'avons pas rencontré d'élément nous permettant de\nconclure que les comptes annuels ainsi que la proposition concernant l'emploi du\nbénéfice ne sont pas conformes à la loi et aux statuts.\n\n[Lieu, date]            [Société de révision]\n                        [Réviseur responsable — réviseur/expert-réviseur agréé]\n                        [N° d'agrément ASR]\n```\n\n> Variante avec **réserve** : insérer un paragraphe *« À l'exception de … »* avant la conclusion, puis **recommander l'approbation avec réserve** (ou le **refus**)."
+              "body": "**Arbre de décision — quel régime ?**\n\n```\n1) Mesurer la taille sur 2 exercices : 20 mio bilan / 40 mio CA / 250 EPT\n   ├─ 2 critères sur 3 dépassés (2 ans) ──────────► CONTRÔLE ORDINAIRE (CO 727)\n   └─ Sous les seuils ─────────────────────────────►\n        ├─ ≤ 10 EPT ET accord unanime des actionnaires ─► OPTING-OUT (CO 727a al. 2) : aucune révision\n        └─ Sinon ───────────────────────────────────────► CONTRÔLE RESTREINT (CO 729 ss)\n```\n*Remarque : une société sous les seuils peut **volontairement** opter pour le contrôle ordinaire (opting-up).*\n\n---\n\n**Déroulé d'une mission de contrôle restreint :**\n1. **Acceptation / indépendance** : vérifier l'agrément (**réviseur agréé**) et l'indépendance (**CO 729**) ; si collaboration à la compta → **mesures de sauvegarde** documentées.\n2. **Planification** : compréhension **légère** de l'entité ; identification des postes à risque.\n3. **Exécution (CO 729a al. 2)** : **auditions** de la direction + **procédures analytiques** + **vérifications détaillées appropriées** (existence, exhaustivité, évaluation, délimitation, présentation).\n4. **Évaluation** : y a-t-il un **fait** indiquant une **non-conformité** à la loi/aux statuts ?\n5. **Rapport (CO 729b)** : nature restreinte + appréciation du résultat + indépendance + personne/qualif ; signature.\n6. **Avis (CO 729c)** : en cas de surendettement non traité par le CA → **aviser le juge**.\n\n---\n\n**Rapport-type — contrôle restreint (modèle EXPERTsuisse / NCR), formulation NÉGATIVE :**\n\n```\nRAPPORT DE L'ORGANE DE RÉVISION SUR LE CONTRÔLE RESTREINT\nÀ l'assemblée générale de [Société], [lieu]\n\nEn notre qualité d'organe de révision, nous avons effectué le contrôle restreint des\ncomptes annuels (bilan, compte de résultat et annexe) de [Société] pour l'exercice\narrêté au [date].\n\nLa responsabilité de l'établissement des comptes annuels incombe au conseil\nd'administration alors que notre mission consiste à contrôler ces comptes. Nous\nattestons que nous remplissons les exigences légales d'agrément (LSR) et\nd'indépendance (art. 729 CO).\n\nNotre contrôle a été effectué selon la Norme suisse relative au contrôle restreint.\nCette norme requiert de planifier et de réaliser le contrôle de manière telle que\ndes anomalies significatives dans les comptes annuels puissent être constatées. Un\ncontrôle restreint englobe principalement des auditions, des opérations de contrôle\nanalytiques ainsi que des vérifications détaillées appropriées des documents\ndisponibles dans l'entreprise contrôlée. En revanche, des vérifications des flux\nd'exploitation et du système de contrôle interne ainsi que des auditions et d'autres\nopérations de contrôle destinées à détecter des fraudes ou d'autres violations de la\nloi ne font pas partie de ce contrôle.\n\nLors de notre contrôle, nous n'avons pas rencontré d'élément nous permettant de\nconclure que les comptes annuels ainsi que la proposition concernant l'emploi du\nbénéfice ne sont pas conformes à la loi et aux statuts.\n\n[Lieu, date]            [Société de révision]\n                        [Réviseur responsable — réviseur/expert-réviseur agréé]\n                        [N° d'agrément ASR]\n```\n\n> Variante avec **réserve** : insérer un paragraphe *« À l'exception de … »* avant la conclusion, puis **recommander l'approbation avec réserve** (ou le **refus**)."
             },
             {
               "section_id": "m12_REV_s7",
@@ -46274,7 +47004,7 @@
             {
               "section_id": "m12_REV_s8",
               "title": "⚠️ Pièges & confusions d'examen",
-              "body": "1. **Assurance limitée ≠ raisonnable.** Restreint = formulation **négative** (*« aucun fait… ne sont pas conformes »*). Ordinaire = formulation **positive** (*« sont conformes »*). Ne pas inverser.\n\n2. **Opting-out ≠ contrôle restreint.** Opting-out = **AUCUNE** révision (≤ 10 EPT + **unanimité**). Restreint = révision **allégée mais réelle**.\n\n3. **Indépendance : LA confusion à éviter.** En **restreint**, la **collaboration à la tenue de la comptabilité est ADMISE** (**CO 729 al. 2**, avec sauvegardes) ; en **ordinaire**, elle est **INTERDITE** (CO 728 al. 2 ch. 4). C'est la distinction reine du module.\n\n4. **Mauvais article pour l'indépendance.** L'indépendance du restreint = **CO 729** (et non « CO 730b » — CO 730/730a portent sur la désignation/durée du mandat, dispositions **communes**).\n\n5. **Nombre de rapports.** Restreint = **1 seul** rapport (CO 729b) à l'AG. Ordinaire = **2** (AG + rapport détaillé au CA). Ne pas attribuer 2 rapports au restreint.\n\n6. **Le rapport restreint RECOMMANDE.** **CO 729b** exige une **recommandation** d'approuver (avec/sans réserve) **ou de refuser** les comptes — ce n'est pas qu'« implicite ».\n\n7. **Procédures exclues.** Au restreint, **pas** de contrôle du **SCI**, **pas** de procédures de **détection de fraude**, **pas** de tests de contrôle, **pas** de confirmations/observations systématiques (**CO 729a**).\n\n8. **Norme à citer.** Restreint = **NCR (SER)** / **ISRE 2400** — **pas** « ISA 700 » (qui est l'ordinaire/audit).\n\n9. **Avis au juge.** Le réviseur restreint **aussi** avise le juge en cas de surendettement non traité (**CO 729c**, pendant de CO 728c). Ne pas l'oublier.\n\n10. **Seuils : 727 ≠ 961.** Les **mêmes** 20/40/250 servent (a) à choisir le **type de révision** (CO 727) et (b) à déclencher d'autres obligations (**présentation des comptes des grandes entreprises, CO 961 ss**, et **consolidation, CO 963a**). Conséquences **différentes**.\n\n11. **Agrément.** Restreint = **réviseur agréé** suffit ; **expert-réviseur** requis pour l'**ordinaire**. Ne pas exiger l'expert-réviseur partout.\n\n12. **Pas de passage obligatoire « restreint d'abord ».** Si les seuils ordinaires sont d'emblée dépassés, la société est en **ordinaire** directement.\n\n13. **Surveillance.** L'autorité est l'**ASR / FAOA** (agrément + surveillance), à ne pas confondre avec **FINMA** (banques/assurances)."
+              "body": "1. **Assurance limitée ≠ raisonnable.** Restreint = formulation **négative** (*« aucun fait… ne sont pas conformes »*). Ordinaire = formulation **positive** (*« sont conformes »*). Ne pas inverser.\n\n2. **Opting-out ≠ contrôle restreint.** Opting-out = **AUCUNE** révision (≤ 10 EPT + **unanimité**). Restreint = révision **allégée mais réelle**.\n\n3. **Indépendance : LA confusion à éviter.** En **restreint**, la **collaboration à la tenue de la comptabilité est ADMISE** (**CO 729 al. 2**, avec sauvegardes) ; en **ordinaire**, elle est **INTERDITE** (CO 728 al. 2 ch. 4). C'est la distinction reine du module.\n\n4. **Mauvais article pour l'indépendance.** L'indépendance du restreint = **CO 729** (et non « CO 730b » — CO 730/730a portent sur la désignation/durée du mandat, dispositions **communes**).\n\n5. **Nombre de rapports.** Restreint = **1 seul** rapport (CO 729b) à l'AG. Ordinaire = **2** (AG + rapport détaillé au CA). Ne pas attribuer 2 rapports au restreint.\n\n6. **Le rapport restreint ne RECOMMANDE pas.** **CO 729b** exige 4 indications : nature restreinte de la révision, **appréciation** du résultat, indépendance (et collaboration à la comptabilité), personne qui a dirigé la révision. La **recommandation** d'approuver (avec/sans réserve) ou de refuser les comptes est propre au rapport **ordinaire** (**CO 728b al. 2 ch. 4**).\n\n7. **Procédures exclues.** Au restreint, **pas** de contrôle du **SCI**, **pas** de procédures de **détection de fraude**, **pas** de tests de contrôle, **pas** de confirmations/observations systématiques (**CO 729a**).\n\n8. **Norme à citer.** Restreint = **NCR (SER)** / **ISRE 2400** — **pas** « ISA 700 » (qui est l'ordinaire/audit).\n\n9. **Avis au juge.** Le réviseur restreint **aussi** avise le juge en cas de surendettement non traité (**CO 729c**, pendant de CO 728c). Ne pas l'oublier.\n\n10. **Seuils : 727 ≠ 961.** Les **mêmes** 20/40/250 servent (a) à choisir le **type de révision** (CO 727) et (b) à déclencher d'autres obligations (**présentation des comptes des grandes entreprises, CO 961 ss**, et **consolidation, CO 963a**). Conséquences **différentes**.\n\n11. **Agrément.** Restreint = **réviseur agréé** suffit ; **expert-réviseur** requis pour l'**ordinaire**. Ne pas exiger l'expert-réviseur partout.\n\n12. **Pas de passage obligatoire « restreint d'abord ».** Si les seuils ordinaires sont d'emblée dépassés, la société est en **ordinaire** directement.\n\n13. **Surveillance.** L'autorité est l'**ASR / FAOA** (agrément + surveillance), à ne pas confondre avec **FINMA** (banques/assurances)."
             },
             {
               "section_id": "m12_REV_s9",
@@ -46289,7 +47019,7 @@
             {
               "section_id": "m12_REV_s11",
               "title": "🧪 Auto-test express (25 questions flash)",
-              "body": "Réponds en < 30 s, puis vérifie. *(renvoi entre parenthèses)*\n\n1. Les 3 régimes de révision ? → *Opting-out, restreint, ordinaire — « OOR »* (CO 727a).\n2. Seuils du contrôle ordinaire ? → *20 mio bilan / 40 mio CA / 250 EPT ; 2/3, 2 ans* (CO 727).\n3. Conditions de l'opting-out ? → *≤ 10 EPT + accord unanime des actionnaires* (CO 727a al. 2).\n4. Effet de l'opting-out ? → *Aucune révision ; mention au RC* (CO 727a al. 2).\n5. Niveau d'assurance du restreint ? → *Limitée (négative)* (CO 729a).\n6. Niveau d'assurance de l'ordinaire ? → *Raisonnable (positive)* (CO 728a).\n7. Formulation du rapport restreint ? → *« Aucun fait… ne sont pas conformes »* (CO 729b).\n8. Norme suisse applicable au restreint ? → *NCR — Norme suisse relative au contrôle restreint (SER)* (EXPERTsuisse).\n9. Équivalent international ? → *ISRE 2400* (IAASB).\n10. Article de l'objet/étendue ? → *CO 729a*.\n11. Les 3 types de procédures du restreint ? → *Auditions + analytique + vérifs détaillées appropriées* (CO 729a al. 2).\n12. Ce qui est EXCLU du restreint ? → *SCI, flux d'exploitation, détection de fraude* (CO 729a al. 2).\n13. Tenue de la compta du client en restreint ? → *Admise, avec mesures de sauvegarde* (CO 729 al. 2).\n14. Tenue de la compta du client en ordinaire ? → *Interdite* (CO 728 al. 2 ch. 4).\n15. Article de l'indépendance du restreint ? → *CO 729* (pas 730b).\n16. Combien de rapports en restreint ? → *1, à l'AG* (CO 729b).\n17. Combien de rapports en ordinaire ? → *2 (AG + CA détaillé)* (CO 728b).\n18. Les 4 indications du rapport restreint ? → *Avis · indépendance · personne+qualif · recommandation* (CO 729b).\n19. Le rapport restreint recommande-t-il ? → *Oui : approuver (avec/sans réserve) ou refuser* (CO 729b).\n20. Avis au juge en cas de surendettement (restreint) ? → *Oui* (CO 729c).\n21. Agrément requis pour le restreint ? → *Réviseur agréé* (CO 729 al. 3 / LSR).\n22. Agrément requis pour l'ordinaire ? → *Expert-réviseur* (LSR).\n23. Rotation du réviseur responsable en restreint ? → *Non imposée* (≠ ordinaire 7 ans, CO 730a al. 2).\n24. EQR / contrôle-qualité de mission en restreint ? → *Non requis*.\n25. Autorité de surveillance ? → *ASR / FAOA* (LSR) — pas la FINMA."
+              "body": "Réponds en < 30 s, puis vérifie. *(renvoi entre parenthèses)*\n\n1. Les 3 régimes de révision ? → *Opting-out, restreint, ordinaire — « OOR »* (CO 727a).\n2. Seuils du contrôle ordinaire ? → *20 mio bilan / 40 mio CA / 250 EPT ; 2/3, 2 ans* (CO 727).\n3. Conditions de l'opting-out ? → *≤ 10 EPT + accord unanime des actionnaires* (CO 727a al. 2).\n4. Effet de l'opting-out ? → *Aucune révision ; mention au RC* (CO 727a al. 2).\n5. Niveau d'assurance du restreint ? → *Limitée (négative)* (CO 729a).\n6. Niveau d'assurance de l'ordinaire ? → *Raisonnable (positive)* (CO 728a).\n7. Formulation du rapport restreint ? → *« Aucun fait… ne sont pas conformes »* (CO 729b).\n8. Norme suisse applicable au restreint ? → *NCR — Norme suisse relative au contrôle restreint (SER)* (EXPERTsuisse).\n9. Équivalent international ? → *ISRE 2400* (IAASB).\n10. Article de l'objet/étendue ? → *CO 729a*.\n11. Les 3 types de procédures du restreint ? → *Auditions + analytique + vérifs détaillées appropriées* (CO 729a al. 2).\n12. Ce qui est EXCLU du restreint ? → *SCI, flux d'exploitation, détection de fraude* (CO 729a al. 2).\n13. Tenue de la compta du client en restreint ? → *Admise, avec mesures de sauvegarde* (CO 729 al. 2).\n14. Tenue de la compta du client en ordinaire ? → *Interdite* (CO 728 al. 2 ch. 4).\n15. Article de l'indépendance du restreint ? → *CO 729* (pas 730b).\n16. Combien de rapports en restreint ? → *1, à l'AG* (CO 729b).\n17. Combien de rapports en ordinaire ? → *2 (AG + CA détaillé)* (CO 728b).\n18. Les 4 indications du rapport restreint ? → *Nature restreinte · appréciation du résultat · indépendance · personne+qualif* (CO 729b).\n19. Le rapport restreint recommande-t-il ? → *Non* : la recommandation d'approuver ou de refuser est propre à l'ordinaire (CO 728b al. 2).\n20. Avis au juge en cas de surendettement (restreint) ? → *Oui* (CO 729c).\n21. Agrément requis pour le restreint ? → *Réviseur agréé* (CO 729 al. 3 / LSR).\n22. Agrément requis pour l'ordinaire ? → *Expert-réviseur* (LSR).\n23. Rotation du réviseur responsable en restreint ? → *Non imposée* (≠ ordinaire 7 ans, CO 730a al. 2).\n24. EQR / contrôle-qualité de mission en restreint ? → *Non requis*.\n25. Autorité de surveillance ? → *ASR / FAOA* (LSR) — pas la FINMA."
             },
             {
               "section_id": "m12_REV_s12",
@@ -46531,6 +47261,106 @@
               "explanation": "CO 727a al. 2 et 4 : la renonciation vaut aussi pour les exercices suivants, mais chaque actionnaire peut exiger un contrôle restreint (au plus tard 10 jours avant l'AG) et le CA doit modifier l'inscription si les conditions ne sont plus remplies.",
               "difficulty": "hard",
               "section_id": "m12_REV_s5"
+            },
+            {
+              "id": "m12_REV_nq1",
+              "type": "vrai_faux",
+              "question": "En contrôle restreint, l'organe de révision doit vérifier l'existence d'un système de contrôle interne.",
+              "options": null,
+              "answer": false,
+              "explanation": "Faux. La vérification de l'existence du SCI (CO 728a al. 1 ch. 3) est propre au contrôle ordinaire. Le contrôle restreint se limite à des auditions, des opérations de contrôle analytiques et des vérifications détaillées appropriées (CO 729a al. 2).",
+              "difficulty": "easy",
+              "section_id": "m12_REV_s8"
+            },
+            {
+              "id": "m12_REV_nq2",
+              "type": "mcq",
+              "question": "Les seuils du contrôle ordinaire (20 / 40 / 250) imposent ce contrôle lorsque deux d'entre eux sont dépassés…",
+              "options": [
+                "Au cours de deux exercices successifs",
+                "Au cours d'un seul exercice",
+                "Au cours de trois exercices successifs",
+                "En moyenne sur les cinq derniers exercices"
+              ],
+              "answer": 0,
+              "explanation": "CO 727 al. 1 ch. 2 : le contrôle ordinaire s'impose lorsque deux des trois valeurs (total du bilan 20 mio, chiffre d'affaires 40 mio, 250 emplois à plein temps en moyenne annuelle) sont dépassées au cours de deux exercices successifs.",
+              "difficulty": "medium",
+              "section_id": "m12_REV_s3"
+            },
+            {
+              "id": "m12_REV_nq3",
+              "type": "mcq",
+              "question": "La rotation du réviseur responsable après 7 ans (CO 730a al. 2) s'applique-t-elle au contrôle restreint ?",
+              "options": [
+                "Oui, mais seulement pour les sociétés familiales",
+                "Non, elle ne vise que le contrôle ordinaire",
+                "Non, elle ne vise que les sociétés cotées en bourse",
+                "Oui, avec un délai de carence de trois ans"
+              ],
+              "answer": 1,
+              "explanation": "CO 730a al. 2 limite à 7 ans la durée pendant laquelle une même personne peut diriger un contrôle ordinaire (carence de 3 ans). Aucune rotation légale n'est imposée en contrôle restreint.",
+              "difficulty": "medium",
+              "section_id": "m12_REV_s3"
+            },
+            {
+              "id": "m12_REV_nq4",
+              "type": "mcq",
+              "question": "Laquelle de ces procédures n'est PAS prévue en contrôle restreint ?",
+              "options": [
+                "Les vérifications détaillées appropriées",
+                "Les auditions de la direction et du personnel comptable",
+                "Les opérations de contrôle analytiques",
+                "Les tests de fonctionnement des contrôles internes"
+              ],
+              "answer": 3,
+              "explanation": "Le contrôle restreint comprend des auditions, des opérations de contrôle analytiques et des vérifications détaillées appropriées (CO 729a al. 2). Les tests du système de contrôle interne, l'observation de l'inventaire et les procédures ciblées sur la fraude n'en font pas partie.",
+              "difficulty": "medium",
+              "section_id": "m12_REV_s8"
+            },
+            {
+              "id": "m12_REV_nq5",
+              "type": "mcq",
+              "question": "Après un opting-out, un actionnaire peut-il encore exiger un contrôle restreint ?",
+              "options": [
+                "Oui, mais seulement s'il détient au moins 10 % du capital",
+                "Non, la renonciation lie tous les actionnaires pendant 3 ans",
+                "Oui, au plus tard 10 jours avant l'assemblée générale",
+                "Non, seul le conseil d'administration peut revenir sur l'opting-out"
+              ],
+              "answer": 2,
+              "explanation": "La renonciation vaut aussi pour les exercices suivants, mais chaque actionnaire peut exiger un contrôle restreint et l'élection d'un organe de révision au plus tard 10 jours avant l'assemblée générale (CO 727a). L'AG doit alors élire l'organe de révision.",
+              "difficulty": "hard",
+              "section_id": "m12_REV_s5"
+            },
+            {
+              "id": "m12_REV_nq6",
+              "type": "mcq",
+              "question": "Pour obtenir l'accord des actionnaires à un opting-out, le conseil d'administration peut-il considérer leur silence comme un consentement ?",
+              "options": [
+                "Non, seul un acte authentique permet de renoncer à la révision",
+                "Oui, sans délai particulier, dès lors que la société a moins de 10 EPT",
+                "Oui, s'il a fixé par écrit un délai de réponse d'au moins 20 jours",
+                "Non, l'accord doit toujours être exprès et donné en assemblée"
+              ],
+              "answer": 2,
+              "explanation": "CO 727a : le CA peut demander le consentement des actionnaires par écrit, fixer un délai de réponse d'au moins 20 jours et indiquer que l'absence de réponse vaut consentement. L'opting-out suppose en outre au plus 10 emplois à plein temps en moyenne annuelle.",
+              "difficulty": "hard",
+              "section_id": "m12_REV_s5"
+            },
+            {
+              "id": "m12_REV_nq7",
+              "type": "mcq",
+              "question": "Que doit contenir le rapport de l'organe de révision en contrôle restreint (CO 729b) ?",
+              "options": [
+                "La nature restreinte du contrôle, une appréciation du résultat, l'indépendance et la personne responsable",
+                "La liste des points clés de l'audit (ISA 701), le seuil de signification retenu et la note de l'auditeur",
+                "Une opinion positive sur l'existence du SCI et une recommandation d'approuver ou de refuser les comptes",
+                "Un rapport détaillé au conseil d'administration sur l'organisation, la gestion et les risques de la société"
+              ],
+              "answer": 0,
+              "explanation": "CO 729b : un rapport écrit résumé à l'AG, signé par la personne qui a dirigé la révision, indiquant la nature restreinte de la révision, une appréciation de son résultat (formulée négativement), l'indépendance (et l'éventuelle collaboration à la comptabilité) et la personne responsable avec ses qualifications. La recommandation d'approuver ou de refuser les comptes et le rapport détaillé au CA relèvent du contrôle ordinaire (CO 728b).",
+              "difficulty": "hard",
+              "section_id": "m12_REV_s8"
             }
           ]
         }
@@ -47148,6 +47978,81 @@
               "explanation": "La dépendance économique envers un client crée une menace d'intérêt personnel (CO 728 al. 2 ch. 5 : mandat entraînant une dépendance économique incompatible). Le Code IESBA prévoit communication et sauvegardes, notamment pour les entités d'intérêt public.",
               "difficulty": "medium",
               "section_id": "m13_REV_s5"
+            },
+            {
+              "id": "m13_REV_nq1",
+              "type": "mcq",
+              "question": "Que régit la norme ISQM 2 ?",
+              "options": [
+                "Le système de gestion de la qualité du cabinet",
+                "La formation continue obligatoire des réviseurs",
+                "La gestion de la qualité au niveau d'un audit",
+                "La revue de la qualité de la mission (EQR)"
+              ],
+              "answer": 3,
+              "explanation": "ISQM 1 régit le système de gestion de la qualité du cabinet, ISQM 2 la revue de la qualité de la mission (nomination et compétences du réviseur EQR, réalisation de la revue) et ISA 220 (révisée) la gestion de la qualité au niveau de chaque audit. Toutes sont applicables depuis le 15.12.2022.",
+              "difficulty": "medium",
+              "section_id": "m13_REV_s4"
+            },
+            {
+              "id": "m13_REV_nq2",
+              "type": "mcq",
+              "question": "Lequel de ces éléments ne fait PAS partie des cinq principes fondamentaux du Code de l'IESBA ?",
+              "options": [
+                "La confidentialité",
+                "L'indépendance",
+                "L'objectivité",
+                "Le comportement professionnel"
+              ],
+              "answer": 1,
+              "explanation": "Les cinq principes fondamentaux sont l'intégrité, l'objectivité, la compétence et la diligence professionnelles, la confidentialité et le comportement professionnel. L'indépendance fait l'objet de normes spécifiques (International Independence Standards) pour les missions d'audit et d'assurance.",
+              "difficulty": "hard",
+              "section_id": "m13_REV_s5"
+            },
+            {
+              "id": "m13_REV_nq3",
+              "type": "mcq",
+              "question": "Pendant l'audit, l'auditeur découvre un acte illégal présumé du client (NOCLAR, Code IESBA section 360). Quelle est sa première démarche ?",
+              "options": [
+                "L'ignorer s'il n'a pas d'effet direct sur les comptes annuels",
+                "En discuter avec le niveau approprié de la direction et, au besoin, la gouvernance",
+                "Le dénoncer immédiatement au Ministère public, sans en informer au préalable le client",
+                "Démissionner de son mandat sans en donner les motifs"
+              ],
+              "answer": 1,
+              "explanation": "Le Code IESBA (R360) demande d'abord de comprendre la situation et d'en discuter avec le niveau approprié de la direction et, le cas échéant, avec les responsables de la gouvernance, puis d'évaluer s'il faut aller plus loin (signalement à une autorité, démission), dans le respect du secret professionnel.",
+              "difficulty": "hard",
+              "section_id": "m13_REV_s5"
+            },
+            {
+              "id": "m13_REV_nq4",
+              "type": "mcq",
+              "question": "Quelle loi fédérale régit l'agrément et la surveillance des réviseurs en Suisse ?",
+              "options": [
+                "La loi sur les banques et les caisses d'épargne (LB)",
+                "La loi sur la surveillance de la révision (LSR)",
+                "La loi sur la surveillance des marchés financiers (LFINMA)",
+                "La loi sur les bourses et le commerce des valeurs (LBVM)"
+              ],
+              "answer": 1,
+              "explanation": "La LSR et son ordonnance (OSRev) fixent les conditions d'agrément (réviseur, expert-réviseur, entreprise soumise à la surveillance de l'État) et les compétences de l'ASR. La FINMA surveille les établissements financiers, pas l'agrément des réviseurs.",
+              "difficulty": "easy",
+              "section_id": "m13_REV_s4"
+            },
+            {
+              "id": "m13_REV_nq5",
+              "type": "mcq",
+              "question": "Le réviseur responsable d'un contrôle ordinaire a atteint 7 ans de mandat. Que prévoit CO 730a al. 2 ?",
+              "options": [
+                "Le mandat se poursuit si l'AG le confirme à l'unanimité",
+                "Il peut continuer s'il obtient l'agrément d'expert-réviseur",
+                "Le cabinet de révision doit être remplacé par un autre",
+                "Il doit être remplacé ; le cabinet peut conserver le mandat"
+              ],
+              "answer": 3,
+              "explanation": "La rotation porte sur la personne qui dirige la révision : après 7 ans, elle doit céder la place et ne peut reprendre le mandat qu'après un délai de carence de 3 ans. Le droit suisse n'impose pas la rotation du cabinet.",
+              "difficulty": "medium",
+              "section_id": "m13_REV_s8"
             }
           ]
         }
@@ -47657,6 +48562,91 @@
               "explanation": "ISRS 4400 (révisée) : le praticien exécute les procédures convenues et rapporte des constatations factuelles, sans exprimer d'opinion ni de conclusion d'assurance.",
               "difficulty": "easy",
               "section_id": "m14_REV_s5"
+            },
+            {
+              "id": "m14_REV_nq1",
+              "type": "mcq",
+              "question": "Quelle est la différence entre ISRE 2400 et ISRE 2410 ?",
+              "options": [
+                "2410 est réalisée par l'auditeur de l'entité ; 2400 par un autre praticien",
+                "2400 donne une assurance raisonnable ; 2410 seulement une assurance limitée",
+                "2400 vise les sociétés cotées ; 2410 les PME non soumises à révision",
+                "2410 porte sur des informations non financières ; 2400 sur des comptes"
+              ],
+              "answer": 0,
+              "explanation": "Les deux normes régissent des examens limités (assurance limitée, conclusion négative). ISRE 2410 s'applique lorsque l'examen est mené par l'auditeur des états financiers annuels de l'entité (ex. comptes intermédiaires) ; ISRE 2400 lorsqu'il est mené par un praticien qui n'en est pas l'auditeur.",
+              "difficulty": "medium",
+              "section_id": "m14_REV_s8"
+            },
+            {
+              "id": "m14_REV_nq2",
+              "type": "mcq",
+              "question": "Dans un inventaire des gaz à effet de serre, que recouvrent les émissions de « scope 2 » ?",
+              "options": [
+                "Les émissions indirectes liées à l'énergie achetée (électricité, chaleur)",
+                "Les émissions de toute la chaîne de valeur, fournisseurs et clients compris",
+                "Les émissions évitées grâce à l'achat de certificats de compensation",
+                "Les émissions directes des installations et des véhicules de l'entité"
+              ],
+              "answer": 0,
+              "explanation": "Scope 1 = émissions directes (combustion sur site, flotte) ; scope 2 = émissions indirectes liées à l'électricité, la chaleur ou la vapeur achetées ; scope 3 = autres émissions indirectes de la chaîne de valeur.",
+              "difficulty": "medium",
+              "section_id": "m14_REV_s3"
+            },
+            {
+              "id": "m14_REV_nq3",
+              "type": "mcq",
+              "question": "Dans un rapport ISAE 3402, qu'implique la méthode « carve-out » pour un sous-traitant de l'organisation de services ?",
+              "options": [
+                "Le sous-traitant est réputé ne présenter aucun risque pour l'entité utilisatrice",
+                "Les contrôles du sous-traitant sont décrits et testés avec les autres",
+                "Le sous-traitant doit publier son propre rapport ISAE 3402 de type 2",
+                "Les contrôles du sous-traitant sont exclus de la description et des tests"
+              ],
+              "answer": 3,
+              "explanation": "Avec la méthode « carve-out », la description mentionne le sous-traitant mais exclut ses contrôles, qui ne sont pas testés ; l'auditeur de l'utilisateur doit alors obtenir d'autres éléments (par ex. le rapport du sous-traitant). Avec la méthode « inclusive », ils sont inclus et testés.",
+              "difficulty": "hard",
+              "section_id": "m14_REV_s5"
+            },
+            {
+              "id": "m14_REV_nq4",
+              "type": "vrai_faux",
+              "question": "Dans une mission de procédures convenues selon ISRS 4400 (révisée), le praticien doit toujours être indépendant.",
+              "options": null,
+              "answer": false,
+              "explanation": "Faux. ISRS 4400 (révisée) n'exige pas l'indépendance, sauf si la loi, la réglementation ou les termes de la mission l'imposent ; le rapport doit indiquer si le praticien est indépendant ou non. La mission ne donne aucune assurance : elle présente des constatations factuelles.",
+              "difficulty": "medium",
+              "section_id": "m14_REV_s8"
+            },
+            {
+              "id": "m14_REV_nq5",
+              "type": "mcq",
+              "question": "Pourquoi la conclusion d'une mission d'assurance limitée est-elle formulée négativement ?",
+              "options": [
+                "Parce que la direction n'a pas fourni de lettre d'affirmation écrite",
+                "Parce que ses procédures sont moins étendues que pour une assurance raisonnable",
+                "Parce que la loi interdit d'exprimer une opinion positive hors audit",
+                "Parce que le praticien a relevé des anomalies à la fois significatives et généralisées"
+              ],
+              "answer": 1,
+              "explanation": "En assurance limitée, la nature, le calendrier et l'étendue des procédures sont réduits : le praticien conclut qu'« aucun élément n'a attiré son attention » laissant penser que l'information n'est pas conforme aux critères. L'assurance raisonnable permet une conclusion positive.",
+              "difficulty": "medium",
+              "section_id": "m14_REV_s3"
+            },
+            {
+              "id": "m14_REV_nq6",
+              "type": "mcq",
+              "question": "Quelle norme de l'IAASB régit une mission de compilation d'informations financières ?",
+              "options": [
+                "ISRE 2400 (révisée)",
+                "ISRS 4400 (révisée)",
+                "ISAE 3000 (révisée)",
+                "ISRS 4410 (révisée)"
+              ],
+              "answer": 3,
+              "explanation": "ISRS 4410 = compilation (le praticien aide à préparer l'information, sans assurance) ; ISRS 4400 = procédures convenues ; ISRE 2400 = examen limité d'états financiers ; ISAE 3000 = cadre général des missions d'assurance autres que sur des informations financières historiques.",
+              "difficulty": "easy",
+              "section_id": "m14_REV_s8"
             }
           ]
         }
@@ -48144,6 +49134,91 @@
               "answer": 0,
               "explanation": "ISA 200.15 : l'auditeur planifie et réalise l'audit avec esprit critique, en reconnaissant que des circonstances peuvent exister qui entraînent des anomalies significatives.",
               "difficulty": "easy",
+              "section_id": "m15_REV_s5"
+            },
+            {
+              "id": "m15_REV_nq1",
+              "type": "mcq",
+              "question": "Dans quel délai après la date du rapport le dossier d'audit final doit-il être assemblé (ISA 230) ?",
+              "options": [
+                "Avant la date du rapport",
+                "En principe 60 jours",
+                "30 jours",
+                "90 jours"
+              ],
+              "answer": 1,
+              "explanation": "ISA 230.A21 : la limite appropriée pour l'assemblage du dossier final n'excède généralement pas 60 jours après la date du rapport. Ensuite, aucune documentation ne peut être supprimée avant la fin de la période de conservation (10 ans en Suisse).",
+              "difficulty": "medium",
+              "section_id": "m15_REV_s3"
+            },
+            {
+              "id": "m15_REV_nq2",
+              "type": "mcq",
+              "question": "À combien fixe-t-on généralement le seuil de signification pour les travaux (performance materiality) ?",
+              "options": [
+                "5 % du seuil de signification global",
+                "50 à 75 % du seuil de signification global",
+                "100 % à 150 % du seuil de signification global",
+                "10 % du résultat avant impôts de l'entité"
+              ],
+              "answer": 1,
+              "explanation": "La performance materiality (ISA 320.11) est fixée en dessous du seuil global pour couvrir le risque d'anomalies non détectées ou cumulées : en pratique 50 à 75 % selon le risque. Le seuil des anomalies manifestement insignifiantes se situe vers 3 à 5 % du seuil global.",
+              "difficulty": "medium",
+              "section_id": "m15_REV_s3"
+            },
+            {
+              "id": "m15_REV_nq3",
+              "type": "mcq",
+              "question": "ISA 540 (révisée) demande d'apprécier le risque inhérent d'une estimation comptable à l'aide de facteurs. Lesquels ?",
+              "options": [
+                "Le chiffre d'affaires, l'effectif et le total du bilan",
+                "La taille du cabinet, le montant des honoraires et la durée du mandat",
+                "La notation de crédit, le cours de bourse et le secteur",
+                "L'incertitude d'estimation, la complexité et la subjectivité"
+              ],
+              "answer": 3,
+              "explanation": "ISA 540 (révisée) introduit des facteurs de risque inhérent propres aux estimations : incertitude d'estimation, complexité, subjectivité (ainsi que changement et sensibilité aux biais de la direction). Le risque inhérent et le risque lié au contrôle sont évalués séparément.",
+              "difficulty": "hard",
+              "section_id": "m15_REV_s5"
+            },
+            {
+              "id": "m15_REV_nq4",
+              "type": "mcq",
+              "question": "Selon ISA 230, la documentation doit permettre à qui de comprendre les travaux et les jugements importants ?",
+              "options": [
+                "À l'autorité fiscale lors d'un contrôle de l'entité",
+                "Au conseil d'administration de l'entité auditée",
+                "Au seul associé signataire, qui a dirigé et supervisé toute la mission",
+                "À un auditeur expérimenté n'ayant eu aucun lien avec la mission"
+              ],
+              "answer": 3,
+              "explanation": "ISA 230.8 : la documentation doit suffire à un auditeur expérimenté, sans lien antérieur avec la mission, pour comprendre la nature, le calendrier et l'étendue des procédures, leurs résultats et les jugements professionnels importants. Non documenté = non fait.",
+              "difficulty": "medium",
+              "section_id": "m15_REV_s8"
+            },
+            {
+              "id": "m15_REV_nq5",
+              "type": "vrai_faux",
+              "question": "Après l'assemblage du dossier final, l'auditeur peut en retirer les documents qu'il juge superflus.",
+              "options": null,
+              "answer": false,
+              "explanation": "Faux. Après l'assemblage, l'auditeur ne doit supprimer ni écarter aucune documentation avant la fin de la période de conservation (ISA 230.15). Toute modification ultérieure doit être documentée (motif, date, auteur).",
+              "difficulty": "easy",
+              "section_id": "m15_REV_s8"
+            },
+            {
+              "id": "m15_REV_nq6",
+              "type": "mcq",
+              "question": "Pour une entité cotée, quand la revue de la qualité de la mission (EQR) doit-elle être achevée ?",
+              "options": [
+                "Avant que le rapport d'audit ne soit daté",
+                "Avant l'assemblée générale des actionnaires",
+                "Dans les 60 jours suivant la date du rapport",
+                "Lors de l'inspection suivante de l'ASR"
+              ],
+              "answer": 0,
+              "explanation": "ISA 220 (révisée) et ISQM 2 : l'associé ne peut pas dater le rapport tant que la revue de la qualité de la mission n'est pas terminée. Le réviseur EQR évalue de manière objective les jugements importants et les conclusions de l'équipe.",
+              "difficulty": "medium",
               "section_id": "m15_REV_s5"
             }
           ]
@@ -48638,6 +49713,111 @@
               "explanation": "Plafonds 3a 2027 (AFC) : 7 373 CHF pour les personnes affiliées à une caisse de pension ; sinon 20 % du revenu, au maximum 36 864 CHF (7 258 / 36 288 en 2025-2026).",
               "difficulty": "easy",
               "section_id": "m16_REV_s5"
+            },
+            {
+              "id": "m16_REV_nq1",
+              "type": "mcq",
+              "question": "Combien de normes compte le premier jeu d'ESRS adopté par la Commission européenne en juillet 2023 ?",
+              "options": [
+                "4 normes, une par pilier de la TCFD",
+                "2 normes : IFRS S1 et IFRS S2",
+                "12 normes : 2 transversales et 10 thématiques",
+                "25 normes sectorielles et une norme générale commune"
+              ],
+              "answer": 2,
+              "explanation": "Le jeu 1 des ESRS compte 12 normes : 2 transversales (ESRS 1 et 2) et 10 thématiques (5 environnementales, 4 sociales, 1 de gouvernance). IFRS S1 et S2 sont les normes de l'ISSB.",
+              "difficulty": "hard",
+              "section_id": "m16_REV_s3"
+            },
+            {
+              "id": "m16_REV_nq2",
+              "type": "mcq",
+              "question": "Quand l'ISSB a-t-il publié ses deux premières normes, IFRS S1 et IFRS S2 ?",
+              "options": [
+                "En décembre 2025",
+                "En novembre 2021",
+                "En juin 2023",
+                "En janvier 2018"
+              ],
+              "answer": 2,
+              "explanation": "L'ISSB a été créé en novembre 2021 (COP26) et a publié IFRS S1 (exigences générales) et IFRS S2 (climat) en juin 2023, applicables aux exercices ouverts dès le 1er janvier 2024 selon l'adoption par chaque juridiction.",
+              "difficulty": "medium",
+              "section_id": "m16_REV_s3"
+            },
+            {
+              "id": "m16_REV_nq3",
+              "type": "mcq",
+              "question": "Quelle notion de matérialité la CSRD impose-t-elle aux entreprises ?",
+              "options": [
+                "La seule matérialité financière, centrée sur les besoins des investisseurs",
+                "Un seuil fixe de 5 % du résultat avant impôts",
+                "La double matérialité : impact sur la société et effets financiers",
+                "Aucune : toutes les informations ESRS sont publiées sans tri"
+              ],
+              "answer": 2,
+              "explanation": "La CSRD exige une analyse de double matérialité : matérialité d'impact (effets de l'entreprise sur les personnes et l'environnement) et matérialité financière (effets des enjeux de durabilité sur l'entreprise). L'ISSB retient une approche centrée sur la matérialité financière.",
+              "difficulty": "medium",
+              "section_id": "m16_REV_s6"
+            },
+            {
+              "id": "m16_REV_nq4",
+              "type": "mcq",
+              "question": "Quels sont les quatre piliers des recommandations de la TCFD ?",
+              "options": [
+                "Gouvernance, stratégie, gestion des risques, indicateurs et objectifs",
+                "Environnement, social, gouvernance et chaîne d'approvisionnement mondiale",
+                "Identification, mesure, atténuation et assurance externe",
+                "Scope 1, scope 2, scope 3 et compensation carbone"
+              ],
+              "answer": 0,
+              "explanation": "La TCFD structure l'information climatique en quatre piliers : gouvernance, stratégie, gestion des risques, indicateurs et objectifs. Ils ont été repris dans IFRS S2 et dans l'ordonnance suisse sur le rapport climatique.",
+              "difficulty": "medium",
+              "section_id": "m16_REV_s8"
+            },
+            {
+              "id": "m16_REV_nq5",
+              "type": "mcq",
+              "question": "Combien de composantes compte le système de gestion de la qualité selon ISQM 1 ?",
+              "options": [
+                "6 composantes",
+                "12 composantes",
+                "5 composantes",
+                "8 composantes"
+              ],
+              "answer": 3,
+              "explanation": "ISQM 1 : gouvernance et leadership, processus d'évaluation des risques du cabinet, règles de déontologie, acceptation et maintien, réalisation des missions, ressources, information et communication, processus de suivi et de correction.",
+              "difficulty": "hard",
+              "section_id": "m16_REV_s5"
+            },
+            {
+              "id": "m16_REV_nq6",
+              "type": "mcq",
+              "question": "Qu'appelle-t-on l'« expectation gap » en audit ?",
+              "options": [
+                "L'écart entre les comptes publiés et les comptes consolidés du groupe",
+                "L'écart entre le seuil de signification global et celui des travaux",
+                "L'écart entre ce que le public attend de l'audit et ce qu'il fournit réellement",
+                "L'écart entre le budget d'honoraires et le temps réellement passé sur la mission"
+              ],
+              "answer": 2,
+              "explanation": "L'expectation gap désigne la différence entre les attentes des utilisateurs (détecter toutes les fraudes, garantir la pérennité…) et la mission réelle de l'auditeur (assurance raisonnable sur les comptes). Il se décompose en écarts de connaissance, de performance et d'évolution des normes.",
+              "difficulty": "medium",
+              "section_id": "m16_REV_s5"
+            },
+            {
+              "id": "m16_REV_nq7",
+              "type": "mcq",
+              "question": "Un auditeur utilise une IA générative pour analyser des contrats. Quel principe doit-il respecter ?",
+              "options": [
+                "Les résultats de l'IA dispensent de toute documentation dans le dossier",
+                "L'humain vérifie, exerce son jugement et reste responsable de la conclusion",
+                "L'IA doit être utilisée uniquement pour la rédaction de la lettre de mission",
+                "L'IA peut signer le rapport si elle a été validée par l'éditeur du logiciel"
+              ],
+              "answer": 1,
+              "explanation": "Principe « human in the loop » : l'IA assiste, mais l'auditeur valide les résultats, exerce son esprit critique (biais d'automatisation), documente le recours à l'outil et assume la responsabilité de ses conclusions.",
+              "difficulty": "medium",
+              "section_id": "m16_REV_s8"
             }
           ]
         }

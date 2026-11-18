@@ -28,10 +28,13 @@ js/*.js               un fichier par onglet natif + utilitaires (voir tableau)
 css/style.css, pdf_export.css   styles de la coquille et des onglets natifs
 <app>/index.html      11 sous-apps React AUTONOMES, ouvertes dans une <iframe>
                       par un petit wrapper js/<app>.js (+ grandlivre en HTML pur)
-vendor/               React 18.3.1, lucide-react 1.74.0, Babel 7.29.14,
-                      Tailwind 3.4.16 — copies locales figées (tools/build_vendor.sh)
+vendor/               React 18.3.1, lucide-react 1.74.0 (seulement les icônes
+                      importées par les sous-apps), Tailwind 3.4.16 — copies locales
+                      figées (tools/build_vendor.sh) ; babel.min.js 7.29.14 ne sert
+                      qu'à l'outil de compilation (jamais chargé par les pages)
 audio/*.m4a           39 podcasts (531 Mo) lus par l'onglet Podcasts
-tools/                sync_subapps.py, build_vendor.sh, smoke_test.js
+tools/                sync_subapps.py (+ compile_jsx.js, build_qcm_catalog.js),
+                      build_vendor.sh, smoke_test.js
 ```
 
 **Cache-busting** : toutes les balises de `index.html` portent `?v=<nombre>`
@@ -67,11 +70,11 @@ depuis la Révision active) est un alias de `fcdb` pour la navigation
 
 | Page | Rendu | Type | Données |
 |---|---|---|---|
-| dashboard | dashboard.js `renderDashboard` (tuiles `HUB_SECTIONS`) | natif | flashcards (carte du jour) |
+| dashboard | dashboard.js `renderDashboard` : « Plan du jour » (`renderDashPlan`) + question du jour + tuiles `HUB_SECTIONS` | natif | flashcards, suivi QCM, journal quotidien |
 | recherche | search_tab.js `renderRechercheTab` (reprend `_stQuery`) | natif | index plein-texte de 9 fichiers data/ + IA Mistral optionnelle (clé saisie par l'utilisateur, localStorage) |
 | modules | modules.js `renderModules` (~3000 l.) | natif | unified_modules, trainer_courses, norms_ifrs_rpc, notion_lessons, flashcards ; `navigateToNormByCode(code)` ouvre une norme |
-| trainer | trainer.js `renderTrainer` | natif | sprints SM-2 (flashcards) + cours (trainer_courses) ; `launchSprintFromIds` (sélection venue de Flashcards) |
-| qcm | qcm.js `renderQcm` | natif | `get_qcm_catalog` = trainer_courses + unified_modules + audit.json annuaire_cours → **3469 QCM** (dédoublonnés par texte ; M1–M16 tous couverts, examen blanc pondéré par domaine) |
+| trainer | trainer.js `renderTrainer` | natif | sprints SM-2 (flashcards) + cours (trainer_courses) ; `launchSprintFromIds` (sélection venue de Flashcards ou du Plan du jour, via sessionStorage `fcdbReviewIds`) |
+| qcm | qcm.js `renderQcm` | natif | `get_qcm_catalog` → **data/qcm_catalog.json** (pré-calculé à partir de trainer_courses + unified_modules + audit.json annuaire_cours) → **3550 QCM** (dédoublonnés par texte ; M1–M16 tous couverts, examen blanc pondéré par domaine) |
 | fcdb | fcdb.js `renderFcdb` | natif | flashcards.json (**1581** cartes) ; « Réviser la sélection » → sprint |
 | compare | comparisons.js `renderComparisons` | natif | comparisons.json (25 thèmes) ; boutons « Normes liées » → `compGoNorm` |
 | progress | progress.js `renderProgress` | natif | `get_module_stats` (liste par module : flashcards, leçons de la Révision active, QCM réussis) + sauvegarde/restauration |
@@ -94,6 +97,7 @@ sont dans aucune rubrique ni dans `HUB_SECTIONS`, et figurent dans
 | norms_ifrs_rpc.json (1,5 Mo) | modules (fiche norme) | `{norms:[80 {id,code,title,category,sections,key_rules,thresholds,cross_refs,flashcard_ids,comparisons,html_content,memo_items,course_items}]}` |
 | flashcards.json (1 Mo) | trainer, fcdb, dashboard, recherche | **liste** de `{id:int,cat,sub,d,q,a}` — ids uniques (max 2269) ; cat ∈ **Fiscalité, Swiss GAAP RPC, IFRS / IAS, Audit / ISA, Expert suisse** (M1) ; d ∈ facile, moyen, difficile, piège |
 | notion_lessons.json | modules, recherche | liste de 661 `{concept,year,module,notes,priority,section,status,type}` |
+| qcm_catalog.json (3,4 Mo) | qcm, progression, plan du jour | **GÉNÉRÉ** par `sync_subapps.py` (tools/build_qcm_catalog.js exécute `_build_qcm_catalog` d'api-client-static.js) : ne pas éditer, relancer `sync_subapps.py --write qcm` après toute modification d'un QCM |
 | comparisons.json | compare, recherche | `{themes:[25 {…, norms:{ifrs,rpc,co}}]}` |
 | audit.json (3,9 Mo) | sous-app audit, qcm, recherche | sections `nas, cadre_legal, cycles, outils, quiz, comparatifs, lexique, annuaire{series[7]→standards[47]}, cas_pratiques, arbres, procedures_assertions, independance, modeles, examens_blancs, timeline, fraude, goingconcern, actualites, annuaire_cours{"200":{…,mcq[]}}` (47 ISA, 566 QCM) ; chaque section a `_label/_icon/_description` (affichés sur l'accueil Audit) |
 | audit_seuils.json | sous-app audit, recherche | `{categories:[8]}` |
@@ -116,6 +120,16 @@ Autres sources : `audit/manifest.json` + `audit/controle_{ordinaire,restreint}/*
 n'apparaissent qu'en rappel explicite (« 22'680 en 2025-2026 »). Le calculateur
 du module Social utilise `parametres_2027` (social/index.html, bloc sans source).
 
+**Plan du jour** (accueil, `renderDashPlan`) : 3 actions (sprint de cartes en retard sinon
+10 nouvelles → `dashPlanCards` ; leçon à continuer ← `swisscpa_mod_last` écrit par
+`modPlayPrepare` ; 10 QCM via `qcmPlanStart` : à revoir → points faibles → erreurs → jamais
+vues), objectif quotidien (`swisscpa_daily_goal`, 15/30/50) et série 🔥. Journal commun
+`window.swisscpaDaily` (api-client-static.js) : `swisscpa_daily` = {jour:{fc,q,l}} alimenté par
+`update_flashcard`, `qcm_record_attempt`, `save_lesson_progress` et les leçons des Modules ;
+la série de la Révision active (`getStreak`) en est dérivée. QCM : répétition espacée
+(`next_review` : ratée → 1 j, réussie → 4/10/30/90 j), `due_ids` calculé à la lecture ;
+`qcm_get_selection` renvoie des **identifiants** (point faible = ≥ 2 essais et < 60 %).
+
 Leçons des Modules en « mode ludique » (modules.js, `modPlay*`) : bandeau ⏱/étapes/questions
 flash, questions de chaque section affichées sous la section (`section_id`), bouton « J'ai
 compris », bilan + trophée ; progression dans `swisscpa_mod_read` ({lessonId:{s:[sections],done}}),
@@ -132,10 +146,15 @@ n'est jamais exportée).
 ## Sous-apps
 
 Chaque `<app>/index.html` embarque **ses données** (`window.__X__ = <JSON>;`,
-format exact `json.dumps(obj, ensure_ascii=False)`) **et son code** (un
-`<script type="text/babel">` = en-tête d'imports + concaténation des `.jsx` +
-`createRoot(...).render(<App/>)`). Les imports sont résolus par une importmap
-vers `../vendor/` (eymanual et fusion ont leur propre `vendor/`, en UMD).
+format exact `json.dumps(obj, ensure_ascii=False)`) **et son code COMPILÉ** :
+en-tête d'imports (`head` dans `APPS`, sync_subapps.py) + concaténation des `.jsx`
++ `createRoot(...).render(<App/>)` (`foot`), transformés en JavaScript par
+`tools/compile_jsx.js` (node + vendor/babel.min.js, preset react) dans
+`<script type="module" id="app-code">`. Le navigateur ne charge plus Babel
+(c'était ~4 s de plus sur téléphone). Les imports sont résolus par une importmap
+vers `../vendor/` ; eymanual et fusion utilisent React UMD (leur propre `vendor/`)
+et un `<script id="fm-src|fusion-src">` classique + une petite amorce.
+**Ne jamais éditer le code dans index.html** : modifier le `.jsx`, puis `--write`.
 
 | Sous-app | Code source | Données embarquées ← source |
 |---|---|---|
@@ -174,17 +193,18 @@ data/audit_{metier,referencement}.json et section `terrain` d'audit.json.
 ### Procédure de modification d'une sous-app
 
 1. Modifier la **source** (le `.jsx` ou le JSON listé ci-dessus).
-2. `python3 tools/sync_subapps.py` → liste les pages à resynchroniser.
-3. `python3 tools/sync_subapps.py --write [app…]` → réécrit les `index.html`.
+2. `python3 tools/sync_subapps.py` → liste les pages à resynchroniser (node requis).
+3. `python3 tools/sync_subapps.py --write [app…]` → réécrit les `index.html`
+   (et `qcm` → data/qcm_catalog.json).
 4. Bloc **sans source** ou grandlivre : éditer directement `<app>/index.html`
    (pour un bloc JSON : charger avec `json.JSONDecoder().raw_decode`, modifier,
    réécrire avec `json.dumps(obj, ensure_ascii=False)`).
 5. Bumper `?v=` dans `index.html`, puis `node tools/smoke_test.js`.
 
-`sync_subapps.py` reproduit l'assemblage à l'octet près ; il repère chaque
-fichier embarqué par son début et sa fin (version courante ou git HEAD), donc
-une modification ne doit pas toucher à la fois les premières et les dernières
-lignes d'un même `.jsx` entre deux synchronisations.
+Icônes : `vendor/lucide-react.js` ne contient que les icônes importées (en-têtes
++ `.jsx`, `sync_subapps.py --icons`). Une nouvelle icône → `bash tools/build_vendor.sh`
+(npm requis) ; `sync_subapps.py` signale l'oubli, sinon la sous-app plante
+(« does not provide an export named … »).
 
 ## Modifier des données JSON
 
@@ -198,7 +218,8 @@ lignes d'un même `.jsx` entre deux synchronisations.
 - Nouvelle flashcard : id entier unique (> 2269), champs `cat/sub/d/q/a`, `cat`
   parmi les 5 catégories ci-dessus.
 - Nouveau QCM : `type` "mcq" (options[], answer = index) ou "vrai_faux"
-  (answer booléen) ; `id` unique dans tout le catalogue.
+  (answer booléen) ; `id` unique dans tout le catalogue ; puis
+  `python3 tools/sync_subapps.py --write qcm` (catalogue pré-calculé).
 - Les données des **sous-apps** sont embarquées : toute modif de data/audit.json,
   oral.json, references.json, english_*, financial_statements, podcasts_extra…
   exige `tools/sync_subapps.py --write`.
@@ -209,7 +230,8 @@ lignes d'un même `.jsx` entre deux synchronisations.
   des rubriques (attend le rendu des iframes), vérifie que la navigation suit
   la page, signale erreurs JS, fichiers locaux
   manquants et sous-apps vides. Tout est vérifiable hors ligne (vendor/).
-- `python3 tools/sync_subapps.py` doit répondre « à jour » partout avant commit.
+- `python3 tools/sync_subapps.py` doit répondre « à jour » partout (sous-apps
+  et `qcm`), sans alerte d'icône, avant commit.
 - `bash tools/build_vendor.sh` uniquement pour changer de version de React,
   Babel, lucide ou Tailwind (npm requis).
 
@@ -220,6 +242,8 @@ lignes d'un même `.jsx` entre deux synchronisations.
   (ex. `get_trainer_progress` → liste) : un objet à la place d'une liste a
   déjà bloqué l'onglet Entraînement.
 - `404.html` redirige vers `index.html`.
+- `escapeHtml` (crossref.js) n'échappe pas les guillemets : pour un attribut
+  (`onclick="…"`), échapper `"` en `&quot;` à part.
 - Les flashcards n'ont pas de module dans flashcards.json : `_fcModuleOf`
   (api-client-static.js) le déduit de `sub` (« M2L7 ») ou de `cat` (Fiscalité →
   M7, TVA → M8, RPC → M3, IFRS → M4, ISA → M5/M10, RPC 30/IFRS 3/IAS 28 → M11).

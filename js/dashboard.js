@@ -1,7 +1,8 @@
 /* ═══════════════════════════════════════════════
-   Accueil — HUB de navigation (zéro statistique).
-   Une porte d'entrée : question du jour + grandes
-   cartes vers chaque espace de l'app.
+   Accueil — HUB de navigation.
+   Une porte d'entrée : plan du jour (3 actions, objectif,
+   série 🔥), question du jour + grandes cartes vers
+   chaque espace de l'app.
    ═══════════════════════════════════════════════ */
 
 // Mêmes rubriques, même ordre et mêmes noms que la barre de navigation
@@ -27,7 +28,7 @@ const HUB_SECTIONS = [
         title: "🎯 S'entraîner",
         cards: [
             { tab: 'trainer', d: 'Sprints de flashcards en répétition espacée (SM-2) et cours guidés.' },
-            { tab: 'qcm', d: '3 469 questions corrigées sur les 16 modules, examen blanc noté sur 6.' },
+            { tab: 'qcm', d: '3 550 questions corrigées sur les 16 modules, examen blanc noté sur 6.' },
             { tab: 'fcdb', d: 'Toutes les cartes, filtrables ; révise une sélection en un clic.' },
             { tab: 'oral', d: "Préparation à l'examen oral, thème par thème, avec simulateur." },
             { tab: 'progress', d: 'Ta progression par module : normes revues, QCM, cartes.' },
@@ -88,6 +89,62 @@ async function renderDashboard(container) {
     body.light-mode .hub-qod-card { background: #fff; border-color: #e2e8f0; }
     body.light-mode .hub-qod-q { color: #1e293b; }
     body.light-mode .hub-qod-a { color: #334155; border-color: #e2e8f0; }
+    .hub-plan { max-width: 780px; margin: 22px auto 0; background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 16px 18px 14px; }
+    .hub-plan-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .hub-plan-k { font-size: 11px; font-weight: 800; color: #818cf8; text-transform: uppercase; letter-spacing: .08em; }
+    .hub-plan-goal { font-size: 15px; font-weight: 700; color: #e2e8f0; margin-top: 3px; }
+    .hub-plan-streak { flex: 0 0 auto; text-align: center; background: rgba(245,158,11,.12); border: 1px solid rgba(245,158,11,.35);
+        color: #fbbf24; border-radius: 12px; padding: 6px 12px; font-size: 13px; font-weight: 700; line-height: 1.2; }
+    .hub-plan-streak b { font-size: 18px; }
+    .hub-plan-streak small { display: block; font-size: 10.5px; font-weight: 600; color: #d6a14a; }
+    .hub-plan-bar { height: 8px; background: #0f172a; border-radius: 99px; overflow: hidden; margin: 10px 0 8px; }
+    .hub-plan-bar > div { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #6366f1, #10b981); transition: width .4s; }
+    .hub-plan-week { display: flex; gap: 6px; align-items: center; font-size: 10.5px; color: #64748b; margin-bottom: 12px; }
+    .hub-plan-day { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .hub-plan-dot { width: 12px; height: 12px; border-radius: 50%; background: #334155; }
+    .hub-plan-dot.on { background: #6366f1; }
+    .hub-plan-dot.goal { background: #10b981; }
+    .hub-plan-day.today .hub-plan-dot { box-shadow: 0 0 0 2px #0f172a, 0 0 0 3.5px #94a3b8; }
+    .hub-plan-items { display: grid; gap: 8px; }
+    .hub-plan-it { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; cursor: pointer; font: inherit;
+        background: #0f172a; border: 1px solid #334155; border-radius: 12px; padding: 11px 13px; color: inherit; transition: border-color .15s, transform .12s; }
+    .hub-plan-it:hover { border-color: #6366f1; transform: translateX(2px); }
+    .hub-plan-ic { flex: 0 0 auto; font-size: 22px; width: 30px; text-align: center; }
+    .hub-plan-txt { flex: 1; min-width: 0; }
+    .hub-plan-t { font-size: 14px; font-weight: 700; color: #e2e8f0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .hub-plan-s { font-size: 12px; color: #94a3b8; margin-top: 1px; }
+    .hub-plan-done { flex: 0 0 auto; font-size: 11.5px; font-weight: 700; color: #10b981; background: rgba(16,185,129,.12);
+        border-radius: 99px; padding: 3px 8px; white-space: nowrap; }
+    .hub-plan-go { flex: 0 0 auto; color: #64748b; font-size: 16px; }
+    .hub-plan-foot { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 10px; font-size: 11.5px; color: #64748b; }
+    .hub-plan-g { background: none; border: 1px solid #334155; color: #94a3b8; border-radius: 99px; padding: 2px 9px; font-size: 11.5px; cursor: pointer; }
+    .hub-plan-g.on { background: #6366f1; border-color: #6366f1; color: #fff; }
+    body.light-mode .hub-plan { background: #fff; border-color: #e2e8f0; }
+    body.light-mode .hub-plan-k { color: #4f46e5; }
+    body.light-mode .hub-plan-goal, body.light-mode .hub-plan-t { color: #0f172a; }
+    body.light-mode .hub-plan-s { color: #64748b; }
+    body.light-mode .hub-plan-bar { background: #e2e8f0; }
+    body.light-mode .hub-plan-dot { background: #e2e8f0; }
+    body.light-mode .hub-plan-dot.on { background: #818cf8; }
+    body.light-mode .hub-plan-dot.goal { background: #10b981; }
+    body.light-mode .hub-plan-day.today .hub-plan-dot { box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px #64748b; }
+    body.light-mode .hub-plan-it { background: #f8fafc; border-color: #e2e8f0; }
+    body.light-mode .hub-plan-it:hover { border-color: #6366f1; background: #fafbff; }
+    body.light-mode .hub-plan-streak { background: #fffbeb; border-color: #fcd34d; color: #b45309; }
+    body.light-mode .hub-plan-streak small { color: #b45309; }
+    body.light-mode .hub-plan-g { border-color: #cbd5e1; color: #475569; }
+    body.light-mode .hub-plan-g.on { color: #fff; border-color: #6366f1; }
+    @media (max-width: 768px) {
+        .hub-hero { padding: 12px 4px 0; }
+        .hub-title { font-size: 22px; }
+        .hub-sub { font-size: 12.5px; margin-bottom: 12px; }
+        .hub-search { padding: 11px 14px; font-size: 14px; border-radius: 13px; }
+        .hub-plan-done-l { display: none; }
+        .hub-plan { margin-top: 16px; padding: 14px 13px 12px; }
+        .hub-plan-goal { font-size: 14px; }
+        .hub-plan-it { padding: 10px 11px; gap: 10px; }
+        .hub-plan-t { white-space: normal; }
+    }
     </style>
     <div class="hub fade-in">
         <div class="hub-hero">
@@ -98,6 +155,7 @@ async function renderDashboard(container) {
                 <span>🔎</span><span>Rechercher un cours, une norme, un seuil, un mot…</span>
             </div>
         </div>
+        <div id="dashPlan"></div>
         <div class="hub-qod" id="dashCardOfDay"></div>
         ${HUB_SECTIONS.map(sec => `
         <div class="hub-sec">
@@ -112,7 +170,133 @@ async function renderDashboard(container) {
             </div>
         </div>`).join('')}
     </div>`;
+    renderDashPlan();
     renderDashCardOfDay();
+}
+
+/* ── Plan du jour : 3 actions concrètes, objectif quotidien, série 🔥 ──
+   Journal d'activité : window.swisscpaDaily (api-client-static.js) — alimenté par
+   les flashcards notées, les QCM répondus et les étapes / questions des leçons. */
+async function renderDashPlan() {
+    const el = document.getElementById('dashPlan');
+    if (!el || !window.swisscpaDaily) return;
+    const D = window.swisscpaDaily;
+    let fcStats = {}, qt = {};
+    try { [fcStats, qt] = await Promise.all([api('get_review_stats'), api('get_qcm_tracking_data')]); } catch (e) { /* données partielles */ }
+    fcStats = fcStats || {}; qt = qt || {};
+    if (!document.getElementById('dashPlan')) return;   // page quittée entre-temps
+
+    const all = D.all();
+    const today = all[D.dayKey()] || {};
+    const goal = D.goal();
+    const done = (today.fc || 0) + (today.q || 0) + (today.l || 0);
+    const pct = Math.min(100, Math.round(done / goal * 100));
+    const streak = D.streak();
+
+    // 7 derniers jours
+    const week = [];
+    const d = new Date(); d.setHours(12, 0, 0, 0); d.setDate(d.getDate() - 6);
+    for (let i = 0; i < 7; i++) {
+        const t = D.total(all[D.dayKey(d)]);
+        week.push({ l: 'DLMMJVS'[d.getDay()], on: t > 0, goal: t >= goal, today: i === 6 });
+        d.setDate(d.getDate() + 1);
+    }
+
+    // 1) Flashcards
+    const due = fcStats.due || 0, fresh = fcStats.never_seen || 0;
+    const fcItem = due > 0
+        ? { ic: '🃏', t: `${Math.min(due, 20)} carte${Math.min(due, 20) > 1 ? 's' : ''} à revoir`, s: `${due} en retard · répétition espacée`, n: today.fc }
+        : { ic: '🃏', t: '10 nouvelles cartes', s: fresh ? 'Aucune carte en retard 👌 — découvre-en de nouvelles' : 'Toutes les cartes sont vues : révision libre', n: today.fc };
+    fcItem.go = 'dashPlanCards()';
+
+    // 2) Leçon à continuer (mode ludique des Modules)
+    let last = null, read = {};
+    try { last = JSON.parse(localStorage.getItem('swisscpa_mod_last') || 'null'); } catch (e) {}
+    try { read = JSON.parse(localStorage.getItem('swisscpa_mod_read') || '{}') || {}; } catch (e) {}
+    let lsItem;
+    if (last && last.lid) {
+        const r = read[last.lid] || {};
+        const k = (r.s || []).length;
+        if (!r.done) {
+            lsItem = { t: `Continuer : ${last.title}`, s: `${last.mcode} · ${k}/${last.n} étapes${last.min ? ` · ~${last.min} min` : ''}`,
+                go: `modOpenLessonAt(${JSON.stringify(last.mid)}, ${JSON.stringify(last.lid)})` };
+        } else if (last.next) {
+            lsItem = { t: `Leçon suivante : ${last.next.title}`, s: `${last.mcode} · « ${last.title} » terminée ✓`,
+                go: `modOpenLessonAt(${JSON.stringify(last.mid)}, ${JSON.stringify(last.next.lid)})` };
+        }
+    }
+    if (!lsItem) lsItem = { t: 'Commencer une leçon', s: '16 modules en mode ludique : étapes, questions flash, trophée', go: "navigate('modules')" };
+    lsItem.ic = '📖'; lsItem.n = today.l;
+
+    // 3) QCM
+    const stats = qt.stats || {};
+    const dueQ = (qt.due_ids || []).length;
+    const weak = Object.values(stats).filter(x => x && x.attempts >= 2 && x.accuracy < 60).length;
+    const qItem = dueQ > 0 ? { t: '10 QCM à revoir', s: `${dueQ} question${dueQ > 1 ? 's' : ''} arrivée${dueQ > 1 ? 's' : ''} à échéance` }
+        : weak > 0 ? { t: '10 QCM — points faibles', s: `${weak} question${weak > 1 ? 's' : ''} sous 60 % de réussite` }
+        : { t: "10 QCM pour t'échauffer", s: 'Tirés au hasard dans les 16 modules' };
+    Object.assign(qItem, { ic: '🎯', n: today.q, go: 'qcmPlanStart(10)' });
+
+    const esc = (x) => escapeHtml(String(x == null ? '' : x));
+    // escapeHtml n'échappe pas les guillemets : attribut onclick échappé à part.
+    const attr = (x) => String(x).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+    const item = (it) => `
+        <button class="hub-plan-it" onclick="${attr(it.go)}">
+            <span class="hub-plan-ic">${it.ic}</span>
+            <span class="hub-plan-txt"><div class="hub-plan-t">${esc(it.t)}</div><div class="hub-plan-s">${esc(it.s)}</div></span>
+            ${it.n ? `<span class="hub-plan-done" title="${it.n} aujourd'hui">✓ ${it.n}<span class="hub-plan-done-l"> aujourd'hui</span></span>` : ''}
+            <span class="hub-plan-go">›</span>
+        </button>`;
+
+    el.innerHTML = `
+    <div class="hub-plan">
+        <div class="hub-plan-head">
+            <div>
+                <div class="hub-plan-k">🗓️ Plan du jour</div>
+                <div class="hub-plan-goal">${done >= goal ? '🎉 Objectif atteint' : 'Objectif'} : ${done} / ${goal} actions</div>
+            </div>
+            <div class="hub-plan-streak" title="Jours d'affilée avec au moins une carte, un QCM ou une étape de leçon">
+                🔥 <b>${streak}</b><small>${streak > 1 ? 'jours de suite' : (streak === 1 ? 'jour' : 'lance ta série')}</small>
+            </div>
+        </div>
+        <div class="hub-plan-bar"><div style="width:${pct}%"></div></div>
+        <div class="hub-plan-week" title="7 derniers jours : violet = actif, vert = objectif atteint">
+            ${week.map(w => `<div class="hub-plan-day${w.today ? ' today' : ''}"><span class="hub-plan-dot${w.goal ? ' goal' : (w.on ? ' on' : '')}"></span>${w.l}</div>`).join('')}
+        </div>
+        <div class="hub-plan-items">${[fcItem, lsItem, qItem].map(item).join('')}</div>
+        <div class="hub-plan-foot">Objectif quotidien :
+            ${[15, 30, 50].map(g => `<button class="hub-plan-g${g === goal ? ' on' : ''}" onclick="dashPlanGoal(${g})">${g}</button>`).join('')}
+            <span>· carte notée, QCM répondu ou étape de leçon = 1 action</span>
+        </div>
+    </div>`;
+}
+
+function dashPlanGoal(g) {
+    if (window.swisscpaDaily) swisscpaDaily.setGoal(g);
+    renderDashPlan();
+}
+
+// Sprint de flashcards : cartes en retard (les plus anciennes d'abord), sinon 10 nouvelles.
+async function dashPlanCards() {
+    let ids = [];
+    try {
+        const cards = await api('get_flashcards') || [];
+        const now = Date.now();
+        const due = cards.filter(c => c.next_review && new Date(c.next_review).getTime() <= now)
+            .sort((a, b) => new Date(a.next_review) - new Date(b.next_review));
+        ids = due.slice(0, 20).map(c => c.id);
+        if (!ids.length) {
+            const fresh = cards.filter(c => !(c.review_count > 0));
+            const pool = fresh.length ? fresh : cards;
+            for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; }
+            ids = pool.slice(0, 10).map(c => c.id);
+        }
+    } catch (e) { console.error('dashPlanCards:', e); }
+    try {
+        sessionStorage.setItem('fcdbReviewIds', JSON.stringify(ids));
+        sessionStorage.setItem('fcdbReviewLabel', 'Plan du jour');
+    } catch (e) {}
+    navigate('trainer');
 }
 
 /* ── Question du jour (pédagogique — pas une statistique) ── */

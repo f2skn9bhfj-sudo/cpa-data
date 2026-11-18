@@ -39,7 +39,11 @@ for (const [spec, file] of Object.entries(mods)) {
     keys.map(k => `export const ${k} = D.${k};`).join("\n") + "\n";
   fs.writeFileSync(`entries/${file}.js`, src);
 }'
-printf 'export * from "lucide-react";\n' > entries/lucide-react.js
+# Seules les icônes importées par les sous-apps (en-têtes de tools/sync_subapps.py) :
+# ~16 Ko au lieu de 950 Ko pour la bibliothèque complète. Nouvelle icône dans un
+# en-tête → relancer ce script (sync_subapps.py le signale).
+ICONS="$(python3 "$ROOT/tools/sync_subapps.py" --icons)"
+printf 'export { %s } from "lucide-react";\n' "$ICONS" > entries/lucide-react.js
 
 mkdir -p "$OUT"
 # Nettoie uniquement les fichiers générés précédemment (modules + chunks).
@@ -52,13 +56,14 @@ find "$OUT" -maxdepth 1 -type f \( -name 'chunk-*.js' -o -name 'react*.js' -o -n
   --define:process.env.NODE_ENV='"production"' \
   --chunk-names='chunk-[hash]' --outdir="$OUT"
 
+# Babel ne sert plus qu'à la compilation côté outil (tools/compile_jsx.js) : les pages ne le chargent pas.
 cp node_modules/@babel/standalone/babel.min.js "$OUT/babel.min.js"
 # Tailwind « Play CDN » 3.4.16 (pas publié sur npm) : copie de fusion/vendor.
 cp "$ROOT/fusion/vendor/tailwind.js" "$OUT/tailwind.js"
 
 cat > "$OUT/VERSIONS.txt" <<EOF
 react / react-dom : $REACT
-lucide-react      : $LUCIDE
+lucide-react      : $LUCIDE (icônes : $ICONS)
 @babel/standalone : $BABEL
 tailwind (play)   : 3.4.16
 construit par tools/build_vendor.sh (esbuild $ESBUILD)

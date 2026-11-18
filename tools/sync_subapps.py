@@ -6,15 +6,23 @@ avec leurs fichiers sources (JSON de données + .jsx).
 Chaque sous-app (audit, conso, english, fs, fusion, hec, oral, podcasts,
 references, social, eymanual) est une page AUTONOME qui embarque :
   1. ses données :  window.__X__ = <json.dumps(obj, ensure_ascii=False)>;
-  2. son code    :  <script type="text/babel"> (ou text/plain) = en-tête
-                    d'imports + concaténation des .jsx + ligne de montage.
-Les scripts d'assemblage d'origine (build_*.py) vivent dans le dépôt desktop,
-absent d'ici. Cet outil reproduit leur résultat à l'octet près.
+  2. son code    :  en-tête d'imports (HEAD) + concaténation des .jsx + ligne
+                    de montage (FOOT), COMPILÉ en JavaScript par
+                    tools/compile_jsx.js (node + vendor/babel.min.js) :
+                    <script type="module" id="app-code"> (importmap → ../vendor/)
+                    ou, pour fusion/eymanual (React UMD), <script id="…-src">.
+Le navigateur ne charge donc plus Babel (3 Mo, ~4 s sur téléphone).
+Ne jamais éditer le code dans index.html : modifier le .jsx puis --write.
+
+Il régénère aussi data/qcm_catalog.json (banque de QCM pré-calculée, voir
+tools/build_qcm_catalog.js) : à relancer après toute modification d'un QCM.
 
 Usage (depuis la racine du dépôt) :
   python3 tools/sync_subapps.py            # --check : signale les écarts
   python3 tools/sync_subapps.py --write    # réécrit les index.html concernés
   python3 tools/sync_subapps.py --write audit conso   # seulement ces apps
+  python3 tools/sync_subapps.py --write qcm           # seulement data/qcm_catalog.json
+  python3 tools/sync_subapps.py --icons    # icônes lucide utilisées (build_vendor.sh)
 
 Données SANS source dans le dépôt (éditer directement dans index.html) :
   audit   : __PLAN_COMPTABLE__, __NESTLE__ (23 états et notes)
@@ -121,6 +129,28 @@ def from_file(path):
 
 KEEP = None  # bloc sans source : conservé tel quel
 
+
+def _head(*icons, hooks=(), fmt=False):
+    """En-tête d'imports commun des sous-apps « module » (importmap)."""
+    h = 'import React from "react";\n'
+    if hooks:
+        h += 'import { ' + ', '.join(hooks) + ' } from "react";\n'
+    h += 'import { createRoot } from "react-dom/client";\n'
+    if icons:
+        h += 'import { ' + ', '.join(icons) + ' } from "lucide-react";\n'
+    if fmt:
+        h += ('const fmt = (n) => { if (n === null || n === undefined || isNaN(n)) return \'–\'; '
+              'return Math.round(n).toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, "\'"); };\n')
+    return h
+
+
+def _mount(comp):
+    return f'createRoot(document.getElementById("root")).render(<{comp} />);\n'
+
+
+ENGINE_ICONS = ('Info', 'AlertTriangle', 'CheckCircle2', 'ArrowRight', 'ArrowLeft', 'ChevronDown',
+                'Calculator', 'GraduationCap', 'Search')
+
 APPS = {
     'audit': {
         'data': {
@@ -134,25 +164,54 @@ APPS = {
             '__NESTLE__': KEEP,
         },
         'code': ['conso/lesson_engine.jsx', 'audit/audit_app.jsx'],
+        'head': _head(*ENGINE_ICONS, 'BookOpen', 'Layers', 'Scale', 'ArrowLeftRight', 'FileText',
+                      'Banknote', 'Eye', 'TrendingUp', 'TrendingDown', 'Lightbulb', 'ChevronRight',
+                      'Gavel', hooks=('useState', 'useEffect', 'useMemo'), fmt=True),
+        'foot': _mount('AuditApp'),
     },
     'conso': {
         'data': {'__CONSO_LESSONS__': lambda _o: {'ifrs': jl('conso/lessons_ifrs.json'),
                                                   'swissgaap': jl('conso/lessons_swissgaap.json')}},
         'code': ['conso/wizard.jsx', 'conso/lesson_engine.jsx'],
+        'head': _head(),
+        'foot': _mount('App'),
     },
-    'english': {'data': {'__ENGLISH__': build_english}, 'code': ['english/english_app.jsx']},
+    'english': {'data': {'__ENGLISH__': build_english}, 'code': ['english/english_app.jsx'],
+                'head': _head('Languages', hooks=('useState', 'useEffect', 'useMemo', 'useRef')),
+                'foot': _mount('EnglishApp')},
     'fs': {'data': {'__FS__': from_file('data/financial_statements.json')},
-           'code': ['conso/lesson_engine.jsx', 'fs/fs_app.jsx']},
+           'code': ['conso/lesson_engine.jsx', 'fs/fs_app.jsx'],
+           'head': _head(*ENGINE_ICONS, hooks=('useState', 'useEffect'), fmt=True),
+           'foot': _mount('FsApp')},
+    # fusion et eymanual : React UMD (vendor/ propre), code en <script> classique + amorce
     'fusion': {'data': {'__FUSION__': from_file('fusion/lessons_fusion.json')},
-               'code': ['conso/lesson_engine.jsx', 'fusion/fusion_app.jsx']},
-    'hec': {'data': {'__HEC__': build_hec}, 'code': ['hec/hec_app.jsx']},
+               'code': ['conso/lesson_engine.jsx', 'fusion/fusion_app.jsx'],
+               'script_id': 'fusion-src', 'head': '', 'foot': ''},
+    'hec': {'data': {'__HEC__': build_hec}, 'code': ['hec/hec_app.jsx'],
+            'head': _head('GraduationCap', 'ArrowLeft', hooks=('useState', 'useEffect', 'useRef')),
+            'foot': _mount('HecApp')},
     'oral': {'data': {'__ORAL__': from_file('data/oral.json')},
-             'code': ['conso/lesson_engine.jsx', 'oral/oral_app.jsx']},
-    'podcasts': {'data': {'__PODCASTS__': build_podcasts}, 'code': ['podcasts/podcasts_app.jsx']},
+             'code': ['conso/lesson_engine.jsx', 'oral/oral_app.jsx'],
+             'head': _head(*ENGINE_ICONS, 'Mic', 'Clock', 'RotateCcw', 'Shuffle',
+                           hooks=('useState', 'useEffect'), fmt=True),
+             'foot': _mount('OralApp')},
+    'podcasts': {'data': {'__PODCASTS__': build_podcasts}, 'code': ['podcasts/podcasts_app.jsx'],
+                 'head': _head('Headphones', 'Play', 'Pause', 'RotateCcw', 'RotateCw', 'Search',
+                               'CheckCircle2', 'X', 'ListMusic', 'Disc3', 'Repeat', 'Clock',
+                               hooks=('useState', 'useEffect', 'useMemo', 'useRef')),
+                 'foot': _mount('PodcastsApp')},
     'references': {'data': {'__REFS__': from_file('data/references.json')},
-                   'code': ['references/references_app.jsx']},
-    'social': {'data': {'__SOCIAL__': KEEP}, 'code': ['social/social_app.jsx']},
-    'eymanual': {'data': {}, 'code': ['eymanual/field-manual.jsx']},
+                   'code': ['references/references_app.jsx'],
+                   'head': _head('BookOpen', 'GraduationCap', 'FileText', 'Languages', 'Ruler',
+                                 'Network', 'Calculator', 'GitBranch', 'Recycle', 'ClipboardCheck',
+                                 'Search', 'ChevronDown', 'RotateCcw', 'Check',
+                                 hooks=('useState', 'useEffect', 'useMemo')),
+                   'foot': _mount('ReferencesApp')},
+    # social_app.jsx se termine lui-même par createRoot(...)
+    'social': {'data': {'__SOCIAL__': KEEP}, 'code': ['social/social_app.jsx'],
+               'head': _head(hooks=('useState', 'useMemo')), 'foot': ''},
+    'eymanual': {'data': {}, 'code': ['eymanual/field-manual.jsx'], 'script_id': 'fm-src',
+                 'head': 'const { useState, useMemo } = React;\n', 'foot': ''},
 }
 
 
@@ -169,7 +228,36 @@ def transform(app, path, src):
     return src.strip()
 
 
-CODE_RE = re.compile(r'(<script type="text/(?:babel|plain)"[^>]*>)(.*?)(</script>)', re.S)
+# Bloc de code : ancien format (JSX compilé par le navigateur) ou format compilé.
+CODE_RE = re.compile(r'(<script (?:type="text/(?:babel|plain)"[^>]*|type="module" id="app-code"|'
+                     r'id="(?:fusion-src|fm-src)")>)(.*?)(</script>)', re.S)
+# Amorce des pages React UMD (fusion, eymanual) : plus de Babel.transform.
+OLD_BOOT = re.compile(r"\n    var src = document\.getElementById\('[a-z-]+'\)\.textContent;\n"
+                      r"    var out = Babel\.transform\(src, \{ presets: \[\['react', \{ runtime: 'classic' \}\]\] \}\)\.code;\n"
+                      r"    \(0, eval\)\(out\);\n")
+NEW_BOOT = "\n    if (typeof App !== 'function') throw new Error('code de l\\'application absent');\n"
+
+
+def assemble(app):
+    """JSX complet d'une app : en-tête + fichiers sources + ligne de montage."""
+    cfg = APPS[app]
+    parts = [transform(app, p, rd(p)) for p in cfg['code']]
+    return cfg['head'] + '\n' + '\n\n\n'.join(parts) + '\n\n' + cfg['foot']
+
+
+def compile_all(apps):
+    """Compile le JSX de plusieurs apps en un seul appel à node (tools/compile_jsx.js)."""
+    import subprocess
+    jobs = {a: {'code': assemble(a), 'mode': 'script' if 'script_id' in APPS[a] else 'module'}
+            for a in apps}
+    try:
+        r = subprocess.run(['node', os.path.join(ROOT, 'tools', 'compile_jsx.js')],
+                           input=json.dumps(jobs), capture_output=True, text=True, check=True)
+    except FileNotFoundError:
+        raise SystemExit('node introuvable : il sert à compiler le JSX (tools/compile_jsx.js).')
+    except subprocess.CalledProcessError as e:
+        raise SystemExit('Erreur de compilation JSX :\n' + e.stderr)
+    return json.loads(r.stdout)
 
 
 def dump(obj):
@@ -179,7 +267,7 @@ def dump(obj):
     return s
 
 
-def sync(app, write):
+def sync(app, write, compiled):
     cfg = APPS[app]
     page_path = os.path.join(ROOT, app, 'index.html')
     page = rd(app + '/index.html')
@@ -200,84 +288,23 @@ def sync(app, write):
             report.append(f'  ~ données {name} différentes de la source')
             new = new[:m.end()] + txt + new[end:]
 
-    # 2) Code
+    # 2) Code (compilé)
     cm = CODE_RE.search(new)
-    code = cm.group(2)
-    segs = []
-    cur = 0
-    old_segments_found = True
-    for p in cfg['code']:
-        # On repère le segment actuel grâce à ses premières/dernières lignes non vides.
-        cur_src = transform(app, p, rd(p))
-        i = code.find(cur_src, cur)
-        if i >= 0:
-            segs.append((i, i + len(cur_src), cur_src))
-            cur = i + len(cur_src)
-            continue
-        old_segments_found = False
-        report.append(f'  ~ code {p} modifié (ou segment non retrouvé)')
-        break
-    if not old_segments_found:
-        # Repli : on repère chaque segment embarqué par son DÉBUT (préfixe) et sa
-        # FIN (suffixe), pris dans la source actuelle ou dans sa version git HEAD.
-        # Marche tant qu'une modification ne touche pas à la fois les premières
-        # et les dernières lignes d'un même fichier.
-        import subprocess
-
-        def versions(p):
-            out = [transform(app, p, rd(p))]
-            try:
-                head = subprocess.run(['git', 'show', 'HEAD:' + p], cwd=ROOT, capture_output=True,
-                                      text=True, check=True).stdout
-                out.append(transform(app, p, head))
-            except subprocess.CalledProcessError:
-                pass
-            return out
-
-        files = cfg['code']
-        vers = [versions(p) for p in files]
-        starts, cur = [], 0
-        for k, p in enumerate(files):
-            pos = None
-            for v in vers[k]:
-                for n in (400, 200, 100, 60):
-                    i = code.find(v[:n], cur)
-                    if i >= 0:
-                        pos = i
-                        break
-                if pos is not None:
-                    break
-            if pos is None:
-                raise SystemExit(f'{app}: début du segment {p} introuvable dans index.html — corriger à la main.')
-            starts.append(pos)
-            cur = pos + 1
-        segs = []
-        for k, p in enumerate(files):
-            # Le dernier segment peut lui-même se terminer par createRoot(...) (social) :
-            # on cherche sa fin jusqu'au bout du script.
-            bound = starts[k + 1] if k + 1 < len(files) else len(code)
-            end = None
-            for v in vers[k]:
-                for n in (400, 200, 100, 60):
-                    j = code.rfind(v[-n:], starts[k], bound)
-                    if j >= 0:
-                        end = j + n
-                        break
-                if end is not None:
-                    break
-            if end is None:
-                raise SystemExit(f'{app}: fin du segment {p} introuvable dans index.html — corriger à la main.')
-            segs.append((starts[k], end, vers[k][0]))
-        out, last = [], 0
-        for a, b, repl in segs:
-            out.append(code[last:a])
-            out.append(repl)
-            last = b
-        out.append(code[last:])
-        new_code = ''.join(out)
-        if '</script' in new_code.lower():
-            raise SystemExit(f'{app}: "</script" dans le code')
-        new = new[:cm.start(2)] + new_code + new[cm.end(2):]
+    if not cm:
+        raise SystemExit(f'{app}: bloc de code introuvable dans index.html')
+    srcs = ', '.join(cfg['code'])
+    body = (f'\n// Généré par tools/sync_subapps.py depuis {srcs} : modifier ces fichiers, pas cette page.\n'
+            + compiled + '\n')
+    for bad in ('</script', '<!--'):
+        if bad in body.lower():
+            raise SystemExit(f'{app}: "{bad}" dans le code compilé : casserait la page')
+    tag = f'<script id="{cfg["script_id"]}">' if 'script_id' in cfg else '<script type="module" id="app-code">'
+    if cm.group(1) != tag or cm.group(2) != body:
+        report.append(f'  ~ code ({srcs}) à recompiler')
+        new = new[:cm.start()] + tag + body + '</script>' + new[cm.end():]
+    # Babel n'est plus chargé par la page
+    new = re.sub(r'<script src="(?:\.\./)?vendor/babel\.min\.js"></script>\n', '', new)
+    new = OLD_BOOT.sub(NEW_BOOT, new)
 
     changed = new != page
     if changed and write:
@@ -290,17 +317,74 @@ def sync(app, write):
     return changed
 
 
+def used_icons():
+    """Icônes lucide importées par les sous-apps « module » : en-têtes ET fichiers .jsx
+    (conso/wizard.jsx importe les siennes)."""
+    icons = set()
+    for cfg in APPS.values():
+        if 'script_id' in cfg:
+            continue  # React UMD : pas de lucide
+        for txt in [cfg['head']] + [rd(p) for p in cfg['code']]:
+            for m in re.finditer(r'import\s*\{([^}]*)\}\s*from\s*["\']lucide-react["\']', txt):
+                icons |= {x.split(' as ')[0].strip() for x in m.group(1).split(',') if x.strip()}
+    return sorted(icons)
+
+
+def check_icons():
+    """vendor/lucide-react.js ne contient que les icônes listées : signale un manque."""
+    blocks = re.findall(r'export\{([^}]*)\}', rd('vendor/lucide-react.js'))
+    if not blocks:
+        return
+    exported = {x.split(' as ')[-1].strip() for x in blocks[-1].split(',')}
+    missing = [i for i in used_icons() if i not in exported]
+    if missing:
+        print(f'! icônes absentes de vendor/lucide-react.js : {", ".join(missing)} '
+              '→ lancer bash tools/build_vendor.sh (la page planterait)')
+    return missing
+
+
+def sync_qcm_catalog(write):
+    """data/qcm_catalog.json : banque de QCM pré-calculée (tools/build_qcm_catalog.js)
+    à partir de trainer_courses, unified_modules et audit.json — à régénérer après
+    toute modification d'un QCM."""
+    import subprocess
+    try:
+        r = subprocess.run(['node', os.path.join(ROOT, 'tools', 'build_qcm_catalog.js')],
+                           capture_output=True, text=True, check=True)
+    except subprocess.CalledProcessError as e:
+        raise SystemExit('Erreur build_qcm_catalog.js :\n' + e.stderr)
+    path = os.path.join(ROOT, 'data', 'qcm_catalog.json')
+    old = rd('data/qcm_catalog.json') if os.path.exists(path) else None
+    changed = old != r.stdout
+    if changed and write:
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(r.stdout)
+    n = len(json.loads(r.stdout)['questions'])
+    status = ('ÉCRIT' if write else 'À SYNCHRONISER') if changed else 'à jour'
+    print(f'{"qcm":10s} {status} (data/qcm_catalog.json, {n} questions)')
+    return changed
+
+
 def main(argv):
+    if '--icons' in argv:
+        print(', '.join(used_icons()))
+        return 0
+    missing_icons = check_icons()
     write = '--write' in argv
-    apps = [a for a in argv if not a.startswith('--')] or list(APPS)
+    apps = [a for a in argv if not a.startswith('--')] or list(APPS) + ['qcm']
+    do_qcm = 'qcm' in apps
+    apps = [a for a in apps if a != 'qcm']
     unknown = [a for a in apps if a not in APPS]
     if unknown:
         raise SystemExit(f'apps inconnues : {unknown} (connues : {", ".join(APPS)})')
-    dirty = [a for a in apps if sync(a, write)]
+    compiled = compile_all(apps) if apps else {}
+    dirty = [a for a in apps if sync(a, write, compiled[a])]
+    if do_qcm and sync_qcm_catalog(write):
+        dirty.append('qcm')
     if dirty and not write:
         print('\n→ relancer avec --write pour mettre à jour ces pages.')
         return 1
-    return 0
+    return 1 if missing_icons else 0
 
 
 if __name__ == '__main__':

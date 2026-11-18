@@ -1,5 +1,5 @@
 react / react-dom : 18.3.1
-lucide-react      : 1.74.0
+lucide-react      : 1.74.0 (icônes : AlertTriangle, ArrowLeft, ArrowLeftRight, ArrowRight, Banknote, BookOpen, Boxes, Building2, Calculator, Check, CheckCircle2, ChevronDown, ChevronRight, ClipboardCheck, Clock, Coins, Compass, Disc3, Eye, FileText, Gavel, GitBranch, Globe, GraduationCap, Headphones, Info, Languages, Layers, Lightbulb, ListChecks, ListMusic, Mic, Network, Package, Pause, Play, Plus, Receipt, Recycle, Repeat, RotateCcw, RotateCw, Ruler, Scale, Search, Shuffle, Table, Trash2, TrendingDown, TrendingUp, Workflow, X)
 @babel/standalone : 7.29.14
 tailwind (play)   : 3.4.16
 construit par tools/build_vendor.sh (esbuild 0.28.2)
