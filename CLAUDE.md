@@ -95,13 +95,13 @@ sont dans aucune rubrique ni dans `HUB_SECTIONS`, et figurent dans
 | flashcards.json (1 Mo) | trainer, fcdb, dashboard, recherche | **liste** de `{id:int,cat,sub,d,q,a}` — ids uniques (max 2269) ; cat ∈ **Fiscalité, Swiss GAAP RPC, IFRS / IAS, Audit / ISA, Expert suisse** (M1) ; d ∈ facile, moyen, difficile, piège |
 | notion_lessons.json | modules, recherche | liste de 661 `{concept,year,module,notes,priority,section,status,type}` |
 | comparisons.json | compare, recherche | `{themes:[25 {…, norms:{ifrs,rpc,co}}]}` |
-| audit.json (3,9 Mo) | sous-app audit, qcm, recherche | sections `nas, cadre_legal, cycles, terrain, outils, quiz, comparatifs, lexique, annuaire{series[7]→standards[47]}, cas_pratiques, arbres, procedures_assertions, independance, modeles, examens_blancs, timeline, fraude, goingconcern, actualites, annuaire_cours{"200":{…,mcq[]}}` (47 ISA, 566 QCM) ; chaque section a `_label/_icon/_description` (affichés sur l'accueil Audit) |
+| audit.json (3,9 Mo) | sous-app audit, qcm, recherche | sections `nas, cadre_legal, cycles, outils, quiz, comparatifs, lexique, annuaire{series[7]→standards[47]}, cas_pratiques, arbres, procedures_assertions, independance, modeles, examens_blancs, timeline, fraude, goingconcern, actualites, annuaire_cours{"200":{…,mcq[]}}` (47 ISA, 566 QCM) ; chaque section a `_label/_icon/_description` (affichés sur l'accueil Audit) |
 | audit_seuils.json | sous-app audit, recherche | `{categories:[8]}` |
 | oral.json (1,5 Mo) | sous-app oral, recherche | `{intro,themes[8],examen}` |
 | references.json | sous-app references, recherche | 13 rubriques (courses_ifrs, memo_co, seuils, cas_chiffres…) |
 | english_module.json + english_{my_notes,meeting,toeic,audit_lab}.json | sous-app english (+ recherche) | vocab 456, phrases 194… |
 | financial_statements.json | sous-app fs | `{statements[4],notes[23]}` |
-| fraude_postes, audit_referencement, audit_annexes, audit_amortissements, audit_metier | sous-app audit | — |
+| fraude_postes, audit_annexes, audit_amortissements | sous-app audit | — |
 | podcasts_extra.json | sous-app podcasts | groupe « ISA+ » |
 
 Autres sources : `audit/manifest.json` + `audit/controle_{ordinaire,restreint}/**`
@@ -117,7 +117,8 @@ n'apparaissent qu'en rappel explicite (« 22'680 en 2025-2026 »). Le calculateu
 du module Social utilise `parametres_2027` (social/index.html, bloc sans source).
 
 Progression utilisateur : uniquement localStorage du navigateur (clés
-`swisscpa_*` + `cpa_audit_progress` de la sous-app Audit), propre à chaque
+`swisscpa_*` ; `cpa_audit_progress` ne sert plus depuis le retrait du
+catalogue des tests, mais reste sauvegardé s'il existe), propre à chaque
 appareil. Onglet Progression → « Sauvegarde » : export/import d'un fichier JSON
 (`progressExportBackup` / `progressImportBackup`, progress.js ; la clé Mistral
 n'est jamais exportée).
@@ -132,7 +133,7 @@ vers `../vendor/` (eymanual et fusion ont leur propre `vendor/`, en UMD).
 
 | Sous-app | Code source | Données embarquées ← source |
 |---|---|---|
-| audit | conso/lesson_engine.jsx + audit/audit_app.jsx | `__AUDIT__`←data/audit.json, `__AUDIT_BOOK__`←audit/manifest.json+fiches, `__AUDIT_SEUILS__`, `__FRAUDE_POSTES__`, `__REFERENCEMENT__`, `__ANNEXES__`, `__AMORTISSEMENTS__`, `__METIER__` ← data/… ; **sans source** : `__PLAN_COMPTABLE__`, `__NESTLE__` (23 états/notes), `__TESTS__`, `__JOURNAL__` |
+| audit | conso/lesson_engine.jsx + audit/audit_app.jsx | `__AUDIT__`←data/audit.json, `__AUDIT_BOOK__`←audit/manifest.json+fiches, `__AUDIT_SEUILS__`, `__FRAUDE_POSTES__`, `__ANNEXES__`, `__AMORTISSEMENTS__` ← data/… ; **sans source** : `__PLAN_COMPTABLE__`, `__NESTLE__` (23 états/notes) |
 | conso | conso/wizard.jsx + conso/lesson_engine.jsx | `__CONSO_LESSONS__` ← conso/lessons_*.json |
 | english | english/english_app.jsx | `__ENGLISH__` ← data/english_*.json |
 | fs | lesson_engine + fs/fs_app.jsx | `__FS__` ← data/financial_statements.json |
@@ -150,11 +151,15 @@ fusion, oral).
 
 **Accueil Audit** (`AuditHome` dans audit_app.jsx) : tuiles regroupées par
 `AUDIT_HOME_GROUPS` (6 groupes). Une entrée `"@x"` = vue spéciale déclarée dans
-`SPECIAL` (revision, book, tests, metier, nestle, plan, fraudepostes,
-referencement, annexes, amortissements, seuils) ; sinon une section de
+`SPECIAL` (revision, book, nestle, plan, fraudepostes, annexes,
+amortissements, seuils) ; sinon une section de
 data/audit.json. Une section non listée tombe dans le dernier groupe. Les
 compteurs (normes ISA, schémas de fraude, tests, chapitres) sont calculés.
-Canvas Perso et Mission Lab (desktop uniquement) ont été retirés.
+Canvas Perso et Mission Lab (desktop uniquement) ont été retirés, puis (nov. 2026,
+à la demande de l'utilisateur) « Une journée d'auditeur », « Catalogue des tests
+d'audit », « Référencement croisé » et « Terrain EY » : code, données embarquées
+(`__METIER__`, `__TESTS__`, `__JOURNAL__`, `__REFERENCEMENT__`), fichiers
+data/audit_{metier,referencement}.json et section `terrain` d'audit.json.
 
 ### Procédure de modification d'une sous-app
 
@@ -175,10 +180,10 @@ lignes d'un même `.jsx` entre deux synchronisations.
 
 - Valider : `python3 -c "import json,glob;[json.load(open(p,encoding='utf-8')) for p in glob.glob('**/*.json',recursive=True)]"`
 - Réécriture en Python : `json.dumps(o, ensure_ascii=False, indent=2)` (indent=1
-  pour audit_annexes, audit_referencement, fraude_postes, conso/lessons_*,
+  pour audit_annexes, fraude_postes, conso/lessons_*,
   fusion/lessons_fusion) + `\n` final si le fichier en avait un. Mise en forme
   manuelle (remplacements ciblés uniquement) : audit/manifest.json,
-  hec/manifest.json, data/{audit_amortissements, audit_metier, comparisons,
+  hec/manifest.json, data/{audit_amortissements, comparisons,
   podcasts_extra}.json, 2 fiches audit (03_planification, 07_communication).
 - Nouvelle flashcard : id entier unique (> 2269), champs `cat/sub/d/q/a`, `cat`
   parmi les 5 catégories ci-dessus.

@@ -17,7 +17,7 @@ Usage (depuis la racine du dépôt) :
   python3 tools/sync_subapps.py --write audit conso   # seulement ces apps
 
 Données SANS source dans le dépôt (éditer directement dans index.html) :
-  audit   : __PLAN_COMPTABLE__, __NESTLE__ (23 états et notes), __TESTS__, __JOURNAL__
+  audit   : __PLAN_COMPTABLE__, __NESTLE__ (23 états et notes)
   podcasts: groupes M2 et M4 (seul le groupe ISA+ vient de data/podcasts_extra.json)
   social  : __SOCIAL__ entier
 L'outil conserve ces blocs tels quels.
@@ -129,13 +129,9 @@ APPS = {
             '__AUDIT_SEUILS__': from_file('data/audit_seuils.json'),
             '__PLAN_COMPTABLE__': KEEP,
             '__FRAUDE_POSTES__': from_file('data/fraude_postes.json'),
-            '__REFERENCEMENT__': from_file('data/audit_referencement.json'),
             '__ANNEXES__': from_file('data/audit_annexes.json'),
             '__AMORTISSEMENTS__': from_file('data/audit_amortissements.json'),
             '__NESTLE__': KEEP,
-            '__METIER__': from_file('data/audit_metier.json'),
-            '__TESTS__': KEEP,
-            '__JOURNAL__': KEEP,
         },
         'code': ['conso/lesson_engine.jsx', 'audit/audit_app.jsx'],
     },

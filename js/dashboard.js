@@ -13,7 +13,7 @@ const HUB_SECTIONS = [
         title: '📚 Cours',
         cards: [
             { tab: 'modules', d: 'Les 16 modules du diplôme : cours, normes CO / RPC / IFRS, leçons et fiches.' },
-            { tab: 'audit', d: "NAS/ISA, Manuel suisse d'audit, catalogue des tests, journée d'auditeur, Nestlé…" },
+            { tab: 'audit', d: "NAS/ISA, Manuel suisse d'audit, cycles, fraude, Nestlé, seuils…" },
             // Masqué (HIDDEN_TABS) : { tab: 'grandlivre', d: 'La comptabilité suisse de A à Z : écritures, TVA, bouclement, cas.' },
             { tab: 'conso', d: 'Consolidation IFRS et Swiss GAAP pas à pas, avec fil rouge chiffré.' },
             { tab: 'fusion', d: "Fusions, apports partiels d'actif et scissions : parité, prime, mali, écritures." },
