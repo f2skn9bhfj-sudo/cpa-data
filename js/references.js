@@ -50,7 +50,7 @@ function renderReferences(container, subTab) {
     container.innerHTML = `
         <iframe id="referencesFrame"
                 src="${_refsSrc(subTab)}"
-                title="Références — leçons, mémos, vocabulaire, seuils, cas, arbres, terrain"
+                title="Références — leçons, mémos, vocabulaire, seuils, cas, arbres"
                 style="display:block;width:100%;height:70vh;border:0;border-radius:10px;background:#f8fafc;box-shadow:0 1px 3px rgba(15,23,42,0.06)"
                 referrerpolicy="no-referrer"></iframe>`;
 

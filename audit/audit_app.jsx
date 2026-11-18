@@ -751,7 +751,7 @@ function AuditCycles({ section, onBack }) {
           <div><CycBlock icon="⚠️" title="Risques typiques (NAS 315)" items={c.risks} color="#ef4444" /><CycBlock icon="🎯" title="Assertions concernées" items={c.assertions} color="#3b82f6" /></div>
           <div><CycBlock icon="🛡️" title="Contrôles clés du SCI" items={c.controls} color="#10b981" /><CycBlock icon="🔬" title="Tests substantifs (TOD)" items={c.tests_substantive} color="#8b5cf6" /></div>
         </div>
-        {(c.ey_tips || []).length > 0 && <div className="mt-2 pt-3 border-t border-slate-100"><CycBlock icon="💡" title="Tips terrain EY" items={c.ey_tips} color="#d97706" /></div>}
+        {SHOW_EY_TIPS && (c.ey_tips || []).length > 0 && <div className="mt-2 pt-3 border-t border-slate-100"><CycBlock icon="💡" title="Tips terrain EY" items={c.ey_tips} color="#d97706" /></div>}
       </div>
     </div>
   );
@@ -1553,6 +1553,11 @@ function AuditGeneric({ section, onBack }) {
    Une entrée "@x" désigne une vue spéciale (clé de SPECIAL ci-dessous),
    sinon une section de data/audit.json (data[k]._icon / _label / _description).
    Toute section de data non listée ici est ajoutée au dernier groupe. */
+/* Rubriques masquées à la demande de l'utilisateur (code et données conservés) :
+   pour réafficher, retirer la clé de ce Set. */
+const AUDIT_HIDDEN = new Set(["cas_pratiques"]);
+/* « Tips terrain EY » des cycles masqués (données ey_tips conservées). */
+const SHOW_EY_TIPS = false;
 const AUDIT_HOME_GROUPS = [
   { id: "normes",    label: "Apprendre les normes",       icon: "📖", items: ["@revision", "annuaire", "nas", "@book", "cadre_legal", "independance"] },
   { id: "methode",   label: "Méthode & cycles",           icon: "🔍", items: ["timeline", "cycles", "procedures_assertions"] },
@@ -1591,9 +1596,9 @@ function AuditHome({ data, book, onSection, onBook, onSeuils, onRevision, onPlan
     amortissements: { show: len((W.__AMORTISSEMENTS__ || {}).lecons) > 0, on: onAmortissements, icon: "⏳", chip: "bg-sky-50 text-sky-700 border-sky-100", label: "Amortissements", desc: "Linéaire et dégressif expliqués pas à pas, taux fiscaux AFC, écritures direct/indirect, et un calculateur qui déroule le calcul année par année.", sub: "cas interactif · surtout le dégressif", subColor: "text-sky-600" },
     seuils: { show: len((W.__AUDIT_SEUILS__ || {}).categories) > 0, on: onSeuils, icon: "📏", chip: "bg-red-50 text-red-700 border-red-100", label: "Seuils & Exercices", desc: "Tous les seuils (ordinaire/restreint, matérialité) + exercices pas-à-pas." },
   };
-  const groups = AUDIT_HOME_GROUPS.map((g) => ({ ...g, items: [...g.items] }));
+  const groups = AUDIT_HOME_GROUPS.map((g) => ({ ...g, items: g.items.filter((it) => !AUDIT_HIDDEN.has(it)) }));
   const placed = new Set(groups.flatMap((g) => g.items));
-  Object.keys(data).forEach((k) => { if (k[0] !== "_" && k !== "annuaire_cours" && !placed.has(k)) groups[groups.length - 1].items.push(k); });
+  Object.keys(data).forEach((k) => { if (k[0] !== "_" && k !== "annuaire_cours" && !placed.has(k) && !AUDIT_HIDDEN.has(k)) groups[groups.length - 1].items.push(k); });
   const tileFor = (it) => {
     if (it[0] === "@") {
       const s = SPECIAL[it.slice(1)];

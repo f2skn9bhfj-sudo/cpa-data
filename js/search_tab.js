@@ -191,7 +191,7 @@ async function stBuildIndex(onProgress) {
     prog('Références…');
     const refs = await stFetchJson('references.json');
     if (refs && typeof refs === 'object') {
-        const label = { memo_co: 'Mémo CO', memo_rpc: 'Mémo RPC', memo_ifrs: 'Mémo IFRS', cas_chiffres: 'Cas chiffrés', arbres_decision: 'Arbres de décision', restructuration: 'Restructuration', terrain: 'Terrain' };
+        const label = { memo_co: 'Mémo CO', memo_rpc: 'Mémo RPC', memo_ifrs: 'Mémo IFRS', cas_chiffres: 'Cas chiffrés', arbres_decision: 'Arbres de décision', restructuration: 'Restructuration' };
         for (const key of Object.keys(label)) {
             const sec = refs[key];
             if (!sec) continue;

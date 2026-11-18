@@ -3042,7 +3042,7 @@
   },
   "cycles": {
     "_label": "Cycles d'audit",
-    "_description": "Pour chaque cycle : risques typiques (NAS 315), assertions concernées, contrôles clés du SCI, tests substantifs (TOD), pièges terrain EY.",
+    "_description": "Pour chaque cycle : risques typiques (NAS 315), assertions concernées, contrôles clés du SCI, tests substantifs (TOD).",
     "_icon": "🔄",
     "items": [
       {

@@ -160,6 +160,10 @@ Canvas Perso et Mission Lab (desktop uniquement) ont été retirés, puis (nov. 
 d'audit », « Référencement croisé » et « Terrain EY » : code, données embarquées
 (`__METIER__`, `__TESTS__`, `__JOURNAL__`, `__REFERENCEMENT__`), fichiers
 data/audit_{metier,referencement}.json et section `terrain` d'audit.json.
+**Masqués** (code et données conservés, réversibles) : la tuile « Cas pratiques »
+(`AUDIT_HIDDEN` dans audit_app.jsx), les « Tips terrain EY » des cycles
+(`SHOW_EY_TIPS = false`) et la rubrique « Terrain EY » des Références (retirée de
+`VALID` dans references_app.jsx).
 
 ### Procédure de modification d'une sous-app
 

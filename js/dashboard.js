@@ -36,7 +36,7 @@ const HUB_SECTIONS = [
     {
         title: '🧰 Ressources',
         cards: [
-            { tab: 'references', d: 'Mémos, seuils, cas chiffrés, arbres de décision, terrain.' },
+            { tab: 'references', d: 'Mémos, seuils, cas chiffrés, arbres de décision, restructurations.' },
             { tab: 'compare', d: 'CO vs Swiss GAAP RPC vs IFRS, thème par thème.' },
             { tab: 'fs', d: 'Explorateur des états financiers et de leurs postes.' },
             { tab: 'recherche', d: "Trouve n'importe quoi dans toute l'app — avec l'IA en option." },

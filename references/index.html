@@ -643,7 +643,9 @@ function TerrainSection({ checked, onToggle }) {
 function ReferencesApp() {
   const persisted = useMemo(rLoad, []);
   const hashSection = (typeof location !== "undefined" && location.hash || "").replace("#", "");
-  const VALID = ["courses", "memos", "glossary", "seuils", "conso", "cas", "arbres", "restruct", "terrain"];
+  /* « Terrain EY » masqué à la demande de l'utilisateur (composant et données conservés) :
+     pour le réafficher, remettre "terrain" ici et retirer le filtre de `sections`. */
+  const VALID = ["courses", "memos", "glossary", "seuils", "conso", "cas", "arbres", "restruct"];
   const [section, setSection] = useState(VALID.includes(hashSection) ? hashSection : (VALID.includes(persisted.section) ? persisted.section : "courses"));
   const [terrain, setTerrain] = useState(persisted.terrain || {});
   const [memoQuery, setMemoQuery] = useState("");
@@ -681,7 +683,7 @@ function ReferencesApp() {
     { id: "arbres", label: "Arbres", icon: <GitBranch size={16} />, n: counts.arbres },
     { id: "restruct", label: "Restructuration", icon: <Recycle size={16} />, n: counts.restruct },
     { id: "terrain", label: "Terrain EY", icon: <ClipboardCheck size={16} />, n: counts.terrain },
-  ];
+  ].filter((s) => VALID.includes(s.id));
 
   /* Délégation des clics cross-ref (les spans viennent de dangerouslySetInnerHTML) */
   const onMainClick = (e) => {
@@ -721,7 +723,7 @@ function ReferencesApp() {
           <BookOpen size={26} className="text-indigo-300" />
           <div className="flex-1 min-w-[220px]">
             <h1 className="text-lg font-bold">Références — bibliothèque de révision</h1>
-            <p className="text-xs text-indigo-200">Leçons · mémos · vocabulaire · seuils · cas chiffrés · arbres · checklists EY</p>
+            <p className="text-xs text-indigo-200">Leçons · mémos · vocabulaire · seuils · cas chiffrés · arbres · restructurations</p>
           </div>
           <div className="flex items-center gap-2 text-xs flex-wrap">
             <span className="bg-white/10 rounded-lg px-3 py-1.5 font-medium">{counts.courses} leçons</span>
