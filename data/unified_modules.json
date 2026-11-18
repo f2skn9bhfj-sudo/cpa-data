@@ -2199,6 +2199,17 @@
               ],
               "questions": null,
               "section_id": "m1_L9_s5"
+            },
+            {
+              "title": "6. 📘 Compléments du classeur — le budget d'un ménage, l'axiome comptable, le report à nouveau",
+              "body": "**Fil rouge : un jeune couple fait ses comptes.** Après un an, ses revenus dépassent ses dépenses courantes de **CHF 12'000** : son patrimoine devrait donc avoir augmenté d'autant. Pourtant, il a **moins** d'argent liquide qu'au départ. Pourquoi ?\n- il a acheté des **meubles** (CHF 12'000, dont 3'000 encore dus au vendeur) : ce n'est pas une consommation, le bien est toujours là → **actif** (et une **dette** pour la part impayée) ;\n- il a **prêté** CHF 10'000 à un ami qui le remboursera → **créance** ;\n- il a versé une **garantie de loyer** de CHF 1'800 qui lui sera rendue → **créance**.\nLe **bilan** montre où se trouve l'épargne ; le **compte de résultat** montre comment elle a été formée.\n\n**Axiome comptable** : établis à partir des mêmes opérations, le compte de résultat et le bilan donnent **toujours le même solde** (le bénéfice). S'ils diffèrent, il y a une erreur.\n\n**Exercice** : période entre deux bilans de clôture (en général 12 mois).\n**Capital** : mise initiale des propriétaires. Le résultat peut être **incorporé au capital** ou laissé dans un compte **report à nouveau** (bénéfice ou perte reporté), au passif s'il est positif, en déduction des fonds propres s'il est négatif.\n\n**Comptes de bilan / comptes de gestion** : les premiers sont **reportés** d'un exercice à l'autre ; les seconds (charges et produits) **repartent de zéro** chaque année après avoir été soldés dans le compte de résultat.",
+              "key_points": [
+                "Épargne ≠ liquidités : actifs et créances",
+                "Axiome : solde du bilan = solde du résultat",
+                "Comptes de gestion remis à zéro chaque année"
+              ],
+              "questions": null,
+              "section_id": "m1_L9_s6"
             }
           ],
           "questions": [
@@ -2316,6 +2327,31 @@
               "explanation": "Actif = fonds étrangers + fonds propres : les fonds propres sont la différence entre ce que l'entreprise possède et ce qu'elle doit à des tiers.",
               "difficulty": "easy",
               "section_id": "m1_L9_s1"
+            },
+            {
+              "id": "m1_L9_q9",
+              "type": "mcq",
+              "question": "Un ménage a économisé 12'000 CHF sur l'année mais possède moins d'argent qu'au départ. Quelle explication est cohérente ?",
+              "options": [
+                "Il a acheté des meubles et prêté de l'argent : l'épargne est devenue des actifs et des créances",
+                "Ses comptes sont forcément faux, car toute l'épargne de l'année doit toujours se retrouver en caisse",
+                "Il a remboursé des dettes, ce qui réduit automatiquement son bénéfice de l'année",
+                "Il a augmenté ses charges courantes sans les enregistrer dans le compte de résultat"
+              ],
+              "answer": 0,
+              "explanation": "L'épargne (bénéfice) augmente le patrimoine, qui peut prendre la forme de biens durables, de créances ou de liquidités. Le bilan montre sa composition.",
+              "difficulty": "medium",
+              "section_id": "m1_L9_s6"
+            },
+            {
+              "id": "m1_L9_q10",
+              "type": "vrai_faux",
+              "question": "Les comptes de charges et de produits sont reportés d'un exercice à l'autre comme les comptes de bilan.",
+              "options": null,
+              "answer": false,
+              "explanation": "Faux. Les comptes de gestion sont soldés dans le compte de résultat à la clôture et repartent de zéro ; seuls les comptes de bilan sont reportés (bilan d'ouverture).",
+              "difficulty": "easy",
+              "section_id": "m1_L9_s6"
             }
           ]
         },
@@ -2397,6 +2433,17 @@
               ],
               "questions": null,
               "section_id": "m1_L10_s5"
+            },
+            {
+              "title": "6. 📘 Compléments du classeur — la grille ComptaLearn en 4 colonnes et les opérations-types",
+              "body": "**La grille en 4 colonnes.** On place côte à côte le bilan et le compte de résultat :\n\n| Col. 1 | Col. 2 | Col. 3 | Col. 4 |\n|---|---|---|---|\n| Bilan — **débit** | Bilan — **crédit** | Résultat — **débit** | Résultat — **crédit** |\n| enrichissement (actif ↑, dette ↓) | appauvrissement (actif ↓, dette ↑) | charge ↑ | produit ↑ |\n\nRègle sans exception : **colonnes impaires = débit, colonnes paires = crédit**. Toute écriture inscrit un montant dans une colonne impaire **et** le même montant dans une colonne paire.\n\n**Les quatre opérations-types**\n| Débit | Crédit | Exemple |\n|---|---|---|\n| col. 1 (bilan) | col. 2 (bilan) | achat d'un véhicule payé par banque |\n| col. 1 (bilan) | col. 4 (produit) | vente encaissée |\n| col. 3 (charge) | col. 2 (bilan) | loyer payé |\n| col. 3 (charge) | col. 4 (produit) | écriture interne (ex. loyer interne, prestation propre) |\n\n**La soustraction comptable** : deux montants placés de part et d'autre d'un compte se **soustraient** ; la différence est le **solde**. *Exercice mental* : 300 au **crédit** du compte « Impôts » (compte de gestion) tombe en colonne 4 → c'est un **produit** de 300, par exemple la correction d'impôts payés en trop.\n\n**Achats et relativité** : un même achat est un actif ou une charge selon **l'usage** qu'en fait l'acheteur (véhicule pour un garage = marchandise ; pour une fiduciaire = immobilisation). **Acompte versé** = créance jusqu'à la livraison, puis imputé sur la facture ; l'écriture de **solde** éteint la créance ou la dette restante.",
+              "key_points": [
+                "Colonnes impaires = débit, paires = crédit",
+                "4 opérations-types",
+                "Montants opposés = soustraction (solde)"
+              ],
+              "questions": null,
+              "section_id": "m1_L10_s6"
             }
           ],
           "questions": [
@@ -2484,6 +2531,36 @@
               "explanation": "Tant que la machine n'est pas livrée, l'acompte est une créance envers le fournisseur (actif). À la livraison, il sera imputé sur le prix de la machine.",
               "difficulty": "medium",
               "section_id": "m1_L10_s5"
+            },
+            {
+              "id": "m1_L10_q7",
+              "type": "mcq",
+              "question": "Dans la grille ComptaLearn, 300 CHF figurent au crédit du compte « Impôts ». Que signifie cette écriture ?",
+              "options": [
+                "Un actif d'impôts de 300 CHF à récupérer",
+                "Une dette d'impôts de 300 CHF envers le fisc",
+                "Un produit (ou une diminution de charge) de 300 CHF",
+                "Une charge supplémentaire d'impôts de 300 CHF à payer"
+              ],
+              "answer": 2,
+              "explanation": "« Impôts » est un compte de gestion ; un montant au crédit tombe dans la colonne 4 (produits) : il réduit la charge, par exemple pour des impôts payés en trop.",
+              "difficulty": "medium",
+              "section_id": "m1_L10_s6"
+            },
+            {
+              "id": "m1_L10_q8",
+              "type": "mcq",
+              "question": "Quelle combinaison de colonnes correspond au paiement du loyer par banque ?",
+              "options": [
+                "Débit colonne 1 (bilan) / crédit colonne 2 (bilan)",
+                "Débit colonne 3 (charge) / crédit colonne 2 (bilan)",
+                "Débit colonne 1 (bilan) / crédit colonne 4 (produit)",
+                "Débit colonne 2 (bilan) / crédit colonne 3 (charge)"
+              ],
+              "answer": 1,
+              "explanation": "Le loyer est une charge (colonne 3, débit) ; la banque diminue (appauvrissement, colonne 2, crédit).",
+              "difficulty": "medium",
+              "section_id": "m1_L10_s6"
             }
           ]
         },
@@ -2565,6 +2642,17 @@
               ],
               "questions": null,
               "section_id": "m1_L11_s5"
+            },
+            {
+              "title": "6. 📘 Compléments du classeur — ce que dit la loi, écriture sur 2 colonnes, journal de caisse",
+              "body": "**Ce que dit la réglementation (CO 957 ss, Olico)**\n- obligation de tenir une **comptabilité** et de présenter des comptes (comptabilité complète dès CHF 500'000 de chiffre d'affaires pour les raisons individuelles et sociétés de personnes ; sinon recettes, dépenses et patrimoine) ;\n- livres : **journal** (chronologique), **grand livre** (par compte), **inventaire**, annexes ; pièces justificatives ;\n- tenue **régulière** (intégralité, véracité, clarté, traçabilité) et conservation **10 ans** ; les livres peuvent être tenus et conservés sous forme **électronique** si leur intégrité est garantie.\n\n**Écriture sur 2 colonnes** : dans le journal, chaque ligne indique le compte à **débiter**, le compte à **créditer**, le libellé et le montant ; dans le grand livre, chaque compte a une colonne **débit** et une colonne **crédit**, puis un **solde**.\n\n**Journal auxiliaire de caisse** (comptabilité manuelle) : on y note les entrées et sorties d'espèces au jour le jour ; seul le **total périodique** est reporté au journal général. Les logiciels intègrent aujourd'hui ces sous-journaux (caisse, banque, débiteurs, créanciers, salaires).\n\n**Inventaire initial / final** : le stock du début et de la fin d'exercice est relevé physiquement et évalué ; la variation corrige les achats (leçon « Bouclement »).\n\n**Règle des comptes collectifs** : on n'enregistre au grand livre que le **collectif** (clients, fournisseurs) ; le **détail** par tiers figure dans la comptabilité auxiliaire, et les deux doivent **concorder** à chaque clôture.\n\n**Activités comptables** : saisir les pièces, contrôler (rapprochements bancaires, soldes clients/fournisseurs), boucler, établir les comptes annuels, archiver.",
+              "key_points": [
+                "CO : journal, grand livre, inventaire, 10 ans",
+                "Journal de caisse : total reporté",
+                "Collectif = somme des comptes particuliers"
+              ],
+              "questions": null,
+              "section_id": "m1_L11_s6"
             }
           ],
           "questions": [
@@ -2682,6 +2770,31 @@
               "explanation": "L'amortissement répartit le coût d'un actif déjà payé sur sa durée d'utilisation : il réduit le bénéfice sans sortie de trésorerie.",
               "difficulty": "easy",
               "section_id": "m1_L11_s2"
+            },
+            {
+              "id": "m1_L11_q9",
+              "type": "vrai_faux",
+              "question": "Les livres comptables peuvent être tenus et conservés sous forme électronique s'ils restent intègres et consultables.",
+              "options": null,
+              "answer": true,
+              "explanation": "Vrai. Le CO et l'ordonnance sur la tenue et la conservation des livres de comptes (Olico) admettent la forme électronique à condition de garantir intégrité, traçabilité et lisibilité pendant 10 ans.",
+              "difficulty": "easy",
+              "section_id": "m1_L11_s6"
+            },
+            {
+              "id": "m1_L11_q10",
+              "type": "mcq",
+              "question": "Dans une comptabilité manuelle, comment le journal auxiliaire de caisse est-il intégré au journal général ?",
+              "options": [
+                "Par le report périodique du total des entrées et des sorties",
+                "Par la recopie de chaque opération de caisse, ligne par ligne",
+                "Il n'est jamais intégré : il sert seulement au contrôle",
+                "Par une seule écriture annuelle lors de l'inventaire final"
+              ],
+              "answer": 0,
+              "explanation": "Le journal auxiliaire détaille les opérations de caisse ; seuls ses totaux périodiques sont reportés dans le journal général, ce qui allège le grand livre.",
+              "difficulty": "medium",
+              "section_id": "m1_L11_s6"
             }
           ]
         },
@@ -2751,6 +2864,17 @@
               ],
               "questions": null,
               "section_id": "m1_L12_s4"
+            },
+            {
+              "title": "5. 📘 Compléments du classeur — tous les groupes du plan comptable PME",
+              "body": "**Normalisation et harmonisation.** Le plan comptable PME (veb.ch, Sterchi/Mattle/Helbling) est **normalisé** (numérotation commune) et **harmonisé** avec le droit comptable (CO 959a/959b) ; les écoles utilisent une version simplifiée (**Swisco**). Classification : **classe** (1 chiffre) → **groupe principal** (2) → **groupe** (3) → **compte** (4).\n\n| Groupe | Contenu | Groupe | Contenu |\n|---|---|---|---|\n| **10** | Actifs circulants | **20** | Dettes à court terme |\n| 100 | Liquidités et titres (1000 caisse, 1020 banque, 1060 titres cotés) | 200 | Dettes résultant d'achats et de prestations |\n| 110 | Créances clients (1100, 1109 ducroire) | 210 | Dettes financières à court terme |\n| 114 | Autres créances (1170/1171 IP, 1176 IA) | 220 | Autres dettes CT (2200 TVA, 2206 IA, 2270 assurances sociales) |\n| 120 | Stocks et travaux en cours | 230 | Passifs de régularisation et provisions CT |\n| 130 | Actifs de régularisation | **24** | Dettes à long terme |\n| **14** | Actifs immobilisés | 240 | Dettes financières LT (2450 emprunts, 2451 hypothèques) |\n| 140 | Immobilisations financières (1400 titres LT, 1440 prêts, 1480 participations) | 250 | Autres dettes LT |\n| 150 | Immobilisations corporelles meubles (machines, mobilier, véhicules, 159 matériel d'emballage) | 260 | Provisions LT |\n| 160 | Immeubles | **28** | Fonds propres (2800 capital, 2850 privé, 290 réserves, 2970 report, 2979 résultat) |\n| 170 | Immobilisations incorporelles (brevets, logiciels, goodwill) | | |\n| 180 | Capital non libéré | | |\n\n**Classes 3 à 9** : 30 production, 32 ventes de marchandises, 34 prestations de services, **36 autres produits** (dont mise à disposition de personnel), 37 prestations propres, 38 déductions sur ventes, 39 variations de stocks ; 40 matériel, 42 marchandises, 44 prestations de tiers, 49 déductions obtenues ; 5 personnel ; 60 locaux, 61 entretien, 62 véhicules, 63 assurances, 64 énergie, 65 administration et informatique, 66 publicité, 67 autres, 68 amortissements, 69 résultat financier ; 7 activités annexes ; 8 hors exploitation, exceptionnel, 89 impôts ; 9 clôture.\n\n**Prestations de services non facturées** (travaux en cours chez un prestataire) : variation enregistrée en classe 3, stock au groupe 120.",
+              "key_points": [
+                "Classe → groupe principal → groupe → compte",
+                "Groupes 10/14 actifs, 20/24/28 passifs",
+                "36 autres produits, 38 déductions, 39 variations"
+              ],
+              "questions": null,
+              "section_id": "m1_L12_s5"
             }
           ],
           "questions": [
@@ -2823,6 +2947,36 @@
               "explanation": "Une entreprise de services enregistre son chiffre d'affaires principal en produits des prestations de services (3400). Le 3200 est réservé aux ventes de marchandises.",
               "difficulty": "easy",
               "section_id": "m1_L12_s4"
+            },
+            {
+              "id": "m1_L12_q6",
+              "type": "mcq",
+              "question": "Dans quel groupe du plan comptable PME figurent les participations durables dans d'autres sociétés ?",
+              "options": [
+                "Groupe 140, immobilisations financières (compte 1480)",
+                "Groupe 170, immobilisations incorporelles et goodwill",
+                "Groupe 100, liquidités et titres cotés à court terme",
+                "Groupe 280, fonds propres et réserves de la société"
+              ],
+              "answer": 0,
+              "explanation": "Les participations sont des immobilisations financières (groupe 140, compte 1480) ; les titres cotés détenus à court terme vont en 1060.",
+              "difficulty": "medium",
+              "section_id": "m1_L12_s5"
+            },
+            {
+              "id": "m1_L12_q7",
+              "type": "mcq",
+              "question": "Où le plan PME enregistre-t-il les revenus tirés de la mise à disposition de personnel à d'autres entreprises ?",
+              "options": [
+                "Classe 7, activités annexes d'exploitation",
+                "Groupe principal 32, ventes de marchandises et services",
+                "Groupe principal 36, autres produits d'exploitation",
+                "Classe 8, produits hors exploitation"
+              ],
+              "answer": 2,
+              "explanation": "La mise à disposition de personnel est un autre produit d'exploitation (groupe 36) ; on peut aussi la porter en diminution des charges de personnel.",
+              "difficulty": "medium",
+              "section_id": "m1_L12_s5"
             }
           ]
         },
@@ -2893,6 +3047,17 @@
               ],
               "questions": null,
               "section_id": "m1_L13_s4"
+            },
+            {
+              "title": "5. 📘 Compléments du classeur — plans comptables types, date d'enregistrement, ouverture des comptes",
+              "body": "**Construire son plan comptable** : partir du plan PME et ne garder que les comptes utiles.\n- *Société de services* (bureau d'ingénieurs) : 1020 banque, 1100 clients, 1280 travaux en cours, 1520 informatique, 2000 fournisseurs, 3400 honoraires, 3940 variation des travaux en cours, 5000 salaires, 6000 loyer, 6500 administration, 6800 amortissements.\n- *Société de production* (fabrique de meubles) : 1210 matières premières, 1260 produits finis, 1500 machines, 3000 ventes de produits fabriqués, 3900 variation des stocks de produits, 4000 matières, 4400 sous-traitance, 6100 entretien.\n\n**À quelle date enregistrer une charge ou un produit ?** À la date où l'opération **se réalise** (livraison, prestation fournie, facture reçue ou émise), indépendamment du paiement ; à la clôture, les **régularisations** rattachent le solde à la bonne période.\n\n**Principes complémentaires** : **coût historique** (évaluation initiale au prix d'acquisition ou de revient), **indépendance des exercices** (délimitation périodique), **continuité d'exploitation**, **intangibilité du bilan d'ouverture**, prudence, permanence, non-compensation.\n\n**Ouverture des comptes** : chaque compte d'actif reçoit son solde au **débit**, chaque compte de passif au **crédit** (contrepartie : compte d'ouverture 9100) ; le total des débits égale le total des crédits — c'est l'**équilibre** du bilan. Le **compte à 3 colonnes** (débit, crédit, solde) permet de suivre le solde après chaque écriture ; à la clôture, le solde est viré au bilan de clôture.",
+              "key_points": [
+                "Services : honoraires, travaux en cours",
+                "Production : matières, produits finis, variation",
+                "Ouverture : actifs au débit, passifs au crédit"
+              ],
+              "questions": null,
+              "section_id": "m1_L13_s5"
             }
           ],
           "questions": [
@@ -2965,6 +3130,31 @@
               "explanation": "Le bilan d'ouverture doit être identique au bilan de clôture de l'exercice précédent ; toute correction passe par une écriture de l'exercice en cours.",
               "difficulty": "easy",
               "section_id": "m1_L13_s1"
+            },
+            {
+              "id": "m1_L13_q6",
+              "type": "mcq",
+              "question": "À quel moment une charge doit-elle en principe être comptabilisée ?",
+              "options": [
+                "Uniquement à la clôture, en une seule écriture récapitulative annuelle",
+                "Lorsqu'elle se réalise (prestation reçue, facture), indépendamment du paiement",
+                "Uniquement au moment du paiement effectif de la facture, par la banque ou par la caisse",
+                "Au moment où le budget de l'exercice suivant est adopté"
+              ],
+              "answer": 1,
+              "explanation": "La comptabilité d'engagement enregistre charges et produits lorsqu'ils se réalisent ; les régularisations de fin d'exercice assurent leur rattachement à la bonne période.",
+              "difficulty": "easy",
+              "section_id": "m1_L13_s5"
+            },
+            {
+              "id": "m1_L13_q7",
+              "type": "vrai_faux",
+              "question": "À l'ouverture des comptes, les soldes des comptes de passif sont inscrits au crédit.",
+              "options": null,
+              "answer": true,
+              "explanation": "Vrai. Les actifs s'ouvrent au débit et les passifs au crédit, avec pour contrepartie le compte d'ouverture (bilan d'ouverture).",
+              "difficulty": "easy",
+              "section_id": "m1_L13_s5"
             }
           ]
         },
@@ -3046,6 +3236,17 @@
               ],
               "questions": null,
               "section_id": "m1_L14_s5"
+            },
+            {
+              "title": "6. 📘 Compléments du classeur — commissions, ventes intragroupe, emballages, escompte, sous-comptes de stock",
+              "body": "**Commissions** : celles versées au **personnel** sont des salaires (classe 5) ; celles versées à des **tiers** pour des affaires apportées se portent en **3803 Commissions de tiers** (déduction sur ventes), à défaut dans un autre compte de la classe 3.\n\n**Prestations propres en faveur du chef d'entreprise** (raison individuelle ou société en nom collectif) : travaux effectués par l'entreprise pour ses besoins **privés** (déménagement, jardin, réparation chez lui) → **2850 Privé / 3700 Prestations propres** ; marchandises prélevées → **2850 / 3710 Consommations propres**, à la **valeur du marché**.\n\n**Mise à disposition de personnel** à une autre entreprise : produit du groupe **36 Autres produits** (ou diminution des charges de personnel).\n\n**Ventes à des sociétés du même groupe** : présentées **séparément** (groupes 305, 325, 345, 365) pour l'analyse et les éliminations de consolidation.\n\n**Emballages**\n- **Matériel d'emballage** (palettes, cuves, caisses réutilisées en interne) : **immobilisation** (groupe 159), amortie ;\n- **Emballages commerciaux** livrés aux clients : charge de **classe 4** (HT, la TVA allant en 1170) ; consignés et repris : créance/dette envers le client.\n\n**Escompte accordé** : comptabilisé **au paiement** seulement, en **3800 Déductions sur ventes** — ou, si on le considère comme un coût de financement, en **6945 Escomptes accordés** (charge financière) ; la TVA est **recalculée** sur le montant réellement encaissé.\n\n**Gestion du stock** : sous-comptes par produit (1201/4201/3201 pour le produit A, 1202/4202/3202 pour le produit B…) pour mesurer la marge de chaque famille ; un stock trop élevé immobilise des liquidités, une rupture nuit aux ventes.",
+              "key_points": [
+                "Commissions de tiers : 3803",
+                "Matériel d'emballage = immobilisation (159)",
+                "Escompte accordé : 3800 ou 6945"
+              ],
+              "questions": null,
+              "section_id": "m1_L14_s6"
             }
           ],
           "questions": [
@@ -3133,6 +3334,36 @@
               "explanation": "Le prélèvement diminue les fonds propres via le compte privé (débit) ; la contrepartie est un produit de consommations propres (crédit), qui compense le coût d'achat déjà enregistré.",
               "difficulty": "medium",
               "section_id": "m1_L14_s5"
+            },
+            {
+              "id": "m1_L14_q7",
+              "type": "mcq",
+              "question": "Une entreprise achète des palettes et des cuves qu'elle réutilise en interne pour stocker ses produits. Comment les comptabiliser ?",
+              "options": [
+                "En charges de marchandises de la classe 4, entièrement au moment de l'achat",
+                "En immobilisation (matériel d'emballage, groupe 159), puis amortissement",
+                "En stock de marchandises destinées à être revendues aux clients",
+                "En déductions sur ventes, car elles concernent les livraisons"
+              ],
+              "answer": 1,
+              "explanation": "Le matériel d'emballage utilisé durablement dans l'entreprise est un actif immobilisé (groupe 159). Les emballages commerciaux livrés aux clients sont, eux, des charges de la classe 4.",
+              "difficulty": "medium",
+              "section_id": "m1_L14_s6"
+            },
+            {
+              "id": "m1_L14_q8",
+              "type": "mcq",
+              "question": "Où peut-on comptabiliser un escompte accordé à un client pour paiement rapide ?",
+              "options": [
+                "En 3800 Déductions sur ventes, ou en 6945 Escomptes accordés",
+                "En 1100 Créances clients, sans contrepartie de résultat",
+                "Uniquement en 4900 Déductions obtenues sur achats de marchandises",
+                "En 3200 Ventes au moment de l'établissement de la facture"
+              ],
+              "answer": 0,
+              "explanation": "L'escompte accordé est enregistré lors du paiement, soit comme déduction sur ventes (3800), soit comme charge financière (6945) ; la TVA doit être corrigée.",
+              "difficulty": "medium",
+              "section_id": "m1_L14_s6"
             }
           ]
         },
@@ -3215,6 +3446,17 @@
               ],
               "questions": null,
               "section_id": "m1_L15_s5"
+            },
+            {
+              "title": "6. 📘 Compléments du classeur — terminologie, schéma, décompte et 4 variantes de comptabilisation",
+              "body": "**Terminologie** : *chiffre d'affaires imposable* (contre-prestations des opérations imposables), *impôt préalable* (TVA payée aux fournisseurs ou à l'importation), *dette fiscale* (TVA sur CA − IP), *assujetti volontaire* (renonce à la libération sous le seuil).\n\n**Schéma de fonctionnement** : chaque stade facture la TVA sur son prix de vente et déduit celle payée en amont ; l'État encaisse au total la TVA sur le **prix final**, payée par le consommateur.\n\n**Calculs** : à partir du HT : TVA = HT × 8,1 % ; à partir du TTC : TVA = TTC × 8,1 / 108,1 ; HT = TTC × 100 / 108,1.\n\n**Décompte et paiement** : décompte trimestriel (effectif), semestriel (TDFN), annuel sur demande ; **remise et paiement dans les 60 jours** suivant la fin de la période ; un excédent d'impôt préalable est **remboursé** par l'AFC. Une **cession d'entreprise** entre assujettis se fait par **procédure de déclaration** (art. 38 LTVA) : pas de TVA facturée.\n\n**Quatre variantes en méthode effective**\n| Variante | Écriture de la vente | TVA due enregistrée |\n|---|---|---|\n| **Nette, convenues** | 1100 / 3200 (HT) + 1100 / 2200 | à la facture |\n| **Brute, convenues** | 1100 / 3200 (TTC) | en fin de période : 3200 / 2200 |\n| **Nette, reçues** | rien à la facture ; 1020 / 3200 (HT) + 1020 / 2200 | à l'encaissement |\n| **Brute, reçues** | 1020 / 3200 (TTC) à l'encaissement | en fin de période : 3200 / 2200 |\n\n**TDFN** : comptabilisation **forfaitaire** (ventes TTC, dette = CA × TDFN en fin de semestre) ou **différenciée** (ventes séparées par taux TDFN quand l'entreprise en a plusieurs).\n\n**La TVA est neutre pour l'assujetti** : elle transite par ses comptes (2200 / 1170) sans toucher son résultat — sauf impôt préalable non déductible (activité exclue, frais de représentation privés), qui devient une **charge**.",
+              "key_points": [
+                "Paiement dans les 60 jours après la période",
+                "4 variantes : nette/brute × convenues/reçues",
+                "TVA neutre, sauf IP non déductible"
+              ],
+              "questions": null,
+              "section_id": "m1_L15_s6"
             }
           ],
           "questions": [
@@ -3317,6 +3559,36 @@
               "explanation": "La TVA facturée est une dette envers l'AFC (2200 TVA due) ; l'impôt préalable payé aux fournisseurs est une créance (1170/1171).",
               "difficulty": "easy",
               "section_id": "m1_L15_s1"
+            },
+            {
+              "id": "m1_L15_q8",
+              "type": "mcq",
+              "question": "Dans quel délai le décompte TVA doit-il être remis et l'impôt payé ?",
+              "options": [
+                "90 jours après la fin de la période fiscale",
+                "À la fin du mois qui suit la période de décompte",
+                "60 jours après la fin de la période de décompte",
+                "30 jours après la fin de la période de décompte"
+              ],
+              "answer": 2,
+              "explanation": "Le décompte doit être remis et la dette fiscale payée dans les 60 jours qui suivent la fin de la période de décompte (art. 71 et 86 LTVA).",
+              "difficulty": "easy",
+              "section_id": "m1_L15_s6"
+            },
+            {
+              "id": "m1_L15_q9",
+              "type": "mcq",
+              "question": "En méthode brute et contre-prestations reçues, quand la TVA due sur les ventes est-elle extraite du compte de ventes ?",
+              "options": [
+                "Jamais : en méthode brute, la TVA reste dans le chiffre d'affaires",
+                "À l'émission de chaque facture, ligne par ligne",
+                "En fin de période, sur la base des encaissements TTC enregistrés",
+                "Uniquement lors de la concordance annuelle de fin d'exercice"
+              ],
+              "answer": 2,
+              "explanation": "En méthode brute, les ventes sont enregistrées TTC ; en mode « reçues », elles le sont à l'encaissement et la TVA est extraite en fin de période (3200 / 2200).",
+              "difficulty": "medium",
+              "section_id": "m1_L15_s6"
             }
           ]
         },
@@ -3388,6 +3660,17 @@
               ],
               "questions": null,
               "section_id": "m1_L16_s4"
+            },
+            {
+              "title": "5. 📘 Compléments du classeur — taux, comptage des jours, méthode des nombres, intérêts composés",
+              "body": "**Définitions** : le **taux** est l'intérêt que rapportent CHF 100 en un an. **Intérêt simple** : il n'est pas ajouté au capital (on verse 50 par an sur 1'000 à 5 %) ; **intérêt composé** : il s'ajoute au capital (la dette passe à 1'050 après un an et produit elle-même des intérêts). Le taux dépend du **risque** (garanties, durée, solvabilité) : une hypothèque de 400'000 sur un immeuble de 800'000 (50 % de la valeur) obtient un taux plus bas qu'un crédit en blanc.\n\n**Compter les jours**\n| Système | Année | Mois |\n|---|---|---|\n| **Allemand** (usage commercial suisse) | 360 jours | 30 jours chacun (la fin février compte pour le 30) |\n| Anglais | 365 jours | jours réels du calendrier |\n*Ex.* du 3 mars au 15 décembre : 27 + 8 × 30 + 15 = **282 jours**.\n\n**Formules** : I = C × t × j / 36'000 (t en %) ; on en tire C = I × 36'000 / (t × j), t = I × 36'000 / (C × j), j = I × 36'000 / (C × t).\n*Ex.* quel taux fait produire 2'700 à 60'000 en 270 jours ? t = 2'700 × 36'000 / (60'000 × 270) = **6 %**.\n\n**Méthode des nombres** (compte courant au solde variable, taux constant) : pour chaque période, **N = C × j / 100** (arrondi) ; **intérêt = ΣN × t / 360**.\n\n**Intérêts composés** : versement unique : Cn = C0 × (1 + i)^n ; versements périodiques (épargne) : valeur finale = a × [(1 + i)^n − 1] / i ; remboursement d'une dette par annuités constantes : A = C × i / (1 − (1 + i)^−n).\n\n**Encaissement d'échéances d'un prêt accordé** : 1020 Banque / 1440 Prêts (remboursement) et 1020 / 6950 (intérêts, nets d'impôt anticipé s'il est dû).",
+              "key_points": [
+                "Usage suisse : 360 j / mois de 30 j",
+                "Nombres : N = C × j / 100 ; I = ΣN × t / 360",
+                "Taux = I × 36'000 / (C × j)"
+              ],
+              "questions": null,
+              "section_id": "m1_L16_s5"
             }
           ],
           "questions": [
@@ -3460,6 +3743,36 @@
               "explanation": "Les intérêts sur avoirs de clients sont exonérés s'ils ne dépassent pas CHF 200 par année civile, pour les comptes bouclés une fois par an.",
               "difficulty": "easy",
               "section_id": "m1_L16_s4"
+            },
+            {
+              "id": "m1_L16_q6",
+              "type": "mcq",
+              "question": "Selon l'usage commercial suisse (méthode allemande), combien de jours d'intérêts compte-t-on du 3 mars au 15 décembre ?",
+              "options": [
+                "287 jours",
+                "277 jours",
+                "282 jours",
+                "285 jours"
+              ],
+              "answer": 2,
+              "explanation": "Mois de 30 jours : 27 jours en mars (du 3 au 30), 8 mois complets (avril à novembre) = 240 jours, puis 15 jours en décembre : 282 jours.",
+              "difficulty": "medium",
+              "section_id": "m1_L16_s5"
+            },
+            {
+              "id": "m1_L16_q7",
+              "type": "mcq",
+              "question": "Quel taux faut-il pour qu'un capital de 60'000 CHF rapporte 2'700 CHF en 270 jours ?",
+              "options": [
+                "6,5 %",
+                "4,5 %",
+                "5 %",
+                "6 %"
+              ],
+              "answer": 3,
+              "explanation": "t = I × 36'000 / (C × j) = 2'700 × 36'000 / (60'000 × 270) = 6 %.",
+              "difficulty": "medium",
+              "section_id": "m1_L16_s5"
             }
           ]
         },
@@ -3520,6 +3833,17 @@
               ],
               "questions": null,
               "section_id": "m1_L17_s3"
+            },
+            {
+              "title": "4. 📘 Compléments du classeur — trésorerie, chèques, cartes, compte postal, change et paiements",
+              "body": "**Gestion de la trésorerie** : prévoir les entrées et sorties (plan de trésorerie) pour éviter à la fois les découverts coûteux et les liquidités oisives.\n\n**Comptes de liquidités** : 1000 Caisse (espèces), 1010 Poste (compte postal — PostFinance, aujourd'hui identifié par un IBAN comme une banque), 1020 Banque.\n- **Chèque reçu** : créance sur le tireur jusqu'à son encaissement (compte de transfert), puis banque ;\n- **Carte de débit** : crédit rapide, faible commission ; **carte de crédit** : crédit différé, commission plus élevée (charge) ;\n- **Versement d'espèces** à la banque : 1020 / 1000 (via un compte de transfert si les écritures viennent de deux journaux).\n\n**Change** : rechercher le **cours** applicable (billets ou devises, acheteur ou vendeur, du jour de l'opération) ; conversion EUR → CHF au cours acheteur de la banque, CHF → EUR au cours vendeur.\n\n**Moyens de paiement**\n- **Poste** : **QR-facture** (code QR), **mandat de poste** interne (paiement en espèces à un destinataire sans compte) et international, **remboursement** (encaissement à la livraison) ;\n- **Banque** : virement (IBAN, BIC/SWIFT pour l'étranger), **LSV / débit direct** (prélèvement autorisé), **eBill** ;\n- **chèque bancaire** (rare aujourd'hui), cartes, **portefeuilles électroniques et paiement par smartphone** (TWINT…), **effets de commerce** (lettre de change, billet à ordre).\n\n**Aspects comptables communs** : chaque moyen de paiement éteint une **créance ou une dette** et mouvemente un compte de **liquidités** ; les **frais** (commissions, taxes postales) sont des charges (frais bancaires / financiers).",
+              "key_points": [
+                "1000 caisse, 1010 poste, 1020 banque",
+                "Chèque : créance jusqu'à l'encaissement",
+                "Frais de paiement = charges"
+              ],
+              "questions": null,
+              "section_id": "m1_L17_s4"
             }
           ],
           "questions": [
@@ -3592,6 +3916,36 @@
               "explanation": "La vente vaut 5'000 ; la commission prélevée par l'acquéreur est une charge (frais de paiement). Un compte de transfert facilite le rapprochement.",
               "difficulty": "medium",
               "section_id": "m1_L17_s1"
+            },
+            {
+              "id": "m1_L17_q6",
+              "type": "mcq",
+              "question": "Une entreprise reçoit un chèque d'un client, qui ne sera crédité qu'après plusieurs jours. Comment le traiter entre-temps ?",
+              "options": [
+                "Comme un produit financier, dès la réception physique du chèque",
+                "Directement comme une augmentation immédiate du compte bancaire de l'entreprise",
+                "Comme une diminution des dettes fournisseurs de l'entreprise",
+                "Comme une créance (compte de transfert) jusqu'au crédit effectif en banque"
+              ],
+              "answer": 3,
+              "explanation": "Tant que le chèque n'est pas encaissé, l'entreprise détient une créance ; un compte de transfert permet de suivre l'opération jusqu'au crédit en banque.",
+              "difficulty": "medium",
+              "section_id": "m1_L17_s4"
+            },
+            {
+              "id": "m1_L17_q7",
+              "type": "mcq",
+              "question": "Quel moyen de paiement permet de payer en espèces un destinataire qui n'a pas de compte ?",
+              "options": [
+                "Le recouvrement direct (LSV)",
+                "L'eBill dans l'e-banking",
+                "Le virement SEPA",
+                "Le mandat de poste"
+              ],
+              "answer": 3,
+              "explanation": "Le mandat de poste permet de verser une somme en espèces à un destinataire, qui la reçoit sans disposer d'un compte. LSV, eBill et virements supposent des comptes bancaires.",
+              "difficulty": "easy",
+              "section_id": "m1_L17_s4"
             }
           ]
         },
@@ -3664,6 +4018,17 @@
               ],
               "questions": null,
               "section_id": "m1_L18_s4"
+            },
+            {
+              "title": "5. 📘 Compléments du classeur — bourse, types de titres, comptes, cotation, clôture",
+              "body": "**Marché des capitaux et bourse.** La bourse met en relation entreprises qui cherchent des fonds et investisseurs ; elle assure la **liquidité** des titres et la formation des **cours**. En Suisse : **SIX Swiss Exchange** (Zurich) ; la cotation est électronique et continue.\n\n**Comptes** : **1060** titres cotés détenus à **court terme** (réalisables dans les 12 mois) ; **1400** titres détenus à **long terme** ; **1480** participations (influence notable, **présumée dès 20 %** des droits de vote) ; les créances envers des sociétés détenues doivent figurer **séparément** au bilan (CO 959a al. 4).\n\n**Obligations** : ordinaires (taux fixe), à taux variable, **zéro-coupon**, **convertibles** (échangeables contre des actions — ex. une obligation de 3'000 donne droit à une action cotée 2'650 : la conversion « coûte » 350 à l'investisseur), à **option** (warrant détachable), de caisse (émises par les banques).\n\n**Actions** : valeur nominale **> 0** (au moins un centime, CO 622 al. 4) ; nominatives, **privilégiées** (dividende ou liquidation prioritaires, CO 654), à droit de vote privilégié ; droits patrimoniaux : **dividende**, part au produit de **liquidation** (CO 660), droit **préférentiel de souscription** lors d'une augmentation de capital ; **bons de participation** (sans droit de vote) et **bons de jouissance**.\n\n**Frais d'achat** : courtage, **droit de timbre de négociation** (0,15 % titres suisses / 0,3 % étrangers, moitié par partie), **taxe de bourse**. Ils s'ajoutent au coût ou passent en charges financières.\n\n**Rendement d'une action** : le dividende se calcule sur la **valeur nominale** : 8 % d'une action de nominal 100 cotée 3'450 ne rapporte que **0,23 %** du prix payé.\n\n**Clôture** : évaluation au coût ou au cours (CO 960b) ; ajustements par **6950 / 6900** (gains et pertes non réalisés), éventuelle réserve de fluctuation ; intérêts courus sur obligations → actifs de régularisation.",
+              "key_points": [
+                "1060 CT, 1400 LT, 1480 participations (≥ 20 %)",
+                "Nominal ≥ 1 centime (CO 622)",
+                "Dividende calculé sur le nominal"
+              ],
+              "questions": null,
+              "section_id": "m1_L18_s5"
             }
           ],
           "questions": [
@@ -3736,6 +4101,36 @@
               "explanation": "Un put est une option de vente : son détenteur peut vendre le sous-jacent au prix d'exercice. Le call est l'option d'achat.",
               "difficulty": "easy",
               "section_id": "m1_L18_s1"
+            },
+            {
+              "id": "m1_L18_q6",
+              "type": "mcq",
+              "question": "À partir de quel pourcentage des droits de vote présume-t-on qu'un placement constitue une participation ?",
+              "options": [
+                "50 %",
+                "20 %",
+                "10 %",
+                "33 %"
+              ],
+              "answer": 1,
+              "explanation": "Selon le droit comptable, une participation suppose une influence notable, présumée dès 20 % des droits de vote ; elle figure en immobilisations financières (1480).",
+              "difficulty": "medium",
+              "section_id": "m1_L18_s5"
+            },
+            {
+              "id": "m1_L18_q7",
+              "type": "mcq",
+              "question": "Une action de valeur nominale 100 CHF, cotée 3'450 CHF, verse un dividende de 8 %. Quel est le rendement pour l'investisseur ?",
+              "options": [
+                "3,45 % du cours payé",
+                "Environ 2,3 % du cours payé en bourse",
+                "8 % du cours payé",
+                "Environ 0,23 % du cours payé"
+              ],
+              "answer": 3,
+              "explanation": "Le dividende de 8 % porte sur la valeur nominale : 8 CHF, soit 8 / 3'450 ≈ 0,23 % du prix payé en bourse.",
+              "difficulty": "medium",
+              "section_id": "m1_L18_s5"
             }
           ]
         },
@@ -3795,6 +4190,17 @@
               ],
               "questions": null,
               "section_id": "m1_L19_s3"
+            },
+            {
+              "title": "4. 📘 Compléments du classeur — écritures internes, frais de déplacement, abonnement CFF",
+              "body": "**Écritures internes** : elles ne correspondent à aucun flux d'argent mais rétablissent la réalité économique entre l'entreprise et son propriétaire (part privée de véhicule, loyer de l'appartement privé, marchandises prélevées, prestations propres, intérêt du capital propre calculé à des fins de gestion).\n\n**Contreparties typiques du compte privé**\n| Situation | Écriture |\n|---|---|\n| Retrait d'espèces | 2850 / 1000 |\n| Facture privée payée par l'entreprise | 2850 / 1020 |\n| Marchandises prélevées | 2850 / 3710 |\n| Travaux de l'entreprise chez le patron | 2850 / 3700 |\n| Part privée véhicule | 2850 / 62xx |\n| Logement privé dans l'immeuble de l'entreprise | 2850 / 7500 |\n| Apport temporaire du patron | 1020 / 2850 |\n\n**Répartition privé / exploitation** : dépenses du ménage, assurances privées, impôts personnels, AVS personnelle (déductible dans la déclaration mais pas une charge de l'entreprise) → **privé**.\n**Frais de déplacement** : l'entreprise peut **rembourser forfaitairement** l'usage professionnel du **véhicule privé** du patron (par km) → charge d'exploitation / 2850.\n**Abonnement général CFF** payé par l'entreprise et utilisé aussi à titre privé → une **part privée** est à porter en 2850.\n\nÀ la clôture : **2800 Capital / 2850 Privé** (prélèvements nets) et **9200 / 2800** (bénéfice).",
+              "key_points": [
+                "Écritures internes : pas de flux d'argent",
+                "AG CFF utilisé en privé : part privée",
+                "Véhicule privé du patron : remboursement par km"
+              ],
+              "questions": null,
+              "section_id": "m1_L19_s4"
             }
           ],
           "questions": [
@@ -3882,6 +4288,21 @@
               "explanation": "Le compte privé, qui recueille les apports et prélèvements de l'exploitant, est viré au capital à la clôture, comme le bénéfice de l'exercice.",
               "difficulty": "easy",
               "section_id": "m1_L19_s1"
+            },
+            {
+              "id": "m1_L19_q7",
+              "type": "mcq",
+              "question": "L'entreprise du patron paie son abonnement général CFF, qu'il utilise aussi pour ses loisirs. Comment le traiter ?",
+              "options": [
+                "Porter une part privée au débit du compte privé (2850)",
+                "Ne rien faire, l'abonnement étant un avantage du personnel",
+                "Comptabiliser tout l'abonnement en charges de déplacement",
+                "Comptabiliser tout l'abonnement en diminution du capital"
+              ],
+              "answer": 0,
+              "explanation": "La part utilisée à titre privé n'est pas une charge commerciale : elle est débitée au compte privé (2850) par le crédit de la charge concernée.",
+              "difficulty": "easy",
+              "section_id": "m1_L19_s4"
             }
           ]
         },
@@ -3953,6 +4374,17 @@
               ],
               "questions": null,
               "section_id": "m1_L20_s4"
+            },
+            {
+              "title": "5. 📘 Compléments du classeur — notion d'immeuble, valeurs, construction, rendement",
+              "body": "**Notion (CC 655)** : sont des immeubles les **biens-fonds**, les **droits distincts et permanents** immatriculés au registre foncier (ex. droit de superficie), les **mines** et les **parts de copropriété**.\n\n**Comptes** : 1600 immeubles d'exploitation, immeubles hors exploitation (placement) dans des comptes séparés des immobilisations, 2451 hypothèques ; 7500/7510 produits et charges d'immeuble d'exploitation ; 8000/8100 pour l'immeuble hors exploitation.\n\n**Locaux commerciaux dans l'immeuble** : si l'entreprise occupe une partie de son immeuble → **loyer interne** (6000 / 7500) ; si c'est l'immeuble du **propriétaire** d'une raison individuelle, son appartement donne une part privée (2850 / 7500).\n\n**Les valeurs d'un immeuble**\n| Valeur | Définition |\n|---|---|\n| **Comptable** | coût d'acquisition (ou de construction) − amortissements cumulés |\n| **Réelle (intrinsèque)** | valeur du terrain + coût de reconstruction du bâtiment − vétusté |\n| **De rendement** | revenu locatif capitalisé : loyers nets × 100 / taux de capitalisation |\n| **Vénale** | prix obtenu sur le marché (souvent pondération réelle / rendement) |\n| **D'assurance** | coût de reconstruction assuré (incendie) |\n| **Officielle (fiscale)** | valeur fixée par le canton pour l'impôt sur la fortune |\n\n**Construction** : les acomptes versés et les factures des entrepreneurs s'accumulent dans un compte **Constructions en cours**, viré en **1600** à la mise en service (puis amortissement du seul bâtiment).\n\n**Rendement** : *brut* = loyers / prix × 100 ; *net* = (loyers − charges, intérêts et entretien) / fonds propres investis × 100. **Méthodes d'enregistrement** : comptes séparés par immeuble (loyers, charges, chauffage) puis résultat d'immeuble.",
+              "key_points": [
+                "CC 655 : biens-fonds, DDP, mines, copropriété",
+                "Valeurs : comptable, réelle, rendement, vénale, assurance, fiscale",
+                "Constructions en cours → 1600"
+              ],
+              "questions": null,
+              "section_id": "m1_L20_s5"
             }
           ],
           "questions": [
@@ -4025,6 +4457,36 @@
               "explanation": "Un produit qui ne se reproduira pas relève du résultat exceptionnel, unique ou hors période (8510), pour ne pas fausser l'analyse du résultat d'exploitation.",
               "difficulty": "easy",
               "section_id": "m1_L20_s1"
+            },
+            {
+              "id": "m1_L20_q6",
+              "type": "mcq",
+              "question": "Comment calcule-t-on la valeur de rendement d'un immeuble ?",
+              "options": [
+                "En additionnant le terrain et le coût de reconstruction",
+                "En capitalisant les loyers nets à un taux de capitalisation",
+                "En retenant le montant assuré contre l'incendie",
+                "En reprenant la valeur officielle fixée pour l'impôt sur la fortune"
+              ],
+              "answer": 1,
+              "explanation": "Valeur de rendement = revenu locatif net × 100 / taux de capitalisation. La valeur réelle correspond au terrain + coût de reconstruction moins la vétusté.",
+              "difficulty": "medium",
+              "section_id": "m1_L20_s5"
+            },
+            {
+              "id": "m1_L20_q7",
+              "type": "mcq",
+              "question": "Lesquels de ces biens sont des immeubles selon l'art. 655 CC ?",
+              "options": [
+                "Les biens-fonds et les véhicules immatriculés de l'entreprise",
+                "Uniquement les bâtiments construits et inscrits au cadastre de la commune où ils se trouvent",
+                "Les biens-fonds et les machines fixées au sol de façon durable, avec leurs accessoires",
+                "Les biens-fonds, les droits distincts et permanents, les mines et les parts de copropriété"
+              ],
+              "answer": 3,
+              "explanation": "L'art. 655 CC énumère les biens-fonds, les droits distincts et permanents immatriculés au registre foncier, les mines et les parts de copropriété d'un immeuble.",
+              "difficulty": "medium",
+              "section_id": "m1_L20_s5"
             }
           ]
         },
@@ -4097,6 +4559,17 @@
               ],
               "questions": null,
               "section_id": "m1_L21_s4"
+            },
+            {
+              "title": "5. 📘 Compléments du classeur — types de provisions, créances douteuses, dépréciations, travaux en cours, réserves",
+              "body": "**Types et catégories de provisions**\n- **à court terme** (échéance ≤ 12 mois : impôts de l'exercice, garanties, litiges proches) — groupe 230 ;\n- **à long terme** (restructuration, garanties longues, prestations de vieillesse non couvertes, environnement) — groupe 260 ;\n- comptes usuels : **2640 provisions pour impôts** (y c. impôts différés sur réserves latentes), **2650 environnement**, **2670 prestations de vieillesse**.\n\n**Créances douteuses (compte 1108)** : une créance dont le recouvrement est incertain (client en sursis, poursuite en cours) peut être transférée de 1100 en **1108** et faire l'objet d'une **correction individuelle** ; le **ducroire** (1109) couvre le risque **global** du solde.\n**Perte sans provision** : 3805 / 1100 (et correction de la TVA due). **Perte supérieure à la provision** : le surplus va en charge, éventuellement **8500** si elle est exceptionnelle ou concerne un exercice antérieur.\n\n**Provisions pour dépréciation** (corrections de valeur d'actifs : stocks invendables, machines obsolètes) : charge / correction de valeur à l'actif.\n\n**Travaux en cours et produits en cours** : prestations commencées mais pas encore facturées (prestataires) ou produits non terminés (fabricants), évalués au **coût de revient** à la clôture → actif (groupe 120) / variation en classe 3.\n\n**Réserves**\n- **légales issues du capital** (agio, apports) et **légales issues du bénéfice** (5 % du bénéfice jusqu'à 20 % du capital libéré) ;\n- **statutaires** et **réserves facultatives** (décidées par l'AG) ;\n- **réserves discrétionnaires** et **réserves latentes** : créées par des amortissements, corrections de valeur ou provisions supérieurs aux besoins — *ex.* amortir une machine à 50 % au lieu de 20 % crée une réserve latente égale à l'écart. Leur dissolution nette significative est indiquée dans l'annexe.",
+              "key_points": [
+                "1108 créances douteuses, 1109 ducroire",
+                "Provisions CT (230) / LT (260)",
+                "Travaux en cours au coût de revient"
+              ],
+              "questions": null,
+              "section_id": "m1_L21_s5"
             }
           ],
           "questions": [
@@ -4184,6 +4657,36 @@
               "explanation": "Une réserve latente naît d'une sous-évaluation d'actifs (ou d'une surévaluation de provisions) ; elle n'apparaît pas au bilan. Le CO l'admet, IFRS et Swiss GAAP RPC non.",
               "difficulty": "easy",
               "section_id": "m1_L21_s4"
+            },
+            {
+              "id": "m1_L21_q7",
+              "type": "mcq",
+              "question": "Quelle est la différence entre le compte 1108 et le compte 1109 ?",
+              "options": [
+                "1108 isole les créances douteuses individuelles, 1109 est le ducroire global",
+                "1108 enregistre les pertes définitives, 1109 les créances recouvrées",
+                "1108 concerne les clients suisses, 1109 les clients étrangers",
+                "1108 est le ducroire global, 1109 isole les créances douteuses individuelles"
+              ],
+              "answer": 0,
+              "explanation": "Les créances dont le recouvrement est incertain peuvent être transférées en 1108 Créances douteuses et corrigées individuellement ; le ducroire 1109 couvre le risque global sur les créances clients.",
+              "difficulty": "medium",
+              "section_id": "m1_L21_s5"
+            },
+            {
+              "id": "m1_L21_q8",
+              "type": "mcq",
+              "question": "Comment évalue-t-on à la clôture des travaux commencés mais non encore facturés ?",
+              "options": [
+                "À la valeur de remplacement estimée par la direction de l'entreprise",
+                "Au prix de vente prévu, porté en chiffre d'affaires",
+                "À zéro, tant que la facture n'a pas été émise",
+                "Au coût de revient engagé, porté à l'actif (travaux en cours)"
+              ],
+              "answer": 3,
+              "explanation": "Les travaux et produits en cours sont des actifs évalués au plus au coût de revient (principe de prudence) ; leur variation est enregistrée en classe 3.",
+              "difficulty": "medium",
+              "section_id": "m1_L21_s5"
             }
           ]
         },
