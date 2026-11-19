@@ -26910,6 +26910,14 @@
               "key_point": "L'impôt différé irrigue de nombreuses normes : PPA d'IFRS 3, dépréciations IAS 36, retraites IAS 19, provisions IAS 37, leasing IFRS 16, instruments IFRS 9 (impôt en OCI) et paiements en actions IFRS 2. La méthode d'examen est systématique : identifier la différence, la qualifier (permanente/temporaire, DTL/DTA), tester la reconnaissance des DTA, appliquer le bon taux, présenter en non-courant et fournir l'ETR reconciliation.",
               "example": "Lors d'un regroupement IFRS 3, réévaluer un immeuble à sa juste valeur de 1 000 alors que sa base fiscale reste à 700 crée une différence imposable de 300 et donc un DTL comptabilisé dès l'acquisition dans l'allocation du prix.",
               "warning": "Pour le leasing IFRS 16, l'amendement 2023 retire l'exemption de reconnaissance initiale : on comptabilise désormais séparément le DTA (sur la dette de location) et le DTL (sur l'actif au droit d'utilisation), au lieu de les considérer comme une transaction unique non génératrice d'impôt différé."
+            },
+            {
+              "section_id": "ias12_xc1",
+              "title": "🧮 Cas d'examen avec écritures — impôts différés actifs et passifs",
+              "content": "**Énoncé** : au 31.12.N, Epsilon SA (taux d'impôt **20 %**) présente :\n- une machine : valeur comptable IFRS **300'000**, base fiscale **200'000** (amortissements fiscaux accélérés) ;\n- une provision pour garantie de **50'000**, déductible fiscalement seulement lors du paiement (base fiscale 0).\nAu 1.1.N, le passif d'impôt différé net s'élevait à **6'000**.\n\n**1. Différences temporelles**\n- Machine : 300'000 − 200'000 = **100'000** imposable → **passif** d'impôt différé : 20 % × 100'000 = **20'000**.\n- Provision : 50'000 **déductible** → **actif** d'impôt différé : 20 % × 50'000 = **10'000** (si des bénéfices imposables futurs sont probables).\n- Position nette : passif de **10'000**.\n\n**2. Variation** : 10'000 − 6'000 = **4'000** de charge d'impôt différé.\n\n| Compte | Débit | Crédit |\n|---|---|---|\n| Charge d'impôt différé (résultat) | 4'000 | |\n| Passif d'impôt différé net | | 4'000 |\n\n**Cas particuliers** : impôt différé sur une **réévaluation** (IAS 16) → contrepartie en **OCI** ; pas d'impôt différé sur la comptabilisation initiale du **goodwill** ; compensation des actifs et passifs seulement s'ils relèvent de la même autorité fiscale.\n**Suisse** : en individuel CO, pas d'impôt différé ; RPC 11 les exige (taux attendu).",
+              "key_point": "VC > base fiscale (actif) → passif d'impôt différé · Provision non encore déductible → actif d'impôt différé · La contrepartie suit l'élément (résultat ou OCI)",
+              "warning": "Un actif d'impôt différé n'est comptabilisé que si des bénéfices imposables futurs sont probables.",
+              "tip": "Méthode : valeur comptable − base fiscale, élément par élément, × taux attendu."
             }
           ],
           "key_rules": [
@@ -27138,6 +27146,51 @@
               "explanation": "IAS 12.15(a) : aucun passif d'impôt différé n'est comptabilisé sur la comptabilisation initiale du goodwill.",
               "difficulty": "medium",
               "section_id": null
+            },
+            {
+              "id": "ias12_cx1",
+              "type": "mcq",
+              "question": "Machine : valeur comptable 300'000, base fiscale 200'000, taux 20 %. Quel impôt différé ?",
+              "options": [
+                "Aucun impôt différé",
+                "Actif de 20'000",
+                "Passif de 60'000",
+                "Passif de 20'000"
+              ],
+              "answer": 3,
+              "explanation": "Différence imposable de 100'000 × 20 % = passif d'impôt différé de 20'000.",
+              "difficulty": "easy",
+              "section_id": "ias12_xc1"
+            },
+            {
+              "id": "ias12_cx2",
+              "type": "mcq",
+              "question": "Provision pour garantie de 50'000 déductible seulement lors du paiement, taux 20 %. Quel impôt différé (bénéfices futurs probables) ?",
+              "options": [
+                "Aucun impôt différé",
+                "Actif de 10'000",
+                "Passif de 10'000",
+                "Actif de 50'000"
+              ],
+              "answer": 1,
+              "explanation": "Différence temporelle déductible de 50'000 × 20 % = actif d'impôt différé de 10'000.",
+              "difficulty": "medium",
+              "section_id": "ias12_xc1"
+            },
+            {
+              "id": "ias12_cx3",
+              "type": "mcq",
+              "question": "Passif d'impôt différé net : 6'000 au 1.1.N et 10'000 au 31.12.N (variations en résultat). Quelle charge d'impôt différé en N ?",
+              "options": [
+                "6'000",
+                "4'000",
+                "10'000",
+                "16'000"
+              ],
+              "answer": 1,
+              "explanation": "Seule la variation du solde est comptabilisée : 10'000 − 6'000 = 4'000.",
+              "difficulty": "easy",
+              "section_id": "ias12_xc1"
             }
           ],
           "audio_files": [
@@ -27226,6 +27279,14 @@
               "key_point": "Les annexes (IAS 16.73-79) exigent notamment la méthode d'évaluation et d'amortissement par classe, la réconciliation des mouvements de VC sur la période et, en cas de réévaluation, la date, la JV et les hypothèses retenues. IAS 16 s'articule avec un réseau de normes : IAS 23, IAS 36, IAS 37, IAS 19, IAS 12, IAS 21, IAS 40, IFRS 5 et IFRS 6.",
               "example": "Une réévaluation d'immeuble crée un écart entre VC comptable et VC fiscale : IAS 12 impose alors la comptabilisation d'un impôt différé sur cette différence temporaire, lui-même logé en OCI lorsqu'il se rattache à un écart de réévaluation passé en OCI.",
               "warning": "Ne confondez pas les deux régimes de test de dépréciation : sous IAS 36, une PPE n'est testée qu'en présence d'indices (test annuel obligatoire réservé au goodwill et aux immobilisations incorporelles à durée indéterminée). Et dès qu'un actif est classé « détenu pour la vente » (IFRS 5), l'amortissement cesse et l'actif est évalué au plus faible de la VC nette et de la JV diminuée des coûts de vente."
+            },
+            {
+              "section_id": "ias16_xc1",
+              "title": "🧮 Cas d'examen avec écritures — approche par composants et réévaluation",
+              "content": "**A. Composants** : le 1.1.N, Eta SA acquiert une machine **1'000'000** : moteur **300'000** (durée **5 ans**) et bâti **700'000** (durée **20 ans**).\n- Amortissement N = 300'000 / 5 + 700'000 / 20 = 60'000 + 35'000 = **95'000** (contre 50'000 avec une durée unique de 20 ans).\n\n| Compte | Débit | Crédit |\n|---|---|---|\n| Amortissements | 95'000 | |\n| Machines (amortissements cumulés) | | 95'000 |\n\n**B. Modèle de la réévaluation** : un bâtiment a une valeur comptable de **800'000** ; sa juste valeur est de **950'000** (taux d'impôt 20 %).\n- Écart de réévaluation : **150'000** en **OCI** ; impôt différé 30'000 en OCI → réserve de réévaluation nette **120'000**.\n\n| Compte | Débit | Crédit |\n|---|---|---|\n| Bâtiments | 150'000 | |\n| OCI — écart de réévaluation | | 150'000 |\n| OCI — écart de réévaluation | 30'000 | |\n| Passif d'impôt différé | | 30'000 |\n\n**Baisse ultérieure** : imputée d'abord sur la réserve de réévaluation, l'excédent en résultat. La réserve n'est **jamais recyclée** ; elle peut être virée aux résultats reportés au fil de l'utilisation ou à la cession.\n**CO** : modèle du coût obligatoire (sauf réévaluation d'immeubles et de participations en cas de perte de capital, art. 725c CO).",
+              "key_point": "Composants à durées différentes amortis séparément · Réévaluation positive → OCI, net d'impôt différé · CO : coût historique",
+              "warning": "La réévaluation s'applique à toute la catégorie d'actifs, pas à un seul bien choisi.",
+              "tip": "Pensez à l'impôt différé dès qu'une réévaluation n'est pas fiscale."
             }
           ],
           "key_rules": [
@@ -27464,6 +27525,51 @@
               "explanation": "IAS 16.39 : une augmentation de valeur résultant d'une réévaluation est comptabilisée en OCI (écart de réévaluation), sauf reprise d'une baisse antérieure comptabilisée en résultat.",
               "difficulty": "medium",
               "section_id": null
+            },
+            {
+              "id": "ias16_cx1",
+              "type": "mcq",
+              "question": "Machine de 1'000'000 : moteur 300'000 (5 ans), bâti 700'000 (20 ans). Quel amortissement annuel ?",
+              "options": [
+                "65'000",
+                "200'000",
+                "95'000",
+                "50'000"
+              ],
+              "answer": 2,
+              "explanation": "60'000 (moteur) + 35'000 (bâti) = 95'000.",
+              "difficulty": "medium",
+              "section_id": "ias16_xc1"
+            },
+            {
+              "id": "ias16_cx2",
+              "type": "mcq",
+              "question": "Bâtiment réévalué de 800'000 à 950'000 (taux d'impôt 20 %). Quel montant net figure en OCI ?",
+              "options": [
+                "120'000",
+                "150'000",
+                "190'000",
+                "30'000"
+              ],
+              "answer": 0,
+              "explanation": "Écart de 150'000 moins impôt différé de 30'000 = 120'000 en OCI.",
+              "difficulty": "medium",
+              "section_id": "ias16_xc1"
+            },
+            {
+              "id": "ias16_cx3",
+              "type": "mcq",
+              "question": "Deux ans plus tard, ce bâtiment perd 180'000 de valeur alors que la réserve de réévaluation (brute) vaut encore 150'000. Comment comptabiliser la baisse ?",
+              "options": [
+                "Aucune écriture tant que le bâtiment n'est pas vendu",
+                "180'000 contre la réserve, qui devient négative",
+                "150'000 contre la réserve en OCI, 30'000 en charge",
+                "180'000 en charge dans le résultat de l'exercice"
+              ],
+              "answer": 2,
+              "explanation": "IAS 16.40 : la diminution est imputée sur l'écart de réévaluation à hauteur de son solde, l'excédent est une charge.",
+              "difficulty": "hard",
+              "section_id": "ias16_xc1"
             }
           ],
           "audio_files": [
@@ -27551,6 +27657,14 @@
               "tip": "**Stratégie examen — IAS 19** :\n1. **Catégoriser** l'avantage (court terme / post-emploi / long terme / fin de contrat)\n2. Si post-emploi : **DC ou DB** ? (test du risque)\n3. Pour la **Suisse** : LPP = **DB** (réflexe automatique)\n4. Si DB : les **3 composantes** (service cost, net interest, remeasurements)\n5. **OCI sans recyclage** pour les remeasurements (différence vs CFH qui recycle)\n6. Vérifier le **plafond d'actif** si plan excédentaire (IFRIC 14)\n\n**Pièges classiques** :\n- Traiter LPP en DC (très très très souvent testé)\n- Recycler les remeasurements en P&L (interdit !)\n- Utiliser un taux WACC au lieu du taux corporate AA\n- Oublier le plafond d'actif sur plan excédentaire\n- Confondre service cost current et past (timing du P&L)",
               "key_point": "IAS 19.135-152 impose des informations très denses en annexe : caractéristiques et risques du régime, hypothèses actuarielles, réconciliation de la DBO et des actifs, analyses de sensibilité (notamment ±50 pb sur le taux d'actualisation) et calendrier/duration des prestations. IAS 19 s'articule avec de nombreuses normes : IAS 12 (impôts différés), IAS 1 (présentation OCI), IFRS 2, IAS 37, IAS 16/38 et IFRS 5.",
               "warning": "Classement OCI à ne pas confondre : les remeasurements IAS 19 sont des items NON recyclables (comme la réévaluation IAS 16 et le FVOCI actions), contrairement aux items recyclables (CFH, NIH, FVOCI dette). Présenter à tort les écarts actuariels comme recyclables est une erreur d'application d'IAS 1 fréquemment sanctionnée."
+            },
+            {
+              "section_id": "ias19_xc1",
+              "title": "🧮 Cas d'examen avec écritures — caisse de pension suisse (prestations définies)",
+              "content": "**Pourquoi IAS 19 « prestations définies » ?** Les plans LPP suisses garantissent un taux minimal et un taux de conversion : l'employeur supporte des risques → traitement **à prestations définies**.\n\n**Énoncé** (en milliers de CHF) — taux d'actualisation **2 %**\n| | DBO (engagement) | Actifs du régime |\n|---|---|---|\n| 1.1.N | 10'000 | 8'000 |\n| Coût des services rendus | + 600 | |\n| Intérêts (2 %) | + 200 | + 160 |\n| Cotisations de l'employeur | | + 500 |\n| Prestations versées | − 300 | − 300 |\n| **Attendu au 31.12.N** | **10'500** | **8'360** |\n| Effectif au 31.12.N (actuaire / valeur de marché) | 10'900 | 8'450 |\n| **Réévaluations (OCI)** | **perte 400** | **gain 90** |\n\n**Montants**\n- **Résultat** : coût des services 600 + intérêt net 2 % × (10'000 − 8'000) = 40 → **640**.\n- **OCI** : 400 − 90 = **perte de 310** (jamais recyclée).\n- Passif net : 2'000 → **2'450** (= 10'900 − 8'450).\n\n| Compte | Débit | Crédit |\n|---|---|---|\n| Charges de personnel (coût des services) | 600 | |\n| Charges financières (intérêt net) | 40 | |\n| OCI — réévaluations | 310 | |\n| Trésorerie (cotisations) | | 500 |\n| Passif net au titre des prestations définies | | 450 |\n\n**IFRS 18** : l'intérêt net va en **financement**. **RPC 16 / CO** : pas de calcul actuariel ; seuls un découvert ou un avantage économique de la caisse sont pris en compte.",
+              "key_point": "LPP suisse = prestations définies sous IAS 19 · Résultat : services + intérêt net · Réévaluations en OCI, sans recyclage",
+              "warning": "L'intérêt net se calcule sur le passif NET d'ouverture (2'000), pas sur l'engagement brut.",
+              "tip": "Contrôle : passif net d'ouverture + charge + OCI − cotisations = passif net de clôture (2'000 + 640 + 310 − 500 = 2'450)."
             }
           ],
           "key_rules": [
@@ -27761,6 +27875,51 @@
               "explanation": "IAS 19.120 et 122 : les réévaluations sont comptabilisées en OCI et ne sont jamais recyclées ; le corridor a été supprimé en 2013.",
               "difficulty": "medium",
               "section_id": null
+            },
+            {
+              "id": "ias19_cx1",
+              "type": "mcq",
+              "question": "DBO 10'000 et actifs 8'000 au 1.1.N, taux 2 %, coût des services 600. Quelle charge IAS 19 en résultat ?",
+              "options": [
+                "840",
+                "600",
+                "640",
+                "800"
+              ],
+              "answer": 2,
+              "explanation": "Coût des services 600 + intérêt net 2 % × (10'000 − 8'000) = 40 → 640.",
+              "difficulty": "medium",
+              "section_id": "ias19_xc1"
+            },
+            {
+              "id": "ias19_cx2",
+              "type": "mcq",
+              "question": "Même cas : DBO attendue 10'500 mais évaluée à 10'900 ; actifs attendus 8'360 mais valant 8'450. Quel montant en OCI ?",
+              "options": [
+                "Perte de 490",
+                "Perte de 400",
+                "Gain de 90",
+                "Perte de 310"
+              ],
+              "answer": 3,
+              "explanation": "Perte actuarielle sur la DBO de 400, gain sur les actifs de 90 : perte nette de 310 en OCI.",
+              "difficulty": "hard",
+              "section_id": "ias19_xc1"
+            },
+            {
+              "id": "ias19_cx3",
+              "type": "mcq",
+              "question": "Pourquoi un plan de pension LPP suisse est-il souvent traité comme un régime à prestations définies sous IAS 19 ?",
+              "options": [
+                "L'employeur supporte des risques (taux minimal, taux de conversion garantis)",
+                "Les actifs du régime sont détenus par une fondation indépendante",
+                "Les cotisations de l'employeur sont fixées en pourcentage du salaire",
+                "La loi suisse (LPP) impose ce traitement comptable à toutes les caisses de pension"
+              ],
+              "answer": 0,
+              "explanation": "Les garanties (intérêt minimal, taux de conversion) exposent l'employeur à des risques actuariels et d'investissement : le plan est à prestations définies.",
+              "difficulty": "medium",
+              "section_id": "ias19_xc1"
             }
           ],
           "audio_files": [
@@ -28081,6 +28240,14 @@
               "info": "**IAS 29 — Mécanique simplifiée** :\n- Postes monétaires : **pas** de réajustement (déjà au pouvoir d'achat de la date de clôture)\n- Postes non monétaires : **réajustés** par l'indice général des prix depuis leur date de comptabilisation\n- Capitaux propres : réajustés depuis l'apport initial\n- Résultat de l'année : recalculé après réajustement de tous les postes\n- Gain/perte sur position monétaire nette → **P&L** spécifique\n\nEnsuite seulement, application d'IAS 21 (translation au cours de clôture pour tout).",
               "key_point": "Si la monnaie fonctionnelle d'une filiale est hyperinflationniste, on retraite d'abord ses comptes selon IAS 29, puis on convertit TOUS les postes (y compris capital et résultat) au cours de clôture, sans cours moyen ni historique ; l'amendement 2024 sur la non-échangeabilité (applicable 2025) impose d'estimer un cours quand la devise n'est pas échangeable.",
               "example": "Une filiale argentine (économie hyperinflationniste depuis 2018) voit ses comptes d'abord réajustés par indice général des prix (IAS 29), puis l'intégralité de son bilan et de son résultat convertie au cours de clôture pour la consolidation."
+            },
+            {
+              "section_id": "ias21_xc1",
+              "title": "🧮 Cas d'examen avec écritures — achat en dollars et consolidation d'une filiale",
+              "content": "**A. Transaction en monnaie étrangère** : Theta SA achète des marchandises pour **USD 100'000** le 1.11.N (cours **0,90**), payées le 15.1.N+1 (cours **0,88**). Cours de clôture au 31.12.N : **0,92**.\n\n| Date | Compte | Débit | Crédit |\n|---|---|---|---|\n| 1.11.N | Stocks | 90'000 | |\n| | Fournisseurs | | 90'000 |\n| 31.12.N | Pertes de change | 2'000 | |\n| | Fournisseurs (100'000 × 0,92 = 92'000) | | 2'000 |\n| 15.1.N+1 | Fournisseurs | 92'000 | |\n| | Trésorerie (100'000 × 0,88) | | 88'000 |\n| | Gains de change | | 4'000 |\n\n- La **dette** (élément monétaire) est convertie au **cours de clôture** ; l'écart va en **résultat**.\n- Le **stock** (élément non monétaire au coût) reste au **cours historique** : 90'000.\n\n**B. Consolidation d'une filiale étrangère** (monnaie fonctionnelle EUR) : actifs et passifs au **cours de clôture**, produits et charges au **cours moyen** (ou du jour), capitaux propres au **cours historique**. L'écart qui en résulte est porté en **OCI** (réserve de conversion) et **recyclé** en résultat lors de la cession de la filiale.",
+              "key_point": "Éléments monétaires : cours de clôture, écart en résultat · Non monétaires au coût : cours historique · Filiale : écart de conversion en OCI, recyclé à la cession",
+              "warning": "Ne pas réévaluer un stock ou une immobilisation au cours de clôture.",
+              "tip": "Monétaire = droit ou obligation de recevoir ou payer un nombre déterminé d'unités monétaires."
             }
           ],
           "key_rules": [
@@ -28232,6 +28399,51 @@
               "explanation": "IAS 21.23 et 28 : éléments monétaires au cours de clôture ; les écarts de change sont comptabilisés en résultat (sauf investissement net dans une activité à l'étranger en consolidation).",
               "difficulty": "medium",
               "section_id": null
+            },
+            {
+              "id": "ias21_cx1",
+              "type": "mcq",
+              "question": "Dette fournisseur de USD 100'000 comptabilisée au cours de 0,90 ; cours de clôture 0,92. Quel écart de change au 31.12 ?",
+              "options": [
+                "Perte de 2'000",
+                "Gain de 2'000",
+                "Perte de 9'200",
+                "Aucun écart"
+              ],
+              "answer": 0,
+              "explanation": "La dette passe de 90'000 à 92'000 : perte de change de 2'000 en résultat.",
+              "difficulty": "easy",
+              "section_id": "ias21_xc1"
+            },
+            {
+              "id": "ias21_cx2",
+              "type": "mcq",
+              "question": "Même dette (92'000 au bilan) payée au cours de 0,88. Quel écart de change lors du paiement ?",
+              "options": [
+                "Gain de 4'000",
+                "Aucun écart",
+                "Gain de 2'000",
+                "Perte de 4'000"
+              ],
+              "answer": 0,
+              "explanation": "Paiement de 88'000 pour une dette de 92'000 : gain de change de 4'000.",
+              "difficulty": "medium",
+              "section_id": "ias21_xc1"
+            },
+            {
+              "id": "ias21_cx3",
+              "type": "mcq",
+              "question": "Les marchandises achetées pour USD 100'000 au cours de 0,90 sont encore en stock au 31.12 (cours 0,92). À quelle valeur figurent-elles ?",
+              "options": [
+                "91'000",
+                "92'000",
+                "90'000",
+                "88'000"
+              ],
+              "answer": 2,
+              "explanation": "Le stock est un élément non monétaire évalué au coût : il reste au cours historique (sous réserve du test de la valeur nette de réalisation).",
+              "difficulty": "medium",
+              "section_id": "ias21_xc1"
             }
           ],
           "audio_files": [
@@ -29241,6 +29453,14 @@
               "example": "Une UGT comprend un droit d'usage (ROU) loué : on inclut le ROU dans la VC testée mais on retire la dette de location, car la VIU des cash flows comprend déjà les paiements de loyer ; inclure la dette ET les loyers déduits doublerait la charge.",
               "key_point": "Raffinements clés : en modèle de réévaluation la perte absorbe d'abord l'OCI puis le P&L (la reprise fait l'inverse) ; la reprise se plafonne à la VC théorique sans dépréciation ; et dans une UGT incluant un actif IFRS 16, le ROU est inclus dans la VC mais la dette de location en est généralement exclue pour éviter un double comptage avec les loyers déjà intégrés à la VIU.",
               "warning": "Cohérence loyers/dette : soit on garde les loyers dans les cash flows VIU et on EXCLUT la dette de location de la VC, soit on retire les loyers des flux et on inclut la dette (approche « net debt ») — mais jamais un mélange des deux, sous peine de double comptage. Piège technique fréquent sur les UGT post-IFRS 16."
+            },
+            {
+              "section_id": "ias36_xc1",
+              "title": "🧮 Cas d'examen avec écritures — dépréciation d'une UGT avec goodwill",
+              "content": "**Énoncé** (en milliers de CHF) : l'UGT « Retail » de Delta SA comprend un **goodwill 200**, des **immobilisations corporelles 600** et des **incorporelles 200** (valeur comptable totale **1'000**). Test annuel : **valeur d'utilité 750**, **juste valeur moins coûts de sortie 700**.\n\n**1. Valeur recouvrable** = la plus élevée des deux = **750**.\n**2. Perte de valeur** = 1'000 − 750 = **250**.\n**3. Imputation** (IAS 36.104) : d'abord sur le **goodwill** (200), puis le solde (50) **au prorata** des autres actifs :\n- corporelles : 50 × 600 / 800 = **37,5** ;\n- incorporelles : 50 × 200 / 800 = **12,5**.\n\n| Compte | Débit | Crédit |\n|---|---|---|\n| Perte de valeur (exploitation) | 250 | |\n| Goodwill | | 200 |\n| Immobilisations corporelles | | 37,5 |\n| Immobilisations incorporelles | | 12,5 |\n\n**Limite** : aucun actif ne descend sous la plus élevée de sa juste valeur moins coûts de sortie, de sa valeur d'utilité et de zéro.\n**Reprise ultérieure** : possible pour les corporelles et incorporelles (jusqu'à la valeur comptable sans dépréciation), **jamais** pour le goodwill (IAS 36.124).\n**RPC 20** : test seulement s'il existe un **indice** ; le goodwill est en règle générale amorti.",
+              "key_point": "Valeur recouvrable = max(valeur d'utilité ; JV − coûts de sortie) · Perte : d'abord le goodwill, puis prorata · Goodwill : jamais de reprise",
+              "warning": "On compare à la plus ÉLEVÉE des deux valeurs, pas à la plus faible.",
+              "tip": "Test du goodwill : au moins une fois par an, même sans indice."
             }
           ],
           "key_rules": [
@@ -29535,6 +29755,51 @@
               "explanation": "IAS 36.124 : une perte de valeur du goodwill ne peut pas être reprise.",
               "difficulty": "medium",
               "section_id": null
+            },
+            {
+              "id": "ias36_cx1",
+              "type": "mcq",
+              "question": "UGT : valeur comptable 1'000 (dont goodwill 200) ; valeur d'utilité 750 ; JV moins coûts de sortie 700. Quelle perte de valeur ?",
+              "options": [
+                "300",
+                "200",
+                "50",
+                "250"
+              ],
+              "answer": 3,
+              "explanation": "Valeur recouvrable = max(750 ; 700) = 750 ; perte = 1'000 − 750 = 250.",
+              "difficulty": "medium",
+              "section_id": "ias36_xc1"
+            },
+            {
+              "id": "ias36_cx2",
+              "type": "mcq",
+              "question": "Même cas (perte 250 ; corporelles 600, incorporelles 200). Quelle part de la perte est imputée aux immobilisations corporelles ?",
+              "options": [
+                "50",
+                "37,5",
+                "150",
+                "187,5"
+              ],
+              "answer": 1,
+              "explanation": "Goodwill 200 d'abord ; solde 50 réparti au prorata : 50 × 600/800 = 37,5.",
+              "difficulty": "hard",
+              "section_id": "ias36_xc1"
+            },
+            {
+              "id": "ias36_cx3",
+              "type": "mcq",
+              "question": "L'année suivante, la valeur recouvrable de l'UGT remonte fortement. Que devient la dépréciation du goodwill ?",
+              "options": [
+                "Elle est reprise en totalité",
+                "Elle n'est jamais reprise",
+                "Elle est reprise sur 5 ans",
+                "Elle est reprise en OCI"
+              ],
+              "answer": 1,
+              "explanation": "IAS 36.124 : une perte de valeur du goodwill ne peut pas être reprise.",
+              "difficulty": "easy",
+              "section_id": "ias36_xc1"
             }
           ],
           "audio_files": [
@@ -29645,6 +29910,14 @@
               "key_point": "IAS 37 s'articule avec de nombreuses normes qui priment sur elle (IAS 12, IAS 19, IFRS 9, IFRS 15) ou interagissent avec elle (IAS 16/IFRIC 1, IAS 36, IAS 10). Elle impose en outre une réconciliation détaillée des provisions d'ouverture à clôture en annexe.",
               "example": "Une garantie produit purement légale (réparation des défauts) relève d'IAS 37 ; une extension de garantie vendue séparément ('garantie de service') est une obligation de prestation IFRS 15. La frontière dépend de la nature de la garantie, pas de son appellation commerciale.",
               "warning": "Frontière subtile très examinée : les indemnités de départ contraint liées à une restructuration relèvent souvent d'IAS 19 (termination benefits), et non d'IAS 37. De même, un événement postérieur à la clôture confirmant une condition existante à la clôture (IAS 10) ajuste la provision — il ne s'agit pas d'un événement de la période suivante."
+            },
+            {
+              "section_id": "ias37_xc1",
+              "title": "🧮 Cas d'examen avec écritures — démantèlement actualisé et litige",
+              "content": "**A. Provision pour démantèlement** : le 1.1.N, Zeta SA met en service une installation qu'elle devra démanteler dans **10 ans** (coût estimé **CHF 1'000'000**). Taux d'actualisation : **3 %**.\n- Valeur actuelle : 1'000'000 / 1,03¹⁰ = **744'094**, ajoutée au coût de l'installation (IAS 16.16c).\n- Désactualisation N : 3 % × 744'094 = **22'323** ; provision au 31.12.N = **766'417**.\n- L'installation (dont 744'094) est amortie sur 10 ans.\n\n| Date | Compte | Débit | Crédit |\n|---|---|---|---|\n| 1.1.N | Installations | 744'094 | |\n| | Provision pour démantèlement | | 744'094 |\n| 31.12.N | Charges financières (désactualisation) | 22'323 | |\n| | Provision pour démantèlement | | 22'323 |\n\n**B. Litige** : un client réclame 400'000 ; l'avocat estime à **60 %** la probabilité de perdre. Obligation actuelle probable → **provision de 400'000** (issue la plus probable pour une obligation unique). Si la probabilité était de 30 % → **passif éventuel** mentionné en annexe.\n\n**C. Restructuration** : provision seulement s'il existe un **plan formel détaillé** et une **attente fondée** des personnes concernées (annonce ou début de mise en œuvre) avant la clôture ; pas de provision pour les pertes d'exploitation futures.\n\n**IFRS 18** : désactualisation en **financement**.",
+              "key_point": "Démantèlement : VA ajoutée au coût de l'actif · Désactualisation en charges financières · Probable (> 50 %) → provision ; possible → annexe",
+              "warning": "On ne provisionne jamais des pertes d'exploitation futures.",
+              "tip": "1,03¹⁰ = 1,3439 : retenir la méthode, pas le chiffre."
             }
           ],
           "key_rules": [
@@ -29891,6 +30164,51 @@
               "explanation": "IAS 37.14 et 23 : il faut une obligation actuelle, une sortie de ressources probable (plus probable qu'improbable) et une estimation fiable.",
               "difficulty": "easy",
               "section_id": null
+            },
+            {
+              "id": "ias37_cx1",
+              "type": "mcq",
+              "question": "Démantèlement dans 10 ans estimé à 1'000'000, taux 3 %. Quelle provision initiale ?",
+              "options": [
+                "766'417",
+                "970'000",
+                "1'000'000",
+                "744'094"
+              ],
+              "answer": 3,
+              "explanation": "1'000'000 / 1,03¹⁰ = 744'094, porté en augmentation du coût de l'installation.",
+              "difficulty": "medium",
+              "section_id": "ias37_xc1"
+            },
+            {
+              "id": "ias37_cx2",
+              "type": "mcq",
+              "question": "Même cas. Quelle charge de désactualisation est comptabilisée en N ?",
+              "options": [
+                "0",
+                "74'409",
+                "30'000",
+                "22'323"
+              ],
+              "answer": 3,
+              "explanation": "3 % × 744'094 = 22'323 (charge financière).",
+              "difficulty": "medium",
+              "section_id": "ias37_xc1"
+            },
+            {
+              "id": "ias37_cx3",
+              "type": "mcq",
+              "question": "Un litige de 400'000 a 60 % de chances d'être perdu. Que comptabilise l'entreprise selon IAS 37 ?",
+              "options": [
+                "Une provision de 240'000",
+                "Une mention en annexe seulement",
+                "Une provision de 400'000",
+                "Une provision de 160'000"
+              ],
+              "answer": 2,
+              "explanation": "La sortie est probable ; pour une obligation unique, l'estimation est en principe l'issue la plus probable : 400'000.",
+              "difficulty": "medium",
+              "section_id": "ias37_xc1"
             }
           ],
           "audio_files": [
@@ -29996,6 +30314,14 @@
               "key_point": "IAS 38.118 impose, par catégorie d'incorporels, la durée/le taux et la méthode d'amortissement, la VC brute et les cumuls d'amortissements et dépréciations en début et fin de période, ainsi qu'une réconciliation des mouvements. Les zones d'audit sensibles concernent la datation des 6 critères de R&D, la justification des durées indéfinies et la frontière développement/maintenance des logiciels.",
               "example": "La JV d'une liste clients acquise s'évalue souvent par la méthode MEEM (Multi-Period Excess Earnings Method), et sa durée d'utilité reflète le taux d'attrition historique de la clientèle.",
               "warning": "Point d'audit fréquent : l'entreprise doit documenter à quelle date précise les 6 critères de développement ont été remplis, car c'est seulement à partir de cette date que les coûts deviennent activables — toute dépense antérieure reste en charges et ne peut être réintégrée."
+            },
+            {
+              "section_id": "ias38_xc1",
+              "title": "🧮 Cas d'examen avec écritures — recherche, développement et amortissement",
+              "content": "**Énoncé** : en N, Iota SA dépense **200'000** de **recherche** (janvier-février) puis **500'000** de **développement** (mars-décembre) pour un logiciel. Les **six critères** d'IAS 38.57 (faisabilité technique, intention, capacité d'utiliser ou de vendre, avantages futurs probables, ressources, évaluation fiable) sont tous remplis le **1.6.N** ; **150'000** de développement ont été engagés avant cette date. Mise en service : 1.1.N+1, durée d'utilité **5 ans**.\n\n**Traitement**\n- Recherche : **200'000 en charges**.\n- Développement avant le 1.6 : **150'000 en charges** (jamais réactivés ensuite, IAS 38.71).\n- Développement après le 1.6 : **350'000 activés**.\n- Amortissement dès N+1 : 350'000 / 5 = **70'000 par an**.\n\n| Date | Compte | Débit | Crédit |\n|---|---|---|---|\n| N | Immobilisations incorporelles en cours | 350'000 | |\n| | Production immobilisée (ou charges de développement) | | 350'000 |\n| N+1 | Amortissement des incorporelles | 70'000 | |\n| | Immobilisations incorporelles (amortissements cumulés) | | 70'000 |\n\n**À retenir aussi** : marques, listes de clients et frais de démarrage **générés en interne** ne sont **jamais** activés ; une incorporelle à durée **indéterminée** n'est pas amortie mais testée chaque année.\n**Lien fiscal** : la déduction R&D supplémentaire et la patent box (M7-L10) sont indépendantes du traitement comptable.",
+              "key_point": "Recherche : toujours en charges · Développement : activé dès que les 6 critères sont remplis · Pas de réactivation des charges passées",
+              "warning": "Les dépenses engagées avant que les critères soient remplis restent en charges.",
+              "tip": "Moyen mnémotechnique des critères : « FICARE » (Faisabilité, Intention, Capacité, Avantages, Ressources, Évaluation)."
             }
           ],
           "key_rules": [
@@ -30243,6 +30569,51 @@
               "explanation": "IAS 38.54 : aucune immobilisation incorporelle ne résulte de la recherche ; les dépenses sont des charges. Les six critères d'IAS 38.57 concernent la phase de développement.",
               "difficulty": "easy",
               "section_id": null
+            },
+            {
+              "id": "ias38_cx1",
+              "type": "mcq",
+              "question": "Développement de 500'000, dont 150'000 engagés avant que les six critères d'IAS 38.57 soient remplis. Quel montant est activé ?",
+              "options": [
+                "500'000",
+                "700'000",
+                "350'000",
+                "150'000"
+              ],
+              "answer": 2,
+              "explanation": "Seules les dépenses engagées après que les critères sont remplis sont activées : 500'000 − 150'000 = 350'000.",
+              "difficulty": "medium",
+              "section_id": "ias38_xc1"
+            },
+            {
+              "id": "ias38_cx2",
+              "type": "mcq",
+              "question": "Même cas avec 200'000 de recherche. Quel montant total de charges en N (avant amortissement) ?",
+              "options": [
+                "550'000",
+                "150'000",
+                "200'000",
+                "350'000"
+              ],
+              "answer": 3,
+              "explanation": "200'000 de recherche + 150'000 de développement antérieur aux critères = 350'000.",
+              "difficulty": "medium",
+              "section_id": "ias38_xc1"
+            },
+            {
+              "id": "ias38_cx3",
+              "type": "mcq",
+              "question": "L'actif de 350'000 est mis en service le 1.1.N+1 pour 5 ans. Quel amortissement annuel ?",
+              "options": [
+                "100'000",
+                "50'000",
+                "116'667",
+                "70'000"
+              ],
+              "answer": 3,
+              "explanation": "350'000 / 5 = 70'000 par an, dès la mise en service.",
+              "difficulty": "easy",
+              "section_id": "ias38_xc1"
             }
           ],
           "audio_files": [
@@ -30847,6 +31218,14 @@
               "info": "**Date d'application des derniers amendements** : effets résiduels d'IFRS 11 / IFRS 10 intégrés dans la norme depuis 2014. Pas de modification majeure attendue pour 2026 — IFRS 5 est considérée comme une norme « mature ». Sa **stabilité** en fait une question récurrente des examens Swiss CPA et EXPERTsuisse.",
               "key_point": "IFRS 5.30-42 impose des informations spécifiques : faits ayant conduit au classement et segment concerné (lien IFRS 8) pour les actifs HFS ; ventilation produits/charges/résultat/impôts (5.33b) et flux de trésorerie par activité (5.33c) pour les activités abandonnées. L'évaluation HFS s'appuie uniquement sur FV-CTS, sans recourir à la valeur d'utilité d'IAS 36.",
               "warning": "Ne confondez pas le test HFS et le test d'impairment IAS 36 : IFRS 5 retient SEULEMENT la juste valeur diminuée des coûts de la vente, tandis qu'IAS 36 compare à la valeur recouvrable (max entre FV-CTS et valeur d'utilité). La cession d'une filiale déclenche par ailleurs les règles de perte de contrôle (IFRS 10) et le recyclage des écarts de conversion en P&L (IAS 21)."
+            },
+            {
+              "section_id": "ifrs5_xc1",
+              "title": "🧮 Cas d'examen avec écritures — machine classée détenue en vue de la vente",
+              "content": "**Énoncé** : une machine (coût 1'000'000, amortissement linéaire **100'000/an**) a une valeur comptable de **500'000** au 1.1.N. Le **30.6.N**, elle remplit les critères « détenue en vue de la vente » (disponible immédiatement, vente hautement probable dans les 12 mois). Juste valeur moins coûts de la vente : **420'000** au 30.6.N, **435'000** au 31.12.N (non vendue).\n\n**Étapes**\n1. Amortissement jusqu'au 30.6 : 50'000 → valeur comptable **450'000**.\n2. Reclassement en « actifs détenus en vue de la vente » et évaluation au **plus bas** de 450'000 et 420'000 → **perte de valeur de 30'000**.\n3. **Plus d'amortissement** à partir du 30.6.\n4. Au 31.12 : JV moins coûts = 435'000 → **reprise de 15'000** (limitée aux pertes de valeur comptabilisées).\n\n| Date | Compte | Débit | Crédit |\n|---|---|---|---|\n| 30.6.N | Amortissement | 50'000 | |\n| | Machines | | 50'000 |\n| 30.6.N | Actifs détenus en vue de la vente | 450'000 | |\n| | Machines | | 450'000 |\n| 30.6.N | Perte de valeur | 30'000 | |\n| | Actifs détenus en vue de la vente | | 30'000 |\n| 31.12.N | Actifs détenus en vue de la vente | 15'000 | |\n| | Reprise de perte de valeur | | 15'000 |\n\n**Présentation** : ligne séparée à l'actif (courant) ; les **comparatifs du bilan ne sont pas retraités**. Si la machine faisait partie d'une **activité abandonnée**, son résultat serait présenté séparément au compte de résultat (comparatifs retraités).",
+              "key_point": "Évaluation : plus bas de VC et JV − coûts de la vente · Plus d'amortissement après le classement · Reprise limitée aux pertes comptabilisées",
+              "warning": "L'amortissement s'arrête dès le classement, même si la vente tarde.",
+              "tip": "Critère clé : vente hautement probable dans les 12 mois."
             }
           ],
           "key_rules": [
@@ -31008,6 +31387,51 @@
               "explanation": "IFRS 5.15 et 25 : évaluation au plus bas de la valeur comptable et de la juste valeur diminuée des coûts de la vente ; l'amortissement cesse.",
               "difficulty": "medium",
               "section_id": null
+            },
+            {
+              "id": "ifrs5_cx1",
+              "type": "mcq",
+              "question": "Machine de valeur comptable 450'000 classée détenue en vue de la vente ; JV moins coûts de la vente 420'000. Quelle perte de valeur ?",
+              "options": [
+                "30'000",
+                "45'000",
+                "0",
+                "80'000"
+              ],
+              "answer": 0,
+              "explanation": "Évaluation au plus bas de 450'000 et 420'000 : perte de valeur de 30'000.",
+              "difficulty": "easy",
+              "section_id": "ifrs5_xc1"
+            },
+            {
+              "id": "ifrs5_cx2",
+              "type": "mcq",
+              "question": "Même machine (amortissement normal 100'000/an), classée le 30.6.N. Quel amortissement est comptabilisé du 1.7 au 31.12.N ?",
+              "options": [
+                "100'000",
+                "50'000",
+                "0",
+                "25'000"
+              ],
+              "answer": 2,
+              "explanation": "IFRS 5.25 : un actif détenu en vue de la vente n'est plus amorti.",
+              "difficulty": "medium",
+              "section_id": "ifrs5_xc1"
+            },
+            {
+              "id": "ifrs5_cx3",
+              "type": "mcq",
+              "question": "Au 31.12.N, la JV moins coûts de la vente remonte à 435'000 (perte initiale de 30'000). Quelle reprise ?",
+              "options": [
+                "35'000",
+                "15'000",
+                "30'000",
+                "0"
+              ],
+              "answer": 1,
+              "explanation": "Reprise à hauteur de la hausse (435'000 − 420'000 = 15'000), dans la limite des pertes de valeur comptabilisées.",
+              "difficulty": "medium",
+              "section_id": "ifrs5_xc1"
             }
           ],
           "audio_files": [
@@ -31337,6 +31761,14 @@
               "tip": "**Stratégie examen** : si une question parle d'instruments financiers, se demander d'abord :\n1. Est-ce dans le champ d'IFRS 9 ? (sinon → IAS 19, IFRS 17, IFRS 16…)\n2. Côté **émetteur** : passif ou capitaux propres ? (IAS 32)\n3. Quelle **catégorie** ? (business model + SPPI)\n4. Y a-t-il une dimension **JV** ? (alors IFRS 13)\n5. Y a-t-il une dimension **change** ? (alors IAS 21)",
               "key_point": "IFRS 9 s'articule avec un réseau de normes : IFRS 7 (informations à fournir) et IFRS 13 (juste valeur) en complément direct, IAS 32 (passif vs capitaux propres chez l'émetteur) aux frontières, et IAS 21 (devises), IAS 23 (coûts d'emprunt via le TIE), IFRS 10/IAS 28 (qui priment) en interaction.",
               "warning": "Cas piège récurrent (IAS 32) : des actions privilégiées rachetables obligatoirement sont, du point de vue de l'émetteur, un PASSIF financier et non des capitaux propres, malgré leur intitulé « actions ». La forme juridique ne détermine pas le classement."
+            },
+            {
+              "section_id": "ifrs9_xc1",
+              "title": "🧮 Cas d'examen avec écritures — pertes de crédit attendues (ECL)",
+              "content": "**A. Créances clients — approche simplifiée (matrice de provisionnement)**\nAu 31.12.N, Gamma SA a CHF 1'000'000 de créances :\n\n| Tranche | Montant | Taux ECL | ECL |\n|---|---|---|---|\n| Non échues | 600'000 | 0,5 % | 3'000 |\n| 1-30 jours | 250'000 | 2 % | 5'000 |\n| 31-90 jours | 100'000 | 8 % | 8'000 |\n| > 90 jours | 50'000 | 40 % | 20'000 |\n| **Total** | **1'000'000** | | **36'000** |\n\nCorrection de valeur existante : 30'000 → **dotation de 6'000**.\n\n| Compte | Débit | Crédit |\n|---|---|---|\n| Pertes de valeur sur créances (exploitation) | 6'000 | |\n| Correction de valeur sur créances (ECL) | | 6'000 |\n\n**B. Prêt accordé — approche générale (3 stades)** : prêt de 500'000, perte en cas de défaut (LGD) 40 %.\n- **Stade 1** (pas d'augmentation importante du risque) : ECL à **12 mois** ; probabilité de défaut à 12 mois 1 % → 500'000 × 1 % × 40 % = **2'000**.\n- **Stade 2** (augmentation importante, ex. retard > 30 jours) : ECL sur **toute la durée** ; PD à vie 6 % → 500'000 × 6 % × 40 % = **12'000** ; les intérêts restent calculés sur la valeur **brute**.\n- **Stade 3** (déprécié, ex. défaut) : ECL à vie ; intérêts calculés sur la valeur **nette**.\n\n**RPC / CO** : correction de valeur fondée sur le risque estimé (souvent forfait fiscal de 5 % / 10 % pour les créances suisses / étrangères en pratique PME).",
+              "key_point": "Créances clients : approche simplifiée, ECL à vie · Stade 1 : 12 mois ; stades 2 et 3 : à vie · Stade 3 : intérêts sur la valeur nette",
+              "warning": "Seule la variation de la correction de valeur passe au résultat (6'000), pas le total de 36'000.",
+              "tip": "Formule : ECL = exposition × probabilité de défaut × perte en cas de défaut."
             }
           ],
           "key_rules": [
@@ -31680,6 +32112,51 @@
               "explanation": "IFRS 9.4.1.2 : modèle « détenir pour encaisser » + flux SPPI → coût amorti.",
               "difficulty": "easy",
               "section_id": null
+            },
+            {
+              "id": "ifrs9_cx1",
+              "type": "mcq",
+              "question": "Créances : 600'000 non échues (0,5 %), 250'000 à 1-30 j (2 %), 100'000 à 31-90 j (8 %), 50'000 à plus de 90 j (40 %). Quelles sont les pertes de crédit attendues ?",
+              "options": [
+                "36'000",
+                "40'000",
+                "28'000",
+                "50'000"
+              ],
+              "answer": 0,
+              "explanation": "3'000 + 5'000 + 8'000 + 20'000 = 36'000.",
+              "difficulty": "medium",
+              "section_id": "ifrs9_xc1"
+            },
+            {
+              "id": "ifrs9_cx2",
+              "type": "mcq",
+              "question": "Même cas, correction de valeur existante de 30'000. Quelle charge est comptabilisée en N ?",
+              "options": [
+                "30'000",
+                "36'000",
+                "66'000",
+                "6'000"
+              ],
+              "answer": 3,
+              "explanation": "Seule l'augmentation de la correction de valeur (36'000 − 30'000) est une charge.",
+              "difficulty": "easy",
+              "section_id": "ifrs9_xc1"
+            },
+            {
+              "id": "ifrs9_cx3",
+              "type": "mcq",
+              "question": "Prêt de 500'000 passé en stade 2 ; PD à vie 6 %, LGD 40 %. Quelle correction de valeur ?",
+              "options": [
+                "20'000",
+                "12'000",
+                "30'000",
+                "2'000"
+              ],
+              "answer": 1,
+              "explanation": "Stade 2 : ECL à vie = 500'000 × 6 % × 40 % = 12'000.",
+              "difficulty": "hard",
+              "section_id": "ifrs9_xc1"
             }
           ],
           "audio_files": [
@@ -32114,6 +32591,14 @@
               "tip": "**Stratégie examen IFRS 15** : presque toujours, la question demande de **dérouler les 5 étapes** explicitement. Si la copie n'identifie pas chacune, points perdus garantis. Toujours :\n1. Énoncer le contrat et confirmer ses 5 critères\n2. Lister les obligations identifiées (et expliquer pourquoi distinctes)\n3. Détailler le prix de transaction (variable, financement…)\n4. Présenter le calcul d'allocation\n5. Préciser le calendrier (overtime/point in time) et passer les écritures",
               "key_point": "IFRS 15 exige des disclosures riches (désagrégation du chiffre d'affaires, soldes et variations des contract assets/liabilities, backlog des obligations restantes, jugements significatifs, coûts capitalisés) et s'articule avec plusieurs normes : IFRS 9 pour les créances et l'actualisation, IAS 37 pour les garanties-assurance et contrats déficitaires, IFRS 16 pour les composantes service des baux.",
               "warning": "Les contrats déficitaires (onerous contracts) ne sont PAS couverts par IFRS 15 : la perte attendue est provisionnée selon IAS 37. De même, les créances clients issues d'un contrat IFRS 15 relèvent d'IFRS 9 pour la dépréciation (ECL, approche simplifiée), à ne pas traiter dans IFRS 15."
+            },
+            {
+              "section_id": "ifrs15_xc1",
+              "title": "🧮 Cas d'examen avec écritures — contrat groupé machine + maintenance",
+              "content": "**Énoncé** : le 1.1.N, Alpha SA vend à un client une **machine** et **2 ans de maintenance** pour un prix global de **CHF 120'000**, payé comptant. Prix de vente **séparés** observables : machine 100'000, maintenance 2 ans 25'000. Le client obtient le contrôle de la machine le 1.1.N ; la maintenance est fournie uniformément.\n\n**Les 5 étapes**\n1. **Contrat** identifié (prix ferme, droits et obligations clairs).\n2. **Deux obligations de prestation** distinctes : la machine (remplie à un moment donné) et la maintenance (remplie progressivement).\n3. **Prix de transaction** : 120'000.\n4. **Répartition** selon les prix de vente séparés (total 125'000) : machine 120'000 × 100/125 = **96'000** ; maintenance 120'000 × 25/125 = **24'000**.\n5. **Comptabilisation** : machine au 1.1.N ; maintenance 12'000 par an.\n\n**Écritures**\n| Date | Compte | Débit | Crédit |\n|---|---|---|---|\n| 1.1.N | Trésorerie | 120'000 | |\n| | Chiffre d'affaires (machine) | | 96'000 |\n| | Passif sur contrat (produits différés) | | 24'000 |\n| 31.12.N | Passif sur contrat | 12'000 | |\n| | Chiffre d'affaires (maintenance) | | 12'000 |\n\n**Impact** : chiffre d'affaires N = **108'000** ; passif sur contrat au 31.12.N = **12'000**.",
+              "key_point": "Répartition au prorata des prix de vente séparés · Machine : un moment donné ; maintenance : progressivement · Encaissement d'avance → passif sur contrat",
+              "warning": "La remise globale (125'000 → 120'000) est répartie entre toutes les obligations, sauf preuve qu'elle concerne une seule d'entre elles.",
+              "tip": "Si le client avait 1 an pour payer, il faudrait aussi tenir compte de la composante de financement si elle est importante (IFRS 15.60)."
             }
           ],
           "key_rules": [
@@ -32343,6 +32828,51 @@
               "explanation": "IFRS 15.56 : la contrepartie variable n'est incluse que dans la mesure où il est hautement probable que son inclusion ne donnera pas lieu à un ajustement à la baisse important du produit cumulé.",
               "difficulty": "hard",
               "section_id": null
+            },
+            {
+              "id": "ifrs15_cx1",
+              "type": "mcq",
+              "question": "Machine (prix séparé 100'000) et maintenance (prix séparé 25'000) vendues ensemble pour 120'000. Quel montant est attribué à la machine ?",
+              "options": [
+                "95'000",
+                "100'000",
+                "96'000",
+                "120'000"
+              ],
+              "answer": 2,
+              "explanation": "120'000 × 100'000 / 125'000 = 96'000 : la remise est répartie au prorata des prix de vente séparés.",
+              "difficulty": "medium",
+              "section_id": "ifrs15_xc1"
+            },
+            {
+              "id": "ifrs15_cx2",
+              "type": "mcq",
+              "question": "Même cas (machine livrée le 1.1.N, maintenance de 24'000 sur 2 ans). Quel chiffre d'affaires est comptabilisé en N ?",
+              "options": [
+                "96'000",
+                "102'000",
+                "120'000",
+                "108'000"
+              ],
+              "answer": 3,
+              "explanation": "96'000 (machine) + 12'000 (une année de maintenance) = 108'000.",
+              "difficulty": "medium",
+              "section_id": "ifrs15_xc1"
+            },
+            {
+              "id": "ifrs15_cx3",
+              "type": "mcq",
+              "question": "Même cas. Quel passif sur contrat figure au bilan au 31.12.N ?",
+              "options": [
+                "12'000",
+                "4'800",
+                "24'000",
+                "0"
+              ],
+              "answer": 0,
+              "explanation": "La maintenance de la 2e année (12'000) est encaissée mais pas encore fournie : passif sur contrat.",
+              "difficulty": "easy",
+              "section_id": "ifrs15_xc1"
             }
           ],
           "audio_files": [
@@ -32455,6 +32985,14 @@
               "warning": "Piège du sub-lease : sa classification (finance vs operating) se juge par rapport au ROU asset restant, pas par rapport à l'actif physique sous-jacent. Tester un sub-lease de 8 ans contre la durée économique du bâtiment (ex. 40 ans) conduirait à tort à un operating lease, alors qu'il couvre 100 % de la durée résiduelle du ROU → finance lease.",
               "tip": "**Test sub-lease en pratique** : si la durée du sub-lease représente la **majeure partie** de la durée résiduelle du head-lease, pencher fortement vers finance lease (et reconnaître le P&L correspondant). Si le sub-lease est court par rapport au ROU restant, plus probable operating lease (revenu locatif linéaire, ROU maintenu).",
               "example": "Sub-lease de 20 % d'une surface (cas A) : ROU restant 14 mio → décomptabilisation de 2,8 mio (20 %), créance financière 1,65 mio, perte de cession 2,8 − 1,65 = 1,15 mio au P&L ; la head-lease liability reste intacte car X demeure responsable envers le bailleur principal."
+            },
+            {
+              "section_id": "ifrs16_xc1",
+              "title": "🧮 Cas d'examen avec écritures — bail de 5 ans chez le preneur",
+              "content": "**Énoncé** : le 1.1.N, Beta SA loue des locaux pour **5 ans**, loyer **CHF 50'000** payable en **fin d'année**. Taux d'emprunt marginal : **5 %**. Coûts directs initiaux : 3'000 (payés). Pas d'option d'achat.\n\n**Évaluation initiale**\n- Dette locative = valeur actuelle de 5 × 50'000 à 5 % = 50'000 × 4,3295 = **216'474**.\n- Droit d'utilisation = 216'474 + 3'000 = **219'474**.\n\n**Année N**\n- Intérêts : 5 % × 216'474 = **10'824** ; remboursement de la dette : 50'000 − 10'824 = 39'176 ; dette au 31.12.N = **177'298**.\n- Amortissement du droit d'utilisation : 219'474 / 5 = **43'895**.\n- **Charge totale N** = 10'824 + 43'895 = **54'719** (> loyer de 50'000 : effet « frontloading »).\n\n**Écritures**\n| Date | Compte | Débit | Crédit |\n|---|---|---|---|\n| 1.1.N | Droit d'utilisation | 219'474 | |\n| | Dette locative | | 216'474 |\n| | Trésorerie | | 3'000 |\n| 31.12.N | Charges d'intérêts | 10'824 | |\n| | Dette locative | 39'176 | |\n| | Trésorerie | | 50'000 |\n| 31.12.N | Amortissement | 43'895 | |\n| | Droit d'utilisation (amortissements cumulés) | | 43'895 |\n\n**Présentation** : intérêts en catégorie **financement** (IFRS 18) ; tableau des flux : 50'000 en **financement** (principal et intérêts).\n**RPC 13 / CO** : leasing opérationnel → simple charge de loyer de 50'000.",
+              "key_point": "Dette = VA des loyers ; ROU = dette + coûts directs · Charge N = intérêts + amortissement · RPC 13 : loyer en charge",
+              "warning": "Les coûts directs initiaux augmentent le droit d'utilisation, jamais la dette locative.",
+              "tip": "Facteur d'annuité à connaître : (1 − 1,05⁻⁵) / 0,05 = 4,3295."
             }
           ],
           "key_rules": [
@@ -32741,6 +33279,51 @@
               "explanation": "IFRS 16.5 et annexe A : un contrat de courte durée a une durée de 12 mois au plus à la date de début et ne comporte pas d'option d'achat.",
               "difficulty": "medium",
               "section_id": null
+            },
+            {
+              "id": "ifrs16_cx1",
+              "type": "mcq",
+              "question": "Bail de 5 ans, loyer de 50'000 payable en fin d'année, taux de 5 %. Quel est le montant initial de la dette locative ?",
+              "options": [
+                "238'095",
+                "216'474",
+                "250'000",
+                "219'474"
+              ],
+              "answer": 1,
+              "explanation": "50'000 × 4,3295 = 216'474 ; les coûts directs (3'000) s'ajoutent au droit d'utilisation (219'474), pas à la dette.",
+              "difficulty": "medium",
+              "section_id": "ifrs16_xc1"
+            },
+            {
+              "id": "ifrs16_cx2",
+              "type": "mcq",
+              "question": "Même cas (dette initiale 216'474, droit d'utilisation 219'474). Quelle charge totale le preneur comptabilise-t-il en N ?",
+              "options": [
+                "54'719",
+                "43'895",
+                "50'000",
+                "53'719"
+              ],
+              "answer": 0,
+              "explanation": "Intérêts 10'824 + amortissement 219'474 / 5 = 43'895 → 54'719.",
+              "difficulty": "hard",
+              "section_id": "ifrs16_xc1"
+            },
+            {
+              "id": "ifrs16_cx3",
+              "type": "mcq",
+              "question": "Même cas. Quel est le solde de la dette locative au 31.12.N ?",
+              "options": [
+                "173'179",
+                "177'298",
+                "166'474",
+                "216'474"
+              ],
+              "answer": 1,
+              "explanation": "216'474 + 10'824 d'intérêts − 50'000 de loyer = 177'298.",
+              "difficulty": "medium",
+              "section_id": "ifrs16_xc1"
             }
           ],
           "audio_files": [
@@ -32908,6 +33491,14 @@
               "warning": "IFRS 19 allège les informations à fournir, pas la comptabilisation ni l'évaluation.",
               "example": "Un groupe coté retraite son compte de résultat 2026 et explique en note le passage de l'ancien « résultat opérationnel » au nouveau résultat d'exploitation.",
               "tip": "À l'oral, savoir comparer IFRS 18 avec RPC 3 et l'art. 959b CO."
+            },
+            {
+              "section_id": "ifrs18_xc1",
+              "title": "🧮 Cas d'examen avec écritures — reclasser un compte de résultat en 5 catégories",
+              "content": "**Énoncé** (en milliers de CHF) — Kappa SA, société industrielle sans activité principale spécifique :\nchiffre d'affaires 2'000 ; coût des ventes (1'200) ; frais commerciaux et administratifs (300) ; écart de change sur créances clients (12) ; perte de valeur du goodwill (50) ; quote-part du résultat d'une associée 40 ; dividendes de titres de placement 10 ; intérêts sur la trésorerie 5 ; intérêts d'un emprunt bancaire (60) ; désactualisation d'une provision (8) ; impôts sur le résultat (90).\n\n| Catégorie | Éléments | Montant |\n|---|---|---|\n| **Exploitation** | 2'000 − 1'200 − 300 − 12 − 50 | **438** |\n| = **Résultat d'exploitation** | | **438** |\n| **Investissement** | 40 + 10 + 5 | **55** |\n| = **Résultat avant financement et impôts** | | **493** |\n| **Financement** | − 60 − 8 | **(68)** |\n| = Résultat avant impôts | | 425 |\n| **Impôts sur le résultat** | | (90) |\n| = **Résultat net** | | **335** |\n\n**Justifications**\n- Écart de change sur **créances clients** → catégorie de l'élément = **exploitation**.\n- Perte de valeur du **goodwill** → **exploitation**.\n- Quote-part de l'associée → **toujours investissement**.\n- Désactualisation d'une provision → **financement** (intérêt sur un autre passif).\n\n**Sous IAS 1**, le même groupe aurait pu présenter un « résultat opérationnel » incluant la quote-part de l'associée (478) : IFRS 18 rend la comparaison entre sociétés possible.",
+              "key_point": "Exploitation = catégorie résiduelle · Associée → investissement ; emprunt et désactualisation → financement · Écarts de change : catégorie de l'élément",
+              "warning": "Le résultat net ne change pas ; seuls les sous-totaux changent.",
+              "tip": "Toujours vérifier si l'entité a une activité principale spécifique (banque, foncière)."
             }
           ],
           "questions": [
@@ -33145,6 +33736,51 @@
               "explanation": "Faux. IFRS 18 porte sur la présentation et les informations à fournir ; la comptabilisation et l'évaluation restent régies par les autres normes (IFRS 15, IAS 16, IFRS 9…).",
               "difficulty": "easy",
               "section_id": "ifrs18_s1"
+            },
+            {
+              "id": "ifrs18_cx1",
+              "type": "mcq",
+              "question": "Avec les données du cas Kappa SA, quel est le résultat d'exploitation selon IFRS 18 ?",
+              "options": [
+                "493",
+                "438",
+                "478",
+                "450"
+              ],
+              "answer": 1,
+              "explanation": "2'000 − 1'200 − 300 − 12 (change sur clients) − 50 (goodwill) = 438.",
+              "difficulty": "hard",
+              "section_id": "ifrs18_xc1"
+            },
+            {
+              "id": "ifrs18_cx2",
+              "type": "mcq",
+              "question": "Même cas : quel est le résultat avant financement et impôts ?",
+              "options": [
+                "493",
+                "505",
+                "425",
+                "438"
+              ],
+              "answer": 0,
+              "explanation": "Résultat d'exploitation 438 + catégorie investissement 55 (40 + 10 + 5) = 493.",
+              "difficulty": "hard",
+              "section_id": "ifrs18_xc1"
+            },
+            {
+              "id": "ifrs18_cx3",
+              "type": "mcq",
+              "question": "Même cas : dans quelle catégorie figure la désactualisation de la provision (8) ?",
+              "options": [
+                "Impôts",
+                "Financement",
+                "Investissement",
+                "Exploitation"
+              ],
+              "answer": 1,
+              "explanation": "Les intérêts sur les passifs autres que de financement pur (provisions, prévoyance) sont classés en financement.",
+              "difficulty": "medium",
+              "section_id": "ifrs18_xc1"
             }
           ]
         },

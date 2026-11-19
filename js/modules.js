@@ -442,6 +442,7 @@ function _modIfrsCard(code, accent) {
     const badges = [
         IFRS_NEW[code] ? `<span class="ifrs-badge ifrs-badge-new">🆕 ${IFRS_NEW[code]}</span>` : '',
         prio ? '<span class="ifrs-badge ifrs-badge-hot">🔥 Incontournable</span>' : '',
+        (n.sections || []).some(s => /^🧮/.test(s.title || '')) ? '<span class="ifrs-badge ifrs-badge-cas">🧮 Cas chiffré</span>' : '',
         (n.revision_count || 0) > 0 ? '<span class="ifrs-badge ifrs-badge-done">✓ Révisée</span>' : '',
     ].join('');
     const q = (n.questions || []).length;
@@ -3116,6 +3117,7 @@ body.light-mode .mod-home-entry:hover { color: #0f172a; }
 .ifrs-badge-hot { color: #fbbf24; background: rgba(245,158,11,.14); }
 .ifrs-badge-new { color: #38bdf8; background: rgba(14,165,233,.15); }
 .ifrs-badge-done { color: #4ade80; background: rgba(34,197,94,.14); }
+.ifrs-badge-cas { color: #c4b5fd; background: rgba(139,92,246,.16); }
 .ifrs-card-prog { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 10px; font-size: 11.5px; color: #94a3b8; }
 .ifrs-prog-bar { flex: 1 1 auto; height: 5px; background: rgba(148,163,184,.2); border-radius: 999px; overflow: hidden; max-width: 110px; }
 .ifrs-prog-bar > span { display: block; height: 100%; border-radius: 999px; }
@@ -3140,6 +3142,7 @@ body.light-mode .ifrs-card-hot { border-color: #fcd34d; }
 body.light-mode .ifrs-badge-hot { color: #b45309; background: #fef3c7; }
 body.light-mode .ifrs-badge-new { color: #0369a1; background: #e0f2fe; }
 body.light-mode .ifrs-badge-done { color: #15803d; background: #dcfce7; }
+body.light-mode .ifrs-badge-cas { color: #6d28d9; background: #ede9fe; }
 body.light-mode .ifrs-mini { color: #334155; background: #f8fafc; border-color: #e2e8f0; }
 body.light-mode .ifrs-mini:hover { color: #0f172a; }
 body.light-mode .ifrs-mini-go { color: #047857; border-color: #a7f3d0; }
