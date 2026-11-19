@@ -444,6 +444,13 @@ function _modIfrsCard(code, accent) {
         prio ? '<span class="ifrs-badge ifrs-badge-hot">🔥 Incontournable</span>' : '',
         (n.sections || []).some(s => /^🧮/.test(s.title || '')) ? '<span class="ifrs-badge ifrs-badge-cas">🧮 Cas chiffré</span>' : '',
         (n.revision_count || 0) > 0 ? '<span class="ifrs-badge ifrs-badge-done">✓ Révisée</span>' : '',
+        (() => {
+            const r = _modReadAll()[n.id];
+            if (!r) return '';
+            if (r.done) return '<span class="ifrs-badge ifrs-badge-win">🏆 Parcours terminé</span>';
+            const k = (r.s || []).length;
+            return k ? `<span class="ifrs-badge ifrs-badge-step">📖 ${k} étape${k > 1 ? 's' : ''}</span>` : '';
+        })(),
     ].join('');
     const q = (n.questions || []).length;
     const c = escapeAttr(code);
@@ -734,7 +741,7 @@ function modToggleDeep() {
         b.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
         const main = b.querySelector('.mod-deep-main');
         const hint = b.querySelector('.mod-deep-hint');
-        if (main) main.innerHTML = willOpen ? '<span class="mod-deep-ic">▴</span> Réduire le cours' : '<span class="mod-deep-ic">▾</span> Approfondir le cours';
+        if (main) main.innerHTML = willOpen ? '<span class="mod-deep-ic">▴</span> Réduire le cours' : '<span class="mod-deep-ic">▶</span> Suivre le cours pas à pas';
         if (hint) hint.style.display = willOpen ? 'none' : '';
     }
 }
@@ -777,6 +784,12 @@ function modRenderNormDetail(n, m) {
         || s.key_point || s.tip || s.warning);
     const meaningful = (n.sections || []).filter(_isMeaningful);
     const _secId = (sec, i) => sec.section_id || `${n.id}_s${i + 1}`;
+    // ── Mode ludique sur les fiches de normes : même moteur que les leçons
+    //    (étapes, questions flash rattachées par section_id, « J'ai compris », bilan) ──
+    const _nlv = { id: n.id, content: meaningful.map((s, i) => Object.assign({}, s, { section_id: _secId(s, i), body: s.content || '' })), questions: n.questions || [] };
+    const _nplay = modPlayPrepare(_nlv);
+    window._modQuiz = window._modQuiz || {};
+    window._modQuiz[n.id] = _nlv.questions;
     const _artM = String(n.code || '').match(/(\d+[a-z]?(?:-\d+[a-z]?)?)/);
     const artLabel = _artM && !/^(IAS|IFRS|RPC|ISA|OCI|NAS|SER|NCR)\b/i.test(String(n.code || '')) ? 'art. ' + _artM[1] : '';
     const _fact = (t) => `<span class="mod-fact">${t}</span>`;
@@ -867,13 +880,14 @@ function modRenderNormDetail(n, m) {
     //    on ouvre directement le détail (pas de bouton solitaire). ──
     if (_hasEss) {
         html += `<button class="mod-deep-toggle" id="modDeepToggle" onclick="modToggleDeep()" aria-expanded="false">
-            <span class="mod-deep-main"><span class="mod-deep-ic">▾</span> Approfondir le cours</span>
-            <span class="mod-deep-hint">${meaningful.length ? meaningful.length + ' sections · ' : ''}exemples · pièges · comparaisons · flashcards</span>
+            <span class="mod-deep-main"><span class="mod-deep-ic">▶</span> Suivre le cours pas à pas</span>
+            <span class="mod-deep-hint">${_nplay.secs.length} étapes${_nplay.nq ? ' · ' + _nplay.nq + ' questions flash' : ''} · ~${_nplay.minutes} min</span>
         </button>
         <div id="modDeep" class="mod-deep" style="display:none">`;
     } else {
         html += `<div id="modDeep" class="mod-deep" style="display:block">`;
     }
+    html += modPlayStrip(_nlv, accent);
 
     // ── Audio files (podcasts, NotebookLM-style) ──
     if (Array.isArray(n.audio_files) && n.audio_files.length > 0) {
@@ -940,20 +954,22 @@ function modRenderNormDetail(n, m) {
             const secId = _secId(sec, i);
             const hasTitle = sec.title && sec.title.trim();
             const hasContent = sec.content && sec.content.trim().length > 0;
-            html += `<div class="mod-section" id="${escapeAttr(secId)}">`;
+            html += `<div class="mod-section" id="${escapeAttr(secId)}"><span class="mod-anchor" id="modsec_${escapeAttr(secId)}"></span>`;
             if (hasTitle) {
                 html += `<h3 class="mod-section-title"><span class="mod-sec-num">${i + 1}</span>${escapeHtml(sec.title)}</h3>`;
             }
-            if (hasContent) {
-                html += `<div class="mod-section-text">${formatAnswer(sec.content)}</div>`;
-            }
-            html += renderCallout('info',    '💡', 'Pour info',       sec.info);
-            html += renderCallout('legal',   '⚖️', 'Texte légal',     sec.legal_quote);
-            html += renderCallout('example', '🟢', 'Exemple concret', sec.example);
-            html += renderCallout('comp',    '📊', 'Comparaison',     sec.comparison);
-            html += renderCallout('key',     '🎯', 'Point clé',       sec.key_point);
-            html += renderCallout('tip',     '🧠', 'Astuce mémo',     sec.tip);
-            html += renderCallout('warn',    '⚠️', 'Attention',       sec.warning);
+            const calls = renderCallout('info',    '💡', 'Pour info',       sec.info)
+                + renderCallout('legal',   '⚖️', 'Texte légal',     sec.legal_quote)
+                + renderCallout('example', '🟢', 'Exemple concret', sec.example)
+                + renderCallout('comp',    '📊', 'Comparaison',     sec.comparison)
+                + renderCallout('key',     '🎯', 'Point clé',       sec.key_point)
+                + renderCallout('tip',     '🧠', 'Astuce mémo',     sec.tip)
+                + renderCallout('warn',    '⚠️', 'Attention',       sec.warning);
+            // Cas en mode défi : les encadrés (point clé, astuce…) dévoileraient la réponse → dans la solution.
+            const defi = hasContent && sec.content.includes(MOD_SOL);
+            if (hasContent) html += _modTextWithSolution(sec.content, 'mod-section-text', defi ? calls : '');
+            if (!defi) html += calls;
+            html += modPlaySectionFoot(_nlv, secId);
             html += `</div>`;
         });
     }
@@ -1062,6 +1078,10 @@ function modRenderNormDetail(n, m) {
         </div>`;
     }
 
+    // ── Questions non rattachées à une section + bilan ludique de la fiche ──
+    if (_nplay.leftover.length) html += modRenderLessonQuiz(_nlv, accent, _nplay.leftover, 'Encore quelques questions');
+    html += _modNormEndCard(n, m, accent);
+
     // ── QCMs liés à cette norme (lazy via api.get_qcm_for_lesson(n.id)) ──
     html += `<div class="mod-section" id="modNormQcmCard">
         <h3 class="mod-section-title">🃏 QCM liés à cette norme</h3>
@@ -1072,6 +1092,7 @@ function modRenderNormDetail(n, m) {
     html += `</div>`; // close mod-detail
     el.innerHTML = html;
     el.scrollTop = 0;
+    modPlayRefresh(n.id);
 
     // ── Active la traduction live (click-to-translate + selection) ──
     if (typeof window.Translator !== 'undefined') {
@@ -1552,14 +1573,11 @@ function modRenderLessonIfpDetail(l, m) {
                 html += `
                 <div class="mod-card mod-card-rich" id="modsec_${escapeAttr(secId)}" style="--mc:${color}">
                     ${headHtml}
-                    <div class="mod-card-text">${formatAnswer(sec.body || '')}</div>
-                    ${infoHtml}
-                    ${legalHtml}
-                    ${exampleHtml}
-                    ${comparisonHtml}
-                    ${keyPointHtml}
-                    ${tipHtml}
-                    ${warningHtml}
+                    ${(() => {
+                        const calls = infoHtml + legalHtml + exampleHtml + comparisonHtml + keyPointHtml + tipHtml + warningHtml;
+                        const defi = String(sec.body || '').includes(MOD_SOL);
+                        return _modTextWithSolution(sec.body || '', 'mod-card-text', defi ? calls : '') + (defi ? '' : calls);
+                    })()}
                     ${modPlaySectionFoot(l, secId)}
                 </div>`;
             }
@@ -1807,6 +1825,58 @@ function modPlayEndCard(l, m, color) {
     </div>`;
 }
 
+// Bilan d'une fiche de norme (mêmes identifiants que le bilan d'une leçon → modPlayRefresh).
+function _modNormNext(n, m) {
+    const inIfrs = IFRS_THEMES.some(t => t.codes.includes(n.code));
+    const order = inIfrs ? IFRS_THEMES.flatMap(t => t.codes) : (m.norms || []).map(x => x.code);
+    for (let k = order.indexOf(n.code) + 1; k > 0 && k < order.length; k++) {
+        const f = _modIfrsFind(order[k]);
+        if (f && (f.n.sections || []).length) return f.n;
+    }
+    return null;
+}
+function _modNormEndCard(n, m, color) {
+    const p = (window._modPlay || {})[n.id];
+    if (!p || !p.secs.length) return '';
+    const next = _modNormNext(n, m), lid = escapeAttr(n.id), code = escapeAttr(n.code || '');
+    return `<div class="mod-end" id="mpEnd_${lid}" data-kind="norm" style="--mc:${color}">
+        <div class="mod-end-emoji" id="mpEndEmoji_${lid}">🏁</div>
+        <div class="mod-end-title" id="mpEndTitle_${lid}">Bilan de la fiche</div>
+        <div class="mod-end-text" id="mpEndText_${lid}"></div>
+        <div class="mod-end-actions">
+            <button class="btn btn-outline" onclick="qcmFocusStart({ codes: ['${code}'], n: 15 })">🎯 15 QCM sur ${escapeHtml(n.code || '')}</button>
+            ${next ? `<button class="btn btn-primary" onclick="modOpenNormAnywhere('${escapeAttr(next.code)}')">Fiche suivante : ${escapeHtml(next.code)} →</button>` : ''}
+        </div>
+    </div>`;
+}
+
+// Cas pratiques : le marqueur invisible \u2063\u2063 sépare l'énoncé de la solution,
+// cachée derrière « Voir la solution » pour que l'on essaie d'abord.
+const MOD_SOL = '\u2063\u2063';
+function _modTextWithSolution(text, cls, extraHtml) {
+    const t = String(text || '');
+    const k = t.indexOf(MOD_SOL);
+    if (k < 0) return `<div class="${cls}">${formatAnswer(t)}</div>`;
+    return `<div class="${cls}">${formatAnswer(t.slice(0, k))}</div>
+        <div class="mod-try">
+            <div class="mod-try-text">🤔 <b>À toi de jouer !</b> Résous le cas sur une feuille (calculs, écritures, raisonnement), puis compare avec la solution.</div>
+            <button class="mod-try-btn" onclick="modRevealSolution(this)">👀 Voir la solution</button>
+        </div>
+        <div class="mod-solution" hidden>
+            <div class="mod-solution-kicker">✅ Solution</div>
+            <div class="${cls}">${formatAnswer(t.slice(k + MOD_SOL.length))}</div>
+            ${extraHtml || ''}
+        </div>`;
+}
+function modRevealSolution(btn) {
+    const box = btn.closest('.mod-try');
+    const sol = box && box.nextElementSibling;
+    if (!sol) return;
+    sol.hidden = false;
+    box.remove();
+    sol.classList.add('mod-solution-pop');
+}
+
 function modPlayGoto(secId) {
     const el = document.getElementById('modsec_' + secId);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1868,13 +1938,14 @@ function modPlayRefresh(lid, justFinished) {
         const em = document.getElementById('mpEndEmoji_' + lid);
         const ti = document.getElementById('mpEndTitle_' + lid);
         const tx = document.getElementById('mpEndText_' + lid);
+        const isNorm = end.dataset.kind === 'norm';
         if (em) em.textContent = finished ? '🏆' : '🏁';
-        if (ti) ti.textContent = finished ? 'Leçon terminée, bravo !' : 'Bilan de la leçon';
+        if (ti) ti.textContent = finished ? (isNorm ? 'Fiche terminée, bravo !' : 'Leçon terminée, bravo !') : (isNorm ? 'Bilan de la fiche' : 'Bilan de la leçon');
         if (tx) tx.textContent = `${k} / ${n} étapes validées`
             + (p.nq ? ` · ${score} / ${p.nq} bonnes réponses${answered < p.nq ? ` (${p.nq - answered} question${p.nq - answered > 1 ? 's' : ''} encore à faire)` : ''}` : '');
         if (justFinished) {
             end.classList.remove('mod-end-pop'); void end.offsetWidth; end.classList.add('mod-end-pop');
-            _modPlayToast('🎉 Leçon terminée !');
+            _modPlayToast(end.dataset.kind === 'norm' ? '🎉 Fiche terminée !' : '🎉 Leçon terminée !');
         }
     }
 }
@@ -3118,6 +3189,17 @@ body.light-mode .mod-home-entry:hover { color: #0f172a; }
 .ifrs-badge-new { color: #38bdf8; background: rgba(14,165,233,.15); }
 .ifrs-badge-done { color: #4ade80; background: rgba(34,197,94,.14); }
 .ifrs-badge-cas { color: #c4b5fd; background: rgba(139,92,246,.16); }
+.ifrs-badge-win { color: #fde68a; background: rgba(234,179,8,.18); }
+.ifrs-badge-step { color: #7dd3fc; background: rgba(14,165,233,.14); }
+.mod-anchor { display: block; position: relative; top: -12px; height: 0; }
+.mod-try { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: space-between; margin: 14px 0 6px; padding: 14px 16px; border-radius: 14px; border: 2px dashed rgba(245,158,11,.55); background: rgba(245,158,11,.08); }
+.mod-try-text { flex: 1 1 260px; font-size: 14px; line-height: 1.5; color: #fde68a; }
+.mod-try-btn { flex: 0 0 auto; font-size: 14px; font-weight: 800; color: #fff; background: linear-gradient(135deg, #f59e0b, #ea580c); border: 0; border-radius: 10px; padding: 10px 16px; cursor: pointer; box-shadow: 0 4px 14px rgba(234,88,12,.3); transition: transform .12s; }
+.mod-try-btn:hover { transform: translateY(-1px); }
+.mod-solution { margin-top: 12px; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(34,197,94,.35); background: rgba(34,197,94,.06); }
+.mod-solution-kicker { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #4ade80; margin-bottom: 8px; }
+.mod-solution-pop { animation: modSolPop .35s ease-out; }
+@keyframes modSolPop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .ifrs-card-prog { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 10px; font-size: 11.5px; color: #94a3b8; }
 .ifrs-prog-bar { flex: 1 1 auto; height: 5px; background: rgba(148,163,184,.2); border-radius: 999px; overflow: hidden; max-width: 110px; }
 .ifrs-prog-bar > span { display: block; height: 100%; border-radius: 999px; }
@@ -3143,6 +3225,12 @@ body.light-mode .ifrs-badge-hot { color: #b45309; background: #fef3c7; }
 body.light-mode .ifrs-badge-new { color: #0369a1; background: #e0f2fe; }
 body.light-mode .ifrs-badge-done { color: #15803d; background: #dcfce7; }
 body.light-mode .ifrs-badge-cas { color: #6d28d9; background: #ede9fe; }
+body.light-mode .ifrs-badge-win { color: #a16207; background: #fef9c3; }
+body.light-mode .ifrs-badge-step { color: #0369a1; background: #e0f2fe; }
+body.light-mode .mod-try { background: #fffbeb; border-color: #fbbf24; }
+body.light-mode .mod-try-text { color: #78350f; }
+body.light-mode .mod-solution { background: #f0fdf4; border-color: #86efac; }
+body.light-mode .mod-solution-kicker { color: #15803d; }
 body.light-mode .ifrs-mini { color: #334155; background: #f8fafc; border-color: #e2e8f0; }
 body.light-mode .ifrs-mini:hover { color: #0f172a; }
 body.light-mode .ifrs-mini-go { color: #047857; border-color: #a7f3d0; }

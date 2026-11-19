@@ -146,7 +146,14 @@ hasard). Énoncés uniques obligatoires (le catalogue dédoublonne par texte).
 Leçons des Modules en « mode ludique » (modules.js, `modPlay*`) : bandeau ⏱/étapes/questions
 flash, questions de chaque section affichées sous la section (`section_id`), bouton « J'ai
 compris », bilan + trophée ; progression dans `swisscpa_mod_read` ({lessonId:{s:[sections],done}}),
-badge ✓ sur les cartes et la barre latérale. Anglais : barre adaptative (5 rubriques les plus
+badge ✓ sur les cartes et la barre latérale.
+Les **fiches de normes** (M3, M4, M11…) utilisent le même moteur : bouton « ▶ Suivre le cours pas à pas »
+(`modToggleDeep`), adaptateur `_nlv` dans `modRenderNormDetail`, bilan `_modNormEndCard` (« Fiche suivante »,
+15 QCM), progression sous l'id de la norme ; badges « 📖 n étapes » / « 🏆 Parcours terminé » sur la page IFRS.
+**Cas en mode défi** : dans le texte d'un cas (`body` d'une leçon ou `content` d'une section de norme), le
+marqueur **invisible** `\u2063\u2063` (`MOD_SOL`) sépare l'énoncé de la solution → encadré « 🤔 À toi de jouer »
++ bouton « 👀 Voir la solution » (`_modTextWithSolution`, `modRevealSolution`) ; les encadrés de la section
+(point clé, astuce…) passent dans la solution. 44 cas marqués (M6, M7, M8, IFRS). Anglais : barre adaptative (5 rubriques les plus
 utilisées, `swisscpa_eng_usage` / `swisscpa_eng_pins`, reste dans « Plus » ; Écriture retirée).
 
 Progression utilisateur : uniquement localStorage du navigateur (clés
