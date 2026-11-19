@@ -95,6 +95,7 @@ const TAB_META = {
     podcasts:   { ic: '🎧', label: 'Podcasts' },
     trainer:    { ic: '⚡', label: 'Révision active' },
     qcm:        { ic: '❓', label: 'QCM' },
+    carnet:     { ic: '📕', label: "Carnet d'erreurs" },
     fcdb:       { ic: '🃏', label: 'Flashcards' },
     oral:       { ic: '🎤', label: 'Examen oral' },
     progress:   { ic: '📈', label: 'Progression' },
@@ -108,7 +109,7 @@ const TAB_META = {
 const NAV_GROUPS = [
     { id: 'accueil',      ic: '🏠', label: 'Accueil',      tabs: ['dashboard'] },
     { id: 'cours',        ic: '📚', label: 'Cours',        tabs: ['modules', 'audit', 'conso', 'fusion', 'social', 'hec', 'english', 'podcasts'] },
-    { id: 'entrainement', ic: '🎯', label: "S'entraîner",  tabs: ['trainer', 'qcm', 'fcdb', 'oral', 'progress'] },
+    { id: 'entrainement', ic: '🎯', label: "S'entraîner",  tabs: ['trainer', 'qcm', 'carnet', 'fcdb', 'oral', 'progress'] },
     { id: 'ressources',   ic: '🧰', label: 'Ressources',   tabs: ['references', 'compare', 'fs', 'recherche'] },
 ];
 // Pages sans entrée propre dans la sous-barre → entrée qu'on y surligne.
@@ -241,6 +242,7 @@ function navigate(tab, subTab) {
         case 'references': renderReferences(main, subTab); break;
         case 'progress': renderProgress(main); break;
         case 'qcm': renderQcm(main); break;
+        case 'carnet': renderErrbook(main); break;
         case 'trainer': renderTrainer(main); break;
         case 'audit': renderAudit(main, subTab); break;
         case 'english':

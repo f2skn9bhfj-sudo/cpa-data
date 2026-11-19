@@ -29,6 +29,7 @@ const HUB_SECTIONS = [
         cards: [
             { tab: 'trainer', d: 'Sprints de flashcards en répétition espacée (SM-2) et cours guidés.' },
             { tab: 'qcm', d: '4 070 questions corrigées sur les 16 modules, Focus IFRS, examen blanc noté sur 6.' },
+            { tab: 'carnet', d: 'Tes questions ratées, à refaire jusqu\'à les maîtriser (2 bonnes réponses d\'affilée).' },
             { tab: 'fcdb', d: 'Toutes les cartes, filtrables ; révise une sélection en un clic.' },
             { tab: 'oral', d: "Préparation à l'examen oral, thème par thème, avec simulateur." },
             { tab: 'progress', d: 'Ta progression par module : normes revues, QCM, cartes.' },

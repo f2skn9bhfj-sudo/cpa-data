@@ -95,6 +95,45 @@
         return t;
     }
     function _saveQcmTracking(t) { const c = Object.assign({}, t); delete c.due_ids; _lsSet('qcm_tracking', c); }
+
+    // ── Carnet d'erreurs ── chaque question ratée (onglet QCM, examen blanc, questions flash des
+    // cours) y entre avec un instantané (énoncé, options, réponse, explication, réponse donnée) ;
+    // elle en sort (« maîtrisée ») après 2 bonnes réponses d'affilée, où qu'elles soient données.
+    const ERRBOOK_GOAL = 2;
+    function _errBookRaw() { return _lsGet('error_book', null); }
+    function _saveErrBook(b) { _lsSet('error_book', b); }
+    function _errSnap(q) {
+        return {
+            type: q.type, question: q.question || '', options: Array.isArray(q.options) ? q.options.slice() : null,
+            answer: q.answer, explanation: String(q.explanation || '').slice(0, 1200),
+            module: q.module || '', norm_code: q.norm_code || '', norm_title: q.norm_title || q.lesson_title || '',
+        };
+    }
+    function _errBookRecord(q, wasCorrect, userText, source) {
+        if (!q || !q.id) return null;
+        const b = _errBookRaw() || {};
+        const now = new Date().toISOString();
+        let e = b[q.id];
+        if (!wasCorrect) {
+            const isNew = !e || !!e.mastered;
+            e = e || { id: q.id, added: now, wrong: 0 };
+            e.wrong = (e.wrong || 0) + 1;
+            e.streak = 0;
+            e.last_wrong = now;
+            if (userText != null) e.user = String(userText);
+            e.source = source || e.source || 'qcm';
+            e.snap = _errSnap(q);
+            if (e.mastered) { delete e.mastered; e.added = now; }
+            b[q.id] = e; _saveErrBook(b);
+            return { status: isNew ? 'added' : 'again', streak: 0, goal: ERRBOOK_GOAL };
+        }
+        if (!e || e.mastered) return null;
+        e.streak = (e.streak || 0) + 1;
+        e.last_right = now;
+        if (e.streak >= ERRBOOK_GOAL) e.mastered = now;
+        b[q.id] = e; _saveErrBook(b);
+        return { status: e.mastered ? 'mastered' : 'progress', streak: e.streak, goal: ERRBOOK_GOAL };
+    }
     // « Point faible » : au moins 2 essais et moins de 60 % de réussite (même règle que qcm.js).
     function _qcmIsWeak(s) { return !!s && s.attempts >= 2 && s.accuracy < 60; }
     // Questions à revoir : date de révision atteinte ; ancien suivi sans date → dernière réponse fausse.
@@ -844,6 +883,44 @@
         },
 
         // Renvoie des IDENTIFIANTS de questions (qcm.js filtre son catalogue avec).
+        // ── Carnet d'erreurs ──
+        async error_book_record(q, was_correct, user_text, source) {
+            return _errBookRecord(q, !!was_correct, user_text, source);
+        },
+        async get_error_book() {
+            let b = _errBookRaw();
+            if (b === null) {
+                // Premier accès : on reprend les questions dont la dernière réponse était fausse.
+                b = {};
+                try {
+                    const t = _qcmTracking();
+                    const cat = await api.get_qcm_catalog();
+                    const byId = {};
+                    (cat.questions || []).forEach(q => { byId[q.id] = q; });
+                    Object.entries(t.stats || {}).forEach(([id, st]) => {
+                        const q = byId[id];
+                        if (!q || !st || st.last_was_correct !== false) return;
+                        b[id] = { id, added: st.last_attempt || new Date().toISOString(), wrong: Math.max(1, (st.attempts || 1) - (st.correct || 0)),
+                                  streak: 0, last_wrong: st.last_attempt || null, source: 'qcm', snap: _errSnap(q) };
+                    });
+                } catch (e) { /* catalogue indisponible : carnet vide */ }
+                _saveErrBook(b);
+            }
+            const all = Object.values(b);
+            const active = all.filter(e => !e.mastered).sort((x, y) => String(y.last_wrong || '').localeCompare(String(x.last_wrong || '')));
+            const mastered = all.filter(e => e.mastered).sort((x, y) => String(y.mastered).localeCompare(String(x.mastered)));
+            return { active, mastered, goal: ERRBOOK_GOAL };
+        },
+        async error_book_remove(id) {
+            const b = _errBookRaw() || {};
+            delete b[id]; _saveErrBook(b); return true;
+        },
+        async error_book_clear_mastered() {
+            const b = _errBookRaw() || {};
+            Object.keys(b).forEach(k => { if (b[k].mastered) delete b[k]; });
+            _saveErrBook(b); return true;
+        },
+
         async qcm_get_selection(kind, limit) {
             const t = _qcmTracking();
             const cat = await api.get_qcm_catalog();

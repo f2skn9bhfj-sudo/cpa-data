@@ -31,7 +31,7 @@ est dans `CLAUDE.md`.
 
 ```bash
 python3 tools/sync_subapps.py      # sous-apps et banque de QCM « à jour »
-node tools/smoke_test.js           # les 18 pages s'ouvrent sans erreur
+node tools/smoke_test.js           # les 19 pages s'ouvrent sans erreur
 ```
 
 Après une modification de JS, CSS ou d'une sous-app, changer le numéro

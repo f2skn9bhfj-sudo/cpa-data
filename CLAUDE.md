@@ -58,7 +58,7 @@ d'écran sur téléphone (≤ 768 px).
 |---|---|
 | 🏠 Accueil | dashboard |
 | 📚 Cours | modules, audit, conso, fusion, social, hec, english, podcasts |
-| 🎯 S'entraîner | trainer (« Révision active »), qcm, fcdb, oral, progress |
+| 🎯 S'entraîner | trainer (« Révision active »), qcm, carnet, fcdb, oral, progress |
 | 🧰 Ressources | references, compare, fs, recherche |
 
 Ajouter une page : un `case` dans `navigate()`, une entrée `TAB_META`, sa place
@@ -75,6 +75,7 @@ depuis la Révision active) est un alias de `fcdb` pour la navigation
 | modules | modules.js `renderModules` (~3000 l.) | natif | unified_modules, trainer_courses, norms_ifrs_rpc, notion_lessons, flashcards ; `navigateToNormByCode(code)` ouvre une norme ; l'accueil du **M4** est une page IFRS (`_modIfrsHomeHtml` : 4 boutons d'action, progression, `IFRS_PRIORITY` « incontournables », 6 thèmes `IFRS_THEMES` dont « Groupes » = fiches du M11, cartes avec QCM vus/réussis remplies par `_modIfrsFillProgress`) |
 | trainer | trainer.js `renderTrainer` | natif | sprints SM-2 (flashcards) + cours (trainer_courses) ; `launchSprintFromIds` (sélection venue de Flashcards ou du Plan du jour, via sessionStorage `fcdbReviewIds`) |
 | qcm | qcm.js `renderQcm` | natif | `get_qcm_catalog` → **data/qcm_catalog.json** (pré-calculé à partir de trainer_courses + unified_modules + audit.json annuaire_cours) → **4070 QCM** (dédoublonnés par texte ; M1–M16 tous couverts, examen blanc pondéré par domaine : reporting 35 % avec M4/M11 ×1,6, audit 25, fiscal 20, droit 20) ; « 🌍 Focus IFRS » = `_qcmStartFocus` (20 Q : à revoir → ratées → nouvelles, 3 par norme max) ; `qcmFocusStart({codes|lessonId|∅, n})` ouvre l'onglet sur une série (fiches de normes, page IFRS, « Lancer cette série » des leçons via sessionStorage `qcmLessonFilter`) |
+| carnet | errbook.js `renderErrbook` : « 📕 Carnet d'erreurs » — questions ratées (onglet QCM, examen blanc, questions flash des cours via `modQuizAnswer`) avec ta réponse / la bonne / « Pourquoi ? », filtres par module, « ▶ Réviser » (20, les plus ratées d'abord) → `qcmFocusStart({ids, snaps})` ; sortie après **2 bonnes réponses d'affilée** (n'importe où) → « Maîtrisées » ; toasts `errbookNotify` | natif | localStorage `swisscpa_static_error_book` = {id:{added,wrong,streak,last_wrong,user,source,snap,mastered}} (api `error_book_record`, `get_error_book` — 1er appel : reprend les questions dont la dernière réponse était fausse —, `error_book_remove`, `error_book_clear_mastered`) |
 | fcdb | fcdb.js `renderFcdb` | natif | flashcards.json (**1613** cartes) ; « Réviser la sélection » → sprint |
 | compare | comparisons.js `renderComparisons` | natif | comparisons.json (25 thèmes) ; boutons « Normes liées » → `compGoNorm` |
 | progress | progress.js `renderProgress` | natif | `get_module_stats` (liste par module : flashcards, leçons de la Révision active, QCM réussis) + sauvegarde/restauration |
@@ -246,7 +247,7 @@ Icônes : `vendor/lucide-react.js` ne contient que les icônes importées (en-t�
 
 ## Vérifications
 
-- `node tools/smoke_test.js` : serveur local + Chromium, parcourt les 18 pages
+- `node tools/smoke_test.js` : serveur local + Chromium, parcourt les 19 pages
   des rubriques (attend le rendu des iframes), vérifie que la navigation suit
   la page, signale erreurs JS, fichiers locaux
   manquants et sous-apps vides. Tout est vérifiable hors ligne (vendor/).

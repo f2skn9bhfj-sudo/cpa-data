@@ -1958,6 +1958,17 @@ function _modPlayToast(msg) {
     clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2600);
 }
 
+// Module et titre d'une leçon ou d'une fiche (pour le carnet d'erreurs).
+function _modQuizCtx(id) {
+    for (const m of modData || []) {
+        const l = (m.lessons_ifp || []).find(x => x.id === id);
+        if (l) return { module: m.code, norm_code: l.code || m.code, norm_title: l.title || '' };
+        const n = (m.norms || []).find(x => x.id === id);
+        if (n) return { module: m.code, norm_code: n.code, norm_title: n.title || '' };
+    }
+    return {};
+}
+
 function modQuizAnswer(lessonId, qi, oi) {
     const qs = (window._modQuiz || {})[lessonId];
     if (!qs || !qs[qi]) return;
@@ -1986,6 +1997,11 @@ function modQuizAnswer(lessonId, qi, oi) {
     }
     const ok = oi === correctIdx;
     if (window.swisscpaDaily) swisscpaDaily.log('l');
+    // Carnet d'erreurs : les questions flash des cours y entrent aussi (et en sortent).
+    if (typeof errbookRecord === 'function' && q.id) {
+        const ctx = _modQuizCtx(lessonId);
+        errbookRecord(Object.assign({}, q, ctx), ok, isVF ? (oi === 0 ? 'Vrai' : 'Faux') : (q.options || [])[oi], 'cours');
+    }
     const exp = document.getElementById('mq_exp_' + lessonId + '_' + qi);
     if (exp) {
         exp.className = 'mq-exp ' + (ok ? 'mq-exp-ok' : 'mq-exp-no');

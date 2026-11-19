@@ -309,6 +309,10 @@ function _qcmRenderSetup() {
                 <div class="qcm-special-title">🌍 Focus IFRS</div>
                 <div class="qcm-special-desc"><b>20</b> questions ciblées parmi <b>${ifrsCount}</b> : à revoir, ratées, puis nouvelles</div>
             </button>
+            <button class="qcm-special qcm-special-errbook" onclick="navigate('carnet')">
+                <div class="qcm-special-title">📕 Carnet d'erreurs</div>
+                <div class="qcm-special-desc"><b id="qcmEbCount">…</b> questions ratées à maîtriser (2 bonnes réponses d'affilée)</div>
+            </button>
             <button class="qcm-special qcm-special-due ${dueCount === 0 ? 'qcm-disabled' : ''}" onclick="_qcmStartSpecial('due')" ${dueCount === 0 ? 'disabled' : ''}>
                 <div class="qcm-special-title">🔁 Révision espacée (SR)</div>
                 <div class="qcm-special-desc"><b>${dueCount}</b> questions dues — ancrage mémoire long terme</div>
@@ -426,6 +430,10 @@ function _qcmRenderSetup() {
 
     _qcmRenderChips();
     _qcmRenderCoverage();
+    api('get_error_book').then(d => {
+        const b = document.getElementById('qcmEbCount');
+        if (b && d) b.textContent = (d.active || []).length;
+    }).catch(() => {});
 }
 
 
@@ -774,6 +782,15 @@ function _qcmStartFocus(p) {
     p = p || {};
     const n = p.n || 20;
     let pool;
+    if (p.ids) {
+        // Carnet d'erreurs : version du catalogue si elle existe, sinon l'instantané enregistré.
+        const byId = {};
+        qcm.catalog.forEach(q => { byId[q.id] = q; });
+        pool = p.ids.map(id => byId[id] || (p.snaps && p.snaps[id] ? Object.assign({ id, difficulty: 'medium' }, p.snaps[id]) : null)).filter(Boolean);
+        if (!pool.length) { alert('Aucune question pour cette sélection.'); return false; }
+        _qcmStartSession(_qcmShuffle(pool), { mode: 'training', specialSelection: p.special || null, shuffleOptions: qcm.shuffleOptions });
+        return true;
+    }
     if (p.lessonId) pool = qcm.catalog.filter(q => q.lesson_id === p.lessonId);
     else if (p.codes && p.codes.length) { const want = new Set(p.codes); pool = qcm.catalog.filter(q => want.has(q.norm_code)); }
     else pool = qcm.catalog.filter(_qcmIsIfrs);
@@ -1157,6 +1174,13 @@ function _qcmRenderOptions() {
 }
 
 
+// Texte de la réponse choisie (pour le carnet d'erreurs) : option affichée ou Vrai / Faux.
+function _qcmChoiceText(q, choice) {
+    if (q.type === 'vrai_faux') return (choice === true || choice === 'true') ? 'Vrai' : 'Faux';
+    const o = (q.options || [])[choice];
+    return o == null ? '' : String(o);
+}
+
 async function _qcmAnswer(choice) {
     const s = qcm.session;
     if (!s) return;
@@ -1181,6 +1205,7 @@ async function _qcmAnswer(choice) {
                 s.answers[s.currentIdx].confidence, timeMs,
                 s.id, q.module, q.norm_code);
         } catch (e) { console.warn('qcm_record_attempt failed:', e); }
+        if (typeof errbookRecord === 'function') errbookRecord(q, correct, _qcmChoiceText(q, choice), 'qcm');
     }
 
     // Update tracking for display
@@ -1304,6 +1329,7 @@ async function _qcmFinish() {
             try {
                 await api('qcm_record_attempt', q.id, a.correct, String(a.choice),
                     a.confidence, a.time_ms, s.id, q.module, q.norm_code);
+                await api('error_book_record', q, a.correct, _qcmChoiceText(q, a.choice), 'examen');
             } catch (e) { /* ignore */ }
         }
     }
@@ -1815,6 +1841,7 @@ function _qcmInjectStyles() {
     .qcm-special-star { border-left: 3px solid #fbbf24; }
     .qcm-special-wrong { border-left: 3px solid #f97316; }
     .qcm-special-es { border-left: 3px solid #0ea5e9; }
+    .qcm-special-errbook { border-left: 3px solid #ef4444; background: linear-gradient(90deg, rgba(239, 68, 68, 0.09), transparent); }
     .qcm-special-ifrs { border-left: 3px solid #10b981; background: linear-gradient(90deg, rgba(16, 185, 129, 0.10), transparent); }
     .qcm-special-exam { border-left: 3px solid #8b5cf6; background: linear-gradient(90deg, rgba(139, 92, 246, 0.08), transparent); }
     .qcm-special-hist { border-left: 3px solid #64748b; }
